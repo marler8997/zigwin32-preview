@@ -1,0 +1,3981 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: MMTIME
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MMTIME = *opaque{
+    // --------------------------------------------------------
+    // Type: _u_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _u_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _smpte_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _smpte_e__Struct = extern struct {
+            hour: {"kind":"Byte"},
+            min: {"kind":"Byte"},
+            sec: {"kind":"Byte"},
+            frame: {"kind":"Byte"},
+            fps: {"kind":"Byte"},
+            dummy: {"kind":"Byte"},
+            pad: {"kind":"Array","child": {"kind":"Byte"}},
+        };
+        // --------------------------------------------------------
+        // Type: _midi_e__Struct
+        // TypeLayoutAttr: sequential
+        // not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+        pub const _midi_e__Struct = *opaque{
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: HDRVR__
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const HDRVR__ = *opaque{
+};
+// --------------------------------------------------------
+// Type: DRVCALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DRVCALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPDRVCALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDRVCALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDRVCALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDRVCALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DRVCONFIGINFOEX
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const DRVCONFIGINFOEX = *opaque{
+};
+// --------------------------------------------------------
+// Type: DRVCONFIGINFO
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const DRVCONFIGINFO = *opaque{
+};
+// --------------------------------------------------------
+// Type: DRIVERPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DRIVERPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DRIVERMSGPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DRIVERMSGPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: HMMIO__
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const HMMIO__ = *opaque{
+};
+// --------------------------------------------------------
+// Type: MMIOPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MMIOPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPMMIOPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPMMIOPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: MMIOINFO
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MMIOINFO = *opaque{
+};
+// --------------------------------------------------------
+// Type: MMCKINFO
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MMCKINFO = *opaque{
+};
+// --------------------------------------------------------
+// Type: HWAVE__
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const HWAVE__ = *opaque{
+};
+// --------------------------------------------------------
+// Type: HWAVEIN__
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const HWAVEIN__ = *opaque{
+};
+// --------------------------------------------------------
+// Type: HWAVEOUT__
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const HWAVEOUT__ = *opaque{
+};
+// --------------------------------------------------------
+// Type: WAVECALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WAVECALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWAVECALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWAVECALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WAVEHDR
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const WAVEHDR = *opaque{
+};
+// --------------------------------------------------------
+// Type: WAVEOUTCAPSA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const WAVEOUTCAPSA = *opaque{
+};
+// --------------------------------------------------------
+// Type: WAVEOUTCAPSW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const WAVEOUTCAPSW = *opaque{
+};
+// --------------------------------------------------------
+// Type: WAVEOUTCAPS2A
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const WAVEOUTCAPS2A = *opaque{
+};
+// --------------------------------------------------------
+// Type: WAVEOUTCAPS2W
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const WAVEOUTCAPS2W = *opaque{
+};
+// --------------------------------------------------------
+// Type: WAVEINCAPSA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const WAVEINCAPSA = *opaque{
+};
+// --------------------------------------------------------
+// Type: WAVEINCAPSW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const WAVEINCAPSW = *opaque{
+};
+// --------------------------------------------------------
+// Type: WAVEINCAPS2A
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const WAVEINCAPS2A = *opaque{
+};
+// --------------------------------------------------------
+// Type: WAVEINCAPS2W
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const WAVEINCAPS2W = *opaque{
+};
+// --------------------------------------------------------
+// Type: WAVEFORMAT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const WAVEFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: PCMWAVEFORMAT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const PCMWAVEFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: WAVEFORMATEX
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const WAVEFORMATEX = *opaque{
+};
+// --------------------------------------------------------
+// Type: HMIDI__
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const HMIDI__ = *opaque{
+};
+// --------------------------------------------------------
+// Type: HMIDIIN__
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const HMIDIIN__ = *opaque{
+};
+// --------------------------------------------------------
+// Type: HMIDIOUT__
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const HMIDIOUT__ = *opaque{
+};
+// --------------------------------------------------------
+// Type: HMIDISTRM__
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const HMIDISTRM__ = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIDICALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MIDICALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPMIDICALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPMIDICALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: MIDIOUTCAPSA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIDIOUTCAPSA = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIDIOUTCAPSW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIDIOUTCAPSW = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIDIOUTCAPS2A
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIDIOUTCAPS2A = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIDIOUTCAPS2W
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIDIOUTCAPS2W = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIDIINCAPSA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIDIINCAPSA = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIDIINCAPSW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIDIINCAPSW = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIDIINCAPS2A
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIDIINCAPS2A = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIDIINCAPS2W
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIDIINCAPS2W = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIDIHDR
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIDIHDR = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIDIEVENT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIDIEVENT = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIDISTRMBUFFVER
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIDISTRMBUFFVER = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIDIPROPTIMEDIV
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIDIPROPTIMEDIV = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIDIPROPTEMPO
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIDIPROPTEMPO = *opaque{
+};
+// --------------------------------------------------------
+// Type: AUXCAPSA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const AUXCAPSA = *opaque{
+};
+// --------------------------------------------------------
+// Type: AUXCAPSW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const AUXCAPSW = *opaque{
+};
+// --------------------------------------------------------
+// Type: AUXCAPS2A
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const AUXCAPS2A = *opaque{
+};
+// --------------------------------------------------------
+// Type: AUXCAPS2W
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const AUXCAPS2W = *opaque{
+};
+// --------------------------------------------------------
+// Type: HMIXEROBJ__
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const HMIXEROBJ__ = *opaque{
+};
+// --------------------------------------------------------
+// Type: HMIXER__
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const HMIXER__ = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIXERCAPSA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIXERCAPSA = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIXERCAPSW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIXERCAPSW = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIXERCAPS2A
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIXERCAPS2A = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIXERCAPS2W
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIXERCAPS2W = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIXERLINEA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIXERLINEA = *opaque{
+    // --------------------------------------------------------
+    // Type: _Target_e__Struct
+    // TypeLayoutAttr: sequential
+    // not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+    pub const _Target_e__Struct = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: MIXERLINEW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIXERLINEW = *opaque{
+    // --------------------------------------------------------
+    // Type: _Target_e__Struct
+    // TypeLayoutAttr: sequential
+    // not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+    pub const _Target_e__Struct = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: MIXERCONTROLA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIXERCONTROLA = *opaque{
+    // --------------------------------------------------------
+    // Type: _Bounds_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Bounds_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous2_e__Struct
+        // TypeLayoutAttr: sequential
+        // not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+        pub const _Anonymous2_e__Struct = *opaque{
+        };
+        // --------------------------------------------------------
+        // Type: _Anonymous1_e__Struct
+        // TypeLayoutAttr: sequential
+        // not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+        pub const _Anonymous1_e__Struct = *opaque{
+        };
+    };
+    // --------------------------------------------------------
+    // Type: _Metrics_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Metrics_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: MIXERCONTROLW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIXERCONTROLW = *opaque{
+    // --------------------------------------------------------
+    // Type: _Metrics_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Metrics_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Bounds_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Bounds_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous1_e__Struct
+        // TypeLayoutAttr: sequential
+        // not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+        pub const _Anonymous1_e__Struct = *opaque{
+        };
+        // --------------------------------------------------------
+        // Type: _Anonymous2_e__Struct
+        // TypeLayoutAttr: sequential
+        // not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+        pub const _Anonymous2_e__Struct = *opaque{
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: MIXERLINECONTROLSA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIXERLINECONTROLSA = *opaque{
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: MIXERLINECONTROLSW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIXERLINECONTROLSW = *opaque{
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: MIXERCONTROLDETAILS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIXERCONTROLDETAILS = *opaque{
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: MIXERCONTROLDETAILS_LISTTEXTA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIXERCONTROLDETAILS_LISTTEXTA = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIXERCONTROLDETAILS_LISTTEXTW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIXERCONTROLDETAILS_LISTTEXTW = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIXERCONTROLDETAILS_BOOLEAN
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIXERCONTROLDETAILS_BOOLEAN = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIXERCONTROLDETAILS_SIGNED
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIXERCONTROLDETAILS_SIGNED = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIXERCONTROLDETAILS_UNSIGNED
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIXERCONTROLDETAILS_UNSIGNED = *opaque{
+};
+// --------------------------------------------------------
+// Type: TIMECAPS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const TIMECAPS = *opaque{
+};
+// --------------------------------------------------------
+// Type: JOYCAPSA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const JOYCAPSA = *opaque{
+};
+// --------------------------------------------------------
+// Type: JOYCAPSW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const JOYCAPSW = *opaque{
+};
+// --------------------------------------------------------
+// Type: JOYCAPS2A
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const JOYCAPS2A = *opaque{
+};
+// --------------------------------------------------------
+// Type: JOYCAPS2W
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const JOYCAPS2W = *opaque{
+};
+// --------------------------------------------------------
+// Type: JOYINFO
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const JOYINFO = *opaque{
+};
+// --------------------------------------------------------
+// Type: JOYINFOEX
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const JOYINFOEX = *opaque{
+};
+// --------------------------------------------------------
+// Type: KSDATAFORMAT_SUBTYPE_PCM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const KSDATAFORMAT_SUBTYPE_PCM = opaque {
+};
+// --------------------------------------------------------
+// Type: KSDATAFORMAT_SUBTYPE_IEEE_FLOAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const KSDATAFORMAT_SUBTYPE_IEEE_FLOAT = opaque {
+};
+// --------------------------------------------------------
+// Type: KSDATAFORMAT_SUBTYPE_WAVEFORMATEX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const KSDATAFORMAT_SUBTYPE_WAVEFORMATEX = opaque {
+};
+// --------------------------------------------------------
+// Type: WAVEFORMATEXTENSIBLE
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const WAVEFORMATEXTENSIBLE = *opaque{
+    // --------------------------------------------------------
+    // Type: _Samples_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Samples_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: ADPCMCOEFSET
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const ADPCMCOEFSET = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADPCMWAVEFORMAT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const ADPCMWAVEFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: DRMWAVEFORMAT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const DRMWAVEFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: DVIADPCMWAVEFORMAT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const DVIADPCMWAVEFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: IMAADPCMWAVEFORMAT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const IMAADPCMWAVEFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: MEDIASPACEADPCMWAVEFORMAT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MEDIASPACEADPCMWAVEFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: SIERRAADPCMWAVEFORMAT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SIERRAADPCMWAVEFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: G723_ADPCMWAVEFORMAT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const G723_ADPCMWAVEFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: DIGISTDWAVEFORMAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIGISTDWAVEFORMAT = extern struct {
+    wfx: Windows.Win32.Multimedia.WAVEFORMATEX,
+};
+// --------------------------------------------------------
+// Type: DIGIFIXWAVEFORMAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIGIFIXWAVEFORMAT = extern struct {
+    wfx: Windows.Win32.Multimedia.WAVEFORMATEX,
+};
+// --------------------------------------------------------
+// Type: DIALOGICOKIADPCMWAVEFORMAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIALOGICOKIADPCMWAVEFORMAT = extern struct {
+    ewf: Windows.Win32.Multimedia.WAVEFORMATEX,
+};
+// --------------------------------------------------------
+// Type: YAMAHA_ADPCMWAVEFORMAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const YAMAHA_ADPCMWAVEFORMAT = extern struct {
+    wfx: Windows.Win32.Multimedia.WAVEFORMATEX,
+};
+// --------------------------------------------------------
+// Type: SONARCWAVEFORMAT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SONARCWAVEFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: TRUESPEECHWAVEFORMAT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const TRUESPEECHWAVEFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: ECHOSC1WAVEFORMAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ECHOSC1WAVEFORMAT = extern struct {
+    wfx: Windows.Win32.Multimedia.WAVEFORMATEX,
+};
+// --------------------------------------------------------
+// Type: AUDIOFILE_AF36WAVEFORMAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AUDIOFILE_AF36WAVEFORMAT = extern struct {
+    wfx: Windows.Win32.Multimedia.WAVEFORMATEX,
+};
+// --------------------------------------------------------
+// Type: APTXWAVEFORMAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const APTXWAVEFORMAT = extern struct {
+    wfx: Windows.Win32.Multimedia.WAVEFORMATEX,
+};
+// --------------------------------------------------------
+// Type: AUDIOFILE_AF10WAVEFORMAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AUDIOFILE_AF10WAVEFORMAT = extern struct {
+    wfx: Windows.Win32.Multimedia.WAVEFORMATEX,
+};
+// --------------------------------------------------------
+// Type: DOLBYAC2WAVEFORMAT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const DOLBYAC2WAVEFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: GSM610WAVEFORMAT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const GSM610WAVEFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADPCMEWAVEFORMAT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const ADPCMEWAVEFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: CONTRESVQLPCWAVEFORMAT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const CONTRESVQLPCWAVEFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: DIGIREALWAVEFORMAT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const DIGIREALWAVEFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: DIGIADPCMWAVEFORMAT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const DIGIADPCMWAVEFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: CONTRESCR10WAVEFORMAT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const CONTRESCR10WAVEFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: NMS_VBXADPCMWAVEFORMAT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const NMS_VBXADPCMWAVEFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: G721_ADPCMWAVEFORMAT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const G721_ADPCMWAVEFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: MSAUDIO1WAVEFORMAT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MSAUDIO1WAVEFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: WMAUDIO2WAVEFORMAT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const WMAUDIO2WAVEFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: WMAUDIO3WAVEFORMAT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const WMAUDIO3WAVEFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: CREATIVEADPCMWAVEFORMAT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const CREATIVEADPCMWAVEFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: CREATIVEFASTSPEECH8WAVEFORMAT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const CREATIVEFASTSPEECH8WAVEFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: CREATIVEFASTSPEECH10WAVEFORMAT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const CREATIVEFASTSPEECH10WAVEFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: FMTOWNS_SND_WAVEFORMAT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const FMTOWNS_SND_WAVEFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: OLIGSMWAVEFORMAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const OLIGSMWAVEFORMAT = extern struct {
+    wfx: Windows.Win32.Multimedia.WAVEFORMATEX,
+};
+// --------------------------------------------------------
+// Type: OLIADPCMWAVEFORMAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const OLIADPCMWAVEFORMAT = extern struct {
+    wfx: Windows.Win32.Multimedia.WAVEFORMATEX,
+};
+// --------------------------------------------------------
+// Type: OLICELPWAVEFORMAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const OLICELPWAVEFORMAT = extern struct {
+    wfx: Windows.Win32.Multimedia.WAVEFORMATEX,
+};
+// --------------------------------------------------------
+// Type: OLISBCWAVEFORMAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const OLISBCWAVEFORMAT = extern struct {
+    wfx: Windows.Win32.Multimedia.WAVEFORMATEX,
+};
+// --------------------------------------------------------
+// Type: OLIOPRWAVEFORMAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const OLIOPRWAVEFORMAT = extern struct {
+    wfx: Windows.Win32.Multimedia.WAVEFORMATEX,
+};
+// --------------------------------------------------------
+// Type: CSIMAADPCMWAVEFORMAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CSIMAADPCMWAVEFORMAT = extern struct {
+    wfx: Windows.Win32.Multimedia.WAVEFORMATEX,
+};
+// --------------------------------------------------------
+// Type: WAVEFILTER
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const WAVEFILTER = *opaque{
+};
+// --------------------------------------------------------
+// Type: VOLUMEWAVEFILTER
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const VOLUMEWAVEFILTER = *opaque{
+};
+// --------------------------------------------------------
+// Type: ECHOWAVEFILTER
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const ECHOWAVEFILTER = *opaque{
+};
+// --------------------------------------------------------
+// Type: s_RIFFWAVE_inst
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const s_RIFFWAVE_inst = extern struct {
+    bUnshiftedNote: {"kind":"Byte"},
+    chFineTune: {"kind":"SByte"},
+    chGain: {"kind":"SByte"},
+    bLowNote: {"kind":"Byte"},
+    bHighNote: {"kind":"Byte"},
+    bLowVelocity: {"kind":"Byte"},
+    bHighVelocity: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: tag_s_RIFFWAVE_INST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const tag_s_RIFFWAVE_INST = opaque {
+};
+// --------------------------------------------------------
+// Type: EXBMINFOHEADER
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const EXBMINFOHEADER = *opaque{
+};
+// --------------------------------------------------------
+// Type: JPEGINFOHEADER
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const JPEGINFOHEADER = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_RECT_PARMS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_RECT_PARMS = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_CAPTURE_PARMSA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_CAPTURE_PARMSA = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_CAPTURE_PARMSW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_CAPTURE_PARMSW = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_COPY_PARMS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_COPY_PARMS = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_CUE_PARMS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_CUE_PARMS = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_CUT_PARMS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_CUT_PARMS = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_DELETE_PARMS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_DELETE_PARMS = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_INFO_PARMSA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_INFO_PARMSA = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_INFO_PARMSW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_INFO_PARMSW = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_LIST_PARMSA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_LIST_PARMSA = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_LIST_PARMSW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_LIST_PARMSW = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_MONITOR_PARMS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_MONITOR_PARMS = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_OPEN_PARMSA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_OPEN_PARMSA = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_OPEN_PARMSW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_OPEN_PARMSW = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_PASTE_PARMS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_PASTE_PARMS = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_QUALITY_PARMSA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_QUALITY_PARMSA = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_QUALITY_PARMSW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_QUALITY_PARMSW = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_RECORD_PARMS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_RECORD_PARMS = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_RESERVE_PARMSA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_RESERVE_PARMSA = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_RESERVE_PARMSW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_RESERVE_PARMSW = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_RESTORE_PARMSA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_RESTORE_PARMSA = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_RESTORE_PARMSW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_RESTORE_PARMSW = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_SAVE_PARMSA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_SAVE_PARMSA = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_SAVE_PARMSW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_SAVE_PARMSW = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_SET_PARMS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_SET_PARMS = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_SETAUDIO_PARMSA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_SETAUDIO_PARMSA = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_SETAUDIO_PARMSW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_SETAUDIO_PARMSW = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_SIGNAL_PARMS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_SIGNAL_PARMS = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_SETVIDEO_PARMSA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_SETVIDEO_PARMSA = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_SETVIDEO_PARMSW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_SETVIDEO_PARMSW = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_STATUS_PARMSA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_STATUS_PARMSA = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_STATUS_PARMSW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_STATUS_PARMSW = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_STEP_PARMS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_STEP_PARMS = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_UPDATE_PARMS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_UPDATE_PARMS = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_WINDOW_PARMSA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_WINDOW_PARMSA = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCI_DGV_WINDOW_PARMSW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_DGV_WINDOW_PARMSW = *opaque{
+};
+// --------------------------------------------------------
+// Type: HACMDRIVERID__
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const HACMDRIVERID__ = *opaque{
+};
+// --------------------------------------------------------
+// Type: HACMDRIVER__
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const HACMDRIVER__ = *opaque{
+};
+// --------------------------------------------------------
+// Type: HACMSTREAM__
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const HACMSTREAM__ = *opaque{
+};
+// --------------------------------------------------------
+// Type: HACMOBJ__
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const HACMOBJ__ = *opaque{
+};
+// --------------------------------------------------------
+// Type: ACMDRIVERENUMCB
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ACMDRIVERENUMCB = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: ACMDRIVERPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ACMDRIVERPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPACMDRIVERPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPACMDRIVERPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: tACMDRIVERDETAILSA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const tACMDRIVERDETAILSA = *opaque{
+};
+// --------------------------------------------------------
+// Type: tACMDRIVERDETAILSW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const tACMDRIVERDETAILSW = *opaque{
+};
+// --------------------------------------------------------
+// Type: tACMFORMATTAGDETAILSA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const tACMFORMATTAGDETAILSA = *opaque{
+};
+// --------------------------------------------------------
+// Type: tACMFORMATTAGDETAILSW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const tACMFORMATTAGDETAILSW = *opaque{
+};
+// --------------------------------------------------------
+// Type: ACMFORMATTAGENUMCBA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ACMFORMATTAGENUMCBA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: ACMFORMATTAGENUMCBW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ACMFORMATTAGENUMCBW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: tACMFORMATDETAILSA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const tACMFORMATDETAILSA = *opaque{
+};
+// --------------------------------------------------------
+// Type: tACMFORMATDETAILSW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const tACMFORMATDETAILSW = *opaque{
+};
+// --------------------------------------------------------
+// Type: ACMFORMATENUMCBA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ACMFORMATENUMCBA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: ACMFORMATENUMCBW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ACMFORMATENUMCBW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: ACMFORMATCHOOSEHOOKPROCA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ACMFORMATCHOOSEHOOKPROCA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: ACMFORMATCHOOSEHOOKPROCW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ACMFORMATCHOOSEHOOKPROCW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: tACMFORMATCHOOSEA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const tACMFORMATCHOOSEA = *opaque{
+};
+// --------------------------------------------------------
+// Type: tACMFORMATCHOOSEW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const tACMFORMATCHOOSEW = *opaque{
+};
+// --------------------------------------------------------
+// Type: tACMFILTERTAGDETAILSA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const tACMFILTERTAGDETAILSA = *opaque{
+};
+// --------------------------------------------------------
+// Type: tACMFILTERTAGDETAILSW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const tACMFILTERTAGDETAILSW = *opaque{
+};
+// --------------------------------------------------------
+// Type: ACMFILTERTAGENUMCBA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ACMFILTERTAGENUMCBA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: ACMFILTERTAGENUMCBW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ACMFILTERTAGENUMCBW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: tACMFILTERDETAILSA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const tACMFILTERDETAILSA = *opaque{
+};
+// --------------------------------------------------------
+// Type: tACMFILTERDETAILSW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const tACMFILTERDETAILSW = *opaque{
+};
+// --------------------------------------------------------
+// Type: ACMFILTERENUMCBA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ACMFILTERENUMCBA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: ACMFILTERENUMCBW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ACMFILTERENUMCBW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: ACMFILTERCHOOSEHOOKPROCA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ACMFILTERCHOOSEHOOKPROCA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: ACMFILTERCHOOSEHOOKPROCW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ACMFILTERCHOOSEHOOKPROCW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: tACMFILTERCHOOSEA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const tACMFILTERCHOOSEA = *opaque{
+};
+// --------------------------------------------------------
+// Type: tACMFILTERCHOOSEW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const tACMFILTERCHOOSEW = *opaque{
+};
+// --------------------------------------------------------
+// Type: ACMSTREAMHEADER
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const ACMSTREAMHEADER = *opaque{
+};
+// --------------------------------------------------------
+// Type: HIC__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HIC__ = extern struct {
+    unused: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: ICOPEN
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ICOPEN = extern struct {
+    dwSize: {"kind":"UInt32"},
+    fccType: {"kind":"UInt32"},
+    fccHandler: {"kind":"UInt32"},
+    dwVersion: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwError: Windows.Win32.SystemServices.LRESULT,
+    pV1Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+    pV2Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+    dnDevNode: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ICINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ICINFO = extern struct {
+    dwSize: {"kind":"UInt32"},
+    fccType: {"kind":"UInt32"},
+    fccHandler: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwVersion: {"kind":"UInt32"},
+    dwVersionICM: {"kind":"UInt32"},
+    szName: {"kind":"Array","child": {"kind":"UInt16"}},
+    szDescription: {"kind":"Array","child": {"kind":"UInt16"}},
+    szDriver: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: ICCOMPRESS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ICCOMPRESS = extern struct {
+    dwFlags: {"kind":"UInt32"},
+    lpbiOutput: {"kind""Ptr","child":Windows.Win32.DirectShow.BITMAPINFOHEADER},
+    lpOutput: {"kind""Ptr","child":{"kind":"Void"}},
+    lpbiInput: {"kind""Ptr","child":Windows.Win32.DirectShow.BITMAPINFOHEADER},
+    lpInput: {"kind""Ptr","child":{"kind":"Void"}},
+    lpckid: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpdwFlags: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lFrameNum: {"kind":"Int32"},
+    dwFrameSize: {"kind":"UInt32"},
+    dwQuality: {"kind":"UInt32"},
+    lpbiPrev: {"kind""Ptr","child":Windows.Win32.DirectShow.BITMAPINFOHEADER},
+    lpPrev: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: ICCOMPRESSFRAMES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ICCOMPRESSFRAMES = extern struct {
+    dwFlags: {"kind":"UInt32"},
+    lpbiOutput: {"kind""Ptr","child":Windows.Win32.DirectShow.BITMAPINFOHEADER},
+    lOutput: Windows.Win32.WindowsAndMessaging.LPARAM,
+    lpbiInput: {"kind""Ptr","child":Windows.Win32.DirectShow.BITMAPINFOHEADER},
+    lInput: Windows.Win32.WindowsAndMessaging.LPARAM,
+    lStartFrame: {"kind":"Int32"},
+    lFrameCount: {"kind":"Int32"},
+    lQuality: {"kind":"Int32"},
+    lDataRate: {"kind":"Int32"},
+    lKeyRate: {"kind":"Int32"},
+    dwRate: {"kind":"UInt32"},
+    dwScale: {"kind":"UInt32"},
+    dwOverheadPerFrame: {"kind":"UInt32"},
+    dwReserved2: {"kind":"UInt32"},
+    GetData: {"kind":"IntPtr"},
+    PutData: {"kind":"IntPtr"},
+};
+// --------------------------------------------------------
+// Type: ICSETSTATUSPROC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ICSETSTATUSPROC = extern struct {
+    dwFlags: {"kind":"UInt32"},
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+    Status: {"kind":"IntPtr"},
+};
+// --------------------------------------------------------
+// Type: ICDECOMPRESS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ICDECOMPRESS = extern struct {
+    dwFlags: {"kind":"UInt32"},
+    lpbiInput: {"kind""Ptr","child":Windows.Win32.DirectShow.BITMAPINFOHEADER},
+    lpInput: {"kind""Ptr","child":{"kind":"Void"}},
+    lpbiOutput: {"kind""Ptr","child":Windows.Win32.DirectShow.BITMAPINFOHEADER},
+    lpOutput: {"kind""Ptr","child":{"kind":"Void"}},
+    ckid: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ICDECOMPRESSEX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ICDECOMPRESSEX = extern struct {
+    dwFlags: {"kind":"UInt32"},
+    lpbiSrc: {"kind""Ptr","child":Windows.Win32.DirectShow.BITMAPINFOHEADER},
+    lpSrc: {"kind""Ptr","child":{"kind":"Void"}},
+    lpbiDst: {"kind""Ptr","child":Windows.Win32.DirectShow.BITMAPINFOHEADER},
+    lpDst: {"kind""Ptr","child":{"kind":"Void"}},
+    xDst: {"kind":"Int32"},
+    yDst: {"kind":"Int32"},
+    dxDst: {"kind":"Int32"},
+    dyDst: {"kind":"Int32"},
+    xSrc: {"kind":"Int32"},
+    ySrc: {"kind":"Int32"},
+    dxSrc: {"kind":"Int32"},
+    dySrc: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: ICDRAWBEGIN
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ICDRAWBEGIN = extern struct {
+    dwFlags: {"kind":"UInt32"},
+    hpal: Windows.Win32.Gdi.HPALETTE,
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hdc: Windows.Win32.Gdi.HDC,
+    xDst: {"kind":"Int32"},
+    yDst: {"kind":"Int32"},
+    dxDst: {"kind":"Int32"},
+    dyDst: {"kind":"Int32"},
+    lpbi: {"kind""Ptr","child":Windows.Win32.DirectShow.BITMAPINFOHEADER},
+    xSrc: {"kind":"Int32"},
+    ySrc: {"kind":"Int32"},
+    dxSrc: {"kind":"Int32"},
+    dySrc: {"kind":"Int32"},
+    dwRate: {"kind":"UInt32"},
+    dwScale: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ICDRAW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ICDRAW = extern struct {
+    dwFlags: {"kind":"UInt32"},
+    lpFormat: {"kind""Ptr","child":{"kind":"Void"}},
+    lpData: {"kind""Ptr","child":{"kind":"Void"}},
+    cbData: {"kind":"UInt32"},
+    lTime: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: ICDRAWSUGGEST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ICDRAWSUGGEST = extern struct {
+    lpbiIn: {"kind""Ptr","child":Windows.Win32.DirectShow.BITMAPINFOHEADER},
+    lpbiSuggest: {"kind""Ptr","child":Windows.Win32.DirectShow.BITMAPINFOHEADER},
+    dxSrc: {"kind":"Int32"},
+    dySrc: {"kind":"Int32"},
+    dxDst: {"kind":"Int32"},
+    dyDst: {"kind":"Int32"},
+    hicDecompressor: {"kind""Ptr","child":Windows.Win32.Multimedia.HIC__},
+};
+// --------------------------------------------------------
+// Type: ICPALETTE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ICPALETTE = extern struct {
+    dwFlags: {"kind":"UInt32"},
+    iStart: {"kind":"Int32"},
+    iLen: {"kind":"Int32"},
+    lppe: {"kind""Ptr","child":Windows.Win32.Direct2D.PALETTEENTRY},
+};
+// --------------------------------------------------------
+// Type: COMPVARS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const COMPVARS = extern struct {
+    cbSize: {"kind":"Int32"},
+    dwFlags: {"kind":"UInt32"},
+    hic: {"kind""Ptr","child":Windows.Win32.Multimedia.HIC__},
+    fccType: {"kind":"UInt32"},
+    fccHandler: {"kind":"UInt32"},
+    lpbiIn: {"kind""Ptr","child":Windows.Win32.Gdi.BITMAPINFO},
+    lpbiOut: {"kind""Ptr","child":Windows.Win32.Gdi.BITMAPINFO},
+    lpBitsOut: {"kind""Ptr","child":{"kind":"Void"}},
+    lpBitsPrev: {"kind""Ptr","child":{"kind":"Void"}},
+    lFrame: {"kind":"Int32"},
+    lKey: {"kind":"Int32"},
+    lDataRate: {"kind":"Int32"},
+    lQ: {"kind":"Int32"},
+    lKeyCount: {"kind":"Int32"},
+    lpState: {"kind""Ptr","child":{"kind":"Void"}},
+    cbState: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: DRAWDIBTIME
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DRAWDIBTIME = extern struct {
+    timeCount: {"kind":"Int32"},
+    timeDraw: {"kind":"Int32"},
+    timeDecompress: {"kind":"Int32"},
+    timeDither: {"kind":"Int32"},
+    timeStretch: {"kind":"Int32"},
+    timeBlt: {"kind":"Int32"},
+    timeSetDIBits: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: AVISTREAMINFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AVISTREAMINFOW = extern struct {
+    fccType: {"kind":"UInt32"},
+    fccHandler: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwCaps: {"kind":"UInt32"},
+    wPriority: {"kind":"UInt16"},
+    wLanguage: {"kind":"UInt16"},
+    dwScale: {"kind":"UInt32"},
+    dwRate: {"kind":"UInt32"},
+    dwStart: {"kind":"UInt32"},
+    dwLength: {"kind":"UInt32"},
+    dwInitialFrames: {"kind":"UInt32"},
+    dwSuggestedBufferSize: {"kind":"UInt32"},
+    dwQuality: {"kind":"UInt32"},
+    dwSampleSize: {"kind":"UInt32"},
+    rcFrame: Windows.Win32.DisplayDevices.RECT,
+    dwEditCount: {"kind":"UInt32"},
+    dwFormatChangeCount: {"kind":"UInt32"},
+    szName: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: AVISTREAMINFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AVISTREAMINFOA = extern struct {
+    fccType: {"kind":"UInt32"},
+    fccHandler: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwCaps: {"kind":"UInt32"},
+    wPriority: {"kind":"UInt16"},
+    wLanguage: {"kind":"UInt16"},
+    dwScale: {"kind":"UInt32"},
+    dwRate: {"kind":"UInt32"},
+    dwStart: {"kind":"UInt32"},
+    dwLength: {"kind":"UInt32"},
+    dwInitialFrames: {"kind":"UInt32"},
+    dwSuggestedBufferSize: {"kind":"UInt32"},
+    dwQuality: {"kind":"UInt32"},
+    dwSampleSize: {"kind":"UInt32"},
+    rcFrame: Windows.Win32.DisplayDevices.RECT,
+    dwEditCount: {"kind":"UInt32"},
+    dwFormatChangeCount: {"kind":"UInt32"},
+    szName: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: AVIFILEINFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AVIFILEINFOW = extern struct {
+    dwMaxBytesPerSec: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwCaps: {"kind":"UInt32"},
+    dwStreams: {"kind":"UInt32"},
+    dwSuggestedBufferSize: {"kind":"UInt32"},
+    dwWidth: {"kind":"UInt32"},
+    dwHeight: {"kind":"UInt32"},
+    dwScale: {"kind":"UInt32"},
+    dwRate: {"kind":"UInt32"},
+    dwLength: {"kind":"UInt32"},
+    dwEditCount: {"kind":"UInt32"},
+    szFileType: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: AVIFILEINFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AVIFILEINFOA = extern struct {
+    dwMaxBytesPerSec: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwCaps: {"kind":"UInt32"},
+    dwStreams: {"kind":"UInt32"},
+    dwSuggestedBufferSize: {"kind":"UInt32"},
+    dwWidth: {"kind":"UInt32"},
+    dwHeight: {"kind":"UInt32"},
+    dwScale: {"kind":"UInt32"},
+    dwRate: {"kind":"UInt32"},
+    dwLength: {"kind":"UInt32"},
+    dwEditCount: {"kind":"UInt32"},
+    szFileType: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: AVISAVECALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const AVISAVECALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: AVICOMPRESSOPTIONS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AVICOMPRESSOPTIONS = extern struct {
+    fccType: {"kind":"UInt32"},
+    fccHandler: {"kind":"UInt32"},
+    dwKeyFrameEvery: {"kind":"UInt32"},
+    dwQuality: {"kind":"UInt32"},
+    dwBytesPerSecond: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    lpFormat: {"kind""Ptr","child":{"kind":"Void"}},
+    cbFormat: {"kind":"UInt32"},
+    lpParms: {"kind""Ptr","child":{"kind":"Void"}},
+    cbParms: {"kind":"UInt32"},
+    dwInterleaveEvery: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: IAVIStream
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAVIStream = *opaque{
+    // TODO: Method 'Create'
+    // TODO: Method 'Info'
+    // TODO: Method 'FindSample'
+    // TODO: Method 'ReadFormat'
+    // TODO: Method 'SetFormat'
+    // TODO: Method 'Read'
+    // TODO: Method 'Write'
+    // TODO: Method 'Delete'
+    // TODO: Method 'ReadData'
+    // TODO: Method 'WriteData'
+    // TODO: Method 'SetInfo'
+};
+// --------------------------------------------------------
+// Type: IAVIStreaming
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAVIStreaming = *opaque{
+    // TODO: Method 'Begin'
+    // TODO: Method 'End'
+};
+// --------------------------------------------------------
+// Type: IAVIEditStream
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAVIEditStream = *opaque{
+    // TODO: Method 'Cut'
+    // TODO: Method 'Copy'
+    // TODO: Method 'Paste'
+    // TODO: Method 'Clone'
+    // TODO: Method 'SetInfo'
+};
+// --------------------------------------------------------
+// Type: IAVIPersistFile
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAVIPersistFile = *opaque{
+    // TODO: Method 'Reserved1'
+};
+// --------------------------------------------------------
+// Type: IAVIFile
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAVIFile = *opaque{
+    // TODO: Method 'Info'
+    // TODO: Method 'GetStream'
+    // TODO: Method 'CreateStream'
+    // TODO: Method 'WriteData'
+    // TODO: Method 'ReadData'
+    // TODO: Method 'EndRecord'
+    // TODO: Method 'DeleteStream'
+};
+// --------------------------------------------------------
+// Type: IGetFrame
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IGetFrame = *opaque{
+    // TODO: Method 'GetFrame'
+    // TODO: Method 'Begin'
+    // TODO: Method 'End'
+    // TODO: Method 'SetFormat'
+};
+// --------------------------------------------------------
+// Type: HVIDEO__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HVIDEO__ = extern struct {
+    unused: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: VIDEOHDR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const VIDEOHDR = extern struct {
+    lpData: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwBufferLength: {"kind":"UInt32"},
+    dwBytesUsed: {"kind":"UInt32"},
+    dwTimeCaptured: {"kind":"UInt32"},
+    dwUser: {"kind":"UIntPtr"},
+    dwFlags: {"kind":"UInt32"},
+    dwReserved: {"kind":"Array","child": {"kind":"UIntPtr"}},
+};
+// --------------------------------------------------------
+// Type: channel_caps_tag
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const channel_caps_tag = extern struct {
+    dwFlags: {"kind":"UInt32"},
+    dwSrcRectXMod: {"kind":"UInt32"},
+    dwSrcRectYMod: {"kind":"UInt32"},
+    dwSrcRectWidthMod: {"kind":"UInt32"},
+    dwSrcRectHeightMod: {"kind":"UInt32"},
+    dwDstRectXMod: {"kind":"UInt32"},
+    dwDstRectYMod: {"kind":"UInt32"},
+    dwDstRectWidthMod: {"kind":"UInt32"},
+    dwDstRectHeightMod: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: CAPDRIVERCAPS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CAPDRIVERCAPS = extern struct {
+    wDeviceIndex: {"kind":"UInt32"},
+    fHasOverlay: Windows.Win32.SystemServices.BOOL,
+    fHasDlgVideoSource: Windows.Win32.SystemServices.BOOL,
+    fHasDlgVideoFormat: Windows.Win32.SystemServices.BOOL,
+    fHasDlgVideoDisplay: Windows.Win32.SystemServices.BOOL,
+    fCaptureInitialized: Windows.Win32.SystemServices.BOOL,
+    fDriverSuppliesPalettes: Windows.Win32.SystemServices.BOOL,
+    hVideoIn: Windows.Win32.SystemServices.HANDLE,
+    hVideoOut: Windows.Win32.SystemServices.HANDLE,
+    hVideoExtIn: Windows.Win32.SystemServices.HANDLE,
+    hVideoExtOut: Windows.Win32.SystemServices.HANDLE,
+};
+// --------------------------------------------------------
+// Type: CAPSTATUS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CAPSTATUS = extern struct {
+    uiImageWidth: {"kind":"UInt32"},
+    uiImageHeight: {"kind":"UInt32"},
+    fLiveWindow: Windows.Win32.SystemServices.BOOL,
+    fOverlayWindow: Windows.Win32.SystemServices.BOOL,
+    fScale: Windows.Win32.SystemServices.BOOL,
+    ptScroll: Windows.Win32.DisplayDevices.POINT,
+    fUsingDefaultPalette: Windows.Win32.SystemServices.BOOL,
+    fAudioHardware: Windows.Win32.SystemServices.BOOL,
+    fCapFileExists: Windows.Win32.SystemServices.BOOL,
+    dwCurrentVideoFrame: {"kind":"UInt32"},
+    dwCurrentVideoFramesDropped: {"kind":"UInt32"},
+    dwCurrentWaveSamples: {"kind":"UInt32"},
+    dwCurrentTimeElapsedMS: {"kind":"UInt32"},
+    hPalCurrent: Windows.Win32.Gdi.HPALETTE,
+    fCapturingNow: Windows.Win32.SystemServices.BOOL,
+    dwReturn: {"kind":"UInt32"},
+    wNumVideoAllocated: {"kind":"UInt32"},
+    wNumAudioAllocated: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: CAPTUREPARMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CAPTUREPARMS = extern struct {
+    dwRequestMicroSecPerFrame: {"kind":"UInt32"},
+    fMakeUserHitOKToCapture: Windows.Win32.SystemServices.BOOL,
+    wPercentDropForError: {"kind":"UInt32"},
+    fYield: Windows.Win32.SystemServices.BOOL,
+    dwIndexSize: {"kind":"UInt32"},
+    wChunkGranularity: {"kind":"UInt32"},
+    fUsingDOSMemory: Windows.Win32.SystemServices.BOOL,
+    wNumVideoRequested: {"kind":"UInt32"},
+    fCaptureAudio: Windows.Win32.SystemServices.BOOL,
+    wNumAudioRequested: {"kind":"UInt32"},
+    vKeyAbort: {"kind":"UInt32"},
+    fAbortLeftMouse: Windows.Win32.SystemServices.BOOL,
+    fAbortRightMouse: Windows.Win32.SystemServices.BOOL,
+    fLimitEnabled: Windows.Win32.SystemServices.BOOL,
+    wTimeLimit: {"kind":"UInt32"},
+    fMCIControl: Windows.Win32.SystemServices.BOOL,
+    fStepMCIDevice: Windows.Win32.SystemServices.BOOL,
+    dwMCIStartTime: {"kind":"UInt32"},
+    dwMCIStopTime: {"kind":"UInt32"},
+    fStepCaptureAt2x: Windows.Win32.SystemServices.BOOL,
+    wStepCaptureAverageFrames: {"kind":"UInt32"},
+    dwAudioBufferSize: {"kind":"UInt32"},
+    fDisableWriteCache: Windows.Win32.SystemServices.BOOL,
+    AVStreamMaster: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: CAPINFOCHUNK
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CAPINFOCHUNK = extern struct {
+    fccInfoID: {"kind":"UInt32"},
+    lpData: {"kind""Ptr","child":{"kind":"Void"}},
+    cbData: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: CAPYIELDCALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CAPYIELDCALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: CAPSTATUSCALLBACKW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CAPSTATUSCALLBACKW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: CAPERRORCALLBACKW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CAPERRORCALLBACKW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: CAPSTATUSCALLBACKA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CAPSTATUSCALLBACKA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: CAPERRORCALLBACKA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CAPERRORCALLBACKA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: CAPVIDEOCALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CAPVIDEOCALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: CAPWAVECALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CAPWAVECALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: CAPCONTROLCALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CAPCONTROLCALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DRVM_IOCTL_DATA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const DRVM_IOCTL_DATA = *opaque{
+};
+// --------------------------------------------------------
+// Type: waveopendesc_tag
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const waveopendesc_tag = *opaque{
+};
+// --------------------------------------------------------
+// Type: midiopenstrmid_tag
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const midiopenstrmid_tag = *opaque{
+};
+// --------------------------------------------------------
+// Type: tMIXEROPENDESC
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const tMIXEROPENDESC = *opaque{
+};
+// --------------------------------------------------------
+// Type: timerevent_tag
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const timerevent_tag = *opaque{
+};
+// --------------------------------------------------------
+// Type: joypos_tag
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const joypos_tag = *opaque{
+};
+// --------------------------------------------------------
+// Type: joyrange_tag
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const joyrange_tag = extern struct {
+    jpMin: Windows.Win32.Multimedia.joypos_tag,
+    jpMax: Windows.Win32.Multimedia.joypos_tag,
+    jpCenter: Windows.Win32.Multimedia.joypos_tag,
+};
+// --------------------------------------------------------
+// Type: joyreguservalues_tag
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const joyreguservalues_tag = *opaque{
+};
+// --------------------------------------------------------
+// Type: joyreghwsettings_tag
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const joyreghwsettings_tag = *opaque{
+};
+// --------------------------------------------------------
+// Type: joyreghwconfig_tag
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const joyreghwconfig_tag = *opaque{
+};
+// --------------------------------------------------------
+// Type: joycalibrate_tag
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const joycalibrate_tag = *opaque{
+};
+// --------------------------------------------------------
+// Type: JOYDEVMSGPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const JOYDEVMSGPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPJOYDEVMSGPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPJOYDEVMSGPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: MCI_OPEN_DRIVER_PARMS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MCI_OPEN_DRIVER_PARMS = *opaque{
+};
+// --------------------------------------------------------
+// Type: TASKCALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TASKCALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPTASKCALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPTASKCALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn joyConfigChanged(
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-0" fn CloseDriver(
+    hDriver: {"kind":"IntPtr"},
+    lParam1: Windows.Win32.WindowsAndMessaging.LPARAM,
+    lParam2: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-0" fn OpenDriver(
+    szDriverName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szSectionName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lParam2: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-0" fn SendDriverMessage(
+    hDriver: {"kind":"IntPtr"},
+    message: {"kind":"UInt32"},
+    lParam1: Windows.Win32.WindowsAndMessaging.LPARAM,
+    lParam2: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-0" fn DrvGetModuleHandle(
+    hDriver: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-0" fn GetDriverModuleHandle(
+    hDriver: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-0" fn DefDriverProc(
+    dwDriverIdentifier: {"kind":"UIntPtr"},
+    hdrvr: {"kind":"IntPtr"},
+    uMsg: {"kind":"UInt32"},
+    lParam1: Windows.Win32.WindowsAndMessaging.LPARAM,
+    lParam2: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-0" fn DriverCallback(
+    dwCallback: {"kind":"UIntPtr"},
+    dwFlags: {"kind":"UInt32"},
+    hDevice: {"kind":"IntPtr"},
+    dwMsg: {"kind":"UInt32"},
+    dwUser: {"kind":"UIntPtr"},
+    dwParam1: {"kind":"UIntPtr"},
+    dwParam2: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-1" fn sndOpenSound(
+    EventName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    AppName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"Int32"},
+    FileHandle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-0" fn mmDrvInstall(
+    hDriver: {"kind":"IntPtr"},
+    wszDrvEntry: {"kind""Ptr","child":{"kind":"UInt16"}},
+    drvMessage: Windows.Win32.Multimedia.DRIVERMSGPROC,
+    wFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-0" fn mmioStringToFOURCCA(
+    sz: {"kind""Ptr","child":{"kind":"SByte"}},
+    uFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-0" fn mmioStringToFOURCCW(
+    sz: {"kind""Ptr","child":{"kind":"UInt16"}},
+    uFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-0" fn mmioInstallIOProcA(
+    fccIOProc: {"kind":"UInt32"},
+    pIOProc: Windows.Win32.Multimedia.LPMMIOPROC,
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-0" fn mmioInstallIOProcW(
+    fccIOProc: {"kind":"UInt32"},
+    pIOProc: Windows.Win32.Multimedia.LPMMIOPROC,
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-0" fn mmioOpenA(
+    pszFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pmmioinfo: {"kind""Ptr","child":Windows.Win32.Multimedia.MMIOINFO},
+    fdwOpen: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-0" fn mmioOpenW(
+    pszFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pmmioinfo: {"kind""Ptr","child":Windows.Win32.Multimedia.MMIOINFO},
+    fdwOpen: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-0" fn mmioRenameA(
+    pszFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszNewFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pmmioinfo: {"kind""Ptr","child":Windows.Win32.Multimedia.MMIOINFO},
+    fdwRename: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-0" fn mmioRenameW(
+    pszFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszNewFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pmmioinfo: {"kind""Ptr","child":Windows.Win32.Multimedia.MMIOINFO},
+    fdwRename: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-0" fn mmioClose(
+    hmmio: {"kind""Ptr","child":Windows.Win32.Multimedia.HMMIO__},
+    fuClose: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-0" fn mmioRead(
+    hmmio: {"kind""Ptr","child":Windows.Win32.Multimedia.HMMIO__},
+    pch: {"kind""Ptr","child":{"kind":"SByte"}},
+    cch: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-0" fn mmioWrite(
+    hmmio: {"kind""Ptr","child":Windows.Win32.Multimedia.HMMIO__},
+    pch: {"kind""Ptr","child":{"kind":"SByte"}},
+    cch: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-0" fn mmioSeek(
+    hmmio: {"kind""Ptr","child":Windows.Win32.Multimedia.HMMIO__},
+    lOffset: {"kind":"Int32"},
+    iOrigin: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-0" fn mmioGetInfo(
+    hmmio: {"kind""Ptr","child":Windows.Win32.Multimedia.HMMIO__},
+    pmmioinfo: {"kind""Ptr","child":Windows.Win32.Multimedia.MMIOINFO},
+    fuInfo: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-0" fn mmioSetInfo(
+    hmmio: {"kind""Ptr","child":Windows.Win32.Multimedia.HMMIO__},
+    pmmioinfo: {"kind""Ptr","child":Windows.Win32.Multimedia.MMIOINFO},
+    fuInfo: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-0" fn mmioSetBuffer(
+    hmmio: {"kind""Ptr","child":Windows.Win32.Multimedia.HMMIO__},
+    pchBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchBuffer: {"kind":"Int32"},
+    fuBuffer: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-0" fn mmioFlush(
+    hmmio: {"kind""Ptr","child":Windows.Win32.Multimedia.HMMIO__},
+    fuFlush: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-0" fn mmioAdvance(
+    hmmio: {"kind""Ptr","child":Windows.Win32.Multimedia.HMMIO__},
+    pmmioinfo: {"kind""Ptr","child":Windows.Win32.Multimedia.MMIOINFO},
+    fuAdvance: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-0" fn mmioSendMessage(
+    hmmio: {"kind""Ptr","child":Windows.Win32.Multimedia.HMMIO__},
+    uMsg: {"kind":"UInt32"},
+    lParam1: Windows.Win32.WindowsAndMessaging.LPARAM,
+    lParam2: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-0" fn mmioDescend(
+    hmmio: {"kind""Ptr","child":Windows.Win32.Multimedia.HMMIO__},
+    pmmcki: {"kind""Ptr","child":Windows.Win32.Multimedia.MMCKINFO},
+    pmmckiParent: {"kind""Ptr","child":Windows.Win32.Multimedia.MMCKINFO},
+    fuDescend: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-0" fn mmioAscend(
+    hmmio: {"kind""Ptr","child":Windows.Win32.Multimedia.HMMIO__},
+    pmmcki: {"kind""Ptr","child":Windows.Win32.Multimedia.MMCKINFO},
+    fuAscend: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-mm-misc-l1-1-0" fn mmioCreateChunk(
+    hmmio: {"kind""Ptr","child":Windows.Win32.Multimedia.HMMIO__},
+    pmmcki: {"kind""Ptr","child":Windows.Win32.Multimedia.MMCKINFO},
+    fuCreate: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn sndPlaySoundA(
+    pszSound: {"kind""Ptr","child":{"kind":"SByte"}},
+    fuSound: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn sndPlaySoundW(
+    pszSound: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fuSound: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn PlaySoundA(
+    pszSound: {"kind""Ptr","child":{"kind":"SByte"}},
+    hmod: {"kind":"IntPtr"},
+    fdwSound: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn PlaySoundW(
+    pszSound: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hmod: {"kind":"IntPtr"},
+    fdwSound: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveOutGetNumDevs(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveOutGetDevCapsA(
+    uDeviceID: {"kind":"UIntPtr"},
+    pwoc: {"kind""Ptr","child":Windows.Win32.Multimedia.WAVEOUTCAPSA},
+    cbwoc: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveOutGetDevCapsW(
+    uDeviceID: {"kind":"UIntPtr"},
+    pwoc: {"kind""Ptr","child":Windows.Win32.Multimedia.WAVEOUTCAPSW},
+    cbwoc: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveOutGetVolume(
+    hwo: {"kind":"IntPtr"},
+    pdwVolume: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveOutSetVolume(
+    hwo: {"kind":"IntPtr"},
+    dwVolume: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveOutGetErrorTextA(
+    mmrError: {"kind":"UInt32"},
+    pszText: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchText: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveOutGetErrorTextW(
+    mmrError: {"kind":"UInt32"},
+    pszText: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchText: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveOutOpen(
+    phwo: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    uDeviceID: {"kind":"UInt32"},
+    pwfx: {"kind""Ptr","child":Windows.Win32.Multimedia.WAVEFORMATEX},
+    dwCallback: {"kind":"UIntPtr"},
+    dwInstance: {"kind":"UIntPtr"},
+    fdwOpen: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveOutClose(
+    hwo: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveOutPrepareHeader(
+    hwo: {"kind":"IntPtr"},
+    pwh: {"kind""Ptr","child":Windows.Win32.Multimedia.WAVEHDR},
+    cbwh: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveOutUnprepareHeader(
+    hwo: {"kind":"IntPtr"},
+    pwh: {"kind""Ptr","child":Windows.Win32.Multimedia.WAVEHDR},
+    cbwh: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveOutWrite(
+    hwo: {"kind":"IntPtr"},
+    pwh: {"kind""Ptr","child":Windows.Win32.Multimedia.WAVEHDR},
+    cbwh: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveOutPause(
+    hwo: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveOutRestart(
+    hwo: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveOutReset(
+    hwo: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveOutBreakLoop(
+    hwo: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveOutGetPosition(
+    hwo: {"kind":"IntPtr"},
+    pmmt: {"kind""Ptr","child":Windows.Win32.Multimedia.MMTIME},
+    cbmmt: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveOutGetPitch(
+    hwo: {"kind":"IntPtr"},
+    pdwPitch: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveOutSetPitch(
+    hwo: {"kind":"IntPtr"},
+    dwPitch: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveOutGetPlaybackRate(
+    hwo: {"kind":"IntPtr"},
+    pdwRate: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveOutSetPlaybackRate(
+    hwo: {"kind":"IntPtr"},
+    dwRate: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveOutGetID(
+    hwo: {"kind":"IntPtr"},
+    puDeviceID: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveOutMessage(
+    hwo: {"kind":"IntPtr"},
+    uMsg: {"kind":"UInt32"},
+    dw1: {"kind":"UIntPtr"},
+    dw2: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveInGetNumDevs(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveInGetDevCapsA(
+    uDeviceID: {"kind":"UIntPtr"},
+    pwic: {"kind""Ptr","child":Windows.Win32.Multimedia.WAVEINCAPSA},
+    cbwic: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveInGetDevCapsW(
+    uDeviceID: {"kind":"UIntPtr"},
+    pwic: {"kind""Ptr","child":Windows.Win32.Multimedia.WAVEINCAPSW},
+    cbwic: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveInGetErrorTextA(
+    mmrError: {"kind":"UInt32"},
+    pszText: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchText: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveInGetErrorTextW(
+    mmrError: {"kind":"UInt32"},
+    pszText: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchText: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveInOpen(
+    phwi: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    uDeviceID: {"kind":"UInt32"},
+    pwfx: {"kind""Ptr","child":Windows.Win32.Multimedia.WAVEFORMATEX},
+    dwCallback: {"kind":"UIntPtr"},
+    dwInstance: {"kind":"UIntPtr"},
+    fdwOpen: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveInClose(
+    hwi: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveInPrepareHeader(
+    hwi: {"kind":"IntPtr"},
+    pwh: {"kind""Ptr","child":Windows.Win32.Multimedia.WAVEHDR},
+    cbwh: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveInUnprepareHeader(
+    hwi: {"kind":"IntPtr"},
+    pwh: {"kind""Ptr","child":Windows.Win32.Multimedia.WAVEHDR},
+    cbwh: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveInAddBuffer(
+    hwi: {"kind":"IntPtr"},
+    pwh: {"kind""Ptr","child":Windows.Win32.Multimedia.WAVEHDR},
+    cbwh: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveInStart(
+    hwi: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveInStop(
+    hwi: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveInReset(
+    hwi: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveInGetPosition(
+    hwi: {"kind":"IntPtr"},
+    pmmt: {"kind""Ptr","child":Windows.Win32.Multimedia.MMTIME},
+    cbmmt: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveInGetID(
+    hwi: {"kind":"IntPtr"},
+    puDeviceID: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn waveInMessage(
+    hwi: {"kind":"IntPtr"},
+    uMsg: {"kind":"UInt32"},
+    dw1: {"kind":"UIntPtr"},
+    dw2: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiOutGetNumDevs(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiStreamOpen(
+    phms: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    puDeviceID: {"kind""Ptr","child":{"kind":"UInt32"}},
+    cMidi: {"kind":"UInt32"},
+    dwCallback: {"kind":"UIntPtr"},
+    dwInstance: {"kind":"UIntPtr"},
+    fdwOpen: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiStreamClose(
+    hms: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiStreamProperty(
+    hms: {"kind":"IntPtr"},
+    lppropdata: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwProperty: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiStreamPosition(
+    hms: {"kind":"IntPtr"},
+    lpmmt: {"kind""Ptr","child":Windows.Win32.Multimedia.MMTIME},
+    cbmmt: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiStreamOut(
+    hms: {"kind":"IntPtr"},
+    pmh: {"kind""Ptr","child":Windows.Win32.Multimedia.MIDIHDR},
+    cbmh: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiStreamPause(
+    hms: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiStreamRestart(
+    hms: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiStreamStop(
+    hms: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiConnect(
+    hmi: {"kind":"IntPtr"},
+    hmo: {"kind":"IntPtr"},
+    pReserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiDisconnect(
+    hmi: {"kind":"IntPtr"},
+    hmo: {"kind":"IntPtr"},
+    pReserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiOutGetDevCapsA(
+    uDeviceID: {"kind":"UIntPtr"},
+    pmoc: {"kind""Ptr","child":Windows.Win32.Multimedia.MIDIOUTCAPSA},
+    cbmoc: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiOutGetDevCapsW(
+    uDeviceID: {"kind":"UIntPtr"},
+    pmoc: {"kind""Ptr","child":Windows.Win32.Multimedia.MIDIOUTCAPSW},
+    cbmoc: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiOutGetVolume(
+    hmo: {"kind":"IntPtr"},
+    pdwVolume: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiOutSetVolume(
+    hmo: {"kind":"IntPtr"},
+    dwVolume: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiOutGetErrorTextA(
+    mmrError: {"kind":"UInt32"},
+    pszText: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchText: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiOutGetErrorTextW(
+    mmrError: {"kind":"UInt32"},
+    pszText: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchText: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiOutOpen(
+    phmo: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    uDeviceID: {"kind":"UInt32"},
+    dwCallback: {"kind":"UIntPtr"},
+    dwInstance: {"kind":"UIntPtr"},
+    fdwOpen: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiOutClose(
+    hmo: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiOutPrepareHeader(
+    hmo: {"kind":"IntPtr"},
+    pmh: {"kind""Ptr","child":Windows.Win32.Multimedia.MIDIHDR},
+    cbmh: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiOutUnprepareHeader(
+    hmo: {"kind":"IntPtr"},
+    pmh: {"kind""Ptr","child":Windows.Win32.Multimedia.MIDIHDR},
+    cbmh: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiOutShortMsg(
+    hmo: {"kind":"IntPtr"},
+    dwMsg: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiOutLongMsg(
+    hmo: {"kind":"IntPtr"},
+    pmh: {"kind""Ptr","child":Windows.Win32.Multimedia.MIDIHDR},
+    cbmh: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiOutReset(
+    hmo: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiOutCachePatches(
+    hmo: {"kind":"IntPtr"},
+    uBank: {"kind":"UInt32"},
+    pwpa: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fuCache: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiOutCacheDrumPatches(
+    hmo: {"kind":"IntPtr"},
+    uPatch: {"kind":"UInt32"},
+    pwkya: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fuCache: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiOutGetID(
+    hmo: {"kind":"IntPtr"},
+    puDeviceID: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiOutMessage(
+    hmo: {"kind":"IntPtr"},
+    uMsg: {"kind":"UInt32"},
+    dw1: {"kind":"UIntPtr"},
+    dw2: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiInGetNumDevs(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiInGetDevCapsA(
+    uDeviceID: {"kind":"UIntPtr"},
+    pmic: {"kind""Ptr","child":Windows.Win32.Multimedia.MIDIINCAPSA},
+    cbmic: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiInGetDevCapsW(
+    uDeviceID: {"kind":"UIntPtr"},
+    pmic: {"kind""Ptr","child":Windows.Win32.Multimedia.MIDIINCAPSW},
+    cbmic: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiInGetErrorTextA(
+    mmrError: {"kind":"UInt32"},
+    pszText: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchText: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiInGetErrorTextW(
+    mmrError: {"kind":"UInt32"},
+    pszText: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchText: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiInOpen(
+    phmi: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    uDeviceID: {"kind":"UInt32"},
+    dwCallback: {"kind":"UIntPtr"},
+    dwInstance: {"kind":"UIntPtr"},
+    fdwOpen: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiInClose(
+    hmi: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiInPrepareHeader(
+    hmi: {"kind":"IntPtr"},
+    pmh: {"kind""Ptr","child":Windows.Win32.Multimedia.MIDIHDR},
+    cbmh: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiInUnprepareHeader(
+    hmi: {"kind":"IntPtr"},
+    pmh: {"kind""Ptr","child":Windows.Win32.Multimedia.MIDIHDR},
+    cbmh: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiInAddBuffer(
+    hmi: {"kind":"IntPtr"},
+    pmh: {"kind""Ptr","child":Windows.Win32.Multimedia.MIDIHDR},
+    cbmh: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiInStart(
+    hmi: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiInStop(
+    hmi: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiInReset(
+    hmi: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiInGetID(
+    hmi: {"kind":"IntPtr"},
+    puDeviceID: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn midiInMessage(
+    hmi: {"kind":"IntPtr"},
+    uMsg: {"kind":"UInt32"},
+    dw1: {"kind":"UIntPtr"},
+    dw2: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn auxGetNumDevs(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn auxGetDevCapsA(
+    uDeviceID: {"kind":"UIntPtr"},
+    pac: {"kind""Ptr","child":Windows.Win32.Multimedia.AUXCAPSA},
+    cbac: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn auxGetDevCapsW(
+    uDeviceID: {"kind":"UIntPtr"},
+    pac: {"kind""Ptr","child":Windows.Win32.Multimedia.AUXCAPSW},
+    cbac: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn auxSetVolume(
+    uDeviceID: {"kind":"UInt32"},
+    dwVolume: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn auxGetVolume(
+    uDeviceID: {"kind":"UInt32"},
+    pdwVolume: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn auxOutMessage(
+    uDeviceID: {"kind":"UInt32"},
+    uMsg: {"kind":"UInt32"},
+    dw1: {"kind":"UIntPtr"},
+    dw2: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn mixerGetNumDevs(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn mixerGetDevCapsA(
+    uMxId: {"kind":"UIntPtr"},
+    pmxcaps: {"kind""Ptr","child":Windows.Win32.Multimedia.MIXERCAPSA},
+    cbmxcaps: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn mixerGetDevCapsW(
+    uMxId: {"kind":"UIntPtr"},
+    pmxcaps: {"kind""Ptr","child":Windows.Win32.Multimedia.MIXERCAPSW},
+    cbmxcaps: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn mixerOpen(
+    phmx: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    uMxId: {"kind":"UInt32"},
+    dwCallback: {"kind":"UIntPtr"},
+    dwInstance: {"kind":"UIntPtr"},
+    fdwOpen: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn mixerClose(
+    hmx: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn mixerMessage(
+    hmx: {"kind":"IntPtr"},
+    uMsg: {"kind":"UInt32"},
+    dwParam1: {"kind":"UIntPtr"},
+    dwParam2: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn mixerGetLineInfoA(
+    hmxobj: {"kind":"IntPtr"},
+    pmxl: {"kind""Ptr","child":Windows.Win32.Multimedia.MIXERLINEA},
+    fdwInfo: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn mixerGetLineInfoW(
+    hmxobj: {"kind":"IntPtr"},
+    pmxl: {"kind""Ptr","child":Windows.Win32.Multimedia.MIXERLINEW},
+    fdwInfo: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn mixerGetID(
+    hmxobj: {"kind":"IntPtr"},
+    puMxId: {"kind""Ptr","child":{"kind":"UInt32"}},
+    fdwId: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn mixerGetLineControlsA(
+    hmxobj: {"kind":"IntPtr"},
+    pmxlc: {"kind""Ptr","child":Windows.Win32.Multimedia.MIXERLINECONTROLSA},
+    fdwControls: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn mixerGetLineControlsW(
+    hmxobj: {"kind":"IntPtr"},
+    pmxlc: {"kind""Ptr","child":Windows.Win32.Multimedia.MIXERLINECONTROLSW},
+    fdwControls: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn mixerGetControlDetailsA(
+    hmxobj: {"kind":"IntPtr"},
+    pmxcd: {"kind""Ptr","child":Windows.Win32.Multimedia.MIXERCONTROLDETAILS},
+    fdwDetails: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn mixerGetControlDetailsW(
+    hmxobj: {"kind":"IntPtr"},
+    pmxcd: {"kind""Ptr","child":Windows.Win32.Multimedia.MIXERCONTROLDETAILS},
+    fdwDetails: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn mixerSetControlDetails(
+    hmxobj: {"kind":"IntPtr"},
+    pmxcd: {"kind""Ptr","child":Windows.Win32.Multimedia.MIXERCONTROLDETAILS},
+    fdwDetails: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn timeGetSystemTime(
+    pmmt: {"kind""Ptr","child":Windows.Win32.Multimedia.MMTIME},
+    cbmmt: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn timeGetTime(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn timeGetDevCaps(
+    ptc: {"kind""Ptr","child":Windows.Win32.Multimedia.TIMECAPS},
+    cbtc: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn timeBeginPeriod(
+    uPeriod: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn timeEndPeriod(
+    uPeriod: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn joyGetPosEx(
+    uJoyID: {"kind":"UInt32"},
+    pji: {"kind""Ptr","child":Windows.Win32.Multimedia.JOYINFOEX},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn joyGetNumDevs(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn joyGetDevCapsA(
+    uJoyID: {"kind":"UIntPtr"},
+    pjc: {"kind""Ptr","child":Windows.Win32.Multimedia.JOYCAPSA},
+    cbjc: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn joyGetDevCapsW(
+    uJoyID: {"kind":"UIntPtr"},
+    pjc: {"kind""Ptr","child":Windows.Win32.Multimedia.JOYCAPSW},
+    cbjc: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn joyGetPos(
+    uJoyID: {"kind":"UInt32"},
+    pji: {"kind""Ptr","child":Windows.Win32.Multimedia.JOYINFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn joyGetThreshold(
+    uJoyID: {"kind":"UInt32"},
+    puThreshold: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn joyReleaseCapture(
+    uJoyID: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn joySetCapture(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    uJoyID: {"kind":"UInt32"},
+    uPeriod: {"kind":"UInt32"},
+    fChanged: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn joySetThreshold(
+    uJoyID: {"kind":"UInt32"},
+    uThreshold: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmGetVersion(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmMetrics(
+    hao: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMOBJ__},
+    uMetric: {"kind":"UInt32"},
+    pMetric: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmDriverEnum(
+    fnCallback: Windows.Win32.Multimedia.ACMDRIVERENUMCB,
+    dwInstance: {"kind":"UIntPtr"},
+    fdwEnum: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmDriverID(
+    hao: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMOBJ__},
+    phadid: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Multimedia.HACMDRIVERID__}},
+    fdwDriverID: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmDriverAddA(
+    phadid: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Multimedia.HACMDRIVERID__}},
+    hinstModule: Windows.Win32.SystemServices.HINSTANCE,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+    dwPriority: {"kind":"UInt32"},
+    fdwAdd: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmDriverAddW(
+    phadid: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Multimedia.HACMDRIVERID__}},
+    hinstModule: Windows.Win32.SystemServices.HINSTANCE,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+    dwPriority: {"kind":"UInt32"},
+    fdwAdd: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmDriverRemove(
+    hadid: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMDRIVERID__},
+    fdwRemove: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmDriverOpen(
+    phad: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Multimedia.HACMDRIVER__}},
+    hadid: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMDRIVERID__},
+    fdwOpen: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmDriverClose(
+    had: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMDRIVER__},
+    fdwClose: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmDriverMessage(
+    had: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMDRIVER__},
+    uMsg: {"kind":"UInt32"},
+    lParam1: Windows.Win32.WindowsAndMessaging.LPARAM,
+    lParam2: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmDriverPriority(
+    hadid: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMDRIVERID__},
+    dwPriority: {"kind":"UInt32"},
+    fdwPriority: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmDriverDetailsA(
+    hadid: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMDRIVERID__},
+    padd: {"kind""Ptr","child":Windows.Win32.Multimedia.tACMDRIVERDETAILSA},
+    fdwDetails: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmDriverDetailsW(
+    hadid: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMDRIVERID__},
+    padd: {"kind""Ptr","child":Windows.Win32.Multimedia.tACMDRIVERDETAILSW},
+    fdwDetails: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmFormatTagDetailsA(
+    had: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMDRIVER__},
+    paftd: {"kind""Ptr","child":Windows.Win32.Multimedia.tACMFORMATTAGDETAILSA},
+    fdwDetails: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmFormatTagDetailsW(
+    had: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMDRIVER__},
+    paftd: {"kind""Ptr","child":Windows.Win32.Multimedia.tACMFORMATTAGDETAILSW},
+    fdwDetails: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmFormatTagEnumA(
+    had: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMDRIVER__},
+    paftd: {"kind""Ptr","child":Windows.Win32.Multimedia.tACMFORMATTAGDETAILSA},
+    fnCallback: Windows.Win32.Multimedia.ACMFORMATTAGENUMCBA,
+    dwInstance: {"kind":"UIntPtr"},
+    fdwEnum: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmFormatTagEnumW(
+    had: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMDRIVER__},
+    paftd: {"kind""Ptr","child":Windows.Win32.Multimedia.tACMFORMATTAGDETAILSW},
+    fnCallback: Windows.Win32.Multimedia.ACMFORMATTAGENUMCBW,
+    dwInstance: {"kind":"UIntPtr"},
+    fdwEnum: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmFormatDetailsA(
+    had: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMDRIVER__},
+    pafd: {"kind""Ptr","child":Windows.Win32.Multimedia.tACMFORMATDETAILSA},
+    fdwDetails: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmFormatDetailsW(
+    had: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMDRIVER__},
+    pafd: {"kind""Ptr","child":Windows.Win32.Multimedia.tACMFORMATDETAILSW},
+    fdwDetails: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmFormatEnumA(
+    had: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMDRIVER__},
+    pafd: {"kind""Ptr","child":Windows.Win32.Multimedia.tACMFORMATDETAILSA},
+    fnCallback: Windows.Win32.Multimedia.ACMFORMATENUMCBA,
+    dwInstance: {"kind":"UIntPtr"},
+    fdwEnum: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmFormatEnumW(
+    had: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMDRIVER__},
+    pafd: {"kind""Ptr","child":Windows.Win32.Multimedia.tACMFORMATDETAILSW},
+    fnCallback: Windows.Win32.Multimedia.ACMFORMATENUMCBW,
+    dwInstance: {"kind":"UIntPtr"},
+    fdwEnum: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmFormatSuggest(
+    had: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMDRIVER__},
+    pwfxSrc: {"kind""Ptr","child":Windows.Win32.Multimedia.WAVEFORMATEX},
+    pwfxDst: {"kind""Ptr","child":Windows.Win32.Multimedia.WAVEFORMATEX},
+    cbwfxDst: {"kind":"UInt32"},
+    fdwSuggest: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmFormatChooseA(
+    pafmtc: {"kind""Ptr","child":Windows.Win32.Multimedia.tACMFORMATCHOOSEA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmFormatChooseW(
+    pafmtc: {"kind""Ptr","child":Windows.Win32.Multimedia.tACMFORMATCHOOSEW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmFilterTagDetailsA(
+    had: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMDRIVER__},
+    paftd: {"kind""Ptr","child":Windows.Win32.Multimedia.tACMFILTERTAGDETAILSA},
+    fdwDetails: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmFilterTagDetailsW(
+    had: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMDRIVER__},
+    paftd: {"kind""Ptr","child":Windows.Win32.Multimedia.tACMFILTERTAGDETAILSW},
+    fdwDetails: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmFilterTagEnumA(
+    had: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMDRIVER__},
+    paftd: {"kind""Ptr","child":Windows.Win32.Multimedia.tACMFILTERTAGDETAILSA},
+    fnCallback: Windows.Win32.Multimedia.ACMFILTERTAGENUMCBA,
+    dwInstance: {"kind":"UIntPtr"},
+    fdwEnum: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmFilterTagEnumW(
+    had: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMDRIVER__},
+    paftd: {"kind""Ptr","child":Windows.Win32.Multimedia.tACMFILTERTAGDETAILSW},
+    fnCallback: Windows.Win32.Multimedia.ACMFILTERTAGENUMCBW,
+    dwInstance: {"kind":"UIntPtr"},
+    fdwEnum: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmFilterDetailsA(
+    had: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMDRIVER__},
+    pafd: {"kind""Ptr","child":Windows.Win32.Multimedia.tACMFILTERDETAILSA},
+    fdwDetails: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmFilterDetailsW(
+    had: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMDRIVER__},
+    pafd: {"kind""Ptr","child":Windows.Win32.Multimedia.tACMFILTERDETAILSW},
+    fdwDetails: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmFilterEnumA(
+    had: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMDRIVER__},
+    pafd: {"kind""Ptr","child":Windows.Win32.Multimedia.tACMFILTERDETAILSA},
+    fnCallback: Windows.Win32.Multimedia.ACMFILTERENUMCBA,
+    dwInstance: {"kind":"UIntPtr"},
+    fdwEnum: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmFilterEnumW(
+    had: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMDRIVER__},
+    pafd: {"kind""Ptr","child":Windows.Win32.Multimedia.tACMFILTERDETAILSW},
+    fnCallback: Windows.Win32.Multimedia.ACMFILTERENUMCBW,
+    dwInstance: {"kind":"UIntPtr"},
+    fdwEnum: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmFilterChooseA(
+    pafltrc: {"kind""Ptr","child":Windows.Win32.Multimedia.tACMFILTERCHOOSEA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmFilterChooseW(
+    pafltrc: {"kind""Ptr","child":Windows.Win32.Multimedia.tACMFILTERCHOOSEW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmStreamOpen(
+    phas: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Multimedia.HACMSTREAM__}},
+    had: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMDRIVER__},
+    pwfxSrc: {"kind""Ptr","child":Windows.Win32.Multimedia.WAVEFORMATEX},
+    pwfxDst: {"kind""Ptr","child":Windows.Win32.Multimedia.WAVEFORMATEX},
+    pwfltr: {"kind""Ptr","child":Windows.Win32.Multimedia.WAVEFILTER},
+    dwCallback: {"kind":"UIntPtr"},
+    dwInstance: {"kind":"UIntPtr"},
+    fdwOpen: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmStreamClose(
+    has: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMSTREAM__},
+    fdwClose: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmStreamSize(
+    has: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMSTREAM__},
+    cbInput: {"kind":"UInt32"},
+    pdwOutputBytes: {"kind""Ptr","child":{"kind":"UInt32"}},
+    fdwSize: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmStreamReset(
+    has: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMSTREAM__},
+    fdwReset: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmStreamMessage(
+    has: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMSTREAM__},
+    uMsg: {"kind":"UInt32"},
+    lParam1: Windows.Win32.WindowsAndMessaging.LPARAM,
+    lParam2: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmStreamConvert(
+    has: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMSTREAM__},
+    pash: {"kind""Ptr","child":Windows.Win32.Multimedia.ACMSTREAMHEADER},
+    fdwConvert: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmStreamPrepareHeader(
+    has: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMSTREAM__},
+    pash: {"kind""Ptr","child":Windows.Win32.Multimedia.ACMSTREAMHEADER},
+    fdwPrepare: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSACM32" fn acmStreamUnprepareHeader(
+    has: {"kind""Ptr","child":Windows.Win32.Multimedia.HACMSTREAM__},
+    pash: {"kind""Ptr","child":Windows.Win32.Multimedia.ACMSTREAMHEADER},
+    fdwUnprepare: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn VideoForWindowsVersion(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn ICInfo(
+    fccType: {"kind":"UInt32"},
+    fccHandler: {"kind":"UInt32"},
+    lpicinfo: {"kind""Ptr","child":Windows.Win32.Multimedia.ICINFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn ICInstall(
+    fccType: {"kind":"UInt32"},
+    fccHandler: {"kind":"UInt32"},
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+    szDesc: {"kind""Ptr","child":{"kind":"SByte"}},
+    wFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn ICRemove(
+    fccType: {"kind":"UInt32"},
+    fccHandler: {"kind":"UInt32"},
+    wFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn ICGetInfo(
+    hic: {"kind""Ptr","child":Windows.Win32.Multimedia.HIC__},
+    picinfo: {"kind""Ptr","child":Windows.Win32.Multimedia.ICINFO},
+    cb: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn ICOpen(
+    fccType: {"kind":"UInt32"},
+    fccHandler: {"kind":"UInt32"},
+    wMode: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn ICOpenFunction(
+    fccType: {"kind":"UInt32"},
+    fccHandler: {"kind":"UInt32"},
+    wMode: {"kind":"UInt32"},
+    lpfnHandler: Windows.Win32.SystemServices.FARPROC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn ICClose(
+    hic: {"kind""Ptr","child":Windows.Win32.Multimedia.HIC__},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn ICSendMessage(
+    hic: {"kind""Ptr","child":Windows.Win32.Multimedia.HIC__},
+    msg: {"kind":"UInt32"},
+    dw1: {"kind":"UIntPtr"},
+    dw2: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn ICCompress(
+    hic: {"kind""Ptr","child":Windows.Win32.Multimedia.HIC__},
+    dwFlags: {"kind":"UInt32"},
+    lpbiOutput: {"kind""Ptr","child":Windows.Win32.DirectShow.BITMAPINFOHEADER},
+    lpData: {"kind""Ptr","child":{"kind":"Void"}},
+    lpbiInput: {"kind""Ptr","child":Windows.Win32.DirectShow.BITMAPINFOHEADER},
+    lpBits: {"kind""Ptr","child":{"kind":"Void"}},
+    lpckid: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpdwFlags: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lFrameNum: {"kind":"Int32"},
+    dwFrameSize: {"kind":"UInt32"},
+    dwQuality: {"kind":"UInt32"},
+    lpbiPrev: {"kind""Ptr","child":Windows.Win32.DirectShow.BITMAPINFOHEADER},
+    lpPrev: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn ICDecompress(
+    hic: {"kind""Ptr","child":Windows.Win32.Multimedia.HIC__},
+    dwFlags: {"kind":"UInt32"},
+    lpbiFormat: {"kind""Ptr","child":Windows.Win32.DirectShow.BITMAPINFOHEADER},
+    lpData: {"kind""Ptr","child":{"kind":"Void"}},
+    lpbi: {"kind""Ptr","child":Windows.Win32.DirectShow.BITMAPINFOHEADER},
+    lpBits: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn ICDrawBegin(
+    hic: {"kind""Ptr","child":Windows.Win32.Multimedia.HIC__},
+    dwFlags: {"kind":"UInt32"},
+    hpal: Windows.Win32.Gdi.HPALETTE,
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hdc: Windows.Win32.Gdi.HDC,
+    xDst: {"kind":"Int32"},
+    yDst: {"kind":"Int32"},
+    dxDst: {"kind":"Int32"},
+    dyDst: {"kind":"Int32"},
+    lpbi: {"kind""Ptr","child":Windows.Win32.DirectShow.BITMAPINFOHEADER},
+    xSrc: {"kind":"Int32"},
+    ySrc: {"kind":"Int32"},
+    dxSrc: {"kind":"Int32"},
+    dySrc: {"kind":"Int32"},
+    dwRate: {"kind":"UInt32"},
+    dwScale: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn ICDraw(
+    hic: {"kind""Ptr","child":Windows.Win32.Multimedia.HIC__},
+    dwFlags: {"kind":"UInt32"},
+    lpFormat: {"kind""Ptr","child":{"kind":"Void"}},
+    lpData: {"kind""Ptr","child":{"kind":"Void"}},
+    cbData: {"kind":"UInt32"},
+    lTime: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn ICLocate(
+    fccType: {"kind":"UInt32"},
+    fccHandler: {"kind":"UInt32"},
+    lpbiIn: {"kind""Ptr","child":Windows.Win32.DirectShow.BITMAPINFOHEADER},
+    lpbiOut: {"kind""Ptr","child":Windows.Win32.DirectShow.BITMAPINFOHEADER},
+    wFlags: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn ICGetDisplayFormat(
+    hic: {"kind""Ptr","child":Windows.Win32.Multimedia.HIC__},
+    lpbiIn: {"kind""Ptr","child":Windows.Win32.DirectShow.BITMAPINFOHEADER},
+    lpbiOut: {"kind""Ptr","child":Windows.Win32.DirectShow.BITMAPINFOHEADER},
+    BitDepth: {"kind":"Int32"},
+    dx: {"kind":"Int32"},
+    dy: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn ICImageCompress(
+    hic: {"kind""Ptr","child":Windows.Win32.Multimedia.HIC__},
+    uiFlags: {"kind":"UInt32"},
+    lpbiIn: {"kind""Ptr","child":Windows.Win32.Gdi.BITMAPINFO},
+    lpBits: {"kind""Ptr","child":{"kind":"Void"}},
+    lpbiOut: {"kind""Ptr","child":Windows.Win32.Gdi.BITMAPINFO},
+    lQuality: {"kind":"Int32"},
+    plSize: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn ICImageDecompress(
+    hic: {"kind""Ptr","child":Windows.Win32.Multimedia.HIC__},
+    uiFlags: {"kind":"UInt32"},
+    lpbiIn: {"kind""Ptr","child":Windows.Win32.Gdi.BITMAPINFO},
+    lpBits: {"kind""Ptr","child":{"kind":"Void"}},
+    lpbiOut: {"kind""Ptr","child":Windows.Win32.Gdi.BITMAPINFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn ICCompressorChoose(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    uiFlags: {"kind":"UInt32"},
+    pvIn: {"kind""Ptr","child":{"kind":"Void"}},
+    lpData: {"kind""Ptr","child":{"kind":"Void"}},
+    pc: {"kind""Ptr","child":Windows.Win32.Multimedia.COMPVARS},
+    lpszTitle: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn ICSeqCompressFrameStart(
+    pc: {"kind""Ptr","child":Windows.Win32.Multimedia.COMPVARS},
+    lpbiIn: {"kind""Ptr","child":Windows.Win32.Gdi.BITMAPINFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn ICSeqCompressFrameEnd(
+    pc: {"kind""Ptr","child":Windows.Win32.Multimedia.COMPVARS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn ICSeqCompressFrame(
+    pc: {"kind""Ptr","child":Windows.Win32.Multimedia.COMPVARS},
+    uiFlags: {"kind":"UInt32"},
+    lpBits: {"kind""Ptr","child":{"kind":"Void"}},
+    pfKey: {"kind""Ptr","child":{"kind":"Int32"}},
+    plSize: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn ICCompressorFree(
+    pc: {"kind""Ptr","child":Windows.Win32.Multimedia.COMPVARS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn DrawDibOpen(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn DrawDibClose(
+    hdd: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn DrawDibGetBuffer(
+    hdd: {"kind":"IntPtr"},
+    lpbi: {"kind""Ptr","child":Windows.Win32.DirectShow.BITMAPINFOHEADER},
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn DrawDibGetPalette(
+    hdd: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn DrawDibSetPalette(
+    hdd: {"kind":"IntPtr"},
+    hpal: Windows.Win32.Gdi.HPALETTE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn DrawDibChangePalette(
+    hdd: {"kind":"IntPtr"},
+    iStart: {"kind":"Int32"},
+    iLen: {"kind":"Int32"},
+    lppe: {"kind""Ptr","child":Windows.Win32.Direct2D.PALETTEENTRY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn DrawDibRealize(
+    hdd: {"kind":"IntPtr"},
+    hdc: Windows.Win32.Gdi.HDC,
+    fBackground: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn DrawDibStart(
+    hdd: {"kind":"IntPtr"},
+    rate: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn DrawDibStop(
+    hdd: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn DrawDibBegin(
+    hdd: {"kind":"IntPtr"},
+    hdc: Windows.Win32.Gdi.HDC,
+    dxDst: {"kind":"Int32"},
+    dyDst: {"kind":"Int32"},
+    lpbi: {"kind""Ptr","child":Windows.Win32.DirectShow.BITMAPINFOHEADER},
+    dxSrc: {"kind":"Int32"},
+    dySrc: {"kind":"Int32"},
+    wFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn DrawDibDraw(
+    hdd: {"kind":"IntPtr"},
+    hdc: Windows.Win32.Gdi.HDC,
+    xDst: {"kind":"Int32"},
+    yDst: {"kind":"Int32"},
+    dxDst: {"kind":"Int32"},
+    dyDst: {"kind":"Int32"},
+    lpbi: {"kind""Ptr","child":Windows.Win32.DirectShow.BITMAPINFOHEADER},
+    lpBits: {"kind""Ptr","child":{"kind":"Void"}},
+    xSrc: {"kind":"Int32"},
+    ySrc: {"kind":"Int32"},
+    dxSrc: {"kind":"Int32"},
+    dySrc: {"kind":"Int32"},
+    wFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn DrawDibEnd(
+    hdd: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn DrawDibTime(
+    hdd: {"kind":"IntPtr"},
+    lpddtime: {"kind""Ptr","child":Windows.Win32.Multimedia.DRAWDIBTIME},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn DrawDibProfileDisplay(
+    lpbi: {"kind""Ptr","child":Windows.Win32.DirectShow.BITMAPINFOHEADER},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIFileInit(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIFileExit(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIFileAddRef(
+    pfile: Windows.Win32.Multimedia.IAVIFile,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIFileRelease(
+    pfile: Windows.Win32.Multimedia.IAVIFile,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIFileOpenA(
+    ppfile: {"kind""Ptr","child":Windows.Win32.Multimedia.IAVIFile},
+    szFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    uMode: {"kind":"UInt32"},
+    lpHandler: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIFileOpenW(
+    ppfile: {"kind""Ptr","child":Windows.Win32.Multimedia.IAVIFile},
+    szFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    uMode: {"kind":"UInt32"},
+    lpHandler: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIFileInfoW(
+    pfile: Windows.Win32.Multimedia.IAVIFile,
+    pfi: {"kind""Ptr","child":Windows.Win32.Multimedia.AVIFILEINFOW},
+    lSize: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIFileInfoA(
+    pfile: Windows.Win32.Multimedia.IAVIFile,
+    pfi: {"kind""Ptr","child":Windows.Win32.Multimedia.AVIFILEINFOA},
+    lSize: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIFileGetStream(
+    pfile: Windows.Win32.Multimedia.IAVIFile,
+    ppavi: {"kind""Ptr","child":Windows.Win32.Multimedia.IAVIStream},
+    fccType: {"kind":"UInt32"},
+    lParam: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIFileCreateStreamW(
+    pfile: Windows.Win32.Multimedia.IAVIFile,
+    ppavi: {"kind""Ptr","child":Windows.Win32.Multimedia.IAVIStream},
+    psi: {"kind""Ptr","child":Windows.Win32.Multimedia.AVISTREAMINFOW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIFileCreateStreamA(
+    pfile: Windows.Win32.Multimedia.IAVIFile,
+    ppavi: {"kind""Ptr","child":Windows.Win32.Multimedia.IAVIStream},
+    psi: {"kind""Ptr","child":Windows.Win32.Multimedia.AVISTREAMINFOA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIFileWriteData(
+    pfile: Windows.Win32.Multimedia.IAVIFile,
+    ckid: {"kind":"UInt32"},
+    lpData: {"kind""Ptr","child":{"kind":"Void"}},
+    cbData: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIFileReadData(
+    pfile: Windows.Win32.Multimedia.IAVIFile,
+    ckid: {"kind":"UInt32"},
+    lpData: {"kind""Ptr","child":{"kind":"Void"}},
+    lpcbData: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIFileEndRecord(
+    pfile: Windows.Win32.Multimedia.IAVIFile,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIStreamAddRef(
+    pavi: Windows.Win32.Multimedia.IAVIStream,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIStreamRelease(
+    pavi: Windows.Win32.Multimedia.IAVIStream,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIStreamInfoW(
+    pavi: Windows.Win32.Multimedia.IAVIStream,
+    psi: {"kind""Ptr","child":Windows.Win32.Multimedia.AVISTREAMINFOW},
+    lSize: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIStreamInfoA(
+    pavi: Windows.Win32.Multimedia.IAVIStream,
+    psi: {"kind""Ptr","child":Windows.Win32.Multimedia.AVISTREAMINFOA},
+    lSize: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIStreamFindSample(
+    pavi: Windows.Win32.Multimedia.IAVIStream,
+    lPos: {"kind":"Int32"},
+    lFlags: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIStreamReadFormat(
+    pavi: Windows.Win32.Multimedia.IAVIStream,
+    lPos: {"kind":"Int32"},
+    lpFormat: {"kind""Ptr","child":{"kind":"Void"}},
+    lpcbFormat: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIStreamSetFormat(
+    pavi: Windows.Win32.Multimedia.IAVIStream,
+    lPos: {"kind":"Int32"},
+    lpFormat: {"kind""Ptr","child":{"kind":"Void"}},
+    cbFormat: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIStreamReadData(
+    pavi: Windows.Win32.Multimedia.IAVIStream,
+    fcc: {"kind":"UInt32"},
+    lp: {"kind""Ptr","child":{"kind":"Void"}},
+    lpcb: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIStreamWriteData(
+    pavi: Windows.Win32.Multimedia.IAVIStream,
+    fcc: {"kind":"UInt32"},
+    lp: {"kind""Ptr","child":{"kind":"Void"}},
+    cb: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIStreamRead(
+    pavi: Windows.Win32.Multimedia.IAVIStream,
+    lStart: {"kind":"Int32"},
+    lSamples: {"kind":"Int32"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    cbBuffer: {"kind":"Int32"},
+    plBytes: {"kind""Ptr","child":{"kind":"Int32"}},
+    plSamples: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIStreamWrite(
+    pavi: Windows.Win32.Multimedia.IAVIStream,
+    lStart: {"kind":"Int32"},
+    lSamples: {"kind":"Int32"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    cbBuffer: {"kind":"Int32"},
+    dwFlags: {"kind":"UInt32"},
+    plSampWritten: {"kind""Ptr","child":{"kind":"Int32"}},
+    plBytesWritten: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIStreamStart(
+    pavi: Windows.Win32.Multimedia.IAVIStream,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIStreamLength(
+    pavi: Windows.Win32.Multimedia.IAVIStream,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIStreamTimeToSample(
+    pavi: Windows.Win32.Multimedia.IAVIStream,
+    lTime: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIStreamSampleToTime(
+    pavi: Windows.Win32.Multimedia.IAVIStream,
+    lSample: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIStreamBeginStreaming(
+    pavi: Windows.Win32.Multimedia.IAVIStream,
+    lStart: {"kind":"Int32"},
+    lEnd: {"kind":"Int32"},
+    lRate: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIStreamEndStreaming(
+    pavi: Windows.Win32.Multimedia.IAVIStream,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIStreamGetFrameOpen(
+    pavi: Windows.Win32.Multimedia.IAVIStream,
+    lpbiWanted: {"kind""Ptr","child":Windows.Win32.DirectShow.BITMAPINFOHEADER},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIStreamGetFrame(
+    pg: Windows.Win32.Multimedia.IGetFrame,
+    lPos: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIStreamGetFrameClose(
+    pg: Windows.Win32.Multimedia.IGetFrame,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIStreamOpenFromFileA(
+    ppavi: {"kind""Ptr","child":Windows.Win32.Multimedia.IAVIStream},
+    szFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    fccType: {"kind":"UInt32"},
+    lParam: {"kind":"Int32"},
+    mode: {"kind":"UInt32"},
+    pclsidHandler: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIStreamOpenFromFileW(
+    ppavi: {"kind""Ptr","child":Windows.Win32.Multimedia.IAVIStream},
+    szFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fccType: {"kind":"UInt32"},
+    lParam: {"kind":"Int32"},
+    mode: {"kind":"UInt32"},
+    pclsidHandler: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIStreamCreate(
+    ppavi: {"kind""Ptr","child":Windows.Win32.Multimedia.IAVIStream},
+    lParam1: {"kind":"Int32"},
+    lParam2: {"kind":"Int32"},
+    pclsidHandler: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIMakeCompressedStream(
+    ppsCompressed: {"kind""Ptr","child":Windows.Win32.Multimedia.IAVIStream},
+    ppsSource: Windows.Win32.Multimedia.IAVIStream,
+    lpOptions: {"kind""Ptr","child":Windows.Win32.Multimedia.AVICOMPRESSOPTIONS},
+    pclsidHandler: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVISaveA(
+    szFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    pclsidHandler: {"kind""Ptr","child":Guid},
+    lpfnCallback: Windows.Win32.Multimedia.AVISAVECALLBACK,
+    nStreams: {"kind":"Int32"},
+    pfile: Windows.Win32.Multimedia.IAVIStream,
+    lpOptions: {"kind""Ptr","child":Windows.Win32.Multimedia.AVICOMPRESSOPTIONS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVISaveVA(
+    szFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    pclsidHandler: {"kind""Ptr","child":Guid},
+    lpfnCallback: Windows.Win32.Multimedia.AVISAVECALLBACK,
+    nStreams: {"kind":"Int32"},
+    ppavi: {"kind""Ptr","child":Windows.Win32.Multimedia.IAVIStream},
+    plpOptions: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Multimedia.AVICOMPRESSOPTIONS}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVISaveW(
+    szFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pclsidHandler: {"kind""Ptr","child":Guid},
+    lpfnCallback: Windows.Win32.Multimedia.AVISAVECALLBACK,
+    nStreams: {"kind":"Int32"},
+    pfile: Windows.Win32.Multimedia.IAVIStream,
+    lpOptions: {"kind""Ptr","child":Windows.Win32.Multimedia.AVICOMPRESSOPTIONS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVISaveVW(
+    szFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pclsidHandler: {"kind""Ptr","child":Guid},
+    lpfnCallback: Windows.Win32.Multimedia.AVISAVECALLBACK,
+    nStreams: {"kind":"Int32"},
+    ppavi: {"kind""Ptr","child":Windows.Win32.Multimedia.IAVIStream},
+    plpOptions: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Multimedia.AVICOMPRESSOPTIONS}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVISaveOptions(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    uiFlags: {"kind":"UInt32"},
+    nStreams: {"kind":"Int32"},
+    ppavi: {"kind""Ptr","child":Windows.Win32.Multimedia.IAVIStream},
+    plpOptions: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Multimedia.AVICOMPRESSOPTIONS}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVISaveOptionsFree(
+    nStreams: {"kind":"Int32"},
+    plpOptions: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Multimedia.AVICOMPRESSOPTIONS}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIBuildFilterW(
+    lpszFilter: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cbFilter: {"kind":"Int32"},
+    fSaving: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIBuildFilterA(
+    lpszFilter: {"kind""Ptr","child":{"kind":"SByte"}},
+    cbFilter: {"kind":"Int32"},
+    fSaving: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIMakeFileFromStreams(
+    ppfile: {"kind""Ptr","child":Windows.Win32.Multimedia.IAVIFile},
+    nStreams: {"kind":"Int32"},
+    papStreams: {"kind""Ptr","child":Windows.Win32.Multimedia.IAVIStream},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIMakeStreamFromClipboard(
+    cfFormat: {"kind":"UInt32"},
+    hGlobal: Windows.Win32.SystemServices.HANDLE,
+    ppstream: {"kind""Ptr","child":Windows.Win32.Multimedia.IAVIStream},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIPutFileOnClipboard(
+    pf: Windows.Win32.Multimedia.IAVIFile,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIGetFromClipboard(
+    lppf: {"kind""Ptr","child":Windows.Win32.Multimedia.IAVIFile},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn AVIClearClipboard(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn CreateEditableStream(
+    ppsEditable: {"kind""Ptr","child":Windows.Win32.Multimedia.IAVIStream},
+    psSource: Windows.Win32.Multimedia.IAVIStream,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn EditStreamCut(
+    pavi: Windows.Win32.Multimedia.IAVIStream,
+    plStart: {"kind""Ptr","child":{"kind":"Int32"}},
+    plLength: {"kind""Ptr","child":{"kind":"Int32"}},
+    ppResult: {"kind""Ptr","child":Windows.Win32.Multimedia.IAVIStream},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn EditStreamCopy(
+    pavi: Windows.Win32.Multimedia.IAVIStream,
+    plStart: {"kind""Ptr","child":{"kind":"Int32"}},
+    plLength: {"kind""Ptr","child":{"kind":"Int32"}},
+    ppResult: {"kind""Ptr","child":Windows.Win32.Multimedia.IAVIStream},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn EditStreamPaste(
+    pavi: Windows.Win32.Multimedia.IAVIStream,
+    plPos: {"kind""Ptr","child":{"kind":"Int32"}},
+    plLength: {"kind""Ptr","child":{"kind":"Int32"}},
+    pstream: Windows.Win32.Multimedia.IAVIStream,
+    lStart: {"kind":"Int32"},
+    lEnd: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn EditStreamClone(
+    pavi: Windows.Win32.Multimedia.IAVIStream,
+    ppResult: {"kind""Ptr","child":Windows.Win32.Multimedia.IAVIStream},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn EditStreamSetNameA(
+    pavi: Windows.Win32.Multimedia.IAVIStream,
+    lpszName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn EditStreamSetNameW(
+    pavi: Windows.Win32.Multimedia.IAVIStream,
+    lpszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn EditStreamSetInfoW(
+    pavi: Windows.Win32.Multimedia.IAVIStream,
+    lpInfo: {"kind""Ptr","child":Windows.Win32.Multimedia.AVISTREAMINFOW},
+    cbInfo: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVIFIL32" fn EditStreamSetInfoA(
+    pavi: Windows.Win32.Multimedia.IAVIStream,
+    lpInfo: {"kind""Ptr","child":Windows.Win32.Multimedia.AVISTREAMINFOA},
+    cbInfo: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn MCIWndCreateA(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    dwStyle: {"kind":"UInt32"},
+    szFile: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn MCIWndCreateW(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    dwStyle: {"kind":"UInt32"},
+    szFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn MCIWndRegisterClass(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVICAP32" fn capCreateCaptureWindowA(
+    lpszWindowName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwStyle: {"kind":"UInt32"},
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    nWidth: {"kind":"Int32"},
+    nHeight: {"kind":"Int32"},
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    nID: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVICAP32" fn capGetDriverDescriptionA(
+    wDriverIndex: {"kind":"UInt32"},
+    lpszName: {"kind""Ptr","child":{"kind":"SByte"}},
+    cbName: {"kind":"Int32"},
+    lpszVer: {"kind""Ptr","child":{"kind":"SByte"}},
+    cbVer: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVICAP32" fn capCreateCaptureWindowW(
+    lpszWindowName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwStyle: {"kind":"UInt32"},
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    nWidth: {"kind":"Int32"},
+    nHeight: {"kind":"Int32"},
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    nID: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "AVICAP32" fn capGetDriverDescriptionW(
+    wDriverIndex: {"kind":"UInt32"},
+    lpszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cbName: {"kind":"Int32"},
+    lpszVer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cbVer: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn GetOpenFileNamePreviewA(
+    lpofn: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.OPENFILENAMEA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn GetSaveFileNamePreviewA(
+    lpofn: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.OPENFILENAMEA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn GetOpenFileNamePreviewW(
+    lpofn: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.OPENFILENAMEW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSVFW32" fn GetSaveFileNamePreviewW(
+    lpofn: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.OPENFILENAMEW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn mmTaskCreate(
+    lpfn: Windows.Win32.Multimedia.LPTASKCALLBACK,
+    lph: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+    dwInst: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn mmTaskBlock(
+    h: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn mmTaskSignal(
+    h: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn mmTaskYield(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINMM" fn mmGetCurrentTask(
+],
+
+"unicode_aliases": [
+     "WAVEOUTCAPS"
+     "WAVEOUTCAPS2"
+     "WAVEINCAPS"
+     "WAVEINCAPS2"
+     "MIDIOUTCAPS"
+     "MIDIOUTCAPS2"
+     "MIDIINCAPS"
+     "MIDIINCAPS2"
+     "AUXCAPS"
+     "AUXCAPS2"
+     "MIXERCAPS"
+     "MIXERCAPS2"
+     "MIXERLINE"
+     "MIXERCONTROL"
+     "MIXERLINECONTROLS"
+     "MIXERCONTROLDETAILS_LISTTEXT"
+     "JOYCAPS"
+     "JOYCAPS2"
+     "MCI_DGV_CAPTURE_PARMS"
+     "MCI_DGV_INFO_PARMS"
+     "MCI_DGV_LIST_PARMS"
+     "MCI_DGV_OPEN_PARMS"
+     "MCI_DGV_QUALITY_PARMS"
+     "MCI_DGV_RESERVE_PARMS"
+     "MCI_DGV_RESTORE_PARMS"
+     "MCI_DGV_SAVE_PARMS"
+     "MCI_DGV_SETAUDIO_PARMS"
+     "MCI_DGV_SETVIDEO_PARMS"
+     "MCI_DGV_STATUS_PARMS"
+     "MCI_DGV_WINDOW_PARMS"
+     "tACMDRIVERDETAILS"
+     "tACMFORMATTAGDETAILS"
+     "ACMFORMATTAGENUMCB"
+     "tACMFORMATDETAILS"
+     "ACMFORMATENUMCB"
+     "ACMFORMATCHOOSEHOOKPROC"
+     "tACMFORMATCHOOSE"
+     "tACMFILTERTAGDETAILS"
+     "ACMFILTERTAGENUMCB"
+     "tACMFILTERDETAILS"
+     "ACMFILTERENUMCB"
+     "ACMFILTERCHOOSEHOOKPROC"
+     "tACMFILTERCHOOSE"
+     "AVISTREAMINFO"
+     "AVIFILEINFO"
+     "CAPSTATUSCALLBACK"
+     "CAPERRORCALLBACK"
+     "mmioStringToFOURCC"
+     "mmioInstallIOProc"
+     "mmioOpen"
+     "mmioRename"
+     "sndPlaySound"
+     "PlaySound"
+     "waveOutGetDevCaps"
+     "waveOutGetErrorText"
+     "waveInGetDevCaps"
+     "waveInGetErrorText"
+     "midiOutGetDevCaps"
+     "midiOutGetErrorText"
+     "midiInGetDevCaps"
+     "midiInGetErrorText"
+     "auxGetDevCaps"
+     "mixerGetDevCaps"
+     "mixerGetLineInfo"
+     "mixerGetLineControls"
+     "mixerGetControlDetails"
+     "joyGetDevCaps"
+     "acmDriverAdd"
+     "acmDriverDetails"
+     "acmFormatTagDetails"
+     "acmFormatTagEnum"
+     "acmFormatDetails"
+     "acmFormatEnum"
+     "acmFormatChoose"
+     "acmFilterTagDetails"
+     "acmFilterTagEnum"
+     "acmFilterDetails"
+     "acmFilterEnum"
+     "acmFilterChoose"
+     "AVIFileOpen"
+     "AVIFileInfo"
+     "AVIFileCreateStream"
+     "AVIStreamInfo"
+     "AVIStreamOpenFromFile"
+     "AVISave"
+     "AVISaveV"
+     "AVIBuildFilter"
+     "EditStreamSetName"
+     "EditStreamSetInfo"
+     "MCIWndCreate"
+     "capCreateCaptureWindow"
+     "capGetDriverDescription"
+     "GetOpenFileNamePreview"
+     "GetSaveFileNamePreview"
+]}

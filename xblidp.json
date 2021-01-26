@@ -1,0 +1,79 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: XblIdpAuthManager
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const XblIdpAuthManager = opaque {
+};
+// --------------------------------------------------------
+// Type: XblIdpAuthTokenResult
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const XblIdpAuthTokenResult = opaque {
+};
+// --------------------------------------------------------
+// Type: XBL_IDP_AUTH_TOKEN_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const XBL_IDP_AUTH_TOKEN_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: IXblIdpAuthManager
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXblIdpAuthManager = *opaque{
+    // TODO: Method 'SetGamerAccount'
+    // TODO: Method 'GetGamerAccount'
+    // TODO: Method 'SetAppViewInitialized'
+    // TODO: Method 'GetEnvironment'
+    // TODO: Method 'GetSandbox'
+    // TODO: Method 'GetTokenAndSignatureWithTokenResult'
+};
+// --------------------------------------------------------
+// Type: IXblIdpAuthTokenResult
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXblIdpAuthTokenResult = *opaque{
+    // TODO: Method 'GetStatus'
+    // TODO: Method 'GetErrorCode'
+    // TODO: Method 'GetToken'
+    // TODO: Method 'GetSignature'
+    // TODO: Method 'GetSandbox'
+    // TODO: Method 'GetEnvironment'
+    // TODO: Method 'GetMsaAccountId'
+    // TODO: Method 'GetXuid'
+    // TODO: Method 'GetGamertag'
+    // TODO: Method 'GetAgeGroup'
+    // TODO: Method 'GetPrivileges'
+    // TODO: Method 'GetMsaTarget'
+    // TODO: Method 'GetMsaPolicy'
+    // TODO: Method 'GetMsaAppId'
+    // TODO: Method 'GetRedirect'
+    // TODO: Method 'GetMessageA'
+    // TODO: Method 'GetHelpId'
+    // TODO: Method 'GetEnforcementBans'
+    // TODO: Method 'GetRestrictions'
+    // TODO: Method 'GetTitleRestrictions'
+};
+// --------------------------------------------------------
+// Type: IXblIdpAuthTokenResult2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXblIdpAuthTokenResult2 = *opaque{
+    // TODO: Method 'GetModernGamertag'
+    // TODO: Method 'GetModernGamertagSuffix'
+    // TODO: Method 'GetUniqueModernGamertag'
+};
+],
+
+"func_definitions": [
+],
+
+"unicode_aliases": [
+]}

@@ -1,0 +1,936 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: WSMAN_DATA_TEXT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_DATA_TEXT = extern struct {
+    bufferLength: {"kind":"UInt32"},
+    buffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WSMAN_DATA_BINARY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_DATA_BINARY = extern struct {
+    dataLength: {"kind":"UInt32"},
+    data: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: WSManDataType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSManDataType = *opaque{
+};
+// --------------------------------------------------------
+// Type: WSMAN_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_DATA = extern struct {
+    type: Windows.Win32.WindowsRemoteManagement.WSManDataType,
+    Anonymous: Windows.Win32.WindowsRemoteManagement.WSMAN_DATA+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: WSMAN_ERROR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_ERROR = extern struct {
+    code: {"kind":"UInt32"},
+    errorDetail: {"kind""Ptr","child":{"kind":"UInt16"}},
+    language: {"kind""Ptr","child":{"kind":"UInt16"}},
+    machineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pluginName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WSMAN_USERNAME_PASSWORD_CREDS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_USERNAME_PASSWORD_CREDS = extern struct {
+    username: {"kind""Ptr","child":{"kind":"UInt16"}},
+    password: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WSManAuthenticationFlags
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSManAuthenticationFlags = *opaque{
+};
+// --------------------------------------------------------
+// Type: WSMAN_AUTHENTICATION_CREDENTIALS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_AUTHENTICATION_CREDENTIALS = extern struct {
+    authenticationMechanism: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.WindowsRemoteManagement.WSMAN_AUTHENTICATION_CREDENTIALS+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: WSMAN_OPTION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_OPTION = extern struct {
+    name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind""Ptr","child":{"kind":"UInt16"}},
+    mustComply: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: WSMAN_OPTION_SET
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_OPTION_SET = extern struct {
+    optionsCount: {"kind":"UInt32"},
+    options: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_OPTION},
+    optionsMustUnderstand: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: WSMAN_OPTION_SETEX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_OPTION_SETEX = extern struct {
+    optionsCount: {"kind":"UInt32"},
+    options: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_OPTION},
+    optionsMustUnderstand: Windows.Win32.SystemServices.BOOL,
+    optionTypes: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+};
+// --------------------------------------------------------
+// Type: WSMAN_KEY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_KEY = extern struct {
+    key: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WSMAN_SELECTOR_SET
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_SELECTOR_SET = extern struct {
+    numberKeys: {"kind":"UInt32"},
+    keys: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_KEY},
+};
+// --------------------------------------------------------
+// Type: WSMAN_FRAGMENT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_FRAGMENT = extern struct {
+    path: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dialect: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WSMAN_FILTER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_FILTER = extern struct {
+    filter: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dialect: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WSMAN_OPERATION_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_OPERATION_INFO = extern struct {
+    fragment: Windows.Win32.WindowsRemoteManagement.WSMAN_FRAGMENT,
+    filter: Windows.Win32.WindowsRemoteManagement.WSMAN_FILTER,
+    selectorSet: Windows.Win32.WindowsRemoteManagement.WSMAN_SELECTOR_SET,
+    optionSet: Windows.Win32.WindowsRemoteManagement.WSMAN_OPTION_SET,
+    reserved: {"kind""Ptr","child":{"kind":"Void"}},
+    version: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WSMAN_OPERATION_INFOEX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_OPERATION_INFOEX = extern struct {
+    fragment: Windows.Win32.WindowsRemoteManagement.WSMAN_FRAGMENT,
+    filter: Windows.Win32.WindowsRemoteManagement.WSMAN_FILTER,
+    selectorSet: Windows.Win32.WindowsRemoteManagement.WSMAN_SELECTOR_SET,
+    optionSet: Windows.Win32.WindowsRemoteManagement.WSMAN_OPTION_SETEX,
+    version: {"kind":"UInt32"},
+    uiLocale: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dataLocale: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WSMAN_API
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WSMAN_API = opaque {
+};
+// --------------------------------------------------------
+// Type: WSManProxyAccessType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSManProxyAccessType = *opaque{
+};
+// --------------------------------------------------------
+// Type: WSMAN_PROXY_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_PROXY_INFO = extern struct {
+    accessType: {"kind":"UInt32"},
+    authenticationCredentials: Windows.Win32.WindowsRemoteManagement.WSMAN_AUTHENTICATION_CREDENTIALS,
+};
+// --------------------------------------------------------
+// Type: WSMAN_SESSION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WSMAN_SESSION = opaque {
+};
+// --------------------------------------------------------
+// Type: WSManSessionOption
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSManSessionOption = *opaque{
+};
+// --------------------------------------------------------
+// Type: WSMAN_OPERATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WSMAN_OPERATION = opaque {
+};
+// --------------------------------------------------------
+// Type: WSManCallbackFlags
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSManCallbackFlags = *opaque{
+};
+// --------------------------------------------------------
+// Type: WSMAN_SHELL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WSMAN_SHELL = opaque {
+};
+// --------------------------------------------------------
+// Type: WSMAN_COMMAND
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WSMAN_COMMAND = opaque {
+};
+// --------------------------------------------------------
+// Type: WSMAN_STREAM_ID_SET
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_STREAM_ID_SET = extern struct {
+    streamIDsCount: {"kind":"UInt32"},
+    streamIDs: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+};
+// --------------------------------------------------------
+// Type: WSMAN_ENVIRONMENT_VARIABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_ENVIRONMENT_VARIABLE = extern struct {
+    name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WSMAN_ENVIRONMENT_VARIABLE_SET
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_ENVIRONMENT_VARIABLE_SET = extern struct {
+    varsCount: {"kind":"UInt32"},
+    vars: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_ENVIRONMENT_VARIABLE},
+};
+// --------------------------------------------------------
+// Type: WSMAN_SHELL_STARTUP_INFO_V10
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_SHELL_STARTUP_INFO_V10 = extern struct {
+    inputStreamSet: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_STREAM_ID_SET},
+    outputStreamSet: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_STREAM_ID_SET},
+    idleTimeoutMs: {"kind":"UInt32"},
+    workingDirectory: {"kind""Ptr","child":{"kind":"UInt16"}},
+    variableSet: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_ENVIRONMENT_VARIABLE_SET},
+};
+// --------------------------------------------------------
+// Type: WSMAN_SHELL_STARTUP_INFO_V11
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_SHELL_STARTUP_INFO_V11 = extern struct {
+    __AnonymousBase_wsman_L665_C48: Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL_STARTUP_INFO_V10,
+    name: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WSMAN_SHELL_DISCONNECT_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_SHELL_DISCONNECT_INFO = extern struct {
+    idleTimeoutMs: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WSManShellFlag
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSManShellFlag = *opaque{
+};
+// --------------------------------------------------------
+// Type: WSMAN_RECEIVE_DATA_RESULT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_RECEIVE_DATA_RESULT = extern struct {
+    streamId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    streamData: Windows.Win32.WindowsRemoteManagement.WSMAN_DATA,
+    commandState: {"kind""Ptr","child":{"kind":"UInt16"}},
+    exitCode: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WSMAN_CONNECT_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_CONNECT_DATA = extern struct {
+    data: Windows.Win32.WindowsRemoteManagement.WSMAN_DATA,
+};
+// --------------------------------------------------------
+// Type: WSMAN_CREATE_SHELL_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_CREATE_SHELL_DATA = extern struct {
+    data: Windows.Win32.WindowsRemoteManagement.WSMAN_DATA,
+};
+// --------------------------------------------------------
+// Type: WSMAN_RESPONSE_DATA
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const WSMAN_RESPONSE_DATA = *opaque{
+};
+// --------------------------------------------------------
+// Type: WSMAN_SHELL_COMPLETION_FUNCTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSMAN_SHELL_COMPLETION_FUNCTION = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WSMAN_SHELL_ASYNC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_SHELL_ASYNC = extern struct {
+    operationContext: {"kind""Ptr","child":{"kind":"Void"}},
+    completionFunction: Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL_COMPLETION_FUNCTION,
+};
+// --------------------------------------------------------
+// Type: WSMAN_COMMAND_ARG_SET
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_COMMAND_ARG_SET = extern struct {
+    argsCount: {"kind":"UInt32"},
+    args: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+};
+// --------------------------------------------------------
+// Type: WSMAN_CERTIFICATE_DETAILS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_CERTIFICATE_DETAILS = extern struct {
+    subject: {"kind""Ptr","child":{"kind":"UInt16"}},
+    issuerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    issuerThumbprint: {"kind""Ptr","child":{"kind":"UInt16"}},
+    subjectName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WSMAN_SENDER_DETAILS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_SENDER_DETAILS = extern struct {
+    senderName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    authenticationMechanism: {"kind""Ptr","child":{"kind":"UInt16"}},
+    certificateDetails: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_CERTIFICATE_DETAILS},
+    clientToken: Windows.Win32.SystemServices.HANDLE,
+    httpURL: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WSMAN_PLUGIN_REQUEST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_PLUGIN_REQUEST = extern struct {
+    senderDetails: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SENDER_DETAILS},
+    locale: {"kind""Ptr","child":{"kind":"UInt16"}},
+    resourceUri: {"kind""Ptr","child":{"kind":"UInt16"}},
+    operationInfo: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_OPERATION_INFO},
+    shutdownNotification: {"kind":"Int32"},
+    shutdownNotificationHandle: Windows.Win32.SystemServices.HANDLE,
+    dataLocale: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WSMAN_PLUGIN_RELEASE_SHELL_CONTEXT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSMAN_PLUGIN_RELEASE_SHELL_CONTEXT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WSMAN_PLUGIN_RELEASE_COMMAND_CONTEXT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSMAN_PLUGIN_RELEASE_COMMAND_CONTEXT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WSMAN_PLUGIN_STARTUP
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSMAN_PLUGIN_STARTUP = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WSMAN_PLUGIN_SHUTDOWN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSMAN_PLUGIN_SHUTDOWN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WSMAN_PLUGIN_SHELL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSMAN_PLUGIN_SHELL = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WSMAN_PLUGIN_COMMAND
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSMAN_PLUGIN_COMMAND = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WSMAN_PLUGIN_SEND
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSMAN_PLUGIN_SEND = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WSMAN_PLUGIN_RECEIVE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSMAN_PLUGIN_RECEIVE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WSMAN_PLUGIN_SIGNAL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSMAN_PLUGIN_SIGNAL = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WSMAN_PLUGIN_CONNECT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSMAN_PLUGIN_CONNECT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WSMAN_AUTHZ_QUOTA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSMAN_AUTHZ_QUOTA = extern struct {
+    maxAllowedConcurrentShells: {"kind":"UInt32"},
+    maxAllowedConcurrentOperations: {"kind":"UInt32"},
+    timeslotSize: {"kind":"UInt32"},
+    maxAllowedOperationsPerTimeslot: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WSMAN_PLUGIN_AUTHORIZE_USER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSMAN_PLUGIN_AUTHORIZE_USER = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WSMAN_PLUGIN_AUTHORIZE_OPERATION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSMAN_PLUGIN_AUTHORIZE_OPERATION = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WSMAN_PLUGIN_AUTHORIZE_QUERY_QUOTA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSMAN_PLUGIN_AUTHORIZE_QUERY_QUOTA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WSMAN_PLUGIN_AUTHORIZE_RELEASE_CONTEXT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSMAN_PLUGIN_AUTHORIZE_RELEASE_CONTEXT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WSMan
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WSMan = opaque {
+};
+// --------------------------------------------------------
+// Type: WSManInternal
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WSManInternal = opaque {
+};
+// --------------------------------------------------------
+// Type: WSManSessionFlags
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSManSessionFlags = *opaque{
+};
+// --------------------------------------------------------
+// Type: WSManEnumFlags
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSManEnumFlags = *opaque{
+};
+// --------------------------------------------------------
+// Type: WSManProxyAccessTypeFlags
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSManProxyAccessTypeFlags = *opaque{
+};
+// --------------------------------------------------------
+// Type: WSManProxyAuthenticationFlags
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSManProxyAuthenticationFlags = *opaque{
+};
+// --------------------------------------------------------
+// Type: IWSMan
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSMan = *opaque{
+    // TODO: Method 'CreateSession'
+    // TODO: Method 'CreateConnectionOptions'
+    // TODO: Method 'get_CommandLine'
+    // TODO: Method 'get_Error'
+};
+// --------------------------------------------------------
+// Type: IWSManEx
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSManEx = *opaque{
+    // TODO: Method 'CreateResourceLocator'
+    // TODO: Method 'SessionFlagUTF8'
+    // TODO: Method 'SessionFlagCredUsernamePassword'
+    // TODO: Method 'SessionFlagSkipCACheck'
+    // TODO: Method 'SessionFlagSkipCNCheck'
+    // TODO: Method 'SessionFlagUseDigest'
+    // TODO: Method 'SessionFlagUseNegotiate'
+    // TODO: Method 'SessionFlagUseBasic'
+    // TODO: Method 'SessionFlagUseKerberos'
+    // TODO: Method 'SessionFlagNoEncryption'
+    // TODO: Method 'SessionFlagEnableSPNServerPort'
+    // TODO: Method 'SessionFlagUseNoAuthentication'
+    // TODO: Method 'EnumerationFlagNonXmlText'
+    // TODO: Method 'EnumerationFlagReturnEPR'
+    // TODO: Method 'EnumerationFlagReturnObjectAndEPR'
+    // TODO: Method 'GetErrorMessage'
+    // TODO: Method 'EnumerationFlagHierarchyDeep'
+    // TODO: Method 'EnumerationFlagHierarchyShallow'
+    // TODO: Method 'EnumerationFlagHierarchyDeepBasePropsOnly'
+    // TODO: Method 'EnumerationFlagReturnObject'
+};
+// --------------------------------------------------------
+// Type: IWSManEx2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSManEx2 = *opaque{
+    // TODO: Method 'SessionFlagUseClientCertificate'
+};
+// --------------------------------------------------------
+// Type: IWSManEx3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSManEx3 = *opaque{
+    // TODO: Method 'SessionFlagUTF16'
+    // TODO: Method 'SessionFlagUseCredSsp'
+    // TODO: Method 'EnumerationFlagAssociationInstance'
+    // TODO: Method 'EnumerationFlagAssociatedInstance'
+    // TODO: Method 'SessionFlagSkipRevocationCheck'
+    // TODO: Method 'SessionFlagAllowNegotiateImplicitCredentials'
+    // TODO: Method 'SessionFlagUseSsl'
+};
+// --------------------------------------------------------
+// Type: IWSManConnectionOptions
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSManConnectionOptions = *opaque{
+    // TODO: Method 'get_UserName'
+    // TODO: Method 'put_UserName'
+    // TODO: Method 'put_Password'
+};
+// --------------------------------------------------------
+// Type: IWSManConnectionOptionsEx
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSManConnectionOptionsEx = *opaque{
+    // TODO: Method 'get_CertificateThumbprint'
+    // TODO: Method 'put_CertificateThumbprint'
+};
+// --------------------------------------------------------
+// Type: IWSManConnectionOptionsEx2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSManConnectionOptionsEx2 = *opaque{
+    // TODO: Method 'SetProxy'
+    // TODO: Method 'ProxyIEConfig'
+    // TODO: Method 'ProxyWinHttpConfig'
+    // TODO: Method 'ProxyAutoDetect'
+    // TODO: Method 'ProxyNoProxyServer'
+    // TODO: Method 'ProxyAuthenticationUseNegotiate'
+    // TODO: Method 'ProxyAuthenticationUseBasic'
+    // TODO: Method 'ProxyAuthenticationUseDigest'
+};
+// --------------------------------------------------------
+// Type: IWSManSession
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSManSession = *opaque{
+    // TODO: Method 'Get'
+    // TODO: Method 'Put'
+    // TODO: Method 'Create'
+    // TODO: Method 'Delete'
+    // TODO: Method 'Invoke'
+    // TODO: Method 'Enumerate'
+    // TODO: Method 'Identify'
+    // TODO: Method 'get_Error'
+    // TODO: Method 'get_BatchItems'
+    // TODO: Method 'put_BatchItems'
+    // TODO: Method 'get_Timeout'
+    // TODO: Method 'put_Timeout'
+};
+// --------------------------------------------------------
+// Type: IWSManEnumerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSManEnumerator = *opaque{
+    // TODO: Method 'ReadItem'
+    // TODO: Method 'get_AtEndOfStream'
+    // TODO: Method 'get_Error'
+};
+// --------------------------------------------------------
+// Type: IWSManResourceLocator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSManResourceLocator = *opaque{
+    // TODO: Method 'put_ResourceURI'
+    // TODO: Method 'get_ResourceURI'
+    // TODO: Method 'AddSelector'
+    // TODO: Method 'ClearSelectors'
+    // TODO: Method 'get_FragmentPath'
+    // TODO: Method 'put_FragmentPath'
+    // TODO: Method 'get_FragmentDialect'
+    // TODO: Method 'put_FragmentDialect'
+    // TODO: Method 'AddOption'
+    // TODO: Method 'put_MustUnderstandOptions'
+    // TODO: Method 'get_MustUnderstandOptions'
+    // TODO: Method 'ClearOptions'
+    // TODO: Method 'get_Error'
+};
+// --------------------------------------------------------
+// Type: IWSManResourceLocatorInternal
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSManResourceLocatorInternal = *opaque{
+};
+// --------------------------------------------------------
+// Type: IWSManInternal
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSManInternal = *opaque{
+    // TODO: Method 'ConfigSDDL'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManInitialize(
+    flags: {"kind":"UInt32"},
+    apiHandle: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_API}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManDeinitialize(
+    apiHandle: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_API},
+    flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManGetErrorMessage(
+    apiHandle: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_API},
+    flags: {"kind":"UInt32"},
+    languageCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    errorCode: {"kind":"UInt32"},
+    messageLength: {"kind":"UInt32"},
+    message: {"kind""Ptr","child":{"kind":"UInt16"}},
+    messageLengthUsed: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManCreateSession(
+    apiHandle: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_API},
+    connection: {"kind""Ptr","child":{"kind":"UInt16"}},
+    flags: {"kind":"UInt32"},
+    serverAuthenticationCredentials: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_AUTHENTICATION_CREDENTIALS},
+    proxyInfo: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_PROXY_INFO},
+    session: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SESSION}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManCloseSession(
+    session: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SESSION},
+    flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManSetSessionOption(
+    session: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SESSION},
+    option: Windows.Win32.WindowsRemoteManagement.WSManSessionOption,
+    data: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_DATA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManGetSessionOptionAsDword(
+    session: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SESSION},
+    option: Windows.Win32.WindowsRemoteManagement.WSManSessionOption,
+    value: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManGetSessionOptionAsString(
+    session: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SESSION},
+    option: Windows.Win32.WindowsRemoteManagement.WSManSessionOption,
+    stringLength: {"kind":"UInt32"},
+    string: {"kind""Ptr","child":{"kind":"UInt16"}},
+    stringLengthUsed: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManCloseOperation(
+    operationHandle: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_OPERATION},
+    flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManCreateShell(
+    session: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SESSION},
+    flags: {"kind":"UInt32"},
+    resourceUri: {"kind""Ptr","child":{"kind":"UInt16"}},
+    startupInfo: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL_STARTUP_INFO_V11},
+    options: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_OPTION_SET},
+    createXml: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_DATA},
+    async: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL_ASYNC},
+    shell: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManRunShellCommand(
+    shell: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL},
+    flags: {"kind":"UInt32"},
+    commandLine: {"kind""Ptr","child":{"kind":"UInt16"}},
+    args: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_COMMAND_ARG_SET},
+    options: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_OPTION_SET},
+    async: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL_ASYNC},
+    command: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_COMMAND}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManSignalShell(
+    shell: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL},
+    command: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_COMMAND},
+    flags: {"kind":"UInt32"},
+    code: {"kind""Ptr","child":{"kind":"UInt16"}},
+    async: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL_ASYNC},
+    signalOperation: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_OPERATION}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManReceiveShellOutput(
+    shell: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL},
+    command: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_COMMAND},
+    flags: {"kind":"UInt32"},
+    desiredStreamSet: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_STREAM_ID_SET},
+    async: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL_ASYNC},
+    receiveOperation: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_OPERATION}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManSendShellInput(
+    shell: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL},
+    command: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_COMMAND},
+    flags: {"kind":"UInt32"},
+    streamId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    streamData: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_DATA},
+    endOfStream: Windows.Win32.SystemServices.BOOL,
+    async: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL_ASYNC},
+    sendOperation: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_OPERATION}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManCloseCommand(
+    commandHandle: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_COMMAND},
+    flags: {"kind":"UInt32"},
+    async: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL_ASYNC},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManCloseShell(
+    shellHandle: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL},
+    flags: {"kind":"UInt32"},
+    async: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL_ASYNC},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManCreateShellEx(
+    session: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SESSION},
+    flags: {"kind":"UInt32"},
+    resourceUri: {"kind""Ptr","child":{"kind":"UInt16"}},
+    shellId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    startupInfo: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL_STARTUP_INFO_V11},
+    options: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_OPTION_SET},
+    createXml: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_DATA},
+    async: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL_ASYNC},
+    shell: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManRunShellCommandEx(
+    shell: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL},
+    flags: {"kind":"UInt32"},
+    commandId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    commandLine: {"kind""Ptr","child":{"kind":"UInt16"}},
+    args: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_COMMAND_ARG_SET},
+    options: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_OPTION_SET},
+    async: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL_ASYNC},
+    command: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_COMMAND}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManDisconnectShell(
+    shell: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL},
+    flags: {"kind":"UInt32"},
+    disconnectInfo: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL_DISCONNECT_INFO},
+    async: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL_ASYNC},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManReconnectShell(
+    shell: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL},
+    flags: {"kind":"UInt32"},
+    async: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL_ASYNC},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManReconnectShellCommand(
+    commandHandle: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_COMMAND},
+    flags: {"kind":"UInt32"},
+    async: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL_ASYNC},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManConnectShell(
+    session: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SESSION},
+    flags: {"kind":"UInt32"},
+    resourceUri: {"kind""Ptr","child":{"kind":"UInt16"}},
+    shellID: {"kind""Ptr","child":{"kind":"UInt16"}},
+    options: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_OPTION_SET},
+    connectXml: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_DATA},
+    async: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL_ASYNC},
+    shell: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManConnectShellCommand(
+    shell: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL},
+    flags: {"kind":"UInt32"},
+    commandID: {"kind""Ptr","child":{"kind":"UInt16"}},
+    options: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_OPTION_SET},
+    connectXml: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_DATA},
+    async: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SHELL_ASYNC},
+    command: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_COMMAND}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManPluginReportContext(
+    requestDetails: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_PLUGIN_REQUEST},
+    flags: {"kind":"UInt32"},
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManPluginReceiveResult(
+    requestDetails: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_PLUGIN_REQUEST},
+    flags: {"kind":"UInt32"},
+    stream: {"kind""Ptr","child":{"kind":"UInt16"}},
+    streamResult: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_DATA},
+    commandState: {"kind""Ptr","child":{"kind":"UInt16"}},
+    exitCode: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManPluginOperationComplete(
+    requestDetails: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_PLUGIN_REQUEST},
+    flags: {"kind":"UInt32"},
+    errorCode: {"kind":"UInt32"},
+    extendedInformation: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManPluginGetOperationParameters(
+    requestDetails: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_PLUGIN_REQUEST},
+    flags: {"kind":"UInt32"},
+    data: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_DATA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManPluginGetConfiguration(
+    pluginContext: {"kind""Ptr","child":{"kind":"Void"}},
+    flags: {"kind":"UInt32"},
+    data: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_DATA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManPluginReportCompletion(
+    pluginContext: {"kind""Ptr","child":{"kind":"Void"}},
+    flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManPluginFreeRequestDetails(
+    requestDetails: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_PLUGIN_REQUEST},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManPluginAuthzUserComplete(
+    senderDetails: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SENDER_DETAILS},
+    flags: {"kind":"UInt32"},
+    userAuthorizationContext: {"kind""Ptr","child":{"kind":"Void"}},
+    impersonationToken: Windows.Win32.SystemServices.HANDLE,
+    userIsAdministrator: Windows.Win32.SystemServices.BOOL,
+    errorCode: {"kind":"UInt32"},
+    extendedErrorInformation: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManPluginAuthzOperationComplete(
+    senderDetails: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SENDER_DETAILS},
+    flags: {"kind":"UInt32"},
+    userAuthorizationContext: {"kind""Ptr","child":{"kind":"Void"}},
+    errorCode: {"kind":"UInt32"},
+    extendedErrorInformation: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WsmSvc" fn WSManPluginAuthzQueryQuotaComplete(
+    senderDetails: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_SENDER_DETAILS},
+    flags: {"kind":"UInt32"},
+    quota: {"kind""Ptr","child":Windows.Win32.WindowsRemoteManagement.WSMAN_AUTHZ_QUOTA},
+    errorCode: {"kind":"UInt32"},
+    extendedErrorInformation: {"kind""Ptr","child":{"kind":"UInt16"}},
+],
+
+"unicode_aliases": [
+]}

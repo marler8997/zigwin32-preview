@@ -1,0 +1,1992 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: WNDPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WNDPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WNDENUMPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WNDENUMPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PROPENUMPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PROPENUMPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PROPENUMPROCEX
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PROPENUMPROCEX = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: EDITWORDBREAKPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EDITWORDBREAKPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: NAMEENUMPROCA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NAMEENUMPROCA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: NAMEENUMPROCW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NAMEENUMPROCW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WINSTAENUMPROCA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WINSTAENUMPROCA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DESKTOPENUMPROCA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DESKTOPENUMPROCA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WINSTAENUMPROCW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WINSTAENUMPROCW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DESKTOPENUMPROCW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DESKTOPENUMPROCW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WINSTAENUMPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WINSTAENUMPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DESKTOPENUMPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DESKTOPENUMPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: SHELLHOOKINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SHELLHOOKINFO = extern struct {
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    rc: Windows.Win32.DisplayDevices.RECT,
+};
+// --------------------------------------------------------
+// Type: HARDWAREHOOKSTRUCT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HARDWAREHOOKSTRUCT = extern struct {
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    message: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+};
+// --------------------------------------------------------
+// Type: MDINEXTMENU
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MDINEXTMENU = extern struct {
+    hmenuIn: Windows.Win32.MenusAndResources.HMENU,
+    hmenuNext: Windows.Win32.MenusAndResources.HMENU,
+    hwndNext: Windows.Win32.WindowsAndMessaging.HWND,
+};
+// --------------------------------------------------------
+// Type: ACCEL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ACCEL = extern struct {
+    fVirt: {"kind":"Byte"},
+    key: {"kind":"UInt16"},
+    cmd: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: PREGISTERCLASSNAMEW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PREGISTERCLASSNAMEW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: HTOUCHINPUT__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTOUCHINPUT__ = extern struct {
+    unused: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: POINTER_INPUT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const POINTER_INPUT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: HSYNTHETICPOINTERDEVICE__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HSYNTHETICPOINTERDEVICE__ = extern struct {
+    unused: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: TPMPARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TPMPARAMS = extern struct {
+    cbSize: {"kind":"UInt32"},
+    rcExclude: Windows.Win32.DisplayDevices.RECT,
+};
+// --------------------------------------------------------
+// Type: MENUINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MENUINFO = extern struct {
+    cbSize: {"kind":"UInt32"},
+    fMask: {"kind":"UInt32"},
+    dwStyle: {"kind":"UInt32"},
+    cyMax: {"kind":"UInt32"},
+    hbrBack: Windows.Win32.Gdi.HBRUSH,
+    dwContextHelpID: {"kind":"UInt32"},
+    dwMenuData: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: MENUGETOBJECTINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MENUGETOBJECTINFO = extern struct {
+    dwFlags: {"kind":"UInt32"},
+    uPos: {"kind":"UInt32"},
+    hmenu: Windows.Win32.MenusAndResources.HMENU,
+    riid: {"kind""Ptr","child":{"kind":"Void"}},
+    pvObj: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: MENUITEMINFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MENUITEMINFOA = extern struct {
+    cbSize: {"kind":"UInt32"},
+    fMask: {"kind":"UInt32"},
+    fType: {"kind":"UInt32"},
+    fState: {"kind":"UInt32"},
+    wID: {"kind":"UInt32"},
+    hSubMenu: Windows.Win32.MenusAndResources.HMENU,
+    hbmpChecked: Windows.Win32.Gdi.HBITMAP,
+    hbmpUnchecked: Windows.Win32.Gdi.HBITMAP,
+    dwItemData: {"kind":"UIntPtr"},
+    dwTypeData: {"kind""Ptr","child":{"kind":"SByte"}},
+    cch: {"kind":"UInt32"},
+    hbmpItem: Windows.Win32.Gdi.HBITMAP,
+};
+// --------------------------------------------------------
+// Type: MENUITEMINFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MENUITEMINFOW = extern struct {
+    cbSize: {"kind":"UInt32"},
+    fMask: {"kind":"UInt32"},
+    fType: {"kind":"UInt32"},
+    fState: {"kind":"UInt32"},
+    wID: {"kind":"UInt32"},
+    hSubMenu: Windows.Win32.MenusAndResources.HMENU,
+    hbmpChecked: Windows.Win32.Gdi.HBITMAP,
+    hbmpUnchecked: Windows.Win32.Gdi.HBITMAP,
+    dwItemData: {"kind":"UIntPtr"},
+    dwTypeData: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cch: {"kind":"UInt32"},
+    hbmpItem: Windows.Win32.Gdi.HBITMAP,
+};
+// --------------------------------------------------------
+// Type: DROPSTRUCT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DROPSTRUCT = extern struct {
+    hwndSource: Windows.Win32.WindowsAndMessaging.HWND,
+    hwndSink: Windows.Win32.WindowsAndMessaging.HWND,
+    wFmt: {"kind":"UInt32"},
+    dwData: {"kind":"UIntPtr"},
+    ptDrop: Windows.Win32.DisplayDevices.POINT,
+    dwControlData: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MSGBOXCALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MSGBOXCALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: MENUITEMTEMPLATEHEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MENUITEMTEMPLATEHEADER = extern struct {
+    versionNumber: {"kind":"UInt16"},
+    offset: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: MENUITEMTEMPLATE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MENUITEMTEMPLATE = extern struct {
+    mtOption: {"kind":"UInt16"},
+    mtID: {"kind":"UInt16"},
+    mtString: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: ICONINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ICONINFO = extern struct {
+    fIcon: Windows.Win32.SystemServices.BOOL,
+    xHotspot: {"kind":"UInt32"},
+    yHotspot: {"kind":"UInt32"},
+    hbmMask: Windows.Win32.Gdi.HBITMAP,
+    hbmColor: Windows.Win32.Gdi.HBITMAP,
+};
+// --------------------------------------------------------
+// Type: CURSORSHAPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CURSORSHAPE = extern struct {
+    xHotSpot: {"kind":"Int32"},
+    yHotSpot: {"kind":"Int32"},
+    cx: {"kind":"Int32"},
+    cy: {"kind":"Int32"},
+    cbWidth: {"kind":"Int32"},
+    Planes: {"kind":"Byte"},
+    BitsPixel: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: ICONINFOEXA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ICONINFOEXA = extern struct {
+    cbSize: {"kind":"UInt32"},
+    fIcon: Windows.Win32.SystemServices.BOOL,
+    xHotspot: {"kind":"UInt32"},
+    yHotspot: {"kind":"UInt32"},
+    hbmMask: Windows.Win32.Gdi.HBITMAP,
+    hbmColor: Windows.Win32.Gdi.HBITMAP,
+    wResID: {"kind":"UInt16"},
+    szModName: {"kind":"Array","child": {"kind":"SByte"}},
+    szResName: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: ICONINFOEXW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ICONINFOEXW = extern struct {
+    cbSize: {"kind":"UInt32"},
+    fIcon: Windows.Win32.SystemServices.BOOL,
+    xHotspot: {"kind":"UInt32"},
+    yHotspot: {"kind":"UInt32"},
+    hbmMask: Windows.Win32.Gdi.HBITMAP,
+    hbmColor: Windows.Win32.Gdi.HBITMAP,
+    wResID: {"kind":"UInt16"},
+    szModName: {"kind":"Array","child": {"kind":"UInt16"}},
+    szResName: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: EDIT_CONTROL_FEATURE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EDIT_CONTROL_FEATURE = *opaque{
+};
+// --------------------------------------------------------
+// Type: TouchPredictionParameters
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TouchPredictionParameters = extern struct {
+    cbSize: {"kind":"UInt32"},
+    dwLatency: {"kind":"UInt32"},
+    dwSampleTime: {"kind":"UInt32"},
+    bUseHWTimeStamp: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HANDEDNESS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HANDEDNESS = *opaque{
+};
+// --------------------------------------------------------
+// Type: ICONMETRICSA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ICONMETRICSA = extern struct {
+    cbSize: {"kind":"UInt32"},
+    iHorzSpacing: {"kind":"Int32"},
+    iVertSpacing: {"kind":"Int32"},
+    iTitleWrap: {"kind":"Int32"},
+    lfFont: Windows.Win32.Shell.LOGFONTA,
+};
+// --------------------------------------------------------
+// Type: ICONMETRICSW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ICONMETRICSW = extern struct {
+    cbSize: {"kind":"UInt32"},
+    iHorzSpacing: {"kind":"Int32"},
+    iVertSpacing: {"kind":"Int32"},
+    iTitleWrap: {"kind":"Int32"},
+    lfFont: Windows.Win32.Shell.LOGFONTW,
+};
+// --------------------------------------------------------
+// Type: CURSORINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CURSORINFO = extern struct {
+    cbSize: {"kind":"UInt32"},
+    flags: {"kind":"UInt32"},
+    hCursor: Windows.Win32.Gdi.HCURSOR,
+    ptScreenPos: Windows.Win32.DisplayDevices.POINT,
+};
+// --------------------------------------------------------
+// Type: MENUBARINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MENUBARINFO = extern struct {
+    cbSize: {"kind":"UInt32"},
+    rcBar: Windows.Win32.DisplayDevices.RECT,
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+    hwndMenu: Windows.Win32.WindowsAndMessaging.HWND,
+    _bitfield: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: HRAWINPUT__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HRAWINPUT__ = extern struct {
+    unused: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: HGESTUREINFO__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HGESTUREINFO__ = extern struct {
+    unused: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: IndexedResourceQualifier
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IndexedResourceQualifier = extern struct {
+    name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: MrmPlatformVersion
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MrmPlatformVersion = *opaque{
+};
+// --------------------------------------------------------
+// Type: MrmResourceIndexerHandle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MrmResourceIndexerHandle = extern struct {
+    handle: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: MrmPackagingMode
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MrmPackagingMode = *opaque{
+};
+// --------------------------------------------------------
+// Type: MrmPackagingOptions
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MrmPackagingOptions = *opaque{
+};
+// --------------------------------------------------------
+// Type: MrmDumpType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MrmDumpType = *opaque{
+};
+// --------------------------------------------------------
+// Type: MrmResourceIndexerMessageSeverity
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MrmResourceIndexerMessageSeverity = *opaque{
+};
+// --------------------------------------------------------
+// Type: MrmResourceIndexerMessage
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MrmResourceIndexerMessage = extern struct {
+    severity: Windows.Win32.MenusAndResources.MrmResourceIndexerMessageSeverity,
+    id: {"kind":"UInt32"},
+    text: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: HACCEL
+// TypeLayoutAttr: sequential
+// RAIIFree 'DestroyAcceleratorTable' (TODO: can we use this information?)
+pub const HACCEL = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: HMENU
+// TypeLayoutAttr: sequential
+// RAIIFree 'DestroyMenu' (TODO: can we use this information?)
+pub const HMENU = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: MESSAGE_RESOURCE_ENTRY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MESSAGE_RESOURCE_ENTRY = extern struct {
+    Length: {"kind":"UInt16"},
+    Flags: {"kind":"UInt16"},
+    Text: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: MESSAGE_RESOURCE_BLOCK
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MESSAGE_RESOURCE_BLOCK = extern struct {
+    LowId: {"kind":"UInt32"},
+    HighId: {"kind":"UInt32"},
+    OffsetToEntries: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MESSAGE_RESOURCE_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MESSAGE_RESOURCE_DATA = extern struct {
+    NumberOfBlocks: {"kind":"UInt32"},
+    Blocks: {"kind":"Array","child": Windows.Win32.MenusAndResources.MESSAGE_RESOURCE_BLOCK},
+};
+// --------------------------------------------------------
+// Type: ENUMRESNAMEPROCA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ENUMRESNAMEPROCA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: ENUMRESNAMEPROCW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ENUMRESNAMEPROCW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: ENUMRESTYPEPROCA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ENUMRESTYPEPROCA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: ENUMRESTYPEPROCW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ENUMRESTYPEPROCW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: VS_FIXEDFILEINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const VS_FIXEDFILEINFO = extern struct {
+    dwSignature: {"kind":"UInt32"},
+    dwStrucVersion: {"kind":"UInt32"},
+    dwFileVersionMS: {"kind":"UInt32"},
+    dwFileVersionLS: {"kind":"UInt32"},
+    dwProductVersionMS: {"kind":"UInt32"},
+    dwProductVersionLS: {"kind":"UInt32"},
+    dwFileFlagsMask: {"kind":"UInt32"},
+    dwFileFlags: {"kind":"UInt32"},
+    dwFileOS: {"kind":"UInt32"},
+    dwFileType: {"kind":"UInt32"},
+    dwFileSubtype: {"kind":"UInt32"},
+    dwFileDateMS: {"kind":"UInt32"},
+    dwFileDateLS: {"kind":"UInt32"},
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn wvsprintfA(
+    param0: {"kind""Ptr","child":{"kind":"SByte"}},
+    param1: {"kind""Ptr","child":{"kind":"SByte"}},
+    arglist: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn wvsprintfW(
+    param0: {"kind""Ptr","child":{"kind":"UInt16"}},
+    param1: {"kind""Ptr","child":{"kind":"UInt16"}},
+    arglist: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn wsprintfA(
+    param0: {"kind""Ptr","child":{"kind":"SByte"}},
+    param1: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn wsprintfW(
+    param0: {"kind""Ptr","child":{"kind":"UInt16"}},
+    param1: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn SetMessageQueue(
+    cMessagesMax: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn BroadcastSystemMessageA(
+    flags: {"kind":"UInt32"},
+    lpInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Msg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn IsMenu(
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn UpdateLayeredWindowIndirect(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    pULWInfo: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.UPDATELAYEREDWINDOWINFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DefDlgProcA(
+    hDlg: Windows.Win32.WindowsAndMessaging.HWND,
+    Msg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CharToOemA(
+    pSrc: {"kind""Ptr","child":{"kind":"SByte"}},
+    pDst: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CharToOemW(
+    pSrc: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pDst: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn OemToCharA(
+    pSrc: {"kind""Ptr","child":{"kind":"SByte"}},
+    pDst: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn OemToCharW(
+    pSrc: {"kind""Ptr","child":{"kind":"SByte"}},
+    pDst: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CharToOemBuffA(
+    lpszSrc: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszDst: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchDstLength: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CharToOemBuffW(
+    lpszSrc: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszDst: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchDstLength: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn OemToCharBuffA(
+    lpszSrc: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszDst: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchDstLength: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn OemToCharBuffW(
+    lpszSrc: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszDst: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchDstLength: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CharUpperA(
+    lpsz: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CharUpperW(
+    lpsz: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn CharUpperBuffA(
+    lpsz: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn CharUpperBuffW(
+    lpsz: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchLength: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CharLowerA(
+    lpsz: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CharLowerW(
+    lpsz: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn CharLowerBuffA(
+    lpsz: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn CharLowerBuffW(
+    lpsz: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn CharNextA(
+    lpsz: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn CharNextW(
+    lpsz: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn CharPrevA(
+    lpszStart: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszCurrent: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn CharPrevW(
+    lpszStart: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszCurrent: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn CharNextExA(
+    CodePage: {"kind":"UInt16"},
+    lpCurrentChar: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn CharPrevExA(
+    CodePage: {"kind":"UInt16"},
+    lpStart: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpCurrentChar: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn IsCharAlphaA(
+    ch: {"kind":"SByte"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn IsCharAlphaW(
+    ch: {"kind":"UInt16"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn IsCharAlphaNumericA(
+    ch: {"kind":"SByte"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn IsCharAlphaNumericW(
+    ch: {"kind":"UInt16"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn IsCharUpperA(
+    ch: {"kind":"SByte"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn IsCharUpperW(
+    ch: {"kind":"UInt16"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn IsCharLowerA(
+    ch: {"kind":"SByte"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn LoadAcceleratorsA(
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    lpTableName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn LoadAcceleratorsW(
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    lpTableName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CreateAcceleratorTableA(
+    paccel: {"kind""Ptr","child":Windows.Win32.MenusAndResources.ACCEL},
+    cAccel: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CreateAcceleratorTableW(
+    paccel: {"kind""Ptr","child":Windows.Win32.MenusAndResources.ACCEL},
+    cAccel: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DestroyAcceleratorTable(
+    hAccel: Windows.Win32.MenusAndResources.HACCEL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn CopyAcceleratorTableA(
+    hAccelSrc: Windows.Win32.MenusAndResources.HACCEL,
+    lpAccelDst: {"kind""Ptr","child":Windows.Win32.MenusAndResources.ACCEL},
+    cAccelEntries: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn CopyAcceleratorTableW(
+    hAccelSrc: Windows.Win32.MenusAndResources.HACCEL,
+    lpAccelDst: {"kind""Ptr","child":Windows.Win32.MenusAndResources.ACCEL},
+    cAccelEntries: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn TranslateAcceleratorA(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hAccTable: Windows.Win32.MenusAndResources.HACCEL,
+    lpMsg: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.MSG},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn TranslateAcceleratorW(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hAccTable: Windows.Win32.MenusAndResources.HACCEL,
+    lpMsg: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.MSG},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn LoadMenuA(
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    lpMenuName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn LoadMenuW(
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    lpMenuName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn LoadMenuIndirectA(
+    lpMenuTemplate: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn LoadMenuIndirectW(
+    lpMenuTemplate: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetMenu(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetMenu(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn ChangeMenuA(
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+    cmd: {"kind":"UInt32"},
+    lpszNewItem: {"kind""Ptr","child":{"kind":"SByte"}},
+    cmdInsert: {"kind":"UInt32"},
+    flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn ChangeMenuW(
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+    cmd: {"kind":"UInt32"},
+    lpszNewItem: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cmdInsert: {"kind":"UInt32"},
+    flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn HiliteMenuItem(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+    uIDHiliteItem: {"kind":"UInt32"},
+    uHilite: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetMenuStringA(
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+    uIDItem: {"kind":"UInt32"},
+    lpString: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchMax: {"kind":"Int32"},
+    flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetMenuStringW(
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+    uIDItem: {"kind":"UInt32"},
+    lpString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchMax: {"kind":"Int32"},
+    flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetMenuState(
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+    uId: {"kind":"UInt32"},
+    uFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn DrawMenuBar(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetSystemMenu(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    bRevert: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CreateMenu(
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CreatePopupMenu(
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn DestroyMenu(
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn CheckMenuItem(
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+    uIDCheckItem: {"kind":"UInt32"},
+    uCheck: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn EnableMenuItem(
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+    uIDEnableItem: {"kind":"UInt32"},
+    uEnable: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetSubMenu(
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+    nPos: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetMenuItemID(
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+    nPos: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetMenuItemCount(
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn InsertMenuA(
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+    uPosition: {"kind":"UInt32"},
+    uFlags: {"kind":"UInt32"},
+    uIDNewItem: {"kind":"UIntPtr"},
+    lpNewItem: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn InsertMenuW(
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+    uPosition: {"kind":"UInt32"},
+    uFlags: {"kind":"UInt32"},
+    uIDNewItem: {"kind":"UIntPtr"},
+    lpNewItem: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn AppendMenuA(
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+    uFlags: {"kind":"UInt32"},
+    uIDNewItem: {"kind":"UIntPtr"},
+    lpNewItem: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn AppendMenuW(
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+    uFlags: {"kind":"UInt32"},
+    uIDNewItem: {"kind":"UIntPtr"},
+    lpNewItem: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn ModifyMenuA(
+    hMnu: Windows.Win32.MenusAndResources.HMENU,
+    uPosition: {"kind":"UInt32"},
+    uFlags: {"kind":"UInt32"},
+    uIDNewItem: {"kind":"UIntPtr"},
+    lpNewItem: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn ModifyMenuW(
+    hMnu: Windows.Win32.MenusAndResources.HMENU,
+    uPosition: {"kind":"UInt32"},
+    uFlags: {"kind":"UInt32"},
+    uIDNewItem: {"kind":"UIntPtr"},
+    lpNewItem: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn RemoveMenu(
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+    uPosition: {"kind":"UInt32"},
+    uFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn DeleteMenu(
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+    uPosition: {"kind":"UInt32"},
+    uFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetMenuItemBitmaps(
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+    uPosition: {"kind":"UInt32"},
+    uFlags: {"kind":"UInt32"},
+    hBitmapUnchecked: Windows.Win32.Gdi.HBITMAP,
+    hBitmapChecked: Windows.Win32.Gdi.HBITMAP,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetMenuCheckMarkDimensions(
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn TrackPopupMenu(
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+    uFlags: {"kind":"UInt32"},
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    nReserved: {"kind":"Int32"},
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    prcRect: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn TrackPopupMenuEx(
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+    uFlags: {"kind":"UInt32"},
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lptpm: {"kind""Ptr","child":Windows.Win32.MenusAndResources.TPMPARAMS},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetMenuInfo(
+    param0: Windows.Win32.MenusAndResources.HMENU,
+    param1: {"kind""Ptr","child":Windows.Win32.MenusAndResources.MENUINFO},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetMenuInfo(
+    param0: Windows.Win32.MenusAndResources.HMENU,
+    param1: {"kind""Ptr","child":Windows.Win32.MenusAndResources.MENUINFO},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn EndMenu(
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn InsertMenuItemA(
+    hmenu: Windows.Win32.MenusAndResources.HMENU,
+    item: {"kind":"UInt32"},
+    fByPosition: Windows.Win32.SystemServices.BOOL,
+    lpmi: {"kind""Ptr","child":Windows.Win32.MenusAndResources.MENUITEMINFOA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn InsertMenuItemW(
+    hmenu: Windows.Win32.MenusAndResources.HMENU,
+    item: {"kind":"UInt32"},
+    fByPosition: Windows.Win32.SystemServices.BOOL,
+    lpmi: {"kind""Ptr","child":Windows.Win32.MenusAndResources.MENUITEMINFOW},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetMenuItemInfoA(
+    hmenu: Windows.Win32.MenusAndResources.HMENU,
+    item: {"kind":"UInt32"},
+    fByPosition: Windows.Win32.SystemServices.BOOL,
+    lpmii: {"kind""Ptr","child":Windows.Win32.MenusAndResources.MENUITEMINFOA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetMenuItemInfoW(
+    hmenu: Windows.Win32.MenusAndResources.HMENU,
+    item: {"kind":"UInt32"},
+    fByPosition: Windows.Win32.SystemServices.BOOL,
+    lpmii: {"kind""Ptr","child":Windows.Win32.MenusAndResources.MENUITEMINFOW},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetMenuItemInfoA(
+    hmenu: Windows.Win32.MenusAndResources.HMENU,
+    item: {"kind":"UInt32"},
+    fByPositon: Windows.Win32.SystemServices.BOOL,
+    lpmii: {"kind""Ptr","child":Windows.Win32.MenusAndResources.MENUITEMINFOA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetMenuItemInfoW(
+    hmenu: Windows.Win32.MenusAndResources.HMENU,
+    item: {"kind":"UInt32"},
+    fByPositon: Windows.Win32.SystemServices.BOOL,
+    lpmii: {"kind""Ptr","child":Windows.Win32.MenusAndResources.MENUITEMINFOW},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetMenuDefaultItem(
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+    fByPos: {"kind":"UInt32"},
+    gmdiFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetMenuDefaultItem(
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+    uItem: {"kind":"UInt32"},
+    fByPos: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetMenuItemRect(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+    uItem: {"kind":"UInt32"},
+    lprcItem: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn MenuItemFromPoint(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+    ptScreen: Windows.Win32.DisplayDevices.POINT,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DragObject(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    hwndFrom: Windows.Win32.WindowsAndMessaging.HWND,
+    fmt: {"kind":"UInt32"},
+    data: {"kind":"UIntPtr"},
+    hcur: Windows.Win32.Gdi.HCURSOR,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn DrawIcon(
+    hDC: Windows.Win32.Gdi.HDC,
+    X: {"kind":"Int32"},
+    Y: {"kind":"Int32"},
+    hIcon: Windows.Win32.Gdi.HICON,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn ShowCursor(
+    bShow: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetCursorPos(
+    X: {"kind":"Int32"},
+    Y: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetPhysicalCursorPos(
+    X: {"kind":"Int32"},
+    Y: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn SetCursor(
+    hCursor: Windows.Win32.Gdi.HCURSOR,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetCursorPos(
+    lpPoint: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetPhysicalCursorPos(
+    lpPoint: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetClipCursor(
+    lpRect: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetCursor(
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CreateCaret(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hBitmap: Windows.Win32.Gdi.HBITMAP,
+    nWidth: {"kind":"Int32"},
+    nHeight: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetCaretBlinkTime(
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetCaretBlinkTime(
+    uMSeconds: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn DestroyCaret(
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn HideCaret(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn ShowCaret(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetCaretPos(
+    X: {"kind":"Int32"},
+    Y: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetCaretPos(
+    lpPoint: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn ClipCursor(
+    lpRect: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetWindowWord(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    nIndex: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn SetWindowWord(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    nIndex: {"kind":"Int32"},
+    wNewWord: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn SetWindowsHookA(
+    nFilterType: {"kind":"Int32"},
+    pfnFilterProc: Windows.Win32.WindowsAndMessaging.HOOKPROC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn SetWindowsHookW(
+    nFilterType: {"kind":"Int32"},
+    pfnFilterProc: Windows.Win32.WindowsAndMessaging.HOOKPROC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn UnhookWindowsHook(
+    nCode: {"kind":"Int32"},
+    pfnFilterProc: Windows.Win32.WindowsAndMessaging.HOOKPROC,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CheckMenuRadioItem(
+    hmenu: Windows.Win32.MenusAndResources.HMENU,
+    first: {"kind":"UInt32"},
+    last: {"kind":"UInt32"},
+    check: {"kind":"UInt32"},
+    flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn LoadCursorA(
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    lpCursorName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn LoadCursorW(
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    lpCursorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn LoadCursorFromFileA(
+    lpFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn LoadCursorFromFileW(
+    lpFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CreateCursor(
+    hInst: Windows.Win32.SystemServices.HINSTANCE,
+    xHotSpot: {"kind":"Int32"},
+    yHotSpot: {"kind":"Int32"},
+    nWidth: {"kind":"Int32"},
+    nHeight: {"kind":"Int32"},
+    pvANDPlane: {"kind""Ptr","child":{"kind":"Void"}},
+    pvXORPlane: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn DestroyCursor(
+    hCursor: Windows.Win32.Gdi.HCURSOR,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetSystemCursor(
+    hcur: Windows.Win32.Gdi.HCURSOR,
+    id: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn LoadIconA(
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    lpIconName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn LoadIconW(
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    lpIconName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn PrivateExtractIconsA(
+    szFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    nIconIndex: {"kind":"Int32"},
+    cxIcon: {"kind":"Int32"},
+    cyIcon: {"kind":"Int32"},
+    phicon: {"kind""Ptr","child":Windows.Win32.Gdi.HICON},
+    piconid: {"kind""Ptr","child":{"kind":"UInt32"}},
+    nIcons: {"kind":"UInt32"},
+    flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn PrivateExtractIconsW(
+    szFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    nIconIndex: {"kind":"Int32"},
+    cxIcon: {"kind":"Int32"},
+    cyIcon: {"kind":"Int32"},
+    phicon: {"kind""Ptr","child":Windows.Win32.Gdi.HICON},
+    piconid: {"kind""Ptr","child":{"kind":"UInt32"}},
+    nIcons: {"kind":"UInt32"},
+    flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CreateIcon(
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    nWidth: {"kind":"Int32"},
+    nHeight: {"kind":"Int32"},
+    cPlanes: {"kind":"Byte"},
+    cBitsPixel: {"kind":"Byte"},
+    lpbANDbits: {"kind""Ptr","child":{"kind":"Byte"}},
+    lpbXORbits: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn DestroyIcon(
+    hIcon: Windows.Win32.Gdi.HICON,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn LookupIconIdFromDirectory(
+    presbits: {"kind""Ptr","child":{"kind":"Byte"}},
+    fIcon: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn LookupIconIdFromDirectoryEx(
+    presbits: {"kind""Ptr","child":{"kind":"Byte"}},
+    fIcon: Windows.Win32.SystemServices.BOOL,
+    cxDesired: {"kind":"Int32"},
+    cyDesired: {"kind":"Int32"},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CreateIconFromResource(
+    presbits: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwResSize: {"kind":"UInt32"},
+    fIcon: Windows.Win32.SystemServices.BOOL,
+    dwVer: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CreateIconFromResourceEx(
+    presbits: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwResSize: {"kind":"UInt32"},
+    fIcon: Windows.Win32.SystemServices.BOOL,
+    dwVer: {"kind":"UInt32"},
+    cxDesired: {"kind":"Int32"},
+    cyDesired: {"kind":"Int32"},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn LoadImageA(
+    hInst: Windows.Win32.SystemServices.HINSTANCE,
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    type: {"kind":"UInt32"},
+    cx: {"kind":"Int32"},
+    cy: {"kind":"Int32"},
+    fuLoad: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn LoadImageW(
+    hInst: Windows.Win32.SystemServices.HINSTANCE,
+    name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    type: {"kind":"UInt32"},
+    cx: {"kind":"Int32"},
+    cy: {"kind":"Int32"},
+    fuLoad: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CopyImage(
+    h: Windows.Win32.SystemServices.HANDLE,
+    type: {"kind":"UInt32"},
+    cx: {"kind":"Int32"},
+    cy: {"kind":"Int32"},
+    flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn DrawIconEx(
+    hdc: Windows.Win32.Gdi.HDC,
+    xLeft: {"kind":"Int32"},
+    yTop: {"kind":"Int32"},
+    hIcon: Windows.Win32.Gdi.HICON,
+    cxWidth: {"kind":"Int32"},
+    cyWidth: {"kind":"Int32"},
+    istepIfAniCur: {"kind":"UInt32"},
+    hbrFlickerFreeDraw: Windows.Win32.Gdi.HBRUSH,
+    diFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CreateIconIndirect(
+    piconinfo: {"kind""Ptr","child":Windows.Win32.MenusAndResources.ICONINFO},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CopyIcon(
+    hIcon: Windows.Win32.Gdi.HICON,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetIconInfo(
+    hIcon: Windows.Win32.Gdi.HICON,
+    piconinfo: {"kind""Ptr","child":Windows.Win32.MenusAndResources.ICONINFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetIconInfoExA(
+    hicon: Windows.Win32.Gdi.HICON,
+    piconinfo: {"kind""Ptr","child":Windows.Win32.MenusAndResources.ICONINFOEXA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetIconInfoExW(
+    hicon: Windows.Win32.Gdi.HICON,
+    piconinfo: {"kind""Ptr","child":Windows.Win32.MenusAndResources.ICONINFOEXW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn SetDebugErrorLevel(
+    dwLevel: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn CancelShutdown(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn InheritWindowMonitor(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hwndInherit: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetDpiAwarenessContextForProcess(
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetCursorInfo(
+    pci: {"kind""Ptr","child":Windows.Win32.MenusAndResources.CURSORINFO},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetMenuBarInfo(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    idObject: {"kind":"Int32"},
+    idItem: {"kind":"Int32"},
+    pmbi: {"kind""Ptr","child":Windows.Win32.MenusAndResources.MENUBARINFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn RealGetWindowClassA(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    ptszClassName: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchClassNameMax: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VERSION" fn VerFindFileA(
+    uFlags: {"kind":"UInt32"},
+    szFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szWinDir: {"kind""Ptr","child":{"kind":"SByte"}},
+    szAppDir: {"kind""Ptr","child":{"kind":"SByte"}},
+    szCurDir: {"kind""Ptr","child":{"kind":"SByte"}},
+    puCurDirLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+    szDestDir: {"kind""Ptr","child":{"kind":"SByte"}},
+    puDestDirLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VERSION" fn VerFindFileW(
+    uFlags: {"kind":"UInt32"},
+    szFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szWinDir: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szAppDir: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szCurDir: {"kind""Ptr","child":{"kind":"UInt16"}},
+    puCurDirLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+    szDestDir: {"kind""Ptr","child":{"kind":"UInt16"}},
+    puDestDirLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VERSION" fn VerInstallFileA(
+    uFlags: {"kind":"UInt32"},
+    szSrcFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szDestFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szSrcDir: {"kind""Ptr","child":{"kind":"SByte"}},
+    szDestDir: {"kind""Ptr","child":{"kind":"SByte"}},
+    szCurDir: {"kind""Ptr","child":{"kind":"SByte"}},
+    szTmpFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    puTmpFileLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VERSION" fn VerInstallFileW(
+    uFlags: {"kind":"UInt32"},
+    szSrcFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szDestFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szSrcDir: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szDestDir: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szCurDir: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szTmpFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    puTmpFileLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "VERSION" fn GetFileVersionInfoSizeA(
+    lptstrFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpdwHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "VERSION" fn GetFileVersionInfoSizeW(
+    lptstrFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpdwHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "VERSION" fn GetFileVersionInfoA(
+    lptstrFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwHandle: {"kind":"UInt32"},
+    dwLen: {"kind":"UInt32"},
+    lpData: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "VERSION" fn GetFileVersionInfoW(
+    lptstrFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwHandle: {"kind":"UInt32"},
+    dwLen: {"kind":"UInt32"},
+    lpData: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "VERSION" fn GetFileVersionInfoSizeExA(
+    dwFlags: {"kind":"UInt32"},
+    lpwstrFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpdwHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "VERSION" fn GetFileVersionInfoSizeExW(
+    dwFlags: {"kind":"UInt32"},
+    lpwstrFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpdwHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "VERSION" fn GetFileVersionInfoExA(
+    dwFlags: {"kind":"UInt32"},
+    lpwstrFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwHandle: {"kind":"UInt32"},
+    dwLen: {"kind":"UInt32"},
+    lpData: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "VERSION" fn GetFileVersionInfoExW(
+    dwFlags: {"kind":"UInt32"},
+    lpwstrFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwHandle: {"kind":"UInt32"},
+    dwLen: {"kind":"UInt32"},
+    lpData: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn VerLanguageNameA(
+    wLang: {"kind":"UInt32"},
+    szLang: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchLang: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn VerLanguageNameW(
+    wLang: {"kind":"UInt32"},
+    szLang: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchLang: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VERSION" fn VerQueryValueA(
+    pBlock: {"kind""Ptr","child":{"kind":"Void"}},
+    lpSubBlock: {"kind""Ptr","child":{"kind":"SByte"}},
+    lplpBuffer: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+    puLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VERSION" fn VerQueryValueW(
+    pBlock: {"kind""Ptr","child":{"kind":"Void"}},
+    lpSubBlock: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lplpBuffer: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+    puLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MrmSupport" fn CreateResourceIndexer(
+    projectRoot: {"kind""Ptr","child":{"kind":"UInt16"}},
+    extensionDllPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppResourceIndexer: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MrmSupport" fn DestroyResourceIndexer(
+    resourceIndexer: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MrmSupport" fn IndexFilePath(
+    resourceIndexer: {"kind""Ptr","child":{"kind":"Void"}},
+    filePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppResourceUri: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    pQualifierCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ppQualifiers: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.MenusAndResources.IndexedResourceQualifier}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MrmSupport" fn DestroyIndexedResults(
+    resourceUri: {"kind""Ptr","child":{"kind":"UInt16"}},
+    qualifierCount: {"kind":"UInt32"},
+    qualifiers: {"kind""Ptr","child":Windows.Win32.MenusAndResources.IndexedResourceQualifier},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MrmSupport" fn MrmCreateResourceIndexer(
+    packageFamilyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    projectRoot: {"kind""Ptr","child":{"kind":"UInt16"}},
+    platformVersion: Windows.Win32.MenusAndResources.MrmPlatformVersion,
+    defaultQualifiers: {"kind""Ptr","child":{"kind":"UInt16"}},
+    indexer: {"kind""Ptr","child":Windows.Win32.MenusAndResources.MrmResourceIndexerHandle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MrmSupport" fn MrmCreateResourceIndexerFromPreviousSchemaFile(
+    projectRoot: {"kind""Ptr","child":{"kind":"UInt16"}},
+    platformVersion: Windows.Win32.MenusAndResources.MrmPlatformVersion,
+    defaultQualifiers: {"kind""Ptr","child":{"kind":"UInt16"}},
+    schemaFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    indexer: {"kind""Ptr","child":Windows.Win32.MenusAndResources.MrmResourceIndexerHandle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MrmSupport" fn MrmCreateResourceIndexerFromPreviousPriFile(
+    projectRoot: {"kind""Ptr","child":{"kind":"UInt16"}},
+    platformVersion: Windows.Win32.MenusAndResources.MrmPlatformVersion,
+    defaultQualifiers: {"kind""Ptr","child":{"kind":"UInt16"}},
+    priFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    indexer: {"kind""Ptr","child":Windows.Win32.MenusAndResources.MrmResourceIndexerHandle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MrmSupport" fn MrmCreateResourceIndexerFromPreviousSchemaData(
+    projectRoot: {"kind""Ptr","child":{"kind":"UInt16"}},
+    platformVersion: Windows.Win32.MenusAndResources.MrmPlatformVersion,
+    defaultQualifiers: {"kind""Ptr","child":{"kind":"UInt16"}},
+    schemaXmlData: {"kind""Ptr","child":{"kind":"Byte"}},
+    schemaXmlSize: {"kind":"UInt32"},
+    indexer: {"kind""Ptr","child":Windows.Win32.MenusAndResources.MrmResourceIndexerHandle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MrmSupport" fn MrmCreateResourceIndexerFromPreviousPriData(
+    projectRoot: {"kind""Ptr","child":{"kind":"UInt16"}},
+    platformVersion: Windows.Win32.MenusAndResources.MrmPlatformVersion,
+    defaultQualifiers: {"kind""Ptr","child":{"kind":"UInt16"}},
+    priData: {"kind""Ptr","child":{"kind":"Byte"}},
+    priSize: {"kind":"UInt32"},
+    indexer: {"kind""Ptr","child":Windows.Win32.MenusAndResources.MrmResourceIndexerHandle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MrmSupport" fn MrmIndexString(
+    indexer: Windows.Win32.MenusAndResources.MrmResourceIndexerHandle,
+    resourceUri: {"kind""Ptr","child":{"kind":"UInt16"}},
+    resourceString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    qualifiers: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MrmSupport" fn MrmIndexEmbeddedData(
+    indexer: Windows.Win32.MenusAndResources.MrmResourceIndexerHandle,
+    resourceUri: {"kind""Ptr","child":{"kind":"UInt16"}},
+    embeddedData: {"kind""Ptr","child":{"kind":"Byte"}},
+    embeddedDataSize: {"kind":"UInt32"},
+    qualifiers: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MrmSupport" fn MrmIndexFile(
+    indexer: Windows.Win32.MenusAndResources.MrmResourceIndexerHandle,
+    resourceUri: {"kind""Ptr","child":{"kind":"UInt16"}},
+    filePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    qualifiers: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MrmSupport" fn MrmIndexFileAutoQualifiers(
+    indexer: Windows.Win32.MenusAndResources.MrmResourceIndexerHandle,
+    filePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MrmSupport" fn MrmIndexResourceContainerAutoQualifiers(
+    indexer: Windows.Win32.MenusAndResources.MrmResourceIndexerHandle,
+    containerPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MrmSupport" fn MrmCreateResourceFile(
+    indexer: Windows.Win32.MenusAndResources.MrmResourceIndexerHandle,
+    packagingMode: Windows.Win32.MenusAndResources.MrmPackagingMode,
+    packagingOptions: Windows.Win32.MenusAndResources.MrmPackagingOptions,
+    outputDirectory: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MrmSupport" fn MrmCreateResourceFileInMemory(
+    indexer: Windows.Win32.MenusAndResources.MrmResourceIndexerHandle,
+    packagingMode: Windows.Win32.MenusAndResources.MrmPackagingMode,
+    packagingOptions: Windows.Win32.MenusAndResources.MrmPackagingOptions,
+    outputPriData: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    outputPriSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MrmSupport" fn MrmPeekResourceIndexerMessages(
+    handle: Windows.Win32.MenusAndResources.MrmResourceIndexerHandle,
+    messages: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.MenusAndResources.MrmResourceIndexerMessage}},
+    numMsgs: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MrmSupport" fn MrmDestroyIndexerAndMessages(
+    indexer: Windows.Win32.MenusAndResources.MrmResourceIndexerHandle,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MrmSupport" fn MrmFreeMemory(
+    data: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MrmSupport" fn MrmDumpPriFile(
+    indexFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    schemaPriFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dumpType: Windows.Win32.MenusAndResources.MrmDumpType,
+    outputXmlFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MrmSupport" fn MrmDumpPriFileInMemory(
+    indexFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    schemaPriFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dumpType: Windows.Win32.MenusAndResources.MrmDumpType,
+    outputXmlData: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    outputXmlSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MrmSupport" fn MrmDumpPriDataInMemory(
+    inputPriData: {"kind""Ptr","child":{"kind":"Byte"}},
+    inputPriSize: {"kind":"UInt32"},
+    schemaPriData: {"kind""Ptr","child":{"kind":"Byte"}},
+    schemaPriSize: {"kind":"UInt32"},
+    dumpType: Windows.Win32.MenusAndResources.MrmDumpType,
+    outputXmlData: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    outputXmlSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MrmSupport" fn MrmCreateConfig(
+    platformVersion: Windows.Win32.MenusAndResources.MrmPlatformVersion,
+    defaultQualifiers: {"kind""Ptr","child":{"kind":"UInt16"}},
+    outputXmlFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MrmSupport" fn MrmCreateConfigInMemory(
+    platformVersion: Windows.Win32.MenusAndResources.MrmPlatformVersion,
+    defaultQualifiers: {"kind""Ptr","child":{"kind":"UInt16"}},
+    outputXmlData: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    outputXmlSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn FreeResource(
+    hResData: {"kind":"IntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn LoadResource(
+    hModule: {"kind":"IntPtr"},
+    hResInfo: {"kind":"IntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn LoadStringA(
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    uID: {"kind":"UInt32"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchBufferMax: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn LoadStringW(
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    uID: {"kind":"UInt32"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchBufferMax: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn LockResource(
+    hResData: {"kind":"IntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn SizeofResource(
+    hModule: {"kind":"IntPtr"},
+    hResInfo: {"kind":"IntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn EnumResourceLanguagesExA(
+    hModule: {"kind":"IntPtr"},
+    lpType: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpEnumFunc: Windows.Win32.SystemServices.ENUMRESLANGPROCA,
+    lParam: {"kind":"IntPtr"},
+    dwFlags: {"kind":"UInt32"},
+    LangId: {"kind":"UInt16"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn EnumResourceLanguagesExW(
+    hModule: {"kind":"IntPtr"},
+    lpType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpEnumFunc: Windows.Win32.SystemServices.ENUMRESLANGPROCW,
+    lParam: {"kind":"IntPtr"},
+    dwFlags: {"kind":"UInt32"},
+    LangId: {"kind":"UInt16"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn EnumResourceNamesExA(
+    hModule: {"kind":"IntPtr"},
+    lpType: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpEnumFunc: Windows.Win32.MenusAndResources.ENUMRESNAMEPROCA,
+    lParam: {"kind":"IntPtr"},
+    dwFlags: {"kind":"UInt32"},
+    LangId: {"kind":"UInt16"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn EnumResourceNamesExW(
+    hModule: {"kind":"IntPtr"},
+    lpType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpEnumFunc: Windows.Win32.MenusAndResources.ENUMRESNAMEPROCW,
+    lParam: {"kind":"IntPtr"},
+    dwFlags: {"kind":"UInt32"},
+    LangId: {"kind":"UInt16"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn EnumResourceTypesExA(
+    hModule: {"kind":"IntPtr"},
+    lpEnumFunc: Windows.Win32.MenusAndResources.ENUMRESTYPEPROCA,
+    lParam: {"kind":"IntPtr"},
+    dwFlags: {"kind":"UInt32"},
+    LangId: {"kind":"UInt16"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn EnumResourceTypesExW(
+    hModule: {"kind":"IntPtr"},
+    lpEnumFunc: Windows.Win32.MenusAndResources.ENUMRESTYPEPROCW,
+    lParam: {"kind":"IntPtr"},
+    dwFlags: {"kind":"UInt32"},
+    LangId: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn lstrcmpA(
+    lpString1: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpString2: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn lstrcmpW(
+    lpString1: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpString2: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn lstrcmpiA(
+    lpString1: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpString2: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn lstrcmpiW(
+    lpString1: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpString2: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn lstrcpynA(
+    lpString1: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpString2: {"kind""Ptr","child":{"kind":"SByte"}},
+    iMaxLength: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn lstrcpynW(
+    lpString1: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpString2: {"kind""Ptr","child":{"kind":"UInt16"}},
+    iMaxLength: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn lstrcpyA(
+    lpString1: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpString2: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn lstrcpyW(
+    lpString1: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpString2: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn lstrcatA(
+    lpString1: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpString2: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn lstrcatW(
+    lpString1: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpString2: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn lstrlenA(
+    lpString: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn lstrlenW(
+    lpString: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn FindResourceA(
+    hModule: {"kind":"IntPtr"},
+    lpName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpType: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn FindResourceExA(
+    hModule: {"kind":"IntPtr"},
+    lpType: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpName: {"kind""Ptr","child":{"kind":"SByte"}},
+    wLanguage: {"kind":"UInt16"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn EnumResourceTypesA(
+    hModule: {"kind":"IntPtr"},
+    lpEnumFunc: Windows.Win32.MenusAndResources.ENUMRESTYPEPROCA,
+    lParam: {"kind":"IntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn EnumResourceTypesW(
+    hModule: {"kind":"IntPtr"},
+    lpEnumFunc: Windows.Win32.MenusAndResources.ENUMRESTYPEPROCW,
+    lParam: {"kind":"IntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn EnumResourceNamesA(
+    hModule: {"kind":"IntPtr"},
+    lpType: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpEnumFunc: Windows.Win32.MenusAndResources.ENUMRESNAMEPROCA,
+    lParam: {"kind":"IntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn EnumResourceLanguagesA(
+    hModule: {"kind":"IntPtr"},
+    lpType: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpEnumFunc: Windows.Win32.SystemServices.ENUMRESLANGPROCA,
+    lParam: {"kind":"IntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn EnumResourceLanguagesW(
+    hModule: {"kind":"IntPtr"},
+    lpType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpEnumFunc: Windows.Win32.SystemServices.ENUMRESLANGPROCW,
+    lParam: {"kind":"IntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn BeginUpdateResourceA(
+    pFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    bDeleteExistingResources: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn BeginUpdateResourceW(
+    pFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    bDeleteExistingResources: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn UpdateResourceA(
+    hUpdate: Windows.Win32.SystemServices.HANDLE,
+    lpType: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpName: {"kind""Ptr","child":{"kind":"SByte"}},
+    wLanguage: {"kind":"UInt16"},
+    lpData: {"kind""Ptr","child":{"kind":"Void"}},
+    cb: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn UpdateResourceW(
+    hUpdate: Windows.Win32.SystemServices.HANDLE,
+    lpType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wLanguage: {"kind":"UInt16"},
+    lpData: {"kind""Ptr","child":{"kind":"Void"}},
+    cb: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn EndUpdateResourceA(
+    hUpdate: Windows.Win32.SystemServices.HANDLE,
+    fDiscard: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn EndUpdateResourceW(
+    hUpdate: Windows.Win32.SystemServices.HANDLE,
+    fDiscard: Windows.Win32.SystemServices.BOOL,
+],
+
+"unicode_aliases": [
+     "NAMEENUMPROC"
+     "MENUITEMINFO"
+     "ICONINFOEX"
+     "ICONMETRICS"
+     "ENUMRESNAMEPROC"
+     "ENUMRESTYPEPROC"
+     "wvsprintf"
+     "wsprintf"
+     "CharToOem"
+     "OemToChar"
+     "CharToOemBuff"
+     "OemToCharBuff"
+     "CharUpper"
+     "CharUpperBuff"
+     "CharLower"
+     "CharLowerBuff"
+     "CharNext"
+     "CharPrev"
+     "IsCharAlpha"
+     "IsCharAlphaNumeric"
+     "IsCharUpper"
+     "LoadAccelerators"
+     "CreateAcceleratorTable"
+     "CopyAcceleratorTable"
+     "TranslateAccelerator"
+     "LoadMenu"
+     "LoadMenuIndirect"
+     "ChangeMenu"
+     "GetMenuString"
+     "InsertMenu"
+     "AppendMenu"
+     "ModifyMenu"
+     "InsertMenuItem"
+     "GetMenuItemInfo"
+     "SetMenuItemInfo"
+     "SetWindowsHook"
+     "LoadCursor"
+     "LoadCursorFromFile"
+     "LoadIcon"
+     "PrivateExtractIcons"
+     "LoadImage"
+     "GetIconInfoEx"
+     "VerFindFile"
+     "VerInstallFile"
+     "GetFileVersionInfoSize"
+     "GetFileVersionInfo"
+     "GetFileVersionInfoSizeEx"
+     "GetFileVersionInfoEx"
+     "VerLanguageName"
+     "VerQueryValue"
+     "LoadString"
+     "EnumResourceLanguagesEx"
+     "EnumResourceNamesEx"
+     "EnumResourceTypesEx"
+     "lstrcmp"
+     "lstrcmpi"
+     "lstrcpyn"
+     "lstrcpy"
+     "lstrcat"
+     "lstrlen"
+     "EnumResourceTypes"
+     "EnumResourceLanguages"
+     "BeginUpdateResource"
+     "UpdateResource"
+     "EndUpdateResource"
+]}

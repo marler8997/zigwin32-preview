@@ -1,0 +1,1512 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: IFunctionInstanceQuery2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const IFunctionInstanceQuery2 = opaque {
+};
+// --------------------------------------------------------
+// Type: IFunctionInstanceCollectionQuery2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const IFunctionInstanceCollectionQuery2 = opaque {
+};
+// --------------------------------------------------------
+// Type: IFunctionInstanceCollectionQueryCollection
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const IFunctionInstanceCollectionQueryCollection = opaque {
+};
+// --------------------------------------------------------
+// Type: IFunctionDiscoveryProviderRefresh
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const IFunctionDiscoveryProviderRefresh = opaque {
+};
+// --------------------------------------------------------
+// Type: PropertyConstraint
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PropertyConstraint = *opaque{
+};
+// --------------------------------------------------------
+// Type: SystemVisibilityFlags
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SystemVisibilityFlags = *opaque{
+};
+// --------------------------------------------------------
+// Type: QueryUpdateAction
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const QueryUpdateAction = *opaque{
+};
+// --------------------------------------------------------
+// Type: QueryCategoryType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const QueryCategoryType = *opaque{
+};
+// --------------------------------------------------------
+// Type: IFunctionDiscoveryNotification
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFunctionDiscoveryNotification = *opaque{
+    // TODO: Method 'OnUpdate'
+    // TODO: Method 'OnError'
+    // TODO: Method 'OnEvent'
+};
+// --------------------------------------------------------
+// Type: IFunctionDiscovery
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFunctionDiscovery = *opaque{
+    // TODO: Method 'GetInstanceCollection'
+    // TODO: Method 'GetInstance'
+    // TODO: Method 'CreateInstanceCollectionQuery'
+    // TODO: Method 'CreateInstanceQuery'
+    // TODO: Method 'AddInstance'
+    // TODO: Method 'RemoveInstance'
+};
+// --------------------------------------------------------
+// Type: IFunctionInstance
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFunctionInstance = *opaque{
+    // TODO: Method 'GetID'
+    // TODO: Method 'GetProviderInstanceID'
+    // TODO: Method 'OpenPropertyStore'
+    // TODO: Method 'GetCategory'
+};
+// --------------------------------------------------------
+// Type: IFunctionInstanceCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFunctionInstanceCollection = *opaque{
+    // TODO: Method 'GetCount'
+    // TODO: Method 'Get'
+    // TODO: Method 'Item'
+    // TODO: Method 'Add'
+    // TODO: Method 'Remove'
+    // TODO: Method 'Delete'
+    // TODO: Method 'DeleteAll'
+};
+// --------------------------------------------------------
+// Type: IPropertyStoreCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPropertyStoreCollection = *opaque{
+    // TODO: Method 'GetCount'
+    // TODO: Method 'Get'
+    // TODO: Method 'Item'
+    // TODO: Method 'Add'
+    // TODO: Method 'Remove'
+    // TODO: Method 'Delete'
+    // TODO: Method 'DeleteAll'
+};
+// --------------------------------------------------------
+// Type: IFunctionInstanceQuery
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFunctionInstanceQuery = *opaque{
+    // TODO: Method 'Execute'
+};
+// --------------------------------------------------------
+// Type: IFunctionInstanceCollectionQuery
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFunctionInstanceCollectionQuery = *opaque{
+    // TODO: Method 'AddQueryConstraint'
+    // TODO: Method 'AddPropertyConstraint'
+    // TODO: Method 'Execute'
+};
+// --------------------------------------------------------
+// Type: CFunctionDiscoveryNotificationWrapper
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const CFunctionDiscoveryNotificationWrapper = *opaque{
+};
+// --------------------------------------------------------
+// Type: IFunctionDiscoveryProvider
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFunctionDiscoveryProvider = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'Query'
+    // TODO: Method 'EndQuery'
+    // TODO: Method 'InstancePropertyStoreValidateAccess'
+    // TODO: Method 'InstancePropertyStoreOpen'
+    // TODO: Method 'InstancePropertyStoreFlush'
+    // TODO: Method 'InstanceQueryService'
+    // TODO: Method 'InstanceReleased'
+};
+// --------------------------------------------------------
+// Type: IProviderProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IProviderProperties = *opaque{
+    // TODO: Method 'GetCount'
+    // TODO: Method 'GetAt'
+    // TODO: Method 'GetValue'
+    // TODO: Method 'SetValue'
+};
+// --------------------------------------------------------
+// Type: IProviderPublishing
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IProviderPublishing = *opaque{
+    // TODO: Method 'CreateInstance'
+    // TODO: Method 'RemoveInstance'
+};
+// --------------------------------------------------------
+// Type: IFunctionDiscoveryProviderFactory
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFunctionDiscoveryProviderFactory = *opaque{
+    // TODO: Method 'CreatePropertyStore'
+    // TODO: Method 'CreateInstance'
+    // TODO: Method 'CreateFunctionInstanceCollection'
+};
+// --------------------------------------------------------
+// Type: IFunctionDiscoveryProviderQuery
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFunctionDiscoveryProviderQuery = *opaque{
+    // TODO: Method 'IsInstanceQuery'
+    // TODO: Method 'IsSubcategoryQuery'
+    // TODO: Method 'GetQueryConstraints'
+    // TODO: Method 'GetPropertyConstraints'
+};
+// --------------------------------------------------------
+// Type: IProviderQueryConstraintCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IProviderQueryConstraintCollection = *opaque{
+    // TODO: Method 'GetCount'
+    // TODO: Method 'Get'
+    // TODO: Method 'Item'
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+};
+// --------------------------------------------------------
+// Type: IProviderPropertyConstraintCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IProviderPropertyConstraintCollection = *opaque{
+    // TODO: Method 'GetCount'
+    // TODO: Method 'Get'
+    // TODO: Method 'Item'
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+};
+// --------------------------------------------------------
+// Type: IFunctionDiscoveryServiceProvider
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFunctionDiscoveryServiceProvider = *opaque{
+    // TODO: Method 'Initialize'
+};
+// --------------------------------------------------------
+// Type: PNPXAssociation
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const PNPXAssociation = opaque {
+};
+// --------------------------------------------------------
+// Type: PNPXPairingHandler
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const PNPXPairingHandler = opaque {
+};
+// --------------------------------------------------------
+// Type: IPNPXAssociation
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPNPXAssociation = *opaque{
+    // TODO: Method 'Associate'
+    // TODO: Method 'Unassociate'
+    // TODO: Method 'Delete'
+};
+// --------------------------------------------------------
+// Type: IPNPXDeviceAssociation
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPNPXDeviceAssociation = *opaque{
+    // TODO: Method 'Associate'
+    // TODO: Method 'Unassociate'
+    // TODO: Method 'Delete'
+};
+// --------------------------------------------------------
+// Type: WSD_DATETIME
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_DATETIME = extern struct {
+    isPositive: Windows.Win32.SystemServices.BOOL,
+    year: {"kind":"UInt32"},
+    month: {"kind":"Byte"},
+    day: {"kind":"Byte"},
+    hour: {"kind":"Byte"},
+    minute: {"kind":"Byte"},
+    second: {"kind":"Byte"},
+    millisecond: {"kind":"UInt32"},
+    TZIsLocal: Windows.Win32.SystemServices.BOOL,
+    TZIsPositive: Windows.Win32.SystemServices.BOOL,
+    TZHour: {"kind":"Byte"},
+    TZMinute: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: WSD_DURATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_DURATION = extern struct {
+    isPositive: Windows.Win32.SystemServices.BOOL,
+    year: {"kind":"UInt32"},
+    month: {"kind":"UInt32"},
+    day: {"kind":"UInt32"},
+    hour: {"kind":"UInt32"},
+    minute: {"kind":"UInt32"},
+    second: {"kind":"UInt32"},
+    millisecond: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: __MIDL___MIDL_itf_wsdxml_0000_0000_0001
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const __MIDL___MIDL_itf_wsdxml_0000_0000_0001 = *opaque{
+};
+// --------------------------------------------------------
+// Type: IWSDXMLContext
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDXMLContext = *opaque{
+    // TODO: Method 'AddNamespace'
+    // TODO: Method 'AddNameToNamespace'
+    // TODO: Method 'SetNamespaces'
+    // TODO: Method 'SetTypes'
+};
+// --------------------------------------------------------
+// Type: WSD_CONFIG_PARAM_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSD_CONFIG_PARAM_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WSD_CONFIG_PARAM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_CONFIG_PARAM = extern struct {
+    configParamType: Windows.Win32.OtherDeviceTechnologies.WSD_CONFIG_PARAM_TYPE,
+    pConfigData: {"kind""Ptr","child":{"kind":"Void"}},
+    dwConfigDataSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WSD_SECURITY_CERT_VALIDATION_V1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_SECURITY_CERT_VALIDATION_V1 = extern struct {
+    certMatchArray: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Security.CERT_CONTEXT}},
+    dwCertMatchArrayCount: {"kind":"UInt32"},
+    hCertMatchStore: {"kind""Ptr","child":{"kind":"Void"}},
+    hCertIssuerStore: {"kind""Ptr","child":{"kind":"Void"}},
+    dwCertCheckOptions: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WSD_SECURITY_CERT_VALIDATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_SECURITY_CERT_VALIDATION = extern struct {
+    certMatchArray: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Security.CERT_CONTEXT}},
+    dwCertMatchArrayCount: {"kind":"UInt32"},
+    hCertMatchStore: {"kind""Ptr","child":{"kind":"Void"}},
+    hCertIssuerStore: {"kind""Ptr","child":{"kind":"Void"}},
+    dwCertCheckOptions: {"kind":"UInt32"},
+    pszCNGHashAlgId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pbCertHash: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwCertHashSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WSD_SECURITY_SIGNATURE_VALIDATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_SECURITY_SIGNATURE_VALIDATION = extern struct {
+    signingCertArray: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Security.CERT_CONTEXT}},
+    dwSigningCertArrayCount: {"kind":"UInt32"},
+    hSigningCertStore: {"kind""Ptr","child":{"kind":"Void"}},
+    dwFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WSD_CONFIG_ADDRESSES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_CONFIG_ADDRESSES = extern struct {
+    addresses: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.IWSDAddress},
+    dwAddressCount: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: IWSDAddress
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDAddress = *opaque{
+    // TODO: Method 'Serialize'
+    // TODO: Method 'Deserialize'
+};
+// --------------------------------------------------------
+// Type: IWSDTransportAddress
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDTransportAddress = *opaque{
+    // TODO: Method 'GetPort'
+    // TODO: Method 'SetPortA'
+    // TODO: Method 'GetTransportAddress'
+    // TODO: Method 'GetTransportAddressEx'
+    // TODO: Method 'SetTransportAddress'
+};
+// --------------------------------------------------------
+// Type: IWSDMessageParameters
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDMessageParameters = *opaque{
+    // TODO: Method 'GetLocalAddress'
+    // TODO: Method 'SetLocalAddress'
+    // TODO: Method 'GetRemoteAddress'
+    // TODO: Method 'SetRemoteAddress'
+    // TODO: Method 'GetLowerParameters'
+};
+// --------------------------------------------------------
+// Type: WSDUdpRetransmitParams
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSDUdpRetransmitParams = extern struct {
+    ulSendDelay: {"kind":"UInt32"},
+    ulRepeat: {"kind":"UInt32"},
+    ulRepeatMinDelay: {"kind":"UInt32"},
+    ulRepeatMaxDelay: {"kind":"UInt32"},
+    ulRepeatUpperDelay: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: IWSDUdpMessageParameters
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDUdpMessageParameters = *opaque{
+    // TODO: Method 'SetRetransmitParams'
+    // TODO: Method 'GetRetransmitParams'
+};
+// --------------------------------------------------------
+// Type: SOCKADDR_STORAGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const SOCKADDR_STORAGE = opaque {
+};
+// --------------------------------------------------------
+// Type: WSDUdpMessageType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSDUdpMessageType = *opaque{
+};
+// --------------------------------------------------------
+// Type: IWSDUdpAddress
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDUdpAddress = *opaque{
+    // TODO: Method 'SetSockaddr'
+    // TODO: Method 'GetSockaddr'
+    // TODO: Method 'SetExclusive'
+    // TODO: Method 'GetExclusive'
+    // TODO: Method 'SetMessageType'
+    // TODO: Method 'GetMessageType'
+    // TODO: Method 'SetTTL'
+    // TODO: Method 'GetTTL'
+    // TODO: Method 'SetAlias'
+    // TODO: Method 'GetAlias'
+};
+// --------------------------------------------------------
+// Type: IWSDHttpMessageParameters
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDHttpMessageParameters = *opaque{
+    // TODO: Method 'SetInboundHttpHeaders'
+    // TODO: Method 'GetInboundHttpHeaders'
+    // TODO: Method 'SetOutboundHttpHeaders'
+    // TODO: Method 'GetOutboundHttpHeaders'
+    // TODO: Method 'SetID'
+    // TODO: Method 'GetID'
+    // TODO: Method 'SetContext'
+    // TODO: Method 'GetContext'
+    // TODO: Method 'Clear'
+};
+// --------------------------------------------------------
+// Type: IWSDHttpAddress
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDHttpAddress = *opaque{
+    // TODO: Method 'GetSecure'
+    // TODO: Method 'SetSecure'
+    // TODO: Method 'GetPath'
+    // TODO: Method 'SetPath'
+};
+// --------------------------------------------------------
+// Type: IWSDSSLClientCertificate
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDSSLClientCertificate = *opaque{
+    // TODO: Method 'GetClientCertificate'
+    // TODO: Method 'GetMappedAccessToken'
+};
+// --------------------------------------------------------
+// Type: IWSDHttpAuthParameters
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDHttpAuthParameters = *opaque{
+    // TODO: Method 'GetClientAccessToken'
+    // TODO: Method 'GetAuthType'
+};
+// --------------------------------------------------------
+// Type: IWSDSignatureProperty
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDSignatureProperty = *opaque{
+    // TODO: Method 'IsMessageSigned'
+    // TODO: Method 'IsMessageSignatureTrusted'
+    // TODO: Method 'GetKeyInfo'
+    // TODO: Method 'GetSignature'
+    // TODO: Method 'GetSignedInfoHash'
+};
+// --------------------------------------------------------
+// Type: WSD_STUB_FUNCTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSD_STUB_FUNCTION = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DeviceDiscoveryMechanism
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DeviceDiscoveryMechanism = *opaque{
+};
+// --------------------------------------------------------
+// Type: WSD_PROTOCOL_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSD_PROTOCOL_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WSD_OPERATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_OPERATION = extern struct {
+    RequestType: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_TYPE},
+    ResponseType: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_TYPE},
+    RequestStubFunction: Windows.Win32.OtherDeviceTechnologies.WSD_STUB_FUNCTION,
+};
+// --------------------------------------------------------
+// Type: PWSD_SOAP_MESSAGE_HANDLER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PWSD_SOAP_MESSAGE_HANDLER = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WSD_HANDLER_CONTEXT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_HANDLER_CONTEXT = extern struct {
+    Handler: Windows.Win32.OtherDeviceTechnologies.PWSD_SOAP_MESSAGE_HANDLER,
+    PVoid: {"kind""Ptr","child":{"kind":"Void"}},
+    Unknown: Windows.Win32.Com.IUnknown,
+};
+// --------------------------------------------------------
+// Type: WSDEventType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSDEventType = *opaque{
+};
+// --------------------------------------------------------
+// Type: WSD_SYNCHRONOUS_RESPONSE_CONTEXT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_SYNCHRONOUS_RESPONSE_CONTEXT = extern struct {
+    hr: Windows.Win32.Com.HRESULT,
+    eventHandle: Windows.Win32.SystemServices.HANDLE,
+    messageParameters: Windows.Win32.OtherDeviceTechnologies.IWSDMessageParameters,
+    results: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: WSD_PORT_TYPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_PORT_TYPE = extern struct {
+    EncodedName: {"kind":"UInt32"},
+    OperationCount: {"kind":"UInt32"},
+    Operations: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_OPERATION},
+    ProtocolType: Windows.Win32.OtherDeviceTechnologies.WSD_PROTOCOL_TYPE,
+};
+// --------------------------------------------------------
+// Type: WSD_RELATIONSHIP_METADATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_RELATIONSHIP_METADATA = extern struct {
+    Type: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Data: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_HOST_METADATA},
+    Any: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: WSD_SERVICE_METADATA_LIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_SERVICE_METADATA_LIST = extern struct {
+    Next: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_SERVICE_METADATA_LIST},
+    Element: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_SERVICE_METADATA},
+};
+// --------------------------------------------------------
+// Type: WSD_HOST_METADATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_HOST_METADATA = extern struct {
+    Host: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_SERVICE_METADATA},
+    Hosted: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_SERVICE_METADATA_LIST},
+};
+// --------------------------------------------------------
+// Type: WSD_ENDPOINT_REFERENCE_LIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_ENDPOINT_REFERENCE_LIST = extern struct {
+    Next: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_ENDPOINT_REFERENCE_LIST},
+    Element: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_ENDPOINT_REFERENCE},
+};
+// --------------------------------------------------------
+// Type: WSD_SERVICE_METADATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_SERVICE_METADATA = extern struct {
+    EndpointReference: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_ENDPOINT_REFERENCE_LIST},
+    Types: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_NAME_LIST},
+    ServiceId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Any: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: WSD_THIS_DEVICE_METADATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_THIS_DEVICE_METADATA = extern struct {
+    FriendlyName: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_LOCALIZED_STRING_LIST},
+    FirmwareVersion: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SerialNumber: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Any: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: WSD_THIS_MODEL_METADATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_THIS_MODEL_METADATA = extern struct {
+    Manufacturer: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_LOCALIZED_STRING_LIST},
+    ManufacturerUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ModelName: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_LOCALIZED_STRING_LIST},
+    ModelNumber: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ModelUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PresentationUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Any: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: WSD_LOCALIZED_STRING_LIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_LOCALIZED_STRING_LIST = extern struct {
+    Next: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_LOCALIZED_STRING_LIST},
+    Element: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_LOCALIZED_STRING},
+};
+// --------------------------------------------------------
+// Type: WSD_SOAP_FAULT_REASON
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_SOAP_FAULT_REASON = extern struct {
+    Text: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_LOCALIZED_STRING_LIST},
+};
+// --------------------------------------------------------
+// Type: WSD_SOAP_FAULT_SUBCODE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_SOAP_FAULT_SUBCODE = extern struct {
+    Value: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_NAME},
+    Subcode: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_SOAP_FAULT_SUBCODE},
+};
+// --------------------------------------------------------
+// Type: WSD_SOAP_FAULT_CODE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_SOAP_FAULT_CODE = extern struct {
+    Value: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_NAME},
+    Subcode: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_SOAP_FAULT_SUBCODE},
+};
+// --------------------------------------------------------
+// Type: WSD_SOAP_FAULT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_SOAP_FAULT = extern struct {
+    Code: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_SOAP_FAULT_CODE},
+    Reason: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_SOAP_FAULT_REASON},
+    Node: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Role: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Detail: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: WSD_APP_SEQUENCE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_APP_SEQUENCE = extern struct {
+    InstanceId: {"kind":"UInt64"},
+    SequenceId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    MessageNumber: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: WSD_HEADER_RELATESTO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_HEADER_RELATESTO = extern struct {
+    RelationshipType: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_NAME},
+    MessageID: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WSD_SOAP_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_SOAP_HEADER = extern struct {
+    To: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Action: {"kind""Ptr","child":{"kind":"UInt16"}},
+    MessageID: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RelatesTo: Windows.Win32.OtherDeviceTechnologies.WSD_HEADER_RELATESTO,
+    ReplyTo: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_ENDPOINT_REFERENCE},
+    From: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_ENDPOINT_REFERENCE},
+    FaultTo: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_ENDPOINT_REFERENCE},
+    AppSequence: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_APP_SEQUENCE},
+    AnyHeaders: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: WSD_SOAP_MESSAGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_SOAP_MESSAGE = extern struct {
+    Header: Windows.Win32.OtherDeviceTechnologies.WSD_SOAP_HEADER,
+    Body: {"kind""Ptr","child":{"kind":"Void"}},
+    BodyType: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_TYPE},
+};
+// --------------------------------------------------------
+// Type: WSD_RESOLVE_MATCHES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_RESOLVE_MATCHES = extern struct {
+    ResolveMatch: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_RESOLVE_MATCH},
+    Any: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: WSD_RESOLVE_MATCH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_RESOLVE_MATCH = extern struct {
+    EndpointReference: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_ENDPOINT_REFERENCE},
+    Types: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_NAME_LIST},
+    Scopes: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_SCOPES},
+    XAddrs: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_URI_LIST},
+    MetadataVersion: {"kind":"UInt64"},
+    Any: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: WSD_RESOLVE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_RESOLVE = extern struct {
+    EndpointReference: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_ENDPOINT_REFERENCE},
+    Any: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: WSD_PROBE_MATCH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_PROBE_MATCH = extern struct {
+    EndpointReference: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_ENDPOINT_REFERENCE},
+    Types: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_NAME_LIST},
+    Scopes: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_SCOPES},
+    XAddrs: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_URI_LIST},
+    MetadataVersion: {"kind":"UInt64"},
+    Any: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: WSD_PROBE_MATCH_LIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_PROBE_MATCH_LIST = extern struct {
+    Next: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_PROBE_MATCH_LIST},
+    Element: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_PROBE_MATCH},
+};
+// --------------------------------------------------------
+// Type: WSD_PROBE_MATCHES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_PROBE_MATCHES = extern struct {
+    ProbeMatch: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_PROBE_MATCH_LIST},
+    Any: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: WSD_PROBE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_PROBE = extern struct {
+    Types: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_NAME_LIST},
+    Scopes: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_SCOPES},
+    Any: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: WSD_BYE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_BYE = extern struct {
+    EndpointReference: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_ENDPOINT_REFERENCE},
+    Any: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: WSD_SCOPES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_SCOPES = extern struct {
+    MatchBy: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Scopes: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_URI_LIST},
+};
+// --------------------------------------------------------
+// Type: WSD_NAME_LIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_NAME_LIST = extern struct {
+    Next: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_NAME_LIST},
+    Element: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_NAME},
+};
+// --------------------------------------------------------
+// Type: WSD_HELLO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_HELLO = extern struct {
+    EndpointReference: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_ENDPOINT_REFERENCE},
+    Types: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_NAME_LIST},
+    Scopes: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_SCOPES},
+    XAddrs: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_URI_LIST},
+    MetadataVersion: {"kind":"UInt64"},
+    Any: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: WSD_REFERENCE_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_REFERENCE_PARAMETERS = extern struct {
+    Any: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: WSD_REFERENCE_PROPERTIES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_REFERENCE_PROPERTIES = extern struct {
+    Any: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: WSD_ENDPOINT_REFERENCE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_ENDPOINT_REFERENCE = extern struct {
+    Address: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReferenceProperties: Windows.Win32.OtherDeviceTechnologies.WSD_REFERENCE_PROPERTIES,
+    ReferenceParameters: Windows.Win32.OtherDeviceTechnologies.WSD_REFERENCE_PARAMETERS,
+    PortType: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_NAME},
+    ServiceName: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_NAME},
+    Any: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: WSD_METADATA_SECTION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_METADATA_SECTION = extern struct {
+    Dialect: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Identifier: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Data: {"kind""Ptr","child":{"kind":"Void"}},
+    MetadataReference: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_ENDPOINT_REFERENCE},
+    Location: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Any: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: WSD_METADATA_SECTION_LIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_METADATA_SECTION_LIST = extern struct {
+    Next: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_METADATA_SECTION_LIST},
+    Element: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_METADATA_SECTION},
+};
+// --------------------------------------------------------
+// Type: WSD_URI_LIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_URI_LIST = extern struct {
+    Next: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_URI_LIST},
+    Element: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WSD_EVENTING_FILTER_ACTION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_EVENTING_FILTER_ACTION = extern struct {
+    Actions: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_URI_LIST},
+};
+// --------------------------------------------------------
+// Type: WSD_EVENTING_FILTER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_EVENTING_FILTER = extern struct {
+    Dialect: {"kind""Ptr","child":{"kind":"UInt16"}},
+    FilterAction: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_EVENTING_FILTER_ACTION},
+    Data: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: WSD_EVENTING_EXPIRES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_EVENTING_EXPIRES = extern struct {
+    Duration: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_DURATION},
+    DateTime: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_DATETIME},
+};
+// --------------------------------------------------------
+// Type: WSD_EVENTING_DELIVERY_MODE_PUSH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_EVENTING_DELIVERY_MODE_PUSH = extern struct {
+    NotifyTo: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_ENDPOINT_REFERENCE},
+};
+// --------------------------------------------------------
+// Type: WSD_EVENTING_DELIVERY_MODE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_EVENTING_DELIVERY_MODE = extern struct {
+    Mode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Push: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_EVENTING_DELIVERY_MODE_PUSH},
+    Data: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: WSD_LOCALIZED_STRING
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_LOCALIZED_STRING = extern struct {
+    lang: {"kind""Ptr","child":{"kind":"UInt16"}},
+    String: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: RESPONSEBODY_GetMetadata
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RESPONSEBODY_GetMetadata = extern struct {
+    Metadata: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_METADATA_SECTION_LIST},
+};
+// --------------------------------------------------------
+// Type: REQUESTBODY_Subscribe
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const REQUESTBODY_Subscribe = extern struct {
+    EndTo: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_ENDPOINT_REFERENCE},
+    Delivery: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_EVENTING_DELIVERY_MODE},
+    Expires: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_EVENTING_EXPIRES},
+    Filter: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_EVENTING_FILTER},
+    Any: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: RESPONSEBODY_Subscribe
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RESPONSEBODY_Subscribe = extern struct {
+    SubscriptionManager: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_ENDPOINT_REFERENCE},
+    expires: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_EVENTING_EXPIRES},
+    any: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: REQUESTBODY_Renew
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const REQUESTBODY_Renew = extern struct {
+    Expires: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_EVENTING_EXPIRES},
+    Any: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: RESPONSEBODY_Renew
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RESPONSEBODY_Renew = extern struct {
+    expires: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_EVENTING_EXPIRES},
+    any: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: REQUESTBODY_GetStatus
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const REQUESTBODY_GetStatus = extern struct {
+    Any: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: RESPONSEBODY_GetStatus
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RESPONSEBODY_GetStatus = extern struct {
+    expires: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_EVENTING_EXPIRES},
+    any: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: REQUESTBODY_Unsubscribe
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const REQUESTBODY_Unsubscribe = extern struct {
+    any: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: RESPONSEBODY_SubscriptionEnd
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RESPONSEBODY_SubscriptionEnd = extern struct {
+    SubscriptionManager: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_ENDPOINT_REFERENCE},
+    Status: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Reason: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_LOCALIZED_STRING},
+    Any: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: WSD_UNKNOWN_LOOKUP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_UNKNOWN_LOOKUP = extern struct {
+    Any: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: WSD_EVENT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSD_EVENT = extern struct {
+    Hr: Windows.Win32.Com.HRESULT,
+    EventType: {"kind":"UInt32"},
+    DispatchTag: {"kind""Ptr","child":{"kind":"UInt16"}},
+    HandlerContext: Windows.Win32.OtherDeviceTechnologies.WSD_HANDLER_CONTEXT,
+    Soap: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_SOAP_MESSAGE},
+    Operation: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_OPERATION},
+    MessageParameters: Windows.Win32.OtherDeviceTechnologies.IWSDMessageParameters,
+};
+// --------------------------------------------------------
+// Type: WSDXML_NAMESPACE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSDXML_NAMESPACE = extern struct {
+    Uri: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PreferredPrefix: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Names: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_NAME},
+    NamesCount: {"kind":"UInt16"},
+    Encoding: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: WSDXML_NAME
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSDXML_NAME = extern struct {
+    Space: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_NAMESPACE},
+    LocalName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WSDXML_TYPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSDXML_TYPE = extern struct {
+    Uri: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Table: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: WSDXML_PREFIX_MAPPING
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSDXML_PREFIX_MAPPING = extern struct {
+    Refs: {"kind":"UInt32"},
+    Next: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_PREFIX_MAPPING},
+    Space: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_NAMESPACE},
+    Prefix: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WSDXML_ATTRIBUTE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSDXML_ATTRIBUTE = extern struct {
+    Element: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+    Next: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ATTRIBUTE},
+    Name: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_NAME},
+    Value: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WSDXML_NODE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSDXML_NODE = extern struct {
+    Type: {"kind":"Int32"},
+    Parent: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+    Next: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_NODE},
+    ElementType: {"kind":"Int32"},
+    TextType: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: WSDXML_ELEMENT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSDXML_ELEMENT = extern struct {
+    Node: Windows.Win32.OtherDeviceTechnologies.WSDXML_NODE,
+    Name: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_NAME},
+    FirstAttribute: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ATTRIBUTE},
+    FirstChild: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_NODE},
+    PrefixMappings: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_PREFIX_MAPPING},
+};
+// --------------------------------------------------------
+// Type: WSDXML_TEXT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSDXML_TEXT = extern struct {
+    Node: Windows.Win32.OtherDeviceTechnologies.WSDXML_NODE,
+    Text: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WSDXML_ELEMENT_LIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSDXML_ELEMENT_LIST = extern struct {
+    Next: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT_LIST},
+    Element: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: IWSDDeviceHost
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDDeviceHost = *opaque{
+    // TODO: Method 'Init'
+    // TODO: Method 'Start'
+    // TODO: Method 'Stop'
+    // TODO: Method 'Terminate'
+    // TODO: Method 'RegisterPortType'
+    // TODO: Method 'SetMetadata'
+    // TODO: Method 'RegisterService'
+    // TODO: Method 'RetireService'
+    // TODO: Method 'AddDynamicService'
+    // TODO: Method 'RemoveDynamicService'
+    // TODO: Method 'SetServiceDiscoverable'
+    // TODO: Method 'SignalEvent'
+};
+// --------------------------------------------------------
+// Type: IWSDDeviceHostNotify
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDDeviceHostNotify = *opaque{
+    // TODO: Method 'GetService'
+};
+// --------------------------------------------------------
+// Type: IWSDServiceMessaging
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDServiceMessaging = *opaque{
+    // TODO: Method 'SendResponse'
+    // TODO: Method 'FaultRequest'
+};
+// --------------------------------------------------------
+// Type: IWSDEndpointProxy
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDEndpointProxy = *opaque{
+    // TODO: Method 'SendOneWayRequest'
+    // TODO: Method 'SendTwoWayRequest'
+    // TODO: Method 'SendTwoWayRequestAsync'
+    // TODO: Method 'AbortAsyncOperation'
+    // TODO: Method 'ProcessFault'
+    // TODO: Method 'GetErrorInfo'
+    // TODO: Method 'GetFaultInfo'
+};
+// --------------------------------------------------------
+// Type: IWSDMetadataExchange
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDMetadataExchange = *opaque{
+    // TODO: Method 'GetMetadata'
+};
+// --------------------------------------------------------
+// Type: IWSDServiceProxy
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDServiceProxy = *opaque{
+    // TODO: Method 'BeginGetMetadata'
+    // TODO: Method 'EndGetMetadata'
+    // TODO: Method 'GetServiceMetadata'
+    // TODO: Method 'SubscribeToOperation'
+    // TODO: Method 'UnsubscribeToOperation'
+    // TODO: Method 'SetEventingStatusCallback'
+    // TODO: Method 'GetEndpointProxy'
+};
+// --------------------------------------------------------
+// Type: IWSDServiceProxyEventing
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDServiceProxyEventing = *opaque{
+    // TODO: Method 'SubscribeToMultipleOperations'
+    // TODO: Method 'BeginSubscribeToMultipleOperations'
+    // TODO: Method 'EndSubscribeToMultipleOperations'
+    // TODO: Method 'UnsubscribeToMultipleOperations'
+    // TODO: Method 'BeginUnsubscribeToMultipleOperations'
+    // TODO: Method 'EndUnsubscribeToMultipleOperations'
+    // TODO: Method 'RenewMultipleOperations'
+    // TODO: Method 'BeginRenewMultipleOperations'
+    // TODO: Method 'EndRenewMultipleOperations'
+    // TODO: Method 'GetStatusForMultipleOperations'
+    // TODO: Method 'BeginGetStatusForMultipleOperations'
+    // TODO: Method 'EndGetStatusForMultipleOperations'
+};
+// --------------------------------------------------------
+// Type: IWSDDeviceProxy
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDDeviceProxy = *opaque{
+    // TODO: Method 'Init'
+    // TODO: Method 'BeginGetMetadata'
+    // TODO: Method 'EndGetMetadata'
+    // TODO: Method 'GetHostMetadata'
+    // TODO: Method 'GetThisModelMetadata'
+    // TODO: Method 'GetThisDeviceMetadata'
+    // TODO: Method 'GetAllMetadata'
+    // TODO: Method 'GetServiceProxyById'
+    // TODO: Method 'GetServiceProxyByType'
+    // TODO: Method 'GetEndpointProxy'
+};
+// --------------------------------------------------------
+// Type: IWSDAsyncResult
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDAsyncResult = *opaque{
+    // TODO: Method 'SetCallback'
+    // TODO: Method 'SetWaitHandle'
+    // TODO: Method 'HasCompleted'
+    // TODO: Method 'GetAsyncState'
+    // TODO: Method 'Abort'
+    // TODO: Method 'GetEvent'
+    // TODO: Method 'GetEndpointProxy'
+};
+// --------------------------------------------------------
+// Type: IWSDAsyncCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDAsyncCallback = *opaque{
+    // TODO: Method 'AsyncOperationComplete'
+};
+// --------------------------------------------------------
+// Type: IWSDEventingStatus
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDEventingStatus = *opaque{
+    // TODO: Method 'SubscriptionRenewed'
+    // TODO: Method 'SubscriptionRenewalFailed'
+    // TODO: Method 'SubscriptionEnded'
+};
+// --------------------------------------------------------
+// Type: IWSDiscoveryProvider
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDiscoveryProvider = *opaque{
+    // TODO: Method 'SetAddressFamily'
+    // TODO: Method 'Attach'
+    // TODO: Method 'Detach'
+    // TODO: Method 'SearchById'
+    // TODO: Method 'SearchByAddress'
+    // TODO: Method 'SearchByType'
+    // TODO: Method 'GetXMLContext'
+};
+// --------------------------------------------------------
+// Type: IWSDiscoveryProviderNotify
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDiscoveryProviderNotify = *opaque{
+    // TODO: Method 'Add'
+    // TODO: Method 'Remove'
+    // TODO: Method 'SearchFailed'
+    // TODO: Method 'SearchComplete'
+};
+// --------------------------------------------------------
+// Type: IWSDiscoveredService
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDiscoveredService = *opaque{
+    // TODO: Method 'GetEndpointReference'
+    // TODO: Method 'GetTypes'
+    // TODO: Method 'GetScopes'
+    // TODO: Method 'GetXAddrs'
+    // TODO: Method 'GetMetadataVersion'
+    // TODO: Method 'GetExtendedDiscoXML'
+    // TODO: Method 'GetProbeResolveTag'
+    // TODO: Method 'GetRemoteTransportAddress'
+    // TODO: Method 'GetLocalTransportAddress'
+    // TODO: Method 'GetLocalInterfaceGUID'
+    // TODO: Method 'GetInstanceId'
+};
+// --------------------------------------------------------
+// Type: IWSDiscoveryPublisher
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDiscoveryPublisher = *opaque{
+    // TODO: Method 'SetAddressFamily'
+    // TODO: Method 'RegisterNotificationSink'
+    // TODO: Method 'UnRegisterNotificationSink'
+    // TODO: Method 'Publish'
+    // TODO: Method 'UnPublish'
+    // TODO: Method 'MatchProbe'
+    // TODO: Method 'MatchResolve'
+    // TODO: Method 'PublishEx'
+    // TODO: Method 'MatchProbeEx'
+    // TODO: Method 'MatchResolveEx'
+    // TODO: Method 'RegisterScopeMatchingRule'
+    // TODO: Method 'UnRegisterScopeMatchingRule'
+    // TODO: Method 'GetXMLContext'
+};
+// --------------------------------------------------------
+// Type: IWSDiscoveryPublisherNotify
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDiscoveryPublisherNotify = *opaque{
+    // TODO: Method 'ProbeHandler'
+    // TODO: Method 'ResolveHandler'
+};
+// --------------------------------------------------------
+// Type: IWSDScopeMatchingRule
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDScopeMatchingRule = *opaque{
+    // TODO: Method 'GetScopeRule'
+    // TODO: Method 'MatchScopes'
+};
+// --------------------------------------------------------
+// Type: IWSDAttachment
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDAttachment = *opaque{
+};
+// --------------------------------------------------------
+// Type: IWSDOutboundAttachment
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDOutboundAttachment = *opaque{
+    // TODO: Method 'Write'
+    // TODO: Method 'Close'
+    // TODO: Method 'Abort'
+};
+// --------------------------------------------------------
+// Type: IWSDInboundAttachment
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWSDInboundAttachment = *opaque{
+    // TODO: Method 'Read'
+    // TODO: Method 'Close'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDXMLGetNameFromBuiltinNamespace(
+    pszNamespace: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppName: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_NAME}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDXMLCreateContext(
+    ppContext: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.IWSDXMLContext},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDCreateUdpMessageParameters(
+    ppTxParams: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.IWSDUdpMessageParameters},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDCreateUdpAddress(
+    ppAddress: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.IWSDUdpAddress},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDCreateHttpMessageParameters(
+    ppTxParams: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.IWSDHttpMessageParameters},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDCreateHttpAddress(
+    ppAddress: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.IWSDHttpAddress},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDSetConfigurationOption(
+    dwOption: {"kind":"UInt32"},
+    pVoid: {"kind""Ptr","child":{"kind":"Void"}},
+    cbInBuffer: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDGetConfigurationOption(
+    dwOption: {"kind":"UInt32"},
+    pVoid: {"kind""Ptr","child":{"kind":"Void"}},
+    cbOutBuffer: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDAllocateLinkedMemory(
+    pParent: {"kind""Ptr","child":{"kind":"Void"}},
+    cbSize: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDFreeLinkedMemory(
+    pVoid: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDAttachLinkedMemory(
+    pParent: {"kind""Ptr","child":{"kind":"Void"}},
+    pChild: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDDetachLinkedMemory(
+    pVoid: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDXMLBuildAnyForSingleElement(
+    pElementName: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_NAME},
+    pszText: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppAny: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDXMLGetValueFromAny(
+    pszNamespace: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pAny: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+    ppszValue: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDXMLAddSibling(
+    pFirst: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+    pSecond: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDXMLAddChild(
+    pParent: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+    pChild: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDXMLCleanupElement(
+    pAny: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_ELEMENT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDGenerateFault(
+    pszCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszSubCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszReason: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszDetail: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pContext: Windows.Win32.OtherDeviceTechnologies.IWSDXMLContext,
+    ppFault: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_SOAP_FAULT}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDGenerateFaultEx(
+    pCode: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_NAME},
+    pSubCode: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSDXML_NAME},
+    pReasons: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_LOCALIZED_STRING_LIST},
+    pszDetail: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppFault: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_SOAP_FAULT}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDUriEncode(
+    source: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchSource: {"kind":"UInt32"},
+    destOut: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    cchDestOut: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDUriDecode(
+    source: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchSource: {"kind":"UInt32"},
+    destOut: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    cchDestOut: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDCreateDeviceHost(
+    pszLocalId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pContext: Windows.Win32.OtherDeviceTechnologies.IWSDXMLContext,
+    ppDeviceHost: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.IWSDDeviceHost},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDCreateDeviceHostAdvanced(
+    pszLocalId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pContext: Windows.Win32.OtherDeviceTechnologies.IWSDXMLContext,
+    ppHostAddresses: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.IWSDAddress},
+    dwHostAddressCount: {"kind":"UInt32"},
+    ppDeviceHost: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.IWSDDeviceHost},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDCreateDeviceHost2(
+    pszLocalId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pContext: Windows.Win32.OtherDeviceTechnologies.IWSDXMLContext,
+    pConfigParams: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_CONFIG_PARAM},
+    dwConfigParamCount: {"kind":"UInt32"},
+    ppDeviceHost: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.IWSDDeviceHost},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDCreateDeviceProxy(
+    pszDeviceId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszLocalId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pContext: Windows.Win32.OtherDeviceTechnologies.IWSDXMLContext,
+    ppDeviceProxy: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.IWSDDeviceProxy},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDCreateDeviceProxyAdvanced(
+    pszDeviceId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pDeviceAddress: Windows.Win32.OtherDeviceTechnologies.IWSDAddress,
+    pszLocalId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pContext: Windows.Win32.OtherDeviceTechnologies.IWSDXMLContext,
+    ppDeviceProxy: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.IWSDDeviceProxy},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDCreateDeviceProxy2(
+    pszDeviceId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszLocalId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pContext: Windows.Win32.OtherDeviceTechnologies.IWSDXMLContext,
+    pConfigParams: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_CONFIG_PARAM},
+    dwConfigParamCount: {"kind":"UInt32"},
+    ppDeviceProxy: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.IWSDDeviceProxy},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDCreateDiscoveryProvider(
+    pContext: Windows.Win32.OtherDeviceTechnologies.IWSDXMLContext,
+    ppProvider: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.IWSDiscoveryProvider},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDCreateDiscoveryProvider2(
+    pContext: Windows.Win32.OtherDeviceTechnologies.IWSDXMLContext,
+    pConfigParams: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_CONFIG_PARAM},
+    dwConfigParamCount: {"kind":"UInt32"},
+    ppProvider: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.IWSDiscoveryProvider},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDCreateDiscoveryPublisher(
+    pContext: Windows.Win32.OtherDeviceTechnologies.IWSDXMLContext,
+    ppPublisher: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.IWSDiscoveryPublisher},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDCreateDiscoveryPublisher2(
+    pContext: Windows.Win32.OtherDeviceTechnologies.IWSDXMLContext,
+    pConfigParams: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.WSD_CONFIG_PARAM},
+    dwConfigParamCount: {"kind":"UInt32"},
+    ppPublisher: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.IWSDiscoveryPublisher},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsdapi" fn WSDCreateOutboundAttachment(
+    ppAttachment: {"kind""Ptr","child":Windows.Win32.OtherDeviceTechnologies.IWSDOutboundAttachment},
+],
+
+"unicode_aliases": [
+]}

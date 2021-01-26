@@ -1,0 +1,3695 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: SP_ALTPLATFORM_INFO_V3
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_ALTPLATFORM_INFO_V3 = *opaque{
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: SP_DEVINFO_DATA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_DEVINFO_DATA = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_DEVICE_INTERFACE_DATA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_DEVICE_INTERFACE_DATA = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_DEVICE_INTERFACE_DETAIL_DATA_A
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_DEVICE_INTERFACE_DETAIL_DATA_A = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_DEVICE_INTERFACE_DETAIL_DATA_W
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_DEVICE_INTERFACE_DETAIL_DATA_W = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_DEVINFO_LIST_DETAIL_DATA_A
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_DEVINFO_LIST_DETAIL_DATA_A = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_DEVINFO_LIST_DETAIL_DATA_W
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_DEVINFO_LIST_DETAIL_DATA_W = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_DEVINSTALL_PARAMS_A
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_DEVINSTALL_PARAMS_A = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_DEVINSTALL_PARAMS_W
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_DEVINSTALL_PARAMS_W = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_CLASSINSTALL_HEADER
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_CLASSINSTALL_HEADER = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_ENABLECLASS_PARAMS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_ENABLECLASS_PARAMS = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_PROPCHANGE_PARAMS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_PROPCHANGE_PARAMS = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_REMOVEDEVICE_PARAMS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_REMOVEDEVICE_PARAMS = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_UNREMOVEDEVICE_PARAMS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_UNREMOVEDEVICE_PARAMS = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_SELECTDEVICE_PARAMS_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SP_SELECTDEVICE_PARAMS_A = extern struct {
+    ClassInstallHeader: Windows.Win32.DeviceAndDriverInstallation.SP_CLASSINSTALL_HEADER,
+    Title: {"kind":"Array","child": {"kind":"SByte"}},
+    Instructions: {"kind":"Array","child": {"kind":"SByte"}},
+    ListLabel: {"kind":"Array","child": {"kind":"SByte"}},
+    SubTitle: {"kind":"Array","child": {"kind":"SByte"}},
+    Reserved: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: SP_SELECTDEVICE_PARAMS_W
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_SELECTDEVICE_PARAMS_W = *opaque{
+};
+// --------------------------------------------------------
+// Type: PDETECT_PROGRESS_NOTIFY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDETECT_PROGRESS_NOTIFY = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: SP_DETECTDEVICE_PARAMS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_DETECTDEVICE_PARAMS = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_INSTALLWIZARD_DATA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_INSTALLWIZARD_DATA = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_NEWDEVICEWIZARD_DATA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_NEWDEVICEWIZARD_DATA = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_TROUBLESHOOTER_PARAMS_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SP_TROUBLESHOOTER_PARAMS_A = extern struct {
+    ClassInstallHeader: Windows.Win32.DeviceAndDriverInstallation.SP_CLASSINSTALL_HEADER,
+    ChmFile: {"kind":"Array","child": {"kind":"SByte"}},
+    HtmlTroubleShooter: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: SP_TROUBLESHOOTER_PARAMS_W
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_TROUBLESHOOTER_PARAMS_W = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_POWERMESSAGEWAKE_PARAMS_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SP_POWERMESSAGEWAKE_PARAMS_A = extern struct {
+    ClassInstallHeader: Windows.Win32.DeviceAndDriverInstallation.SP_CLASSINSTALL_HEADER,
+    PowerMessageWake: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: SP_POWERMESSAGEWAKE_PARAMS_W
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_POWERMESSAGEWAKE_PARAMS_W = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_DRVINFO_DATA_V2_A
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_DRVINFO_DATA_V2_A = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_DRVINFO_DATA_V2_W
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_DRVINFO_DATA_V2_W = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_DRVINFO_DATA_V1_A
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_DRVINFO_DATA_V1_A = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_DRVINFO_DATA_V1_W
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_DRVINFO_DATA_V1_W = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_DRVINFO_DETAIL_DATA_A
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_DRVINFO_DETAIL_DATA_A = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_DRVINFO_DETAIL_DATA_W
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_DRVINFO_DETAIL_DATA_W = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_DRVINSTALL_PARAMS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_DRVINSTALL_PARAMS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PSP_DETSIG_CMPPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PSP_DETSIG_CMPPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: COINSTALLER_CONTEXT_DATA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const COINSTALLER_CONTEXT_DATA = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_CLASSIMAGELIST_DATA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_CLASSIMAGELIST_DATA = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_PROPSHEETPAGE_REQUEST
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_PROPSHEETPAGE_REQUEST = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_BACKUP_QUEUE_PARAMS_V2_A
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_BACKUP_QUEUE_PARAMS_V2_A = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_BACKUP_QUEUE_PARAMS_V2_W
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_BACKUP_QUEUE_PARAMS_V2_W = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_BACKUP_QUEUE_PARAMS_V1_A
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_BACKUP_QUEUE_PARAMS_V1_A = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_BACKUP_QUEUE_PARAMS_V1_W
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_BACKUP_QUEUE_PARAMS_V1_W = *opaque{
+};
+// --------------------------------------------------------
+// Type: SetupFileLogInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SetupFileLogInfo = *opaque{
+};
+// --------------------------------------------------------
+// Type: PNP_VETO_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PNP_VETO_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: CONFLICT_DETAILS_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CONFLICT_DETAILS_A = extern struct {
+    CD_ulSize: {"kind":"UInt32"},
+    CD_ulMask: {"kind":"UInt32"},
+    CD_dnDevInst: {"kind":"UInt32"},
+    CD_rdResDes: {"kind":"UIntPtr"},
+    CD_ulFlags: {"kind":"UInt32"},
+    CD_szDescription: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: CONFLICT_DETAILS_W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CONFLICT_DETAILS_W = extern struct {
+    CD_ulSize: {"kind":"UInt32"},
+    CD_ulMask: {"kind":"UInt32"},
+    CD_dnDevInst: {"kind":"UInt32"},
+    CD_rdResDes: {"kind":"UIntPtr"},
+    CD_ulFlags: {"kind":"UInt32"},
+    CD_szDescription: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: MEM_RANGE
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MEM_RANGE = *opaque{
+};
+// --------------------------------------------------------
+// Type: MEM_DES
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MEM_DES = *opaque{
+};
+// --------------------------------------------------------
+// Type: MEM_RESOURCE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MEM_RESOURCE = extern struct {
+    MEM_Header: Windows.Win32.DeviceAndDriverInstallation.MEM_DES,
+    MEM_Data: {"kind":"Array","child": Windows.Win32.DeviceAndDriverInstallation.MEM_RANGE},
+};
+// --------------------------------------------------------
+// Type: Mem_Large_Range_s
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const Mem_Large_Range_s = *opaque{
+};
+// --------------------------------------------------------
+// Type: Mem_Large_Des_s
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const Mem_Large_Des_s = *opaque{
+};
+// --------------------------------------------------------
+// Type: Mem_Large_Resource_s
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const Mem_Large_Resource_s = extern struct {
+    MEM_LARGE_Header: Windows.Win32.DeviceAndDriverInstallation.Mem_Large_Des_s,
+    MEM_LARGE_Data: {"kind":"Array","child": Windows.Win32.DeviceAndDriverInstallation.Mem_Large_Range_s},
+};
+// --------------------------------------------------------
+// Type: IO_RANGE
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const IO_RANGE = *opaque{
+};
+// --------------------------------------------------------
+// Type: IO_DES
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const IO_DES = *opaque{
+};
+// --------------------------------------------------------
+// Type: IO_RESOURCE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IO_RESOURCE = extern struct {
+    IO_Header: Windows.Win32.DeviceAndDriverInstallation.IO_DES,
+    IO_Data: {"kind":"Array","child": Windows.Win32.DeviceAndDriverInstallation.IO_RANGE},
+};
+// --------------------------------------------------------
+// Type: DMA_RANGE
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const DMA_RANGE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DMA_DES
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const DMA_DES = *opaque{
+};
+// --------------------------------------------------------
+// Type: DMA_RESOURCE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DMA_RESOURCE = extern struct {
+    DMA_Header: Windows.Win32.DeviceAndDriverInstallation.DMA_DES,
+    DMA_Data: {"kind":"Array","child": Windows.Win32.DeviceAndDriverInstallation.DMA_RANGE},
+};
+// --------------------------------------------------------
+// Type: IRQ_RANGE
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const IRQ_RANGE = *opaque{
+};
+// --------------------------------------------------------
+// Type: IRQ_DES_32
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const IRQ_DES_32 = *opaque{
+};
+// --------------------------------------------------------
+// Type: IRQ_DES_64
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const IRQ_DES_64 = *opaque{
+};
+// --------------------------------------------------------
+// Type: IRQ_RESOURCE_32
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IRQ_RESOURCE_32 = extern struct {
+    IRQ_Header: Windows.Win32.DeviceAndDriverInstallation.IRQ_DES_32,
+    IRQ_Data: {"kind":"Array","child": Windows.Win32.DeviceAndDriverInstallation.IRQ_RANGE},
+};
+// --------------------------------------------------------
+// Type: IRQ_RESOURCE_64
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IRQ_RESOURCE_64 = extern struct {
+    IRQ_Header: Windows.Win32.DeviceAndDriverInstallation.IRQ_DES_64,
+    IRQ_Data: {"kind":"Array","child": Windows.Win32.DeviceAndDriverInstallation.IRQ_RANGE},
+};
+// --------------------------------------------------------
+// Type: DevPrivate_Range_s
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const DevPrivate_Range_s = *opaque{
+};
+// --------------------------------------------------------
+// Type: DevPrivate_Des_s
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const DevPrivate_Des_s = *opaque{
+};
+// --------------------------------------------------------
+// Type: DevPrivate_Resource_s
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DevPrivate_Resource_s = extern struct {
+    PRV_Header: Windows.Win32.DeviceAndDriverInstallation.DevPrivate_Des_s,
+    PRV_Data: {"kind":"Array","child": Windows.Win32.DeviceAndDriverInstallation.DevPrivate_Range_s},
+};
+// --------------------------------------------------------
+// Type: CS_DES
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const CS_DES = *opaque{
+};
+// --------------------------------------------------------
+// Type: CS_RESOURCE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CS_RESOURCE = extern struct {
+    CS_Header: Windows.Win32.DeviceAndDriverInstallation.CS_DES,
+};
+// --------------------------------------------------------
+// Type: PCCARD_DES
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const PCCARD_DES = *opaque{
+};
+// --------------------------------------------------------
+// Type: PCCARD_RESOURCE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PCCARD_RESOURCE = extern struct {
+    PcCard_Header: Windows.Win32.DeviceAndDriverInstallation.PCCARD_DES,
+};
+// --------------------------------------------------------
+// Type: MFCARD_DES
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MFCARD_DES = *opaque{
+};
+// --------------------------------------------------------
+// Type: MFCARD_RESOURCE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MFCARD_RESOURCE = extern struct {
+    MfCard_Header: Windows.Win32.DeviceAndDriverInstallation.MFCARD_DES,
+};
+// --------------------------------------------------------
+// Type: BUSNUMBER_RANGE
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const BUSNUMBER_RANGE = *opaque{
+};
+// --------------------------------------------------------
+// Type: BUSNUMBER_DES
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const BUSNUMBER_DES = *opaque{
+};
+// --------------------------------------------------------
+// Type: BUSNUMBER_RESOURCE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BUSNUMBER_RESOURCE = extern struct {
+    BusNumber_Header: Windows.Win32.DeviceAndDriverInstallation.BUSNUMBER_DES,
+    BusNumber_Data: {"kind":"Array","child": Windows.Win32.DeviceAndDriverInstallation.BUSNUMBER_RANGE},
+};
+// --------------------------------------------------------
+// Type: Connection_Des_s
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const Connection_Des_s = *opaque{
+};
+// --------------------------------------------------------
+// Type: Connection_Resource_s
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const Connection_Resource_s = extern struct {
+    Connection_Header: Windows.Win32.DeviceAndDriverInstallation.Connection_Des_s,
+};
+// --------------------------------------------------------
+// Type: HWProfileInfo_sA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const HWProfileInfo_sA = *opaque{
+};
+// --------------------------------------------------------
+// Type: HWProfileInfo_sW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const HWProfileInfo_sW = *opaque{
+};
+// --------------------------------------------------------
+// Type: HCMNOTIFICATION__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HCMNOTIFICATION__ = extern struct {
+    unused: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: CM_NOTIFY_FILTER_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CM_NOTIFY_FILTER_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: CM_NOTIFY_FILTER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CM_NOTIFY_FILTER = extern struct {
+    cbSize: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+    FilterType: Windows.Win32.DeviceAndDriverInstallation.CM_NOTIFY_FILTER_TYPE,
+    Reserved: {"kind":"UInt32"},
+    u: Windows.Win32.DeviceAndDriverInstallation.CM_NOTIFY_FILTER+_u_e__Union,
+    // --------------------------------------------------------
+    // Type: _u_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _u_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _DeviceHandle_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _DeviceHandle_e__Struct = extern struct {
+            hTarget: Windows.Win32.SystemServices.HANDLE,
+        };
+        // --------------------------------------------------------
+        // Type: _DeviceInstance_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _DeviceInstance_e__Struct = extern struct {
+            InstanceId: {"kind":"Array","child": {"kind":"UInt16"}},
+        };
+        // --------------------------------------------------------
+        // Type: _DeviceInterface_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _DeviceInterface_e__Struct = extern struct {
+            ClassGuid: Guid,
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: CM_NOTIFY_ACTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CM_NOTIFY_ACTION = *opaque{
+};
+// --------------------------------------------------------
+// Type: CM_NOTIFY_EVENT_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CM_NOTIFY_EVENT_DATA = extern struct {
+    FilterType: Windows.Win32.DeviceAndDriverInstallation.CM_NOTIFY_FILTER_TYPE,
+    Reserved: {"kind":"UInt32"},
+    u: Windows.Win32.DeviceAndDriverInstallation.CM_NOTIFY_EVENT_DATA+_u_e__Union,
+    // --------------------------------------------------------
+    // Type: _u_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _u_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _DeviceInstance_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _DeviceInstance_e__Struct = extern struct {
+            InstanceId: {"kind":"Array","child": {"kind":"UInt16"}},
+        };
+        // --------------------------------------------------------
+        // Type: _DeviceInterface_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _DeviceInterface_e__Struct = extern struct {
+            ClassGuid: Guid,
+            SymbolicLink: {"kind":"Array","child": {"kind":"UInt16"}},
+        };
+        // --------------------------------------------------------
+        // Type: _DeviceHandle_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _DeviceHandle_e__Struct = extern struct {
+            EventGuid: Guid,
+            NameOffset: {"kind":"Int32"},
+            DataSize: {"kind":"UInt32"},
+            Data: {"kind":"Array","child": {"kind":"Byte"}},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: PCM_NOTIFY_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PCM_NOTIFY_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetInfDriverStoreLocationA(
+    FileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    AlternatePlatformInfo: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.SP_ALTPLATFORM_INFO_V2},
+    LocaleName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReturnBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReturnBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetInfDriverStoreLocationW(
+    FileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    AlternatePlatformInfo: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.SP_ALTPLATFORM_INFO_V2},
+    LocaleName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReturnBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReturnBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetInfPublishedNameA(
+    DriverStoreLocation: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReturnBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReturnBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetInfPublishedNameW(
+    DriverStoreLocation: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReturnBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReturnBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetThreadLogToken(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn SetupSetThreadLogToken(
+    LogToken: {"kind":"UInt64"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn SetupWriteTextLog(
+    LogToken: {"kind":"UInt64"},
+    Category: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+    MessageStr: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn SetupWriteTextLogError(
+    LogToken: {"kind":"UInt64"},
+    Category: {"kind":"UInt32"},
+    LogFlags: {"kind":"UInt32"},
+    Error: {"kind":"UInt32"},
+    MessageStr: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn SetupWriteTextLogInfLine(
+    LogToken: {"kind":"UInt64"},
+    Flags: {"kind":"UInt32"},
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    Context: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetBackupInformationA(
+    QueueHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    BackupParams: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_BACKUP_QUEUE_PARAMS_V2_A},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetBackupInformationW(
+    QueueHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    BackupParams: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_BACKUP_QUEUE_PARAMS_V2_W},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn SetupPrepareQueueForRestoreA(
+    QueueHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    BackupPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    RestoreFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn SetupPrepareQueueForRestoreW(
+    QueueHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    BackupPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RestoreFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn SetupSetNonInteractiveMode(
+    NonInteractiveFlag: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetNonInteractiveMode(
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiCreateDeviceInfoList(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiCreateDeviceInfoListExA(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    MachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiCreateDeviceInfoListExW(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    MachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetDeviceInfoListClass(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    ClassGuid: {"kind""Ptr","child":Guid},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetDeviceInfoListDetailA(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoSetDetailData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_LIST_DETAIL_DATA_A},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetDeviceInfoListDetailW(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoSetDetailData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_LIST_DETAIL_DATA_W},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiCreateDeviceInfoA(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ClassGuid: {"kind""Ptr","child":Guid},
+    DeviceDescription: {"kind""Ptr","child":{"kind":"SByte"}},
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    CreationFlags: {"kind":"UInt32"},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiCreateDeviceInfoW(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClassGuid: {"kind""Ptr","child":Guid},
+    DeviceDescription: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    CreationFlags: {"kind":"UInt32"},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiOpenDeviceInfoA(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInstanceId: {"kind""Ptr","child":{"kind":"SByte"}},
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    OpenFlags: {"kind":"UInt32"},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiOpenDeviceInfoW(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInstanceId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    OpenFlags: {"kind":"UInt32"},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetDeviceInstanceIdA(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    DeviceInstanceId: {"kind""Ptr","child":{"kind":"SByte"}},
+    DeviceInstanceIdSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetDeviceInstanceIdW(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    DeviceInstanceId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DeviceInstanceIdSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiDeleteDeviceInfo(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiEnumDeviceInfo(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    MemberIndex: {"kind":"UInt32"},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiDestroyDeviceInfoList(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiEnumDeviceInterfaces(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    InterfaceClassGuid: {"kind""Ptr","child":Guid},
+    MemberIndex: {"kind":"UInt32"},
+    DeviceInterfaceData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVICE_INTERFACE_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiCreateDeviceInterfaceA(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    InterfaceClassGuid: {"kind""Ptr","child":Guid},
+    ReferenceString: {"kind""Ptr","child":{"kind":"SByte"}},
+    CreationFlags: {"kind":"UInt32"},
+    DeviceInterfaceData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVICE_INTERFACE_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiCreateDeviceInterfaceW(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    InterfaceClassGuid: {"kind""Ptr","child":Guid},
+    ReferenceString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    CreationFlags: {"kind":"UInt32"},
+    DeviceInterfaceData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVICE_INTERFACE_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiOpenDeviceInterfaceA(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DevicePath: {"kind""Ptr","child":{"kind":"SByte"}},
+    OpenFlags: {"kind":"UInt32"},
+    DeviceInterfaceData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVICE_INTERFACE_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiOpenDeviceInterfaceW(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DevicePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    OpenFlags: {"kind":"UInt32"},
+    DeviceInterfaceData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVICE_INTERFACE_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetDeviceInterfaceAlias(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInterfaceData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVICE_INTERFACE_DATA},
+    AliasInterfaceClassGuid: {"kind""Ptr","child":Guid},
+    AliasDeviceInterfaceData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVICE_INTERFACE_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiDeleteDeviceInterfaceData(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInterfaceData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVICE_INTERFACE_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiRemoveDeviceInterface(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInterfaceData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVICE_INTERFACE_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetDeviceInterfaceDetailA(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInterfaceData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVICE_INTERFACE_DATA},
+    DeviceInterfaceDetailData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVICE_INTERFACE_DETAIL_DATA_A},
+    DeviceInterfaceDetailDataSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetDeviceInterfaceDetailW(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInterfaceData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVICE_INTERFACE_DATA},
+    DeviceInterfaceDetailData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVICE_INTERFACE_DETAIL_DATA_W},
+    DeviceInterfaceDetailDataSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiInstallDeviceInterfaces(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiSetDeviceInterfaceDefault(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInterfaceData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVICE_INTERFACE_DATA},
+    Flags: {"kind":"UInt32"},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiRegisterDeviceInfo(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    Flags: {"kind":"UInt32"},
+    CompareProc: Windows.Win32.DeviceAndDriverInstallation.PSP_DETSIG_CMPPROC,
+    CompareContext: {"kind""Ptr","child":{"kind":"Void"}},
+    DupDeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiBuildDriverInfoList(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    DriverType: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiCancelDriverInfoSearch(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiEnumDriverInfoA(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    DriverType: {"kind":"UInt32"},
+    MemberIndex: {"kind":"UInt32"},
+    DriverInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DRVINFO_DATA_V2_A},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiEnumDriverInfoW(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    DriverType: {"kind":"UInt32"},
+    MemberIndex: {"kind":"UInt32"},
+    DriverInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DRVINFO_DATA_V2_W},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetSelectedDriverA(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    DriverInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DRVINFO_DATA_V2_A},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetSelectedDriverW(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    DriverInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DRVINFO_DATA_V2_W},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiSetSelectedDriverA(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    DriverInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DRVINFO_DATA_V2_A},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiSetSelectedDriverW(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    DriverInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DRVINFO_DATA_V2_W},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetDriverInfoDetailA(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    DriverInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DRVINFO_DATA_V2_A},
+    DriverInfoDetailData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DRVINFO_DETAIL_DATA_A},
+    DriverInfoDetailDataSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetDriverInfoDetailW(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    DriverInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DRVINFO_DATA_V2_W},
+    DriverInfoDetailData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DRVINFO_DETAIL_DATA_W},
+    DriverInfoDetailDataSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiDestroyDriverInfoList(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    DriverType: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetClassDevsW(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    Enumerator: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetClassDevsExA(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    Enumerator: {"kind""Ptr","child":{"kind":"SByte"}},
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    Flags: {"kind":"UInt32"},
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    MachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetClassDevsExW(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    Enumerator: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    Flags: {"kind":"UInt32"},
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    MachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetINFClassA(
+    InfName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ClassGuid: {"kind""Ptr","child":Guid},
+    ClassName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ClassNameSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetINFClassW(
+    InfName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClassGuid: {"kind""Ptr","child":Guid},
+    ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClassNameSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiBuildClassInfoList(
+    Flags: {"kind":"UInt32"},
+    ClassGuidList: {"kind""Ptr","child":Guid},
+    ClassGuidListSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiBuildClassInfoListExA(
+    Flags: {"kind":"UInt32"},
+    ClassGuidList: {"kind""Ptr","child":Guid},
+    ClassGuidListSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    MachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiBuildClassInfoListExW(
+    Flags: {"kind":"UInt32"},
+    ClassGuidList: {"kind""Ptr","child":Guid},
+    ClassGuidListSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    MachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetClassDescriptionA(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    ClassDescription: {"kind""Ptr","child":{"kind":"SByte"}},
+    ClassDescriptionSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetClassDescriptionW(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    ClassDescription: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClassDescriptionSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetClassDescriptionExA(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    ClassDescription: {"kind""Ptr","child":{"kind":"SByte"}},
+    ClassDescriptionSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    MachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetClassDescriptionExW(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    ClassDescription: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClassDescriptionSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    MachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiCallClassInstaller(
+    InstallFunction: {"kind":"UInt32"},
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiSelectDevice(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiSelectBestCompatDrv(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiInstallDevice(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiInstallDriverFiles(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiRegisterCoDeviceInstallers(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiRemoveDevice(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiUnremoveDevice(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiRestartDevices(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiChangeState(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiInstallClassA(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    InfFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Flags: {"kind":"UInt32"},
+    FileQueue: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiInstallClassW(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    InfFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    FileQueue: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiInstallClassExA(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    InfFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Flags: {"kind":"UInt32"},
+    FileQueue: {"kind""Ptr","child":{"kind":"Void"}},
+    InterfaceClassGuid: {"kind""Ptr","child":Guid},
+    Reserved1: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved2: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiInstallClassExW(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    InfFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    FileQueue: {"kind""Ptr","child":{"kind":"Void"}},
+    InterfaceClassGuid: {"kind""Ptr","child":Guid},
+    Reserved1: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved2: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiOpenClassRegKey(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    samDesired: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiOpenClassRegKeyExA(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    samDesired: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+    MachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiOpenClassRegKeyExW(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    samDesired: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+    MachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiCreateDeviceInterfaceRegKeyA(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInterfaceData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVICE_INTERFACE_DATA},
+    Reserved: {"kind":"UInt32"},
+    samDesired: {"kind":"UInt32"},
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    InfSectionName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiCreateDeviceInterfaceRegKeyW(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInterfaceData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVICE_INTERFACE_DATA},
+    Reserved: {"kind":"UInt32"},
+    samDesired: {"kind":"UInt32"},
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    InfSectionName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiOpenDeviceInterfaceRegKey(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInterfaceData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVICE_INTERFACE_DATA},
+    Reserved: {"kind":"UInt32"},
+    samDesired: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiDeleteDeviceInterfaceRegKey(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInterfaceData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVICE_INTERFACE_DATA},
+    Reserved: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiCreateDevRegKeyA(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    Scope: {"kind":"UInt32"},
+    HwProfile: {"kind":"UInt32"},
+    KeyType: {"kind":"UInt32"},
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    InfSectionName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiCreateDevRegKeyW(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    Scope: {"kind":"UInt32"},
+    HwProfile: {"kind":"UInt32"},
+    KeyType: {"kind":"UInt32"},
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    InfSectionName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiOpenDevRegKey(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    Scope: {"kind":"UInt32"},
+    HwProfile: {"kind":"UInt32"},
+    KeyType: {"kind":"UInt32"},
+    samDesired: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiDeleteDevRegKey(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    Scope: {"kind":"UInt32"},
+    HwProfile: {"kind":"UInt32"},
+    KeyType: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetHwProfileList(
+    HwProfileList: {"kind""Ptr","child":{"kind":"UInt32"}},
+    HwProfileListSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    CurrentlyActiveIndex: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetHwProfileListExA(
+    HwProfileList: {"kind""Ptr","child":{"kind":"UInt32"}},
+    HwProfileListSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    CurrentlyActiveIndex: {"kind""Ptr","child":{"kind":"UInt32"}},
+    MachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetHwProfileListExW(
+    HwProfileList: {"kind""Ptr","child":{"kind":"UInt32"}},
+    HwProfileListSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    CurrentlyActiveIndex: {"kind""Ptr","child":{"kind":"UInt32"}},
+    MachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetDevicePropertyKeys(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    PropertyKeyArray: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyKeyCount: {"kind":"UInt32"},
+    RequiredPropertyKeyCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetDevicePropertyW(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    PropertyKey: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiSetDevicePropertyW(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    PropertyKey: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyType: {"kind":"UInt32"},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetDeviceInterfacePropertyKeys(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInterfaceData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVICE_INTERFACE_DATA},
+    PropertyKeyArray: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyKeyCount: {"kind":"UInt32"},
+    RequiredPropertyKeyCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetDeviceInterfacePropertyW(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInterfaceData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVICE_INTERFACE_DATA},
+    PropertyKey: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiSetDeviceInterfacePropertyW(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInterfaceData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVICE_INTERFACE_DATA},
+    PropertyKey: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyType: {"kind":"UInt32"},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetClassPropertyKeys(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    PropertyKeyArray: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyKeyCount: {"kind":"UInt32"},
+    RequiredPropertyKeyCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetClassPropertyKeysExW(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    PropertyKeyArray: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyKeyCount: {"kind":"UInt32"},
+    RequiredPropertyKeyCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Flags: {"kind":"UInt32"},
+    MachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetClassPropertyW(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    PropertyKey: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetClassPropertyExW(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    PropertyKey: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Flags: {"kind":"UInt32"},
+    MachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiSetClassPropertyW(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    PropertyKey: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyType: {"kind":"UInt32"},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiSetClassPropertyExW(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    PropertyKey: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyType: {"kind":"UInt32"},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+    MachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetDeviceRegistryPropertyA(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    Property: {"kind":"UInt32"},
+    PropertyRegDataType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetDeviceRegistryPropertyW(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    Property: {"kind":"UInt32"},
+    PropertyRegDataType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetClassRegistryPropertyA(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    Property: {"kind":"UInt32"},
+    PropertyRegDataType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    MachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetClassRegistryPropertyW(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    Property: {"kind":"UInt32"},
+    PropertyRegDataType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    MachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiSetDeviceRegistryPropertyA(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    Property: {"kind":"UInt32"},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiSetDeviceRegistryPropertyW(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    Property: {"kind":"UInt32"},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiSetClassRegistryPropertyA(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    Property: {"kind":"UInt32"},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind":"UInt32"},
+    MachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiSetClassRegistryPropertyW(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    Property: {"kind":"UInt32"},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind":"UInt32"},
+    MachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetDeviceInstallParamsA(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    DeviceInstallParams: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINSTALL_PARAMS_A},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetDeviceInstallParamsW(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    DeviceInstallParams: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINSTALL_PARAMS_W},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetClassInstallParamsA(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    ClassInstallParams: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_CLASSINSTALL_HEADER},
+    ClassInstallParamsSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetClassInstallParamsW(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    ClassInstallParams: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_CLASSINSTALL_HEADER},
+    ClassInstallParamsSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiSetDeviceInstallParamsA(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    DeviceInstallParams: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINSTALL_PARAMS_A},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiSetDeviceInstallParamsW(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    DeviceInstallParams: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINSTALL_PARAMS_W},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiSetClassInstallParamsA(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    ClassInstallParams: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_CLASSINSTALL_HEADER},
+    ClassInstallParamsSize: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiSetClassInstallParamsW(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    ClassInstallParams: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_CLASSINSTALL_HEADER},
+    ClassInstallParamsSize: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetDriverInstallParamsA(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    DriverInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DRVINFO_DATA_V2_A},
+    DriverInstallParams: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DRVINSTALL_PARAMS},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetDriverInstallParamsW(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    DriverInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DRVINFO_DATA_V2_W},
+    DriverInstallParams: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DRVINSTALL_PARAMS},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiSetDriverInstallParamsA(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    DriverInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DRVINFO_DATA_V2_A},
+    DriverInstallParams: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DRVINSTALL_PARAMS},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiSetDriverInstallParamsW(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    DriverInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DRVINFO_DATA_V2_W},
+    DriverInstallParams: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DRVINSTALL_PARAMS},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiLoadClassIcon(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    LargeIcon: {"kind""Ptr","child":Windows.Win32.Gdi.HICON},
+    MiniIconIndex: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiLoadDeviceIcon(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    cxIcon: {"kind":"UInt32"},
+    cyIcon: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+    hIcon: {"kind""Ptr","child":Windows.Win32.Gdi.HICON},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiDrawMiniIcon(
+    hdc: Windows.Win32.Gdi.HDC,
+    rc: Windows.Win32.DisplayDevices.RECT,
+    MiniIconIndex: {"kind":"Int32"},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetClassBitmapIndex(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    MiniIconIndex: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetClassImageList(
+    ClassImageListData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_CLASSIMAGELIST_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetClassImageListExA(
+    ClassImageListData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_CLASSIMAGELIST_DATA},
+    MachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetClassImageListExW(
+    ClassImageListData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_CLASSIMAGELIST_DATA},
+    MachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetClassImageIndex(
+    ClassImageListData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_CLASSIMAGELIST_DATA},
+    ClassGuid: {"kind""Ptr","child":Guid},
+    ImageIndex: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiDestroyClassImageList(
+    ClassImageListData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_CLASSIMAGELIST_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetClassDevPropertySheetsA(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    PropertySheetHeader: {"kind""Ptr","child":Windows.Win32.Controls.PROPSHEETHEADERA_V2},
+    PropertySheetHeaderPageListSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PropertySheetType: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetClassDevPropertySheetsW(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    PropertySheetHeader: {"kind""Ptr","child":Windows.Win32.Controls.PROPSHEETHEADERW_V2},
+    PropertySheetHeaderPageListSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PropertySheetType: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiAskForOEMDisk(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiSelectOEMDrv(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiClassNameFromGuidA(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    ClassName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ClassNameSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiClassNameFromGuidW(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClassNameSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiClassNameFromGuidExA(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    ClassName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ClassNameSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    MachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiClassNameFromGuidExW(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClassNameSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    MachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiClassGuidsFromNameA(
+    ClassName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ClassGuidList: {"kind""Ptr","child":Guid},
+    ClassGuidListSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiClassGuidsFromNameW(
+    ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClassGuidList: {"kind""Ptr","child":Guid},
+    ClassGuidListSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiClassGuidsFromNameExA(
+    ClassName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ClassGuidList: {"kind""Ptr","child":Guid},
+    ClassGuidListSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    MachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiClassGuidsFromNameExW(
+    ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClassGuidList: {"kind""Ptr","child":Guid},
+    ClassGuidListSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    MachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetHwProfileFriendlyNameA(
+    HwProfile: {"kind":"UInt32"},
+    FriendlyName: {"kind""Ptr","child":{"kind":"SByte"}},
+    FriendlyNameSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetHwProfileFriendlyNameW(
+    HwProfile: {"kind":"UInt32"},
+    FriendlyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    FriendlyNameSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetHwProfileFriendlyNameExA(
+    HwProfile: {"kind":"UInt32"},
+    FriendlyName: {"kind""Ptr","child":{"kind":"SByte"}},
+    FriendlyNameSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    MachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetHwProfileFriendlyNameExW(
+    HwProfile: {"kind":"UInt32"},
+    FriendlyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    FriendlyNameSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    MachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetWizardPage(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    InstallWizardData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_INSTALLWIZARD_DATA},
+    PageType: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetSelectedDevice(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiSetSelectedDevice(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetActualModelsSectionA(
+    Context: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+    AlternatePlatformInfo: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.SP_ALTPLATFORM_INFO_V2},
+    InfSectionWithExt: {"kind""Ptr","child":{"kind":"SByte"}},
+    InfSectionWithExtSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetActualModelsSectionW(
+    Context: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+    AlternatePlatformInfo: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.SP_ALTPLATFORM_INFO_V2},
+    InfSectionWithExt: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InfSectionWithExtSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetActualSectionToInstallA(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    InfSectionName: {"kind""Ptr","child":{"kind":"SByte"}},
+    InfSectionWithExt: {"kind""Ptr","child":{"kind":"SByte"}},
+    InfSectionWithExtSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Extension: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetActualSectionToInstallW(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    InfSectionName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InfSectionWithExt: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InfSectionWithExtSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Extension: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetActualSectionToInstallExA(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    InfSectionName: {"kind""Ptr","child":{"kind":"SByte"}},
+    AlternatePlatformInfo: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.SP_ALTPLATFORM_INFO_V2},
+    InfSectionWithExt: {"kind""Ptr","child":{"kind":"SByte"}},
+    InfSectionWithExtSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Extension: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetActualSectionToInstallExW(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    InfSectionName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    AlternatePlatformInfo: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.SP_ALTPLATFORM_INFO_V2},
+    InfSectionWithExt: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InfSectionWithExtSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Extension: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetCustomDevicePropertyA(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    CustomPropertyName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Flags: {"kind":"UInt32"},
+    PropertyRegDataType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetCustomDevicePropertyW(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    CustomPropertyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    PropertyRegDataType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Add_Empty_Log_Conf(
+    plcLogConf: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    dnDevInst: {"kind":"UInt32"},
+    Priority: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Add_Empty_Log_Conf_Ex(
+    plcLogConf: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    dnDevInst: {"kind":"UInt32"},
+    Priority: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Add_IDA(
+    dnDevInst: {"kind":"UInt32"},
+    pszID: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Add_IDW(
+    dnDevInst: {"kind":"UInt32"},
+    pszID: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Add_ID_ExA(
+    dnDevInst: {"kind":"UInt32"},
+    pszID: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Add_ID_ExW(
+    dnDevInst: {"kind":"UInt32"},
+    pszID: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Add_Range(
+    ullStartValue: {"kind":"UInt64"},
+    ullEndValue: {"kind":"UInt64"},
+    rlh: {"kind":"UIntPtr"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Add_Res_Des(
+    prdResDes: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    lcLogConf: {"kind":"UIntPtr"},
+    ResourceID: {"kind":"UInt32"},
+    ResourceData: {"kind""Ptr","child":{"kind":"Void"}},
+    ResourceLen: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Add_Res_Des_Ex(
+    prdResDes: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    lcLogConf: {"kind":"UIntPtr"},
+    ResourceID: {"kind":"UInt32"},
+    ResourceData: {"kind""Ptr","child":{"kind":"Void"}},
+    ResourceLen: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Connect_MachineA(
+    UNCServerName: {"kind""Ptr","child":{"kind":"SByte"}},
+    phMachine: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Connect_MachineW(
+    UNCServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phMachine: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Create_DevNodeA(
+    pdnDevInst: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pDeviceID: {"kind""Ptr","child":{"kind":"SByte"}},
+    dnParent: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Create_DevNodeW(
+    pdnDevInst: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pDeviceID: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dnParent: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Create_DevNode_ExA(
+    pdnDevInst: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pDeviceID: {"kind""Ptr","child":{"kind":"SByte"}},
+    dnParent: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Create_DevNode_ExW(
+    pdnDevInst: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pDeviceID: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dnParent: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Create_Range_List(
+    prlh: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Delete_Class_Key(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Delete_Class_Key_Ex(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Delete_DevNode_Key(
+    dnDevNode: {"kind":"UInt32"},
+    ulHardwareProfile: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Delete_DevNode_Key_Ex(
+    dnDevNode: {"kind":"UInt32"},
+    ulHardwareProfile: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Delete_Range(
+    ullStartValue: {"kind":"UInt64"},
+    ullEndValue: {"kind":"UInt64"},
+    rlh: {"kind":"UIntPtr"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Detect_Resource_Conflict(
+    dnDevInst: {"kind":"UInt32"},
+    ResourceID: {"kind":"UInt32"},
+    ResourceData: {"kind""Ptr","child":{"kind":"Void"}},
+    ResourceLen: {"kind":"UInt32"},
+    pbConflictDetected: {"kind""Ptr","child":{"kind":"Int32"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Detect_Resource_Conflict_Ex(
+    dnDevInst: {"kind":"UInt32"},
+    ResourceID: {"kind":"UInt32"},
+    ResourceData: {"kind""Ptr","child":{"kind":"Void"}},
+    ResourceLen: {"kind":"UInt32"},
+    pbConflictDetected: {"kind""Ptr","child":{"kind":"Int32"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Disable_DevNode(
+    dnDevInst: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Disable_DevNode_Ex(
+    dnDevInst: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Disconnect_Machine(
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Dup_Range_List(
+    rlhOld: {"kind":"UIntPtr"},
+    rlhNew: {"kind":"UIntPtr"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Enable_DevNode(
+    dnDevInst: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Enable_DevNode_Ex(
+    dnDevInst: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Enumerate_Classes(
+    ulClassIndex: {"kind":"UInt32"},
+    ClassGuid: {"kind""Ptr","child":Guid},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Enumerate_Classes_Ex(
+    ulClassIndex: {"kind":"UInt32"},
+    ClassGuid: {"kind""Ptr","child":Guid},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Enumerate_EnumeratorsA(
+    ulEnumIndex: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Enumerate_EnumeratorsW(
+    ulEnumIndex: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Enumerate_Enumerators_ExA(
+    ulEnumIndex: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Enumerate_Enumerators_ExW(
+    ulEnumIndex: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Find_Range(
+    pullStart: {"kind""Ptr","child":{"kind":"UInt64"}},
+    ullStart: {"kind":"UInt64"},
+    ulLength: {"kind":"UInt32"},
+    ullAlignment: {"kind":"UInt64"},
+    ullEnd: {"kind":"UInt64"},
+    rlh: {"kind":"UIntPtr"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_First_Range(
+    rlh: {"kind":"UIntPtr"},
+    pullStart: {"kind""Ptr","child":{"kind":"UInt64"}},
+    pullEnd: {"kind""Ptr","child":{"kind":"UInt64"}},
+    preElement: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Free_Log_Conf(
+    lcLogConfToBeFreed: {"kind":"UIntPtr"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Free_Log_Conf_Ex(
+    lcLogConfToBeFreed: {"kind":"UIntPtr"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Free_Log_Conf_Handle(
+    lcLogConf: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Free_Range_List(
+    rlh: {"kind":"UIntPtr"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Free_Res_Des(
+    prdResDes: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    rdResDes: {"kind":"UIntPtr"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Free_Res_Des_Ex(
+    prdResDes: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    rdResDes: {"kind":"UIntPtr"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Free_Res_Des_Handle(
+    rdResDes: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Child(
+    pdnDevInst: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dnDevInst: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Child_Ex(
+    pdnDevInst: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dnDevInst: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Class_NameA(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    Buffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Class_NameW(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    Buffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Class_Name_ExA(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    Buffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Class_Name_ExW(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    Buffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Class_Key_NameA(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    pszKeyName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Class_Key_NameW(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    pszKeyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Class_Key_Name_ExA(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    pszKeyName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Class_Key_Name_ExW(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    pszKeyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Depth(
+    pulDepth: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dnDevInst: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Depth_Ex(
+    pulDepth: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dnDevInst: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Device_IDA(
+    dnDevInst: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    BufferLen: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Device_IDW(
+    dnDevInst: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    BufferLen: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Device_ID_ExA(
+    dnDevInst: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    BufferLen: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Device_ID_ExW(
+    dnDevInst: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    BufferLen: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Device_ID_ListA(
+    pszFilter: {"kind""Ptr","child":{"kind":"SByte"}},
+    Buffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    BufferLen: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Device_ID_ListW(
+    pszFilter: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Buffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    BufferLen: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Device_ID_List_ExA(
+    pszFilter: {"kind""Ptr","child":{"kind":"SByte"}},
+    Buffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    BufferLen: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Device_ID_List_ExW(
+    pszFilter: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Buffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    BufferLen: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Device_ID_List_SizeA(
+    pulLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pszFilter: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Device_ID_List_SizeW(
+    pulLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pszFilter: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Device_ID_List_Size_ExA(
+    pulLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pszFilter: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Device_ID_List_Size_ExW(
+    pulLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pszFilter: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Device_ID_Size(
+    pulLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dnDevInst: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Device_ID_Size_Ex(
+    pulLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dnDevInst: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-devices-config-l1-1-1" fn CM_Get_DevNode_PropertyW(
+    dnDevInst: {"kind":"UInt32"},
+    PropertyKey: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "CFGMGR32" fn CM_Get_DevNode_Property_ExW(
+    dnDevInst: {"kind":"UInt32"},
+    PropertyKey: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-devices-config-l1-1-1" fn CM_Get_DevNode_Property_Keys(
+    dnDevInst: {"kind":"UInt32"},
+    PropertyKeyArray: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyKeyCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "CFGMGR32" fn CM_Get_DevNode_Property_Keys_Ex(
+    dnDevInst: {"kind":"UInt32"},
+    PropertyKeyArray: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyKeyCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_DevNode_Registry_PropertyA(
+    dnDevInst: {"kind":"UInt32"},
+    ulProperty: {"kind":"UInt32"},
+    pulRegDataType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_DevNode_Registry_PropertyW(
+    dnDevInst: {"kind":"UInt32"},
+    ulProperty: {"kind":"UInt32"},
+    pulRegDataType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_DevNode_Registry_Property_ExA(
+    dnDevInst: {"kind":"UInt32"},
+    ulProperty: {"kind":"UInt32"},
+    pulRegDataType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_DevNode_Registry_Property_ExW(
+    dnDevInst: {"kind":"UInt32"},
+    ulProperty: {"kind":"UInt32"},
+    pulRegDataType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_DevNode_Custom_PropertyA(
+    dnDevInst: {"kind":"UInt32"},
+    pszCustomPropertyName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pulRegDataType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_DevNode_Custom_PropertyW(
+    dnDevInst: {"kind":"UInt32"},
+    pszCustomPropertyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pulRegDataType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_DevNode_Custom_Property_ExA(
+    dnDevInst: {"kind":"UInt32"},
+    pszCustomPropertyName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pulRegDataType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_DevNode_Custom_Property_ExW(
+    dnDevInst: {"kind":"UInt32"},
+    pszCustomPropertyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pulRegDataType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_DevNode_Status(
+    pulStatus: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pulProblemNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dnDevInst: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_DevNode_Status_Ex(
+    pulStatus: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pulProblemNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dnDevInst: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_First_Log_Conf(
+    plcLogConf: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    dnDevInst: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_First_Log_Conf_Ex(
+    plcLogConf: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    dnDevInst: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Global_State(
+    pulState: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Global_State_Ex(
+    pulState: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Hardware_Profile_InfoA(
+    ulIndex: {"kind":"UInt32"},
+    pHWProfileInfo: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.HWProfileInfo_sA},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Hardware_Profile_Info_ExA(
+    ulIndex: {"kind":"UInt32"},
+    pHWProfileInfo: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.HWProfileInfo_sA},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Hardware_Profile_InfoW(
+    ulIndex: {"kind":"UInt32"},
+    pHWProfileInfo: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.HWProfileInfo_sW},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Hardware_Profile_Info_ExW(
+    ulIndex: {"kind":"UInt32"},
+    pHWProfileInfo: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.HWProfileInfo_sW},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_HW_Prof_FlagsA(
+    pDeviceID: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulHardwareProfile: {"kind":"UInt32"},
+    pulValue: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_HW_Prof_FlagsW(
+    pDeviceID: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulHardwareProfile: {"kind":"UInt32"},
+    pulValue: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_HW_Prof_Flags_ExA(
+    pDeviceID: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulHardwareProfile: {"kind":"UInt32"},
+    pulValue: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_HW_Prof_Flags_ExW(
+    pDeviceID: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulHardwareProfile: {"kind":"UInt32"},
+    pulValue: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Device_Interface_AliasA(
+    pszDeviceInterface: {"kind""Ptr","child":{"kind":"SByte"}},
+    AliasInterfaceGuid: {"kind""Ptr","child":Guid},
+    pszAliasDeviceInterface: {"kind""Ptr","child":{"kind":"SByte"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Device_Interface_AliasW(
+    pszDeviceInterface: {"kind""Ptr","child":{"kind":"UInt16"}},
+    AliasInterfaceGuid: {"kind""Ptr","child":Guid},
+    pszAliasDeviceInterface: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Device_Interface_Alias_ExA(
+    pszDeviceInterface: {"kind""Ptr","child":{"kind":"SByte"}},
+    AliasInterfaceGuid: {"kind""Ptr","child":Guid},
+    pszAliasDeviceInterface: {"kind""Ptr","child":{"kind":"SByte"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Device_Interface_Alias_ExW(
+    pszDeviceInterface: {"kind""Ptr","child":{"kind":"UInt16"}},
+    AliasInterfaceGuid: {"kind""Ptr","child":Guid},
+    pszAliasDeviceInterface: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Device_Interface_ListA(
+    InterfaceClassGuid: {"kind""Ptr","child":Guid},
+    pDeviceID: {"kind""Ptr","child":{"kind":"SByte"}},
+    Buffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    BufferLen: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Device_Interface_ListW(
+    InterfaceClassGuid: {"kind""Ptr","child":Guid},
+    pDeviceID: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Buffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    BufferLen: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Device_Interface_List_ExA(
+    InterfaceClassGuid: {"kind""Ptr","child":Guid},
+    pDeviceID: {"kind""Ptr","child":{"kind":"SByte"}},
+    Buffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    BufferLen: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Device_Interface_List_ExW(
+    InterfaceClassGuid: {"kind""Ptr","child":Guid},
+    pDeviceID: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Buffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    BufferLen: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Device_Interface_List_SizeA(
+    pulLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+    InterfaceClassGuid: {"kind""Ptr","child":Guid},
+    pDeviceID: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Device_Interface_List_SizeW(
+    pulLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+    InterfaceClassGuid: {"kind""Ptr","child":Guid},
+    pDeviceID: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Device_Interface_List_Size_ExA(
+    pulLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+    InterfaceClassGuid: {"kind""Ptr","child":Guid},
+    pDeviceID: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Device_Interface_List_Size_ExW(
+    pulLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+    InterfaceClassGuid: {"kind""Ptr","child":Guid},
+    pDeviceID: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-devices-config-l1-1-1" fn CM_Get_Device_Interface_PropertyW(
+    pszDeviceInterface: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PropertyKey: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "CFGMGR32" fn CM_Get_Device_Interface_Property_ExW(
+    pszDeviceInterface: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PropertyKey: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-devices-config-l1-1-1" fn CM_Get_Device_Interface_Property_KeysW(
+    pszDeviceInterface: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PropertyKeyArray: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyKeyCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "CFGMGR32" fn CM_Get_Device_Interface_Property_Keys_ExW(
+    pszDeviceInterface: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PropertyKeyArray: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyKeyCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Log_Conf_Priority(
+    lcLogConf: {"kind":"UIntPtr"},
+    pPriority: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Log_Conf_Priority_Ex(
+    lcLogConf: {"kind":"UIntPtr"},
+    pPriority: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Next_Log_Conf(
+    plcLogConf: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    lcLogConf: {"kind":"UIntPtr"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Next_Log_Conf_Ex(
+    plcLogConf: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    lcLogConf: {"kind":"UIntPtr"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Parent(
+    pdnDevInst: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dnDevInst: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Parent_Ex(
+    pdnDevInst: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dnDevInst: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Res_Des_Data(
+    rdResDes: {"kind":"UIntPtr"},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    BufferLen: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Res_Des_Data_Ex(
+    rdResDes: {"kind":"UIntPtr"},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    BufferLen: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Res_Des_Data_Size(
+    pulSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    rdResDes: {"kind":"UIntPtr"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Res_Des_Data_Size_Ex(
+    pulSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    rdResDes: {"kind":"UIntPtr"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Sibling(
+    pdnDevInst: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dnDevInst: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Sibling_Ex(
+    pdnDevInst: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dnDevInst: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Version(
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Version_Ex(
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Is_Version_Available(
+    wVersion: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Is_Version_Available_Ex(
+    wVersion: {"kind":"UInt16"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Intersect_Range_List(
+    rlhOld1: {"kind":"UIntPtr"},
+    rlhOld2: {"kind":"UIntPtr"},
+    rlhNew: {"kind":"UIntPtr"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Invert_Range_List(
+    rlhOld: {"kind":"UIntPtr"},
+    rlhNew: {"kind":"UIntPtr"},
+    ullMaxValue: {"kind":"UInt64"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Locate_DevNodeA(
+    pdnDevInst: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pDeviceID: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Locate_DevNodeW(
+    pdnDevInst: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pDeviceID: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Locate_DevNode_ExA(
+    pdnDevInst: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pDeviceID: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Locate_DevNode_ExW(
+    pdnDevInst: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pDeviceID: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Merge_Range_List(
+    rlhOld1: {"kind":"UIntPtr"},
+    rlhOld2: {"kind":"UIntPtr"},
+    rlhNew: {"kind":"UIntPtr"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Modify_Res_Des(
+    prdResDes: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    rdResDes: {"kind":"UIntPtr"},
+    ResourceID: {"kind":"UInt32"},
+    ResourceData: {"kind""Ptr","child":{"kind":"Void"}},
+    ResourceLen: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Modify_Res_Des_Ex(
+    prdResDes: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    rdResDes: {"kind":"UIntPtr"},
+    ResourceID: {"kind":"UInt32"},
+    ResourceData: {"kind""Ptr","child":{"kind":"Void"}},
+    ResourceLen: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Move_DevNode(
+    dnFromDevInst: {"kind":"UInt32"},
+    dnToDevInst: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Move_DevNode_Ex(
+    dnFromDevInst: {"kind":"UInt32"},
+    dnToDevInst: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Next_Range(
+    preElement: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    pullStart: {"kind""Ptr","child":{"kind":"UInt64"}},
+    pullEnd: {"kind""Ptr","child":{"kind":"UInt64"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Next_Res_Des(
+    prdResDes: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    rdResDes: {"kind":"UIntPtr"},
+    ForResource: {"kind":"UInt32"},
+    pResourceID: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Next_Res_Des_Ex(
+    prdResDes: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    rdResDes: {"kind":"UIntPtr"},
+    ForResource: {"kind":"UInt32"},
+    pResourceID: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Open_Class_KeyA(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    pszClassName: {"kind""Ptr","child":{"kind":"SByte"}},
+    samDesired: {"kind":"UInt32"},
+    Disposition: {"kind":"UInt32"},
+    phkClass: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.HKEY},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Open_Class_KeyW(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    pszClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    samDesired: {"kind":"UInt32"},
+    Disposition: {"kind":"UInt32"},
+    phkClass: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.HKEY},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Open_Class_Key_ExA(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    pszClassName: {"kind""Ptr","child":{"kind":"SByte"}},
+    samDesired: {"kind":"UInt32"},
+    Disposition: {"kind":"UInt32"},
+    phkClass: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.HKEY},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Open_Class_Key_ExW(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    pszClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    samDesired: {"kind":"UInt32"},
+    Disposition: {"kind":"UInt32"},
+    phkClass: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.HKEY},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Open_DevNode_Key(
+    dnDevNode: {"kind":"UInt32"},
+    samDesired: {"kind":"UInt32"},
+    ulHardwareProfile: {"kind":"UInt32"},
+    Disposition: {"kind":"UInt32"},
+    phkDevice: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.HKEY},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Open_DevNode_Key_Ex(
+    dnDevNode: {"kind":"UInt32"},
+    samDesired: {"kind":"UInt32"},
+    ulHardwareProfile: {"kind":"UInt32"},
+    Disposition: {"kind":"UInt32"},
+    phkDevice: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.HKEY},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Open_Device_Interface_KeyA(
+    pszDeviceInterface: {"kind""Ptr","child":{"kind":"SByte"}},
+    samDesired: {"kind":"UInt32"},
+    Disposition: {"kind":"UInt32"},
+    phkDeviceInterface: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.HKEY},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Open_Device_Interface_KeyW(
+    pszDeviceInterface: {"kind""Ptr","child":{"kind":"UInt16"}},
+    samDesired: {"kind":"UInt32"},
+    Disposition: {"kind":"UInt32"},
+    phkDeviceInterface: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.HKEY},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Open_Device_Interface_Key_ExA(
+    pszDeviceInterface: {"kind""Ptr","child":{"kind":"SByte"}},
+    samDesired: {"kind":"UInt32"},
+    Disposition: {"kind":"UInt32"},
+    phkDeviceInterface: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.HKEY},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Open_Device_Interface_Key_ExW(
+    pszDeviceInterface: {"kind""Ptr","child":{"kind":"UInt16"}},
+    samDesired: {"kind":"UInt32"},
+    Disposition: {"kind":"UInt32"},
+    phkDeviceInterface: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.HKEY},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Delete_Device_Interface_KeyA(
+    pszDeviceInterface: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Delete_Device_Interface_KeyW(
+    pszDeviceInterface: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Delete_Device_Interface_Key_ExA(
+    pszDeviceInterface: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Delete_Device_Interface_Key_ExW(
+    pszDeviceInterface: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Query_Arbitrator_Free_Data(
+    pData: {"kind""Ptr","child":{"kind":"Void"}},
+    DataLen: {"kind":"UInt32"},
+    dnDevInst: {"kind":"UInt32"},
+    ResourceID: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Query_Arbitrator_Free_Data_Ex(
+    pData: {"kind""Ptr","child":{"kind":"Void"}},
+    DataLen: {"kind":"UInt32"},
+    dnDevInst: {"kind":"UInt32"},
+    ResourceID: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Query_Arbitrator_Free_Size(
+    pulSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dnDevInst: {"kind":"UInt32"},
+    ResourceID: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Query_Arbitrator_Free_Size_Ex(
+    pulSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dnDevInst: {"kind":"UInt32"},
+    ResourceID: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Query_Remove_SubTree(
+    dnAncestor: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Query_Remove_SubTree_Ex(
+    dnAncestor: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Query_And_Remove_SubTreeA(
+    dnAncestor: {"kind":"UInt32"},
+    pVetoType: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.PNP_VETO_TYPE},
+    pszVetoName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulNameLength: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Query_And_Remove_SubTreeW(
+    dnAncestor: {"kind":"UInt32"},
+    pVetoType: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.PNP_VETO_TYPE},
+    pszVetoName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulNameLength: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Query_And_Remove_SubTree_ExA(
+    dnAncestor: {"kind":"UInt32"},
+    pVetoType: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.PNP_VETO_TYPE},
+    pszVetoName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulNameLength: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Query_And_Remove_SubTree_ExW(
+    dnAncestor: {"kind":"UInt32"},
+    pVetoType: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.PNP_VETO_TYPE},
+    pszVetoName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulNameLength: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Request_Device_EjectA(
+    dnDevInst: {"kind":"UInt32"},
+    pVetoType: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.PNP_VETO_TYPE},
+    pszVetoName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulNameLength: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Request_Device_Eject_ExA(
+    dnDevInst: {"kind":"UInt32"},
+    pVetoType: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.PNP_VETO_TYPE},
+    pszVetoName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulNameLength: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Request_Device_EjectW(
+    dnDevInst: {"kind":"UInt32"},
+    pVetoType: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.PNP_VETO_TYPE},
+    pszVetoName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulNameLength: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Request_Device_Eject_ExW(
+    dnDevInst: {"kind":"UInt32"},
+    pVetoType: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.PNP_VETO_TYPE},
+    pszVetoName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulNameLength: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Reenumerate_DevNode(
+    dnDevInst: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Reenumerate_DevNode_Ex(
+    dnDevInst: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Register_Device_InterfaceA(
+    dnDevInst: {"kind":"UInt32"},
+    InterfaceClassGuid: {"kind""Ptr","child":Guid},
+    pszReference: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszDeviceInterface: {"kind""Ptr","child":{"kind":"SByte"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Register_Device_InterfaceW(
+    dnDevInst: {"kind":"UInt32"},
+    InterfaceClassGuid: {"kind""Ptr","child":Guid},
+    pszReference: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszDeviceInterface: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Register_Device_Interface_ExA(
+    dnDevInst: {"kind":"UInt32"},
+    InterfaceClassGuid: {"kind""Ptr","child":Guid},
+    pszReference: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszDeviceInterface: {"kind""Ptr","child":{"kind":"SByte"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Register_Device_Interface_ExW(
+    dnDevInst: {"kind":"UInt32"},
+    InterfaceClassGuid: {"kind""Ptr","child":Guid},
+    pszReference: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszDeviceInterface: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Set_DevNode_Problem_Ex(
+    dnDevInst: {"kind":"UInt32"},
+    ulProblem: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Set_DevNode_Problem(
+    dnDevInst: {"kind":"UInt32"},
+    ulProblem: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Unregister_Device_InterfaceA(
+    pszDeviceInterface: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Unregister_Device_InterfaceW(
+    pszDeviceInterface: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Unregister_Device_Interface_ExA(
+    pszDeviceInterface: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Unregister_Device_Interface_ExW(
+    pszDeviceInterface: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Register_Device_Driver(
+    dnDevInst: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Register_Device_Driver_Ex(
+    dnDevInst: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Remove_SubTree(
+    dnAncestor: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Remove_SubTree_Ex(
+    dnAncestor: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-devices-config-l1-1-1" fn CM_Set_DevNode_PropertyW(
+    dnDevInst: {"kind":"UInt32"},
+    PropertyKey: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyType: {"kind":"UInt32"},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "CFGMGR32" fn CM_Set_DevNode_Property_ExW(
+    dnDevInst: {"kind":"UInt32"},
+    PropertyKey: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyType: {"kind":"UInt32"},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Set_DevNode_Registry_PropertyA(
+    dnDevInst: {"kind":"UInt32"},
+    ulProperty: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    ulLength: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Set_DevNode_Registry_PropertyW(
+    dnDevInst: {"kind":"UInt32"},
+    ulProperty: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    ulLength: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Set_DevNode_Registry_Property_ExA(
+    dnDevInst: {"kind":"UInt32"},
+    ulProperty: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    ulLength: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Set_DevNode_Registry_Property_ExW(
+    dnDevInst: {"kind":"UInt32"},
+    ulProperty: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    ulLength: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-devices-config-l1-1-1" fn CM_Set_Device_Interface_PropertyW(
+    pszDeviceInterface: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PropertyKey: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyType: {"kind":"UInt32"},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "CFGMGR32" fn CM_Set_Device_Interface_Property_ExW(
+    pszDeviceInterface: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PropertyKey: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyType: {"kind":"UInt32"},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Is_Dock_Station_Present(
+    pbPresent: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Is_Dock_Station_Present_Ex(
+    pbPresent: {"kind""Ptr","child":{"kind":"Int32"}},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Request_Eject_PC(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Request_Eject_PC_Ex(
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Set_HW_Prof_FlagsA(
+    pDeviceID: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulConfig: {"kind":"UInt32"},
+    ulValue: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Set_HW_Prof_FlagsW(
+    pDeviceID: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulConfig: {"kind":"UInt32"},
+    ulValue: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Set_HW_Prof_Flags_ExA(
+    pDeviceID: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulConfig: {"kind":"UInt32"},
+    ulValue: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Set_HW_Prof_Flags_ExW(
+    pDeviceID: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulConfig: {"kind":"UInt32"},
+    ulValue: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Setup_DevNode(
+    dnDevInst: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Setup_DevNode_Ex(
+    dnDevInst: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Test_Range_Available(
+    ullStartValue: {"kind":"UInt64"},
+    ullEndValue: {"kind":"UInt64"},
+    rlh: {"kind":"UIntPtr"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Uninstall_DevNode(
+    dnDevInst: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Uninstall_DevNode_Ex(
+    dnDevInst: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Run_Detection(
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Run_Detection_Ex(
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Set_HW_Prof(
+    ulHardwareProfile: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Set_HW_Prof_Ex(
+    ulHardwareProfile: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Query_Resource_Conflict_List(
+    pclConflictList: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    dnDevInst: {"kind":"UInt32"},
+    ResourceID: {"kind":"UInt32"},
+    ResourceData: {"kind""Ptr","child":{"kind":"Void"}},
+    ResourceLen: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Free_Resource_Conflict_Handle(
+    clConflictList: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Resource_Conflict_Count(
+    clConflictList: {"kind":"UIntPtr"},
+    pulCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Resource_Conflict_DetailsA(
+    clConflictList: {"kind":"UIntPtr"},
+    ulIndex: {"kind":"UInt32"},
+    pConflictDetails: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.CONFLICT_DETAILS_A},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Resource_Conflict_DetailsW(
+    clConflictList: {"kind":"UIntPtr"},
+    ulIndex: {"kind":"UInt32"},
+    pConflictDetails: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.CONFLICT_DETAILS_W},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-devices-config-l1-1-1" fn CM_Get_Class_PropertyW(
+    ClassGUID: {"kind""Ptr","child":Guid},
+    PropertyKey: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "CFGMGR32" fn CM_Get_Class_Property_ExW(
+    ClassGUID: {"kind""Ptr","child":Guid},
+    PropertyKey: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-devices-config-l1-1-1" fn CM_Get_Class_Property_Keys(
+    ClassGUID: {"kind""Ptr","child":Guid},
+    PropertyKeyArray: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyKeyCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "CFGMGR32" fn CM_Get_Class_Property_Keys_Ex(
+    ClassGUID: {"kind""Ptr","child":Guid},
+    PropertyKeyArray: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyKeyCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-devices-config-l1-1-1" fn CM_Set_Class_PropertyW(
+    ClassGUID: {"kind""Ptr","child":Guid},
+    PropertyKey: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyType: {"kind":"UInt32"},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "CFGMGR32" fn CM_Set_Class_Property_ExW(
+    ClassGUID: {"kind""Ptr","child":Guid},
+    PropertyKey: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPKEY},
+    PropertyType: {"kind":"UInt32"},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    PropertyBufferSize: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Class_Registry_PropertyA(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    ulProperty: {"kind":"UInt32"},
+    pulRegDataType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Get_Class_Registry_PropertyW(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    ulProperty: {"kind":"UInt32"},
+    pulRegDataType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    pulLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Set_Class_Registry_PropertyA(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    ulProperty: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    ulLength: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CM_Set_Class_Registry_PropertyW(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    ulProperty: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    ulLength: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    hMachine: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn CMP_WaitNoPendingInstallEvents(
+    dwTimeout: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-devices-config-l1-1-1" fn CM_Register_Notification(
+    pFilter: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.CM_NOTIFY_FILTER},
+    pContext: {"kind""Ptr","child":{"kind":"Void"}},
+    pCallback: Windows.Win32.DeviceAndDriverInstallation.PCM_NOTIFY_CALLBACK,
+    pNotifyContext: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.HCMNOTIFICATION__}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-devices-config-l1-1-1" fn CM_Unregister_Notification(
+    NotifyContext: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.HCMNOTIFICATION__},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-devices-config-l1-1-1" fn CM_MapCrToWin32Err(
+    CmReturnCode: {"kind":"UInt32"},
+    DefaultErr: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "newdev" fn UpdateDriverForPlugAndPlayDevicesA(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    HardwareId: {"kind""Ptr","child":{"kind":"SByte"}},
+    FullInfPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    InstallFlags: {"kind":"UInt32"},
+    bRebootRequired: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "newdev" fn UpdateDriverForPlugAndPlayDevicesW(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    HardwareId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    FullInfPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InstallFlags: {"kind":"UInt32"},
+    bRebootRequired: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "newdev" fn DiInstallDevice(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    DriverInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DRVINFO_DATA_V2_A},
+    Flags: {"kind":"UInt32"},
+    NeedReboot: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "newdev" fn DiInstallDriverW(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    InfPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    NeedReboot: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "newdev" fn DiInstallDriverA(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    InfPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    Flags: {"kind":"UInt32"},
+    NeedReboot: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "newdev" fn DiUninstallDevice(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    Flags: {"kind":"UInt32"},
+    NeedReboot: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "newdev" fn DiUninstallDriverW(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    InfPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    NeedReboot: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "newdev" fn DiUninstallDriverA(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    InfPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    Flags: {"kind":"UInt32"},
+    NeedReboot: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "newdev" fn DiShowUpdateDevice(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    Flags: {"kind":"UInt32"},
+    NeedReboot: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "newdev" fn DiRollbackDriver(
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    Flags: {"kind":"UInt32"},
+    NeedReboot: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "newdev" fn DiShowUpdateDriver(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    FilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    NeedReboot: {"kind""Ptr","child":{"kind":"Int32"}},
+],
+
+"unicode_aliases": [
+     "SP_DEVICE_INTERFACE_DETAIL_DATA_"
+     "SP_DEVINFO_LIST_DETAIL_DATA_"
+     "SP_DEVINSTALL_PARAMS_"
+     "SP_SELECTDEVICE_PARAMS_"
+     "SP_TROUBLESHOOTER_PARAMS_"
+     "SP_POWERMESSAGEWAKE_PARAMS_"
+     "SP_DRVINFO_DATA_V2_"
+     "SP_DRVINFO_DATA_V1_"
+     "SP_DRVINFO_DETAIL_DATA_"
+     "SP_BACKUP_QUEUE_PARAMS_V2_"
+     "SP_BACKUP_QUEUE_PARAMS_V1_"
+     "CONFLICT_DETAILS_"
+     "HWProfileInfo_s"
+     "SetupGetInfDriverStoreLocation"
+     "SetupGetInfPublishedName"
+     "SetupGetBackupInformation"
+     "SetupPrepareQueueForRestore"
+     "SetupDiCreateDeviceInfoListEx"
+     "SetupDiGetDeviceInfoListDetail"
+     "SetupDiCreateDeviceInfo"
+     "SetupDiOpenDeviceInfo"
+     "SetupDiGetDeviceInstanceId"
+     "SetupDiCreateDeviceInterface"
+     "SetupDiOpenDeviceInterface"
+     "SetupDiGetDeviceInterfaceDetail"
+     "SetupDiEnumDriverInfo"
+     "SetupDiGetSelectedDriver"
+     "SetupDiSetSelectedDriver"
+     "SetupDiGetDriverInfoDetail"
+     "SetupDiGetClassDevsEx"
+     "SetupDiGetINFClass"
+     "SetupDiBuildClassInfoListEx"
+     "SetupDiGetClassDescription"
+     "SetupDiGetClassDescriptionEx"
+     "SetupDiInstallClass"
+     "SetupDiInstallClassEx"
+     "SetupDiOpenClassRegKeyEx"
+     "SetupDiCreateDeviceInterfaceRegKey"
+     "SetupDiCreateDevRegKey"
+     "SetupDiGetHwProfileListEx"
+     "SetupDiGetDeviceRegistryProperty"
+     "SetupDiGetClassRegistryProperty"
+     "SetupDiSetDeviceRegistryProperty"
+     "SetupDiSetClassRegistryProperty"
+     "SetupDiGetDeviceInstallParams"
+     "SetupDiGetClassInstallParams"
+     "SetupDiSetDeviceInstallParams"
+     "SetupDiSetClassInstallParams"
+     "SetupDiGetDriverInstallParams"
+     "SetupDiSetDriverInstallParams"
+     "SetupDiGetClassImageListEx"
+     "SetupDiGetClassDevPropertySheets"
+     "SetupDiClassNameFromGuid"
+     "SetupDiClassNameFromGuidEx"
+     "SetupDiClassGuidsFromName"
+     "SetupDiClassGuidsFromNameEx"
+     "SetupDiGetHwProfileFriendlyName"
+     "SetupDiGetHwProfileFriendlyNameEx"
+     "SetupDiGetActualModelsSection"
+     "SetupDiGetActualSectionToInstall"
+     "SetupDiGetActualSectionToInstallEx"
+     "SetupDiGetCustomDeviceProperty"
+     "CM_Add_ID"
+     "CM_Add_ID_Ex"
+     "CM_Connect_Machine"
+     "CM_Create_DevNode"
+     "CM_Create_DevNode_Ex"
+     "CM_Enumerate_Enumerators"
+     "CM_Enumerate_Enumerators_Ex"
+     "CM_Get_Class_Name"
+     "CM_Get_Class_Name_Ex"
+     "CM_Get_Class_Key_Name"
+     "CM_Get_Class_Key_Name_Ex"
+     "CM_Get_Device_ID"
+     "CM_Get_Device_ID_Ex"
+     "CM_Get_Device_ID_List"
+     "CM_Get_Device_ID_List_Ex"
+     "CM_Get_Device_ID_List_Size"
+     "CM_Get_Device_ID_List_Size_Ex"
+     "CM_Get_DevNode_Registry_Property"
+     "CM_Get_DevNode_Registry_Property_Ex"
+     "CM_Get_DevNode_Custom_Property"
+     "CM_Get_DevNode_Custom_Property_Ex"
+     "CM_Get_Hardware_Profile_Info"
+     "CM_Get_Hardware_Profile_Info_Ex"
+     "CM_Get_HW_Prof_Flags"
+     "CM_Get_HW_Prof_Flags_Ex"
+     "CM_Get_Device_Interface_Alias"
+     "CM_Get_Device_Interface_Alias_Ex"
+     "CM_Get_Device_Interface_List"
+     "CM_Get_Device_Interface_List_Ex"
+     "CM_Get_Device_Interface_List_Size"
+     "CM_Get_Device_Interface_List_Size_Ex"
+     "CM_Locate_DevNode"
+     "CM_Locate_DevNode_Ex"
+     "CM_Open_Class_Key"
+     "CM_Open_Class_Key_Ex"
+     "CM_Open_Device_Interface_Key"
+     "CM_Open_Device_Interface_Key_Ex"
+     "CM_Delete_Device_Interface_Key"
+     "CM_Delete_Device_Interface_Key_Ex"
+     "CM_Query_And_Remove_SubTree"
+     "CM_Query_And_Remove_SubTree_Ex"
+     "CM_Request_Device_Eject"
+     "CM_Request_Device_Eject_Ex"
+     "CM_Register_Device_Interface"
+     "CM_Register_Device_Interface_Ex"
+     "CM_Unregister_Device_Interface"
+     "CM_Unregister_Device_Interface_Ex"
+     "CM_Set_DevNode_Registry_Property"
+     "CM_Set_DevNode_Registry_Property_Ex"
+     "CM_Set_HW_Prof_Flags"
+     "CM_Set_HW_Prof_Flags_Ex"
+     "CM_Get_Resource_Conflict_Details"
+     "CM_Get_Class_Registry_Property"
+     "CM_Set_Class_Registry_Property"
+     "UpdateDriverForPlugAndPlayDevices"
+     "DiInstallDriver"
+     "DiUninstallDriver"
+]}

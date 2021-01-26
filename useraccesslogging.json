@@ -1,0 +1,71 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: IEnumSpeechCommands
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumSpeechCommands = *opaque{
+    // TODO: Method 'Clone'
+    // TODO: Method 'Next'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Skip'
+};
+// --------------------------------------------------------
+// Type: ISpeechCommandProvider
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISpeechCommandProvider = *opaque{
+    // TODO: Method 'EnumSpeechCommands'
+    // TODO: Method 'ProcessCommand'
+};
+// --------------------------------------------------------
+// Type: ITfFnCustomSpeechCommand
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfFnCustomSpeechCommand = *opaque{
+    // TODO: Method 'SetSpeechCommandProvider'
+};
+// --------------------------------------------------------
+// Type: UAL_DATA_BLOB
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const UAL_DATA_BLOB = extern struct {
+    Size: {"kind":"UInt32"},
+    RoleGuid: Guid,
+    TenantId: Guid,
+    Address: Windows.Win32.NetworkDrivers.SOCKADDR_STORAGE_LH,
+    UserName: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MsCtfMonitor" fn DoMsCtfMonitor(
+    dwFlags: {"kind":"UInt32"},
+    hEventForServiceStop: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ualapi" fn UalStart(
+    Data: {"kind""Ptr","child":Windows.Win32.UserAccessLogging.UAL_DATA_BLOB},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ualapi" fn UalStop(
+    Data: {"kind""Ptr","child":Windows.Win32.UserAccessLogging.UAL_DATA_BLOB},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ualapi" fn UalInstrument(
+    Data: {"kind""Ptr","child":Windows.Win32.UserAccessLogging.UAL_DATA_BLOB},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ualapi" fn UalRegisterProduct(
+    wszProductName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszRoleName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszGuid: {"kind""Ptr","child":{"kind":"UInt16"}},
+],
+
+"unicode_aliases": [
+]}

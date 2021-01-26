@@ -1,0 +1,471 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: CriticalPolicySectionHandle
+// TypeLayoutAttr: sequential
+// RAIIFree 'LeaveCriticalPolicySection' (TODO: can we use this information?)
+pub const CriticalPolicySectionHandle = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: GPO_LINK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const GPO_LINK = *opaque{
+};
+// --------------------------------------------------------
+// Type: GROUP_POLICY_OBJECTA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GROUP_POLICY_OBJECTA = extern struct {
+    dwOptions: {"kind":"UInt32"},
+    dwVersion: {"kind":"UInt32"},
+    lpDSPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpFileSysPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpDisplayName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szGPOName: {"kind":"Array","child": {"kind":"SByte"}},
+    GPOLink: Windows.Win32.Policy.GPO_LINK,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+    pNext: {"kind""Ptr","child":Windows.Win32.Policy.GROUP_POLICY_OBJECTA},
+    pPrev: {"kind""Ptr","child":Windows.Win32.Policy.GROUP_POLICY_OBJECTA},
+    lpExtensions: {"kind""Ptr","child":{"kind":"SByte"}},
+    lParam2: Windows.Win32.WindowsAndMessaging.LPARAM,
+    lpLink: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: GROUP_POLICY_OBJECTW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GROUP_POLICY_OBJECTW = extern struct {
+    dwOptions: {"kind":"UInt32"},
+    dwVersion: {"kind":"UInt32"},
+    lpDSPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpFileSysPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpDisplayName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szGPOName: {"kind":"Array","child": {"kind":"UInt16"}},
+    GPOLink: Windows.Win32.Policy.GPO_LINK,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+    pNext: {"kind""Ptr","child":Windows.Win32.Policy.GROUP_POLICY_OBJECTW},
+    pPrev: {"kind""Ptr","child":Windows.Win32.Policy.GROUP_POLICY_OBJECTW},
+    lpExtensions: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lParam2: Windows.Win32.WindowsAndMessaging.LPARAM,
+    lpLink: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: PFNSTATUSMESSAGECALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFNSTATUSMESSAGECALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFNPROCESSGROUPPOLICY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFNPROCESSGROUPPOLICY = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFNPROCESSGROUPPOLICYEX
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFNPROCESSGROUPPOLICYEX = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: RSOP_TARGET
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RSOP_TARGET = extern struct {
+    pwszAccountName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszNewSOM: {"kind""Ptr","child":{"kind":"UInt16"}},
+    psaSecurityGroups: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+    pRsopToken: {"kind""Ptr","child":{"kind":"Void"}},
+    pGPOList: {"kind""Ptr","child":Windows.Win32.Policy.GROUP_POLICY_OBJECTA},
+    pWbemServices: Windows.Win32.Wmi.IWbemServices,
+};
+// --------------------------------------------------------
+// Type: PFNGENERATEGROUPPOLICY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFNGENERATEGROUPPOLICY = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: SETTINGSTATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SETTINGSTATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: POLICYSETTINGSTATUSINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const POLICYSETTINGSTATUSINFO = extern struct {
+    szKey: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szEventSource: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szEventLogName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwEventID: {"kind":"UInt32"},
+    dwErrorCode: {"kind":"UInt32"},
+    status: Windows.Win32.Policy.SETTINGSTATUS,
+    timeLogged: Windows.Win32.WindowsProgramming.SYSTEMTIME,
+};
+// --------------------------------------------------------
+// Type: INSTALLSPECTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const INSTALLSPECTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: INSTALLSPEC
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const INSTALLSPEC = *opaque{
+    // --------------------------------------------------------
+    // Type: _AppName_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _AppName_e__Struct = extern struct {
+        Name: {"kind""Ptr","child":{"kind":"UInt16"}},
+        GPOId: Guid,
+    };
+    // --------------------------------------------------------
+    // Type: _COMClass_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _COMClass_e__Struct = extern struct {
+        Clsid: Guid,
+        ClsCtx: {"kind":"UInt32"},
+    };
+};
+// --------------------------------------------------------
+// Type: INSTALLDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INSTALLDATA = extern struct {
+    Type: Windows.Win32.Policy.INSTALLSPECTYPE,
+    Spec: Windows.Win32.Policy.INSTALLSPEC,
+};
+// --------------------------------------------------------
+// Type: APPSTATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const APPSTATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: LOCALMANAGEDAPPLICATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LOCALMANAGEDAPPLICATION = extern struct {
+    pszDeploymentName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszPolicyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszProductId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwState: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MANAGEDAPPLICATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MANAGEDAPPLICATION = extern struct {
+    pszPackageName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszPublisher: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwVersionHi: {"kind":"UInt32"},
+    dwVersionLo: {"kind":"UInt32"},
+    dwRevision: {"kind":"UInt32"},
+    GpoId: Guid,
+    pszPolicyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ProductId: Guid,
+    Language: {"kind":"UInt16"},
+    pszOwner: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszCompany: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszComments: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszContact: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszSupportUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwPathType: {"kind":"UInt32"},
+    bInstalled: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: GROUP_POLICY_OBJECT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const GROUP_POLICY_OBJECT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: GROUP_POLICY_HINT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const GROUP_POLICY_HINT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: IGPEInformation
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IGPEInformation = *opaque{
+    // TODO: Method 'GetName'
+    // TODO: Method 'GetDisplayName'
+    // TODO: Method 'GetRegistryKey'
+    // TODO: Method 'GetDSPath'
+    // TODO: Method 'GetFileSysPath'
+    // TODO: Method 'GetOptions'
+    // TODO: Method 'GetType'
+    // TODO: Method 'GetHint'
+    // TODO: Method 'PolicyChanged'
+};
+// --------------------------------------------------------
+// Type: IGroupPolicyObject
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IGroupPolicyObject = *opaque{
+    // TODO: Method 'New'
+    // TODO: Method 'OpenDSGPO'
+    // TODO: Method 'OpenLocalMachineGPO'
+    // TODO: Method 'OpenRemoteMachineGPO'
+    // TODO: Method 'Save'
+    // TODO: Method 'Delete'
+    // TODO: Method 'GetName'
+    // TODO: Method 'GetDisplayName'
+    // TODO: Method 'SetDisplayName'
+    // TODO: Method 'GetPath'
+    // TODO: Method 'GetDSPath'
+    // TODO: Method 'GetFileSysPath'
+    // TODO: Method 'GetRegistryKey'
+    // TODO: Method 'GetOptions'
+    // TODO: Method 'SetOptions'
+    // TODO: Method 'GetType'
+    // TODO: Method 'GetMachineName'
+    // TODO: Method 'GetPropertySheetPages'
+};
+// --------------------------------------------------------
+// Type: IRSOPInformation
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRSOPInformation = *opaque{
+    // TODO: Method 'GetNamespace'
+    // TODO: Method 'GetFlags'
+    // TODO: Method 'GetEventLogEntryText'
+};
+// --------------------------------------------------------
+// Type: GPOBROWSEINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GPOBROWSEINFO = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    hwndOwner: Windows.Win32.WindowsAndMessaging.HWND,
+    lpTitle: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpInitialOU: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpDSPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwDSPathSize: {"kind":"UInt32"},
+    lpName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwNameSize: {"kind":"UInt32"},
+    gpoType: Windows.Win32.Policy.GROUP_POLICY_OBJECT_TYPE,
+    gpoHint: Windows.Win32.Policy.GROUP_POLICY_HINT_TYPE,
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USERENV" fn RefreshPolicy(
+    bMachine: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USERENV" fn RefreshPolicyEx(
+    bMachine: Windows.Win32.SystemServices.BOOL,
+    dwOptions: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USERENV" fn EnterCriticalPolicySection(
+    bMachine: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USERENV" fn LeaveCriticalPolicySection(
+    hSection: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USERENV" fn RegisterGPNotification(
+    hEvent: Windows.Win32.SystemServices.HANDLE,
+    bMachine: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USERENV" fn UnregisterGPNotification(
+    hEvent: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USERENV" fn GetGPOListA(
+    hToken: Windows.Win32.SystemServices.HANDLE,
+    lpName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpHostName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpComputerName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwFlags: {"kind":"UInt32"},
+    pGPOList: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Policy.GROUP_POLICY_OBJECTA}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USERENV" fn GetGPOListW(
+    hToken: Windows.Win32.SystemServices.HANDLE,
+    lpName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpHostName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpComputerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+    pGPOList: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Policy.GROUP_POLICY_OBJECTW}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USERENV" fn FreeGPOListA(
+    pGPOList: {"kind""Ptr","child":Windows.Win32.Policy.GROUP_POLICY_OBJECTA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USERENV" fn FreeGPOListW(
+    pGPOList: {"kind""Ptr","child":Windows.Win32.Policy.GROUP_POLICY_OBJECTW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USERENV" fn GetAppliedGPOListA(
+    dwFlags: {"kind":"UInt32"},
+    pMachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pSidUser: {"kind""Ptr","child":{"kind":"Void"}},
+    pGuidExtension: {"kind""Ptr","child":Guid},
+    ppGPOList: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Policy.GROUP_POLICY_OBJECTA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USERENV" fn GetAppliedGPOListW(
+    dwFlags: {"kind":"UInt32"},
+    pMachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pSidUser: {"kind""Ptr","child":{"kind":"Void"}},
+    pGuidExtension: {"kind""Ptr","child":Guid},
+    ppGPOList: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Policy.GROUP_POLICY_OBJECTW}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USERENV" fn ProcessGroupPolicyCompleted(
+    extensionId: {"kind""Ptr","child":Guid},
+    pAsyncHandle: {"kind":"UIntPtr"},
+    dwStatus: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USERENV" fn ProcessGroupPolicyCompletedEx(
+    extensionId: {"kind""Ptr","child":Guid},
+    pAsyncHandle: {"kind":"UIntPtr"},
+    dwStatus: {"kind":"UInt32"},
+    RsopStatus: Windows.Win32.Com.HRESULT,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USERENV" fn RsopAccessCheckByType(
+    pSecurityDescriptor: {"kind""Ptr","child":{"kind":"Void"}},
+    pPrincipalSelfSid: {"kind""Ptr","child":{"kind":"Void"}},
+    pRsopToken: {"kind""Ptr","child":{"kind":"Void"}},
+    dwDesiredAccessMask: {"kind":"UInt32"},
+    pObjectTypeList: {"kind""Ptr","child":Windows.Win32.Security.OBJECT_TYPE_LIST},
+    ObjectTypeListLength: {"kind":"UInt32"},
+    pGenericMapping: {"kind""Ptr","child":Windows.Win32.Security.GENERIC_MAPPING},
+    pPrivilegeSet: {"kind""Ptr","child":Windows.Win32.Security.PRIVILEGE_SET},
+    pdwPrivilegeSetLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pdwGrantedAccessMask: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pbAccessStatus: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USERENV" fn RsopFileAccessCheck(
+    pszFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pRsopToken: {"kind""Ptr","child":{"kind":"Void"}},
+    dwDesiredAccessMask: {"kind":"UInt32"},
+    pdwGrantedAccessMask: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pbAccessStatus: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USERENV" fn RsopSetPolicySettingStatus(
+    dwFlags: {"kind":"UInt32"},
+    pServices: Windows.Win32.Wmi.IWbemServices,
+    pSettingInstance: Windows.Win32.Wmi.IWbemClassObject,
+    nInfo: {"kind":"UInt32"},
+    pStatus: {"kind""Ptr","child":Windows.Win32.Policy.POLICYSETTINGSTATUSINFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USERENV" fn RsopResetPolicySettingStatus(
+    dwFlags: {"kind":"UInt32"},
+    pServices: Windows.Win32.Wmi.IWbemServices,
+    pSettingInstance: Windows.Win32.Wmi.IWbemClassObject,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USERENV" fn GenerateGPNotification(
+    bMachine: Windows.Win32.SystemServices.BOOL,
+    lpwszMgmtProduct: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwMgmtProductOptions: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn InstallApplication(
+    pInstallInfo: {"kind""Ptr","child":Windows.Win32.Policy.INSTALLDATA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn UninstallApplication(
+    ProductCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwStatus: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn CommandLineFromMsiDescriptor(
+    Descriptor: {"kind""Ptr","child":{"kind":"UInt16"}},
+    CommandLine: {"kind""Ptr","child":{"kind":"UInt16"}},
+    CommandLineLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn GetManagedApplications(
+    pCategory: {"kind""Ptr","child":Guid},
+    dwQueryFlags: {"kind":"UInt32"},
+    dwInfoLevel: {"kind":"UInt32"},
+    pdwApps: {"kind""Ptr","child":{"kind":"UInt32"}},
+    prgManagedApps: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Policy.MANAGEDAPPLICATION}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn GetLocalManagedApplications(
+    bUserApps: Windows.Win32.SystemServices.BOOL,
+    pdwApps: {"kind""Ptr","child":{"kind":"UInt32"}},
+    prgLocalApps: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Policy.LOCALMANAGEDAPPLICATION}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn GetLocalManagedApplicationData(
+    ProductCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DisplayName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    SupportUrl: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn GetManagedApplicationCategories(
+    dwReserved: {"kind":"UInt32"},
+    pAppCategory: {"kind""Ptr","child":Windows.Win32.Shell.APPCATEGORYINFOLIST},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GPEDIT" fn CreateGPOLink(
+    lpGPO: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpContainer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fHighPriority: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GPEDIT" fn DeleteGPOLink(
+    lpGPO: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpContainer: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GPEDIT" fn DeleteAllGPOLinks(
+    lpContainer: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GPEDIT" fn BrowseForGPO(
+    lpBrowseInfo: {"kind""Ptr","child":Windows.Win32.Policy.GPOBROWSEINFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GPEDIT" fn ImportRSoPData(
+    lpNameSpace: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GPEDIT" fn ExportRSoPData(
+    lpNameSpace: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+],
+
+"unicode_aliases": [
+     "GROUP_POLICY_OBJECT"
+     "GetGPOList"
+     "FreeGPOList"
+     "GetAppliedGPOList"
+]}

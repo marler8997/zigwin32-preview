@@ -1,0 +1,541 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: WER_REPORT_UI
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WER_REPORT_UI = *opaque{
+};
+// --------------------------------------------------------
+// Type: WER_REGISTER_FILE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WER_REGISTER_FILE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WER_FILE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WER_FILE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WER_SUBMIT_RESULT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WER_SUBMIT_RESULT = *opaque{
+};
+// --------------------------------------------------------
+// Type: WER_REPORT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WER_REPORT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WER_REPORT_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WER_REPORT_INFORMATION = extern struct {
+    dwSize: {"kind":"UInt32"},
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+    wzConsentKey: {"kind":"Array","child": {"kind":"UInt16"}},
+    wzFriendlyEventName: {"kind":"Array","child": {"kind":"UInt16"}},
+    wzApplicationName: {"kind":"Array","child": {"kind":"UInt16"}},
+    wzApplicationPath: {"kind":"Array","child": {"kind":"UInt16"}},
+    wzDescription: {"kind":"Array","child": {"kind":"UInt16"}},
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+};
+// --------------------------------------------------------
+// Type: WER_REPORT_INFORMATION_V3
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WER_REPORT_INFORMATION_V3 = extern struct {
+    dwSize: {"kind":"UInt32"},
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+    wzConsentKey: {"kind":"Array","child": {"kind":"UInt16"}},
+    wzFriendlyEventName: {"kind":"Array","child": {"kind":"UInt16"}},
+    wzApplicationName: {"kind":"Array","child": {"kind":"UInt16"}},
+    wzApplicationPath: {"kind":"Array","child": {"kind":"UInt16"}},
+    wzDescription: {"kind":"Array","child": {"kind":"UInt16"}},
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    wzNamespacePartner: {"kind":"Array","child": {"kind":"UInt16"}},
+    wzNamespaceGroup: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WER_DUMP_CUSTOM_OPTIONS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WER_DUMP_CUSTOM_OPTIONS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwMask: {"kind":"UInt32"},
+    dwDumpFlags: {"kind":"UInt32"},
+    bOnlyThisThread: Windows.Win32.SystemServices.BOOL,
+    dwExceptionThreadFlags: {"kind":"UInt32"},
+    dwOtherThreadFlags: {"kind":"UInt32"},
+    dwExceptionThreadExFlags: {"kind":"UInt32"},
+    dwOtherThreadExFlags: {"kind":"UInt32"},
+    dwPreferredModuleFlags: {"kind":"UInt32"},
+    dwOtherModuleFlags: {"kind":"UInt32"},
+    wzPreferredModuleList: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WER_DUMP_CUSTOM_OPTIONS_V2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WER_DUMP_CUSTOM_OPTIONS_V2 = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwMask: {"kind":"UInt32"},
+    dwDumpFlags: {"kind":"UInt32"},
+    bOnlyThisThread: Windows.Win32.SystemServices.BOOL,
+    dwExceptionThreadFlags: {"kind":"UInt32"},
+    dwOtherThreadFlags: {"kind":"UInt32"},
+    dwExceptionThreadExFlags: {"kind":"UInt32"},
+    dwOtherThreadExFlags: {"kind":"UInt32"},
+    dwPreferredModuleFlags: {"kind":"UInt32"},
+    dwOtherModuleFlags: {"kind":"UInt32"},
+    wzPreferredModuleList: {"kind":"Array","child": {"kind":"UInt16"}},
+    dwPreferredModuleResetFlags: {"kind":"UInt32"},
+    dwOtherModuleResetFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WER_REPORT_INFORMATION_V4
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WER_REPORT_INFORMATION_V4 = extern struct {
+    dwSize: {"kind":"UInt32"},
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+    wzConsentKey: {"kind":"Array","child": {"kind":"UInt16"}},
+    wzFriendlyEventName: {"kind":"Array","child": {"kind":"UInt16"}},
+    wzApplicationName: {"kind":"Array","child": {"kind":"UInt16"}},
+    wzApplicationPath: {"kind":"Array","child": {"kind":"UInt16"}},
+    wzDescription: {"kind":"Array","child": {"kind":"UInt16"}},
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    wzNamespacePartner: {"kind":"Array","child": {"kind":"UInt16"}},
+    wzNamespaceGroup: {"kind":"Array","child": {"kind":"UInt16"}},
+    rgbApplicationIdentity: {"kind":"Array","child": {"kind":"Byte"}},
+    hSnapshot: Windows.Win32.SystemServices.HANDLE,
+    hDeleteFilesImpersonationToken: Windows.Win32.SystemServices.HANDLE,
+};
+// --------------------------------------------------------
+// Type: WER_REPORT_INFORMATION_V5
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WER_REPORT_INFORMATION_V5 = extern struct {
+    dwSize: {"kind":"UInt32"},
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+    wzConsentKey: {"kind":"Array","child": {"kind":"UInt16"}},
+    wzFriendlyEventName: {"kind":"Array","child": {"kind":"UInt16"}},
+    wzApplicationName: {"kind":"Array","child": {"kind":"UInt16"}},
+    wzApplicationPath: {"kind":"Array","child": {"kind":"UInt16"}},
+    wzDescription: {"kind":"Array","child": {"kind":"UInt16"}},
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    wzNamespacePartner: {"kind":"Array","child": {"kind":"UInt16"}},
+    wzNamespaceGroup: {"kind":"Array","child": {"kind":"UInt16"}},
+    rgbApplicationIdentity: {"kind":"Array","child": {"kind":"Byte"}},
+    hSnapshot: Windows.Win32.SystemServices.HANDLE,
+    hDeleteFilesImpersonationToken: Windows.Win32.SystemServices.HANDLE,
+    submitResultMax: Windows.Win32.WindowsErrorReporting.WER_SUBMIT_RESULT,
+};
+// --------------------------------------------------------
+// Type: WER_DUMP_CUSTOM_OPTIONS_V3
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WER_DUMP_CUSTOM_OPTIONS_V3 = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwMask: {"kind":"UInt32"},
+    dwDumpFlags: {"kind":"UInt32"},
+    bOnlyThisThread: Windows.Win32.SystemServices.BOOL,
+    dwExceptionThreadFlags: {"kind":"UInt32"},
+    dwOtherThreadFlags: {"kind":"UInt32"},
+    dwExceptionThreadExFlags: {"kind":"UInt32"},
+    dwOtherThreadExFlags: {"kind":"UInt32"},
+    dwPreferredModuleFlags: {"kind":"UInt32"},
+    dwOtherModuleFlags: {"kind":"UInt32"},
+    wzPreferredModuleList: {"kind":"Array","child": {"kind":"UInt16"}},
+    dwPreferredModuleResetFlags: {"kind":"UInt32"},
+    dwOtherModuleResetFlags: {"kind":"UInt32"},
+    pvDumpKey: {"kind""Ptr","child":{"kind":"Void"}},
+    hSnapshot: Windows.Win32.SystemServices.HANDLE,
+    dwThreadID: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WER_EXCEPTION_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WER_EXCEPTION_INFORMATION = extern struct {
+    pExceptionPointers: {"kind""Ptr","child":Windows.Win32.Debug.EXCEPTION_POINTERS},
+    bClientPointers: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: WER_CONSENT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WER_CONSENT = *opaque{
+};
+// --------------------------------------------------------
+// Type: WER_DUMP_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WER_DUMP_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WER_RUNTIME_EXCEPTION_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WER_RUNTIME_EXCEPTION_INFORMATION = extern struct {
+    dwSize: {"kind":"UInt32"},
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+    hThread: Windows.Win32.SystemServices.HANDLE,
+    exceptionRecord: Windows.Win32.Debug.EXCEPTION_RECORD,
+    context: Windows.Win32.Debug.CONTEXT,
+    pwszReportId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    bIsFatal: Windows.Win32.SystemServices.BOOL,
+    dwReserved: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PFN_WER_RUNTIME_EXCEPTION_EVENT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFN_WER_RUNTIME_EXCEPTION_EVENT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFN_WER_RUNTIME_EXCEPTION_EVENT_SIGNATURE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFN_WER_RUNTIME_EXCEPTION_EVENT_SIGNATURE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFN_WER_RUNTIME_EXCEPTION_DEBUGGER_LAUNCH
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFN_WER_RUNTIME_EXCEPTION_DEBUGGER_LAUNCH = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: REPORT_STORE_TYPES
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const REPORT_STORE_TYPES = *opaque{
+};
+// --------------------------------------------------------
+// Type: WER_REPORT_PARAMETER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WER_REPORT_PARAMETER = extern struct {
+    Name: {"kind":"Array","child": {"kind":"UInt16"}},
+    Value: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WER_REPORT_SIGNATURE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WER_REPORT_SIGNATURE = extern struct {
+    EventName: {"kind":"Array","child": {"kind":"UInt16"}},
+    Parameters: {"kind":"Array","child": Windows.Win32.WindowsErrorReporting.WER_REPORT_PARAMETER},
+};
+// --------------------------------------------------------
+// Type: WER_REPORT_METADATA_V2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WER_REPORT_METADATA_V2 = extern struct {
+    Signature: Windows.Win32.WindowsErrorReporting.WER_REPORT_SIGNATURE,
+    BucketId: Guid,
+    ReportId: Guid,
+    CreationTime: Windows.Win32.WindowsProgramming.FILETIME,
+    SizeInBytes: {"kind":"UInt64"},
+    CabId: {"kind":"Array","child": {"kind":"UInt16"}},
+    ReportStatus: {"kind":"UInt32"},
+    ReportIntegratorId: Guid,
+    NumberOfFiles: {"kind":"UInt32"},
+    SizeOfFileNames: {"kind":"UInt32"},
+    FileNames: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WER_REPORT_METADATA_V3
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WER_REPORT_METADATA_V3 = extern struct {
+    Signature: Windows.Win32.WindowsErrorReporting.WER_REPORT_SIGNATURE,
+    BucketId: Guid,
+    ReportId: Guid,
+    CreationTime: Windows.Win32.WindowsProgramming.FILETIME,
+    SizeInBytes: {"kind":"UInt64"},
+    CabId: {"kind":"Array","child": {"kind":"UInt16"}},
+    ReportStatus: {"kind":"UInt32"},
+    ReportIntegratorId: Guid,
+    NumberOfFiles: {"kind":"UInt32"},
+    SizeOfFileNames: {"kind":"UInt32"},
+    FileNames: {"kind""Ptr","child":{"kind":"UInt16"}},
+    FriendlyEventName: {"kind":"Array","child": {"kind":"UInt16"}},
+    ApplicationName: {"kind":"Array","child": {"kind":"UInt16"}},
+    ApplicationPath: {"kind":"Array","child": {"kind":"UInt16"}},
+    Description: {"kind":"Array","child": {"kind":"UInt16"}},
+    BucketIdString: {"kind":"Array","child": {"kind":"UInt16"}},
+    LegacyBucketId: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: WER_REPORT_METADATA_V1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WER_REPORT_METADATA_V1 = extern struct {
+    Signature: Windows.Win32.WindowsErrorReporting.WER_REPORT_SIGNATURE,
+    BucketId: Guid,
+    ReportId: Guid,
+    CreationTime: Windows.Win32.WindowsProgramming.FILETIME,
+    SizeInBytes: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: EFaultRepRetVal
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EFaultRepRetVal = *opaque{
+};
+// --------------------------------------------------------
+// Type: pfn_REPORTFAULT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const pfn_REPORTFAULT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: pfn_ADDEREXCLUDEDAPPLICATIONA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const pfn_ADDEREXCLUDEDAPPLICATIONA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: pfn_ADDEREXCLUDEDAPPLICATIONW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const pfn_ADDEREXCLUDEDAPPLICATIONW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wer" fn WerReportCreate(
+    pwzEventType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    repType: Windows.Win32.WindowsErrorReporting.WER_REPORT_TYPE,
+    pReportInformation: {"kind""Ptr","child":Windows.Win32.WindowsErrorReporting.WER_REPORT_INFORMATION},
+    phReportHandle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wer" fn WerReportSetParameter(
+    hReportHandle: {"kind":"IntPtr"},
+    dwparamID: {"kind":"UInt32"},
+    pwzName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzValue: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wer" fn WerReportAddFile(
+    hReportHandle: {"kind":"IntPtr"},
+    pwzPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    repFileType: Windows.Win32.WindowsErrorReporting.WER_FILE_TYPE,
+    dwFileFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wer" fn WerReportSetUIOption(
+    hReportHandle: {"kind":"IntPtr"},
+    repUITypeID: Windows.Win32.WindowsErrorReporting.WER_REPORT_UI,
+    pwzValue: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wer" fn WerReportSubmit(
+    hReportHandle: {"kind":"IntPtr"},
+    consent: Windows.Win32.WindowsErrorReporting.WER_CONSENT,
+    dwFlags: {"kind":"UInt32"},
+    pSubmitResult: {"kind""Ptr","child":Windows.Win32.WindowsErrorReporting.WER_SUBMIT_RESULT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wer" fn WerReportAddDump(
+    hReportHandle: {"kind":"IntPtr"},
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+    hThread: Windows.Win32.SystemServices.HANDLE,
+    dumpType: Windows.Win32.WindowsErrorReporting.WER_DUMP_TYPE,
+    pExceptionParam: {"kind""Ptr","child":Windows.Win32.WindowsErrorReporting.WER_EXCEPTION_INFORMATION},
+    pDumpCustomOptions: {"kind""Ptr","child":Windows.Win32.WindowsErrorReporting.WER_DUMP_CUSTOM_OPTIONS},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wer" fn WerReportCloseHandle(
+    hReportHandle: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn WerRegisterFile(
+    pwzFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    regFileType: Windows.Win32.WindowsErrorReporting.WER_REGISTER_FILE_TYPE,
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn WerUnregisterFile(
+    pwzFilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn WerRegisterMemoryBlock(
+    pvAddress: {"kind""Ptr","child":{"kind":"Void"}},
+    dwSize: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn WerUnregisterMemoryBlock(
+    pvAddress: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn WerRegisterExcludedMemoryBlock(
+    address: {"kind""Ptr","child":{"kind":"Void"}},
+    size: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn WerUnregisterExcludedMemoryBlock(
+    address: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn WerRegisterCustomMetadata(
+    key: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn WerUnregisterCustomMetadata(
+    key: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn WerRegisterAdditionalProcess(
+    processId: {"kind":"UInt32"},
+    captureExtraInfoForThreadId: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn WerUnregisterAdditionalProcess(
+    processId: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn WerRegisterAppLocalDump(
+    localAppDataRelativePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn WerUnregisterAppLocalDump(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn WerSetFlags(
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn WerGetFlags(
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+    pdwFlags: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wer" fn WerAddExcludedApplication(
+    pwzExeName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    bAllUsers: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wer" fn WerRemoveExcludedApplication(
+    pwzExeName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    bAllUsers: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn WerRegisterRuntimeExceptionModule(
+    pwszOutOfProcessCallbackDll: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pContext: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn WerUnregisterRuntimeExceptionModule(
+    pwszOutOfProcessCallbackDll: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pContext: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wer" fn WerStoreOpen(
+    repStoreType: Windows.Win32.WindowsErrorReporting.REPORT_STORE_TYPES,
+    phReportStore: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wer" fn WerStoreClose(
+    hReportStore: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wer" fn WerStoreGetFirstReportKey(
+    hReportStore: {"kind""Ptr","child":{"kind":"Void"}},
+    ppszReportKey: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wer" fn WerStoreGetNextReportKey(
+    hReportStore: {"kind""Ptr","child":{"kind":"Void"}},
+    ppszReportKey: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wer" fn WerStoreQueryReportMetadataV2(
+    hReportStore: {"kind""Ptr","child":{"kind":"Void"}},
+    pszReportKey: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pReportMetadata: {"kind""Ptr","child":Windows.Win32.WindowsErrorReporting.WER_REPORT_METADATA_V2},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wer" fn WerStoreQueryReportMetadataV3(
+    hReportStore: {"kind""Ptr","child":{"kind":"Void"}},
+    pszReportKey: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pReportMetadata: {"kind""Ptr","child":Windows.Win32.WindowsErrorReporting.WER_REPORT_METADATA_V3},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wer" fn WerFreeString(
+    pwszStr: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wer" fn WerStorePurge(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wer" fn WerStoreGetReportCount(
+    hReportStore: {"kind""Ptr","child":{"kind":"Void"}},
+    pdwReportCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wer" fn WerStoreGetSizeOnDisk(
+    hReportStore: {"kind""Ptr","child":{"kind":"Void"}},
+    pqwSizeInBytes: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wer" fn WerStoreQueryReportMetadataV1(
+    hReportStore: {"kind""Ptr","child":{"kind":"Void"}},
+    pszReportKey: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pReportMetadata: {"kind""Ptr","child":Windows.Win32.WindowsErrorReporting.WER_REPORT_METADATA_V1},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wer" fn WerStoreUploadReport(
+    hReportStore: {"kind""Ptr","child":{"kind":"Void"}},
+    pszReportKey: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+    pSubmitResult: {"kind""Ptr","child":Windows.Win32.WindowsErrorReporting.WER_SUBMIT_RESULT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "faultrep" fn ReportFault(
+    pep: {"kind""Ptr","child":Windows.Win32.Debug.EXCEPTION_POINTERS},
+    dwOpt: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "faultrep" fn AddERExcludedApplicationA(
+    szApplication: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "faultrep" fn AddERExcludedApplicationW(
+    wszApplication: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "faultrep" fn WerReportHang(
+    hwndHungApp: Windows.Win32.WindowsAndMessaging.HWND,
+    pwzHungApplicationName: {"kind""Ptr","child":{"kind":"UInt16"}},
+],
+
+"unicode_aliases": [
+     "pfn_ADDEREXCLUDEDAPPLICATION"
+     "AddERExcludedApplication"
+]}

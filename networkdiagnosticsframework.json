@@ -1,0 +1,340 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: ATTRIBUTE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ATTRIBUTE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: OCTET_STRING
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const OCTET_STRING = extern struct {
+    dwLength: {"kind":"UInt32"},
+    lpValue: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: LIFE_TIME
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LIFE_TIME = extern struct {
+    startTime: Windows.Win32.WindowsProgramming.FILETIME,
+    endTime: Windows.Win32.WindowsProgramming.FILETIME,
+};
+// --------------------------------------------------------
+// Type: DIAG_SOCKADDR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIAG_SOCKADDR = extern struct {
+    family: {"kind":"UInt16"},
+    data: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: HELPER_ATTRIBUTE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HELPER_ATTRIBUTE = extern struct {
+    pwszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    type: Windows.Win32.NetworkDiagnosticsFramework.ATTRIBUTE_TYPE,
+    Anonymous: Windows.Win32.NetworkDiagnosticsFramework.HELPER_ATTRIBUTE+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: REPAIR_SCOPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const REPAIR_SCOPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: REPAIR_RISK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const REPAIR_RISK = *opaque{
+};
+// --------------------------------------------------------
+// Type: UI_INFO_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const UI_INFO_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: ShellCommandInfo
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ShellCommandInfo = extern struct {
+    pwszOperation: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszParameters: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszDirectory: {"kind""Ptr","child":{"kind":"UInt16"}},
+    nShowCmd: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: UiInfo
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const UiInfo = extern struct {
+    type: Windows.Win32.NetworkDiagnosticsFramework.UI_INFO_TYPE,
+    Anonymous: Windows.Win32.NetworkDiagnosticsFramework.UiInfo+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: RepairInfo
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RepairInfo = extern struct {
+    guid: Guid,
+    pwszClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszDescription: {"kind""Ptr","child":{"kind":"UInt16"}},
+    sidType: {"kind":"UInt32"},
+    cost: {"kind":"Int32"},
+    flags: {"kind":"UInt32"},
+    scope: Windows.Win32.NetworkDiagnosticsFramework.REPAIR_SCOPE,
+    risk: Windows.Win32.NetworkDiagnosticsFramework.REPAIR_RISK,
+    UiInfo: Windows.Win32.NetworkDiagnosticsFramework.UiInfo,
+    rootCauseIndex: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: RepairInfoEx
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RepairInfoEx = extern struct {
+    repair: Windows.Win32.NetworkDiagnosticsFramework.RepairInfo,
+    repairRank: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: RootCauseInfo
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RootCauseInfo = extern struct {
+    pwszDescription: {"kind""Ptr","child":{"kind":"UInt16"}},
+    rootCauseID: Guid,
+    rootCauseFlags: {"kind":"UInt32"},
+    networkInterfaceID: Guid,
+    pRepairs: {"kind""Ptr","child":Windows.Win32.NetworkDiagnosticsFramework.RepairInfoEx},
+    repairCount: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: DIAGNOSIS_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DIAGNOSIS_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: REPAIR_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const REPAIR_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PROBLEM_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PROBLEM_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: HYPOTHESIS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HYPOTHESIS = extern struct {
+    pwszClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszDescription: {"kind""Ptr","child":{"kind":"UInt16"}},
+    celt: {"kind":"UInt32"},
+    rgAttributes: {"kind""Ptr","child":Windows.Win32.NetworkDiagnosticsFramework.HELPER_ATTRIBUTE},
+};
+// --------------------------------------------------------
+// Type: HelperAttributeInfo
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HelperAttributeInfo = extern struct {
+    pwszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    type: Windows.Win32.NetworkDiagnosticsFramework.ATTRIBUTE_TYPE,
+};
+// --------------------------------------------------------
+// Type: DiagnosticsInfo
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DiagnosticsInfo = extern struct {
+    cost: {"kind":"Int32"},
+    flags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: INetDiagHelper
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetDiagHelper = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'GetDiagnosticsInfo'
+    // TODO: Method 'GetKeyAttributes'
+    // TODO: Method 'LowHealth'
+    // TODO: Method 'HighUtilization'
+    // TODO: Method 'GetLowerHypotheses'
+    // TODO: Method 'GetDownStreamHypotheses'
+    // TODO: Method 'GetHigherHypotheses'
+    // TODO: Method 'GetUpStreamHypotheses'
+    // TODO: Method 'Repair'
+    // TODO: Method 'Validate'
+    // TODO: Method 'GetRepairInfo'
+    // TODO: Method 'GetLifeTime'
+    // TODO: Method 'SetLifeTime'
+    // TODO: Method 'GetCacheTime'
+    // TODO: Method 'GetAttributes'
+    // TODO: Method 'Cancel'
+    // TODO: Method 'Cleanup'
+};
+// --------------------------------------------------------
+// Type: HypothesisResult
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HypothesisResult = extern struct {
+    hypothesis: Windows.Win32.NetworkDiagnosticsFramework.HYPOTHESIS,
+    pathStatus: Windows.Win32.NetworkDiagnosticsFramework.DIAGNOSIS_STATUS,
+};
+// --------------------------------------------------------
+// Type: INetDiagHelperUtilFactory
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetDiagHelperUtilFactory = *opaque{
+    // TODO: Method 'CreateUtilityInstance'
+};
+// --------------------------------------------------------
+// Type: INetDiagHelperEx
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetDiagHelperEx = *opaque{
+    // TODO: Method 'ReconfirmLowHealth'
+    // TODO: Method 'SetUtilities'
+    // TODO: Method 'ReproduceFailure'
+};
+// --------------------------------------------------------
+// Type: INetDiagHelperInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetDiagHelperInfo = *opaque{
+    // TODO: Method 'GetAttributeInfo'
+};
+// --------------------------------------------------------
+// Type: INetDiagExtensibleHelper
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetDiagExtensibleHelper = *opaque{
+    // TODO: Method 'ResolveAttributes'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NDFAPI" fn NdfCreateIncident(
+    helperClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    celt: {"kind":"UInt32"},
+    attributes: {"kind""Ptr","child":Windows.Win32.NetworkDiagnosticsFramework.HELPER_ATTRIBUTE},
+    handle: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NDFAPI" fn NdfCreateWinSockIncident(
+    sock: {"kind":"UIntPtr"},
+    host: {"kind""Ptr","child":{"kind":"UInt16"}},
+    port: {"kind":"UInt16"},
+    appId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    userId: {"kind""Ptr","child":Windows.Win32.Security.SID},
+    handle: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NDFAPI" fn NdfCreateWebIncident(
+    url: {"kind""Ptr","child":{"kind":"UInt16"}},
+    handle: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NDFAPI" fn NdfCreateWebIncidentEx(
+    url: {"kind""Ptr","child":{"kind":"UInt16"}},
+    useWinHTTP: Windows.Win32.SystemServices.BOOL,
+    moduleName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    handle: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NDFAPI" fn NdfCreateSharingIncident(
+    UNCPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    handle: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NDFAPI" fn NdfCreateDNSIncident(
+    hostname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    queryType: {"kind":"UInt16"},
+    handle: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NDFAPI" fn NdfCreateConnectivityIncident(
+    handle: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NDFAPI" fn NdfCreateNetConnectionIncident(
+    handle: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+    id: Guid,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NDFAPI" fn NdfCreatePnrpIncident(
+    cloudname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    peername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    diagnosePublish: Windows.Win32.SystemServices.BOOL,
+    appId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    handle: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NDFAPI" fn NdfCreateGroupingIncident(
+    CloudName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    GroupName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Identity: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Invitation: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Addresses: {"kind""Ptr","child":Windows.Win32.NetworkDrivers.SOCKET_ADDRESS_LIST},
+    appId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    handle: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NDFAPI" fn NdfExecuteDiagnosis(
+    handle: {"kind""Ptr","child":{"kind":"Void"}},
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NDFAPI" fn NdfCloseIncident(
+    handle: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NDFAPI" fn NdfDiagnoseIncident(
+    Handle: {"kind""Ptr","child":{"kind":"Void"}},
+    RootCauseCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    RootCauses: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.NetworkDiagnosticsFramework.RootCauseInfo}},
+    dwWait: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NDFAPI" fn NdfRepairIncident(
+    Handle: {"kind""Ptr","child":{"kind":"Void"}},
+    RepairEx: {"kind""Ptr","child":Windows.Win32.NetworkDiagnosticsFramework.RepairInfoEx},
+    dwWait: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NDFAPI" fn NdfCancelIncident(
+    Handle: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NDFAPI" fn NdfGetTraceFile(
+    Handle: {"kind""Ptr","child":{"kind":"Void"}},
+    TraceFileLocation: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+],
+
+"unicode_aliases": [
+]}

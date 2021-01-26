@@ -1,0 +1,648 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: AsnOctetString
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AsnOctetString = extern struct {
+    stream: {"kind""Ptr","child":{"kind":"Byte"}},
+    length: {"kind":"UInt32"},
+    dynamic: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: AsnObjectIdentifier
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AsnObjectIdentifier = extern struct {
+    idLength: {"kind":"UInt32"},
+    ids: {"kind""Ptr","child":{"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: AsnAny
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AsnAny = extern struct {
+    asnType: {"kind":"Byte"},
+    asnValue: Windows.Win32.Snmp.AsnAny+_asnValue_e__Union,
+    // --------------------------------------------------------
+    // Type: _asnValue_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _asnValue_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: SnmpVarBind
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SnmpVarBind = extern struct {
+    name: Windows.Win32.Snmp.AsnObjectIdentifier,
+    value: Windows.Win32.Snmp.AsnAny,
+};
+// --------------------------------------------------------
+// Type: SnmpVarBindList
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SnmpVarBindList = extern struct {
+    list: {"kind""Ptr","child":Windows.Win32.Snmp.SnmpVarBind},
+    len: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PFNSNMPEXTENSIONINIT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFNSNMPEXTENSIONINIT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFNSNMPEXTENSIONINITEX
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFNSNMPEXTENSIONINITEX = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFNSNMPEXTENSIONMONITOR
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFNSNMPEXTENSIONMONITOR = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFNSNMPEXTENSIONQUERY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFNSNMPEXTENSIONQUERY = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFNSNMPEXTENSIONQUERYEX
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFNSNMPEXTENSIONQUERYEX = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFNSNMPEXTENSIONTRAP
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFNSNMPEXTENSIONTRAP = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFNSNMPEXTENSIONCLOSE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFNSNMPEXTENSIONCLOSE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: smiOCTETS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const smiOCTETS = extern struct {
+    len: {"kind":"UInt32"},
+    ptr: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: smiOID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const smiOID = extern struct {
+    len: {"kind":"UInt32"},
+    ptr: {"kind""Ptr","child":{"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: smiCNTR64
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const smiCNTR64 = extern struct {
+    hipart: {"kind":"UInt32"},
+    lopart: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: smiVALUE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const smiVALUE = extern struct {
+    syntax: {"kind":"UInt32"},
+    value: Windows.Win32.Snmp.smiVALUE+_value_e__Union,
+    // --------------------------------------------------------
+    // Type: _value_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _value_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: smiVENDORINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const smiVENDORINFO = extern struct {
+    vendorName: {"kind":"Array","child": {"kind":"SByte"}},
+    vendorContact: {"kind":"Array","child": {"kind":"SByte"}},
+    vendorVersionId: {"kind":"Array","child": {"kind":"SByte"}},
+    vendorVersionDate: {"kind":"Array","child": {"kind":"SByte"}},
+    vendorEnterprise: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SNMPAPI_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SNMPAPI_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFNSNMPSTARTUPEX
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFNSNMPSTARTUPEX = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFNSNMPCLEANUPEX
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFNSNMPCLEANUPEX = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "snmpapi" fn SnmpUtilOidCpy(
+    pOidDst: {"kind""Ptr","child":Windows.Win32.Snmp.AsnObjectIdentifier},
+    pOidSrc: {"kind""Ptr","child":Windows.Win32.Snmp.AsnObjectIdentifier},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "snmpapi" fn SnmpUtilOidAppend(
+    pOidDst: {"kind""Ptr","child":Windows.Win32.Snmp.AsnObjectIdentifier},
+    pOidSrc: {"kind""Ptr","child":Windows.Win32.Snmp.AsnObjectIdentifier},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "snmpapi" fn SnmpUtilOidNCmp(
+    pOid1: {"kind""Ptr","child":Windows.Win32.Snmp.AsnObjectIdentifier},
+    pOid2: {"kind""Ptr","child":Windows.Win32.Snmp.AsnObjectIdentifier},
+    nSubIds: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "snmpapi" fn SnmpUtilOidCmp(
+    pOid1: {"kind""Ptr","child":Windows.Win32.Snmp.AsnObjectIdentifier},
+    pOid2: {"kind""Ptr","child":Windows.Win32.Snmp.AsnObjectIdentifier},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "snmpapi" fn SnmpUtilOidFree(
+    pOid: {"kind""Ptr","child":Windows.Win32.Snmp.AsnObjectIdentifier},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "snmpapi" fn SnmpUtilOctetsCmp(
+    pOctets1: {"kind""Ptr","child":Windows.Win32.Snmp.AsnOctetString},
+    pOctets2: {"kind""Ptr","child":Windows.Win32.Snmp.AsnOctetString},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "snmpapi" fn SnmpUtilOctetsNCmp(
+    pOctets1: {"kind""Ptr","child":Windows.Win32.Snmp.AsnOctetString},
+    pOctets2: {"kind""Ptr","child":Windows.Win32.Snmp.AsnOctetString},
+    nChars: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "snmpapi" fn SnmpUtilOctetsCpy(
+    pOctetsDst: {"kind""Ptr","child":Windows.Win32.Snmp.AsnOctetString},
+    pOctetsSrc: {"kind""Ptr","child":Windows.Win32.Snmp.AsnOctetString},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "snmpapi" fn SnmpUtilOctetsFree(
+    pOctets: {"kind""Ptr","child":Windows.Win32.Snmp.AsnOctetString},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "snmpapi" fn SnmpUtilAsnAnyCpy(
+    pAnyDst: {"kind""Ptr","child":Windows.Win32.Snmp.AsnAny},
+    pAnySrc: {"kind""Ptr","child":Windows.Win32.Snmp.AsnAny},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "snmpapi" fn SnmpUtilAsnAnyFree(
+    pAny: {"kind""Ptr","child":Windows.Win32.Snmp.AsnAny},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "snmpapi" fn SnmpUtilVarBindCpy(
+    pVbDst: {"kind""Ptr","child":Windows.Win32.Snmp.SnmpVarBind},
+    pVbSrc: {"kind""Ptr","child":Windows.Win32.Snmp.SnmpVarBind},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "snmpapi" fn SnmpUtilVarBindFree(
+    pVb: {"kind""Ptr","child":Windows.Win32.Snmp.SnmpVarBind},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "snmpapi" fn SnmpUtilVarBindListCpy(
+    pVblDst: {"kind""Ptr","child":Windows.Win32.Snmp.SnmpVarBindList},
+    pVblSrc: {"kind""Ptr","child":Windows.Win32.Snmp.SnmpVarBindList},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "snmpapi" fn SnmpUtilVarBindListFree(
+    pVbl: {"kind""Ptr","child":Windows.Win32.Snmp.SnmpVarBindList},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "snmpapi" fn SnmpUtilMemFree(
+    pMem: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "snmpapi" fn SnmpUtilMemAlloc(
+    nBytes: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "snmpapi" fn SnmpUtilMemReAlloc(
+    pMem: {"kind""Ptr","child":{"kind":"Void"}},
+    nBytes: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "snmpapi" fn SnmpUtilOidToA(
+    Oid: {"kind""Ptr","child":Windows.Win32.Snmp.AsnObjectIdentifier},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "snmpapi" fn SnmpUtilIdsToA(
+    Ids: {"kind""Ptr","child":{"kind":"UInt32"}},
+    IdLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "snmpapi" fn SnmpUtilPrintOid(
+    Oid: {"kind""Ptr","child":Windows.Win32.Snmp.AsnObjectIdentifier},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "snmpapi" fn SnmpUtilPrintAsnAny(
+    pAny: {"kind""Ptr","child":Windows.Win32.Snmp.AsnAny},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "snmpapi" fn SnmpSvcGetUptime(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "snmpapi" fn SnmpSvcSetLogLevel(
+    nLogLevel: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "snmpapi" fn SnmpSvcSetLogType(
+    nLogType: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "snmpapi" fn SnmpUtilDbgPrint(
+    nLogLevel: {"kind":"Int32"},
+    szFormat: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "mgmtapi" fn SnmpMgrOpen(
+    lpAgentAddress: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpAgentCommunity: {"kind""Ptr","child":{"kind":"SByte"}},
+    nTimeOut: {"kind":"Int32"},
+    nRetries: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "mgmtapi" fn SnmpMgrCtl(
+    session: {"kind""Ptr","child":{"kind":"Void"}},
+    dwCtlCode: {"kind":"UInt32"},
+    lpvInBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    cbInBuffer: {"kind":"UInt32"},
+    lpvOUTBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    cbOUTBuffer: {"kind":"UInt32"},
+    lpcbBytesReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mgmtapi" fn SnmpMgrClose(
+    session: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "mgmtapi" fn SnmpMgrRequest(
+    session: {"kind""Ptr","child":{"kind":"Void"}},
+    requestType: {"kind":"Byte"},
+    variableBindings: {"kind""Ptr","child":Windows.Win32.Snmp.SnmpVarBindList},
+    errorStatus: {"kind""Ptr","child":{"kind":"Int32"}},
+    errorIndex: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mgmtapi" fn SnmpMgrStrToOid(
+    string: {"kind""Ptr","child":{"kind":"SByte"}},
+    oid: {"kind""Ptr","child":Windows.Win32.Snmp.AsnObjectIdentifier},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mgmtapi" fn SnmpMgrOidToStr(
+    oid: {"kind""Ptr","child":Windows.Win32.Snmp.AsnObjectIdentifier},
+    string: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "mgmtapi" fn SnmpMgrTrapListen(
+    phTrapAvailable: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mgmtapi" fn SnmpMgrGetTrap(
+    enterprise: {"kind""Ptr","child":Windows.Win32.Snmp.AsnObjectIdentifier},
+    IPAddress: {"kind""Ptr","child":Windows.Win32.Snmp.AsnOctetString},
+    genericTrap: {"kind""Ptr","child":{"kind":"Int32"}},
+    specificTrap: {"kind""Ptr","child":{"kind":"Int32"}},
+    timeStamp: {"kind""Ptr","child":{"kind":"UInt32"}},
+    variableBindings: {"kind""Ptr","child":Windows.Win32.Snmp.SnmpVarBindList},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mgmtapi" fn SnmpMgrGetTrapEx(
+    enterprise: {"kind""Ptr","child":Windows.Win32.Snmp.AsnObjectIdentifier},
+    agentAddress: {"kind""Ptr","child":Windows.Win32.Snmp.AsnOctetString},
+    sourceAddress: {"kind""Ptr","child":Windows.Win32.Snmp.AsnOctetString},
+    genericTrap: {"kind""Ptr","child":{"kind":"Int32"}},
+    specificTrap: {"kind""Ptr","child":{"kind":"Int32"}},
+    community: {"kind""Ptr","child":Windows.Win32.Snmp.AsnOctetString},
+    timeStamp: {"kind""Ptr","child":{"kind":"UInt32"}},
+    variableBindings: {"kind""Ptr","child":Windows.Win32.Snmp.SnmpVarBindList},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpGetTranslateMode(
+    nTranslateMode: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpSetTranslateMode(
+    nTranslateMode: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpGetRetransmitMode(
+    nRetransmitMode: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpSetRetransmitMode(
+    nRetransmitMode: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpGetTimeout(
+    hEntity: {"kind":"IntPtr"},
+    nPolicyTimeout: {"kind""Ptr","child":{"kind":"UInt32"}},
+    nActualTimeout: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpSetTimeout(
+    hEntity: {"kind":"IntPtr"},
+    nPolicyTimeout: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpGetRetry(
+    hEntity: {"kind":"IntPtr"},
+    nPolicyRetry: {"kind""Ptr","child":{"kind":"UInt32"}},
+    nActualRetry: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpSetRetry(
+    hEntity: {"kind":"IntPtr"},
+    nPolicyRetry: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpGetVendorInfo(
+    vendorInfo: {"kind""Ptr","child":Windows.Win32.Snmp.smiVENDORINFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpStartup(
+    nMajorVersion: {"kind""Ptr","child":{"kind":"UInt32"}},
+    nMinorVersion: {"kind""Ptr","child":{"kind":"UInt32"}},
+    nLevel: {"kind""Ptr","child":{"kind":"UInt32"}},
+    nTranslateMode: {"kind""Ptr","child":{"kind":"UInt32"}},
+    nRetransmitMode: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpCleanup(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpOpen(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    wMsg: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpClose(
+    session: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpSendMsg(
+    session: {"kind":"IntPtr"},
+    srcEntity: {"kind":"IntPtr"},
+    dstEntity: {"kind":"IntPtr"},
+    context: {"kind":"IntPtr"},
+    PDU: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpRecvMsg(
+    session: {"kind":"IntPtr"},
+    srcEntity: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    dstEntity: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    context: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    PDU: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpRegister(
+    session: {"kind":"IntPtr"},
+    srcEntity: {"kind":"IntPtr"},
+    dstEntity: {"kind":"IntPtr"},
+    context: {"kind":"IntPtr"},
+    notification: {"kind""Ptr","child":Windows.Win32.Snmp.smiOID},
+    state: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpCreateSession(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    wMsg: {"kind":"UInt32"},
+    fCallBack: Windows.Win32.Snmp.SNMPAPI_CALLBACK,
+    lpClientData: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpListen(
+    hEntity: {"kind":"IntPtr"},
+    lStatus: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpListenEx(
+    hEntity: {"kind":"IntPtr"},
+    lStatus: {"kind":"UInt32"},
+    nUseEntityAddr: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpCancelMsg(
+    session: {"kind":"IntPtr"},
+    reqId: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpStartupEx(
+    nMajorVersion: {"kind""Ptr","child":{"kind":"UInt32"}},
+    nMinorVersion: {"kind""Ptr","child":{"kind":"UInt32"}},
+    nLevel: {"kind""Ptr","child":{"kind":"UInt32"}},
+    nTranslateMode: {"kind""Ptr","child":{"kind":"UInt32"}},
+    nRetransmitMode: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpCleanupEx(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpStrToEntity(
+    session: {"kind":"IntPtr"},
+    string: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpEntityToStr(
+    entity: {"kind":"IntPtr"},
+    size: {"kind":"UInt32"},
+    string: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpFreeEntity(
+    entity: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpStrToContext(
+    session: {"kind":"IntPtr"},
+    string: {"kind""Ptr","child":Windows.Win32.Snmp.smiOCTETS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpContextToStr(
+    context: {"kind":"IntPtr"},
+    string: {"kind""Ptr","child":Windows.Win32.Snmp.smiOCTETS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpFreeContext(
+    context: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpSetPort(
+    hEntity: {"kind":"IntPtr"},
+    nPort: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpCreatePdu(
+    session: {"kind":"IntPtr"},
+    PDU_type: {"kind":"Int32"},
+    request_id: {"kind":"Int32"},
+    error_status: {"kind":"Int32"},
+    error_index: {"kind":"Int32"},
+    varbindlist: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpGetPduData(
+    PDU: {"kind":"IntPtr"},
+    PDU_type: {"kind""Ptr","child":{"kind":"Int32"}},
+    request_id: {"kind""Ptr","child":{"kind":"Int32"}},
+    error_status: {"kind""Ptr","child":{"kind":"Int32"}},
+    error_index: {"kind""Ptr","child":{"kind":"Int32"}},
+    varbindlist: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpSetPduData(
+    PDU: {"kind":"IntPtr"},
+    PDU_type: {"kind""Ptr","child":{"kind":"Int32"}},
+    request_id: {"kind""Ptr","child":{"kind":"Int32"}},
+    non_repeaters: {"kind""Ptr","child":{"kind":"Int32"}},
+    max_repetitions: {"kind""Ptr","child":{"kind":"Int32"}},
+    varbindlist: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpDuplicatePdu(
+    session: {"kind":"IntPtr"},
+    PDU: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpFreePdu(
+    PDU: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpCreateVbl(
+    session: {"kind":"IntPtr"},
+    name: {"kind""Ptr","child":Windows.Win32.Snmp.smiOID},
+    value: {"kind""Ptr","child":Windows.Win32.Snmp.smiVALUE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpDuplicateVbl(
+    session: {"kind":"IntPtr"},
+    vbl: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpFreeVbl(
+    vbl: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpCountVbl(
+    vbl: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpGetVb(
+    vbl: {"kind":"IntPtr"},
+    index: {"kind":"UInt32"},
+    name: {"kind""Ptr","child":Windows.Win32.Snmp.smiOID},
+    value: {"kind""Ptr","child":Windows.Win32.Snmp.smiVALUE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpSetVb(
+    vbl: {"kind":"IntPtr"},
+    index: {"kind":"UInt32"},
+    name: {"kind""Ptr","child":Windows.Win32.Snmp.smiOID},
+    value: {"kind""Ptr","child":Windows.Win32.Snmp.smiVALUE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpDeleteVb(
+    vbl: {"kind":"IntPtr"},
+    index: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpGetLastError(
+    session: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpStrToOid(
+    string: {"kind""Ptr","child":{"kind":"SByte"}},
+    dstOID: {"kind""Ptr","child":Windows.Win32.Snmp.smiOID},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpOidToStr(
+    srcOID: {"kind""Ptr","child":Windows.Win32.Snmp.smiOID},
+    size: {"kind":"UInt32"},
+    string: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpOidCopy(
+    srcOID: {"kind""Ptr","child":Windows.Win32.Snmp.smiOID},
+    dstOID: {"kind""Ptr","child":Windows.Win32.Snmp.smiOID},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpOidCompare(
+    xOID: {"kind""Ptr","child":Windows.Win32.Snmp.smiOID},
+    yOID: {"kind""Ptr","child":Windows.Win32.Snmp.smiOID},
+    maxlen: {"kind":"UInt32"},
+    result: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpEncodeMsg(
+    session: {"kind":"IntPtr"},
+    srcEntity: {"kind":"IntPtr"},
+    dstEntity: {"kind":"IntPtr"},
+    context: {"kind":"IntPtr"},
+    pdu: {"kind":"IntPtr"},
+    msgBufDesc: {"kind""Ptr","child":Windows.Win32.Snmp.smiOCTETS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpDecodeMsg(
+    session: {"kind":"IntPtr"},
+    srcEntity: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    dstEntity: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    context: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    pdu: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    msgBufDesc: {"kind""Ptr","child":Windows.Win32.Snmp.smiOCTETS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wsnmp32" fn SnmpFreeDescriptor(
+    syntax: {"kind":"UInt32"},
+    descriptor: {"kind""Ptr","child":Windows.Win32.Snmp.smiOCTETS},
+],
+
+"unicode_aliases": [
+]}

@@ -1,0 +1,1569 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: DRAWPATRECT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DRAWPATRECT = extern struct {
+    ptPosition: Windows.Win32.DisplayDevices.POINT,
+    ptSize: Windows.Win32.DisplayDevices.POINT,
+    wStyle: {"kind":"UInt16"},
+    wPattern: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: PSINJECTDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PSINJECTDATA = extern struct {
+    DataBytes: {"kind":"UInt32"},
+    InjectionPoint: {"kind":"UInt16"},
+    PageNumber: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: PSFEATURE_OUTPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PSFEATURE_OUTPUT = extern struct {
+    bPageIndependent: Windows.Win32.SystemServices.BOOL,
+    bSetPageDevice: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: PSFEATURE_CUSTPAPER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PSFEATURE_CUSTPAPER = extern struct {
+    lOrientation: {"kind":"Int32"},
+    lWidth: {"kind":"Int32"},
+    lHeight: {"kind":"Int32"},
+    lWidthOffset: {"kind":"Int32"},
+    lHeightOffset: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: DEVMODEA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DEVMODEA = extern struct {
+    dmDeviceName: {"kind":"Array","child": {"kind":"Byte"}},
+    dmSpecVersion: {"kind":"UInt16"},
+    dmDriverVersion: {"kind":"UInt16"},
+    dmSize: {"kind":"UInt16"},
+    dmDriverExtra: {"kind":"UInt16"},
+    dmFields: {"kind":"UInt32"},
+    Anonymous1: Windows.Win32.Xps.DEVMODEA+_Anonymous1_e__Union,
+    dmColor: {"kind":"Int16"},
+    dmDuplex: {"kind":"Int16"},
+    dmYResolution: {"kind":"Int16"},
+    dmTTOption: {"kind":"Int16"},
+    dmCollate: {"kind":"Int16"},
+    dmFormName: {"kind":"Array","child": {"kind":"Byte"}},
+    dmLogPixels: {"kind":"UInt16"},
+    dmBitsPerPel: {"kind":"UInt32"},
+    dmPelsWidth: {"kind":"UInt32"},
+    dmPelsHeight: {"kind":"UInt32"},
+    Anonymous2: Windows.Win32.Xps.DEVMODEA+_Anonymous2_e__Union,
+    dmDisplayFrequency: {"kind":"UInt32"},
+    dmICMMethod: {"kind":"UInt32"},
+    dmICMIntent: {"kind":"UInt32"},
+    dmMediaType: {"kind":"UInt32"},
+    dmDitherType: {"kind":"UInt32"},
+    dmReserved1: {"kind":"UInt32"},
+    dmReserved2: {"kind":"UInt32"},
+    dmPanningWidth: {"kind":"UInt32"},
+    dmPanningHeight: {"kind":"UInt32"},
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous1_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous1_e__Struct = extern struct {
+            dmOrientation: {"kind":"Int16"},
+            dmPaperSize: {"kind":"Int16"},
+            dmPaperLength: {"kind":"Int16"},
+            dmPaperWidth: {"kind":"Int16"},
+            dmScale: {"kind":"Int16"},
+            dmCopies: {"kind":"Int16"},
+            dmDefaultSource: {"kind":"Int16"},
+            dmPrintQuality: {"kind":"Int16"},
+        };
+        // --------------------------------------------------------
+        // Type: _Anonymous2_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous2_e__Struct = extern struct {
+            dmPosition: Windows.Win32.DisplayDevices.POINTL,
+            dmDisplayOrientation: {"kind":"UInt32"},
+            dmDisplayFixedOutput: {"kind":"UInt32"},
+        };
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: ABORTPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ABORTPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DOCINFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DOCINFOA = extern struct {
+    cbSize: {"kind":"Int32"},
+    lpszDocName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszOutput: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszDatatype: {"kind""Ptr","child":{"kind":"SByte"}},
+    fwType: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DOCINFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DOCINFOW = extern struct {
+    cbSize: {"kind":"Int32"},
+    lpszDocName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszOutput: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszDatatype: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fwType: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: XpsOMObjectFactory
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const XpsOMObjectFactory = opaque {
+};
+// --------------------------------------------------------
+// Type: XpsOMThumbnailGenerator
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const XpsOMThumbnailGenerator = opaque {
+};
+// --------------------------------------------------------
+// Type: XPS_TILE_MODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const XPS_TILE_MODE = *opaque{
+};
+// --------------------------------------------------------
+// Type: XPS_COLOR_INTERPOLATION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const XPS_COLOR_INTERPOLATION = *opaque{
+};
+// --------------------------------------------------------
+// Type: XPS_SPREAD_METHOD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const XPS_SPREAD_METHOD = *opaque{
+};
+// --------------------------------------------------------
+// Type: XPS_STYLE_SIMULATION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const XPS_STYLE_SIMULATION = *opaque{
+};
+// --------------------------------------------------------
+// Type: XPS_LINE_CAP
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const XPS_LINE_CAP = *opaque{
+};
+// --------------------------------------------------------
+// Type: XPS_DASH_CAP
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const XPS_DASH_CAP = *opaque{
+};
+// --------------------------------------------------------
+// Type: XPS_LINE_JOIN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const XPS_LINE_JOIN = *opaque{
+};
+// --------------------------------------------------------
+// Type: XPS_IMAGE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const XPS_IMAGE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: XPS_COLOR_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const XPS_COLOR_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: XPS_FILL_RULE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const XPS_FILL_RULE = *opaque{
+};
+// --------------------------------------------------------
+// Type: XPS_SEGMENT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const XPS_SEGMENT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: XPS_SEGMENT_STROKE_PATTERN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const XPS_SEGMENT_STROKE_PATTERN = *opaque{
+};
+// --------------------------------------------------------
+// Type: XPS_FONT_EMBEDDING
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const XPS_FONT_EMBEDDING = *opaque{
+};
+// --------------------------------------------------------
+// Type: XPS_OBJECT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const XPS_OBJECT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: XPS_THUMBNAIL_SIZE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const XPS_THUMBNAIL_SIZE = *opaque{
+};
+// --------------------------------------------------------
+// Type: XPS_INTERLEAVING
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const XPS_INTERLEAVING = *opaque{
+};
+// --------------------------------------------------------
+// Type: XPS_POINT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const XPS_POINT = extern struct {
+    x: {"kind":"Single"},
+    y: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: XPS_SIZE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const XPS_SIZE = extern struct {
+    width: {"kind":"Single"},
+    height: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: XPS_RECT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const XPS_RECT = extern struct {
+    x: {"kind":"Single"},
+    y: {"kind":"Single"},
+    width: {"kind":"Single"},
+    height: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: XPS_DASH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const XPS_DASH = extern struct {
+    length: {"kind":"Single"},
+    gap: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: XPS_GLYPH_MAPPING
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const XPS_GLYPH_MAPPING = extern struct {
+    unicodeStringStart: {"kind":"UInt32"},
+    unicodeStringLength: {"kind":"UInt16"},
+    glyphIndicesStart: {"kind":"UInt32"},
+    glyphIndicesLength: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: XPS_MATRIX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const XPS_MATRIX = extern struct {
+    m11: {"kind":"Single"},
+    m12: {"kind":"Single"},
+    m21: {"kind":"Single"},
+    m22: {"kind":"Single"},
+    m31: {"kind":"Single"},
+    m32: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: XPS_COLOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const XPS_COLOR = extern struct {
+    colorType: Windows.Win32.Xps.XPS_COLOR_TYPE,
+    value: Windows.Win32.Xps.XPS_COLOR+__MIDL___MIDL_itf_xpsobjectmodel_0000_0000_0028,
+    // --------------------------------------------------------
+    // Type: __MIDL___MIDL_itf_xpsobjectmodel_0000_0000_0028
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const __MIDL___MIDL_itf_xpsobjectmodel_0000_0000_0028 = *opaque{
+        // --------------------------------------------------------
+        // Type: _context_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _context_e__Struct = extern struct {
+            channelCount: {"kind":"Byte"},
+            channels: {"kind":"Array","child": {"kind":"Single"}},
+        };
+        // --------------------------------------------------------
+        // Type: _sRGB_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _sRGB_e__Struct = extern struct {
+            alpha: {"kind":"Byte"},
+            red: {"kind":"Byte"},
+            green: {"kind":"Byte"},
+            blue: {"kind":"Byte"},
+        };
+        // --------------------------------------------------------
+        // Type: _scRGB_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _scRGB_e__Struct = extern struct {
+            alpha: {"kind":"Single"},
+            red: {"kind":"Single"},
+            green: {"kind":"Single"},
+            blue: {"kind":"Single"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: IXpsOMShareable
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMShareable = *opaque{
+    // TODO: Method 'GetOwner'
+    // TODO: Method 'GetType'
+};
+// --------------------------------------------------------
+// Type: IXpsOMVisual
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMVisual = *opaque{
+    // TODO: Method 'GetTransform'
+    // TODO: Method 'GetTransformLocal'
+    // TODO: Method 'SetTransformLocal'
+    // TODO: Method 'GetTransformLookup'
+    // TODO: Method 'SetTransformLookup'
+    // TODO: Method 'GetClipGeometry'
+    // TODO: Method 'GetClipGeometryLocal'
+    // TODO: Method 'SetClipGeometryLocal'
+    // TODO: Method 'GetClipGeometryLookup'
+    // TODO: Method 'SetClipGeometryLookup'
+    // TODO: Method 'GetOpacity'
+    // TODO: Method 'SetOpacity'
+    // TODO: Method 'GetOpacityMaskBrush'
+    // TODO: Method 'GetOpacityMaskBrushLocal'
+    // TODO: Method 'SetOpacityMaskBrushLocal'
+    // TODO: Method 'GetOpacityMaskBrushLookup'
+    // TODO: Method 'SetOpacityMaskBrushLookup'
+    // TODO: Method 'GetName'
+    // TODO: Method 'SetName'
+    // TODO: Method 'GetIsHyperlinkTarget'
+    // TODO: Method 'SetIsHyperlinkTarget'
+    // TODO: Method 'GetHyperlinkNavigateUri'
+    // TODO: Method 'SetHyperlinkNavigateUri'
+    // TODO: Method 'GetLanguage'
+    // TODO: Method 'SetLanguage'
+};
+// --------------------------------------------------------
+// Type: IXpsOMPart
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMPart = *opaque{
+    // TODO: Method 'GetPartName'
+    // TODO: Method 'SetPartName'
+};
+// --------------------------------------------------------
+// Type: IXpsOMGlyphsEditor
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMGlyphsEditor = *opaque{
+    // TODO: Method 'ApplyEdits'
+    // TODO: Method 'GetUnicodeString'
+    // TODO: Method 'SetUnicodeString'
+    // TODO: Method 'GetGlyphIndexCount'
+    // TODO: Method 'GetGlyphIndicesA'
+    // TODO: Method 'SetGlyphIndices'
+    // TODO: Method 'GetGlyphMappingCount'
+    // TODO: Method 'GetGlyphMappings'
+    // TODO: Method 'SetGlyphMappings'
+    // TODO: Method 'GetProhibitedCaretStopCount'
+    // TODO: Method 'GetProhibitedCaretStops'
+    // TODO: Method 'SetProhibitedCaretStops'
+    // TODO: Method 'GetBidiLevel'
+    // TODO: Method 'SetBidiLevel'
+    // TODO: Method 'GetIsSideways'
+    // TODO: Method 'SetIsSideways'
+    // TODO: Method 'GetDeviceFontName'
+    // TODO: Method 'SetDeviceFontName'
+};
+// --------------------------------------------------------
+// Type: IXpsOMGlyphs
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMGlyphs = *opaque{
+    // TODO: Method 'GetUnicodeString'
+    // TODO: Method 'GetGlyphIndexCount'
+    // TODO: Method 'GetGlyphIndicesA'
+    // TODO: Method 'GetGlyphMappingCount'
+    // TODO: Method 'GetGlyphMappings'
+    // TODO: Method 'GetProhibitedCaretStopCount'
+    // TODO: Method 'GetProhibitedCaretStops'
+    // TODO: Method 'GetBidiLevel'
+    // TODO: Method 'GetIsSideways'
+    // TODO: Method 'GetDeviceFontName'
+    // TODO: Method 'GetStyleSimulations'
+    // TODO: Method 'SetStyleSimulations'
+    // TODO: Method 'GetOrigin'
+    // TODO: Method 'SetOrigin'
+    // TODO: Method 'GetFontRenderingEmSize'
+    // TODO: Method 'SetFontRenderingEmSize'
+    // TODO: Method 'GetFontResource'
+    // TODO: Method 'SetFontResource'
+    // TODO: Method 'GetFontFaceIndex'
+    // TODO: Method 'SetFontFaceIndex'
+    // TODO: Method 'GetFillBrush'
+    // TODO: Method 'GetFillBrushLocal'
+    // TODO: Method 'SetFillBrushLocal'
+    // TODO: Method 'GetFillBrushLookup'
+    // TODO: Method 'SetFillBrushLookup'
+    // TODO: Method 'GetGlyphsEditor'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IXpsOMDashCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMDashCollection = *opaque{
+    // TODO: Method 'GetCount'
+    // TODO: Method 'GetAt'
+    // TODO: Method 'InsertAt'
+    // TODO: Method 'RemoveAt'
+    // TODO: Method 'SetAt'
+    // TODO: Method 'Append'
+};
+// --------------------------------------------------------
+// Type: IXpsOMMatrixTransform
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMMatrixTransform = *opaque{
+    // TODO: Method 'GetMatrix'
+    // TODO: Method 'SetMatrix'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IXpsOMGeometry
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMGeometry = *opaque{
+    // TODO: Method 'GetFigures'
+    // TODO: Method 'GetFillRule'
+    // TODO: Method 'SetFillRule'
+    // TODO: Method 'GetTransform'
+    // TODO: Method 'GetTransformLocal'
+    // TODO: Method 'SetTransformLocal'
+    // TODO: Method 'GetTransformLookup'
+    // TODO: Method 'SetTransformLookup'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IXpsOMGeometryFigure
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMGeometryFigure = *opaque{
+    // TODO: Method 'GetOwner'
+    // TODO: Method 'GetSegmentData'
+    // TODO: Method 'GetSegmentTypes'
+    // TODO: Method 'GetSegmentStrokes'
+    // TODO: Method 'SetSegments'
+    // TODO: Method 'GetStartPoint'
+    // TODO: Method 'SetStartPoint'
+    // TODO: Method 'GetIsClosed'
+    // TODO: Method 'SetIsClosed'
+    // TODO: Method 'GetIsFilled'
+    // TODO: Method 'SetIsFilled'
+    // TODO: Method 'GetSegmentCount'
+    // TODO: Method 'GetSegmentDataCount'
+    // TODO: Method 'GetSegmentStrokePattern'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IXpsOMGeometryFigureCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMGeometryFigureCollection = *opaque{
+    // TODO: Method 'GetCount'
+    // TODO: Method 'GetAt'
+    // TODO: Method 'InsertAt'
+    // TODO: Method 'RemoveAt'
+    // TODO: Method 'SetAt'
+    // TODO: Method 'Append'
+};
+// --------------------------------------------------------
+// Type: IXpsOMPath
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMPath = *opaque{
+    // TODO: Method 'GetGeometry'
+    // TODO: Method 'GetGeometryLocal'
+    // TODO: Method 'SetGeometryLocal'
+    // TODO: Method 'GetGeometryLookup'
+    // TODO: Method 'SetGeometryLookup'
+    // TODO: Method 'GetAccessibilityShortDescription'
+    // TODO: Method 'SetAccessibilityShortDescription'
+    // TODO: Method 'GetAccessibilityLongDescription'
+    // TODO: Method 'SetAccessibilityLongDescription'
+    // TODO: Method 'GetSnapsToPixels'
+    // TODO: Method 'SetSnapsToPixels'
+    // TODO: Method 'GetStrokeBrush'
+    // TODO: Method 'GetStrokeBrushLocal'
+    // TODO: Method 'SetStrokeBrushLocal'
+    // TODO: Method 'GetStrokeBrushLookup'
+    // TODO: Method 'SetStrokeBrushLookup'
+    // TODO: Method 'GetStrokeDashes'
+    // TODO: Method 'GetStrokeDashCap'
+    // TODO: Method 'SetStrokeDashCap'
+    // TODO: Method 'GetStrokeDashOffset'
+    // TODO: Method 'SetStrokeDashOffset'
+    // TODO: Method 'GetStrokeStartLineCap'
+    // TODO: Method 'SetStrokeStartLineCap'
+    // TODO: Method 'GetStrokeEndLineCap'
+    // TODO: Method 'SetStrokeEndLineCap'
+    // TODO: Method 'GetStrokeLineJoin'
+    // TODO: Method 'SetStrokeLineJoin'
+    // TODO: Method 'GetStrokeMiterLimit'
+    // TODO: Method 'SetStrokeMiterLimit'
+    // TODO: Method 'GetStrokeThickness'
+    // TODO: Method 'SetStrokeThickness'
+    // TODO: Method 'GetFillBrush'
+    // TODO: Method 'GetFillBrushLocal'
+    // TODO: Method 'SetFillBrushLocal'
+    // TODO: Method 'GetFillBrushLookup'
+    // TODO: Method 'SetFillBrushLookup'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IXpsOMBrush
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMBrush = *opaque{
+    // TODO: Method 'GetOpacity'
+    // TODO: Method 'SetOpacity'
+};
+// --------------------------------------------------------
+// Type: IXpsOMGradientStopCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMGradientStopCollection = *opaque{
+    // TODO: Method 'GetCount'
+    // TODO: Method 'GetAt'
+    // TODO: Method 'InsertAt'
+    // TODO: Method 'RemoveAt'
+    // TODO: Method 'SetAt'
+    // TODO: Method 'Append'
+};
+// --------------------------------------------------------
+// Type: IXpsOMSolidColorBrush
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMSolidColorBrush = *opaque{
+    // TODO: Method 'GetColor'
+    // TODO: Method 'SetColor'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IXpsOMTileBrush
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMTileBrush = *opaque{
+    // TODO: Method 'GetTransform'
+    // TODO: Method 'GetTransformLocal'
+    // TODO: Method 'SetTransformLocal'
+    // TODO: Method 'GetTransformLookup'
+    // TODO: Method 'SetTransformLookup'
+    // TODO: Method 'GetViewbox'
+    // TODO: Method 'SetViewbox'
+    // TODO: Method 'GetViewport'
+    // TODO: Method 'SetViewport'
+    // TODO: Method 'GetTileMode'
+    // TODO: Method 'SetTileMode'
+};
+// --------------------------------------------------------
+// Type: IXpsOMVisualBrush
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMVisualBrush = *opaque{
+    // TODO: Method 'GetVisual'
+    // TODO: Method 'GetVisualLocal'
+    // TODO: Method 'SetVisualLocal'
+    // TODO: Method 'GetVisualLookup'
+    // TODO: Method 'SetVisualLookup'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IXpsOMImageBrush
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMImageBrush = *opaque{
+    // TODO: Method 'GetImageResource'
+    // TODO: Method 'SetImageResource'
+    // TODO: Method 'GetColorProfileResource'
+    // TODO: Method 'SetColorProfileResource'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IXpsOMGradientStop
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMGradientStop = *opaque{
+    // TODO: Method 'GetOwner'
+    // TODO: Method 'GetOffset'
+    // TODO: Method 'SetOffset'
+    // TODO: Method 'GetColor'
+    // TODO: Method 'SetColor'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IXpsOMGradientBrush
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMGradientBrush = *opaque{
+    // TODO: Method 'GetGradientStops'
+    // TODO: Method 'GetTransform'
+    // TODO: Method 'GetTransformLocal'
+    // TODO: Method 'SetTransformLocal'
+    // TODO: Method 'GetTransformLookup'
+    // TODO: Method 'SetTransformLookup'
+    // TODO: Method 'GetSpreadMethod'
+    // TODO: Method 'SetSpreadMethod'
+    // TODO: Method 'GetColorInterpolationMode'
+    // TODO: Method 'SetColorInterpolationMode'
+};
+// --------------------------------------------------------
+// Type: IXpsOMLinearGradientBrush
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMLinearGradientBrush = *opaque{
+    // TODO: Method 'GetStartPoint'
+    // TODO: Method 'SetStartPoint'
+    // TODO: Method 'GetEndPoint'
+    // TODO: Method 'SetEndPoint'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IXpsOMRadialGradientBrush
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMRadialGradientBrush = *opaque{
+    // TODO: Method 'GetCenter'
+    // TODO: Method 'SetCenter'
+    // TODO: Method 'GetRadiiSizes'
+    // TODO: Method 'SetRadiiSizes'
+    // TODO: Method 'GetGradientOrigin'
+    // TODO: Method 'SetGradientOrigin'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IXpsOMResource
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMResource = *opaque{
+};
+// --------------------------------------------------------
+// Type: IXpsOMPartResources
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMPartResources = *opaque{
+    // TODO: Method 'GetFontResources'
+    // TODO: Method 'GetImageResources'
+    // TODO: Method 'GetColorProfileResources'
+    // TODO: Method 'GetRemoteDictionaryResources'
+};
+// --------------------------------------------------------
+// Type: IXpsOMDictionary
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMDictionary = *opaque{
+    // TODO: Method 'GetOwner'
+    // TODO: Method 'GetCount'
+    // TODO: Method 'GetAt'
+    // TODO: Method 'GetByKey'
+    // TODO: Method 'GetIndex'
+    // TODO: Method 'Append'
+    // TODO: Method 'InsertAt'
+    // TODO: Method 'RemoveAt'
+    // TODO: Method 'SetAt'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IXpsOMFontResource
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMFontResource = *opaque{
+    // TODO: Method 'GetStream'
+    // TODO: Method 'SetContent'
+    // TODO: Method 'GetEmbeddingOption'
+};
+// --------------------------------------------------------
+// Type: IXpsOMFontResourceCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMFontResourceCollection = *opaque{
+    // TODO: Method 'GetCount'
+    // TODO: Method 'GetAt'
+    // TODO: Method 'SetAt'
+    // TODO: Method 'InsertAt'
+    // TODO: Method 'Append'
+    // TODO: Method 'RemoveAt'
+    // TODO: Method 'GetByPartName'
+};
+// --------------------------------------------------------
+// Type: IXpsOMImageResource
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMImageResource = *opaque{
+    // TODO: Method 'GetStream'
+    // TODO: Method 'SetContent'
+    // TODO: Method 'GetImageType'
+};
+// --------------------------------------------------------
+// Type: IXpsOMImageResourceCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMImageResourceCollection = *opaque{
+    // TODO: Method 'GetCount'
+    // TODO: Method 'GetAt'
+    // TODO: Method 'InsertAt'
+    // TODO: Method 'RemoveAt'
+    // TODO: Method 'SetAt'
+    // TODO: Method 'Append'
+    // TODO: Method 'GetByPartName'
+};
+// --------------------------------------------------------
+// Type: IXpsOMColorProfileResource
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMColorProfileResource = *opaque{
+    // TODO: Method 'GetStream'
+    // TODO: Method 'SetContent'
+};
+// --------------------------------------------------------
+// Type: IXpsOMColorProfileResourceCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMColorProfileResourceCollection = *opaque{
+    // TODO: Method 'GetCount'
+    // TODO: Method 'GetAt'
+    // TODO: Method 'InsertAt'
+    // TODO: Method 'RemoveAt'
+    // TODO: Method 'SetAt'
+    // TODO: Method 'Append'
+    // TODO: Method 'GetByPartName'
+};
+// --------------------------------------------------------
+// Type: IXpsOMPrintTicketResource
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMPrintTicketResource = *opaque{
+    // TODO: Method 'GetStream'
+    // TODO: Method 'SetContent'
+};
+// --------------------------------------------------------
+// Type: IXpsOMRemoteDictionaryResource
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMRemoteDictionaryResource = *opaque{
+    // TODO: Method 'GetDictionary'
+    // TODO: Method 'SetDictionary'
+};
+// --------------------------------------------------------
+// Type: IXpsOMRemoteDictionaryResourceCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMRemoteDictionaryResourceCollection = *opaque{
+    // TODO: Method 'GetCount'
+    // TODO: Method 'GetAt'
+    // TODO: Method 'InsertAt'
+    // TODO: Method 'RemoveAt'
+    // TODO: Method 'SetAt'
+    // TODO: Method 'Append'
+    // TODO: Method 'GetByPartName'
+};
+// --------------------------------------------------------
+// Type: IXpsOMSignatureBlockResourceCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMSignatureBlockResourceCollection = *opaque{
+    // TODO: Method 'GetCount'
+    // TODO: Method 'GetAt'
+    // TODO: Method 'InsertAt'
+    // TODO: Method 'RemoveAt'
+    // TODO: Method 'SetAt'
+    // TODO: Method 'Append'
+    // TODO: Method 'GetByPartName'
+};
+// --------------------------------------------------------
+// Type: IXpsOMDocumentStructureResource
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMDocumentStructureResource = *opaque{
+    // TODO: Method 'GetOwner'
+    // TODO: Method 'GetStream'
+    // TODO: Method 'SetContent'
+};
+// --------------------------------------------------------
+// Type: IXpsOMStoryFragmentsResource
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMStoryFragmentsResource = *opaque{
+    // TODO: Method 'GetOwner'
+    // TODO: Method 'GetStream'
+    // TODO: Method 'SetContent'
+};
+// --------------------------------------------------------
+// Type: IXpsOMSignatureBlockResource
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMSignatureBlockResource = *opaque{
+    // TODO: Method 'GetOwner'
+    // TODO: Method 'GetStream'
+    // TODO: Method 'SetContent'
+};
+// --------------------------------------------------------
+// Type: IXpsOMVisualCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMVisualCollection = *opaque{
+    // TODO: Method 'GetCount'
+    // TODO: Method 'GetAt'
+    // TODO: Method 'InsertAt'
+    // TODO: Method 'RemoveAt'
+    // TODO: Method 'SetAt'
+    // TODO: Method 'Append'
+};
+// --------------------------------------------------------
+// Type: IXpsOMCanvas
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMCanvas = *opaque{
+    // TODO: Method 'GetVisuals'
+    // TODO: Method 'GetUseAliasedEdgeMode'
+    // TODO: Method 'SetUseAliasedEdgeMode'
+    // TODO: Method 'GetAccessibilityShortDescription'
+    // TODO: Method 'SetAccessibilityShortDescription'
+    // TODO: Method 'GetAccessibilityLongDescription'
+    // TODO: Method 'SetAccessibilityLongDescription'
+    // TODO: Method 'GetDictionary'
+    // TODO: Method 'GetDictionaryLocal'
+    // TODO: Method 'SetDictionaryLocal'
+    // TODO: Method 'GetDictionaryResource'
+    // TODO: Method 'SetDictionaryResource'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IXpsOMPage
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMPage = *opaque{
+    // TODO: Method 'GetOwner'
+    // TODO: Method 'GetVisuals'
+    // TODO: Method 'GetPageDimensions'
+    // TODO: Method 'SetPageDimensions'
+    // TODO: Method 'GetContentBox'
+    // TODO: Method 'SetContentBox'
+    // TODO: Method 'GetBleedBox'
+    // TODO: Method 'SetBleedBox'
+    // TODO: Method 'GetLanguage'
+    // TODO: Method 'SetLanguage'
+    // TODO: Method 'GetName'
+    // TODO: Method 'SetName'
+    // TODO: Method 'GetIsHyperlinkTarget'
+    // TODO: Method 'SetIsHyperlinkTarget'
+    // TODO: Method 'GetDictionary'
+    // TODO: Method 'GetDictionaryLocal'
+    // TODO: Method 'SetDictionaryLocal'
+    // TODO: Method 'GetDictionaryResource'
+    // TODO: Method 'SetDictionaryResource'
+    // TODO: Method 'Write'
+    // TODO: Method 'GenerateUnusedLookupKey'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IXpsOMPageReference
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMPageReference = *opaque{
+    // TODO: Method 'GetOwner'
+    // TODO: Method 'GetPage'
+    // TODO: Method 'SetPage'
+    // TODO: Method 'DiscardPage'
+    // TODO: Method 'IsPageLoaded'
+    // TODO: Method 'GetAdvisoryPageDimensions'
+    // TODO: Method 'SetAdvisoryPageDimensions'
+    // TODO: Method 'GetStoryFragmentsResource'
+    // TODO: Method 'SetStoryFragmentsResource'
+    // TODO: Method 'GetPrintTicketResource'
+    // TODO: Method 'SetPrintTicketResource'
+    // TODO: Method 'GetThumbnailResource'
+    // TODO: Method 'SetThumbnailResource'
+    // TODO: Method 'CollectLinkTargets'
+    // TODO: Method 'CollectPartResources'
+    // TODO: Method 'HasRestrictedFonts'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IXpsOMPageReferenceCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMPageReferenceCollection = *opaque{
+    // TODO: Method 'GetCount'
+    // TODO: Method 'GetAt'
+    // TODO: Method 'InsertAt'
+    // TODO: Method 'RemoveAt'
+    // TODO: Method 'SetAt'
+    // TODO: Method 'Append'
+};
+// --------------------------------------------------------
+// Type: IXpsOMDocument
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMDocument = *opaque{
+    // TODO: Method 'GetOwner'
+    // TODO: Method 'GetPageReferences'
+    // TODO: Method 'GetPrintTicketResource'
+    // TODO: Method 'SetPrintTicketResource'
+    // TODO: Method 'GetDocumentStructureResource'
+    // TODO: Method 'SetDocumentStructureResource'
+    // TODO: Method 'GetSignatureBlockResources'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IXpsOMDocumentCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMDocumentCollection = *opaque{
+    // TODO: Method 'GetCount'
+    // TODO: Method 'GetAt'
+    // TODO: Method 'InsertAt'
+    // TODO: Method 'RemoveAt'
+    // TODO: Method 'SetAt'
+    // TODO: Method 'Append'
+};
+// --------------------------------------------------------
+// Type: IXpsOMDocumentSequence
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMDocumentSequence = *opaque{
+    // TODO: Method 'GetOwner'
+    // TODO: Method 'GetDocuments'
+    // TODO: Method 'GetPrintTicketResource'
+    // TODO: Method 'SetPrintTicketResource'
+};
+// --------------------------------------------------------
+// Type: IXpsOMCoreProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMCoreProperties = *opaque{
+    // TODO: Method 'GetOwner'
+    // TODO: Method 'GetCategory'
+    // TODO: Method 'SetCategory'
+    // TODO: Method 'GetContentStatus'
+    // TODO: Method 'SetContentStatus'
+    // TODO: Method 'GetContentType'
+    // TODO: Method 'SetContentType'
+    // TODO: Method 'GetCreated'
+    // TODO: Method 'SetCreated'
+    // TODO: Method 'GetCreator'
+    // TODO: Method 'SetCreator'
+    // TODO: Method 'GetDescription'
+    // TODO: Method 'SetDescription'
+    // TODO: Method 'GetIdentifier'
+    // TODO: Method 'SetIdentifier'
+    // TODO: Method 'GetKeywords'
+    // TODO: Method 'SetKeywords'
+    // TODO: Method 'GetLanguage'
+    // TODO: Method 'SetLanguage'
+    // TODO: Method 'GetLastModifiedBy'
+    // TODO: Method 'SetLastModifiedBy'
+    // TODO: Method 'GetLastPrinted'
+    // TODO: Method 'SetLastPrinted'
+    // TODO: Method 'GetModified'
+    // TODO: Method 'SetModified'
+    // TODO: Method 'GetRevision'
+    // TODO: Method 'SetRevision'
+    // TODO: Method 'GetSubject'
+    // TODO: Method 'SetSubject'
+    // TODO: Method 'GetTitle'
+    // TODO: Method 'SetTitle'
+    // TODO: Method 'GetVersion'
+    // TODO: Method 'SetVersion'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IXpsOMPackage
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMPackage = *opaque{
+    // TODO: Method 'GetDocumentSequence'
+    // TODO: Method 'SetDocumentSequence'
+    // TODO: Method 'GetCoreProperties'
+    // TODO: Method 'SetCoreProperties'
+    // TODO: Method 'GetDiscardControlPartName'
+    // TODO: Method 'SetDiscardControlPartName'
+    // TODO: Method 'GetThumbnailResource'
+    // TODO: Method 'SetThumbnailResource'
+    // TODO: Method 'WriteToFile'
+    // TODO: Method 'WriteToStream'
+};
+// --------------------------------------------------------
+// Type: IXpsOMObjectFactory
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMObjectFactory = *opaque{
+    // TODO: Method 'CreatePackage'
+    // TODO: Method 'CreatePackageFromFile'
+    // TODO: Method 'CreatePackageFromStream'
+    // TODO: Method 'CreateStoryFragmentsResource'
+    // TODO: Method 'CreateDocumentStructureResource'
+    // TODO: Method 'CreateSignatureBlockResource'
+    // TODO: Method 'CreateRemoteDictionaryResource'
+    // TODO: Method 'CreateRemoteDictionaryResourceFromStream'
+    // TODO: Method 'CreatePartResources'
+    // TODO: Method 'CreateDocumentSequence'
+    // TODO: Method 'CreateDocument'
+    // TODO: Method 'CreatePageReference'
+    // TODO: Method 'CreatePage'
+    // TODO: Method 'CreatePageFromStream'
+    // TODO: Method 'CreateCanvas'
+    // TODO: Method 'CreateGlyphs'
+    // TODO: Method 'CreatePath'
+    // TODO: Method 'CreateGeometry'
+    // TODO: Method 'CreateGeometryFigure'
+    // TODO: Method 'CreateMatrixTransform'
+    // TODO: Method 'CreateSolidColorBrush'
+    // TODO: Method 'CreateColorProfileResource'
+    // TODO: Method 'CreateImageBrush'
+    // TODO: Method 'CreateVisualBrush'
+    // TODO: Method 'CreateImageResource'
+    // TODO: Method 'CreatePrintTicketResource'
+    // TODO: Method 'CreateFontResource'
+    // TODO: Method 'CreateGradientStop'
+    // TODO: Method 'CreateLinearGradientBrush'
+    // TODO: Method 'CreateRadialGradientBrush'
+    // TODO: Method 'CreateCoreProperties'
+    // TODO: Method 'CreateDictionary'
+    // TODO: Method 'CreatePartUriCollection'
+    // TODO: Method 'CreatePackageWriterOnFile'
+    // TODO: Method 'CreatePackageWriterOnStream'
+    // TODO: Method 'CreatePartUri'
+    // TODO: Method 'CreateReadOnlyStreamOnFile'
+};
+// --------------------------------------------------------
+// Type: IXpsOMNameCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMNameCollection = *opaque{
+    // TODO: Method 'GetCount'
+    // TODO: Method 'GetAt'
+};
+// --------------------------------------------------------
+// Type: IXpsOMPartUriCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMPartUriCollection = *opaque{
+    // TODO: Method 'GetCount'
+    // TODO: Method 'GetAt'
+    // TODO: Method 'InsertAt'
+    // TODO: Method 'RemoveAt'
+    // TODO: Method 'SetAt'
+    // TODO: Method 'Append'
+};
+// --------------------------------------------------------
+// Type: IXpsOMPackageWriter
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMPackageWriter = *opaque{
+    // TODO: Method 'StartNewDocument'
+    // TODO: Method 'AddPage'
+    // TODO: Method 'AddResource'
+    // TODO: Method 'Close'
+    // TODO: Method 'IsClosed'
+};
+// --------------------------------------------------------
+// Type: IXpsOMPackageTarget
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMPackageTarget = *opaque{
+    // TODO: Method 'CreateXpsOMPackageWriter'
+};
+// --------------------------------------------------------
+// Type: IXpsOMThumbnailGenerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMThumbnailGenerator = *opaque{
+    // TODO: Method 'GenerateThumbnail'
+};
+// --------------------------------------------------------
+// Type: XPS_DOCUMENT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const XPS_DOCUMENT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: IXpsOMObjectFactory1
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMObjectFactory1 = *opaque{
+    // TODO: Method 'GetDocumentTypeFromFile'
+    // TODO: Method 'GetDocumentTypeFromStream'
+    // TODO: Method 'ConvertHDPhotoToJpegXR'
+    // TODO: Method 'ConvertJpegXRToHDPhoto'
+    // TODO: Method 'CreatePackageWriterOnFile1'
+    // TODO: Method 'CreatePackageWriterOnStream1'
+    // TODO: Method 'CreatePackage1'
+    // TODO: Method 'CreatePackageFromStream1'
+    // TODO: Method 'CreatePackageFromFile1'
+    // TODO: Method 'CreatePage1'
+    // TODO: Method 'CreatePageFromStream1'
+    // TODO: Method 'CreateRemoteDictionaryResourceFromStream1'
+};
+// --------------------------------------------------------
+// Type: IXpsOMPackage1
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMPackage1 = *opaque{
+    // TODO: Method 'GetDocumentType'
+    // TODO: Method 'WriteToFile1'
+    // TODO: Method 'WriteToStream1'
+};
+// --------------------------------------------------------
+// Type: IXpsOMPage1
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMPage1 = *opaque{
+    // TODO: Method 'GetDocumentType'
+    // TODO: Method 'Write1'
+};
+// --------------------------------------------------------
+// Type: IXpsDocumentPackageTarget
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsDocumentPackageTarget = *opaque{
+    // TODO: Method 'GetXpsOMPackageWriter'
+    // TODO: Method 'GetXpsOMFactory'
+    // TODO: Method 'GetXpsType'
+};
+// --------------------------------------------------------
+// Type: IXpsOMRemoteDictionaryResource1
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMRemoteDictionaryResource1 = *opaque{
+    // TODO: Method 'GetDocumentType'
+    // TODO: Method 'Write1'
+};
+// --------------------------------------------------------
+// Type: IXpsOMPackageWriter3D
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsOMPackageWriter3D = *opaque{
+    // TODO: Method 'AddModelTexture'
+    // TODO: Method 'SetModelPrintTicket'
+};
+// --------------------------------------------------------
+// Type: IXpsDocumentPackageTarget3D
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsDocumentPackageTarget3D = *opaque{
+    // TODO: Method 'GetXpsOMPackageWriter3D'
+    // TODO: Method 'GetXpsOMFactory'
+};
+// --------------------------------------------------------
+// Type: XpsSignatureManager
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const XpsSignatureManager = opaque {
+};
+// --------------------------------------------------------
+// Type: XPS_SIGNATURE_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const XPS_SIGNATURE_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: XPS_SIGN_POLICY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const XPS_SIGN_POLICY = *opaque{
+};
+// --------------------------------------------------------
+// Type: XPS_SIGN_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const XPS_SIGN_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: IXpsSigningOptions
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsSigningOptions = *opaque{
+    // TODO: Method 'GetSignatureId'
+    // TODO: Method 'SetSignatureId'
+    // TODO: Method 'GetSignatureMethod'
+    // TODO: Method 'SetSignatureMethod'
+    // TODO: Method 'GetDigestMethod'
+    // TODO: Method 'SetDigestMethod'
+    // TODO: Method 'GetSignaturePartName'
+    // TODO: Method 'SetSignaturePartName'
+    // TODO: Method 'GetPolicy'
+    // TODO: Method 'SetPolicy'
+    // TODO: Method 'GetSigningTimeFormat'
+    // TODO: Method 'SetSigningTimeFormat'
+    // TODO: Method 'GetCustomObjects'
+    // TODO: Method 'GetCustomReferences'
+    // TODO: Method 'GetCertificateSet'
+    // TODO: Method 'GetFlags'
+    // TODO: Method 'SetFlags'
+};
+// --------------------------------------------------------
+// Type: IXpsSignatureCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsSignatureCollection = *opaque{
+    // TODO: Method 'GetCount'
+    // TODO: Method 'GetAt'
+    // TODO: Method 'RemoveAt'
+};
+// --------------------------------------------------------
+// Type: IXpsSignature
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsSignature = *opaque{
+    // TODO: Method 'GetSignatureId'
+    // TODO: Method 'GetSignatureValue'
+    // TODO: Method 'GetCertificateEnumerator'
+    // TODO: Method 'GetSigningTime'
+    // TODO: Method 'GetSigningTimeFormat'
+    // TODO: Method 'GetSignaturePartName'
+    // TODO: Method 'Verify'
+    // TODO: Method 'GetPolicy'
+    // TODO: Method 'GetCustomObjectEnumerator'
+    // TODO: Method 'GetCustomReferenceEnumerator'
+    // TODO: Method 'GetSignatureXml'
+    // TODO: Method 'SetSignatureXml'
+};
+// --------------------------------------------------------
+// Type: IXpsSignatureBlockCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsSignatureBlockCollection = *opaque{
+    // TODO: Method 'GetCount'
+    // TODO: Method 'GetAt'
+    // TODO: Method 'RemoveAt'
+};
+// --------------------------------------------------------
+// Type: IXpsSignatureBlock
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsSignatureBlock = *opaque{
+    // TODO: Method 'GetRequests'
+    // TODO: Method 'GetPartName'
+    // TODO: Method 'GetDocumentIndex'
+    // TODO: Method 'GetDocumentName'
+    // TODO: Method 'CreateRequest'
+};
+// --------------------------------------------------------
+// Type: IXpsSignatureRequestCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsSignatureRequestCollection = *opaque{
+    // TODO: Method 'GetCount'
+    // TODO: Method 'GetAt'
+    // TODO: Method 'RemoveAt'
+};
+// --------------------------------------------------------
+// Type: IXpsSignatureRequest
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsSignatureRequest = *opaque{
+    // TODO: Method 'GetIntent'
+    // TODO: Method 'SetIntent'
+    // TODO: Method 'GetRequestedSigner'
+    // TODO: Method 'SetRequestedSigner'
+    // TODO: Method 'GetRequestSignByDate'
+    // TODO: Method 'SetRequestSignByDate'
+    // TODO: Method 'GetSigningLocale'
+    // TODO: Method 'SetSigningLocale'
+    // TODO: Method 'GetSpotLocation'
+    // TODO: Method 'SetSpotLocation'
+    // TODO: Method 'GetRequestId'
+    // TODO: Method 'GetSignature'
+};
+// --------------------------------------------------------
+// Type: IXpsSignatureManager
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXpsSignatureManager = *opaque{
+    // TODO: Method 'LoadPackageFile'
+    // TODO: Method 'LoadPackageStream'
+    // TODO: Method 'Sign'
+    // TODO: Method 'GetSignatureOriginPartName'
+    // TODO: Method 'SetSignatureOriginPartName'
+    // TODO: Method 'GetSignatures'
+    // TODO: Method 'AddSignatureBlock'
+    // TODO: Method 'GetSignatureBlocks'
+    // TODO: Method 'CreateSigningOptions'
+    // TODO: Method 'SavePackageToFile'
+    // TODO: Method 'SavePackageToStream'
+};
+// --------------------------------------------------------
+// Type: PrintDocumentPackageTarget
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const PrintDocumentPackageTarget = opaque {
+};
+// --------------------------------------------------------
+// Type: PrintDocumentPackageTargetFactory
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const PrintDocumentPackageTargetFactory = opaque {
+};
+// --------------------------------------------------------
+// Type: IPrintDocumentPackageTarget
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPrintDocumentPackageTarget = *opaque{
+    // TODO: Method 'GetPackageTargetTypes'
+    // TODO: Method 'GetPackageTarget'
+    // TODO: Method 'Cancel'
+};
+// --------------------------------------------------------
+// Type: PrintDocumentPackageCompletion
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PrintDocumentPackageCompletion = *opaque{
+};
+// --------------------------------------------------------
+// Type: PrintDocumentPackageStatus
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PrintDocumentPackageStatus = extern struct {
+    JobId: {"kind":"UInt32"},
+    CurrentDocument: {"kind":"Int32"},
+    CurrentPage: {"kind":"Int32"},
+    CurrentPageTotal: {"kind":"Int32"},
+    Completion: Windows.Win32.Xps.PrintDocumentPackageCompletion,
+    PackageStatus: Windows.Win32.Com.HRESULT,
+};
+// --------------------------------------------------------
+// Type: IPrintDocumentPackageStatusEvent
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPrintDocumentPackageStatusEvent = *opaque{
+    // TODO: Method 'PackageStatusUpdated'
+};
+// --------------------------------------------------------
+// Type: IPrintDocumentPackageTargetFactory
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPrintDocumentPackageTargetFactory = *opaque{
+    // TODO: Method 'CreateDocumentPackageTargetForPrintJob'
+};
+// --------------------------------------------------------
+// Type: HPTPROVIDER__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HPTPROVIDER__ = extern struct {
+    unused: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: EDefaultDevmodeType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EDefaultDevmodeType = *opaque{
+};
+// --------------------------------------------------------
+// Type: EPrintTicketScope
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EPrintTicketScope = *opaque{
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn PrintWindow(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hdcBlt: Windows.Win32.Gdi.HDC,
+    nFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINSPOOL" fn DeviceCapabilitiesA(
+    pDevice: {"kind""Ptr","child":{"kind":"SByte"}},
+    pPort: {"kind""Ptr","child":{"kind":"SByte"}},
+    fwCapability: {"kind":"UInt16"},
+    pOutput: {"kind""Ptr","child":{"kind":"SByte"}},
+    pDevMode: {"kind""Ptr","child":Windows.Win32.Xps.DEVMODEA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINSPOOL" fn DeviceCapabilitiesW(
+    pDevice: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pPort: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fwCapability: {"kind":"UInt16"},
+    pOutput: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pDevMode: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DEVMODEW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn Escape(
+    hdc: Windows.Win32.Gdi.HDC,
+    iEscape: {"kind":"Int32"},
+    cjIn: {"kind":"Int32"},
+    pvIn: {"kind""Ptr","child":{"kind":"SByte"}},
+    pvOut: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn ExtEscape(
+    hdc: Windows.Win32.Gdi.HDC,
+    iEscape: {"kind":"Int32"},
+    cjInput: {"kind":"Int32"},
+    lpInData: {"kind""Ptr","child":{"kind":"SByte"}},
+    cjOutput: {"kind":"Int32"},
+    lpOutData: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn StartDocA(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpdi: {"kind""Ptr","child":Windows.Win32.Xps.DOCINFOA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn StartDocW(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpdi: {"kind""Ptr","child":Windows.Win32.Xps.DOCINFOW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EndDoc(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn StartPage(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EndPage(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn AbortDoc(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetAbortProc(
+    hdc: Windows.Win32.Gdi.HDC,
+    proc: Windows.Win32.Xps.ABORTPROC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "prntvpt" fn PTQuerySchemaVersionSupport(
+    pszPrinterName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pMaxVersion: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "prntvpt" fn PTOpenProvider(
+    pszPrinterName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwVersion: {"kind":"UInt32"},
+    phProvider: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Xps.HPTPROVIDER__}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "prntvpt" fn PTOpenProviderEx(
+    pszPrinterName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwMaxVersion: {"kind":"UInt32"},
+    dwPrefVersion: {"kind":"UInt32"},
+    phProvider: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Xps.HPTPROVIDER__}},
+    pUsedVersion: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "prntvpt" fn PTCloseProvider(
+    hProvider: {"kind""Ptr","child":Windows.Win32.Xps.HPTPROVIDER__},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "prntvpt" fn PTReleaseMemory(
+    pBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "prntvpt" fn PTGetPrintCapabilities(
+    hProvider: {"kind""Ptr","child":Windows.Win32.Xps.HPTPROVIDER__},
+    pPrintTicket: Windows.Win32.StructuredStorage.IStream,
+    pCapabilities: Windows.Win32.StructuredStorage.IStream,
+    pbstrErrorMessage: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "prntvpt" fn PTGetPrintDeviceCapabilities(
+    hProvider: {"kind""Ptr","child":Windows.Win32.Xps.HPTPROVIDER__},
+    pPrintTicket: Windows.Win32.StructuredStorage.IStream,
+    pDeviceCapabilities: Windows.Win32.StructuredStorage.IStream,
+    pbstrErrorMessage: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "prntvpt" fn PTGetPrintDeviceResources(
+    hProvider: {"kind""Ptr","child":Windows.Win32.Xps.HPTPROVIDER__},
+    pszLocaleName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pPrintTicket: Windows.Win32.StructuredStorage.IStream,
+    pDeviceResources: Windows.Win32.StructuredStorage.IStream,
+    pbstrErrorMessage: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "prntvpt" fn PTMergeAndValidatePrintTicket(
+    hProvider: {"kind""Ptr","child":Windows.Win32.Xps.HPTPROVIDER__},
+    pBaseTicket: Windows.Win32.StructuredStorage.IStream,
+    pDeltaTicket: Windows.Win32.StructuredStorage.IStream,
+    scope: Windows.Win32.Xps.EPrintTicketScope,
+    pResultTicket: Windows.Win32.StructuredStorage.IStream,
+    pbstrErrorMessage: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "prntvpt" fn PTConvertPrintTicketToDevMode(
+    hProvider: {"kind""Ptr","child":Windows.Win32.Xps.HPTPROVIDER__},
+    pPrintTicket: Windows.Win32.StructuredStorage.IStream,
+    baseDevmodeType: Windows.Win32.Xps.EDefaultDevmodeType,
+    scope: Windows.Win32.Xps.EPrintTicketScope,
+    pcbDevmode: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ppDevmode: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Xps.DEVMODEA}},
+    pbstrErrorMessage: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "prntvpt" fn PTConvertDevModeToPrintTicket(
+    hProvider: {"kind""Ptr","child":Windows.Win32.Xps.HPTPROVIDER__},
+    cbDevmode: {"kind":"UInt32"},
+    pDevmode: {"kind""Ptr","child":Windows.Win32.Xps.DEVMODEA},
+    scope: Windows.Win32.Xps.EPrintTicketScope,
+    pPrintTicket: Windows.Win32.StructuredStorage.IStream,
+],
+
+"unicode_aliases": [
+     "DOCINFO"
+     "DeviceCapabilities"
+     "StartDoc"
+]}

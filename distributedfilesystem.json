@@ -1,0 +1,457 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: DFS_TARGET_PRIORITY_CLASS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DFS_TARGET_PRIORITY_CLASS = *opaque{
+};
+// --------------------------------------------------------
+// Type: DFS_TARGET_PRIORITY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DFS_TARGET_PRIORITY = extern struct {
+    TargetPriorityClass: Windows.Win32.DistributedFileSystem.DFS_TARGET_PRIORITY_CLASS,
+    TargetPriorityRank: {"kind":"UInt16"},
+    Reserved: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: DFS_INFO_1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DFS_INFO_1 = extern struct {
+    EntryPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DFS_INFO_2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DFS_INFO_2 = extern struct {
+    EntryPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    State: {"kind":"UInt32"},
+    NumberOfStorages: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DFS_STORAGE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DFS_STORAGE_INFO = extern struct {
+    State: {"kind":"UInt32"},
+    ServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ShareName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DFS_STORAGE_INFO_1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DFS_STORAGE_INFO_1 = extern struct {
+    State: {"kind":"UInt32"},
+    ServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ShareName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TargetPriority: Windows.Win32.DistributedFileSystem.DFS_TARGET_PRIORITY,
+};
+// --------------------------------------------------------
+// Type: DFS_INFO_3
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DFS_INFO_3 = extern struct {
+    EntryPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    State: {"kind":"UInt32"},
+    NumberOfStorages: {"kind":"UInt32"},
+    Storage: {"kind""Ptr","child":Windows.Win32.DistributedFileSystem.DFS_STORAGE_INFO},
+};
+// --------------------------------------------------------
+// Type: DFS_INFO_4
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DFS_INFO_4 = extern struct {
+    EntryPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    State: {"kind":"UInt32"},
+    Timeout: {"kind":"UInt32"},
+    Guid: Guid,
+    NumberOfStorages: {"kind":"UInt32"},
+    Storage: {"kind""Ptr","child":Windows.Win32.DistributedFileSystem.DFS_STORAGE_INFO},
+};
+// --------------------------------------------------------
+// Type: DFS_INFO_5
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DFS_INFO_5 = extern struct {
+    EntryPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    State: {"kind":"UInt32"},
+    Timeout: {"kind":"UInt32"},
+    Guid: Guid,
+    PropertyFlags: {"kind":"UInt32"},
+    MetadataSize: {"kind":"UInt32"},
+    NumberOfStorages: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DFS_INFO_6
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DFS_INFO_6 = extern struct {
+    EntryPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    State: {"kind":"UInt32"},
+    Timeout: {"kind":"UInt32"},
+    Guid: Guid,
+    PropertyFlags: {"kind":"UInt32"},
+    MetadataSize: {"kind":"UInt32"},
+    NumberOfStorages: {"kind":"UInt32"},
+    Storage: {"kind""Ptr","child":Windows.Win32.DistributedFileSystem.DFS_STORAGE_INFO_1},
+};
+// --------------------------------------------------------
+// Type: DFS_INFO_7
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DFS_INFO_7 = extern struct {
+    GenerationGuid: Guid,
+};
+// --------------------------------------------------------
+// Type: DFS_INFO_8
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DFS_INFO_8 = extern struct {
+    EntryPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    State: {"kind":"UInt32"},
+    Timeout: {"kind":"UInt32"},
+    Guid: Guid,
+    PropertyFlags: {"kind":"UInt32"},
+    MetadataSize: {"kind":"UInt32"},
+    SdLengthReserved: {"kind":"UInt32"},
+    pSecurityDescriptor: {"kind""Ptr","child":{"kind":"Void"}},
+    NumberOfStorages: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DFS_INFO_9
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DFS_INFO_9 = extern struct {
+    EntryPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    State: {"kind":"UInt32"},
+    Timeout: {"kind":"UInt32"},
+    Guid: Guid,
+    PropertyFlags: {"kind":"UInt32"},
+    MetadataSize: {"kind":"UInt32"},
+    SdLengthReserved: {"kind":"UInt32"},
+    pSecurityDescriptor: {"kind""Ptr","child":{"kind":"Void"}},
+    NumberOfStorages: {"kind":"UInt32"},
+    Storage: {"kind""Ptr","child":Windows.Win32.DistributedFileSystem.DFS_STORAGE_INFO_1},
+};
+// --------------------------------------------------------
+// Type: DFS_INFO_50
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DFS_INFO_50 = extern struct {
+    NamespaceMajorVersion: {"kind":"UInt32"},
+    NamespaceMinorVersion: {"kind":"UInt32"},
+    NamespaceCapabilities: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: DFS_INFO_100
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DFS_INFO_100 = extern struct {
+    Comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DFS_INFO_101
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DFS_INFO_101 = extern struct {
+    State: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DFS_INFO_102
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DFS_INFO_102 = extern struct {
+    Timeout: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DFS_INFO_103
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DFS_INFO_103 = extern struct {
+    PropertyFlagMask: {"kind":"UInt32"},
+    PropertyFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DFS_INFO_104
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DFS_INFO_104 = extern struct {
+    TargetPriority: Windows.Win32.DistributedFileSystem.DFS_TARGET_PRIORITY,
+};
+// --------------------------------------------------------
+// Type: DFS_INFO_105
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DFS_INFO_105 = extern struct {
+    Comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    State: {"kind":"UInt32"},
+    Timeout: {"kind":"UInt32"},
+    PropertyFlagMask: {"kind":"UInt32"},
+    PropertyFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DFS_INFO_106
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DFS_INFO_106 = extern struct {
+    State: {"kind":"UInt32"},
+    TargetPriority: Windows.Win32.DistributedFileSystem.DFS_TARGET_PRIORITY,
+};
+// --------------------------------------------------------
+// Type: DFS_INFO_107
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DFS_INFO_107 = extern struct {
+    Comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    State: {"kind":"UInt32"},
+    Timeout: {"kind":"UInt32"},
+    PropertyFlagMask: {"kind":"UInt32"},
+    PropertyFlags: {"kind":"UInt32"},
+    SdLengthReserved: {"kind":"UInt32"},
+    pSecurityDescriptor: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DFS_INFO_150
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DFS_INFO_150 = extern struct {
+    SdLengthReserved: {"kind":"UInt32"},
+    pSecurityDescriptor: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DFS_INFO_200
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DFS_INFO_200 = extern struct {
+    FtDfsName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DFS_INFO_300
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DFS_INFO_300 = extern struct {
+    Flags: {"kind":"UInt32"},
+    DfsName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DFS_SITENAME_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DFS_SITENAME_INFO = extern struct {
+    SiteFlags: {"kind":"UInt32"},
+    SiteName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DFS_SITELIST_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DFS_SITELIST_INFO = extern struct {
+    cSites: {"kind":"UInt32"},
+    Site: {"kind":"Array","child": Windows.Win32.DistributedFileSystem.DFS_SITENAME_INFO},
+};
+// --------------------------------------------------------
+// Type: DFS_NAMESPACE_VERSION_ORIGIN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DFS_NAMESPACE_VERSION_ORIGIN = *opaque{
+};
+// --------------------------------------------------------
+// Type: DFS_SUPPORTED_NAMESPACE_VERSION_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DFS_SUPPORTED_NAMESPACE_VERSION_INFO = extern struct {
+    DomainDfsMajorVersion: {"kind":"UInt32"},
+    DomainDfsMinorVersion: {"kind":"UInt32"},
+    DomainDfsCapabilities: {"kind":"UInt64"},
+    StandaloneDfsMajorVersion: {"kind":"UInt32"},
+    StandaloneDfsMinorVersion: {"kind":"UInt32"},
+    StandaloneDfsCapabilities: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: DFS_GET_PKT_ENTRY_STATE_ARG
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DFS_GET_PKT_ENTRY_STATE_ARG = extern struct {
+    DfsEntryPathLen: {"kind":"UInt16"},
+    ServerNameLen: {"kind":"UInt16"},
+    ShareNameLen: {"kind":"UInt16"},
+    Level: {"kind":"UInt32"},
+    Buffer: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dfscli" fn NetDfsAdd(
+    DfsEntryPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ShareName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dfscli" fn NetDfsAddStdRoot(
+    ServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RootShare: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dfscli" fn NetDfsRemoveStdRoot(
+    ServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RootShare: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dfscli" fn NetDfsAddFtRoot(
+    ServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RootShare: {"kind""Ptr","child":{"kind":"UInt16"}},
+    FtDfsName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dfscli" fn NetDfsRemoveFtRoot(
+    ServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RootShare: {"kind""Ptr","child":{"kind":"UInt16"}},
+    FtDfsName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dfscli" fn NetDfsRemoveFtRootForced(
+    DomainName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RootShare: {"kind""Ptr","child":{"kind":"UInt16"}},
+    FtDfsName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dfscli" fn NetDfsRemove(
+    DfsEntryPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ShareName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dfscli" fn NetDfsEnum(
+    DfsName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Level: {"kind":"UInt32"},
+    PrefMaxLen: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    EntriesRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ResumeHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dfscli" fn NetDfsGetInfo(
+    DfsEntryPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ShareName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Level: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dfscli" fn NetDfsSetInfo(
+    DfsEntryPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ShareName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Level: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dfscli" fn NetDfsGetClientInfo(
+    DfsEntryPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ShareName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Level: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dfscli" fn NetDfsSetClientInfo(
+    DfsEntryPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ShareName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Level: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dfscli" fn NetDfsMove(
+    OldDfsEntryPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    NewDfsEntryPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dfscli" fn NetDfsAddRootTarget(
+    pDfsPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pTargetPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    MajorVersion: {"kind":"UInt32"},
+    pComment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dfscli" fn NetDfsRemoveRootTarget(
+    pDfsPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pTargetPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dfscli" fn NetDfsGetSecurity(
+    DfsEntryPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SecurityInformation: {"kind":"UInt32"},
+    ppSecurityDescriptor: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+    lpcbSecurityDescriptor: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dfscli" fn NetDfsSetSecurity(
+    DfsEntryPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SecurityInformation: {"kind":"UInt32"},
+    pSecurityDescriptor: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dfscli" fn NetDfsGetStdContainerSecurity(
+    MachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SecurityInformation: {"kind":"UInt32"},
+    ppSecurityDescriptor: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+    lpcbSecurityDescriptor: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dfscli" fn NetDfsSetStdContainerSecurity(
+    MachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SecurityInformation: {"kind":"UInt32"},
+    pSecurityDescriptor: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dfscli" fn NetDfsGetFtContainerSecurity(
+    DomainName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SecurityInformation: {"kind":"UInt32"},
+    ppSecurityDescriptor: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+    lpcbSecurityDescriptor: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dfscli" fn NetDfsSetFtContainerSecurity(
+    DomainName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SecurityInformation: {"kind":"UInt32"},
+    pSecurityDescriptor: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dfscli" fn NetDfsGetSupportedNamespaceVersion(
+    Origin: Windows.Win32.DistributedFileSystem.DFS_NAMESPACE_VERSION_ORIGIN,
+    pName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppVersionInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.DistributedFileSystem.DFS_SUPPORTED_NAMESPACE_VERSION_INFO}},
+],
+
+"unicode_aliases": [
+]}

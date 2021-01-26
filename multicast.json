@@ -1,0 +1,120 @@
+﻿{
+"constants": [
+     {
+         "name": "MCAST_API_VERSION_0"
+        ,"type": {"kind":"Int32"}
+        ,"value": 0
+    }
+    ,{
+         "name": "MCAST_API_VERSION_1"
+        ,"type": {"kind":"Int32"}
+        ,"value": 1
+    }
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: IPNG_ADDRESS
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const IPNG_ADDRESS = *opaque{
+};
+// --------------------------------------------------------
+// Type: MCAST_CLIENT_UID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MCAST_CLIENT_UID = extern struct {
+    ClientUID: {"kind""Ptr","child":{"kind":"Byte"}},
+    ClientUIDLength: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MCAST_SCOPE_CTX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MCAST_SCOPE_CTX = extern struct {
+    ScopeID: Windows.Win32.Multicast.IPNG_ADDRESS,
+    Interface: Windows.Win32.Multicast.IPNG_ADDRESS,
+    ServerID: Windows.Win32.Multicast.IPNG_ADDRESS,
+};
+// --------------------------------------------------------
+// Type: MCAST_SCOPE_ENTRY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MCAST_SCOPE_ENTRY = extern struct {
+    ScopeCtx: Windows.Win32.Multicast.MCAST_SCOPE_CTX,
+    LastAddr: Windows.Win32.Multicast.IPNG_ADDRESS,
+    TTL: {"kind":"UInt32"},
+    ScopeDesc: Windows.Win32.Security.UNICODE_STRING,
+};
+// --------------------------------------------------------
+// Type: MCAST_LEASE_REQUEST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MCAST_LEASE_REQUEST = extern struct {
+    LeaseStartTime: {"kind":"Int32"},
+    MaxLeaseStartTime: {"kind":"Int32"},
+    LeaseDuration: {"kind":"UInt32"},
+    MinLeaseDuration: {"kind":"UInt32"},
+    ServerAddress: Windows.Win32.Multicast.IPNG_ADDRESS,
+    MinAddrCount: {"kind":"UInt16"},
+    AddrCount: {"kind":"UInt16"},
+    pAddrBuf: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: MCAST_LEASE_RESPONSE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MCAST_LEASE_RESPONSE = extern struct {
+    LeaseStartTime: {"kind":"Int32"},
+    LeaseEndTime: {"kind":"Int32"},
+    ServerAddress: Windows.Win32.Multicast.IPNG_ADDRESS,
+    AddrCount: {"kind":"UInt16"},
+    pAddrBuf: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dhcpcsvc" fn McastApiStartup(
+    Version: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dhcpcsvc" fn McastApiCleanup(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dhcpcsvc" fn McastGenUID(
+    pRequestID: {"kind""Ptr","child":Windows.Win32.Multicast.MCAST_CLIENT_UID},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dhcpcsvc" fn McastEnumerateScopes(
+    AddrFamily: {"kind":"UInt16"},
+    ReQuery: Windows.Win32.SystemServices.BOOL,
+    pScopeList: {"kind""Ptr","child":Windows.Win32.Multicast.MCAST_SCOPE_ENTRY},
+    pScopeLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pScopeCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dhcpcsvc" fn McastRequestAddress(
+    AddrFamily: {"kind":"UInt16"},
+    pRequestID: {"kind""Ptr","child":Windows.Win32.Multicast.MCAST_CLIENT_UID},
+    pScopeCtx: {"kind""Ptr","child":Windows.Win32.Multicast.MCAST_SCOPE_CTX},
+    pAddrRequest: {"kind""Ptr","child":Windows.Win32.Multicast.MCAST_LEASE_REQUEST},
+    pAddrResponse: {"kind""Ptr","child":Windows.Win32.Multicast.MCAST_LEASE_RESPONSE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dhcpcsvc" fn McastRenewAddress(
+    AddrFamily: {"kind":"UInt16"},
+    pRequestID: {"kind""Ptr","child":Windows.Win32.Multicast.MCAST_CLIENT_UID},
+    pRenewRequest: {"kind""Ptr","child":Windows.Win32.Multicast.MCAST_LEASE_REQUEST},
+    pRenewResponse: {"kind""Ptr","child":Windows.Win32.Multicast.MCAST_LEASE_RESPONSE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dhcpcsvc" fn McastReleaseAddress(
+    AddrFamily: {"kind":"UInt16"},
+    pRequestID: {"kind""Ptr","child":Windows.Win32.Multicast.MCAST_CLIENT_UID},
+    pReleaseRequest: {"kind""Ptr","child":Windows.Win32.Multicast.MCAST_LEASE_REQUEST},
+],
+
+"unicode_aliases": [
+]}

@@ -1,0 +1,3148 @@
+﻿{
+"constants": [
+     {
+         "name": "lDEFAULT_PREFETCH_SIZE"
+        ,"type": {"kind":"Int32"}
+        ,"value": 100
+    }
+    ,{
+         "name": "wcharREASSIGN_RECIPIENTS_DELIMITER"
+        ,"type": {"kind":"UInt16"}
+        ,"value": 59
+    }
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: FAX_ENUM_LOG_LEVELS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FAX_ENUM_LOG_LEVELS = *opaque{
+};
+// --------------------------------------------------------
+// Type: FAX_ENUM_LOG_CATEGORIES
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FAX_ENUM_LOG_CATEGORIES = *opaque{
+};
+// --------------------------------------------------------
+// Type: FAX_LOG_CATEGORYA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_LOG_CATEGORYA = extern struct {
+    Name: {"kind""Ptr","child":{"kind":"SByte"}},
+    Category: {"kind":"UInt32"},
+    Level: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: FAX_LOG_CATEGORYW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_LOG_CATEGORYW = extern struct {
+    Name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Category: {"kind":"UInt32"},
+    Level: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: FAX_TIME
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_TIME = extern struct {
+    Hour: {"kind":"UInt16"},
+    Minute: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: FAX_CONFIGURATIONA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_CONFIGURATIONA = extern struct {
+    SizeOfStruct: {"kind":"UInt32"},
+    Retries: {"kind":"UInt32"},
+    RetryDelay: {"kind":"UInt32"},
+    DirtyDays: {"kind":"UInt32"},
+    Branding: Windows.Win32.SystemServices.BOOL,
+    UseDeviceTsid: Windows.Win32.SystemServices.BOOL,
+    ServerCp: Windows.Win32.SystemServices.BOOL,
+    PauseServerQueue: Windows.Win32.SystemServices.BOOL,
+    StartCheapTime: Windows.Win32.Fax.FAX_TIME,
+    StopCheapTime: Windows.Win32.Fax.FAX_TIME,
+    ArchiveOutgoingFaxes: Windows.Win32.SystemServices.BOOL,
+    ArchiveDirectory: {"kind""Ptr","child":{"kind":"SByte"}},
+    Reserved: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: FAX_CONFIGURATIONW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_CONFIGURATIONW = extern struct {
+    SizeOfStruct: {"kind":"UInt32"},
+    Retries: {"kind":"UInt32"},
+    RetryDelay: {"kind":"UInt32"},
+    DirtyDays: {"kind":"UInt32"},
+    Branding: Windows.Win32.SystemServices.BOOL,
+    UseDeviceTsid: Windows.Win32.SystemServices.BOOL,
+    ServerCp: Windows.Win32.SystemServices.BOOL,
+    PauseServerQueue: Windows.Win32.SystemServices.BOOL,
+    StartCheapTime: Windows.Win32.Fax.FAX_TIME,
+    StopCheapTime: Windows.Win32.Fax.FAX_TIME,
+    ArchiveOutgoingFaxes: Windows.Win32.SystemServices.BOOL,
+    ArchiveDirectory: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Reserved: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: FAX_ENUM_JOB_COMMANDS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FAX_ENUM_JOB_COMMANDS = *opaque{
+};
+// --------------------------------------------------------
+// Type: FAX_DEVICE_STATUSA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_DEVICE_STATUSA = extern struct {
+    SizeOfStruct: {"kind":"UInt32"},
+    CallerId: {"kind""Ptr","child":{"kind":"SByte"}},
+    Csid: {"kind""Ptr","child":{"kind":"SByte"}},
+    CurrentPage: {"kind":"UInt32"},
+    DeviceId: {"kind":"UInt32"},
+    DeviceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    DocumentName: {"kind""Ptr","child":{"kind":"SByte"}},
+    JobType: {"kind":"UInt32"},
+    PhoneNumber: {"kind""Ptr","child":{"kind":"SByte"}},
+    RoutingString: {"kind""Ptr","child":{"kind":"SByte"}},
+    SenderName: {"kind""Ptr","child":{"kind":"SByte"}},
+    RecipientName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Size: {"kind":"UInt32"},
+    StartTime: Windows.Win32.WindowsProgramming.FILETIME,
+    Status: {"kind":"UInt32"},
+    StatusString: {"kind""Ptr","child":{"kind":"SByte"}},
+    SubmittedTime: Windows.Win32.WindowsProgramming.FILETIME,
+    TotalPages: {"kind":"UInt32"},
+    Tsid: {"kind""Ptr","child":{"kind":"SByte"}},
+    UserName: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: FAX_DEVICE_STATUSW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_DEVICE_STATUSW = extern struct {
+    SizeOfStruct: {"kind":"UInt32"},
+    CallerId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Csid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    CurrentPage: {"kind":"UInt32"},
+    DeviceId: {"kind":"UInt32"},
+    DeviceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DocumentName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    JobType: {"kind":"UInt32"},
+    PhoneNumber: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RoutingString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SenderName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RecipientName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Size: {"kind":"UInt32"},
+    StartTime: Windows.Win32.WindowsProgramming.FILETIME,
+    Status: {"kind":"UInt32"},
+    StatusString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubmittedTime: Windows.Win32.WindowsProgramming.FILETIME,
+    TotalPages: {"kind":"UInt32"},
+    Tsid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    UserName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: FAX_JOB_ENTRYA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_JOB_ENTRYA = extern struct {
+    SizeOfStruct: {"kind":"UInt32"},
+    JobId: {"kind":"UInt32"},
+    UserName: {"kind""Ptr","child":{"kind":"SByte"}},
+    JobType: {"kind":"UInt32"},
+    QueueStatus: {"kind":"UInt32"},
+    Status: {"kind":"UInt32"},
+    Size: {"kind":"UInt32"},
+    PageCount: {"kind":"UInt32"},
+    RecipientNumber: {"kind""Ptr","child":{"kind":"SByte"}},
+    RecipientName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Tsid: {"kind""Ptr","child":{"kind":"SByte"}},
+    SenderName: {"kind""Ptr","child":{"kind":"SByte"}},
+    SenderCompany: {"kind""Ptr","child":{"kind":"SByte"}},
+    SenderDept: {"kind""Ptr","child":{"kind":"SByte"}},
+    BillingCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    ScheduleAction: {"kind":"UInt32"},
+    ScheduleTime: Windows.Win32.WindowsProgramming.SYSTEMTIME,
+    DeliveryReportType: {"kind":"UInt32"},
+    DeliveryReportAddress: {"kind""Ptr","child":{"kind":"SByte"}},
+    DocumentName: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: FAX_JOB_ENTRYW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_JOB_ENTRYW = extern struct {
+    SizeOfStruct: {"kind":"UInt32"},
+    JobId: {"kind":"UInt32"},
+    UserName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    JobType: {"kind":"UInt32"},
+    QueueStatus: {"kind":"UInt32"},
+    Status: {"kind":"UInt32"},
+    Size: {"kind":"UInt32"},
+    PageCount: {"kind":"UInt32"},
+    RecipientNumber: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RecipientName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Tsid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SenderName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SenderCompany: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SenderDept: {"kind""Ptr","child":{"kind":"UInt16"}},
+    BillingCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ScheduleAction: {"kind":"UInt32"},
+    ScheduleTime: Windows.Win32.WindowsProgramming.SYSTEMTIME,
+    DeliveryReportType: {"kind":"UInt32"},
+    DeliveryReportAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DocumentName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: FAX_PORT_INFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_PORT_INFOA = extern struct {
+    SizeOfStruct: {"kind":"UInt32"},
+    DeviceId: {"kind":"UInt32"},
+    State: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+    Rings: {"kind":"UInt32"},
+    Priority: {"kind":"UInt32"},
+    DeviceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Tsid: {"kind""Ptr","child":{"kind":"SByte"}},
+    Csid: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: FAX_PORT_INFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_PORT_INFOW = extern struct {
+    SizeOfStruct: {"kind":"UInt32"},
+    DeviceId: {"kind":"UInt32"},
+    State: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+    Rings: {"kind":"UInt32"},
+    Priority: {"kind":"UInt32"},
+    DeviceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Tsid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Csid: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: FAX_ROUTING_METHODA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_ROUTING_METHODA = extern struct {
+    SizeOfStruct: {"kind":"UInt32"},
+    DeviceId: {"kind":"UInt32"},
+    Enabled: Windows.Win32.SystemServices.BOOL,
+    DeviceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Guid: {"kind""Ptr","child":{"kind":"SByte"}},
+    FriendlyName: {"kind""Ptr","child":{"kind":"SByte"}},
+    FunctionName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ExtensionImageName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ExtensionFriendlyName: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: FAX_ROUTING_METHODW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_ROUTING_METHODW = extern struct {
+    SizeOfStruct: {"kind":"UInt32"},
+    DeviceId: {"kind":"UInt32"},
+    Enabled: Windows.Win32.SystemServices.BOOL,
+    DeviceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Guid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    FriendlyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    FunctionName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ExtensionImageName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ExtensionFriendlyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: FAX_GLOBAL_ROUTING_INFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_GLOBAL_ROUTING_INFOA = extern struct {
+    SizeOfStruct: {"kind":"UInt32"},
+    Priority: {"kind":"UInt32"},
+    Guid: {"kind""Ptr","child":{"kind":"SByte"}},
+    FriendlyName: {"kind""Ptr","child":{"kind":"SByte"}},
+    FunctionName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ExtensionImageName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ExtensionFriendlyName: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: FAX_GLOBAL_ROUTING_INFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_GLOBAL_ROUTING_INFOW = extern struct {
+    SizeOfStruct: {"kind":"UInt32"},
+    Priority: {"kind":"UInt32"},
+    Guid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    FriendlyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    FunctionName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ExtensionImageName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ExtensionFriendlyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: FAX_COVERPAGE_INFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_COVERPAGE_INFOA = extern struct {
+    SizeOfStruct: {"kind":"UInt32"},
+    CoverPageName: {"kind""Ptr","child":{"kind":"SByte"}},
+    UseServerCoverPage: Windows.Win32.SystemServices.BOOL,
+    RecName: {"kind""Ptr","child":{"kind":"SByte"}},
+    RecFaxNumber: {"kind""Ptr","child":{"kind":"SByte"}},
+    RecCompany: {"kind""Ptr","child":{"kind":"SByte"}},
+    RecStreetAddress: {"kind""Ptr","child":{"kind":"SByte"}},
+    RecCity: {"kind""Ptr","child":{"kind":"SByte"}},
+    RecState: {"kind""Ptr","child":{"kind":"SByte"}},
+    RecZip: {"kind""Ptr","child":{"kind":"SByte"}},
+    RecCountry: {"kind""Ptr","child":{"kind":"SByte"}},
+    RecTitle: {"kind""Ptr","child":{"kind":"SByte"}},
+    RecDepartment: {"kind""Ptr","child":{"kind":"SByte"}},
+    RecOfficeLocation: {"kind""Ptr","child":{"kind":"SByte"}},
+    RecHomePhone: {"kind""Ptr","child":{"kind":"SByte"}},
+    RecOfficePhone: {"kind""Ptr","child":{"kind":"SByte"}},
+    SdrName: {"kind""Ptr","child":{"kind":"SByte"}},
+    SdrFaxNumber: {"kind""Ptr","child":{"kind":"SByte"}},
+    SdrCompany: {"kind""Ptr","child":{"kind":"SByte"}},
+    SdrAddress: {"kind""Ptr","child":{"kind":"SByte"}},
+    SdrTitle: {"kind""Ptr","child":{"kind":"SByte"}},
+    SdrDepartment: {"kind""Ptr","child":{"kind":"SByte"}},
+    SdrOfficeLocation: {"kind""Ptr","child":{"kind":"SByte"}},
+    SdrHomePhone: {"kind""Ptr","child":{"kind":"SByte"}},
+    SdrOfficePhone: {"kind""Ptr","child":{"kind":"SByte"}},
+    Note: {"kind""Ptr","child":{"kind":"SByte"}},
+    Subject: {"kind""Ptr","child":{"kind":"SByte"}},
+    TimeSent: Windows.Win32.WindowsProgramming.SYSTEMTIME,
+    PageCount: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: FAX_COVERPAGE_INFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_COVERPAGE_INFOW = extern struct {
+    SizeOfStruct: {"kind":"UInt32"},
+    CoverPageName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    UseServerCoverPage: Windows.Win32.SystemServices.BOOL,
+    RecName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RecFaxNumber: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RecCompany: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RecStreetAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RecCity: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RecState: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RecZip: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RecCountry: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RecTitle: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RecDepartment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RecOfficeLocation: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RecHomePhone: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RecOfficePhone: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SdrName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SdrFaxNumber: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SdrCompany: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SdrAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SdrTitle: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SdrDepartment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SdrOfficeLocation: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SdrHomePhone: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SdrOfficePhone: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Note: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Subject: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TimeSent: Windows.Win32.WindowsProgramming.SYSTEMTIME,
+    PageCount: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: FAX_ENUM_JOB_SEND_ATTRIBUTES
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FAX_ENUM_JOB_SEND_ATTRIBUTES = *opaque{
+};
+// --------------------------------------------------------
+// Type: FAX_ENUM_DELIVERY_REPORT_TYPES
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FAX_ENUM_DELIVERY_REPORT_TYPES = *opaque{
+};
+// --------------------------------------------------------
+// Type: FAX_JOB_PARAMA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_JOB_PARAMA = extern struct {
+    SizeOfStruct: {"kind":"UInt32"},
+    RecipientNumber: {"kind""Ptr","child":{"kind":"SByte"}},
+    RecipientName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Tsid: {"kind""Ptr","child":{"kind":"SByte"}},
+    SenderName: {"kind""Ptr","child":{"kind":"SByte"}},
+    SenderCompany: {"kind""Ptr","child":{"kind":"SByte"}},
+    SenderDept: {"kind""Ptr","child":{"kind":"SByte"}},
+    BillingCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    ScheduleAction: {"kind":"UInt32"},
+    ScheduleTime: Windows.Win32.WindowsProgramming.SYSTEMTIME,
+    DeliveryReportType: {"kind":"UInt32"},
+    DeliveryReportAddress: {"kind""Ptr","child":{"kind":"SByte"}},
+    DocumentName: {"kind""Ptr","child":{"kind":"SByte"}},
+    CallHandle: {"kind":"UInt32"},
+    Reserved: {"kind":"Array","child": {"kind":"UIntPtr"}},
+};
+// --------------------------------------------------------
+// Type: FAX_JOB_PARAMW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_JOB_PARAMW = extern struct {
+    SizeOfStruct: {"kind":"UInt32"},
+    RecipientNumber: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RecipientName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Tsid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SenderName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SenderCompany: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SenderDept: {"kind""Ptr","child":{"kind":"UInt16"}},
+    BillingCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ScheduleAction: {"kind":"UInt32"},
+    ScheduleTime: Windows.Win32.WindowsProgramming.SYSTEMTIME,
+    DeliveryReportType: {"kind":"UInt32"},
+    DeliveryReportAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DocumentName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    CallHandle: {"kind":"UInt32"},
+    Reserved: {"kind":"Array","child": {"kind":"UIntPtr"}},
+};
+// --------------------------------------------------------
+// Type: FAX_EVENTA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_EVENTA = extern struct {
+    SizeOfStruct: {"kind":"UInt32"},
+    TimeStamp: Windows.Win32.WindowsProgramming.FILETIME,
+    DeviceId: {"kind":"UInt32"},
+    EventId: {"kind":"UInt32"},
+    JobId: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: FAX_EVENTW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_EVENTW = extern struct {
+    SizeOfStruct: {"kind":"UInt32"},
+    TimeStamp: Windows.Win32.WindowsProgramming.FILETIME,
+    DeviceId: {"kind":"UInt32"},
+    EventId: {"kind":"UInt32"},
+    JobId: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: FAX_PRINT_INFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_PRINT_INFOA = extern struct {
+    SizeOfStruct: {"kind":"UInt32"},
+    DocName: {"kind""Ptr","child":{"kind":"SByte"}},
+    RecipientName: {"kind""Ptr","child":{"kind":"SByte"}},
+    RecipientNumber: {"kind""Ptr","child":{"kind":"SByte"}},
+    SenderName: {"kind""Ptr","child":{"kind":"SByte"}},
+    SenderCompany: {"kind""Ptr","child":{"kind":"SByte"}},
+    SenderDept: {"kind""Ptr","child":{"kind":"SByte"}},
+    SenderBillingCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    Reserved: {"kind""Ptr","child":{"kind":"SByte"}},
+    DrEmailAddress: {"kind""Ptr","child":{"kind":"SByte"}},
+    OutputFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: FAX_PRINT_INFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_PRINT_INFOW = extern struct {
+    SizeOfStruct: {"kind":"UInt32"},
+    DocName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RecipientName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RecipientNumber: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SenderName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SenderCompany: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SenderDept: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SenderBillingCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Reserved: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DrEmailAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    OutputFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: FAX_CONTEXT_INFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_CONTEXT_INFOA = extern struct {
+    SizeOfStruct: {"kind":"UInt32"},
+    hDC: Windows.Win32.Gdi.HDC,
+    ServerName: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: FAX_CONTEXT_INFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_CONTEXT_INFOW = extern struct {
+    SizeOfStruct: {"kind":"UInt32"},
+    hDC: Windows.Win32.Gdi.HDC,
+    ServerName: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: PFAXCONNECTFAXSERVERA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXCONNECTFAXSERVERA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXCONNECTFAXSERVERW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXCONNECTFAXSERVERW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXCLOSE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXCLOSE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: FAX_ENUM_PORT_OPEN_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FAX_ENUM_PORT_OPEN_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PFAXOPENPORT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXOPENPORT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXCOMPLETEJOBPARAMSA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXCOMPLETEJOBPARAMSA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXCOMPLETEJOBPARAMSW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXCOMPLETEJOBPARAMSW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXSENDDOCUMENTA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXSENDDOCUMENTA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXSENDDOCUMENTW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXSENDDOCUMENTW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAX_RECIPIENT_CALLBACKA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAX_RECIPIENT_CALLBACKA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAX_RECIPIENT_CALLBACKW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAX_RECIPIENT_CALLBACKW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXSENDDOCUMENTFORBROADCASTA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXSENDDOCUMENTFORBROADCASTA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXSENDDOCUMENTFORBROADCASTW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXSENDDOCUMENTFORBROADCASTW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXENUMJOBSA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXENUMJOBSA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXENUMJOBSW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXENUMJOBSW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXGETJOBA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXGETJOBA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXGETJOBW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXGETJOBW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXSETJOBA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXSETJOBA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXSETJOBW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXSETJOBW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXGETPAGEDATA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXGETPAGEDATA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXGETDEVICESTATUSA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXGETDEVICESTATUSA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXGETDEVICESTATUSW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXGETDEVICESTATUSW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXABORT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXABORT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXGETCONFIGURATIONA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXGETCONFIGURATIONA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXGETCONFIGURATIONW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXGETCONFIGURATIONW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXSETCONFIGURATIONA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXSETCONFIGURATIONA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXSETCONFIGURATIONW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXSETCONFIGURATIONW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXGETLOGGINGCATEGORIESA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXGETLOGGINGCATEGORIESA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXGETLOGGINGCATEGORIESW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXGETLOGGINGCATEGORIESW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXSETLOGGINGCATEGORIESA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXSETLOGGINGCATEGORIESA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXSETLOGGINGCATEGORIESW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXSETLOGGINGCATEGORIESW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXENUMPORTSA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXENUMPORTSA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXENUMPORTSW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXENUMPORTSW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXGETPORTA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXGETPORTA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXGETPORTW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXGETPORTW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXSETPORTA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXSETPORTA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXSETPORTW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXSETPORTW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXENUMROUTINGMETHODSA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXENUMROUTINGMETHODSA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXENUMROUTINGMETHODSW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXENUMROUTINGMETHODSW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXENABLEROUTINGMETHODA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXENABLEROUTINGMETHODA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXENABLEROUTINGMETHODW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXENABLEROUTINGMETHODW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXENUMGLOBALROUTINGINFOA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXENUMGLOBALROUTINGINFOA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXENUMGLOBALROUTINGINFOW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXENUMGLOBALROUTINGINFOW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXSETGLOBALROUTINGINFOA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXSETGLOBALROUTINGINFOA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXSETGLOBALROUTINGINFOW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXSETGLOBALROUTINGINFOW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXGETROUTINGINFOA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXGETROUTINGINFOA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXGETROUTINGINFOW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXGETROUTINGINFOW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXSETROUTINGINFOA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXSETROUTINGINFOA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXSETROUTINGINFOW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXSETROUTINGINFOW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXINITIALIZEEVENTQUEUE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXINITIALIZEEVENTQUEUE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXFREEBUFFER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXFREEBUFFER = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXSTARTPRINTJOBA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXSTARTPRINTJOBA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXSTARTPRINTJOBW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXSTARTPRINTJOBW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXPRINTCOVERPAGEA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXPRINTCOVERPAGEA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXPRINTCOVERPAGEW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXPRINTCOVERPAGEW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXREGISTERSERVICEPROVIDERW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXREGISTERSERVICEPROVIDERW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXUNREGISTERSERVICEPROVIDERW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXUNREGISTERSERVICEPROVIDERW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAX_ROUTING_INSTALLATION_CALLBACKW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAX_ROUTING_INSTALLATION_CALLBACKW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXREGISTERROUTINGEXTENSIONW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXREGISTERROUTINGEXTENSIONW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXACCESSCHECK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXACCESSCHECK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: FAX_SEND
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_SEND = extern struct {
+    SizeOfStruct: {"kind":"UInt32"},
+    FileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    CallerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    CallerNumber: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReceiverName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReceiverNumber: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Branding: Windows.Win32.SystemServices.BOOL,
+    CallHandle: {"kind":"UInt32"},
+    Reserved: {"kind":"Array","child": {"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: FAX_RECEIVE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_RECEIVE = extern struct {
+    SizeOfStruct: {"kind":"UInt32"},
+    FileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReceiverName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReceiverNumber: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Reserved: {"kind":"Array","child": {"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: FAX_DEV_STATUS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_DEV_STATUS = extern struct {
+    SizeOfStruct: {"kind":"UInt32"},
+    StatusId: {"kind":"UInt32"},
+    StringId: {"kind":"UInt32"},
+    PageCount: {"kind":"UInt32"},
+    CSI: {"kind""Ptr","child":{"kind":"UInt16"}},
+    CallerId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RoutingInfo: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ErrorCode: {"kind":"UInt32"},
+    Reserved: {"kind":"Array","child": {"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: PFAX_SERVICE_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAX_SERVICE_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAX_LINECALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAX_LINECALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAX_SEND_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAX_SEND_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXDEVINITIALIZE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXDEVINITIALIZE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXDEVVIRTUALDEVICECREATION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXDEVVIRTUALDEVICECREATION = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXDEVSTARTJOB
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXDEVSTARTJOB = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXDEVENDJOB
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXDEVENDJOB = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXDEVSEND
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXDEVSEND = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXDEVRECEIVE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXDEVRECEIVE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXDEVREPORTSTATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXDEVREPORTSTATUS = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXDEVABORTOPERATION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXDEVABORTOPERATION = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXDEVCONFIGURE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXDEVCONFIGURE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXDEVSHUTDOWN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXDEVSHUTDOWN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: FaxServer
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxServer = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxDeviceProviders
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxDeviceProviders = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxDevices
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxDevices = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxInboundRouting
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxInboundRouting = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxFolders
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxFolders = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxLoggingOptions
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxLoggingOptions = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxActivity
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxActivity = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxOutboundRouting
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxOutboundRouting = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxReceiptOptions
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxReceiptOptions = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxSecurity
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxSecurity = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxDocument
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxDocument = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxSender
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxSender = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxRecipients
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxRecipients = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxIncomingArchive
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxIncomingArchive = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxIncomingQueue
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxIncomingQueue = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxOutgoingArchive
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxOutgoingArchive = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxOutgoingQueue
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxOutgoingQueue = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxIncomingMessageIterator
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxIncomingMessageIterator = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxIncomingMessage
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxIncomingMessage = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxOutgoingJobs
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxOutgoingJobs = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxOutgoingJob
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxOutgoingJob = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxOutgoingMessageIterator
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxOutgoingMessageIterator = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxOutgoingMessage
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxOutgoingMessage = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxIncomingJobs
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxIncomingJobs = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxIncomingJob
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxIncomingJob = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxDeviceProvider
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxDeviceProvider = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxDevice
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxDevice = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxActivityLogging
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxActivityLogging = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxEventLogging
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxEventLogging = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxOutboundRoutingGroups
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxOutboundRoutingGroups = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxOutboundRoutingGroup
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxOutboundRoutingGroup = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxDeviceIds
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxDeviceIds = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxOutboundRoutingRules
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxOutboundRoutingRules = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxOutboundRoutingRule
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxOutboundRoutingRule = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxInboundRoutingExtensions
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxInboundRoutingExtensions = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxInboundRoutingExtension
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxInboundRoutingExtension = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxInboundRoutingMethods
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxInboundRoutingMethods = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxInboundRoutingMethod
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxInboundRoutingMethod = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxJobStatus
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxJobStatus = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxRecipient
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxRecipient = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxConfiguration
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxConfiguration = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxAccountSet
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxAccountSet = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxAccounts
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxAccounts = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxAccount
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxAccount = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxAccountFolders
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxAccountFolders = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxAccountIncomingQueue
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxAccountIncomingQueue = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxAccountOutgoingQueue
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxAccountOutgoingQueue = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxAccountIncomingArchive
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxAccountIncomingArchive = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxAccountOutgoingArchive
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxAccountOutgoingArchive = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxSecurity2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxSecurity2 = opaque {
+};
+// --------------------------------------------------------
+// Type: FAX_JOB_STATUS_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FAX_JOB_STATUS_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: FAX_JOB_EXTENDED_STATUS_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FAX_JOB_EXTENDED_STATUS_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: FAX_JOB_OPERATIONS_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FAX_JOB_OPERATIONS_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: FAX_JOB_TYPE_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FAX_JOB_TYPE_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: IFaxJobStatus
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxJobStatus = *opaque{
+    // TODO: Method 'get_Status'
+    // TODO: Method 'get_Pages'
+    // TODO: Method 'get_Size'
+    // TODO: Method 'get_CurrentPage'
+    // TODO: Method 'get_DeviceId'
+    // TODO: Method 'get_CSID'
+    // TODO: Method 'get_TSID'
+    // TODO: Method 'get_ExtendedStatusCode'
+    // TODO: Method 'get_ExtendedStatus'
+    // TODO: Method 'get_AvailableOperations'
+    // TODO: Method 'get_Retries'
+    // TODO: Method 'get_JobType'
+    // TODO: Method 'get_ScheduledTime'
+    // TODO: Method 'get_TransmissionStart'
+    // TODO: Method 'get_TransmissionEnd'
+    // TODO: Method 'get_CallerId'
+    // TODO: Method 'get_RoutingInformation'
+};
+// --------------------------------------------------------
+// Type: FAX_SERVER_EVENTS_TYPE_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FAX_SERVER_EVENTS_TYPE_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: FAX_SERVER_APIVERSION_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FAX_SERVER_APIVERSION_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: IFaxServer
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxServer = *opaque{
+    // TODO: Method 'Connect'
+    // TODO: Method 'get_ServerName'
+    // TODO: Method 'GetDeviceProviders'
+    // TODO: Method 'GetDevices'
+    // TODO: Method 'get_InboundRouting'
+    // TODO: Method 'get_Folders'
+    // TODO: Method 'get_LoggingOptions'
+    // TODO: Method 'get_MajorVersion'
+    // TODO: Method 'get_MinorVersion'
+    // TODO: Method 'get_MajorBuild'
+    // TODO: Method 'get_MinorBuild'
+    // TODO: Method 'get_Debug'
+    // TODO: Method 'get_Activity'
+    // TODO: Method 'get_OutboundRouting'
+    // TODO: Method 'get_ReceiptOptions'
+    // TODO: Method 'get_Security'
+    // TODO: Method 'Disconnect'
+    // TODO: Method 'GetExtensionProperty'
+    // TODO: Method 'SetExtensionProperty'
+    // TODO: Method 'ListenToServerEvents'
+    // TODO: Method 'RegisterDeviceProvider'
+    // TODO: Method 'UnregisterDeviceProvider'
+    // TODO: Method 'RegisterInboundRoutingExtension'
+    // TODO: Method 'UnregisterInboundRoutingExtension'
+    // TODO: Method 'get_RegisteredEvents'
+    // TODO: Method 'get_APIVersion'
+};
+// --------------------------------------------------------
+// Type: IFaxDeviceProviders
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxDeviceProviders = *opaque{
+    // TODO: Method 'get__NewEnum'
+    // TODO: Method 'get_Item'
+    // TODO: Method 'get_Count'
+};
+// --------------------------------------------------------
+// Type: IFaxDevices
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxDevices = *opaque{
+    // TODO: Method 'get__NewEnum'
+    // TODO: Method 'get_Item'
+    // TODO: Method 'get_Count'
+    // TODO: Method 'get_ItemById'
+};
+// --------------------------------------------------------
+// Type: IFaxInboundRouting
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxInboundRouting = *opaque{
+    // TODO: Method 'GetExtensions'
+    // TODO: Method 'GetMethods'
+};
+// --------------------------------------------------------
+// Type: IFaxFolders
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxFolders = *opaque{
+    // TODO: Method 'get_OutgoingQueue'
+    // TODO: Method 'get_IncomingQueue'
+    // TODO: Method 'get_IncomingArchive'
+    // TODO: Method 'get_OutgoingArchive'
+};
+// --------------------------------------------------------
+// Type: IFaxLoggingOptions
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxLoggingOptions = *opaque{
+    // TODO: Method 'get_EventLogging'
+    // TODO: Method 'get_ActivityLogging'
+};
+// --------------------------------------------------------
+// Type: IFaxActivity
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxActivity = *opaque{
+    // TODO: Method 'get_IncomingMessages'
+    // TODO: Method 'get_RoutingMessages'
+    // TODO: Method 'get_OutgoingMessages'
+    // TODO: Method 'get_QueuedMessages'
+    // TODO: Method 'Refresh'
+};
+// --------------------------------------------------------
+// Type: IFaxOutboundRouting
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxOutboundRouting = *opaque{
+    // TODO: Method 'GetGroups'
+    // TODO: Method 'GetRules'
+};
+// --------------------------------------------------------
+// Type: FAX_SMTP_AUTHENTICATION_TYPE_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FAX_SMTP_AUTHENTICATION_TYPE_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: FAX_RECEIPT_TYPE_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FAX_RECEIPT_TYPE_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: IFaxReceiptOptions
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxReceiptOptions = *opaque{
+    // TODO: Method 'get_AuthenticationType'
+    // TODO: Method 'put_AuthenticationType'
+    // TODO: Method 'get_SMTPServer'
+    // TODO: Method 'put_SMTPServer'
+    // TODO: Method 'get_SMTPPort'
+    // TODO: Method 'put_SMTPPort'
+    // TODO: Method 'get_SMTPSender'
+    // TODO: Method 'put_SMTPSender'
+    // TODO: Method 'get_SMTPUser'
+    // TODO: Method 'put_SMTPUser'
+    // TODO: Method 'get_AllowedReceipts'
+    // TODO: Method 'put_AllowedReceipts'
+    // TODO: Method 'get_SMTPPassword'
+    // TODO: Method 'put_SMTPPassword'
+    // TODO: Method 'Refresh'
+    // TODO: Method 'Save'
+    // TODO: Method 'get_UseForInboundRouting'
+    // TODO: Method 'put_UseForInboundRouting'
+};
+// --------------------------------------------------------
+// Type: FAX_ACCESS_RIGHTS_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FAX_ACCESS_RIGHTS_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: IFaxSecurity
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxSecurity = *opaque{
+    // TODO: Method 'get_Descriptor'
+    // TODO: Method 'put_Descriptor'
+    // TODO: Method 'get_GrantedRights'
+    // TODO: Method 'Refresh'
+    // TODO: Method 'Save'
+    // TODO: Method 'get_InformationType'
+    // TODO: Method 'put_InformationType'
+};
+// --------------------------------------------------------
+// Type: FAX_PRIORITY_TYPE_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FAX_PRIORITY_TYPE_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: FAX_COVERPAGE_TYPE_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FAX_COVERPAGE_TYPE_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: FAX_SCHEDULE_TYPE_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FAX_SCHEDULE_TYPE_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: IFaxDocument
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxDocument = *opaque{
+    // TODO: Method 'get_Body'
+    // TODO: Method 'put_Body'
+    // TODO: Method 'get_Sender'
+    // TODO: Method 'get_Recipients'
+    // TODO: Method 'get_CoverPage'
+    // TODO: Method 'put_CoverPage'
+    // TODO: Method 'get_Subject'
+    // TODO: Method 'put_Subject'
+    // TODO: Method 'get_Note'
+    // TODO: Method 'put_Note'
+    // TODO: Method 'get_ScheduleTime'
+    // TODO: Method 'put_ScheduleTime'
+    // TODO: Method 'get_ReceiptAddress'
+    // TODO: Method 'put_ReceiptAddress'
+    // TODO: Method 'get_DocumentName'
+    // TODO: Method 'put_DocumentName'
+    // TODO: Method 'get_CallHandle'
+    // TODO: Method 'put_CallHandle'
+    // TODO: Method 'get_CoverPageType'
+    // TODO: Method 'put_CoverPageType'
+    // TODO: Method 'get_ScheduleType'
+    // TODO: Method 'put_ScheduleType'
+    // TODO: Method 'get_ReceiptType'
+    // TODO: Method 'put_ReceiptType'
+    // TODO: Method 'get_GroupBroadcastReceipts'
+    // TODO: Method 'put_GroupBroadcastReceipts'
+    // TODO: Method 'get_Priority'
+    // TODO: Method 'put_Priority'
+    // TODO: Method 'get_TapiConnection'
+    // TODO: Method 'putref_TapiConnection'
+    // TODO: Method 'Submit'
+    // TODO: Method 'ConnectedSubmit'
+    // TODO: Method 'get_AttachFaxToReceipt'
+    // TODO: Method 'put_AttachFaxToReceipt'
+};
+// --------------------------------------------------------
+// Type: IFaxSender
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxSender = *opaque{
+    // TODO: Method 'get_BillingCode'
+    // TODO: Method 'put_BillingCode'
+    // TODO: Method 'get_City'
+    // TODO: Method 'put_City'
+    // TODO: Method 'get_Company'
+    // TODO: Method 'put_Company'
+    // TODO: Method 'get_Country'
+    // TODO: Method 'put_Country'
+    // TODO: Method 'get_Department'
+    // TODO: Method 'put_Department'
+    // TODO: Method 'get_Email'
+    // TODO: Method 'put_Email'
+    // TODO: Method 'get_FaxNumber'
+    // TODO: Method 'put_FaxNumber'
+    // TODO: Method 'get_HomePhone'
+    // TODO: Method 'put_HomePhone'
+    // TODO: Method 'get_Name'
+    // TODO: Method 'put_Name'
+    // TODO: Method 'get_TSID'
+    // TODO: Method 'put_TSID'
+    // TODO: Method 'get_OfficePhone'
+    // TODO: Method 'put_OfficePhone'
+    // TODO: Method 'get_OfficeLocation'
+    // TODO: Method 'put_OfficeLocation'
+    // TODO: Method 'get_State'
+    // TODO: Method 'put_State'
+    // TODO: Method 'get_StreetAddress'
+    // TODO: Method 'put_StreetAddress'
+    // TODO: Method 'get_Title'
+    // TODO: Method 'put_Title'
+    // TODO: Method 'get_ZipCode'
+    // TODO: Method 'put_ZipCode'
+    // TODO: Method 'LoadDefaultSender'
+    // TODO: Method 'SaveDefaultSender'
+};
+// --------------------------------------------------------
+// Type: IFaxRecipient
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxRecipient = *opaque{
+    // TODO: Method 'get_FaxNumber'
+    // TODO: Method 'put_FaxNumber'
+    // TODO: Method 'get_Name'
+    // TODO: Method 'put_Name'
+};
+// --------------------------------------------------------
+// Type: IFaxRecipients
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxRecipients = *opaque{
+    // TODO: Method 'get__NewEnum'
+    // TODO: Method 'get_Item'
+    // TODO: Method 'get_Count'
+    // TODO: Method 'Add'
+    // TODO: Method 'Remove'
+};
+// --------------------------------------------------------
+// Type: IFaxIncomingArchive
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxIncomingArchive = *opaque{
+    // TODO: Method 'get_UseArchive'
+    // TODO: Method 'put_UseArchive'
+    // TODO: Method 'get_ArchiveFolder'
+    // TODO: Method 'put_ArchiveFolder'
+    // TODO: Method 'get_SizeQuotaWarning'
+    // TODO: Method 'put_SizeQuotaWarning'
+    // TODO: Method 'get_HighQuotaWaterMark'
+    // TODO: Method 'put_HighQuotaWaterMark'
+    // TODO: Method 'get_LowQuotaWaterMark'
+    // TODO: Method 'put_LowQuotaWaterMark'
+    // TODO: Method 'get_AgeLimit'
+    // TODO: Method 'put_AgeLimit'
+    // TODO: Method 'get_SizeLow'
+    // TODO: Method 'get_SizeHigh'
+    // TODO: Method 'Refresh'
+    // TODO: Method 'Save'
+    // TODO: Method 'GetMessages'
+    // TODO: Method 'GetMessageA'
+};
+// --------------------------------------------------------
+// Type: IFaxIncomingQueue
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxIncomingQueue = *opaque{
+    // TODO: Method 'get_Blocked'
+    // TODO: Method 'put_Blocked'
+    // TODO: Method 'Refresh'
+    // TODO: Method 'Save'
+    // TODO: Method 'GetJobs'
+    // TODO: Method 'GetJobA'
+};
+// --------------------------------------------------------
+// Type: IFaxOutgoingArchive
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxOutgoingArchive = *opaque{
+    // TODO: Method 'get_UseArchive'
+    // TODO: Method 'put_UseArchive'
+    // TODO: Method 'get_ArchiveFolder'
+    // TODO: Method 'put_ArchiveFolder'
+    // TODO: Method 'get_SizeQuotaWarning'
+    // TODO: Method 'put_SizeQuotaWarning'
+    // TODO: Method 'get_HighQuotaWaterMark'
+    // TODO: Method 'put_HighQuotaWaterMark'
+    // TODO: Method 'get_LowQuotaWaterMark'
+    // TODO: Method 'put_LowQuotaWaterMark'
+    // TODO: Method 'get_AgeLimit'
+    // TODO: Method 'put_AgeLimit'
+    // TODO: Method 'get_SizeLow'
+    // TODO: Method 'get_SizeHigh'
+    // TODO: Method 'Refresh'
+    // TODO: Method 'Save'
+    // TODO: Method 'GetMessages'
+    // TODO: Method 'GetMessageA'
+};
+// --------------------------------------------------------
+// Type: IFaxOutgoingQueue
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxOutgoingQueue = *opaque{
+    // TODO: Method 'get_Blocked'
+    // TODO: Method 'put_Blocked'
+    // TODO: Method 'get_Paused'
+    // TODO: Method 'put_Paused'
+    // TODO: Method 'get_AllowPersonalCoverPages'
+    // TODO: Method 'put_AllowPersonalCoverPages'
+    // TODO: Method 'get_UseDeviceTSID'
+    // TODO: Method 'put_UseDeviceTSID'
+    // TODO: Method 'get_Retries'
+    // TODO: Method 'put_Retries'
+    // TODO: Method 'get_RetryDelay'
+    // TODO: Method 'put_RetryDelay'
+    // TODO: Method 'get_DiscountRateStart'
+    // TODO: Method 'put_DiscountRateStart'
+    // TODO: Method 'get_DiscountRateEnd'
+    // TODO: Method 'put_DiscountRateEnd'
+    // TODO: Method 'get_AgeLimit'
+    // TODO: Method 'put_AgeLimit'
+    // TODO: Method 'get_Branding'
+    // TODO: Method 'put_Branding'
+    // TODO: Method 'Refresh'
+    // TODO: Method 'Save'
+    // TODO: Method 'GetJobs'
+    // TODO: Method 'GetJobA'
+};
+// --------------------------------------------------------
+// Type: IFaxIncomingMessageIterator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxIncomingMessageIterator = *opaque{
+    // TODO: Method 'get_Message'
+    // TODO: Method 'get_PrefetchSize'
+    // TODO: Method 'put_PrefetchSize'
+    // TODO: Method 'get_AtEOF'
+    // TODO: Method 'MoveFirst'
+    // TODO: Method 'MoveNext'
+};
+// --------------------------------------------------------
+// Type: IFaxIncomingMessage
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxIncomingMessage = *opaque{
+    // TODO: Method 'get_Id'
+    // TODO: Method 'get_Pages'
+    // TODO: Method 'get_Size'
+    // TODO: Method 'get_DeviceName'
+    // TODO: Method 'get_Retries'
+    // TODO: Method 'get_TransmissionStart'
+    // TODO: Method 'get_TransmissionEnd'
+    // TODO: Method 'get_CSID'
+    // TODO: Method 'get_TSID'
+    // TODO: Method 'get_CallerId'
+    // TODO: Method 'get_RoutingInformation'
+    // TODO: Method 'CopyTiff'
+    // TODO: Method 'Delete'
+};
+// --------------------------------------------------------
+// Type: IFaxOutgoingJobs
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxOutgoingJobs = *opaque{
+    // TODO: Method 'get__NewEnum'
+    // TODO: Method 'get_Item'
+    // TODO: Method 'get_Count'
+};
+// --------------------------------------------------------
+// Type: IFaxOutgoingJob
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxOutgoingJob = *opaque{
+    // TODO: Method 'get_Subject'
+    // TODO: Method 'get_DocumentName'
+    // TODO: Method 'get_Pages'
+    // TODO: Method 'get_Size'
+    // TODO: Method 'get_SubmissionId'
+    // TODO: Method 'get_Id'
+    // TODO: Method 'get_OriginalScheduledTime'
+    // TODO: Method 'get_SubmissionTime'
+    // TODO: Method 'get_ReceiptType'
+    // TODO: Method 'get_Priority'
+    // TODO: Method 'get_Sender'
+    // TODO: Method 'get_Recipient'
+    // TODO: Method 'get_CurrentPage'
+    // TODO: Method 'get_DeviceId'
+    // TODO: Method 'get_Status'
+    // TODO: Method 'get_ExtendedStatusCode'
+    // TODO: Method 'get_ExtendedStatus'
+    // TODO: Method 'get_AvailableOperations'
+    // TODO: Method 'get_Retries'
+    // TODO: Method 'get_ScheduledTime'
+    // TODO: Method 'get_TransmissionStart'
+    // TODO: Method 'get_TransmissionEnd'
+    // TODO: Method 'get_CSID'
+    // TODO: Method 'get_TSID'
+    // TODO: Method 'get_GroupBroadcastReceipts'
+    // TODO: Method 'Pause'
+    // TODO: Method 'Resume'
+    // TODO: Method 'Restart'
+    // TODO: Method 'CopyTiff'
+    // TODO: Method 'Refresh'
+    // TODO: Method 'Cancel'
+};
+// --------------------------------------------------------
+// Type: IFaxOutgoingMessageIterator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxOutgoingMessageIterator = *opaque{
+    // TODO: Method 'get_Message'
+    // TODO: Method 'get_AtEOF'
+    // TODO: Method 'get_PrefetchSize'
+    // TODO: Method 'put_PrefetchSize'
+    // TODO: Method 'MoveFirst'
+    // TODO: Method 'MoveNext'
+};
+// --------------------------------------------------------
+// Type: IFaxOutgoingMessage
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxOutgoingMessage = *opaque{
+    // TODO: Method 'get_SubmissionId'
+    // TODO: Method 'get_Id'
+    // TODO: Method 'get_Subject'
+    // TODO: Method 'get_DocumentName'
+    // TODO: Method 'get_Retries'
+    // TODO: Method 'get_Pages'
+    // TODO: Method 'get_Size'
+    // TODO: Method 'get_OriginalScheduledTime'
+    // TODO: Method 'get_SubmissionTime'
+    // TODO: Method 'get_Priority'
+    // TODO: Method 'get_Sender'
+    // TODO: Method 'get_Recipient'
+    // TODO: Method 'get_DeviceName'
+    // TODO: Method 'get_TransmissionStart'
+    // TODO: Method 'get_TransmissionEnd'
+    // TODO: Method 'get_CSID'
+    // TODO: Method 'get_TSID'
+    // TODO: Method 'CopyTiff'
+    // TODO: Method 'Delete'
+};
+// --------------------------------------------------------
+// Type: IFaxIncomingJobs
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxIncomingJobs = *opaque{
+    // TODO: Method 'get__NewEnum'
+    // TODO: Method 'get_Item'
+    // TODO: Method 'get_Count'
+};
+// --------------------------------------------------------
+// Type: IFaxIncomingJob
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxIncomingJob = *opaque{
+    // TODO: Method 'get_Size'
+    // TODO: Method 'get_Id'
+    // TODO: Method 'get_CurrentPage'
+    // TODO: Method 'get_DeviceId'
+    // TODO: Method 'get_Status'
+    // TODO: Method 'get_ExtendedStatusCode'
+    // TODO: Method 'get_ExtendedStatus'
+    // TODO: Method 'get_AvailableOperations'
+    // TODO: Method 'get_Retries'
+    // TODO: Method 'get_TransmissionStart'
+    // TODO: Method 'get_TransmissionEnd'
+    // TODO: Method 'get_CSID'
+    // TODO: Method 'get_TSID'
+    // TODO: Method 'get_CallerId'
+    // TODO: Method 'get_RoutingInformation'
+    // TODO: Method 'get_JobType'
+    // TODO: Method 'Cancel'
+    // TODO: Method 'Refresh'
+    // TODO: Method 'CopyTiff'
+};
+// --------------------------------------------------------
+// Type: FAX_PROVIDER_STATUS_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FAX_PROVIDER_STATUS_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: IFaxDeviceProvider
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxDeviceProvider = *opaque{
+    // TODO: Method 'get_FriendlyName'
+    // TODO: Method 'get_ImageName'
+    // TODO: Method 'get_UniqueName'
+    // TODO: Method 'get_TapiProviderName'
+    // TODO: Method 'get_MajorVersion'
+    // TODO: Method 'get_MinorVersion'
+    // TODO: Method 'get_MajorBuild'
+    // TODO: Method 'get_MinorBuild'
+    // TODO: Method 'get_Debug'
+    // TODO: Method 'get_Status'
+    // TODO: Method 'get_InitErrorCode'
+    // TODO: Method 'get_DeviceIds'
+};
+// --------------------------------------------------------
+// Type: FAX_DEVICE_RECEIVE_MODE_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FAX_DEVICE_RECEIVE_MODE_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: IFaxDevice
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxDevice = *opaque{
+    // TODO: Method 'get_Id'
+    // TODO: Method 'get_DeviceName'
+    // TODO: Method 'get_ProviderUniqueName'
+    // TODO: Method 'get_PoweredOff'
+    // TODO: Method 'get_ReceivingNow'
+    // TODO: Method 'get_SendingNow'
+    // TODO: Method 'get_UsedRoutingMethods'
+    // TODO: Method 'get_Description'
+    // TODO: Method 'put_Description'
+    // TODO: Method 'get_SendEnabled'
+    // TODO: Method 'put_SendEnabled'
+    // TODO: Method 'get_ReceiveMode'
+    // TODO: Method 'put_ReceiveMode'
+    // TODO: Method 'get_RingsBeforeAnswer'
+    // TODO: Method 'put_RingsBeforeAnswer'
+    // TODO: Method 'get_CSID'
+    // TODO: Method 'put_CSID'
+    // TODO: Method 'get_TSID'
+    // TODO: Method 'put_TSID'
+    // TODO: Method 'Refresh'
+    // TODO: Method 'Save'
+    // TODO: Method 'GetExtensionProperty'
+    // TODO: Method 'SetExtensionProperty'
+    // TODO: Method 'UseRoutingMethod'
+    // TODO: Method 'get_RingingNow'
+    // TODO: Method 'AnswerCall'
+};
+// --------------------------------------------------------
+// Type: IFaxActivityLogging
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxActivityLogging = *opaque{
+    // TODO: Method 'get_LogIncoming'
+    // TODO: Method 'put_LogIncoming'
+    // TODO: Method 'get_LogOutgoing'
+    // TODO: Method 'put_LogOutgoing'
+    // TODO: Method 'get_DatabasePath'
+    // TODO: Method 'put_DatabasePath'
+    // TODO: Method 'Refresh'
+    // TODO: Method 'Save'
+};
+// --------------------------------------------------------
+// Type: FAX_LOG_LEVEL_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FAX_LOG_LEVEL_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: IFaxEventLogging
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxEventLogging = *opaque{
+    // TODO: Method 'get_InitEventsLevel'
+    // TODO: Method 'put_InitEventsLevel'
+    // TODO: Method 'get_InboundEventsLevel'
+    // TODO: Method 'put_InboundEventsLevel'
+    // TODO: Method 'get_OutboundEventsLevel'
+    // TODO: Method 'put_OutboundEventsLevel'
+    // TODO: Method 'get_GeneralEventsLevel'
+    // TODO: Method 'put_GeneralEventsLevel'
+    // TODO: Method 'Refresh'
+    // TODO: Method 'Save'
+};
+// --------------------------------------------------------
+// Type: IFaxOutboundRoutingGroups
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxOutboundRoutingGroups = *opaque{
+    // TODO: Method 'get__NewEnum'
+    // TODO: Method 'get_Item'
+    // TODO: Method 'get_Count'
+    // TODO: Method 'Add'
+    // TODO: Method 'Remove'
+};
+// --------------------------------------------------------
+// Type: FAX_GROUP_STATUS_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FAX_GROUP_STATUS_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: IFaxOutboundRoutingGroup
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxOutboundRoutingGroup = *opaque{
+    // TODO: Method 'get_Name'
+    // TODO: Method 'get_Status'
+    // TODO: Method 'get_DeviceIds'
+};
+// --------------------------------------------------------
+// Type: IFaxDeviceIds
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxDeviceIds = *opaque{
+    // TODO: Method 'get__NewEnum'
+    // TODO: Method 'get_Item'
+    // TODO: Method 'get_Count'
+    // TODO: Method 'Add'
+    // TODO: Method 'Remove'
+    // TODO: Method 'SetOrder'
+};
+// --------------------------------------------------------
+// Type: IFaxOutboundRoutingRules
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxOutboundRoutingRules = *opaque{
+    // TODO: Method 'get__NewEnum'
+    // TODO: Method 'get_Item'
+    // TODO: Method 'get_Count'
+    // TODO: Method 'ItemByCountryAndArea'
+    // TODO: Method 'RemoveByCountryAndArea'
+    // TODO: Method 'Remove'
+    // TODO: Method 'Add'
+};
+// --------------------------------------------------------
+// Type: FAX_RULE_STATUS_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FAX_RULE_STATUS_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: IFaxOutboundRoutingRule
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxOutboundRoutingRule = *opaque{
+    // TODO: Method 'get_CountryCode'
+    // TODO: Method 'get_AreaCode'
+    // TODO: Method 'get_Status'
+    // TODO: Method 'get_UseDevice'
+    // TODO: Method 'put_UseDevice'
+    // TODO: Method 'get_DeviceId'
+    // TODO: Method 'put_DeviceId'
+    // TODO: Method 'get_GroupName'
+    // TODO: Method 'put_GroupName'
+    // TODO: Method 'Refresh'
+    // TODO: Method 'Save'
+};
+// --------------------------------------------------------
+// Type: IFaxInboundRoutingExtensions
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxInboundRoutingExtensions = *opaque{
+    // TODO: Method 'get__NewEnum'
+    // TODO: Method 'get_Item'
+    // TODO: Method 'get_Count'
+};
+// --------------------------------------------------------
+// Type: IFaxInboundRoutingExtension
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxInboundRoutingExtension = *opaque{
+    // TODO: Method 'get_FriendlyName'
+    // TODO: Method 'get_ImageName'
+    // TODO: Method 'get_UniqueName'
+    // TODO: Method 'get_MajorVersion'
+    // TODO: Method 'get_MinorVersion'
+    // TODO: Method 'get_MajorBuild'
+    // TODO: Method 'get_MinorBuild'
+    // TODO: Method 'get_Debug'
+    // TODO: Method 'get_Status'
+    // TODO: Method 'get_InitErrorCode'
+    // TODO: Method 'get_Methods'
+};
+// --------------------------------------------------------
+// Type: IFaxInboundRoutingMethods
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxInboundRoutingMethods = *opaque{
+    // TODO: Method 'get__NewEnum'
+    // TODO: Method 'get_Item'
+    // TODO: Method 'get_Count'
+};
+// --------------------------------------------------------
+// Type: IFaxInboundRoutingMethod
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxInboundRoutingMethod = *opaque{
+    // TODO: Method 'get_Name'
+    // TODO: Method 'get_GUID'
+    // TODO: Method 'get_FunctionName'
+    // TODO: Method 'get_ExtensionFriendlyName'
+    // TODO: Method 'get_ExtensionImageName'
+    // TODO: Method 'get_Priority'
+    // TODO: Method 'put_Priority'
+    // TODO: Method 'Refresh'
+    // TODO: Method 'Save'
+};
+// --------------------------------------------------------
+// Type: IFaxDocument2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxDocument2 = *opaque{
+    // TODO: Method 'get_SubmissionId'
+    // TODO: Method 'get_Bodies'
+    // TODO: Method 'put_Bodies'
+    // TODO: Method 'Submit2'
+    // TODO: Method 'ConnectedSubmit2'
+};
+// --------------------------------------------------------
+// Type: IFaxConfiguration
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxConfiguration = *opaque{
+    // TODO: Method 'get_UseArchive'
+    // TODO: Method 'put_UseArchive'
+    // TODO: Method 'get_ArchiveLocation'
+    // TODO: Method 'put_ArchiveLocation'
+    // TODO: Method 'get_SizeQuotaWarning'
+    // TODO: Method 'put_SizeQuotaWarning'
+    // TODO: Method 'get_HighQuotaWaterMark'
+    // TODO: Method 'put_HighQuotaWaterMark'
+    // TODO: Method 'get_LowQuotaWaterMark'
+    // TODO: Method 'put_LowQuotaWaterMark'
+    // TODO: Method 'get_ArchiveAgeLimit'
+    // TODO: Method 'put_ArchiveAgeLimit'
+    // TODO: Method 'get_ArchiveSizeLow'
+    // TODO: Method 'get_ArchiveSizeHigh'
+    // TODO: Method 'get_OutgoingQueueBlocked'
+    // TODO: Method 'put_OutgoingQueueBlocked'
+    // TODO: Method 'get_OutgoingQueuePaused'
+    // TODO: Method 'put_OutgoingQueuePaused'
+    // TODO: Method 'get_AllowPersonalCoverPages'
+    // TODO: Method 'put_AllowPersonalCoverPages'
+    // TODO: Method 'get_UseDeviceTSID'
+    // TODO: Method 'put_UseDeviceTSID'
+    // TODO: Method 'get_Retries'
+    // TODO: Method 'put_Retries'
+    // TODO: Method 'get_RetryDelay'
+    // TODO: Method 'put_RetryDelay'
+    // TODO: Method 'get_DiscountRateStart'
+    // TODO: Method 'put_DiscountRateStart'
+    // TODO: Method 'get_DiscountRateEnd'
+    // TODO: Method 'put_DiscountRateEnd'
+    // TODO: Method 'get_OutgoingQueueAgeLimit'
+    // TODO: Method 'put_OutgoingQueueAgeLimit'
+    // TODO: Method 'get_Branding'
+    // TODO: Method 'put_Branding'
+    // TODO: Method 'get_IncomingQueueBlocked'
+    // TODO: Method 'put_IncomingQueueBlocked'
+    // TODO: Method 'get_AutoCreateAccountOnConnect'
+    // TODO: Method 'put_AutoCreateAccountOnConnect'
+    // TODO: Method 'get_IncomingFaxesArePublic'
+    // TODO: Method 'put_IncomingFaxesArePublic'
+    // TODO: Method 'Refresh'
+    // TODO: Method 'Save'
+};
+// --------------------------------------------------------
+// Type: IFaxServer2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxServer2 = *opaque{
+    // TODO: Method 'get_Configuration'
+    // TODO: Method 'get_CurrentAccount'
+    // TODO: Method 'get_FaxAccountSet'
+    // TODO: Method 'get_Security2'
+};
+// --------------------------------------------------------
+// Type: IFaxAccountSet
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxAccountSet = *opaque{
+    // TODO: Method 'GetAccounts'
+    // TODO: Method 'GetAccount'
+    // TODO: Method 'AddAccount'
+    // TODO: Method 'RemoveAccount'
+};
+// --------------------------------------------------------
+// Type: IFaxAccounts
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxAccounts = *opaque{
+    // TODO: Method 'get__NewEnum'
+    // TODO: Method 'get_Item'
+    // TODO: Method 'get_Count'
+};
+// --------------------------------------------------------
+// Type: FAX_ACCOUNT_EVENTS_TYPE_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FAX_ACCOUNT_EVENTS_TYPE_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: IFaxAccount
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxAccount = *opaque{
+    // TODO: Method 'get_AccountName'
+    // TODO: Method 'get_Folders'
+    // TODO: Method 'ListenToAccountEvents'
+    // TODO: Method 'get_RegisteredEvents'
+};
+// --------------------------------------------------------
+// Type: IFaxOutgoingJob2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxOutgoingJob2 = *opaque{
+    // TODO: Method 'get_HasCoverPage'
+    // TODO: Method 'get_ReceiptAddress'
+    // TODO: Method 'get_ScheduleType'
+};
+// --------------------------------------------------------
+// Type: IFaxAccountFolders
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxAccountFolders = *opaque{
+    // TODO: Method 'get_OutgoingQueue'
+    // TODO: Method 'get_IncomingQueue'
+    // TODO: Method 'get_IncomingArchive'
+    // TODO: Method 'get_OutgoingArchive'
+};
+// --------------------------------------------------------
+// Type: IFaxAccountIncomingQueue
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxAccountIncomingQueue = *opaque{
+    // TODO: Method 'GetJobs'
+    // TODO: Method 'GetJobA'
+};
+// --------------------------------------------------------
+// Type: IFaxAccountOutgoingQueue
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxAccountOutgoingQueue = *opaque{
+    // TODO: Method 'GetJobs'
+    // TODO: Method 'GetJobA'
+};
+// --------------------------------------------------------
+// Type: IFaxOutgoingMessage2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxOutgoingMessage2 = *opaque{
+    // TODO: Method 'get_HasCoverPage'
+    // TODO: Method 'get_ReceiptType'
+    // TODO: Method 'get_ReceiptAddress'
+    // TODO: Method 'get_Read'
+    // TODO: Method 'put_Read'
+    // TODO: Method 'Save'
+    // TODO: Method 'Refresh'
+};
+// --------------------------------------------------------
+// Type: IFaxAccountIncomingArchive
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxAccountIncomingArchive = *opaque{
+    // TODO: Method 'get_SizeLow'
+    // TODO: Method 'get_SizeHigh'
+    // TODO: Method 'Refresh'
+    // TODO: Method 'GetMessages'
+    // TODO: Method 'GetMessageA'
+};
+// --------------------------------------------------------
+// Type: IFaxAccountOutgoingArchive
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxAccountOutgoingArchive = *opaque{
+    // TODO: Method 'get_SizeLow'
+    // TODO: Method 'get_SizeHigh'
+    // TODO: Method 'Refresh'
+    // TODO: Method 'GetMessages'
+    // TODO: Method 'GetMessageA'
+};
+// --------------------------------------------------------
+// Type: FAX_ACCESS_RIGHTS_ENUM_2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FAX_ACCESS_RIGHTS_ENUM_2 = *opaque{
+};
+// --------------------------------------------------------
+// Type: IFaxSecurity2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxSecurity2 = *opaque{
+    // TODO: Method 'get_Descriptor'
+    // TODO: Method 'put_Descriptor'
+    // TODO: Method 'get_GrantedRights'
+    // TODO: Method 'Refresh'
+    // TODO: Method 'Save'
+    // TODO: Method 'get_InformationType'
+    // TODO: Method 'put_InformationType'
+};
+// --------------------------------------------------------
+// Type: IFaxIncomingMessage2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxIncomingMessage2 = *opaque{
+    // TODO: Method 'get_Subject'
+    // TODO: Method 'put_Subject'
+    // TODO: Method 'get_SenderName'
+    // TODO: Method 'put_SenderName'
+    // TODO: Method 'get_SenderFaxNumber'
+    // TODO: Method 'put_SenderFaxNumber'
+    // TODO: Method 'get_HasCoverPage'
+    // TODO: Method 'put_HasCoverPage'
+    // TODO: Method 'get_Recipients'
+    // TODO: Method 'put_Recipients'
+    // TODO: Method 'get_WasReAssigned'
+    // TODO: Method 'get_Read'
+    // TODO: Method 'put_Read'
+    // TODO: Method 'ReAssign'
+    // TODO: Method 'Save'
+    // TODO: Method 'Refresh'
+};
+// --------------------------------------------------------
+// Type: FAX_ROUTING_RULE_CODE_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FAX_ROUTING_RULE_CODE_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: IFaxServerNotify
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxServerNotify = *opaque{
+};
+// --------------------------------------------------------
+// Type: _IFaxServerNotify2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const _IFaxServerNotify2 = *opaque{
+    // TODO: Method 'OnIncomingJobAdded'
+    // TODO: Method 'OnIncomingJobRemoved'
+    // TODO: Method 'OnIncomingJobChanged'
+    // TODO: Method 'OnOutgoingJobAdded'
+    // TODO: Method 'OnOutgoingJobRemoved'
+    // TODO: Method 'OnOutgoingJobChanged'
+    // TODO: Method 'OnIncomingMessageAdded'
+    // TODO: Method 'OnIncomingMessageRemoved'
+    // TODO: Method 'OnOutgoingMessageAdded'
+    // TODO: Method 'OnOutgoingMessageRemoved'
+    // TODO: Method 'OnReceiptOptionsChange'
+    // TODO: Method 'OnActivityLoggingConfigChange'
+    // TODO: Method 'OnSecurityConfigChange'
+    // TODO: Method 'OnEventLoggingConfigChange'
+    // TODO: Method 'OnOutgoingQueueConfigChange'
+    // TODO: Method 'OnOutgoingArchiveConfigChange'
+    // TODO: Method 'OnIncomingArchiveConfigChange'
+    // TODO: Method 'OnDevicesConfigChange'
+    // TODO: Method 'OnOutboundRoutingGroupsConfigChange'
+    // TODO: Method 'OnOutboundRoutingRulesConfigChange'
+    // TODO: Method 'OnServerActivityChange'
+    // TODO: Method 'OnQueuesStatusChange'
+    // TODO: Method 'OnNewCall'
+    // TODO: Method 'OnServerShutDown'
+    // TODO: Method 'OnDeviceStatusChange'
+    // TODO: Method 'OnGeneralServerConfigChanged'
+};
+// --------------------------------------------------------
+// Type: IFaxServerNotify2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxServerNotify2 = *opaque{
+};
+// --------------------------------------------------------
+// Type: _IFaxAccountNotify
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const _IFaxAccountNotify = *opaque{
+    // TODO: Method 'OnIncomingJobAdded'
+    // TODO: Method 'OnIncomingJobRemoved'
+    // TODO: Method 'OnIncomingJobChanged'
+    // TODO: Method 'OnOutgoingJobAdded'
+    // TODO: Method 'OnOutgoingJobRemoved'
+    // TODO: Method 'OnOutgoingJobChanged'
+    // TODO: Method 'OnIncomingMessageAdded'
+    // TODO: Method 'OnIncomingMessageRemoved'
+    // TODO: Method 'OnOutgoingMessageAdded'
+    // TODO: Method 'OnOutgoingMessageRemoved'
+    // TODO: Method 'OnServerShutDown'
+};
+// --------------------------------------------------------
+// Type: IFaxAccountNotify
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFaxAccountNotify = *opaque{
+};
+// --------------------------------------------------------
+// Type: PFAXROUTEADDFILE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXROUTEADDFILE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXROUTEDELETEFILE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXROUTEDELETEFILE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXROUTEGETFILE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXROUTEGETFILE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXROUTEENUMFILE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXROUTEENUMFILE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXROUTEENUMFILES
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXROUTEENUMFILES = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXROUTEMODIFYROUTINGDATA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXROUTEMODIFYROUTINGDATA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: FAX_ROUTE_CALLBACKROUTINES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_ROUTE_CALLBACKROUTINES = extern struct {
+    SizeOfStruct: {"kind":"UInt32"},
+    FaxRouteAddFile: Windows.Win32.Fax.PFAXROUTEADDFILE,
+    FaxRouteDeleteFile: Windows.Win32.Fax.PFAXROUTEDELETEFILE,
+    FaxRouteGetFile: Windows.Win32.Fax.PFAXROUTEGETFILE,
+    FaxRouteEnumFiles: Windows.Win32.Fax.PFAXROUTEENUMFILES,
+    FaxRouteModifyRoutingData: Windows.Win32.Fax.PFAXROUTEMODIFYROUTINGDATA,
+};
+// --------------------------------------------------------
+// Type: FAX_ROUTE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FAX_ROUTE = extern struct {
+    SizeOfStruct: {"kind":"UInt32"},
+    JobId: {"kind":"UInt32"},
+    ElapsedTime: {"kind":"UInt64"},
+    ReceiveTime: {"kind":"UInt64"},
+    PageCount: {"kind":"UInt32"},
+    Csid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Tsid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    CallerId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RoutingInfo: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReceiverName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReceiverNumber: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DeviceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DeviceId: {"kind":"UInt32"},
+    RoutingInfoData: {"kind""Ptr","child":{"kind":"Byte"}},
+    RoutingInfoDataSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: FAXROUTE_ENABLE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FAXROUTE_ENABLE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PFAXROUTEINITIALIZE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXROUTEINITIALIZE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXROUTEMETHOD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXROUTEMETHOD = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXROUTEDEVICEENABLE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXROUTEDEVICEENABLE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXROUTEDEVICECHANGENOTIFICATION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXROUTEDEVICECHANGENOTIFICATION = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXROUTEGETROUTINGINFO
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXROUTEGETROUTINGINFO = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAXROUTESETROUTINGINFO
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAXROUTESETROUTINGINFO = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: FAX_ENUM_DEVICE_ID_SOURCE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FAX_ENUM_DEVICE_ID_SOURCE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PFAX_EXT_GET_DATA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAX_EXT_GET_DATA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAX_EXT_SET_DATA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAX_EXT_SET_DATA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAX_EXT_CONFIG_CHANGE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAX_EXT_CONFIG_CHANGE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAX_EXT_REGISTER_FOR_EVENTS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAX_EXT_REGISTER_FOR_EVENTS = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAX_EXT_UNREGISTER_FOR_EVENTS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAX_EXT_UNREGISTER_FOR_EVENTS = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAX_EXT_FREE_BUFFER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAX_EXT_FREE_BUFFER = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFAX_EXT_INITIALIZE_CONFIG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFAX_EXT_INITIALIZE_CONFIG = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: SendToMode
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SendToMode = *opaque{
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxConnectFaxServerA(
+    MachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    FaxHandle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxConnectFaxServerW(
+    MachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    FaxHandle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINFAX" fn FaxClose(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINFAX" fn FaxOpenPort(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    DeviceId: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+    FaxPortHandle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINFAX" fn FaxCompleteJobParamsA(
+    JobParams: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Fax.FAX_JOB_PARAMA}},
+    CoverpageInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Fax.FAX_COVERPAGE_INFOA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINFAX" fn FaxCompleteJobParamsW(
+    JobParams: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Fax.FAX_JOB_PARAMW}},
+    CoverpageInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Fax.FAX_COVERPAGE_INFOW}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxSendDocumentA(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    FileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    JobParams: {"kind""Ptr","child":Windows.Win32.Fax.FAX_JOB_PARAMA},
+    CoverpageInfo: {"kind""Ptr","child":Windows.Win32.Fax.FAX_COVERPAGE_INFOA},
+    FaxJobId: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxSendDocumentW(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    FileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    JobParams: {"kind""Ptr","child":Windows.Win32.Fax.FAX_JOB_PARAMW},
+    CoverpageInfo: {"kind""Ptr","child":Windows.Win32.Fax.FAX_COVERPAGE_INFOW},
+    FaxJobId: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxSendDocumentForBroadcastA(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    FileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    FaxJobId: {"kind""Ptr","child":{"kind":"UInt32"}},
+    FaxRecipientCallback: Windows.Win32.Fax.PFAX_RECIPIENT_CALLBACKA,
+    Context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxSendDocumentForBroadcastW(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    FileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    FaxJobId: {"kind""Ptr","child":{"kind":"UInt32"}},
+    FaxRecipientCallback: Windows.Win32.Fax.PFAX_RECIPIENT_CALLBACKW,
+    Context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxEnumJobsA(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    JobEntry: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Fax.FAX_JOB_ENTRYA}},
+    JobsReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxEnumJobsW(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    JobEntry: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Fax.FAX_JOB_ENTRYW}},
+    JobsReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxGetJobA(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    JobId: {"kind":"UInt32"},
+    JobEntry: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Fax.FAX_JOB_ENTRYA}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxGetJobW(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    JobId: {"kind":"UInt32"},
+    JobEntry: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Fax.FAX_JOB_ENTRYW}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxSetJobA(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    JobId: {"kind":"UInt32"},
+    Command: {"kind":"UInt32"},
+    JobEntry: {"kind""Ptr","child":Windows.Win32.Fax.FAX_JOB_ENTRYA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxSetJobW(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    JobId: {"kind":"UInt32"},
+    Command: {"kind":"UInt32"},
+    JobEntry: {"kind""Ptr","child":Windows.Win32.Fax.FAX_JOB_ENTRYW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINFAX" fn FaxGetPageData(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    JobId: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    BufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ImageWidth: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ImageHeight: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxGetDeviceStatusA(
+    FaxPortHandle: Windows.Win32.SystemServices.HANDLE,
+    DeviceStatus: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Fax.FAX_DEVICE_STATUSA}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxGetDeviceStatusW(
+    FaxPortHandle: Windows.Win32.SystemServices.HANDLE,
+    DeviceStatus: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Fax.FAX_DEVICE_STATUSW}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINFAX" fn FaxAbort(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    JobId: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxGetConfigurationA(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    FaxConfig: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Fax.FAX_CONFIGURATIONA}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxGetConfigurationW(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    FaxConfig: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Fax.FAX_CONFIGURATIONW}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxSetConfigurationA(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    FaxConfig: {"kind""Ptr","child":Windows.Win32.Fax.FAX_CONFIGURATIONA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxSetConfigurationW(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    FaxConfig: {"kind""Ptr","child":Windows.Win32.Fax.FAX_CONFIGURATIONW},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxGetLoggingCategoriesA(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    Categories: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Fax.FAX_LOG_CATEGORYA}},
+    NumberCategories: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxGetLoggingCategoriesW(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    Categories: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Fax.FAX_LOG_CATEGORYW}},
+    NumberCategories: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxSetLoggingCategoriesA(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    Categories: {"kind""Ptr","child":Windows.Win32.Fax.FAX_LOG_CATEGORYA},
+    NumberCategories: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxSetLoggingCategoriesW(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    Categories: {"kind""Ptr","child":Windows.Win32.Fax.FAX_LOG_CATEGORYW},
+    NumberCategories: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxEnumPortsA(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    PortInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Fax.FAX_PORT_INFOA}},
+    PortsReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxEnumPortsW(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    PortInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Fax.FAX_PORT_INFOW}},
+    PortsReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxGetPortA(
+    FaxPortHandle: Windows.Win32.SystemServices.HANDLE,
+    PortInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Fax.FAX_PORT_INFOA}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxGetPortW(
+    FaxPortHandle: Windows.Win32.SystemServices.HANDLE,
+    PortInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Fax.FAX_PORT_INFOW}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxSetPortA(
+    FaxPortHandle: Windows.Win32.SystemServices.HANDLE,
+    PortInfo: {"kind""Ptr","child":Windows.Win32.Fax.FAX_PORT_INFOA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxSetPortW(
+    FaxPortHandle: Windows.Win32.SystemServices.HANDLE,
+    PortInfo: {"kind""Ptr","child":Windows.Win32.Fax.FAX_PORT_INFOW},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxEnumRoutingMethodsA(
+    FaxPortHandle: Windows.Win32.SystemServices.HANDLE,
+    RoutingMethod: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Fax.FAX_ROUTING_METHODA}},
+    MethodsReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxEnumRoutingMethodsW(
+    FaxPortHandle: Windows.Win32.SystemServices.HANDLE,
+    RoutingMethod: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Fax.FAX_ROUTING_METHODW}},
+    MethodsReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxEnableRoutingMethodA(
+    FaxPortHandle: Windows.Win32.SystemServices.HANDLE,
+    RoutingGuid: {"kind""Ptr","child":{"kind":"SByte"}},
+    Enabled: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxEnableRoutingMethodW(
+    FaxPortHandle: Windows.Win32.SystemServices.HANDLE,
+    RoutingGuid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Enabled: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxEnumGlobalRoutingInfoA(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    RoutingInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Fax.FAX_GLOBAL_ROUTING_INFOA}},
+    MethodsReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxEnumGlobalRoutingInfoW(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    RoutingInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Fax.FAX_GLOBAL_ROUTING_INFOW}},
+    MethodsReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxSetGlobalRoutingInfoA(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    RoutingInfo: {"kind""Ptr","child":Windows.Win32.Fax.FAX_GLOBAL_ROUTING_INFOA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxSetGlobalRoutingInfoW(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    RoutingInfo: {"kind""Ptr","child":Windows.Win32.Fax.FAX_GLOBAL_ROUTING_INFOW},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxGetRoutingInfoA(
+    FaxPortHandle: Windows.Win32.SystemServices.HANDLE,
+    RoutingGuid: {"kind""Ptr","child":{"kind":"SByte"}},
+    RoutingInfoBuffer: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    RoutingInfoBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxGetRoutingInfoW(
+    FaxPortHandle: Windows.Win32.SystemServices.HANDLE,
+    RoutingGuid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RoutingInfoBuffer: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    RoutingInfoBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxSetRoutingInfoA(
+    FaxPortHandle: Windows.Win32.SystemServices.HANDLE,
+    RoutingGuid: {"kind""Ptr","child":{"kind":"SByte"}},
+    RoutingInfoBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    RoutingInfoBufferSize: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxSetRoutingInfoW(
+    FaxPortHandle: Windows.Win32.SystemServices.HANDLE,
+    RoutingGuid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RoutingInfoBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    RoutingInfoBufferSize: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINFAX" fn FaxInitializeEventQueue(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    CompletionPort: Windows.Win32.SystemServices.HANDLE,
+    CompletionKey: {"kind":"UIntPtr"},
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    MessageStart: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINFAX" fn FaxFreeBuffer(
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxStartPrintJobA(
+    PrinterName: {"kind""Ptr","child":{"kind":"SByte"}},
+    PrintInfo: {"kind""Ptr","child":Windows.Win32.Fax.FAX_PRINT_INFOA},
+    FaxJobId: {"kind""Ptr","child":{"kind":"UInt32"}},
+    FaxContextInfo: {"kind""Ptr","child":Windows.Win32.Fax.FAX_CONTEXT_INFOA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxStartPrintJobW(
+    PrinterName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PrintInfo: {"kind""Ptr","child":Windows.Win32.Fax.FAX_PRINT_INFOW},
+    FaxJobId: {"kind""Ptr","child":{"kind":"UInt32"}},
+    FaxContextInfo: {"kind""Ptr","child":Windows.Win32.Fax.FAX_CONTEXT_INFOW},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxPrintCoverPageA(
+    FaxContextInfo: {"kind""Ptr","child":Windows.Win32.Fax.FAX_CONTEXT_INFOA},
+    CoverPageInfo: {"kind""Ptr","child":Windows.Win32.Fax.FAX_COVERPAGE_INFOA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxPrintCoverPageW(
+    FaxContextInfo: {"kind""Ptr","child":Windows.Win32.Fax.FAX_CONTEXT_INFOW},
+    CoverPageInfo: {"kind""Ptr","child":Windows.Win32.Fax.FAX_COVERPAGE_INFOW},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxRegisterServiceProviderW(
+    DeviceProvider: {"kind""Ptr","child":{"kind":"UInt16"}},
+    FriendlyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ImageName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TspName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINFAX" fn FaxUnregisterServiceProviderW(
+    DeviceProvider: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINFAX" fn FaxRegisterRoutingExtensionW(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    ExtensionName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    FriendlyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ImageName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    CallBack: Windows.Win32.Fax.PFAX_ROUTING_INSTALLATION_CALLBACKW,
+    Context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINFAX" fn FaxAccessCheck(
+    FaxHandle: Windows.Win32.SystemServices.HANDLE,
+    AccessMask: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "fxsutility" fn CanSendToFaxRecipient(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "fxsutility" fn SendToFaxRecipient(
+    sndMode: Windows.Win32.Fax.SendToMode,
+    lpFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+],
+
+"unicode_aliases": [
+     "FAX_LOG_CATEGORY"
+     "FAX_CONFIGURATION"
+     "FAX_DEVICE_STATUS"
+     "FAX_JOB_ENTRY"
+     "FAX_PORT_INFO"
+     "FAX_ROUTING_METHOD"
+     "FAX_GLOBAL_ROUTING_INFO"
+     "FAX_COVERPAGE_INFO"
+     "FAX_JOB_PARAM"
+     "FAX_EVENT"
+     "FAX_PRINT_INFO"
+     "FAX_CONTEXT_INFO"
+     "PFAXCONNECTFAXSERVER"
+     "PFAXCOMPLETEJOBPARAMS"
+     "PFAXSENDDOCUMENT"
+     "PFAX_RECIPIENT_CALLBACK"
+     "PFAXSENDDOCUMENTFORBROADCAST"
+     "PFAXENUMJOBS"
+     "PFAXGETJOB"
+     "PFAXSETJOB"
+     "PFAXGETDEVICESTATUS"
+     "PFAXGETCONFIGURATION"
+     "PFAXSETCONFIGURATION"
+     "PFAXGETLOGGINGCATEGORIES"
+     "PFAXSETLOGGINGCATEGORIES"
+     "PFAXENUMPORTS"
+     "PFAXGETPORT"
+     "PFAXSETPORT"
+     "PFAXENUMROUTINGMETHODS"
+     "PFAXENABLEROUTINGMETHOD"
+     "PFAXENUMGLOBALROUTINGINFO"
+     "PFAXSETGLOBALROUTINGINFO"
+     "PFAXGETROUTINGINFO"
+     "PFAXSETROUTINGINFO"
+     "PFAXSTARTPRINTJOB"
+     "PFAXPRINTCOVERPAGE"
+     "FaxConnectFaxServer"
+     "FaxCompleteJobParams"
+     "FaxSendDocument"
+     "FaxSendDocumentForBroadcast"
+     "FaxEnumJobs"
+     "FaxGetJob"
+     "FaxSetJob"
+     "FaxGetDeviceStatus"
+     "FaxGetConfiguration"
+     "FaxSetConfiguration"
+     "FaxGetLoggingCategories"
+     "FaxSetLoggingCategories"
+     "FaxEnumPorts"
+     "FaxGetPort"
+     "FaxSetPort"
+     "FaxEnumRoutingMethods"
+     "FaxEnableRoutingMethod"
+     "FaxEnumGlobalRoutingInfo"
+     "FaxSetGlobalRoutingInfo"
+     "FaxGetRoutingInfo"
+     "FaxSetRoutingInfo"
+     "FaxStartPrintJob"
+     "FaxPrintCoverPage"
+]}

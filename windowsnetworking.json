@@ -1,0 +1,402 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: NetEnumHandle
+// TypeLayoutAttr: sequential
+// RAIIFree 'WNetCloseEnum' (TODO: can we use this information?)
+pub const NetEnumHandle = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: CONNECTDLGSTRUCTA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CONNECTDLGSTRUCTA = extern struct {
+    cbStructure: {"kind":"UInt32"},
+    hwndOwner: Windows.Win32.WindowsAndMessaging.HWND,
+    lpConnRes: {"kind""Ptr","child":Windows.Win32.Security.NETRESOURCEA},
+    dwFlags: {"kind":"UInt32"},
+    dwDevNum: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: CONNECTDLGSTRUCTW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CONNECTDLGSTRUCTW = extern struct {
+    cbStructure: {"kind":"UInt32"},
+    hwndOwner: Windows.Win32.WindowsAndMessaging.HWND,
+    lpConnRes: {"kind""Ptr","child":Windows.Win32.Security.NETRESOURCEW},
+    dwFlags: {"kind":"UInt32"},
+    dwDevNum: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DISCDLGSTRUCTA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DISCDLGSTRUCTA = extern struct {
+    cbStructure: {"kind":"UInt32"},
+    hwndOwner: Windows.Win32.WindowsAndMessaging.HWND,
+    lpLocalName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpRemoteName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DISCDLGSTRUCTW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DISCDLGSTRUCTW = extern struct {
+    cbStructure: {"kind":"UInt32"},
+    hwndOwner: Windows.Win32.WindowsAndMessaging.HWND,
+    lpLocalName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpRemoteName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: NETINFOSTRUCT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NETINFOSTRUCT = extern struct {
+    cbStructure: {"kind":"UInt32"},
+    dwProviderVersion: {"kind":"UInt32"},
+    dwStatus: {"kind":"UInt32"},
+    dwCharacteristics: {"kind":"UInt32"},
+    dwHandle: {"kind":"UIntPtr"},
+    wNetType: {"kind":"UInt16"},
+    dwPrinters: {"kind":"UInt32"},
+    dwDrives: {"kind":"UInt32"},
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetAddConnectionA(
+    lpRemoteName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpPassword: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpLocalName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetAddConnectionW(
+    lpRemoteName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpLocalName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetAddConnection2A(
+    lpNetResource: {"kind""Ptr","child":Windows.Win32.Security.NETRESOURCEA},
+    lpPassword: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpUserName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetAddConnection2W(
+    lpNetResource: {"kind""Ptr","child":Windows.Win32.Security.NETRESOURCEW},
+    lpPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpUserName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetAddConnection3A(
+    hwndOwner: Windows.Win32.WindowsAndMessaging.HWND,
+    lpNetResource: {"kind""Ptr","child":Windows.Win32.Security.NETRESOURCEA},
+    lpPassword: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpUserName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetAddConnection3W(
+    hwndOwner: Windows.Win32.WindowsAndMessaging.HWND,
+    lpNetResource: {"kind""Ptr","child":Windows.Win32.Security.NETRESOURCEW},
+    lpPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpUserName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetAddConnection4A(
+    hwndOwner: Windows.Win32.WindowsAndMessaging.HWND,
+    lpNetResource: {"kind""Ptr","child":Windows.Win32.Security.NETRESOURCEA},
+    pAuthBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    cbAuthBuffer: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    lpUseOptions: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbUseOptions: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetAddConnection4W(
+    hwndOwner: Windows.Win32.WindowsAndMessaging.HWND,
+    lpNetResource: {"kind""Ptr","child":Windows.Win32.Security.NETRESOURCEW},
+    pAuthBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    cbAuthBuffer: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    lpUseOptions: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbUseOptions: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetCancelConnectionA(
+    lpName: {"kind""Ptr","child":{"kind":"SByte"}},
+    fForce: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetCancelConnectionW(
+    lpName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fForce: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetCancelConnection2A(
+    lpName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwFlags: {"kind":"UInt32"},
+    fForce: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetCancelConnection2W(
+    lpName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+    fForce: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetGetConnectionA(
+    lpLocalName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpRemoteName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpnLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetGetConnectionW(
+    lpLocalName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpRemoteName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpnLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetUseConnectionA(
+    hwndOwner: Windows.Win32.WindowsAndMessaging.HWND,
+    lpNetResource: {"kind""Ptr","child":Windows.Win32.Security.NETRESOURCEA},
+    lpPassword: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpUserId: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwFlags: {"kind":"UInt32"},
+    lpAccessName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpResult: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetUseConnectionW(
+    hwndOwner: Windows.Win32.WindowsAndMessaging.HWND,
+    lpNetResource: {"kind""Ptr","child":Windows.Win32.Security.NETRESOURCEW},
+    lpPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpUserId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+    lpAccessName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpResult: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetUseConnection4A(
+    hwndOwner: Windows.Win32.WindowsAndMessaging.HWND,
+    lpNetResource: {"kind""Ptr","child":Windows.Win32.Security.NETRESOURCEA},
+    pAuthBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    cbAuthBuffer: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    lpUseOptions: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbUseOptions: {"kind":"UInt32"},
+    lpAccessName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpResult: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetUseConnection4W(
+    hwndOwner: Windows.Win32.WindowsAndMessaging.HWND,
+    lpNetResource: {"kind""Ptr","child":Windows.Win32.Security.NETRESOURCEW},
+    pAuthBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    cbAuthBuffer: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    lpUseOptions: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbUseOptions: {"kind":"UInt32"},
+    lpAccessName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpResult: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetConnectionDialog(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    dwType: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetDisconnectDialog(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    dwType: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetConnectionDialog1A(
+    lpConnDlgStruct: {"kind""Ptr","child":Windows.Win32.WindowsNetworking.CONNECTDLGSTRUCTA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetConnectionDialog1W(
+    lpConnDlgStruct: {"kind""Ptr","child":Windows.Win32.WindowsNetworking.CONNECTDLGSTRUCTW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetDisconnectDialog1A(
+    lpConnDlgStruct: {"kind""Ptr","child":Windows.Win32.WindowsNetworking.DISCDLGSTRUCTA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetDisconnectDialog1W(
+    lpConnDlgStruct: {"kind""Ptr","child":Windows.Win32.WindowsNetworking.DISCDLGSTRUCTW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetOpenEnumA(
+    dwScope: {"kind":"UInt32"},
+    dwType: {"kind":"UInt32"},
+    dwUsage: {"kind":"UInt32"},
+    lpNetResource: {"kind""Ptr","child":Windows.Win32.Security.NETRESOURCEA},
+    lphEnum: {"kind""Ptr","child":Windows.Win32.WindowsNetworking.NetEnumHandle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetOpenEnumW(
+    dwScope: {"kind":"UInt32"},
+    dwType: {"kind":"UInt32"},
+    dwUsage: {"kind":"UInt32"},
+    lpNetResource: {"kind""Ptr","child":Windows.Win32.Security.NETRESOURCEW},
+    lphEnum: {"kind""Ptr","child":Windows.Win32.WindowsNetworking.NetEnumHandle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetEnumResourceA(
+    hEnum: Windows.Win32.SystemServices.HANDLE,
+    lpcCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    lpBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetEnumResourceW(
+    hEnum: Windows.Win32.SystemServices.HANDLE,
+    lpcCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    lpBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetCloseEnum(
+    hEnum: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetGetResourceParentA(
+    lpNetResource: {"kind""Ptr","child":Windows.Win32.Security.NETRESOURCEA},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    lpcbBuffer: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetGetResourceParentW(
+    lpNetResource: {"kind""Ptr","child":Windows.Win32.Security.NETRESOURCEW},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    lpcbBuffer: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetGetResourceInformationA(
+    lpNetResource: {"kind""Ptr","child":Windows.Win32.Security.NETRESOURCEA},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    lpcbBuffer: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lplpSystem: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetGetResourceInformationW(
+    lpNetResource: {"kind""Ptr","child":Windows.Win32.Security.NETRESOURCEW},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    lpcbBuffer: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lplpSystem: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetGetUniversalNameA(
+    lpLocalPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwInfoLevel: {"kind":"UInt32"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    lpBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetGetUniversalNameW(
+    lpLocalPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwInfoLevel: {"kind":"UInt32"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    lpBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetGetUserA(
+    lpName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpUserName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpnLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetGetUserW(
+    lpName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpUserName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpnLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetGetProviderNameA(
+    dwNetType: {"kind":"UInt32"},
+    lpProviderName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetGetProviderNameW(
+    dwNetType: {"kind":"UInt32"},
+    lpProviderName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetGetNetworkInformationA(
+    lpProvider: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpNetInfoStruct: {"kind""Ptr","child":Windows.Win32.WindowsNetworking.NETINFOSTRUCT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn WNetGetNetworkInformationW(
+    lpProvider: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpNetInfoStruct: {"kind""Ptr","child":Windows.Win32.WindowsNetworking.NETINFOSTRUCT},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "MPR" fn WNetGetLastErrorA(
+    lpError: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpErrorBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    nErrorBufSize: {"kind":"UInt32"},
+    lpNameBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    nNameBufSize: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "MPR" fn WNetGetLastErrorW(
+    lpError: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpErrorBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    nErrorBufSize: {"kind":"UInt32"},
+    lpNameBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    nNameBufSize: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn MultinetGetConnectionPerformanceA(
+    lpNetResource: {"kind""Ptr","child":Windows.Win32.Security.NETRESOURCEA},
+    lpNetConnectInfoStruct: {"kind""Ptr","child":Windows.Win32.Security.NETCONNECTINFOSTRUCT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MPR" fn MultinetGetConnectionPerformanceW(
+    lpNetResource: {"kind""Ptr","child":Windows.Win32.Security.NETRESOURCEW},
+    lpNetConnectInfoStruct: {"kind""Ptr","child":Windows.Win32.Security.NETCONNECTINFOSTRUCT},
+],
+
+"unicode_aliases": [
+     "CONNECTDLGSTRUCT"
+     "DISCDLGSTRUCT"
+     "WNetAddConnection"
+     "WNetAddConnection2"
+     "WNetAddConnection3"
+     "WNetAddConnection4"
+     "WNetCancelConnection"
+     "WNetCancelConnection2"
+     "WNetGetConnection"
+     "WNetUseConnection"
+     "WNetUseConnection4"
+     "WNetConnectionDialog1"
+     "WNetDisconnectDialog1"
+     "WNetOpenEnum"
+     "WNetEnumResource"
+     "WNetGetResourceParent"
+     "WNetGetResourceInformation"
+     "WNetGetUniversalName"
+     "WNetGetUser"
+     "WNetGetProviderName"
+     "WNetGetNetworkInformation"
+     "WNetGetLastError"
+     "MultinetGetConnectionPerformance"
+]}

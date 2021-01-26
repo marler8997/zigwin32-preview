@@ -1,0 +1,98 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: QOCINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const QOCINFO = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwInSpeed: {"kind":"UInt32"},
+    dwOutSpeed: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SENS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const SENS = opaque {
+};
+// --------------------------------------------------------
+// Type: SENS_QOCINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SENS_QOCINFO = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwOutSpeed: {"kind":"UInt32"},
+    dwInSpeed: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ISensNetwork
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISensNetwork = *opaque{
+    // TODO: Method 'ConnectionMade'
+    // TODO: Method 'ConnectionMadeNoQOCInfo'
+    // TODO: Method 'ConnectionLost'
+    // TODO: Method 'DestinationReachable'
+    // TODO: Method 'DestinationReachableNoQOCInfo'
+};
+// --------------------------------------------------------
+// Type: ISensOnNow
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISensOnNow = *opaque{
+    // TODO: Method 'OnACPower'
+    // TODO: Method 'OnBatteryPower'
+    // TODO: Method 'BatteryLow'
+};
+// --------------------------------------------------------
+// Type: ISensLogon
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISensLogon = *opaque{
+    // TODO: Method 'Logon'
+    // TODO: Method 'Logoff'
+    // TODO: Method 'StartShell'
+    // TODO: Method 'DisplayLock'
+    // TODO: Method 'DisplayUnlock'
+    // TODO: Method 'StartScreenSaver'
+    // TODO: Method 'StopScreenSaver'
+};
+// --------------------------------------------------------
+// Type: ISensLogon2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISensLogon2 = *opaque{
+    // TODO: Method 'Logon'
+    // TODO: Method 'Logoff'
+    // TODO: Method 'SessionDisconnect'
+    // TODO: Method 'SessionReconnect'
+    // TODO: Method 'PostShell'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SensApi" fn IsDestinationReachableA(
+    lpszDestination: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpQOCInfo: {"kind""Ptr","child":Windows.Win32.SystemEventNotificationService.QOCINFO},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SensApi" fn IsDestinationReachableW(
+    lpszDestination: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpQOCInfo: {"kind""Ptr","child":Windows.Win32.SystemEventNotificationService.QOCINFO},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SensApi" fn IsNetworkAlive(
+    lpdwFlags: {"kind""Ptr","child":{"kind":"UInt32"}},
+],
+
+"unicode_aliases": [
+     "IsDestinationReachable"
+]}

@@ -1,0 +1,673 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: SDP_LARGE_INTEGER_16
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SDP_LARGE_INTEGER_16 = extern struct {
+    LowPart: {"kind":"UInt64"},
+    HighPart: {"kind":"Int64"},
+};
+// --------------------------------------------------------
+// Type: SDP_ULARGE_INTEGER_16
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SDP_ULARGE_INTEGER_16 = extern struct {
+    LowPart: {"kind":"UInt64"},
+    HighPart: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: NodeContainerType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NodeContainerType = *opaque{
+};
+// --------------------------------------------------------
+// Type: SDP_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SDP_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: SDP_SPECIFICTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SDP_SPECIFICTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: SdpAttributeRange
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SdpAttributeRange = extern struct {
+    minAttribute: {"kind":"UInt16"},
+    maxAttribute: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: SdpQueryUuidUnion
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const SdpQueryUuidUnion = *opaque{
+};
+// --------------------------------------------------------
+// Type: SdpQueryUuid
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SdpQueryUuid = extern struct {
+    u: Windows.Win32.Bluetooth.SdpQueryUuidUnion,
+    uuidType: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: BTH_DEVICE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BTH_DEVICE_INFO = extern struct {
+    flags: {"kind":"UInt32"},
+    address: {"kind":"UInt64"},
+    classOfDevice: {"kind":"UInt32"},
+    name: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: BTH_RADIO_IN_RANGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BTH_RADIO_IN_RANGE = extern struct {
+    deviceInfo: Windows.Win32.Bluetooth.BTH_DEVICE_INFO,
+    previousDeviceFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: BTH_L2CAP_EVENT_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BTH_L2CAP_EVENT_INFO = extern struct {
+    bthAddress: {"kind":"UInt64"},
+    psm: {"kind":"UInt16"},
+    connected: {"kind":"Byte"},
+    initiated: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: BTH_HCI_EVENT_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BTH_HCI_EVENT_INFO = extern struct {
+    bthAddress: {"kind":"UInt64"},
+    connectionType: {"kind":"Byte"},
+    connected: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: IO_CAPABILITY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const IO_CAPABILITY = *opaque{
+};
+// --------------------------------------------------------
+// Type: AUTHENTICATION_REQUIREMENTS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const AUTHENTICATION_REQUIREMENTS = *opaque{
+};
+// --------------------------------------------------------
+// Type: BLUETOOTH_ADDRESS_STRUCT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BLUETOOTH_ADDRESS_STRUCT = extern struct {
+    Anonymous: Windows.Win32.Bluetooth.BLUETOOTH_ADDRESS_STRUCT+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: BLUETOOTH_LOCAL_SERVICE_INFO_STRUCT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BLUETOOTH_LOCAL_SERVICE_INFO_STRUCT = extern struct {
+    Enabled: Windows.Win32.SystemServices.BOOL,
+    btAddr: Windows.Win32.Bluetooth.BLUETOOTH_ADDRESS_STRUCT,
+    szName: {"kind":"Array","child": {"kind":"UInt16"}},
+    szDeviceString: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: BLUETOOTH_FIND_RADIO_PARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BLUETOOTH_FIND_RADIO_PARAMS = extern struct {
+    dwSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: BLUETOOTH_RADIO_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BLUETOOTH_RADIO_INFO = extern struct {
+    dwSize: {"kind":"UInt32"},
+    address: Windows.Win32.Bluetooth.BLUETOOTH_ADDRESS_STRUCT,
+    szName: {"kind":"Array","child": {"kind":"UInt16"}},
+    ulClassofDevice: {"kind":"UInt32"},
+    lmpSubversion: {"kind":"UInt16"},
+    manufacturer: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: BLUETOOTH_DEVICE_INFO_STRUCT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BLUETOOTH_DEVICE_INFO_STRUCT = extern struct {
+    dwSize: {"kind":"UInt32"},
+    Address: Windows.Win32.Bluetooth.BLUETOOTH_ADDRESS_STRUCT,
+    ulClassofDevice: {"kind":"UInt32"},
+    fConnected: Windows.Win32.SystemServices.BOOL,
+    fRemembered: Windows.Win32.SystemServices.BOOL,
+    fAuthenticated: Windows.Win32.SystemServices.BOOL,
+    stLastSeen: Windows.Win32.WindowsProgramming.SYSTEMTIME,
+    stLastUsed: Windows.Win32.WindowsProgramming.SYSTEMTIME,
+    szName: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: BLUETOOTH_AUTHENTICATION_METHOD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const BLUETOOTH_AUTHENTICATION_METHOD = *opaque{
+};
+// --------------------------------------------------------
+// Type: BLUETOOTH_IO_CAPABILITY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const BLUETOOTH_IO_CAPABILITY = *opaque{
+};
+// --------------------------------------------------------
+// Type: BLUETOOTH_AUTHENTICATION_REQUIREMENTS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const BLUETOOTH_AUTHENTICATION_REQUIREMENTS = *opaque{
+};
+// --------------------------------------------------------
+// Type: BLUETOOTH_AUTHENTICATION_CALLBACK_PARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BLUETOOTH_AUTHENTICATION_CALLBACK_PARAMS = extern struct {
+    deviceInfo: Windows.Win32.Bluetooth.BLUETOOTH_DEVICE_INFO_STRUCT,
+    authenticationMethod: Windows.Win32.Bluetooth.BLUETOOTH_AUTHENTICATION_METHOD,
+    ioCapability: Windows.Win32.Bluetooth.BLUETOOTH_IO_CAPABILITY,
+    authenticationRequirements: Windows.Win32.Bluetooth.BLUETOOTH_AUTHENTICATION_REQUIREMENTS,
+    Anonymous: Windows.Win32.Bluetooth.BLUETOOTH_AUTHENTICATION_CALLBACK_PARAMS+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: BLUETOOTH_DEVICE_SEARCH_PARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BLUETOOTH_DEVICE_SEARCH_PARAMS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    fReturnAuthenticated: Windows.Win32.SystemServices.BOOL,
+    fReturnRemembered: Windows.Win32.SystemServices.BOOL,
+    fReturnUnknown: Windows.Win32.SystemServices.BOOL,
+    fReturnConnected: Windows.Win32.SystemServices.BOOL,
+    fIssueInquiry: Windows.Win32.SystemServices.BOOL,
+    cTimeoutMultiplier: {"kind":"Byte"},
+    hRadio: Windows.Win32.SystemServices.HANDLE,
+};
+// --------------------------------------------------------
+// Type: BLUETOOTH_COD_PAIRS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BLUETOOTH_COD_PAIRS = extern struct {
+    ulCODMask: {"kind":"UInt32"},
+    pcszDescription: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: PFN_DEVICE_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFN_DEVICE_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: BLUETOOTH_SELECT_DEVICE_PARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BLUETOOTH_SELECT_DEVICE_PARAMS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    cNumOfClasses: {"kind":"UInt32"},
+    prgClassOfDevices: {"kind""Ptr","child":Windows.Win32.Bluetooth.BLUETOOTH_COD_PAIRS},
+    pszInfo: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    fForceAuthentication: Windows.Win32.SystemServices.BOOL,
+    fShowAuthenticated: Windows.Win32.SystemServices.BOOL,
+    fShowRemembered: Windows.Win32.SystemServices.BOOL,
+    fShowUnknown: Windows.Win32.SystemServices.BOOL,
+    fAddNewDeviceWizard: Windows.Win32.SystemServices.BOOL,
+    fSkipServicesPage: Windows.Win32.SystemServices.BOOL,
+    pfnDeviceCallback: Windows.Win32.Bluetooth.PFN_DEVICE_CALLBACK,
+    pvParam: {"kind""Ptr","child":{"kind":"Void"}},
+    cNumDevices: {"kind":"UInt32"},
+    pDevices: {"kind""Ptr","child":Windows.Win32.Bluetooth.BLUETOOTH_DEVICE_INFO_STRUCT},
+};
+// --------------------------------------------------------
+// Type: BLUETOOTH_PIN_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BLUETOOTH_PIN_INFO = extern struct {
+    pin: {"kind":"Array","child": {"kind":"Byte"}},
+    pinLength: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: BLUETOOTH_OOB_DATA_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BLUETOOTH_OOB_DATA_INFO = extern struct {
+    C: {"kind":"Array","child": {"kind":"Byte"}},
+    R: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: BLUETOOTH_NUMERIC_COMPARISON_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BLUETOOTH_NUMERIC_COMPARISON_INFO = extern struct {
+    NumericValue: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: BLUETOOTH_PASSKEY_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BLUETOOTH_PASSKEY_INFO = extern struct {
+    passkey: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PFN_AUTHENTICATION_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFN_AUTHENTICATION_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFN_AUTHENTICATION_CALLBACK_EX
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFN_AUTHENTICATION_CALLBACK_EX = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: BLUETOOTH_AUTHENTICATE_RESPONSE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BLUETOOTH_AUTHENTICATE_RESPONSE = extern struct {
+    bthAddressRemote: Windows.Win32.Bluetooth.BLUETOOTH_ADDRESS_STRUCT,
+    authMethod: Windows.Win32.Bluetooth.BLUETOOTH_AUTHENTICATION_METHOD,
+    Anonymous: Windows.Win32.Bluetooth.BLUETOOTH_AUTHENTICATE_RESPONSE+_Anonymous_e__Union,
+    negativeResponse: {"kind":"Byte"},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: SDP_ELEMENT_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SDP_ELEMENT_DATA = extern struct {
+    type: Windows.Win32.Bluetooth.SDP_TYPE,
+    specificType: Windows.Win32.Bluetooth.SDP_SPECIFICTYPE,
+    data: Windows.Win32.Bluetooth.SDP_ELEMENT_DATA+_data_e__Union,
+    // --------------------------------------------------------
+    // Type: _data_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _data_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _sequence_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _sequence_e__Struct = extern struct {
+            value: {"kind""Ptr","child":{"kind":"Byte"}},
+            length: {"kind":"UInt32"},
+        };
+        // --------------------------------------------------------
+        // Type: _string_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _string_e__Struct = extern struct {
+            value: {"kind""Ptr","child":{"kind":"Byte"}},
+            length: {"kind":"UInt32"},
+        };
+        // --------------------------------------------------------
+        // Type: _alternative_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _alternative_e__Struct = extern struct {
+            value: {"kind""Ptr","child":{"kind":"Byte"}},
+            length: {"kind":"UInt32"},
+        };
+        // --------------------------------------------------------
+        // Type: _url_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _url_e__Struct = extern struct {
+            value: {"kind""Ptr","child":{"kind":"Byte"}},
+            length: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: SDP_STRING_TYPE_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SDP_STRING_TYPE_DATA = extern struct {
+    encoding: {"kind":"UInt16"},
+    mibeNum: {"kind":"UInt16"},
+    attributeId: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: PFN_BLUETOOTH_ENUM_ATTRIBUTES_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFN_BLUETOOTH_ENUM_ATTRIBUTES_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: SOCKADDR_BTH
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SOCKADDR_BTH = *opaque{
+};
+// --------------------------------------------------------
+// Type: BTH_SET_SERVICE
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const BTH_SET_SERVICE = *opaque{
+};
+// --------------------------------------------------------
+// Type: BTH_QUERY_DEVICE
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const BTH_QUERY_DEVICE = *opaque{
+};
+// --------------------------------------------------------
+// Type: BTH_QUERY_SERVICE
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const BTH_QUERY_SERVICE = *opaque{
+};
+// --------------------------------------------------------
+// Type: RFCOMM_MSC_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RFCOMM_MSC_DATA = extern struct {
+    Signals: {"kind":"Byte"},
+    Break: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: RFCOMM_RLS_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RFCOMM_RLS_DATA = extern struct {
+    LineStatus: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: RFCOMM_RPN_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RFCOMM_RPN_DATA = extern struct {
+    Baud: {"kind":"Byte"},
+    Data: {"kind":"Byte"},
+    FlowControl: {"kind":"Byte"},
+    XonChar: {"kind":"Byte"},
+    XoffChar: {"kind":"Byte"},
+    ParameterMask1: {"kind":"Byte"},
+    ParameterMask2: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: RFCOMM_COMMAND
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const RFCOMM_COMMAND = *opaque{
+    // --------------------------------------------------------
+    // Type: _Data_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Data_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: BTH_PING_REQ
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const BTH_PING_REQ = *opaque{
+};
+// --------------------------------------------------------
+// Type: BTH_PING_RSP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BTH_PING_RSP = extern struct {
+    dataLen: {"kind":"Byte"},
+    data: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: BTH_INFO_REQ
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const BTH_INFO_REQ = *opaque{
+};
+// --------------------------------------------------------
+// Type: BTH_INFO_RSP
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const BTH_INFO_RSP = *opaque{
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=True (can and should we use this?)
+pub extern "BluetoothApis" fn BluetoothFindFirstRadio(
+    pbtfrp: {"kind""Ptr","child":Windows.Win32.Bluetooth.BLUETOOTH_FIND_RADIO_PARAMS},
+    phRadio: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "BluetoothApis" fn BluetoothFindNextRadio(
+    hFind: {"kind":"IntPtr"},
+    phRadio: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "BluetoothApis" fn BluetoothFindRadioClose(
+    hFind: {"kind":"IntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "BluetoothApis" fn BluetoothGetRadioInfo(
+    hRadio: Windows.Win32.SystemServices.HANDLE,
+    pRadioInfo: {"kind""Ptr","child":Windows.Win32.Bluetooth.BLUETOOTH_RADIO_INFO},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "BluetoothApis" fn BluetoothFindFirstDevice(
+    pbtsp: {"kind""Ptr","child":Windows.Win32.Bluetooth.BLUETOOTH_DEVICE_SEARCH_PARAMS},
+    pbtdi: {"kind""Ptr","child":Windows.Win32.Bluetooth.BLUETOOTH_DEVICE_INFO_STRUCT},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "BluetoothApis" fn BluetoothFindNextDevice(
+    hFind: {"kind":"IntPtr"},
+    pbtdi: {"kind""Ptr","child":Windows.Win32.Bluetooth.BLUETOOTH_DEVICE_INFO_STRUCT},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "BluetoothApis" fn BluetoothFindDeviceClose(
+    hFind: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "BluetoothApis" fn BluetoothGetDeviceInfo(
+    hRadio: Windows.Win32.SystemServices.HANDLE,
+    pbtdi: {"kind""Ptr","child":Windows.Win32.Bluetooth.BLUETOOTH_DEVICE_INFO_STRUCT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "BluetoothApis" fn BluetoothUpdateDeviceRecord(
+    pbtdi: {"kind""Ptr","child":Windows.Win32.Bluetooth.BLUETOOTH_DEVICE_INFO_STRUCT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "BluetoothApis" fn BluetoothRemoveDevice(
+    pAddress: {"kind""Ptr","child":Windows.Win32.Bluetooth.BLUETOOTH_ADDRESS_STRUCT},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "bthprops" fn BluetoothSelectDevices(
+    pbtsdp: {"kind""Ptr","child":Windows.Win32.Bluetooth.BLUETOOTH_SELECT_DEVICE_PARAMS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "bthprops" fn BluetoothSelectDevicesFree(
+    pbtsdp: {"kind""Ptr","child":Windows.Win32.Bluetooth.BLUETOOTH_SELECT_DEVICE_PARAMS},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "bthprops" fn BluetoothDisplayDeviceProperties(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    pbtdi: {"kind""Ptr","child":Windows.Win32.Bluetooth.BLUETOOTH_DEVICE_INFO_STRUCT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "bthprops" fn BluetoothAuthenticateDevice(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    hRadio: Windows.Win32.SystemServices.HANDLE,
+    pbtbi: {"kind""Ptr","child":Windows.Win32.Bluetooth.BLUETOOTH_DEVICE_INFO_STRUCT},
+    pszPasskey: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulPasskeyLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "bthprops" fn BluetoothAuthenticateDeviceEx(
+    hwndParentIn: Windows.Win32.WindowsAndMessaging.HWND,
+    hRadioIn: Windows.Win32.SystemServices.HANDLE,
+    pbtdiInout: {"kind""Ptr","child":Windows.Win32.Bluetooth.BLUETOOTH_DEVICE_INFO_STRUCT},
+    pbtOobData: {"kind""Ptr","child":Windows.Win32.Bluetooth.BLUETOOTH_OOB_DATA_INFO},
+    authenticationRequirement: Windows.Win32.Bluetooth.AUTHENTICATION_REQUIREMENTS,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "bthprops" fn BluetoothAuthenticateMultipleDevices(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    hRadio: Windows.Win32.SystemServices.HANDLE,
+    cDevices: {"kind":"UInt32"},
+    rgbtdi: {"kind""Ptr","child":Windows.Win32.Bluetooth.BLUETOOTH_DEVICE_INFO_STRUCT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "BluetoothApis" fn BluetoothSetServiceState(
+    hRadio: Windows.Win32.SystemServices.HANDLE,
+    pbtdi: {"kind""Ptr","child":Windows.Win32.Bluetooth.BLUETOOTH_DEVICE_INFO_STRUCT},
+    pGuidService: {"kind""Ptr","child":Guid},
+    dwServiceFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "BluetoothApis" fn BluetoothEnumerateInstalledServices(
+    hRadio: Windows.Win32.SystemServices.HANDLE,
+    pbtdi: {"kind""Ptr","child":Windows.Win32.Bluetooth.BLUETOOTH_DEVICE_INFO_STRUCT},
+    pcServiceInout: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pGuidServices: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "BluetoothApis" fn BluetoothEnableDiscovery(
+    hRadio: Windows.Win32.SystemServices.HANDLE,
+    fEnabled: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "BluetoothApis" fn BluetoothIsDiscoverable(
+    hRadio: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "BluetoothApis" fn BluetoothEnableIncomingConnections(
+    hRadio: Windows.Win32.SystemServices.HANDLE,
+    fEnabled: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "BluetoothApis" fn BluetoothIsConnectable(
+    hRadio: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "BluetoothApis" fn BluetoothRegisterForAuthentication(
+    pbtdi: {"kind""Ptr","child":Windows.Win32.Bluetooth.BLUETOOTH_DEVICE_INFO_STRUCT},
+    phRegHandle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    pfnCallback: Windows.Win32.Bluetooth.PFN_AUTHENTICATION_CALLBACK,
+    pvParam: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "BluetoothApis" fn BluetoothRegisterForAuthenticationEx(
+    pbtdiIn: {"kind""Ptr","child":Windows.Win32.Bluetooth.BLUETOOTH_DEVICE_INFO_STRUCT},
+    phRegHandleOut: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    pfnCallbackIn: Windows.Win32.Bluetooth.PFN_AUTHENTICATION_CALLBACK_EX,
+    pvParam: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "BluetoothApis" fn BluetoothUnregisterAuthentication(
+    hRegHandle: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "BluetoothApis" fn BluetoothSendAuthenticationResponse(
+    hRadio: Windows.Win32.SystemServices.HANDLE,
+    pbtdi: {"kind""Ptr","child":Windows.Win32.Bluetooth.BLUETOOTH_DEVICE_INFO_STRUCT},
+    pszPasskey: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "BluetoothApis" fn BluetoothSendAuthenticationResponseEx(
+    hRadioIn: Windows.Win32.SystemServices.HANDLE,
+    pauthResponse: {"kind""Ptr","child":Windows.Win32.Bluetooth.BLUETOOTH_AUTHENTICATE_RESPONSE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "BluetoothApis" fn BluetoothSdpGetElementData(
+    pSdpStream: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbSdpStreamLength: {"kind":"UInt32"},
+    pData: {"kind""Ptr","child":Windows.Win32.Bluetooth.SDP_ELEMENT_DATA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "BluetoothApis" fn BluetoothSdpGetContainerElementData(
+    pContainerStream: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbContainerLength: {"kind":"UInt32"},
+    pElement: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    pData: {"kind""Ptr","child":Windows.Win32.Bluetooth.SDP_ELEMENT_DATA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "BluetoothApis" fn BluetoothSdpGetAttributeValue(
+    pRecordStream: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbRecordLength: {"kind":"UInt32"},
+    usAttributeId: {"kind":"UInt16"},
+    pAttributeData: {"kind""Ptr","child":Windows.Win32.Bluetooth.SDP_ELEMENT_DATA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "BluetoothApis" fn BluetoothSdpGetString(
+    pRecordStream: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbRecordLength: {"kind":"UInt32"},
+    pStringData: {"kind""Ptr","child":Windows.Win32.Bluetooth.SDP_STRING_TYPE_DATA},
+    usStringOffset: {"kind":"UInt16"},
+    pszString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchStringLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "BluetoothApis" fn BluetoothSdpEnumAttributes(
+    pSDPStream: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbStreamSize: {"kind":"UInt32"},
+    pfnCallback: Windows.Win32.Bluetooth.PFN_BLUETOOTH_ENUM_ATTRIBUTES_CALLBACK,
+    pvParam: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "BluetoothApis" fn BluetoothSetLocalServiceInfo(
+    hRadioIn: Windows.Win32.SystemServices.HANDLE,
+    pClassGuid: {"kind""Ptr","child":Guid},
+    ulInstance: {"kind":"UInt32"},
+    pServiceInfoIn: {"kind""Ptr","child":Windows.Win32.Bluetooth.BLUETOOTH_LOCAL_SERVICE_INFO_STRUCT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "BluetoothApis" fn BluetoothIsVersionAvailable(
+    MajorVersion: {"kind":"Byte"},
+    MinorVersion: {"kind":"Byte"},
+],
+
+"unicode_aliases": [
+]}

@@ -1,0 +1,809 @@
+﻿{
+"constants": [
+     {
+         "name": "DRMIDVERSION"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 0
+    }
+    ,{
+         "name": "DRMBOUNDLICENSEPARAMSVERSION"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 1
+    }
+    ,{
+         "name": "DRMBINDINGFLAGS_IGNORE_VALIDITY_INTERVALS"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 1
+    }
+    ,{
+         "name": "DRMLICENSEACQDATAVERSION"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 0
+    }
+    ,{
+         "name": "DRMACTSERVINFOVERSION"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 0
+    }
+    ,{
+         "name": "DRMCLIENTSTRUCTVERSION"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 1
+    }
+    ,{
+         "name": "DRMCALLBACKVERSION"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 1
+    }
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: DRMID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DRMID = extern struct {
+    uVersion: {"kind":"UInt32"},
+    wszIDType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszID: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DRMTIMETYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DRMTIMETYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DRMENCODINGTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DRMENCODINGTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DRMATTESTTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DRMATTESTTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DRMSPECTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DRMSPECTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DRMSECURITYPROVIDERTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DRMSECURITYPROVIDERTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DRMGLOBALOPTIONS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DRMGLOBALOPTIONS = *opaque{
+};
+// --------------------------------------------------------
+// Type: DRMBOUNDLICENSEPARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DRMBOUNDLICENSEPARAMS = extern struct {
+    uVersion: {"kind":"UInt32"},
+    hEnablingPrincipal: {"kind":"UInt32"},
+    hSecureStore: {"kind":"UInt32"},
+    wszRightsRequested: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszRightsGroup: {"kind""Ptr","child":{"kind":"UInt16"}},
+    idResource: Windows.Win32.RightsManagement.DRMID,
+    cAuthenticatorCount: {"kind":"UInt32"},
+    rghAuthenticators: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszDefaultEnablingPrincipalCredentials: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DRM_LICENSE_ACQ_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DRM_LICENSE_ACQ_DATA = extern struct {
+    uVersion: {"kind":"UInt32"},
+    wszURL: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszLocalFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pbPostData: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwPostDataSize: {"kind":"UInt32"},
+    wszFriendlyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DRM_ACTSERV_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DRM_ACTSERV_INFO = extern struct {
+    uVersion: {"kind":"UInt32"},
+    wszPubKey: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszURL: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DRM_CLIENT_VERSION_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DRM_CLIENT_VERSION_INFO = extern struct {
+    uStructVersion: {"kind":"UInt32"},
+    dwVersion: {"kind":"Array","child": {"kind":"UInt32"}},
+    wszHierarchy: {"kind":"Array","child": {"kind":"UInt16"}},
+    wszProductId: {"kind":"Array","child": {"kind":"UInt16"}},
+    wszProductDescription: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DRM_STATUS_MSG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DRM_STATUS_MSG = *opaque{
+};
+// --------------------------------------------------------
+// Type: DRM_USAGEPOLICY_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DRM_USAGEPOLICY_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DRM_DISTRIBUTION_POINT_INFO
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DRM_DISTRIBUTION_POINT_INFO = *opaque{
+};
+// --------------------------------------------------------
+// Type: DRMCALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DRMCALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMSetGlobalOptions(
+    eGlobalOptions: Windows.Win32.RightsManagement.DRMGLOBALOPTIONS,
+    pvdata: {"kind""Ptr","child":{"kind":"Void"}},
+    dwlen: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetClientVersion(
+    pDRMClientVersionInfo: {"kind""Ptr","child":Windows.Win32.RightsManagement.DRM_CLIENT_VERSION_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMInitEnvironment(
+    eSecurityProviderType: Windows.Win32.RightsManagement.DRMSECURITYPROVIDERTYPE,
+    eSpecification: Windows.Win32.RightsManagement.DRMSPECTYPE,
+    wszSecurityProvider: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszManifestCredentials: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszMachineCredentials: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phEnv: {"kind""Ptr","child":{"kind":"UInt32"}},
+    phDefaultLibrary: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMLoadLibrary(
+    hEnv: {"kind":"UInt32"},
+    eSpecification: Windows.Win32.RightsManagement.DRMSPECTYPE,
+    wszLibraryProvider: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszCredentials: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phLibrary: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMCreateEnablingPrincipal(
+    hEnv: {"kind":"UInt32"},
+    hLibrary: {"kind":"UInt32"},
+    wszObject: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pidPrincipal: {"kind""Ptr","child":Windows.Win32.RightsManagement.DRMID},
+    wszCredentials: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phEnablingPrincipal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMCloseHandle(
+    handle: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMCloseEnvironmentHandle(
+    hEnv: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMDuplicateHandle(
+    hToCopy: {"kind":"UInt32"},
+    phCopy: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMDuplicateEnvironmentHandle(
+    hToCopy: {"kind":"UInt32"},
+    phCopy: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMRegisterRevocationList(
+    hEnv: {"kind":"UInt32"},
+    wszRevocationList: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMCheckSecurity(
+    hEnv: {"kind":"UInt32"},
+    cLevel: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMRegisterContent(
+    fRegister: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMEncrypt(
+    hCryptoProvider: {"kind":"UInt32"},
+    iPosition: {"kind":"UInt32"},
+    cNumInBytes: {"kind":"UInt32"},
+    pbInData: {"kind""Ptr","child":{"kind":"Byte"}},
+    pcNumOutBytes: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pbOutData: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMDecrypt(
+    hCryptoProvider: {"kind":"UInt32"},
+    iPosition: {"kind":"UInt32"},
+    cNumInBytes: {"kind":"UInt32"},
+    pbInData: {"kind""Ptr","child":{"kind":"Byte"}},
+    pcNumOutBytes: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pbOutData: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMCreateBoundLicense(
+    hEnv: {"kind":"UInt32"},
+    pParams: {"kind""Ptr","child":Windows.Win32.RightsManagement.DRMBOUNDLICENSEPARAMS},
+    wszLicenseChain: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phBoundLicense: {"kind""Ptr","child":{"kind":"UInt32"}},
+    phErrorLog: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMCreateEnablingBitsDecryptor(
+    hBoundLicense: {"kind":"UInt32"},
+    wszRight: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hAuxLib: {"kind":"UInt32"},
+    wszAuxPlug: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phDecryptor: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMCreateEnablingBitsEncryptor(
+    hBoundLicense: {"kind":"UInt32"},
+    wszRight: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hAuxLib: {"kind":"UInt32"},
+    wszAuxPlug: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phEncryptor: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMAttest(
+    hEnablingPrincipal: {"kind":"UInt32"},
+    wszData: {"kind""Ptr","child":{"kind":"UInt16"}},
+    eType: Windows.Win32.RightsManagement.DRMATTESTTYPE,
+    pcAttestedBlob: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszAttestedBlob: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetTime(
+    hEnv: {"kind":"UInt32"},
+    eTimerIdType: Windows.Win32.RightsManagement.DRMTIMETYPE,
+    poTimeObject: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.SYSTEMTIME},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetInfo(
+    handle: {"kind":"UInt32"},
+    wszAttribute: {"kind""Ptr","child":{"kind":"UInt16"}},
+    peEncoding: {"kind""Ptr","child":Windows.Win32.RightsManagement.DRMENCODINGTYPE},
+    pcBuffer: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pbBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetEnvironmentInfo(
+    handle: {"kind":"UInt32"},
+    wszAttribute: {"kind""Ptr","child":{"kind":"UInt16"}},
+    peEncoding: {"kind""Ptr","child":Windows.Win32.RightsManagement.DRMENCODINGTYPE},
+    pcBuffer: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pbBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetProcAddress(
+    hLibrary: {"kind":"UInt32"},
+    wszProcName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppfnProcAddress: {"kind""Ptr","child":Windows.Win32.SystemServices.FARPROC},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetBoundLicenseObjectCount(
+    hQueryRoot: {"kind":"UInt32"},
+    wszSubObjectType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcSubObjects: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetBoundLicenseObject(
+    hQueryRoot: {"kind":"UInt32"},
+    wszSubObjectType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    iWhich: {"kind":"UInt32"},
+    phSubObject: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetBoundLicenseAttributeCount(
+    hQueryRoot: {"kind":"UInt32"},
+    wszAttribute: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcAttributes: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetBoundLicenseAttribute(
+    hQueryRoot: {"kind":"UInt32"},
+    wszAttribute: {"kind""Ptr","child":{"kind":"UInt16"}},
+    iWhich: {"kind":"UInt32"},
+    peEncoding: {"kind""Ptr","child":Windows.Win32.RightsManagement.DRMENCODINGTYPE},
+    pcBuffer: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pbBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMCreateClientSession(
+    pfnCallback: Windows.Win32.RightsManagement.DRMCALLBACK,
+    uCallbackVersion: {"kind":"UInt32"},
+    wszGroupIDProviderType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszGroupID: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phClient: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMIsActivated(
+    hClient: {"kind":"UInt32"},
+    uFlags: {"kind":"UInt32"},
+    pActServInfo: {"kind""Ptr","child":Windows.Win32.RightsManagement.DRM_ACTSERV_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMActivate(
+    hClient: {"kind":"UInt32"},
+    uFlags: {"kind":"UInt32"},
+    uLangID: {"kind":"UInt32"},
+    pActServInfo: {"kind""Ptr","child":Windows.Win32.RightsManagement.DRM_ACTSERV_INFO},
+    pvContext: {"kind""Ptr","child":{"kind":"Void"}},
+    hParentWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetServiceLocation(
+    hClient: {"kind":"UInt32"},
+    uServiceType: {"kind":"UInt32"},
+    uServiceLocation: {"kind":"UInt32"},
+    wszIssuanceLicense: {"kind""Ptr","child":{"kind":"UInt16"}},
+    puServiceURLLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszServiceURL: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMCreateLicenseStorageSession(
+    hEnv: {"kind":"UInt32"},
+    hDefaultLibrary: {"kind":"UInt32"},
+    hClient: {"kind":"UInt32"},
+    uFlags: {"kind":"UInt32"},
+    wszIssuanceLicense: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phLicenseStorage: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMAddLicense(
+    hLicenseStorage: {"kind":"UInt32"},
+    uFlags: {"kind":"UInt32"},
+    wszLicense: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMAcquireAdvisories(
+    hLicenseStorage: {"kind":"UInt32"},
+    wszLicense: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszURL: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pvContext: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMEnumerateLicense(
+    hSession: {"kind":"UInt32"},
+    uFlags: {"kind":"UInt32"},
+    uIndex: {"kind":"UInt32"},
+    pfSharedFlag: {"kind""Ptr","child":{"kind":"Int32"}},
+    puCertificateDataLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszCertificateData: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMAcquireLicense(
+    hSession: {"kind":"UInt32"},
+    uFlags: {"kind":"UInt32"},
+    wszGroupIdentityCredential: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszRequestedRights: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszCustomData: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszURL: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pvContext: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMDeleteLicense(
+    hSession: {"kind":"UInt32"},
+    wszLicenseId: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMCloseSession(
+    hSession: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMDuplicateSession(
+    hSessionIn: {"kind":"UInt32"},
+    phSessionOut: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetSecurityProvider(
+    uFlags: {"kind":"UInt32"},
+    puTypeLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    puPathLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMEncode(
+    wszAlgID: {"kind""Ptr","child":{"kind":"UInt16"}},
+    uDataLen: {"kind":"UInt32"},
+    pbDecodedData: {"kind""Ptr","child":{"kind":"Byte"}},
+    puEncodedStringLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszEncodedString: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMDecode(
+    wszAlgID: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszEncodedString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    puDecodedDataLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pbDecodedData: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMConstructCertificateChain(
+    cCertificates: {"kind":"UInt32"},
+    rgwszCertificates: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    pcChain: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszChain: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMParseUnboundLicense(
+    wszCertificate: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phQueryRoot: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMCloseQueryHandle(
+    hQuery: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetUnboundLicenseObjectCount(
+    hQueryRoot: {"kind":"UInt32"},
+    wszSubObjectType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcSubObjects: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetUnboundLicenseObject(
+    hQueryRoot: {"kind":"UInt32"},
+    wszSubObjectType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    iIndex: {"kind":"UInt32"},
+    phSubQuery: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetUnboundLicenseAttributeCount(
+    hQueryRoot: {"kind":"UInt32"},
+    wszAttributeType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcAttributes: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetUnboundLicenseAttribute(
+    hQueryRoot: {"kind":"UInt32"},
+    wszAttributeType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    iWhich: {"kind":"UInt32"},
+    peEncoding: {"kind""Ptr","child":Windows.Win32.RightsManagement.DRMENCODINGTYPE},
+    pcBuffer: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pbBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetCertificateChainCount(
+    wszChain: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcCertCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMDeconstructCertificateChain(
+    wszChain: {"kind""Ptr","child":{"kind":"UInt16"}},
+    iWhich: {"kind":"UInt32"},
+    pcCert: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszCert: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMVerify(
+    wszData: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcAttestedData: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszAttestedData: {"kind""Ptr","child":{"kind":"UInt16"}},
+    peType: {"kind""Ptr","child":Windows.Win32.RightsManagement.DRMATTESTTYPE},
+    pcPrincipal: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszPrincipal: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcManifest: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszManifest: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMCreateUser(
+    wszUserName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszUserId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszUserIdType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phUser: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMCreateRight(
+    wszRightName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pstFrom: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.SYSTEMTIME},
+    pstUntil: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.SYSTEMTIME},
+    cExtendedInfo: {"kind":"UInt32"},
+    pwszExtendedInfoName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    pwszExtendedInfoValue: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    phRight: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMCreateIssuanceLicense(
+    pstTimeFrom: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.SYSTEMTIME},
+    pstTimeUntil: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.SYSTEMTIME},
+    wszReferralInfoName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszReferralInfoURL: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hOwner: {"kind":"UInt32"},
+    wszIssuanceLicense: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hBoundLicense: {"kind":"UInt32"},
+    phIssuanceLicense: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMAddRightWithUser(
+    hIssuanceLicense: {"kind":"UInt32"},
+    hRight: {"kind":"UInt32"},
+    hUser: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMClearAllRights(
+    hIssuanceLicense: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMSetMetaData(
+    hIssuanceLicense: {"kind":"UInt32"},
+    wszContentId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszContentIdType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszSKUId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszSKUIdType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszContentType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszContentName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMSetUsagePolicy(
+    hIssuanceLicense: {"kind":"UInt32"},
+    eUsagePolicyType: Windows.Win32.RightsManagement.DRM_USAGEPOLICY_TYPE,
+    fDelete: Windows.Win32.SystemServices.BOOL,
+    fExclusion: Windows.Win32.SystemServices.BOOL,
+    wszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszMinVersion: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszMaxVersion: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszPublicKey: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszDigestAlgorithm: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pbDigest: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbDigest: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMSetRevocationPoint(
+    hIssuanceLicense: {"kind":"UInt32"},
+    fDelete: Windows.Win32.SystemServices.BOOL,
+    wszId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszIdType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszURL: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pstFrequency: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.SYSTEMTIME},
+    wszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszPublicKey: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMSetApplicationSpecificData(
+    hIssuanceLicense: {"kind":"UInt32"},
+    fDelete: Windows.Win32.SystemServices.BOOL,
+    wszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszValue: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMSetNameAndDescription(
+    hIssuanceLicense: {"kind":"UInt32"},
+    fDelete: Windows.Win32.SystemServices.BOOL,
+    lcid: {"kind":"UInt32"},
+    wszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszDescription: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMSetIntervalTime(
+    hIssuanceLicense: {"kind":"UInt32"},
+    cDays: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetIssuanceLicenseTemplate(
+    hIssuanceLicense: {"kind":"UInt32"},
+    puIssuanceLicenseTemplateLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszIssuanceLicenseTemplate: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetSignedIssuanceLicense(
+    hEnv: {"kind":"UInt32"},
+    hIssuanceLicense: {"kind":"UInt32"},
+    uFlags: {"kind":"UInt32"},
+    pbSymKey: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbSymKey: {"kind":"UInt32"},
+    wszSymKeyType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszClientLicensorCertificate: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pfnCallback: Windows.Win32.RightsManagement.DRMCALLBACK,
+    wszURL: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pvContext: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetSignedIssuanceLicenseEx(
+    hEnv: {"kind":"UInt32"},
+    hIssuanceLicense: {"kind":"UInt32"},
+    uFlags: {"kind":"UInt32"},
+    pbSymKey: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbSymKey: {"kind":"UInt32"},
+    wszSymKeyType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pvReserved: {"kind""Ptr","child":{"kind":"Void"}},
+    hEnablingPrincipal: {"kind":"UInt32"},
+    hBoundLicenseCLC: {"kind":"UInt32"},
+    pfnCallback: Windows.Win32.RightsManagement.DRMCALLBACK,
+    pvContext: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMClosePubHandle(
+    hPub: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMDuplicatePubHandle(
+    hPubIn: {"kind":"UInt32"},
+    phPubOut: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetUserInfo(
+    hUser: {"kind":"UInt32"},
+    puUserNameLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszUserName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    puUserIdLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszUserId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    puUserIdTypeLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszUserIdType: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetRightInfo(
+    hRight: {"kind":"UInt32"},
+    puRightNameLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszRightName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pstFrom: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.SYSTEMTIME},
+    pstUntil: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.SYSTEMTIME},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetRightExtendedInfo(
+    hRight: {"kind":"UInt32"},
+    uIndex: {"kind":"UInt32"},
+    puExtendedInfoNameLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszExtendedInfoName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    puExtendedInfoValueLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszExtendedInfoValue: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetUsers(
+    hIssuanceLicense: {"kind":"UInt32"},
+    uIndex: {"kind":"UInt32"},
+    phUser: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetUserRights(
+    hIssuanceLicense: {"kind":"UInt32"},
+    hUser: {"kind":"UInt32"},
+    uIndex: {"kind":"UInt32"},
+    phRight: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetMetaData(
+    hIssuanceLicense: {"kind":"UInt32"},
+    puContentIdLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszContentId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    puContentIdTypeLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszContentIdType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    puSKUIdLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszSKUId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    puSKUIdTypeLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszSKUIdType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    puContentTypeLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszContentType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    puContentNameLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszContentName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetApplicationSpecificData(
+    hIssuanceLicense: {"kind":"UInt32"},
+    uIndex: {"kind":"UInt32"},
+    puNameLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    puValueLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszValue: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetIssuanceLicenseInfo(
+    hIssuanceLicense: {"kind":"UInt32"},
+    pstTimeFrom: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.SYSTEMTIME},
+    pstTimeUntil: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.SYSTEMTIME},
+    uFlags: {"kind":"UInt32"},
+    puDistributionPointNameLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszDistributionPointName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    puDistributionPointURLLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszDistributionPointURL: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phOwner: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pfOfficial: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetRevocationPoint(
+    hIssuanceLicense: {"kind":"UInt32"},
+    puIdLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    puIdTypeLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszIdType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    puURLLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszRL: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pstFrequency: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.SYSTEMTIME},
+    puNameLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    puPublicKeyLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszPublicKey: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetUsagePolicy(
+    hIssuanceLicense: {"kind":"UInt32"},
+    uIndex: {"kind":"UInt32"},
+    peUsagePolicyType: {"kind""Ptr","child":Windows.Win32.RightsManagement.DRM_USAGEPOLICY_TYPE},
+    pfExclusion: {"kind""Ptr","child":{"kind":"Int32"}},
+    puNameLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    puMinVersionLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszMinVersion: {"kind""Ptr","child":{"kind":"UInt16"}},
+    puMaxVersionLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszMaxVersion: {"kind""Ptr","child":{"kind":"UInt16"}},
+    puPublicKeyLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszPublicKey: {"kind""Ptr","child":{"kind":"UInt16"}},
+    puDigestAlgorithmLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszDigestAlgorithm: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcbDigest: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pbDigest: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetNameAndDescription(
+    hIssuanceLicense: {"kind":"UInt32"},
+    uIndex: {"kind":"UInt32"},
+    pulcid: {"kind""Ptr","child":{"kind":"UInt32"}},
+    puNameLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    puDescriptionLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszDescription: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetOwnerLicense(
+    hIssuanceLicense: {"kind":"UInt32"},
+    puOwnerLicenseLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wszOwnerLicense: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMGetIntervalTime(
+    hIssuanceLicense: {"kind":"UInt32"},
+    pcDays: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMRepair(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMRegisterProtectedWindow(
+    hEnv: {"kind":"UInt32"},
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMIsWindowProtected(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    pfProtected: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msdrm" fn DRMAcquireIssuanceLicenseTemplate(
+    hClient: {"kind":"UInt32"},
+    uFlags: {"kind":"UInt32"},
+    pvReserved: {"kind""Ptr","child":{"kind":"Void"}},
+    cTemplates: {"kind":"UInt32"},
+    pwszTemplateIds: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    wszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pvContext: {"kind""Ptr","child":{"kind":"Void"}},
+],
+
+"unicode_aliases": [
+]}

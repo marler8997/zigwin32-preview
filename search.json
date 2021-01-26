@@ -1,0 +1,2439 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: IWordSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWordSink = *opaque{
+    // TODO: Method 'PutWord'
+    // TODO: Method 'PutAltWord'
+    // TODO: Method 'StartAltPhrase'
+    // TODO: Method 'EndAltPhrase'
+    // TODO: Method 'PutBreak'
+};
+// --------------------------------------------------------
+// Type: PFNFILLTEXTBUFFER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFNFILLTEXTBUFFER = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: TEXT_SOURCE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TEXT_SOURCE = extern struct {
+    pfnFillTextBuffer: Windows.Win32.Search.PFNFILLTEXTBUFFER,
+    awcBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    iEnd: {"kind":"UInt32"},
+    iCur: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: IWordBreaker
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWordBreaker = *opaque{
+    // TODO: Method 'Init'
+    // TODO: Method 'BreakText'
+    // TODO: Method 'ComposePhrase'
+    // TODO: Method 'GetLicenseToUse'
+};
+// --------------------------------------------------------
+// Type: IWordFormSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWordFormSink = *opaque{
+    // TODO: Method 'PutAltWord'
+    // TODO: Method 'PutWord'
+};
+// --------------------------------------------------------
+// Type: IStemmer
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IStemmer = *opaque{
+    // TODO: Method 'Init'
+    // TODO: Method 'GenerateWordForms'
+    // TODO: Method 'GetLicenseToUse'
+};
+// --------------------------------------------------------
+// Type: ISimpleCommandCreator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISimpleCommandCreator = *opaque{
+    // TODO: Method 'CreateICommand'
+    // TODO: Method 'VerifyCatalog'
+    // TODO: Method 'GetDefaultCatalog'
+};
+// --------------------------------------------------------
+// Type: IColumnMapper
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IColumnMapper = *opaque{
+    // TODO: Method 'GetPropInfoFromName'
+    // TODO: Method 'GetPropInfoFromId'
+    // TODO: Method 'EnumPropInfo'
+    // TODO: Method 'IsMapUpToDate'
+};
+// --------------------------------------------------------
+// Type: IColumnMapperCreator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IColumnMapperCreator = *opaque{
+    // TODO: Method 'GetColumnMapper'
+};
+// --------------------------------------------------------
+// Type: CSearchManager
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const CSearchManager = opaque {
+};
+// --------------------------------------------------------
+// Type: CSearchRoot
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const CSearchRoot = opaque {
+};
+// --------------------------------------------------------
+// Type: CSearchScopeRule
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const CSearchScopeRule = opaque {
+};
+// --------------------------------------------------------
+// Type: FilterRegistration
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FilterRegistration = opaque {
+};
+// --------------------------------------------------------
+// Type: FILTERED_DATA_SOURCES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FILTERED_DATA_SOURCES = extern struct {
+    pwcsExtension: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwcsMime: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pClsid: {"kind""Ptr","child":Guid},
+    pwcsOverride: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: ILoadFilter
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ILoadFilter = *opaque{
+    // TODO: Method 'LoadIFilter'
+    // TODO: Method 'LoadIFilterFromStorage'
+    // TODO: Method 'LoadIFilterFromStream'
+};
+// --------------------------------------------------------
+// Type: ILoadFilterWithPrivateComActivation
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ILoadFilterWithPrivateComActivation = *opaque{
+    // TODO: Method 'LoadIFilterWithPrivateComActivation'
+};
+// --------------------------------------------------------
+// Type: CONDITION_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CONDITION_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: CONDITION_OPERATION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CONDITION_OPERATION = *opaque{
+};
+// --------------------------------------------------------
+// Type: IRichChunk
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRichChunk = *opaque{
+    // TODO: Method 'GetData'
+};
+// --------------------------------------------------------
+// Type: ICondition
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICondition = *opaque{
+    // TODO: Method 'GetConditionType'
+    // TODO: Method 'GetSubConditions'
+    // TODO: Method 'GetComparisonInfo'
+    // TODO: Method 'GetValueType'
+    // TODO: Method 'GetValueNormalization'
+    // TODO: Method 'GetInputTerms'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: ICondition2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICondition2 = *opaque{
+    // TODO: Method 'GetLocale'
+    // TODO: Method 'GetLeafConditionInfo'
+};
+// --------------------------------------------------------
+// Type: IRowsetExactScroll
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const IRowsetExactScroll = opaque {
+};
+// --------------------------------------------------------
+// Type: DB_NUMERIC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DB_NUMERIC = extern struct {
+    precision: {"kind":"Byte"},
+    scale: {"kind":"Byte"},
+    sign: {"kind":"Byte"},
+    val: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: DBVECTOR
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const DBVECTOR = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBDATE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DBDATE = extern struct {
+    year: {"kind":"Int16"},
+    month: {"kind":"UInt16"},
+    day: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: DBTIME
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DBTIME = extern struct {
+    hour: {"kind":"UInt16"},
+    minute: {"kind":"UInt16"},
+    second: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: DBTIMESTAMP
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const DBTIMESTAMP = *opaque{
+};
+// --------------------------------------------------------
+// Type: DB_VARNUMERIC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DB_VARNUMERIC = extern struct {
+    precision: {"kind":"Byte"},
+    scale: {"kind":"SByte"},
+    sign: {"kind":"Byte"},
+    val: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: SEC_OBJECT_ELEMENT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const SEC_OBJECT_ELEMENT = *opaque{
+};
+// --------------------------------------------------------
+// Type: SEC_OBJECT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const SEC_OBJECT = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBIMPLICITSESSION
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const DBIMPLICITSESSION = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBTYPEENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBTYPEENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBTYPEENUM15
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBTYPEENUM15 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBTYPEENUM20
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBTYPEENUM20 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBPARTENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBPARTENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBPARAMIOENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBPARAMIOENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBBINDFLAGENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBBINDFLAGENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBMEMOWNERENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBMEMOWNERENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBOBJECT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const DBOBJECT = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBSTATUSENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBSTATUSENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBSTATUSENUM20
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBSTATUSENUM20 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBSTATUSENUM21
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBSTATUSENUM21 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBBINDURLFLAGENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBBINDURLFLAGENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBBINDURLSTATUSENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBBINDURLSTATUSENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBSTATUSENUM25
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBSTATUSENUM25 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBBINDEXT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const DBBINDEXT = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBBINDING
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const DBBINDING = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBROWSTATUSENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBROWSTATUSENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBROWSTATUSENUM20
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBROWSTATUSENUM20 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBSTATUSENUM26
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBSTATUSENUM26 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBFAILUREINFO
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const DBFAILUREINFO = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBCOLUMNFLAGSENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBCOLUMNFLAGSENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBCOLUMNFLAGSENUM20
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBCOLUMNFLAGSENUM20 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBCOLUMNFLAGS15ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBCOLUMNFLAGS15ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBCOLUMNFLAGSENUM21
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBCOLUMNFLAGSENUM21 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBCOLUMNFLAGSENUM26
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBCOLUMNFLAGSENUM26 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBTABLESTATISTICSTYPE26
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBTABLESTATISTICSTYPE26 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBCOLUMNINFO
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const DBCOLUMNINFO = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBBOOKMARK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBBOOKMARK = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBPROPENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBPROPENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBPROPENUM15
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBPROPENUM15 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBPROPENUM20
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBPROPENUM20 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBPROPENUM21
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBPROPENUM21 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBPROPENUM25
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBPROPENUM25 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBPROPENUM26
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBPROPENUM26 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBPARAMS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const DBPARAMS = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBPARAMFLAGSENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBPARAMFLAGSENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBPARAMFLAGSENUM20
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBPARAMFLAGSENUM20 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBPARAMINFO
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const DBPARAMINFO = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBPROPIDSET
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const DBPROPIDSET = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBPROPFLAGSENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBPROPFLAGSENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBPROPFLAGSENUM21
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBPROPFLAGSENUM21 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBPROPFLAGSENUM25
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBPROPFLAGSENUM25 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBPROPFLAGSENUM26
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBPROPFLAGSENUM26 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBPROPINFO
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const DBPROPINFO = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBPROPINFOSET
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const DBPROPINFOSET = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBPROPOPTIONSENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBPROPOPTIONSENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBPROPSTATUSENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBPROPSTATUSENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBPROPSTATUSENUM21
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBPROPSTATUSENUM21 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBPROP
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const DBPROP = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBPROPSET
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const DBPROPSET = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBINDEX_COL_ORDERENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBINDEX_COL_ORDERENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBINDEXCOLUMNDESC
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const DBINDEXCOLUMNDESC = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBCOLUMNDESC
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const DBCOLUMNDESC = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBCOLUMNACCESS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const DBCOLUMNACCESS = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBCOLUMNDESCFLAGSENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBCOLUMNDESCFLAGSENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBEVENTPHASEENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBEVENTPHASEENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBREASONENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBREASONENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBREASONENUM15
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBREASONENUM15 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBCOMPAREOPSENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBCOMPAREOPSENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBCOMPAREOPSENUM20
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBCOMPAREOPSENUM20 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBASYNCHOPENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBASYNCHOPENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBASYNCHPHASEENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBASYNCHPHASEENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBSORTENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBSORTENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBCOMMANDPERSISTFLAGENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBCOMMANDPERSISTFLAGENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBCOMMANDPERSISTFLAGENUM21
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBCOMMANDPERSISTFLAGENUM21 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBCONSTRAINTTYPEENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBCONSTRAINTTYPEENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBUPDELRULEENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBUPDELRULEENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBMATCHTYPEENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBMATCHTYPEENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBDEFERRABILITYENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBDEFERRABILITYENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBCONSTRAINTDESC
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const DBCONSTRAINTDESC = *opaque{
+};
+// --------------------------------------------------------
+// Type: MDAXISINFO
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const MDAXISINFO = *opaque{
+};
+// --------------------------------------------------------
+// Type: RMTPACK
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const RMTPACK = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBACCESSORFLAGSENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBACCESSORFLAGSENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBBINDSTATUSENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBBINDSTATUSENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: IAccessor
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAccessor = *opaque{
+    // TODO: Method 'AddRefAccessor'
+    // TODO: Method 'CreateAccessor'
+    // TODO: Method 'GetBindings'
+    // TODO: Method 'ReleaseAccessor'
+};
+// --------------------------------------------------------
+// Type: IRowset
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRowset = *opaque{
+    // TODO: Method 'AddRefRows'
+    // TODO: Method 'GetData'
+    // TODO: Method 'GetNextRows'
+    // TODO: Method 'ReleaseRows'
+    // TODO: Method 'RestartPosition'
+};
+// --------------------------------------------------------
+// Type: IRowsetInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRowsetInfo = *opaque{
+    // TODO: Method 'GetProperties'
+    // TODO: Method 'GetReferencedRowset'
+    // TODO: Method 'GetSpecification'
+};
+// --------------------------------------------------------
+// Type: DBCOMPAREENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBCOMPAREENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: IRowsetLocate
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRowsetLocate = *opaque{
+    // TODO: Method 'Compare'
+    // TODO: Method 'GetRowsAt'
+    // TODO: Method 'GetRowsByBookmark'
+    // TODO: Method 'Hash'
+};
+// --------------------------------------------------------
+// Type: IRowsetResynch
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRowsetResynch = *opaque{
+    // TODO: Method 'GetVisibleData'
+    // TODO: Method 'ResynchRows'
+};
+// --------------------------------------------------------
+// Type: IRowsetScroll
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRowsetScroll = *opaque{
+    // TODO: Method 'GetApproximatePosition'
+    // TODO: Method 'GetRowsAtRatio'
+};
+// --------------------------------------------------------
+// Type: IChapteredRowset
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IChapteredRowset = *opaque{
+    // TODO: Method 'AddRefChapter'
+    // TODO: Method 'ReleaseChapter'
+};
+// --------------------------------------------------------
+// Type: IRowsetFind
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRowsetFind = *opaque{
+    // TODO: Method 'FindNextRow'
+};
+// --------------------------------------------------------
+// Type: DBPOSITIONFLAGSENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBPOSITIONFLAGSENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: IRowPosition
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRowPosition = *opaque{
+    // TODO: Method 'ClearRowPosition'
+    // TODO: Method 'GetRowPosition'
+    // TODO: Method 'GetRowset'
+    // TODO: Method 'Initialize'
+    // TODO: Method 'SetRowPosition'
+};
+// --------------------------------------------------------
+// Type: IRowPositionChange
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRowPositionChange = *opaque{
+    // TODO: Method 'OnRowPositionChange'
+};
+// --------------------------------------------------------
+// Type: IViewRowset
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IViewRowset = *opaque{
+    // TODO: Method 'GetSpecification'
+    // TODO: Method 'OpenViewRowset'
+};
+// --------------------------------------------------------
+// Type: IViewChapter
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IViewChapter = *opaque{
+    // TODO: Method 'GetSpecification'
+    // TODO: Method 'OpenViewChapter'
+};
+// --------------------------------------------------------
+// Type: IViewSort
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IViewSort = *opaque{
+    // TODO: Method 'GetSortOrder'
+    // TODO: Method 'SetSortOrder'
+};
+// --------------------------------------------------------
+// Type: IViewFilter
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IViewFilter = *opaque{
+    // TODO: Method 'GetFilter'
+    // TODO: Method 'GetFilterBindings'
+    // TODO: Method 'SetFilter'
+};
+// --------------------------------------------------------
+// Type: IRowsetView
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRowsetView = *opaque{
+    // TODO: Method 'CreateView'
+    // TODO: Method 'GetView'
+};
+// --------------------------------------------------------
+// Type: IRowsetChange
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRowsetChange = *opaque{
+    // TODO: Method 'DeleteRows'
+    // TODO: Method 'SetData'
+    // TODO: Method 'InsertRow'
+};
+// --------------------------------------------------------
+// Type: DBPENDINGSTATUSENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBPENDINGSTATUSENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: IRowsetUpdate
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRowsetUpdate = *opaque{
+    // TODO: Method 'GetOriginalData'
+    // TODO: Method 'GetPendingRows'
+    // TODO: Method 'GetRowStatus'
+    // TODO: Method 'Undo'
+    // TODO: Method 'Update'
+};
+// --------------------------------------------------------
+// Type: IRowsetIdentity
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRowsetIdentity = *opaque{
+    // TODO: Method 'IsSameRow'
+};
+// --------------------------------------------------------
+// Type: IRowsetNotify
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRowsetNotify = *opaque{
+    // TODO: Method 'OnFieldChange'
+    // TODO: Method 'OnRowChange'
+    // TODO: Method 'OnRowsetChange'
+};
+// --------------------------------------------------------
+// Type: DBSEEKENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBSEEKENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBRANGEENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBRANGEENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBRANGEENUM20
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBRANGEENUM20 = *opaque{
+};
+// --------------------------------------------------------
+// Type: IRowsetIndex
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRowsetIndex = *opaque{
+    // TODO: Method 'GetIndexInfo'
+    // TODO: Method 'Seek'
+    // TODO: Method 'SetRange'
+};
+// --------------------------------------------------------
+// Type: ICommand
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICommand = *opaque{
+    // TODO: Method 'Cancel'
+    // TODO: Method 'Execute'
+    // TODO: Method 'GetDBSession'
+};
+// --------------------------------------------------------
+// Type: DBRESULTFLAGENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBRESULTFLAGENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: IMultipleResults
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IMultipleResults = *opaque{
+    // TODO: Method 'GetResult'
+};
+// --------------------------------------------------------
+// Type: DBCONVERTFLAGSENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBCONVERTFLAGSENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBCONVERTFLAGSENUM20
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBCONVERTFLAGSENUM20 = *opaque{
+};
+// --------------------------------------------------------
+// Type: IConvertType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IConvertType = *opaque{
+    // TODO: Method 'CanConvert'
+};
+// --------------------------------------------------------
+// Type: ICommandPrepare
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICommandPrepare = *opaque{
+    // TODO: Method 'Prepare'
+    // TODO: Method 'Unprepare'
+};
+// --------------------------------------------------------
+// Type: ICommandProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICommandProperties = *opaque{
+    // TODO: Method 'GetProperties'
+    // TODO: Method 'SetProperties'
+};
+// --------------------------------------------------------
+// Type: ICommandText
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICommandText = *opaque{
+    // TODO: Method 'GetCommandText'
+    // TODO: Method 'SetCommandText'
+};
+// --------------------------------------------------------
+// Type: DBPARAMBINDINFO
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const DBPARAMBINDINFO = *opaque{
+};
+// --------------------------------------------------------
+// Type: ICommandWithParameters
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICommandWithParameters = *opaque{
+    // TODO: Method 'GetParameterInfo'
+    // TODO: Method 'MapParameterNames'
+    // TODO: Method 'SetParameterInfo'
+};
+// --------------------------------------------------------
+// Type: IColumnsRowset
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IColumnsRowset = *opaque{
+    // TODO: Method 'GetAvailableColumns'
+    // TODO: Method 'GetColumnsRowset'
+};
+// --------------------------------------------------------
+// Type: IColumnsInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IColumnsInfo = *opaque{
+    // TODO: Method 'GetColumnInfo'
+    // TODO: Method 'MapColumnIDs'
+};
+// --------------------------------------------------------
+// Type: IDBCreateCommand
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDBCreateCommand = *opaque{
+    // TODO: Method 'CreateCommand'
+};
+// --------------------------------------------------------
+// Type: IDBCreateSession
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDBCreateSession = *opaque{
+    // TODO: Method 'CreateSession'
+};
+// --------------------------------------------------------
+// Type: DBSOURCETYPEENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBSOURCETYPEENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBSOURCETYPEENUM20
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBSOURCETYPEENUM20 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBSOURCETYPEENUM25
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBSOURCETYPEENUM25 = *opaque{
+};
+// --------------------------------------------------------
+// Type: ISourcesRowset
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISourcesRowset = *opaque{
+    // TODO: Method 'GetSourcesRowset'
+};
+// --------------------------------------------------------
+// Type: IDBProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDBProperties = *opaque{
+    // TODO: Method 'GetProperties'
+    // TODO: Method 'GetPropertyInfo'
+    // TODO: Method 'SetProperties'
+};
+// --------------------------------------------------------
+// Type: IDBInitialize
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDBInitialize = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'Uninitialize'
+};
+// --------------------------------------------------------
+// Type: DBLITERALENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBLITERALENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBLITERALENUM20
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBLITERALENUM20 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBLITERALENUM21
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBLITERALENUM21 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBLITERALINFO
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const DBLITERALINFO = *opaque{
+};
+// --------------------------------------------------------
+// Type: IDBInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDBInfo = *opaque{
+    // TODO: Method 'GetKeywords'
+    // TODO: Method 'GetLiteralInfo'
+};
+// --------------------------------------------------------
+// Type: IDBDataSourceAdmin
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDBDataSourceAdmin = *opaque{
+    // TODO: Method 'CreateDataSource'
+    // TODO: Method 'DestroyDataSource'
+    // TODO: Method 'GetCreationProperties'
+    // TODO: Method 'ModifyDataSource'
+};
+// --------------------------------------------------------
+// Type: IDBAsynchNotify
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDBAsynchNotify = *opaque{
+    // TODO: Method 'OnLowResource'
+    // TODO: Method 'OnProgress'
+    // TODO: Method 'OnStop'
+};
+// --------------------------------------------------------
+// Type: IDBAsynchStatus
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDBAsynchStatus = *opaque{
+    // TODO: Method 'Abort'
+    // TODO: Method 'GetStatus'
+};
+// --------------------------------------------------------
+// Type: ISessionProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISessionProperties = *opaque{
+    // TODO: Method 'GetProperties'
+    // TODO: Method 'SetProperties'
+};
+// --------------------------------------------------------
+// Type: IIndexDefinition
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IIndexDefinition = *opaque{
+    // TODO: Method 'CreateIndex'
+    // TODO: Method 'DropIndex'
+};
+// --------------------------------------------------------
+// Type: ITableDefinition
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITableDefinition = *opaque{
+    // TODO: Method 'CreateTable'
+    // TODO: Method 'DropTable'
+    // TODO: Method 'AddColumn'
+    // TODO: Method 'DropColumn'
+};
+// --------------------------------------------------------
+// Type: IOpenRowset
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpenRowset = *opaque{
+    // TODO: Method 'OpenRowset'
+};
+// --------------------------------------------------------
+// Type: IDBSchemaRowset
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDBSchemaRowset = *opaque{
+    // TODO: Method 'GetRowset'
+    // TODO: Method 'GetSchemas'
+};
+// --------------------------------------------------------
+// Type: IMDDataset
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IMDDataset = *opaque{
+    // TODO: Method 'FreeAxisInfo'
+    // TODO: Method 'GetAxisInfo'
+    // TODO: Method 'GetAxisRowset'
+    // TODO: Method 'GetCellData'
+    // TODO: Method 'GetSpecification'
+};
+// --------------------------------------------------------
+// Type: IMDFind
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IMDFind = *opaque{
+    // TODO: Method 'FindCell'
+    // TODO: Method 'FindTuple'
+};
+// --------------------------------------------------------
+// Type: IMDRangeRowset
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IMDRangeRowset = *opaque{
+    // TODO: Method 'GetRangeRowset'
+};
+// --------------------------------------------------------
+// Type: IAlterTable
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAlterTable = *opaque{
+    // TODO: Method 'AlterColumn'
+    // TODO: Method 'AlterTable'
+};
+// --------------------------------------------------------
+// Type: IAlterIndex
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAlterIndex = *opaque{
+    // TODO: Method 'AlterIndex'
+};
+// --------------------------------------------------------
+// Type: IRowsetChapterMember
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRowsetChapterMember = *opaque{
+    // TODO: Method 'IsRowInChapter'
+};
+// --------------------------------------------------------
+// Type: ICommandPersist
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICommandPersist = *opaque{
+    // TODO: Method 'DeleteCommand'
+    // TODO: Method 'GetCurrentCommand'
+    // TODO: Method 'LoadCommand'
+    // TODO: Method 'SaveCommand'
+};
+// --------------------------------------------------------
+// Type: IRowsetRefresh
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRowsetRefresh = *opaque{
+    // TODO: Method 'RefreshVisibleData'
+    // TODO: Method 'GetLastVisibleData'
+};
+// --------------------------------------------------------
+// Type: IParentRowset
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IParentRowset = *opaque{
+    // TODO: Method 'GetChildRowset'
+};
+// --------------------------------------------------------
+// Type: ERRORINFO
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const ERRORINFO = *opaque{
+};
+// --------------------------------------------------------
+// Type: IErrorRecords
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IErrorRecords = *opaque{
+    // TODO: Method 'AddErrorRecord'
+    // TODO: Method 'GetBasicErrorInfo'
+    // TODO: Method 'GetCustomErrorObject'
+    // TODO: Method 'GetErrorInfo'
+    // TODO: Method 'GetErrorParameters'
+    // TODO: Method 'GetRecordCount'
+};
+// --------------------------------------------------------
+// Type: IErrorLookup
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IErrorLookup = *opaque{
+    // TODO: Method 'GetErrorDescription'
+    // TODO: Method 'GetHelpInfo'
+    // TODO: Method 'ReleaseErrors'
+};
+// --------------------------------------------------------
+// Type: ISQLErrorInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISQLErrorInfo = *opaque{
+    // TODO: Method 'GetSQLInfo'
+};
+// --------------------------------------------------------
+// Type: IGetDataSource
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IGetDataSource = *opaque{
+    // TODO: Method 'GetDataSource'
+};
+// --------------------------------------------------------
+// Type: ITransactionLocal
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITransactionLocal = *opaque{
+    // TODO: Method 'GetOptionsObject'
+    // TODO: Method 'StartTransaction'
+};
+// --------------------------------------------------------
+// Type: ITransactionJoin
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITransactionJoin = *opaque{
+    // TODO: Method 'GetOptionsObject'
+    // TODO: Method 'JoinTransaction'
+};
+// --------------------------------------------------------
+// Type: ITransactionObject
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITransactionObject = *opaque{
+    // TODO: Method 'GetTransactionObject'
+};
+// --------------------------------------------------------
+// Type: ITrusteeAdmin
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITrusteeAdmin = *opaque{
+    // TODO: Method 'CompareTrustees'
+    // TODO: Method 'CreateTrustee'
+    // TODO: Method 'DeleteTrustee'
+    // TODO: Method 'SetTrusteeProperties'
+    // TODO: Method 'GetTrusteeProperties'
+};
+// --------------------------------------------------------
+// Type: ITrusteeGroupAdmin
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITrusteeGroupAdmin = *opaque{
+    // TODO: Method 'AddMember'
+    // TODO: Method 'DeleteMember'
+    // TODO: Method 'IsMember'
+    // TODO: Method 'GetMembers'
+    // TODO: Method 'GetMemberships'
+};
+// --------------------------------------------------------
+// Type: IObjectAccessControl
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IObjectAccessControl = *opaque{
+    // TODO: Method 'GetObjectAccessRights'
+    // TODO: Method 'GetObjectOwner'
+    // TODO: Method 'IsObjectAccessAllowed'
+    // TODO: Method 'SetObjectAccessRights'
+    // TODO: Method 'SetObjectOwner'
+};
+// --------------------------------------------------------
+// Type: ACCESS_MASKENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ACCESS_MASKENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ISecurityInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISecurityInfo = *opaque{
+    // TODO: Method 'GetCurrentTrustee'
+    // TODO: Method 'GetObjectTypes'
+    // TODO: Method 'GetPermissions'
+};
+// --------------------------------------------------------
+// Type: ITableCreation
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITableCreation = *opaque{
+    // TODO: Method 'GetTableDefinition'
+};
+// --------------------------------------------------------
+// Type: ITableDefinitionWithConstraints
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITableDefinitionWithConstraints = *opaque{
+    // TODO: Method 'AddConstraint'
+    // TODO: Method 'CreateTableWithConstraints'
+    // TODO: Method 'DropConstraint'
+};
+// --------------------------------------------------------
+// Type: IRow
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRow = *opaque{
+    // TODO: Method 'GetColumns'
+    // TODO: Method 'GetSourceRowset'
+    // TODO: Method 'Open'
+};
+// --------------------------------------------------------
+// Type: IRowChange
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRowChange = *opaque{
+    // TODO: Method 'SetColumns'
+};
+// --------------------------------------------------------
+// Type: IRowSchemaChange
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRowSchemaChange = *opaque{
+    // TODO: Method 'DeleteColumns'
+    // TODO: Method 'AddColumns'
+};
+// --------------------------------------------------------
+// Type: IGetRow
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IGetRow = *opaque{
+    // TODO: Method 'GetRowFromHROW'
+    // TODO: Method 'GetURLFromHROW'
+};
+// --------------------------------------------------------
+// Type: IBindResource
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IBindResource = *opaque{
+    // TODO: Method 'Bind'
+};
+// --------------------------------------------------------
+// Type: DBCOPYFLAGSENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBCOPYFLAGSENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBMOVEFLAGSENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBMOVEFLAGSENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBDELETEFLAGSENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBDELETEFLAGSENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: IScopedOperations
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IScopedOperations = *opaque{
+    // TODO: Method 'Copy'
+    // TODO: Method 'Move'
+    // TODO: Method 'Delete'
+    // TODO: Method 'OpenRowset'
+};
+// --------------------------------------------------------
+// Type: ICreateRow
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICreateRow = *opaque{
+    // TODO: Method 'CreateRow'
+};
+// --------------------------------------------------------
+// Type: IDBBinderProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDBBinderProperties = *opaque{
+    // TODO: Method 'Reset'
+};
+// --------------------------------------------------------
+// Type: IColumnsInfo2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IColumnsInfo2 = *opaque{
+    // TODO: Method 'GetRestrictedColumnInfo'
+};
+// --------------------------------------------------------
+// Type: IRegisterProvider
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRegisterProvider = *opaque{
+    // TODO: Method 'GetURLMapping'
+    // TODO: Method 'SetURLMapping'
+    // TODO: Method 'UnregisterProvider'
+};
+// --------------------------------------------------------
+// Type: IGetSession
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IGetSession = *opaque{
+    // TODO: Method 'GetSession'
+};
+// --------------------------------------------------------
+// Type: IGetSourceRow
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IGetSourceRow = *opaque{
+    // TODO: Method 'GetSourceRow'
+};
+// --------------------------------------------------------
+// Type: IRowsetCurrentIndex
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRowsetCurrentIndex = *opaque{
+    // TODO: Method 'GetIndex'
+    // TODO: Method 'SetIndex'
+};
+// --------------------------------------------------------
+// Type: ICommandStream
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICommandStream = *opaque{
+    // TODO: Method 'GetCommandStream'
+    // TODO: Method 'SetCommandStream'
+};
+// --------------------------------------------------------
+// Type: IRowsetBookmark
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRowsetBookmark = *opaque{
+    // TODO: Method 'PositionOnBookmark'
+};
+// --------------------------------------------------------
+// Type: QueryParser
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const QueryParser = opaque {
+};
+// --------------------------------------------------------
+// Type: NegationCondition
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const NegationCondition = opaque {
+};
+// --------------------------------------------------------
+// Type: CompoundCondition
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const CompoundCondition = opaque {
+};
+// --------------------------------------------------------
+// Type: LeafCondition
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const LeafCondition = opaque {
+};
+// --------------------------------------------------------
+// Type: ConditionFactory
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const ConditionFactory = opaque {
+};
+// --------------------------------------------------------
+// Type: Interval
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const Interval = opaque {
+};
+// --------------------------------------------------------
+// Type: QueryParserManager
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const QueryParserManager = opaque {
+};
+// --------------------------------------------------------
+// Type: STRUCTURED_QUERY_SYNTAX
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const STRUCTURED_QUERY_SYNTAX = *opaque{
+};
+// --------------------------------------------------------
+// Type: STRUCTURED_QUERY_SINGLE_OPTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const STRUCTURED_QUERY_SINGLE_OPTION = *opaque{
+};
+// --------------------------------------------------------
+// Type: STRUCTURED_QUERY_MULTIOPTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const STRUCTURED_QUERY_MULTIOPTION = *opaque{
+};
+// --------------------------------------------------------
+// Type: STRUCTURED_QUERY_PARSE_ERROR
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const STRUCTURED_QUERY_PARSE_ERROR = *opaque{
+};
+// --------------------------------------------------------
+// Type: STRUCTURED_QUERY_RESOLVE_OPTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const STRUCTURED_QUERY_RESOLVE_OPTION = *opaque{
+};
+// --------------------------------------------------------
+// Type: CASE_REQUIREMENT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CASE_REQUIREMENT = *opaque{
+};
+// --------------------------------------------------------
+// Type: INTERVAL_LIMIT_KIND
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const INTERVAL_LIMIT_KIND = *opaque{
+};
+// --------------------------------------------------------
+// Type: QUERY_PARSER_MANAGER_OPTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const QUERY_PARSER_MANAGER_OPTION = *opaque{
+};
+// --------------------------------------------------------
+// Type: IQueryParser
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IQueryParser = *opaque{
+    // TODO: Method 'Parse'
+    // TODO: Method 'SetOption'
+    // TODO: Method 'GetOption'
+    // TODO: Method 'SetMultiOption'
+    // TODO: Method 'GetSchemaProvider'
+    // TODO: Method 'RestateToString'
+    // TODO: Method 'ParsePropertyValue'
+    // TODO: Method 'RestatePropertyValueToString'
+};
+// --------------------------------------------------------
+// Type: IConditionFactory
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IConditionFactory = *opaque{
+    // TODO: Method 'MakeNot'
+    // TODO: Method 'MakeAndOr'
+    // TODO: Method 'MakeLeaf'
+    // TODO: Method 'Resolve'
+};
+// --------------------------------------------------------
+// Type: IQuerySolution
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IQuerySolution = *opaque{
+    // TODO: Method 'GetQuery'
+    // TODO: Method 'GetErrors'
+    // TODO: Method 'GetLexicalData'
+};
+// --------------------------------------------------------
+// Type: CONDITION_CREATION_OPTIONS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CONDITION_CREATION_OPTIONS = *opaque{
+};
+// --------------------------------------------------------
+// Type: IConditionFactory2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IConditionFactory2 = *opaque{
+    // TODO: Method 'CreateTrueFalse'
+    // TODO: Method 'CreateNegation'
+    // TODO: Method 'CreateCompoundFromObjectArray'
+    // TODO: Method 'CreateCompoundFromArray'
+    // TODO: Method 'CreateStringLeaf'
+    // TODO: Method 'CreateIntegerLeaf'
+    // TODO: Method 'CreateBooleanLeaf'
+    // TODO: Method 'CreateLeaf'
+    // TODO: Method 'ResolveCondition'
+};
+// --------------------------------------------------------
+// Type: IConditionGenerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IConditionGenerator = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'RecognizeNamedEntities'
+    // TODO: Method 'GenerateForLeaf'
+    // TODO: Method 'DefaultPhrase'
+};
+// --------------------------------------------------------
+// Type: IInterval
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IInterval = *opaque{
+    // TODO: Method 'GetLimits'
+};
+// --------------------------------------------------------
+// Type: IMetaData
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IMetaData = *opaque{
+    // TODO: Method 'GetData'
+};
+// --------------------------------------------------------
+// Type: IEntity
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEntity = *opaque{
+    // TODO: Method 'Name'
+    // TODO: Method 'Base'
+    // TODO: Method 'Relationships'
+    // TODO: Method 'GetRelationship'
+    // TODO: Method 'MetaData'
+    // TODO: Method 'NamedEntities'
+    // TODO: Method 'GetNamedEntity'
+    // TODO: Method 'DefaultPhrase'
+};
+// --------------------------------------------------------
+// Type: IRelationship
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRelationship = *opaque{
+    // TODO: Method 'Name'
+    // TODO: Method 'IsReal'
+    // TODO: Method 'Destination'
+    // TODO: Method 'MetaData'
+    // TODO: Method 'DefaultPhrase'
+};
+// --------------------------------------------------------
+// Type: INamedEntity
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INamedEntity = *opaque{
+    // TODO: Method 'GetValue'
+    // TODO: Method 'DefaultPhrase'
+};
+// --------------------------------------------------------
+// Type: ISchemaProvider
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISchemaProvider = *opaque{
+    // TODO: Method 'Entities'
+    // TODO: Method 'RootEntity'
+    // TODO: Method 'GetEntity'
+    // TODO: Method 'MetaData'
+    // TODO: Method 'Localize'
+    // TODO: Method 'SaveBinary'
+    // TODO: Method 'LookupAuthoredNamedEntity'
+};
+// --------------------------------------------------------
+// Type: ITokenCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITokenCollection = *opaque{
+    // TODO: Method 'NumberOfTokens'
+    // TODO: Method 'GetToken'
+};
+// --------------------------------------------------------
+// Type: NAMED_ENTITY_CERTAINTY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NAMED_ENTITY_CERTAINTY = *opaque{
+};
+// --------------------------------------------------------
+// Type: INamedEntityCollector
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INamedEntityCollector = *opaque{
+    // TODO: Method 'Add'
+};
+// --------------------------------------------------------
+// Type: ISchemaLocalizerSupport
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISchemaLocalizerSupport = *opaque{
+    // TODO: Method 'Localize'
+};
+// --------------------------------------------------------
+// Type: IQueryParserManager
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IQueryParserManager = *opaque{
+    // TODO: Method 'CreateLoadedParser'
+    // TODO: Method 'InitializeOptions'
+    // TODO: Method 'SetOption'
+};
+// --------------------------------------------------------
+// Type: HITRANGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HITRANGE = extern struct {
+    iPosition: {"kind":"UInt32"},
+    cLength: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: IUrlAccessor
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IUrlAccessor = *opaque{
+    // TODO: Method 'AddRequestParameter'
+    // TODO: Method 'GetDocFormat'
+    // TODO: Method 'GetCLSID'
+    // TODO: Method 'GetHost'
+    // TODO: Method 'IsDirectory'
+    // TODO: Method 'GetSize'
+    // TODO: Method 'GetLastModified'
+    // TODO: Method 'GetFileName'
+    // TODO: Method 'GetSecurityDescriptor'
+    // TODO: Method 'GetRedirectedURL'
+    // TODO: Method 'GetSecurityProvider'
+    // TODO: Method 'BindToStream'
+    // TODO: Method 'BindToFilter'
+};
+// --------------------------------------------------------
+// Type: IUrlAccessor2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IUrlAccessor2 = *opaque{
+    // TODO: Method 'GetDisplayUrl'
+    // TODO: Method 'IsDocument'
+    // TODO: Method 'GetCodePage'
+};
+// --------------------------------------------------------
+// Type: IUrlAccessor3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IUrlAccessor3 = *opaque{
+    // TODO: Method 'GetImpersonationSidBlobs'
+};
+// --------------------------------------------------------
+// Type: IUrlAccessor4
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IUrlAccessor4 = *opaque{
+    // TODO: Method 'ShouldIndexItemContent'
+    // TODO: Method 'ShouldIndexProperty'
+};
+// --------------------------------------------------------
+// Type: IOpLockStatus
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpLockStatus = *opaque{
+    // TODO: Method 'IsOplockValid'
+    // TODO: Method 'IsOplockBroken'
+    // TODO: Method 'GetOplockEventHandle'
+};
+// --------------------------------------------------------
+// Type: ISearchProtocolThreadContext
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISearchProtocolThreadContext = *opaque{
+    // TODO: Method 'ThreadInit'
+    // TODO: Method 'ThreadShutdown'
+    // TODO: Method 'ThreadIdle'
+};
+// --------------------------------------------------------
+// Type: TIMEOUT_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TIMEOUT_INFO = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwConnectTimeout: {"kind":"UInt32"},
+    dwDataTimeout: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PROXY_ACCESS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PROXY_ACCESS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PROXY_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PROXY_INFO = extern struct {
+    dwSize: {"kind":"UInt32"},
+    pcwszUserAgent: {"kind""Ptr","child":{"kind":"UInt16"}},
+    paUseProxy: Windows.Win32.Search.PROXY_ACCESS,
+    fLocalBypass: Windows.Win32.SystemServices.BOOL,
+    dwPortNumber: {"kind":"UInt32"},
+    pcwszProxyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcwszBypassList: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: AUTH_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const AUTH_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: AUTHENTICATION_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AUTHENTICATION_INFO = extern struct {
+    dwSize: {"kind":"UInt32"},
+    atAuthenticationType: Windows.Win32.Search.AUTH_TYPE,
+    pcwszUser: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcwszPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: INCREMENTAL_ACCESS_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INCREMENTAL_ACCESS_INFO = extern struct {
+    dwSize: {"kind":"UInt32"},
+    ftLastModifiedTime: Windows.Win32.WindowsProgramming.FILETIME,
+};
+// --------------------------------------------------------
+// Type: ITEM_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ITEM_INFO = extern struct {
+    dwSize: {"kind":"UInt32"},
+    pcwszFromEMail: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcwszApplicationName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcwszCatalogName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcwszContentClass: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: ISearchProtocol
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISearchProtocol = *opaque{
+    // TODO: Method 'Init'
+    // TODO: Method 'CreateAccessor'
+    // TODO: Method 'CloseAccessor'
+    // TODO: Method 'ShutDown'
+};
+// --------------------------------------------------------
+// Type: ISearchProtocol2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISearchProtocol2 = *opaque{
+    // TODO: Method 'CreateAccessorEx'
+};
+// --------------------------------------------------------
+// Type: IProtocolHandlerSite
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IProtocolHandlerSite = *opaque{
+    // TODO: Method 'GetFilter'
+};
+// --------------------------------------------------------
+// Type: ISearchRoot
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISearchRoot = *opaque{
+    // TODO: Method 'put_Schedule'
+    // TODO: Method 'get_Schedule'
+    // TODO: Method 'put_RootURL'
+    // TODO: Method 'get_RootURL'
+    // TODO: Method 'put_IsHierarchical'
+    // TODO: Method 'get_IsHierarchical'
+    // TODO: Method 'put_ProvidesNotifications'
+    // TODO: Method 'get_ProvidesNotifications'
+    // TODO: Method 'put_UseNotificationsOnly'
+    // TODO: Method 'get_UseNotificationsOnly'
+    // TODO: Method 'put_EnumerationDepth'
+    // TODO: Method 'get_EnumerationDepth'
+    // TODO: Method 'put_HostDepth'
+    // TODO: Method 'get_HostDepth'
+    // TODO: Method 'put_FollowDirectories'
+    // TODO: Method 'get_FollowDirectories'
+    // TODO: Method 'put_AuthenticationType'
+    // TODO: Method 'get_AuthenticationType'
+    // TODO: Method 'put_User'
+    // TODO: Method 'get_User'
+    // TODO: Method 'put_Password'
+    // TODO: Method 'get_Password'
+};
+// --------------------------------------------------------
+// Type: IEnumSearchRoots
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumSearchRoots = *opaque{
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: FOLLOW_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FOLLOW_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: ISearchScopeRule
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISearchScopeRule = *opaque{
+    // TODO: Method 'get_PatternOrURL'
+    // TODO: Method 'get_IsIncluded'
+    // TODO: Method 'get_IsDefault'
+    // TODO: Method 'get_FollowFlags'
+};
+// --------------------------------------------------------
+// Type: IEnumSearchScopeRules
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumSearchScopeRules = *opaque{
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: CLUSION_REASON
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CLUSION_REASON = *opaque{
+};
+// --------------------------------------------------------
+// Type: ISearchCrawlScopeManager
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISearchCrawlScopeManager = *opaque{
+    // TODO: Method 'AddDefaultScopeRule'
+    // TODO: Method 'AddRoot'
+    // TODO: Method 'RemoveRoot'
+    // TODO: Method 'EnumerateRoots'
+    // TODO: Method 'AddHierarchicalScope'
+    // TODO: Method 'AddUserScopeRule'
+    // TODO: Method 'RemoveScopeRule'
+    // TODO: Method 'EnumerateScopeRules'
+    // TODO: Method 'HasParentScopeRule'
+    // TODO: Method 'HasChildScopeRule'
+    // TODO: Method 'IncludedInCrawlScope'
+    // TODO: Method 'IncludedInCrawlScopeEx'
+    // TODO: Method 'RevertToDefaultScopes'
+    // TODO: Method 'SaveAll'
+    // TODO: Method 'GetParentScopeVersionId'
+    // TODO: Method 'RemoveDefaultScopeRule'
+};
+// --------------------------------------------------------
+// Type: ISearchCrawlScopeManager2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISearchCrawlScopeManager2 = *opaque{
+    // TODO: Method 'GetVersion'
+};
+// --------------------------------------------------------
+// Type: SEARCH_KIND_OF_CHANGE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SEARCH_KIND_OF_CHANGE = *opaque{
+};
+// --------------------------------------------------------
+// Type: SEARCH_NOTIFICATION_PRIORITY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SEARCH_NOTIFICATION_PRIORITY = *opaque{
+};
+// --------------------------------------------------------
+// Type: SEARCH_ITEM_CHANGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SEARCH_ITEM_CHANGE = extern struct {
+    Change: Windows.Win32.Search.SEARCH_KIND_OF_CHANGE,
+    Priority: Windows.Win32.Search.SEARCH_NOTIFICATION_PRIORITY,
+    pUserData: {"kind""Ptr","child":Windows.Win32.WinSock.BLOB},
+    lpwszURL: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpwszOldURL: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: ISearchItemsChangedSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISearchItemsChangedSink = *opaque{
+    // TODO: Method 'StartedMonitoringScope'
+    // TODO: Method 'StoppedMonitoringScope'
+    // TODO: Method 'OnItemsChanged'
+};
+// --------------------------------------------------------
+// Type: SEARCH_ITEM_PERSISTENT_CHANGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SEARCH_ITEM_PERSISTENT_CHANGE = extern struct {
+    Change: Windows.Win32.Search.SEARCH_KIND_OF_CHANGE,
+    URL: {"kind""Ptr","child":{"kind":"UInt16"}},
+    OldURL: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Priority: Windows.Win32.Search.SEARCH_NOTIFICATION_PRIORITY,
+};
+// --------------------------------------------------------
+// Type: ISearchPersistentItemsChangedSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISearchPersistentItemsChangedSink = *opaque{
+    // TODO: Method 'StartedMonitoringScope'
+    // TODO: Method 'StoppedMonitoringScope'
+    // TODO: Method 'OnItemsChanged'
+};
+// --------------------------------------------------------
+// Type: ISearchViewChangedSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISearchViewChangedSink = *opaque{
+    // TODO: Method 'OnChange'
+};
+// --------------------------------------------------------
+// Type: SEARCH_INDEXING_PHASE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SEARCH_INDEXING_PHASE = *opaque{
+};
+// --------------------------------------------------------
+// Type: SEARCH_ITEM_INDEXING_STATUS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SEARCH_ITEM_INDEXING_STATUS = extern struct {
+    dwDocID: {"kind":"UInt32"},
+    hrIndexingStatus: Windows.Win32.Com.HRESULT,
+};
+// --------------------------------------------------------
+// Type: ISearchNotifyInlineSite
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISearchNotifyInlineSite = *opaque{
+    // TODO: Method 'OnItemIndexedStatusChange'
+    // TODO: Method 'OnCatalogStatusChange'
+};
+// --------------------------------------------------------
+// Type: CatalogStatus
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CatalogStatus = *opaque{
+};
+// --------------------------------------------------------
+// Type: CatalogPausedReason
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CatalogPausedReason = *opaque{
+};
+// --------------------------------------------------------
+// Type: ISearchCatalogManager
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISearchCatalogManager = *opaque{
+    // TODO: Method 'get_Name'
+    // TODO: Method 'GetParameter'
+    // TODO: Method 'SetParameter'
+    // TODO: Method 'GetCatalogStatus'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Reindex'
+    // TODO: Method 'ReindexMatchingURLs'
+    // TODO: Method 'ReindexSearchRoot'
+    // TODO: Method 'put_ConnectTimeout'
+    // TODO: Method 'get_ConnectTimeout'
+    // TODO: Method 'put_DataTimeout'
+    // TODO: Method 'get_DataTimeout'
+    // TODO: Method 'NumberOfItems'
+    // TODO: Method 'NumberOfItemsToIndex'
+    // TODO: Method 'URLBeingIndexed'
+    // TODO: Method 'GetURLIndexingState'
+    // TODO: Method 'GetPersistentItemsChangedSink'
+    // TODO: Method 'RegisterViewForNotification'
+    // TODO: Method 'GetItemsChangedSink'
+    // TODO: Method 'UnregisterViewForNotification'
+    // TODO: Method 'SetExtensionClusion'
+    // TODO: Method 'EnumerateExcludedExtensions'
+    // TODO: Method 'GetQueryHelper'
+    // TODO: Method 'put_DiacriticSensitivity'
+    // TODO: Method 'get_DiacriticSensitivity'
+    // TODO: Method 'GetCrawlScopeManager'
+};
+// --------------------------------------------------------
+// Type: tagPRIORITIZE_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const tagPRIORITIZE_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: ISearchCatalogManager2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISearchCatalogManager2 = *opaque{
+    // TODO: Method 'PrioritizeMatchingURLs'
+};
+// --------------------------------------------------------
+// Type: SEARCH_TERM_EXPANSION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SEARCH_TERM_EXPANSION = *opaque{
+};
+// --------------------------------------------------------
+// Type: SEARCH_QUERY_SYNTAX
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SEARCH_QUERY_SYNTAX = *opaque{
+};
+// --------------------------------------------------------
+// Type: SEARCH_COLUMN_PROPERTIES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SEARCH_COLUMN_PROPERTIES = extern struct {
+    Value: Windows.Win32.StructuredStorage.PROPVARIANT,
+    lcid: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ISearchQueryHelper
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISearchQueryHelper = *opaque{
+    // TODO: Method 'get_ConnectionString'
+    // TODO: Method 'put_QueryContentLocale'
+    // TODO: Method 'get_QueryContentLocale'
+    // TODO: Method 'put_QueryKeywordLocale'
+    // TODO: Method 'get_QueryKeywordLocale'
+    // TODO: Method 'put_QueryTermExpansion'
+    // TODO: Method 'get_QueryTermExpansion'
+    // TODO: Method 'put_QuerySyntax'
+    // TODO: Method 'get_QuerySyntax'
+    // TODO: Method 'put_QueryContentProperties'
+    // TODO: Method 'get_QueryContentProperties'
+    // TODO: Method 'put_QuerySelectColumns'
+    // TODO: Method 'get_QuerySelectColumns'
+    // TODO: Method 'put_QueryWhereRestrictions'
+    // TODO: Method 'get_QueryWhereRestrictions'
+    // TODO: Method 'put_QuerySorting'
+    // TODO: Method 'get_QuerySorting'
+    // TODO: Method 'GenerateSQLFromUserQuery'
+    // TODO: Method 'WriteProperties'
+    // TODO: Method 'put_QueryMaxResults'
+    // TODO: Method 'get_QueryMaxResults'
+};
+// --------------------------------------------------------
+// Type: PRIORITY_LEVEL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PRIORITY_LEVEL = *opaque{
+};
+// --------------------------------------------------------
+// Type: IRowsetPrioritization
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRowsetPrioritization = *opaque{
+    // TODO: Method 'SetScopePriority'
+    // TODO: Method 'GetScopePriority'
+    // TODO: Method 'GetScopeStatistics'
+};
+// --------------------------------------------------------
+// Type: ROWSETEVENT_ITEMSTATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ROWSETEVENT_ITEMSTATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: ROWSETEVENT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ROWSETEVENT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: IRowsetEvents
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRowsetEvents = *opaque{
+    // TODO: Method 'OnNewItem'
+    // TODO: Method 'OnChangedItem'
+    // TODO: Method 'OnDeletedItem'
+    // TODO: Method 'OnRowsetEvent'
+};
+// --------------------------------------------------------
+// Type: ISearchManager
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISearchManager = *opaque{
+    // TODO: Method 'GetIndexerVersionStr'
+    // TODO: Method 'GetIndexerVersion'
+    // TODO: Method 'GetParameter'
+    // TODO: Method 'SetParameter'
+    // TODO: Method 'get_ProxyName'
+    // TODO: Method 'get_BypassList'
+    // TODO: Method 'SetProxy'
+    // TODO: Method 'GetCatalog'
+    // TODO: Method 'get_UserAgent'
+    // TODO: Method 'put_UserAgent'
+    // TODO: Method 'get_UseProxy'
+    // TODO: Method 'get_LocalBypass'
+    // TODO: Method 'get_PortNumber'
+};
+// --------------------------------------------------------
+// Type: ISearchManager2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISearchManager2 = *opaque{
+    // TODO: Method 'CreateCatalog'
+    // TODO: Method 'DeleteCatalog'
+};
+// --------------------------------------------------------
+// Type: CSearchLanguageSupport
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const CSearchLanguageSupport = opaque {
+};
+// --------------------------------------------------------
+// Type: ISearchLanguageSupport
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISearchLanguageSupport = *opaque{
+    // TODO: Method 'SetDiacriticSensitivity'
+    // TODO: Method 'GetDiacriticSensitivity'
+    // TODO: Method 'LoadWordBreaker'
+    // TODO: Method 'LoadStemmer'
+    // TODO: Method 'IsPrefixNormalized'
+};
+// --------------------------------------------------------
+// Type: SubscriptionMgr
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const SubscriptionMgr = opaque {
+};
+// --------------------------------------------------------
+// Type: ITEMPROP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ITEMPROP = extern struct {
+    variantValue: Windows.Win32.Automation.VARIANT,
+    pwszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: IEnumItemProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumItemProperties = *opaque{
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Clone'
+    // TODO: Method 'GetCount'
+};
+// --------------------------------------------------------
+// Type: SUBSCRIPTIONITEMINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SUBSCRIPTIONITEMINFO = extern struct {
+    cbSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwPriority: {"kind":"UInt32"},
+    ScheduleGroup: Guid,
+    clsidAgent: Guid,
+};
+// --------------------------------------------------------
+// Type: ISubscriptionItem
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISubscriptionItem = *opaque{
+    // TODO: Method 'GetCookie'
+    // TODO: Method 'GetSubscriptionItemInfo'
+    // TODO: Method 'SetSubscriptionItemInfo'
+    // TODO: Method 'ReadProperties'
+    // TODO: Method 'WriteProperties'
+    // TODO: Method 'EnumProperties'
+    // TODO: Method 'NotifyChanged'
+};
+// --------------------------------------------------------
+// Type: IEnumSubscription
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumSubscription = *opaque{
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Clone'
+    // TODO: Method 'GetCount'
+};
+// --------------------------------------------------------
+// Type: SUBSCRIPTIONTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SUBSCRIPTIONTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: SUBSCRIPTIONINFOFLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SUBSCRIPTIONINFOFLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CREATESUBSCRIPTIONFLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CREATESUBSCRIPTIONFLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: SUBSCRIPTIONSCHEDULE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SUBSCRIPTIONSCHEDULE = *opaque{
+};
+// --------------------------------------------------------
+// Type: _tagSubscriptionInfo
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _tagSubscriptionInfo = extern struct {
+    cbSize: {"kind":"UInt32"},
+    fUpdateFlags: {"kind":"UInt32"},
+    schedule: Windows.Win32.Search.SUBSCRIPTIONSCHEDULE,
+    customGroupCookie: Guid,
+    pTrigger: {"kind""Ptr","child":{"kind":"Void"}},
+    dwRecurseLevels: {"kind":"UInt32"},
+    fWebcrawlerFlags: {"kind":"UInt32"},
+    bMailNotification: Windows.Win32.SystemServices.BOOL,
+    bGleam: Windows.Win32.SystemServices.BOOL,
+    bChangesOnly: Windows.Win32.SystemServices.BOOL,
+    bNeedPassword: Windows.Win32.SystemServices.BOOL,
+    fChannelFlags: {"kind":"UInt32"},
+    bstrUserName: Windows.Win32.Automation.BSTR,
+    bstrPassword: Windows.Win32.Automation.BSTR,
+    bstrFriendlyName: Windows.Win32.Automation.BSTR,
+    dwMaxSizeKB: {"kind":"UInt32"},
+    subType: Windows.Win32.Search.SUBSCRIPTIONTYPE,
+    fTaskFlags: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ISubscriptionMgr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISubscriptionMgr = *opaque{
+    // TODO: Method 'DeleteSubscription'
+    // TODO: Method 'UpdateSubscription'
+    // TODO: Method 'UpdateAll'
+    // TODO: Method 'IsSubscribed'
+    // TODO: Method 'GetSubscriptionInfo'
+    // TODO: Method 'GetDefaultInfo'
+    // TODO: Method 'ShowSubscriptionProperties'
+    // TODO: Method 'CreateSubscription'
+};
+// --------------------------------------------------------
+// Type: ISubscriptionMgr2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISubscriptionMgr2 = *opaque{
+    // TODO: Method 'GetItemFromURL'
+    // TODO: Method 'GetItemFromCookie'
+    // TODO: Method 'GetSubscriptionRunState'
+    // TODO: Method 'EnumSubscriptions'
+    // TODO: Method 'UpdateItems'
+    // TODO: Method 'AbortItems'
+    // TODO: Method 'AbortAll'
+};
+// --------------------------------------------------------
+// Type: DELIVERY_AGENT_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DELIVERY_AGENT_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: WEBCRAWL_RECURSEFLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WEBCRAWL_RECURSEFLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CHANNEL_AGENT_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CHANNEL_AGENT_FLAGS = *opaque{
+};
+],
+
+"func_definitions": [
+],
+
+"unicode_aliases": [
+]}

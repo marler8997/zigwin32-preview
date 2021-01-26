@@ -1,0 +1,53 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn RegisterApplicationRecoveryCallback(
+    pRecoveyCallback: Windows.Win32.WindowsProgramming.APPLICATION_RECOVERY_CALLBACK,
+    pvParameter: {"kind""Ptr","child":{"kind":"Void"}},
+    dwPingInterval: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn UnregisterApplicationRecoveryCallback(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn RegisterApplicationRestart(
+    pwzCommandline: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn UnregisterApplicationRestart(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn GetApplicationRecoveryCallback(
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+    pRecoveryCallback: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.APPLICATION_RECOVERY_CALLBACK},
+    ppvParameter: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+    pdwPingInterval: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pdwFlags: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn GetApplicationRestartSettings(
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+    pwzCommandline: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pdwFlags: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn ApplicationRecoveryInProgress(
+    pbCancelled: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn ApplicationRecoveryFinished(
+    bSuccess: Windows.Win32.SystemServices.BOOL,
+],
+
+"unicode_aliases": [
+]}

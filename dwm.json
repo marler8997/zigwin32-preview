@@ -1,0 +1,267 @@
+﻿{
+"constants": [
+     {
+         "name": "c_DwmMaxQueuedBuffers"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 8
+    }
+    ,{
+         "name": "c_DwmMaxMonitors"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 16
+    }
+    ,{
+         "name": "c_DwmMaxAdapters"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 16
+    }
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: DWM_BLURBEHIND
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const DWM_BLURBEHIND = *opaque{
+};
+// --------------------------------------------------------
+// Type: DWMWINDOWATTRIBUTE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DWMWINDOWATTRIBUTE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DWMNCRENDERINGPOLICY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DWMNCRENDERINGPOLICY = *opaque{
+};
+// --------------------------------------------------------
+// Type: DWMFLIP3DWINDOWPOLICY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DWMFLIP3DWINDOWPOLICY = *opaque{
+};
+// --------------------------------------------------------
+// Type: DWM_THUMBNAIL_PROPERTIES
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const DWM_THUMBNAIL_PROPERTIES = *opaque{
+};
+// --------------------------------------------------------
+// Type: UNSIGNED_RATIO
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const UNSIGNED_RATIO = *opaque{
+};
+// --------------------------------------------------------
+// Type: DWM_TIMING_INFO
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const DWM_TIMING_INFO = *opaque{
+};
+// --------------------------------------------------------
+// Type: DWM_SOURCE_FRAME_SAMPLING
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DWM_SOURCE_FRAME_SAMPLING = *opaque{
+};
+// --------------------------------------------------------
+// Type: DWM_PRESENT_PARAMETERS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const DWM_PRESENT_PARAMETERS = *opaque{
+};
+// --------------------------------------------------------
+// Type: DWMTRANSITION_OWNEDWINDOW_TARGET
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DWMTRANSITION_OWNEDWINDOW_TARGET = *opaque{
+};
+// --------------------------------------------------------
+// Type: GESTURE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const GESTURE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DWM_SHOWCONTACT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DWM_SHOWCONTACT = *opaque{
+};
+// --------------------------------------------------------
+// Type: DWM_TAB_WINDOW_REQUIREMENTS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DWM_TAB_WINDOW_REQUIREMENTS = *opaque{
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmDefWindowProc(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    msg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+    plResult: {"kind""Ptr","child":Windows.Win32.SystemServices.LRESULT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmEnableBlurBehindWindow(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    pBlurBehind: {"kind""Ptr","child":Windows.Win32.Dwm.DWM_BLURBEHIND},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmEnableComposition(
+    uCompositionAction: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmEnableMMCSS(
+    fEnableMMCSS: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmExtendFrameIntoClientArea(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    pMarInset: {"kind""Ptr","child":Windows.Win32.Controls.MARGINS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmGetColorizationColor(
+    pcrColorization: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pfOpaqueBlend: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmGetCompositionTimingInfo(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    pTimingInfo: {"kind""Ptr","child":Windows.Win32.Dwm.DWM_TIMING_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmGetWindowAttribute(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    dwAttribute: {"kind":"UInt32"},
+    pvAttribute: {"kind""Ptr","child":{"kind":"Void"}},
+    cbAttribute: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmIsCompositionEnabled(
+    pfEnabled: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmModifyPreviousDxFrameDuration(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    cRefreshes: {"kind":"Int32"},
+    fRelative: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmQueryThumbnailSourceSize(
+    hThumbnail: {"kind":"IntPtr"},
+    pSize: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SIZE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmRegisterThumbnail(
+    hwndDestination: Windows.Win32.WindowsAndMessaging.HWND,
+    hwndSource: Windows.Win32.WindowsAndMessaging.HWND,
+    phThumbnailId: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmSetDxFrameDuration(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    cRefreshes: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmSetPresentParameters(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    pPresentParams: {"kind""Ptr","child":Windows.Win32.Dwm.DWM_PRESENT_PARAMETERS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmSetWindowAttribute(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    dwAttribute: {"kind":"UInt32"},
+    pvAttribute: {"kind""Ptr","child":{"kind":"Void"}},
+    cbAttribute: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmUnregisterThumbnail(
+    hThumbnailId: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmUpdateThumbnailProperties(
+    hThumbnailId: {"kind":"IntPtr"},
+    ptnProperties: {"kind""Ptr","child":Windows.Win32.Dwm.DWM_THUMBNAIL_PROPERTIES},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmSetIconicThumbnail(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hbmp: Windows.Win32.Gdi.HBITMAP,
+    dwSITFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmSetIconicLivePreviewBitmap(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hbmp: Windows.Win32.Gdi.HBITMAP,
+    pptClient: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+    dwSITFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmInvalidateIconicBitmaps(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmAttachMilContent(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmDetachMilContent(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmFlush(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmGetGraphicsStreamTransformHint(
+    uIndex: {"kind":"UInt32"},
+    pTransform: {"kind""Ptr","child":Windows.Win32.WpfBitmapEffects.MilMatrix3x2D},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmGetGraphicsStreamClient(
+    uIndex: {"kind":"UInt32"},
+    pClientUuid: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmGetTransportAttributes(
+    pfIsRemoting: {"kind""Ptr","child":{"kind":"Int32"}},
+    pfIsConnected: {"kind""Ptr","child":{"kind":"Int32"}},
+    pDwGeneration: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmTransitionOwnedWindow(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    target: Windows.Win32.Dwm.DWMTRANSITION_OWNEDWINDOW_TARGET,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmRenderGesture(
+    gt: Windows.Win32.Dwm.GESTURE_TYPE,
+    cContacts: {"kind":"UInt32"},
+    pdwPointerID: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pPoints: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmTetherContact(
+    dwPointerID: {"kind":"UInt32"},
+    fEnable: Windows.Win32.SystemServices.BOOL,
+    ptTether: Windows.Win32.DisplayDevices.POINT,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmShowContact(
+    dwPointerID: {"kind":"UInt32"},
+    eShowContact: Windows.Win32.Dwm.DWM_SHOWCONTACT,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dwmapi" fn DwmGetUnmetTabRequirements(
+    appWindow: Windows.Win32.WindowsAndMessaging.HWND,
+    value: {"kind""Ptr","child":Windows.Win32.Dwm.DWM_TAB_WINDOW_REQUIREMENTS},
+],
+
+"unicode_aliases": [
+]}

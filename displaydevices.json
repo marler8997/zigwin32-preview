@@ -1,0 +1,3495 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: RECT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RECT = extern struct {
+    left: {"kind":"Int32"},
+    top: {"kind":"Int32"},
+    right: {"kind":"Int32"},
+    bottom: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: RECTL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RECTL = extern struct {
+    left: {"kind":"Int32"},
+    top: {"kind":"Int32"},
+    right: {"kind":"Int32"},
+    bottom: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: POINT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const POINT = extern struct {
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: POINTL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const POINTL = extern struct {
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: SIZE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SIZE = extern struct {
+    cx: {"kind":"Int32"},
+    cy: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: POINTS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const POINTS = extern struct {
+    x: {"kind":"Int16"},
+    y: {"kind":"Int16"},
+};
+// --------------------------------------------------------
+// Type: DEVMODEW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DEVMODEW = extern struct {
+    dmDeviceName: {"kind":"Array","child": {"kind":"UInt16"}},
+    dmSpecVersion: {"kind":"UInt16"},
+    dmDriverVersion: {"kind":"UInt16"},
+    dmSize: {"kind":"UInt16"},
+    dmDriverExtra: {"kind":"UInt16"},
+    dmFields: {"kind":"UInt32"},
+    Anonymous1: Windows.Win32.DisplayDevices.DEVMODEW+_Anonymous1_e__Union,
+    dmColor: {"kind":"Int16"},
+    dmDuplex: {"kind":"Int16"},
+    dmYResolution: {"kind":"Int16"},
+    dmTTOption: {"kind":"Int16"},
+    dmCollate: {"kind":"Int16"},
+    dmFormName: {"kind":"Array","child": {"kind":"UInt16"}},
+    dmLogPixels: {"kind":"UInt16"},
+    dmBitsPerPel: {"kind":"UInt32"},
+    dmPelsWidth: {"kind":"UInt32"},
+    dmPelsHeight: {"kind":"UInt32"},
+    Anonymous2: Windows.Win32.DisplayDevices.DEVMODEW+_Anonymous2_e__Union,
+    dmDisplayFrequency: {"kind":"UInt32"},
+    dmICMMethod: {"kind":"UInt32"},
+    dmICMIntent: {"kind":"UInt32"},
+    dmMediaType: {"kind":"UInt32"},
+    dmDitherType: {"kind":"UInt32"},
+    dmReserved1: {"kind":"UInt32"},
+    dmReserved2: {"kind":"UInt32"},
+    dmPanningWidth: {"kind":"UInt32"},
+    dmPanningHeight: {"kind":"UInt32"},
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous2_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous2_e__Struct = extern struct {
+            dmPosition: Windows.Win32.DisplayDevices.POINTL,
+            dmDisplayOrientation: {"kind":"UInt32"},
+            dmDisplayFixedOutput: {"kind":"UInt32"},
+        };
+        // --------------------------------------------------------
+        // Type: _Anonymous1_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous1_e__Struct = extern struct {
+            dmOrientation: {"kind":"Int16"},
+            dmPaperSize: {"kind":"Int16"},
+            dmPaperLength: {"kind":"Int16"},
+            dmPaperWidth: {"kind":"Int16"},
+            dmScale: {"kind":"Int16"},
+            dmCopies: {"kind":"Int16"},
+            dmDefaultSource: {"kind":"Int16"},
+            dmPrintQuality: {"kind":"Int16"},
+        };
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_RATIONAL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DISPLAYCONFIG_RATIONAL = extern struct {
+    Numerator: {"kind":"UInt32"},
+    Denominator: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY = *opaque{
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_SCANLINE_ORDERING
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DISPLAYCONFIG_SCANLINE_ORDERING = *opaque{
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_2DREGION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DISPLAYCONFIG_2DREGION = extern struct {
+    cx: {"kind":"UInt32"},
+    cy: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_VIDEO_SIGNAL_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DISPLAYCONFIG_VIDEO_SIGNAL_INFO = extern struct {
+    pixelRate: {"kind":"UInt64"},
+    hSyncFreq: Windows.Win32.DisplayDevices.DISPLAYCONFIG_RATIONAL,
+    vSyncFreq: Windows.Win32.DisplayDevices.DISPLAYCONFIG_RATIONAL,
+    activeSize: Windows.Win32.DisplayDevices.DISPLAYCONFIG_2DREGION,
+    totalSize: Windows.Win32.DisplayDevices.DISPLAYCONFIG_2DREGION,
+    Anonymous: Windows.Win32.DisplayDevices.DISPLAYCONFIG_VIDEO_SIGNAL_INFO+_Anonymous_e__Union,
+    scanLineOrdering: Windows.Win32.DisplayDevices.DISPLAYCONFIG_SCANLINE_ORDERING,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _AdditionalSignalInfo_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _AdditionalSignalInfo_e__Struct = extern struct {
+            _bitfield: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_SCALING
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DISPLAYCONFIG_SCALING = *opaque{
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_ROTATION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DISPLAYCONFIG_ROTATION = *opaque{
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_MODE_INFO_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DISPLAYCONFIG_MODE_INFO_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_PIXELFORMAT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DISPLAYCONFIG_PIXELFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_SOURCE_MODE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DISPLAYCONFIG_SOURCE_MODE = extern struct {
+    width: {"kind":"UInt32"},
+    height: {"kind":"UInt32"},
+    pixelFormat: Windows.Win32.DisplayDevices.DISPLAYCONFIG_PIXELFORMAT,
+    position: Windows.Win32.DisplayDevices.POINTL,
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_TARGET_MODE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DISPLAYCONFIG_TARGET_MODE = extern struct {
+    targetVideoSignalInfo: Windows.Win32.DisplayDevices.DISPLAYCONFIG_VIDEO_SIGNAL_INFO,
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_DESKTOP_IMAGE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DISPLAYCONFIG_DESKTOP_IMAGE_INFO = extern struct {
+    PathSourceSize: Windows.Win32.DisplayDevices.POINTL,
+    DesktopImageRegion: Windows.Win32.DisplayDevices.RECTL,
+    DesktopImageClip: Windows.Win32.DisplayDevices.RECTL,
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_MODE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DISPLAYCONFIG_MODE_INFO = extern struct {
+    infoType: Windows.Win32.DisplayDevices.DISPLAYCONFIG_MODE_INFO_TYPE,
+    id: {"kind":"UInt32"},
+    adapterId: Windows.Win32.Kernel.LUID,
+    Anonymous: Windows.Win32.DisplayDevices.DISPLAYCONFIG_MODE_INFO+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_PATH_SOURCE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DISPLAYCONFIG_PATH_SOURCE_INFO = extern struct {
+    adapterId: Windows.Win32.Kernel.LUID,
+    id: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.DisplayDevices.DISPLAYCONFIG_PATH_SOURCE_INFO+_Anonymous_e__Union,
+    statusFlags: {"kind":"UInt32"},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            _bitfield: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_PATH_TARGET_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DISPLAYCONFIG_PATH_TARGET_INFO = extern struct {
+    adapterId: Windows.Win32.Kernel.LUID,
+    id: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.DisplayDevices.DISPLAYCONFIG_PATH_TARGET_INFO+_Anonymous_e__Union,
+    outputTechnology: Windows.Win32.DisplayDevices.DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY,
+    rotation: Windows.Win32.DisplayDevices.DISPLAYCONFIG_ROTATION,
+    scaling: Windows.Win32.DisplayDevices.DISPLAYCONFIG_SCALING,
+    refreshRate: Windows.Win32.DisplayDevices.DISPLAYCONFIG_RATIONAL,
+    scanLineOrdering: Windows.Win32.DisplayDevices.DISPLAYCONFIG_SCANLINE_ORDERING,
+    targetAvailable: Windows.Win32.SystemServices.BOOL,
+    statusFlags: {"kind":"UInt32"},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            _bitfield: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_PATH_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DISPLAYCONFIG_PATH_INFO = extern struct {
+    sourceInfo: Windows.Win32.DisplayDevices.DISPLAYCONFIG_PATH_SOURCE_INFO,
+    targetInfo: Windows.Win32.DisplayDevices.DISPLAYCONFIG_PATH_TARGET_INFO,
+    flags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_TOPOLOGY_ID
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DISPLAYCONFIG_TOPOLOGY_ID = *opaque{
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_DEVICE_INFO_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DISPLAYCONFIG_DEVICE_INFO_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_DEVICE_INFO_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DISPLAYCONFIG_DEVICE_INFO_HEADER = extern struct {
+    type: Windows.Win32.DisplayDevices.DISPLAYCONFIG_DEVICE_INFO_TYPE,
+    size: {"kind":"UInt32"},
+    adapterId: Windows.Win32.Kernel.LUID,
+    id: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_SOURCE_DEVICE_NAME
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DISPLAYCONFIG_SOURCE_DEVICE_NAME = extern struct {
+    header: Windows.Win32.DisplayDevices.DISPLAYCONFIG_DEVICE_INFO_HEADER,
+    viewGdiDeviceName: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS = extern struct {
+    Anonymous: Windows.Win32.DisplayDevices.DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            _bitfield: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_TARGET_DEVICE_NAME
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DISPLAYCONFIG_TARGET_DEVICE_NAME = extern struct {
+    header: Windows.Win32.DisplayDevices.DISPLAYCONFIG_DEVICE_INFO_HEADER,
+    flags: Windows.Win32.DisplayDevices.DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS,
+    outputTechnology: Windows.Win32.DisplayDevices.DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY,
+    edidManufactureId: {"kind":"UInt16"},
+    edidProductCodeId: {"kind":"UInt16"},
+    connectorInstance: {"kind":"UInt32"},
+    monitorFriendlyDeviceName: {"kind":"Array","child": {"kind":"UInt16"}},
+    monitorDevicePath: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_TARGET_PREFERRED_MODE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DISPLAYCONFIG_TARGET_PREFERRED_MODE = extern struct {
+    header: Windows.Win32.DisplayDevices.DISPLAYCONFIG_DEVICE_INFO_HEADER,
+    width: {"kind":"UInt32"},
+    height: {"kind":"UInt32"},
+    targetMode: Windows.Win32.DisplayDevices.DISPLAYCONFIG_TARGET_MODE,
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_ADAPTER_NAME
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DISPLAYCONFIG_ADAPTER_NAME = extern struct {
+    header: Windows.Win32.DisplayDevices.DISPLAYCONFIG_DEVICE_INFO_HEADER,
+    adapterDevicePath: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_TARGET_BASE_TYPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DISPLAYCONFIG_TARGET_BASE_TYPE = extern struct {
+    header: Windows.Win32.DisplayDevices.DISPLAYCONFIG_DEVICE_INFO_HEADER,
+    baseOutputTechnology: Windows.Win32.DisplayDevices.DISPLAYCONFIG_VIDEO_OUTPUT_TECHNOLOGY,
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_SET_TARGET_PERSISTENCE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DISPLAYCONFIG_SET_TARGET_PERSISTENCE = extern struct {
+    header: Windows.Win32.DisplayDevices.DISPLAYCONFIG_DEVICE_INFO_HEADER,
+    Anonymous: Windows.Win32.DisplayDevices.DISPLAYCONFIG_SET_TARGET_PERSISTENCE+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            _bitfield: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION = extern struct {
+    header: Windows.Win32.DisplayDevices.DISPLAYCONFIG_DEVICE_INFO_HEADER,
+    Anonymous: Windows.Win32.DisplayDevices.DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            _bitfield: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: DDVIDEOPORTCAPS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDVIDEOPORTCAPS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwMaxWidth: {"kind":"UInt32"},
+    dwMaxVBIWidth: {"kind":"UInt32"},
+    dwMaxHeight: {"kind":"UInt32"},
+    dwVideoPortID: {"kind":"UInt32"},
+    dwCaps: {"kind":"UInt32"},
+    dwFX: {"kind":"UInt32"},
+    dwNumAutoFlipSurfaces: {"kind":"UInt32"},
+    dwAlignVideoPortBoundary: {"kind":"UInt32"},
+    dwAlignVideoPortPrescaleWidth: {"kind":"UInt32"},
+    dwAlignVideoPortCropBoundary: {"kind":"UInt32"},
+    dwAlignVideoPortCropWidth: {"kind":"UInt32"},
+    dwPreshrinkXStep: {"kind":"UInt32"},
+    dwPreshrinkYStep: {"kind":"UInt32"},
+    dwNumVBIAutoFlipSurfaces: {"kind":"UInt32"},
+    dwNumPreferredAutoflip: {"kind":"UInt32"},
+    wNumFilterTapsX: {"kind":"UInt16"},
+    wNumFilterTapsY: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: DDVIDEOPORTDESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDVIDEOPORTDESC = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFieldWidth: {"kind":"UInt32"},
+    dwVBIWidth: {"kind":"UInt32"},
+    dwFieldHeight: {"kind":"UInt32"},
+    dwMicrosecondsPerField: {"kind":"UInt32"},
+    dwMaxPixelsPerSecond: {"kind":"UInt32"},
+    dwVideoPortID: {"kind":"UInt32"},
+    dwReserved1: {"kind":"UInt32"},
+    VideoPortType: Windows.Win32.CoreAudio.DDVIDEOPORTCONNECT,
+    dwReserved2: {"kind":"UIntPtr"},
+    dwReserved3: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: DDVIDEOPORTINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDVIDEOPORTINFO = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwOriginX: {"kind":"UInt32"},
+    dwOriginY: {"kind":"UInt32"},
+    dwVPFlags: {"kind":"UInt32"},
+    rCrop: Windows.Win32.DisplayDevices.RECT,
+    dwPrescaleWidth: {"kind":"UInt32"},
+    dwPrescaleHeight: {"kind":"UInt32"},
+    lpddpfInputFormat: {"kind""Ptr","child":Windows.Win32.DirectDraw.DDPIXELFORMAT},
+    lpddpfVBIInputFormat: {"kind""Ptr","child":Windows.Win32.DirectDraw.DDPIXELFORMAT},
+    lpddpfVBIOutputFormat: {"kind""Ptr","child":Windows.Win32.DirectDraw.DDPIXELFORMAT},
+    dwVBIHeight: {"kind":"UInt32"},
+    dwReserved1: {"kind":"UIntPtr"},
+    dwReserved2: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: DDVIDEOPORTBANDWIDTH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDVIDEOPORTBANDWIDTH = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwCaps: {"kind":"UInt32"},
+    dwOverlay: {"kind":"UInt32"},
+    dwColorkey: {"kind":"UInt32"},
+    dwYInterpolate: {"kind":"UInt32"},
+    dwYInterpAndColorkey: {"kind":"UInt32"},
+    dwReserved1: {"kind":"UIntPtr"},
+    dwReserved2: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: DD_GETHEAPALIGNMENTDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const DD_GETHEAPALIGNMENTDATA = opaque {
+};
+// --------------------------------------------------------
+// Type: VIDEOMEMORY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const VIDEOMEMORY = extern struct {
+    dwFlags: {"kind":"UInt32"},
+    fpStart: {"kind":"UIntPtr"},
+    Anonymous1: Windows.Win32.DisplayDevices.VIDEOMEMORY+_Anonymous1_e__Union,
+    ddsCaps: Windows.Win32.DirectDraw.DDSCAPS,
+    ddsCapsAlt: Windows.Win32.DirectDraw.DDSCAPS,
+    Anonymous2: Windows.Win32.DisplayDevices.VIDEOMEMORY+_Anonymous2_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: VIDEOMEMORYINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const VIDEOMEMORYINFO = extern struct {
+    fpPrimary: {"kind":"UIntPtr"},
+    dwFlags: {"kind":"UInt32"},
+    dwDisplayWidth: {"kind":"UInt32"},
+    dwDisplayHeight: {"kind":"UInt32"},
+    lDisplayPitch: {"kind":"Int32"},
+    ddpfDisplay: Windows.Win32.DirectDraw.DDPIXELFORMAT,
+    dwOffscreenAlign: {"kind":"UInt32"},
+    dwOverlayAlign: {"kind":"UInt32"},
+    dwTextureAlign: {"kind":"UInt32"},
+    dwZBufferAlign: {"kind":"UInt32"},
+    dwAlphaAlign: {"kind":"UInt32"},
+    pvPrimary: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: PDD_CANCREATESURFACE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_CANCREATESURFACE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_WAITFORVERTICALBLANK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_WAITFORVERTICALBLANK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_CREATESURFACE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_CREATESURFACE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_CREATEPALETTE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_CREATEPALETTE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_GETSCANLINE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_GETSCANLINE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_MAPMEMORY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_MAPMEMORY = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_GETDRIVERINFO
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_GETDRIVERINFO = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DD_CALLBACKS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_CALLBACKS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    DestroyDriver: Windows.Win32.SystemServices.PDD_DESTROYDRIVER,
+    CreateSurface: Windows.Win32.DisplayDevices.PDD_CREATESURFACE,
+    SetColorKey: Windows.Win32.SystemServices.PDD_SETCOLORKEY,
+    SetMode: Windows.Win32.SystemServices.PDD_SETMODE,
+    WaitForVerticalBlank: Windows.Win32.DisplayDevices.PDD_WAITFORVERTICALBLANK,
+    CanCreateSurface: Windows.Win32.DisplayDevices.PDD_CANCREATESURFACE,
+    CreatePalette: Windows.Win32.DisplayDevices.PDD_CREATEPALETTE,
+    GetScanLine: Windows.Win32.DisplayDevices.PDD_GETSCANLINE,
+    MapMemory: Windows.Win32.DisplayDevices.PDD_MAPMEMORY,
+};
+// --------------------------------------------------------
+// Type: PDD_GETAVAILDRIVERMEMORY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_GETAVAILDRIVERMEMORY = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DD_MISCELLANEOUSCALLBACKS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_MISCELLANEOUSCALLBACKS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    GetAvailDriverMemory: Windows.Win32.DisplayDevices.PDD_GETAVAILDRIVERMEMORY,
+};
+// --------------------------------------------------------
+// Type: PDD_CREATESURFACEEX
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_CREATESURFACEEX = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_GETDRIVERSTATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_GETDRIVERSTATE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_DESTROYDDLOCAL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_DESTROYDDLOCAL = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DD_MISCELLANEOUS2CALLBACKS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_MISCELLANEOUS2CALLBACKS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    AlphaBlt: Windows.Win32.SystemServices.PDD_ALPHABLT,
+    CreateSurfaceEx: Windows.Win32.DisplayDevices.PDD_CREATESURFACEEX,
+    GetDriverState: Windows.Win32.DisplayDevices.PDD_GETDRIVERSTATE,
+    DestroyDDLocal: Windows.Win32.DisplayDevices.PDD_DESTROYDDLOCAL,
+};
+// --------------------------------------------------------
+// Type: PDD_FREEDRIVERMEMORY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_FREEDRIVERMEMORY = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_SETEXCLUSIVEMODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_SETEXCLUSIVEMODE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_FLIPTOGDISURFACE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_FLIPTOGDISURFACE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DD_NTCALLBACKS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_NTCALLBACKS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    FreeDriverMemory: Windows.Win32.DisplayDevices.PDD_FREEDRIVERMEMORY,
+    SetExclusiveMode: Windows.Win32.DisplayDevices.PDD_SETEXCLUSIVEMODE,
+    FlipToGDISurface: Windows.Win32.DisplayDevices.PDD_FLIPTOGDISURFACE,
+};
+// --------------------------------------------------------
+// Type: PDD_PALCB_DESTROYPALETTE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_PALCB_DESTROYPALETTE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_PALCB_SETENTRIES
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_PALCB_SETENTRIES = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DD_PALETTECALLBACKS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_PALETTECALLBACKS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    DestroyPalette: Windows.Win32.DisplayDevices.PDD_PALCB_DESTROYPALETTE,
+    SetEntries: Windows.Win32.DisplayDevices.PDD_PALCB_SETENTRIES,
+};
+// --------------------------------------------------------
+// Type: PDD_SURFCB_LOCK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_SURFCB_LOCK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_SURFCB_UNLOCK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_SURFCB_UNLOCK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_SURFCB_BLT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_SURFCB_BLT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_SURFCB_UPDATEOVERLAY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_SURFCB_UPDATEOVERLAY = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_SURFCB_SETOVERLAYPOSITION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_SURFCB_SETOVERLAYPOSITION = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_SURFCB_SETPALETTE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_SURFCB_SETPALETTE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_SURFCB_FLIP
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_SURFCB_FLIP = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_SURFCB_DESTROYSURFACE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_SURFCB_DESTROYSURFACE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_SURFCB_ADDATTACHEDSURFACE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_SURFCB_ADDATTACHEDSURFACE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_SURFCB_SETCOLORKEY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_SURFCB_SETCOLORKEY = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_SURFCB_GETBLTSTATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_SURFCB_GETBLTSTATUS = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_SURFCB_GETFLIPSTATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_SURFCB_GETFLIPSTATUS = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DD_SURFACECALLBACKS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_SURFACECALLBACKS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    DestroySurface: Windows.Win32.DisplayDevices.PDD_SURFCB_DESTROYSURFACE,
+    Flip: Windows.Win32.DisplayDevices.PDD_SURFCB_FLIP,
+    SetClipList: Windows.Win32.SystemServices.PDD_SURFCB_SETCLIPLIST,
+    Lock: Windows.Win32.DisplayDevices.PDD_SURFCB_LOCK,
+    Unlock: Windows.Win32.DisplayDevices.PDD_SURFCB_UNLOCK,
+    Blt: Windows.Win32.DisplayDevices.PDD_SURFCB_BLT,
+    SetColorKey: Windows.Win32.DisplayDevices.PDD_SURFCB_SETCOLORKEY,
+    AddAttachedSurface: Windows.Win32.DisplayDevices.PDD_SURFCB_ADDATTACHEDSURFACE,
+    GetBltStatus: Windows.Win32.DisplayDevices.PDD_SURFCB_GETBLTSTATUS,
+    GetFlipStatus: Windows.Win32.DisplayDevices.PDD_SURFCB_GETFLIPSTATUS,
+    UpdateOverlay: Windows.Win32.DisplayDevices.PDD_SURFCB_UPDATEOVERLAY,
+    SetOverlayPosition: Windows.Win32.DisplayDevices.PDD_SURFCB_SETOVERLAYPOSITION,
+    reserved4: {"kind""Ptr","child":{"kind":"Void"}},
+    SetPalette: Windows.Win32.DisplayDevices.PDD_SURFCB_SETPALETTE,
+};
+// --------------------------------------------------------
+// Type: PDD_VPORTCB_CANCREATEVIDEOPORT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_VPORTCB_CANCREATEVIDEOPORT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_VPORTCB_CREATEVIDEOPORT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_VPORTCB_CREATEVIDEOPORT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_VPORTCB_FLIP
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_VPORTCB_FLIP = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_VPORTCB_GETBANDWIDTH
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_VPORTCB_GETBANDWIDTH = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_VPORTCB_GETINPUTFORMATS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_VPORTCB_GETINPUTFORMATS = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_VPORTCB_GETOUTPUTFORMATS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_VPORTCB_GETOUTPUTFORMATS = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_VPORTCB_GETFIELD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_VPORTCB_GETFIELD = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_VPORTCB_GETLINE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_VPORTCB_GETLINE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_VPORTCB_GETVPORTCONNECT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_VPORTCB_GETVPORTCONNECT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_VPORTCB_DESTROYVPORT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_VPORTCB_DESTROYVPORT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_VPORTCB_GETFLIPSTATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_VPORTCB_GETFLIPSTATUS = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_VPORTCB_UPDATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_VPORTCB_UPDATE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_VPORTCB_WAITFORSYNC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_VPORTCB_WAITFORSYNC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_VPORTCB_GETSIGNALSTATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_VPORTCB_GETSIGNALSTATUS = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_VPORTCB_COLORCONTROL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_VPORTCB_COLORCONTROL = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DD_VIDEOPORTCALLBACKS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_VIDEOPORTCALLBACKS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    CanCreateVideoPort: Windows.Win32.DisplayDevices.PDD_VPORTCB_CANCREATEVIDEOPORT,
+    CreateVideoPort: Windows.Win32.DisplayDevices.PDD_VPORTCB_CREATEVIDEOPORT,
+    FlipVideoPort: Windows.Win32.DisplayDevices.PDD_VPORTCB_FLIP,
+    GetVideoPortBandwidth: Windows.Win32.DisplayDevices.PDD_VPORTCB_GETBANDWIDTH,
+    GetVideoPortInputFormats: Windows.Win32.DisplayDevices.PDD_VPORTCB_GETINPUTFORMATS,
+    GetVideoPortOutputFormats: Windows.Win32.DisplayDevices.PDD_VPORTCB_GETOUTPUTFORMATS,
+    lpReserved1: {"kind""Ptr","child":{"kind":"Void"}},
+    GetVideoPortField: Windows.Win32.DisplayDevices.PDD_VPORTCB_GETFIELD,
+    GetVideoPortLine: Windows.Win32.DisplayDevices.PDD_VPORTCB_GETLINE,
+    GetVideoPortConnectInfo: Windows.Win32.DisplayDevices.PDD_VPORTCB_GETVPORTCONNECT,
+    DestroyVideoPort: Windows.Win32.DisplayDevices.PDD_VPORTCB_DESTROYVPORT,
+    GetVideoPortFlipStatus: Windows.Win32.DisplayDevices.PDD_VPORTCB_GETFLIPSTATUS,
+    UpdateVideoPort: Windows.Win32.DisplayDevices.PDD_VPORTCB_UPDATE,
+    WaitForVideoPortSync: Windows.Win32.DisplayDevices.PDD_VPORTCB_WAITFORSYNC,
+    GetVideoSignalStatus: Windows.Win32.DisplayDevices.PDD_VPORTCB_GETSIGNALSTATUS,
+    ColorControl: Windows.Win32.DisplayDevices.PDD_VPORTCB_COLORCONTROL,
+};
+// --------------------------------------------------------
+// Type: PDD_COLORCB_COLORCONTROL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_COLORCB_COLORCONTROL = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DD_COLORCONTROLCALLBACKS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_COLORCONTROLCALLBACKS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    ColorControl: Windows.Win32.DisplayDevices.PDD_COLORCB_COLORCONTROL,
+};
+// --------------------------------------------------------
+// Type: PDD_KERNELCB_SYNCSURFACE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_KERNELCB_SYNCSURFACE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_KERNELCB_SYNCVIDEOPORT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_KERNELCB_SYNCVIDEOPORT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DD_KERNELCALLBACKS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_KERNELCALLBACKS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    SyncSurfaceData: Windows.Win32.DisplayDevices.PDD_KERNELCB_SYNCSURFACE,
+    SyncVideoPortData: Windows.Win32.DisplayDevices.PDD_KERNELCB_SYNCVIDEOPORT,
+};
+// --------------------------------------------------------
+// Type: PDD_MOCOMPCB_GETGUIDS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_MOCOMPCB_GETGUIDS = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_MOCOMPCB_GETFORMATS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_MOCOMPCB_GETFORMATS = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_MOCOMPCB_CREATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_MOCOMPCB_CREATE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_MOCOMPCB_GETCOMPBUFFINFO
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_MOCOMPCB_GETCOMPBUFFINFO = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_MOCOMPCB_GETINTERNALINFO
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_MOCOMPCB_GETINTERNALINFO = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_MOCOMPCB_BEGINFRAME
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_MOCOMPCB_BEGINFRAME = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_MOCOMPCB_ENDFRAME
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_MOCOMPCB_ENDFRAME = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_MOCOMPCB_RENDER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_MOCOMPCB_RENDER = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_MOCOMPCB_QUERYSTATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_MOCOMPCB_QUERYSTATUS = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDD_MOCOMPCB_DESTROY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDD_MOCOMPCB_DESTROY = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DD_MOTIONCOMPCALLBACKS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_MOTIONCOMPCALLBACKS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    GetMoCompGuids: Windows.Win32.DisplayDevices.PDD_MOCOMPCB_GETGUIDS,
+    GetMoCompFormats: Windows.Win32.DisplayDevices.PDD_MOCOMPCB_GETFORMATS,
+    CreateMoComp: Windows.Win32.DisplayDevices.PDD_MOCOMPCB_CREATE,
+    GetMoCompBuffInfo: Windows.Win32.DisplayDevices.PDD_MOCOMPCB_GETCOMPBUFFINFO,
+    GetInternalMoCompInfo: Windows.Win32.DisplayDevices.PDD_MOCOMPCB_GETINTERNALINFO,
+    BeginMoCompFrame: Windows.Win32.DisplayDevices.PDD_MOCOMPCB_BEGINFRAME,
+    EndMoCompFrame: Windows.Win32.DisplayDevices.PDD_MOCOMPCB_ENDFRAME,
+    RenderMoComp: Windows.Win32.DisplayDevices.PDD_MOCOMPCB_RENDER,
+    QueryMoCompStatus: Windows.Win32.DisplayDevices.PDD_MOCOMPCB_QUERYSTATUS,
+    DestroyMoComp: Windows.Win32.DisplayDevices.PDD_MOCOMPCB_DESTROY,
+};
+// --------------------------------------------------------
+// Type: DD_NONLOCALVIDMEMCAPS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_NONLOCALVIDMEMCAPS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwNLVBCaps: {"kind":"UInt32"},
+    dwNLVBCaps2: {"kind":"UInt32"},
+    dwNLVBCKeyCaps: {"kind":"UInt32"},
+    dwNLVBFXCaps: {"kind":"UInt32"},
+    dwNLVBRops: {"kind":"Array","child": {"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: DD_PALETTE_GLOBAL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_PALETTE_GLOBAL = extern struct {
+    dwReserved1: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: DD_PALETTE_LOCAL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_PALETTE_LOCAL = extern struct {
+    dwReserved0: {"kind":"UInt32"},
+    dwReserved1: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: DD_CLIPPER_GLOBAL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_CLIPPER_GLOBAL = extern struct {
+    dwReserved1: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: DD_CLIPPER_LOCAL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_CLIPPER_LOCAL = extern struct {
+    dwReserved1: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: DD_ATTACHLIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_ATTACHLIST = extern struct {
+    lpLink: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_ATTACHLIST},
+    lpAttached: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+};
+// --------------------------------------------------------
+// Type: DD_SURFACE_INT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_SURFACE_INT = extern struct {
+    lpLcl: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+};
+// --------------------------------------------------------
+// Type: DD_SURFACE_GLOBAL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_SURFACE_GLOBAL = extern struct {
+    Anonymous1: Windows.Win32.DisplayDevices.DD_SURFACE_GLOBAL+_Anonymous1_e__Union,
+    Anonymous2: Windows.Win32.DisplayDevices.DD_SURFACE_GLOBAL+_Anonymous2_e__Union,
+    fpVidMem: {"kind":"UIntPtr"},
+    Anonymous3: Windows.Win32.DisplayDevices.DD_SURFACE_GLOBAL+_Anonymous3_e__Union,
+    yHint: {"kind":"Int32"},
+    xHint: {"kind":"Int32"},
+    wHeight: {"kind":"UInt32"},
+    wWidth: {"kind":"UInt32"},
+    dwReserved1: {"kind":"UIntPtr"},
+    ddpfSurface: Windows.Win32.DirectDraw.DDPIXELFORMAT,
+    fpHeapOffset: {"kind":"UIntPtr"},
+    hCreatorProcess: Windows.Win32.SystemServices.HANDLE,
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous3_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous3_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: DD_SURFACE_MORE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_SURFACE_MORE = extern struct {
+    dwMipMapCount: {"kind":"UInt32"},
+    lpVideoPort: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_VIDEOPORT_LOCAL},
+    dwOverlayFlags: {"kind":"UInt32"},
+    ddsCapsEx: Windows.Win32.DirectDraw.DDSCAPSEX,
+    dwSurfaceHandle: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DD_SURFACE_LOCAL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_SURFACE_LOCAL = extern struct {
+    lpGbl: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_GLOBAL},
+    dwFlags: {"kind":"UInt32"},
+    ddsCaps: Windows.Win32.DirectDraw.DDSCAPS,
+    dwReserved1: {"kind":"UIntPtr"},
+    Anonymous1: Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL+_Anonymous1_e__Union,
+    Anonymous2: Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL+_Anonymous2_e__Union,
+    lpSurfMore: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_MORE},
+    lpAttachList: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_ATTACHLIST},
+    lpAttachListFrom: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_ATTACHLIST},
+    rcOverlaySrc: Windows.Win32.DisplayDevices.RECT,
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: DD_D3DBUFCALLBACKS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_D3DBUFCALLBACKS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    CanCreateD3DBuffer: Windows.Win32.DisplayDevices.PDD_CANCREATESURFACE,
+    CreateD3DBuffer: Windows.Win32.DisplayDevices.PDD_CREATESURFACE,
+    DestroyD3DBuffer: Windows.Win32.DisplayDevices.PDD_SURFCB_DESTROYSURFACE,
+    LockD3DBuffer: Windows.Win32.DisplayDevices.PDD_SURFCB_LOCK,
+    UnlockD3DBuffer: Windows.Win32.DisplayDevices.PDD_SURFCB_UNLOCK,
+};
+// --------------------------------------------------------
+// Type: DD_HALINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_HALINFO = extern struct {
+    dwSize: {"kind":"UInt32"},
+    vmiData: Windows.Win32.DisplayDevices.VIDEOMEMORYINFO,
+    ddCaps: Windows.Win32.SystemServices.DDNTCORECAPS,
+    GetDriverInfo: Windows.Win32.DisplayDevices.PDD_GETDRIVERINFO,
+    dwFlags: {"kind":"UInt32"},
+    lpD3DGlobalDriverData: {"kind""Ptr","child":{"kind":"Void"}},
+    lpD3DHALCallbacks: {"kind""Ptr","child":{"kind":"Void"}},
+    lpD3DBufCallbacks: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_D3DBUFCALLBACKS},
+};
+// --------------------------------------------------------
+// Type: DD_DIRECTDRAW_GLOBAL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_DIRECTDRAW_GLOBAL = extern struct {
+    dhpdev: {"kind""Ptr","child":{"kind":"Void"}},
+    dwReserved1: {"kind":"UIntPtr"},
+    dwReserved2: {"kind":"UIntPtr"},
+    lpDDVideoPortCaps: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DDVIDEOPORTCAPS},
+};
+// --------------------------------------------------------
+// Type: DD_DIRECTDRAW_LOCAL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_DIRECTDRAW_LOCAL = extern struct {
+    lpGbl: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_GLOBAL},
+};
+// --------------------------------------------------------
+// Type: DD_VIDEOPORT_LOCAL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_VIDEOPORT_LOCAL = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    ddvpDesc: Windows.Win32.DisplayDevices.DDVIDEOPORTDESC,
+    ddvpInfo: Windows.Win32.DisplayDevices.DDVIDEOPORTINFO,
+    lpSurface: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_INT},
+    lpVBISurface: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_INT},
+    dwNumAutoflip: {"kind":"UInt32"},
+    dwNumVBIAutoflip: {"kind":"UInt32"},
+    dwReserved1: {"kind":"UIntPtr"},
+    dwReserved2: {"kind":"UIntPtr"},
+    dwReserved3: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: DD_MOTIONCOMP_LOCAL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_MOTIONCOMP_LOCAL = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    guid: Guid,
+    dwUncompWidth: {"kind":"UInt32"},
+    dwUncompHeight: {"kind":"UInt32"},
+    ddUncompPixelFormat: Windows.Win32.DirectDraw.DDPIXELFORMAT,
+    dwDriverReserved1: {"kind":"UInt32"},
+    dwDriverReserved2: {"kind":"UInt32"},
+    dwDriverReserved3: {"kind":"UInt32"},
+    lpDriverReserved1: {"kind""Ptr","child":{"kind":"Void"}},
+    lpDriverReserved2: {"kind""Ptr","child":{"kind":"Void"}},
+    lpDriverReserved3: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_MORESURFACECAPS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_MORESURFACECAPS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    ddsCapsMore: Windows.Win32.DirectDraw.DDSCAPSEX,
+    ddsExtendedHeapRestrictions: {"kind":"Array","child": Windows.Win32.DisplayDevices.DD_MORESURFACECAPS+tagNTExtendedHeapRestrictions},
+    // --------------------------------------------------------
+    // Type: tagNTExtendedHeapRestrictions
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const tagNTExtendedHeapRestrictions = extern struct {
+        ddsCapsEx: Windows.Win32.DirectDraw.DDSCAPSEX,
+        ddsCapsExAlt: Windows.Win32.DirectDraw.DDSCAPSEX,
+    };
+};
+// --------------------------------------------------------
+// Type: DD_STEREOMODE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_STEREOMODE = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwHeight: {"kind":"UInt32"},
+    dwWidth: {"kind":"UInt32"},
+    dwBpp: {"kind":"UInt32"},
+    dwRefreshRate: {"kind":"UInt32"},
+    bSupported: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: DD_UPDATENONLOCALHEAPDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_UPDATENONLOCALHEAPDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_GLOBAL},
+    dwHeap: {"kind":"UInt32"},
+    fpGARTLin: {"kind":"UIntPtr"},
+    fpGARTDev: {"kind":"UIntPtr"},
+    ulPolicyMaxBytes: {"kind":"UIntPtr"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    UpdateNonLocalHeap: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_NTPRIVATEDRIVERCAPS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_NTPRIVATEDRIVERCAPS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwPrivateCaps: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DD_BLTDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_BLTDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_GLOBAL},
+    lpDDDestSurface: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+    rDest: Windows.Win32.DisplayDevices.RECTL,
+    lpDDSrcSurface: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+    rSrc: Windows.Win32.DisplayDevices.RECTL,
+    dwFlags: {"kind":"UInt32"},
+    dwROPFlags: {"kind":"UInt32"},
+    bltFX: Windows.Win32.DirectDraw.DDBLTFX,
+    ddRVal: Windows.Win32.Com.HRESULT,
+    Blt: {"kind""Ptr","child":{"kind":"Void"}},
+    IsClipped: Windows.Win32.SystemServices.BOOL,
+    rOrigDest: Windows.Win32.DisplayDevices.RECTL,
+    rOrigSrc: Windows.Win32.DisplayDevices.RECTL,
+    dwRectCnt: {"kind":"UInt32"},
+    prDestRects: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    dwAFlags: {"kind":"UInt32"},
+    ddargbScaleFactors: Windows.Win32.DirectDraw.DDARGB,
+};
+// --------------------------------------------------------
+// Type: DD_LOCKDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_LOCKDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_GLOBAL},
+    lpDDSurface: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+    bHasRect: {"kind":"UInt32"},
+    rArea: Windows.Win32.DisplayDevices.RECTL,
+    lpSurfData: {"kind""Ptr","child":{"kind":"Void"}},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    Lock: {"kind""Ptr","child":{"kind":"Void"}},
+    dwFlags: {"kind":"UInt32"},
+    fpProcess: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: DD_UNLOCKDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_UNLOCKDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_GLOBAL},
+    lpDDSurface: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    Unlock: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_UPDATEOVERLAYDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_UPDATEOVERLAYDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_GLOBAL},
+    lpDDDestSurface: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+    rDest: Windows.Win32.DisplayDevices.RECTL,
+    lpDDSrcSurface: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+    rSrc: Windows.Win32.DisplayDevices.RECTL,
+    dwFlags: {"kind":"UInt32"},
+    overlayFX: Windows.Win32.DirectDraw.DDOVERLAYFX,
+    ddRVal: Windows.Win32.Com.HRESULT,
+    UpdateOverlay: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_SETOVERLAYPOSITIONDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_SETOVERLAYPOSITIONDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_GLOBAL},
+    lpDDSrcSurface: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+    lpDDDestSurface: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+    lXPos: {"kind":"Int32"},
+    lYPos: {"kind":"Int32"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    SetOverlayPosition: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_SETPALETTEDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_SETPALETTEDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_GLOBAL},
+    lpDDSurface: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+    lpDDPalette: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_PALETTE_GLOBAL},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    SetPalette: {"kind""Ptr","child":{"kind":"Void"}},
+    Attach: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: DD_FLIPDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_FLIPDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_GLOBAL},
+    lpSurfCurr: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+    lpSurfTarg: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+    dwFlags: {"kind":"UInt32"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    Flip: {"kind""Ptr","child":{"kind":"Void"}},
+    lpSurfCurrLeft: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+    lpSurfTargLeft: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+};
+// --------------------------------------------------------
+// Type: DD_DESTROYSURFACEDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_DESTROYSURFACEDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_GLOBAL},
+    lpDDSurface: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    DestroySurface: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_ADDATTACHEDSURFACEDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_ADDATTACHEDSURFACEDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_GLOBAL},
+    lpDDSurface: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+    lpSurfAttached: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    AddAttachedSurface: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_SETCOLORKEYDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_SETCOLORKEYDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_GLOBAL},
+    lpDDSurface: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+    dwFlags: {"kind":"UInt32"},
+    ckNew: Windows.Win32.DirectShow.DDCOLORKEY,
+    ddRVal: Windows.Win32.Com.HRESULT,
+    SetColorKey: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_GETBLTSTATUSDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_GETBLTSTATUSDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_GLOBAL},
+    lpDDSurface: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+    dwFlags: {"kind":"UInt32"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    GetBltStatus: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_GETFLIPSTATUSDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_GETFLIPSTATUSDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_GLOBAL},
+    lpDDSurface: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+    dwFlags: {"kind":"UInt32"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    GetFlipStatus: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_DESTROYPALETTEDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_DESTROYPALETTEDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_GLOBAL},
+    lpDDPalette: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_PALETTE_GLOBAL},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    DestroyPalette: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_SETENTRIESDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_SETENTRIESDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_GLOBAL},
+    lpDDPalette: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_PALETTE_GLOBAL},
+    dwBase: {"kind":"UInt32"},
+    dwNumEntries: {"kind":"UInt32"},
+    lpEntries: {"kind""Ptr","child":Windows.Win32.Direct2D.PALETTEENTRY},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    SetEntries: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_CREATESURFACEDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_CREATESURFACEDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_GLOBAL},
+    lpDDSurfaceDesc: {"kind""Ptr","child":Windows.Win32.DirectDraw.DDSURFACEDESC},
+    lplpSList: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL}},
+    dwSCnt: {"kind":"UInt32"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    CreateSurface: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_CANCREATESURFACEDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_CANCREATESURFACEDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_GLOBAL},
+    lpDDSurfaceDesc: {"kind""Ptr","child":Windows.Win32.DirectDraw.DDSURFACEDESC},
+    bIsDifferentPixelFormat: {"kind":"UInt32"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    CanCreateSurface: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_CREATEPALETTEDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_CREATEPALETTEDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_GLOBAL},
+    lpDDPalette: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_PALETTE_GLOBAL},
+    lpColorTable: {"kind""Ptr","child":Windows.Win32.Direct2D.PALETTEENTRY},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    CreatePalette: {"kind""Ptr","child":{"kind":"Void"}},
+    is_excl: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: DD_WAITFORVERTICALBLANKDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_WAITFORVERTICALBLANKDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_GLOBAL},
+    dwFlags: {"kind":"UInt32"},
+    bIsInVB: {"kind":"UInt32"},
+    hEvent: {"kind":"UIntPtr"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    WaitForVerticalBlank: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_GETSCANLINEDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_GETSCANLINEDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_GLOBAL},
+    dwScanLine: {"kind":"UInt32"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    GetScanLine: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_MAPMEMORYDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_MAPMEMORYDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_GLOBAL},
+    bMap: Windows.Win32.SystemServices.BOOL,
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+    fpProcess: {"kind":"UIntPtr"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+};
+// --------------------------------------------------------
+// Type: DD_CANCREATEVPORTDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_CANCREATEVPORTDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    lpDDVideoPortDesc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DDVIDEOPORTDESC},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    CanCreateVideoPort: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_CREATEVPORTDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_CREATEVPORTDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    lpDDVideoPortDesc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DDVIDEOPORTDESC},
+    lpVideoPort: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_VIDEOPORT_LOCAL},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    CreateVideoPort: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_FLIPVPORTDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_FLIPVPORTDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    lpVideoPort: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_VIDEOPORT_LOCAL},
+    lpSurfCurr: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+    lpSurfTarg: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    FlipVideoPort: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_GETVPORTBANDWIDTHDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_GETVPORTBANDWIDTHDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    lpVideoPort: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_VIDEOPORT_LOCAL},
+    lpddpfFormat: {"kind""Ptr","child":Windows.Win32.DirectDraw.DDPIXELFORMAT},
+    dwWidth: {"kind":"UInt32"},
+    dwHeight: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    lpBandwidth: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DDVIDEOPORTBANDWIDTH},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    GetVideoPortBandwidth: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_GETVPORTINPUTFORMATDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_GETVPORTINPUTFORMATDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    lpVideoPort: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_VIDEOPORT_LOCAL},
+    dwFlags: {"kind":"UInt32"},
+    lpddpfFormat: {"kind""Ptr","child":Windows.Win32.DirectDraw.DDPIXELFORMAT},
+    dwNumFormats: {"kind":"UInt32"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    GetVideoPortInputFormats: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_GETVPORTOUTPUTFORMATDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_GETVPORTOUTPUTFORMATDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    lpVideoPort: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_VIDEOPORT_LOCAL},
+    dwFlags: {"kind":"UInt32"},
+    lpddpfInputFormat: {"kind""Ptr","child":Windows.Win32.DirectDraw.DDPIXELFORMAT},
+    lpddpfOutputFormats: {"kind""Ptr","child":Windows.Win32.DirectDraw.DDPIXELFORMAT},
+    dwNumFormats: {"kind":"UInt32"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    GetVideoPortInputFormats: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_GETVPORTFIELDDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_GETVPORTFIELDDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    lpVideoPort: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_VIDEOPORT_LOCAL},
+    bField: Windows.Win32.SystemServices.BOOL,
+    ddRVal: Windows.Win32.Com.HRESULT,
+    GetVideoPortField: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_GETVPORTLINEDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_GETVPORTLINEDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    lpVideoPort: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_VIDEOPORT_LOCAL},
+    dwLine: {"kind":"UInt32"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    GetVideoPortLine: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_GETVPORTCONNECTDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_GETVPORTCONNECTDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    dwPortId: {"kind":"UInt32"},
+    lpConnect: {"kind""Ptr","child":Windows.Win32.CoreAudio.DDVIDEOPORTCONNECT},
+    dwNumEntries: {"kind":"UInt32"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    GetVideoPortConnectInfo: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_DESTROYVPORTDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_DESTROYVPORTDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    lpVideoPort: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_VIDEOPORT_LOCAL},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    DestroyVideoPort: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_GETVPORTFLIPSTATUSDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_GETVPORTFLIPSTATUSDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    fpSurface: {"kind":"UIntPtr"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    GetVideoPortFlipStatus: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_UPDATEVPORTDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_UPDATEVPORTDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    lpVideoPort: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_VIDEOPORT_LOCAL},
+    lplpDDSurface: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_INT}},
+    lplpDDVBISurface: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_INT}},
+    lpVideoInfo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DDVIDEOPORTINFO},
+    dwFlags: {"kind":"UInt32"},
+    dwNumAutoflip: {"kind":"UInt32"},
+    dwNumVBIAutoflip: {"kind":"UInt32"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    UpdateVideoPort: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_WAITFORVPORTSYNCDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_WAITFORVPORTSYNCDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    lpVideoPort: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_VIDEOPORT_LOCAL},
+    dwFlags: {"kind":"UInt32"},
+    dwLine: {"kind":"UInt32"},
+    dwTimeOut: {"kind":"UInt32"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    UpdateVideoPort: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_GETVPORTSIGNALDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_GETVPORTSIGNALDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    lpVideoPort: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_VIDEOPORT_LOCAL},
+    dwStatus: {"kind":"UInt32"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    GetVideoSignalStatus: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_VPORTCOLORDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_VPORTCOLORDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    lpVideoPort: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_VIDEOPORT_LOCAL},
+    dwFlags: {"kind":"UInt32"},
+    lpColorData: {"kind""Ptr","child":Windows.Win32.DirectDraw.DDCOLORCONTROL},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    ColorControl: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_COLORCONTROLDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_COLORCONTROLDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_GLOBAL},
+    lpDDSurface: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+    lpColorData: {"kind""Ptr","child":Windows.Win32.DirectDraw.DDCOLORCONTROL},
+    dwFlags: {"kind":"UInt32"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    ColorControl: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_GETDRIVERINFODATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_GETDRIVERINFODATA = extern struct {
+    dhpdev: {"kind""Ptr","child":{"kind":"Void"}},
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    guidInfo: Guid,
+    dwExpectedSize: {"kind":"UInt32"},
+    lpvData: {"kind""Ptr","child":{"kind":"Void"}},
+    dwActualSize: {"kind":"UInt32"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+};
+// --------------------------------------------------------
+// Type: DD_GETAVAILDRIVERMEMORYDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_GETAVAILDRIVERMEMORYDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_GLOBAL},
+    DDSCaps: Windows.Win32.DirectDraw.DDSCAPS,
+    dwTotal: {"kind":"UInt32"},
+    dwFree: {"kind":"UInt32"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    GetAvailDriverMemory: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_FREEDRIVERMEMORYDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_FREEDRIVERMEMORYDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_GLOBAL},
+    lpDDSurface: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    FreeDriverMemory: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_SETEXCLUSIVEMODEDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_SETEXCLUSIVEMODEDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_GLOBAL},
+    dwEnterExcl: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    SetExclusiveMode: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_FLIPTOGDISURFACEDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_FLIPTOGDISURFACEDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_GLOBAL},
+    dwToGDI: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    FlipToGDISurface: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_SYNCSURFACEDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_SYNCSURFACEDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    lpDDSurface: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+    dwSurfaceOffset: {"kind":"UInt32"},
+    fpLockPtr: {"kind":"UIntPtr"},
+    lPitch: {"kind":"Int32"},
+    dwOverlayOffset: {"kind":"UInt32"},
+    dwDriverReserved1: {"kind":"UInt32"},
+    dwDriverReserved2: {"kind":"UInt32"},
+    dwDriverReserved3: {"kind":"UInt32"},
+    dwDriverReserved4: {"kind":"UInt32"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+};
+// --------------------------------------------------------
+// Type: DD_SYNCVIDEOPORTDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_SYNCVIDEOPORTDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    lpVideoPort: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_VIDEOPORT_LOCAL},
+    dwOriginOffset: {"kind":"UInt32"},
+    dwHeight: {"kind":"UInt32"},
+    dwVBIHeight: {"kind":"UInt32"},
+    dwDriverReserved1: {"kind":"UInt32"},
+    dwDriverReserved2: {"kind":"UInt32"},
+    dwDriverReserved3: {"kind":"UInt32"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+};
+// --------------------------------------------------------
+// Type: DD_GETMOCOMPGUIDSDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_GETMOCOMPGUIDSDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    dwNumGuids: {"kind":"UInt32"},
+    lpGuids: {"kind""Ptr","child":Guid},
+    ddRVal: Windows.Win32.Com.HRESULT,
+};
+// --------------------------------------------------------
+// Type: DD_GETMOCOMPFORMATSDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_GETMOCOMPFORMATSDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    lpGuid: {"kind""Ptr","child":Guid},
+    dwNumFormats: {"kind":"UInt32"},
+    lpFormats: {"kind""Ptr","child":Windows.Win32.DirectDraw.DDPIXELFORMAT},
+    ddRVal: Windows.Win32.Com.HRESULT,
+};
+// --------------------------------------------------------
+// Type: DD_CREATEMOCOMPDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_CREATEMOCOMPDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    lpMoComp: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_MOTIONCOMP_LOCAL},
+    lpGuid: {"kind""Ptr","child":Guid},
+    dwUncompWidth: {"kind":"UInt32"},
+    dwUncompHeight: {"kind":"UInt32"},
+    ddUncompPixelFormat: Windows.Win32.DirectDraw.DDPIXELFORMAT,
+    lpData: {"kind""Ptr","child":{"kind":"Void"}},
+    dwDataSize: {"kind":"UInt32"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+};
+// --------------------------------------------------------
+// Type: DDCOMPBUFFERINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDCOMPBUFFERINFO = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwNumCompBuffers: {"kind":"UInt32"},
+    dwWidthToCreate: {"kind":"UInt32"},
+    dwHeightToCreate: {"kind":"UInt32"},
+    dwBytesToAllocate: {"kind":"UInt32"},
+    ddCompCaps: Windows.Win32.DirectDraw.DDSCAPS2,
+    ddPixelFormat: Windows.Win32.DirectDraw.DDPIXELFORMAT,
+};
+// --------------------------------------------------------
+// Type: DD_GETMOCOMPCOMPBUFFDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_GETMOCOMPCOMPBUFFDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    lpGuid: {"kind""Ptr","child":Guid},
+    dwWidth: {"kind":"UInt32"},
+    dwHeight: {"kind":"UInt32"},
+    ddPixelFormat: Windows.Win32.DirectDraw.DDPIXELFORMAT,
+    dwNumTypesCompBuffs: {"kind":"UInt32"},
+    lpCompBuffInfo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DDCOMPBUFFERINFO},
+    ddRVal: Windows.Win32.Com.HRESULT,
+};
+// --------------------------------------------------------
+// Type: DD_GETINTERNALMOCOMPDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_GETINTERNALMOCOMPDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    lpGuid: {"kind""Ptr","child":Guid},
+    dwWidth: {"kind":"UInt32"},
+    dwHeight: {"kind":"UInt32"},
+    ddPixelFormat: Windows.Win32.DirectDraw.DDPIXELFORMAT,
+    dwScratchMemAlloc: {"kind":"UInt32"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+};
+// --------------------------------------------------------
+// Type: DD_BEGINMOCOMPFRAMEDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_BEGINMOCOMPFRAMEDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    lpMoComp: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_MOTIONCOMP_LOCAL},
+    lpDestSurface: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+    dwInputDataSize: {"kind":"UInt32"},
+    lpInputData: {"kind""Ptr","child":{"kind":"Void"}},
+    dwOutputDataSize: {"kind":"UInt32"},
+    lpOutputData: {"kind""Ptr","child":{"kind":"Void"}},
+    ddRVal: Windows.Win32.Com.HRESULT,
+};
+// --------------------------------------------------------
+// Type: DD_ENDMOCOMPFRAMEDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_ENDMOCOMPFRAMEDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    lpMoComp: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_MOTIONCOMP_LOCAL},
+    lpInputData: {"kind""Ptr","child":{"kind":"Void"}},
+    dwInputDataSize: {"kind":"UInt32"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+};
+// --------------------------------------------------------
+// Type: DDMOCOMPBUFFERINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDMOCOMPBUFFERINFO = extern struct {
+    dwSize: {"kind":"UInt32"},
+    lpCompSurface: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+    dwDataOffset: {"kind":"UInt32"},
+    dwDataSize: {"kind":"UInt32"},
+    lpPrivate: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DD_RENDERMOCOMPDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_RENDERMOCOMPDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    lpMoComp: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_MOTIONCOMP_LOCAL},
+    dwNumBuffers: {"kind":"UInt32"},
+    lpBufferInfo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DDMOCOMPBUFFERINFO},
+    dwFunction: {"kind":"UInt32"},
+    lpInputData: {"kind""Ptr","child":{"kind":"Void"}},
+    dwInputDataSize: {"kind":"UInt32"},
+    lpOutputData: {"kind""Ptr","child":{"kind":"Void"}},
+    dwOutputDataSize: {"kind":"UInt32"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+};
+// --------------------------------------------------------
+// Type: DD_QUERYMOCOMPSTATUSDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_QUERYMOCOMPSTATUSDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    lpMoComp: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_MOTIONCOMP_LOCAL},
+    lpSurface: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+    dwFlags: {"kind":"UInt32"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+};
+// --------------------------------------------------------
+// Type: DD_DESTROYMOCOMPDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_DESTROYMOCOMPDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    lpMoComp: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_MOTIONCOMP_LOCAL},
+    ddRVal: Windows.Win32.Com.HRESULT,
+};
+// --------------------------------------------------------
+// Type: DD_CREATESURFACEEXDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_CREATESURFACEEXDATA = extern struct {
+    dwFlags: {"kind":"UInt32"},
+    lpDDLcl: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_DIRECTDRAW_LOCAL},
+    lpDDSLcl: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DD_SURFACE_LOCAL},
+    ddRVal: Windows.Win32.Com.HRESULT,
+};
+// --------------------------------------------------------
+// Type: DD_GETDRIVERSTATEDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DD_GETDRIVERSTATEDATA = extern struct {
+    dwFlags: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.DisplayDevices.DD_GETDRIVERSTATEDATA+_Anonymous_e__Union,
+    lpdwStates: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwLength: {"kind":"UInt32"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: FD_XFORM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FD_XFORM = extern struct {
+    eXX: {"kind":"UInt32"},
+    eXY: {"kind":"UInt32"},
+    eYX: {"kind":"UInt32"},
+    eYY: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: FD_DEVICEMETRICS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FD_DEVICEMETRICS = extern struct {
+    flRealizedType: {"kind":"UInt32"},
+    pteBase: Windows.Win32.SystemServices.POINTE,
+    pteSide: Windows.Win32.SystemServices.POINTE,
+    lD: {"kind":"Int32"},
+    fxMaxAscender: {"kind":"Int32"},
+    fxMaxDescender: {"kind":"Int32"},
+    ptlUnderline1: Windows.Win32.DisplayDevices.POINTL,
+    ptlStrikeOut: Windows.Win32.DisplayDevices.POINTL,
+    ptlULThickness: Windows.Win32.DisplayDevices.POINTL,
+    ptlSOThickness: Windows.Win32.DisplayDevices.POINTL,
+    cxMax: {"kind":"UInt32"},
+    cyMax: {"kind":"UInt32"},
+    cjGlyphMax: {"kind":"UInt32"},
+    fdxQuantized: Windows.Win32.DisplayDevices.FD_XFORM,
+    lNonLinearExtLeading: {"kind":"Int32"},
+    lNonLinearIntLeading: {"kind":"Int32"},
+    lNonLinearMaxCharWidth: {"kind":"Int32"},
+    lNonLinearAvgCharWidth: {"kind":"Int32"},
+    lMinA: {"kind":"Int32"},
+    lMinC: {"kind":"Int32"},
+    lMinD: {"kind":"Int32"},
+    alReserved: {"kind":"Array","child": {"kind":"Int32"}},
+};
+// --------------------------------------------------------
+// Type: WCRUN
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WCRUN = extern struct {
+    wcLow: {"kind":"UInt16"},
+    cGlyphs: {"kind":"UInt16"},
+    phg: {"kind""Ptr","child":{"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: FD_GLYPHSET
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FD_GLYPHSET = extern struct {
+    cjThis: {"kind":"UInt32"},
+    flAccel: {"kind":"UInt32"},
+    cGlyphsSupported: {"kind":"UInt32"},
+    cRuns: {"kind":"UInt32"},
+    awcrun: {"kind":"Array","child": Windows.Win32.DisplayDevices.WCRUN},
+};
+// --------------------------------------------------------
+// Type: FD_GLYPHATTR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FD_GLYPHATTR = extern struct {
+    cjThis: {"kind":"UInt32"},
+    cGlyphs: {"kind":"UInt32"},
+    iMode: {"kind":"UInt32"},
+    aGlyphAttr: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: FD_KERNINGPAIR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FD_KERNINGPAIR = extern struct {
+    wcFirst: {"kind":"UInt16"},
+    wcSecond: {"kind":"UInt16"},
+    fwdKern: {"kind":"Int16"},
+};
+// --------------------------------------------------------
+// Type: FONTDIFF
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FONTDIFF = extern struct {
+    jReserved1: {"kind":"Byte"},
+    jReserved2: {"kind":"Byte"},
+    jReserved3: {"kind":"Byte"},
+    bWeight: {"kind":"Byte"},
+    usWinWeight: {"kind":"UInt16"},
+    fsSelection: {"kind":"UInt16"},
+    fwdAveCharWidth: {"kind":"Int16"},
+    fwdMaxCharInc: {"kind":"Int16"},
+    ptlCaret: Windows.Win32.DisplayDevices.POINTL,
+};
+// --------------------------------------------------------
+// Type: FONTSIM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FONTSIM = extern struct {
+    dpBold: {"kind":"Int32"},
+    dpItalic: {"kind":"Int32"},
+    dpBoldItalic: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: IFIMETRICS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IFIMETRICS = extern struct {
+    cjThis: {"kind":"UInt32"},
+    cjIfiExtra: {"kind":"UInt32"},
+    dpwszFamilyName: {"kind":"Int32"},
+    dpwszStyleName: {"kind":"Int32"},
+    dpwszFaceName: {"kind":"Int32"},
+    dpwszUniqueName: {"kind":"Int32"},
+    dpFontSim: {"kind":"Int32"},
+    lEmbedId: {"kind":"Int32"},
+    lItalicAngle: {"kind":"Int32"},
+    lCharBias: {"kind":"Int32"},
+    dpCharSets: {"kind":"Int32"},
+    jWinCharSet: {"kind":"Byte"},
+    jWinPitchAndFamily: {"kind":"Byte"},
+    usWinWeight: {"kind":"UInt16"},
+    flInfo: {"kind":"UInt32"},
+    fsSelection: {"kind":"UInt16"},
+    fsType: {"kind":"UInt16"},
+    fwdUnitsPerEm: {"kind":"Int16"},
+    fwdLowestPPEm: {"kind":"Int16"},
+    fwdWinAscender: {"kind":"Int16"},
+    fwdWinDescender: {"kind":"Int16"},
+    fwdMacAscender: {"kind":"Int16"},
+    fwdMacDescender: {"kind":"Int16"},
+    fwdMacLineGap: {"kind":"Int16"},
+    fwdTypoAscender: {"kind":"Int16"},
+    fwdTypoDescender: {"kind":"Int16"},
+    fwdTypoLineGap: {"kind":"Int16"},
+    fwdAveCharWidth: {"kind":"Int16"},
+    fwdMaxCharInc: {"kind":"Int16"},
+    fwdCapHeight: {"kind":"Int16"},
+    fwdXHeight: {"kind":"Int16"},
+    fwdSubscriptXSize: {"kind":"Int16"},
+    fwdSubscriptYSize: {"kind":"Int16"},
+    fwdSubscriptXOffset: {"kind":"Int16"},
+    fwdSubscriptYOffset: {"kind":"Int16"},
+    fwdSuperscriptXSize: {"kind":"Int16"},
+    fwdSuperscriptYSize: {"kind":"Int16"},
+    fwdSuperscriptXOffset: {"kind":"Int16"},
+    fwdSuperscriptYOffset: {"kind":"Int16"},
+    fwdUnderscoreSize: {"kind":"Int16"},
+    fwdUnderscorePosition: {"kind":"Int16"},
+    fwdStrikeoutSize: {"kind":"Int16"},
+    fwdStrikeoutPosition: {"kind":"Int16"},
+    chFirstChar: {"kind":"Byte"},
+    chLastChar: {"kind":"Byte"},
+    chDefaultChar: {"kind":"Byte"},
+    chBreakChar: {"kind":"Byte"},
+    wcFirstChar: {"kind":"UInt16"},
+    wcLastChar: {"kind":"UInt16"},
+    wcDefaultChar: {"kind":"UInt16"},
+    wcBreakChar: {"kind":"UInt16"},
+    ptlBaseline: Windows.Win32.DisplayDevices.POINTL,
+    ptlAspect: Windows.Win32.DisplayDevices.POINTL,
+    ptlCaret: Windows.Win32.DisplayDevices.POINTL,
+    rclFontBox: Windows.Win32.DisplayDevices.RECTL,
+    achVendId: {"kind":"Array","child": {"kind":"Byte"}},
+    cKerningPairs: {"kind":"UInt32"},
+    ulPanoseCulture: {"kind":"UInt32"},
+    panose: Windows.Win32.Gdi.PANOSE,
+};
+// --------------------------------------------------------
+// Type: IFIEXTRA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IFIEXTRA = extern struct {
+    ulIdentifier: {"kind":"UInt32"},
+    dpFontSig: {"kind":"Int32"},
+    cig: {"kind":"UInt32"},
+    dpDesignVector: {"kind":"Int32"},
+    dpAxesInfoW: {"kind":"Int32"},
+    aulReserved: {"kind":"Array","child": {"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: DRVFN
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DRVFN = extern struct {
+    iFunc: {"kind":"UInt32"},
+    pfn: Windows.Win32.SystemServices.PFN,
+};
+// --------------------------------------------------------
+// Type: DRVENABLEDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DRVENABLEDATA = extern struct {
+    iDriverVersion: {"kind":"UInt32"},
+    c: {"kind":"UInt32"},
+    pdrvfn: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DRVFN},
+};
+// --------------------------------------------------------
+// Type: DEVINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DEVINFO = extern struct {
+    flGraphicsCaps: {"kind":"UInt32"},
+    lfDefaultFont: Windows.Win32.Shell.LOGFONTW,
+    lfAnsiVarFont: Windows.Win32.Shell.LOGFONTW,
+    lfAnsiFixFont: Windows.Win32.Shell.LOGFONTW,
+    cFonts: {"kind":"UInt32"},
+    iDitherFormat: {"kind":"UInt32"},
+    cxDither: {"kind":"UInt16"},
+    cyDither: {"kind":"UInt16"},
+    hpalDefault: Windows.Win32.Gdi.HPALETTE,
+    flGraphicsCaps2: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: LINEATTRS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LINEATTRS = extern struct {
+    fl: {"kind":"UInt32"},
+    iJoin: {"kind":"UInt32"},
+    iEndCap: {"kind":"UInt32"},
+    elWidth: Windows.Win32.SystemServices.FLOAT_LONG,
+    eMiterLimit: {"kind":"UInt32"},
+    cstyle: {"kind":"UInt32"},
+    pstyle: {"kind""Ptr","child":Windows.Win32.SystemServices.FLOAT_LONG},
+    elStyleState: Windows.Win32.SystemServices.FLOAT_LONG,
+};
+// --------------------------------------------------------
+// Type: XFORML
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const XFORML = extern struct {
+    eM11: {"kind":"UInt32"},
+    eM12: {"kind":"UInt32"},
+    eM21: {"kind":"UInt32"},
+    eM22: {"kind":"UInt32"},
+    eDx: {"kind":"UInt32"},
+    eDy: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: CIECHROMA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CIECHROMA = extern struct {
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    Y: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: COLORINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const COLORINFO = extern struct {
+    Red: Windows.Win32.DisplayDevices.CIECHROMA,
+    Green: Windows.Win32.DisplayDevices.CIECHROMA,
+    Blue: Windows.Win32.DisplayDevices.CIECHROMA,
+    Cyan: Windows.Win32.DisplayDevices.CIECHROMA,
+    Magenta: Windows.Win32.DisplayDevices.CIECHROMA,
+    Yellow: Windows.Win32.DisplayDevices.CIECHROMA,
+    AlignmentWhite: Windows.Win32.DisplayDevices.CIECHROMA,
+    RedGamma: {"kind":"Int32"},
+    GreenGamma: {"kind":"Int32"},
+    BlueGamma: {"kind":"Int32"},
+    MagentaInCyanDye: {"kind":"Int32"},
+    YellowInCyanDye: {"kind":"Int32"},
+    CyanInMagentaDye: {"kind":"Int32"},
+    YellowInMagentaDye: {"kind":"Int32"},
+    CyanInYellowDye: {"kind":"Int32"},
+    MagentaInYellowDye: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: GDIINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GDIINFO = extern struct {
+    ulVersion: {"kind":"UInt32"},
+    ulTechnology: {"kind":"UInt32"},
+    ulHorzSize: {"kind":"UInt32"},
+    ulVertSize: {"kind":"UInt32"},
+    ulHorzRes: {"kind":"UInt32"},
+    ulVertRes: {"kind":"UInt32"},
+    cBitsPixel: {"kind":"UInt32"},
+    cPlanes: {"kind":"UInt32"},
+    ulNumColors: {"kind":"UInt32"},
+    flRaster: {"kind":"UInt32"},
+    ulLogPixelsX: {"kind":"UInt32"},
+    ulLogPixelsY: {"kind":"UInt32"},
+    flTextCaps: {"kind":"UInt32"},
+    ulDACRed: {"kind":"UInt32"},
+    ulDACGreen: {"kind":"UInt32"},
+    ulDACBlue: {"kind":"UInt32"},
+    ulAspectX: {"kind":"UInt32"},
+    ulAspectY: {"kind":"UInt32"},
+    ulAspectXY: {"kind":"UInt32"},
+    xStyleStep: {"kind":"Int32"},
+    yStyleStep: {"kind":"Int32"},
+    denStyleStep: {"kind":"Int32"},
+    ptlPhysOffset: Windows.Win32.DisplayDevices.POINTL,
+    szlPhysSize: Windows.Win32.DisplayDevices.SIZE,
+    ulNumPalReg: {"kind":"UInt32"},
+    ciDevice: Windows.Win32.DisplayDevices.COLORINFO,
+    ulDevicePelsDPI: {"kind":"UInt32"},
+    ulPrimaryOrder: {"kind":"UInt32"},
+    ulHTPatternSize: {"kind":"UInt32"},
+    ulHTOutputFormat: {"kind":"UInt32"},
+    flHTFlags: {"kind":"UInt32"},
+    ulVRefresh: {"kind":"UInt32"},
+    ulBltAlignment: {"kind":"UInt32"},
+    ulPanningHorzRes: {"kind":"UInt32"},
+    ulPanningVertRes: {"kind":"UInt32"},
+    xPanningAlignment: {"kind":"UInt32"},
+    yPanningAlignment: {"kind":"UInt32"},
+    cxHTPat: {"kind":"UInt32"},
+    cyHTPat: {"kind":"UInt32"},
+    pHTPatA: {"kind""Ptr","child":{"kind":"Byte"}},
+    pHTPatB: {"kind""Ptr","child":{"kind":"Byte"}},
+    pHTPatC: {"kind""Ptr","child":{"kind":"Byte"}},
+    flShadeBlend: {"kind":"UInt32"},
+    ulPhysicalPixelCharacteristics: {"kind":"UInt32"},
+    ulPhysicalPixelGamma: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: BRUSHOBJ
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BRUSHOBJ = extern struct {
+    iSolidColor: {"kind":"UInt32"},
+    pvRbrush: {"kind""Ptr","child":{"kind":"Void"}},
+    flColorType: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: CLIPOBJ
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CLIPOBJ = extern struct {
+    iUniq: {"kind":"UInt32"},
+    rclBounds: Windows.Win32.DisplayDevices.RECTL,
+    iDComplexity: {"kind":"Byte"},
+    iFComplexity: {"kind":"Byte"},
+    iMode: {"kind":"Byte"},
+    fjOptions: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: DRIVEROBJ
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DRIVEROBJ = extern struct {
+    pvObj: {"kind""Ptr","child":{"kind":"Void"}},
+    pFreeProc: Windows.Win32.SystemServices.FREEOBJPROC,
+    hdev: {"kind""Ptr","child":Windows.Win32.SystemServices.HDEV__},
+    dhpdev: {"kind""Ptr","child":Windows.Win32.SystemServices.DHPDEV__},
+};
+// --------------------------------------------------------
+// Type: FONTOBJ
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FONTOBJ = extern struct {
+    iUniq: {"kind":"UInt32"},
+    iFace: {"kind":"UInt32"},
+    cxMax: {"kind":"UInt32"},
+    flFontType: {"kind":"UInt32"},
+    iTTUniq: {"kind":"UIntPtr"},
+    iFile: {"kind":"UIntPtr"},
+    sizLogResPpi: Windows.Win32.DisplayDevices.SIZE,
+    ulStyleSize: {"kind":"UInt32"},
+    pvConsumer: {"kind""Ptr","child":{"kind":"Void"}},
+    pvProducer: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: BLENDOBJ
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BLENDOBJ = extern struct {
+    BlendFunction: Windows.Win32.Gdi.BLENDFUNCTION,
+};
+// --------------------------------------------------------
+// Type: PALOBJ
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PALOBJ = extern struct {
+    ulReserved: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PATHOBJ
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PATHOBJ = extern struct {
+    fl: {"kind":"UInt32"},
+    cCurves: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SURFOBJ
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SURFOBJ = extern struct {
+    dhsurf: {"kind""Ptr","child":Windows.Win32.SystemServices.DHSURF__},
+    hsurf: {"kind""Ptr","child":Windows.Win32.SystemServices.HSURF__},
+    dhpdev: {"kind""Ptr","child":Windows.Win32.SystemServices.DHPDEV__},
+    hdev: {"kind""Ptr","child":Windows.Win32.SystemServices.HDEV__},
+    sizlBitmap: Windows.Win32.DisplayDevices.SIZE,
+    cjBits: {"kind":"UInt32"},
+    pvBits: {"kind""Ptr","child":{"kind":"Void"}},
+    pvScan0: {"kind""Ptr","child":{"kind":"Void"}},
+    lDelta: {"kind":"Int32"},
+    iUniq: {"kind":"UInt32"},
+    iBitmapFormat: {"kind":"UInt32"},
+    iType: {"kind":"UInt16"},
+    fjBitmap: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: WNDOBJ
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WNDOBJ = extern struct {
+    coClient: Windows.Win32.DisplayDevices.CLIPOBJ,
+    pvConsumer: {"kind""Ptr","child":{"kind":"Void"}},
+    rclClient: Windows.Win32.DisplayDevices.RECTL,
+    psoOwner: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+};
+// --------------------------------------------------------
+// Type: XLATEOBJ
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const XLATEOBJ = extern struct {
+    iUniq: {"kind":"UInt32"},
+    flXlate: {"kind":"UInt32"},
+    iSrcType: {"kind":"UInt16"},
+    iDstType: {"kind":"UInt16"},
+    cEntries: {"kind":"UInt32"},
+    pulXlate: {"kind""Ptr","child":{"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: ENUMRECTS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ENUMRECTS = extern struct {
+    c: {"kind":"UInt32"},
+    arcl: {"kind":"Array","child": Windows.Win32.DisplayDevices.RECTL},
+};
+// --------------------------------------------------------
+// Type: GLYPHBITS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GLYPHBITS = extern struct {
+    ptlOrigin: Windows.Win32.DisplayDevices.POINTL,
+    sizlBitmap: Windows.Win32.DisplayDevices.SIZE,
+    aj: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: GLYPHDEF
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const GLYPHDEF = *opaque{
+};
+// --------------------------------------------------------
+// Type: GLYPHPOS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GLYPHPOS = extern struct {
+    hg: {"kind":"UInt32"},
+    pgdf: {"kind""Ptr","child":Windows.Win32.DisplayDevices.GLYPHDEF},
+    ptl: Windows.Win32.DisplayDevices.POINTL,
+};
+// --------------------------------------------------------
+// Type: GLYPHDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GLYPHDATA = extern struct {
+    gdf: Windows.Win32.DisplayDevices.GLYPHDEF,
+    hg: {"kind":"UInt32"},
+    fxD: {"kind":"Int32"},
+    fxA: {"kind":"Int32"},
+    fxAB: {"kind":"Int32"},
+    fxInkTop: {"kind":"Int32"},
+    fxInkBottom: {"kind":"Int32"},
+    rclInk: Windows.Win32.DisplayDevices.RECTL,
+    ptqD: Windows.Win32.SystemServices.POINTQF,
+};
+// --------------------------------------------------------
+// Type: STROBJ
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const STROBJ = extern struct {
+    cGlyphs: {"kind":"UInt32"},
+    flAccel: {"kind":"UInt32"},
+    ulCharInc: {"kind":"UInt32"},
+    rclBkGround: Windows.Win32.DisplayDevices.RECTL,
+    pgp: {"kind""Ptr","child":Windows.Win32.DisplayDevices.GLYPHPOS},
+    pwszOrg: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: FONTINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FONTINFO = extern struct {
+    cjThis: {"kind":"UInt32"},
+    flCaps: {"kind":"UInt32"},
+    cGlyphsSupported: {"kind":"UInt32"},
+    cjMaxGlyph1: {"kind":"UInt32"},
+    cjMaxGlyph4: {"kind":"UInt32"},
+    cjMaxGlyph8: {"kind":"UInt32"},
+    cjMaxGlyph32: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PATHDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PATHDATA = extern struct {
+    flags: {"kind":"UInt32"},
+    count: {"kind":"UInt32"},
+    pptfx: {"kind""Ptr","child":Windows.Win32.SystemServices.POINTFIX},
+};
+// --------------------------------------------------------
+// Type: RUN
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RUN = extern struct {
+    iStart: {"kind":"Int32"},
+    iStop: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: CLIPLINE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CLIPLINE = extern struct {
+    ptfxA: Windows.Win32.SystemServices.POINTFIX,
+    ptfxB: Windows.Win32.SystemServices.POINTFIX,
+    lStyleState: {"kind":"Int32"},
+    c: {"kind":"UInt32"},
+    arun: {"kind":"Array","child": Windows.Win32.DisplayDevices.RUN},
+};
+// --------------------------------------------------------
+// Type: PERBANDINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PERBANDINFO = extern struct {
+    bRepeatThisBand: Windows.Win32.SystemServices.BOOL,
+    szlBand: Windows.Win32.DisplayDevices.SIZE,
+    ulHorzRes: {"kind":"UInt32"},
+    ulVertRes: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: GAMMARAMP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GAMMARAMP = extern struct {
+    Red: {"kind":"Array","child": {"kind":"UInt16"}},
+    Green: {"kind":"Array","child": {"kind":"UInt16"}},
+    Blue: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DEVHTINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DEVHTINFO = extern struct {
+    HTFlags: {"kind":"UInt32"},
+    HTPatternSize: {"kind":"UInt32"},
+    DevPelsDPI: {"kind":"UInt32"},
+    ColorInfo: Windows.Win32.DisplayDevices.COLORINFO,
+};
+// --------------------------------------------------------
+// Type: DEVHTADJDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DEVHTADJDATA = extern struct {
+    DeviceFlags: {"kind":"UInt32"},
+    DeviceXDPI: {"kind":"UInt32"},
+    DeviceYDPI: {"kind":"UInt32"},
+    pDefHTInfo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DEVHTINFO},
+    pAdjHTInfo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DEVHTINFO},
+};
+// --------------------------------------------------------
+// Type: TYPE1_FONT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TYPE1_FONT = extern struct {
+    hPFM: Windows.Win32.SystemServices.HANDLE,
+    hPFB: Windows.Win32.SystemServices.HANDLE,
+    ulIdentifier: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ENGSAFESEMAPHORE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ENGSAFESEMAPHORE = extern struct {
+    hsem: {"kind""Ptr","child":Windows.Win32.SystemServices.HSEMAPHORE__},
+    lCount: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: FLOATOBJ
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FLOATOBJ = extern struct {
+    ul1: {"kind":"UInt32"},
+    ul2: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: FLOATOBJ_XFORM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FLOATOBJ_XFORM = extern struct {
+    eM11: Windows.Win32.DisplayDevices.FLOATOBJ,
+    eM12: Windows.Win32.DisplayDevices.FLOATOBJ,
+    eM21: Windows.Win32.DisplayDevices.FLOATOBJ,
+    eM22: Windows.Win32.DisplayDevices.FLOATOBJ,
+    eDx: Windows.Win32.DisplayDevices.FLOATOBJ,
+    eDy: Windows.Win32.DisplayDevices.FLOATOBJ,
+};
+// --------------------------------------------------------
+// Type: ENG_TIME_FIELDS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ENG_TIME_FIELDS = extern struct {
+    usYear: {"kind":"UInt16"},
+    usMonth: {"kind":"UInt16"},
+    usDay: {"kind":"UInt16"},
+    usHour: {"kind":"UInt16"},
+    usMinute: {"kind":"UInt16"},
+    usSecond: {"kind":"UInt16"},
+    usMilliseconds: {"kind":"UInt16"},
+    usWeekday: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: PFN_DrvQueryGlyphAttrs
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFN_DrvQueryGlyphAttrs = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: VIDEOPARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const VIDEOPARAMETERS = extern struct {
+    Guid: Guid,
+    dwOffset: {"kind":"UInt32"},
+    dwCommand: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwMode: {"kind":"UInt32"},
+    dwTVStandard: {"kind":"UInt32"},
+    dwAvailableModes: {"kind":"UInt32"},
+    dwAvailableTVStandard: {"kind":"UInt32"},
+    dwFlickerFilter: {"kind":"UInt32"},
+    dwOverScanX: {"kind":"UInt32"},
+    dwOverScanY: {"kind":"UInt32"},
+    dwMaxUnscaledX: {"kind":"UInt32"},
+    dwMaxUnscaledY: {"kind":"UInt32"},
+    dwPositionX: {"kind":"UInt32"},
+    dwPositionY: {"kind":"UInt32"},
+    dwBrightness: {"kind":"UInt32"},
+    dwContrast: {"kind":"UInt32"},
+    dwCPType: {"kind":"UInt32"},
+    dwCPCommand: {"kind":"UInt32"},
+    dwCPStandard: {"kind":"UInt32"},
+    dwCPKey: {"kind":"UInt32"},
+    bCP_APSTriggerBits: {"kind":"UInt32"},
+    bOEMCopyProtection: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: IDirectDrawKernel
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectDrawKernel = *opaque{
+    // TODO: Method 'GetCaps'
+    // TODO: Method 'GetKernelHandle'
+    // TODO: Method 'ReleaseKernelHandle'
+};
+// --------------------------------------------------------
+// Type: IDirectDrawSurfaceKernel
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectDrawSurfaceKernel = *opaque{
+    // TODO: Method 'GetKernelHandle'
+    // TODO: Method 'ReleaseKernelHandle'
+};
+// --------------------------------------------------------
+// Type: DDKERNELCAPS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDKERNELCAPS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwCaps: {"kind":"UInt32"},
+    dwIRQCaps: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SURFACEALIGNMENT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SURFACEALIGNMENT = extern struct {
+    Anonymous: Windows.Win32.DisplayDevices.SURFACEALIGNMENT+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Rectangular_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Rectangular_e__Struct = extern struct {
+            dwXAlignment: {"kind":"UInt32"},
+            dwYAlignment: {"kind":"UInt32"},
+            dwFlags: {"kind":"UInt32"},
+            dwReserved2: {"kind":"UInt32"},
+        };
+        // --------------------------------------------------------
+        // Type: _Linear_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Linear_e__Struct = extern struct {
+            dwStartAlignment: {"kind":"UInt32"},
+            dwPitchAlignment: {"kind":"UInt32"},
+            dwFlags: {"kind":"UInt32"},
+            dwReserved2: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: HEAPALIGNMENT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HEAPALIGNMENT = extern struct {
+    dwSize: {"kind":"UInt32"},
+    ddsCaps: Windows.Win32.DirectDraw.DDSCAPS,
+    dwReserved: {"kind":"UInt32"},
+    ExecuteBuffer: Windows.Win32.DisplayDevices.SURFACEALIGNMENT,
+    Overlay: Windows.Win32.DisplayDevices.SURFACEALIGNMENT,
+    Texture: Windows.Win32.DisplayDevices.SURFACEALIGNMENT,
+    ZBuffer: Windows.Win32.DisplayDevices.SURFACEALIGNMENT,
+    AlphaBuffer: Windows.Win32.DisplayDevices.SURFACEALIGNMENT,
+    Offscreen: Windows.Win32.DisplayDevices.SURFACEALIGNMENT,
+    FlipTarget: Windows.Win32.DisplayDevices.SURFACEALIGNMENT,
+};
+// --------------------------------------------------------
+// Type: VMEMHEAP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const VMEMHEAP = extern struct {
+    dwFlags: {"kind":"UInt32"},
+    stride: {"kind":"UInt32"},
+    freeList: {"kind""Ptr","child":{"kind":"Void"}},
+    allocList: {"kind""Ptr","child":{"kind":"Void"}},
+    dwTotalSize: {"kind":"UInt32"},
+    fpGARTLin: {"kind":"UIntPtr"},
+    fpGARTDev: {"kind":"UIntPtr"},
+    dwCommitedSize: {"kind":"UInt32"},
+    dwCoalesceCount: {"kind":"UInt32"},
+    Alignment: Windows.Win32.DisplayDevices.HEAPALIGNMENT,
+    ddsCapsEx: Windows.Win32.DirectDraw.DDSCAPSEX,
+    ddsCapsExAlt: Windows.Win32.DirectDraw.DDSCAPSEX,
+    liPhysAGPBase: Windows.Win32.SystemServices.LARGE_INTEGER,
+    hdevAGP: Windows.Win32.SystemServices.HANDLE,
+    pvPhysRsrv: {"kind""Ptr","child":{"kind":"Void"}},
+    pAgpCommitMask: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwAgpCommitMaskSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DDCORECAPS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDCORECAPS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwCaps: {"kind":"UInt32"},
+    dwCaps2: {"kind":"UInt32"},
+    dwCKeyCaps: {"kind":"UInt32"},
+    dwFXCaps: {"kind":"UInt32"},
+    dwFXAlphaCaps: {"kind":"UInt32"},
+    dwPalCaps: {"kind":"UInt32"},
+    dwSVCaps: {"kind":"UInt32"},
+    dwAlphaBltConstBitDepths: {"kind":"UInt32"},
+    dwAlphaBltPixelBitDepths: {"kind":"UInt32"},
+    dwAlphaBltSurfaceBitDepths: {"kind":"UInt32"},
+    dwAlphaOverlayConstBitDepths: {"kind":"UInt32"},
+    dwAlphaOverlayPixelBitDepths: {"kind":"UInt32"},
+    dwAlphaOverlaySurfaceBitDepths: {"kind":"UInt32"},
+    dwZBufferBitDepths: {"kind":"UInt32"},
+    dwVidMemTotal: {"kind":"UInt32"},
+    dwVidMemFree: {"kind":"UInt32"},
+    dwMaxVisibleOverlays: {"kind":"UInt32"},
+    dwCurrVisibleOverlays: {"kind":"UInt32"},
+    dwNumFourCCCodes: {"kind":"UInt32"},
+    dwAlignBoundarySrc: {"kind":"UInt32"},
+    dwAlignSizeSrc: {"kind":"UInt32"},
+    dwAlignBoundaryDest: {"kind":"UInt32"},
+    dwAlignSizeDest: {"kind":"UInt32"},
+    dwAlignStrideAlign: {"kind":"UInt32"},
+    dwRops: {"kind":"Array","child": {"kind":"UInt32"}},
+    ddsCaps: Windows.Win32.DirectDraw.DDSCAPS,
+    dwMinOverlayStretch: {"kind":"UInt32"},
+    dwMaxOverlayStretch: {"kind":"UInt32"},
+    dwMinLiveVideoStretch: {"kind":"UInt32"},
+    dwMaxLiveVideoStretch: {"kind":"UInt32"},
+    dwMinHwCodecStretch: {"kind":"UInt32"},
+    dwMaxHwCodecStretch: {"kind":"UInt32"},
+    dwReserved1: {"kind":"UInt32"},
+    dwReserved2: {"kind":"UInt32"},
+    dwReserved3: {"kind":"UInt32"},
+    dwSVBCaps: {"kind":"UInt32"},
+    dwSVBCKeyCaps: {"kind":"UInt32"},
+    dwSVBFXCaps: {"kind":"UInt32"},
+    dwSVBRops: {"kind":"Array","child": {"kind":"UInt32"}},
+    dwVSBCaps: {"kind":"UInt32"},
+    dwVSBCKeyCaps: {"kind":"UInt32"},
+    dwVSBFXCaps: {"kind":"UInt32"},
+    dwVSBRops: {"kind":"Array","child": {"kind":"UInt32"}},
+    dwSSBCaps: {"kind":"UInt32"},
+    dwSSBCKeyCaps: {"kind":"UInt32"},
+    dwSSBFXCaps: {"kind":"UInt32"},
+    dwSSBRops: {"kind":"Array","child": {"kind":"UInt32"}},
+    dwMaxVideoPorts: {"kind":"UInt32"},
+    dwCurrVideoPorts: {"kind":"UInt32"},
+    dwSVBCaps2: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DDHAL_WAITFORVERTICALBLANKDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDHAL_WAITFORVERTICALBLANKDATA = extern struct {
+    lpDD: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.DDRAWI_DIRECTDRAW_GBL},
+    dwFlags: {"kind":"UInt32"},
+    bIsInVB: {"kind":"UInt32"},
+    hEvent: {"kind":"UIntPtr"},
+    ddRVal: Windows.Win32.Com.HRESULT,
+    WaitForVerticalBlank: Windows.Win32.WindowsProgramming.LPDDHAL_WAITFORVERTICALBLANK,
+};
+// --------------------------------------------------------
+// Type: DDHAL_DESTROYDDLOCALDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDHAL_DESTROYDDLOCALDATA = extern struct {
+    dwFlags: {"kind":"UInt32"},
+    pDDLcl: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.DDRAWI_DIRECTDRAW_LCL},
+    ddRVal: Windows.Win32.Com.HRESULT,
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetDisplayConfigBufferSizes(
+    flags: {"kind":"UInt32"},
+    numPathArrayElements: {"kind""Ptr","child":{"kind":"UInt32"}},
+    numModeInfoArrayElements: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn SetDisplayConfig(
+    numPathArrayElements: {"kind":"UInt32"},
+    pathArray: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DISPLAYCONFIG_PATH_INFO},
+    numModeInfoArrayElements: {"kind":"UInt32"},
+    modeInfoArray: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DISPLAYCONFIG_MODE_INFO},
+    flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn QueryDisplayConfig(
+    flags: {"kind":"UInt32"},
+    numPathArrayElements: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pathArray: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DISPLAYCONFIG_PATH_INFO},
+    numModeInfoArrayElements: {"kind""Ptr","child":{"kind":"UInt32"}},
+    modeInfoArray: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DISPLAYCONFIG_MODE_INFO},
+    currentTopologyId: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DISPLAYCONFIG_TOPOLOGY_ID},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DisplayConfigGetDeviceInfo(
+    requestPacket: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DISPLAYCONFIG_DEVICE_INFO_HEADER},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DisplayConfigSetDeviceInfo(
+    setPacket: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DISPLAYCONFIG_DEVICE_INFO_HEADER},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn BRUSHOBJ_pvAllocRbrush(
+    pbo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.BRUSHOBJ},
+    cj: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn BRUSHOBJ_pvGetRbrush(
+    pbo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.BRUSHOBJ},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn BRUSHOBJ_ulGetBrushColor(
+    pbo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.BRUSHOBJ},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn BRUSHOBJ_hGetColorTransform(
+    pbo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.BRUSHOBJ},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CLIPOBJ_cEnumStart(
+    pco: {"kind""Ptr","child":Windows.Win32.DisplayDevices.CLIPOBJ},
+    bAll: Windows.Win32.SystemServices.BOOL,
+    iType: {"kind":"UInt32"},
+    iDirection: {"kind":"UInt32"},
+    cLimit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CLIPOBJ_bEnum(
+    pco: {"kind""Ptr","child":Windows.Win32.DisplayDevices.CLIPOBJ},
+    cj: {"kind":"UInt32"},
+    pul: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CLIPOBJ_ppoGetPath(
+    pco: {"kind""Ptr","child":Windows.Win32.DisplayDevices.CLIPOBJ},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn FONTOBJ_cGetAllGlyphHandles(
+    pfo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.FONTOBJ},
+    phg: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn FONTOBJ_vGetInfo(
+    pfo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.FONTOBJ},
+    cjSize: {"kind":"UInt32"},
+    pfi: {"kind""Ptr","child":Windows.Win32.DisplayDevices.FONTINFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn FONTOBJ_cGetGlyphs(
+    pfo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.FONTOBJ},
+    iMode: {"kind":"UInt32"},
+    cGlyph: {"kind":"UInt32"},
+    phg: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ppvGlyph: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn FONTOBJ_pxoGetXform(
+    pfo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.FONTOBJ},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn FONTOBJ_pifi(
+    pfo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.FONTOBJ},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn FONTOBJ_pfdg(
+    pfo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.FONTOBJ},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn FONTOBJ_pvTrueTypeFontFile(
+    pfo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.FONTOBJ},
+    pcjFile: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn FONTOBJ_pQueryGlyphAttrs(
+    pfo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.FONTOBJ},
+    iMode: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn PATHOBJ_vEnumStart(
+    ppo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.PATHOBJ},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn PATHOBJ_bEnum(
+    ppo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.PATHOBJ},
+    ppd: {"kind""Ptr","child":Windows.Win32.DisplayDevices.PATHDATA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn PATHOBJ_vEnumStartClipLines(
+    ppo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.PATHOBJ},
+    pco: {"kind""Ptr","child":Windows.Win32.DisplayDevices.CLIPOBJ},
+    pso: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+    pla: {"kind""Ptr","child":Windows.Win32.DisplayDevices.LINEATTRS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn PATHOBJ_bEnumClipLines(
+    ppo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.PATHOBJ},
+    cb: {"kind":"UInt32"},
+    pcl: {"kind""Ptr","child":Windows.Win32.DisplayDevices.CLIPLINE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn PATHOBJ_vGetBounds(
+    ppo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.PATHOBJ},
+    prectfx: {"kind""Ptr","child":Windows.Win32.SystemServices.RECTFX},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn STROBJ_vEnumStart(
+    pstro: {"kind""Ptr","child":Windows.Win32.DisplayDevices.STROBJ},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn STROBJ_bEnum(
+    pstro: {"kind""Ptr","child":Windows.Win32.DisplayDevices.STROBJ},
+    pc: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ppgpos: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.DisplayDevices.GLYPHPOS}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn STROBJ_bEnumPositionsOnly(
+    pstro: {"kind""Ptr","child":Windows.Win32.DisplayDevices.STROBJ},
+    pc: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ppgpos: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.DisplayDevices.GLYPHPOS}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn STROBJ_dwGetCodePage(
+    pstro: {"kind""Ptr","child":Windows.Win32.DisplayDevices.STROBJ},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn STROBJ_bGetAdvanceWidths(
+    pso: {"kind""Ptr","child":Windows.Win32.DisplayDevices.STROBJ},
+    iFirst: {"kind":"UInt32"},
+    c: {"kind":"UInt32"},
+    pptqD: {"kind""Ptr","child":Windows.Win32.SystemServices.POINTQF},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn XFORMOBJ_iGetXform(
+    pxo: {"kind""Ptr","child":Windows.Win32.SystemServices.XFORMOBJ},
+    pxform: {"kind""Ptr","child":Windows.Win32.DisplayDevices.XFORML},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn XFORMOBJ_bApplyXform(
+    pxo: {"kind""Ptr","child":Windows.Win32.SystemServices.XFORMOBJ},
+    iMode: {"kind":"UInt32"},
+    cPoints: {"kind":"UInt32"},
+    pvIn: {"kind""Ptr","child":{"kind":"Void"}},
+    pvOut: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn XLATEOBJ_iXlate(
+    pxlo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.XLATEOBJ},
+    iColor: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn XLATEOBJ_piVector(
+    pxlo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.XLATEOBJ},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn XLATEOBJ_cGetPalette(
+    pxlo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.XLATEOBJ},
+    iPal: {"kind":"UInt32"},
+    cPal: {"kind":"UInt32"},
+    pPal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn XLATEOBJ_hGetColorTransform(
+    pxlo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.XLATEOBJ},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngCreateBitmap(
+    sizl: Windows.Win32.DisplayDevices.SIZE,
+    lWidth: {"kind":"Int32"},
+    iFormat: {"kind":"UInt32"},
+    fl: {"kind":"UInt32"},
+    pvBits: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngCreateDeviceSurface(
+    dhsurf: {"kind""Ptr","child":Windows.Win32.SystemServices.DHSURF__},
+    sizl: Windows.Win32.DisplayDevices.SIZE,
+    iFormatCompat: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngCreateDeviceBitmap(
+    dhsurf: {"kind""Ptr","child":Windows.Win32.SystemServices.DHSURF__},
+    sizl: Windows.Win32.DisplayDevices.SIZE,
+    iFormatCompat: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngDeleteSurface(
+    hsurf: {"kind""Ptr","child":Windows.Win32.SystemServices.HSURF__},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngLockSurface(
+    hsurf: {"kind""Ptr","child":Windows.Win32.SystemServices.HSURF__},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngUnlockSurface(
+    pso: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngEraseSurface(
+    pso: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+    prcl: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECTL},
+    iColor: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngAssociateSurface(
+    hsurf: {"kind""Ptr","child":Windows.Win32.SystemServices.HSURF__},
+    hdev: {"kind""Ptr","child":Windows.Win32.SystemServices.HDEV__},
+    flHooks: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngMarkBandingSurface(
+    hsurf: {"kind""Ptr","child":Windows.Win32.SystemServices.HSURF__},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngCheckAbort(
+    pso: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngDeletePath(
+    ppo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.PATHOBJ},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngCreatePalette(
+    iMode: {"kind":"UInt32"},
+    cColors: {"kind":"UInt32"},
+    pulColors: {"kind""Ptr","child":{"kind":"UInt32"}},
+    flRed: {"kind":"UInt32"},
+    flGreen: {"kind":"UInt32"},
+    flBlue: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngDeletePalette(
+    hpal: Windows.Win32.Gdi.HPALETTE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngCreateClip(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngDeleteClip(
+    pco: {"kind""Ptr","child":Windows.Win32.DisplayDevices.CLIPOBJ},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngBitBlt(
+    psoTrg: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+    psoSrc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+    psoMask: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+    pco: {"kind""Ptr","child":Windows.Win32.DisplayDevices.CLIPOBJ},
+    pxlo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.XLATEOBJ},
+    prclTrg: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECTL},
+    pptlSrc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINTL},
+    pptlMask: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINTL},
+    pbo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.BRUSHOBJ},
+    pptlBrush: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINTL},
+    rop4: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngLineTo(
+    pso: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+    pco: {"kind""Ptr","child":Windows.Win32.DisplayDevices.CLIPOBJ},
+    pbo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.BRUSHOBJ},
+    x1: {"kind":"Int32"},
+    y1: {"kind":"Int32"},
+    x2: {"kind":"Int32"},
+    y2: {"kind":"Int32"},
+    prclBounds: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECTL},
+    mix: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngStretchBlt(
+    psoDest: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+    psoSrc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+    psoMask: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+    pco: {"kind""Ptr","child":Windows.Win32.DisplayDevices.CLIPOBJ},
+    pxlo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.XLATEOBJ},
+    pca: {"kind""Ptr","child":Windows.Win32.Gdi.COLORADJUSTMENT},
+    pptlHTOrg: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINTL},
+    prclDest: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECTL},
+    prclSrc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECTL},
+    pptlMask: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINTL},
+    iMode: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngStretchBltROP(
+    psoDest: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+    psoSrc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+    psoMask: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+    pco: {"kind""Ptr","child":Windows.Win32.DisplayDevices.CLIPOBJ},
+    pxlo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.XLATEOBJ},
+    pca: {"kind""Ptr","child":Windows.Win32.Gdi.COLORADJUSTMENT},
+    pptlHTOrg: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINTL},
+    prclDest: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECTL},
+    prclSrc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECTL},
+    pptlMask: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINTL},
+    iMode: {"kind":"UInt32"},
+    pbo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.BRUSHOBJ},
+    rop4: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngAlphaBlend(
+    psoDest: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+    psoSrc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+    pco: {"kind""Ptr","child":Windows.Win32.DisplayDevices.CLIPOBJ},
+    pxlo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.XLATEOBJ},
+    prclDest: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECTL},
+    prclSrc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECTL},
+    pBlendObj: {"kind""Ptr","child":Windows.Win32.DisplayDevices.BLENDOBJ},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngGradientFill(
+    psoDest: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+    pco: {"kind""Ptr","child":Windows.Win32.DisplayDevices.CLIPOBJ},
+    pxlo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.XLATEOBJ},
+    pVertex: {"kind""Ptr","child":Windows.Win32.Gdi.TRIVERTEX},
+    nVertex: {"kind":"UInt32"},
+    pMesh: {"kind""Ptr","child":{"kind":"Void"}},
+    nMesh: {"kind":"UInt32"},
+    prclExtents: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECTL},
+    pptlDitherOrg: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINTL},
+    ulMode: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngTransparentBlt(
+    psoDst: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+    psoSrc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+    pco: {"kind""Ptr","child":Windows.Win32.DisplayDevices.CLIPOBJ},
+    pxlo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.XLATEOBJ},
+    prclDst: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECTL},
+    prclSrc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECTL},
+    TransColor: {"kind":"UInt32"},
+    bCalledFromBitBlt: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngTextOut(
+    pso: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+    pstro: {"kind""Ptr","child":Windows.Win32.DisplayDevices.STROBJ},
+    pfo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.FONTOBJ},
+    pco: {"kind""Ptr","child":Windows.Win32.DisplayDevices.CLIPOBJ},
+    prclExtra: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECTL},
+    prclOpaque: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECTL},
+    pboFore: {"kind""Ptr","child":Windows.Win32.DisplayDevices.BRUSHOBJ},
+    pboOpaque: {"kind""Ptr","child":Windows.Win32.DisplayDevices.BRUSHOBJ},
+    pptlOrg: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINTL},
+    mix: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngStrokePath(
+    pso: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+    ppo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.PATHOBJ},
+    pco: {"kind""Ptr","child":Windows.Win32.DisplayDevices.CLIPOBJ},
+    pxo: {"kind""Ptr","child":Windows.Win32.SystemServices.XFORMOBJ},
+    pbo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.BRUSHOBJ},
+    pptlBrushOrg: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINTL},
+    plineattrs: {"kind""Ptr","child":Windows.Win32.DisplayDevices.LINEATTRS},
+    mix: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngFillPath(
+    pso: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+    ppo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.PATHOBJ},
+    pco: {"kind""Ptr","child":Windows.Win32.DisplayDevices.CLIPOBJ},
+    pbo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.BRUSHOBJ},
+    pptlBrushOrg: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINTL},
+    mix: {"kind":"UInt32"},
+    flOptions: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngStrokeAndFillPath(
+    pso: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+    ppo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.PATHOBJ},
+    pco: {"kind""Ptr","child":Windows.Win32.DisplayDevices.CLIPOBJ},
+    pxo: {"kind""Ptr","child":Windows.Win32.SystemServices.XFORMOBJ},
+    pboStroke: {"kind""Ptr","child":Windows.Win32.DisplayDevices.BRUSHOBJ},
+    plineattrs: {"kind""Ptr","child":Windows.Win32.DisplayDevices.LINEATTRS},
+    pboFill: {"kind""Ptr","child":Windows.Win32.DisplayDevices.BRUSHOBJ},
+    pptlBrushOrg: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINTL},
+    mixFill: {"kind":"UInt32"},
+    flOptions: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngPaint(
+    pso: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+    pco: {"kind""Ptr","child":Windows.Win32.DisplayDevices.CLIPOBJ},
+    pbo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.BRUSHOBJ},
+    pptlBrushOrg: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINTL},
+    mix: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngCopyBits(
+    psoDest: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+    psoSrc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+    pco: {"kind""Ptr","child":Windows.Win32.DisplayDevices.CLIPOBJ},
+    pxlo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.XLATEOBJ},
+    prclDest: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECTL},
+    pptlSrc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINTL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngPlgBlt(
+    psoTrg: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+    psoSrc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+    psoMsk: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SURFOBJ},
+    pco: {"kind""Ptr","child":Windows.Win32.DisplayDevices.CLIPOBJ},
+    pxlo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.XLATEOBJ},
+    pca: {"kind""Ptr","child":Windows.Win32.Gdi.COLORADJUSTMENT},
+    pptlBrushOrg: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINTL},
+    pptfx: {"kind""Ptr","child":Windows.Win32.SystemServices.POINTFIX},
+    prcl: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECTL},
+    pptl: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINTL},
+    iMode: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn HT_Get8BPPFormatPalette(
+    pPaletteEntry: {"kind""Ptr","child":Windows.Win32.Direct2D.PALETTEENTRY},
+    RedGamma: {"kind":"UInt16"},
+    GreenGamma: {"kind":"UInt16"},
+    BlueGamma: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn HT_Get8BPPMaskPalette(
+    pPaletteEntry: {"kind""Ptr","child":Windows.Win32.Direct2D.PALETTEENTRY},
+    Use8BPPMaskPal: Windows.Win32.SystemServices.BOOL,
+    CMYMask: {"kind":"Byte"},
+    RedGamma: {"kind":"UInt16"},
+    GreenGamma: {"kind":"UInt16"},
+    BlueGamma: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngGetPrinterDataFileName(
+    hdev: {"kind""Ptr","child":Windows.Win32.SystemServices.HDEV__},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngGetDriverName(
+    hdev: {"kind""Ptr","child":Windows.Win32.SystemServices.HDEV__},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngLoadModule(
+    pwsz: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngFindResource(
+    h: Windows.Win32.SystemServices.HANDLE,
+    iName: {"kind":"Int32"},
+    iType: {"kind":"Int32"},
+    pulSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngFreeModule(
+    h: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngCreateSemaphore(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngAcquireSemaphore(
+    hsem: {"kind""Ptr","child":Windows.Win32.SystemServices.HSEMAPHORE__},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngReleaseSemaphore(
+    hsem: {"kind""Ptr","child":Windows.Win32.SystemServices.HSEMAPHORE__},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngDeleteSemaphore(
+    hsem: {"kind""Ptr","child":Windows.Win32.SystemServices.HSEMAPHORE__},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngMultiByteToUnicodeN(
+    UnicodeString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    MaxBytesInUnicodeString: {"kind":"UInt32"},
+    BytesInUnicodeString: {"kind""Ptr","child":{"kind":"UInt32"}},
+    MultiByteString: {"kind""Ptr","child":{"kind":"SByte"}},
+    BytesInMultiByteString: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngUnicodeToMultiByteN(
+    MultiByteString: {"kind""Ptr","child":{"kind":"SByte"}},
+    MaxBytesInMultiByteString: {"kind":"UInt32"},
+    BytesInMultiByteString: {"kind""Ptr","child":{"kind":"UInt32"}},
+    UnicodeString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    BytesInUnicodeString: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngQueryLocalTime(
+    param0: {"kind""Ptr","child":Windows.Win32.DisplayDevices.ENG_TIME_FIELDS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngComputeGlyphSet(
+    nCodePage: {"kind":"Int32"},
+    nFirstChar: {"kind":"Int32"},
+    cChars: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngMultiByteToWideChar(
+    CodePage: {"kind":"UInt32"},
+    WideCharString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    BytesInWideCharString: {"kind":"Int32"},
+    MultiByteString: {"kind""Ptr","child":{"kind":"SByte"}},
+    BytesInMultiByteString: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngWideCharToMultiByte(
+    CodePage: {"kind":"UInt32"},
+    WideCharString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    BytesInWideCharString: {"kind":"Int32"},
+    MultiByteString: {"kind""Ptr","child":{"kind":"SByte"}},
+    BytesInMultiByteString: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EngGetCurrentCodePage(
+    OemCodePage: {"kind""Ptr","child":{"kind":"UInt16"}},
+    AnsiCodePage: {"kind""Ptr","child":{"kind":"UInt16"}},
+],
+
+"unicode_aliases": [
+]}

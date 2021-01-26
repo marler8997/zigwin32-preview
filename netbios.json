@@ -1,0 +1,139 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: NCB
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NCB = extern struct {
+    ncb_command: {"kind":"Byte"},
+    ncb_retcode: {"kind":"Byte"},
+    ncb_lsn: {"kind":"Byte"},
+    ncb_num: {"kind":"Byte"},
+    ncb_buffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    ncb_length: {"kind":"UInt16"},
+    ncb_callname: {"kind":"Array","child": {"kind":"Byte"}},
+    ncb_name: {"kind":"Array","child": {"kind":"Byte"}},
+    ncb_rto: {"kind":"Byte"},
+    ncb_sto: {"kind":"Byte"},
+    ncb_post: {"kind":"IntPtr"},
+    ncb_lana_num: {"kind":"Byte"},
+    ncb_cmd_cplt: {"kind":"Byte"},
+    ncb_reserve: {"kind":"Array","child": {"kind":"Byte"}},
+    ncb_event: Windows.Win32.SystemServices.HANDLE,
+};
+// --------------------------------------------------------
+// Type: ADAPTER_STATUS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADAPTER_STATUS = extern struct {
+    adapter_address: {"kind":"Array","child": {"kind":"Byte"}},
+    rev_major: {"kind":"Byte"},
+    reserved0: {"kind":"Byte"},
+    adapter_type: {"kind":"Byte"},
+    rev_minor: {"kind":"Byte"},
+    duration: {"kind":"UInt16"},
+    frmr_recv: {"kind":"UInt16"},
+    frmr_xmit: {"kind":"UInt16"},
+    iframe_recv_err: {"kind":"UInt16"},
+    xmit_aborts: {"kind":"UInt16"},
+    xmit_success: {"kind":"UInt32"},
+    recv_success: {"kind":"UInt32"},
+    iframe_xmit_err: {"kind":"UInt16"},
+    recv_buff_unavail: {"kind":"UInt16"},
+    t1_timeouts: {"kind":"UInt16"},
+    ti_timeouts: {"kind":"UInt16"},
+    reserved1: {"kind":"UInt32"},
+    free_ncbs: {"kind":"UInt16"},
+    max_cfg_ncbs: {"kind":"UInt16"},
+    max_ncbs: {"kind":"UInt16"},
+    xmit_buf_unavail: {"kind":"UInt16"},
+    max_dgram_size: {"kind":"UInt16"},
+    pending_sess: {"kind":"UInt16"},
+    max_cfg_sess: {"kind":"UInt16"},
+    max_sess: {"kind":"UInt16"},
+    max_sess_pkt_size: {"kind":"UInt16"},
+    name_count: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: NAME_BUFFER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NAME_BUFFER = extern struct {
+    name: {"kind":"Array","child": {"kind":"Byte"}},
+    name_num: {"kind":"Byte"},
+    name_flags: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: SESSION_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SESSION_HEADER = extern struct {
+    sess_name: {"kind":"Byte"},
+    num_sess: {"kind":"Byte"},
+    rcv_dg_outstanding: {"kind":"Byte"},
+    rcv_any_outstanding: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: SESSION_BUFFER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SESSION_BUFFER = extern struct {
+    lsn: {"kind":"Byte"},
+    state: {"kind":"Byte"},
+    local_name: {"kind":"Array","child": {"kind":"Byte"}},
+    remote_name: {"kind":"Array","child": {"kind":"Byte"}},
+    rcvs_outstanding: {"kind":"Byte"},
+    sends_outstanding: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: LANA_ENUM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LANA_ENUM = extern struct {
+    length: {"kind":"Byte"},
+    lana: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: FIND_NAME_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FIND_NAME_HEADER = extern struct {
+    node_count: {"kind":"UInt16"},
+    reserved: {"kind":"Byte"},
+    unique_group: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: FIND_NAME_BUFFER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FIND_NAME_BUFFER = extern struct {
+    length: {"kind":"Byte"},
+    access_control: {"kind":"Byte"},
+    frame_control: {"kind":"Byte"},
+    destination_addr: {"kind":"Array","child": {"kind":"Byte"}},
+    source_addr: {"kind":"Array","child": {"kind":"Byte"}},
+    routing_info: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: ACTION_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ACTION_HEADER = extern struct {
+    transport_id: {"kind":"UInt32"},
+    action_code: {"kind":"UInt16"},
+    reserved: {"kind":"UInt16"},
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn Netbios(
+    pncb: {"kind""Ptr","child":Windows.Win32.NetBios.NCB},
+],
+
+"unicode_aliases": [
+]}

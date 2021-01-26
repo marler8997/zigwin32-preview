@@ -1,0 +1,162 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: IMFDeviceTransform
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IMFDeviceTransform = *opaque{
+    // TODO: Method 'InitializeTransform'
+    // TODO: Method 'GetInputAvailableType'
+    // TODO: Method 'GetInputCurrentType'
+    // TODO: Method 'GetInputStreamAttributes'
+    // TODO: Method 'GetOutputAvailableType'
+    // TODO: Method 'GetOutputCurrentType'
+    // TODO: Method 'GetOutputStreamAttributes'
+    // TODO: Method 'GetStreamCount'
+    // TODO: Method 'GetStreamIDs'
+    // TODO: Method 'ProcessEvent'
+    // TODO: Method 'ProcessInput'
+    // TODO: Method 'ProcessMessage'
+    // TODO: Method 'ProcessOutput'
+    // TODO: Method 'SetInputStreamState'
+    // TODO: Method 'GetInputStreamState'
+    // TODO: Method 'SetOutputStreamState'
+    // TODO: Method 'GetOutputStreamState'
+    // TODO: Method 'GetInputStreamPreferredState'
+    // TODO: Method 'FlushInputStream'
+    // TODO: Method 'FlushOutputStream'
+};
+// --------------------------------------------------------
+// Type: IMFDeviceTransformCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IMFDeviceTransformCallback = *opaque{
+    // TODO: Method 'OnBufferSent'
+};
+// --------------------------------------------------------
+// Type: MF_TRANSFER_VIDEO_FRAME_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MF_TRANSFER_VIDEO_FRAME_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: MF_MEDIASOURCE_STATUS_INFO
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MF_MEDIASOURCE_STATUS_INFO = *opaque{
+};
+// --------------------------------------------------------
+// Type: FaceRectInfoBlobHeader
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FaceRectInfoBlobHeader = extern struct {
+    Size: {"kind":"UInt32"},
+    Count: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: FaceRectInfo
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FaceRectInfo = extern struct {
+    Region: Windows.Win32.DisplayDevices.RECT,
+    confidenceLevel: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: FaceCharacterizationBlobHeader
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FaceCharacterizationBlobHeader = extern struct {
+    Size: {"kind":"UInt32"},
+    Count: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: FaceCharacterization
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FaceCharacterization = extern struct {
+    BlinkScoreLeft: {"kind":"UInt32"},
+    BlinkScoreRight: {"kind":"UInt32"},
+    FacialExpression: {"kind":"UInt32"},
+    FacialExpressionScore: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: CapturedMetadataExposureCompensation
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CapturedMetadataExposureCompensation = extern struct {
+    Flags: {"kind":"UInt64"},
+    Value: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: CapturedMetadataISOGains
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CapturedMetadataISOGains = extern struct {
+    AnalogGain: {"kind":"Single"},
+    DigitalGain: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: CapturedMetadataWhiteBalanceGains
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CapturedMetadataWhiteBalanceGains = extern struct {
+    R: {"kind":"Single"},
+    G: {"kind":"Single"},
+    B: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: MetadataTimeStamps
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MetadataTimeStamps = extern struct {
+    Flags: {"kind":"UInt32"},
+    Device: {"kind":"Int64"},
+    Presentation: {"kind":"Int64"},
+};
+// --------------------------------------------------------
+// Type: HistogramGrid
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HistogramGrid = extern struct {
+    Width: {"kind":"UInt32"},
+    Height: {"kind":"UInt32"},
+    Region: Windows.Win32.DisplayDevices.RECT,
+};
+// --------------------------------------------------------
+// Type: HistogramBlobHeader
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HistogramBlobHeader = extern struct {
+    Size: {"kind":"UInt32"},
+    Histograms: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HistogramHeader
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HistogramHeader = extern struct {
+    Size: {"kind":"UInt32"},
+    Bins: {"kind":"UInt32"},
+    FourCC: {"kind":"UInt32"},
+    ChannelMasks: {"kind":"UInt32"},
+    Grid: Windows.Win32.StreamingMedia.HistogramGrid,
+};
+// --------------------------------------------------------
+// Type: HistogramDataHeader
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HistogramDataHeader = extern struct {
+    Size: {"kind":"UInt32"},
+    ChannelMask: {"kind":"UInt32"},
+    Linear: {"kind":"UInt32"},
+};
+],
+
+"func_definitions": [
+],
+
+"unicode_aliases": [
+]}

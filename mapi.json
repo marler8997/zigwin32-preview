@@ -1,0 +1,207 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: MapiFileDesc
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MapiFileDesc = extern struct {
+    ulReserved: {"kind":"UInt32"},
+    flFlags: {"kind":"UInt32"},
+    nPosition: {"kind":"UInt32"},
+    lpszPathName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpFileType: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: MapiFileDescW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MapiFileDescW = extern struct {
+    ulReserved: {"kind":"UInt32"},
+    flFlags: {"kind":"UInt32"},
+    nPosition: {"kind":"UInt32"},
+    lpszPathName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpFileType: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: MapiFileTagExt
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MapiFileTagExt = extern struct {
+    ulReserved: {"kind":"UInt32"},
+    cbTag: {"kind":"UInt32"},
+    lpTag: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbEncoding: {"kind":"UInt32"},
+    lpEncoding: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: MapiRecipDesc
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MapiRecipDesc = extern struct {
+    ulReserved: {"kind":"UInt32"},
+    ulRecipClass: {"kind":"UInt32"},
+    lpszName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszAddress: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulEIDSize: {"kind":"UInt32"},
+    lpEntryID: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: MapiRecipDescW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MapiRecipDescW = extern struct {
+    ulReserved: {"kind":"UInt32"},
+    ulRecipClass: {"kind":"UInt32"},
+    lpszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulEIDSize: {"kind":"UInt32"},
+    lpEntryID: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: MapiMessage
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MapiMessage = extern struct {
+    ulReserved: {"kind":"UInt32"},
+    lpszSubject: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszNoteText: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszMessageType: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszDateReceived: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszConversationID: {"kind""Ptr","child":{"kind":"SByte"}},
+    flFlags: {"kind":"UInt32"},
+    lpOriginator: {"kind""Ptr","child":Windows.Win32.Mapi.MapiRecipDesc},
+    nRecipCount: {"kind":"UInt32"},
+    lpRecips: {"kind""Ptr","child":Windows.Win32.Mapi.MapiRecipDesc},
+    nFileCount: {"kind":"UInt32"},
+    lpFiles: {"kind""Ptr","child":Windows.Win32.Mapi.MapiFileDesc},
+};
+// --------------------------------------------------------
+// Type: MapiMessageW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MapiMessageW = extern struct {
+    ulReserved: {"kind":"UInt32"},
+    lpszSubject: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszNoteText: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszMessageType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszDateReceived: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszConversationID: {"kind""Ptr","child":{"kind":"UInt16"}},
+    flFlags: {"kind":"UInt32"},
+    lpOriginator: {"kind""Ptr","child":Windows.Win32.Mapi.MapiRecipDescW},
+    nRecipCount: {"kind":"UInt32"},
+    lpRecips: {"kind""Ptr","child":Windows.Win32.Mapi.MapiRecipDescW},
+    nFileCount: {"kind":"UInt32"},
+    lpFiles: {"kind""Ptr","child":Windows.Win32.Mapi.MapiFileDescW},
+};
+// --------------------------------------------------------
+// Type: MAPILOGON
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MAPILOGON = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: MAPILOGOFF
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MAPILOGOFF = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: MAPISENDMAIL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MAPISENDMAIL = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: MAPISENDMAILW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MAPISENDMAILW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: MAPISENDDOCUMENTS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MAPISENDDOCUMENTS = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: MAPIFINDNEXT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MAPIFINDNEXT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: MAPIREADMAIL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MAPIREADMAIL = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: MAPISAVEMAIL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MAPISAVEMAIL = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: MAPIDELETEMAIL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MAPIDELETEMAIL = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: MAPIADDRESS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MAPIADDRESS = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: MAPIDETAILS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MAPIDETAILS = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: MAPIRESOLVENAME
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MAPIRESOLVENAME = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MAPI32" fn MAPIFreeBuffer(
+    pv: {"kind""Ptr","child":{"kind":"Void"}},
+],
+
+"unicode_aliases": [
+]}

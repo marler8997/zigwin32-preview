@@ -1,0 +1,48 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: RESTOREPOINTINFOA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const RESTOREPOINTINFOA = *opaque{
+};
+// --------------------------------------------------------
+// Type: RESTOREPOINTINFOW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const RESTOREPOINTINFOW = *opaque{
+};
+// --------------------------------------------------------
+// Type: _RESTOREPTINFOEX
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const _RESTOREPTINFOEX = *opaque{
+};
+// --------------------------------------------------------
+// Type: STATEMGRSTATUS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const STATEMGRSTATUS = *opaque{
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "sfc" fn SRSetRestorePointA(
+    pRestorePtSpec: {"kind""Ptr","child":Windows.Win32.SystemRestore.RESTOREPOINTINFOA},
+    pSMgrStatus: {"kind""Ptr","child":Windows.Win32.SystemRestore.STATEMGRSTATUS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "sfc" fn SRSetRestorePointW(
+    pRestorePtSpec: {"kind""Ptr","child":Windows.Win32.SystemRestore.RESTOREPOINTINFOW},
+    pSMgrStatus: {"kind""Ptr","child":Windows.Win32.SystemRestore.STATEMGRSTATUS},
+],
+
+"unicode_aliases": [
+     "RESTOREPOINTINFO"
+     "SRSetRestorePoint"
+]}

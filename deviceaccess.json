@@ -1,0 +1,44 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: IDeviceRequestCompletionCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDeviceRequestCompletionCallback = *opaque{
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IDeviceIoControl
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDeviceIoControl = *opaque{
+    // TODO: Method 'DeviceIoControlSync'
+    // TODO: Method 'DeviceIoControlAsync'
+    // TODO: Method 'CancelOperation'
+};
+// --------------------------------------------------------
+// Type: ICreateDeviceAccessAsync
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICreateDeviceAccessAsync = *opaque{
+    // TODO: Method 'Cancel'
+    // TODO: Method 'Wait'
+    // TODO: Method 'Close'
+    // TODO: Method 'GetResult'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "deviceaccess" fn CreateDeviceAccessInstance(
+    deviceInterfacePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    desiredAccess: {"kind":"UInt32"},
+    createAsync: {"kind""Ptr","child":Windows.Win32.DeviceAccess.ICreateDeviceAccessAsync},
+],
+
+"unicode_aliases": [
+]}

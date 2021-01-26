@@ -1,0 +1,25 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WSClient" fn CheckDeveloperLicense(
+    pExpiration: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WSClient" fn AcquireDeveloperLicense(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    pExpiration: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WSClient" fn RemoveDeveloperLicense(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+],
+
+"unicode_aliases": [
+]}

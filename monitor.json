@@ -1,0 +1,248 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: PHYSICAL_MONITOR
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const PHYSICAL_MONITOR = *opaque{
+};
+// --------------------------------------------------------
+// Type: MC_TIMING_REPORT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MC_TIMING_REPORT = *opaque{
+};
+// --------------------------------------------------------
+// Type: MC_VCP_CODE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MC_VCP_CODE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: MC_DISPLAY_TECHNOLOGY_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MC_DISPLAY_TECHNOLOGY_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: MC_DRIVE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MC_DRIVE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: MC_GAIN_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MC_GAIN_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: MC_POSITION_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MC_POSITION_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: MC_SIZE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MC_SIZE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: MC_COLOR_TEMPERATURE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MC_COLOR_TEMPERATURE = *opaque{
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=True (can and should we use this?)
+pub extern "dxva2" fn GetNumberOfPhysicalMonitorsFromHMONITOR(
+    hMonitor: {"kind":"IntPtr"},
+    pdwNumberOfPhysicalMonitors: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dxva2" fn GetNumberOfPhysicalMonitorsFromIDirect3DDevice9(
+    pDirect3DDevice9: Windows.Win32.Direct2D.IDirect3DDevice9,
+    pdwNumberOfPhysicalMonitors: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "dxva2" fn GetPhysicalMonitorsFromHMONITOR(
+    hMonitor: {"kind":"IntPtr"},
+    dwPhysicalMonitorArraySize: {"kind":"UInt32"},
+    pPhysicalMonitorArray: {"kind""Ptr","child":Windows.Win32.Monitor.PHYSICAL_MONITOR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dxva2" fn GetPhysicalMonitorsFromIDirect3DDevice9(
+    pDirect3DDevice9: Windows.Win32.Direct2D.IDirect3DDevice9,
+    dwPhysicalMonitorArraySize: {"kind":"UInt32"},
+    pPhysicalMonitorArray: {"kind""Ptr","child":Windows.Win32.Monitor.PHYSICAL_MONITOR},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "dxva2" fn DestroyPhysicalMonitor(
+    hMonitor: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "dxva2" fn DestroyPhysicalMonitors(
+    dwPhysicalMonitorArraySize: {"kind":"UInt32"},
+    pPhysicalMonitorArray: {"kind""Ptr","child":Windows.Win32.Monitor.PHYSICAL_MONITOR},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "dxva2" fn GetVCPFeatureAndVCPFeatureReply(
+    hMonitor: Windows.Win32.SystemServices.HANDLE,
+    bVCPCode: {"kind":"Byte"},
+    pvct: {"kind""Ptr","child":Windows.Win32.Monitor.MC_VCP_CODE_TYPE},
+    pdwCurrentValue: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pdwMaximumValue: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dxva2" fn SetVCPFeature(
+    hMonitor: Windows.Win32.SystemServices.HANDLE,
+    bVCPCode: {"kind":"Byte"},
+    dwNewValue: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "dxva2" fn SaveCurrentSettings(
+    hMonitor: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "dxva2" fn GetCapabilitiesStringLength(
+    hMonitor: Windows.Win32.SystemServices.HANDLE,
+    pdwCapabilitiesStringLengthInCharacters: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "dxva2" fn CapabilitiesRequestAndCapabilitiesReply(
+    hMonitor: Windows.Win32.SystemServices.HANDLE,
+    pszASCIICapabilitiesString: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwCapabilitiesStringLengthInCharacters: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "dxva2" fn GetTimingReport(
+    hMonitor: Windows.Win32.SystemServices.HANDLE,
+    pmtrMonitorTimingReport: {"kind""Ptr","child":Windows.Win32.Monitor.MC_TIMING_REPORT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dxva2" fn GetMonitorCapabilities(
+    hMonitor: Windows.Win32.SystemServices.HANDLE,
+    pdwMonitorCapabilities: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pdwSupportedColorTemperatures: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "dxva2" fn SaveCurrentMonitorSettings(
+    hMonitor: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "dxva2" fn GetMonitorTechnologyType(
+    hMonitor: Windows.Win32.SystemServices.HANDLE,
+    pdtyDisplayTechnologyType: {"kind""Ptr","child":Windows.Win32.Monitor.MC_DISPLAY_TECHNOLOGY_TYPE},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "dxva2" fn GetMonitorBrightness(
+    hMonitor: Windows.Win32.SystemServices.HANDLE,
+    pdwMinimumBrightness: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pdwCurrentBrightness: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pdwMaximumBrightness: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "dxva2" fn GetMonitorContrast(
+    hMonitor: Windows.Win32.SystemServices.HANDLE,
+    pdwMinimumContrast: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pdwCurrentContrast: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pdwMaximumContrast: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "dxva2" fn GetMonitorColorTemperature(
+    hMonitor: Windows.Win32.SystemServices.HANDLE,
+    pctCurrentColorTemperature: {"kind""Ptr","child":Windows.Win32.Monitor.MC_COLOR_TEMPERATURE},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "dxva2" fn GetMonitorRedGreenOrBlueDrive(
+    hMonitor: Windows.Win32.SystemServices.HANDLE,
+    dtDriveType: Windows.Win32.Monitor.MC_DRIVE_TYPE,
+    pdwMinimumDrive: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pdwCurrentDrive: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pdwMaximumDrive: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "dxva2" fn GetMonitorRedGreenOrBlueGain(
+    hMonitor: Windows.Win32.SystemServices.HANDLE,
+    gtGainType: Windows.Win32.Monitor.MC_GAIN_TYPE,
+    pdwMinimumGain: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pdwCurrentGain: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pdwMaximumGain: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "dxva2" fn SetMonitorBrightness(
+    hMonitor: Windows.Win32.SystemServices.HANDLE,
+    dwNewBrightness: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "dxva2" fn SetMonitorContrast(
+    hMonitor: Windows.Win32.SystemServices.HANDLE,
+    dwNewContrast: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "dxva2" fn SetMonitorColorTemperature(
+    hMonitor: Windows.Win32.SystemServices.HANDLE,
+    ctCurrentColorTemperature: Windows.Win32.Monitor.MC_COLOR_TEMPERATURE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dxva2" fn SetMonitorRedGreenOrBlueDrive(
+    hMonitor: Windows.Win32.SystemServices.HANDLE,
+    dtDriveType: Windows.Win32.Monitor.MC_DRIVE_TYPE,
+    dwNewDrive: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dxva2" fn SetMonitorRedGreenOrBlueGain(
+    hMonitor: Windows.Win32.SystemServices.HANDLE,
+    gtGainType: Windows.Win32.Monitor.MC_GAIN_TYPE,
+    dwNewGain: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "dxva2" fn DegaussMonitor(
+    hMonitor: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "dxva2" fn GetMonitorDisplayAreaSize(
+    hMonitor: Windows.Win32.SystemServices.HANDLE,
+    stSizeType: Windows.Win32.Monitor.MC_SIZE_TYPE,
+    pdwMinimumWidthOrHeight: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pdwCurrentWidthOrHeight: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pdwMaximumWidthOrHeight: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "dxva2" fn GetMonitorDisplayAreaPosition(
+    hMonitor: Windows.Win32.SystemServices.HANDLE,
+    ptPositionType: Windows.Win32.Monitor.MC_POSITION_TYPE,
+    pdwMinimumPosition: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pdwCurrentPosition: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pdwMaximumPosition: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "dxva2" fn SetMonitorDisplayAreaSize(
+    hMonitor: Windows.Win32.SystemServices.HANDLE,
+    stSizeType: Windows.Win32.Monitor.MC_SIZE_TYPE,
+    dwNewDisplayAreaWidthOrHeight: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "dxva2" fn SetMonitorDisplayAreaPosition(
+    hMonitor: Windows.Win32.SystemServices.HANDLE,
+    ptPositionType: Windows.Win32.Monitor.MC_POSITION_TYPE,
+    dwNewPosition: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "dxva2" fn RestoreMonitorFactoryColorDefaults(
+    hMonitor: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "dxva2" fn RestoreMonitorFactoryDefaults(
+    hMonitor: Windows.Win32.SystemServices.HANDLE,
+],
+
+"unicode_aliases": [
+]}

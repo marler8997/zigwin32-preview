@@ -1,0 +1,2193 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: NET_ADDRESS_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const NET_ADDRESS_INFO = opaque {
+};
+// --------------------------------------------------------
+// Type: IcmpHandle
+// TypeLayoutAttr: sequential
+// RAIIFree 'IcmpCloseHandle' (TODO: can we use this information?)
+pub const IcmpHandle = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: ip_option_information
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ip_option_information = extern struct {
+    Ttl: {"kind":"Byte"},
+    Tos: {"kind":"Byte"},
+    Flags: {"kind":"Byte"},
+    OptionsSize: {"kind":"Byte"},
+    OptionsData: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: icmp_echo_reply
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const icmp_echo_reply = extern struct {
+    Address: {"kind":"UInt32"},
+    Status: {"kind":"UInt32"},
+    RoundTripTime: {"kind":"UInt32"},
+    DataSize: {"kind":"UInt16"},
+    Reserved: {"kind":"UInt16"},
+    Data: {"kind""Ptr","child":{"kind":"Void"}},
+    Options: Windows.Win32.IpHelper.ip_option_information,
+};
+// --------------------------------------------------------
+// Type: IPV6_ADDRESS_EX
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const IPV6_ADDRESS_EX = *opaque{
+};
+// --------------------------------------------------------
+// Type: icmpv6_echo_reply_lh
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const icmpv6_echo_reply_lh = extern struct {
+    Address: Windows.Win32.IpHelper.IPV6_ADDRESS_EX,
+    Status: {"kind":"UInt32"},
+    RoundTripTime: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: arp_send_reply
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const arp_send_reply = extern struct {
+    DestAddress: {"kind":"UInt32"},
+    SrcAddress: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: tcp_reserve_port_range
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const tcp_reserve_port_range = extern struct {
+    UpperRange: {"kind":"UInt16"},
+    LowerRange: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: IP_ADAPTER_INDEX_MAP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IP_ADAPTER_INDEX_MAP = extern struct {
+    Index: {"kind":"UInt32"},
+    Name: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: IP_INTERFACE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IP_INTERFACE_INFO = extern struct {
+    NumAdapters: {"kind":"Int32"},
+    Adapter: {"kind":"Array","child": Windows.Win32.IpHelper.IP_ADAPTER_INDEX_MAP},
+};
+// --------------------------------------------------------
+// Type: IP_UNIDIRECTIONAL_ADAPTER_ADDRESS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IP_UNIDIRECTIONAL_ADAPTER_ADDRESS = extern struct {
+    NumAdapters: {"kind":"UInt32"},
+    Address: {"kind":"Array","child": {"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: IP_ADAPTER_ORDER_MAP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IP_ADAPTER_ORDER_MAP = extern struct {
+    NumAdapters: {"kind":"UInt32"},
+    AdapterOrder: {"kind":"Array","child": {"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: IP_MCAST_COUNTER_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IP_MCAST_COUNTER_INFO = extern struct {
+    InMcastOctets: {"kind":"UInt64"},
+    OutMcastOctets: {"kind":"UInt64"},
+    InMcastPkts: {"kind":"UInt64"},
+    OutMcastPkts: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: IF_ACCESS_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const IF_ACCESS_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: INTERNAL_IF_OPER_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const INTERNAL_IF_OPER_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: NET_IF_RCV_ADDRESS_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NET_IF_RCV_ADDRESS_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: NET_IF_RCV_ADDRESS_LH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NET_IF_RCV_ADDRESS_LH = extern struct {
+    ifRcvAddressType: Windows.Win32.IpHelper.NET_IF_RCV_ADDRESS_TYPE,
+    ifRcvAddressLength: {"kind":"UInt16"},
+    ifRcvAddressOffset: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: NET_IF_ALIAS_LH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NET_IF_ALIAS_LH = extern struct {
+    ifAliasLength: {"kind":"UInt16"},
+    ifAliasOffset: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: NET_LUID_LH
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const NET_LUID_LH = *opaque{
+    // --------------------------------------------------------
+    // Type: _Info_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _Info_e__Struct = extern struct {
+        _bitfield: {"kind":"UInt64"},
+    };
+};
+// --------------------------------------------------------
+// Type: IF_PHYSICAL_ADDRESS_LH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IF_PHYSICAL_ADDRESS_LH = extern struct {
+    Length: {"kind":"UInt16"},
+    Address: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: IF_ADMINISTRATIVE_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const IF_ADMINISTRATIVE_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: IF_OPER_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const IF_OPER_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIB_IF_ENTRY_LEVEL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MIB_IF_ENTRY_LEVEL = *opaque{
+};
+// --------------------------------------------------------
+// Type: PIPINTERFACE_CHANGE_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIPINTERFACE_CHANGE_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PUNICAST_IPADDRESS_CHANGE_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PUNICAST_IPADDRESS_CHANGE_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PSTABLE_UNICAST_IPADDRESS_TABLE_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PSTABLE_UNICAST_IPADDRESS_TABLE_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IP_ADDRESS_PREFIX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IP_ADDRESS_PREFIX = extern struct {
+    Prefix: Windows.Win32.IpHelper.SOCKADDR_INET,
+    PrefixLength: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: PIPFORWARD_CHANGE_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIPFORWARD_CHANGE_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PTEREDO_PORT_CHANGE_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PTEREDO_PORT_CHANGE_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DNS_SETTINGS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DNS_SETTINGS = extern struct {
+    Version: {"kind":"UInt32"},
+    Flags: {"kind":"UInt64"},
+    Hostname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Domain: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SearchList: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DNS_INTERFACE_SETTINGS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DNS_INTERFACE_SETTINGS = extern struct {
+    Version: {"kind":"UInt32"},
+    Flags: {"kind":"UInt64"},
+    Domain: {"kind""Ptr","child":{"kind":"UInt16"}},
+    NameServer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SearchList: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RegistrationEnabled: {"kind":"UInt32"},
+    RegisterAdapterName: {"kind":"UInt32"},
+    EnableLLMNR: {"kind":"UInt32"},
+    QueryAdapterName: {"kind":"UInt32"},
+    ProfileNameServer: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DNS_INTERFACE_SETTINGS_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DNS_INTERFACE_SETTINGS_EX = extern struct {
+    SettingsV1: Windows.Win32.IpHelper.DNS_INTERFACE_SETTINGS,
+    DisableUnconstrainedQueries: {"kind":"UInt32"},
+    SupplementalSearchList: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: PNETWORK_CONNECTIVITY_HINT_CHANGE_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PNETWORK_CONNECTIVITY_HINT_CHANGE_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: MIB_IPFORWARD_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MIB_IPFORWARD_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIB_IPNET_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MIB_IPNET_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIB_IPSTATS_FORWARDING
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MIB_IPSTATS_FORWARDING = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIB_TCP_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MIB_TCP_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: TCP_RTO_ALGORITHM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TCP_RTO_ALGORITHM = *opaque{
+};
+// --------------------------------------------------------
+// Type: TCP_TABLE_CLASS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TCP_TABLE_CLASS = *opaque{
+};
+// --------------------------------------------------------
+// Type: UDP_TABLE_CLASS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const UDP_TABLE_CLASS = *opaque{
+};
+// --------------------------------------------------------
+// Type: TCPIP_OWNER_MODULE_INFO_CLASS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TCPIP_OWNER_MODULE_INFO_CLASS = *opaque{
+};
+// --------------------------------------------------------
+// Type: TCPIP_OWNER_MODULE_BASIC_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TCPIP_OWNER_MODULE_BASIC_INFO = extern struct {
+    pModuleName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pModulePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: MIB_IPDESTROW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPDESTROW = extern struct {
+    ForwardRow: Windows.Win32.Mib.MIB_IPFORWARDROW,
+    dwForwardPreference: {"kind":"UInt32"},
+    dwForwardViewSet: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_IPDESTTABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPDESTTABLE = extern struct {
+    dwNumEntries: {"kind":"UInt32"},
+    table: {"kind":"Array","child": Windows.Win32.IpHelper.MIB_IPDESTROW},
+};
+// --------------------------------------------------------
+// Type: MIB_ROUTESTATE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_ROUTESTATE = extern struct {
+    bRoutesSetToStack: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: IP_ADDRESS_STRING
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IP_ADDRESS_STRING = extern struct {
+    String: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: IP_ADDR_STRING
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IP_ADDR_STRING = extern struct {
+    Next: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADDR_STRING},
+    IpAddress: Windows.Win32.IpHelper.IP_ADDRESS_STRING,
+    IpMask: Windows.Win32.IpHelper.IP_ADDRESS_STRING,
+    Context: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: IP_ADAPTER_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IP_ADAPTER_INFO = extern struct {
+    Next: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADAPTER_INFO},
+    ComboIndex: {"kind":"UInt32"},
+    AdapterName: {"kind":"Array","child": {"kind":"SByte"}},
+    Description: {"kind":"Array","child": {"kind":"SByte"}},
+    AddressLength: {"kind":"UInt32"},
+    Address: {"kind":"Array","child": {"kind":"Byte"}},
+    Index: {"kind":"UInt32"},
+    Type: {"kind":"UInt32"},
+    DhcpEnabled: {"kind":"UInt32"},
+    CurrentIpAddress: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADDR_STRING},
+    IpAddressList: Windows.Win32.IpHelper.IP_ADDR_STRING,
+    GatewayList: Windows.Win32.IpHelper.IP_ADDR_STRING,
+    DhcpServer: Windows.Win32.IpHelper.IP_ADDR_STRING,
+    HaveWins: Windows.Win32.SystemServices.BOOL,
+    PrimaryWinsServer: Windows.Win32.IpHelper.IP_ADDR_STRING,
+    SecondaryWinsServer: Windows.Win32.IpHelper.IP_ADDR_STRING,
+    LeaseObtained: {"kind":"Int64"},
+    LeaseExpires: {"kind":"Int64"},
+};
+// --------------------------------------------------------
+// Type: IP_ADAPTER_UNICAST_ADDRESS_LH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IP_ADAPTER_UNICAST_ADDRESS_LH = extern struct {
+    Anonymous: Windows.Win32.IpHelper.IP_ADAPTER_UNICAST_ADDRESS_LH+_Anonymous_e__Union,
+    Next: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADAPTER_UNICAST_ADDRESS_LH},
+    Address: Windows.Win32.WinSock.SOCKET_ADDRESS,
+    PrefixOrigin: Windows.Win32.IpHelper.NL_PREFIX_ORIGIN,
+    SuffixOrigin: Windows.Win32.IpHelper.NL_SUFFIX_ORIGIN,
+    DadState: Windows.Win32.IpHelper.NL_DAD_STATE,
+    ValidLifetime: {"kind":"UInt32"},
+    PreferredLifetime: {"kind":"UInt32"},
+    LeaseLifetime: {"kind":"UInt32"},
+    OnLinkPrefixLength: {"kind":"Byte"},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            Length: {"kind":"UInt32"},
+            Flags: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: IP_ADAPTER_UNICAST_ADDRESS_XP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IP_ADAPTER_UNICAST_ADDRESS_XP = extern struct {
+    Anonymous: Windows.Win32.IpHelper.IP_ADAPTER_UNICAST_ADDRESS_XP+_Anonymous_e__Union,
+    Next: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADAPTER_UNICAST_ADDRESS_XP},
+    Address: Windows.Win32.WinSock.SOCKET_ADDRESS,
+    PrefixOrigin: Windows.Win32.IpHelper.NL_PREFIX_ORIGIN,
+    SuffixOrigin: Windows.Win32.IpHelper.NL_SUFFIX_ORIGIN,
+    DadState: Windows.Win32.IpHelper.NL_DAD_STATE,
+    ValidLifetime: {"kind":"UInt32"},
+    PreferredLifetime: {"kind":"UInt32"},
+    LeaseLifetime: {"kind":"UInt32"},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            Length: {"kind":"UInt32"},
+            Flags: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: IP_ADAPTER_ANYCAST_ADDRESS_XP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IP_ADAPTER_ANYCAST_ADDRESS_XP = extern struct {
+    Anonymous: Windows.Win32.IpHelper.IP_ADAPTER_ANYCAST_ADDRESS_XP+_Anonymous_e__Union,
+    Next: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADAPTER_ANYCAST_ADDRESS_XP},
+    Address: Windows.Win32.WinSock.SOCKET_ADDRESS,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            Length: {"kind":"UInt32"},
+            Flags: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: IP_ADAPTER_MULTICAST_ADDRESS_XP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IP_ADAPTER_MULTICAST_ADDRESS_XP = extern struct {
+    Anonymous: Windows.Win32.IpHelper.IP_ADAPTER_MULTICAST_ADDRESS_XP+_Anonymous_e__Union,
+    Next: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADAPTER_MULTICAST_ADDRESS_XP},
+    Address: Windows.Win32.WinSock.SOCKET_ADDRESS,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            Length: {"kind":"UInt32"},
+            Flags: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: IP_ADAPTER_DNS_SERVER_ADDRESS_XP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IP_ADAPTER_DNS_SERVER_ADDRESS_XP = extern struct {
+    Anonymous: Windows.Win32.IpHelper.IP_ADAPTER_DNS_SERVER_ADDRESS_XP+_Anonymous_e__Union,
+    Next: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADAPTER_DNS_SERVER_ADDRESS_XP},
+    Address: Windows.Win32.WinSock.SOCKET_ADDRESS,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            Length: {"kind":"UInt32"},
+            Reserved: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: IP_ADAPTER_WINS_SERVER_ADDRESS_LH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IP_ADAPTER_WINS_SERVER_ADDRESS_LH = extern struct {
+    Anonymous: Windows.Win32.IpHelper.IP_ADAPTER_WINS_SERVER_ADDRESS_LH+_Anonymous_e__Union,
+    Next: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADAPTER_WINS_SERVER_ADDRESS_LH},
+    Address: Windows.Win32.WinSock.SOCKET_ADDRESS,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            Length: {"kind":"UInt32"},
+            Reserved: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: IP_ADAPTER_GATEWAY_ADDRESS_LH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IP_ADAPTER_GATEWAY_ADDRESS_LH = extern struct {
+    Anonymous: Windows.Win32.IpHelper.IP_ADAPTER_GATEWAY_ADDRESS_LH+_Anonymous_e__Union,
+    Next: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADAPTER_GATEWAY_ADDRESS_LH},
+    Address: Windows.Win32.WinSock.SOCKET_ADDRESS,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            Length: {"kind":"UInt32"},
+            Reserved: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: IP_ADAPTER_PREFIX_XP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IP_ADAPTER_PREFIX_XP = extern struct {
+    Anonymous: Windows.Win32.IpHelper.IP_ADAPTER_PREFIX_XP+_Anonymous_e__Union,
+    Next: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADAPTER_PREFIX_XP},
+    Address: Windows.Win32.WinSock.SOCKET_ADDRESS,
+    PrefixLength: {"kind":"UInt32"},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            Length: {"kind":"UInt32"},
+            Flags: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: IP_ADAPTER_DNS_SUFFIX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IP_ADAPTER_DNS_SUFFIX = extern struct {
+    Next: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADAPTER_DNS_SUFFIX},
+    String: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: IP_ADAPTER_ADDRESSES_LH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IP_ADAPTER_ADDRESSES_LH = extern struct {
+    Anonymous1: Windows.Win32.IpHelper.IP_ADAPTER_ADDRESSES_LH+_Anonymous1_e__Union,
+    Next: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADAPTER_ADDRESSES_LH},
+    AdapterName: {"kind""Ptr","child":{"kind":"SByte"}},
+    FirstUnicastAddress: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADAPTER_UNICAST_ADDRESS_LH},
+    FirstAnycastAddress: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADAPTER_ANYCAST_ADDRESS_XP},
+    FirstMulticastAddress: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADAPTER_MULTICAST_ADDRESS_XP},
+    FirstDnsServerAddress: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADAPTER_DNS_SERVER_ADDRESS_XP},
+    DnsSuffix: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Description: {"kind""Ptr","child":{"kind":"UInt16"}},
+    FriendlyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PhysicalAddress: {"kind":"Array","child": {"kind":"Byte"}},
+    PhysicalAddressLength: {"kind":"UInt32"},
+    Anonymous2: Windows.Win32.IpHelper.IP_ADAPTER_ADDRESSES_LH+_Anonymous2_e__Union,
+    Mtu: {"kind":"UInt32"},
+    IfType: {"kind":"UInt32"},
+    OperStatus: Windows.Win32.IpHelper.IF_OPER_STATUS,
+    Ipv6IfIndex: {"kind":"UInt32"},
+    ZoneIndices: {"kind":"Array","child": {"kind":"UInt32"}},
+    FirstPrefix: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADAPTER_PREFIX_XP},
+    TransmitLinkSpeed: {"kind":"UInt64"},
+    ReceiveLinkSpeed: {"kind":"UInt64"},
+    FirstWinsServerAddress: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADAPTER_WINS_SERVER_ADDRESS_LH},
+    FirstGatewayAddress: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADAPTER_GATEWAY_ADDRESS_LH},
+    Ipv4Metric: {"kind":"UInt32"},
+    Ipv6Metric: {"kind":"UInt32"},
+    Luid: Windows.Win32.IpHelper.NET_LUID_LH,
+    Dhcpv4Server: Windows.Win32.WinSock.SOCKET_ADDRESS,
+    CompartmentId: {"kind":"UInt32"},
+    NetworkGuid: Guid,
+    ConnectionType: Windows.Win32.NetworkDrivers.NET_IF_CONNECTION_TYPE,
+    TunnelType: Windows.Win32.NetworkDrivers.TUNNEL_TYPE,
+    Dhcpv6Server: Windows.Win32.WinSock.SOCKET_ADDRESS,
+    Dhcpv6ClientDuid: {"kind":"Array","child": {"kind":"Byte"}},
+    Dhcpv6ClientDuidLength: {"kind":"UInt32"},
+    Dhcpv6Iaid: {"kind":"UInt32"},
+    FirstDnsSuffix: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADAPTER_DNS_SUFFIX},
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            _bitfield: {"kind":"UInt32"},
+        };
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            Length: {"kind":"UInt32"},
+            IfIndex: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: IP_ADAPTER_ADDRESSES_XP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IP_ADAPTER_ADDRESSES_XP = extern struct {
+    Anonymous: Windows.Win32.IpHelper.IP_ADAPTER_ADDRESSES_XP+_Anonymous_e__Union,
+    Next: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADAPTER_ADDRESSES_XP},
+    AdapterName: {"kind""Ptr","child":{"kind":"SByte"}},
+    FirstUnicastAddress: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADAPTER_UNICAST_ADDRESS_XP},
+    FirstAnycastAddress: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADAPTER_ANYCAST_ADDRESS_XP},
+    FirstMulticastAddress: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADAPTER_MULTICAST_ADDRESS_XP},
+    FirstDnsServerAddress: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADAPTER_DNS_SERVER_ADDRESS_XP},
+    DnsSuffix: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Description: {"kind""Ptr","child":{"kind":"UInt16"}},
+    FriendlyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PhysicalAddress: {"kind":"Array","child": {"kind":"Byte"}},
+    PhysicalAddressLength: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+    Mtu: {"kind":"UInt32"},
+    IfType: {"kind":"UInt32"},
+    OperStatus: Windows.Win32.IpHelper.IF_OPER_STATUS,
+    Ipv6IfIndex: {"kind":"UInt32"},
+    ZoneIndices: {"kind":"Array","child": {"kind":"UInt32"}},
+    FirstPrefix: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADAPTER_PREFIX_XP},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            Length: {"kind":"UInt32"},
+            IfIndex: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: IP_PER_ADAPTER_INFO_W2KSP1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IP_PER_ADAPTER_INFO_W2KSP1 = extern struct {
+    AutoconfigEnabled: {"kind":"UInt32"},
+    AutoconfigActive: {"kind":"UInt32"},
+    CurrentDnsServer: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADDR_STRING},
+    DnsServerList: Windows.Win32.IpHelper.IP_ADDR_STRING,
+};
+// --------------------------------------------------------
+// Type: FIXED_INFO_W2KSP1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FIXED_INFO_W2KSP1 = extern struct {
+    HostName: {"kind":"Array","child": {"kind":"SByte"}},
+    DomainName: {"kind":"Array","child": {"kind":"SByte"}},
+    CurrentDnsServer: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADDR_STRING},
+    DnsServerList: Windows.Win32.IpHelper.IP_ADDR_STRING,
+    NodeType: {"kind":"UInt32"},
+    ScopeId: {"kind":"Array","child": {"kind":"SByte"}},
+    EnableRouting: {"kind":"UInt32"},
+    EnableProxy: {"kind":"UInt32"},
+    EnableDns: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ip_interface_name_info_w2ksp1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ip_interface_name_info_w2ksp1 = extern struct {
+    Index: {"kind":"UInt32"},
+    MediaType: {"kind":"UInt32"},
+    ConnectionType: {"kind":"Byte"},
+    AccessType: {"kind":"Byte"},
+    DeviceGuid: Guid,
+    InterfaceGuid: Guid,
+};
+// --------------------------------------------------------
+// Type: TCP_ESTATS_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TCP_ESTATS_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: TCP_BOOLEAN_OPTIONAL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TCP_BOOLEAN_OPTIONAL = *opaque{
+};
+// --------------------------------------------------------
+// Type: TCP_ESTATS_SYN_OPTS_ROS_v0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TCP_ESTATS_SYN_OPTS_ROS_v0 = extern struct {
+    ActiveOpen: {"kind":"Byte"},
+    MssRcvd: {"kind":"UInt32"},
+    MssSent: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: TCP_SOFT_ERROR
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TCP_SOFT_ERROR = *opaque{
+};
+// --------------------------------------------------------
+// Type: TCP_ESTATS_DATA_ROD_v0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TCP_ESTATS_DATA_ROD_v0 = extern struct {
+    DataBytesOut: {"kind":"UInt64"},
+    DataSegsOut: {"kind":"UInt64"},
+    DataBytesIn: {"kind":"UInt64"},
+    DataSegsIn: {"kind":"UInt64"},
+    SegsOut: {"kind":"UInt64"},
+    SegsIn: {"kind":"UInt64"},
+    SoftErrors: {"kind":"UInt32"},
+    SoftErrorReason: {"kind":"UInt32"},
+    SndUna: {"kind":"UInt32"},
+    SndNxt: {"kind":"UInt32"},
+    SndMax: {"kind":"UInt32"},
+    ThruBytesAcked: {"kind":"UInt64"},
+    RcvNxt: {"kind":"UInt32"},
+    ThruBytesReceived: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: TCP_ESTATS_DATA_RW_v0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TCP_ESTATS_DATA_RW_v0 = extern struct {
+    EnableCollection: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: TCP_ESTATS_SND_CONG_ROD_v0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TCP_ESTATS_SND_CONG_ROD_v0 = extern struct {
+    SndLimTransRwin: {"kind":"UInt32"},
+    SndLimTimeRwin: {"kind":"UInt32"},
+    SndLimBytesRwin: {"kind":"UIntPtr"},
+    SndLimTransCwnd: {"kind":"UInt32"},
+    SndLimTimeCwnd: {"kind":"UInt32"},
+    SndLimBytesCwnd: {"kind":"UIntPtr"},
+    SndLimTransSnd: {"kind":"UInt32"},
+    SndLimTimeSnd: {"kind":"UInt32"},
+    SndLimBytesSnd: {"kind":"UIntPtr"},
+    SlowStart: {"kind":"UInt32"},
+    CongAvoid: {"kind":"UInt32"},
+    OtherReductions: {"kind":"UInt32"},
+    CurCwnd: {"kind":"UInt32"},
+    MaxSsCwnd: {"kind":"UInt32"},
+    MaxCaCwnd: {"kind":"UInt32"},
+    CurSsthresh: {"kind":"UInt32"},
+    MaxSsthresh: {"kind":"UInt32"},
+    MinSsthresh: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: TCP_ESTATS_SND_CONG_ROS_v0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TCP_ESTATS_SND_CONG_ROS_v0 = extern struct {
+    LimCwnd: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: TCP_ESTATS_SND_CONG_RW_v0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TCP_ESTATS_SND_CONG_RW_v0 = extern struct {
+    EnableCollection: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: TCP_ESTATS_PATH_ROD_v0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TCP_ESTATS_PATH_ROD_v0 = extern struct {
+    FastRetran: {"kind":"UInt32"},
+    Timeouts: {"kind":"UInt32"},
+    SubsequentTimeouts: {"kind":"UInt32"},
+    CurTimeoutCount: {"kind":"UInt32"},
+    AbruptTimeouts: {"kind":"UInt32"},
+    PktsRetrans: {"kind":"UInt32"},
+    BytesRetrans: {"kind":"UInt32"},
+    DupAcksIn: {"kind":"UInt32"},
+    SacksRcvd: {"kind":"UInt32"},
+    SackBlocksRcvd: {"kind":"UInt32"},
+    CongSignals: {"kind":"UInt32"},
+    PreCongSumCwnd: {"kind":"UInt32"},
+    PreCongSumRtt: {"kind":"UInt32"},
+    PostCongSumRtt: {"kind":"UInt32"},
+    PostCongCountRtt: {"kind":"UInt32"},
+    EcnSignals: {"kind":"UInt32"},
+    EceRcvd: {"kind":"UInt32"},
+    SendStall: {"kind":"UInt32"},
+    QuenchRcvd: {"kind":"UInt32"},
+    RetranThresh: {"kind":"UInt32"},
+    SndDupAckEpisodes: {"kind":"UInt32"},
+    SumBytesReordered: {"kind":"UInt32"},
+    NonRecovDa: {"kind":"UInt32"},
+    NonRecovDaEpisodes: {"kind":"UInt32"},
+    AckAfterFr: {"kind":"UInt32"},
+    DsackDups: {"kind":"UInt32"},
+    SampleRtt: {"kind":"UInt32"},
+    SmoothedRtt: {"kind":"UInt32"},
+    RttVar: {"kind":"UInt32"},
+    MaxRtt: {"kind":"UInt32"},
+    MinRtt: {"kind":"UInt32"},
+    SumRtt: {"kind":"UInt32"},
+    CountRtt: {"kind":"UInt32"},
+    CurRto: {"kind":"UInt32"},
+    MaxRto: {"kind":"UInt32"},
+    MinRto: {"kind":"UInt32"},
+    CurMss: {"kind":"UInt32"},
+    MaxMss: {"kind":"UInt32"},
+    MinMss: {"kind":"UInt32"},
+    SpuriousRtoDetections: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: TCP_ESTATS_PATH_RW_v0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TCP_ESTATS_PATH_RW_v0 = extern struct {
+    EnableCollection: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: TCP_ESTATS_SEND_BUFF_ROD_v0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TCP_ESTATS_SEND_BUFF_ROD_v0 = extern struct {
+    CurRetxQueue: {"kind":"UIntPtr"},
+    MaxRetxQueue: {"kind":"UIntPtr"},
+    CurAppWQueue: {"kind":"UIntPtr"},
+    MaxAppWQueue: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: TCP_ESTATS_SEND_BUFF_RW_v0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TCP_ESTATS_SEND_BUFF_RW_v0 = extern struct {
+    EnableCollection: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: TCP_ESTATS_REC_ROD_v0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TCP_ESTATS_REC_ROD_v0 = extern struct {
+    CurRwinSent: {"kind":"UInt32"},
+    MaxRwinSent: {"kind":"UInt32"},
+    MinRwinSent: {"kind":"UInt32"},
+    LimRwin: {"kind":"UInt32"},
+    DupAckEpisodes: {"kind":"UInt32"},
+    DupAcksOut: {"kind":"UInt32"},
+    CeRcvd: {"kind":"UInt32"},
+    EcnSent: {"kind":"UInt32"},
+    EcnNoncesRcvd: {"kind":"UInt32"},
+    CurReasmQueue: {"kind":"UInt32"},
+    MaxReasmQueue: {"kind":"UInt32"},
+    CurAppRQueue: {"kind":"UIntPtr"},
+    MaxAppRQueue: {"kind":"UIntPtr"},
+    WinScaleSent: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: TCP_ESTATS_REC_RW_v0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TCP_ESTATS_REC_RW_v0 = extern struct {
+    EnableCollection: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: TCP_ESTATS_OBS_REC_ROD_v0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TCP_ESTATS_OBS_REC_ROD_v0 = extern struct {
+    CurRwinRcvd: {"kind":"UInt32"},
+    MaxRwinRcvd: {"kind":"UInt32"},
+    MinRwinRcvd: {"kind":"UInt32"},
+    WinScaleRcvd: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: TCP_ESTATS_OBS_REC_RW_v0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TCP_ESTATS_OBS_REC_RW_v0 = extern struct {
+    EnableCollection: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: TCP_ESTATS_BANDWIDTH_RW_v0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TCP_ESTATS_BANDWIDTH_RW_v0 = extern struct {
+    EnableCollectionOutbound: Windows.Win32.IpHelper.TCP_BOOLEAN_OPTIONAL,
+    EnableCollectionInbound: Windows.Win32.IpHelper.TCP_BOOLEAN_OPTIONAL,
+};
+// --------------------------------------------------------
+// Type: TCP_ESTATS_BANDWIDTH_ROD_v0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TCP_ESTATS_BANDWIDTH_ROD_v0 = extern struct {
+    OutboundBandwidth: {"kind":"UInt64"},
+    InboundBandwidth: {"kind":"UInt64"},
+    OutboundInstability: {"kind":"UInt64"},
+    InboundInstability: {"kind":"UInt64"},
+    OutboundBandwidthPeaked: {"kind":"Byte"},
+    InboundBandwidthPeaked: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: TCP_ESTATS_FINE_RTT_RW_v0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TCP_ESTATS_FINE_RTT_RW_v0 = extern struct {
+    EnableCollection: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: TCP_ESTATS_FINE_RTT_ROD_v0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TCP_ESTATS_FINE_RTT_ROD_v0 = extern struct {
+    RttVar: {"kind":"UInt32"},
+    MaxRtt: {"kind":"UInt32"},
+    MinRtt: {"kind":"UInt32"},
+    SumRtt: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: INTERFACE_TIMESTAMP_CAPABILITY_FLAGS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERFACE_TIMESTAMP_CAPABILITY_FLAGS = extern struct {
+    PtpV2OverUdpIPv4EventMsgReceiveHw: {"kind":"Byte"},
+    PtpV2OverUdpIPv4AllMsgReceiveHw: {"kind":"Byte"},
+    PtpV2OverUdpIPv4EventMsgTransmitHw: {"kind":"Byte"},
+    PtpV2OverUdpIPv4AllMsgTransmitHw: {"kind":"Byte"},
+    PtpV2OverUdpIPv6EventMsgReceiveHw: {"kind":"Byte"},
+    PtpV2OverUdpIPv6AllMsgReceiveHw: {"kind":"Byte"},
+    PtpV2OverUdpIPv6EventMsgTransmitHw: {"kind":"Byte"},
+    PtpV2OverUdpIPv6AllMsgTransmitHw: {"kind":"Byte"},
+    AllReceiveHw: {"kind":"Byte"},
+    AllTransmitHw: {"kind":"Byte"},
+    TaggedTransmitHw: {"kind":"Byte"},
+    AllReceiveSw: {"kind":"Byte"},
+    AllTransmitSw: {"kind":"Byte"},
+    TaggedTransmitSw: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: INTERFACE_TIMESTAMP_CAPABILITIES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERFACE_TIMESTAMP_CAPABILITIES = extern struct {
+    Version: {"kind":"UInt32"},
+    HardwareClockFrequencyHz: {"kind":"UInt64"},
+    CrossTimestamp: {"kind":"Byte"},
+    Reserved1: {"kind":"UInt64"},
+    Reserved2: {"kind":"UInt64"},
+    TimestampFlags: Windows.Win32.IpHelper.INTERFACE_TIMESTAMP_CAPABILITY_FLAGS,
+};
+// --------------------------------------------------------
+// Type: INTERFACE_HARDWARE_CROSSTIMESTAMP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERFACE_HARDWARE_CROSSTIMESTAMP = extern struct {
+    Version: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+    SystemTimestamp1: {"kind":"UInt64"},
+    HardwareClockTimestamp: {"kind":"UInt64"},
+    SystemTimestamp2: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: HIFTIMESTAMPCHANGE__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HIFTIMESTAMPCHANGE__ = extern struct {
+    unused: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: INTERFACE_TIMESTAMP_CONFIG_CHANGE_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const INTERFACE_TIMESTAMP_CONFIG_CHANGE_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PINTERFACE_TIMESTAMP_CONFIG_CHANGE_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PINTERFACE_TIMESTAMP_CONFIG_CHANGE_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: NET_ADDRESS_FORMAT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NET_ADDRESS_FORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: SCOPE_LEVEL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SCOPE_LEVEL = *opaque{
+};
+// --------------------------------------------------------
+// Type: SOCKADDR_INET
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const SOCKADDR_INET = *opaque{
+};
+// --------------------------------------------------------
+// Type: SOCKADDR_IN6_PAIR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SOCKADDR_IN6_PAIR = extern struct {
+    SourceAddress: {"kind""Ptr","child":Windows.Win32.NetworkDrivers.SOCKADDR_IN6_LH},
+    DestinationAddress: {"kind""Ptr","child":Windows.Win32.NetworkDrivers.SOCKADDR_IN6_LH},
+};
+// --------------------------------------------------------
+// Type: NL_PREFIX_ORIGIN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NL_PREFIX_ORIGIN = *opaque{
+};
+// --------------------------------------------------------
+// Type: NL_SUFFIX_ORIGIN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NL_SUFFIX_ORIGIN = *opaque{
+};
+// --------------------------------------------------------
+// Type: NL_DAD_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NL_DAD_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: NL_NETWORK_CONNECTIVITY_LEVEL_HINT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NL_NETWORK_CONNECTIVITY_LEVEL_HINT = *opaque{
+};
+// --------------------------------------------------------
+// Type: NL_NETWORK_CONNECTIVITY_COST_HINT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NL_NETWORK_CONNECTIVITY_COST_HINT = *opaque{
+};
+// --------------------------------------------------------
+// Type: NL_NETWORK_CONNECTIVITY_HINT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NL_NETWORK_CONNECTIVITY_HINT = extern struct {
+    ConnectivityLevel: Windows.Win32.IpHelper.NL_NETWORK_CONNECTIVITY_LEVEL_HINT,
+    ConnectivityCost: Windows.Win32.IpHelper.NL_NETWORK_CONNECTIVITY_COST_HINT,
+    ApproachingDataLimit: {"kind":"Byte"},
+    OverDataLimit: {"kind":"Byte"},
+    Roaming: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: NL_BANDWIDTH_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NL_BANDWIDTH_INFORMATION = extern struct {
+    Bandwidth: {"kind":"UInt64"},
+    Instability: {"kind":"UInt64"},
+    BandwidthPeaked: {"kind":"Byte"},
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetIfEntry2(
+    Row: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IF_ROW2},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetIfEntry2Ex(
+    Level: Windows.Win32.IpHelper.MIB_IF_ENTRY_LEVEL,
+    Row: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IF_ROW2},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetIfTable2(
+    Table: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Mib.MIB_IF_TABLE2}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetIfTable2Ex(
+    Level: Windows.Win32.NetworkDrivers.MIB_IF_TABLE_LEVEL,
+    Table: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Mib.MIB_IF_TABLE2}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetIfStackTable(
+    Table: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Mib.MIB_IFSTACK_TABLE}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetInvertedIfStackTable(
+    Table: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Mib.MIB_INVERTEDIFSTACK_TABLE}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetIpInterfaceEntry(
+    Row: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPINTERFACE_ROW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetIpInterfaceTable(
+    Family: {"kind":"UInt16"},
+    Table: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Mib.MIB_IPINTERFACE_TABLE}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn InitializeIpInterfaceEntry(
+    Row: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPINTERFACE_ROW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn NotifyIpInterfaceChange(
+    Family: {"kind":"UInt16"},
+    Callback: Windows.Win32.IpHelper.PIPINTERFACE_CHANGE_CALLBACK,
+    CallerContext: {"kind""Ptr","child":{"kind":"Void"}},
+    InitialNotification: {"kind":"Byte"},
+    NotificationHandle: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn SetIpInterfaceEntry(
+    Row: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPINTERFACE_ROW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetIpNetworkConnectionBandwidthEstimates(
+    InterfaceIndex: {"kind":"UInt32"},
+    AddressFamily: {"kind":"UInt16"},
+    BandwidthEstimates: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IP_NETWORK_CONNECTION_BANDWIDTH_ESTIMATES},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn CreateUnicastIpAddressEntry(
+    Row: {"kind""Ptr","child":Windows.Win32.Mib.MIB_UNICASTIPADDRESS_ROW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn DeleteUnicastIpAddressEntry(
+    Row: {"kind""Ptr","child":Windows.Win32.Mib.MIB_UNICASTIPADDRESS_ROW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetUnicastIpAddressEntry(
+    Row: {"kind""Ptr","child":Windows.Win32.Mib.MIB_UNICASTIPADDRESS_ROW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetUnicastIpAddressTable(
+    Family: {"kind":"UInt16"},
+    Table: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Mib.MIB_UNICASTIPADDRESS_TABLE}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn InitializeUnicastIpAddressEntry(
+    Row: {"kind""Ptr","child":Windows.Win32.Mib.MIB_UNICASTIPADDRESS_ROW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn NotifyUnicastIpAddressChange(
+    Family: {"kind":"UInt16"},
+    Callback: Windows.Win32.IpHelper.PUNICAST_IPADDRESS_CHANGE_CALLBACK,
+    CallerContext: {"kind""Ptr","child":{"kind":"Void"}},
+    InitialNotification: {"kind":"Byte"},
+    NotificationHandle: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn NotifyStableUnicastIpAddressTable(
+    Family: {"kind":"UInt16"},
+    Table: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Mib.MIB_UNICASTIPADDRESS_TABLE}},
+    CallerCallback: Windows.Win32.IpHelper.PSTABLE_UNICAST_IPADDRESS_TABLE_CALLBACK,
+    CallerContext: {"kind""Ptr","child":{"kind":"Void"}},
+    NotificationHandle: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn SetUnicastIpAddressEntry(
+    Row: {"kind""Ptr","child":Windows.Win32.Mib.MIB_UNICASTIPADDRESS_ROW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn CreateAnycastIpAddressEntry(
+    Row: {"kind""Ptr","child":Windows.Win32.Mib.MIB_ANYCASTIPADDRESS_ROW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn DeleteAnycastIpAddressEntry(
+    Row: {"kind""Ptr","child":Windows.Win32.Mib.MIB_ANYCASTIPADDRESS_ROW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetAnycastIpAddressEntry(
+    Row: {"kind""Ptr","child":Windows.Win32.Mib.MIB_ANYCASTIPADDRESS_ROW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetAnycastIpAddressTable(
+    Family: {"kind":"UInt16"},
+    Table: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Mib.MIB_ANYCASTIPADDRESS_TABLE}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetMulticastIpAddressEntry(
+    Row: {"kind""Ptr","child":Windows.Win32.Mib.MIB_MULTICASTIPADDRESS_ROW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetMulticastIpAddressTable(
+    Family: {"kind":"UInt16"},
+    Table: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Mib.MIB_MULTICASTIPADDRESS_TABLE}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn CreateIpForwardEntry2(
+    Row: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPFORWARD_ROW2},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn DeleteIpForwardEntry2(
+    Row: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPFORWARD_ROW2},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetBestRoute2(
+    InterfaceLuid: {"kind""Ptr","child":Windows.Win32.IpHelper.NET_LUID_LH},
+    InterfaceIndex: {"kind":"UInt32"},
+    SourceAddress: {"kind""Ptr","child":Windows.Win32.IpHelper.SOCKADDR_INET},
+    DestinationAddress: {"kind""Ptr","child":Windows.Win32.IpHelper.SOCKADDR_INET},
+    AddressSortOptions: {"kind":"UInt32"},
+    BestRoute: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPFORWARD_ROW2},
+    BestSourceAddress: {"kind""Ptr","child":Windows.Win32.IpHelper.SOCKADDR_INET},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetIpForwardEntry2(
+    Row: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPFORWARD_ROW2},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetIpForwardTable2(
+    Family: {"kind":"UInt16"},
+    Table: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Mib.MIB_IPFORWARD_TABLE2}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn InitializeIpForwardEntry(
+    Row: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPFORWARD_ROW2},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn NotifyRouteChange2(
+    AddressFamily: {"kind":"UInt16"},
+    Callback: Windows.Win32.IpHelper.PIPFORWARD_CHANGE_CALLBACK,
+    CallerContext: {"kind""Ptr","child":{"kind":"Void"}},
+    InitialNotification: {"kind":"Byte"},
+    NotificationHandle: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn SetIpForwardEntry2(
+    Route: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPFORWARD_ROW2},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn FlushIpPathTable(
+    Family: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetIpPathEntry(
+    Row: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPPATH_ROW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetIpPathTable(
+    Family: {"kind":"UInt16"},
+    Table: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Mib.MIB_IPPATH_TABLE}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn CreateIpNetEntry2(
+    Row: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPNET_ROW2},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn DeleteIpNetEntry2(
+    Row: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPNET_ROW2},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn FlushIpNetTable2(
+    Family: {"kind":"UInt16"},
+    InterfaceIndex: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetIpNetEntry2(
+    Row: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPNET_ROW2},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetIpNetTable2(
+    Family: {"kind":"UInt16"},
+    Table: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Mib.MIB_IPNET_TABLE2}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn ResolveIpNetEntry2(
+    Row: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPNET_ROW2},
+    SourceAddress: {"kind""Ptr","child":Windows.Win32.IpHelper.SOCKADDR_INET},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn SetIpNetEntry2(
+    Row: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPNET_ROW2},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn NotifyTeredoPortChange(
+    Callback: Windows.Win32.IpHelper.PTEREDO_PORT_CHANGE_CALLBACK,
+    CallerContext: {"kind""Ptr","child":{"kind":"Void"}},
+    InitialNotification: {"kind":"Byte"},
+    NotificationHandle: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetTeredoPort(
+    Port: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn CancelMibChangeNotify2(
+    NotificationHandle: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn FreeMibTable(
+    Memory: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn CreateSortedAddressPairs(
+    SourceAddressList: {"kind""Ptr","child":Windows.Win32.NetworkDrivers.SOCKADDR_IN6_LH},
+    SourceAddressCount: {"kind":"UInt32"},
+    DestinationAddressList: {"kind""Ptr","child":Windows.Win32.NetworkDrivers.SOCKADDR_IN6_LH},
+    DestinationAddressCount: {"kind":"UInt32"},
+    AddressSortOptions: {"kind":"UInt32"},
+    SortedAddressPairList: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.IpHelper.SOCKADDR_IN6_PAIR}},
+    SortedAddressPairCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn ConvertCompartmentGuidToId(
+    CompartmentGuid: {"kind""Ptr","child":Guid},
+    CompartmentId: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn ConvertCompartmentIdToGuid(
+    CompartmentId: {"kind":"UInt32"},
+    CompartmentGuid: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn ConvertInterfaceNameToLuidA(
+    InterfaceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    InterfaceLuid: {"kind""Ptr","child":Windows.Win32.IpHelper.NET_LUID_LH},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn ConvertInterfaceNameToLuidW(
+    InterfaceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InterfaceLuid: {"kind""Ptr","child":Windows.Win32.IpHelper.NET_LUID_LH},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn ConvertInterfaceLuidToNameA(
+    InterfaceLuid: {"kind""Ptr","child":Windows.Win32.IpHelper.NET_LUID_LH},
+    InterfaceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Length: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn ConvertInterfaceLuidToNameW(
+    InterfaceLuid: {"kind""Ptr","child":Windows.Win32.IpHelper.NET_LUID_LH},
+    InterfaceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Length: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn ConvertInterfaceLuidToIndex(
+    InterfaceLuid: {"kind""Ptr","child":Windows.Win32.IpHelper.NET_LUID_LH},
+    InterfaceIndex: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn ConvertInterfaceIndexToLuid(
+    InterfaceIndex: {"kind":"UInt32"},
+    InterfaceLuid: {"kind""Ptr","child":Windows.Win32.IpHelper.NET_LUID_LH},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn ConvertInterfaceLuidToAlias(
+    InterfaceLuid: {"kind""Ptr","child":Windows.Win32.IpHelper.NET_LUID_LH},
+    InterfaceAlias: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Length: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn ConvertInterfaceAliasToLuid(
+    InterfaceAlias: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InterfaceLuid: {"kind""Ptr","child":Windows.Win32.IpHelper.NET_LUID_LH},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn ConvertInterfaceLuidToGuid(
+    InterfaceLuid: {"kind""Ptr","child":Windows.Win32.IpHelper.NET_LUID_LH},
+    InterfaceGuid: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn ConvertInterfaceGuidToLuid(
+    InterfaceGuid: {"kind""Ptr","child":Guid},
+    InterfaceLuid: {"kind""Ptr","child":Windows.Win32.IpHelper.NET_LUID_LH},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn if_nametoindex(
+    InterfaceName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn if_indextoname(
+    InterfaceIndex: {"kind":"UInt32"},
+    InterfaceName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetCurrentThreadCompartmentScope(
+    CompartmentScope: {"kind""Ptr","child":{"kind":"UInt32"}},
+    CompartmentId: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn SetCurrentThreadCompartmentScope(
+    CompartmentScope: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetJobCompartmentId(
+    JobHandle: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn SetJobCompartmentId(
+    JobHandle: Windows.Win32.SystemServices.HANDLE,
+    CompartmentId: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetDefaultCompartmentId(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn ConvertLengthToIpv4Mask(
+    MaskLength: {"kind":"UInt32"},
+    Mask: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn ConvertIpv4MaskToLength(
+    Mask: {"kind":"UInt32"},
+    MaskLength: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetDnsSettings(
+    Settings: {"kind""Ptr","child":Windows.Win32.IpHelper.DNS_SETTINGS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn FreeDnsSettings(
+    Settings: {"kind""Ptr","child":Windows.Win32.IpHelper.DNS_SETTINGS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn SetDnsSettings(
+    Settings: {"kind""Ptr","child":Windows.Win32.IpHelper.DNS_SETTINGS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetInterfaceDnsSettings(
+    Interface: Guid,
+    Settings: {"kind""Ptr","child":Windows.Win32.IpHelper.DNS_INTERFACE_SETTINGS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn FreeInterfaceDnsSettings(
+    Settings: {"kind""Ptr","child":Windows.Win32.IpHelper.DNS_INTERFACE_SETTINGS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn SetInterfaceDnsSettings(
+    Interface: Guid,
+    Settings: {"kind""Ptr","child":Windows.Win32.IpHelper.DNS_INTERFACE_SETTINGS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetNetworkConnectivityHint(
+    ConnectivityHint: {"kind""Ptr","child":Windows.Win32.IpHelper.NL_NETWORK_CONNECTIVITY_HINT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetNetworkConnectivityHintForInterface(
+    InterfaceIndex: {"kind":"UInt32"},
+    ConnectivityHint: {"kind""Ptr","child":Windows.Win32.IpHelper.NL_NETWORK_CONNECTIVITY_HINT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn NotifyNetworkConnectivityHintChange(
+    Callback: Windows.Win32.IpHelper.PNETWORK_CONNECTIVITY_HINT_CHANGE_CALLBACK,
+    CallerContext: {"kind""Ptr","child":{"kind":"Void"}},
+    InitialNotification: {"kind":"Byte"},
+    NotificationHandle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "IPHLPAPI" fn IcmpCreateFile(
+
+// set_last_errror=True (can and should we use this?)
+pub extern "IPHLPAPI" fn Icmp6CreateFile(
+
+// set_last_errror=True (can and should we use this?)
+pub extern "IPHLPAPI" fn IcmpCloseHandle(
+    IcmpHandle: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "IPHLPAPI" fn IcmpSendEcho(
+    IcmpHandle: Windows.Win32.SystemServices.HANDLE,
+    DestinationAddress: {"kind":"UInt32"},
+    RequestData: {"kind""Ptr","child":{"kind":"Void"}},
+    RequestSize: {"kind":"UInt16"},
+    RequestOptions: {"kind""Ptr","child":Windows.Win32.IpHelper.ip_option_information},
+    ReplyBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    ReplySize: {"kind":"UInt32"},
+    Timeout: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "IPHLPAPI" fn IcmpSendEcho2(
+    IcmpHandle: Windows.Win32.SystemServices.HANDLE,
+    Event: Windows.Win32.SystemServices.HANDLE,
+    ApcRoutine: Windows.Win32.SystemServices.FARPROC,
+    ApcContext: {"kind""Ptr","child":{"kind":"Void"}},
+    DestinationAddress: {"kind":"UInt32"},
+    RequestData: {"kind""Ptr","child":{"kind":"Void"}},
+    RequestSize: {"kind":"UInt16"},
+    RequestOptions: {"kind""Ptr","child":Windows.Win32.IpHelper.ip_option_information},
+    ReplyBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    ReplySize: {"kind":"UInt32"},
+    Timeout: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "IPHLPAPI" fn IcmpSendEcho2Ex(
+    IcmpHandle: Windows.Win32.SystemServices.HANDLE,
+    Event: Windows.Win32.SystemServices.HANDLE,
+    ApcRoutine: Windows.Win32.SystemServices.FARPROC,
+    ApcContext: {"kind""Ptr","child":{"kind":"Void"}},
+    SourceAddress: {"kind":"UInt32"},
+    DestinationAddress: {"kind":"UInt32"},
+    RequestData: {"kind""Ptr","child":{"kind":"Void"}},
+    RequestSize: {"kind":"UInt16"},
+    RequestOptions: {"kind""Ptr","child":Windows.Win32.IpHelper.ip_option_information},
+    ReplyBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    ReplySize: {"kind":"UInt32"},
+    Timeout: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "IPHLPAPI" fn Icmp6SendEcho2(
+    IcmpHandle: Windows.Win32.SystemServices.HANDLE,
+    Event: Windows.Win32.SystemServices.HANDLE,
+    ApcRoutine: Windows.Win32.SystemServices.FARPROC,
+    ApcContext: {"kind""Ptr","child":{"kind":"Void"}},
+    SourceAddress: {"kind""Ptr","child":Windows.Win32.NetworkDrivers.SOCKADDR_IN6_LH},
+    DestinationAddress: {"kind""Ptr","child":Windows.Win32.NetworkDrivers.SOCKADDR_IN6_LH},
+    RequestData: {"kind""Ptr","child":{"kind":"Void"}},
+    RequestSize: {"kind":"UInt16"},
+    RequestOptions: {"kind""Ptr","child":Windows.Win32.IpHelper.ip_option_information},
+    ReplyBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    ReplySize: {"kind":"UInt32"},
+    Timeout: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "IPHLPAPI" fn IcmpParseReplies(
+    ReplyBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    ReplySize: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "IPHLPAPI" fn Icmp6ParseReplies(
+    ReplyBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    ReplySize: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetNumberOfInterfaces(
+    pdwNumIf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetIfEntry(
+    pIfRow: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IFROW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetIfTable(
+    pIfTable: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IFTABLE},
+    pdwSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    bOrder: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetIpAddrTable(
+    pIpAddrTable: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPADDRTABLE},
+    pdwSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    bOrder: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetIpNetTable(
+    IpNetTable: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPNETTABLE},
+    SizePointer: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Order: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetIpForwardTable(
+    pIpForwardTable: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPFORWARDTABLE},
+    pdwSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    bOrder: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetTcpTable(
+    TcpTable: {"kind""Ptr","child":Windows.Win32.Mib.MIB_TCPTABLE},
+    SizePointer: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Order: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetExtendedTcpTable(
+    pTcpTable: {"kind""Ptr","child":{"kind":"Void"}},
+    pdwSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    bOrder: Windows.Win32.SystemServices.BOOL,
+    ulAf: {"kind":"UInt32"},
+    TableClass: Windows.Win32.IpHelper.TCP_TABLE_CLASS,
+    Reserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetOwnerModuleFromTcpEntry(
+    pTcpEntry: {"kind""Ptr","child":Windows.Win32.Mib.MIB_TCPROW_OWNER_MODULE},
+    Class: Windows.Win32.IpHelper.TCPIP_OWNER_MODULE_INFO_CLASS,
+    pBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    pdwSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetUdpTable(
+    UdpTable: {"kind""Ptr","child":Windows.Win32.Mib.MIB_UDPTABLE},
+    SizePointer: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Order: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetExtendedUdpTable(
+    pUdpTable: {"kind""Ptr","child":{"kind":"Void"}},
+    pdwSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    bOrder: Windows.Win32.SystemServices.BOOL,
+    ulAf: {"kind":"UInt32"},
+    TableClass: Windows.Win32.IpHelper.UDP_TABLE_CLASS,
+    Reserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetOwnerModuleFromUdpEntry(
+    pUdpEntry: {"kind""Ptr","child":Windows.Win32.Mib.MIB_UDPROW_OWNER_MODULE},
+    Class: Windows.Win32.IpHelper.TCPIP_OWNER_MODULE_INFO_CLASS,
+    pBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    pdwSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetTcpTable2(
+    TcpTable: {"kind""Ptr","child":Windows.Win32.Mib.MIB_TCPTABLE2},
+    SizePointer: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Order: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetTcp6Table(
+    TcpTable: {"kind""Ptr","child":Windows.Win32.Mib.MIB_TCP6TABLE},
+    SizePointer: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Order: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetTcp6Table2(
+    TcpTable: {"kind""Ptr","child":Windows.Win32.Mib.MIB_TCP6TABLE2},
+    SizePointer: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Order: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetPerTcpConnectionEStats(
+    Row: {"kind""Ptr","child":Windows.Win32.Mib.MIB_TCPROW_LH},
+    EstatsType: Windows.Win32.IpHelper.TCP_ESTATS_TYPE,
+    Rw: {"kind""Ptr","child":{"kind":"Byte"}},
+    RwVersion: {"kind":"UInt32"},
+    RwSize: {"kind":"UInt32"},
+    Ros: {"kind""Ptr","child":{"kind":"Byte"}},
+    RosVersion: {"kind":"UInt32"},
+    RosSize: {"kind":"UInt32"},
+    Rod: {"kind""Ptr","child":{"kind":"Byte"}},
+    RodVersion: {"kind":"UInt32"},
+    RodSize: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn SetPerTcpConnectionEStats(
+    Row: {"kind""Ptr","child":Windows.Win32.Mib.MIB_TCPROW_LH},
+    EstatsType: Windows.Win32.IpHelper.TCP_ESTATS_TYPE,
+    Rw: {"kind""Ptr","child":{"kind":"Byte"}},
+    RwVersion: {"kind":"UInt32"},
+    RwSize: {"kind":"UInt32"},
+    Offset: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetPerTcp6ConnectionEStats(
+    Row: {"kind""Ptr","child":Windows.Win32.Mib.MIB_TCP6ROW},
+    EstatsType: Windows.Win32.IpHelper.TCP_ESTATS_TYPE,
+    Rw: {"kind""Ptr","child":{"kind":"Byte"}},
+    RwVersion: {"kind":"UInt32"},
+    RwSize: {"kind":"UInt32"},
+    Ros: {"kind""Ptr","child":{"kind":"Byte"}},
+    RosVersion: {"kind":"UInt32"},
+    RosSize: {"kind":"UInt32"},
+    Rod: {"kind""Ptr","child":{"kind":"Byte"}},
+    RodVersion: {"kind":"UInt32"},
+    RodSize: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn SetPerTcp6ConnectionEStats(
+    Row: {"kind""Ptr","child":Windows.Win32.Mib.MIB_TCP6ROW},
+    EstatsType: Windows.Win32.IpHelper.TCP_ESTATS_TYPE,
+    Rw: {"kind""Ptr","child":{"kind":"Byte"}},
+    RwVersion: {"kind":"UInt32"},
+    RwSize: {"kind":"UInt32"},
+    Offset: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetOwnerModuleFromTcp6Entry(
+    pTcpEntry: {"kind""Ptr","child":Windows.Win32.Mib.MIB_TCP6ROW_OWNER_MODULE},
+    Class: Windows.Win32.IpHelper.TCPIP_OWNER_MODULE_INFO_CLASS,
+    pBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    pdwSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetUdp6Table(
+    Udp6Table: {"kind""Ptr","child":Windows.Win32.Mib.MIB_UDP6TABLE},
+    SizePointer: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Order: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetOwnerModuleFromUdp6Entry(
+    pUdpEntry: {"kind""Ptr","child":Windows.Win32.Mib.MIB_UDP6ROW_OWNER_MODULE},
+    Class: Windows.Win32.IpHelper.TCPIP_OWNER_MODULE_INFO_CLASS,
+    pBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    pdwSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetOwnerModuleFromPidAndInfo(
+    ulPid: {"kind":"UInt32"},
+    pInfo: {"kind""Ptr","child":{"kind":"UInt64"}},
+    Class: Windows.Win32.IpHelper.TCPIP_OWNER_MODULE_INFO_CLASS,
+    pBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    pdwSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetIpStatistics(
+    Statistics: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPSTATS_LH},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetIcmpStatistics(
+    Statistics: {"kind""Ptr","child":Windows.Win32.Mib.MIB_ICMP},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetTcpStatistics(
+    Statistics: {"kind""Ptr","child":Windows.Win32.Mib.MIB_TCPSTATS_LH},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetUdpStatistics(
+    Stats: {"kind""Ptr","child":Windows.Win32.Mib.MIB_UDPSTATS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn SetIpStatisticsEx(
+    Statistics: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPSTATS_LH},
+    Family: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetIpStatisticsEx(
+    Statistics: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPSTATS_LH},
+    Family: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetIcmpStatisticsEx(
+    Statistics: {"kind""Ptr","child":Windows.Win32.Mib.MIB_ICMP_EX_XPSP1},
+    Family: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetTcpStatisticsEx(
+    Statistics: {"kind""Ptr","child":Windows.Win32.Mib.MIB_TCPSTATS_LH},
+    Family: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetUdpStatisticsEx(
+    Statistics: {"kind""Ptr","child":Windows.Win32.Mib.MIB_UDPSTATS},
+    Family: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetTcpStatisticsEx2(
+    Statistics: {"kind""Ptr","child":Windows.Win32.Mib.MIB_TCPSTATS2},
+    Family: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetUdpStatisticsEx2(
+    Statistics: {"kind""Ptr","child":Windows.Win32.Mib.MIB_UDPSTATS2},
+    Family: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn SetIfEntry(
+    pIfRow: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IFROW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn CreateIpForwardEntry(
+    pRoute: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPFORWARDROW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn SetIpForwardEntry(
+    pRoute: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPFORWARDROW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn DeleteIpForwardEntry(
+    pRoute: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPFORWARDROW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn SetIpStatistics(
+    pIpStats: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPSTATS_LH},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn SetIpTTL(
+    nTTL: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn CreateIpNetEntry(
+    pArpEntry: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPNETROW_LH},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn SetIpNetEntry(
+    pArpEntry: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPNETROW_LH},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn DeleteIpNetEntry(
+    pArpEntry: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPNETROW_LH},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn FlushIpNetTable(
+    dwIfIndex: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn CreateProxyArpEntry(
+    dwAddress: {"kind":"UInt32"},
+    dwMask: {"kind":"UInt32"},
+    dwIfIndex: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn DeleteProxyArpEntry(
+    dwAddress: {"kind":"UInt32"},
+    dwMask: {"kind":"UInt32"},
+    dwIfIndex: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn SetTcpEntry(
+    pTcpRow: {"kind""Ptr","child":Windows.Win32.Mib.MIB_TCPROW_LH},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetInterfaceInfo(
+    pIfTable: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_INTERFACE_INFO},
+    dwOutBufLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetUniDirectionalAdapterInfo(
+    pIPIfInfo: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_UNIDIRECTIONAL_ADAPTER_ADDRESS},
+    dwOutBufLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn NhpAllocateAndGetInterfaceInfoFromStack(
+    ppTable: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.IpHelper.ip_interface_name_info_w2ksp1}},
+    pdwCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    bOrder: Windows.Win32.SystemServices.BOOL,
+    hHeap: Windows.Win32.SystemServices.HANDLE,
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetBestInterface(
+    dwDestAddr: {"kind":"UInt32"},
+    pdwBestIfIndex: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetBestInterfaceEx(
+    pDestAddr: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    pdwBestIfIndex: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetBestRoute(
+    dwDestAddr: {"kind":"UInt32"},
+    dwSourceAddr: {"kind":"UInt32"},
+    pBestRoute: {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPFORWARDROW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn NotifyAddrChange(
+    Handle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn NotifyRouteChange(
+    Handle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn CancelIPChangeNotify(
+    notifyOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetAdapterIndex(
+    AdapterName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    IfIndex: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn AddIPAddress(
+    Address: {"kind":"UInt32"},
+    IpMask: {"kind":"UInt32"},
+    IfIndex: {"kind":"UInt32"},
+    NTEContext: {"kind""Ptr","child":{"kind":"UInt32"}},
+    NTEInstance: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn DeleteIPAddress(
+    NTEContext: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetNetworkParams(
+    pFixedInfo: {"kind""Ptr","child":Windows.Win32.IpHelper.FIXED_INFO_W2KSP1},
+    pOutBufLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetAdaptersInfo(
+    AdapterInfo: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADAPTER_INFO},
+    SizePointer: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetAdapterOrderMap(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetAdaptersAddresses(
+    Family: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+    AdapterAddresses: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADAPTER_ADDRESSES_LH},
+    SizePointer: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetPerAdapterInfo(
+    IfIndex: {"kind":"UInt32"},
+    pPerAdapterInfo: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_PER_ADAPTER_INFO_W2KSP1},
+    pOutBufLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetInterfaceCurrentTimestampCapabilities(
+    InterfaceLuid: {"kind""Ptr","child":Windows.Win32.IpHelper.NET_LUID_LH},
+    TimestampCapabilites: {"kind""Ptr","child":Windows.Win32.IpHelper.INTERFACE_TIMESTAMP_CAPABILITIES},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetInterfaceHardwareTimestampCapabilities(
+    InterfaceLuid: {"kind""Ptr","child":Windows.Win32.IpHelper.NET_LUID_LH},
+    TimestampCapabilites: {"kind""Ptr","child":Windows.Win32.IpHelper.INTERFACE_TIMESTAMP_CAPABILITIES},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn CaptureInterfaceHardwareCrossTimestamp(
+    InterfaceLuid: {"kind""Ptr","child":Windows.Win32.IpHelper.NET_LUID_LH},
+    CrossTimestamp: {"kind""Ptr","child":Windows.Win32.IpHelper.INTERFACE_HARDWARE_CROSSTIMESTAMP},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn NotifyIfTimestampConfigChange(
+    CallerContext: {"kind""Ptr","child":{"kind":"Void"}},
+    Callback: Windows.Win32.IpHelper.PINTERFACE_TIMESTAMP_CONFIG_CHANGE_CALLBACK,
+    NotificationHandle: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.IpHelper.HIFTIMESTAMPCHANGE__}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn CancelIfTimestampConfigChange(
+    NotificationHandle: {"kind""Ptr","child":Windows.Win32.IpHelper.HIFTIMESTAMPCHANGE__},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn IpReleaseAddress(
+    AdapterInfo: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADAPTER_INDEX_MAP},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn IpRenewAddress(
+    AdapterInfo: {"kind""Ptr","child":Windows.Win32.IpHelper.IP_ADAPTER_INDEX_MAP},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn SendARP(
+    DestIP: {"kind":"UInt32"},
+    SrcIP: {"kind":"UInt32"},
+    pMacAddr: {"kind""Ptr","child":{"kind":"Void"}},
+    PhyAddrLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "IPHLPAPI" fn GetRTTAndHopCount(
+    DestIpAddress: {"kind":"UInt32"},
+    HopCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    MaxHops: {"kind":"UInt32"},
+    RTT: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetFriendlyIfIndex(
+    IfIndex: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn EnableRouter(
+    pHandle: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+    pOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn UnenableRouter(
+    pOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    lpdwEnableCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn DisableMediaSense(
+    pHandle: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+    pOverLapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn RestoreMediaSense(
+    pOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    lpdwEnableCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn GetIpErrorString(
+    ErrorCode: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Size: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn ResolveNeighbor(
+    NetworkAddress: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    PhysicalAddress: {"kind""Ptr","child":{"kind":"Void"}},
+    PhysicalAddressLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn CreatePersistentTcpPortReservation(
+    StartPort: {"kind":"UInt16"},
+    NumberOfPorts: {"kind":"UInt16"},
+    Token: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn CreatePersistentUdpPortReservation(
+    StartPort: {"kind":"UInt16"},
+    NumberOfPorts: {"kind":"UInt16"},
+    Token: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn DeletePersistentTcpPortReservation(
+    StartPort: {"kind":"UInt16"},
+    NumberOfPorts: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn DeletePersistentUdpPortReservation(
+    StartPort: {"kind":"UInt16"},
+    NumberOfPorts: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn LookupPersistentTcpPortReservation(
+    StartPort: {"kind":"UInt16"},
+    NumberOfPorts: {"kind":"UInt16"},
+    Token: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "IPHLPAPI" fn LookupPersistentUdpPortReservation(
+    StartPort: {"kind":"UInt16"},
+    NumberOfPorts: {"kind":"UInt16"},
+    Token: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ntdll" fn RtlIpv4AddressToStringA(
+    Addr: {"kind""Ptr","child":Windows.Win32.WinSock.in_addr},
+    S: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ntdll" fn RtlIpv4AddressToStringW(
+    Addr: {"kind""Ptr","child":Windows.Win32.WinSock.in_addr},
+    S: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ntdll" fn RtlIpv4AddressToStringExW(
+    Address: {"kind""Ptr","child":Windows.Win32.WinSock.in_addr},
+    Port: {"kind":"UInt16"},
+    AddressString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    AddressStringLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ntdll" fn RtlIpv4StringToAddressA(
+    S: {"kind""Ptr","child":{"kind":"SByte"}},
+    Strict: {"kind":"Byte"},
+    Terminator: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    Addr: {"kind""Ptr","child":Windows.Win32.WinSock.in_addr},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ntdll" fn RtlIpv4StringToAddressW(
+    S: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Strict: {"kind":"Byte"},
+    Terminator: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    Addr: {"kind""Ptr","child":Windows.Win32.WinSock.in_addr},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ntdll" fn RtlIpv4StringToAddressExW(
+    AddressString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Strict: {"kind":"Byte"},
+    Address: {"kind""Ptr","child":Windows.Win32.WinSock.in_addr},
+    Port: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ntdll" fn RtlIpv6AddressToStringA(
+    Addr: {"kind""Ptr","child":Windows.Win32.WinSock.in6_addr},
+    S: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ntdll" fn RtlIpv6AddressToStringW(
+    Addr: {"kind""Ptr","child":Windows.Win32.WinSock.in6_addr},
+    S: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ntdll" fn RtlIpv6AddressToStringExW(
+    Address: {"kind""Ptr","child":Windows.Win32.WinSock.in6_addr},
+    ScopeId: {"kind":"UInt32"},
+    Port: {"kind":"UInt16"},
+    AddressString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    AddressStringLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ntdll" fn RtlIpv6StringToAddressA(
+    S: {"kind""Ptr","child":{"kind":"SByte"}},
+    Terminator: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    Addr: {"kind""Ptr","child":Windows.Win32.WinSock.in6_addr},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ntdll" fn RtlIpv6StringToAddressW(
+    S: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Terminator: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    Addr: {"kind""Ptr","child":Windows.Win32.WinSock.in6_addr},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ntdll" fn RtlIpv6StringToAddressExW(
+    AddressString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Address: {"kind""Ptr","child":Windows.Win32.WinSock.in6_addr},
+    ScopeId: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Port: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ntdll" fn RtlEthernetAddressToStringA(
+    Addr: {"kind""Ptr","child":Windows.Win32.WindowsFiltering.DL_EUI48},
+    S: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ntdll" fn RtlEthernetAddressToStringW(
+    Addr: {"kind""Ptr","child":Windows.Win32.WindowsFiltering.DL_EUI48},
+    S: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ntdll" fn RtlEthernetStringToAddressA(
+    S: {"kind""Ptr","child":{"kind":"SByte"}},
+    Terminator: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    Addr: {"kind""Ptr","child":Windows.Win32.WindowsFiltering.DL_EUI48},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ntdll" fn RtlEthernetStringToAddressW(
+    S: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Terminator: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    Addr: {"kind""Ptr","child":Windows.Win32.WindowsFiltering.DL_EUI48},
+],
+
+"unicode_aliases": [
+     "ConvertInterfaceNameToLuid"
+     "ConvertInterfaceLuidToName"
+     "RtlIpv4AddressToString"
+     "RtlIpv4StringToAddress"
+     "RtlIpv6AddressToString"
+     "RtlIpv6StringToAddress"
+     "RtlEthernetAddressToString"
+     "RtlEthernetStringToAddress"
+]}

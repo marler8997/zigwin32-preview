@@ -1,0 +1,292 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: NetworkListManager
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const NetworkListManager = opaque {
+};
+// --------------------------------------------------------
+// Type: NLM_CONNECTION_COST
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NLM_CONNECTION_COST = *opaque{
+};
+// --------------------------------------------------------
+// Type: NLM_USAGE_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NLM_USAGE_DATA = extern struct {
+    UsageInMegabytes: {"kind":"UInt32"},
+    LastSyncTime: Windows.Win32.WindowsProgramming.FILETIME,
+};
+// --------------------------------------------------------
+// Type: NLM_DATAPLAN_STATUS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NLM_DATAPLAN_STATUS = extern struct {
+    InterfaceGuid: Guid,
+    UsageData: Windows.Win32.NetworkListManager.NLM_USAGE_DATA,
+    DataLimitInMegabytes: {"kind":"UInt32"},
+    InboundBandwidthInKbps: {"kind":"UInt32"},
+    OutboundBandwidthInKbps: {"kind":"UInt32"},
+    NextBillingCycle: Windows.Win32.WindowsProgramming.FILETIME,
+    MaxTransferSizeInMegabytes: {"kind":"UInt32"},
+    Reserved: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: NLM_SOCKADDR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NLM_SOCKADDR = extern struct {
+    data: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: NLM_NETWORK_CLASS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NLM_NETWORK_CLASS = *opaque{
+};
+// --------------------------------------------------------
+// Type: NLM_SIMULATED_PROFILE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NLM_SIMULATED_PROFILE_INFO = extern struct {
+    ProfileName: {"kind":"Array","child": {"kind":"UInt16"}},
+    cost: Windows.Win32.NetworkListManager.NLM_CONNECTION_COST,
+    UsageInMegabytes: {"kind":"UInt32"},
+    DataLimitInMegabytes: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: NLM_INTERNET_CONNECTIVITY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NLM_INTERNET_CONNECTIVITY = *opaque{
+};
+// --------------------------------------------------------
+// Type: NLM_CONNECTIVITY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NLM_CONNECTIVITY = *opaque{
+};
+// --------------------------------------------------------
+// Type: NLM_DOMAIN_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NLM_DOMAIN_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: NLM_ENUM_NETWORK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NLM_ENUM_NETWORK = *opaque{
+};
+// --------------------------------------------------------
+// Type: INetworkListManager
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetworkListManager = *opaque{
+    // TODO: Method 'GetNetworks'
+    // TODO: Method 'GetNetwork'
+    // TODO: Method 'GetNetworkConnections'
+    // TODO: Method 'GetNetworkConnection'
+    // TODO: Method 'get_IsConnectedToInternet'
+    // TODO: Method 'get_IsConnected'
+    // TODO: Method 'GetConnectivity'
+    // TODO: Method 'SetSimulatedProfileInfo'
+    // TODO: Method 'ClearSimulatedProfileInfo'
+};
+// --------------------------------------------------------
+// Type: INetworkListManagerEvents
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetworkListManagerEvents = *opaque{
+    // TODO: Method 'ConnectivityChanged'
+};
+// --------------------------------------------------------
+// Type: NLM_NETWORK_CATEGORY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NLM_NETWORK_CATEGORY = *opaque{
+};
+// --------------------------------------------------------
+// Type: INetwork
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetwork = *opaque{
+    // TODO: Method 'GetName'
+    // TODO: Method 'SetName'
+    // TODO: Method 'GetDescription'
+    // TODO: Method 'SetDescription'
+    // TODO: Method 'GetNetworkId'
+    // TODO: Method 'GetDomainType'
+    // TODO: Method 'GetNetworkConnections'
+    // TODO: Method 'GetTimeCreatedAndConnected'
+    // TODO: Method 'get_IsConnectedToInternet'
+    // TODO: Method 'get_IsConnected'
+    // TODO: Method 'GetConnectivity'
+    // TODO: Method 'GetCategory'
+    // TODO: Method 'SetCategory'
+};
+// --------------------------------------------------------
+// Type: IEnumNetworks
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumNetworks = *opaque{
+    // TODO: Method 'get__NewEnum'
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: NLM_NETWORK_PROPERTY_CHANGE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NLM_NETWORK_PROPERTY_CHANGE = *opaque{
+};
+// --------------------------------------------------------
+// Type: INetworkEvents
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetworkEvents = *opaque{
+    // TODO: Method 'NetworkAdded'
+    // TODO: Method 'NetworkDeleted'
+    // TODO: Method 'NetworkConnectivityChanged'
+    // TODO: Method 'NetworkPropertyChanged'
+};
+// --------------------------------------------------------
+// Type: INetworkConnection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetworkConnection = *opaque{
+    // TODO: Method 'GetNetwork'
+    // TODO: Method 'get_IsConnectedToInternet'
+    // TODO: Method 'get_IsConnected'
+    // TODO: Method 'GetConnectivity'
+    // TODO: Method 'GetConnectionId'
+    // TODO: Method 'GetAdapterId'
+    // TODO: Method 'GetDomainType'
+};
+// --------------------------------------------------------
+// Type: IEnumNetworkConnections
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumNetworkConnections = *opaque{
+    // TODO: Method 'get__NewEnum'
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: NLM_CONNECTION_PROPERTY_CHANGE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NLM_CONNECTION_PROPERTY_CHANGE = *opaque{
+};
+// --------------------------------------------------------
+// Type: INetworkConnectionEvents
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetworkConnectionEvents = *opaque{
+    // TODO: Method 'NetworkConnectionConnectivityChanged'
+    // TODO: Method 'NetworkConnectionPropertyChanged'
+};
+// --------------------------------------------------------
+// Type: INetworkCostManager
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetworkCostManager = *opaque{
+    // TODO: Method 'GetCost'
+    // TODO: Method 'GetDataPlanStatus'
+    // TODO: Method 'SetDestinationAddresses'
+};
+// --------------------------------------------------------
+// Type: INetworkCostManagerEvents
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetworkCostManagerEvents = *opaque{
+    // TODO: Method 'CostChanged'
+    // TODO: Method 'DataPlanStatusChanged'
+};
+// --------------------------------------------------------
+// Type: INetworkConnectionCost
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetworkConnectionCost = *opaque{
+    // TODO: Method 'GetCost'
+    // TODO: Method 'GetDataPlanStatus'
+};
+// --------------------------------------------------------
+// Type: INetworkConnectionCostEvents
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetworkConnectionCostEvents = *opaque{
+    // TODO: Method 'ConnectionCostChanged'
+    // TODO: Method 'ConnectionDataPlanStatusChanged'
+};
+// --------------------------------------------------------
+// Type: ONDEMAND_NOTIFICATION_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ONDEMAND_NOTIFICATION_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: NET_INTERFACE_CONTEXT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NET_INTERFACE_CONTEXT = extern struct {
+    InterfaceIndex: {"kind":"UInt32"},
+    ConfigurationName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: NET_INTERFACE_CONTEXT_TABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NET_INTERFACE_CONTEXT_TABLE = extern struct {
+    InterfaceContextHandle: Windows.Win32.SystemServices.HANDLE,
+    NumberOfEntries: {"kind":"UInt32"},
+    InterfaceContextArray: {"kind""Ptr","child":Windows.Win32.NetworkListManager.NET_INTERFACE_CONTEXT},
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OnDemandConnRouteHelper" fn OnDemandGetRoutingHint(
+    destinationHostName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    interfaceIndex: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OnDemandConnRouteHelper" fn OnDemandRegisterNotification(
+    callback: Windows.Win32.NetworkListManager.ONDEMAND_NOTIFICATION_CALLBACK,
+    callbackContext: {"kind""Ptr","child":{"kind":"Void"}},
+    registrationHandle: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OnDemandConnRouteHelper" fn OnDemandUnRegisterNotification(
+    registrationHandle: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OnDemandConnRouteHelper" fn GetInterfaceContextTableForHostName(
+    HostName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ProxyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    ConnectionProfileFilterRawData: {"kind""Ptr","child":{"kind":"Byte"}},
+    ConnectionProfileFilterRawDataSize: {"kind":"UInt32"},
+    InterfaceContextTable: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.NetworkListManager.NET_INTERFACE_CONTEXT_TABLE}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OnDemandConnRouteHelper" fn FreeInterfaceContextTable(
+    InterfaceContextTable: {"kind""Ptr","child":Windows.Win32.NetworkListManager.NET_INTERFACE_CONTEXT_TABLE},
+],
+
+"unicode_aliases": [
+]}

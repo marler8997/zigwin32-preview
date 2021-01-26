@@ -1,0 +1,3792 @@
+﻿{
+"constants": [
+     {
+         "name": "ALLJOYN_LITTLE_ENDIAN"
+        ,"type": {"kind":"Byte"}
+        ,"value": 108
+    }
+    ,{
+         "name": "ALLJOYN_BIG_ENDIAN"
+        ,"type": {"kind":"Byte"}
+        ,"value": 66
+    }
+    ,{
+         "name": "ALLJOYN_MESSAGE_DEFAULT_TIMEOUT"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 25000
+    }
+    ,{
+         "name": "ALLJOYN_CRED_PASSWORD"
+        ,"type": {"kind":"UInt16"}
+        ,"value": 1
+    }
+    ,{
+         "name": "ALLJOYN_CRED_USER_NAME"
+        ,"type": {"kind":"UInt16"}
+        ,"value": 2
+    }
+    ,{
+         "name": "ALLJOYN_CRED_CERT_CHAIN"
+        ,"type": {"kind":"UInt16"}
+        ,"value": 4
+    }
+    ,{
+         "name": "ALLJOYN_CRED_PRIVATE_KEY"
+        ,"type": {"kind":"UInt16"}
+        ,"value": 8
+    }
+    ,{
+         "name": "ALLJOYN_CRED_LOGON_ENTRY"
+        ,"type": {"kind":"UInt16"}
+        ,"value": 16
+    }
+    ,{
+         "name": "ALLJOYN_CRED_EXPIRATION"
+        ,"type": {"kind":"UInt16"}
+        ,"value": 32
+    }
+    ,{
+         "name": "ALLJOYN_CRED_NEW_PASSWORD"
+        ,"type": {"kind":"UInt16"}
+        ,"value": 4097
+    }
+    ,{
+         "name": "ALLJOYN_CRED_ONE_TIME_PWD"
+        ,"type": {"kind":"UInt16"}
+        ,"value": 8193
+    }
+    ,{
+         "name": "ALLJOYN_PROP_ACCESS_READ"
+        ,"type": {"kind":"Byte"}
+        ,"value": 1
+    }
+    ,{
+         "name": "ALLJOYN_PROP_ACCESS_WRITE"
+        ,"type": {"kind":"Byte"}
+        ,"value": 2
+    }
+    ,{
+         "name": "ALLJOYN_PROP_ACCESS_RW"
+        ,"type": {"kind":"Byte"}
+        ,"value": 3
+    }
+    ,{
+         "name": "ALLJOYN_MEMBER_ANNOTATE_NO_REPLY"
+        ,"type": {"kind":"Byte"}
+        ,"value": 1
+    }
+    ,{
+         "name": "ALLJOYN_MEMBER_ANNOTATE_DEPRECATED"
+        ,"type": {"kind":"Byte"}
+        ,"value": 2
+    }
+    ,{
+         "name": "ALLJOYN_MEMBER_ANNOTATE_SESSIONCAST"
+        ,"type": {"kind":"Byte"}
+        ,"value": 4
+    }
+    ,{
+         "name": "ALLJOYN_MEMBER_ANNOTATE_SESSIONLESS"
+        ,"type": {"kind":"Byte"}
+        ,"value": 8
+    }
+    ,{
+         "name": "ALLJOYN_MEMBER_ANNOTATE_UNICAST"
+        ,"type": {"kind":"Byte"}
+        ,"value": 16
+    }
+    ,{
+         "name": "ALLJOYN_MEMBER_ANNOTATE_GLOBAL_BROADCAST"
+        ,"type": {"kind":"Byte"}
+        ,"value": 32
+    }
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: alljoyn_about_announceflag
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_about_announceflag = *opaque{
+};
+// --------------------------------------------------------
+// Type: QStatus
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const QStatus = *opaque{
+};
+// --------------------------------------------------------
+// Type: _alljoyn_msgarg_handle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _alljoyn_msgarg_handle = opaque {
+};
+// --------------------------------------------------------
+// Type: alljoyn_typeid
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_typeid = *opaque{
+};
+// --------------------------------------------------------
+// Type: _alljoyn_aboutdata_handle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _alljoyn_aboutdata_handle = opaque {
+};
+// --------------------------------------------------------
+// Type: _alljoyn_aboutdatalistener_handle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _alljoyn_aboutdatalistener_handle = opaque {
+};
+// --------------------------------------------------------
+// Type: alljoyn_aboutdatalistener_getaboutdata_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_aboutdatalistener_getaboutdata_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_aboutdatalistener_getannouncedaboutdata_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_aboutdatalistener_getannouncedaboutdata_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_aboutdatalistener_callbacks
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const alljoyn_aboutdatalistener_callbacks = extern struct {
+    about_datalistener_getaboutdata: Windows.Win32.AllJoyn.alljoyn_aboutdatalistener_getaboutdata_ptr,
+    about_datalistener_getannouncedaboutdata: Windows.Win32.AllJoyn.alljoyn_aboutdatalistener_getannouncedaboutdata_ptr,
+};
+// --------------------------------------------------------
+// Type: _alljoyn_permissionconfigurator_handle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _alljoyn_permissionconfigurator_handle = opaque {
+};
+// --------------------------------------------------------
+// Type: alljoyn_applicationstate
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_applicationstate = *opaque{
+};
+// --------------------------------------------------------
+// Type: alljoyn_claimcapability_masks
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_claimcapability_masks = *opaque{
+};
+// --------------------------------------------------------
+// Type: alljoyn_claimcapabilityadditionalinfo_masks
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_claimcapabilityadditionalinfo_masks = *opaque{
+};
+// --------------------------------------------------------
+// Type: alljoyn_certificateid
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const alljoyn_certificateid = extern struct {
+    serial: {"kind""Ptr","child":{"kind":"Byte"}},
+    serialLen: {"kind":"UIntPtr"},
+    issuerPublicKey: {"kind""Ptr","child":{"kind":"SByte"}},
+    issuerAki: {"kind""Ptr","child":{"kind":"Byte"}},
+    issuerAkiLen: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: alljoyn_certificateidarray
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const alljoyn_certificateidarray = extern struct {
+    count: {"kind":"UIntPtr"},
+    ids: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_certificateid},
+};
+// --------------------------------------------------------
+// Type: alljoyn_manifestarray
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const alljoyn_manifestarray = extern struct {
+    count: {"kind":"UIntPtr"},
+    xmls: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+};
+// --------------------------------------------------------
+// Type: _alljoyn_applicationstatelistener_handle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _alljoyn_applicationstatelistener_handle = opaque {
+};
+// --------------------------------------------------------
+// Type: alljoyn_applicationstatelistener_state_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_applicationstatelistener_state_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_applicationstatelistener_callbacks
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const alljoyn_applicationstatelistener_callbacks = extern struct {
+    state: Windows.Win32.AllJoyn.alljoyn_applicationstatelistener_state_ptr,
+};
+// --------------------------------------------------------
+// Type: _alljoyn_keystore_handle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _alljoyn_keystore_handle = opaque {
+};
+// --------------------------------------------------------
+// Type: _alljoyn_keystorelistener_handle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _alljoyn_keystorelistener_handle = opaque {
+};
+// --------------------------------------------------------
+// Type: alljoyn_keystorelistener_loadrequest_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_keystorelistener_loadrequest_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_keystorelistener_storerequest_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_keystorelistener_storerequest_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_keystorelistener_acquireexclusivelock_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_keystorelistener_acquireexclusivelock_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_keystorelistener_releaseexclusivelock_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_keystorelistener_releaseexclusivelock_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_keystorelistener_callbacks
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const alljoyn_keystorelistener_callbacks = extern struct {
+    load_request: Windows.Win32.AllJoyn.alljoyn_keystorelistener_loadrequest_ptr,
+    store_request: Windows.Win32.AllJoyn.alljoyn_keystorelistener_storerequest_ptr,
+};
+// --------------------------------------------------------
+// Type: alljoyn_keystorelistener_with_synchronization_callbacks
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const alljoyn_keystorelistener_with_synchronization_callbacks = extern struct {
+    load_request: Windows.Win32.AllJoyn.alljoyn_keystorelistener_loadrequest_ptr,
+    store_request: Windows.Win32.AllJoyn.alljoyn_keystorelistener_storerequest_ptr,
+    acquire_exclusive_lock: Windows.Win32.AllJoyn.alljoyn_keystorelistener_acquireexclusivelock_ptr,
+    release_exclusive_lock: Windows.Win32.AllJoyn.alljoyn_keystorelistener_releaseexclusivelock_ptr,
+};
+// --------------------------------------------------------
+// Type: _alljoyn_sessionopts_handle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _alljoyn_sessionopts_handle = opaque {
+};
+// --------------------------------------------------------
+// Type: _alljoyn_message_handle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _alljoyn_message_handle = opaque {
+};
+// --------------------------------------------------------
+// Type: _alljoyn_busattachment_handle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _alljoyn_busattachment_handle = opaque {
+};
+// --------------------------------------------------------
+// Type: alljoyn_messagetype
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_messagetype = *opaque{
+};
+// --------------------------------------------------------
+// Type: _alljoyn_authlistener_handle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _alljoyn_authlistener_handle = opaque {
+};
+// --------------------------------------------------------
+// Type: _alljoyn_credentials_handle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _alljoyn_credentials_handle = opaque {
+};
+// --------------------------------------------------------
+// Type: alljoyn_authlistener_requestcredentials_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_authlistener_requestcredentials_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_authlistener_requestcredentialsasync_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_authlistener_requestcredentialsasync_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_authlistener_verifycredentials_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_authlistener_verifycredentials_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_authlistener_verifycredentialsasync_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_authlistener_verifycredentialsasync_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_authlistener_securityviolation_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_authlistener_securityviolation_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_authlistener_authenticationcomplete_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_authlistener_authenticationcomplete_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_authlistener_callbacks
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const alljoyn_authlistener_callbacks = extern struct {
+    request_credentials: Windows.Win32.AllJoyn.alljoyn_authlistener_requestcredentials_ptr,
+    verify_credentials: Windows.Win32.AllJoyn.alljoyn_authlistener_verifycredentials_ptr,
+    security_violation: Windows.Win32.AllJoyn.alljoyn_authlistener_securityviolation_ptr,
+    authentication_complete: Windows.Win32.AllJoyn.alljoyn_authlistener_authenticationcomplete_ptr,
+};
+// --------------------------------------------------------
+// Type: alljoyn_authlistenerasync_callbacks
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const alljoyn_authlistenerasync_callbacks = extern struct {
+    request_credentials: Windows.Win32.AllJoyn.alljoyn_authlistener_requestcredentialsasync_ptr,
+    verify_credentials: Windows.Win32.AllJoyn.alljoyn_authlistener_verifycredentialsasync_ptr,
+    security_violation: Windows.Win32.AllJoyn.alljoyn_authlistener_securityviolation_ptr,
+    authentication_complete: Windows.Win32.AllJoyn.alljoyn_authlistener_authenticationcomplete_ptr,
+};
+// --------------------------------------------------------
+// Type: _alljoyn_buslistener_handle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _alljoyn_buslistener_handle = opaque {
+};
+// --------------------------------------------------------
+// Type: alljoyn_buslistener_listener_registered_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_buslistener_listener_registered_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_buslistener_listener_unregistered_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_buslistener_listener_unregistered_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_buslistener_found_advertised_name_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_buslistener_found_advertised_name_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_buslistener_lost_advertised_name_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_buslistener_lost_advertised_name_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_buslistener_name_owner_changed_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_buslistener_name_owner_changed_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_buslistener_bus_stopping_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_buslistener_bus_stopping_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_buslistener_bus_disconnected_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_buslistener_bus_disconnected_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_buslistener_bus_prop_changed_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_buslistener_bus_prop_changed_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_buslistener_callbacks
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const alljoyn_buslistener_callbacks = extern struct {
+    listener_registered: Windows.Win32.AllJoyn.alljoyn_buslistener_listener_registered_ptr,
+    listener_unregistered: Windows.Win32.AllJoyn.alljoyn_buslistener_listener_unregistered_ptr,
+    found_advertised_name: Windows.Win32.AllJoyn.alljoyn_buslistener_found_advertised_name_ptr,
+    lost_advertised_name: Windows.Win32.AllJoyn.alljoyn_buslistener_lost_advertised_name_ptr,
+    name_owner_changed: Windows.Win32.AllJoyn.alljoyn_buslistener_name_owner_changed_ptr,
+    bus_stopping: Windows.Win32.AllJoyn.alljoyn_buslistener_bus_stopping_ptr,
+    bus_disconnected: Windows.Win32.AllJoyn.alljoyn_buslistener_bus_disconnected_ptr,
+    property_changed: Windows.Win32.AllJoyn.alljoyn_buslistener_bus_prop_changed_ptr,
+};
+// --------------------------------------------------------
+// Type: _alljoyn_interfacedescription_handle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _alljoyn_interfacedescription_handle = opaque {
+};
+// --------------------------------------------------------
+// Type: alljoyn_interfacedescription_securitypolicy
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_interfacedescription_securitypolicy = *opaque{
+};
+// --------------------------------------------------------
+// Type: alljoyn_interfacedescription_member
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const alljoyn_interfacedescription_member = extern struct {
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    memberType: Windows.Win32.AllJoyn.alljoyn_messagetype,
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    signature: {"kind""Ptr","child":{"kind":"SByte"}},
+    returnSignature: {"kind""Ptr","child":{"kind":"SByte"}},
+    argNames: {"kind""Ptr","child":{"kind":"SByte"}},
+    internal_member: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: alljoyn_interfacedescription_translation_callback_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_interfacedescription_translation_callback_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_interfacedescription_property
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const alljoyn_interfacedescription_property = extern struct {
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    signature: {"kind""Ptr","child":{"kind":"SByte"}},
+    access: {"kind":"Byte"},
+    internal_property: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: _alljoyn_busobject_handle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _alljoyn_busobject_handle = opaque {
+};
+// --------------------------------------------------------
+// Type: alljoyn_messagereceiver_methodhandler_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_messagereceiver_methodhandler_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_messagereceiver_replyhandler_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_messagereceiver_replyhandler_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_messagereceiver_signalhandler_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_messagereceiver_signalhandler_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_busobject_prop_get_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_busobject_prop_get_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_busobject_prop_set_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_busobject_prop_set_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_busobject_object_registration_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_busobject_object_registration_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_busobject_callbacks
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const alljoyn_busobject_callbacks = extern struct {
+    property_get: Windows.Win32.AllJoyn.alljoyn_busobject_prop_get_ptr,
+    property_set: Windows.Win32.AllJoyn.alljoyn_busobject_prop_set_ptr,
+    object_registered: Windows.Win32.AllJoyn.alljoyn_busobject_object_registration_ptr,
+    object_unregistered: Windows.Win32.AllJoyn.alljoyn_busobject_object_registration_ptr,
+};
+// --------------------------------------------------------
+// Type: alljoyn_busobject_methodentry
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const alljoyn_busobject_methodentry = extern struct {
+    member: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_interfacedescription_member},
+    method_handler: Windows.Win32.AllJoyn.alljoyn_messagereceiver_methodhandler_ptr,
+};
+// --------------------------------------------------------
+// Type: _alljoyn_proxybusobject_handle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _alljoyn_proxybusobject_handle = opaque {
+};
+// --------------------------------------------------------
+// Type: alljoyn_proxybusobject_listener_introspectcb_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_proxybusobject_listener_introspectcb_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_proxybusobject_listener_getpropertycb_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_proxybusobject_listener_getpropertycb_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_proxybusobject_listener_getallpropertiescb_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_proxybusobject_listener_getallpropertiescb_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_proxybusobject_listener_setpropertycb_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_proxybusobject_listener_setpropertycb_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_proxybusobject_listener_propertieschanged_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_proxybusobject_listener_propertieschanged_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: _alljoyn_permissionconfigurationlistener_handle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _alljoyn_permissionconfigurationlistener_handle = opaque {
+};
+// --------------------------------------------------------
+// Type: alljoyn_permissionconfigurationlistener_factoryreset_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_permissionconfigurationlistener_factoryreset_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_permissionconfigurationlistener_policychanged_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_permissionconfigurationlistener_policychanged_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_permissionconfigurationlistener_startmanagement_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_permissionconfigurationlistener_startmanagement_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_permissionconfigurationlistener_endmanagement_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_permissionconfigurationlistener_endmanagement_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_permissionconfigurationlistener_callbacks
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const alljoyn_permissionconfigurationlistener_callbacks = extern struct {
+    factory_reset: Windows.Win32.AllJoyn.alljoyn_permissionconfigurationlistener_factoryreset_ptr,
+    policy_changed: Windows.Win32.AllJoyn.alljoyn_permissionconfigurationlistener_policychanged_ptr,
+    start_management: Windows.Win32.AllJoyn.alljoyn_permissionconfigurationlistener_startmanagement_ptr,
+    end_management: Windows.Win32.AllJoyn.alljoyn_permissionconfigurationlistener_endmanagement_ptr,
+};
+// --------------------------------------------------------
+// Type: alljoyn_sessionlostreason
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_sessionlostreason = *opaque{
+};
+// --------------------------------------------------------
+// Type: _alljoyn_sessionlistener_handle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _alljoyn_sessionlistener_handle = opaque {
+};
+// --------------------------------------------------------
+// Type: alljoyn_sessionlistener_sessionlost_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_sessionlistener_sessionlost_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_sessionlistener_sessionmemberadded_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_sessionlistener_sessionmemberadded_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_sessionlistener_sessionmemberremoved_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_sessionlistener_sessionmemberremoved_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_sessionlistener_callbacks
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const alljoyn_sessionlistener_callbacks = extern struct {
+    session_lost: Windows.Win32.AllJoyn.alljoyn_sessionlistener_sessionlost_ptr,
+    session_member_added: Windows.Win32.AllJoyn.alljoyn_sessionlistener_sessionmemberadded_ptr,
+    session_member_removed: Windows.Win32.AllJoyn.alljoyn_sessionlistener_sessionmemberremoved_ptr,
+};
+// --------------------------------------------------------
+// Type: _alljoyn_sessionportlistener_handle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _alljoyn_sessionportlistener_handle = opaque {
+};
+// --------------------------------------------------------
+// Type: alljoyn_sessionportlistener_acceptsessionjoiner_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_sessionportlistener_acceptsessionjoiner_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_sessionportlistener_sessionjoined_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_sessionportlistener_sessionjoined_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_sessionportlistener_callbacks
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const alljoyn_sessionportlistener_callbacks = extern struct {
+    accept_session_joiner: Windows.Win32.AllJoyn.alljoyn_sessionportlistener_acceptsessionjoiner_ptr,
+    session_joined: Windows.Win32.AllJoyn.alljoyn_sessionportlistener_sessionjoined_ptr,
+};
+// --------------------------------------------------------
+// Type: _alljoyn_aboutlistener_handle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _alljoyn_aboutlistener_handle = opaque {
+};
+// --------------------------------------------------------
+// Type: alljoyn_about_announced_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_about_announced_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_aboutlistener_callback
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const alljoyn_aboutlistener_callback = extern struct {
+    about_listener_announced: Windows.Win32.AllJoyn.alljoyn_about_announced_ptr,
+};
+// --------------------------------------------------------
+// Type: alljoyn_busattachment_joinsessioncb_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_busattachment_joinsessioncb_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_busattachment_setlinktimeoutcb_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_busattachment_setlinktimeoutcb_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: _alljoyn_aboutobj_handle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _alljoyn_aboutobj_handle = opaque {
+};
+// --------------------------------------------------------
+// Type: _alljoyn_aboutobjectdescription_handle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _alljoyn_aboutobjectdescription_handle = opaque {
+};
+// --------------------------------------------------------
+// Type: _alljoyn_aboutproxy_handle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _alljoyn_aboutproxy_handle = opaque {
+};
+// --------------------------------------------------------
+// Type: _alljoyn_pinglistener_handle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _alljoyn_pinglistener_handle = opaque {
+};
+// --------------------------------------------------------
+// Type: alljoyn_autopinger_destination_lost_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_autopinger_destination_lost_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_autopinger_destination_found_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_autopinger_destination_found_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_pinglistener_callback
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const alljoyn_pinglistener_callback = extern struct {
+    destination_found: Windows.Win32.AllJoyn.alljoyn_autopinger_destination_found_ptr,
+    destination_lost: Windows.Win32.AllJoyn.alljoyn_autopinger_destination_lost_ptr,
+};
+// --------------------------------------------------------
+// Type: _alljoyn_autopinger_handle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _alljoyn_autopinger_handle = opaque {
+};
+// --------------------------------------------------------
+// Type: _alljoyn_proxybusobject_ref_handle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _alljoyn_proxybusobject_ref_handle = opaque {
+};
+// --------------------------------------------------------
+// Type: _alljoyn_observerlistener_handle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _alljoyn_observerlistener_handle = opaque {
+};
+// --------------------------------------------------------
+// Type: alljoyn_observer_object_discovered_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_observer_object_discovered_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_observer_object_lost_ptr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const alljoyn_observer_object_lost_ptr = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: alljoyn_observerlistener_callback
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const alljoyn_observerlistener_callback = extern struct {
+    object_discovered: Windows.Win32.AllJoyn.alljoyn_observer_object_discovered_ptr,
+    object_lost: Windows.Win32.AllJoyn.alljoyn_observer_object_lost_ptr,
+};
+// --------------------------------------------------------
+// Type: _alljoyn_observer_handle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _alljoyn_observer_handle = opaque {
+};
+// --------------------------------------------------------
+// Type: _alljoyn_securityapplicationproxy_handle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _alljoyn_securityapplicationproxy_handle = opaque {
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=True (can and should we use this?)
+pub extern "MSAJApi" fn AllJoynConnectToBus(
+    connectionSpec: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "MSAJApi" fn AllJoynCloseBusHandle(
+    busHandle: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "MSAJApi" fn AllJoynSendToBus(
+    connectedBusHandle: Windows.Win32.SystemServices.HANDLE,
+    buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    bytesToWrite: {"kind":"UInt32"},
+    bytesTransferred: {"kind""Ptr","child":{"kind":"UInt32"}},
+    reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "MSAJApi" fn AllJoynReceiveFromBus(
+    connectedBusHandle: Windows.Win32.SystemServices.HANDLE,
+    buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    bytesToRead: {"kind":"UInt32"},
+    bytesTransferred: {"kind""Ptr","child":{"kind":"UInt32"}},
+    reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "MSAJApi" fn AllJoynEventSelect(
+    connectedBusHandle: Windows.Win32.SystemServices.HANDLE,
+    eventHandle: Windows.Win32.SystemServices.HANDLE,
+    eventTypes: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "MSAJApi" fn AllJoynEnumEvents(
+    connectedBusHandle: Windows.Win32.SystemServices.HANDLE,
+    eventToReset: Windows.Win32.SystemServices.HANDLE,
+    eventTypes: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn AllJoynCreateBus(
+    outBufferSize: {"kind":"UInt32"},
+    inBufferSize: {"kind":"UInt32"},
+    lpSecurityAttributes: {"kind""Ptr","child":Windows.Win32.SystemServices.SECURITY_ATTRIBUTES},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn AllJoynAcceptBusConnection(
+    serverBusHandle: Windows.Win32.SystemServices.HANDLE,
+    abortEvent: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_unity_deferred_callbacks_process(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_unity_set_deferred_callback_mainthread_only(
+    mainthread_only: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn QCC_StatusText(
+    status: Windows.Win32.AllJoyn.QStatus,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_create(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_create_and_set(
+    signature: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_destroy(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_array_create(
+    size: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_array_element(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    index: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_set(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    signature: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_get(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    signature: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_copy(
+    source: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_clone(
+    destination: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    source: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_equal(
+    lhv: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    rhv: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_array_set(
+    args: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    numArgs: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    signature: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_array_get(
+    args: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    numArgs: {"kind":"UIntPtr"},
+    signature: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_tostring(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    str: {"kind""Ptr","child":{"kind":"SByte"}},
+    buf: {"kind":"UIntPtr"},
+    indent: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_array_tostring(
+    args: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    numArgs: {"kind":"UIntPtr"},
+    str: {"kind""Ptr","child":{"kind":"SByte"}},
+    buf: {"kind":"UIntPtr"},
+    indent: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_signature(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    str: {"kind""Ptr","child":{"kind":"SByte"}},
+    buf: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_array_signature(
+    values: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    numValues: {"kind":"UIntPtr"},
+    str: {"kind""Ptr","child":{"kind":"SByte"}},
+    buf: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_hassignature(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    signature: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_getdictelement(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    elemSig: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_gettype(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_clear(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_stabilize(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_array_set_offset(
+    args: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    argOffset: {"kind":"UIntPtr"},
+    numArgs: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    signature: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_set_and_stabilize(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    signature: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_set_uint8(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    y: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_set_bool(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    b: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_set_int16(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    n: {"kind":"Int16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_set_uint16(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    q: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_set_int32(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    i: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_set_uint32(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    u: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_set_int64(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    x: {"kind":"Int64"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_set_uint64(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    t: {"kind":"UInt64"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_set_double(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    d: {"kind":"Double"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_set_string(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    s: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_set_objectpath(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    o: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_set_signature(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    g: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_get_uint8(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    y: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_get_bool(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    b: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_get_int16(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    n: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_get_uint16(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    q: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_get_int32(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    i: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_get_uint32(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    u: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_get_int64(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    x: {"kind""Ptr","child":{"kind":"Int64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_get_uint64(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    t: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_get_double(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    d: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_get_string(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    s: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_get_objectpath(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    o: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_get_signature(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    g: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_get_variant(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    v: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_set_uint8_array(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    length: {"kind":"UIntPtr"},
+    ay: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_set_bool_array(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    length: {"kind":"UIntPtr"},
+    ab: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_set_int16_array(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    length: {"kind":"UIntPtr"},
+    an: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_set_uint16_array(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    length: {"kind":"UIntPtr"},
+    aq: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_set_int32_array(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    length: {"kind":"UIntPtr"},
+    ai: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_set_uint32_array(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    length: {"kind":"UIntPtr"},
+    au: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_set_int64_array(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    length: {"kind":"UIntPtr"},
+    ax: {"kind""Ptr","child":{"kind":"Int64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_set_uint64_array(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    length: {"kind":"UIntPtr"},
+    at: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_set_double_array(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    length: {"kind":"UIntPtr"},
+    ad: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_set_string_array(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    length: {"kind":"UIntPtr"},
+    as: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_set_objectpath_array(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    length: {"kind":"UIntPtr"},
+    ao: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_set_signature_array(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    length: {"kind":"UIntPtr"},
+    ag: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_get_uint8_array(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    length: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    ay: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_get_bool_array(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    length: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    ab: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_get_int16_array(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    length: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    an: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_get_uint16_array(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    length: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    aq: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_get_int32_array(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    length: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    ai: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_get_uint32_array(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    length: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    au: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_get_int64_array(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    length: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    ax: {"kind""Ptr","child":{"kind":"Int64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_get_uint64_array(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    length: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    at: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_get_double_array(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    length: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    ad: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_get_variant_array(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    signature: {"kind""Ptr","child":{"kind":"SByte"}},
+    length: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    av: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_get_array_numberofelements(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_get_array_element(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    index: {"kind":"UIntPtr"},
+    element: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_get_array_elementsignature(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    index: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_getkey(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_getvalue(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_setdictentry(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    key: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    value: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_setstruct(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    struct_members: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    num_members: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_getnummembers(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_msgarg_getmember(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    index: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_create_empty(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_create(
+    defaultLanguage: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_create_full(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    language: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_destroy(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_createfromxml(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    aboutDataXml: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_isvalid(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    language: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_createfrommsgarg(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    language: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_setappid(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    appId: {"kind""Ptr","child":{"kind":"Byte"}},
+    num: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_setappid_fromstring(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    appId: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_getappid(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    appId: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    num: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_setdefaultlanguage(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    defaultLanguage: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_getdefaultlanguage(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    defaultLanguage: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_setdevicename(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    deviceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    language: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_getdevicename(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    deviceName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    language: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_setdeviceid(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    deviceId: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_getdeviceid(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    deviceId: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_setappname(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    appName: {"kind""Ptr","child":{"kind":"SByte"}},
+    language: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_getappname(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    appName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    language: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_setmanufacturer(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    manufacturer: {"kind""Ptr","child":{"kind":"SByte"}},
+    language: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_getmanufacturer(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    manufacturer: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    language: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_setmodelnumber(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    modelNumber: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_getmodelnumber(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    modelNumber: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_setsupportedlanguage(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    language: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_getsupportedlanguages(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    languageTags: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    num: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_setdescription(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    description: {"kind""Ptr","child":{"kind":"SByte"}},
+    language: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_getdescription(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    description: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    language: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_setdateofmanufacture(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    dateOfManufacture: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_getdateofmanufacture(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    dateOfManufacture: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_setsoftwareversion(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    softwareVersion: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_getsoftwareversion(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    softwareVersion: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_getajsoftwareversion(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    ajSoftwareVersion: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_sethardwareversion(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    hardwareVersion: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_gethardwareversion(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    hardwareVersion: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_setsupporturl(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    supportUrl: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_getsupporturl(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    supportUrl: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_setfield(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    value: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    language: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_getfield(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    value: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle}},
+    language: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_getfields(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    fields: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    num_fields: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_getaboutdata(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    msgArg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    language: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_getannouncedaboutdata(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    msgArg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_isfieldrequired(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    fieldName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_isfieldannounced(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    fieldName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_isfieldlocalized(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    fieldName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdata_getfieldsignature(
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+    fieldName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdatalistener_create(
+    callbacks: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_aboutdatalistener_callbacks},
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutdatalistener_destroy(
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdatalistener_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_getdefaultclaimcapabilities(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_getapplicationstate(
+    configurator: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_permissionconfigurator_handle},
+    state: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_applicationstate},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_setapplicationstate(
+    configurator: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_permissionconfigurator_handle},
+    state: Windows.Win32.AllJoyn.alljoyn_applicationstate,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_getpublickey(
+    configurator: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_permissionconfigurator_handle},
+    publicKey: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_publickey_destroy(
+    publicKey: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_getmanifesttemplate(
+    configurator: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_permissionconfigurator_handle},
+    manifestTemplateXml: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_manifesttemplate_destroy(
+    manifestTemplateXml: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_setmanifesttemplatefromxml(
+    configurator: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_permissionconfigurator_handle},
+    manifestTemplateXml: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_getclaimcapabilities(
+    configurator: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_permissionconfigurator_handle},
+    claimCapabilities: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_setclaimcapabilities(
+    configurator: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_permissionconfigurator_handle},
+    claimCapabilities: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_getclaimcapabilitiesadditionalinfo(
+    configurator: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_permissionconfigurator_handle},
+    additionalInfo: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_setclaimcapabilitiesadditionalinfo(
+    configurator: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_permissionconfigurator_handle},
+    additionalInfo: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_reset(
+    configurator: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_permissionconfigurator_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_claim(
+    configurator: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_permissionconfigurator_handle},
+    caKey: {"kind""Ptr","child":{"kind":"SByte"}},
+    identityCertificateChain: {"kind""Ptr","child":{"kind":"SByte"}},
+    groupId: {"kind""Ptr","child":{"kind":"Byte"}},
+    groupSize: {"kind":"UIntPtr"},
+    groupAuthority: {"kind""Ptr","child":{"kind":"SByte"}},
+    manifestsXmls: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    manifestsCount: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_updateidentity(
+    configurator: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_permissionconfigurator_handle},
+    identityCertificateChain: {"kind""Ptr","child":{"kind":"SByte"}},
+    manifestsXmls: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    manifestsCount: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_getidentity(
+    configurator: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_permissionconfigurator_handle},
+    identityCertificateChain: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_certificatechain_destroy(
+    certificateChain: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_getmanifests(
+    configurator: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_permissionconfigurator_handle},
+    manifestArray: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_manifestarray},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_manifestarray_cleanup(
+    manifestArray: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_manifestarray},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_installmanifests(
+    configurator: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_permissionconfigurator_handle},
+    manifestsXmls: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    manifestsCount: {"kind":"UIntPtr"},
+    append: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_getidentitycertificateid(
+    configurator: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_permissionconfigurator_handle},
+    certificateId: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_certificateid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_certificateid_cleanup(
+    certificateId: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_certificateid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_updatepolicy(
+    configurator: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_permissionconfigurator_handle},
+    policyXml: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_getpolicy(
+    configurator: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_permissionconfigurator_handle},
+    policyXml: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_getdefaultpolicy(
+    configurator: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_permissionconfigurator_handle},
+    policyXml: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_policy_destroy(
+    policyXml: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_resetpolicy(
+    configurator: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_permissionconfigurator_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_getmembershipsummaries(
+    configurator: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_permissionconfigurator_handle},
+    certificateIds: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_certificateidarray},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_certificateidarray_cleanup(
+    certificateIdArray: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_certificateidarray},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_installmembership(
+    configurator: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_permissionconfigurator_handle},
+    membershipCertificateChain: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_removemembership(
+    configurator: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_permissionconfigurator_handle},
+    serial: {"kind""Ptr","child":{"kind":"Byte"}},
+    serialLen: {"kind":"UIntPtr"},
+    issuerPublicKey: {"kind""Ptr","child":{"kind":"SByte"}},
+    issuerAki: {"kind""Ptr","child":{"kind":"Byte"}},
+    issuerAkiLen: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_startmanagement(
+    configurator: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_permissionconfigurator_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurator_endmanagement(
+    configurator: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_permissionconfigurator_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_applicationstatelistener_create(
+    callbacks: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_applicationstatelistener_callbacks},
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_applicationstatelistener_destroy(
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_applicationstatelistener_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_keystorelistener_create(
+    callbacks: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_keystorelistener_callbacks},
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_keystorelistener_with_synchronization_create(
+    callbacks: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_keystorelistener_with_synchronization_callbacks},
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_keystorelistener_destroy(
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_keystorelistener_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_keystorelistener_putkeys(
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_keystorelistener_handle},
+    keyStore: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_keystore_handle},
+    source: {"kind""Ptr","child":{"kind":"SByte"}},
+    password: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_keystorelistener_getkeys(
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_keystorelistener_handle},
+    keyStore: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_keystore_handle},
+    sink: {"kind""Ptr","child":{"kind":"SByte"}},
+    sink_sz: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_sessionopts_create(
+    traffic: {"kind":"Byte"},
+    isMultipoint: {"kind":"Int32"},
+    proximity: {"kind":"Byte"},
+    transports: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_sessionopts_destroy(
+    opts: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_sessionopts_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_sessionopts_get_traffic(
+    opts: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_sessionopts_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_sessionopts_set_traffic(
+    opts: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_sessionopts_handle},
+    traffic: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_sessionopts_get_multipoint(
+    opts: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_sessionopts_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_sessionopts_set_multipoint(
+    opts: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_sessionopts_handle},
+    isMultipoint: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_sessionopts_get_proximity(
+    opts: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_sessionopts_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_sessionopts_set_proximity(
+    opts: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_sessionopts_handle},
+    proximity: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_sessionopts_get_transports(
+    opts: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_sessionopts_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_sessionopts_set_transports(
+    opts: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_sessionopts_handle},
+    transports: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_sessionopts_iscompatible(
+    one: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_sessionopts_handle},
+    other: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_sessionopts_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_sessionopts_cmp(
+    one: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_sessionopts_handle},
+    other: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_sessionopts_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_create(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_destroy(
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_isbroadcastsignal(
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_isglobalbroadcast(
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_issessionless(
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_getflags(
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_isexpired(
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+    tillExpireMS: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_isunreliable(
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_isencrypted(
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_getauthmechanism(
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_gettype(
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_getargs(
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+    numArgs: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    args: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_getarg(
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+    argN: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_parseargs(
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+    signature: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_getcallserial(
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_getsignature(
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_getobjectpath(
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_getinterface(
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_getmembername(
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_getreplyserial(
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_getsender(
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_getreceiveendpointname(
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_getdestination(
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_getcompressiontoken(
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_getsessionid(
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_geterrorname(
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+    errorMessage: {"kind""Ptr","child":{"kind":"SByte"}},
+    errorMessage_size: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_tostring(
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+    str: {"kind""Ptr","child":{"kind":"SByte"}},
+    buf: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_description(
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+    str: {"kind""Ptr","child":{"kind":"SByte"}},
+    buf: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_gettimestamp(
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_eql(
+    one: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+    other: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_message_setendianess(
+    endian: {"kind":"SByte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_authlistener_requestcredentialsresponse(
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_authlistener_handle},
+    authContext: {"kind""Ptr","child":{"kind":"Void"}},
+    accept: {"kind":"Int32"},
+    credentials: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_credentials_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_authlistener_verifycredentialsresponse(
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_authlistener_handle},
+    authContext: {"kind""Ptr","child":{"kind":"Void"}},
+    accept: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_authlistener_create(
+    callbacks: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_authlistener_callbacks},
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_authlistenerasync_create(
+    callbacks: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_authlistenerasync_callbacks},
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_authlistener_destroy(
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_authlistener_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_authlistenerasync_destroy(
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_authlistener_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_authlistener_setsharedsecret(
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_authlistener_handle},
+    sharedSecret: {"kind""Ptr","child":{"kind":"Byte"}},
+    sharedSecretSize: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_credentials_create(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_credentials_destroy(
+    cred: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_credentials_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_credentials_isset(
+    cred: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_credentials_handle},
+    creds: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_credentials_setpassword(
+    cred: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_credentials_handle},
+    pwd: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_credentials_setusername(
+    cred: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_credentials_handle},
+    userName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_credentials_setcertchain(
+    cred: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_credentials_handle},
+    certChain: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_credentials_setprivatekey(
+    cred: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_credentials_handle},
+    pk: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_credentials_setlogonentry(
+    cred: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_credentials_handle},
+    logonEntry: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_credentials_setexpiration(
+    cred: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_credentials_handle},
+    expiration: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_credentials_getpassword(
+    cred: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_credentials_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_credentials_getusername(
+    cred: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_credentials_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_credentials_getcertchain(
+    cred: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_credentials_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_credentials_getprivateKey(
+    cred: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_credentials_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_credentials_getlogonentry(
+    cred: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_credentials_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_credentials_getexpiration(
+    cred: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_credentials_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_credentials_clear(
+    cred: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_credentials_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_buslistener_create(
+    callbacks: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_buslistener_callbacks},
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_buslistener_destroy(
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_buslistener_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_member_getannotationscount(
+    member: Windows.Win32.AllJoyn.alljoyn_interfacedescription_member,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_member_getannotationatindex(
+    member: Windows.Win32.AllJoyn.alljoyn_interfacedescription_member,
+    index: {"kind":"UIntPtr"},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    name_size: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    value: {"kind""Ptr","child":{"kind":"SByte"}},
+    value_size: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_member_getannotation(
+    member: Windows.Win32.AllJoyn.alljoyn_interfacedescription_member,
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    value: {"kind""Ptr","child":{"kind":"SByte"}},
+    value_size: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_member_getargannotationscount(
+    member: Windows.Win32.AllJoyn.alljoyn_interfacedescription_member,
+    argName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_member_getargannotationatindex(
+    member: Windows.Win32.AllJoyn.alljoyn_interfacedescription_member,
+    argName: {"kind""Ptr","child":{"kind":"SByte"}},
+    index: {"kind":"UIntPtr"},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    name_size: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    value: {"kind""Ptr","child":{"kind":"SByte"}},
+    value_size: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_member_getargannotation(
+    member: Windows.Win32.AllJoyn.alljoyn_interfacedescription_member,
+    argName: {"kind""Ptr","child":{"kind":"SByte"}},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    value: {"kind""Ptr","child":{"kind":"SByte"}},
+    value_size: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_property_getannotationscount(
+    property: Windows.Win32.AllJoyn.alljoyn_interfacedescription_property,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_property_getannotationatindex(
+    property: Windows.Win32.AllJoyn.alljoyn_interfacedescription_property,
+    index: {"kind":"UIntPtr"},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    name_size: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    value: {"kind""Ptr","child":{"kind":"SByte"}},
+    value_size: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_property_getannotation(
+    property: Windows.Win32.AllJoyn.alljoyn_interfacedescription_property,
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    value: {"kind""Ptr","child":{"kind":"SByte"}},
+    value_size: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_activate(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_addannotation(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    value: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_getannotation(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    value: {"kind""Ptr","child":{"kind":"SByte"}},
+    value_size: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_getannotationscount(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_getannotationatindex(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    index: {"kind":"UIntPtr"},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    name_size: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    value: {"kind""Ptr","child":{"kind":"SByte"}},
+    value_size: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_getmember(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    member: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_interfacedescription_member},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_addmember(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    type: Windows.Win32.AllJoyn.alljoyn_messagetype,
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    inputSig: {"kind""Ptr","child":{"kind":"SByte"}},
+    outSig: {"kind""Ptr","child":{"kind":"SByte"}},
+    argNames: {"kind""Ptr","child":{"kind":"SByte"}},
+    annotation: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_addmemberannotation(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    member: {"kind""Ptr","child":{"kind":"SByte"}},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    value: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_getmemberannotation(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    member: {"kind""Ptr","child":{"kind":"SByte"}},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    value: {"kind""Ptr","child":{"kind":"SByte"}},
+    value_size: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_getmembers(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    members: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_interfacedescription_member},
+    numMembers: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_hasmember(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    inSig: {"kind""Ptr","child":{"kind":"SByte"}},
+    outSig: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_addmethod(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    inputSig: {"kind""Ptr","child":{"kind":"SByte"}},
+    outSig: {"kind""Ptr","child":{"kind":"SByte"}},
+    argNames: {"kind""Ptr","child":{"kind":"SByte"}},
+    annotation: {"kind":"Byte"},
+    accessPerms: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_getmethod(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    member: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_interfacedescription_member},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_addsignal(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    sig: {"kind""Ptr","child":{"kind":"SByte"}},
+    argNames: {"kind""Ptr","child":{"kind":"SByte"}},
+    annotation: {"kind":"Byte"},
+    accessPerms: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_getsignal(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    member: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_interfacedescription_member},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_getproperty(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    property: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_interfacedescription_property},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_getproperties(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    props: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_interfacedescription_property},
+    numProps: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_addproperty(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    signature: {"kind""Ptr","child":{"kind":"SByte"}},
+    access: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_addpropertyannotation(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    property: {"kind""Ptr","child":{"kind":"SByte"}},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    value: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_getpropertyannotation(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    property: {"kind""Ptr","child":{"kind":"SByte"}},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    value: {"kind""Ptr","child":{"kind":"SByte"}},
+    str_size: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_hasproperty(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_hasproperties(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_getname(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_introspect(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    str: {"kind""Ptr","child":{"kind":"SByte"}},
+    buf: {"kind":"UIntPtr"},
+    indent: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_issecure(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_getsecuritypolicy(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_setdescriptionlanguage(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    language: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_getdescriptionlanguages(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    languages: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    size: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_getdescriptionlanguages2(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    languages: {"kind""Ptr","child":{"kind":"SByte"}},
+    languagesSize: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_setdescription(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    description: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_setdescriptionforlanguage(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    description: {"kind""Ptr","child":{"kind":"SByte"}},
+    languageTag: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_getdescriptionforlanguage(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    description: {"kind""Ptr","child":{"kind":"SByte"}},
+    maxLanguageLength: {"kind":"UIntPtr"},
+    languageTag: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_setmemberdescription(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    member: {"kind""Ptr","child":{"kind":"SByte"}},
+    description: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_setmemberdescriptionforlanguage(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    member: {"kind""Ptr","child":{"kind":"SByte"}},
+    description: {"kind""Ptr","child":{"kind":"SByte"}},
+    languageTag: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_getmemberdescriptionforlanguage(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    member: {"kind""Ptr","child":{"kind":"SByte"}},
+    description: {"kind""Ptr","child":{"kind":"SByte"}},
+    maxLanguageLength: {"kind":"UIntPtr"},
+    languageTag: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_setargdescription(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    member: {"kind""Ptr","child":{"kind":"SByte"}},
+    argName: {"kind""Ptr","child":{"kind":"SByte"}},
+    description: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_setargdescriptionforlanguage(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    member: {"kind""Ptr","child":{"kind":"SByte"}},
+    arg: {"kind""Ptr","child":{"kind":"SByte"}},
+    description: {"kind""Ptr","child":{"kind":"SByte"}},
+    languageTag: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_getargdescriptionforlanguage(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    member: {"kind""Ptr","child":{"kind":"SByte"}},
+    arg: {"kind""Ptr","child":{"kind":"SByte"}},
+    description: {"kind""Ptr","child":{"kind":"SByte"}},
+    maxLanguageLength: {"kind":"UIntPtr"},
+    languageTag: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_setpropertydescription(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    description: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_setpropertydescriptionforlanguage(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    description: {"kind""Ptr","child":{"kind":"SByte"}},
+    languageTag: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_getpropertydescriptionforlanguage(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    property: {"kind""Ptr","child":{"kind":"SByte"}},
+    description: {"kind""Ptr","child":{"kind":"SByte"}},
+    maxLanguageLength: {"kind":"UIntPtr"},
+    languageTag: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_setdescriptiontranslationcallback(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    translationCallback: Windows.Win32.AllJoyn.alljoyn_interfacedescription_translation_callback_ptr,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_getdescriptiontranslationcallback(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_hasdescription(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_addargannotation(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    member: {"kind""Ptr","child":{"kind":"SByte"}},
+    argName: {"kind""Ptr","child":{"kind":"SByte"}},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    value: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_getmemberargannotation(
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    member: {"kind""Ptr","child":{"kind":"SByte"}},
+    argName: {"kind""Ptr","child":{"kind":"SByte"}},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    value: {"kind""Ptr","child":{"kind":"SByte"}},
+    value_size: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_eql(
+    one: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    other: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_member_eql(
+    one: Windows.Win32.AllJoyn.alljoyn_interfacedescription_member,
+    other: Windows.Win32.AllJoyn.alljoyn_interfacedescription_member,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_interfacedescription_property_eql(
+    one: Windows.Win32.AllJoyn.alljoyn_interfacedescription_property,
+    other: Windows.Win32.AllJoyn.alljoyn_interfacedescription_property,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busobject_create(
+    path: {"kind""Ptr","child":{"kind":"SByte"}},
+    isPlaceholder: {"kind":"Int32"},
+    callbacks_in: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_busobject_callbacks},
+    context_in: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busobject_destroy(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busobject_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busobject_getpath(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busobject_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busobject_emitpropertychanged(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busobject_handle},
+    ifcName: {"kind""Ptr","child":{"kind":"SByte"}},
+    propName: {"kind""Ptr","child":{"kind":"SByte"}},
+    val: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    id: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busobject_emitpropertieschanged(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busobject_handle},
+    ifcName: {"kind""Ptr","child":{"kind":"SByte"}},
+    propNames: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    numProps: {"kind":"UIntPtr"},
+    id: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busobject_getname(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busobject_handle},
+    buffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    bufferSz: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busobject_addinterface(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busobject_handle},
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busobject_addmethodhandler(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busobject_handle},
+    member: Windows.Win32.AllJoyn.alljoyn_interfacedescription_member,
+    handler: Windows.Win32.AllJoyn.alljoyn_messagereceiver_methodhandler_ptr,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busobject_addmethodhandlers(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busobject_handle},
+    entries: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_busobject_methodentry},
+    numEntries: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busobject_methodreply_args(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busobject_handle},
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+    args: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    numArgs: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busobject_methodreply_err(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busobject_handle},
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+    error: {"kind""Ptr","child":{"kind":"SByte"}},
+    errorMessage: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busobject_methodreply_status(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busobject_handle},
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+    status: Windows.Win32.AllJoyn.QStatus,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busobject_getbusattachment(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busobject_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busobject_signal(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busobject_handle},
+    destination: {"kind""Ptr","child":{"kind":"SByte"}},
+    sessionId: {"kind":"UInt32"},
+    signal: Windows.Win32.AllJoyn.alljoyn_interfacedescription_member,
+    args: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    numArgs: {"kind":"UIntPtr"},
+    timeToLive: {"kind":"UInt16"},
+    flags: {"kind":"Byte"},
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busobject_cancelsessionlessmessage_serial(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busobject_handle},
+    serialNumber: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busobject_cancelsessionlessmessage(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busobject_handle},
+    msg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busobject_issecure(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busobject_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busobject_getannouncedinterfacenames(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busobject_handle},
+    interfaces: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    numInterfaces: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busobject_setannounceflag(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busobject_handle},
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+    isAnnounced: Windows.Win32.AllJoyn.alljoyn_about_announceflag,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busobject_addinterface_announced(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busobject_handle},
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_create(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    service: {"kind""Ptr","child":{"kind":"SByte"}},
+    path: {"kind""Ptr","child":{"kind":"SByte"}},
+    sessionId: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_create_secure(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    service: {"kind""Ptr","child":{"kind":"SByte"}},
+    path: {"kind""Ptr","child":{"kind":"SByte"}},
+    sessionId: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_destroy(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_addinterface(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_addinterface_by_name(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_getchildren(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+    children: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle}},
+    numChildren: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_getchild(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+    path: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_addchild(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+    child: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_removechild(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+    path: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_introspectremoteobject(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_introspectremoteobjectasync(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+    callback: Windows.Win32.AllJoyn.alljoyn_proxybusobject_listener_introspectcb_ptr,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_getproperty(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+    iface: {"kind""Ptr","child":{"kind":"SByte"}},
+    property: {"kind""Ptr","child":{"kind":"SByte"}},
+    value: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_getpropertyasync(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+    iface: {"kind""Ptr","child":{"kind":"SByte"}},
+    property: {"kind""Ptr","child":{"kind":"SByte"}},
+    callback: Windows.Win32.AllJoyn.alljoyn_proxybusobject_listener_getpropertycb_ptr,
+    timeout: {"kind":"UInt32"},
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_getallproperties(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+    iface: {"kind""Ptr","child":{"kind":"SByte"}},
+    values: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_getallpropertiesasync(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+    iface: {"kind""Ptr","child":{"kind":"SByte"}},
+    callback: Windows.Win32.AllJoyn.alljoyn_proxybusobject_listener_getallpropertiescb_ptr,
+    timeout: {"kind":"UInt32"},
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_setproperty(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+    iface: {"kind""Ptr","child":{"kind":"SByte"}},
+    property: {"kind""Ptr","child":{"kind":"SByte"}},
+    value: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_registerpropertieschangedlistener(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+    iface: {"kind""Ptr","child":{"kind":"SByte"}},
+    properties: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    numProperties: {"kind":"UIntPtr"},
+    callback: Windows.Win32.AllJoyn.alljoyn_proxybusobject_listener_propertieschanged_ptr,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_unregisterpropertieschangedlistener(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+    iface: {"kind""Ptr","child":{"kind":"SByte"}},
+    callback: Windows.Win32.AllJoyn.alljoyn_proxybusobject_listener_propertieschanged_ptr,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_setpropertyasync(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+    iface: {"kind""Ptr","child":{"kind":"SByte"}},
+    property: {"kind""Ptr","child":{"kind":"SByte"}},
+    value: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    callback: Windows.Win32.AllJoyn.alljoyn_proxybusobject_listener_setpropertycb_ptr,
+    timeout: {"kind":"UInt32"},
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_methodcall(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+    ifaceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    methodName: {"kind""Ptr","child":{"kind":"SByte"}},
+    args: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    numArgs: {"kind":"UIntPtr"},
+    replyMsg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+    timeout: {"kind":"UInt32"},
+    flags: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_methodcall_member(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+    method: Windows.Win32.AllJoyn.alljoyn_interfacedescription_member,
+    args: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    numArgs: {"kind":"UIntPtr"},
+    replyMsg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_message_handle},
+    timeout: {"kind":"UInt32"},
+    flags: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_methodcall_noreply(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+    ifaceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    methodName: {"kind""Ptr","child":{"kind":"SByte"}},
+    args: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    numArgs: {"kind":"UIntPtr"},
+    flags: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_methodcall_member_noreply(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+    method: Windows.Win32.AllJoyn.alljoyn_interfacedescription_member,
+    args: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    numArgs: {"kind":"UIntPtr"},
+    flags: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_methodcallasync(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+    ifaceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    methodName: {"kind""Ptr","child":{"kind":"SByte"}},
+    replyFunc: Windows.Win32.AllJoyn.alljoyn_messagereceiver_replyhandler_ptr,
+    args: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    numArgs: {"kind":"UIntPtr"},
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+    timeout: {"kind":"UInt32"},
+    flags: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_methodcallasync_member(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+    method: Windows.Win32.AllJoyn.alljoyn_interfacedescription_member,
+    replyFunc: Windows.Win32.AllJoyn.alljoyn_messagereceiver_replyhandler_ptr,
+    args: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+    numArgs: {"kind":"UIntPtr"},
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+    timeout: {"kind":"UInt32"},
+    flags: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_parsexml(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+    xml: {"kind""Ptr","child":{"kind":"SByte"}},
+    identifier: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_secureconnection(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+    forceAuth: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_secureconnectionasync(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+    forceAuth: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_getinterface(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+    iface: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_getinterfaces(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+    ifaces: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle}},
+    numIfaces: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_getpath(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_getservicename(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_getuniquename(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_getsessionid(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_implementsinterface(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+    iface: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_copy(
+    source: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_isvalid(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_issecure(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_enablepropertycaching(
+    proxyObj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurationlistener_create(
+    callbacks: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_permissionconfigurationlistener_callbacks},
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_permissionconfigurationlistener_destroy(
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_permissionconfigurationlistener_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_sessionlistener_create(
+    callbacks: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_sessionlistener_callbacks},
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_sessionlistener_destroy(
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_sessionlistener_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_sessionportlistener_create(
+    callbacks: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_sessionportlistener_callbacks},
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_sessionportlistener_destroy(
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_sessionportlistener_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutlistener_create(
+    callback: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_aboutlistener_callback},
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutlistener_destroy(
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutlistener_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_create(
+    applicationName: {"kind""Ptr","child":{"kind":"SByte"}},
+    allowRemoteMessages: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_create_concurrency(
+    applicationName: {"kind""Ptr","child":{"kind":"SByte"}},
+    allowRemoteMessages: {"kind":"Int32"},
+    concurrency: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_destroy(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_start(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_stop(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_join(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_getconcurrency(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_getconnectspec(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_enableconcurrentcallbacks(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_createinterface(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    iface: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_createinterface_secure(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    iface: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle}},
+    secPolicy: Windows.Win32.AllJoyn.alljoyn_interfacedescription_securitypolicy,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_connect(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    connectSpec: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_registerbuslistener(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_buslistener_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_unregisterbuslistener(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_buslistener_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_findadvertisedname(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    namePrefix: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_findadvertisednamebytransport(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    namePrefix: {"kind""Ptr","child":{"kind":"SByte"}},
+    transports: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_cancelfindadvertisedname(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    namePrefix: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_cancelfindadvertisednamebytransport(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    namePrefix: {"kind""Ptr","child":{"kind":"SByte"}},
+    transports: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_advertisename(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    transports: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_canceladvertisename(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    transports: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_getinterface(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_joinsession(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    sessionHost: {"kind""Ptr","child":{"kind":"SByte"}},
+    sessionPort: {"kind":"UInt16"},
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_sessionlistener_handle},
+    sessionId: {"kind""Ptr","child":{"kind":"UInt32"}},
+    opts: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_sessionopts_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_joinsessionasync(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    sessionHost: {"kind""Ptr","child":{"kind":"SByte"}},
+    sessionPort: {"kind":"UInt16"},
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_sessionlistener_handle},
+    opts: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_sessionopts_handle},
+    callback: Windows.Win32.AllJoyn.alljoyn_busattachment_joinsessioncb_ptr,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_registerbusobject(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    obj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busobject_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_registerbusobject_secure(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    obj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busobject_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_unregisterbusobject(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    object: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busobject_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_requestname(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    requestedName: {"kind""Ptr","child":{"kind":"SByte"}},
+    flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_releasename(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_bindsessionport(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    sessionPort: {"kind""Ptr","child":{"kind":"UInt16"}},
+    opts: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_sessionopts_handle},
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_sessionportlistener_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_unbindsessionport(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    sessionPort: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_enablepeersecurity(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    authMechanisms: {"kind""Ptr","child":{"kind":"SByte"}},
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_authlistener_handle},
+    keyStoreFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    isShared: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_enablepeersecuritywithpermissionconfigurationlistener(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    authMechanisms: {"kind""Ptr","child":{"kind":"SByte"}},
+    authListener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_authlistener_handle},
+    keyStoreFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    isShared: {"kind":"Int32"},
+    permissionConfigurationListener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_permissionconfigurationlistener_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_ispeersecurityenabled(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_createinterfacesfromxml(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    xml: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_getinterfaces(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    ifaces: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle}},
+    numIfaces: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_deleteinterface(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    iface: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_interfacedescription_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_isstarted(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_isstopping(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_isconnected(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_disconnect(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    unused: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_getdbusproxyobj(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_getalljoynproxyobj(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_getalljoyndebugobj(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_getuniquename(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_getglobalguidstring(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_registersignalhandler(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    signal_handler: Windows.Win32.AllJoyn.alljoyn_messagereceiver_signalhandler_ptr,
+    member: Windows.Win32.AllJoyn.alljoyn_interfacedescription_member,
+    srcPath: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_registersignalhandlerwithrule(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    signal_handler: Windows.Win32.AllJoyn.alljoyn_messagereceiver_signalhandler_ptr,
+    member: Windows.Win32.AllJoyn.alljoyn_interfacedescription_member,
+    matchRule: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_unregistersignalhandler(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    signal_handler: Windows.Win32.AllJoyn.alljoyn_messagereceiver_signalhandler_ptr,
+    member: Windows.Win32.AllJoyn.alljoyn_interfacedescription_member,
+    srcPath: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_unregistersignalhandlerwithrule(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    signal_handler: Windows.Win32.AllJoyn.alljoyn_messagereceiver_signalhandler_ptr,
+    member: Windows.Win32.AllJoyn.alljoyn_interfacedescription_member,
+    matchRule: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_unregisterallhandlers(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_registerkeystorelistener(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_keystorelistener_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_reloadkeystore(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_clearkeystore(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_clearkeys(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    guid: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_setkeyexpiration(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    guid: {"kind""Ptr","child":{"kind":"SByte"}},
+    timeout: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_getkeyexpiration(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    guid: {"kind""Ptr","child":{"kind":"SByte"}},
+    timeout: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_addlogonentry(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    authMechanism: {"kind""Ptr","child":{"kind":"SByte"}},
+    userName: {"kind""Ptr","child":{"kind":"SByte"}},
+    password: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_addmatch(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    rule: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_removematch(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    rule: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_setsessionlistener(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    sessionId: {"kind":"UInt32"},
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_sessionlistener_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_leavesession(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    sessionId: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_secureconnection(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    forceAuth: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_secureconnectionasync(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    forceAuth: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_removesessionmember(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    sessionId: {"kind":"UInt32"},
+    memberName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_setlinktimeout(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    sessionid: {"kind":"UInt32"},
+    linkTimeout: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_setlinktimeoutasync(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    sessionid: {"kind":"UInt32"},
+    linkTimeout: {"kind":"UInt32"},
+    callback: Windows.Win32.AllJoyn.alljoyn_busattachment_setlinktimeoutcb_ptr,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_namehasowner(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    hasOwner: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_getpeerguid(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    guid: {"kind""Ptr","child":{"kind":"SByte"}},
+    guidSz: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_setdaemondebug(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    module: {"kind""Ptr","child":{"kind":"SByte"}},
+    level: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_gettimestamp(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_ping(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    timeout: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_registeraboutlistener(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    aboutListener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutlistener_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_unregisteraboutlistener(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    aboutListener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutlistener_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_unregisterallaboutlisteners(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_whoimplements_interfaces(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    implementsInterfaces: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    numberInterfaces: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_whoimplements_interface(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    implementsInterface: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_cancelwhoimplements_interfaces(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    implementsInterfaces: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    numberInterfaces: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_cancelwhoimplements_interface(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    implementsInterface: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_getpermissionconfigurator(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_registerapplicationstatelistener(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_applicationstatelistener_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_unregisterapplicationstatelistener(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_applicationstatelistener_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_busattachment_deletedefaultkeystore(
+    applicationName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutobj_create(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    isAnnounced: Windows.Win32.AllJoyn.alljoyn_about_announceflag,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutobj_destroy(
+    obj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutobj_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutobj_announce(
+    obj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutobj_handle},
+    sessionPort: {"kind":"UInt16"},
+    aboutData: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdata_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutobj_announce_using_datalistener(
+    obj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutobj_handle},
+    sessionPort: {"kind":"UInt16"},
+    aboutListener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutdatalistener_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutobj_unannounce(
+    obj: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutobj_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutobjectdescription_create(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutobjectdescription_create_full(
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutobjectdescription_createfrommsgarg(
+    description: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutobjectdescription_handle},
+    arg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutobjectdescription_destroy(
+    description: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutobjectdescription_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutobjectdescription_getpaths(
+    description: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutobjectdescription_handle},
+    paths: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    numPaths: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutobjectdescription_getinterfaces(
+    description: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutobjectdescription_handle},
+    path: {"kind""Ptr","child":{"kind":"SByte"}},
+    interfaces: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    numInterfaces: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutobjectdescription_getinterfacepaths(
+    description: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutobjectdescription_handle},
+    interfaceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    paths: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    numPaths: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutobjectdescription_clear(
+    description: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutobjectdescription_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutobjectdescription_haspath(
+    description: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutobjectdescription_handle},
+    path: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutobjectdescription_hasinterface(
+    description: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutobjectdescription_handle},
+    interfaceName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutobjectdescription_hasinterfaceatpath(
+    description: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutobjectdescription_handle},
+    path: {"kind""Ptr","child":{"kind":"SByte"}},
+    interfaceName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutobjectdescription_getmsgarg(
+    description: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutobjectdescription_handle},
+    msgArg: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutproxy_create(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    busName: {"kind""Ptr","child":{"kind":"SByte"}},
+    sessionId: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutproxy_destroy(
+    proxy: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutproxy_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutproxy_getobjectdescription(
+    proxy: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutproxy_handle},
+    objectDesc: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutproxy_getaboutdata(
+    proxy: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutproxy_handle},
+    language: {"kind""Ptr","child":{"kind":"SByte"}},
+    data: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_msgarg_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_aboutproxy_getversion(
+    proxy: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_aboutproxy_handle},
+    version: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_pinglistener_create(
+    callback: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_pinglistener_callback},
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_pinglistener_destroy(
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_pinglistener_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_autopinger_create(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_autopinger_destroy(
+    autopinger: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_autopinger_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_autopinger_pause(
+    autopinger: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_autopinger_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_autopinger_resume(
+    autopinger: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_autopinger_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_autopinger_addpinggroup(
+    autopinger: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_autopinger_handle},
+    group: {"kind""Ptr","child":{"kind":"SByte"}},
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_pinglistener_handle},
+    pinginterval: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_autopinger_removepinggroup(
+    autopinger: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_autopinger_handle},
+    group: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_autopinger_setpinginterval(
+    autopinger: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_autopinger_handle},
+    group: {"kind""Ptr","child":{"kind":"SByte"}},
+    pinginterval: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_autopinger_adddestination(
+    autopinger: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_autopinger_handle},
+    group: {"kind""Ptr","child":{"kind":"SByte"}},
+    destination: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_autopinger_removedestination(
+    autopinger: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_autopinger_handle},
+    group: {"kind""Ptr","child":{"kind":"SByte"}},
+    destination: {"kind""Ptr","child":{"kind":"SByte"}},
+    removeall: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_getversion(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_getbuildinfo(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_getnumericversion(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_init(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_shutdown(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_routerinit(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_routerinitwithconfig(
+    configXml: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_routershutdown(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_ref_create(
+    proxy: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_ref_get(
+    ref: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_ref_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_ref_incref(
+    ref: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_ref_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_proxybusobject_ref_decref(
+    ref: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_ref_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_observerlistener_create(
+    callback: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_observerlistener_callback},
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_observerlistener_destroy(
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_observerlistener_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_observer_create(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    mandatoryInterfaces: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    numMandatoryInterfaces: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_observer_destroy(
+    observer: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_observer_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_observer_registerlistener(
+    observer: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_observer_handle},
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_observerlistener_handle},
+    triggerOnExisting: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_observer_unregisterlistener(
+    observer: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_observer_handle},
+    listener: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_observerlistener_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_observer_unregisteralllisteners(
+    observer: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_observer_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_observer_get(
+    observer: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_observer_handle},
+    uniqueBusName: {"kind""Ptr","child":{"kind":"SByte"}},
+    objectPath: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_observer_getfirst(
+    observer: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_observer_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_observer_getnext(
+    observer: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_observer_handle},
+    proxyref: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_proxybusobject_ref_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_securityapplicationproxy_getpermissionmanagementsessionport(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_securityapplicationproxy_create(
+    bus: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_busattachment_handle},
+    appBusName: {"kind""Ptr","child":{"kind":"SByte"}},
+    sessionId: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_securityapplicationproxy_destroy(
+    proxy: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_securityapplicationproxy_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_securityapplicationproxy_claim(
+    proxy: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_securityapplicationproxy_handle},
+    caKey: {"kind""Ptr","child":{"kind":"SByte"}},
+    identityCertificateChain: {"kind""Ptr","child":{"kind":"SByte"}},
+    groupId: {"kind""Ptr","child":{"kind":"Byte"}},
+    groupSize: {"kind":"UIntPtr"},
+    groupAuthority: {"kind""Ptr","child":{"kind":"SByte"}},
+    manifestsXmls: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    manifestsCount: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_securityapplicationproxy_getmanifesttemplate(
+    proxy: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_securityapplicationproxy_handle},
+    manifestTemplateXml: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_securityapplicationproxy_manifesttemplate_destroy(
+    manifestTemplateXml: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_securityapplicationproxy_getapplicationstate(
+    proxy: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_securityapplicationproxy_handle},
+    applicationState: {"kind""Ptr","child":Windows.Win32.AllJoyn.alljoyn_applicationstate},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_securityapplicationproxy_getclaimcapabilities(
+    proxy: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_securityapplicationproxy_handle},
+    capabilities: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_securityapplicationproxy_getclaimcapabilitiesadditionalinfo(
+    proxy: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_securityapplicationproxy_handle},
+    additionalInfo: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_securityapplicationproxy_getpolicy(
+    proxy: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_securityapplicationproxy_handle},
+    policyXml: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_securityapplicationproxy_getdefaultpolicy(
+    proxy: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_securityapplicationproxy_handle},
+    policyXml: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_securityapplicationproxy_policy_destroy(
+    policyXml: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_securityapplicationproxy_updatepolicy(
+    proxy: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_securityapplicationproxy_handle},
+    policyXml: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_securityapplicationproxy_updateidentity(
+    proxy: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_securityapplicationproxy_handle},
+    identityCertificateChain: {"kind""Ptr","child":{"kind":"SByte"}},
+    manifestsXmls: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    manifestsCount: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_securityapplicationproxy_installmembership(
+    proxy: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_securityapplicationproxy_handle},
+    membershipCertificateChain: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_securityapplicationproxy_reset(
+    proxy: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_securityapplicationproxy_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_securityapplicationproxy_resetpolicy(
+    proxy: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_securityapplicationproxy_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_securityapplicationproxy_startmanagement(
+    proxy: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_securityapplicationproxy_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_securityapplicationproxy_endmanagement(
+    proxy: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_securityapplicationproxy_handle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_securityapplicationproxy_geteccpublickey(
+    proxy: {"kind""Ptr","child":Windows.Win32.AllJoyn._alljoyn_securityapplicationproxy_handle},
+    eccPublicKey: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_securityapplicationproxy_eccpublickey_destroy(
+    eccPublicKey: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_securityapplicationproxy_signmanifest(
+    unsignedManifestXml: {"kind""Ptr","child":{"kind":"SByte"}},
+    identityCertificatePem: {"kind""Ptr","child":{"kind":"SByte"}},
+    signingPrivateKeyPem: {"kind""Ptr","child":{"kind":"SByte"}},
+    signedManifestXml: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_securityapplicationproxy_manifest_destroy(
+    signedManifestXml: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_securityapplicationproxy_computemanifestdigest(
+    unsignedManifestXml: {"kind""Ptr","child":{"kind":"SByte"}},
+    identityCertificatePem: {"kind""Ptr","child":{"kind":"SByte"}},
+    digest: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    digestSize: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_securityapplicationproxy_digest_destroy(
+    digest: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSAJApi" fn alljoyn_securityapplicationproxy_setmanifestsignature(
+    unsignedManifestXml: {"kind""Ptr","child":{"kind":"SByte"}},
+    identityCertificatePem: {"kind""Ptr","child":{"kind":"SByte"}},
+    signature: {"kind""Ptr","child":{"kind":"Byte"}},
+    signatureSize: {"kind":"UIntPtr"},
+    signedManifestXml: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+],
+
+"unicode_aliases": [
+]}

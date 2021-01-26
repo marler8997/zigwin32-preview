@@ -1,0 +1,4255 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: ACTIVATION_CONTEXT_QUERY_INDEX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ACTIVATION_CONTEXT_QUERY_INDEX = extern struct {
+    ulAssemblyIndex: {"kind":"UInt32"},
+    ulFileIndexInAssembly: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ASSEMBLY_FILE_DETAILED_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ASSEMBLY_FILE_DETAILED_INFORMATION = extern struct {
+    ulFlags: {"kind":"UInt32"},
+    ulFilenameLength: {"kind":"UInt32"},
+    ulPathLength: {"kind":"UInt32"},
+    lpFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpFilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION = extern struct {
+    ulFlags: {"kind":"UInt32"},
+    ulEncodedAssemblyIdentityLength: {"kind":"UInt32"},
+    ulManifestPathType: {"kind":"UInt32"},
+    ulManifestPathLength: {"kind":"UInt32"},
+    liManifestLastWriteTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    ulPolicyPathType: {"kind":"UInt32"},
+    ulPolicyPathLength: {"kind":"UInt32"},
+    liPolicyLastWriteTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    ulMetadataSatelliteRosterIndex: {"kind":"UInt32"},
+    ulManifestVersionMajor: {"kind":"UInt32"},
+    ulManifestVersionMinor: {"kind":"UInt32"},
+    ulPolicyVersionMajor: {"kind":"UInt32"},
+    ulPolicyVersionMinor: {"kind":"UInt32"},
+    ulAssemblyDirectoryNameLength: {"kind":"UInt32"},
+    lpAssemblyEncodedAssemblyIdentity: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpAssemblyManifestPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpAssemblyPolicyPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpAssemblyDirectoryName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulFileCount: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ACTCTX_REQUESTED_RUN_LEVEL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ACTCTX_REQUESTED_RUN_LEVEL = *opaque{
+};
+// --------------------------------------------------------
+// Type: ACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ACTIVATION_CONTEXT_RUN_LEVEL_INFORMATION = extern struct {
+    ulFlags: {"kind":"UInt32"},
+    RunLevel: Windows.Win32.ApplicationInstallationAndServicing.ACTCTX_REQUESTED_RUN_LEVEL,
+    UiAccess: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ACTCTX_COMPATIBILITY_ELEMENT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ACTCTX_COMPATIBILITY_ELEMENT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: COMPATIBILITY_CONTEXT_ELEMENT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const COMPATIBILITY_CONTEXT_ELEMENT = extern struct {
+    Id: Guid,
+    Type: Windows.Win32.ApplicationInstallationAndServicing.ACTCTX_COMPATIBILITY_ELEMENT_TYPE,
+    MaxVersionTested: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION = extern struct {
+    ElementCount: {"kind":"UInt32"},
+    Elements: Windows.Win32.ApplicationInstallationAndServicing.COMPATIBILITY_CONTEXT_ELEMENT,
+};
+// --------------------------------------------------------
+// Type: ACTIVATION_CONTEXT_DETAILED_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ACTIVATION_CONTEXT_DETAILED_INFORMATION = extern struct {
+    dwFlags: {"kind":"UInt32"},
+    ulFormatVersion: {"kind":"UInt32"},
+    ulAssemblyCount: {"kind":"UInt32"},
+    ulRootManifestPathType: {"kind":"UInt32"},
+    ulRootManifestPathChars: {"kind":"UInt32"},
+    ulRootConfigurationPathType: {"kind":"UInt32"},
+    ulRootConfigurationPathChars: {"kind":"UInt32"},
+    ulAppDirPathType: {"kind":"UInt32"},
+    ulAppDirPathChars: {"kind":"UInt32"},
+    lpRootManifestPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpRootConfigurationPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpAppDirPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: RESULTTYPES
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const RESULTTYPES = *opaque{
+};
+// --------------------------------------------------------
+// Type: STATUSTYPES
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const STATUSTYPES = *opaque{
+};
+// --------------------------------------------------------
+// Type: LPDISPLAYVAL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDISPLAYVAL = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPEVALCOMCALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPEVALCOMCALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IValidate
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IValidate = *opaque{
+    // TODO: Method 'OpenDatabase'
+    // TODO: Method 'OpenCUB'
+    // TODO: Method 'CloseDatabase'
+    // TODO: Method 'CloseCUB'
+    // TODO: Method 'SetDisplay'
+    // TODO: Method 'SetStatus'
+    // TODO: Method 'Validate'
+};
+// --------------------------------------------------------
+// Type: MsmMerge
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const MsmMerge = opaque {
+};
+// --------------------------------------------------------
+// Type: msmErrorType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const msmErrorType = *opaque{
+};
+// --------------------------------------------------------
+// Type: IEnumMsmString
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumMsmString = *opaque{
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IMsmStrings
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IMsmStrings = *opaque{
+    // TODO: Method 'get_Item'
+    // TODO: Method 'get_Count'
+    // TODO: Method 'get__NewEnum'
+};
+// --------------------------------------------------------
+// Type: IMsmError
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IMsmError = *opaque{
+    // TODO: Method 'get_Type'
+    // TODO: Method 'get_Path'
+    // TODO: Method 'get_Language'
+    // TODO: Method 'get_DatabaseTable'
+    // TODO: Method 'get_DatabaseKeys'
+    // TODO: Method 'get_ModuleTable'
+    // TODO: Method 'get_ModuleKeys'
+};
+// --------------------------------------------------------
+// Type: IEnumMsmError
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumMsmError = *opaque{
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IMsmErrors
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IMsmErrors = *opaque{
+    // TODO: Method 'get_Item'
+    // TODO: Method 'get_Count'
+    // TODO: Method 'get__NewEnum'
+};
+// --------------------------------------------------------
+// Type: IMsmDependency
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IMsmDependency = *opaque{
+    // TODO: Method 'get_Module'
+    // TODO: Method 'get_Language'
+    // TODO: Method 'get_Version'
+};
+// --------------------------------------------------------
+// Type: IEnumMsmDependency
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumMsmDependency = *opaque{
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IMsmDependencies
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IMsmDependencies = *opaque{
+    // TODO: Method 'get_Item'
+    // TODO: Method 'get_Count'
+    // TODO: Method 'get__NewEnum'
+};
+// --------------------------------------------------------
+// Type: IMsmMerge
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IMsmMerge = *opaque{
+    // TODO: Method 'OpenDatabase'
+    // TODO: Method 'OpenModule'
+    // TODO: Method 'CloseDatabase'
+    // TODO: Method 'CloseModule'
+    // TODO: Method 'OpenLog'
+    // TODO: Method 'CloseLog'
+    // TODO: Method 'Log'
+    // TODO: Method 'get_Errors'
+    // TODO: Method 'get_Dependencies'
+    // TODO: Method 'Merge'
+    // TODO: Method 'Connect'
+    // TODO: Method 'ExtractCAB'
+    // TODO: Method 'ExtractFiles'
+};
+// --------------------------------------------------------
+// Type: IMsmGetFiles
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IMsmGetFiles = *opaque{
+    // TODO: Method 'get_ModuleFiles'
+};
+// --------------------------------------------------------
+// Type: PMSIHANDLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PMSIHANDLE = extern struct {
+    m_h: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: INSTALLMESSAGE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const INSTALLMESSAGE = *opaque{
+};
+// --------------------------------------------------------
+// Type: INSTALLUI_HANDLERA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const INSTALLUI_HANDLERA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: INSTALLUI_HANDLERW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const INSTALLUI_HANDLERW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: INSTALLUI_HANDLER_RECORD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const INSTALLUI_HANDLER_RECORD = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PINSTALLUI_HANDLER_RECORD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PINSTALLUI_HANDLER_RECORD = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: INSTALLUILEVEL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const INSTALLUILEVEL = *opaque{
+};
+// --------------------------------------------------------
+// Type: INSTALLSTATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const INSTALLSTATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: USERINFOSTATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const USERINFOSTATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: INSTALLLEVEL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const INSTALLLEVEL = *opaque{
+};
+// --------------------------------------------------------
+// Type: REINSTALLMODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const REINSTALLMODE = *opaque{
+};
+// --------------------------------------------------------
+// Type: tagINSTALLOGMODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const tagINSTALLOGMODE = *opaque{
+};
+// --------------------------------------------------------
+// Type: INSTALLLOGATTRIBUTES
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const INSTALLLOGATTRIBUTES = *opaque{
+};
+// --------------------------------------------------------
+// Type: INSTALLFEATUREATTRIBUTE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const INSTALLFEATUREATTRIBUTE = *opaque{
+};
+// --------------------------------------------------------
+// Type: INSTALLMODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const INSTALLMODE = *opaque{
+};
+// --------------------------------------------------------
+// Type: MSIPATCHSTATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MSIPATCHSTATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: MSIINSTALLCONTEXT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MSIINSTALLCONTEXT = *opaque{
+};
+// --------------------------------------------------------
+// Type: MSIPATCHDATATYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MSIPATCHDATATYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: MSIPATCHSEQUENCEINFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MSIPATCHSEQUENCEINFOA = extern struct {
+    szPatchData: {"kind""Ptr","child":{"kind":"SByte"}},
+    ePatchDataType: Windows.Win32.ApplicationInstallationAndServicing.MSIPATCHDATATYPE,
+    dwOrder: {"kind":"UInt32"},
+    uStatus: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MSIPATCHSEQUENCEINFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MSIPATCHSEQUENCEINFOW = extern struct {
+    szPatchData: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ePatchDataType: Windows.Win32.ApplicationInstallationAndServicing.MSIPATCHDATATYPE,
+    dwOrder: {"kind":"UInt32"},
+    uStatus: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SCRIPTFLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SCRIPTFLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADVERTISEFLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADVERTISEFLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: INSTALLTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const INSTALLTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: MSIFILEHASHINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MSIFILEHASHINFO = extern struct {
+    dwFileHashInfoSize: {"kind":"UInt32"},
+    dwData: {"kind":"Array","child": {"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: MSIARCHITECTUREFLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MSIARCHITECTUREFLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: MSIOPENPACKAGEFLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MSIOPENPACKAGEFLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: MSIADVERTISEOPTIONFLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MSIADVERTISEOPTIONFLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: MSISOURCETYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MSISOURCETYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: MSICODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MSICODE = *opaque{
+};
+// --------------------------------------------------------
+// Type: MSITRANSACTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MSITRANSACTION = *opaque{
+};
+// --------------------------------------------------------
+// Type: MSITRANSACTIONSTATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MSITRANSACTIONSTATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: MSIDBSTATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MSIDBSTATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: MSIMODIFY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MSIMODIFY = *opaque{
+};
+// --------------------------------------------------------
+// Type: MSICOLINFO
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MSICOLINFO = *opaque{
+};
+// --------------------------------------------------------
+// Type: MSICONDITION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MSICONDITION = *opaque{
+};
+// --------------------------------------------------------
+// Type: MSICOSTTREE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MSICOSTTREE = *opaque{
+};
+// --------------------------------------------------------
+// Type: MSIDBERROR
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MSIDBERROR = *opaque{
+};
+// --------------------------------------------------------
+// Type: MSIRUNMODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MSIRUNMODE = *opaque{
+};
+// --------------------------------------------------------
+// Type: MSITRANSFORM_ERROR
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MSITRANSFORM_ERROR = *opaque{
+};
+// --------------------------------------------------------
+// Type: MSITRANSFORM_VALIDATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MSITRANSFORM_VALIDATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: ASSEMBLY_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ASSEMBLY_INFO = extern struct {
+    cbAssemblyInfo: {"kind":"UInt32"},
+    dwAssemblyFlags: {"kind":"UInt32"},
+    uliAssemblySizeInKB: Windows.Win32.SystemServices.ULARGE_INTEGER,
+    pszCurrentAssemblyPathBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchBuf: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: FUSION_INSTALL_REFERENCE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FUSION_INSTALL_REFERENCE = extern struct {
+    cbSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    guidScheme: Guid,
+    szIdentifier: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szNonCannonicalData: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: ASM_NAME
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ASM_NAME = *opaque{
+};
+// --------------------------------------------------------
+// Type: __MIDL_IAssemblyName_0002
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const __MIDL_IAssemblyName_0002 = *opaque{
+};
+// --------------------------------------------------------
+// Type: ASM_DISPLAY_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ASM_DISPLAY_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: ASM_CMP_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ASM_CMP_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: IAssemblyName
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAssemblyName = *opaque{
+    // TODO: Method 'SetProperty'
+    // TODO: Method 'GetProperty'
+    // TODO: Method 'Finalize'
+    // TODO: Method 'GetDisplayName'
+    // TODO: Method 'Reserved'
+    // TODO: Method 'GetName'
+    // TODO: Method 'GetVersion'
+    // TODO: Method 'IsEqual'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IAssemblyCacheItem
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAssemblyCacheItem = *opaque{
+    // TODO: Method 'CreateStream'
+    // TODO: Method 'Commit'
+    // TODO: Method 'AbortItem'
+};
+// --------------------------------------------------------
+// Type: IAssemblyCache
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAssemblyCache = *opaque{
+    // TODO: Method 'UninstallAssembly'
+    // TODO: Method 'QueryAssemblyInfo'
+    // TODO: Method 'CreateAssemblyCacheItem'
+    // TODO: Method 'Reserved'
+    // TODO: Method 'InstallAssembly'
+};
+// --------------------------------------------------------
+// Type: CREATE_ASM_NAME_OBJ_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CREATE_ASM_NAME_OBJ_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PROTECTED_FILE_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PROTECTED_FILE_DATA = extern struct {
+    FileName: {"kind":"Array","child": {"kind":"UInt16"}},
+    FileNumber: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: INFCONTEXT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const INFCONTEXT = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_INF_INFORMATION
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_INF_INFORMATION = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_ALTPLATFORM_INFO_V2
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_ALTPLATFORM_INFO_V2 = *opaque{
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: SP_ALTPLATFORM_INFO_V1
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_ALTPLATFORM_INFO_V1 = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_ORIGINAL_FILE_INFO_A
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_ORIGINAL_FILE_INFO_A = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_ORIGINAL_FILE_INFO_W
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_ORIGINAL_FILE_INFO_W = *opaque{
+};
+// --------------------------------------------------------
+// Type: PSP_FILE_CALLBACK_A
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PSP_FILE_CALLBACK_A = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PSP_FILE_CALLBACK_W
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PSP_FILE_CALLBACK_W = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: FILEPATHS_A
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const FILEPATHS_A = *opaque{
+};
+// --------------------------------------------------------
+// Type: FILEPATHS_W
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const FILEPATHS_W = *opaque{
+};
+// --------------------------------------------------------
+// Type: FILEPATHS_SIGNERINFO_A
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const FILEPATHS_SIGNERINFO_A = *opaque{
+};
+// --------------------------------------------------------
+// Type: FILEPATHS_SIGNERINFO_W
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const FILEPATHS_SIGNERINFO_W = *opaque{
+};
+// --------------------------------------------------------
+// Type: SOURCE_MEDIA_A
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SOURCE_MEDIA_A = *opaque{
+};
+// --------------------------------------------------------
+// Type: SOURCE_MEDIA_W
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SOURCE_MEDIA_W = *opaque{
+};
+// --------------------------------------------------------
+// Type: CABINET_INFO_A
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const CABINET_INFO_A = *opaque{
+};
+// --------------------------------------------------------
+// Type: CABINET_INFO_W
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const CABINET_INFO_W = *opaque{
+};
+// --------------------------------------------------------
+// Type: FILE_IN_CABINET_INFO_A
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const FILE_IN_CABINET_INFO_A = *opaque{
+};
+// --------------------------------------------------------
+// Type: FILE_IN_CABINET_INFO_W
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const FILE_IN_CABINET_INFO_W = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_REGISTER_CONTROL_STATUSA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_REGISTER_CONTROL_STATUSA = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_REGISTER_CONTROL_STATUSW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_REGISTER_CONTROL_STATUSW = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_FILE_COPY_PARAMS_A
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_FILE_COPY_PARAMS_A = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_FILE_COPY_PARAMS_W
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_FILE_COPY_PARAMS_W = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_INF_SIGNER_INFO_V1_A
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_INF_SIGNER_INFO_V1_A = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_INF_SIGNER_INFO_V1_W
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_INF_SIGNER_INFO_V1_W = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_INF_SIGNER_INFO_V2_A
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_INF_SIGNER_INFO_V2_A = *opaque{
+};
+// --------------------------------------------------------
+// Type: SP_INF_SIGNER_INFO_V2_W
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const SP_INF_SIGNER_INFO_V2_W = *opaque{
+};
+// --------------------------------------------------------
+// Type: ACTCTXA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ACTCTXA = extern struct {
+    cbSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    lpSource: {"kind""Ptr","child":{"kind":"SByte"}},
+    wProcessorArchitecture: {"kind":"UInt16"},
+    wLangId: {"kind":"UInt16"},
+    lpAssemblyDirectory: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpResourceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpApplicationName: {"kind""Ptr","child":{"kind":"SByte"}},
+    hModule: {"kind":"IntPtr"},
+};
+// --------------------------------------------------------
+// Type: ACTCTXW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ACTCTXW = extern struct {
+    cbSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    lpSource: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wProcessorArchitecture: {"kind":"UInt16"},
+    wLangId: {"kind":"UInt16"},
+    lpAssemblyDirectory: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpResourceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpApplicationName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hModule: {"kind":"IntPtr"},
+};
+// --------------------------------------------------------
+// Type: ACTCTX_SECTION_KEYED_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ACTCTX_SECTION_KEYED_DATA = extern struct {
+    cbSize: {"kind":"UInt32"},
+    ulDataFormatVersion: {"kind":"UInt32"},
+    lpData: {"kind""Ptr","child":{"kind":"Void"}},
+    ulLength: {"kind":"UInt32"},
+    lpSectionGlobalData: {"kind""Ptr","child":{"kind":"Void"}},
+    ulSectionGlobalDataLength: {"kind":"UInt32"},
+    lpSectionBase: {"kind""Ptr","child":{"kind":"Void"}},
+    ulSectionTotalLength: {"kind":"UInt32"},
+    hActCtx: Windows.Win32.SystemServices.HANDLE,
+    ulAssemblyRosterIndex: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    AssemblyMetadata: Windows.Win32.WindowsProgramming.ACTCTX_SECTION_KEYED_DATA_ASSEMBLY_METADATA,
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiCloseHandle(
+    hAny: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiCloseAllHandles(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSetInternalUI(
+    dwUILevel: Windows.Win32.ApplicationInstallationAndServicing.INSTALLUILEVEL,
+    phWnd: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.HWND},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSetExternalUIA(
+    puiHandler: Windows.Win32.ApplicationInstallationAndServicing.INSTALLUI_HANDLERA,
+    dwMessageFilter: {"kind":"UInt32"},
+    pvContext: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSetExternalUIW(
+    puiHandler: Windows.Win32.ApplicationInstallationAndServicing.INSTALLUI_HANDLERW,
+    dwMessageFilter: {"kind":"UInt32"},
+    pvContext: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSetExternalUIRecord(
+    puiHandler: Windows.Win32.ApplicationInstallationAndServicing.INSTALLUI_HANDLER_RECORD,
+    dwMessageFilter: {"kind":"UInt32"},
+    pvContext: {"kind""Ptr","child":{"kind":"Void"}},
+    ppuiPrevHandler: Windows.Win32.ApplicationInstallationAndServicing.PINSTALLUI_HANDLER_RECORD,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEnableLogA(
+    dwLogMode: {"kind":"UInt32"},
+    szLogFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwLogAttributes: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEnableLogW(
+    dwLogMode: {"kind":"UInt32"},
+    szLogFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwLogAttributes: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiQueryProductStateA(
+    szProduct: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiQueryProductStateW(
+    szProduct: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetProductInfoA(
+    szProduct: {"kind""Ptr","child":{"kind":"SByte"}},
+    szAttribute: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpValueBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchValueBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetProductInfoW(
+    szProduct: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szAttribute: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpValueBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchValueBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetProductInfoExA(
+    szProductCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    szProperty: {"kind""Ptr","child":{"kind":"SByte"}},
+    szValue: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchValue: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetProductInfoExW(
+    szProductCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    szProperty: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szValue: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchValue: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiInstallProductA(
+    szPackagePath: {"kind""Ptr","child":{"kind":"SByte"}},
+    szCommandLine: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiInstallProductW(
+    szPackagePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szCommandLine: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiConfigureProductA(
+    szProduct: {"kind""Ptr","child":{"kind":"SByte"}},
+    iInstallLevel: {"kind":"Int32"},
+    eInstallState: Windows.Win32.ApplicationInstallationAndServicing.INSTALLSTATE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiConfigureProductW(
+    szProduct: {"kind""Ptr","child":{"kind":"UInt16"}},
+    iInstallLevel: {"kind":"Int32"},
+    eInstallState: Windows.Win32.ApplicationInstallationAndServicing.INSTALLSTATE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiConfigureProductExA(
+    szProduct: {"kind""Ptr","child":{"kind":"SByte"}},
+    iInstallLevel: {"kind":"Int32"},
+    eInstallState: Windows.Win32.ApplicationInstallationAndServicing.INSTALLSTATE,
+    szCommandLine: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiConfigureProductExW(
+    szProduct: {"kind""Ptr","child":{"kind":"UInt16"}},
+    iInstallLevel: {"kind":"Int32"},
+    eInstallState: Windows.Win32.ApplicationInstallationAndServicing.INSTALLSTATE,
+    szCommandLine: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiReinstallProductA(
+    szProduct: {"kind""Ptr","child":{"kind":"SByte"}},
+    szReinstallMode: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiReinstallProductW(
+    szProduct: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szReinstallMode: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiAdvertiseProductExA(
+    szPackagePath: {"kind""Ptr","child":{"kind":"SByte"}},
+    szScriptfilePath: {"kind""Ptr","child":{"kind":"SByte"}},
+    szTransforms: {"kind""Ptr","child":{"kind":"SByte"}},
+    lgidLanguage: {"kind":"UInt16"},
+    dwPlatform: {"kind":"UInt32"},
+    dwOptions: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiAdvertiseProductExW(
+    szPackagePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szScriptfilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szTransforms: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lgidLanguage: {"kind":"UInt16"},
+    dwPlatform: {"kind":"UInt32"},
+    dwOptions: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiAdvertiseProductA(
+    szPackagePath: {"kind""Ptr","child":{"kind":"SByte"}},
+    szScriptfilePath: {"kind""Ptr","child":{"kind":"SByte"}},
+    szTransforms: {"kind""Ptr","child":{"kind":"SByte"}},
+    lgidLanguage: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiAdvertiseProductW(
+    szPackagePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szScriptfilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szTransforms: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lgidLanguage: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiProcessAdvertiseScriptA(
+    szScriptFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    szIconFolder: {"kind""Ptr","child":{"kind":"SByte"}},
+    hRegData: Windows.Win32.WindowsProgramming.HKEY,
+    fShortcuts: Windows.Win32.SystemServices.BOOL,
+    fRemoveItems: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiProcessAdvertiseScriptW(
+    szScriptFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szIconFolder: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hRegData: Windows.Win32.WindowsProgramming.HKEY,
+    fShortcuts: Windows.Win32.SystemServices.BOOL,
+    fRemoveItems: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiAdvertiseScriptA(
+    szScriptFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwFlags: {"kind":"UInt32"},
+    phRegData: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.HKEY},
+    fRemoveItems: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiAdvertiseScriptW(
+    szScriptFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+    phRegData: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.HKEY},
+    fRemoveItems: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetProductInfoFromScriptA(
+    szScriptFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpProductBuf39: {"kind""Ptr","child":{"kind":"SByte"}},
+    plgidLanguage: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pdwVersion: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpNameBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchNameBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpPackageBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchPackageBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetProductInfoFromScriptW(
+    szScriptFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpProductBuf39: {"kind""Ptr","child":{"kind":"UInt16"}},
+    plgidLanguage: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pdwVersion: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpNameBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchNameBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpPackageBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchPackageBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetProductCodeA(
+    szComponent: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpBuf39: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetProductCodeW(
+    szComponent: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpBuf39: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetUserInfoA(
+    szProduct: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpUserNameBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchUserNameBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpOrgNameBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchOrgNameBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpSerialBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchSerialBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetUserInfoW(
+    szProduct: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpUserNameBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchUserNameBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpOrgNameBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchOrgNameBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpSerialBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchSerialBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiCollectUserInfoA(
+    szProduct: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiCollectUserInfoW(
+    szProduct: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiApplyPatchA(
+    szPatchPackage: {"kind""Ptr","child":{"kind":"SByte"}},
+    szInstallPackage: {"kind""Ptr","child":{"kind":"SByte"}},
+    eInstallType: Windows.Win32.ApplicationInstallationAndServicing.INSTALLTYPE,
+    szCommandLine: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiApplyPatchW(
+    szPatchPackage: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szInstallPackage: {"kind""Ptr","child":{"kind":"UInt16"}},
+    eInstallType: Windows.Win32.ApplicationInstallationAndServicing.INSTALLTYPE,
+    szCommandLine: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetPatchInfoA(
+    szPatch: {"kind""Ptr","child":{"kind":"SByte"}},
+    szAttribute: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpValueBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchValueBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetPatchInfoW(
+    szPatch: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szAttribute: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpValueBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchValueBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEnumPatchesA(
+    szProduct: {"kind""Ptr","child":{"kind":"SByte"}},
+    iPatchIndex: {"kind":"UInt32"},
+    lpPatchBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpTransformsBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchTransformsBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEnumPatchesW(
+    szProduct: {"kind""Ptr","child":{"kind":"UInt16"}},
+    iPatchIndex: {"kind":"UInt32"},
+    lpPatchBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpTransformsBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchTransformsBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiRemovePatchesA(
+    szPatchList: {"kind""Ptr","child":{"kind":"SByte"}},
+    szProductCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    eUninstallType: Windows.Win32.ApplicationInstallationAndServicing.INSTALLTYPE,
+    szPropertyList: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiRemovePatchesW(
+    szPatchList: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szProductCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    eUninstallType: Windows.Win32.ApplicationInstallationAndServicing.INSTALLTYPE,
+    szPropertyList: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiExtractPatchXMLDataA(
+    szPatchPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwReserved: {"kind":"UInt32"},
+    szXMLData: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchXMLData: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiExtractPatchXMLDataW(
+    szPatchPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwReserved: {"kind":"UInt32"},
+    szXMLData: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchXMLData: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetPatchInfoExA(
+    szPatchCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    szProductCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    szProperty: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpValue: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchValue: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetPatchInfoExW(
+    szPatchCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szProductCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    szProperty: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpValue: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchValue: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiApplyMultiplePatchesA(
+    szPatchPackages: {"kind""Ptr","child":{"kind":"SByte"}},
+    szProductCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    szPropertiesList: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiApplyMultiplePatchesW(
+    szPatchPackages: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szProductCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szPropertiesList: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiDeterminePatchSequenceA(
+    szProductCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    cPatchInfo: {"kind":"UInt32"},
+    pPatchInfo: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.MSIPATCHSEQUENCEINFOA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiDeterminePatchSequenceW(
+    szProductCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    cPatchInfo: {"kind":"UInt32"},
+    pPatchInfo: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.MSIPATCHSEQUENCEINFOW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiDetermineApplicablePatchesA(
+    szProductPackagePath: {"kind""Ptr","child":{"kind":"SByte"}},
+    cPatchInfo: {"kind":"UInt32"},
+    pPatchInfo: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.MSIPATCHSEQUENCEINFOA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiDetermineApplicablePatchesW(
+    szProductPackagePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cPatchInfo: {"kind":"UInt32"},
+    pPatchInfo: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.MSIPATCHSEQUENCEINFOW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEnumPatchesExA(
+    szProductCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwContext: {"kind":"UInt32"},
+    dwFilter: {"kind":"UInt32"},
+    dwIndex: {"kind":"UInt32"},
+    szPatchCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    szTargetProductCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    pdwTargetProductContext: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT},
+    szTargetUserSid: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchTargetUserSid: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEnumPatchesExW(
+    szProductCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwContext: {"kind":"UInt32"},
+    dwFilter: {"kind":"UInt32"},
+    dwIndex: {"kind":"UInt32"},
+    szPatchCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szTargetProductCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pdwTargetProductContext: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT},
+    szTargetUserSid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchTargetUserSid: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiQueryFeatureStateA(
+    szProduct: {"kind""Ptr","child":{"kind":"SByte"}},
+    szFeature: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiQueryFeatureStateW(
+    szProduct: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szFeature: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiQueryFeatureStateExA(
+    szProductCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    szFeature: {"kind""Ptr","child":{"kind":"SByte"}},
+    pdwState: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INSTALLSTATE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiQueryFeatureStateExW(
+    szProductCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    szFeature: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pdwState: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INSTALLSTATE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiUseFeatureA(
+    szProduct: {"kind""Ptr","child":{"kind":"SByte"}},
+    szFeature: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiUseFeatureW(
+    szProduct: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szFeature: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiUseFeatureExA(
+    szProduct: {"kind""Ptr","child":{"kind":"SByte"}},
+    szFeature: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwInstallMode: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiUseFeatureExW(
+    szProduct: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szFeature: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwInstallMode: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetFeatureUsageA(
+    szProduct: {"kind""Ptr","child":{"kind":"SByte"}},
+    szFeature: {"kind""Ptr","child":{"kind":"SByte"}},
+    pdwUseCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pwDateUsed: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetFeatureUsageW(
+    szProduct: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szFeature: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pdwUseCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pwDateUsed: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiConfigureFeatureA(
+    szProduct: {"kind""Ptr","child":{"kind":"SByte"}},
+    szFeature: {"kind""Ptr","child":{"kind":"SByte"}},
+    eInstallState: Windows.Win32.ApplicationInstallationAndServicing.INSTALLSTATE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiConfigureFeatureW(
+    szProduct: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szFeature: {"kind""Ptr","child":{"kind":"UInt16"}},
+    eInstallState: Windows.Win32.ApplicationInstallationAndServicing.INSTALLSTATE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiReinstallFeatureA(
+    szProduct: {"kind""Ptr","child":{"kind":"SByte"}},
+    szFeature: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwReinstallMode: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiReinstallFeatureW(
+    szProduct: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szFeature: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwReinstallMode: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiProvideComponentA(
+    szProduct: {"kind""Ptr","child":{"kind":"SByte"}},
+    szFeature: {"kind""Ptr","child":{"kind":"SByte"}},
+    szComponent: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwInstallMode: {"kind":"UInt32"},
+    lpPathBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchPathBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiProvideComponentW(
+    szProduct: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szFeature: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szComponent: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwInstallMode: {"kind":"UInt32"},
+    lpPathBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchPathBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiProvideQualifiedComponentA(
+    szCategory: {"kind""Ptr","child":{"kind":"SByte"}},
+    szQualifier: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwInstallMode: {"kind":"UInt32"},
+    lpPathBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchPathBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiProvideQualifiedComponentW(
+    szCategory: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szQualifier: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwInstallMode: {"kind":"UInt32"},
+    lpPathBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchPathBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiProvideQualifiedComponentExA(
+    szCategory: {"kind""Ptr","child":{"kind":"SByte"}},
+    szQualifier: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwInstallMode: {"kind":"UInt32"},
+    szProduct: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwUnused1: {"kind":"UInt32"},
+    dwUnused2: {"kind":"UInt32"},
+    lpPathBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchPathBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiProvideQualifiedComponentExW(
+    szCategory: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szQualifier: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwInstallMode: {"kind":"UInt32"},
+    szProduct: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwUnused1: {"kind":"UInt32"},
+    dwUnused2: {"kind":"UInt32"},
+    lpPathBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchPathBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetComponentPathA(
+    szProduct: {"kind""Ptr","child":{"kind":"SByte"}},
+    szComponent: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpPathBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetComponentPathW(
+    szProduct: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szComponent: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpPathBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetComponentPathExA(
+    szProductCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    szComponentCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    lpOutPathBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchOutPathBuffer: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetComponentPathExW(
+    szProductCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szComponentCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    lpOutPathBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchOutPathBuffer: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiProvideAssemblyA(
+    szAssemblyName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szAppContext: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwInstallMode: {"kind":"UInt32"},
+    dwAssemblyInfo: {"kind":"UInt32"},
+    lpPathBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchPathBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiProvideAssemblyW(
+    szAssemblyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szAppContext: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwInstallMode: {"kind":"UInt32"},
+    dwAssemblyInfo: {"kind":"UInt32"},
+    lpPathBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchPathBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiQueryComponentStateA(
+    szProductCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    szComponentCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    pdwState: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INSTALLSTATE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiQueryComponentStateW(
+    szProductCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    szComponentCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pdwState: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INSTALLSTATE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEnumProductsA(
+    iProductIndex: {"kind":"UInt32"},
+    lpProductBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEnumProductsW(
+    iProductIndex: {"kind":"UInt32"},
+    lpProductBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEnumProductsExA(
+    szProductCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwContext: {"kind":"UInt32"},
+    dwIndex: {"kind":"UInt32"},
+    szInstalledProductCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    pdwInstalledContext: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT},
+    szSid: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchSid: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEnumProductsExW(
+    szProductCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwContext: {"kind":"UInt32"},
+    dwIndex: {"kind":"UInt32"},
+    szInstalledProductCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pdwInstalledContext: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT},
+    szSid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchSid: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEnumRelatedProductsA(
+    lpUpgradeCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwReserved: {"kind":"UInt32"},
+    iProductIndex: {"kind":"UInt32"},
+    lpProductBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEnumRelatedProductsW(
+    lpUpgradeCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwReserved: {"kind":"UInt32"},
+    iProductIndex: {"kind":"UInt32"},
+    lpProductBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEnumFeaturesA(
+    szProduct: {"kind""Ptr","child":{"kind":"SByte"}},
+    iFeatureIndex: {"kind":"UInt32"},
+    lpFeatureBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpParentBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEnumFeaturesW(
+    szProduct: {"kind""Ptr","child":{"kind":"UInt16"}},
+    iFeatureIndex: {"kind":"UInt32"},
+    lpFeatureBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpParentBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEnumComponentsA(
+    iComponentIndex: {"kind":"UInt32"},
+    lpComponentBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEnumComponentsW(
+    iComponentIndex: {"kind":"UInt32"},
+    lpComponentBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEnumComponentsExA(
+    szUserSid: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwContext: {"kind":"UInt32"},
+    dwIndex: {"kind":"UInt32"},
+    szInstalledComponentCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    pdwInstalledContext: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT},
+    szSid: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchSid: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEnumComponentsExW(
+    szUserSid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwContext: {"kind":"UInt32"},
+    dwIndex: {"kind":"UInt32"},
+    szInstalledComponentCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pdwInstalledContext: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT},
+    szSid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchSid: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEnumClientsA(
+    szComponent: {"kind""Ptr","child":{"kind":"SByte"}},
+    iProductIndex: {"kind":"UInt32"},
+    lpProductBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEnumClientsW(
+    szComponent: {"kind""Ptr","child":{"kind":"UInt16"}},
+    iProductIndex: {"kind":"UInt32"},
+    lpProductBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEnumClientsExA(
+    szComponent: {"kind""Ptr","child":{"kind":"SByte"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwContext: {"kind":"UInt32"},
+    dwProductIndex: {"kind":"UInt32"},
+    szProductBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pdwInstalledContext: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT},
+    szSid: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchSid: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEnumClientsExW(
+    szComponent: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwContext: {"kind":"UInt32"},
+    dwProductIndex: {"kind":"UInt32"},
+    szProductBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pdwInstalledContext: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT},
+    szSid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchSid: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEnumComponentQualifiersA(
+    szComponent: {"kind""Ptr","child":{"kind":"SByte"}},
+    iIndex: {"kind":"UInt32"},
+    lpQualifierBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchQualifierBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpApplicationDataBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchApplicationDataBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEnumComponentQualifiersW(
+    szComponent: {"kind""Ptr","child":{"kind":"UInt16"}},
+    iIndex: {"kind":"UInt32"},
+    lpQualifierBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchQualifierBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpApplicationDataBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchApplicationDataBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiOpenProductA(
+    szProduct: {"kind""Ptr","child":{"kind":"SByte"}},
+    hProduct: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiOpenProductW(
+    szProduct: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hProduct: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiOpenPackageA(
+    szPackagePath: {"kind""Ptr","child":{"kind":"SByte"}},
+    hProduct: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiOpenPackageW(
+    szPackagePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hProduct: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiOpenPackageExA(
+    szPackagePath: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwOptions: {"kind":"UInt32"},
+    hProduct: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiOpenPackageExW(
+    szPackagePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwOptions: {"kind":"UInt32"},
+    hProduct: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetPatchFileListA(
+    szProductCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    szPatchPackages: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcFiles: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pphFileRecords: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt32"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetPatchFileListW(
+    szProductCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szPatchPackages: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcFiles: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pphFileRecords: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt32"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetProductPropertyA(
+    hProduct: {"kind":"UInt32"},
+    szProperty: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpValueBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchValueBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetProductPropertyW(
+    hProduct: {"kind":"UInt32"},
+    szProperty: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpValueBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchValueBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiVerifyPackageA(
+    szPackagePath: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiVerifyPackageW(
+    szPackagePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetFeatureInfoA(
+    hProduct: {"kind":"UInt32"},
+    szFeature: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpAttributes: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpTitleBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchTitleBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpHelpBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchHelpBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetFeatureInfoW(
+    hProduct: {"kind":"UInt32"},
+    szFeature: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpAttributes: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpTitleBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchTitleBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpHelpBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchHelpBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiInstallMissingComponentA(
+    szProduct: {"kind""Ptr","child":{"kind":"SByte"}},
+    szComponent: {"kind""Ptr","child":{"kind":"SByte"}},
+    eInstallState: Windows.Win32.ApplicationInstallationAndServicing.INSTALLSTATE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiInstallMissingComponentW(
+    szProduct: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szComponent: {"kind""Ptr","child":{"kind":"UInt16"}},
+    eInstallState: Windows.Win32.ApplicationInstallationAndServicing.INSTALLSTATE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiInstallMissingFileA(
+    szProduct: {"kind""Ptr","child":{"kind":"SByte"}},
+    szFile: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiInstallMissingFileW(
+    szProduct: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiLocateComponentA(
+    szComponent: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpPathBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiLocateComponentW(
+    szComponent: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpPathBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSourceListClearAllA(
+    szProduct: {"kind""Ptr","child":{"kind":"SByte"}},
+    szUserName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSourceListClearAllW(
+    szProduct: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szUserName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSourceListAddSourceA(
+    szProduct: {"kind""Ptr","child":{"kind":"SByte"}},
+    szUserName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwReserved: {"kind":"UInt32"},
+    szSource: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSourceListAddSourceW(
+    szProduct: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szUserName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwReserved: {"kind":"UInt32"},
+    szSource: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSourceListForceResolutionA(
+    szProduct: {"kind""Ptr","child":{"kind":"SByte"}},
+    szUserName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSourceListForceResolutionW(
+    szProduct: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szUserName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSourceListAddSourceExA(
+    szProductCodeOrPatchCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    dwOptions: {"kind":"UInt32"},
+    szSource: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwIndex: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSourceListAddSourceExW(
+    szProductCodeOrPatchCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    dwOptions: {"kind":"UInt32"},
+    szSource: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwIndex: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSourceListAddMediaDiskA(
+    szProductCodeOrPatchCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    dwOptions: {"kind":"UInt32"},
+    dwDiskId: {"kind":"UInt32"},
+    szVolumeLabel: {"kind""Ptr","child":{"kind":"SByte"}},
+    szDiskPrompt: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSourceListAddMediaDiskW(
+    szProductCodeOrPatchCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    dwOptions: {"kind":"UInt32"},
+    dwDiskId: {"kind":"UInt32"},
+    szVolumeLabel: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szDiskPrompt: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSourceListClearSourceA(
+    szProductCodeOrPatchCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    dwOptions: {"kind":"UInt32"},
+    szSource: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSourceListClearSourceW(
+    szProductCodeOrPatchCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    dwOptions: {"kind":"UInt32"},
+    szSource: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSourceListClearMediaDiskA(
+    szProductCodeOrPatchCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    dwOptions: {"kind":"UInt32"},
+    dwDiskId: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSourceListClearMediaDiskW(
+    szProductCodeOrPatchCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    dwOptions: {"kind":"UInt32"},
+    dwDiskId: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSourceListClearAllExA(
+    szProductCodeOrPatchCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    dwOptions: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSourceListClearAllExW(
+    szProductCodeOrPatchCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    dwOptions: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSourceListForceResolutionExA(
+    szProductCodeOrPatchCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    dwOptions: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSourceListForceResolutionExW(
+    szProductCodeOrPatchCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    dwOptions: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSourceListSetInfoA(
+    szProductCodeOrPatchCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    dwOptions: {"kind":"UInt32"},
+    szProperty: {"kind""Ptr","child":{"kind":"SByte"}},
+    szValue: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSourceListSetInfoW(
+    szProductCodeOrPatchCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    dwOptions: {"kind":"UInt32"},
+    szProperty: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szValue: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSourceListGetInfoA(
+    szProductCodeOrPatchCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    dwOptions: {"kind":"UInt32"},
+    szProperty: {"kind""Ptr","child":{"kind":"SByte"}},
+    szValue: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchValue: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSourceListGetInfoW(
+    szProductCodeOrPatchCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    dwOptions: {"kind":"UInt32"},
+    szProperty: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szValue: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchValue: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSourceListEnumSourcesA(
+    szProductCodeOrPatchCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    dwOptions: {"kind":"UInt32"},
+    dwIndex: {"kind":"UInt32"},
+    szSource: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchSource: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSourceListEnumSourcesW(
+    szProductCodeOrPatchCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    dwOptions: {"kind":"UInt32"},
+    dwIndex: {"kind":"UInt32"},
+    szSource: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchSource: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSourceListEnumMediaDisksA(
+    szProductCodeOrPatchCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    dwOptions: {"kind":"UInt32"},
+    dwIndex: {"kind":"UInt32"},
+    pdwDiskId: {"kind""Ptr","child":{"kind":"UInt32"}},
+    szVolumeLabel: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchVolumeLabel: {"kind""Ptr","child":{"kind":"UInt32"}},
+    szDiskPrompt: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchDiskPrompt: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSourceListEnumMediaDisksW(
+    szProductCodeOrPatchCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szUserSid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwContext: Windows.Win32.ApplicationInstallationAndServicing.MSIINSTALLCONTEXT,
+    dwOptions: {"kind":"UInt32"},
+    dwIndex: {"kind":"UInt32"},
+    pdwDiskId: {"kind""Ptr","child":{"kind":"UInt32"}},
+    szVolumeLabel: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchVolumeLabel: {"kind""Ptr","child":{"kind":"UInt32"}},
+    szDiskPrompt: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchDiskPrompt: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetFileVersionA(
+    szFilePath: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpVersionBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchVersionBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpLangBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchLangBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetFileVersionW(
+    szFilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpVersionBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchVersionBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpLangBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchLangBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetFileHashA(
+    szFilePath: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwOptions: {"kind":"UInt32"},
+    pHash: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.MSIFILEHASHINFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetFileHashW(
+    szFilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwOptions: {"kind":"UInt32"},
+    pHash: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.MSIFILEHASHINFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetFileSignatureInformationA(
+    szSignedObjectPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwFlags: {"kind":"UInt32"},
+    ppcCertContext: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Security.CERT_CONTEXT}},
+    pbHashData: {"kind""Ptr","child":{"kind":"Byte"}},
+    pcbHashData: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetFileSignatureInformationW(
+    szSignedObjectPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+    ppcCertContext: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Security.CERT_CONTEXT}},
+    pbHashData: {"kind""Ptr","child":{"kind":"Byte"}},
+    pcbHashData: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetShortcutTargetA(
+    szShortcutPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    szProductCode: {"kind""Ptr","child":{"kind":"SByte"}},
+    szFeatureId: {"kind""Ptr","child":{"kind":"SByte"}},
+    szComponentCode: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetShortcutTargetW(
+    szShortcutPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szProductCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szFeatureId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szComponentCode: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiIsProductElevatedA(
+    szProduct: {"kind""Ptr","child":{"kind":"SByte"}},
+    pfElevated: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiIsProductElevatedW(
+    szProduct: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pfElevated: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiNotifySidChangeA(
+    pOldSid: {"kind""Ptr","child":{"kind":"SByte"}},
+    pNewSid: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiNotifySidChangeW(
+    pOldSid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pNewSid: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiBeginTransactionA(
+    szName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwTransactionAttributes: {"kind":"UInt32"},
+    phTransactionHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+    phChangeOfOwnerEvent: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiBeginTransactionW(
+    szName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwTransactionAttributes: {"kind":"UInt32"},
+    phTransactionHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+    phChangeOfOwnerEvent: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEndTransaction(
+    dwTransactionState: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiJoinTransaction(
+    hTransactionHandle: {"kind":"UInt32"},
+    dwTransactionAttributes: {"kind":"UInt32"},
+    phChangeOfOwnerEvent: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiDatabaseOpenViewA(
+    hDatabase: {"kind":"UInt32"},
+    szQuery: {"kind""Ptr","child":{"kind":"SByte"}},
+    phView: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiDatabaseOpenViewW(
+    hDatabase: {"kind":"UInt32"},
+    szQuery: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phView: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiViewGetErrorA(
+    hView: {"kind":"UInt32"},
+    szColumnNameBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiViewGetErrorW(
+    hView: {"kind":"UInt32"},
+    szColumnNameBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiViewExecute(
+    hView: {"kind":"UInt32"},
+    hRecord: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiViewFetch(
+    hView: {"kind":"UInt32"},
+    phRecord: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiViewModify(
+    hView: {"kind":"UInt32"},
+    eModifyMode: Windows.Win32.ApplicationInstallationAndServicing.MSIMODIFY,
+    hRecord: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiViewGetColumnInfo(
+    hView: {"kind":"UInt32"},
+    eColumnInfo: Windows.Win32.ApplicationInstallationAndServicing.MSICOLINFO,
+    phRecord: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiViewClose(
+    hView: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiDatabaseGetPrimaryKeysA(
+    hDatabase: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"SByte"}},
+    phRecord: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiDatabaseGetPrimaryKeysW(
+    hDatabase: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phRecord: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiDatabaseIsTablePersistentA(
+    hDatabase: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiDatabaseIsTablePersistentW(
+    hDatabase: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetSummaryInformationA(
+    hDatabase: {"kind":"UInt32"},
+    szDatabasePath: {"kind""Ptr","child":{"kind":"SByte"}},
+    uiUpdateCount: {"kind":"UInt32"},
+    phSummaryInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetSummaryInformationW(
+    hDatabase: {"kind":"UInt32"},
+    szDatabasePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    uiUpdateCount: {"kind":"UInt32"},
+    phSummaryInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSummaryInfoGetPropertyCount(
+    hSummaryInfo: {"kind":"UInt32"},
+    puiPropertyCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSummaryInfoSetPropertyA(
+    hSummaryInfo: {"kind":"UInt32"},
+    uiProperty: {"kind":"UInt32"},
+    uiDataType: {"kind":"UInt32"},
+    iValue: {"kind":"Int32"},
+    pftValue: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+    szValue: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSummaryInfoSetPropertyW(
+    hSummaryInfo: {"kind":"UInt32"},
+    uiProperty: {"kind":"UInt32"},
+    uiDataType: {"kind":"UInt32"},
+    iValue: {"kind":"Int32"},
+    pftValue: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+    szValue: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSummaryInfoGetPropertyA(
+    hSummaryInfo: {"kind":"UInt32"},
+    uiProperty: {"kind":"UInt32"},
+    puiDataType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    piValue: {"kind""Ptr","child":{"kind":"Int32"}},
+    pftValue: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+    szValueBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchValueBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSummaryInfoGetPropertyW(
+    hSummaryInfo: {"kind":"UInt32"},
+    uiProperty: {"kind":"UInt32"},
+    puiDataType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    piValue: {"kind""Ptr","child":{"kind":"Int32"}},
+    pftValue: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+    szValueBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchValueBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSummaryInfoPersist(
+    hSummaryInfo: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiOpenDatabaseA(
+    szDatabasePath: {"kind""Ptr","child":{"kind":"SByte"}},
+    szPersist: {"kind""Ptr","child":{"kind":"SByte"}},
+    phDatabase: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiOpenDatabaseW(
+    szDatabasePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szPersist: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phDatabase: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiDatabaseImportA(
+    hDatabase: {"kind":"UInt32"},
+    szFolderPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    szFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiDatabaseImportW(
+    hDatabase: {"kind":"UInt32"},
+    szFolderPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiDatabaseExportA(
+    hDatabase: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szFolderPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    szFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiDatabaseExportW(
+    hDatabase: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szFolderPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiDatabaseMergeA(
+    hDatabase: {"kind":"UInt32"},
+    hDatabaseMerge: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiDatabaseMergeW(
+    hDatabase: {"kind":"UInt32"},
+    hDatabaseMerge: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiDatabaseGenerateTransformA(
+    hDatabase: {"kind":"UInt32"},
+    hDatabaseReference: {"kind":"UInt32"},
+    szTransformFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    iReserved1: {"kind":"Int32"},
+    iReserved2: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiDatabaseGenerateTransformW(
+    hDatabase: {"kind":"UInt32"},
+    hDatabaseReference: {"kind":"UInt32"},
+    szTransformFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    iReserved1: {"kind":"Int32"},
+    iReserved2: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiDatabaseApplyTransformA(
+    hDatabase: {"kind":"UInt32"},
+    szTransformFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    iErrorConditions: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiDatabaseApplyTransformW(
+    hDatabase: {"kind":"UInt32"},
+    szTransformFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    iErrorConditions: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiCreateTransformSummaryInfoA(
+    hDatabase: {"kind":"UInt32"},
+    hDatabaseReference: {"kind":"UInt32"},
+    szTransformFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    iErrorConditions: {"kind":"Int32"},
+    iValidation: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiCreateTransformSummaryInfoW(
+    hDatabase: {"kind":"UInt32"},
+    hDatabaseReference: {"kind":"UInt32"},
+    szTransformFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    iErrorConditions: {"kind":"Int32"},
+    iValidation: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiDatabaseCommit(
+    hDatabase: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetDatabaseState(
+    hDatabase: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiCreateRecord(
+    cParams: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiRecordIsNull(
+    hRecord: {"kind":"UInt32"},
+    iField: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiRecordDataSize(
+    hRecord: {"kind":"UInt32"},
+    iField: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiRecordSetInteger(
+    hRecord: {"kind":"UInt32"},
+    iField: {"kind":"UInt32"},
+    iValue: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiRecordSetStringA(
+    hRecord: {"kind":"UInt32"},
+    iField: {"kind":"UInt32"},
+    szValue: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiRecordSetStringW(
+    hRecord: {"kind":"UInt32"},
+    iField: {"kind":"UInt32"},
+    szValue: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiRecordGetInteger(
+    hRecord: {"kind":"UInt32"},
+    iField: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiRecordGetStringA(
+    hRecord: {"kind":"UInt32"},
+    iField: {"kind":"UInt32"},
+    szValueBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchValueBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiRecordGetStringW(
+    hRecord: {"kind":"UInt32"},
+    iField: {"kind":"UInt32"},
+    szValueBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchValueBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiRecordGetFieldCount(
+    hRecord: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiRecordSetStreamA(
+    hRecord: {"kind":"UInt32"},
+    iField: {"kind":"UInt32"},
+    szFilePath: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiRecordSetStreamW(
+    hRecord: {"kind":"UInt32"},
+    iField: {"kind":"UInt32"},
+    szFilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiRecordReadStream(
+    hRecord: {"kind":"UInt32"},
+    iField: {"kind":"UInt32"},
+    szDataBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcbDataBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiRecordClearData(
+    hRecord: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetActiveDatabase(
+    hInstall: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSetPropertyA(
+    hInstall: {"kind":"UInt32"},
+    szName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szValue: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSetPropertyW(
+    hInstall: {"kind":"UInt32"},
+    szName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szValue: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetPropertyA(
+    hInstall: {"kind":"UInt32"},
+    szName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szValueBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchValueBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetPropertyW(
+    hInstall: {"kind":"UInt32"},
+    szName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szValueBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchValueBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetLanguage(
+    hInstall: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetMode(
+    hInstall: {"kind":"UInt32"},
+    eRunMode: Windows.Win32.ApplicationInstallationAndServicing.MSIRUNMODE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSetMode(
+    hInstall: {"kind":"UInt32"},
+    eRunMode: Windows.Win32.ApplicationInstallationAndServicing.MSIRUNMODE,
+    fState: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiFormatRecordA(
+    hInstall: {"kind":"UInt32"},
+    hRecord: {"kind":"UInt32"},
+    szResultBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchResultBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiFormatRecordW(
+    hInstall: {"kind":"UInt32"},
+    hRecord: {"kind":"UInt32"},
+    szResultBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchResultBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiDoActionA(
+    hInstall: {"kind":"UInt32"},
+    szAction: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiDoActionW(
+    hInstall: {"kind":"UInt32"},
+    szAction: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSequenceA(
+    hInstall: {"kind":"UInt32"},
+    szTable: {"kind""Ptr","child":{"kind":"SByte"}},
+    iSequenceMode: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSequenceW(
+    hInstall: {"kind":"UInt32"},
+    szTable: {"kind""Ptr","child":{"kind":"UInt16"}},
+    iSequenceMode: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiProcessMessage(
+    hInstall: {"kind":"UInt32"},
+    eMessageType: Windows.Win32.ApplicationInstallationAndServicing.INSTALLMESSAGE,
+    hRecord: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEvaluateConditionA(
+    hInstall: {"kind":"UInt32"},
+    szCondition: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEvaluateConditionW(
+    hInstall: {"kind":"UInt32"},
+    szCondition: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetFeatureStateA(
+    hInstall: {"kind":"UInt32"},
+    szFeature: {"kind""Ptr","child":{"kind":"SByte"}},
+    piInstalled: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INSTALLSTATE},
+    piAction: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INSTALLSTATE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetFeatureStateW(
+    hInstall: {"kind":"UInt32"},
+    szFeature: {"kind""Ptr","child":{"kind":"UInt16"}},
+    piInstalled: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INSTALLSTATE},
+    piAction: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INSTALLSTATE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSetFeatureStateA(
+    hInstall: {"kind":"UInt32"},
+    szFeature: {"kind""Ptr","child":{"kind":"SByte"}},
+    iState: Windows.Win32.ApplicationInstallationAndServicing.INSTALLSTATE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSetFeatureStateW(
+    hInstall: {"kind":"UInt32"},
+    szFeature: {"kind""Ptr","child":{"kind":"UInt16"}},
+    iState: Windows.Win32.ApplicationInstallationAndServicing.INSTALLSTATE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSetFeatureAttributesA(
+    hInstall: {"kind":"UInt32"},
+    szFeature: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwAttributes: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSetFeatureAttributesW(
+    hInstall: {"kind":"UInt32"},
+    szFeature: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwAttributes: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetComponentStateA(
+    hInstall: {"kind":"UInt32"},
+    szComponent: {"kind""Ptr","child":{"kind":"SByte"}},
+    piInstalled: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INSTALLSTATE},
+    piAction: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INSTALLSTATE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetComponentStateW(
+    hInstall: {"kind":"UInt32"},
+    szComponent: {"kind""Ptr","child":{"kind":"UInt16"}},
+    piInstalled: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INSTALLSTATE},
+    piAction: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INSTALLSTATE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSetComponentStateA(
+    hInstall: {"kind":"UInt32"},
+    szComponent: {"kind""Ptr","child":{"kind":"SByte"}},
+    iState: Windows.Win32.ApplicationInstallationAndServicing.INSTALLSTATE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSetComponentStateW(
+    hInstall: {"kind":"UInt32"},
+    szComponent: {"kind""Ptr","child":{"kind":"UInt16"}},
+    iState: Windows.Win32.ApplicationInstallationAndServicing.INSTALLSTATE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetFeatureCostA(
+    hInstall: {"kind":"UInt32"},
+    szFeature: {"kind""Ptr","child":{"kind":"SByte"}},
+    iCostTree: Windows.Win32.ApplicationInstallationAndServicing.MSICOSTTREE,
+    iState: Windows.Win32.ApplicationInstallationAndServicing.INSTALLSTATE,
+    piCost: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetFeatureCostW(
+    hInstall: {"kind":"UInt32"},
+    szFeature: {"kind""Ptr","child":{"kind":"UInt16"}},
+    iCostTree: Windows.Win32.ApplicationInstallationAndServicing.MSICOSTTREE,
+    iState: Windows.Win32.ApplicationInstallationAndServicing.INSTALLSTATE,
+    piCost: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEnumComponentCostsA(
+    hInstall: {"kind":"UInt32"},
+    szComponent: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwIndex: {"kind":"UInt32"},
+    iState: Windows.Win32.ApplicationInstallationAndServicing.INSTALLSTATE,
+    szDriveBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchDriveBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+    piCost: {"kind""Ptr","child":{"kind":"Int32"}},
+    piTempCost: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEnumComponentCostsW(
+    hInstall: {"kind":"UInt32"},
+    szComponent: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwIndex: {"kind":"UInt32"},
+    iState: Windows.Win32.ApplicationInstallationAndServicing.INSTALLSTATE,
+    szDriveBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchDriveBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+    piCost: {"kind""Ptr","child":{"kind":"Int32"}},
+    piTempCost: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSetInstallLevel(
+    hInstall: {"kind":"UInt32"},
+    iInstallLevel: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetFeatureValidStatesA(
+    hInstall: {"kind":"UInt32"},
+    szFeature: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpInstallStates: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetFeatureValidStatesW(
+    hInstall: {"kind":"UInt32"},
+    szFeature: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpInstallStates: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetSourcePathA(
+    hInstall: {"kind":"UInt32"},
+    szFolder: {"kind""Ptr","child":{"kind":"SByte"}},
+    szPathBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchPathBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetSourcePathW(
+    hInstall: {"kind":"UInt32"},
+    szFolder: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szPathBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchPathBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetTargetPathA(
+    hInstall: {"kind":"UInt32"},
+    szFolder: {"kind""Ptr","child":{"kind":"SByte"}},
+    szPathBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchPathBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetTargetPathW(
+    hInstall: {"kind":"UInt32"},
+    szFolder: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szPathBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchPathBuf: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSetTargetPathA(
+    hInstall: {"kind":"UInt32"},
+    szFolder: {"kind""Ptr","child":{"kind":"SByte"}},
+    szFolderPath: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiSetTargetPathW(
+    hInstall: {"kind":"UInt32"},
+    szFolder: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szFolderPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiVerifyDiskSpace(
+    hInstall: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiEnableUIPreview(
+    hDatabase: {"kind":"UInt32"},
+    phPreview: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiPreviewDialogA(
+    hPreview: {"kind":"UInt32"},
+    szDialogName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiPreviewDialogW(
+    hPreview: {"kind":"UInt32"},
+    szDialogName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiPreviewBillboardA(
+    hPreview: {"kind":"UInt32"},
+    szControlName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szBillboard: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiPreviewBillboardW(
+    hPreview: {"kind":"UInt32"},
+    szControlName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szBillboard: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "msi" fn MsiGetLastErrorRecord(
+
+// set_last_errror=True (can and should we use this?)
+pub extern "sfc" fn SfcGetNextProtectedFile(
+    RpcHandle: Windows.Win32.SystemServices.HANDLE,
+    ProtFileData: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.PROTECTED_FILE_DATA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "sfc" fn SfcIsFileProtected(
+    RpcHandle: Windows.Win32.SystemServices.HANDLE,
+    ProtFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "sfc" fn SfcIsKeyProtected(
+    KeyHandle: Windows.Win32.WindowsProgramming.HKEY,
+    SubKeyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    KeySam: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "sfc" fn SfpVerifyFile(
+    pszFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszError: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwErrSize: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetInfInformationA(
+    InfSpec: {"kind""Ptr","child":{"kind":"Void"}},
+    SearchControl: {"kind":"UInt32"},
+    ReturnBuffer: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.SP_INF_INFORMATION},
+    ReturnBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetInfInformationW(
+    InfSpec: {"kind""Ptr","child":{"kind":"Void"}},
+    SearchControl: {"kind":"UInt32"},
+    ReturnBuffer: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.SP_INF_INFORMATION},
+    ReturnBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQueryInfFileInformationA(
+    InfInformation: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.SP_INF_INFORMATION},
+    InfIndex: {"kind":"UInt32"},
+    ReturnBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReturnBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQueryInfFileInformationW(
+    InfInformation: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.SP_INF_INFORMATION},
+    InfIndex: {"kind":"UInt32"},
+    ReturnBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReturnBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQueryInfOriginalFileInformationA(
+    InfInformation: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.SP_INF_INFORMATION},
+    InfIndex: {"kind":"UInt32"},
+    AlternatePlatformInfo: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.SP_ALTPLATFORM_INFO_V2},
+    OriginalFileInfo: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.SP_ORIGINAL_FILE_INFO_A},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQueryInfOriginalFileInformationW(
+    InfInformation: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.SP_INF_INFORMATION},
+    InfIndex: {"kind":"UInt32"},
+    AlternatePlatformInfo: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.SP_ALTPLATFORM_INFO_V2},
+    OriginalFileInfo: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.SP_ORIGINAL_FILE_INFO_W},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQueryInfVersionInformationA(
+    InfInformation: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.SP_INF_INFORMATION},
+    InfIndex: {"kind":"UInt32"},
+    Key: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReturnBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReturnBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQueryInfVersionInformationW(
+    InfInformation: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.SP_INF_INFORMATION},
+    InfIndex: {"kind":"UInt32"},
+    Key: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReturnBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReturnBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetInfFileListA(
+    DirectoryPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    InfStyle: {"kind":"UInt32"},
+    ReturnBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReturnBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetInfFileListW(
+    DirectoryPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InfStyle: {"kind":"UInt32"},
+    ReturnBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReturnBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupOpenInfFileW(
+    FileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InfClass: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InfStyle: {"kind":"UInt32"},
+    ErrorLine: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupOpenInfFileA(
+    FileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    InfClass: {"kind""Ptr","child":{"kind":"SByte"}},
+    InfStyle: {"kind":"UInt32"},
+    ErrorLine: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupOpenMasterInf(
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupOpenAppendInfFileW(
+    FileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    ErrorLine: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupOpenAppendInfFileA(
+    FileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    ErrorLine: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn SetupCloseInfFile(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupFindFirstLineA(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    Section: {"kind""Ptr","child":{"kind":"SByte"}},
+    Key: {"kind""Ptr","child":{"kind":"SByte"}},
+    Context: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupFindFirstLineW(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    Section: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Key: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Context: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupFindNextLine(
+    ContextIn: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+    ContextOut: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupFindNextMatchLineA(
+    ContextIn: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+    Key: {"kind""Ptr","child":{"kind":"SByte"}},
+    ContextOut: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupFindNextMatchLineW(
+    ContextIn: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+    Key: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ContextOut: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetLineByIndexA(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    Section: {"kind""Ptr","child":{"kind":"SByte"}},
+    Index: {"kind":"UInt32"},
+    Context: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetLineByIndexW(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    Section: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Index: {"kind":"UInt32"},
+    Context: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetLineCountA(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    Section: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetLineCountW(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    Section: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetLineTextA(
+    Context: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    Section: {"kind""Ptr","child":{"kind":"SByte"}},
+    Key: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReturnBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReturnBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetLineTextW(
+    Context: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    Section: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Key: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReturnBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReturnBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetFieldCount(
+    Context: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetStringFieldA(
+    Context: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+    FieldIndex: {"kind":"UInt32"},
+    ReturnBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReturnBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetStringFieldW(
+    Context: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+    FieldIndex: {"kind":"UInt32"},
+    ReturnBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReturnBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetIntField(
+    Context: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+    FieldIndex: {"kind":"UInt32"},
+    IntegerValue: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetMultiSzFieldA(
+    Context: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+    FieldIndex: {"kind":"UInt32"},
+    ReturnBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReturnBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetMultiSzFieldW(
+    Context: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+    FieldIndex: {"kind":"UInt32"},
+    ReturnBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReturnBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetBinaryField(
+    Context: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+    FieldIndex: {"kind":"UInt32"},
+    ReturnBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    ReturnBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetFileCompressionInfoA(
+    SourceFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ActualSourceFileName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    SourceFileSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    TargetFileSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    CompressionType: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetFileCompressionInfoW(
+    SourceFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ActualSourceFileName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    SourceFileSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    TargetFileSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    CompressionType: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetFileCompressionInfoExA(
+    SourceFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ActualSourceFileNameBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    ActualSourceFileNameBufferLen: {"kind":"UInt32"},
+    RequiredBufferLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+    SourceFileSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    TargetFileSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    CompressionType: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetFileCompressionInfoExW(
+    SourceFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ActualSourceFileNameBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ActualSourceFileNameBufferLen: {"kind":"UInt32"},
+    RequiredBufferLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+    SourceFileSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    TargetFileSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    CompressionType: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDecompressOrCopyFileA(
+    SourceFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    TargetFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    CompressionType: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDecompressOrCopyFileW(
+    SourceFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TargetFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    CompressionType: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetSourceFileLocationA(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    InfContext: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+    FileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    SourceId: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ReturnBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReturnBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetSourceFileLocationW(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    InfContext: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+    FileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SourceId: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ReturnBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReturnBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetSourceFileSizeA(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    InfContext: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+    FileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Section: {"kind""Ptr","child":{"kind":"SByte"}},
+    FileSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    RoundingFactor: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetSourceFileSizeW(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    InfContext: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+    FileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Section: {"kind""Ptr","child":{"kind":"UInt16"}},
+    FileSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    RoundingFactor: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetTargetPathA(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    InfContext: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+    Section: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReturnBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReturnBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetTargetPathW(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    InfContext: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+    Section: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReturnBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReturnBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupSetSourceListA(
+    Flags: {"kind":"UInt32"},
+    SourceList: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    SourceCount: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupSetSourceListW(
+    Flags: {"kind":"UInt32"},
+    SourceList: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    SourceCount: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupCancelTemporarySourceList(
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupAddToSourceListA(
+    Flags: {"kind":"UInt32"},
+    Source: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupAddToSourceListW(
+    Flags: {"kind":"UInt32"},
+    Source: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupRemoveFromSourceListA(
+    Flags: {"kind":"UInt32"},
+    Source: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupRemoveFromSourceListW(
+    Flags: {"kind":"UInt32"},
+    Source: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQuerySourceListA(
+    Flags: {"kind":"UInt32"},
+    List: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}}},
+    Count: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQuerySourceListW(
+    Flags: {"kind":"UInt32"},
+    List: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}}},
+    Count: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupFreeSourceListA(
+    List: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}}},
+    Count: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupFreeSourceListW(
+    List: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}}},
+    Count: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupPromptForDiskA(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    DialogTitle: {"kind""Ptr","child":{"kind":"SByte"}},
+    DiskName: {"kind""Ptr","child":{"kind":"SByte"}},
+    PathToSource: {"kind""Ptr","child":{"kind":"SByte"}},
+    FileSought: {"kind""Ptr","child":{"kind":"SByte"}},
+    TagFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    DiskPromptStyle: {"kind":"UInt32"},
+    PathBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    PathBufferSize: {"kind":"UInt32"},
+    PathRequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupPromptForDiskW(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    DialogTitle: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DiskName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PathToSource: {"kind""Ptr","child":{"kind":"UInt16"}},
+    FileSought: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TagFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DiskPromptStyle: {"kind":"UInt32"},
+    PathBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PathBufferSize: {"kind":"UInt32"},
+    PathRequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupCopyErrorA(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    DialogTitle: {"kind""Ptr","child":{"kind":"SByte"}},
+    DiskName: {"kind""Ptr","child":{"kind":"SByte"}},
+    PathToSource: {"kind""Ptr","child":{"kind":"SByte"}},
+    SourceFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    TargetPathFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    Win32ErrorCode: {"kind":"UInt32"},
+    Style: {"kind":"UInt32"},
+    PathBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    PathBufferSize: {"kind":"UInt32"},
+    PathRequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupCopyErrorW(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    DialogTitle: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DiskName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PathToSource: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SourceFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TargetPathFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Win32ErrorCode: {"kind":"UInt32"},
+    Style: {"kind":"UInt32"},
+    PathBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PathBufferSize: {"kind":"UInt32"},
+    PathRequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupRenameErrorA(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    DialogTitle: {"kind""Ptr","child":{"kind":"SByte"}},
+    SourceFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    TargetFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    Win32ErrorCode: {"kind":"UInt32"},
+    Style: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupRenameErrorW(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    DialogTitle: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SourceFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TargetFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Win32ErrorCode: {"kind":"UInt32"},
+    Style: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDeleteErrorA(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    DialogTitle: {"kind""Ptr","child":{"kind":"SByte"}},
+    File: {"kind""Ptr","child":{"kind":"SByte"}},
+    Win32ErrorCode: {"kind":"UInt32"},
+    Style: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDeleteErrorW(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    DialogTitle: {"kind""Ptr","child":{"kind":"UInt16"}},
+    File: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Win32ErrorCode: {"kind":"UInt32"},
+    Style: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupBackupErrorA(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    DialogTitle: {"kind""Ptr","child":{"kind":"SByte"}},
+    SourceFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    TargetFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    Win32ErrorCode: {"kind":"UInt32"},
+    Style: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupBackupErrorW(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    DialogTitle: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SourceFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TargetFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Win32ErrorCode: {"kind":"UInt32"},
+    Style: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupSetDirectoryIdA(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    Id: {"kind":"UInt32"},
+    Directory: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupSetDirectoryIdW(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    Id: {"kind":"UInt32"},
+    Directory: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupSetDirectoryIdExA(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    Id: {"kind":"UInt32"},
+    Directory: {"kind""Ptr","child":{"kind":"SByte"}},
+    Flags: {"kind":"UInt32"},
+    Reserved1: {"kind":"UInt32"},
+    Reserved2: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupSetDirectoryIdExW(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    Id: {"kind":"UInt32"},
+    Directory: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    Reserved1: {"kind":"UInt32"},
+    Reserved2: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetSourceInfoA(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    SourceId: {"kind":"UInt32"},
+    InfoDesired: {"kind":"UInt32"},
+    ReturnBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReturnBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetSourceInfoW(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    SourceId: {"kind":"UInt32"},
+    InfoDesired: {"kind":"UInt32"},
+    ReturnBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReturnBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupInstallFileA(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    InfContext: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+    SourceFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    SourcePathRoot: {"kind""Ptr","child":{"kind":"SByte"}},
+    DestinationName: {"kind""Ptr","child":{"kind":"SByte"}},
+    CopyStyle: {"kind":"UInt32"},
+    CopyMsgHandler: Windows.Win32.ApplicationInstallationAndServicing.PSP_FILE_CALLBACK_A,
+    Context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupInstallFileW(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    InfContext: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+    SourceFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SourcePathRoot: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DestinationName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    CopyStyle: {"kind":"UInt32"},
+    CopyMsgHandler: Windows.Win32.ApplicationInstallationAndServicing.PSP_FILE_CALLBACK_W,
+    Context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupInstallFileExA(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    InfContext: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+    SourceFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    SourcePathRoot: {"kind""Ptr","child":{"kind":"SByte"}},
+    DestinationName: {"kind""Ptr","child":{"kind":"SByte"}},
+    CopyStyle: {"kind":"UInt32"},
+    CopyMsgHandler: Windows.Win32.ApplicationInstallationAndServicing.PSP_FILE_CALLBACK_A,
+    Context: {"kind""Ptr","child":{"kind":"Void"}},
+    FileWasInUse: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupInstallFileExW(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    InfContext: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.INFCONTEXT},
+    SourceFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SourcePathRoot: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DestinationName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    CopyStyle: {"kind":"UInt32"},
+    CopyMsgHandler: Windows.Win32.ApplicationInstallationAndServicing.PSP_FILE_CALLBACK_W,
+    Context: {"kind""Ptr","child":{"kind":"Void"}},
+    FileWasInUse: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupOpenFileQueue(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn SetupCloseFileQueue(
+    QueueHandle: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupSetFileQueueAlternatePlatformA(
+    QueueHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    AlternatePlatformInfo: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.SP_ALTPLATFORM_INFO_V2},
+    AlternateDefaultCatalogFile: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupSetFileQueueAlternatePlatformW(
+    QueueHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    AlternatePlatformInfo: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.SP_ALTPLATFORM_INFO_V2},
+    AlternateDefaultCatalogFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupSetPlatformPathOverrideA(
+    Override: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupSetPlatformPathOverrideW(
+    Override: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQueueCopyA(
+    QueueHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    SourceRootPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    SourcePath: {"kind""Ptr","child":{"kind":"SByte"}},
+    SourceFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+    SourceDescription: {"kind""Ptr","child":{"kind":"SByte"}},
+    SourceTagfile: {"kind""Ptr","child":{"kind":"SByte"}},
+    TargetDirectory: {"kind""Ptr","child":{"kind":"SByte"}},
+    TargetFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+    CopyStyle: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQueueCopyW(
+    QueueHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    SourceRootPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SourcePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SourceFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SourceDescription: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SourceTagfile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TargetDirectory: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TargetFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+    CopyStyle: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQueueCopyIndirectA(
+    CopyParams: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.SP_FILE_COPY_PARAMS_A},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQueueCopyIndirectW(
+    CopyParams: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.SP_FILE_COPY_PARAMS_W},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQueueDefaultCopyA(
+    QueueHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    SourceRootPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    SourceFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+    TargetFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+    CopyStyle: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQueueDefaultCopyW(
+    QueueHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    SourceRootPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SourceFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TargetFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+    CopyStyle: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQueueCopySectionA(
+    QueueHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    SourceRootPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    ListInfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    Section: {"kind""Ptr","child":{"kind":"SByte"}},
+    CopyStyle: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQueueCopySectionW(
+    QueueHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    SourceRootPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    ListInfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    Section: {"kind""Ptr","child":{"kind":"UInt16"}},
+    CopyStyle: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQueueDeleteA(
+    QueueHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    PathPart1: {"kind""Ptr","child":{"kind":"SByte"}},
+    PathPart2: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQueueDeleteW(
+    QueueHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    PathPart1: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PathPart2: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQueueDeleteSectionA(
+    QueueHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    ListInfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    Section: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQueueDeleteSectionW(
+    QueueHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    ListInfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    Section: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQueueRenameA(
+    QueueHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    SourcePath: {"kind""Ptr","child":{"kind":"SByte"}},
+    SourceFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+    TargetPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    TargetFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQueueRenameW(
+    QueueHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    SourcePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SourceFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TargetPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TargetFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQueueRenameSectionA(
+    QueueHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    ListInfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    Section: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQueueRenameSectionW(
+    QueueHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    ListInfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    Section: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupCommitFileQueueA(
+    Owner: Windows.Win32.WindowsAndMessaging.HWND,
+    QueueHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    MsgHandler: Windows.Win32.ApplicationInstallationAndServicing.PSP_FILE_CALLBACK_A,
+    Context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupCommitFileQueueW(
+    Owner: Windows.Win32.WindowsAndMessaging.HWND,
+    QueueHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    MsgHandler: Windows.Win32.ApplicationInstallationAndServicing.PSP_FILE_CALLBACK_W,
+    Context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupScanFileQueueA(
+    FileQueue: {"kind""Ptr","child":{"kind":"Void"}},
+    Flags: {"kind":"UInt32"},
+    Window: Windows.Win32.WindowsAndMessaging.HWND,
+    CallbackRoutine: Windows.Win32.ApplicationInstallationAndServicing.PSP_FILE_CALLBACK_A,
+    CallbackContext: {"kind""Ptr","child":{"kind":"Void"}},
+    Result: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupScanFileQueueW(
+    FileQueue: {"kind""Ptr","child":{"kind":"Void"}},
+    Flags: {"kind":"UInt32"},
+    Window: Windows.Win32.WindowsAndMessaging.HWND,
+    CallbackRoutine: Windows.Win32.ApplicationInstallationAndServicing.PSP_FILE_CALLBACK_W,
+    CallbackContext: {"kind""Ptr","child":{"kind":"Void"}},
+    Result: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetFileQueueCount(
+    FileQueue: {"kind""Ptr","child":{"kind":"Void"}},
+    SubQueueFileOp: {"kind":"UInt32"},
+    NumOperations: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupGetFileQueueFlags(
+    FileQueue: {"kind""Ptr","child":{"kind":"Void"}},
+    Flags: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupSetFileQueueFlags(
+    FileQueue: {"kind""Ptr","child":{"kind":"Void"}},
+    FlagMask: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupCopyOEMInfA(
+    SourceInfFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    OEMSourceMediaLocation: {"kind""Ptr","child":{"kind":"SByte"}},
+    OEMSourceMediaType: {"kind":"UInt32"},
+    CopyStyle: {"kind":"UInt32"},
+    DestinationInfFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    DestinationInfFileNameSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    DestinationInfFileNameComponent: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupCopyOEMInfW(
+    SourceInfFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    OEMSourceMediaLocation: {"kind""Ptr","child":{"kind":"UInt16"}},
+    OEMSourceMediaType: {"kind":"UInt32"},
+    CopyStyle: {"kind":"UInt32"},
+    DestinationInfFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DestinationInfFileNameSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    DestinationInfFileNameComponent: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn SetupUninstallOEMInfA(
+    InfFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Flags: {"kind":"UInt32"},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn SetupUninstallOEMInfW(
+    InfFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupUninstallNewlyCopiedInfs(
+    FileQueue: {"kind""Ptr","child":{"kind":"Void"}},
+    Flags: {"kind":"UInt32"},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupCreateDiskSpaceListA(
+    Reserved1: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved2: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupCreateDiskSpaceListW(
+    Reserved1: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved2: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDuplicateDiskSpaceListA(
+    DiskSpace: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved1: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved2: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDuplicateDiskSpaceListW(
+    DiskSpace: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved1: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved2: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDestroyDiskSpaceList(
+    DiskSpace: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQueryDrivesInDiskSpaceListA(
+    DiskSpace: {"kind""Ptr","child":{"kind":"Void"}},
+    ReturnBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReturnBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQueryDrivesInDiskSpaceListW(
+    DiskSpace: {"kind""Ptr","child":{"kind":"Void"}},
+    ReturnBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReturnBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQuerySpaceRequiredOnDriveA(
+    DiskSpace: {"kind""Ptr","child":{"kind":"Void"}},
+    DriveSpec: {"kind""Ptr","child":{"kind":"SByte"}},
+    SpaceRequired: {"kind""Ptr","child":{"kind":"Int64"}},
+    Reserved1: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved2: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQuerySpaceRequiredOnDriveW(
+    DiskSpace: {"kind""Ptr","child":{"kind":"Void"}},
+    DriveSpec: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SpaceRequired: {"kind""Ptr","child":{"kind":"Int64"}},
+    Reserved1: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved2: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupAdjustDiskSpaceListA(
+    DiskSpace: {"kind""Ptr","child":{"kind":"Void"}},
+    DriveRoot: {"kind""Ptr","child":{"kind":"SByte"}},
+    Amount: {"kind":"Int64"},
+    Reserved1: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved2: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupAdjustDiskSpaceListW(
+    DiskSpace: {"kind""Ptr","child":{"kind":"Void"}},
+    DriveRoot: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Amount: {"kind":"Int64"},
+    Reserved1: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved2: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupAddToDiskSpaceListA(
+    DiskSpace: {"kind""Ptr","child":{"kind":"Void"}},
+    TargetFilespec: {"kind""Ptr","child":{"kind":"SByte"}},
+    FileSize: {"kind":"Int64"},
+    Operation: {"kind":"UInt32"},
+    Reserved1: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved2: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupAddToDiskSpaceListW(
+    DiskSpace: {"kind""Ptr","child":{"kind":"Void"}},
+    TargetFilespec: {"kind""Ptr","child":{"kind":"UInt16"}},
+    FileSize: {"kind":"Int64"},
+    Operation: {"kind":"UInt32"},
+    Reserved1: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved2: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupAddSectionToDiskSpaceListA(
+    DiskSpace: {"kind""Ptr","child":{"kind":"Void"}},
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    ListInfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    SectionName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Operation: {"kind":"UInt32"},
+    Reserved1: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved2: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupAddSectionToDiskSpaceListW(
+    DiskSpace: {"kind""Ptr","child":{"kind":"Void"}},
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    ListInfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    SectionName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Operation: {"kind":"UInt32"},
+    Reserved1: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved2: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupAddInstallSectionToDiskSpaceListA(
+    DiskSpace: {"kind""Ptr","child":{"kind":"Void"}},
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    LayoutInfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    SectionName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Reserved1: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved2: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupAddInstallSectionToDiskSpaceListW(
+    DiskSpace: {"kind""Ptr","child":{"kind":"Void"}},
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    LayoutInfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    SectionName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Reserved1: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved2: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupRemoveFromDiskSpaceListA(
+    DiskSpace: {"kind""Ptr","child":{"kind":"Void"}},
+    TargetFilespec: {"kind""Ptr","child":{"kind":"SByte"}},
+    Operation: {"kind":"UInt32"},
+    Reserved1: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved2: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupRemoveFromDiskSpaceListW(
+    DiskSpace: {"kind""Ptr","child":{"kind":"Void"}},
+    TargetFilespec: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Operation: {"kind":"UInt32"},
+    Reserved1: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved2: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupRemoveSectionFromDiskSpaceListA(
+    DiskSpace: {"kind""Ptr","child":{"kind":"Void"}},
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    ListInfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    SectionName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Operation: {"kind":"UInt32"},
+    Reserved1: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved2: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupRemoveSectionFromDiskSpaceListW(
+    DiskSpace: {"kind""Ptr","child":{"kind":"Void"}},
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    ListInfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    SectionName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Operation: {"kind":"UInt32"},
+    Reserved1: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved2: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupRemoveInstallSectionFromDiskSpaceListA(
+    DiskSpace: {"kind""Ptr","child":{"kind":"Void"}},
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    LayoutInfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    SectionName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Reserved1: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved2: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupRemoveInstallSectionFromDiskSpaceListW(
+    DiskSpace: {"kind""Ptr","child":{"kind":"Void"}},
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    LayoutInfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    SectionName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Reserved1: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved2: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupIterateCabinetA(
+    CabinetFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    Reserved: {"kind":"UInt32"},
+    MsgHandler: Windows.Win32.ApplicationInstallationAndServicing.PSP_FILE_CALLBACK_A,
+    Context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupIterateCabinetW(
+    CabinetFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Reserved: {"kind":"UInt32"},
+    MsgHandler: Windows.Win32.ApplicationInstallationAndServicing.PSP_FILE_CALLBACK_W,
+    Context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupPromptReboot(
+    FileQueue: {"kind""Ptr","child":{"kind":"Void"}},
+    Owner: Windows.Win32.WindowsAndMessaging.HWND,
+    ScanOnly: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupInitDefaultQueueCallback(
+    OwnerWindow: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn SetupInitDefaultQueueCallbackEx(
+    OwnerWindow: Windows.Win32.WindowsAndMessaging.HWND,
+    AlternateProgressWindow: Windows.Win32.WindowsAndMessaging.HWND,
+    ProgressMessage: {"kind":"UInt32"},
+    Reserved1: {"kind":"UInt32"},
+    Reserved2: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupTermDefaultQueueCallback(
+    Context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDefaultQueueCallbackA(
+    Context: {"kind""Ptr","child":{"kind":"Void"}},
+    Notification: {"kind":"UInt32"},
+    Param1: {"kind":"UIntPtr"},
+    Param2: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDefaultQueueCallbackW(
+    Context: {"kind""Ptr","child":{"kind":"Void"}},
+    Notification: {"kind":"UInt32"},
+    Param1: {"kind":"UIntPtr"},
+    Param2: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupInstallFromInfSectionA(
+    Owner: Windows.Win32.WindowsAndMessaging.HWND,
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    SectionName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Flags: {"kind":"UInt32"},
+    RelativeKeyRoot: Windows.Win32.WindowsProgramming.HKEY,
+    SourceRootPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    CopyFlags: {"kind":"UInt32"},
+    MsgHandler: Windows.Win32.ApplicationInstallationAndServicing.PSP_FILE_CALLBACK_A,
+    Context: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupInstallFromInfSectionW(
+    Owner: Windows.Win32.WindowsAndMessaging.HWND,
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    SectionName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    RelativeKeyRoot: Windows.Win32.WindowsProgramming.HKEY,
+    SourceRootPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    CopyFlags: {"kind":"UInt32"},
+    MsgHandler: Windows.Win32.ApplicationInstallationAndServicing.PSP_FILE_CALLBACK_W,
+    Context: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupInstallFilesFromInfSectionA(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    LayoutInfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    FileQueue: {"kind""Ptr","child":{"kind":"Void"}},
+    SectionName: {"kind""Ptr","child":{"kind":"SByte"}},
+    SourceRootPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    CopyFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupInstallFilesFromInfSectionW(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    LayoutInfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    FileQueue: {"kind""Ptr","child":{"kind":"Void"}},
+    SectionName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SourceRootPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    CopyFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupInstallServicesFromInfSectionA(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    SectionName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupInstallServicesFromInfSectionW(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    SectionName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupInstallServicesFromInfSectionExA(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    SectionName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Flags: {"kind":"UInt32"},
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    Reserved1: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved2: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupInstallServicesFromInfSectionExW(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    SectionName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    DeviceInfoSet: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceInfoData: {"kind""Ptr","child":Windows.Win32.DeviceAndDriverInstallation.SP_DEVINFO_DATA},
+    Reserved1: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved2: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn InstallHinfSectionA(
+    Window: Windows.Win32.WindowsAndMessaging.HWND,
+    ModuleHandle: Windows.Win32.SystemServices.HINSTANCE,
+    CommandLine: {"kind""Ptr","child":{"kind":"SByte"}},
+    ShowCommand: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn InstallHinfSectionW(
+    Window: Windows.Win32.WindowsAndMessaging.HWND,
+    ModuleHandle: Windows.Win32.SystemServices.HINSTANCE,
+    CommandLine: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ShowCommand: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupInitializeFileLogA(
+    LogFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupInitializeFileLogW(
+    LogFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupTerminateFileLog(
+    FileLogHandle: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupLogFileA(
+    FileLogHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    LogSectionName: {"kind""Ptr","child":{"kind":"SByte"}},
+    SourceFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+    TargetFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+    Checksum: {"kind":"UInt32"},
+    DiskTagfile: {"kind""Ptr","child":{"kind":"SByte"}},
+    DiskDescription: {"kind""Ptr","child":{"kind":"SByte"}},
+    OtherInfo: {"kind""Ptr","child":{"kind":"SByte"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupLogFileW(
+    FileLogHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    LogSectionName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SourceFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TargetFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Checksum: {"kind":"UInt32"},
+    DiskTagfile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DiskDescription: {"kind""Ptr","child":{"kind":"UInt16"}},
+    OtherInfo: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupRemoveFileLogEntryA(
+    FileLogHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    LogSectionName: {"kind""Ptr","child":{"kind":"SByte"}},
+    TargetFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupRemoveFileLogEntryW(
+    FileLogHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    LogSectionName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TargetFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQueryFileLogA(
+    FileLogHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    LogSectionName: {"kind""Ptr","child":{"kind":"SByte"}},
+    TargetFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+    DesiredInfo: Windows.Win32.DeviceAndDriverInstallation.SetupFileLogInfo,
+    DataOut: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReturnBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupQueryFileLogW(
+    FileLogHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    LogSectionName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TargetFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DesiredInfo: Windows.Win32.DeviceAndDriverInstallation.SetupFileLogInfo,
+    DataOut: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReturnBufferSize: {"kind":"UInt32"},
+    RequiredSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupOpenLog(
+    Erase: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupLogErrorA(
+    MessageString: {"kind""Ptr","child":{"kind":"SByte"}},
+    Severity: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupLogErrorW(
+    MessageString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Severity: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn SetupCloseLog(
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupDiGetClassDevsA(
+    ClassGuid: {"kind""Ptr","child":Guid},
+    Enumerator: {"kind""Ptr","child":{"kind":"SByte"}},
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupEnumInfSectionsA(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    Index: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    Size: {"kind":"UInt32"},
+    SizeNeeded: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "SETUPAPI" fn SetupEnumInfSectionsW(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    Index: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Size: {"kind":"UInt32"},
+    SizeNeeded: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn SetupVerifyInfFileA(
+    InfName: {"kind""Ptr","child":{"kind":"SByte"}},
+    AltPlatformInfo: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.SP_ALTPLATFORM_INFO_V2},
+    InfSignerInfo: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.SP_INF_SIGNER_INFO_V2_A},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn SetupVerifyInfFileW(
+    InfName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    AltPlatformInfo: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.SP_ALTPLATFORM_INFO_V2},
+    InfSignerInfo: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.SP_INF_SIGNER_INFO_V2_W},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn SetupConfigureWmiFromInfSectionA(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    SectionName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SETUPAPI" fn SetupConfigureWmiFromInfSectionW(
+    InfHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    SectionName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn CreateActCtxA(
+    pActCtx: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.ACTCTXA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn CreateActCtxW(
+    pActCtx: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.ACTCTXW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn AddRefActCtx(
+    hActCtx: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn ReleaseActCtx(
+    hActCtx: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn ZombifyActCtx(
+    hActCtx: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn ActivateActCtx(
+    hActCtx: Windows.Win32.SystemServices.HANDLE,
+    lpCookie: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn DeactivateActCtx(
+    dwFlags: {"kind":"UInt32"},
+    ulCookie: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn GetCurrentActCtx(
+    lphActCtx: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn FindActCtxSectionStringA(
+    dwFlags: {"kind":"UInt32"},
+    lpExtensionGuid: {"kind""Ptr","child":Guid},
+    ulSectionId: {"kind":"UInt32"},
+    lpStringToFind: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReturnedData: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.ACTCTX_SECTION_KEYED_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn FindActCtxSectionStringW(
+    dwFlags: {"kind":"UInt32"},
+    lpExtensionGuid: {"kind""Ptr","child":Guid},
+    ulSectionId: {"kind":"UInt32"},
+    lpStringToFind: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReturnedData: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.ACTCTX_SECTION_KEYED_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn FindActCtxSectionGuid(
+    dwFlags: {"kind":"UInt32"},
+    lpExtensionGuid: {"kind""Ptr","child":Guid},
+    ulSectionId: {"kind":"UInt32"},
+    lpGuidToFind: {"kind""Ptr","child":Guid},
+    ReturnedData: {"kind""Ptr","child":Windows.Win32.ApplicationInstallationAndServicing.ACTCTX_SECTION_KEYED_DATA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn QueryActCtxW(
+    dwFlags: {"kind":"UInt32"},
+    hActCtx: Windows.Win32.SystemServices.HANDLE,
+    pvSubInstance: {"kind""Ptr","child":{"kind":"Void"}},
+    ulInfoClass: {"kind":"UInt32"},
+    pvBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    cbBuffer: {"kind":"UIntPtr"},
+    pcbWrittenOrRequired: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn QueryActCtxSettingsW(
+    dwFlags: {"kind":"UInt32"},
+    hActCtx: Windows.Win32.SystemServices.HANDLE,
+    settingsNameSpace: {"kind""Ptr","child":{"kind":"UInt16"}},
+    settingName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pvBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwBuffer: {"kind":"UIntPtr"},
+    pdwWrittenOrRequired: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+],
+
+"unicode_aliases": [
+     "INSTALLUI_HANDLER"
+     "MSIPATCHSEQUENCEINFO"
+     "SP_ORIGINAL_FILE_INFO_"
+     "PSP_FILE_CALLBACK_"
+     "FILEPATHS_"
+     "FILEPATHS_SIGNERINFO_"
+     "SOURCE_MEDIA_"
+     "CABINET_INFO_"
+     "FILE_IN_CABINET_INFO_"
+     "SP_REGISTER_CONTROL_STATUS"
+     "SP_FILE_COPY_PARAMS_"
+     "SP_INF_SIGNER_INFO_V1_"
+     "SP_INF_SIGNER_INFO_V2_"
+     "ACTCTX"
+     "MsiSetExternalUI"
+     "MsiEnableLog"
+     "MsiQueryProductState"
+     "MsiGetProductInfo"
+     "MsiGetProductInfoEx"
+     "MsiInstallProduct"
+     "MsiConfigureProduct"
+     "MsiConfigureProductEx"
+     "MsiReinstallProduct"
+     "MsiAdvertiseProductEx"
+     "MsiAdvertiseProduct"
+     "MsiProcessAdvertiseScript"
+     "MsiAdvertiseScript"
+     "MsiGetProductInfoFromScript"
+     "MsiGetProductCode"
+     "MsiGetUserInfo"
+     "MsiCollectUserInfo"
+     "MsiApplyPatch"
+     "MsiGetPatchInfo"
+     "MsiEnumPatches"
+     "MsiRemovePatches"
+     "MsiExtractPatchXMLData"
+     "MsiGetPatchInfoEx"
+     "MsiApplyMultiplePatches"
+     "MsiDeterminePatchSequence"
+     "MsiDetermineApplicablePatches"
+     "MsiEnumPatchesEx"
+     "MsiQueryFeatureState"
+     "MsiQueryFeatureStateEx"
+     "MsiUseFeature"
+     "MsiUseFeatureEx"
+     "MsiGetFeatureUsage"
+     "MsiConfigureFeature"
+     "MsiReinstallFeature"
+     "MsiProvideComponent"
+     "MsiProvideQualifiedComponent"
+     "MsiProvideQualifiedComponentEx"
+     "MsiGetComponentPath"
+     "MsiGetComponentPathEx"
+     "MsiProvideAssembly"
+     "MsiQueryComponentState"
+     "MsiEnumProducts"
+     "MsiEnumProductsEx"
+     "MsiEnumRelatedProducts"
+     "MsiEnumFeatures"
+     "MsiEnumComponents"
+     "MsiEnumComponentsEx"
+     "MsiEnumClients"
+     "MsiEnumClientsEx"
+     "MsiEnumComponentQualifiers"
+     "MsiOpenProduct"
+     "MsiOpenPackage"
+     "MsiOpenPackageEx"
+     "MsiGetPatchFileList"
+     "MsiGetProductProperty"
+     "MsiVerifyPackage"
+     "MsiGetFeatureInfo"
+     "MsiInstallMissingComponent"
+     "MsiInstallMissingFile"
+     "MsiLocateComponent"
+     "MsiSourceListClearAll"
+     "MsiSourceListAddSource"
+     "MsiSourceListForceResolution"
+     "MsiSourceListAddSourceEx"
+     "MsiSourceListAddMediaDisk"
+     "MsiSourceListClearSource"
+     "MsiSourceListClearMediaDisk"
+     "MsiSourceListClearAllEx"
+     "MsiSourceListForceResolutionEx"
+     "MsiSourceListSetInfo"
+     "MsiSourceListGetInfo"
+     "MsiSourceListEnumSources"
+     "MsiSourceListEnumMediaDisks"
+     "MsiGetFileVersion"
+     "MsiGetFileHash"
+     "MsiGetFileSignatureInformation"
+     "MsiGetShortcutTarget"
+     "MsiIsProductElevated"
+     "MsiNotifySidChange"
+     "MsiBeginTransaction"
+     "MsiDatabaseOpenView"
+     "MsiViewGetError"
+     "MsiDatabaseGetPrimaryKeys"
+     "MsiDatabaseIsTablePersistent"
+     "MsiGetSummaryInformation"
+     "MsiSummaryInfoSetProperty"
+     "MsiSummaryInfoGetProperty"
+     "MsiOpenDatabase"
+     "MsiDatabaseImport"
+     "MsiDatabaseExport"
+     "MsiDatabaseMerge"
+     "MsiDatabaseGenerateTransform"
+     "MsiDatabaseApplyTransform"
+     "MsiCreateTransformSummaryInfo"
+     "MsiRecordSetString"
+     "MsiRecordGetString"
+     "MsiRecordSetStream"
+     "MsiSetProperty"
+     "MsiGetProperty"
+     "MsiFormatRecord"
+     "MsiDoAction"
+     "MsiSequence"
+     "MsiEvaluateCondition"
+     "MsiGetFeatureState"
+     "MsiSetFeatureState"
+     "MsiSetFeatureAttributes"
+     "MsiGetComponentState"
+     "MsiSetComponentState"
+     "MsiGetFeatureCost"
+     "MsiEnumComponentCosts"
+     "MsiGetFeatureValidStates"
+     "MsiGetSourcePath"
+     "MsiGetTargetPath"
+     "MsiSetTargetPath"
+     "MsiPreviewDialog"
+     "MsiPreviewBillboard"
+     "SetupGetInfInformation"
+     "SetupQueryInfFileInformation"
+     "SetupQueryInfOriginalFileInformation"
+     "SetupQueryInfVersionInformation"
+     "SetupGetInfFileList"
+     "SetupOpenInfFile"
+     "SetupOpenAppendInfFile"
+     "SetupFindFirstLine"
+     "SetupFindNextMatchLine"
+     "SetupGetLineByIndex"
+     "SetupGetLineCount"
+     "SetupGetLineText"
+     "SetupGetStringField"
+     "SetupGetMultiSzField"
+     "SetupGetFileCompressionInfo"
+     "SetupGetFileCompressionInfoEx"
+     "SetupDecompressOrCopyFile"
+     "SetupGetSourceFileLocation"
+     "SetupGetSourceFileSize"
+     "SetupGetTargetPath"
+     "SetupSetSourceList"
+     "SetupAddToSourceList"
+     "SetupRemoveFromSourceList"
+     "SetupQuerySourceList"
+     "SetupFreeSourceList"
+     "SetupPromptForDisk"
+     "SetupCopyError"
+     "SetupRenameError"
+     "SetupDeleteError"
+     "SetupBackupError"
+     "SetupSetDirectoryId"
+     "SetupSetDirectoryIdEx"
+     "SetupGetSourceInfo"
+     "SetupInstallFile"
+     "SetupInstallFileEx"
+     "SetupSetFileQueueAlternatePlatform"
+     "SetupSetPlatformPathOverride"
+     "SetupQueueCopy"
+     "SetupQueueCopyIndirect"
+     "SetupQueueDefaultCopy"
+     "SetupQueueCopySection"
+     "SetupQueueDelete"
+     "SetupQueueDeleteSection"
+     "SetupQueueRename"
+     "SetupQueueRenameSection"
+     "SetupCommitFileQueue"
+     "SetupScanFileQueue"
+     "SetupCopyOEMInf"
+     "SetupUninstallOEMInf"
+     "SetupCreateDiskSpaceList"
+     "SetupDuplicateDiskSpaceList"
+     "SetupQueryDrivesInDiskSpaceList"
+     "SetupQuerySpaceRequiredOnDrive"
+     "SetupAdjustDiskSpaceList"
+     "SetupAddToDiskSpaceList"
+     "SetupAddSectionToDiskSpaceList"
+     "SetupAddInstallSectionToDiskSpaceList"
+     "SetupRemoveFromDiskSpaceList"
+     "SetupRemoveSectionFromDiskSpaceList"
+     "SetupRemoveInstallSectionFromDiskSpaceList"
+     "SetupIterateCabinet"
+     "SetupDefaultQueueCallback"
+     "SetupInstallFromInfSection"
+     "SetupInstallFilesFromInfSection"
+     "SetupInstallServicesFromInfSection"
+     "SetupInstallServicesFromInfSectionEx"
+     "InstallHinfSection"
+     "SetupInitializeFileLog"
+     "SetupLogFile"
+     "SetupRemoveFileLogEntry"
+     "SetupQueryFileLog"
+     "SetupLogError"
+     "SetupEnumInfSections"
+     "SetupVerifyInfFile"
+     "SetupConfigureWmiFromInfSection"
+     "CreateActCtx"
+     "FindActCtxSectionString"
+]}

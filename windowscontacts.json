@@ -1,0 +1,88 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: Contact
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const Contact = opaque {
+};
+// --------------------------------------------------------
+// Type: ContactManager
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const ContactManager = opaque {
+};
+// --------------------------------------------------------
+// Type: IContactManager
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IContactManager = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'Load'
+    // TODO: Method 'MergeContactIDs'
+    // TODO: Method 'GetMeContact'
+    // TODO: Method 'SetMeContact'
+    // TODO: Method 'GetContactCollection'
+};
+// --------------------------------------------------------
+// Type: IContactCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IContactCollection = *opaque{
+    // TODO: Method 'Reset'
+    // TODO: Method 'Next'
+    // TODO: Method 'GetCurrent'
+};
+// --------------------------------------------------------
+// Type: IContactProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IContactProperties = *opaque{
+    // TODO: Method 'GetString'
+    // TODO: Method 'GetDate'
+    // TODO: Method 'GetBinary'
+    // TODO: Method 'GetLabels'
+    // TODO: Method 'SetString'
+    // TODO: Method 'SetDate'
+    // TODO: Method 'SetBinary'
+    // TODO: Method 'SetLabels'
+    // TODO: Method 'CreateArrayNode'
+    // TODO: Method 'DeleteProperty'
+    // TODO: Method 'DeleteArrayNode'
+    // TODO: Method 'DeleteLabels'
+    // TODO: Method 'GetPropertyCollection'
+};
+// --------------------------------------------------------
+// Type: IContact
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IContact = *opaque{
+    // TODO: Method 'GetContactID'
+    // TODO: Method 'GetPath'
+    // TODO: Method 'CommitChanges'
+};
+// --------------------------------------------------------
+// Type: IContactPropertyCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IContactPropertyCollection = *opaque{
+    // TODO: Method 'Reset'
+    // TODO: Method 'Next'
+    // TODO: Method 'GetPropertyName'
+    // TODO: Method 'GetPropertyType'
+    // TODO: Method 'GetPropertyVersion'
+    // TODO: Method 'GetPropertyModificationDate'
+    // TODO: Method 'GetPropertyArrayElementID'
+};
+],
+
+"func_definitions": [
+],
+
+"unicode_aliases": [
+]}

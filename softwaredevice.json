@@ -1,0 +1,112 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: SW_DEVICE_CAPABILITIES
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SW_DEVICE_CAPABILITIES = *opaque{
+};
+// --------------------------------------------------------
+// Type: SW_DEVICE_CREATE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SW_DEVICE_CREATE_INFO = extern struct {
+    cbSize: {"kind":"UInt32"},
+    pszInstanceId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszzHardwareIds: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszzCompatibleIds: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pContainerId: {"kind""Ptr","child":Guid},
+    CapabilityFlags: {"kind":"UInt32"},
+    pszDeviceDescription: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszDeviceLocation: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pSecurityDescriptor: {"kind""Ptr","child":Windows.Win32.Security.SECURITY_DESCRIPTOR},
+};
+// --------------------------------------------------------
+// Type: SW_DEVICE_LIFETIME
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SW_DEVICE_LIFETIME = *opaque{
+};
+// --------------------------------------------------------
+// Type: HSWDEVICE__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HSWDEVICE__ = extern struct {
+    unused: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: SW_DEVICE_CREATE_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SW_DEVICE_CREATE_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-devices-swdevice-l1-1-0" fn SwDeviceCreate(
+    pszEnumeratorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszParentDeviceInstance: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pCreateInfo: {"kind""Ptr","child":Windows.Win32.SoftwareDevice.SW_DEVICE_CREATE_INFO},
+    cPropertyCount: {"kind":"UInt32"},
+    pProperties: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPERTY},
+    pCallback: Windows.Win32.SoftwareDevice.SW_DEVICE_CREATE_CALLBACK,
+    pContext: {"kind""Ptr","child":{"kind":"Void"}},
+    phSwDevice: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.SoftwareDevice.HSWDEVICE__}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-devices-swdevice-l1-1-0" fn SwDeviceClose(
+    hSwDevice: {"kind""Ptr","child":Windows.Win32.SoftwareDevice.HSWDEVICE__},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-devices-swdevice-l1-1-1" fn SwDeviceSetLifetime(
+    hSwDevice: {"kind""Ptr","child":Windows.Win32.SoftwareDevice.HSWDEVICE__},
+    Lifetime: Windows.Win32.SoftwareDevice.SW_DEVICE_LIFETIME,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-devices-swdevice-l1-1-1" fn SwDeviceGetLifetime(
+    hSwDevice: {"kind""Ptr","child":Windows.Win32.SoftwareDevice.HSWDEVICE__},
+    pLifetime: {"kind""Ptr","child":Windows.Win32.SoftwareDevice.SW_DEVICE_LIFETIME},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-devices-swdevice-l1-1-0" fn SwDevicePropertySet(
+    hSwDevice: {"kind""Ptr","child":Windows.Win32.SoftwareDevice.HSWDEVICE__},
+    cPropertyCount: {"kind":"UInt32"},
+    pProperties: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPERTY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-devices-swdevice-l1-1-0" fn SwDeviceInterfaceRegister(
+    hSwDevice: {"kind""Ptr","child":Windows.Win32.SoftwareDevice.HSWDEVICE__},
+    pInterfaceClassGuid: {"kind""Ptr","child":Guid},
+    pszReferenceString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cPropertyCount: {"kind":"UInt32"},
+    pProperties: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPERTY},
+    fEnabled: Windows.Win32.SystemServices.BOOL,
+    ppszDeviceInterfaceId: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-devices-swdevice-l1-1-0" fn SwMemFree(
+    pMem: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-devices-swdevice-l1-1-0" fn SwDeviceInterfaceSetState(
+    hSwDevice: {"kind""Ptr","child":Windows.Win32.SoftwareDevice.HSWDEVICE__},
+    pszDeviceInterfaceId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fEnabled: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-devices-swdevice-l1-1-0" fn SwDeviceInterfacePropertySet(
+    hSwDevice: {"kind""Ptr","child":Windows.Win32.SoftwareDevice.HSWDEVICE__},
+    pszDeviceInterfaceId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cPropertyCount: {"kind":"UInt32"},
+    pProperties: {"kind""Ptr","child":Windows.Win32.SystemServices.DEVPROPERTY},
+],
+
+"unicode_aliases": [
+]}

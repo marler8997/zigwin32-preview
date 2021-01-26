@@ -1,0 +1,2254 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: DLGPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DLGPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: TIMERPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TIMERPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: HOOKPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HOOKPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: SENDASYNCPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SENDASYNCPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PROPENUMPROCA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PROPENUMPROCA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PROPENUMPROCW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PROPENUMPROCW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PROPENUMPROCEXA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PROPENUMPROCEXA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PROPENUMPROCEXW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PROPENUMPROCEXW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: CBT_CREATEWNDA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CBT_CREATEWNDA = extern struct {
+    lpcs: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.CREATESTRUCTA},
+    hwndInsertAfter: Windows.Win32.WindowsAndMessaging.HWND,
+};
+// --------------------------------------------------------
+// Type: CBT_CREATEWNDW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CBT_CREATEWNDW = extern struct {
+    lpcs: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.CREATESTRUCTW},
+    hwndInsertAfter: Windows.Win32.WindowsAndMessaging.HWND,
+};
+// --------------------------------------------------------
+// Type: CBTACTIVATESTRUCT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CBTACTIVATESTRUCT = extern struct {
+    fMouse: Windows.Win32.SystemServices.BOOL,
+    hWndActive: Windows.Win32.WindowsAndMessaging.HWND,
+};
+// --------------------------------------------------------
+// Type: EVENTMSG
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENTMSG = extern struct {
+    message: {"kind":"UInt32"},
+    paramL: {"kind":"UInt32"},
+    paramH: {"kind":"UInt32"},
+    time: {"kind":"UInt32"},
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+};
+// --------------------------------------------------------
+// Type: CWPSTRUCT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CWPSTRUCT = extern struct {
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    message: {"kind":"UInt32"},
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+};
+// --------------------------------------------------------
+// Type: CWPRETSTRUCT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CWPRETSTRUCT = extern struct {
+    lResult: Windows.Win32.SystemServices.LRESULT,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    message: {"kind":"UInt32"},
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+};
+// --------------------------------------------------------
+// Type: KBDLLHOOKSTRUCT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const KBDLLHOOKSTRUCT = extern struct {
+    vkCode: {"kind":"UInt32"},
+    scanCode: {"kind":"UInt32"},
+    flags: {"kind":"UInt32"},
+    time: {"kind":"UInt32"},
+    dwExtraInfo: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: MSLLHOOKSTRUCT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MSLLHOOKSTRUCT = extern struct {
+    pt: Windows.Win32.DisplayDevices.POINT,
+    mouseData: {"kind":"UInt32"},
+    flags: {"kind":"UInt32"},
+    time: {"kind":"UInt32"},
+    dwExtraInfo: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: DEBUGHOOKINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DEBUGHOOKINFO = extern struct {
+    idThread: {"kind":"UInt32"},
+    idThreadInstaller: {"kind":"UInt32"},
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    code: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: MOUSEHOOKSTRUCT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MOUSEHOOKSTRUCT = extern struct {
+    pt: Windows.Win32.DisplayDevices.POINT,
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    wHitTestCode: {"kind":"UInt32"},
+    dwExtraInfo: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: MOUSEHOOKSTRUCTEX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MOUSEHOOKSTRUCTEX = extern struct {
+    __AnonymousBase_winuser_L1173_C46: Windows.Win32.WindowsAndMessaging.MOUSEHOOKSTRUCT,
+    mouseData: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WNDCLASSEXA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WNDCLASSEXA = extern struct {
+    cbSize: {"kind":"UInt32"},
+    style: {"kind":"UInt32"},
+    lpfnWndProc: Windows.Win32.MenusAndResources.WNDPROC,
+    cbClsExtra: {"kind":"Int32"},
+    cbWndExtra: {"kind":"Int32"},
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    hIcon: Windows.Win32.Gdi.HICON,
+    hCursor: Windows.Win32.Gdi.HCURSOR,
+    hbrBackground: Windows.Win32.Gdi.HBRUSH,
+    lpszMenuName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszClassName: {"kind""Ptr","child":{"kind":"SByte"}},
+    hIconSm: Windows.Win32.Gdi.HICON,
+};
+// --------------------------------------------------------
+// Type: WNDCLASSEXW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WNDCLASSEXW = extern struct {
+    cbSize: {"kind":"UInt32"},
+    style: {"kind":"UInt32"},
+    lpfnWndProc: Windows.Win32.MenusAndResources.WNDPROC,
+    cbClsExtra: {"kind":"Int32"},
+    cbWndExtra: {"kind":"Int32"},
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    hIcon: Windows.Win32.Gdi.HICON,
+    hCursor: Windows.Win32.Gdi.HCURSOR,
+    hbrBackground: Windows.Win32.Gdi.HBRUSH,
+    lpszMenuName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hIconSm: Windows.Win32.Gdi.HICON,
+};
+// --------------------------------------------------------
+// Type: WNDCLASSA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WNDCLASSA = extern struct {
+    style: {"kind":"UInt32"},
+    lpfnWndProc: Windows.Win32.MenusAndResources.WNDPROC,
+    cbClsExtra: {"kind":"Int32"},
+    cbWndExtra: {"kind":"Int32"},
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    hIcon: Windows.Win32.Gdi.HICON,
+    hCursor: Windows.Win32.Gdi.HCURSOR,
+    hbrBackground: Windows.Win32.Gdi.HBRUSH,
+    lpszMenuName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszClassName: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: WNDCLASSW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WNDCLASSW = extern struct {
+    style: {"kind":"UInt32"},
+    lpfnWndProc: Windows.Win32.MenusAndResources.WNDPROC,
+    cbClsExtra: {"kind":"Int32"},
+    cbWndExtra: {"kind":"Int32"},
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    hIcon: Windows.Win32.Gdi.HICON,
+    hCursor: Windows.Win32.Gdi.HCURSOR,
+    hbrBackground: Windows.Win32.Gdi.HBRUSH,
+    lpszMenuName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: MSG
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MSG = extern struct {
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    message: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+    time: {"kind":"UInt32"},
+    pt: Windows.Win32.DisplayDevices.POINT,
+};
+// --------------------------------------------------------
+// Type: MINMAXINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MINMAXINFO = extern struct {
+    ptReserved: Windows.Win32.DisplayDevices.POINT,
+    ptMaxSize: Windows.Win32.DisplayDevices.POINT,
+    ptMaxPosition: Windows.Win32.DisplayDevices.POINT,
+    ptMinTrackSize: Windows.Win32.DisplayDevices.POINT,
+    ptMaxTrackSize: Windows.Win32.DisplayDevices.POINT,
+};
+// --------------------------------------------------------
+// Type: WINDOWPOS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINDOWPOS = extern struct {
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hwndInsertAfter: Windows.Win32.WindowsAndMessaging.HWND,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    cx: {"kind":"Int32"},
+    cy: {"kind":"Int32"},
+    flags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: NCCALCSIZE_PARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NCCALCSIZE_PARAMS = extern struct {
+    rgrc: {"kind":"Array","child": Windows.Win32.DisplayDevices.RECT},
+    lppos: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.WINDOWPOS},
+};
+// --------------------------------------------------------
+// Type: CREATESTRUCTA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CREATESTRUCTA = extern struct {
+    lpCreateParams: {"kind""Ptr","child":{"kind":"Void"}},
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    cy: {"kind":"Int32"},
+    cx: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    x: {"kind":"Int32"},
+    style: {"kind":"Int32"},
+    lpszName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszClass: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwExStyle: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: CREATESTRUCTW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CREATESTRUCTW = extern struct {
+    lpCreateParams: {"kind""Ptr","child":{"kind":"Void"}},
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    cy: {"kind":"Int32"},
+    cx: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    x: {"kind":"Int32"},
+    style: {"kind":"Int32"},
+    lpszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszClass: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwExStyle: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WINDOWPLACEMENT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINDOWPLACEMENT = extern struct {
+    length: {"kind":"UInt32"},
+    flags: {"kind":"UInt32"},
+    showCmd: {"kind":"UInt32"},
+    ptMinPosition: Windows.Win32.DisplayDevices.POINT,
+    ptMaxPosition: Windows.Win32.DisplayDevices.POINT,
+    rcNormalPosition: Windows.Win32.DisplayDevices.RECT,
+};
+// --------------------------------------------------------
+// Type: STYLESTRUCT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const STYLESTRUCT = extern struct {
+    styleOld: {"kind":"UInt32"},
+    styleNew: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: BSMINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BSMINFO = extern struct {
+    cbSize: {"kind":"UInt32"},
+    hdesk: Windows.Win32.WindowsStationsAndDesktops.HDESK,
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    luid: Windows.Win32.Kernel.LUID,
+};
+// --------------------------------------------------------
+// Type: UPDATELAYEREDWINDOWINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const UPDATELAYEREDWINDOWINFO = extern struct {
+    cbSize: {"kind":"UInt32"},
+    hdcDst: Windows.Win32.Gdi.HDC,
+    pptDst: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+    psize: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SIZE},
+    hdcSrc: Windows.Win32.Gdi.HDC,
+    pptSrc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+    crKey: {"kind":"UInt32"},
+    pblend: {"kind""Ptr","child":Windows.Win32.Gdi.BLENDFUNCTION},
+    dwFlags: {"kind":"UInt32"},
+    prcDirty: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+};
+// --------------------------------------------------------
+// Type: DLGTEMPLATE
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const DLGTEMPLATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DLGITEMTEMPLATE
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const DLGITEMTEMPLATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: MSGBOXPARAMSA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MSGBOXPARAMSA = extern struct {
+    cbSize: {"kind":"UInt32"},
+    hwndOwner: Windows.Win32.WindowsAndMessaging.HWND,
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    lpszText: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszCaption: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwStyle: {"kind":"UInt32"},
+    lpszIcon: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwContextHelpId: {"kind":"UIntPtr"},
+    lpfnMsgBoxCallback: Windows.Win32.MenusAndResources.MSGBOXCALLBACK,
+    dwLanguageId: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MSGBOXPARAMSW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MSGBOXPARAMSW = extern struct {
+    cbSize: {"kind":"UInt32"},
+    hwndOwner: Windows.Win32.WindowsAndMessaging.HWND,
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    lpszText: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszCaption: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwStyle: {"kind":"UInt32"},
+    lpszIcon: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwContextHelpId: {"kind":"UIntPtr"},
+    lpfnMsgBoxCallback: Windows.Win32.MenusAndResources.MSGBOXCALLBACK,
+    dwLanguageId: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MDICREATESTRUCTA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MDICREATESTRUCTA = extern struct {
+    szClass: {"kind""Ptr","child":{"kind":"SByte"}},
+    szTitle: {"kind""Ptr","child":{"kind":"SByte"}},
+    hOwner: Windows.Win32.SystemServices.HANDLE,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    cx: {"kind":"Int32"},
+    cy: {"kind":"Int32"},
+    style: {"kind":"UInt32"},
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+};
+// --------------------------------------------------------
+// Type: MDICREATESTRUCTW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MDICREATESTRUCTW = extern struct {
+    szClass: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szTitle: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hOwner: Windows.Win32.SystemServices.HANDLE,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    cx: {"kind":"Int32"},
+    cy: {"kind":"Int32"},
+    style: {"kind":"UInt32"},
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+};
+// --------------------------------------------------------
+// Type: CLIENTCREATESTRUCT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CLIENTCREATESTRUCT = extern struct {
+    hWindowMenu: Windows.Win32.SystemServices.HANDLE,
+    idFirstChild: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: NONCLIENTMETRICSA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NONCLIENTMETRICSA = extern struct {
+    cbSize: {"kind":"UInt32"},
+    iBorderWidth: {"kind":"Int32"},
+    iScrollWidth: {"kind":"Int32"},
+    iScrollHeight: {"kind":"Int32"},
+    iCaptionWidth: {"kind":"Int32"},
+    iCaptionHeight: {"kind":"Int32"},
+    lfCaptionFont: Windows.Win32.Shell.LOGFONTA,
+    iSmCaptionWidth: {"kind":"Int32"},
+    iSmCaptionHeight: {"kind":"Int32"},
+    lfSmCaptionFont: Windows.Win32.Shell.LOGFONTA,
+    iMenuWidth: {"kind":"Int32"},
+    iMenuHeight: {"kind":"Int32"},
+    lfMenuFont: Windows.Win32.Shell.LOGFONTA,
+    lfStatusFont: Windows.Win32.Shell.LOGFONTA,
+    lfMessageFont: Windows.Win32.Shell.LOGFONTA,
+    iPaddedBorderWidth: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: NONCLIENTMETRICSW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NONCLIENTMETRICSW = extern struct {
+    cbSize: {"kind":"UInt32"},
+    iBorderWidth: {"kind":"Int32"},
+    iScrollWidth: {"kind":"Int32"},
+    iScrollHeight: {"kind":"Int32"},
+    iCaptionWidth: {"kind":"Int32"},
+    iCaptionHeight: {"kind":"Int32"},
+    lfCaptionFont: Windows.Win32.Shell.LOGFONTW,
+    iSmCaptionWidth: {"kind":"Int32"},
+    iSmCaptionHeight: {"kind":"Int32"},
+    lfSmCaptionFont: Windows.Win32.Shell.LOGFONTW,
+    iMenuWidth: {"kind":"Int32"},
+    iMenuHeight: {"kind":"Int32"},
+    lfMenuFont: Windows.Win32.Shell.LOGFONTW,
+    lfStatusFont: Windows.Win32.Shell.LOGFONTW,
+    lfMessageFont: Windows.Win32.Shell.LOGFONTW,
+    iPaddedBorderWidth: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: MINIMIZEDMETRICS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MINIMIZEDMETRICS = extern struct {
+    cbSize: {"kind":"UInt32"},
+    iWidth: {"kind":"Int32"},
+    iHorzGap: {"kind":"Int32"},
+    iVertGap: {"kind":"Int32"},
+    iArrange: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: ANIMATIONINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ANIMATIONINFO = extern struct {
+    cbSize: {"kind":"UInt32"},
+    iMinAnimate: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: AUDIODESCRIPTION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AUDIODESCRIPTION = extern struct {
+    cbSize: {"kind":"UInt32"},
+    Enabled: Windows.Win32.SystemServices.BOOL,
+    Locale: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: GUITHREADINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GUITHREADINFO = extern struct {
+    cbSize: {"kind":"UInt32"},
+    flags: {"kind":"UInt32"},
+    hwndActive: Windows.Win32.WindowsAndMessaging.HWND,
+    hwndFocus: Windows.Win32.WindowsAndMessaging.HWND,
+    hwndCapture: Windows.Win32.WindowsAndMessaging.HWND,
+    hwndMenuOwner: Windows.Win32.WindowsAndMessaging.HWND,
+    hwndMoveSize: Windows.Win32.WindowsAndMessaging.HWND,
+    hwndCaret: Windows.Win32.WindowsAndMessaging.HWND,
+    rcCaret: Windows.Win32.DisplayDevices.RECT,
+};
+// --------------------------------------------------------
+// Type: WINDOWINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINDOWINFO = extern struct {
+    cbSize: {"kind":"UInt32"},
+    rcWindow: Windows.Win32.DisplayDevices.RECT,
+    rcClient: Windows.Win32.DisplayDevices.RECT,
+    dwStyle: {"kind":"UInt32"},
+    dwExStyle: {"kind":"UInt32"},
+    dwWindowStatus: {"kind":"UInt32"},
+    cxWindowBorders: {"kind":"UInt32"},
+    cyWindowBorders: {"kind":"UInt32"},
+    atomWindowType: {"kind":"UInt16"},
+    wCreatorVersion: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: TITLEBARINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TITLEBARINFO = extern struct {
+    cbSize: {"kind":"UInt32"},
+    rcTitleBar: Windows.Win32.DisplayDevices.RECT,
+    rgstate: {"kind":"Array","child": {"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: TITLEBARINFOEX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TITLEBARINFOEX = extern struct {
+    cbSize: {"kind":"UInt32"},
+    rcTitleBar: Windows.Win32.DisplayDevices.RECT,
+    rgstate: {"kind":"Array","child": {"kind":"UInt32"}},
+    rgrect: {"kind":"Array","child": Windows.Win32.DisplayDevices.RECT},
+};
+// --------------------------------------------------------
+// Type: ALTTABINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ALTTABINFO = extern struct {
+    cbSize: {"kind":"UInt32"},
+    cItems: {"kind":"Int32"},
+    cColumns: {"kind":"Int32"},
+    cRows: {"kind":"Int32"},
+    iColFocus: {"kind":"Int32"},
+    iRowFocus: {"kind":"Int32"},
+    cxItem: {"kind":"Int32"},
+    cyItem: {"kind":"Int32"},
+    ptStart: Windows.Win32.DisplayDevices.POINT,
+};
+// --------------------------------------------------------
+// Type: CHANGEFILTERSTRUCT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CHANGEFILTERSTRUCT = extern struct {
+    cbSize: {"kind":"UInt32"},
+    ExtStatus: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: LPOFNHOOKPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPOFNHOOKPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: OPENFILENAME_NT4A
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const OPENFILENAME_NT4A = *opaque{
+};
+// --------------------------------------------------------
+// Type: OPENFILENAME_NT4W
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const OPENFILENAME_NT4W = *opaque{
+};
+// --------------------------------------------------------
+// Type: OPENFILENAMEA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const OPENFILENAMEA = *opaque{
+};
+// --------------------------------------------------------
+// Type: OPENFILENAMEW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const OPENFILENAMEW = *opaque{
+};
+// --------------------------------------------------------
+// Type: LPCCHOOKPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPCCHOOKPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: OFNOTIFYA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const OFNOTIFYA = *opaque{
+};
+// --------------------------------------------------------
+// Type: OFNOTIFYW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const OFNOTIFYW = *opaque{
+};
+// --------------------------------------------------------
+// Type: OFNOTIFYEXA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const OFNOTIFYEXA = *opaque{
+};
+// --------------------------------------------------------
+// Type: OFNOTIFYEXW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const OFNOTIFYEXW = *opaque{
+};
+// --------------------------------------------------------
+// Type: CHOOSECOLORA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const CHOOSECOLORA = *opaque{
+};
+// --------------------------------------------------------
+// Type: CHOOSECOLORW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const CHOOSECOLORW = *opaque{
+};
+// --------------------------------------------------------
+// Type: LPFRHOOKPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFRHOOKPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: FINDREPLACEA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const FINDREPLACEA = *opaque{
+};
+// --------------------------------------------------------
+// Type: FINDREPLACEW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const FINDREPLACEW = *opaque{
+};
+// --------------------------------------------------------
+// Type: LPCFHOOKPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPCFHOOKPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: CHOOSEFONTA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const CHOOSEFONTA = *opaque{
+};
+// --------------------------------------------------------
+// Type: CHOOSEFONTW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const CHOOSEFONTW = *opaque{
+};
+// --------------------------------------------------------
+// Type: LPPRINTHOOKPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPPRINTHOOKPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPSETUPHOOKPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPSETUPHOOKPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PRINTDLGA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const PRINTDLGA = *opaque{
+};
+// --------------------------------------------------------
+// Type: PRINTDLGW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const PRINTDLGW = *opaque{
+};
+// --------------------------------------------------------
+// Type: IPrintDialogCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPrintDialogCallback = *opaque{
+    // TODO: Method 'InitDone'
+    // TODO: Method 'SelectionChange'
+    // TODO: Method 'HandleMessage'
+};
+// --------------------------------------------------------
+// Type: IPrintDialogServices
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPrintDialogServices = *opaque{
+    // TODO: Method 'GetCurrentDevMode'
+    // TODO: Method 'GetCurrentPrinterName'
+    // TODO: Method 'GetCurrentPortName'
+};
+// --------------------------------------------------------
+// Type: PRINTPAGERANGE
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const PRINTPAGERANGE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PRINTDLGEXA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const PRINTDLGEXA = *opaque{
+};
+// --------------------------------------------------------
+// Type: PRINTDLGEXW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const PRINTDLGEXW = *opaque{
+};
+// --------------------------------------------------------
+// Type: DEVNAMES
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const DEVNAMES = *opaque{
+};
+// --------------------------------------------------------
+// Type: LPPAGEPAINTHOOK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPPAGEPAINTHOOK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPPAGESETUPHOOK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPPAGESETUPHOOK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PAGESETUPDLGA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const PAGESETUPDLGA = *opaque{
+};
+// --------------------------------------------------------
+// Type: PAGESETUPDLGW
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const PAGESETUPDLGW = *opaque{
+};
+// --------------------------------------------------------
+// Type: HWND
+// TypeLayoutAttr: sequential
+pub const HWND = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: LPARAM
+// TypeLayoutAttr: sequential
+pub const LPARAM = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: WPARAM
+// TypeLayoutAttr: sequential
+pub const WPARAM = {"kind":"UIntPtr"};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn IsHungAppWindow(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn RegisterWindowMessageA(
+    lpString: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn RegisterWindowMessageW(
+    lpString: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetMessageA(
+    lpMsg: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.MSG},
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    wMsgFilterMin: {"kind":"UInt32"},
+    wMsgFilterMax: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetMessageW(
+    lpMsg: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.MSG},
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    wMsgFilterMin: {"kind":"UInt32"},
+    wMsgFilterMax: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn TranslateMessage(
+    lpMsg: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.MSG},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DispatchMessageA(
+    lpMsg: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.MSG},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DispatchMessageW(
+    lpMsg: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.MSG},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn PeekMessageA(
+    lpMsg: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.MSG},
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    wMsgFilterMin: {"kind":"UInt32"},
+    wMsgFilterMax: {"kind":"UInt32"},
+    wRemoveMsg: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn PeekMessageW(
+    lpMsg: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.MSG},
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    wMsgFilterMin: {"kind":"UInt32"},
+    wMsgFilterMax: {"kind":"UInt32"},
+    wRemoveMsg: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetMessagePos(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetMessageTime(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetMessageExtraInfo(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn SetMessageExtraInfo(
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SendMessageA(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    Msg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SendMessageW(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    Msg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SendMessageTimeoutA(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    Msg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+    fuFlags: {"kind":"UInt32"},
+    uTimeout: {"kind":"UInt32"},
+    lpdwResult: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SendMessageTimeoutW(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    Msg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+    fuFlags: {"kind":"UInt32"},
+    uTimeout: {"kind":"UInt32"},
+    lpdwResult: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SendNotifyMessageA(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    Msg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SendNotifyMessageW(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    Msg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SendMessageCallbackA(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    Msg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+    lpResultCallBack: Windows.Win32.WindowsAndMessaging.SENDASYNCPROC,
+    dwData: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SendMessageCallbackW(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    Msg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+    lpResultCallBack: Windows.Win32.WindowsAndMessaging.SENDASYNCPROC,
+    dwData: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn BroadcastSystemMessageExA(
+    flags: {"kind":"UInt32"},
+    lpInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Msg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+    pbsmInfo: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.BSMINFO},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn BroadcastSystemMessageExW(
+    flags: {"kind":"UInt32"},
+    lpInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Msg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+    pbsmInfo: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.BSMINFO},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn BroadcastSystemMessageW(
+    flags: {"kind":"UInt32"},
+    lpInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Msg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn PostMessageA(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    Msg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn PostMessageW(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    Msg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn PostThreadMessageA(
+    idThread: {"kind":"UInt32"},
+    Msg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn PostThreadMessageW(
+    idThread: {"kind":"UInt32"},
+    Msg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn ReplyMessage(
+    lResult: Windows.Win32.SystemServices.LRESULT,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn WaitMessage(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DefWindowProcA(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    Msg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DefWindowProcW(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    Msg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn PostQuitMessage(
+    nExitCode: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn CallWindowProcA(
+    lpPrevWndFunc: Windows.Win32.MenusAndResources.WNDPROC,
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    Msg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn CallWindowProcW(
+    lpPrevWndFunc: Windows.Win32.MenusAndResources.WNDPROC,
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    Msg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn InSendMessage(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn InSendMessageEx(
+    lpReserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn RegisterClassA(
+    lpWndClass: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.WNDCLASSA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn RegisterClassW(
+    lpWndClass: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.WNDCLASSW},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn UnregisterClassA(
+    lpClassName: {"kind""Ptr","child":{"kind":"SByte"}},
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn UnregisterClassW(
+    lpClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetClassInfoA(
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    lpClassName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpWndClass: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.WNDCLASSA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetClassInfoW(
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    lpClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpWndClass: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.WNDCLASSW},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn RegisterClassExA(
+    param0: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.WNDCLASSEXA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn RegisterClassExW(
+    param0: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.WNDCLASSEXW},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetClassInfoExA(
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    lpszClass: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpwcx: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.WNDCLASSEXA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetClassInfoExW(
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    lpszClass: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpwcx: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.WNDCLASSEXW},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CreateWindowExA(
+    dwExStyle: {"kind":"UInt32"},
+    lpClassName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpWindowName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwStyle: {"kind":"UInt32"},
+    X: {"kind":"Int32"},
+    Y: {"kind":"Int32"},
+    nWidth: {"kind":"Int32"},
+    nHeight: {"kind":"Int32"},
+    hWndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    lpParam: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CreateWindowExW(
+    dwExStyle: {"kind":"UInt32"},
+    lpClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpWindowName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwStyle: {"kind":"UInt32"},
+    X: {"kind":"Int32"},
+    Y: {"kind":"Int32"},
+    nWidth: {"kind":"Int32"},
+    nHeight: {"kind":"Int32"},
+    hWndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    hMenu: Windows.Win32.MenusAndResources.HMENU,
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    lpParam: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn IsWindow(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn IsChild(
+    hWndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn DestroyWindow(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn ShowWindow(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    nCmdShow: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn AnimateWindow(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    dwTime: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn UpdateLayeredWindow(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hdcDst: Windows.Win32.Gdi.HDC,
+    pptDst: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+    psize: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SIZE},
+    hdcSrc: Windows.Win32.Gdi.HDC,
+    pptSrc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+    crKey: {"kind":"UInt32"},
+    pblend: {"kind""Ptr","child":Windows.Win32.Gdi.BLENDFUNCTION},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetLayeredWindowAttributes(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    pcrKey: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pbAlpha: {"kind""Ptr","child":{"kind":"Byte"}},
+    pdwFlags: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetLayeredWindowAttributes(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    crKey: {"kind":"UInt32"},
+    bAlpha: {"kind":"Byte"},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn ShowWindowAsync(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    nCmdShow: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn ShowOwnedPopups(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    fShow: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn OpenIcon(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CloseWindow(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn MoveWindow(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    X: {"kind":"Int32"},
+    Y: {"kind":"Int32"},
+    nWidth: {"kind":"Int32"},
+    nHeight: {"kind":"Int32"},
+    bRepaint: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetWindowPos(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hWndInsertAfter: Windows.Win32.WindowsAndMessaging.HWND,
+    X: {"kind":"Int32"},
+    Y: {"kind":"Int32"},
+    cx: {"kind":"Int32"},
+    cy: {"kind":"Int32"},
+    uFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetWindowPlacement(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpwndpl: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.WINDOWPLACEMENT},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetWindowPlacement(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpwndpl: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.WINDOWPLACEMENT},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetWindowDisplayAffinity(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    pdwAffinity: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetWindowDisplayAffinity(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    dwAffinity: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn BeginDeferWindowPos(
+    nNumWindows: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn DeferWindowPos(
+    hWinPosInfo: {"kind":"IntPtr"},
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hWndInsertAfter: Windows.Win32.WindowsAndMessaging.HWND,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    cx: {"kind":"Int32"},
+    cy: {"kind":"Int32"},
+    uFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn EndDeferWindowPos(
+    hWinPosInfo: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn IsWindowVisible(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn IsIconic(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn AnyPopup(
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn BringWindowToTop(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn IsZoomed(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CreateDialogParamA(
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    lpTemplateName: {"kind""Ptr","child":{"kind":"SByte"}},
+    hWndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    lpDialogFunc: Windows.Win32.WindowsAndMessaging.DLGPROC,
+    dwInitParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CreateDialogParamW(
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    lpTemplateName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hWndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    lpDialogFunc: Windows.Win32.WindowsAndMessaging.DLGPROC,
+    dwInitParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CreateDialogIndirectParamA(
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    lpTemplate: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.DLGTEMPLATE},
+    hWndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    lpDialogFunc: Windows.Win32.WindowsAndMessaging.DLGPROC,
+    dwInitParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CreateDialogIndirectParamW(
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    lpTemplate: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.DLGTEMPLATE},
+    hWndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    lpDialogFunc: Windows.Win32.WindowsAndMessaging.DLGPROC,
+    dwInitParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn DialogBoxParamA(
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    lpTemplateName: {"kind""Ptr","child":{"kind":"SByte"}},
+    hWndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    lpDialogFunc: Windows.Win32.WindowsAndMessaging.DLGPROC,
+    dwInitParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn DialogBoxParamW(
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    lpTemplateName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hWndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    lpDialogFunc: Windows.Win32.WindowsAndMessaging.DLGPROC,
+    dwInitParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn DialogBoxIndirectParamA(
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    hDialogTemplate: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.DLGTEMPLATE},
+    hWndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    lpDialogFunc: Windows.Win32.WindowsAndMessaging.DLGPROC,
+    dwInitParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn DialogBoxIndirectParamW(
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    hDialogTemplate: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.DLGTEMPLATE},
+    hWndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    lpDialogFunc: Windows.Win32.WindowsAndMessaging.DLGPROC,
+    dwInitParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn EndDialog(
+    hDlg: Windows.Win32.WindowsAndMessaging.HWND,
+    nResult: {"kind":"IntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetDlgItem(
+    hDlg: Windows.Win32.WindowsAndMessaging.HWND,
+    nIDDlgItem: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetDlgItemInt(
+    hDlg: Windows.Win32.WindowsAndMessaging.HWND,
+    nIDDlgItem: {"kind":"Int32"},
+    uValue: {"kind":"UInt32"},
+    bSigned: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetDlgItemInt(
+    hDlg: Windows.Win32.WindowsAndMessaging.HWND,
+    nIDDlgItem: {"kind":"Int32"},
+    lpTranslated: {"kind""Ptr","child":{"kind":"Int32"}},
+    bSigned: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetDlgItemTextA(
+    hDlg: Windows.Win32.WindowsAndMessaging.HWND,
+    nIDDlgItem: {"kind":"Int32"},
+    lpString: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetDlgItemTextW(
+    hDlg: Windows.Win32.WindowsAndMessaging.HWND,
+    nIDDlgItem: {"kind":"Int32"},
+    lpString: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetDlgItemTextA(
+    hDlg: Windows.Win32.WindowsAndMessaging.HWND,
+    nIDDlgItem: {"kind":"Int32"},
+    lpString: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchMax: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetDlgItemTextW(
+    hDlg: Windows.Win32.WindowsAndMessaging.HWND,
+    nIDDlgItem: {"kind":"Int32"},
+    lpString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchMax: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn SendDlgItemMessageA(
+    hDlg: Windows.Win32.WindowsAndMessaging.HWND,
+    nIDDlgItem: {"kind":"Int32"},
+    Msg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn SendDlgItemMessageW(
+    hDlg: Windows.Win32.WindowsAndMessaging.HWND,
+    nIDDlgItem: {"kind":"Int32"},
+    Msg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetNextDlgGroupItem(
+    hDlg: Windows.Win32.WindowsAndMessaging.HWND,
+    hCtl: Windows.Win32.WindowsAndMessaging.HWND,
+    bPrevious: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetNextDlgTabItem(
+    hDlg: Windows.Win32.WindowsAndMessaging.HWND,
+    hCtl: Windows.Win32.WindowsAndMessaging.HWND,
+    bPrevious: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetDlgCtrlID(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetDialogBaseUnits(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DefDlgProcW(
+    hDlg: Windows.Win32.WindowsAndMessaging.HWND,
+    Msg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn CallMsgFilterA(
+    lpMsg: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.MSG},
+    nCode: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn CallMsgFilterW(
+    lpMsg: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.MSG},
+    nCode: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetInputState(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetQueueStatus(
+    flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetTimer(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    nIDEvent: {"kind":"UIntPtr"},
+    uElapse: {"kind":"UInt32"},
+    lpTimerFunc: Windows.Win32.WindowsAndMessaging.TIMERPROC,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetCoalescableTimer(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    nIDEvent: {"kind":"UIntPtr"},
+    uElapse: {"kind":"UInt32"},
+    lpTimerFunc: Windows.Win32.WindowsAndMessaging.TIMERPROC,
+    uToleranceDelay: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn KillTimer(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    uIDEvent: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn IsWindowUnicode(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetSystemMetrics(
+    nIndex: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CalculatePopupWindowPosition(
+    anchorPoint: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+    windowSize: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SIZE},
+    flags: {"kind":"UInt32"},
+    excludeRect: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    popupWindowPosition: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetForegroundWindow(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn SwitchToThisWindow(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    fUnknown: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn SetForegroundWindow(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn AllowSetForegroundWindow(
+    dwProcessId: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn LockSetForegroundWindow(
+    uLockCode: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetPropA(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpString: {"kind""Ptr","child":{"kind":"SByte"}},
+    hData: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetPropW(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hData: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetPropA(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpString: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetPropW(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpString: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn RemovePropA(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpString: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn RemovePropW(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpString: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn EnumPropsExA(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpEnumFunc: Windows.Win32.WindowsAndMessaging.PROPENUMPROCEXA,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn EnumPropsExW(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpEnumFunc: Windows.Win32.WindowsAndMessaging.PROPENUMPROCEXW,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn EnumPropsA(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpEnumFunc: Windows.Win32.WindowsAndMessaging.PROPENUMPROCA,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn EnumPropsW(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpEnumFunc: Windows.Win32.WindowsAndMessaging.PROPENUMPROCW,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetWindowTextA(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpString: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetWindowTextW(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpString: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetWindowTextA(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpString: {"kind""Ptr","child":{"kind":"SByte"}},
+    nMaxCount: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetWindowTextW(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    nMaxCount: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetWindowTextLengthA(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetWindowTextLengthW(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetClientRect(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpRect: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetWindowRect(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpRect: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn AdjustWindowRect(
+    lpRect: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    dwStyle: {"kind":"UInt32"},
+    bMenu: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn AdjustWindowRectEx(
+    lpRect: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    dwStyle: {"kind":"UInt32"},
+    bMenu: Windows.Win32.SystemServices.BOOL,
+    dwExStyle: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn MessageBoxA(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpText: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpCaption: {"kind""Ptr","child":{"kind":"SByte"}},
+    uType: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn MessageBoxW(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpText: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpCaption: {"kind""Ptr","child":{"kind":"UInt16"}},
+    uType: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn MessageBoxExA(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpText: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpCaption: {"kind""Ptr","child":{"kind":"SByte"}},
+    uType: {"kind":"UInt32"},
+    wLanguageId: {"kind":"UInt16"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn MessageBoxExW(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpText: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpCaption: {"kind""Ptr","child":{"kind":"UInt16"}},
+    uType: {"kind":"UInt32"},
+    wLanguageId: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn MessageBoxIndirectA(
+    lpmbp: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.MSGBOXPARAMSA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn MessageBoxIndirectW(
+    lpmbp: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.MSGBOXPARAMSW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn LogicalToPhysicalPoint(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpPoint: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn PhysicalToLogicalPoint(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpPoint: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn WindowFromPoint(
+    Point: Windows.Win32.DisplayDevices.POINT,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn WindowFromPhysicalPoint(
+    Point: Windows.Win32.DisplayDevices.POINT,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn ChildWindowFromPoint(
+    hWndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    Point: Windows.Win32.DisplayDevices.POINT,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn ChildWindowFromPointEx(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    pt: Windows.Win32.DisplayDevices.POINT,
+    flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetSysColor(
+    nIndex: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetSysColors(
+    cElements: {"kind":"Int32"},
+    lpaElements: {"kind""Ptr","child":{"kind":"Int32"}},
+    lpaRgbValues: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetWindowLongA(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    nIndex: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetWindowLongW(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    nIndex: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetWindowLongA(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    nIndex: {"kind":"Int32"},
+    dwNewLong: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetWindowLongW(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    nIndex: {"kind":"Int32"},
+    dwNewLong: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetClassWord(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    nIndex: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetClassWord(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    nIndex: {"kind":"Int32"},
+    wNewWord: {"kind":"UInt16"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetClassLongA(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    nIndex: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetClassLongW(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    nIndex: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetClassLongA(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    nIndex: {"kind":"Int32"},
+    dwNewLong: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetClassLongW(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    nIndex: {"kind":"Int32"},
+    dwNewLong: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetProcessDefaultLayout(
+    pdwDefaultLayout: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetProcessDefaultLayout(
+    dwDefaultLayout: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetDesktopWindow(
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetParent(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetParent(
+    hWndChild: Windows.Win32.WindowsAndMessaging.HWND,
+    hWndNewParent: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn EnumChildWindows(
+    hWndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    lpEnumFunc: Windows.Win32.MenusAndResources.WNDENUMPROC,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn FindWindowA(
+    lpClassName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpWindowName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn FindWindowW(
+    lpClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpWindowName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn FindWindowExA(
+    hWndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    hWndChildAfter: Windows.Win32.WindowsAndMessaging.HWND,
+    lpszClass: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszWindow: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn FindWindowExW(
+    hWndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    hWndChildAfter: Windows.Win32.WindowsAndMessaging.HWND,
+    lpszClass: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszWindow: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetShellWindow(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn RegisterShellHookWindow(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DeregisterShellHookWindow(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn EnumWindows(
+    lpEnumFunc: Windows.Win32.MenusAndResources.WNDENUMPROC,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn EnumThreadWindows(
+    dwThreadId: {"kind":"UInt32"},
+    lpfn: Windows.Win32.MenusAndResources.WNDENUMPROC,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetClassNameA(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpClassName: {"kind""Ptr","child":{"kind":"SByte"}},
+    nMaxCount: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetClassNameW(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    nMaxCount: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetTopWindow(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetWindowThreadProcessId(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpdwProcessId: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn IsGUIThread(
+    bConvert: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetLastActivePopup(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetWindow(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    uCmd: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetWindowsHookExA(
+    idHook: {"kind":"Int32"},
+    lpfn: Windows.Win32.WindowsAndMessaging.HOOKPROC,
+    hmod: Windows.Win32.SystemServices.HINSTANCE,
+    dwThreadId: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetWindowsHookExW(
+    idHook: {"kind":"Int32"},
+    lpfn: Windows.Win32.WindowsAndMessaging.HOOKPROC,
+    hmod: Windows.Win32.SystemServices.HINSTANCE,
+    dwThreadId: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn UnhookWindowsHookEx(
+    hhk: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn CallNextHookEx(
+    hhk: {"kind":"IntPtr"},
+    nCode: {"kind":"Int32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn IsDialogMessageA(
+    hDlg: Windows.Win32.WindowsAndMessaging.HWND,
+    lpMsg: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.MSG},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn IsDialogMessageW(
+    hDlg: Windows.Win32.WindowsAndMessaging.HWND,
+    lpMsg: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.MSG},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn MapDialogRect(
+    hDlg: Windows.Win32.WindowsAndMessaging.HWND,
+    lpRect: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DefFrameProcA(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hWndMDIClient: Windows.Win32.WindowsAndMessaging.HWND,
+    uMsg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DefFrameProcW(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hWndMDIClient: Windows.Win32.WindowsAndMessaging.HWND,
+    uMsg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DefMDIChildProcA(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    uMsg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DefMDIChildProcW(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    uMsg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn TranslateMDISysAccel(
+    hWndClient: Windows.Win32.WindowsAndMessaging.HWND,
+    lpMsg: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.MSG},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn ArrangeIconicWindows(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CreateMDIWindowA(
+    lpClassName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpWindowName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwStyle: {"kind":"UInt32"},
+    X: {"kind":"Int32"},
+    Y: {"kind":"Int32"},
+    nWidth: {"kind":"Int32"},
+    nHeight: {"kind":"Int32"},
+    hWndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CreateMDIWindowW(
+    lpClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpWindowName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwStyle: {"kind":"UInt32"},
+    X: {"kind":"Int32"},
+    Y: {"kind":"Int32"},
+    nWidth: {"kind":"Int32"},
+    nHeight: {"kind":"Int32"},
+    hWndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn TileWindows(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    wHow: {"kind":"UInt32"},
+    lpRect: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    cKids: {"kind":"UInt32"},
+    lpKids: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CascadeWindows(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    wHow: {"kind":"UInt32"},
+    lpRect: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    cKids: {"kind":"UInt32"},
+    lpKids: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SystemParametersInfoA(
+    uiAction: {"kind":"UInt32"},
+    uiParam: {"kind":"UInt32"},
+    pvParam: {"kind""Ptr","child":{"kind":"Void"}},
+    fWinIni: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SystemParametersInfoW(
+    uiAction: {"kind":"UInt32"},
+    uiParam: {"kind":"UInt32"},
+    pvParam: {"kind""Ptr","child":{"kind":"Void"}},
+    fWinIni: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn SoundSentry(
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn InternalGetWindowText(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    pString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchMaxCount: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetGUIThreadInfo(
+    idThread: {"kind":"UInt32"},
+    pgui: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.GUITHREADINFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn SetProcessDPIAware(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn IsProcessDPIAware(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetWindowModuleFileNameA(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    pszFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchFileNameMax: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetWindowModuleFileNameW(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    pszFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchFileNameMax: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetWindowInfo(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    pwi: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.WINDOWINFO},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetTitleBarInfo(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    pti: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.TITLEBARINFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetAncestor(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    gaFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn RealChildWindowFromPoint(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    ptParentClientCoords: Windows.Win32.DisplayDevices.POINT,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn RealGetWindowClassW(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    ptszClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchClassNameMax: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetAltTabInfoA(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    iItem: {"kind":"Int32"},
+    pati: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.ALTTABINFO},
+    pszItemText: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchItemText: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetAltTabInfoW(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    iItem: {"kind":"Int32"},
+    pati: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.ALTTABINFO},
+    pszItemText: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchItemText: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn ChangeWindowMessageFilter(
+    message: {"kind":"UInt32"},
+    dwFlag: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn ChangeWindowMessageFilterEx(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    message: {"kind":"UInt32"},
+    action: {"kind":"UInt32"},
+    pChangeFilterStruct: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.CHANGEFILTERSTRUCT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "COMDLG32" fn GetOpenFileNameA(
+    param0: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.OPENFILENAMEA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "COMDLG32" fn GetOpenFileNameW(
+    param0: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.OPENFILENAMEW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "COMDLG32" fn GetSaveFileNameA(
+    param0: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.OPENFILENAMEA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "COMDLG32" fn GetSaveFileNameW(
+    param0: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.OPENFILENAMEW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "COMDLG32" fn GetFileTitleA(
+    param0: {"kind""Ptr","child":{"kind":"SByte"}},
+    Buf: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchSize: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "COMDLG32" fn GetFileTitleW(
+    param0: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Buf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchSize: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "COMDLG32" fn ChooseColorA(
+    param0: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.CHOOSECOLORA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "COMDLG32" fn ChooseColorW(
+    param0: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.CHOOSECOLORW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "COMDLG32" fn FindTextA(
+    param0: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.FINDREPLACEA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "COMDLG32" fn FindTextW(
+    param0: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.FINDREPLACEW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "COMDLG32" fn ReplaceTextA(
+    param0: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.FINDREPLACEA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "COMDLG32" fn ReplaceTextW(
+    param0: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.FINDREPLACEW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "COMDLG32" fn ChooseFontA(
+    param0: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.CHOOSEFONTA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "COMDLG32" fn ChooseFontW(
+    param0: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.CHOOSEFONTW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "COMDLG32" fn PrintDlgA(
+    pPD: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.PRINTDLGA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "COMDLG32" fn PrintDlgW(
+    pPD: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.PRINTDLGW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "COMDLG32" fn PrintDlgExA(
+    pPD: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.PRINTDLGEXA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "COMDLG32" fn PrintDlgExW(
+    pPD: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.PRINTDLGEXW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "COMDLG32" fn CommDlgExtendedError(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "COMDLG32" fn PageSetupDlgA(
+    param0: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.PAGESETUPDLGA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "COMDLG32" fn PageSetupDlgW(
+    param0: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.PAGESETUPDLGW},
+],
+
+"unicode_aliases": [
+     "PROPENUMPROC"
+     "PROPENUMPROCEX"
+     "CBT_CREATEWND"
+     "WNDCLASSEX"
+     "WNDCLASS"
+     "CREATESTRUCT"
+     "MSGBOXPARAMS"
+     "MDICREATESTRUCT"
+     "NONCLIENTMETRICS"
+     "OPENFILENAME_NT4"
+     "OPENFILENAME"
+     "OFNOTIFY"
+     "OFNOTIFYEX"
+     "CHOOSECOLOR"
+     "FINDREPLACE"
+     "CHOOSEFONT"
+     "PRINTDLG"
+     "PRINTDLGEX"
+     "PAGESETUPDLG"
+     "RegisterWindowMessage"
+     "GetMessage"
+     "DispatchMessage"
+     "PeekMessage"
+     "SendMessage"
+     "SendMessageTimeout"
+     "SendNotifyMessage"
+     "SendMessageCallback"
+     "BroadcastSystemMessageEx"
+     "PostMessage"
+     "PostThreadMessage"
+     "DefWindowProc"
+     "CallWindowProc"
+     "RegisterClass"
+     "UnregisterClass"
+     "GetClassInfo"
+     "RegisterClassEx"
+     "GetClassInfoEx"
+     "CreateWindowEx"
+     "CreateDialogParam"
+     "CreateDialogIndirectParam"
+     "DialogBoxParam"
+     "DialogBoxIndirectParam"
+     "SetDlgItemText"
+     "GetDlgItemText"
+     "SendDlgItemMessage"
+     "CallMsgFilter"
+     "SetProp"
+     "GetProp"
+     "RemoveProp"
+     "EnumPropsEx"
+     "EnumProps"
+     "SetWindowText"
+     "GetWindowText"
+     "GetWindowTextLength"
+     "MessageBox"
+     "MessageBoxEx"
+     "MessageBoxIndirect"
+     "GetWindowLong"
+     "SetWindowLong"
+     "GetClassLong"
+     "SetClassLong"
+     "FindWindow"
+     "FindWindowEx"
+     "GetClassName"
+     "SetWindowsHookEx"
+     "IsDialogMessage"
+     "DefFrameProc"
+     "DefMDIChildProc"
+     "CreateMDIWindow"
+     "SystemParametersInfo"
+     "GetWindowModuleFileName"
+     "GetAltTabInfo"
+     "GetOpenFileName"
+     "GetSaveFileName"
+     "GetFileTitle"
+     "ChooseColor"
+     "FindText"
+     "ReplaceText"
+     "ChooseFont"
+     "PrintDlg"
+     "PrintDlgEx"
+     "PageSetupDlg"
+]}

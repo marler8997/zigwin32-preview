@@ -1,0 +1,82 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: IWsbApplicationBackupSupport
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWsbApplicationBackupSupport = *opaque{
+    // TODO: Method 'CheckConsistency'
+};
+// --------------------------------------------------------
+// Type: IWsbApplicationRestoreSupport
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWsbApplicationRestoreSupport = *opaque{
+    // TODO: Method 'PreRestore'
+    // TODO: Method 'PostRestore'
+    // TODO: Method 'OrderComponents'
+    // TODO: Method 'IsRollForwardSupported'
+};
+// --------------------------------------------------------
+// Type: IWsbApplicationAsync
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWsbApplicationAsync = *opaque{
+    // TODO: Method 'QueryStatus'
+    // TODO: Method 'Abort'
+};
+// --------------------------------------------------------
+// Type: WSB_OB_STATUS_ENTRY_PAIR_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSB_OB_STATUS_ENTRY_PAIR_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WSB_OB_STATUS_ENTRY_VALUE_TYPE_PAIR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSB_OB_STATUS_ENTRY_VALUE_TYPE_PAIR = extern struct {
+    m_wszObStatusEntryPairValue: {"kind""Ptr","child":{"kind":"UInt16"}},
+    m_ObStatusEntryPairType: Windows.Win32.WindowsServerBackup.WSB_OB_STATUS_ENTRY_PAIR_TYPE,
+};
+// --------------------------------------------------------
+// Type: WSB_OB_STATUS_ENTRY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSB_OB_STATUS_ENTRY = extern struct {
+    m_dwIcon: {"kind":"UInt32"},
+    m_dwStatusEntryName: {"kind":"UInt32"},
+    m_dwStatusEntryValue: {"kind":"UInt32"},
+    m_cValueTypePair: {"kind":"UInt32"},
+    m_rgValueTypePair: {"kind""Ptr","child":Windows.Win32.WindowsServerBackup.WSB_OB_STATUS_ENTRY_VALUE_TYPE_PAIR},
+};
+// --------------------------------------------------------
+// Type: WSB_OB_STATUS_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSB_OB_STATUS_INFO = extern struct {
+    m_guidSnapinId: Guid,
+    m_cStatusEntry: {"kind":"UInt32"},
+    m_rgStatusEntry: {"kind""Ptr","child":Windows.Win32.WindowsServerBackup.WSB_OB_STATUS_ENTRY},
+};
+// --------------------------------------------------------
+// Type: WSB_OB_REGISTRATION_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSB_OB_REGISTRATION_INFO = extern struct {
+    m_wszResourceDLL: {"kind""Ptr","child":{"kind":"UInt16"}},
+    m_guidSnapinId: Guid,
+    m_dwProviderName: {"kind":"UInt32"},
+    m_dwProviderIcon: {"kind":"UInt32"},
+    m_bSupportsRemoting: {"kind":"Byte"},
+};
+],
+
+"func_definitions": [
+],
+
+"unicode_aliases": [
+]}

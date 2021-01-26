@@ -1,0 +1,206 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: USEROBJECTFLAGS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USEROBJECTFLAGS = extern struct {
+    fInherit: Windows.Win32.SystemServices.BOOL,
+    fReserved: Windows.Win32.SystemServices.BOOL,
+    dwFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HDESK
+// TypeLayoutAttr: sequential
+// RAIIFree 'CloseDesktop' (TODO: can we use this information?)
+pub const HDESK = {"kind":"IntPtr"};
+],
+
+"func_definitions": [
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CreateDesktopA(
+    lpszDesktop: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszDevice: {"kind""Ptr","child":{"kind":"SByte"}},
+    pDevmode: {"kind""Ptr","child":Windows.Win32.Xps.DEVMODEA},
+    dwFlags: {"kind":"UInt32"},
+    dwDesiredAccess: {"kind":"UInt32"},
+    lpsa: {"kind""Ptr","child":Windows.Win32.SystemServices.SECURITY_ATTRIBUTES},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CreateDesktopW(
+    lpszDesktop: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszDevice: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pDevmode: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DEVMODEW},
+    dwFlags: {"kind":"UInt32"},
+    dwDesiredAccess: {"kind":"UInt32"},
+    lpsa: {"kind""Ptr","child":Windows.Win32.SystemServices.SECURITY_ATTRIBUTES},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CreateDesktopExA(
+    lpszDesktop: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszDevice: {"kind""Ptr","child":{"kind":"SByte"}},
+    pDevmode: {"kind""Ptr","child":Windows.Win32.Xps.DEVMODEA},
+    dwFlags: {"kind":"UInt32"},
+    dwDesiredAccess: {"kind":"UInt32"},
+    lpsa: {"kind""Ptr","child":Windows.Win32.SystemServices.SECURITY_ATTRIBUTES},
+    ulHeapSize: {"kind":"UInt32"},
+    pvoid: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CreateDesktopExW(
+    lpszDesktop: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszDevice: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pDevmode: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DEVMODEW},
+    dwFlags: {"kind":"UInt32"},
+    dwDesiredAccess: {"kind":"UInt32"},
+    lpsa: {"kind""Ptr","child":Windows.Win32.SystemServices.SECURITY_ATTRIBUTES},
+    ulHeapSize: {"kind":"UInt32"},
+    pvoid: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn OpenDesktopA(
+    lpszDesktop: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwFlags: {"kind":"UInt32"},
+    fInherit: Windows.Win32.SystemServices.BOOL,
+    dwDesiredAccess: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn OpenDesktopW(
+    lpszDesktop: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+    fInherit: Windows.Win32.SystemServices.BOOL,
+    dwDesiredAccess: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn OpenInputDesktop(
+    dwFlags: {"kind":"UInt32"},
+    fInherit: Windows.Win32.SystemServices.BOOL,
+    dwDesiredAccess: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn EnumDesktopsA(
+    hwinsta: {"kind":"IntPtr"},
+    lpEnumFunc: Windows.Win32.MenusAndResources.DESKTOPENUMPROCA,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn EnumDesktopsW(
+    hwinsta: {"kind":"IntPtr"},
+    lpEnumFunc: Windows.Win32.MenusAndResources.DESKTOPENUMPROCW,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn EnumDesktopWindows(
+    hDesktop: Windows.Win32.WindowsStationsAndDesktops.HDESK,
+    lpfn: Windows.Win32.MenusAndResources.WNDENUMPROC,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SwitchDesktop(
+    hDesktop: Windows.Win32.WindowsStationsAndDesktops.HDESK,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetThreadDesktop(
+    hDesktop: Windows.Win32.WindowsStationsAndDesktops.HDESK,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CloseDesktop(
+    hDesktop: Windows.Win32.WindowsStationsAndDesktops.HDESK,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetThreadDesktop(
+    dwThreadId: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CreateWindowStationA(
+    lpwinsta: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwFlags: {"kind":"UInt32"},
+    dwDesiredAccess: {"kind":"UInt32"},
+    lpsa: {"kind""Ptr","child":Windows.Win32.SystemServices.SECURITY_ATTRIBUTES},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CreateWindowStationW(
+    lpwinsta: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+    dwDesiredAccess: {"kind":"UInt32"},
+    lpsa: {"kind""Ptr","child":Windows.Win32.SystemServices.SECURITY_ATTRIBUTES},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn OpenWindowStationA(
+    lpszWinSta: {"kind""Ptr","child":{"kind":"SByte"}},
+    fInherit: Windows.Win32.SystemServices.BOOL,
+    dwDesiredAccess: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn OpenWindowStationW(
+    lpszWinSta: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fInherit: Windows.Win32.SystemServices.BOOL,
+    dwDesiredAccess: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn EnumWindowStationsA(
+    lpEnumFunc: Windows.Win32.MenusAndResources.WINSTAENUMPROCA,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn EnumWindowStationsW(
+    lpEnumFunc: Windows.Win32.MenusAndResources.WINSTAENUMPROCW,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CloseWindowStation(
+    hWinSta: {"kind":"IntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetProcessWindowStation(
+    hWinSta: {"kind":"IntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetProcessWindowStation(
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetUserObjectInformationA(
+    hObj: Windows.Win32.SystemServices.HANDLE,
+    nIndex: {"kind":"Int32"},
+    pvInfo: {"kind""Ptr","child":{"kind":"Void"}},
+    nLength: {"kind":"UInt32"},
+    lpnLengthNeeded: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetUserObjectInformationW(
+    hObj: Windows.Win32.SystemServices.HANDLE,
+    nIndex: {"kind":"Int32"},
+    pvInfo: {"kind""Ptr","child":{"kind":"Void"}},
+    nLength: {"kind":"UInt32"},
+    lpnLengthNeeded: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetUserObjectInformationA(
+    hObj: Windows.Win32.SystemServices.HANDLE,
+    nIndex: {"kind":"Int32"},
+    pvInfo: {"kind""Ptr","child":{"kind":"Void"}},
+    nLength: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetUserObjectInformationW(
+    hObj: Windows.Win32.SystemServices.HANDLE,
+    nIndex: {"kind":"Int32"},
+    pvInfo: {"kind""Ptr","child":{"kind":"Void"}},
+    nLength: {"kind":"UInt32"},
+],
+
+"unicode_aliases": [
+     "CreateDesktop"
+     "CreateDesktopEx"
+     "OpenDesktop"
+     "EnumDesktops"
+     "CreateWindowStation"
+     "OpenWindowStation"
+     "EnumWindowStations"
+     "GetUserObjectInformation"
+     "SetUserObjectInformation"
+]}

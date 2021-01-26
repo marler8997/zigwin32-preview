@@ -1,0 +1,134 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: TBS_CONTEXT_PARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TBS_CONTEXT_PARAMS = extern struct {
+    version: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: TBS_CONTEXT_PARAMS2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TBS_CONTEXT_PARAMS2 = extern struct {
+    version: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.TpmBaseServices.TBS_CONTEXT_PARAMS2+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            _bitfield: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: tdTPM_WNF_PROVISIONING
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const tdTPM_WNF_PROVISIONING = extern struct {
+    status: {"kind":"UInt32"},
+    message: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: TPM_DEVICE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TPM_DEVICE_INFO = extern struct {
+    structVersion: {"kind":"UInt32"},
+    tpmVersion: {"kind":"UInt32"},
+    tpmInterfaceType: {"kind":"UInt32"},
+    tpmImpRevision: {"kind":"UInt32"},
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "tbs" fn Tbsi_Context_Create(
+    pContextParams: {"kind""Ptr","child":Windows.Win32.TpmBaseServices.TBS_CONTEXT_PARAMS},
+    phContext: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "tbs" fn Tbsip_Context_Close(
+    hContext: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "tbs" fn Tbsip_Submit_Command(
+    hContext: {"kind""Ptr","child":{"kind":"Void"}},
+    Locality: {"kind":"UInt32"},
+    Priority: {"kind":"UInt32"},
+    pabCommand: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbCommand: {"kind":"UInt32"},
+    pabResult: {"kind""Ptr","child":{"kind":"Byte"}},
+    pcbResult: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "tbs" fn Tbsip_Cancel_Commands(
+    hContext: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "tbs" fn Tbsi_Physical_Presence_Command(
+    hContext: {"kind""Ptr","child":{"kind":"Void"}},
+    pabInput: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbInput: {"kind":"UInt32"},
+    pabOutput: {"kind""Ptr","child":{"kind":"Byte"}},
+    pcbOutput: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "tbs" fn Tbsi_Get_TCG_Log(
+    hContext: {"kind""Ptr","child":{"kind":"Void"}},
+    pOutputBuf: {"kind""Ptr","child":{"kind":"Byte"}},
+    pOutputBufLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "tbs" fn Tbsi_GetDeviceInfo(
+    Size: {"kind":"UInt32"},
+    Info: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "tbs" fn Tbsi_Get_OwnerAuth(
+    hContext: {"kind""Ptr","child":{"kind":"Void"}},
+    ownerauthType: {"kind":"UInt32"},
+    pOutputBuf: {"kind""Ptr","child":{"kind":"Byte"}},
+    pOutputBufLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "tbs" fn Tbsi_Revoke_Attestation(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSOUND" fn GetDeviceID(
+    pbWindowsAIK: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbWindowsAIK: {"kind":"UInt32"},
+    pcbResult: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pfProtectedByTPM: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "tbs" fn GetDeviceIDString(
+    pszWindowsAIK: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchWindowsAIK: {"kind":"UInt32"},
+    pcchResult: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pfProtectedByTPM: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "tbs" fn Tbsi_Create_Windows_Key(
+    keyHandle: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "tbs" fn Tbsi_Get_TCG_Log_Ex(
+    logType: {"kind":"UInt32"},
+    pbOutput: {"kind""Ptr","child":{"kind":"Byte"}},
+    pcbOutput: {"kind""Ptr","child":{"kind":"UInt32"}},
+],
+
+"unicode_aliases": [
+]}

@@ -1,0 +1,991 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: VIRTUAL_STORAGE_TYPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const VIRTUAL_STORAGE_TYPE = extern struct {
+    DeviceId: {"kind":"UInt32"},
+    VendorId: Guid,
+};
+// --------------------------------------------------------
+// Type: OPEN_VIRTUAL_DISK_VERSION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const OPEN_VIRTUAL_DISK_VERSION = *opaque{
+};
+// --------------------------------------------------------
+// Type: OPEN_VIRTUAL_DISK_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const OPEN_VIRTUAL_DISK_PARAMETERS = extern struct {
+    Version: Windows.Win32.VirtualStorage.OPEN_VIRTUAL_DISK_VERSION,
+    Anonymous: Windows.Win32.VirtualStorage.OPEN_VIRTUAL_DISK_PARAMETERS+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Version2_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Version2_e__Struct = extern struct {
+            GetInfoOnly: Windows.Win32.SystemServices.BOOL,
+            ReadOnly: Windows.Win32.SystemServices.BOOL,
+            ResiliencyGuid: Guid,
+        };
+        // --------------------------------------------------------
+        // Type: _Version3_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Version3_e__Struct = extern struct {
+            GetInfoOnly: Windows.Win32.SystemServices.BOOL,
+            ReadOnly: Windows.Win32.SystemServices.BOOL,
+            ResiliencyGuid: Guid,
+            SnapshotId: Guid,
+        };
+        // --------------------------------------------------------
+        // Type: _Version1_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Version1_e__Struct = extern struct {
+            RWDepth: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: VIRTUAL_DISK_ACCESS_MASK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const VIRTUAL_DISK_ACCESS_MASK = *opaque{
+};
+// --------------------------------------------------------
+// Type: OPEN_VIRTUAL_DISK_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const OPEN_VIRTUAL_DISK_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: CREATE_VIRTUAL_DISK_VERSION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CREATE_VIRTUAL_DISK_VERSION = *opaque{
+};
+// --------------------------------------------------------
+// Type: CREATE_VIRTUAL_DISK_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CREATE_VIRTUAL_DISK_PARAMETERS = extern struct {
+    Version: Windows.Win32.VirtualStorage.CREATE_VIRTUAL_DISK_VERSION,
+    Anonymous: Windows.Win32.VirtualStorage.CREATE_VIRTUAL_DISK_PARAMETERS+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Version3_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Version3_e__Struct = extern struct {
+            UniqueId: Guid,
+            MaximumSize: {"kind":"UInt64"},
+            BlockSizeInBytes: {"kind":"UInt32"},
+            SectorSizeInBytes: {"kind":"UInt32"},
+            PhysicalSectorSizeInBytes: {"kind":"UInt32"},
+            ParentPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+            SourcePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+            OpenFlags: Windows.Win32.VirtualStorage.OPEN_VIRTUAL_DISK_FLAG,
+            ParentVirtualStorageType: Windows.Win32.VirtualStorage.VIRTUAL_STORAGE_TYPE,
+            SourceVirtualStorageType: Windows.Win32.VirtualStorage.VIRTUAL_STORAGE_TYPE,
+            ResiliencyGuid: Guid,
+            SourceLimitPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+            BackingStorageType: Windows.Win32.VirtualStorage.VIRTUAL_STORAGE_TYPE,
+        };
+        // --------------------------------------------------------
+        // Type: _Version1_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Version1_e__Struct = extern struct {
+            UniqueId: Guid,
+            MaximumSize: {"kind":"UInt64"},
+            BlockSizeInBytes: {"kind":"UInt32"},
+            SectorSizeInBytes: {"kind":"UInt32"},
+            ParentPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+            SourcePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+        };
+        // --------------------------------------------------------
+        // Type: _Version4_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Version4_e__Struct = extern struct {
+            UniqueId: Guid,
+            MaximumSize: {"kind":"UInt64"},
+            BlockSizeInBytes: {"kind":"UInt32"},
+            SectorSizeInBytes: {"kind":"UInt32"},
+            PhysicalSectorSizeInBytes: {"kind":"UInt32"},
+            ParentPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+            SourcePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+            OpenFlags: Windows.Win32.VirtualStorage.OPEN_VIRTUAL_DISK_FLAG,
+            ParentVirtualStorageType: Windows.Win32.VirtualStorage.VIRTUAL_STORAGE_TYPE,
+            SourceVirtualStorageType: Windows.Win32.VirtualStorage.VIRTUAL_STORAGE_TYPE,
+            ResiliencyGuid: Guid,
+            SourceLimitPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+            BackingStorageType: Windows.Win32.VirtualStorage.VIRTUAL_STORAGE_TYPE,
+            PmemAddressAbstractionType: Guid,
+            DataAlignment: {"kind":"UInt64"},
+        };
+        // --------------------------------------------------------
+        // Type: _Version2_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Version2_e__Struct = extern struct {
+            UniqueId: Guid,
+            MaximumSize: {"kind":"UInt64"},
+            BlockSizeInBytes: {"kind":"UInt32"},
+            SectorSizeInBytes: {"kind":"UInt32"},
+            PhysicalSectorSizeInBytes: {"kind":"UInt32"},
+            ParentPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+            SourcePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+            OpenFlags: Windows.Win32.VirtualStorage.OPEN_VIRTUAL_DISK_FLAG,
+            ParentVirtualStorageType: Windows.Win32.VirtualStorage.VIRTUAL_STORAGE_TYPE,
+            SourceVirtualStorageType: Windows.Win32.VirtualStorage.VIRTUAL_STORAGE_TYPE,
+            ResiliencyGuid: Guid,
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: CREATE_VIRTUAL_DISK_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CREATE_VIRTUAL_DISK_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: ATTACH_VIRTUAL_DISK_VERSION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ATTACH_VIRTUAL_DISK_VERSION = *opaque{
+};
+// --------------------------------------------------------
+// Type: ATTACH_VIRTUAL_DISK_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ATTACH_VIRTUAL_DISK_PARAMETERS = extern struct {
+    Version: Windows.Win32.VirtualStorage.ATTACH_VIRTUAL_DISK_VERSION,
+    Anonymous: Windows.Win32.VirtualStorage.ATTACH_VIRTUAL_DISK_PARAMETERS+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Version1_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Version1_e__Struct = extern struct {
+            Reserved: {"kind":"UInt32"},
+        };
+        // --------------------------------------------------------
+        // Type: _Version2_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Version2_e__Struct = extern struct {
+            RestrictedOffset: {"kind":"UInt64"},
+            RestrictedLength: {"kind":"UInt64"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: ATTACH_VIRTUAL_DISK_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ATTACH_VIRTUAL_DISK_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: DETACH_VIRTUAL_DISK_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DETACH_VIRTUAL_DISK_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: DEPENDENT_DISK_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DEPENDENT_DISK_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: STORAGE_DEPENDENCY_INFO_VERSION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const STORAGE_DEPENDENCY_INFO_VERSION = *opaque{
+};
+// --------------------------------------------------------
+// Type: STORAGE_DEPENDENCY_INFO_TYPE_1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const STORAGE_DEPENDENCY_INFO_TYPE_1 = extern struct {
+    DependencyTypeFlags: Windows.Win32.VirtualStorage.DEPENDENT_DISK_FLAG,
+    ProviderSpecificFlags: {"kind":"UInt32"},
+    VirtualStorageType: Windows.Win32.VirtualStorage.VIRTUAL_STORAGE_TYPE,
+};
+// --------------------------------------------------------
+// Type: STORAGE_DEPENDENCY_INFO_TYPE_2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const STORAGE_DEPENDENCY_INFO_TYPE_2 = extern struct {
+    DependencyTypeFlags: Windows.Win32.VirtualStorage.DEPENDENT_DISK_FLAG,
+    ProviderSpecificFlags: {"kind":"UInt32"},
+    VirtualStorageType: Windows.Win32.VirtualStorage.VIRTUAL_STORAGE_TYPE,
+    AncestorLevel: {"kind":"UInt32"},
+    DependencyDeviceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    HostVolumeName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DependentVolumeName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DependentVolumeRelativePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: STORAGE_DEPENDENCY_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const STORAGE_DEPENDENCY_INFO = extern struct {
+    Version: Windows.Win32.VirtualStorage.STORAGE_DEPENDENCY_INFO_VERSION,
+    NumberEntries: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.VirtualStorage.STORAGE_DEPENDENCY_INFO+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: GET_STORAGE_DEPENDENCY_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const GET_STORAGE_DEPENDENCY_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: GET_VIRTUAL_DISK_INFO_VERSION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const GET_VIRTUAL_DISK_INFO_VERSION = *opaque{
+};
+// --------------------------------------------------------
+// Type: GET_VIRTUAL_DISK_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GET_VIRTUAL_DISK_INFO = extern struct {
+    Version: Windows.Win32.VirtualStorage.GET_VIRTUAL_DISK_INFO_VERSION,
+    Anonymous: Windows.Win32.VirtualStorage.GET_VIRTUAL_DISK_INFO+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _ChangeTrackingState_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _ChangeTrackingState_e__Struct = extern struct {
+            Enabled: Windows.Win32.SystemServices.BOOL,
+            NewerChanges: Windows.Win32.SystemServices.BOOL,
+            MostRecentId: {"kind":"Array","child": {"kind":"UInt16"}},
+        };
+        // --------------------------------------------------------
+        // Type: _ParentLocation_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _ParentLocation_e__Struct = extern struct {
+            ParentResolved: Windows.Win32.SystemServices.BOOL,
+            ParentLocationBuffer: {"kind":"Array","child": {"kind":"UInt16"}},
+        };
+        // --------------------------------------------------------
+        // Type: _Size_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Size_e__Struct = extern struct {
+            VirtualSize: {"kind":"UInt64"},
+            PhysicalSize: {"kind":"UInt64"},
+            BlockSize: {"kind":"UInt32"},
+            SectorSize: {"kind":"UInt32"},
+        };
+        // --------------------------------------------------------
+        // Type: _PhysicalDisk_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _PhysicalDisk_e__Struct = extern struct {
+            LogicalSectorSize: {"kind":"UInt32"},
+            PhysicalSectorSize: {"kind":"UInt32"},
+            IsRemote: Windows.Win32.SystemServices.BOOL,
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: SET_VIRTUAL_DISK_INFO_VERSION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SET_VIRTUAL_DISK_INFO_VERSION = *opaque{
+};
+// --------------------------------------------------------
+// Type: SET_VIRTUAL_DISK_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SET_VIRTUAL_DISK_INFO = extern struct {
+    Version: Windows.Win32.VirtualStorage.SET_VIRTUAL_DISK_INFO_VERSION,
+    Anonymous: Windows.Win32.VirtualStorage.SET_VIRTUAL_DISK_INFO+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _ParentLocator_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _ParentLocator_e__Struct = extern struct {
+            LinkageId: Guid,
+            ParentFilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+        };
+        // --------------------------------------------------------
+        // Type: _ParentPathWithDepthInfo_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _ParentPathWithDepthInfo_e__Struct = extern struct {
+            ChildDepth: {"kind":"UInt32"},
+            ParentFilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: VIRTUAL_DISK_PROGRESS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const VIRTUAL_DISK_PROGRESS = extern struct {
+    OperationStatus: {"kind":"UInt32"},
+    CurrentValue: {"kind":"UInt64"},
+    CompletionValue: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: COMPACT_VIRTUAL_DISK_VERSION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const COMPACT_VIRTUAL_DISK_VERSION = *opaque{
+};
+// --------------------------------------------------------
+// Type: COMPACT_VIRTUAL_DISK_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const COMPACT_VIRTUAL_DISK_PARAMETERS = extern struct {
+    Version: Windows.Win32.VirtualStorage.COMPACT_VIRTUAL_DISK_VERSION,
+    Anonymous: Windows.Win32.VirtualStorage.COMPACT_VIRTUAL_DISK_PARAMETERS+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Version1_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Version1_e__Struct = extern struct {
+            Reserved: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: COMPACT_VIRTUAL_DISK_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const COMPACT_VIRTUAL_DISK_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: MERGE_VIRTUAL_DISK_VERSION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MERGE_VIRTUAL_DISK_VERSION = *opaque{
+};
+// --------------------------------------------------------
+// Type: MERGE_VIRTUAL_DISK_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MERGE_VIRTUAL_DISK_PARAMETERS = extern struct {
+    Version: Windows.Win32.VirtualStorage.MERGE_VIRTUAL_DISK_VERSION,
+    Anonymous: Windows.Win32.VirtualStorage.MERGE_VIRTUAL_DISK_PARAMETERS+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Version1_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Version1_e__Struct = extern struct {
+            MergeDepth: {"kind":"UInt32"},
+        };
+        // --------------------------------------------------------
+        // Type: _Version2_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Version2_e__Struct = extern struct {
+            MergeSourceDepth: {"kind":"UInt32"},
+            MergeTargetDepth: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: MERGE_VIRTUAL_DISK_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MERGE_VIRTUAL_DISK_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: EXPAND_VIRTUAL_DISK_VERSION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EXPAND_VIRTUAL_DISK_VERSION = *opaque{
+};
+// --------------------------------------------------------
+// Type: EXPAND_VIRTUAL_DISK_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EXPAND_VIRTUAL_DISK_PARAMETERS = extern struct {
+    Version: Windows.Win32.VirtualStorage.EXPAND_VIRTUAL_DISK_VERSION,
+    Anonymous: Windows.Win32.VirtualStorage.EXPAND_VIRTUAL_DISK_PARAMETERS+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Version1_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Version1_e__Struct = extern struct {
+            NewSize: {"kind":"UInt64"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: EXPAND_VIRTUAL_DISK_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EXPAND_VIRTUAL_DISK_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: RESIZE_VIRTUAL_DISK_VERSION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const RESIZE_VIRTUAL_DISK_VERSION = *opaque{
+};
+// --------------------------------------------------------
+// Type: RESIZE_VIRTUAL_DISK_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RESIZE_VIRTUAL_DISK_PARAMETERS = extern struct {
+    Version: Windows.Win32.VirtualStorage.RESIZE_VIRTUAL_DISK_VERSION,
+    Anonymous: Windows.Win32.VirtualStorage.RESIZE_VIRTUAL_DISK_PARAMETERS+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Version1_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Version1_e__Struct = extern struct {
+            NewSize: {"kind":"UInt64"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: RESIZE_VIRTUAL_DISK_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const RESIZE_VIRTUAL_DISK_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIRROR_VIRTUAL_DISK_VERSION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MIRROR_VIRTUAL_DISK_VERSION = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIRROR_VIRTUAL_DISK_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIRROR_VIRTUAL_DISK_PARAMETERS = extern struct {
+    Version: Windows.Win32.VirtualStorage.MIRROR_VIRTUAL_DISK_VERSION,
+    Anonymous: Windows.Win32.VirtualStorage.MIRROR_VIRTUAL_DISK_PARAMETERS+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Version1_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Version1_e__Struct = extern struct {
+            MirrorVirtualDiskPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: MIRROR_VIRTUAL_DISK_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MIRROR_VIRTUAL_DISK_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: QUERY_CHANGES_VIRTUAL_DISK_RANGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const QUERY_CHANGES_VIRTUAL_DISK_RANGE = extern struct {
+    ByteOffset: {"kind":"UInt64"},
+    ByteLength: {"kind":"UInt64"},
+    Reserved: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: QUERY_CHANGES_VIRTUAL_DISK_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const QUERY_CHANGES_VIRTUAL_DISK_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: TAKE_SNAPSHOT_VHDSET_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TAKE_SNAPSHOT_VHDSET_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: TAKE_SNAPSHOT_VHDSET_VERSION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TAKE_SNAPSHOT_VHDSET_VERSION = *opaque{
+};
+// --------------------------------------------------------
+// Type: TAKE_SNAPSHOT_VHDSET_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TAKE_SNAPSHOT_VHDSET_PARAMETERS = extern struct {
+    Version: Windows.Win32.VirtualStorage.TAKE_SNAPSHOT_VHDSET_VERSION,
+    Anonymous: Windows.Win32.VirtualStorage.TAKE_SNAPSHOT_VHDSET_PARAMETERS+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Version1_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Version1_e__Struct = extern struct {
+            SnapshotId: Guid,
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: DELETE_SNAPSHOT_VHDSET_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DELETE_SNAPSHOT_VHDSET_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: DELETE_SNAPSHOT_VHDSET_VERSION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DELETE_SNAPSHOT_VHDSET_VERSION = *opaque{
+};
+// --------------------------------------------------------
+// Type: DELETE_SNAPSHOT_VHDSET_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DELETE_SNAPSHOT_VHDSET_PARAMETERS = extern struct {
+    Version: Windows.Win32.VirtualStorage.DELETE_SNAPSHOT_VHDSET_VERSION,
+    Anonymous: Windows.Win32.VirtualStorage.DELETE_SNAPSHOT_VHDSET_PARAMETERS+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Version1_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Version1_e__Struct = extern struct {
+            SnapshotId: Guid,
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: MODIFY_VHDSET_VERSION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MODIFY_VHDSET_VERSION = *opaque{
+};
+// --------------------------------------------------------
+// Type: MODIFY_VHDSET_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MODIFY_VHDSET_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: MODIFY_VHDSET_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MODIFY_VHDSET_PARAMETERS = extern struct {
+    Version: Windows.Win32.VirtualStorage.MODIFY_VHDSET_VERSION,
+    Anonymous: Windows.Win32.VirtualStorage.MODIFY_VHDSET_PARAMETERS+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _SnapshotPath_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _SnapshotPath_e__Struct = extern struct {
+            SnapshotId: Guid,
+            SnapshotFilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: APPLY_SNAPSHOT_VHDSET_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const APPLY_SNAPSHOT_VHDSET_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: APPLY_SNAPSHOT_VHDSET_VERSION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const APPLY_SNAPSHOT_VHDSET_VERSION = *opaque{
+};
+// --------------------------------------------------------
+// Type: APPLY_SNAPSHOT_VHDSET_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const APPLY_SNAPSHOT_VHDSET_PARAMETERS = extern struct {
+    Version: Windows.Win32.VirtualStorage.APPLY_SNAPSHOT_VHDSET_VERSION,
+    Anonymous: Windows.Win32.VirtualStorage.APPLY_SNAPSHOT_VHDSET_PARAMETERS+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Version1_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Version1_e__Struct = extern struct {
+            SnapshotId: Guid,
+            LeafSnapshotId: Guid,
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: RAW_SCSI_VIRTUAL_DISK_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const RAW_SCSI_VIRTUAL_DISK_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: RAW_SCSI_VIRTUAL_DISK_VERSION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const RAW_SCSI_VIRTUAL_DISK_VERSION = *opaque{
+};
+// --------------------------------------------------------
+// Type: RAW_SCSI_VIRTUAL_DISK_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RAW_SCSI_VIRTUAL_DISK_PARAMETERS = extern struct {
+    Version: Windows.Win32.VirtualStorage.RAW_SCSI_VIRTUAL_DISK_VERSION,
+    Anonymous: Windows.Win32.VirtualStorage.RAW_SCSI_VIRTUAL_DISK_PARAMETERS+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Version1_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Version1_e__Struct = extern struct {
+            RSVDHandle: Windows.Win32.SystemServices.BOOL,
+            DataIn: {"kind":"Byte"},
+            CdbLength: {"kind":"Byte"},
+            SenseInfoLength: {"kind":"Byte"},
+            SrbFlags: {"kind":"UInt32"},
+            DataTransferLength: {"kind":"UInt32"},
+            DataBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+            SenseInfo: {"kind""Ptr","child":{"kind":"Byte"}},
+            Cdb: {"kind""Ptr","child":{"kind":"Byte"}},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: RAW_SCSI_VIRTUAL_DISK_RESPONSE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RAW_SCSI_VIRTUAL_DISK_RESPONSE = extern struct {
+    Version: Windows.Win32.VirtualStorage.RAW_SCSI_VIRTUAL_DISK_VERSION,
+    Anonymous: Windows.Win32.VirtualStorage.RAW_SCSI_VIRTUAL_DISK_RESPONSE+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Version1_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Version1_e__Struct = extern struct {
+            ScsiStatus: {"kind":"Byte"},
+            SenseInfoLength: {"kind":"Byte"},
+            DataTransferLength: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: FORK_VIRTUAL_DISK_VERSION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FORK_VIRTUAL_DISK_VERSION = *opaque{
+};
+// --------------------------------------------------------
+// Type: FORK_VIRTUAL_DISK_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FORK_VIRTUAL_DISK_PARAMETERS = extern struct {
+    Version: Windows.Win32.VirtualStorage.FORK_VIRTUAL_DISK_VERSION,
+    Anonymous: Windows.Win32.VirtualStorage.FORK_VIRTUAL_DISK_PARAMETERS+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Version1_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Version1_e__Struct = extern struct {
+            ForkedVirtualDiskPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: FORK_VIRTUAL_DISK_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FORK_VIRTUAL_DISK_FLAG = *opaque{
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VirtDisk" fn OpenVirtualDisk(
+    VirtualStorageType: {"kind""Ptr","child":Windows.Win32.VirtualStorage.VIRTUAL_STORAGE_TYPE},
+    Path: {"kind""Ptr","child":{"kind":"UInt16"}},
+    VirtualDiskAccessMask: Windows.Win32.VirtualStorage.VIRTUAL_DISK_ACCESS_MASK,
+    Flags: Windows.Win32.VirtualStorage.OPEN_VIRTUAL_DISK_FLAG,
+    Parameters: {"kind""Ptr","child":Windows.Win32.VirtualStorage.OPEN_VIRTUAL_DISK_PARAMETERS},
+    Handle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VirtDisk" fn CreateVirtualDisk(
+    VirtualStorageType: {"kind""Ptr","child":Windows.Win32.VirtualStorage.VIRTUAL_STORAGE_TYPE},
+    Path: {"kind""Ptr","child":{"kind":"UInt16"}},
+    VirtualDiskAccessMask: Windows.Win32.VirtualStorage.VIRTUAL_DISK_ACCESS_MASK,
+    SecurityDescriptor: {"kind""Ptr","child":{"kind":"Void"}},
+    Flags: Windows.Win32.VirtualStorage.CREATE_VIRTUAL_DISK_FLAG,
+    ProviderSpecificFlags: {"kind":"UInt32"},
+    Parameters: {"kind""Ptr","child":Windows.Win32.VirtualStorage.CREATE_VIRTUAL_DISK_PARAMETERS},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    Handle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VirtDisk" fn AttachVirtualDisk(
+    VirtualDiskHandle: Windows.Win32.SystemServices.HANDLE,
+    SecurityDescriptor: {"kind""Ptr","child":{"kind":"Void"}},
+    Flags: Windows.Win32.VirtualStorage.ATTACH_VIRTUAL_DISK_FLAG,
+    ProviderSpecificFlags: {"kind":"UInt32"},
+    Parameters: {"kind""Ptr","child":Windows.Win32.VirtualStorage.ATTACH_VIRTUAL_DISK_PARAMETERS},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VirtDisk" fn DetachVirtualDisk(
+    VirtualDiskHandle: Windows.Win32.SystemServices.HANDLE,
+    Flags: Windows.Win32.VirtualStorage.DETACH_VIRTUAL_DISK_FLAG,
+    ProviderSpecificFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VirtDisk" fn GetVirtualDiskPhysicalPath(
+    VirtualDiskHandle: Windows.Win32.SystemServices.HANDLE,
+    DiskPathSizeInBytes: {"kind""Ptr","child":{"kind":"UInt32"}},
+    DiskPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VirtDisk" fn GetAllAttachedVirtualDiskPhysicalPaths(
+    PathsBufferSizeInBytes: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PathsBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VirtDisk" fn GetStorageDependencyInformation(
+    ObjectHandle: Windows.Win32.SystemServices.HANDLE,
+    Flags: Windows.Win32.VirtualStorage.GET_STORAGE_DEPENDENCY_FLAG,
+    StorageDependencyInfoSize: {"kind":"UInt32"},
+    StorageDependencyInfo: {"kind""Ptr","child":Windows.Win32.VirtualStorage.STORAGE_DEPENDENCY_INFO},
+    SizeUsed: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VirtDisk" fn GetVirtualDiskInformation(
+    VirtualDiskHandle: Windows.Win32.SystemServices.HANDLE,
+    VirtualDiskInfoSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    VirtualDiskInfo: {"kind""Ptr","child":Windows.Win32.VirtualStorage.GET_VIRTUAL_DISK_INFO},
+    SizeUsed: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VirtDisk" fn SetVirtualDiskInformation(
+    VirtualDiskHandle: Windows.Win32.SystemServices.HANDLE,
+    VirtualDiskInfo: {"kind""Ptr","child":Windows.Win32.VirtualStorage.SET_VIRTUAL_DISK_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VirtDisk" fn EnumerateVirtualDiskMetadata(
+    VirtualDiskHandle: Windows.Win32.SystemServices.HANDLE,
+    NumberOfItems: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Items: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VirtDisk" fn GetVirtualDiskMetadata(
+    VirtualDiskHandle: Windows.Win32.SystemServices.HANDLE,
+    Item: {"kind""Ptr","child":Guid},
+    MetaDataSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    MetaData: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VirtDisk" fn SetVirtualDiskMetadata(
+    VirtualDiskHandle: Windows.Win32.SystemServices.HANDLE,
+    Item: {"kind""Ptr","child":Guid},
+    MetaDataSize: {"kind":"UInt32"},
+    MetaData: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VirtDisk" fn DeleteVirtualDiskMetadata(
+    VirtualDiskHandle: Windows.Win32.SystemServices.HANDLE,
+    Item: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VirtDisk" fn GetVirtualDiskOperationProgress(
+    VirtualDiskHandle: Windows.Win32.SystemServices.HANDLE,
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    Progress: {"kind""Ptr","child":Windows.Win32.VirtualStorage.VIRTUAL_DISK_PROGRESS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VirtDisk" fn CompactVirtualDisk(
+    VirtualDiskHandle: Windows.Win32.SystemServices.HANDLE,
+    Flags: Windows.Win32.VirtualStorage.COMPACT_VIRTUAL_DISK_FLAG,
+    Parameters: {"kind""Ptr","child":Windows.Win32.VirtualStorage.COMPACT_VIRTUAL_DISK_PARAMETERS},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VirtDisk" fn MergeVirtualDisk(
+    VirtualDiskHandle: Windows.Win32.SystemServices.HANDLE,
+    Flags: Windows.Win32.VirtualStorage.MERGE_VIRTUAL_DISK_FLAG,
+    Parameters: {"kind""Ptr","child":Windows.Win32.VirtualStorage.MERGE_VIRTUAL_DISK_PARAMETERS},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VirtDisk" fn ExpandVirtualDisk(
+    VirtualDiskHandle: Windows.Win32.SystemServices.HANDLE,
+    Flags: Windows.Win32.VirtualStorage.EXPAND_VIRTUAL_DISK_FLAG,
+    Parameters: {"kind""Ptr","child":Windows.Win32.VirtualStorage.EXPAND_VIRTUAL_DISK_PARAMETERS},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VirtDisk" fn ResizeVirtualDisk(
+    VirtualDiskHandle: Windows.Win32.SystemServices.HANDLE,
+    Flags: Windows.Win32.VirtualStorage.RESIZE_VIRTUAL_DISK_FLAG,
+    Parameters: {"kind""Ptr","child":Windows.Win32.VirtualStorage.RESIZE_VIRTUAL_DISK_PARAMETERS},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VirtDisk" fn MirrorVirtualDisk(
+    VirtualDiskHandle: Windows.Win32.SystemServices.HANDLE,
+    Flags: Windows.Win32.VirtualStorage.MIRROR_VIRTUAL_DISK_FLAG,
+    Parameters: {"kind""Ptr","child":Windows.Win32.VirtualStorage.MIRROR_VIRTUAL_DISK_PARAMETERS},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VirtDisk" fn BreakMirrorVirtualDisk(
+    VirtualDiskHandle: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VirtDisk" fn AddVirtualDiskParent(
+    VirtualDiskHandle: Windows.Win32.SystemServices.HANDLE,
+    ParentPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VirtDisk" fn QueryChangesVirtualDisk(
+    VirtualDiskHandle: Windows.Win32.SystemServices.HANDLE,
+    ChangeTrackingId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ByteOffset: {"kind":"UInt64"},
+    ByteLength: {"kind":"UInt64"},
+    Flags: Windows.Win32.VirtualStorage.QUERY_CHANGES_VIRTUAL_DISK_FLAG,
+    Ranges: {"kind""Ptr","child":Windows.Win32.VirtualStorage.QUERY_CHANGES_VIRTUAL_DISK_RANGE},
+    RangeCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ProcessedLength: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VirtDisk" fn TakeSnapshotVhdSet(
+    VirtualDiskHandle: Windows.Win32.SystemServices.HANDLE,
+    Parameters: {"kind""Ptr","child":Windows.Win32.VirtualStorage.TAKE_SNAPSHOT_VHDSET_PARAMETERS},
+    Flags: Windows.Win32.VirtualStorage.TAKE_SNAPSHOT_VHDSET_FLAG,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VirtDisk" fn DeleteSnapshotVhdSet(
+    VirtualDiskHandle: Windows.Win32.SystemServices.HANDLE,
+    Parameters: {"kind""Ptr","child":Windows.Win32.VirtualStorage.DELETE_SNAPSHOT_VHDSET_PARAMETERS},
+    Flags: Windows.Win32.VirtualStorage.DELETE_SNAPSHOT_VHDSET_FLAG,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VirtDisk" fn ModifyVhdSet(
+    VirtualDiskHandle: Windows.Win32.SystemServices.HANDLE,
+    Parameters: {"kind""Ptr","child":Windows.Win32.VirtualStorage.MODIFY_VHDSET_PARAMETERS},
+    Flags: Windows.Win32.VirtualStorage.MODIFY_VHDSET_FLAG,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VirtDisk" fn ApplySnapshotVhdSet(
+    VirtualDiskHandle: Windows.Win32.SystemServices.HANDLE,
+    Parameters: {"kind""Ptr","child":Windows.Win32.VirtualStorage.APPLY_SNAPSHOT_VHDSET_PARAMETERS},
+    Flags: Windows.Win32.VirtualStorage.APPLY_SNAPSHOT_VHDSET_FLAG,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VirtDisk" fn RawSCSIVirtualDisk(
+    VirtualDiskHandle: Windows.Win32.SystemServices.HANDLE,
+    Parameters: {"kind""Ptr","child":Windows.Win32.VirtualStorage.RAW_SCSI_VIRTUAL_DISK_PARAMETERS},
+    Flags: Windows.Win32.VirtualStorage.RAW_SCSI_VIRTUAL_DISK_FLAG,
+    Response: {"kind""Ptr","child":Windows.Win32.VirtualStorage.RAW_SCSI_VIRTUAL_DISK_RESPONSE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VirtDisk" fn ForkVirtualDisk(
+    VirtualDiskHandle: Windows.Win32.SystemServices.HANDLE,
+    Flags: Windows.Win32.VirtualStorage.FORK_VIRTUAL_DISK_FLAG,
+    Parameters: {"kind""Ptr","child":Windows.Win32.VirtualStorage.FORK_VIRTUAL_DISK_PARAMETERS},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "VirtDisk" fn CompleteForkVirtualDisk(
+    VirtualDiskHandle: Windows.Win32.SystemServices.HANDLE,
+],
+
+"unicode_aliases": [
+]}

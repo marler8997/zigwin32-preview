@@ -1,0 +1,3238 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: SAFEARRAYBOUND
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SAFEARRAYBOUND = extern struct {
+    cElements: {"kind":"UInt32"},
+    lLbound: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: _wireSAFEARR_BSTR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _wireSAFEARR_BSTR = extern struct {
+    Size: {"kind":"UInt32"},
+    aBstr: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Com.FLAGGED_WORD_BLOB}},
+};
+// --------------------------------------------------------
+// Type: _wireSAFEARR_UNKNOWN
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _wireSAFEARR_UNKNOWN = extern struct {
+    Size: {"kind":"UInt32"},
+    apUnknown: {"kind""Ptr","child":Windows.Win32.Com.IUnknown},
+};
+// --------------------------------------------------------
+// Type: _wireSAFEARR_DISPATCH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _wireSAFEARR_DISPATCH = extern struct {
+    Size: {"kind":"UInt32"},
+    apDispatch: {"kind""Ptr","child":Windows.Win32.Automation.IDispatch},
+};
+// --------------------------------------------------------
+// Type: _wireSAFEARR_VARIANT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _wireSAFEARR_VARIANT = extern struct {
+    Size: {"kind":"UInt32"},
+    aVariant: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Automation._wireVARIANT}},
+};
+// --------------------------------------------------------
+// Type: _wireSAFEARR_BRECORD
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _wireSAFEARR_BRECORD = extern struct {
+    Size: {"kind":"UInt32"},
+    aRecord: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Automation._wireBRECORD}},
+};
+// --------------------------------------------------------
+// Type: _wireSAFEARR_HAVEIID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _wireSAFEARR_HAVEIID = extern struct {
+    Size: {"kind":"UInt32"},
+    apUnknown: {"kind""Ptr","child":Windows.Win32.Com.IUnknown},
+    iid: Guid,
+};
+// --------------------------------------------------------
+// Type: SF_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SF_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: _wireSAFEARRAY_UNION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _wireSAFEARRAY_UNION = extern struct {
+    sfType: {"kind":"UInt32"},
+    u: Windows.Win32.Automation._wireSAFEARRAY_UNION+_u_e__Struct,
+    // --------------------------------------------------------
+    // Type: _u_e__Struct
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _u_e__Struct = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: _wireSAFEARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _wireSAFEARRAY = extern struct {
+    cDims: {"kind":"UInt16"},
+    fFeatures: {"kind":"UInt16"},
+    cbElements: {"kind":"UInt32"},
+    cLocks: {"kind":"UInt32"},
+    uArrayStructs: Windows.Win32.Automation._wireSAFEARRAY_UNION,
+    rgsabound: {"kind":"Array","child": Windows.Win32.Automation.SAFEARRAYBOUND},
+};
+// --------------------------------------------------------
+// Type: SAFEARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SAFEARRAY = extern struct {
+    cDims: {"kind":"UInt16"},
+    fFeatures: {"kind":"UInt16"},
+    cbElements: {"kind":"UInt32"},
+    cLocks: {"kind":"UInt32"},
+    pvData: {"kind""Ptr","child":{"kind":"Void"}},
+    rgsabound: {"kind":"Array","child": Windows.Win32.Automation.SAFEARRAYBOUND},
+};
+// --------------------------------------------------------
+// Type: VARIANT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const VARIANT = extern struct {
+    Anonymous: Windows.Win32.Automation.VARIANT+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            vt: {"kind":"UInt16"},
+            wReserved1: {"kind":"UInt16"},
+            wReserved2: {"kind":"UInt16"},
+            wReserved3: {"kind":"UInt16"},
+            Anonymous: Windows.Win32.Automation.VARIANT+_Anonymous_e__Union+_Anonymous_e__Struct+_Anonymous_e__Union,
+            // --------------------------------------------------------
+            // Type: _Anonymous_e__Union
+            // TypeLayoutAttr: explicit
+            // not generating the actual code for this type because it has an explicit layout
+            pub const _Anonymous_e__Union = *opaque{
+                // --------------------------------------------------------
+                // Type: _Anonymous_e__Struct
+                // TypeLayoutAttr: sequential
+                // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+                pub const _Anonymous_e__Struct = extern struct {
+                    pvRecord: {"kind""Ptr","child":{"kind":"Void"}},
+                    pRecInfo: Windows.Win32.Automation.IRecordInfo,
+                };
+            };
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: _wireBRECORD
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _wireBRECORD = extern struct {
+    fFlags: {"kind":"UInt32"},
+    clSize: {"kind":"UInt32"},
+    pRecInfo: Windows.Win32.Automation.IRecordInfo,
+    pRecord: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: _wireVARIANT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _wireVARIANT = extern struct {
+    clSize: {"kind":"UInt32"},
+    rpcReserved: {"kind":"UInt32"},
+    vt: {"kind":"UInt16"},
+    wReserved1: {"kind":"UInt16"},
+    wReserved2: {"kind":"UInt16"},
+    wReserved3: {"kind":"UInt16"},
+    Anonymous: Windows.Win32.Automation._wireVARIANT+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: TYPEKIND
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TYPEKIND = *opaque{
+};
+// --------------------------------------------------------
+// Type: TYPEDESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TYPEDESC = extern struct {
+    Anonymous: Windows.Win32.Automation.TYPEDESC+_Anonymous_e__Union,
+    vt: {"kind":"UInt16"},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: ARRAYDESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ARRAYDESC = extern struct {
+    tdescElem: Windows.Win32.Automation.TYPEDESC,
+    cDims: {"kind":"UInt16"},
+    rgbounds: {"kind":"Array","child": Windows.Win32.Automation.SAFEARRAYBOUND},
+};
+// --------------------------------------------------------
+// Type: PARAMDESCEX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PARAMDESCEX = extern struct {
+    cBytes: {"kind":"UInt32"},
+    varDefaultValue: Windows.Win32.Automation.VARIANT,
+};
+// --------------------------------------------------------
+// Type: PARAMDESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PARAMDESC = extern struct {
+    pparamdescex: {"kind""Ptr","child":Windows.Win32.Automation.PARAMDESCEX},
+    wParamFlags: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: IDLDESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IDLDESC = extern struct {
+    dwReserved: {"kind":"UIntPtr"},
+    wIDLFlags: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: ELEMDESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ELEMDESC = extern struct {
+    tdesc: Windows.Win32.Automation.TYPEDESC,
+    Anonymous: Windows.Win32.Automation.ELEMDESC+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: TYPEATTR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TYPEATTR = extern struct {
+    guid: Guid,
+    lcid: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+    memidConstructor: {"kind":"Int32"},
+    memidDestructor: {"kind":"Int32"},
+    lpstrSchema: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cbSizeInstance: {"kind":"UInt32"},
+    typekind: Windows.Win32.Automation.TYPEKIND,
+    cFuncs: {"kind":"UInt16"},
+    cVars: {"kind":"UInt16"},
+    cImplTypes: {"kind":"UInt16"},
+    cbSizeVft: {"kind":"UInt16"},
+    cbAlignment: {"kind":"UInt16"},
+    wTypeFlags: {"kind":"UInt16"},
+    wMajorVerNum: {"kind":"UInt16"},
+    wMinorVerNum: {"kind":"UInt16"},
+    tdescAlias: Windows.Win32.Automation.TYPEDESC,
+    idldescType: Windows.Win32.Automation.IDLDESC,
+};
+// --------------------------------------------------------
+// Type: DISPPARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DISPPARAMS = extern struct {
+    rgvarg: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    rgdispidNamedArgs: {"kind""Ptr","child":{"kind":"Int32"}},
+    cArgs: {"kind":"UInt32"},
+    cNamedArgs: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EXCEPINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EXCEPINFO = extern struct {
+    wCode: {"kind":"UInt16"},
+    wReserved: {"kind":"UInt16"},
+    bstrSource: Windows.Win32.Automation.BSTR,
+    bstrDescription: Windows.Win32.Automation.BSTR,
+    bstrHelpFile: Windows.Win32.Automation.BSTR,
+    dwHelpContext: {"kind":"UInt32"},
+    pvReserved: {"kind""Ptr","child":{"kind":"Void"}},
+    pfnDeferredFillIn: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Com.HRESULT}}}}}}}}}},
+    scode: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: CALLCONV
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CALLCONV = *opaque{
+};
+// --------------------------------------------------------
+// Type: FUNCKIND
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FUNCKIND = *opaque{
+};
+// --------------------------------------------------------
+// Type: INVOKEKIND
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const INVOKEKIND = *opaque{
+};
+// --------------------------------------------------------
+// Type: FUNCDESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FUNCDESC = extern struct {
+    memid: {"kind":"Int32"},
+    lprgscode: {"kind""Ptr","child":{"kind":"Int32"}},
+    lprgelemdescParam: {"kind""Ptr","child":Windows.Win32.Automation.ELEMDESC},
+    funckind: Windows.Win32.Automation.FUNCKIND,
+    invkind: Windows.Win32.Automation.INVOKEKIND,
+    callconv: Windows.Win32.Automation.CALLCONV,
+    cParams: {"kind":"Int16"},
+    cParamsOpt: {"kind":"Int16"},
+    oVft: {"kind":"Int16"},
+    cScodes: {"kind":"Int16"},
+    elemdescFunc: Windows.Win32.Automation.ELEMDESC,
+    wFuncFlags: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: VARKIND
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const VARKIND = *opaque{
+};
+// --------------------------------------------------------
+// Type: VARDESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const VARDESC = extern struct {
+    memid: {"kind":"Int32"},
+    lpstrSchema: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Anonymous: Windows.Win32.Automation.VARDESC+_Anonymous_e__Union,
+    elemdescVar: Windows.Win32.Automation.ELEMDESC,
+    wVarFlags: {"kind":"UInt16"},
+    varkind: Windows.Win32.Automation.VARKIND,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: TYPEFLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TYPEFLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: FUNCFLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FUNCFLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: VARFLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const VARFLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CLEANLOCALSTORAGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CLEANLOCALSTORAGE = extern struct {
+    pInterface: Windows.Win32.Com.IUnknown,
+    pStorage: {"kind""Ptr","child":{"kind":"Void"}},
+    flags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: CUSTDATAITEM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CUSTDATAITEM = extern struct {
+    guid: Guid,
+    varValue: Windows.Win32.Automation.VARIANT,
+};
+// --------------------------------------------------------
+// Type: CUSTDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CUSTDATA = extern struct {
+    cCustData: {"kind":"UInt32"},
+    prgCustData: {"kind""Ptr","child":Windows.Win32.Automation.CUSTDATAITEM},
+};
+// --------------------------------------------------------
+// Type: ICreateTypeInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICreateTypeInfo = *opaque{
+    // TODO: Method 'SetGuid'
+    // TODO: Method 'SetTypeFlags'
+    // TODO: Method 'SetDocString'
+    // TODO: Method 'SetHelpContext'
+    // TODO: Method 'SetVersion'
+    // TODO: Method 'AddRefTypeInfo'
+    // TODO: Method 'AddFuncDesc'
+    // TODO: Method 'AddImplType'
+    // TODO: Method 'SetImplTypeFlags'
+    // TODO: Method 'SetAlignment'
+    // TODO: Method 'SetSchema'
+    // TODO: Method 'AddVarDesc'
+    // TODO: Method 'SetFuncAndParamNames'
+    // TODO: Method 'SetVarName'
+    // TODO: Method 'SetTypeDescAlias'
+    // TODO: Method 'DefineFuncAsDllEntry'
+    // TODO: Method 'SetFuncDocString'
+    // TODO: Method 'SetVarDocString'
+    // TODO: Method 'SetFuncHelpContext'
+    // TODO: Method 'SetVarHelpContext'
+    // TODO: Method 'SetMops'
+    // TODO: Method 'SetTypeIdldesc'
+    // TODO: Method 'LayOut'
+};
+// --------------------------------------------------------
+// Type: ICreateTypeInfo2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICreateTypeInfo2 = *opaque{
+    // TODO: Method 'DeleteFuncDesc'
+    // TODO: Method 'DeleteFuncDescByMemId'
+    // TODO: Method 'DeleteVarDesc'
+    // TODO: Method 'DeleteVarDescByMemId'
+    // TODO: Method 'DeleteImplType'
+    // TODO: Method 'SetCustData'
+    // TODO: Method 'SetFuncCustData'
+    // TODO: Method 'SetParamCustData'
+    // TODO: Method 'SetVarCustData'
+    // TODO: Method 'SetImplTypeCustData'
+    // TODO: Method 'SetHelpStringContext'
+    // TODO: Method 'SetFuncHelpStringContext'
+    // TODO: Method 'SetVarHelpStringContext'
+    // TODO: Method 'Invalidate'
+    // TODO: Method 'SetName'
+};
+// --------------------------------------------------------
+// Type: ICreateTypeLib
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICreateTypeLib = *opaque{
+    // TODO: Method 'CreateTypeInfo'
+    // TODO: Method 'SetName'
+    // TODO: Method 'SetVersion'
+    // TODO: Method 'SetGuid'
+    // TODO: Method 'SetDocString'
+    // TODO: Method 'SetHelpFileName'
+    // TODO: Method 'SetHelpContext'
+    // TODO: Method 'SetLcid'
+    // TODO: Method 'SetLibFlags'
+    // TODO: Method 'SaveAllChanges'
+};
+// --------------------------------------------------------
+// Type: ICreateTypeLib2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICreateTypeLib2 = *opaque{
+    // TODO: Method 'DeleteTypeInfo'
+    // TODO: Method 'SetCustData'
+    // TODO: Method 'SetHelpStringContext'
+    // TODO: Method 'SetHelpStringDll'
+};
+// --------------------------------------------------------
+// Type: IDispatch
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDispatch = *opaque{
+    // TODO: Method 'GetTypeInfoCount'
+    // TODO: Method 'GetTypeInfo'
+    // TODO: Method 'GetIDsOfNames'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IEnumVARIANT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumVARIANT = *opaque{
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: DESCKIND
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DESCKIND = *opaque{
+};
+// --------------------------------------------------------
+// Type: BINDPTR
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const BINDPTR = *opaque{
+};
+// --------------------------------------------------------
+// Type: ITypeComp
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITypeComp = *opaque{
+    // TODO: Method 'Bind'
+    // TODO: Method 'BindType'
+};
+// --------------------------------------------------------
+// Type: ITypeInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITypeInfo = *opaque{
+    // TODO: Method 'GetTypeAttr'
+    // TODO: Method 'GetTypeComp'
+    // TODO: Method 'GetFuncDesc'
+    // TODO: Method 'GetVarDesc'
+    // TODO: Method 'GetNames'
+    // TODO: Method 'GetRefTypeOfImplType'
+    // TODO: Method 'GetImplTypeFlags'
+    // TODO: Method 'GetIDsOfNames'
+    // TODO: Method 'Invoke'
+    // TODO: Method 'GetDocumentation'
+    // TODO: Method 'GetDllEntry'
+    // TODO: Method 'GetRefTypeInfo'
+    // TODO: Method 'AddressOfMember'
+    // TODO: Method 'CreateInstance'
+    // TODO: Method 'GetMops'
+    // TODO: Method 'GetContainingTypeLib'
+    // TODO: Method 'ReleaseTypeAttr'
+    // TODO: Method 'ReleaseFuncDesc'
+    // TODO: Method 'ReleaseVarDesc'
+};
+// --------------------------------------------------------
+// Type: ITypeInfo2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITypeInfo2 = *opaque{
+    // TODO: Method 'GetTypeKind'
+    // TODO: Method 'GetTypeFlags'
+    // TODO: Method 'GetFuncIndexOfMemId'
+    // TODO: Method 'GetVarIndexOfMemId'
+    // TODO: Method 'GetCustData'
+    // TODO: Method 'GetFuncCustData'
+    // TODO: Method 'GetParamCustData'
+    // TODO: Method 'GetVarCustData'
+    // TODO: Method 'GetImplTypeCustData'
+    // TODO: Method 'GetDocumentation2'
+    // TODO: Method 'GetAllCustData'
+    // TODO: Method 'GetAllFuncCustData'
+    // TODO: Method 'GetAllParamCustData'
+    // TODO: Method 'GetAllVarCustData'
+    // TODO: Method 'GetAllImplTypeCustData'
+};
+// --------------------------------------------------------
+// Type: SYSKIND
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SYSKIND = *opaque{
+};
+// --------------------------------------------------------
+// Type: LIBFLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LIBFLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: TLIBATTR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TLIBATTR = extern struct {
+    guid: Guid,
+    lcid: {"kind":"UInt32"},
+    syskind: Windows.Win32.Automation.SYSKIND,
+    wMajorVerNum: {"kind":"UInt16"},
+    wMinorVerNum: {"kind":"UInt16"},
+    wLibFlags: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: ITypeLib
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITypeLib = *opaque{
+    // TODO: Method 'GetTypeInfoCount'
+    // TODO: Method 'GetTypeInfo'
+    // TODO: Method 'GetTypeInfoType'
+    // TODO: Method 'GetTypeInfoOfGuid'
+    // TODO: Method 'GetLibAttr'
+    // TODO: Method 'GetTypeComp'
+    // TODO: Method 'GetDocumentation'
+    // TODO: Method 'IsName'
+    // TODO: Method 'FindName'
+    // TODO: Method 'ReleaseTLibAttr'
+};
+// --------------------------------------------------------
+// Type: ITypeLib2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITypeLib2 = *opaque{
+    // TODO: Method 'GetCustData'
+    // TODO: Method 'GetLibStatistics'
+    // TODO: Method 'GetDocumentation2'
+    // TODO: Method 'GetAllCustData'
+};
+// --------------------------------------------------------
+// Type: CHANGEKIND
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CHANGEKIND = *opaque{
+};
+// --------------------------------------------------------
+// Type: ITypeChangeEvents
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITypeChangeEvents = *opaque{
+    // TODO: Method 'RequestTypeChange'
+    // TODO: Method 'AfterTypeChange'
+};
+// --------------------------------------------------------
+// Type: IErrorInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IErrorInfo = *opaque{
+    // TODO: Method 'GetGUID'
+    // TODO: Method 'GetSource'
+    // TODO: Method 'GetDescription'
+    // TODO: Method 'GetHelpFile'
+    // TODO: Method 'GetHelpContext'
+};
+// --------------------------------------------------------
+// Type: ICreateErrorInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICreateErrorInfo = *opaque{
+    // TODO: Method 'SetGUID'
+    // TODO: Method 'SetSource'
+    // TODO: Method 'SetDescription'
+    // TODO: Method 'SetHelpFile'
+    // TODO: Method 'SetHelpContext'
+};
+// --------------------------------------------------------
+// Type: ISupportErrorInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISupportErrorInfo = *opaque{
+    // TODO: Method 'InterfaceSupportsErrorInfo'
+};
+// --------------------------------------------------------
+// Type: ITypeFactory
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITypeFactory = *opaque{
+    // TODO: Method 'CreateFromTypeInfo'
+};
+// --------------------------------------------------------
+// Type: ITypeMarshal
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITypeMarshal = *opaque{
+    // TODO: Method 'Size'
+    // TODO: Method 'Marshal'
+    // TODO: Method 'Unmarshal'
+    // TODO: Method 'Free'
+};
+// --------------------------------------------------------
+// Type: IRecordInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRecordInfo = *opaque{
+    // TODO: Method 'RecordInit'
+    // TODO: Method 'RecordClear'
+    // TODO: Method 'RecordCopy'
+    // TODO: Method 'GetGuid'
+    // TODO: Method 'GetName'
+    // TODO: Method 'GetSize'
+    // TODO: Method 'GetTypeInfo'
+    // TODO: Method 'GetField'
+    // TODO: Method 'GetFieldNoCopy'
+    // TODO: Method 'PutField'
+    // TODO: Method 'PutFieldNoCopy'
+    // TODO: Method 'GetFieldNames'
+    // TODO: Method 'IsMatchingType'
+    // TODO: Method 'RecordCreate'
+    // TODO: Method 'RecordCreateCopy'
+    // TODO: Method 'RecordDestroy'
+};
+// --------------------------------------------------------
+// Type: IErrorLog
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IErrorLog = *opaque{
+    // TODO: Method 'AddError'
+};
+// --------------------------------------------------------
+// Type: IPropertyBag
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPropertyBag = *opaque{
+    // TODO: Method 'Read'
+    // TODO: Method 'Write'
+};
+// --------------------------------------------------------
+// Type: ITypeLibRegistrationReader
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITypeLibRegistrationReader = *opaque{
+    // TODO: Method 'EnumTypeLibRegistrations'
+};
+// --------------------------------------------------------
+// Type: ITypeLibRegistration
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITypeLibRegistration = *opaque{
+    // TODO: Method 'GetGuid'
+    // TODO: Method 'GetVersion'
+    // TODO: Method 'GetLcid'
+    // TODO: Method 'GetWin32Path'
+    // TODO: Method 'GetWin64Path'
+    // TODO: Method 'GetDisplayName'
+    // TODO: Method 'GetFlags'
+    // TODO: Method 'GetHelpDir'
+};
+// --------------------------------------------------------
+// Type: NUMPARSE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NUMPARSE = extern struct {
+    cDig: {"kind":"Int32"},
+    dwInFlags: {"kind":"UInt32"},
+    dwOutFlags: {"kind":"UInt32"},
+    cchUsed: {"kind":"Int32"},
+    nBaseShift: {"kind":"Int32"},
+    nPwr10: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: UDATE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const UDATE = extern struct {
+    st: Windows.Win32.WindowsProgramming.SYSTEMTIME,
+    wDayOfYear: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: REGKIND
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const REGKIND = *opaque{
+};
+// --------------------------------------------------------
+// Type: PARAMDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PARAMDATA = extern struct {
+    szName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    vt: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: METHODDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const METHODDATA = extern struct {
+    szName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppdata: {"kind""Ptr","child":Windows.Win32.Automation.PARAMDATA},
+    dispid: {"kind":"Int32"},
+    iMeth: {"kind":"UInt32"},
+    cc: Windows.Win32.Automation.CALLCONV,
+    cArgs: {"kind":"UInt32"},
+    wFlags: {"kind":"UInt16"},
+    vtReturn: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: INTERFACEDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERFACEDATA = extern struct {
+    pmethdata: {"kind""Ptr","child":Windows.Win32.Automation.METHODDATA},
+    cMembers: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WiaDevMgr
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WiaDevMgr = opaque {
+};
+// --------------------------------------------------------
+// Type: WiaLog
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WiaLog = opaque {
+};
+// --------------------------------------------------------
+// Type: WIA_RAW_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WIA_RAW_HEADER = extern struct {
+    Tag: {"kind":"UInt32"},
+    Version: {"kind":"UInt32"},
+    HeaderSize: {"kind":"UInt32"},
+    XRes: {"kind":"UInt32"},
+    YRes: {"kind":"UInt32"},
+    XExtent: {"kind":"UInt32"},
+    YExtent: {"kind":"UInt32"},
+    BytesPerLine: {"kind":"UInt32"},
+    BitsPerPixel: {"kind":"UInt32"},
+    ChannelsPerPixel: {"kind":"UInt32"},
+    DataType: {"kind":"UInt32"},
+    BitsPerChannel: {"kind":"Array","child": {"kind":"Byte"}},
+    Compression: {"kind":"UInt32"},
+    PhotometricInterp: {"kind":"UInt32"},
+    LineOrder: {"kind":"UInt32"},
+    RawDataOffset: {"kind":"UInt32"},
+    RawDataSize: {"kind":"UInt32"},
+    PaletteOffset: {"kind":"UInt32"},
+    PaletteSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WIA_BARCODE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WIA_BARCODE_INFO = extern struct {
+    Size: {"kind":"UInt32"},
+    Type: {"kind":"UInt32"},
+    Page: {"kind":"UInt32"},
+    Confidence: {"kind":"UInt32"},
+    XOffset: {"kind":"UInt32"},
+    YOffset: {"kind":"UInt32"},
+    Rotation: {"kind":"UInt32"},
+    Length: {"kind":"UInt32"},
+    Text: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WIA_BARCODES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WIA_BARCODES = extern struct {
+    Tag: {"kind":"UInt32"},
+    Version: {"kind":"UInt32"},
+    Size: {"kind":"UInt32"},
+    Count: {"kind":"UInt32"},
+    Barcodes: {"kind":"Array","child": Windows.Win32.Automation.WIA_BARCODE_INFO},
+};
+// --------------------------------------------------------
+// Type: WIA_PATCH_CODE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WIA_PATCH_CODE_INFO = extern struct {
+    Type: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WIA_PATCH_CODES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WIA_PATCH_CODES = extern struct {
+    Tag: {"kind":"UInt32"},
+    Version: {"kind":"UInt32"},
+    Size: {"kind":"UInt32"},
+    Count: {"kind":"UInt32"},
+    PatchCodes: {"kind":"Array","child": Windows.Win32.Automation.WIA_PATCH_CODE_INFO},
+};
+// --------------------------------------------------------
+// Type: WIA_MICR_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WIA_MICR_INFO = extern struct {
+    Size: {"kind":"UInt32"},
+    Page: {"kind":"UInt32"},
+    Length: {"kind":"UInt32"},
+    Text: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WIA_MICR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WIA_MICR = extern struct {
+    Tag: {"kind":"UInt32"},
+    Version: {"kind":"UInt32"},
+    Size: {"kind":"UInt32"},
+    Placeholder: {"kind":"UInt16"},
+    Reserved: {"kind":"UInt16"},
+    Count: {"kind":"UInt32"},
+    Micr: {"kind":"Array","child": Windows.Win32.Automation.WIA_MICR_INFO},
+};
+// --------------------------------------------------------
+// Type: IDispatchEx
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDispatchEx = *opaque{
+    // TODO: Method 'GetDispID'
+    // TODO: Method 'InvokeEx'
+    // TODO: Method 'DeleteMemberByName'
+    // TODO: Method 'DeleteMemberByDispID'
+    // TODO: Method 'GetMemberProperties'
+    // TODO: Method 'GetMemberName'
+    // TODO: Method 'GetNextDispID'
+    // TODO: Method 'GetNameSpaceParent'
+};
+// --------------------------------------------------------
+// Type: IDispError
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDispError = *opaque{
+    // TODO: Method 'QueryErrorInfo'
+    // TODO: Method 'GetNext'
+    // TODO: Method 'GetHresult'
+    // TODO: Method 'GetSource'
+    // TODO: Method 'GetHelpInfo'
+    // TODO: Method 'GetDescription'
+};
+// --------------------------------------------------------
+// Type: IVariantChangeType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IVariantChangeType = *opaque{
+    // TODO: Method 'ChangeType'
+};
+// --------------------------------------------------------
+// Type: IObjectIdentity
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IObjectIdentity = *opaque{
+    // TODO: Method 'IsEqualObject'
+};
+// --------------------------------------------------------
+// Type: ICanHandleException
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICanHandleException = *opaque{
+    // TODO: Method 'CanHandleException'
+};
+// --------------------------------------------------------
+// Type: IProvideRuntimeContext
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IProvideRuntimeContext = *opaque{
+    // TODO: Method 'GetCurrentSourceContext'
+};
+// --------------------------------------------------------
+// Type: BSTR
+// TypeLayoutAttr: sequential
+// RAIIFree 'SysFreeString' (TODO: can we use this information?)
+pub const BSTR = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: VARENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const VARENUM = *opaque{
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn BSTR_UserSize(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind":"UInt32"},
+    param2: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn BSTR_UserMarshal(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":{"kind":"Byte"}},
+    param2: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn BSTR_UserUnmarshal(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":{"kind":"Byte"}},
+    param2: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn BSTR_UserFree(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn BSTR_UserSize64(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind":"UInt32"},
+    param2: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn BSTR_UserMarshal64(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":{"kind":"Byte"}},
+    param2: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn BSTR_UserUnmarshal64(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":{"kind":"Byte"}},
+    param2: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn BSTR_UserFree64(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn HWND_UserSize(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind":"UInt32"},
+    param2: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.HWND},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn HWND_UserMarshal(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":{"kind":"Byte"}},
+    param2: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.HWND},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn HWND_UserUnmarshal(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":{"kind":"Byte"}},
+    param2: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.HWND},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn HWND_UserFree(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.HWND},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn HWND_UserSize64(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind":"UInt32"},
+    param2: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.HWND},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn HWND_UserMarshal64(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":{"kind":"Byte"}},
+    param2: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.HWND},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn HWND_UserUnmarshal64(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":{"kind":"Byte"}},
+    param2: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.HWND},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn HWND_UserFree64(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.HWND},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VARIANT_UserSize(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind":"UInt32"},
+    param2: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VARIANT_UserMarshal(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":{"kind":"Byte"}},
+    param2: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VARIANT_UserUnmarshal(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":{"kind":"Byte"}},
+    param2: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VARIANT_UserFree(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VARIANT_UserSize64(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind":"UInt32"},
+    param2: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VARIANT_UserMarshal64(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":{"kind":"Byte"}},
+    param2: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VARIANT_UserUnmarshal64(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":{"kind":"Byte"}},
+    param2: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VARIANT_UserFree64(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn LPSAFEARRAY_UserSize(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind":"UInt32"},
+    param2: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn LPSAFEARRAY_UserMarshal(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":{"kind":"Byte"}},
+    param2: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn LPSAFEARRAY_UserUnmarshal(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":{"kind":"Byte"}},
+    param2: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn LPSAFEARRAY_UserFree(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn LPSAFEARRAY_UserSize64(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind":"UInt32"},
+    param2: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn LPSAFEARRAY_UserMarshal64(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":{"kind":"Byte"}},
+    param2: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn LPSAFEARRAY_UserUnmarshal64(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":{"kind":"Byte"}},
+    param2: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn LPSAFEARRAY_UserFree64(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn STGMEDIUM_UserSize(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind":"UInt32"},
+    param2: {"kind""Ptr","child":Windows.Win32.Com.STGMEDIUM},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn STGMEDIUM_UserMarshal(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":{"kind":"Byte"}},
+    param2: {"kind""Ptr","child":Windows.Win32.Com.STGMEDIUM},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn STGMEDIUM_UserUnmarshal(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":{"kind":"Byte"}},
+    param2: {"kind""Ptr","child":Windows.Win32.Com.STGMEDIUM},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn STGMEDIUM_UserFree(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":Windows.Win32.Com.STGMEDIUM},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn STGMEDIUM_UserSize64(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind":"UInt32"},
+    param2: {"kind""Ptr","child":Windows.Win32.Com.STGMEDIUM},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn STGMEDIUM_UserMarshal64(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":{"kind":"Byte"}},
+    param2: {"kind""Ptr","child":Windows.Win32.Com.STGMEDIUM},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn STGMEDIUM_UserUnmarshal64(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":{"kind":"Byte"}},
+    param2: {"kind""Ptr","child":Windows.Win32.Com.STGMEDIUM},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn STGMEDIUM_UserFree64(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":Windows.Win32.Com.STGMEDIUM},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn OleLoadPictureFile(
+    varFileName: Windows.Win32.Automation.VARIANT,
+    lplpdispPicture: {"kind""Ptr","child":Windows.Win32.Automation.IDispatch},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn OleLoadPictureFileEx(
+    varFileName: Windows.Win32.Automation.VARIANT,
+    xSizeDesired: {"kind":"UInt32"},
+    ySizeDesired: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    lplpdispPicture: {"kind""Ptr","child":Windows.Win32.Automation.IDispatch},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn OleSavePictureFile(
+    lpdispPicture: Windows.Win32.Automation.IDispatch,
+    bstrFileName: Windows.Win32.Automation.BSTR,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SysAllocString(
+    psz: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SysReAllocString(
+    pbstr: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+    psz: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SysAllocStringLen(
+    strIn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ui: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SysReAllocStringLen(
+    pbstr: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+    psz: {"kind""Ptr","child":{"kind":"UInt16"}},
+    len: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SysAddRefString(
+    bstrString: Windows.Win32.Automation.BSTR,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SysReleaseString(
+    bstrString: Windows.Win32.Automation.BSTR,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SysFreeString(
+    bstrString: Windows.Win32.Automation.BSTR,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SysStringLen(
+    pbstr: Windows.Win32.Automation.BSTR,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SysStringByteLen(
+    bstr: Windows.Win32.Automation.BSTR,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SysAllocStringByteLen(
+    psz: {"kind""Ptr","child":{"kind":"SByte"}},
+    len: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn DosDateTimeToVariantTime(
+    wDosDate: {"kind":"UInt16"},
+    wDosTime: {"kind":"UInt16"},
+    pvtime: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VariantTimeToDosDateTime(
+    vtime: {"kind":"Double"},
+    pwDosDate: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwDosTime: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SystemTimeToVariantTime(
+    lpSystemTime: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.SYSTEMTIME},
+    pvtime: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VariantTimeToSystemTime(
+    vtime: {"kind":"Double"},
+    lpSystemTime: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.SYSTEMTIME},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayAllocDescriptor(
+    cDims: {"kind":"UInt32"},
+    ppsaOut: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayAllocDescriptorEx(
+    vt: {"kind":"UInt16"},
+    cDims: {"kind":"UInt32"},
+    ppsaOut: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayAllocData(
+    psa: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayCreate(
+    vt: {"kind":"UInt16"},
+    cDims: {"kind":"UInt32"},
+    rgsabound: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAYBOUND},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayCreateEx(
+    vt: {"kind":"UInt16"},
+    cDims: {"kind":"UInt32"},
+    rgsabound: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAYBOUND},
+    pvExtra: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayCopyData(
+    psaSource: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+    psaTarget: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayReleaseDescriptor(
+    psa: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayDestroyDescriptor(
+    psa: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayReleaseData(
+    pData: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayDestroyData(
+    psa: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayAddRef(
+    psa: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+    ppDataToRelease: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayDestroy(
+    psa: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayRedim(
+    psa: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+    psaboundNew: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAYBOUND},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayGetDim(
+    psa: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayGetElemsize(
+    psa: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayGetUBound(
+    psa: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+    nDim: {"kind":"UInt32"},
+    plUbound: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayGetLBound(
+    psa: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+    nDim: {"kind":"UInt32"},
+    plLbound: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayLock(
+    psa: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayUnlock(
+    psa: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayAccessData(
+    psa: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+    ppvData: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayUnaccessData(
+    psa: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayGetElement(
+    psa: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+    rgIndices: {"kind""Ptr","child":{"kind":"Int32"}},
+    pv: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayPutElement(
+    psa: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+    rgIndices: {"kind""Ptr","child":{"kind":"Int32"}},
+    pv: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayCopy(
+    psa: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+    ppsaOut: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayPtrOfIndex(
+    psa: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+    rgIndices: {"kind""Ptr","child":{"kind":"Int32"}},
+    ppvData: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArraySetRecordInfo(
+    psa: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+    prinfo: Windows.Win32.Automation.IRecordInfo,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayGetRecordInfo(
+    psa: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+    prinfo: {"kind""Ptr","child":Windows.Win32.Automation.IRecordInfo},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArraySetIID(
+    psa: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+    guid: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayGetIID(
+    psa: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+    pguid: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayGetVartype(
+    psa: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+    pvt: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayCreateVector(
+    vt: {"kind":"UInt16"},
+    lLbound: {"kind":"Int32"},
+    cElements: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SafeArrayCreateVectorEx(
+    vt: {"kind":"UInt16"},
+    lLbound: {"kind":"Int32"},
+    cElements: {"kind":"UInt32"},
+    pvExtra: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VariantInit(
+    pvarg: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VariantClear(
+    pvarg: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VariantCopy(
+    pvargDest: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvargSrc: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VariantCopyInd(
+    pvarDest: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvargSrc: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VariantChangeType(
+    pvargDest: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarSrc: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    wFlags: {"kind":"UInt16"},
+    vt: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VariantChangeTypeEx(
+    pvargDest: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarSrc: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    lcid: {"kind":"UInt32"},
+    wFlags: {"kind":"UInt16"},
+    vt: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VectorFromBstr(
+    bstr: Windows.Win32.Automation.BSTR,
+    ppsa: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn BstrFromVector(
+    psa: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+    pbstr: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI1FromI2(
+    sIn: {"kind":"Int16"},
+    pbOut: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI1FromI4(
+    lIn: {"kind":"Int32"},
+    pbOut: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI1FromI8(
+    i64In: {"kind":"Int64"},
+    pbOut: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI1FromR4(
+    fltIn: {"kind":"Single"},
+    pbOut: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI1FromR8(
+    dblIn: {"kind":"Double"},
+    pbOut: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI1FromCy(
+    cyIn: Windows.Win32.SystemServices.CY,
+    pbOut: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI1FromDate(
+    dateIn: {"kind":"Double"},
+    pbOut: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI1FromStr(
+    strIn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pbOut: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI1FromDisp(
+    pdispIn: Windows.Win32.Automation.IDispatch,
+    lcid: {"kind":"UInt32"},
+    pbOut: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI1FromBool(
+    boolIn: {"kind":"Int16"},
+    pbOut: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI1FromI1(
+    cIn: {"kind":"SByte"},
+    pbOut: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI1FromUI2(
+    uiIn: {"kind":"UInt16"},
+    pbOut: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI1FromUI4(
+    ulIn: {"kind":"UInt32"},
+    pbOut: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI1FromUI8(
+    ui64In: {"kind":"UInt64"},
+    pbOut: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI1FromDec(
+    pdecIn: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+    pbOut: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI2FromUI1(
+    bIn: {"kind":"Byte"},
+    psOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI2FromI4(
+    lIn: {"kind":"Int32"},
+    psOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI2FromI8(
+    i64In: {"kind":"Int64"},
+    psOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI2FromR4(
+    fltIn: {"kind":"Single"},
+    psOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI2FromR8(
+    dblIn: {"kind":"Double"},
+    psOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI2FromCy(
+    cyIn: Windows.Win32.SystemServices.CY,
+    psOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI2FromDate(
+    dateIn: {"kind":"Double"},
+    psOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI2FromStr(
+    strIn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    psOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI2FromDisp(
+    pdispIn: Windows.Win32.Automation.IDispatch,
+    lcid: {"kind":"UInt32"},
+    psOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI2FromBool(
+    boolIn: {"kind":"Int16"},
+    psOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI2FromI1(
+    cIn: {"kind":"SByte"},
+    psOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI2FromUI2(
+    uiIn: {"kind":"UInt16"},
+    psOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI2FromUI4(
+    ulIn: {"kind":"UInt32"},
+    psOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI2FromUI8(
+    ui64In: {"kind":"UInt64"},
+    psOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI2FromDec(
+    pdecIn: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+    psOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI4FromUI1(
+    bIn: {"kind":"Byte"},
+    plOut: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI4FromI2(
+    sIn: {"kind":"Int16"},
+    plOut: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI4FromI8(
+    i64In: {"kind":"Int64"},
+    plOut: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI4FromR4(
+    fltIn: {"kind":"Single"},
+    plOut: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI4FromR8(
+    dblIn: {"kind":"Double"},
+    plOut: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI4FromCy(
+    cyIn: Windows.Win32.SystemServices.CY,
+    plOut: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI4FromDate(
+    dateIn: {"kind":"Double"},
+    plOut: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI4FromStr(
+    strIn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    plOut: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI4FromDisp(
+    pdispIn: Windows.Win32.Automation.IDispatch,
+    lcid: {"kind":"UInt32"},
+    plOut: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI4FromBool(
+    boolIn: {"kind":"Int16"},
+    plOut: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI4FromI1(
+    cIn: {"kind":"SByte"},
+    plOut: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI4FromUI2(
+    uiIn: {"kind":"UInt16"},
+    plOut: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI4FromUI4(
+    ulIn: {"kind":"UInt32"},
+    plOut: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI4FromUI8(
+    ui64In: {"kind":"UInt64"},
+    plOut: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI4FromDec(
+    pdecIn: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+    plOut: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI8FromUI1(
+    bIn: {"kind":"Byte"},
+    pi64Out: {"kind""Ptr","child":{"kind":"Int64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI8FromI2(
+    sIn: {"kind":"Int16"},
+    pi64Out: {"kind""Ptr","child":{"kind":"Int64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI8FromR4(
+    fltIn: {"kind":"Single"},
+    pi64Out: {"kind""Ptr","child":{"kind":"Int64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI8FromR8(
+    dblIn: {"kind":"Double"},
+    pi64Out: {"kind""Ptr","child":{"kind":"Int64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI8FromCy(
+    cyIn: Windows.Win32.SystemServices.CY,
+    pi64Out: {"kind""Ptr","child":{"kind":"Int64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI8FromDate(
+    dateIn: {"kind":"Double"},
+    pi64Out: {"kind""Ptr","child":{"kind":"Int64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI8FromStr(
+    strIn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pi64Out: {"kind""Ptr","child":{"kind":"Int64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI8FromDisp(
+    pdispIn: Windows.Win32.Automation.IDispatch,
+    lcid: {"kind":"UInt32"},
+    pi64Out: {"kind""Ptr","child":{"kind":"Int64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI8FromBool(
+    boolIn: {"kind":"Int16"},
+    pi64Out: {"kind""Ptr","child":{"kind":"Int64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI8FromI1(
+    cIn: {"kind":"SByte"},
+    pi64Out: {"kind""Ptr","child":{"kind":"Int64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI8FromUI2(
+    uiIn: {"kind":"UInt16"},
+    pi64Out: {"kind""Ptr","child":{"kind":"Int64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI8FromUI4(
+    ulIn: {"kind":"UInt32"},
+    pi64Out: {"kind""Ptr","child":{"kind":"Int64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI8FromUI8(
+    ui64In: {"kind":"UInt64"},
+    pi64Out: {"kind""Ptr","child":{"kind":"Int64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI8FromDec(
+    pdecIn: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+    pi64Out: {"kind""Ptr","child":{"kind":"Int64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR4FromUI1(
+    bIn: {"kind":"Byte"},
+    pfltOut: {"kind""Ptr","child":{"kind":"Single"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR4FromI2(
+    sIn: {"kind":"Int16"},
+    pfltOut: {"kind""Ptr","child":{"kind":"Single"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR4FromI4(
+    lIn: {"kind":"Int32"},
+    pfltOut: {"kind""Ptr","child":{"kind":"Single"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR4FromI8(
+    i64In: {"kind":"Int64"},
+    pfltOut: {"kind""Ptr","child":{"kind":"Single"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR4FromR8(
+    dblIn: {"kind":"Double"},
+    pfltOut: {"kind""Ptr","child":{"kind":"Single"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR4FromCy(
+    cyIn: Windows.Win32.SystemServices.CY,
+    pfltOut: {"kind""Ptr","child":{"kind":"Single"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR4FromDate(
+    dateIn: {"kind":"Double"},
+    pfltOut: {"kind""Ptr","child":{"kind":"Single"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR4FromStr(
+    strIn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pfltOut: {"kind""Ptr","child":{"kind":"Single"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR4FromDisp(
+    pdispIn: Windows.Win32.Automation.IDispatch,
+    lcid: {"kind":"UInt32"},
+    pfltOut: {"kind""Ptr","child":{"kind":"Single"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR4FromBool(
+    boolIn: {"kind":"Int16"},
+    pfltOut: {"kind""Ptr","child":{"kind":"Single"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR4FromI1(
+    cIn: {"kind":"SByte"},
+    pfltOut: {"kind""Ptr","child":{"kind":"Single"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR4FromUI2(
+    uiIn: {"kind":"UInt16"},
+    pfltOut: {"kind""Ptr","child":{"kind":"Single"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR4FromUI4(
+    ulIn: {"kind":"UInt32"},
+    pfltOut: {"kind""Ptr","child":{"kind":"Single"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR4FromUI8(
+    ui64In: {"kind":"UInt64"},
+    pfltOut: {"kind""Ptr","child":{"kind":"Single"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR4FromDec(
+    pdecIn: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+    pfltOut: {"kind""Ptr","child":{"kind":"Single"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR8FromUI1(
+    bIn: {"kind":"Byte"},
+    pdblOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR8FromI2(
+    sIn: {"kind":"Int16"},
+    pdblOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR8FromI4(
+    lIn: {"kind":"Int32"},
+    pdblOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR8FromI8(
+    i64In: {"kind":"Int64"},
+    pdblOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR8FromR4(
+    fltIn: {"kind":"Single"},
+    pdblOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR8FromCy(
+    cyIn: Windows.Win32.SystemServices.CY,
+    pdblOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR8FromDate(
+    dateIn: {"kind":"Double"},
+    pdblOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR8FromStr(
+    strIn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pdblOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR8FromDisp(
+    pdispIn: Windows.Win32.Automation.IDispatch,
+    lcid: {"kind":"UInt32"},
+    pdblOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR8FromBool(
+    boolIn: {"kind":"Int16"},
+    pdblOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR8FromI1(
+    cIn: {"kind":"SByte"},
+    pdblOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR8FromUI2(
+    uiIn: {"kind":"UInt16"},
+    pdblOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR8FromUI4(
+    ulIn: {"kind":"UInt32"},
+    pdblOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR8FromUI8(
+    ui64In: {"kind":"UInt64"},
+    pdblOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR8FromDec(
+    pdecIn: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+    pdblOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDateFromUI1(
+    bIn: {"kind":"Byte"},
+    pdateOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDateFromI2(
+    sIn: {"kind":"Int16"},
+    pdateOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDateFromI4(
+    lIn: {"kind":"Int32"},
+    pdateOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDateFromI8(
+    i64In: {"kind":"Int64"},
+    pdateOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDateFromR4(
+    fltIn: {"kind":"Single"},
+    pdateOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDateFromR8(
+    dblIn: {"kind":"Double"},
+    pdateOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDateFromCy(
+    cyIn: Windows.Win32.SystemServices.CY,
+    pdateOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDateFromStr(
+    strIn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pdateOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDateFromDisp(
+    pdispIn: Windows.Win32.Automation.IDispatch,
+    lcid: {"kind":"UInt32"},
+    pdateOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDateFromBool(
+    boolIn: {"kind":"Int16"},
+    pdateOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDateFromI1(
+    cIn: {"kind":"SByte"},
+    pdateOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDateFromUI2(
+    uiIn: {"kind":"UInt16"},
+    pdateOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDateFromUI4(
+    ulIn: {"kind":"UInt32"},
+    pdateOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDateFromUI8(
+    ui64In: {"kind":"UInt64"},
+    pdateOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDateFromDec(
+    pdecIn: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+    pdateOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarCyFromUI1(
+    bIn: {"kind":"Byte"},
+    pcyOut: {"kind""Ptr","child":Windows.Win32.SystemServices.CY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarCyFromI2(
+    sIn: {"kind":"Int16"},
+    pcyOut: {"kind""Ptr","child":Windows.Win32.SystemServices.CY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarCyFromI4(
+    lIn: {"kind":"Int32"},
+    pcyOut: {"kind""Ptr","child":Windows.Win32.SystemServices.CY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarCyFromI8(
+    i64In: {"kind":"Int64"},
+    pcyOut: {"kind""Ptr","child":Windows.Win32.SystemServices.CY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarCyFromR4(
+    fltIn: {"kind":"Single"},
+    pcyOut: {"kind""Ptr","child":Windows.Win32.SystemServices.CY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarCyFromR8(
+    dblIn: {"kind":"Double"},
+    pcyOut: {"kind""Ptr","child":Windows.Win32.SystemServices.CY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarCyFromDate(
+    dateIn: {"kind":"Double"},
+    pcyOut: {"kind""Ptr","child":Windows.Win32.SystemServices.CY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarCyFromStr(
+    strIn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pcyOut: {"kind""Ptr","child":Windows.Win32.SystemServices.CY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarCyFromDisp(
+    pdispIn: Windows.Win32.Automation.IDispatch,
+    lcid: {"kind":"UInt32"},
+    pcyOut: {"kind""Ptr","child":Windows.Win32.SystemServices.CY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarCyFromBool(
+    boolIn: {"kind":"Int16"},
+    pcyOut: {"kind""Ptr","child":Windows.Win32.SystemServices.CY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarCyFromI1(
+    cIn: {"kind":"SByte"},
+    pcyOut: {"kind""Ptr","child":Windows.Win32.SystemServices.CY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarCyFromUI2(
+    uiIn: {"kind":"UInt16"},
+    pcyOut: {"kind""Ptr","child":Windows.Win32.SystemServices.CY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarCyFromUI4(
+    ulIn: {"kind":"UInt32"},
+    pcyOut: {"kind""Ptr","child":Windows.Win32.SystemServices.CY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarCyFromUI8(
+    ui64In: {"kind":"UInt64"},
+    pcyOut: {"kind""Ptr","child":Windows.Win32.SystemServices.CY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarCyFromDec(
+    pdecIn: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+    pcyOut: {"kind""Ptr","child":Windows.Win32.SystemServices.CY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBstrFromUI1(
+    bVal: {"kind":"Byte"},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pbstrOut: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBstrFromI2(
+    iVal: {"kind":"Int16"},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pbstrOut: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBstrFromI4(
+    lIn: {"kind":"Int32"},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pbstrOut: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBstrFromI8(
+    i64In: {"kind":"Int64"},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pbstrOut: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBstrFromR4(
+    fltIn: {"kind":"Single"},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pbstrOut: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBstrFromR8(
+    dblIn: {"kind":"Double"},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pbstrOut: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBstrFromCy(
+    cyIn: Windows.Win32.SystemServices.CY,
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pbstrOut: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBstrFromDate(
+    dateIn: {"kind":"Double"},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pbstrOut: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBstrFromDisp(
+    pdispIn: Windows.Win32.Automation.IDispatch,
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pbstrOut: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBstrFromBool(
+    boolIn: {"kind":"Int16"},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pbstrOut: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBstrFromI1(
+    cIn: {"kind":"SByte"},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pbstrOut: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBstrFromUI2(
+    uiIn: {"kind":"UInt16"},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pbstrOut: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBstrFromUI4(
+    ulIn: {"kind":"UInt32"},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pbstrOut: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBstrFromUI8(
+    ui64In: {"kind":"UInt64"},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pbstrOut: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBstrFromDec(
+    pdecIn: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pbstrOut: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBoolFromUI1(
+    bIn: {"kind":"Byte"},
+    pboolOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBoolFromI2(
+    sIn: {"kind":"Int16"},
+    pboolOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBoolFromI4(
+    lIn: {"kind":"Int32"},
+    pboolOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBoolFromI8(
+    i64In: {"kind":"Int64"},
+    pboolOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBoolFromR4(
+    fltIn: {"kind":"Single"},
+    pboolOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBoolFromR8(
+    dblIn: {"kind":"Double"},
+    pboolOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBoolFromDate(
+    dateIn: {"kind":"Double"},
+    pboolOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBoolFromCy(
+    cyIn: Windows.Win32.SystemServices.CY,
+    pboolOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBoolFromStr(
+    strIn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pboolOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBoolFromDisp(
+    pdispIn: Windows.Win32.Automation.IDispatch,
+    lcid: {"kind":"UInt32"},
+    pboolOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBoolFromI1(
+    cIn: {"kind":"SByte"},
+    pboolOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBoolFromUI2(
+    uiIn: {"kind":"UInt16"},
+    pboolOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBoolFromUI4(
+    ulIn: {"kind":"UInt32"},
+    pboolOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBoolFromUI8(
+    i64In: {"kind":"UInt64"},
+    pboolOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBoolFromDec(
+    pdecIn: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+    pboolOut: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI1FromUI1(
+    bIn: {"kind":"Byte"},
+    pcOut: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI1FromI2(
+    uiIn: {"kind":"Int16"},
+    pcOut: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI1FromI4(
+    lIn: {"kind":"Int32"},
+    pcOut: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI1FromI8(
+    i64In: {"kind":"Int64"},
+    pcOut: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI1FromR4(
+    fltIn: {"kind":"Single"},
+    pcOut: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI1FromR8(
+    dblIn: {"kind":"Double"},
+    pcOut: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI1FromDate(
+    dateIn: {"kind":"Double"},
+    pcOut: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI1FromCy(
+    cyIn: Windows.Win32.SystemServices.CY,
+    pcOut: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI1FromStr(
+    strIn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pcOut: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI1FromDisp(
+    pdispIn: Windows.Win32.Automation.IDispatch,
+    lcid: {"kind":"UInt32"},
+    pcOut: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI1FromBool(
+    boolIn: {"kind":"Int16"},
+    pcOut: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI1FromUI2(
+    uiIn: {"kind":"UInt16"},
+    pcOut: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI1FromUI4(
+    ulIn: {"kind":"UInt32"},
+    pcOut: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI1FromUI8(
+    i64In: {"kind":"UInt64"},
+    pcOut: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarI1FromDec(
+    pdecIn: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+    pcOut: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI2FromUI1(
+    bIn: {"kind":"Byte"},
+    puiOut: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI2FromI2(
+    uiIn: {"kind":"Int16"},
+    puiOut: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI2FromI4(
+    lIn: {"kind":"Int32"},
+    puiOut: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI2FromI8(
+    i64In: {"kind":"Int64"},
+    puiOut: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI2FromR4(
+    fltIn: {"kind":"Single"},
+    puiOut: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI2FromR8(
+    dblIn: {"kind":"Double"},
+    puiOut: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI2FromDate(
+    dateIn: {"kind":"Double"},
+    puiOut: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI2FromCy(
+    cyIn: Windows.Win32.SystemServices.CY,
+    puiOut: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI2FromStr(
+    strIn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    puiOut: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI2FromDisp(
+    pdispIn: Windows.Win32.Automation.IDispatch,
+    lcid: {"kind":"UInt32"},
+    puiOut: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI2FromBool(
+    boolIn: {"kind":"Int16"},
+    puiOut: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI2FromI1(
+    cIn: {"kind":"SByte"},
+    puiOut: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI2FromUI4(
+    ulIn: {"kind":"UInt32"},
+    puiOut: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI2FromUI8(
+    i64In: {"kind":"UInt64"},
+    puiOut: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI2FromDec(
+    pdecIn: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+    puiOut: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI4FromUI1(
+    bIn: {"kind":"Byte"},
+    pulOut: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI4FromI2(
+    uiIn: {"kind":"Int16"},
+    pulOut: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI4FromI4(
+    lIn: {"kind":"Int32"},
+    pulOut: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI4FromI8(
+    i64In: {"kind":"Int64"},
+    plOut: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI4FromR4(
+    fltIn: {"kind":"Single"},
+    pulOut: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI4FromR8(
+    dblIn: {"kind":"Double"},
+    pulOut: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI4FromDate(
+    dateIn: {"kind":"Double"},
+    pulOut: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI4FromCy(
+    cyIn: Windows.Win32.SystemServices.CY,
+    pulOut: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI4FromStr(
+    strIn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pulOut: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI4FromDisp(
+    pdispIn: Windows.Win32.Automation.IDispatch,
+    lcid: {"kind":"UInt32"},
+    pulOut: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI4FromBool(
+    boolIn: {"kind":"Int16"},
+    pulOut: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI4FromI1(
+    cIn: {"kind":"SByte"},
+    pulOut: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI4FromUI2(
+    uiIn: {"kind":"UInt16"},
+    pulOut: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI4FromUI8(
+    ui64In: {"kind":"UInt64"},
+    plOut: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI4FromDec(
+    pdecIn: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+    pulOut: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI8FromUI1(
+    bIn: {"kind":"Byte"},
+    pi64Out: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI8FromI2(
+    sIn: {"kind":"Int16"},
+    pi64Out: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI8FromI8(
+    ui64In: {"kind":"Int64"},
+    pi64Out: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI8FromR4(
+    fltIn: {"kind":"Single"},
+    pi64Out: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI8FromR8(
+    dblIn: {"kind":"Double"},
+    pi64Out: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI8FromCy(
+    cyIn: Windows.Win32.SystemServices.CY,
+    pi64Out: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI8FromDate(
+    dateIn: {"kind":"Double"},
+    pi64Out: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI8FromStr(
+    strIn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pi64Out: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI8FromDisp(
+    pdispIn: Windows.Win32.Automation.IDispatch,
+    lcid: {"kind":"UInt32"},
+    pi64Out: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI8FromBool(
+    boolIn: {"kind":"Int16"},
+    pi64Out: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI8FromI1(
+    cIn: {"kind":"SByte"},
+    pi64Out: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI8FromUI2(
+    uiIn: {"kind":"UInt16"},
+    pi64Out: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI8FromUI4(
+    ulIn: {"kind":"UInt32"},
+    pi64Out: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUI8FromDec(
+    pdecIn: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+    pi64Out: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDecFromUI1(
+    bIn: {"kind":"Byte"},
+    pdecOut: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDecFromI2(
+    uiIn: {"kind":"Int16"},
+    pdecOut: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDecFromI4(
+    lIn: {"kind":"Int32"},
+    pdecOut: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDecFromI8(
+    i64In: {"kind":"Int64"},
+    pdecOut: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDecFromR4(
+    fltIn: {"kind":"Single"},
+    pdecOut: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDecFromR8(
+    dblIn: {"kind":"Double"},
+    pdecOut: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDecFromDate(
+    dateIn: {"kind":"Double"},
+    pdecOut: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDecFromCy(
+    cyIn: Windows.Win32.SystemServices.CY,
+    pdecOut: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDecFromStr(
+    strIn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pdecOut: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDecFromDisp(
+    pdispIn: Windows.Win32.Automation.IDispatch,
+    lcid: {"kind":"UInt32"},
+    pdecOut: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDecFromBool(
+    boolIn: {"kind":"Int16"},
+    pdecOut: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDecFromI1(
+    cIn: {"kind":"SByte"},
+    pdecOut: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDecFromUI2(
+    uiIn: {"kind":"UInt16"},
+    pdecOut: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDecFromUI4(
+    ulIn: {"kind":"UInt32"},
+    pdecOut: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDecFromUI8(
+    ui64In: {"kind":"UInt64"},
+    pdecOut: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarParseNumFromStr(
+    strIn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pnumprs: {"kind""Ptr","child":Windows.Win32.Automation.NUMPARSE},
+    rgbDig: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarNumFromParseNum(
+    pnumprs: {"kind""Ptr","child":Windows.Win32.Automation.NUMPARSE},
+    rgbDig: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwVtBits: {"kind":"UInt32"},
+    pvar: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarAdd(
+    pvarLeft: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarRight: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarResult: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarAnd(
+    pvarLeft: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarRight: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarResult: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarCat(
+    pvarLeft: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarRight: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarResult: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDiv(
+    pvarLeft: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarRight: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarResult: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarEqv(
+    pvarLeft: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarRight: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarResult: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarIdiv(
+    pvarLeft: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarRight: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarResult: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarImp(
+    pvarLeft: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarRight: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarResult: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarMod(
+    pvarLeft: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarRight: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarResult: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarMul(
+    pvarLeft: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarRight: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarResult: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarOr(
+    pvarLeft: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarRight: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarResult: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarPow(
+    pvarLeft: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarRight: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarResult: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarSub(
+    pvarLeft: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarRight: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarResult: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarXor(
+    pvarLeft: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarRight: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarResult: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarAbs(
+    pvarIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarResult: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarFix(
+    pvarIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarResult: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarInt(
+    pvarIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarResult: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarNeg(
+    pvarIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarResult: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarNot(
+    pvarIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarResult: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarRound(
+    pvarIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    cDecimals: {"kind":"Int32"},
+    pvarResult: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarCmp(
+    pvarLeft: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pvarRight: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDecAdd(
+    pdecLeft: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+    pdecRight: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+    pdecResult: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDecDiv(
+    pdecLeft: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+    pdecRight: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+    pdecResult: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDecMul(
+    pdecLeft: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+    pdecRight: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+    pdecResult: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDecSub(
+    pdecLeft: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+    pdecRight: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+    pdecResult: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDecAbs(
+    pdecIn: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+    pdecResult: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDecFix(
+    pdecIn: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+    pdecResult: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDecInt(
+    pdecIn: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+    pdecResult: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDecNeg(
+    pdecIn: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+    pdecResult: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDecRound(
+    pdecIn: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+    cDecimals: {"kind":"Int32"},
+    pdecResult: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDecCmp(
+    pdecLeft: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+    pdecRight: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDecCmpR8(
+    pdecLeft: {"kind""Ptr","child":Windows.Win32.SystemServices.DECIMAL},
+    dblRight: {"kind":"Double"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarCyAdd(
+    cyLeft: Windows.Win32.SystemServices.CY,
+    cyRight: Windows.Win32.SystemServices.CY,
+    pcyResult: {"kind""Ptr","child":Windows.Win32.SystemServices.CY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarCyMul(
+    cyLeft: Windows.Win32.SystemServices.CY,
+    cyRight: Windows.Win32.SystemServices.CY,
+    pcyResult: {"kind""Ptr","child":Windows.Win32.SystemServices.CY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarCyMulI4(
+    cyLeft: Windows.Win32.SystemServices.CY,
+    lRight: {"kind":"Int32"},
+    pcyResult: {"kind""Ptr","child":Windows.Win32.SystemServices.CY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarCyMulI8(
+    cyLeft: Windows.Win32.SystemServices.CY,
+    lRight: {"kind":"Int64"},
+    pcyResult: {"kind""Ptr","child":Windows.Win32.SystemServices.CY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarCySub(
+    cyLeft: Windows.Win32.SystemServices.CY,
+    cyRight: Windows.Win32.SystemServices.CY,
+    pcyResult: {"kind""Ptr","child":Windows.Win32.SystemServices.CY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarCyAbs(
+    cyIn: Windows.Win32.SystemServices.CY,
+    pcyResult: {"kind""Ptr","child":Windows.Win32.SystemServices.CY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarCyFix(
+    cyIn: Windows.Win32.SystemServices.CY,
+    pcyResult: {"kind""Ptr","child":Windows.Win32.SystemServices.CY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarCyInt(
+    cyIn: Windows.Win32.SystemServices.CY,
+    pcyResult: {"kind""Ptr","child":Windows.Win32.SystemServices.CY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarCyNeg(
+    cyIn: Windows.Win32.SystemServices.CY,
+    pcyResult: {"kind""Ptr","child":Windows.Win32.SystemServices.CY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarCyRound(
+    cyIn: Windows.Win32.SystemServices.CY,
+    cDecimals: {"kind":"Int32"},
+    pcyResult: {"kind""Ptr","child":Windows.Win32.SystemServices.CY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarCyCmp(
+    cyLeft: Windows.Win32.SystemServices.CY,
+    cyRight: Windows.Win32.SystemServices.CY,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarCyCmpR8(
+    cyLeft: Windows.Win32.SystemServices.CY,
+    dblRight: {"kind":"Double"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBstrCat(
+    bstrLeft: Windows.Win32.Automation.BSTR,
+    bstrRight: Windows.Win32.Automation.BSTR,
+    pbstrResult: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarBstrCmp(
+    bstrLeft: Windows.Win32.Automation.BSTR,
+    bstrRight: Windows.Win32.Automation.BSTR,
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR8Pow(
+    dblLeft: {"kind":"Double"},
+    dblRight: {"kind":"Double"},
+    pdblResult: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR4CmpR8(
+    fltLeft: {"kind":"Single"},
+    dblRight: {"kind":"Double"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarR8Round(
+    dblIn: {"kind":"Double"},
+    cDecimals: {"kind":"Int32"},
+    pdblResult: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDateFromUdate(
+    pudateIn: {"kind""Ptr","child":Windows.Win32.Automation.UDATE},
+    dwFlags: {"kind":"UInt32"},
+    pdateOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarDateFromUdateEx(
+    pudateIn: {"kind""Ptr","child":Windows.Win32.Automation.UDATE},
+    lcid: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pdateOut: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarUdateFromDate(
+    dateIn: {"kind":"Double"},
+    dwFlags: {"kind":"UInt32"},
+    pudateOut: {"kind""Ptr","child":Windows.Win32.Automation.UDATE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn GetAltMonthNames(
+    lcid: {"kind":"UInt32"},
+    prgp: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarFormat(
+    pvarIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pstrFormat: {"kind""Ptr","child":{"kind":"UInt16"}},
+    iFirstDay: {"kind":"Int32"},
+    iFirstWeek: {"kind":"Int32"},
+    dwFlags: {"kind":"UInt32"},
+    pbstrOut: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarFormatDateTime(
+    pvarIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    iNamedFormat: {"kind":"Int32"},
+    dwFlags: {"kind":"UInt32"},
+    pbstrOut: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarFormatNumber(
+    pvarIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    iNumDig: {"kind":"Int32"},
+    iIncLead: {"kind":"Int32"},
+    iUseParens: {"kind":"Int32"},
+    iGroup: {"kind":"Int32"},
+    dwFlags: {"kind":"UInt32"},
+    pbstrOut: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarFormatPercent(
+    pvarIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    iNumDig: {"kind":"Int32"},
+    iIncLead: {"kind":"Int32"},
+    iUseParens: {"kind":"Int32"},
+    iGroup: {"kind":"Int32"},
+    dwFlags: {"kind":"UInt32"},
+    pbstrOut: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarFormatCurrency(
+    pvarIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    iNumDig: {"kind":"Int32"},
+    iIncLead: {"kind":"Int32"},
+    iUseParens: {"kind":"Int32"},
+    iGroup: {"kind":"Int32"},
+    dwFlags: {"kind":"UInt32"},
+    pbstrOut: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarWeekdayName(
+    iWeekday: {"kind":"Int32"},
+    fAbbrev: {"kind":"Int32"},
+    iFirstDay: {"kind":"Int32"},
+    dwFlags: {"kind":"UInt32"},
+    pbstrOut: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarMonthName(
+    iMonth: {"kind":"Int32"},
+    fAbbrev: {"kind":"Int32"},
+    dwFlags: {"kind":"UInt32"},
+    pbstrOut: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarFormatFromTokens(
+    pvarIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pstrFormat: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pbTokCur: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwFlags: {"kind":"UInt32"},
+    pbstrOut: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+    lcid: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn VarTokenizeFormatString(
+    pstrFormat: {"kind""Ptr","child":{"kind":"UInt16"}},
+    rgbTok: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbTok: {"kind":"Int32"},
+    iFirstDay: {"kind":"Int32"},
+    iFirstWeek: {"kind":"Int32"},
+    lcid: {"kind":"UInt32"},
+    pcbActual: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn LHashValOfNameSysA(
+    syskind: Windows.Win32.Automation.SYSKIND,
+    lcid: {"kind":"UInt32"},
+    szName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn LHashValOfNameSys(
+    syskind: Windows.Win32.Automation.SYSKIND,
+    lcid: {"kind":"UInt32"},
+    szName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn LoadTypeLib(
+    szFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pptlib: {"kind""Ptr","child":Windows.Win32.Automation.ITypeLib},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn LoadTypeLibEx(
+    szFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    regkind: Windows.Win32.Automation.REGKIND,
+    pptlib: {"kind""Ptr","child":Windows.Win32.Automation.ITypeLib},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn LoadRegTypeLib(
+    rguid: {"kind""Ptr","child":Guid},
+    wVerMajor: {"kind":"UInt16"},
+    wVerMinor: {"kind":"UInt16"},
+    lcid: {"kind":"UInt32"},
+    pptlib: {"kind""Ptr","child":Windows.Win32.Automation.ITypeLib},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn QueryPathOfRegTypeLib(
+    guid: {"kind""Ptr","child":Guid},
+    wMaj: {"kind":"UInt16"},
+    wMin: {"kind":"UInt16"},
+    lcid: {"kind":"UInt32"},
+    lpbstrPathName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn RegisterTypeLib(
+    ptlib: Windows.Win32.Automation.ITypeLib,
+    szFullPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szHelpDir: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn UnRegisterTypeLib(
+    libID: {"kind""Ptr","child":Guid},
+    wVerMajor: {"kind":"UInt16"},
+    wVerMinor: {"kind":"UInt16"},
+    lcid: {"kind":"UInt32"},
+    syskind: Windows.Win32.Automation.SYSKIND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn RegisterTypeLibForUser(
+    ptlib: Windows.Win32.Automation.ITypeLib,
+    szFullPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szHelpDir: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn UnRegisterTypeLibForUser(
+    libID: {"kind""Ptr","child":Guid},
+    wMajorVerNum: {"kind":"UInt16"},
+    wMinorVerNum: {"kind":"UInt16"},
+    lcid: {"kind":"UInt32"},
+    syskind: Windows.Win32.Automation.SYSKIND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn CreateTypeLib(
+    syskind: Windows.Win32.Automation.SYSKIND,
+    szFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppctlib: {"kind""Ptr","child":Windows.Win32.Automation.ICreateTypeLib},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn CreateTypeLib2(
+    syskind: Windows.Win32.Automation.SYSKIND,
+    szFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppctlib: {"kind""Ptr","child":Windows.Win32.Automation.ICreateTypeLib2},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn DispGetParam(
+    pdispparams: {"kind""Ptr","child":Windows.Win32.Automation.DISPPARAMS},
+    position: {"kind":"UInt32"},
+    vtTarg: {"kind":"UInt16"},
+    pvarResult: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    puArgErr: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn DispGetIDsOfNames(
+    ptinfo: Windows.Win32.Automation.ITypeInfo,
+    rgszNames: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    cNames: {"kind":"UInt32"},
+    rgdispid: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn DispInvoke(
+    _this: {"kind""Ptr","child":{"kind":"Void"}},
+    ptinfo: Windows.Win32.Automation.ITypeInfo,
+    dispidMember: {"kind":"Int32"},
+    wFlags: {"kind":"UInt16"},
+    pparams: {"kind""Ptr","child":Windows.Win32.Automation.DISPPARAMS},
+    pvarResult: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pexcepinfo: {"kind""Ptr","child":Windows.Win32.Automation.EXCEPINFO},
+    puArgErr: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn CreateDispTypeInfo(
+    pidata: {"kind""Ptr","child":Windows.Win32.Automation.INTERFACEDATA},
+    lcid: {"kind":"UInt32"},
+    pptinfo: {"kind""Ptr","child":Windows.Win32.Automation.ITypeInfo},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn CreateStdDispatch(
+    punkOuter: Windows.Win32.Com.IUnknown,
+    pvThis: {"kind""Ptr","child":{"kind":"Void"}},
+    ptinfo: Windows.Win32.Automation.ITypeInfo,
+    ppunkStdDisp: {"kind""Ptr","child":Windows.Win32.Com.IUnknown},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn DispCallFunc(
+    pvInstance: {"kind""Ptr","child":{"kind":"Void"}},
+    oVft: {"kind":"UIntPtr"},
+    cc: Windows.Win32.Automation.CALLCONV,
+    vtReturn: {"kind":"UInt16"},
+    cActuals: {"kind":"UInt32"},
+    prgvt: {"kind""Ptr","child":{"kind":"UInt16"}},
+    prgpvarg: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Automation.VARIANT}},
+    pvargResult: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn RegisterActiveObject(
+    punk: Windows.Win32.Com.IUnknown,
+    rclsid: {"kind""Ptr","child":Guid},
+    dwFlags: {"kind":"UInt32"},
+    pdwRegister: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn RevokeActiveObject(
+    dwRegister: {"kind":"UInt32"},
+    pvReserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn GetActiveObject(
+    rclsid: {"kind""Ptr","child":Guid},
+    pvReserved: {"kind""Ptr","child":{"kind":"Void"}},
+    ppunk: {"kind""Ptr","child":Windows.Win32.Com.IUnknown},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn SetErrorInfo(
+    dwReserved: {"kind":"UInt32"},
+    perrinfo: Windows.Win32.Automation.IErrorInfo,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn GetErrorInfo(
+    dwReserved: {"kind":"UInt32"},
+    pperrinfo: {"kind""Ptr","child":Windows.Win32.Automation.IErrorInfo},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn CreateErrorInfo(
+    pperrinfo: {"kind""Ptr","child":Windows.Win32.Automation.ICreateErrorInfo},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn GetRecordInfoFromTypeInfo(
+    pTypeInfo: Windows.Win32.Automation.ITypeInfo,
+    ppRecInfo: {"kind""Ptr","child":Windows.Win32.Automation.IRecordInfo},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn GetRecordInfoFromGuids(
+    rGuidTypeLib: {"kind""Ptr","child":Guid},
+    uVerMajor: {"kind":"UInt32"},
+    uVerMinor: {"kind":"UInt32"},
+    lcid: {"kind":"UInt32"},
+    rGuidTypeInfo: {"kind""Ptr","child":Guid},
+    ppRecInfo: {"kind""Ptr","child":Windows.Win32.Automation.IRecordInfo},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn OaBuildVersion(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn ClearCustData(
+    pCustData: {"kind""Ptr","child":Windows.Win32.Automation.CUSTDATA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLEAUT32" fn OaEnablePerUserTLibRegistration(
+],
+
+"unicode_aliases": [
+]}

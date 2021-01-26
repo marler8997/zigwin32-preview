@@ -1,0 +1,1314 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: MIB_NOTIFICATION_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MIB_NOTIFICATION_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIB_IF_ROW2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IF_ROW2 = extern struct {
+    InterfaceLuid: Windows.Win32.IpHelper.NET_LUID_LH,
+    InterfaceIndex: {"kind":"UInt32"},
+    InterfaceGuid: Guid,
+    Alias: {"kind":"Array","child": {"kind":"UInt16"}},
+    Description: {"kind":"Array","child": {"kind":"UInt16"}},
+    PhysicalAddressLength: {"kind":"UInt32"},
+    PhysicalAddress: {"kind":"Array","child": {"kind":"Byte"}},
+    PermanentPhysicalAddress: {"kind":"Array","child": {"kind":"Byte"}},
+    Mtu: {"kind":"UInt32"},
+    Type: {"kind":"UInt32"},
+    TunnelType: Windows.Win32.NetworkDrivers.TUNNEL_TYPE,
+    MediaType: Windows.Win32.NativeWiFi.NDIS_MEDIUM,
+    PhysicalMediumType: Windows.Win32.NativeWiFi.NDIS_PHYSICAL_MEDIUM,
+    AccessType: Windows.Win32.NetworkDrivers.NET_IF_ACCESS_TYPE,
+    DirectionType: Windows.Win32.NetworkDrivers.NET_IF_DIRECTION_TYPE,
+    InterfaceAndOperStatusFlags: Windows.Win32.Mib.MIB_IF_ROW2+_InterfaceAndOperStatusFlags_e__Struct,
+    OperStatus: Windows.Win32.IpHelper.IF_OPER_STATUS,
+    AdminStatus: Windows.Win32.NetworkDrivers.NET_IF_ADMIN_STATUS,
+    MediaConnectState: Windows.Win32.NetworkDrivers.NET_IF_MEDIA_CONNECT_STATE,
+    NetworkGuid: Guid,
+    ConnectionType: Windows.Win32.NetworkDrivers.NET_IF_CONNECTION_TYPE,
+    TransmitLinkSpeed: {"kind":"UInt64"},
+    ReceiveLinkSpeed: {"kind":"UInt64"},
+    InOctets: {"kind":"UInt64"},
+    InUcastPkts: {"kind":"UInt64"},
+    InNUcastPkts: {"kind":"UInt64"},
+    InDiscards: {"kind":"UInt64"},
+    InErrors: {"kind":"UInt64"},
+    InUnknownProtos: {"kind":"UInt64"},
+    InUcastOctets: {"kind":"UInt64"},
+    InMulticastOctets: {"kind":"UInt64"},
+    InBroadcastOctets: {"kind":"UInt64"},
+    OutOctets: {"kind":"UInt64"},
+    OutUcastPkts: {"kind":"UInt64"},
+    OutNUcastPkts: {"kind":"UInt64"},
+    OutDiscards: {"kind":"UInt64"},
+    OutErrors: {"kind":"UInt64"},
+    OutUcastOctets: {"kind":"UInt64"},
+    OutMulticastOctets: {"kind":"UInt64"},
+    OutBroadcastOctets: {"kind":"UInt64"},
+    OutQLen: {"kind":"UInt64"},
+    // --------------------------------------------------------
+    // Type: _InterfaceAndOperStatusFlags_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _InterfaceAndOperStatusFlags_e__Struct = extern struct {
+        _bitfield: {"kind":"Byte"},
+    };
+};
+// --------------------------------------------------------
+// Type: MIB_IF_TABLE2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IF_TABLE2 = extern struct {
+    NumEntries: {"kind":"UInt32"},
+    Table: {"kind":"Array","child": Windows.Win32.Mib.MIB_IF_ROW2},
+};
+// --------------------------------------------------------
+// Type: MIB_IPINTERFACE_ROW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPINTERFACE_ROW = extern struct {
+    Family: {"kind":"UInt16"},
+    InterfaceLuid: Windows.Win32.IpHelper.NET_LUID_LH,
+    InterfaceIndex: {"kind":"UInt32"},
+    MaxReassemblySize: {"kind":"UInt32"},
+    InterfaceIdentifier: {"kind":"UInt64"},
+    MinRouterAdvertisementInterval: {"kind":"UInt32"},
+    MaxRouterAdvertisementInterval: {"kind":"UInt32"},
+    AdvertisingEnabled: {"kind":"Byte"},
+    ForwardingEnabled: {"kind":"Byte"},
+    WeakHostSend: {"kind":"Byte"},
+    WeakHostReceive: {"kind":"Byte"},
+    UseAutomaticMetric: {"kind":"Byte"},
+    UseNeighborUnreachabilityDetection: {"kind":"Byte"},
+    ManagedAddressConfigurationSupported: {"kind":"Byte"},
+    OtherStatefulConfigurationSupported: {"kind":"Byte"},
+    AdvertiseDefaultRoute: {"kind":"Byte"},
+    RouterDiscoveryBehavior: Windows.Win32.NetworkDrivers.NL_ROUTER_DISCOVERY_BEHAVIOR,
+    DadTransmits: {"kind":"UInt32"},
+    BaseReachableTime: {"kind":"UInt32"},
+    RetransmitTime: {"kind":"UInt32"},
+    PathMtuDiscoveryTimeout: {"kind":"UInt32"},
+    LinkLocalAddressBehavior: Windows.Win32.NetworkDrivers.NL_LINK_LOCAL_ADDRESS_BEHAVIOR,
+    LinkLocalAddressTimeout: {"kind":"UInt32"},
+    ZoneIndices: {"kind":"Array","child": {"kind":"UInt32"}},
+    SitePrefixLength: {"kind":"UInt32"},
+    Metric: {"kind":"UInt32"},
+    NlMtu: {"kind":"UInt32"},
+    Connected: {"kind":"Byte"},
+    SupportsWakeUpPatterns: {"kind":"Byte"},
+    SupportsNeighborDiscovery: {"kind":"Byte"},
+    SupportsRouterDiscovery: {"kind":"Byte"},
+    ReachableTime: {"kind":"UInt32"},
+    TransmitOffload: Windows.Win32.Mib.NL_INTERFACE_OFFLOAD_ROD,
+    ReceiveOffload: Windows.Win32.Mib.NL_INTERFACE_OFFLOAD_ROD,
+    DisableDefaultRoutes: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: MIB_IPINTERFACE_TABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPINTERFACE_TABLE = extern struct {
+    NumEntries: {"kind":"UInt32"},
+    Table: {"kind":"Array","child": Windows.Win32.Mib.MIB_IPINTERFACE_ROW},
+};
+// --------------------------------------------------------
+// Type: MIB_IFSTACK_ROW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IFSTACK_ROW = extern struct {
+    HigherLayerInterfaceIndex: {"kind":"UInt32"},
+    LowerLayerInterfaceIndex: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_INVERTEDIFSTACK_ROW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_INVERTEDIFSTACK_ROW = extern struct {
+    LowerLayerInterfaceIndex: {"kind":"UInt32"},
+    HigherLayerInterfaceIndex: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_IFSTACK_TABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IFSTACK_TABLE = extern struct {
+    NumEntries: {"kind":"UInt32"},
+    Table: {"kind":"Array","child": Windows.Win32.Mib.MIB_IFSTACK_ROW},
+};
+// --------------------------------------------------------
+// Type: MIB_INVERTEDIFSTACK_TABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_INVERTEDIFSTACK_TABLE = extern struct {
+    NumEntries: {"kind":"UInt32"},
+    Table: {"kind":"Array","child": Windows.Win32.Mib.MIB_INVERTEDIFSTACK_ROW},
+};
+// --------------------------------------------------------
+// Type: MIB_IP_NETWORK_CONNECTION_BANDWIDTH_ESTIMATES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IP_NETWORK_CONNECTION_BANDWIDTH_ESTIMATES = extern struct {
+    InboundBandwidthInformation: Windows.Win32.IpHelper.NL_BANDWIDTH_INFORMATION,
+    OutboundBandwidthInformation: Windows.Win32.IpHelper.NL_BANDWIDTH_INFORMATION,
+};
+// --------------------------------------------------------
+// Type: MIB_UNICASTIPADDRESS_ROW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_UNICASTIPADDRESS_ROW = extern struct {
+    Address: Windows.Win32.IpHelper.SOCKADDR_INET,
+    InterfaceLuid: Windows.Win32.IpHelper.NET_LUID_LH,
+    InterfaceIndex: {"kind":"UInt32"},
+    PrefixOrigin: Windows.Win32.IpHelper.NL_PREFIX_ORIGIN,
+    SuffixOrigin: Windows.Win32.IpHelper.NL_SUFFIX_ORIGIN,
+    ValidLifetime: {"kind":"UInt32"},
+    PreferredLifetime: {"kind":"UInt32"},
+    OnLinkPrefixLength: {"kind":"Byte"},
+    SkipAsSource: {"kind":"Byte"},
+    DadState: Windows.Win32.IpHelper.NL_DAD_STATE,
+    ScopeId: Windows.Win32.WinSock.SCOPE_ID,
+    CreationTimeStamp: Windows.Win32.SystemServices.LARGE_INTEGER,
+};
+// --------------------------------------------------------
+// Type: MIB_UNICASTIPADDRESS_TABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_UNICASTIPADDRESS_TABLE = extern struct {
+    NumEntries: {"kind":"UInt32"},
+    Table: {"kind":"Array","child": Windows.Win32.Mib.MIB_UNICASTIPADDRESS_ROW},
+};
+// --------------------------------------------------------
+// Type: MIB_ANYCASTIPADDRESS_ROW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_ANYCASTIPADDRESS_ROW = extern struct {
+    Address: Windows.Win32.IpHelper.SOCKADDR_INET,
+    InterfaceLuid: Windows.Win32.IpHelper.NET_LUID_LH,
+    InterfaceIndex: {"kind":"UInt32"},
+    ScopeId: Windows.Win32.WinSock.SCOPE_ID,
+};
+// --------------------------------------------------------
+// Type: MIB_ANYCASTIPADDRESS_TABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_ANYCASTIPADDRESS_TABLE = extern struct {
+    NumEntries: {"kind":"UInt32"},
+    Table: {"kind":"Array","child": Windows.Win32.Mib.MIB_ANYCASTIPADDRESS_ROW},
+};
+// --------------------------------------------------------
+// Type: MIB_MULTICASTIPADDRESS_ROW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_MULTICASTIPADDRESS_ROW = extern struct {
+    Address: Windows.Win32.IpHelper.SOCKADDR_INET,
+    InterfaceIndex: {"kind":"UInt32"},
+    InterfaceLuid: Windows.Win32.IpHelper.NET_LUID_LH,
+    ScopeId: Windows.Win32.WinSock.SCOPE_ID,
+};
+// --------------------------------------------------------
+// Type: MIB_MULTICASTIPADDRESS_TABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_MULTICASTIPADDRESS_TABLE = extern struct {
+    NumEntries: {"kind":"UInt32"},
+    Table: {"kind":"Array","child": Windows.Win32.Mib.MIB_MULTICASTIPADDRESS_ROW},
+};
+// --------------------------------------------------------
+// Type: MIB_IPFORWARD_ROW2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPFORWARD_ROW2 = extern struct {
+    InterfaceLuid: Windows.Win32.IpHelper.NET_LUID_LH,
+    InterfaceIndex: {"kind":"UInt32"},
+    DestinationPrefix: Windows.Win32.IpHelper.IP_ADDRESS_PREFIX,
+    NextHop: Windows.Win32.IpHelper.SOCKADDR_INET,
+    SitePrefixLength: {"kind":"Byte"},
+    ValidLifetime: {"kind":"UInt32"},
+    PreferredLifetime: {"kind":"UInt32"},
+    Metric: {"kind":"UInt32"},
+    Protocol: Windows.Win32.NetworkDrivers.NL_ROUTE_PROTOCOL,
+    Loopback: {"kind":"Byte"},
+    AutoconfigureAddress: {"kind":"Byte"},
+    Publish: {"kind":"Byte"},
+    Immortal: {"kind":"Byte"},
+    Age: {"kind":"UInt32"},
+    Origin: Windows.Win32.NetworkDrivers.NL_ROUTE_ORIGIN,
+};
+// --------------------------------------------------------
+// Type: MIB_IPFORWARD_TABLE2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPFORWARD_TABLE2 = extern struct {
+    NumEntries: {"kind":"UInt32"},
+    Table: {"kind":"Array","child": Windows.Win32.Mib.MIB_IPFORWARD_ROW2},
+};
+// --------------------------------------------------------
+// Type: MIB_IPPATH_ROW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPPATH_ROW = extern struct {
+    Source: Windows.Win32.IpHelper.SOCKADDR_INET,
+    Destination: Windows.Win32.IpHelper.SOCKADDR_INET,
+    InterfaceLuid: Windows.Win32.IpHelper.NET_LUID_LH,
+    InterfaceIndex: {"kind":"UInt32"},
+    CurrentNextHop: Windows.Win32.IpHelper.SOCKADDR_INET,
+    PathMtu: {"kind":"UInt32"},
+    RttMean: {"kind":"UInt32"},
+    RttDeviation: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.Mib.MIB_IPPATH_ROW+_Anonymous_e__Union,
+    IsReachable: {"kind":"Byte"},
+    LinkTransmitSpeed: {"kind":"UInt64"},
+    LinkReceiveSpeed: {"kind":"UInt64"},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: MIB_IPPATH_TABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPPATH_TABLE = extern struct {
+    NumEntries: {"kind":"UInt32"},
+    Table: {"kind":"Array","child": Windows.Win32.Mib.MIB_IPPATH_ROW},
+};
+// --------------------------------------------------------
+// Type: MIB_IPNET_ROW2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPNET_ROW2 = extern struct {
+    Address: Windows.Win32.IpHelper.SOCKADDR_INET,
+    InterfaceIndex: {"kind":"UInt32"},
+    InterfaceLuid: Windows.Win32.IpHelper.NET_LUID_LH,
+    PhysicalAddress: {"kind":"Array","child": {"kind":"Byte"}},
+    PhysicalAddressLength: {"kind":"UInt32"},
+    State: Windows.Win32.NetworkDrivers.NL_NEIGHBOR_STATE,
+    Anonymous: Windows.Win32.Mib.MIB_IPNET_ROW2+_Anonymous_e__Union,
+    ReachabilityTime: Windows.Win32.Mib.MIB_IPNET_ROW2+_ReachabilityTime_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            _bitfield: {"kind":"Byte"},
+        };
+    };
+    // --------------------------------------------------------
+    // Type: _ReachabilityTime_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _ReachabilityTime_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: MIB_IPNET_TABLE2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPNET_TABLE2 = extern struct {
+    NumEntries: {"kind":"UInt32"},
+    Table: {"kind":"Array","child": Windows.Win32.Mib.MIB_IPNET_ROW2},
+};
+// --------------------------------------------------------
+// Type: MIB_OPAQUE_QUERY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_OPAQUE_QUERY = extern struct {
+    dwVarId: {"kind":"UInt32"},
+    rgdwVarIndex: {"kind":"Array","child": {"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: MIB_IFNUMBER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IFNUMBER = extern struct {
+    dwValue: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_IFROW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IFROW = extern struct {
+    wszName: {"kind":"Array","child": {"kind":"UInt16"}},
+    dwIndex: {"kind":"UInt32"},
+    dwType: {"kind":"UInt32"},
+    dwMtu: {"kind":"UInt32"},
+    dwSpeed: {"kind":"UInt32"},
+    dwPhysAddrLen: {"kind":"UInt32"},
+    bPhysAddr: {"kind":"Array","child": {"kind":"Byte"}},
+    dwAdminStatus: {"kind":"UInt32"},
+    dwOperStatus: Windows.Win32.IpHelper.INTERNAL_IF_OPER_STATUS,
+    dwLastChange: {"kind":"UInt32"},
+    dwInOctets: {"kind":"UInt32"},
+    dwInUcastPkts: {"kind":"UInt32"},
+    dwInNUcastPkts: {"kind":"UInt32"},
+    dwInDiscards: {"kind":"UInt32"},
+    dwInErrors: {"kind":"UInt32"},
+    dwInUnknownProtos: {"kind":"UInt32"},
+    dwOutOctets: {"kind":"UInt32"},
+    dwOutUcastPkts: {"kind":"UInt32"},
+    dwOutNUcastPkts: {"kind":"UInt32"},
+    dwOutDiscards: {"kind":"UInt32"},
+    dwOutErrors: {"kind":"UInt32"},
+    dwOutQLen: {"kind":"UInt32"},
+    dwDescrLen: {"kind":"UInt32"},
+    bDescr: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: MIB_IFTABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IFTABLE = extern struct {
+    dwNumEntries: {"kind":"UInt32"},
+    table: {"kind":"Array","child": Windows.Win32.Mib.MIB_IFROW},
+};
+// --------------------------------------------------------
+// Type: MIB_IPADDRROW_XP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPADDRROW_XP = extern struct {
+    dwAddr: {"kind":"UInt32"},
+    dwIndex: {"kind":"UInt32"},
+    dwMask: {"kind":"UInt32"},
+    dwBCastAddr: {"kind":"UInt32"},
+    dwReasmSize: {"kind":"UInt32"},
+    unused1: {"kind":"UInt16"},
+    wType: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: MIB_IPADDRROW_W2K
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPADDRROW_W2K = extern struct {
+    dwAddr: {"kind":"UInt32"},
+    dwIndex: {"kind":"UInt32"},
+    dwMask: {"kind":"UInt32"},
+    dwBCastAddr: {"kind":"UInt32"},
+    dwReasmSize: {"kind":"UInt32"},
+    unused1: {"kind":"UInt16"},
+    unused2: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: MIB_IPADDRTABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPADDRTABLE = extern struct {
+    dwNumEntries: {"kind":"UInt32"},
+    table: {"kind":"Array","child": Windows.Win32.Mib.MIB_IPADDRROW_XP},
+};
+// --------------------------------------------------------
+// Type: MIB_IPFORWARDNUMBER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPFORWARDNUMBER = extern struct {
+    dwValue: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_IPFORWARDROW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPFORWARDROW = extern struct {
+    dwForwardDest: {"kind":"UInt32"},
+    dwForwardMask: {"kind":"UInt32"},
+    dwForwardPolicy: {"kind":"UInt32"},
+    dwForwardNextHop: {"kind":"UInt32"},
+    dwForwardIfIndex: {"kind":"UInt32"},
+    Anonymous1: Windows.Win32.Mib.MIB_IPFORWARDROW+_Anonymous1_e__Union,
+    Anonymous2: Windows.Win32.Mib.MIB_IPFORWARDROW+_Anonymous2_e__Union,
+    dwForwardAge: {"kind":"UInt32"},
+    dwForwardNextHopAS: {"kind":"UInt32"},
+    dwForwardMetric1: {"kind":"UInt32"},
+    dwForwardMetric2: {"kind":"UInt32"},
+    dwForwardMetric3: {"kind":"UInt32"},
+    dwForwardMetric4: {"kind":"UInt32"},
+    dwForwardMetric5: {"kind":"UInt32"},
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: MIB_IPFORWARDTABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPFORWARDTABLE = extern struct {
+    dwNumEntries: {"kind":"UInt32"},
+    table: {"kind":"Array","child": Windows.Win32.Mib.MIB_IPFORWARDROW},
+};
+// --------------------------------------------------------
+// Type: MIB_IPNETROW_LH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPNETROW_LH = extern struct {
+    dwIndex: {"kind":"UInt32"},
+    dwPhysAddrLen: {"kind":"UInt32"},
+    bPhysAddr: {"kind":"Array","child": {"kind":"Byte"}},
+    dwAddr: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.Mib.MIB_IPNETROW_LH+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: MIB_IPNETROW_W2K
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPNETROW_W2K = extern struct {
+    dwIndex: {"kind":"UInt32"},
+    dwPhysAddrLen: {"kind":"UInt32"},
+    bPhysAddr: {"kind":"Array","child": {"kind":"Byte"}},
+    dwAddr: {"kind":"UInt32"},
+    dwType: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_IPNETTABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPNETTABLE = extern struct {
+    dwNumEntries: {"kind":"UInt32"},
+    table: {"kind":"Array","child": Windows.Win32.Mib.MIB_IPNETROW_LH},
+};
+// --------------------------------------------------------
+// Type: MIB_IPSTATS_LH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPSTATS_LH = extern struct {
+    Anonymous: Windows.Win32.Mib.MIB_IPSTATS_LH+_Anonymous_e__Union,
+    dwDefaultTTL: {"kind":"UInt32"},
+    dwInReceives: {"kind":"UInt32"},
+    dwInHdrErrors: {"kind":"UInt32"},
+    dwInAddrErrors: {"kind":"UInt32"},
+    dwForwDatagrams: {"kind":"UInt32"},
+    dwInUnknownProtos: {"kind":"UInt32"},
+    dwInDiscards: {"kind":"UInt32"},
+    dwInDelivers: {"kind":"UInt32"},
+    dwOutRequests: {"kind":"UInt32"},
+    dwRoutingDiscards: {"kind":"UInt32"},
+    dwOutDiscards: {"kind":"UInt32"},
+    dwOutNoRoutes: {"kind":"UInt32"},
+    dwReasmTimeout: {"kind":"UInt32"},
+    dwReasmReqds: {"kind":"UInt32"},
+    dwReasmOks: {"kind":"UInt32"},
+    dwReasmFails: {"kind":"UInt32"},
+    dwFragOks: {"kind":"UInt32"},
+    dwFragFails: {"kind":"UInt32"},
+    dwFragCreates: {"kind":"UInt32"},
+    dwNumIf: {"kind":"UInt32"},
+    dwNumAddr: {"kind":"UInt32"},
+    dwNumRoutes: {"kind":"UInt32"},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: MIB_IPSTATS_W2K
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPSTATS_W2K = extern struct {
+    dwForwarding: {"kind":"UInt32"},
+    dwDefaultTTL: {"kind":"UInt32"},
+    dwInReceives: {"kind":"UInt32"},
+    dwInHdrErrors: {"kind":"UInt32"},
+    dwInAddrErrors: {"kind":"UInt32"},
+    dwForwDatagrams: {"kind":"UInt32"},
+    dwInUnknownProtos: {"kind":"UInt32"},
+    dwInDiscards: {"kind":"UInt32"},
+    dwInDelivers: {"kind":"UInt32"},
+    dwOutRequests: {"kind":"UInt32"},
+    dwRoutingDiscards: {"kind":"UInt32"},
+    dwOutDiscards: {"kind":"UInt32"},
+    dwOutNoRoutes: {"kind":"UInt32"},
+    dwReasmTimeout: {"kind":"UInt32"},
+    dwReasmReqds: {"kind":"UInt32"},
+    dwReasmOks: {"kind":"UInt32"},
+    dwReasmFails: {"kind":"UInt32"},
+    dwFragOks: {"kind":"UInt32"},
+    dwFragFails: {"kind":"UInt32"},
+    dwFragCreates: {"kind":"UInt32"},
+    dwNumIf: {"kind":"UInt32"},
+    dwNumAddr: {"kind":"UInt32"},
+    dwNumRoutes: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIBICMPSTATS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIBICMPSTATS = extern struct {
+    dwMsgs: {"kind":"UInt32"},
+    dwErrors: {"kind":"UInt32"},
+    dwDestUnreachs: {"kind":"UInt32"},
+    dwTimeExcds: {"kind":"UInt32"},
+    dwParmProbs: {"kind":"UInt32"},
+    dwSrcQuenchs: {"kind":"UInt32"},
+    dwRedirects: {"kind":"UInt32"},
+    dwEchos: {"kind":"UInt32"},
+    dwEchoReps: {"kind":"UInt32"},
+    dwTimestamps: {"kind":"UInt32"},
+    dwTimestampReps: {"kind":"UInt32"},
+    dwAddrMasks: {"kind":"UInt32"},
+    dwAddrMaskReps: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIBICMPINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIBICMPINFO = extern struct {
+    icmpInStats: Windows.Win32.Mib.MIBICMPSTATS,
+    icmpOutStats: Windows.Win32.Mib.MIBICMPSTATS,
+};
+// --------------------------------------------------------
+// Type: MIB_ICMP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_ICMP = extern struct {
+    stats: Windows.Win32.Mib.MIBICMPINFO,
+};
+// --------------------------------------------------------
+// Type: MIBICMPSTATS_EX_XPSP1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIBICMPSTATS_EX_XPSP1 = extern struct {
+    dwMsgs: {"kind":"UInt32"},
+    dwErrors: {"kind":"UInt32"},
+    rgdwTypeCount: {"kind":"Array","child": {"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: MIB_ICMP_EX_XPSP1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_ICMP_EX_XPSP1 = extern struct {
+    icmpInStats: Windows.Win32.Mib.MIBICMPSTATS_EX_XPSP1,
+    icmpOutStats: Windows.Win32.Mib.MIBICMPSTATS_EX_XPSP1,
+};
+// --------------------------------------------------------
+// Type: ICMP6_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ICMP6_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: ICMP4_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ICMP4_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIB_IPMCAST_OIF_XP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPMCAST_OIF_XP = extern struct {
+    dwOutIfIndex: {"kind":"UInt32"},
+    dwNextHopAddr: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+    dwReserved1: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_IPMCAST_OIF_W2K
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPMCAST_OIF_W2K = extern struct {
+    dwOutIfIndex: {"kind":"UInt32"},
+    dwNextHopAddr: {"kind":"UInt32"},
+    pvReserved: {"kind""Ptr","child":{"kind":"Void"}},
+    dwReserved: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_IPMCAST_MFE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPMCAST_MFE = extern struct {
+    dwGroup: {"kind":"UInt32"},
+    dwSource: {"kind":"UInt32"},
+    dwSrcMask: {"kind":"UInt32"},
+    dwUpStrmNgbr: {"kind":"UInt32"},
+    dwInIfIndex: {"kind":"UInt32"},
+    dwInIfProtocol: {"kind":"UInt32"},
+    dwRouteProtocol: {"kind":"UInt32"},
+    dwRouteNetwork: {"kind":"UInt32"},
+    dwRouteMask: {"kind":"UInt32"},
+    ulUpTime: {"kind":"UInt32"},
+    ulExpiryTime: {"kind":"UInt32"},
+    ulTimeOut: {"kind":"UInt32"},
+    ulNumOutIf: {"kind":"UInt32"},
+    fFlags: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+    rgmioOutInfo: {"kind":"Array","child": Windows.Win32.Mib.MIB_IPMCAST_OIF_XP},
+};
+// --------------------------------------------------------
+// Type: MIB_MFE_TABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_MFE_TABLE = extern struct {
+    dwNumEntries: {"kind":"UInt32"},
+    table: {"kind":"Array","child": Windows.Win32.Mib.MIB_IPMCAST_MFE},
+};
+// --------------------------------------------------------
+// Type: MIB_IPMCAST_OIF_STATS_LH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPMCAST_OIF_STATS_LH = extern struct {
+    dwOutIfIndex: {"kind":"UInt32"},
+    dwNextHopAddr: {"kind":"UInt32"},
+    dwDialContext: {"kind":"UInt32"},
+    ulTtlTooLow: {"kind":"UInt32"},
+    ulFragNeeded: {"kind":"UInt32"},
+    ulOutPackets: {"kind":"UInt32"},
+    ulOutDiscards: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_IPMCAST_OIF_STATS_W2K
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPMCAST_OIF_STATS_W2K = extern struct {
+    dwOutIfIndex: {"kind":"UInt32"},
+    dwNextHopAddr: {"kind":"UInt32"},
+    pvDialContext: {"kind""Ptr","child":{"kind":"Void"}},
+    ulTtlTooLow: {"kind":"UInt32"},
+    ulFragNeeded: {"kind":"UInt32"},
+    ulOutPackets: {"kind":"UInt32"},
+    ulOutDiscards: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_IPMCAST_MFE_STATS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPMCAST_MFE_STATS = extern struct {
+    dwGroup: {"kind":"UInt32"},
+    dwSource: {"kind":"UInt32"},
+    dwSrcMask: {"kind":"UInt32"},
+    dwUpStrmNgbr: {"kind":"UInt32"},
+    dwInIfIndex: {"kind":"UInt32"},
+    dwInIfProtocol: {"kind":"UInt32"},
+    dwRouteProtocol: {"kind":"UInt32"},
+    dwRouteNetwork: {"kind":"UInt32"},
+    dwRouteMask: {"kind":"UInt32"},
+    ulUpTime: {"kind":"UInt32"},
+    ulExpiryTime: {"kind":"UInt32"},
+    ulNumOutIf: {"kind":"UInt32"},
+    ulInPkts: {"kind":"UInt32"},
+    ulInOctets: {"kind":"UInt32"},
+    ulPktsDifferentIf: {"kind":"UInt32"},
+    ulQueueOverflow: {"kind":"UInt32"},
+    rgmiosOutStats: {"kind":"Array","child": Windows.Win32.Mib.MIB_IPMCAST_OIF_STATS_LH},
+};
+// --------------------------------------------------------
+// Type: MIB_MFE_STATS_TABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_MFE_STATS_TABLE = extern struct {
+    dwNumEntries: {"kind":"UInt32"},
+    table: {"kind":"Array","child": Windows.Win32.Mib.MIB_IPMCAST_MFE_STATS},
+};
+// --------------------------------------------------------
+// Type: MIB_IPMCAST_MFE_STATS_EX_XP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPMCAST_MFE_STATS_EX_XP = extern struct {
+    dwGroup: {"kind":"UInt32"},
+    dwSource: {"kind":"UInt32"},
+    dwSrcMask: {"kind":"UInt32"},
+    dwUpStrmNgbr: {"kind":"UInt32"},
+    dwInIfIndex: {"kind":"UInt32"},
+    dwInIfProtocol: {"kind":"UInt32"},
+    dwRouteProtocol: {"kind":"UInt32"},
+    dwRouteNetwork: {"kind":"UInt32"},
+    dwRouteMask: {"kind":"UInt32"},
+    ulUpTime: {"kind":"UInt32"},
+    ulExpiryTime: {"kind":"UInt32"},
+    ulNumOutIf: {"kind":"UInt32"},
+    ulInPkts: {"kind":"UInt32"},
+    ulInOctets: {"kind":"UInt32"},
+    ulPktsDifferentIf: {"kind":"UInt32"},
+    ulQueueOverflow: {"kind":"UInt32"},
+    ulUninitMfe: {"kind":"UInt32"},
+    ulNegativeMfe: {"kind":"UInt32"},
+    ulInDiscards: {"kind":"UInt32"},
+    ulInHdrErrors: {"kind":"UInt32"},
+    ulTotalOutPackets: {"kind":"UInt32"},
+    rgmiosOutStats: {"kind":"Array","child": Windows.Win32.Mib.MIB_IPMCAST_OIF_STATS_LH},
+};
+// --------------------------------------------------------
+// Type: MIB_MFE_STATS_TABLE_EX_XP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_MFE_STATS_TABLE_EX_XP = extern struct {
+    dwNumEntries: {"kind":"UInt32"},
+    table: {"kind":"Array","child": {"kind""Ptr","child":Windows.Win32.Mib.MIB_IPMCAST_MFE_STATS_EX_XP}},
+};
+// --------------------------------------------------------
+// Type: MIB_IPMCAST_GLOBAL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPMCAST_GLOBAL = extern struct {
+    dwEnable: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_IPMCAST_IF_ENTRY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPMCAST_IF_ENTRY = extern struct {
+    dwIfIndex: {"kind":"UInt32"},
+    dwTtl: {"kind":"UInt32"},
+    dwProtocol: {"kind":"UInt32"},
+    dwRateLimit: {"kind":"UInt32"},
+    ulInMcastOctets: {"kind":"UInt32"},
+    ulOutMcastOctets: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_IPMCAST_IF_TABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPMCAST_IF_TABLE = extern struct {
+    dwNumEntries: {"kind":"UInt32"},
+    table: {"kind":"Array","child": Windows.Win32.Mib.MIB_IPMCAST_IF_ENTRY},
+};
+// --------------------------------------------------------
+// Type: TCP_CONNECTION_OFFLOAD_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TCP_CONNECTION_OFFLOAD_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIB_TCPROW_LH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_TCPROW_LH = extern struct {
+    Anonymous: Windows.Win32.Mib.MIB_TCPROW_LH+_Anonymous_e__Union,
+    dwLocalAddr: {"kind":"UInt32"},
+    dwLocalPort: {"kind":"UInt32"},
+    dwRemoteAddr: {"kind":"UInt32"},
+    dwRemotePort: {"kind":"UInt32"},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: MIB_TCPROW_W2K
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_TCPROW_W2K = extern struct {
+    dwState: {"kind":"UInt32"},
+    dwLocalAddr: {"kind":"UInt32"},
+    dwLocalPort: {"kind":"UInt32"},
+    dwRemoteAddr: {"kind":"UInt32"},
+    dwRemotePort: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_TCPTABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_TCPTABLE = extern struct {
+    dwNumEntries: {"kind":"UInt32"},
+    table: {"kind":"Array","child": Windows.Win32.Mib.MIB_TCPROW_LH},
+};
+// --------------------------------------------------------
+// Type: MIB_TCPROW2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_TCPROW2 = extern struct {
+    dwState: {"kind":"UInt32"},
+    dwLocalAddr: {"kind":"UInt32"},
+    dwLocalPort: {"kind":"UInt32"},
+    dwRemoteAddr: {"kind":"UInt32"},
+    dwRemotePort: {"kind":"UInt32"},
+    dwOwningPid: {"kind":"UInt32"},
+    dwOffloadState: Windows.Win32.Mib.TCP_CONNECTION_OFFLOAD_STATE,
+};
+// --------------------------------------------------------
+// Type: MIB_TCPTABLE2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_TCPTABLE2 = extern struct {
+    dwNumEntries: {"kind":"UInt32"},
+    table: {"kind":"Array","child": Windows.Win32.Mib.MIB_TCPROW2},
+};
+// --------------------------------------------------------
+// Type: MIB_TCPROW_OWNER_PID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_TCPROW_OWNER_PID = extern struct {
+    dwState: {"kind":"UInt32"},
+    dwLocalAddr: {"kind":"UInt32"},
+    dwLocalPort: {"kind":"UInt32"},
+    dwRemoteAddr: {"kind":"UInt32"},
+    dwRemotePort: {"kind":"UInt32"},
+    dwOwningPid: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_TCPTABLE_OWNER_PID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_TCPTABLE_OWNER_PID = extern struct {
+    dwNumEntries: {"kind":"UInt32"},
+    table: {"kind":"Array","child": Windows.Win32.Mib.MIB_TCPROW_OWNER_PID},
+};
+// --------------------------------------------------------
+// Type: MIB_TCPROW_OWNER_MODULE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_TCPROW_OWNER_MODULE = extern struct {
+    dwState: {"kind":"UInt32"},
+    dwLocalAddr: {"kind":"UInt32"},
+    dwLocalPort: {"kind":"UInt32"},
+    dwRemoteAddr: {"kind":"UInt32"},
+    dwRemotePort: {"kind":"UInt32"},
+    dwOwningPid: {"kind":"UInt32"},
+    liCreateTimestamp: Windows.Win32.SystemServices.LARGE_INTEGER,
+    OwningModuleInfo: {"kind":"Array","child": {"kind":"UInt64"}},
+};
+// --------------------------------------------------------
+// Type: MIB_TCPTABLE_OWNER_MODULE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_TCPTABLE_OWNER_MODULE = extern struct {
+    dwNumEntries: {"kind":"UInt32"},
+    table: {"kind":"Array","child": Windows.Win32.Mib.MIB_TCPROW_OWNER_MODULE},
+};
+// --------------------------------------------------------
+// Type: MIB_TCP6ROW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_TCP6ROW = extern struct {
+    State: Windows.Win32.IpHelper.MIB_TCP_STATE,
+    LocalAddr: Windows.Win32.WinSock.in6_addr,
+    dwLocalScopeId: {"kind":"UInt32"},
+    dwLocalPort: {"kind":"UInt32"},
+    RemoteAddr: Windows.Win32.WinSock.in6_addr,
+    dwRemoteScopeId: {"kind":"UInt32"},
+    dwRemotePort: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_TCP6TABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_TCP6TABLE = extern struct {
+    dwNumEntries: {"kind":"UInt32"},
+    table: {"kind":"Array","child": Windows.Win32.Mib.MIB_TCP6ROW},
+};
+// --------------------------------------------------------
+// Type: MIB_TCP6ROW2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_TCP6ROW2 = extern struct {
+    LocalAddr: Windows.Win32.WinSock.in6_addr,
+    dwLocalScopeId: {"kind":"UInt32"},
+    dwLocalPort: {"kind":"UInt32"},
+    RemoteAddr: Windows.Win32.WinSock.in6_addr,
+    dwRemoteScopeId: {"kind":"UInt32"},
+    dwRemotePort: {"kind":"UInt32"},
+    State: Windows.Win32.IpHelper.MIB_TCP_STATE,
+    dwOwningPid: {"kind":"UInt32"},
+    dwOffloadState: Windows.Win32.Mib.TCP_CONNECTION_OFFLOAD_STATE,
+};
+// --------------------------------------------------------
+// Type: MIB_TCP6TABLE2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_TCP6TABLE2 = extern struct {
+    dwNumEntries: {"kind":"UInt32"},
+    table: {"kind":"Array","child": Windows.Win32.Mib.MIB_TCP6ROW2},
+};
+// --------------------------------------------------------
+// Type: MIB_TCP6ROW_OWNER_PID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_TCP6ROW_OWNER_PID = extern struct {
+    ucLocalAddr: {"kind":"Array","child": {"kind":"Byte"}},
+    dwLocalScopeId: {"kind":"UInt32"},
+    dwLocalPort: {"kind":"UInt32"},
+    ucRemoteAddr: {"kind":"Array","child": {"kind":"Byte"}},
+    dwRemoteScopeId: {"kind":"UInt32"},
+    dwRemotePort: {"kind":"UInt32"},
+    dwState: {"kind":"UInt32"},
+    dwOwningPid: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_TCP6TABLE_OWNER_PID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_TCP6TABLE_OWNER_PID = extern struct {
+    dwNumEntries: {"kind":"UInt32"},
+    table: {"kind":"Array","child": Windows.Win32.Mib.MIB_TCP6ROW_OWNER_PID},
+};
+// --------------------------------------------------------
+// Type: MIB_TCP6ROW_OWNER_MODULE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_TCP6ROW_OWNER_MODULE = extern struct {
+    ucLocalAddr: {"kind":"Array","child": {"kind":"Byte"}},
+    dwLocalScopeId: {"kind":"UInt32"},
+    dwLocalPort: {"kind":"UInt32"},
+    ucRemoteAddr: {"kind":"Array","child": {"kind":"Byte"}},
+    dwRemoteScopeId: {"kind":"UInt32"},
+    dwRemotePort: {"kind":"UInt32"},
+    dwState: {"kind":"UInt32"},
+    dwOwningPid: {"kind":"UInt32"},
+    liCreateTimestamp: Windows.Win32.SystemServices.LARGE_INTEGER,
+    OwningModuleInfo: {"kind":"Array","child": {"kind":"UInt64"}},
+};
+// --------------------------------------------------------
+// Type: MIB_TCP6TABLE_OWNER_MODULE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_TCP6TABLE_OWNER_MODULE = extern struct {
+    dwNumEntries: {"kind":"UInt32"},
+    table: {"kind":"Array","child": Windows.Win32.Mib.MIB_TCP6ROW_OWNER_MODULE},
+};
+// --------------------------------------------------------
+// Type: MIB_TCPSTATS_LH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_TCPSTATS_LH = extern struct {
+    Anonymous: Windows.Win32.Mib.MIB_TCPSTATS_LH+_Anonymous_e__Union,
+    dwRtoMin: {"kind":"UInt32"},
+    dwRtoMax: {"kind":"UInt32"},
+    dwMaxConn: {"kind":"UInt32"},
+    dwActiveOpens: {"kind":"UInt32"},
+    dwPassiveOpens: {"kind":"UInt32"},
+    dwAttemptFails: {"kind":"UInt32"},
+    dwEstabResets: {"kind":"UInt32"},
+    dwCurrEstab: {"kind":"UInt32"},
+    dwInSegs: {"kind":"UInt32"},
+    dwOutSegs: {"kind":"UInt32"},
+    dwRetransSegs: {"kind":"UInt32"},
+    dwInErrs: {"kind":"UInt32"},
+    dwOutRsts: {"kind":"UInt32"},
+    dwNumConns: {"kind":"UInt32"},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: MIB_TCPSTATS_W2K
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_TCPSTATS_W2K = extern struct {
+    dwRtoAlgorithm: {"kind":"UInt32"},
+    dwRtoMin: {"kind":"UInt32"},
+    dwRtoMax: {"kind":"UInt32"},
+    dwMaxConn: {"kind":"UInt32"},
+    dwActiveOpens: {"kind":"UInt32"},
+    dwPassiveOpens: {"kind":"UInt32"},
+    dwAttemptFails: {"kind":"UInt32"},
+    dwEstabResets: {"kind":"UInt32"},
+    dwCurrEstab: {"kind":"UInt32"},
+    dwInSegs: {"kind":"UInt32"},
+    dwOutSegs: {"kind":"UInt32"},
+    dwRetransSegs: {"kind":"UInt32"},
+    dwInErrs: {"kind":"UInt32"},
+    dwOutRsts: {"kind":"UInt32"},
+    dwNumConns: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_TCPSTATS2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_TCPSTATS2 = extern struct {
+    RtoAlgorithm: Windows.Win32.IpHelper.TCP_RTO_ALGORITHM,
+    dwRtoMin: {"kind":"UInt32"},
+    dwRtoMax: {"kind":"UInt32"},
+    dwMaxConn: {"kind":"UInt32"},
+    dwActiveOpens: {"kind":"UInt32"},
+    dwPassiveOpens: {"kind":"UInt32"},
+    dwAttemptFails: {"kind":"UInt32"},
+    dwEstabResets: {"kind":"UInt32"},
+    dwCurrEstab: {"kind":"UInt32"},
+    dw64InSegs: {"kind":"UInt64"},
+    dw64OutSegs: {"kind":"UInt64"},
+    dwRetransSegs: {"kind":"UInt32"},
+    dwInErrs: {"kind":"UInt32"},
+    dwOutRsts: {"kind":"UInt32"},
+    dwNumConns: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_UDPROW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_UDPROW = extern struct {
+    dwLocalAddr: {"kind":"UInt32"},
+    dwLocalPort: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_UDPTABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_UDPTABLE = extern struct {
+    dwNumEntries: {"kind":"UInt32"},
+    table: {"kind":"Array","child": Windows.Win32.Mib.MIB_UDPROW},
+};
+// --------------------------------------------------------
+// Type: MIB_UDPROW_OWNER_PID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_UDPROW_OWNER_PID = extern struct {
+    dwLocalAddr: {"kind":"UInt32"},
+    dwLocalPort: {"kind":"UInt32"},
+    dwOwningPid: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_UDPTABLE_OWNER_PID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_UDPTABLE_OWNER_PID = extern struct {
+    dwNumEntries: {"kind":"UInt32"},
+    table: {"kind":"Array","child": Windows.Win32.Mib.MIB_UDPROW_OWNER_PID},
+};
+// --------------------------------------------------------
+// Type: MIB_UDPROW_OWNER_MODULE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_UDPROW_OWNER_MODULE = extern struct {
+    dwLocalAddr: {"kind":"UInt32"},
+    dwLocalPort: {"kind":"UInt32"},
+    dwOwningPid: {"kind":"UInt32"},
+    liCreateTimestamp: Windows.Win32.SystemServices.LARGE_INTEGER,
+    Anonymous: Windows.Win32.Mib.MIB_UDPROW_OWNER_MODULE+_Anonymous_e__Union,
+    OwningModuleInfo: {"kind":"Array","child": {"kind":"UInt64"}},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            _bitfield: {"kind":"Int32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: MIB_UDPTABLE_OWNER_MODULE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_UDPTABLE_OWNER_MODULE = extern struct {
+    dwNumEntries: {"kind":"UInt32"},
+    table: {"kind":"Array","child": Windows.Win32.Mib.MIB_UDPROW_OWNER_MODULE},
+};
+// --------------------------------------------------------
+// Type: MIB_UDP6ROW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_UDP6ROW = extern struct {
+    dwLocalAddr: Windows.Win32.WinSock.in6_addr,
+    dwLocalScopeId: {"kind":"UInt32"},
+    dwLocalPort: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_UDP6TABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_UDP6TABLE = extern struct {
+    dwNumEntries: {"kind":"UInt32"},
+    table: {"kind":"Array","child": Windows.Win32.Mib.MIB_UDP6ROW},
+};
+// --------------------------------------------------------
+// Type: MIB_UDP6ROW_OWNER_PID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_UDP6ROW_OWNER_PID = extern struct {
+    ucLocalAddr: {"kind":"Array","child": {"kind":"Byte"}},
+    dwLocalScopeId: {"kind":"UInt32"},
+    dwLocalPort: {"kind":"UInt32"},
+    dwOwningPid: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_UDP6TABLE_OWNER_PID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_UDP6TABLE_OWNER_PID = extern struct {
+    dwNumEntries: {"kind":"UInt32"},
+    table: {"kind":"Array","child": Windows.Win32.Mib.MIB_UDP6ROW_OWNER_PID},
+};
+// --------------------------------------------------------
+// Type: MIB_UDP6ROW_OWNER_MODULE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_UDP6ROW_OWNER_MODULE = extern struct {
+    ucLocalAddr: {"kind":"Array","child": {"kind":"Byte"}},
+    dwLocalScopeId: {"kind":"UInt32"},
+    dwLocalPort: {"kind":"UInt32"},
+    dwOwningPid: {"kind":"UInt32"},
+    liCreateTimestamp: Windows.Win32.SystemServices.LARGE_INTEGER,
+    Anonymous: Windows.Win32.Mib.MIB_UDP6ROW_OWNER_MODULE+_Anonymous_e__Union,
+    OwningModuleInfo: {"kind":"Array","child": {"kind":"UInt64"}},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            _bitfield: {"kind":"Int32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: MIB_UDP6TABLE_OWNER_MODULE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_UDP6TABLE_OWNER_MODULE = extern struct {
+    dwNumEntries: {"kind":"UInt32"},
+    table: {"kind":"Array","child": Windows.Win32.Mib.MIB_UDP6ROW_OWNER_MODULE},
+};
+// --------------------------------------------------------
+// Type: MIB_UDPSTATS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_UDPSTATS = extern struct {
+    dwInDatagrams: {"kind":"UInt32"},
+    dwNoPorts: {"kind":"UInt32"},
+    dwInErrors: {"kind":"UInt32"},
+    dwOutDatagrams: {"kind":"UInt32"},
+    dwNumAddrs: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_UDPSTATS2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_UDPSTATS2 = extern struct {
+    dw64InDatagrams: {"kind":"UInt64"},
+    dwNoPorts: {"kind":"UInt32"},
+    dwInErrors: {"kind":"UInt32"},
+    dw64OutDatagrams: {"kind":"UInt64"},
+    dwNumAddrs: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_IPMCAST_BOUNDARY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPMCAST_BOUNDARY = extern struct {
+    dwIfIndex: {"kind":"UInt32"},
+    dwGroupAddress: {"kind":"UInt32"},
+    dwGroupMask: {"kind":"UInt32"},
+    dwStatus: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_IPMCAST_BOUNDARY_TABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPMCAST_BOUNDARY_TABLE = extern struct {
+    dwNumEntries: {"kind":"UInt32"},
+    table: {"kind":"Array","child": Windows.Win32.Mib.MIB_IPMCAST_BOUNDARY},
+};
+// --------------------------------------------------------
+// Type: MIB_BOUNDARYROW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_BOUNDARYROW = extern struct {
+    dwGroupAddress: {"kind":"UInt32"},
+    dwGroupMask: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_MCAST_LIMIT_ROW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_MCAST_LIMIT_ROW = extern struct {
+    dwTtl: {"kind":"UInt32"},
+    dwRateLimit: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_IPMCAST_SCOPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IPMCAST_SCOPE = extern struct {
+    dwGroupAddress: {"kind":"UInt32"},
+    dwGroupMask: {"kind":"UInt32"},
+    snNameBuffer: {"kind":"Array","child": {"kind":"UInt16"}},
+    dwStatus: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_BEST_IF
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_BEST_IF = extern struct {
+    dwDestAddr: {"kind":"UInt32"},
+    dwIfIndex: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_PROXYARP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_PROXYARP = extern struct {
+    dwAddress: {"kind":"UInt32"},
+    dwMask: {"kind":"UInt32"},
+    dwIfIndex: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MIB_IFSTATUS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_IFSTATUS = extern struct {
+    dwIfIndex: {"kind":"UInt32"},
+    dwAdminStatus: {"kind":"UInt32"},
+    dwOperationalStatus: {"kind":"UInt32"},
+    bMHbeatActive: Windows.Win32.SystemServices.BOOL,
+    bMHbeatAlive: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: MIB_OPAQUE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIB_OPAQUE_INFO = extern struct {
+    dwId: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.Mib.MIB_OPAQUE_INFO+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: NL_INTERFACE_OFFLOAD_ROD
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NL_INTERFACE_OFFLOAD_ROD = extern struct {
+    _bitfield: {"kind":"Byte"},
+};
+],
+
+"func_definitions": [
+],
+
+"unicode_aliases": [
+]}

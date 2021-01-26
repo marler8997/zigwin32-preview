@@ -1,0 +1,423 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: OpcFactory
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const OpcFactory = opaque {
+};
+// --------------------------------------------------------
+// Type: IOpcUri
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcUri = *opaque{
+    // TODO: Method 'GetRelationshipsPartUri'
+    // TODO: Method 'GetRelativeUri'
+    // TODO: Method 'CombinePartUri'
+};
+// --------------------------------------------------------
+// Type: IOpcPartUri
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcPartUri = *opaque{
+    // TODO: Method 'ComparePartUri'
+    // TODO: Method 'GetSourceUri'
+    // TODO: Method 'IsRelationshipsPartUri'
+};
+// --------------------------------------------------------
+// Type: OPC_URI_TARGET_MODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const OPC_URI_TARGET_MODE = *opaque{
+};
+// --------------------------------------------------------
+// Type: OPC_COMPRESSION_OPTIONS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const OPC_COMPRESSION_OPTIONS = *opaque{
+};
+// --------------------------------------------------------
+// Type: OPC_STREAM_IO_MODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const OPC_STREAM_IO_MODE = *opaque{
+};
+// --------------------------------------------------------
+// Type: OPC_READ_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const OPC_READ_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: OPC_WRITE_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const OPC_WRITE_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: OPC_SIGNATURE_VALIDATION_RESULT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const OPC_SIGNATURE_VALIDATION_RESULT = *opaque{
+};
+// --------------------------------------------------------
+// Type: OPC_CANONICALIZATION_METHOD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const OPC_CANONICALIZATION_METHOD = *opaque{
+};
+// --------------------------------------------------------
+// Type: OPC_RELATIONSHIP_SELECTOR
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const OPC_RELATIONSHIP_SELECTOR = *opaque{
+};
+// --------------------------------------------------------
+// Type: OPC_RELATIONSHIPS_SIGNING_OPTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const OPC_RELATIONSHIPS_SIGNING_OPTION = *opaque{
+};
+// --------------------------------------------------------
+// Type: OPC_CERTIFICATE_EMBEDDING_OPTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const OPC_CERTIFICATE_EMBEDDING_OPTION = *opaque{
+};
+// --------------------------------------------------------
+// Type: OPC_SIGNATURE_TIME_FORMAT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const OPC_SIGNATURE_TIME_FORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: IOpcPackage
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcPackage = *opaque{
+    // TODO: Method 'GetPartSet'
+    // TODO: Method 'GetRelationshipSet'
+};
+// --------------------------------------------------------
+// Type: IOpcPart
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcPart = *opaque{
+    // TODO: Method 'GetRelationshipSet'
+    // TODO: Method 'GetContentStream'
+    // TODO: Method 'GetName'
+    // TODO: Method 'GetContentType'
+    // TODO: Method 'GetCompressionOptions'
+};
+// --------------------------------------------------------
+// Type: IOpcRelationship
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcRelationship = *opaque{
+    // TODO: Method 'GetId'
+    // TODO: Method 'GetRelationshipType'
+    // TODO: Method 'GetSourceUri'
+    // TODO: Method 'GetTargetUri'
+    // TODO: Method 'GetTargetMode'
+};
+// --------------------------------------------------------
+// Type: IOpcPartSet
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcPartSet = *opaque{
+    // TODO: Method 'GetPart'
+    // TODO: Method 'CreatePart'
+    // TODO: Method 'DeletePart'
+    // TODO: Method 'PartExists'
+    // TODO: Method 'GetEnumerator'
+};
+// --------------------------------------------------------
+// Type: IOpcRelationshipSet
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcRelationshipSet = *opaque{
+    // TODO: Method 'GetRelationship'
+    // TODO: Method 'CreateRelationship'
+    // TODO: Method 'DeleteRelationship'
+    // TODO: Method 'RelationshipExists'
+    // TODO: Method 'GetEnumerator'
+    // TODO: Method 'GetEnumeratorForType'
+    // TODO: Method 'GetRelationshipsContentStream'
+};
+// --------------------------------------------------------
+// Type: IOpcPartEnumerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcPartEnumerator = *opaque{
+    // TODO: Method 'MoveNext'
+    // TODO: Method 'MovePrevious'
+    // TODO: Method 'GetCurrent'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IOpcRelationshipEnumerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcRelationshipEnumerator = *opaque{
+    // TODO: Method 'MoveNext'
+    // TODO: Method 'MovePrevious'
+    // TODO: Method 'GetCurrent'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IOpcSignaturePartReference
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcSignaturePartReference = *opaque{
+    // TODO: Method 'GetPartName'
+    // TODO: Method 'GetContentType'
+    // TODO: Method 'GetDigestMethod'
+    // TODO: Method 'GetDigestValue'
+    // TODO: Method 'GetTransformMethod'
+};
+// --------------------------------------------------------
+// Type: IOpcSignatureRelationshipReference
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcSignatureRelationshipReference = *opaque{
+    // TODO: Method 'GetSourceUri'
+    // TODO: Method 'GetDigestMethod'
+    // TODO: Method 'GetDigestValue'
+    // TODO: Method 'GetTransformMethod'
+    // TODO: Method 'GetRelationshipSigningOption'
+    // TODO: Method 'GetRelationshipSelectorEnumerator'
+};
+// --------------------------------------------------------
+// Type: IOpcRelationshipSelector
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcRelationshipSelector = *opaque{
+    // TODO: Method 'GetSelectorType'
+    // TODO: Method 'GetSelectionCriterion'
+};
+// --------------------------------------------------------
+// Type: IOpcSignatureReference
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcSignatureReference = *opaque{
+    // TODO: Method 'GetId'
+    // TODO: Method 'GetUri'
+    // TODO: Method 'GetType'
+    // TODO: Method 'GetTransformMethod'
+    // TODO: Method 'GetDigestMethod'
+    // TODO: Method 'GetDigestValue'
+};
+// --------------------------------------------------------
+// Type: IOpcSignatureCustomObject
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcSignatureCustomObject = *opaque{
+    // TODO: Method 'GetXml'
+};
+// --------------------------------------------------------
+// Type: IOpcDigitalSignature
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcDigitalSignature = *opaque{
+    // TODO: Method 'GetNamespaces'
+    // TODO: Method 'GetSignatureId'
+    // TODO: Method 'GetSignaturePartName'
+    // TODO: Method 'GetSignatureMethod'
+    // TODO: Method 'GetCanonicalizationMethod'
+    // TODO: Method 'GetSignatureValue'
+    // TODO: Method 'GetSignaturePartReferenceEnumerator'
+    // TODO: Method 'GetSignatureRelationshipReferenceEnumerator'
+    // TODO: Method 'GetSigningTime'
+    // TODO: Method 'GetTimeFormatA'
+    // TODO: Method 'GetPackageObjectReference'
+    // TODO: Method 'GetCertificateEnumerator'
+    // TODO: Method 'GetCustomReferenceEnumerator'
+    // TODO: Method 'GetCustomObjectEnumerator'
+    // TODO: Method 'GetSignatureXml'
+};
+// --------------------------------------------------------
+// Type: IOpcSigningOptions
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcSigningOptions = *opaque{
+    // TODO: Method 'GetSignatureId'
+    // TODO: Method 'SetSignatureId'
+    // TODO: Method 'GetSignatureMethod'
+    // TODO: Method 'SetSignatureMethod'
+    // TODO: Method 'GetDefaultDigestMethod'
+    // TODO: Method 'SetDefaultDigestMethod'
+    // TODO: Method 'GetCertificateEmbeddingOption'
+    // TODO: Method 'SetCertificateEmbeddingOption'
+    // TODO: Method 'GetTimeFormatA'
+    // TODO: Method 'SetTimeFormat'
+    // TODO: Method 'GetSignaturePartReferenceSet'
+    // TODO: Method 'GetSignatureRelationshipReferenceSet'
+    // TODO: Method 'GetCustomObjectSet'
+    // TODO: Method 'GetCustomReferenceSet'
+    // TODO: Method 'GetCertificateSet'
+    // TODO: Method 'GetSignaturePartName'
+    // TODO: Method 'SetSignaturePartName'
+};
+// --------------------------------------------------------
+// Type: IOpcDigitalSignatureManager
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcDigitalSignatureManager = *opaque{
+    // TODO: Method 'GetSignatureOriginPartName'
+    // TODO: Method 'SetSignatureOriginPartName'
+    // TODO: Method 'GetSignatureEnumerator'
+    // TODO: Method 'RemoveSignature'
+    // TODO: Method 'CreateSigningOptions'
+    // TODO: Method 'Validate'
+    // TODO: Method 'Sign'
+    // TODO: Method 'ReplaceSignatureXml'
+};
+// --------------------------------------------------------
+// Type: IOpcSignaturePartReferenceEnumerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcSignaturePartReferenceEnumerator = *opaque{
+    // TODO: Method 'MoveNext'
+    // TODO: Method 'MovePrevious'
+    // TODO: Method 'GetCurrent'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IOpcSignatureRelationshipReferenceEnumerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcSignatureRelationshipReferenceEnumerator = *opaque{
+    // TODO: Method 'MoveNext'
+    // TODO: Method 'MovePrevious'
+    // TODO: Method 'GetCurrent'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IOpcRelationshipSelectorEnumerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcRelationshipSelectorEnumerator = *opaque{
+    // TODO: Method 'MoveNext'
+    // TODO: Method 'MovePrevious'
+    // TODO: Method 'GetCurrent'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IOpcSignatureReferenceEnumerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcSignatureReferenceEnumerator = *opaque{
+    // TODO: Method 'MoveNext'
+    // TODO: Method 'MovePrevious'
+    // TODO: Method 'GetCurrent'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IOpcSignatureCustomObjectEnumerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcSignatureCustomObjectEnumerator = *opaque{
+    // TODO: Method 'MoveNext'
+    // TODO: Method 'MovePrevious'
+    // TODO: Method 'GetCurrent'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IOpcCertificateEnumerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcCertificateEnumerator = *opaque{
+    // TODO: Method 'MoveNext'
+    // TODO: Method 'MovePrevious'
+    // TODO: Method 'GetCurrent'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IOpcDigitalSignatureEnumerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcDigitalSignatureEnumerator = *opaque{
+    // TODO: Method 'MoveNext'
+    // TODO: Method 'MovePrevious'
+    // TODO: Method 'GetCurrent'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IOpcSignaturePartReferenceSet
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcSignaturePartReferenceSet = *opaque{
+    // TODO: Method 'Create'
+    // TODO: Method 'Delete'
+    // TODO: Method 'GetEnumerator'
+};
+// --------------------------------------------------------
+// Type: IOpcSignatureRelationshipReferenceSet
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcSignatureRelationshipReferenceSet = *opaque{
+    // TODO: Method 'Create'
+    // TODO: Method 'CreateRelationshipSelectorSet'
+    // TODO: Method 'Delete'
+    // TODO: Method 'GetEnumerator'
+};
+// --------------------------------------------------------
+// Type: IOpcRelationshipSelectorSet
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcRelationshipSelectorSet = *opaque{
+    // TODO: Method 'Create'
+    // TODO: Method 'Delete'
+    // TODO: Method 'GetEnumerator'
+};
+// --------------------------------------------------------
+// Type: IOpcSignatureReferenceSet
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcSignatureReferenceSet = *opaque{
+    // TODO: Method 'Create'
+    // TODO: Method 'Delete'
+    // TODO: Method 'GetEnumerator'
+};
+// --------------------------------------------------------
+// Type: IOpcSignatureCustomObjectSet
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcSignatureCustomObjectSet = *opaque{
+    // TODO: Method 'Create'
+    // TODO: Method 'Delete'
+    // TODO: Method 'GetEnumerator'
+};
+// --------------------------------------------------------
+// Type: IOpcCertificateSet
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcCertificateSet = *opaque{
+    // TODO: Method 'Add'
+    // TODO: Method 'Remove'
+    // TODO: Method 'GetEnumerator'
+};
+// --------------------------------------------------------
+// Type: IOpcFactory
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IOpcFactory = *opaque{
+    // TODO: Method 'CreatePackageRootUri'
+    // TODO: Method 'CreatePartUri'
+    // TODO: Method 'CreateStreamOnFile'
+    // TODO: Method 'CreatePackage'
+    // TODO: Method 'ReadPackageFromStream'
+    // TODO: Method 'WritePackageToStream'
+    // TODO: Method 'CreateDigitalSignatureManager'
+};
+],
+
+"func_definitions": [
+],
+
+"unicode_aliases": [
+]}

@@ -1,0 +1,577 @@
+﻿{
+"constants": [
+     {
+         "name": "HHWIN_NAVTYPE_TOC"
+        ,"type": {"kind":"Int32"}
+        ,"value": 0
+    }
+    ,{
+         "name": "HHWIN_NAVTYPE_INDEX"
+        ,"type": {"kind":"Int32"}
+        ,"value": 1
+    }
+    ,{
+         "name": "HHWIN_NAVTYPE_SEARCH"
+        ,"type": {"kind":"Int32"}
+        ,"value": 2
+    }
+    ,{
+         "name": "HHWIN_NAVTYPE_FAVORITES"
+        ,"type": {"kind":"Int32"}
+        ,"value": 3
+    }
+    ,{
+         "name": "HHWIN_NAVTYPE_HISTORY"
+        ,"type": {"kind":"Int32"}
+        ,"value": 4
+    }
+    ,{
+         "name": "HHWIN_NAVTYPE_AUTHOR"
+        ,"type": {"kind":"Int32"}
+        ,"value": 5
+    }
+    ,{
+         "name": "HHWIN_NAVTYPE_CUSTOM_FIRST"
+        ,"type": {"kind":"Int32"}
+        ,"value": 11
+    }
+    ,{
+         "name": "IT_INCLUSIVE"
+        ,"type": {"kind":"Int32"}
+        ,"value": 0
+    }
+    ,{
+         "name": "IT_EXCLUSIVE"
+        ,"type": {"kind":"Int32"}
+        ,"value": 1
+    }
+    ,{
+         "name": "IT_HIDDEN"
+        ,"type": {"kind":"Int32"}
+        ,"value": 2
+    }
+    ,{
+         "name": "HHWIN_NAVTAB_TOP"
+        ,"type": {"kind":"Int32"}
+        ,"value": 0
+    }
+    ,{
+         "name": "HHWIN_NAVTAB_LEFT"
+        ,"type": {"kind":"Int32"}
+        ,"value": 1
+    }
+    ,{
+         "name": "HHWIN_NAVTAB_BOTTOM"
+        ,"type": {"kind":"Int32"}
+        ,"value": 2
+    }
+    ,{
+         "name": "HH_TAB_CONTENTS"
+        ,"type": {"kind":"Int32"}
+        ,"value": 0
+    }
+    ,{
+         "name": "HH_TAB_INDEX"
+        ,"type": {"kind":"Int32"}
+        ,"value": 1
+    }
+    ,{
+         "name": "HH_TAB_SEARCH"
+        ,"type": {"kind":"Int32"}
+        ,"value": 2
+    }
+    ,{
+         "name": "HH_TAB_FAVORITES"
+        ,"type": {"kind":"Int32"}
+        ,"value": 3
+    }
+    ,{
+         "name": "HH_TAB_HISTORY"
+        ,"type": {"kind":"Int32"}
+        ,"value": 4
+    }
+    ,{
+         "name": "HH_TAB_AUTHOR"
+        ,"type": {"kind":"Int32"}
+        ,"value": 5
+    }
+    ,{
+         "name": "HH_TAB_CUSTOM_FIRST"
+        ,"type": {"kind":"Int32"}
+        ,"value": 11
+    }
+    ,{
+         "name": "HH_TAB_CUSTOM_LAST"
+        ,"type": {"kind":"Int32"}
+        ,"value": 19
+    }
+    ,{
+         "name": "HHACT_TAB_CONTENTS"
+        ,"type": {"kind":"Int32"}
+        ,"value": 0
+    }
+    ,{
+         "name": "HHACT_TAB_INDEX"
+        ,"type": {"kind":"Int32"}
+        ,"value": 1
+    }
+    ,{
+         "name": "HHACT_TAB_SEARCH"
+        ,"type": {"kind":"Int32"}
+        ,"value": 2
+    }
+    ,{
+         "name": "HHACT_TAB_HISTORY"
+        ,"type": {"kind":"Int32"}
+        ,"value": 3
+    }
+    ,{
+         "name": "HHACT_TAB_FAVORITES"
+        ,"type": {"kind":"Int32"}
+        ,"value": 4
+    }
+    ,{
+         "name": "HHACT_EXPAND"
+        ,"type": {"kind":"Int32"}
+        ,"value": 5
+    }
+    ,{
+         "name": "HHACT_CONTRACT"
+        ,"type": {"kind":"Int32"}
+        ,"value": 6
+    }
+    ,{
+         "name": "HHACT_BACK"
+        ,"type": {"kind":"Int32"}
+        ,"value": 7
+    }
+    ,{
+         "name": "HHACT_FORWARD"
+        ,"type": {"kind":"Int32"}
+        ,"value": 8
+    }
+    ,{
+         "name": "HHACT_STOP"
+        ,"type": {"kind":"Int32"}
+        ,"value": 9
+    }
+    ,{
+         "name": "HHACT_REFRESH"
+        ,"type": {"kind":"Int32"}
+        ,"value": 10
+    }
+    ,{
+         "name": "HHACT_HOME"
+        ,"type": {"kind":"Int32"}
+        ,"value": 11
+    }
+    ,{
+         "name": "HHACT_SYNC"
+        ,"type": {"kind":"Int32"}
+        ,"value": 12
+    }
+    ,{
+         "name": "HHACT_OPTIONS"
+        ,"type": {"kind":"Int32"}
+        ,"value": 13
+    }
+    ,{
+         "name": "HHACT_PRINT"
+        ,"type": {"kind":"Int32"}
+        ,"value": 14
+    }
+    ,{
+         "name": "HHACT_HIGHLIGHT"
+        ,"type": {"kind":"Int32"}
+        ,"value": 15
+    }
+    ,{
+         "name": "HHACT_CUSTOMIZE"
+        ,"type": {"kind":"Int32"}
+        ,"value": 16
+    }
+    ,{
+         "name": "HHACT_JUMP1"
+        ,"type": {"kind":"Int32"}
+        ,"value": 17
+    }
+    ,{
+         "name": "HHACT_JUMP2"
+        ,"type": {"kind":"Int32"}
+        ,"value": 18
+    }
+    ,{
+         "name": "HHACT_ZOOM"
+        ,"type": {"kind":"Int32"}
+        ,"value": 19
+    }
+    ,{
+         "name": "HHACT_TOC_NEXT"
+        ,"type": {"kind":"Int32"}
+        ,"value": 20
+    }
+    ,{
+         "name": "HHACT_TOC_PREV"
+        ,"type": {"kind":"Int32"}
+        ,"value": 21
+    }
+    ,{
+         "name": "HHACT_NOTES"
+        ,"type": {"kind":"Int32"}
+        ,"value": 22
+    }
+    ,{
+         "name": "HHACT_LAST_ENUM"
+        ,"type": {"kind":"Int32"}
+        ,"value": 23
+    }
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: HHN_NOTIFY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HHN_NOTIFY = extern struct {
+    hdr: Windows.Win32.Controls.NMHDR,
+    pszUrl: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: HH_POPUP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HH_POPUP = extern struct {
+    cbStruct: {"kind":"Int32"},
+    hinst: Windows.Win32.SystemServices.HINSTANCE,
+    idString: {"kind":"UInt32"},
+    pszText: {"kind""Ptr","child":{"kind":"SByte"}},
+    pt: Windows.Win32.DisplayDevices.POINT,
+    clrForeground: {"kind":"UInt32"},
+    clrBackground: {"kind":"UInt32"},
+    rcMargins: Windows.Win32.DisplayDevices.RECT,
+    pszFont: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: HH_AKLINK
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HH_AKLINK = extern struct {
+    cbStruct: {"kind":"Int32"},
+    fReserved: Windows.Win32.SystemServices.BOOL,
+    pszKeywords: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszUrl: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszMsgText: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszMsgTitle: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszWindow: {"kind""Ptr","child":{"kind":"SByte"}},
+    fIndexOnFail: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: HH_ENUM_IT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HH_ENUM_IT = extern struct {
+    cbStruct: {"kind":"Int32"},
+    iType: {"kind":"Int32"},
+    pszCatName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszITName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszITDescription: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: HH_ENUM_CAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HH_ENUM_CAT = extern struct {
+    cbStruct: {"kind":"Int32"},
+    pszCatName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszCatDescription: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: HH_SET_INFOTYPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HH_SET_INFOTYPE = extern struct {
+    cbStruct: {"kind":"Int32"},
+    pszCatName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszInfoTypeName: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: HH_FTS_QUERY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HH_FTS_QUERY = extern struct {
+    cbStruct: {"kind":"Int32"},
+    fUniCodeStrings: Windows.Win32.SystemServices.BOOL,
+    pszSearchQuery: {"kind""Ptr","child":{"kind":"SByte"}},
+    iProximity: {"kind":"Int32"},
+    fStemmedSearch: Windows.Win32.SystemServices.BOOL,
+    fTitleOnly: Windows.Win32.SystemServices.BOOL,
+    fExecute: Windows.Win32.SystemServices.BOOL,
+    pszWindow: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: HH_WINTYPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HH_WINTYPE = extern struct {
+    cbStruct: {"kind":"Int32"},
+    fUniCodeStrings: Windows.Win32.SystemServices.BOOL,
+    pszType: {"kind""Ptr","child":{"kind":"SByte"}},
+    fsValidMembers: {"kind":"UInt32"},
+    fsWinProperties: {"kind":"UInt32"},
+    pszCaption: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwStyles: {"kind":"UInt32"},
+    dwExStyles: {"kind":"UInt32"},
+    rcWindowPos: Windows.Win32.DisplayDevices.RECT,
+    nShowState: {"kind":"Int32"},
+    hwndHelp: Windows.Win32.WindowsAndMessaging.HWND,
+    hwndCaller: Windows.Win32.WindowsAndMessaging.HWND,
+    paInfoTypes: {"kind""Ptr","child":{"kind":"UInt32"}},
+    hwndToolBar: Windows.Win32.WindowsAndMessaging.HWND,
+    hwndNavigation: Windows.Win32.WindowsAndMessaging.HWND,
+    hwndHTML: Windows.Win32.WindowsAndMessaging.HWND,
+    iNavWidth: {"kind":"Int32"},
+    rcHTML: Windows.Win32.DisplayDevices.RECT,
+    pszToc: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszIndex: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszHome: {"kind""Ptr","child":{"kind":"SByte"}},
+    fsToolBarFlags: {"kind":"UInt32"},
+    fNotExpanded: Windows.Win32.SystemServices.BOOL,
+    curNavType: {"kind":"Int32"},
+    tabpos: {"kind":"Int32"},
+    idNotify: {"kind":"Int32"},
+    tabOrder: {"kind":"Array","child": {"kind":"Byte"}},
+    cHistory: {"kind":"Int32"},
+    pszJump1: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszJump2: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszUrlJump1: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszUrlJump2: {"kind""Ptr","child":{"kind":"SByte"}},
+    rcMinSize: Windows.Win32.DisplayDevices.RECT,
+    cbInfoTypes: {"kind":"Int32"},
+    pszCustomTabs: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: HHNTRACK
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HHNTRACK = extern struct {
+    hdr: Windows.Win32.Controls.NMHDR,
+    pszCurUrl: {"kind""Ptr","child":{"kind":"SByte"}},
+    idAction: {"kind":"Int32"},
+    phhWinType: {"kind""Ptr","child":Windows.Win32.HtmlHelp.HH_WINTYPE},
+};
+// --------------------------------------------------------
+// Type: HH_GPROPID
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HH_GPROPID = *opaque{
+};
+// --------------------------------------------------------
+// Type: HH_GLOBAL_PROPERTY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HH_GLOBAL_PROPERTY = extern struct {
+    id: Windows.Win32.HtmlHelp.HH_GPROPID,
+    var: Windows.Win32.Automation.VARIANT,
+};
+// --------------------------------------------------------
+// Type: CProperty
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CProperty = extern struct {
+    dwPropID: {"kind":"UInt32"},
+    cbData: {"kind":"UInt32"},
+    dwType: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.HtmlHelp.CProperty+_Anonymous_e__Union,
+    fPersist: Windows.Win32.SystemServices.BOOL,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: IITPropList
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IITPropList = *opaque{
+    // TODO: Method 'Set'
+    // TODO: Method 'Set'
+    // TODO: Method 'Set'
+    // TODO: Method 'Add'
+    // TODO: Method 'Get'
+    // TODO: Method 'Clear'
+    // TODO: Method 'SetPersist'
+    // TODO: Method 'SetPersist'
+    // TODO: Method 'GetFirst'
+    // TODO: Method 'GetNext'
+    // TODO: Method 'GetPropCount'
+    // TODO: Method 'SaveHeader'
+    // TODO: Method 'SaveData'
+    // TODO: Method 'GetHeaderSize'
+    // TODO: Method 'GetDataSize'
+    // TODO: Method 'SaveDataToStream'
+    // TODO: Method 'LoadFromMem'
+    // TODO: Method 'SaveToMem'
+};
+// --------------------------------------------------------
+// Type: IITDatabase
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IITDatabase = *opaque{
+    // TODO: Method 'Open'
+    // TODO: Method 'Close'
+    // TODO: Method 'CreateObject'
+    // TODO: Method 'GetObjectA'
+    // TODO: Method 'GetObjectPersistence'
+};
+// --------------------------------------------------------
+// Type: IITGroup
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const IITGroup = opaque {
+};
+// --------------------------------------------------------
+// Type: IITQuery
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const IITQuery = opaque {
+};
+// --------------------------------------------------------
+// Type: IITWordWheel
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IITWordWheel = *opaque{
+    // TODO: Method 'Open'
+    // TODO: Method 'Close'
+    // TODO: Method 'GetLocaleInfoA'
+    // TODO: Method 'GetSorterInstance'
+    // TODO: Method 'Count'
+    // TODO: Method 'Lookup'
+    // TODO: Method 'Lookup'
+    // TODO: Method 'Lookup'
+    // TODO: Method 'SetGroup'
+    // TODO: Method 'GetGroup'
+    // TODO: Method 'GetDataCount'
+    // TODO: Method 'GetData'
+    // TODO: Method 'GetDataColumns'
+};
+// --------------------------------------------------------
+// Type: IStemSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IStemSink = *opaque{
+    // TODO: Method 'PutAltWord'
+    // TODO: Method 'PutWord'
+};
+// --------------------------------------------------------
+// Type: IStemmerConfig
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IStemmerConfig = *opaque{
+    // TODO: Method 'SetLocaleInfoA'
+    // TODO: Method 'GetLocaleInfoA'
+    // TODO: Method 'SetControlInfo'
+    // TODO: Method 'GetControlInfo'
+    // TODO: Method 'LoadExternalStemmerData'
+};
+// --------------------------------------------------------
+// Type: IITStopWordList
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const IITStopWordList = opaque {
+};
+// --------------------------------------------------------
+// Type: IWordBreakerConfig
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWordBreakerConfig = *opaque{
+    // TODO: Method 'SetLocaleInfoA'
+    // TODO: Method 'GetLocaleInfoA'
+    // TODO: Method 'SetBreakWordType'
+    // TODO: Method 'GetBreakWordType'
+    // TODO: Method 'SetControlInfo'
+    // TODO: Method 'GetControlInfo'
+    // TODO: Method 'LoadExternalBreakerData'
+    // TODO: Method 'SetWordStemmer'
+    // TODO: Method 'GetWordStemmer'
+};
+// --------------------------------------------------------
+// Type: PRIORITY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PRIORITY = *opaque{
+};
+// --------------------------------------------------------
+// Type: ROWSTATUS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ROWSTATUS = extern struct {
+    lRowFirst: {"kind":"Int32"},
+    cRows: {"kind":"Int32"},
+    cProperties: {"kind":"Int32"},
+    cRowsTotal: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: COLUMNSTATUS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const COLUMNSTATUS = extern struct {
+    cPropCount: {"kind":"Int32"},
+    cPropsLoaded: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: PFNCOLHEAPFREE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFNCOLHEAPFREE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IITResultSet
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IITResultSet = *opaque{
+    // TODO: Method 'SetColumnPriority'
+    // TODO: Method 'SetColumnHeap'
+    // TODO: Method 'SetKeyProp'
+    // TODO: Method 'Add'
+    // TODO: Method 'Add'
+    // TODO: Method 'Add'
+    // TODO: Method 'Add'
+    // TODO: Method 'Append'
+    // TODO: Method 'Set'
+    // TODO: Method 'Set'
+    // TODO: Method 'Set'
+    // TODO: Method 'Set'
+    // TODO: Method 'Copy'
+    // TODO: Method 'AppendRows'
+    // TODO: Method 'Get'
+    // TODO: Method 'GetKeyProp'
+    // TODO: Method 'GetColumnPriority'
+    // TODO: Method 'GetRowCount'
+    // TODO: Method 'GetColumnCount'
+    // TODO: Method 'GetColumn'
+    // TODO: Method 'GetColumn'
+    // TODO: Method 'GetColumnFromPropID'
+    // TODO: Method 'Clear'
+    // TODO: Method 'ClearRows'
+    // TODO: Method 'Free'
+    // TODO: Method 'IsCompleted'
+    // TODO: Method 'Cancel'
+    // TODO: Method 'Pause'
+    // TODO: Method 'GetRowStatus'
+    // TODO: Method 'GetColumnStatus'
+};
+],
+
+"func_definitions": [
+],
+
+"unicode_aliases": [
+]}

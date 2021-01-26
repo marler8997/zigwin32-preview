@@ -1,0 +1,155 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: ENHANCED_STORAGE_PASSWORD_SILO_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ENHANCED_STORAGE_PASSWORD_SILO_INFORMATION = extern struct {
+    CurrentAdminFailures: {"kind":"Byte"},
+    CurrentUserFailures: {"kind":"Byte"},
+    TotalUserAuthenticationCount: {"kind":"UInt32"},
+    TotalAdminAuthenticationCount: {"kind":"UInt32"},
+    FipsCompliant: Windows.Win32.SystemServices.BOOL,
+    SecurityIDAvailable: Windows.Win32.SystemServices.BOOL,
+    InitializeInProgress: Windows.Win32.SystemServices.BOOL,
+    ITMSArmed: Windows.Win32.SystemServices.BOOL,
+    ITMSArmable: Windows.Win32.SystemServices.BOOL,
+    UserCreated: Windows.Win32.SystemServices.BOOL,
+    ResetOnPORDefault: Windows.Win32.SystemServices.BOOL,
+    ResetOnPORCurrent: Windows.Win32.SystemServices.BOOL,
+    MaxAdminFailures: {"kind":"Byte"},
+    MaxUserFailures: {"kind":"Byte"},
+    TimeToCompleteInitialization: {"kind":"UInt32"},
+    TimeRemainingToCompleteInitialization: {"kind":"UInt32"},
+    MinTimeToAuthenticate: {"kind":"UInt32"},
+    MaxAdminPasswordSize: {"kind":"Byte"},
+    MinAdminPasswordSize: {"kind":"Byte"},
+    MaxAdminHintSize: {"kind":"Byte"},
+    MaxUserPasswordSize: {"kind":"Byte"},
+    MinUserPasswordSize: {"kind":"Byte"},
+    MaxUserHintSize: {"kind":"Byte"},
+    MaxUserNameSize: {"kind":"Byte"},
+    MaxSiloNameSize: {"kind":"Byte"},
+    MaxChallengeSize: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: EnumEnhancedStorageACT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const EnumEnhancedStorageACT = opaque {
+};
+// --------------------------------------------------------
+// Type: EnhancedStorageACT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const EnhancedStorageACT = opaque {
+};
+// --------------------------------------------------------
+// Type: EnhancedStorageSilo
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const EnhancedStorageSilo = opaque {
+};
+// --------------------------------------------------------
+// Type: EnhancedStorageSiloAction
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const EnhancedStorageSiloAction = opaque {
+};
+// --------------------------------------------------------
+// Type: ACT_AUTHORIZATION_STATE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ACT_AUTHORIZATION_STATE = extern struct {
+    ulState: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SILO_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SILO_INFO = extern struct {
+    ulSTID: {"kind":"UInt32"},
+    SpecificationMajor: {"kind":"Byte"},
+    SpecificationMinor: {"kind":"Byte"},
+    ImplementationMajor: {"kind":"Byte"},
+    ImplementationMinor: {"kind":"Byte"},
+    type: {"kind":"Byte"},
+    capabilities: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: ACT_AUTHORIZATION_STATE_VALUE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ACT_AUTHORIZATION_STATE_VALUE = *opaque{
+};
+// --------------------------------------------------------
+// Type: IEnumEnhancedStorageACT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumEnhancedStorageACT = *opaque{
+    // TODO: Method 'GetACTs'
+    // TODO: Method 'GetMatchingACT'
+};
+// --------------------------------------------------------
+// Type: IEnhancedStorageACT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnhancedStorageACT = *opaque{
+    // TODO: Method 'Authorize'
+    // TODO: Method 'Unauthorize'
+    // TODO: Method 'GetAuthorizationState'
+    // TODO: Method 'GetMatchingVolume'
+    // TODO: Method 'GetUniqueIdentity'
+    // TODO: Method 'GetSilos'
+};
+// --------------------------------------------------------
+// Type: IEnhancedStorageACT2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnhancedStorageACT2 = *opaque{
+    // TODO: Method 'GetDeviceName'
+    // TODO: Method 'IsDeviceRemovable'
+};
+// --------------------------------------------------------
+// Type: IEnhancedStorageACT3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnhancedStorageACT3 = *opaque{
+    // TODO: Method 'UnauthorizeEx'
+    // TODO: Method 'IsQueueFrozen'
+    // TODO: Method 'GetShellExtSupport'
+};
+// --------------------------------------------------------
+// Type: IEnhancedStorageSilo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnhancedStorageSilo = *opaque{
+    // TODO: Method 'GetInfo'
+    // TODO: Method 'GetActions'
+    // TODO: Method 'SendCommand'
+    // TODO: Method 'GetPortableDevice'
+    // TODO: Method 'GetDevicePath'
+};
+// --------------------------------------------------------
+// Type: IEnhancedStorageSiloAction
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnhancedStorageSiloAction = *opaque{
+    // TODO: Method 'GetName'
+    // TODO: Method 'GetDescription'
+    // TODO: Method 'Invoke'
+};
+],
+
+"func_definitions": [
+],
+
+"unicode_aliases": [
+]}

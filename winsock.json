@@ -1,0 +1,4372 @@
+﻿{
+"constants": [
+     {
+         "name": "LM_HB_Extension"
+        ,"type": {"kind":"Int32"}
+        ,"value": 128
+    }
+    ,{
+         "name": "LM_HB1_PnP"
+        ,"type": {"kind":"Int32"}
+        ,"value": 1
+    }
+    ,{
+         "name": "LM_HB1_PDA_Palmtop"
+        ,"type": {"kind":"Int32"}
+        ,"value": 2
+    }
+    ,{
+         "name": "LM_HB1_Computer"
+        ,"type": {"kind":"Int32"}
+        ,"value": 4
+    }
+    ,{
+         "name": "LM_HB1_Printer"
+        ,"type": {"kind":"Int32"}
+        ,"value": 8
+    }
+    ,{
+         "name": "LM_HB1_Modem"
+        ,"type": {"kind":"Int32"}
+        ,"value": 16
+    }
+    ,{
+         "name": "LM_HB1_Fax"
+        ,"type": {"kind":"Int32"}
+        ,"value": 32
+    }
+    ,{
+         "name": "LM_HB1_LANAccess"
+        ,"type": {"kind":"Int32"}
+        ,"value": 64
+    }
+    ,{
+         "name": "LM_HB2_Telephony"
+        ,"type": {"kind":"Int32"}
+        ,"value": 1
+    }
+    ,{
+         "name": "LM_HB2_FileServer"
+        ,"type": {"kind":"Int32"}
+        ,"value": 2
+    }
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: BLOB
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BLOB = extern struct {
+    cbSize: {"kind":"UInt32"},
+    pBlobData: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: HWSAEVENT
+// TypeLayoutAttr: sequential
+// RAIIFree 'WSACloseEvent' (TODO: can we use this information?)
+pub const HWSAEVENT = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: in_addr
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const in_addr = extern struct {
+    S_un: Windows.Win32.WinSock.in_addr+_S_un_e__Union,
+    // --------------------------------------------------------
+    // Type: _S_un_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _S_un_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _S_un_b_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _S_un_b_e__Struct = extern struct {
+            s_b1: {"kind":"Byte"},
+            s_b2: {"kind":"Byte"},
+            s_b3: {"kind":"Byte"},
+            s_b4: {"kind":"Byte"},
+        };
+        // --------------------------------------------------------
+        // Type: _S_un_w_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _S_un_w_e__Struct = extern struct {
+            s_w1: {"kind":"UInt16"},
+            s_w2: {"kind":"UInt16"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: SOCKADDR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SOCKADDR = extern struct {
+    sa_family: {"kind":"UInt16"},
+    sa_data: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: SOCKET_ADDRESS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SOCKET_ADDRESS = extern struct {
+    lpSockaddr: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    iSockaddrLength: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: CSADDR_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CSADDR_INFO = extern struct {
+    LocalAddr: Windows.Win32.WinSock.SOCKET_ADDRESS,
+    RemoteAddr: Windows.Win32.WinSock.SOCKET_ADDRESS,
+    iSocketType: {"kind":"Int32"},
+    iProtocol: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: sockaddr_storage_xp
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const sockaddr_storage_xp = extern struct {
+    ss_family: {"kind":"Int16"},
+    __ss_pad1: {"kind":"Array","child": {"kind":"SByte"}},
+    __ss_align: {"kind":"Int64"},
+    __ss_pad2: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: SOCKET_PROCESSOR_AFFINITY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SOCKET_PROCESSOR_AFFINITY = extern struct {
+    Processor: Windows.Win32.SystemServices.PROCESSOR_NUMBER,
+    NumaNodeId: {"kind":"UInt16"},
+    Reserved: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: IPPROTO
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const IPPROTO = *opaque{
+};
+// --------------------------------------------------------
+// Type: SCOPE_ID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SCOPE_ID = extern struct {
+    Anonymous: Windows.Win32.WinSock.SCOPE_ID+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            _bitfield: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: sockaddr_in
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const sockaddr_in = extern struct {
+    sin_family: {"kind":"UInt16"},
+    sin_port: {"kind":"UInt16"},
+    sin_addr: Windows.Win32.WinSock.in_addr,
+    sin_zero: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: sockaddr_dl
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const sockaddr_dl = extern struct {
+    sdl_family: {"kind":"UInt16"},
+    sdl_data: {"kind":"Array","child": {"kind":"Byte"}},
+    sdl_zero: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: WSABUF
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSABUF = extern struct {
+    len: {"kind":"UInt32"},
+    buf: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: WSAMSG
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSAMSG = extern struct {
+    name: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    namelen: {"kind":"Int32"},
+    lpBuffers: {"kind""Ptr","child":Windows.Win32.WinSock.WSABUF},
+    dwBufferCount: {"kind":"UInt32"},
+    Control: Windows.Win32.WinSock.WSABUF,
+    dwFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: cmsghdr
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const cmsghdr = extern struct {
+    cmsg_len: {"kind":"UIntPtr"},
+    cmsg_level: {"kind":"Int32"},
+    cmsg_type: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: ADDRINFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADDRINFOA = extern struct {
+    ai_flags: {"kind":"Int32"},
+    ai_family: {"kind":"Int32"},
+    ai_socktype: {"kind":"Int32"},
+    ai_protocol: {"kind":"Int32"},
+    ai_addrlen: {"kind":"UIntPtr"},
+    ai_canonname: {"kind""Ptr","child":{"kind":"SByte"}},
+    ai_addr: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    ai_next: {"kind""Ptr","child":Windows.Win32.WinSock.ADDRINFOA},
+};
+// --------------------------------------------------------
+// Type: addrinfoW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const addrinfoW = extern struct {
+    ai_flags: {"kind":"Int32"},
+    ai_family: {"kind":"Int32"},
+    ai_socktype: {"kind":"Int32"},
+    ai_protocol: {"kind":"Int32"},
+    ai_addrlen: {"kind":"UIntPtr"},
+    ai_canonname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ai_addr: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    ai_next: {"kind""Ptr","child":Windows.Win32.WinSock.addrinfoW},
+};
+// --------------------------------------------------------
+// Type: addrinfoexA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const addrinfoexA = extern struct {
+    ai_flags: {"kind":"Int32"},
+    ai_family: {"kind":"Int32"},
+    ai_socktype: {"kind":"Int32"},
+    ai_protocol: {"kind":"Int32"},
+    ai_addrlen: {"kind":"UIntPtr"},
+    ai_canonname: {"kind""Ptr","child":{"kind":"SByte"}},
+    ai_addr: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    ai_blob: {"kind""Ptr","child":{"kind":"Void"}},
+    ai_bloblen: {"kind":"UIntPtr"},
+    ai_provider: {"kind""Ptr","child":Guid},
+    ai_next: {"kind""Ptr","child":Windows.Win32.WinSock.addrinfoexA},
+};
+// --------------------------------------------------------
+// Type: addrinfoexW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const addrinfoexW = extern struct {
+    ai_flags: {"kind":"Int32"},
+    ai_family: {"kind":"Int32"},
+    ai_socktype: {"kind":"Int32"},
+    ai_protocol: {"kind":"Int32"},
+    ai_addrlen: {"kind":"UIntPtr"},
+    ai_canonname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ai_addr: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    ai_blob: {"kind""Ptr","child":{"kind":"Void"}},
+    ai_bloblen: {"kind":"UIntPtr"},
+    ai_provider: {"kind""Ptr","child":Guid},
+    ai_next: {"kind""Ptr","child":Windows.Win32.WinSock.addrinfoexW},
+};
+// --------------------------------------------------------
+// Type: addrinfoex2A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const addrinfoex2A = extern struct {
+    ai_flags: {"kind":"Int32"},
+    ai_family: {"kind":"Int32"},
+    ai_socktype: {"kind":"Int32"},
+    ai_protocol: {"kind":"Int32"},
+    ai_addrlen: {"kind":"UIntPtr"},
+    ai_canonname: {"kind""Ptr","child":{"kind":"SByte"}},
+    ai_addr: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    ai_blob: {"kind""Ptr","child":{"kind":"Void"}},
+    ai_bloblen: {"kind":"UIntPtr"},
+    ai_provider: {"kind""Ptr","child":Guid},
+    ai_next: {"kind""Ptr","child":Windows.Win32.WinSock.addrinfoex2A},
+    ai_version: {"kind":"Int32"},
+    ai_fqdn: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: addrinfoex2W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const addrinfoex2W = extern struct {
+    ai_flags: {"kind":"Int32"},
+    ai_family: {"kind":"Int32"},
+    ai_socktype: {"kind":"Int32"},
+    ai_protocol: {"kind":"Int32"},
+    ai_addrlen: {"kind":"UIntPtr"},
+    ai_canonname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ai_addr: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    ai_blob: {"kind""Ptr","child":{"kind":"Void"}},
+    ai_bloblen: {"kind":"UIntPtr"},
+    ai_provider: {"kind""Ptr","child":Guid},
+    ai_next: {"kind""Ptr","child":Windows.Win32.WinSock.addrinfoex2W},
+    ai_version: {"kind":"Int32"},
+    ai_fqdn: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: addrinfoex3
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const addrinfoex3 = extern struct {
+    ai_flags: {"kind":"Int32"},
+    ai_family: {"kind":"Int32"},
+    ai_socktype: {"kind":"Int32"},
+    ai_protocol: {"kind":"Int32"},
+    ai_addrlen: {"kind":"UIntPtr"},
+    ai_canonname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ai_addr: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    ai_blob: {"kind""Ptr","child":{"kind":"Void"}},
+    ai_bloblen: {"kind":"UIntPtr"},
+    ai_provider: {"kind""Ptr","child":Guid},
+    ai_next: {"kind""Ptr","child":Windows.Win32.WinSock.addrinfoex3},
+    ai_version: {"kind":"Int32"},
+    ai_fqdn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ai_interfaceindex: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: addrinfoex4
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const addrinfoex4 = extern struct {
+    ai_flags: {"kind":"Int32"},
+    ai_family: {"kind":"Int32"},
+    ai_socktype: {"kind":"Int32"},
+    ai_protocol: {"kind":"Int32"},
+    ai_addrlen: {"kind":"UIntPtr"},
+    ai_canonname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ai_addr: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    ai_blob: {"kind""Ptr","child":{"kind":"Void"}},
+    ai_bloblen: {"kind":"UIntPtr"},
+    ai_provider: {"kind""Ptr","child":Guid},
+    ai_next: {"kind""Ptr","child":Windows.Win32.WinSock.addrinfoex4},
+    ai_version: {"kind":"Int32"},
+    ai_fqdn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ai_interfaceindex: {"kind":"Int32"},
+    ai_resolutionhandle: Windows.Win32.SystemServices.HANDLE,
+};
+// --------------------------------------------------------
+// Type: fd_set
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const fd_set = extern struct {
+    fd_count: {"kind":"UInt32"},
+    fd_array: {"kind":"Array","child": {"kind":"UIntPtr"}},
+};
+// --------------------------------------------------------
+// Type: timeval
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const timeval = extern struct {
+    tv_sec: {"kind":"Int32"},
+    tv_usec: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: hostent
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const hostent = extern struct {
+    h_name: {"kind""Ptr","child":{"kind":"SByte"}},
+    h_aliases: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    h_addrtype: {"kind":"Int16"},
+    h_length: {"kind":"Int16"},
+    h_addr_list: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+};
+// --------------------------------------------------------
+// Type: netent
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const netent = extern struct {
+    n_name: {"kind""Ptr","child":{"kind":"SByte"}},
+    n_aliases: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    n_addrtype: {"kind":"Int16"},
+    n_net: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: servent
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const servent = extern struct {
+    s_name: {"kind""Ptr","child":{"kind":"SByte"}},
+    s_aliases: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    s_port: {"kind":"Int16"},
+    s_proto: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: protoent
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const protoent = extern struct {
+    p_name: {"kind""Ptr","child":{"kind":"SByte"}},
+    p_aliases: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    p_proto: {"kind":"Int16"},
+};
+// --------------------------------------------------------
+// Type: WSAData
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSAData = extern struct {
+    wVersion: {"kind":"UInt16"},
+    wHighVersion: {"kind":"UInt16"},
+    szDescription: {"kind":"Array","child": {"kind":"SByte"}},
+    szSystemStatus: {"kind":"Array","child": {"kind":"SByte"}},
+    iMaxSockets: {"kind":"UInt16"},
+    iMaxUdpDg: {"kind":"UInt16"},
+    lpVendorInfo: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: sockproto
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const sockproto = extern struct {
+    sp_family: {"kind":"UInt16"},
+    sp_protocol: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: linger
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const linger = extern struct {
+    l_onoff: {"kind":"UInt16"},
+    l_linger: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: WSANETWORKEVENTS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSANETWORKEVENTS = extern struct {
+    lNetworkEvents: {"kind":"Int32"},
+    iErrorCode: {"kind":"Array","child": {"kind":"Int32"}},
+};
+// --------------------------------------------------------
+// Type: WSAPROTOCOLCHAIN
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSAPROTOCOLCHAIN = extern struct {
+    ChainLen: {"kind":"Int32"},
+    ChainEntries: {"kind":"Array","child": {"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: WSAPROTOCOL_INFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSAPROTOCOL_INFOA = extern struct {
+    dwServiceFlags1: {"kind":"UInt32"},
+    dwServiceFlags2: {"kind":"UInt32"},
+    dwServiceFlags3: {"kind":"UInt32"},
+    dwServiceFlags4: {"kind":"UInt32"},
+    dwProviderFlags: {"kind":"UInt32"},
+    ProviderId: Guid,
+    dwCatalogEntryId: {"kind":"UInt32"},
+    ProtocolChain: Windows.Win32.WinSock.WSAPROTOCOLCHAIN,
+    iVersion: {"kind":"Int32"},
+    iAddressFamily: {"kind":"Int32"},
+    iMaxSockAddr: {"kind":"Int32"},
+    iMinSockAddr: {"kind":"Int32"},
+    iSocketType: {"kind":"Int32"},
+    iProtocol: {"kind":"Int32"},
+    iProtocolMaxOffset: {"kind":"Int32"},
+    iNetworkByteOrder: {"kind":"Int32"},
+    iSecurityScheme: {"kind":"Int32"},
+    dwMessageSize: {"kind":"UInt32"},
+    dwProviderReserved: {"kind":"UInt32"},
+    szProtocol: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: WSAPROTOCOL_INFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSAPROTOCOL_INFOW = extern struct {
+    dwServiceFlags1: {"kind":"UInt32"},
+    dwServiceFlags2: {"kind":"UInt32"},
+    dwServiceFlags3: {"kind":"UInt32"},
+    dwServiceFlags4: {"kind":"UInt32"},
+    dwProviderFlags: {"kind":"UInt32"},
+    ProviderId: Guid,
+    dwCatalogEntryId: {"kind":"UInt32"},
+    ProtocolChain: Windows.Win32.WinSock.WSAPROTOCOLCHAIN,
+    iVersion: {"kind":"Int32"},
+    iAddressFamily: {"kind":"Int32"},
+    iMaxSockAddr: {"kind":"Int32"},
+    iMinSockAddr: {"kind":"Int32"},
+    iSocketType: {"kind":"Int32"},
+    iProtocol: {"kind":"Int32"},
+    iProtocolMaxOffset: {"kind":"Int32"},
+    iNetworkByteOrder: {"kind":"Int32"},
+    iSecurityScheme: {"kind":"Int32"},
+    dwMessageSize: {"kind":"UInt32"},
+    dwProviderReserved: {"kind":"UInt32"},
+    szProtocol: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: LPCONDITIONPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPCONDITIONPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSAOVERLAPPED_COMPLETION_ROUTINE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSAOVERLAPPED_COMPLETION_ROUTINE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WSACOMPLETIONTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSACOMPLETIONTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WSACOMPLETION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSACOMPLETION = extern struct {
+    Type: Windows.Win32.WinSock.WSACOMPLETIONTYPE,
+    Parameters: Windows.Win32.WinSock.WSACOMPLETION+_Parameters_e__Union,
+    // --------------------------------------------------------
+    // Type: _Parameters_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Parameters_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Port_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Port_e__Struct = extern struct {
+            lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+            hPort: Windows.Win32.SystemServices.HANDLE,
+            Key: {"kind":"UIntPtr"},
+        };
+        // --------------------------------------------------------
+        // Type: _Event_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Event_e__Struct = extern struct {
+            lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+        };
+        // --------------------------------------------------------
+        // Type: _WindowMessage_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _WindowMessage_e__Struct = extern struct {
+            hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+            uMsg: {"kind":"UInt32"},
+            context: Windows.Win32.WindowsAndMessaging.WPARAM,
+        };
+        // --------------------------------------------------------
+        // Type: _Apc_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Apc_e__Struct = extern struct {
+            lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+            lpfnCompletionProc: Windows.Win32.WinSock.LPWSAOVERLAPPED_COMPLETION_ROUTINE,
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: AFPROTOCOLS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AFPROTOCOLS = extern struct {
+    iAddressFamily: {"kind":"Int32"},
+    iProtocol: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: WSAECOMPARATOR
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSAECOMPARATOR = *opaque{
+};
+// --------------------------------------------------------
+// Type: WSAVERSION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSAVERSION = extern struct {
+    dwVersion: {"kind":"UInt32"},
+    ecHow: Windows.Win32.WinSock.WSAECOMPARATOR,
+};
+// --------------------------------------------------------
+// Type: WSAQUERYSETA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSAQUERYSETA = extern struct {
+    dwSize: {"kind":"UInt32"},
+    lpszServiceInstanceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpServiceClassId: {"kind""Ptr","child":Guid},
+    lpVersion: {"kind""Ptr","child":Windows.Win32.WinSock.WSAVERSION},
+    lpszComment: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwNameSpace: {"kind":"UInt32"},
+    lpNSProviderId: {"kind""Ptr","child":Guid},
+    lpszContext: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwNumberOfProtocols: {"kind":"UInt32"},
+    lpafpProtocols: {"kind""Ptr","child":Windows.Win32.WinSock.AFPROTOCOLS},
+    lpszQueryString: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwNumberOfCsAddrs: {"kind":"UInt32"},
+    lpcsaBuffer: {"kind""Ptr","child":Windows.Win32.WinSock.CSADDR_INFO},
+    dwOutputFlags: {"kind":"UInt32"},
+    lpBlob: {"kind""Ptr","child":Windows.Win32.WinSock.BLOB},
+};
+// --------------------------------------------------------
+// Type: WSAQUERYSETW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSAQUERYSETW = extern struct {
+    dwSize: {"kind":"UInt32"},
+    lpszServiceInstanceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpServiceClassId: {"kind""Ptr","child":Guid},
+    lpVersion: {"kind""Ptr","child":Windows.Win32.WinSock.WSAVERSION},
+    lpszComment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwNameSpace: {"kind":"UInt32"},
+    lpNSProviderId: {"kind""Ptr","child":Guid},
+    lpszContext: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwNumberOfProtocols: {"kind":"UInt32"},
+    lpafpProtocols: {"kind""Ptr","child":Windows.Win32.WinSock.AFPROTOCOLS},
+    lpszQueryString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwNumberOfCsAddrs: {"kind":"UInt32"},
+    lpcsaBuffer: {"kind""Ptr","child":Windows.Win32.WinSock.CSADDR_INFO},
+    dwOutputFlags: {"kind":"UInt32"},
+    lpBlob: {"kind""Ptr","child":Windows.Win32.WinSock.BLOB},
+};
+// --------------------------------------------------------
+// Type: WSAQUERYSET2A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSAQUERYSET2A = extern struct {
+    dwSize: {"kind":"UInt32"},
+    lpszServiceInstanceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpVersion: {"kind""Ptr","child":Windows.Win32.WinSock.WSAVERSION},
+    lpszComment: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwNameSpace: {"kind":"UInt32"},
+    lpNSProviderId: {"kind""Ptr","child":Guid},
+    lpszContext: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwNumberOfProtocols: {"kind":"UInt32"},
+    lpafpProtocols: {"kind""Ptr","child":Windows.Win32.WinSock.AFPROTOCOLS},
+    lpszQueryString: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwNumberOfCsAddrs: {"kind":"UInt32"},
+    lpcsaBuffer: {"kind""Ptr","child":Windows.Win32.WinSock.CSADDR_INFO},
+    dwOutputFlags: {"kind":"UInt32"},
+    lpBlob: {"kind""Ptr","child":Windows.Win32.WinSock.BLOB},
+};
+// --------------------------------------------------------
+// Type: WSAQUERYSET2W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSAQUERYSET2W = extern struct {
+    dwSize: {"kind":"UInt32"},
+    lpszServiceInstanceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpVersion: {"kind""Ptr","child":Windows.Win32.WinSock.WSAVERSION},
+    lpszComment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwNameSpace: {"kind":"UInt32"},
+    lpNSProviderId: {"kind""Ptr","child":Guid},
+    lpszContext: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwNumberOfProtocols: {"kind":"UInt32"},
+    lpafpProtocols: {"kind""Ptr","child":Windows.Win32.WinSock.AFPROTOCOLS},
+    lpszQueryString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwNumberOfCsAddrs: {"kind":"UInt32"},
+    lpcsaBuffer: {"kind""Ptr","child":Windows.Win32.WinSock.CSADDR_INFO},
+    dwOutputFlags: {"kind":"UInt32"},
+    lpBlob: {"kind""Ptr","child":Windows.Win32.WinSock.BLOB},
+};
+// --------------------------------------------------------
+// Type: WSAESETSERVICEOP
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSAESETSERVICEOP = *opaque{
+};
+// --------------------------------------------------------
+// Type: WSANSCLASSINFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSANSCLASSINFOA = extern struct {
+    lpszName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwNameSpace: {"kind":"UInt32"},
+    dwValueType: {"kind":"UInt32"},
+    dwValueSize: {"kind":"UInt32"},
+    lpValue: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: WSANSCLASSINFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSANSCLASSINFOW = extern struct {
+    lpszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwNameSpace: {"kind":"UInt32"},
+    dwValueType: {"kind":"UInt32"},
+    dwValueSize: {"kind":"UInt32"},
+    lpValue: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: WSASERVICECLASSINFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSASERVICECLASSINFOA = extern struct {
+    lpServiceClassId: {"kind""Ptr","child":Guid},
+    lpszServiceClassName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwCount: {"kind":"UInt32"},
+    lpClassInfos: {"kind""Ptr","child":Windows.Win32.WinSock.WSANSCLASSINFOA},
+};
+// --------------------------------------------------------
+// Type: WSASERVICECLASSINFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSASERVICECLASSINFOW = extern struct {
+    lpServiceClassId: {"kind""Ptr","child":Guid},
+    lpszServiceClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwCount: {"kind":"UInt32"},
+    lpClassInfos: {"kind""Ptr","child":Windows.Win32.WinSock.WSANSCLASSINFOW},
+};
+// --------------------------------------------------------
+// Type: WSANAMESPACE_INFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSANAMESPACE_INFOA = extern struct {
+    NSProviderId: Guid,
+    dwNameSpace: {"kind":"UInt32"},
+    fActive: Windows.Win32.SystemServices.BOOL,
+    dwVersion: {"kind":"UInt32"},
+    lpszIdentifier: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: WSANAMESPACE_INFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSANAMESPACE_INFOW = extern struct {
+    NSProviderId: Guid,
+    dwNameSpace: {"kind":"UInt32"},
+    fActive: Windows.Win32.SystemServices.BOOL,
+    dwVersion: {"kind":"UInt32"},
+    lpszIdentifier: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WSANAMESPACE_INFOEXA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSANAMESPACE_INFOEXA = extern struct {
+    NSProviderId: Guid,
+    dwNameSpace: {"kind":"UInt32"},
+    fActive: Windows.Win32.SystemServices.BOOL,
+    dwVersion: {"kind":"UInt32"},
+    lpszIdentifier: {"kind""Ptr","child":{"kind":"SByte"}},
+    ProviderSpecific: Windows.Win32.WinSock.BLOB,
+};
+// --------------------------------------------------------
+// Type: WSANAMESPACE_INFOEXW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSANAMESPACE_INFOEXW = extern struct {
+    NSProviderId: Guid,
+    dwNameSpace: {"kind":"UInt32"},
+    fActive: Windows.Win32.SystemServices.BOOL,
+    dwVersion: {"kind":"UInt32"},
+    lpszIdentifier: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ProviderSpecific: Windows.Win32.WinSock.BLOB,
+};
+// --------------------------------------------------------
+// Type: WSAPOLLFD
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSAPOLLFD = extern struct {
+    fd: {"kind":"UIntPtr"},
+    events: {"kind":"Int16"},
+    revents: {"kind":"Int16"},
+};
+// --------------------------------------------------------
+// Type: in6_addr
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const in6_addr = extern struct {
+    u: Windows.Win32.WinSock.in6_addr+_u_e__Union,
+    // --------------------------------------------------------
+    // Type: _u_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _u_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: sockaddr_in6_old
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const sockaddr_in6_old = extern struct {
+    sin6_family: {"kind":"Int16"},
+    sin6_port: {"kind":"UInt16"},
+    sin6_flowinfo: {"kind":"UInt32"},
+    sin6_addr: Windows.Win32.WinSock.in6_addr,
+};
+// --------------------------------------------------------
+// Type: sockaddr_gen
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const sockaddr_gen = *opaque{
+};
+// --------------------------------------------------------
+// Type: INTERFACE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERFACE_INFO = extern struct {
+    iiFlags: {"kind":"UInt32"},
+    iiAddress: Windows.Win32.WinSock.sockaddr_gen,
+    iiBroadcastAddress: Windows.Win32.WinSock.sockaddr_gen,
+    iiNetmask: Windows.Win32.WinSock.sockaddr_gen,
+};
+// --------------------------------------------------------
+// Type: INTERFACE_INFO_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERFACE_INFO_EX = extern struct {
+    iiFlags: {"kind":"UInt32"},
+    iiAddress: Windows.Win32.WinSock.SOCKET_ADDRESS,
+    iiBroadcastAddress: Windows.Win32.WinSock.SOCKET_ADDRESS,
+    iiNetmask: Windows.Win32.WinSock.SOCKET_ADDRESS,
+};
+// --------------------------------------------------------
+// Type: PMTUD_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PMTUD_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: sockaddr_in6_w2ksp1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const sockaddr_in6_w2ksp1 = extern struct {
+    sin6_family: {"kind":"Int16"},
+    sin6_port: {"kind":"UInt16"},
+    sin6_flowinfo: {"kind":"UInt32"},
+    sin6_addr: Windows.Win32.WinSock.in6_addr,
+    sin6_scope_id: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MULTICAST_MODE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MULTICAST_MODE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: ip_mreq
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ip_mreq = extern struct {
+    imr_multiaddr: Windows.Win32.WinSock.in_addr,
+    imr_interface: Windows.Win32.WinSock.in_addr,
+};
+// --------------------------------------------------------
+// Type: ip_mreq_source
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ip_mreq_source = extern struct {
+    imr_multiaddr: Windows.Win32.WinSock.in_addr,
+    imr_sourceaddr: Windows.Win32.WinSock.in_addr,
+    imr_interface: Windows.Win32.WinSock.in_addr,
+};
+// --------------------------------------------------------
+// Type: ip_msfilter
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ip_msfilter = extern struct {
+    imsf_multiaddr: Windows.Win32.WinSock.in_addr,
+    imsf_interface: Windows.Win32.WinSock.in_addr,
+    imsf_fmode: Windows.Win32.WinSock.MULTICAST_MODE_TYPE,
+    imsf_numsrc: {"kind":"UInt32"},
+    imsf_slist: {"kind":"Array","child": Windows.Win32.WinSock.in_addr},
+};
+// --------------------------------------------------------
+// Type: ipv6_mreq
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ipv6_mreq = extern struct {
+    ipv6mr_multiaddr: Windows.Win32.WinSock.in6_addr,
+    ipv6mr_interface: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: group_req
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const group_req = extern struct {
+    gr_interface: {"kind":"UInt32"},
+    gr_group: Windows.Win32.NetworkDrivers.SOCKADDR_STORAGE_LH,
+};
+// --------------------------------------------------------
+// Type: group_source_req
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const group_source_req = extern struct {
+    gsr_interface: {"kind":"UInt32"},
+    gsr_group: Windows.Win32.NetworkDrivers.SOCKADDR_STORAGE_LH,
+    gsr_source: Windows.Win32.NetworkDrivers.SOCKADDR_STORAGE_LH,
+};
+// --------------------------------------------------------
+// Type: group_filter
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const group_filter = extern struct {
+    gf_interface: {"kind":"UInt32"},
+    gf_group: Windows.Win32.NetworkDrivers.SOCKADDR_STORAGE_LH,
+    gf_fmode: Windows.Win32.WinSock.MULTICAST_MODE_TYPE,
+    gf_numsrc: {"kind":"UInt32"},
+    gf_slist: {"kind":"Array","child": Windows.Win32.NetworkDrivers.SOCKADDR_STORAGE_LH},
+};
+// --------------------------------------------------------
+// Type: in_pktinfo
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const in_pktinfo = extern struct {
+    ipi_addr: Windows.Win32.WinSock.in_addr,
+    ipi_ifindex: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: in6_pktinfo
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const in6_pktinfo = extern struct {
+    ipi6_addr: Windows.Win32.WinSock.in6_addr,
+    ipi6_ifindex: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: in_pktinfo_ex
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const in_pktinfo_ex = extern struct {
+    pkt_info: Windows.Win32.WinSock.in_pktinfo,
+    scope_id: Windows.Win32.WinSock.SCOPE_ID,
+};
+// --------------------------------------------------------
+// Type: in6_pktinfo_ex
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const in6_pktinfo_ex = extern struct {
+    pkt_info: Windows.Win32.WinSock.in6_pktinfo,
+    scope_id: Windows.Win32.WinSock.SCOPE_ID,
+};
+// --------------------------------------------------------
+// Type: in_recverr
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const in_recverr = extern struct {
+    protocol: Windows.Win32.WinSock.IPPROTO,
+    info: {"kind":"UInt32"},
+    type: {"kind":"Byte"},
+    code: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: icmp_error_info
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const icmp_error_info = extern struct {
+    srcaddress: Windows.Win32.IpHelper.SOCKADDR_INET,
+    protocol: Windows.Win32.WinSock.IPPROTO,
+    type: {"kind":"Byte"},
+    code: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: eWINDOW_ADVANCE_METHOD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const eWINDOW_ADVANCE_METHOD = *opaque{
+};
+// --------------------------------------------------------
+// Type: RM_SEND_WINDOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RM_SEND_WINDOW = extern struct {
+    RateKbitsPerSec: {"kind":"UInt32"},
+    WindowSizeInMSecs: {"kind":"UInt32"},
+    WindowSizeInBytes: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: RM_SENDER_STATS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RM_SENDER_STATS = extern struct {
+    DataBytesSent: {"kind":"UInt64"},
+    TotalBytesSent: {"kind":"UInt64"},
+    NaksReceived: {"kind":"UInt64"},
+    NaksReceivedTooLate: {"kind":"UInt64"},
+    NumOutstandingNaks: {"kind":"UInt64"},
+    NumNaksAfterRData: {"kind":"UInt64"},
+    RepairPacketsSent: {"kind":"UInt64"},
+    BufferSpaceAvailable: {"kind":"UInt64"},
+    TrailingEdgeSeqId: {"kind":"UInt64"},
+    LeadingEdgeSeqId: {"kind":"UInt64"},
+    RateKBitsPerSecOverall: {"kind":"UInt64"},
+    RateKBitsPerSecLast: {"kind":"UInt64"},
+    TotalODataPacketsSent: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: RM_RECEIVER_STATS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RM_RECEIVER_STATS = extern struct {
+    NumODataPacketsReceived: {"kind":"UInt64"},
+    NumRDataPacketsReceived: {"kind":"UInt64"},
+    NumDuplicateDataPackets: {"kind":"UInt64"},
+    DataBytesReceived: {"kind":"UInt64"},
+    TotalBytesReceived: {"kind":"UInt64"},
+    RateKBitsPerSecOverall: {"kind":"UInt64"},
+    RateKBitsPerSecLast: {"kind":"UInt64"},
+    TrailingEdgeSeqId: {"kind":"UInt64"},
+    LeadingEdgeSeqId: {"kind":"UInt64"},
+    AverageSequencesInWindow: {"kind":"UInt64"},
+    MinSequencesInWindow: {"kind":"UInt64"},
+    MaxSequencesInWindow: {"kind":"UInt64"},
+    FirstNakSequenceNumber: {"kind":"UInt64"},
+    NumPendingNaks: {"kind":"UInt64"},
+    NumOutstandingNaks: {"kind":"UInt64"},
+    NumDataPacketsBuffered: {"kind":"UInt64"},
+    TotalSelectiveNaksSent: {"kind":"UInt64"},
+    TotalParityNaksSent: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: RM_FEC_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RM_FEC_INFO = extern struct {
+    FECBlockSize: {"kind":"UInt16"},
+    FECProActivePackets: {"kind":"UInt16"},
+    FECGroupSize: {"kind":"Byte"},
+    fFECOnDemandParityEnabled: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: IPX_ADDRESS_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IPX_ADDRESS_DATA = extern struct {
+    adapternum: {"kind":"Int32"},
+    netnum: {"kind":"Array","child": {"kind":"Byte"}},
+    nodenum: {"kind":"Array","child": {"kind":"Byte"}},
+    wan: {"kind":"Byte"},
+    status: {"kind":"Byte"},
+    maxpkt: {"kind":"Int32"},
+    linkspeed: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: IPX_NETNUM_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IPX_NETNUM_DATA = extern struct {
+    netnum: {"kind":"Array","child": {"kind":"Byte"}},
+    hopcount: {"kind":"UInt16"},
+    netdelay: {"kind":"UInt16"},
+    cardnum: {"kind":"Int32"},
+    router: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: IPX_SPXCONNSTATUS_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IPX_SPXCONNSTATUS_DATA = extern struct {
+    ConnectionState: {"kind":"Byte"},
+    WatchDogActive: {"kind":"Byte"},
+    LocalConnectionId: {"kind":"UInt16"},
+    RemoteConnectionId: {"kind":"UInt16"},
+    LocalSequenceNumber: {"kind":"UInt16"},
+    LocalAckNumber: {"kind":"UInt16"},
+    LocalAllocNumber: {"kind":"UInt16"},
+    RemoteAckNumber: {"kind":"UInt16"},
+    RemoteAllocNumber: {"kind":"UInt16"},
+    LocalSocket: {"kind":"UInt16"},
+    ImmediateAddress: {"kind":"Array","child": {"kind":"Byte"}},
+    RemoteNetwork: {"kind":"Array","child": {"kind":"Byte"}},
+    RemoteNode: {"kind":"Array","child": {"kind":"Byte"}},
+    RemoteSocket: {"kind":"UInt16"},
+    RetransmissionCount: {"kind":"UInt16"},
+    EstimatedRoundTripDelay: {"kind":"UInt16"},
+    RetransmittedPackets: {"kind":"UInt16"},
+    SuppressedPacket: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: LM_IRPARMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LM_IRPARMS = extern struct {
+    nTXDataBytes: {"kind":"UInt32"},
+    nRXDataBytes: {"kind":"UInt32"},
+    nBaudRate: {"kind":"UInt32"},
+    thresholdTime: {"kind":"UInt32"},
+    discTime: {"kind":"UInt32"},
+    nMSLinkTurn: {"kind":"UInt16"},
+    nTXPackets: {"kind":"Byte"},
+    nRXPackets: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: SOCKADDR_IRDA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SOCKADDR_IRDA = extern struct {
+    irdaAddressFamily: {"kind":"UInt16"},
+    irdaDeviceID: {"kind":"Array","child": {"kind":"Byte"}},
+    irdaServiceName: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: WINDOWS_IRDA_DEVICE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINDOWS_IRDA_DEVICE_INFO = extern struct {
+    irdaDeviceID: {"kind":"Array","child": {"kind":"Byte"}},
+    irdaDeviceName: {"kind":"Array","child": {"kind":"SByte"}},
+    irdaDeviceHints1: {"kind":"Byte"},
+    irdaDeviceHints2: {"kind":"Byte"},
+    irdaCharSet: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: WCE_IRDA_DEVICE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WCE_IRDA_DEVICE_INFO = extern struct {
+    irdaDeviceID: {"kind":"Array","child": {"kind":"Byte"}},
+    irdaDeviceName: {"kind":"Array","child": {"kind":"SByte"}},
+    Reserved: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: WINDOWS_DEVICELIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINDOWS_DEVICELIST = extern struct {
+    numDevice: {"kind":"UInt32"},
+    Device: {"kind":"Array","child": Windows.Win32.WinSock.WINDOWS_IRDA_DEVICE_INFO},
+};
+// --------------------------------------------------------
+// Type: WCE_DEVICELIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WCE_DEVICELIST = extern struct {
+    numDevice: {"kind":"UInt32"},
+    Device: {"kind":"Array","child": Windows.Win32.WinSock.WCE_IRDA_DEVICE_INFO},
+};
+// --------------------------------------------------------
+// Type: WINDOWS_IAS_SET
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINDOWS_IAS_SET = extern struct {
+    irdaClassName: {"kind":"Array","child": {"kind":"SByte"}},
+    irdaAttribName: {"kind":"Array","child": {"kind":"SByte"}},
+    irdaAttribType: {"kind":"UInt32"},
+    irdaAttribute: Windows.Win32.WinSock.WINDOWS_IAS_SET+_irdaAttribute_e__Union,
+    // --------------------------------------------------------
+    // Type: _irdaAttribute_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _irdaAttribute_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _irdaAttribOctetSeq_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _irdaAttribOctetSeq_e__Struct = extern struct {
+            Len: {"kind":"UInt16"},
+            OctetSeq: {"kind":"Array","child": {"kind":"Byte"}},
+        };
+        // --------------------------------------------------------
+        // Type: _irdaAttribUsrStr_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _irdaAttribUsrStr_e__Struct = extern struct {
+            Len: {"kind":"Byte"},
+            CharSet: {"kind":"Byte"},
+            UsrStr: {"kind":"Array","child": {"kind":"Byte"}},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: WINDOWS_IAS_QUERY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINDOWS_IAS_QUERY = extern struct {
+    irdaDeviceID: {"kind":"Array","child": {"kind":"Byte"}},
+    irdaClassName: {"kind":"Array","child": {"kind":"SByte"}},
+    irdaAttribName: {"kind":"Array","child": {"kind":"SByte"}},
+    irdaAttribType: {"kind":"UInt32"},
+    irdaAttribute: Windows.Win32.WinSock.WINDOWS_IAS_QUERY+_irdaAttribute_e__Union,
+    // --------------------------------------------------------
+    // Type: _irdaAttribute_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _irdaAttribute_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _irdaAttribOctetSeq_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _irdaAttribOctetSeq_e__Struct = extern struct {
+            Len: {"kind":"UInt32"},
+            OctetSeq: {"kind":"Array","child": {"kind":"Byte"}},
+        };
+        // --------------------------------------------------------
+        // Type: _irdaAttribUsrStr_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _irdaAttribUsrStr_e__Struct = extern struct {
+            Len: {"kind":"UInt32"},
+            CharSet: {"kind":"UInt32"},
+            UsrStr: {"kind":"Array","child": {"kind":"Byte"}},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: NL_BANDWIDTH_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NL_BANDWIDTH_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: NL_PATH_BANDWIDTH_ROD
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NL_PATH_BANDWIDTH_ROD = extern struct {
+    Bandwidth: {"kind":"UInt64"},
+    Instability: {"kind":"UInt64"},
+    BandwidthPeaked: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: NL_NETWORK_CATEGORY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NL_NETWORK_CATEGORY = *opaque{
+};
+// --------------------------------------------------------
+// Type: NL_INTERFACE_NETWORK_CATEGORY_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NL_INTERFACE_NETWORK_CATEGORY_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: TCPSTATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TCPSTATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: TRANSPORT_SETTING_ID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TRANSPORT_SETTING_ID = extern struct {
+    Guid: Guid,
+};
+// --------------------------------------------------------
+// Type: tcp_keepalive
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const tcp_keepalive = extern struct {
+    onoff: {"kind":"UInt32"},
+    keepalivetime: {"kind":"UInt32"},
+    keepaliveinterval: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: CONTROL_CHANNEL_TRIGGER_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CONTROL_CHANNEL_TRIGGER_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: REAL_TIME_NOTIFICATION_SETTING_INPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const REAL_TIME_NOTIFICATION_SETTING_INPUT = extern struct {
+    TransportSettingId: Windows.Win32.WinSock.TRANSPORT_SETTING_ID,
+    BrokerEventGuid: Guid,
+};
+// --------------------------------------------------------
+// Type: REAL_TIME_NOTIFICATION_SETTING_INPUT_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const REAL_TIME_NOTIFICATION_SETTING_INPUT_EX = extern struct {
+    TransportSettingId: Windows.Win32.WinSock.TRANSPORT_SETTING_ID,
+    BrokerEventGuid: Guid,
+    Unmark: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: REAL_TIME_NOTIFICATION_SETTING_OUTPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const REAL_TIME_NOTIFICATION_SETTING_OUTPUT = extern struct {
+    ChannelStatus: Windows.Win32.WinSock.CONTROL_CHANNEL_TRIGGER_STATUS,
+};
+// --------------------------------------------------------
+// Type: ASSOCIATE_NAMERES_CONTEXT_INPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ASSOCIATE_NAMERES_CONTEXT_INPUT = extern struct {
+    TransportSettingId: Windows.Win32.WinSock.TRANSPORT_SETTING_ID,
+    Handle: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: RCVALL_VALUE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const RCVALL_VALUE = *opaque{
+};
+// --------------------------------------------------------
+// Type: RCVALL_IF
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RCVALL_IF = extern struct {
+    Mode: Windows.Win32.WinSock.RCVALL_VALUE,
+    Interface: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: TCP_INITIAL_RTO_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TCP_INITIAL_RTO_PARAMETERS = extern struct {
+    Rtt: {"kind":"UInt16"},
+    MaxSynRetransmissions: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: TCP_ICW_LEVEL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TCP_ICW_LEVEL = *opaque{
+};
+// --------------------------------------------------------
+// Type: TCP_ICW_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TCP_ICW_PARAMETERS = extern struct {
+    Level: Windows.Win32.WinSock.TCP_ICW_LEVEL,
+};
+// --------------------------------------------------------
+// Type: TCP_ACK_FREQUENCY_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TCP_ACK_FREQUENCY_PARAMETERS = extern struct {
+    TcpDelayedAckFrequency: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: TCP_INFO_v0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TCP_INFO_v0 = extern struct {
+    State: Windows.Win32.WinSock.TCPSTATE,
+    Mss: {"kind":"UInt32"},
+    ConnectionTimeMs: {"kind":"UInt64"},
+    TimestampsEnabled: {"kind":"Byte"},
+    RttUs: {"kind":"UInt32"},
+    MinRttUs: {"kind":"UInt32"},
+    BytesInFlight: {"kind":"UInt32"},
+    Cwnd: {"kind":"UInt32"},
+    SndWnd: {"kind":"UInt32"},
+    RcvWnd: {"kind":"UInt32"},
+    RcvBuf: {"kind":"UInt32"},
+    BytesOut: {"kind":"UInt64"},
+    BytesIn: {"kind":"UInt64"},
+    BytesReordered: {"kind":"UInt32"},
+    BytesRetrans: {"kind":"UInt32"},
+    FastRetrans: {"kind":"UInt32"},
+    DupAcksIn: {"kind":"UInt32"},
+    TimeoutEpisodes: {"kind":"UInt32"},
+    SynRetrans: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: TCP_INFO_v1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TCP_INFO_v1 = extern struct {
+    State: Windows.Win32.WinSock.TCPSTATE,
+    Mss: {"kind":"UInt32"},
+    ConnectionTimeMs: {"kind":"UInt64"},
+    TimestampsEnabled: {"kind":"Byte"},
+    RttUs: {"kind":"UInt32"},
+    MinRttUs: {"kind":"UInt32"},
+    BytesInFlight: {"kind":"UInt32"},
+    Cwnd: {"kind":"UInt32"},
+    SndWnd: {"kind":"UInt32"},
+    RcvWnd: {"kind":"UInt32"},
+    RcvBuf: {"kind":"UInt32"},
+    BytesOut: {"kind":"UInt64"},
+    BytesIn: {"kind":"UInt64"},
+    BytesReordered: {"kind":"UInt32"},
+    BytesRetrans: {"kind":"UInt32"},
+    FastRetrans: {"kind":"UInt32"},
+    DupAcksIn: {"kind":"UInt32"},
+    TimeoutEpisodes: {"kind":"UInt32"},
+    SynRetrans: {"kind":"Byte"},
+    SndLimTransRwin: {"kind":"UInt32"},
+    SndLimTimeRwin: {"kind":"UInt32"},
+    SndLimBytesRwin: {"kind":"UInt64"},
+    SndLimTransCwnd: {"kind":"UInt32"},
+    SndLimTimeCwnd: {"kind":"UInt32"},
+    SndLimBytesCwnd: {"kind":"UInt64"},
+    SndLimTransSnd: {"kind":"UInt32"},
+    SndLimTimeSnd: {"kind":"UInt32"},
+    SndLimBytesSnd: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: INET_PORT_RANGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INET_PORT_RANGE = extern struct {
+    StartPort: {"kind":"UInt16"},
+    NumberOfPorts: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: INET_PORT_RESERVATION_TOKEN
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INET_PORT_RESERVATION_TOKEN = extern struct {
+    Token: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: INET_PORT_RESERVATION_INSTANCE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INET_PORT_RESERVATION_INSTANCE = extern struct {
+    Reservation: Windows.Win32.WinSock.INET_PORT_RANGE,
+    Token: Windows.Win32.WinSock.INET_PORT_RESERVATION_TOKEN,
+};
+// --------------------------------------------------------
+// Type: INET_PORT_RESERVATION_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INET_PORT_RESERVATION_INFORMATION = extern struct {
+    OwningPid: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SOCKET_USAGE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SOCKET_USAGE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: SOCKET_SECURITY_PROTOCOL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SOCKET_SECURITY_PROTOCOL = *opaque{
+};
+// --------------------------------------------------------
+// Type: SOCKET_SECURITY_SETTINGS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SOCKET_SECURITY_SETTINGS = extern struct {
+    SecurityProtocol: Windows.Win32.WinSock.SOCKET_SECURITY_PROTOCOL,
+    SecurityFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SOCKET_SECURITY_SETTINGS_IPSEC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SOCKET_SECURITY_SETTINGS_IPSEC = extern struct {
+    SecurityProtocol: Windows.Win32.WinSock.SOCKET_SECURITY_PROTOCOL,
+    SecurityFlags: {"kind":"UInt32"},
+    IpsecFlags: {"kind":"UInt32"},
+    AuthipMMPolicyKey: Guid,
+    AuthipQMPolicyKey: Guid,
+    Reserved: Guid,
+    Reserved2: {"kind":"UInt64"},
+    UserNameStringLen: {"kind":"UInt32"},
+    DomainNameStringLen: {"kind":"UInt32"},
+    PasswordStringLen: {"kind":"UInt32"},
+    AllStrings: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: SOCKET_PEER_TARGET_NAME
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SOCKET_PEER_TARGET_NAME = extern struct {
+    SecurityProtocol: Windows.Win32.WinSock.SOCKET_SECURITY_PROTOCOL,
+    PeerAddress: Windows.Win32.NetworkDrivers.SOCKADDR_STORAGE_LH,
+    PeerTargetNameStringLen: {"kind":"UInt32"},
+    AllStrings: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: SOCKET_SECURITY_QUERY_TEMPLATE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SOCKET_SECURITY_QUERY_TEMPLATE = extern struct {
+    SecurityProtocol: Windows.Win32.WinSock.SOCKET_SECURITY_PROTOCOL,
+    PeerAddress: Windows.Win32.NetworkDrivers.SOCKADDR_STORAGE_LH,
+    PeerTokenAccessMask: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SOCKET_SECURITY_QUERY_TEMPLATE_IPSEC2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SOCKET_SECURITY_QUERY_TEMPLATE_IPSEC2 = extern struct {
+    SecurityProtocol: Windows.Win32.WinSock.SOCKET_SECURITY_PROTOCOL,
+    PeerAddress: Windows.Win32.NetworkDrivers.SOCKADDR_STORAGE_LH,
+    PeerTokenAccessMask: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+    FieldMask: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SOCKET_SECURITY_QUERY_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SOCKET_SECURITY_QUERY_INFO = extern struct {
+    SecurityProtocol: Windows.Win32.WinSock.SOCKET_SECURITY_PROTOCOL,
+    Flags: {"kind":"UInt32"},
+    PeerApplicationAccessTokenHandle: {"kind":"UInt64"},
+    PeerMachineAccessTokenHandle: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: SOCKET_SECURITY_QUERY_INFO_IPSEC2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SOCKET_SECURITY_QUERY_INFO_IPSEC2 = extern struct {
+    SecurityProtocol: Windows.Win32.WinSock.SOCKET_SECURITY_PROTOCOL,
+    Flags: {"kind":"UInt32"},
+    PeerApplicationAccessTokenHandle: {"kind":"UInt64"},
+    PeerMachineAccessTokenHandle: {"kind":"UInt64"},
+    MmSaId: {"kind":"UInt64"},
+    QmSaId: {"kind":"UInt64"},
+    NegotiationWinerr: {"kind":"UInt32"},
+    SaLookupContext: Guid,
+};
+// --------------------------------------------------------
+// Type: RSS_SCALABILITY_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RSS_SCALABILITY_INFO = extern struct {
+    RssEnabled: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: WSA_COMPATIBILITY_BEHAVIOR_ID
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSA_COMPATIBILITY_BEHAVIOR_ID = *opaque{
+};
+// --------------------------------------------------------
+// Type: WSA_COMPATIBILITY_MODE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSA_COMPATIBILITY_MODE = extern struct {
+    BehaviorId: Windows.Win32.WinSock.WSA_COMPATIBILITY_BEHAVIOR_ID,
+    TargetOsVersion: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: RIO_BUFFERID_t
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const RIO_BUFFERID_t = opaque {
+};
+// --------------------------------------------------------
+// Type: RIO_CQ_t
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const RIO_CQ_t = opaque {
+};
+// --------------------------------------------------------
+// Type: RIO_RQ_t
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const RIO_RQ_t = opaque {
+};
+// --------------------------------------------------------
+// Type: RIORESULT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RIORESULT = extern struct {
+    Status: {"kind":"Int32"},
+    BytesTransferred: {"kind":"UInt32"},
+    SocketContext: {"kind":"UInt64"},
+    RequestContext: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: RIO_BUF
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RIO_BUF = extern struct {
+    BufferId: {"kind""Ptr","child":Windows.Win32.WinSock.RIO_BUFFERID_t},
+    Offset: {"kind":"UInt32"},
+    Length: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: RIO_CMSG_BUFFER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RIO_CMSG_BUFFER = extern struct {
+    TotalLength: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ATM_ADDRESS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ATM_ADDRESS = extern struct {
+    AddressType: {"kind":"UInt32"},
+    NumofDigits: {"kind":"UInt32"},
+    Addr: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: ATM_BLLI
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ATM_BLLI = extern struct {
+    Layer2Protocol: {"kind":"UInt32"},
+    Layer2UserSpecifiedProtocol: {"kind":"UInt32"},
+    Layer3Protocol: {"kind":"UInt32"},
+    Layer3UserSpecifiedProtocol: {"kind":"UInt32"},
+    Layer3IPI: {"kind":"UInt32"},
+    SnapID: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: ATM_BHLI
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ATM_BHLI = extern struct {
+    HighLayerInfoType: {"kind":"UInt32"},
+    HighLayerInfoLength: {"kind":"UInt32"},
+    HighLayerInfo: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: sockaddr_atm
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const sockaddr_atm = extern struct {
+    satm_family: {"kind":"UInt16"},
+    satm_number: Windows.Win32.WinSock.ATM_ADDRESS,
+    satm_blli: Windows.Win32.WinSock.ATM_BLLI,
+    satm_bhli: Windows.Win32.WinSock.ATM_BHLI,
+};
+// --------------------------------------------------------
+// Type: Q2931_IE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const Q2931_IE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: Q2931_IE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const Q2931_IE = extern struct {
+    IEType: Windows.Win32.WinSock.Q2931_IE_TYPE,
+    IELength: {"kind":"UInt32"},
+    IE: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: AAL_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const AAL_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: AAL5_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AAL5_PARAMETERS = extern struct {
+    ForwardMaxCPCSSDUSize: {"kind":"UInt32"},
+    BackwardMaxCPCSSDUSize: {"kind":"UInt32"},
+    Mode: {"kind":"Byte"},
+    SSCSType: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: AALUSER_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AALUSER_PARAMETERS = extern struct {
+    UserDefined: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: AAL_PARAMETERS_IE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AAL_PARAMETERS_IE = extern struct {
+    AALType: Windows.Win32.WinSock.AAL_TYPE,
+    AALSpecificParameters: Windows.Win32.WinSock.AAL_PARAMETERS_IE+_AALSpecificParameters_e__Union,
+    // --------------------------------------------------------
+    // Type: _AALSpecificParameters_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _AALSpecificParameters_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: ATM_TD
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ATM_TD = extern struct {
+    PeakCellRate_CLP0: {"kind":"UInt32"},
+    PeakCellRate_CLP01: {"kind":"UInt32"},
+    SustainableCellRate_CLP0: {"kind":"UInt32"},
+    SustainableCellRate_CLP01: {"kind":"UInt32"},
+    MaxBurstSize_CLP0: {"kind":"UInt32"},
+    MaxBurstSize_CLP01: {"kind":"UInt32"},
+    Tagging: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: ATM_TRAFFIC_DESCRIPTOR_IE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ATM_TRAFFIC_DESCRIPTOR_IE = extern struct {
+    Forward: Windows.Win32.WinSock.ATM_TD,
+    Backward: Windows.Win32.WinSock.ATM_TD,
+    BestEffort: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: ATM_BROADBAND_BEARER_CAPABILITY_IE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ATM_BROADBAND_BEARER_CAPABILITY_IE = extern struct {
+    BearerClass: {"kind":"Byte"},
+    TrafficType: {"kind":"Byte"},
+    TimingRequirements: {"kind":"Byte"},
+    ClippingSusceptability: {"kind":"Byte"},
+    UserPlaneConnectionConfig: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: ATM_BLLI_IE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ATM_BLLI_IE = extern struct {
+    Layer2Protocol: {"kind":"UInt32"},
+    Layer2Mode: {"kind":"Byte"},
+    Layer2WindowSize: {"kind":"Byte"},
+    Layer2UserSpecifiedProtocol: {"kind":"UInt32"},
+    Layer3Protocol: {"kind":"UInt32"},
+    Layer3Mode: {"kind":"Byte"},
+    Layer3DefaultPacketSize: {"kind":"Byte"},
+    Layer3PacketWindowSize: {"kind":"Byte"},
+    Layer3UserSpecifiedProtocol: {"kind":"UInt32"},
+    Layer3IPI: {"kind":"UInt32"},
+    SnapID: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: ATM_CALLING_PARTY_NUMBER_IE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ATM_CALLING_PARTY_NUMBER_IE = extern struct {
+    ATM_Number: Windows.Win32.WinSock.ATM_ADDRESS,
+    Presentation_Indication: {"kind":"Byte"},
+    Screening_Indicator: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: ATM_CAUSE_IE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ATM_CAUSE_IE = extern struct {
+    Location: {"kind":"Byte"},
+    Cause: {"kind":"Byte"},
+    DiagnosticsLength: {"kind":"Byte"},
+    Diagnostics: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: ATM_QOS_CLASS_IE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ATM_QOS_CLASS_IE = extern struct {
+    QOSClassForward: {"kind":"Byte"},
+    QOSClassBackward: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: ATM_TRANSIT_NETWORK_SELECTION_IE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ATM_TRANSIT_NETWORK_SELECTION_IE = extern struct {
+    TypeOfNetworkId: {"kind":"Byte"},
+    NetworkIdPlan: {"kind":"Byte"},
+    NetworkIdLength: {"kind":"Byte"},
+    NetworkId: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: ATM_CONNECTION_ID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ATM_CONNECTION_ID = extern struct {
+    DeviceNumber: {"kind":"UInt32"},
+    VPI: {"kind":"UInt32"},
+    VCI: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ATM_PVC_PARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ATM_PVC_PARAMS = extern struct {
+    PvcConnectionId: Windows.Win32.WinSock.ATM_CONNECTION_ID,
+    PvcQos: Windows.Win32.QualityOfService.QOS,
+};
+// --------------------------------------------------------
+// Type: NAPI_PROVIDER_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NAPI_PROVIDER_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: NAPI_PROVIDER_LEVEL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NAPI_PROVIDER_LEVEL = *opaque{
+};
+// --------------------------------------------------------
+// Type: NAPI_DOMAIN_DESCRIPTION_BLOB
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NAPI_DOMAIN_DESCRIPTION_BLOB = extern struct {
+    AuthLevel: {"kind":"UInt32"},
+    cchDomainName: {"kind":"UInt32"},
+    OffsetNextDomainDescription: {"kind":"UInt32"},
+    OffsetThisDomainName: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: NAPI_PROVIDER_INSTALLATION_BLOB
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NAPI_PROVIDER_INSTALLATION_BLOB = extern struct {
+    dwVersion: {"kind":"UInt32"},
+    dwProviderType: {"kind":"UInt32"},
+    fSupportsWildCard: {"kind":"UInt32"},
+    cDomains: {"kind":"UInt32"},
+    OffsetFirstDomain: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: TRANSMIT_FILE_BUFFERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TRANSMIT_FILE_BUFFERS = extern struct {
+    Head: {"kind""Ptr","child":{"kind":"Void"}},
+    HeadLength: {"kind":"UInt32"},
+    Tail: {"kind""Ptr","child":{"kind":"Void"}},
+    TailLength: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: LPFN_TRANSMITFILE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFN_TRANSMITFILE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPFN_ACCEPTEX
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFN_ACCEPTEX = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPFN_GETACCEPTEXSOCKADDRS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFN_GETACCEPTEXSOCKADDRS = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: TRANSMIT_PACKETS_ELEMENT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TRANSMIT_PACKETS_ELEMENT = extern struct {
+    dwElFlags: {"kind":"UInt32"},
+    cLength: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.WinSock.TRANSMIT_PACKETS_ELEMENT+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            nFileOffset: Windows.Win32.SystemServices.LARGE_INTEGER,
+            hFile: Windows.Win32.SystemServices.HANDLE,
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: LPFN_TRANSMITPACKETS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFN_TRANSMITPACKETS = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPFN_CONNECTEX
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFN_CONNECTEX = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPFN_DISCONNECTEX
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFN_DISCONNECTEX = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: NLA_BLOB_DATA_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NLA_BLOB_DATA_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: NLA_CONNECTIVITY_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NLA_CONNECTIVITY_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: NLA_INTERNET
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NLA_INTERNET = *opaque{
+};
+// --------------------------------------------------------
+// Type: NLA_BLOB
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NLA_BLOB = extern struct {
+    header: Windows.Win32.WinSock.NLA_BLOB+_header_e__Struct,
+    data: Windows.Win32.WinSock.NLA_BLOB+_data_e__Union,
+    // --------------------------------------------------------
+    // Type: _data_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _data_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _ICS_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _ICS_e__Struct = extern struct {
+            remote: Windows.Win32.WinSock.NLA_BLOB+_data_e__Union+_ICS_e__Struct+_remote_e__Struct,
+            // --------------------------------------------------------
+            // Type: _remote_e__Struct
+            // TypeLayoutAttr: sequential
+            // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+            pub const _remote_e__Struct = extern struct {
+                speed: {"kind":"UInt32"},
+                type: {"kind":"UInt32"},
+                state: {"kind":"UInt32"},
+                machineName: {"kind":"Array","child": {"kind":"UInt16"}},
+                sharedAdapterName: {"kind":"Array","child": {"kind":"UInt16"}},
+            };
+        };
+        // --------------------------------------------------------
+        // Type: _locationData_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _locationData_e__Struct = extern struct {
+            information: {"kind":"Array","child": {"kind":"SByte"}},
+        };
+        // --------------------------------------------------------
+        // Type: _interfaceData_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _interfaceData_e__Struct = extern struct {
+            dwType: {"kind":"UInt32"},
+            dwSpeed: {"kind":"UInt32"},
+            adapterName: {"kind":"Array","child": {"kind":"SByte"}},
+        };
+        // --------------------------------------------------------
+        // Type: _connectivity_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _connectivity_e__Struct = extern struct {
+            type: Windows.Win32.WinSock.NLA_CONNECTIVITY_TYPE,
+            internet: Windows.Win32.WinSock.NLA_INTERNET,
+        };
+    };
+    // --------------------------------------------------------
+    // Type: _header_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _header_e__Struct = extern struct {
+        type: Windows.Win32.WinSock.NLA_BLOB_DATA_TYPE,
+        dwSize: {"kind":"UInt32"},
+        nextOffset: {"kind":"UInt32"},
+    };
+};
+// --------------------------------------------------------
+// Type: LPFN_WSARECVMSG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFN_WSARECVMSG = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WSAPOLLDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSAPOLLDATA = extern struct {
+    result: {"kind":"Int32"},
+    fds: {"kind":"UInt32"},
+    timeout: {"kind":"Int32"},
+    fdArray: {"kind":"Array","child": Windows.Win32.WinSock.WSAPOLLFD},
+};
+// --------------------------------------------------------
+// Type: WSASENDMSG
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSASENDMSG = extern struct {
+    lpMsg: {"kind""Ptr","child":Windows.Win32.WinSock.WSAMSG},
+    dwFlags: {"kind":"UInt32"},
+    lpNumberOfBytesSent: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    lpCompletionRoutine: Windows.Win32.WinSock.LPWSAOVERLAPPED_COMPLETION_ROUTINE,
+};
+// --------------------------------------------------------
+// Type: LPFN_WSASENDMSG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFN_WSASENDMSG = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPFN_WSAPOLL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFN_WSAPOLL = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPFN_RIORECEIVE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFN_RIORECEIVE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPFN_RIORECEIVEEX
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFN_RIORECEIVEEX = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPFN_RIOSEND
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFN_RIOSEND = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPFN_RIOSENDEX
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFN_RIOSENDEX = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPFN_RIOCLOSECOMPLETIONQUEUE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFN_RIOCLOSECOMPLETIONQUEUE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: RIO_NOTIFICATION_COMPLETION_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const RIO_NOTIFICATION_COMPLETION_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: RIO_NOTIFICATION_COMPLETION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RIO_NOTIFICATION_COMPLETION = extern struct {
+    Type: Windows.Win32.WinSock.RIO_NOTIFICATION_COMPLETION_TYPE,
+    Anonymous: Windows.Win32.WinSock.RIO_NOTIFICATION_COMPLETION+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Iocp_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Iocp_e__Struct = extern struct {
+            IocpHandle: Windows.Win32.SystemServices.HANDLE,
+            CompletionKey: {"kind""Ptr","child":{"kind":"Void"}},
+            Overlapped: {"kind""Ptr","child":{"kind":"Void"}},
+        };
+        // --------------------------------------------------------
+        // Type: _Event_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Event_e__Struct = extern struct {
+            EventHandle: Windows.Win32.SystemServices.HANDLE,
+            NotifyReset: Windows.Win32.SystemServices.BOOL,
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: LPFN_RIOCREATECOMPLETIONQUEUE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFN_RIOCREATECOMPLETIONQUEUE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPFN_RIOCREATEREQUESTQUEUE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFN_RIOCREATEREQUESTQUEUE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPFN_RIODEQUEUECOMPLETION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFN_RIODEQUEUECOMPLETION = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPFN_RIODEREGISTERBUFFER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFN_RIODEREGISTERBUFFER = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPFN_RIONOTIFY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFN_RIONOTIFY = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPFN_RIOREGISTERBUFFER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFN_RIOREGISTERBUFFER = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPFN_RIORESIZECOMPLETIONQUEUE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFN_RIORESIZECOMPLETIONQUEUE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPFN_RIORESIZEREQUESTQUEUE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFN_RIORESIZEREQUESTQUEUE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: RIO_EXTENSION_FUNCTION_TABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RIO_EXTENSION_FUNCTION_TABLE = extern struct {
+    cbSize: {"kind":"UInt32"},
+    RIOReceive: Windows.Win32.WinSock.LPFN_RIORECEIVE,
+    RIOReceiveEx: Windows.Win32.WinSock.LPFN_RIORECEIVEEX,
+    RIOSend: Windows.Win32.WinSock.LPFN_RIOSEND,
+    RIOSendEx: Windows.Win32.WinSock.LPFN_RIOSENDEX,
+    RIOCloseCompletionQueue: Windows.Win32.WinSock.LPFN_RIOCLOSECOMPLETIONQUEUE,
+    RIOCreateCompletionQueue: Windows.Win32.WinSock.LPFN_RIOCREATECOMPLETIONQUEUE,
+    RIOCreateRequestQueue: Windows.Win32.WinSock.LPFN_RIOCREATEREQUESTQUEUE,
+    RIODequeueCompletion: Windows.Win32.WinSock.LPFN_RIODEQUEUECOMPLETION,
+    RIODeregisterBuffer: Windows.Win32.WinSock.LPFN_RIODEREGISTERBUFFER,
+    RIONotify: Windows.Win32.WinSock.LPFN_RIONOTIFY,
+    RIORegisterBuffer: Windows.Win32.WinSock.LPFN_RIOREGISTERBUFFER,
+    RIOResizeCompletionQueue: Windows.Win32.WinSock.LPFN_RIORESIZECOMPLETIONQUEUE,
+    RIOResizeRequestQueue: Windows.Win32.WinSock.LPFN_RIORESIZEREQUESTQUEUE,
+};
+// --------------------------------------------------------
+// Type: WSPData
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSPData = extern struct {
+    wVersion: {"kind":"UInt16"},
+    wHighVersion: {"kind":"UInt16"},
+    szDescription: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WSATHREADID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSATHREADID = extern struct {
+    ThreadHandle: Windows.Win32.SystemServices.HANDLE,
+    Reserved: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: LPBLOCKINGCALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPBLOCKINGCALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSAUSERAPC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSAUSERAPC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPACCEPT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPACCEPT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPADDRESSTOSTRING
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPADDRESSTOSTRING = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPASYNCSELECT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPASYNCSELECT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPBIND
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPBIND = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPCANCELBLOCKINGCALL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPCANCELBLOCKINGCALL = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPCLEANUP
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPCLEANUP = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPCLOSESOCKET
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPCLOSESOCKET = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPCONNECT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPCONNECT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPDUPLICATESOCKET
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPDUPLICATESOCKET = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPENUMNETWORKEVENTS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPENUMNETWORKEVENTS = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPEVENTSELECT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPEVENTSELECT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPGETOVERLAPPEDRESULT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPGETOVERLAPPEDRESULT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPGETPEERNAME
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPGETPEERNAME = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPGETSOCKNAME
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPGETSOCKNAME = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPGETSOCKOPT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPGETSOCKOPT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPGETQOSBYNAME
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPGETQOSBYNAME = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPIOCTL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPIOCTL = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPJOINLEAF
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPJOINLEAF = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPLISTEN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPLISTEN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPRECV
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPRECV = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPRECVDISCONNECT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPRECVDISCONNECT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPRECVFROM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPRECVFROM = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPSELECT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPSELECT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPSEND
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPSEND = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPSENDDISCONNECT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPSENDDISCONNECT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPSENDTO
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPSENDTO = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPSETSOCKOPT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPSETSOCKOPT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPSHUTDOWN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPSHUTDOWN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPSOCKET
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPSOCKET = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSPSTRINGTOADDRESS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPSTRINGTOADDRESS = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WSPPROC_TABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSPPROC_TABLE = extern struct {
+    lpWSPAccept: Windows.Win32.WinSock.LPWSPACCEPT,
+    lpWSPAddressToString: Windows.Win32.WinSock.LPWSPADDRESSTOSTRING,
+    lpWSPAsyncSelect: Windows.Win32.WinSock.LPWSPASYNCSELECT,
+    lpWSPBind: Windows.Win32.WinSock.LPWSPBIND,
+    lpWSPCancelBlockingCall: Windows.Win32.WinSock.LPWSPCANCELBLOCKINGCALL,
+    lpWSPCleanup: Windows.Win32.WinSock.LPWSPCLEANUP,
+    lpWSPCloseSocket: Windows.Win32.WinSock.LPWSPCLOSESOCKET,
+    lpWSPConnect: Windows.Win32.WinSock.LPWSPCONNECT,
+    lpWSPDuplicateSocket: Windows.Win32.WinSock.LPWSPDUPLICATESOCKET,
+    lpWSPEnumNetworkEvents: Windows.Win32.WinSock.LPWSPENUMNETWORKEVENTS,
+    lpWSPEventSelect: Windows.Win32.WinSock.LPWSPEVENTSELECT,
+    lpWSPGetOverlappedResult: Windows.Win32.WinSock.LPWSPGETOVERLAPPEDRESULT,
+    lpWSPGetPeerName: Windows.Win32.WinSock.LPWSPGETPEERNAME,
+    lpWSPGetSockName: Windows.Win32.WinSock.LPWSPGETSOCKNAME,
+    lpWSPGetSockOpt: Windows.Win32.WinSock.LPWSPGETSOCKOPT,
+    lpWSPGetQOSByName: Windows.Win32.WinSock.LPWSPGETQOSBYNAME,
+    lpWSPIoctl: Windows.Win32.WinSock.LPWSPIOCTL,
+    lpWSPJoinLeaf: Windows.Win32.WinSock.LPWSPJOINLEAF,
+    lpWSPListen: Windows.Win32.WinSock.LPWSPLISTEN,
+    lpWSPRecv: Windows.Win32.WinSock.LPWSPRECV,
+    lpWSPRecvDisconnect: Windows.Win32.WinSock.LPWSPRECVDISCONNECT,
+    lpWSPRecvFrom: Windows.Win32.WinSock.LPWSPRECVFROM,
+    lpWSPSelect: Windows.Win32.WinSock.LPWSPSELECT,
+    lpWSPSend: Windows.Win32.WinSock.LPWSPSEND,
+    lpWSPSendDisconnect: Windows.Win32.WinSock.LPWSPSENDDISCONNECT,
+    lpWSPSendTo: Windows.Win32.WinSock.LPWSPSENDTO,
+    lpWSPSetSockOpt: Windows.Win32.WinSock.LPWSPSETSOCKOPT,
+    lpWSPShutdown: Windows.Win32.WinSock.LPWSPSHUTDOWN,
+    lpWSPSocket: Windows.Win32.WinSock.LPWSPSOCKET,
+    lpWSPStringToAddress: Windows.Win32.WinSock.LPWSPSTRINGTOADDRESS,
+};
+// --------------------------------------------------------
+// Type: LPWPUCLOSEEVENT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWPUCLOSEEVENT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWPUCLOSESOCKETHANDLE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWPUCLOSESOCKETHANDLE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWPUCREATEEVENT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWPUCREATEEVENT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWPUCREATESOCKETHANDLE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWPUCREATESOCKETHANDLE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWPUFDISSET
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWPUFDISSET = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWPUGETPROVIDERPATH
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWPUGETPROVIDERPATH = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWPUMODIFYIFSHANDLE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWPUMODIFYIFSHANDLE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWPUPOSTMESSAGE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWPUPOSTMESSAGE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWPUQUERYBLOCKINGCALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWPUQUERYBLOCKINGCALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWPUQUERYSOCKETHANDLECONTEXT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWPUQUERYSOCKETHANDLECONTEXT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWPUQUEUEAPC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWPUQUEUEAPC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWPURESETEVENT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWPURESETEVENT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWPUSETEVENT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWPUSETEVENT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWPUOPENCURRENTTHREAD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWPUOPENCURRENTTHREAD = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWPUCLOSETHREAD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWPUCLOSETHREAD = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWPUCOMPLETEOVERLAPPEDREQUEST
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWPUCOMPLETEOVERLAPPEDREQUEST = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WSPUPCALLTABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSPUPCALLTABLE = extern struct {
+    lpWPUCloseEvent: Windows.Win32.WinSock.LPWPUCLOSEEVENT,
+    lpWPUCloseSocketHandle: Windows.Win32.WinSock.LPWPUCLOSESOCKETHANDLE,
+    lpWPUCreateEvent: Windows.Win32.WinSock.LPWPUCREATEEVENT,
+    lpWPUCreateSocketHandle: Windows.Win32.WinSock.LPWPUCREATESOCKETHANDLE,
+    lpWPUFDIsSet: Windows.Win32.WinSock.LPWPUFDISSET,
+    lpWPUGetProviderPath: Windows.Win32.WinSock.LPWPUGETPROVIDERPATH,
+    lpWPUModifyIFSHandle: Windows.Win32.WinSock.LPWPUMODIFYIFSHANDLE,
+    lpWPUPostMessage: Windows.Win32.WinSock.LPWPUPOSTMESSAGE,
+    lpWPUQueryBlockingCallback: Windows.Win32.WinSock.LPWPUQUERYBLOCKINGCALLBACK,
+    lpWPUQuerySocketHandleContext: Windows.Win32.WinSock.LPWPUQUERYSOCKETHANDLECONTEXT,
+    lpWPUQueueApc: Windows.Win32.WinSock.LPWPUQUEUEAPC,
+    lpWPUResetEvent: Windows.Win32.WinSock.LPWPURESETEVENT,
+    lpWPUSetEvent: Windows.Win32.WinSock.LPWPUSETEVENT,
+    lpWPUOpenCurrentThread: Windows.Win32.WinSock.LPWPUOPENCURRENTTHREAD,
+    lpWPUCloseThread: Windows.Win32.WinSock.LPWPUCLOSETHREAD,
+};
+// --------------------------------------------------------
+// Type: LPWSPSTARTUP
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSPSTARTUP = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSCENUMPROTOCOLS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSCENUMPROTOCOLS = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSCDEINSTALLPROVIDER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSCDEINSTALLPROVIDER = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSCINSTALLPROVIDER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSCINSTALLPROVIDER = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSCGETPROVIDERPATH
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSCGETPROVIDERPATH = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSCUPDATEPROVIDER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSCUPDATEPROVIDER = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WSC_PROVIDER_INFO_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WSC_PROVIDER_INFO_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WSC_PROVIDER_AUDIT_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WSC_PROVIDER_AUDIT_INFO = extern struct {
+    RecordSize: {"kind":"UInt32"},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: LPWSCINSTALLNAMESPACE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSCINSTALLNAMESPACE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSCUNINSTALLNAMESPACE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSCUNINSTALLNAMESPACE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSCENABLENSPROVIDER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSCENABLENSPROVIDER = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPNSPCLEANUP
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPNSPCLEANUP = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPNSPLOOKUPSERVICEBEGIN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPNSPLOOKUPSERVICEBEGIN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPNSPLOOKUPSERVICENEXT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPNSPLOOKUPSERVICENEXT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPNSPIOCTL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPNSPIOCTL = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPNSPLOOKUPSERVICEEND
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPNSPLOOKUPSERVICEEND = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPNSPSETSERVICE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPNSPSETSERVICE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPNSPINSTALLSERVICECLASS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPNSPINSTALLSERVICECLASS = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPNSPREMOVESERVICECLASS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPNSPREMOVESERVICECLASS = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPNSPGETSERVICECLASSINFO
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPNSPGETSERVICECLASSINFO = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: NSP_ROUTINE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NSP_ROUTINE = extern struct {
+    cbSize: {"kind":"UInt32"},
+    dwMajorVersion: {"kind":"UInt32"},
+    dwMinorVersion: {"kind":"UInt32"},
+    NSPCleanup: Windows.Win32.WinSock.LPNSPCLEANUP,
+    NSPLookupServiceBegin: Windows.Win32.WinSock.LPNSPLOOKUPSERVICEBEGIN,
+    NSPLookupServiceNext: Windows.Win32.WinSock.LPNSPLOOKUPSERVICENEXT,
+    NSPLookupServiceEnd: Windows.Win32.WinSock.LPNSPLOOKUPSERVICEEND,
+    NSPSetService: Windows.Win32.WinSock.LPNSPSETSERVICE,
+    NSPInstallServiceClass: Windows.Win32.WinSock.LPNSPINSTALLSERVICECLASS,
+    NSPRemoveServiceClass: Windows.Win32.WinSock.LPNSPREMOVESERVICECLASS,
+    NSPGetServiceClassInfo: Windows.Win32.WinSock.LPNSPGETSERVICECLASSINFO,
+    NSPIoctl: Windows.Win32.WinSock.LPNSPIOCTL,
+};
+// --------------------------------------------------------
+// Type: LPNSPSTARTUP
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPNSPSTARTUP = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPNSPV2STARTUP
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPNSPV2STARTUP = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPNSPV2CLEANUP
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPNSPV2CLEANUP = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPNSPV2LOOKUPSERVICEBEGIN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPNSPV2LOOKUPSERVICEBEGIN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPNSPV2LOOKUPSERVICENEXTEX
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPNSPV2LOOKUPSERVICENEXTEX = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPNSPV2LOOKUPSERVICEEND
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPNSPV2LOOKUPSERVICEEND = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPNSPV2SETSERVICEEX
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPNSPV2SETSERVICEEX = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPNSPV2CLIENTSESSIONRUNDOWN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPNSPV2CLIENTSESSIONRUNDOWN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: NSPV2_ROUTINE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NSPV2_ROUTINE = extern struct {
+    cbSize: {"kind":"UInt32"},
+    dwMajorVersion: {"kind":"UInt32"},
+    dwMinorVersion: {"kind":"UInt32"},
+    NSPv2Startup: Windows.Win32.WinSock.LPNSPV2STARTUP,
+    NSPv2Cleanup: Windows.Win32.WinSock.LPNSPV2CLEANUP,
+    NSPv2LookupServiceBegin: Windows.Win32.WinSock.LPNSPV2LOOKUPSERVICEBEGIN,
+    NSPv2LookupServiceNextEx: Windows.Win32.WinSock.LPNSPV2LOOKUPSERVICENEXTEX,
+    NSPv2LookupServiceEnd: Windows.Win32.WinSock.LPNSPV2LOOKUPSERVICEEND,
+    NSPv2SetServiceEx: Windows.Win32.WinSock.LPNSPV2SETSERVICEEX,
+    NSPv2ClientSessionRundown: Windows.Win32.WinSock.LPNSPV2CLIENTSESSIONRUNDOWN,
+};
+// --------------------------------------------------------
+// Type: NS_INFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NS_INFOA = extern struct {
+    dwNameSpace: {"kind":"UInt32"},
+    dwNameSpaceFlags: {"kind":"UInt32"},
+    lpNameSpace: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: NS_INFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NS_INFOW = extern struct {
+    dwNameSpace: {"kind":"UInt32"},
+    dwNameSpaceFlags: {"kind":"UInt32"},
+    lpNameSpace: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: SERVICE_TYPE_VALUE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVICE_TYPE_VALUE = extern struct {
+    dwNameSpace: {"kind":"UInt32"},
+    dwValueType: {"kind":"UInt32"},
+    dwValueSize: {"kind":"UInt32"},
+    dwValueNameOffset: {"kind":"UInt32"},
+    dwValueOffset: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVICE_TYPE_VALUE_ABSA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVICE_TYPE_VALUE_ABSA = extern struct {
+    dwNameSpace: {"kind":"UInt32"},
+    dwValueType: {"kind":"UInt32"},
+    dwValueSize: {"kind":"UInt32"},
+    lpValueName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpValue: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: SERVICE_TYPE_VALUE_ABSW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVICE_TYPE_VALUE_ABSW = extern struct {
+    dwNameSpace: {"kind":"UInt32"},
+    dwValueType: {"kind":"UInt32"},
+    dwValueSize: {"kind":"UInt32"},
+    lpValueName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpValue: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: SERVICE_TYPE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVICE_TYPE_INFO = extern struct {
+    dwTypeNameOffset: {"kind":"UInt32"},
+    dwValueCount: {"kind":"UInt32"},
+    Values: {"kind":"Array","child": Windows.Win32.WinSock.SERVICE_TYPE_VALUE},
+};
+// --------------------------------------------------------
+// Type: SERVICE_TYPE_INFO_ABSA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVICE_TYPE_INFO_ABSA = extern struct {
+    lpTypeName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwValueCount: {"kind":"UInt32"},
+    Values: {"kind":"Array","child": Windows.Win32.WinSock.SERVICE_TYPE_VALUE_ABSA},
+};
+// --------------------------------------------------------
+// Type: SERVICE_TYPE_INFO_ABSW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVICE_TYPE_INFO_ABSW = extern struct {
+    lpTypeName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwValueCount: {"kind":"UInt32"},
+    Values: {"kind":"Array","child": Windows.Win32.WinSock.SERVICE_TYPE_VALUE_ABSW},
+};
+// --------------------------------------------------------
+// Type: SERVICE_ADDRESS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVICE_ADDRESS = extern struct {
+    dwAddressType: {"kind":"UInt32"},
+    dwAddressFlags: {"kind":"UInt32"},
+    dwAddressLength: {"kind":"UInt32"},
+    dwPrincipalLength: {"kind":"UInt32"},
+    lpAddress: {"kind""Ptr","child":{"kind":"Byte"}},
+    lpPrincipal: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: SERVICE_ADDRESSES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVICE_ADDRESSES = extern struct {
+    dwAddressCount: {"kind":"UInt32"},
+    Addresses: {"kind":"Array","child": Windows.Win32.WinSock.SERVICE_ADDRESS},
+};
+// --------------------------------------------------------
+// Type: SERVICE_INFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVICE_INFOA = extern struct {
+    lpServiceType: {"kind""Ptr","child":Guid},
+    lpServiceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpComment: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpLocale: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwDisplayHint: {"kind":"UInt32"},
+    dwVersion: {"kind":"UInt32"},
+    dwTime: {"kind":"UInt32"},
+    lpMachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpServiceAddress: {"kind""Ptr","child":Windows.Win32.WinSock.SERVICE_ADDRESSES},
+    ServiceSpecificInfo: Windows.Win32.WinSock.BLOB,
+};
+// --------------------------------------------------------
+// Type: SERVICE_INFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVICE_INFOW = extern struct {
+    lpServiceType: {"kind""Ptr","child":Guid},
+    lpServiceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpComment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpLocale: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwDisplayHint: {"kind":"UInt32"},
+    dwVersion: {"kind":"UInt32"},
+    dwTime: {"kind":"UInt32"},
+    lpMachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpServiceAddress: {"kind""Ptr","child":Windows.Win32.WinSock.SERVICE_ADDRESSES},
+    ServiceSpecificInfo: Windows.Win32.WinSock.BLOB,
+};
+// --------------------------------------------------------
+// Type: NS_SERVICE_INFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NS_SERVICE_INFOA = extern struct {
+    dwNameSpace: {"kind":"UInt32"},
+    ServiceInfo: Windows.Win32.WinSock.SERVICE_INFOA,
+};
+// --------------------------------------------------------
+// Type: NS_SERVICE_INFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NS_SERVICE_INFOW = extern struct {
+    dwNameSpace: {"kind":"UInt32"},
+    ServiceInfo: Windows.Win32.WinSock.SERVICE_INFOW,
+};
+// --------------------------------------------------------
+// Type: PROTOCOL_INFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PROTOCOL_INFOA = extern struct {
+    dwServiceFlags: {"kind":"UInt32"},
+    iAddressFamily: {"kind":"Int32"},
+    iMaxSockAddr: {"kind":"Int32"},
+    iMinSockAddr: {"kind":"Int32"},
+    iSocketType: {"kind":"Int32"},
+    iProtocol: {"kind":"Int32"},
+    dwMessageSize: {"kind":"UInt32"},
+    lpProtocol: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: PROTOCOL_INFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PROTOCOL_INFOW = extern struct {
+    dwServiceFlags: {"kind":"UInt32"},
+    iAddressFamily: {"kind":"Int32"},
+    iMaxSockAddr: {"kind":"Int32"},
+    iMinSockAddr: {"kind":"Int32"},
+    iSocketType: {"kind":"Int32"},
+    iProtocol: {"kind":"Int32"},
+    dwMessageSize: {"kind":"UInt32"},
+    lpProtocol: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: NETRESOURCE2A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NETRESOURCE2A = extern struct {
+    dwScope: {"kind":"UInt32"},
+    dwType: {"kind":"UInt32"},
+    dwUsage: {"kind":"UInt32"},
+    dwDisplayType: {"kind":"UInt32"},
+    lpLocalName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpRemoteName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpComment: {"kind""Ptr","child":{"kind":"SByte"}},
+    ns_info: Windows.Win32.WinSock.NS_INFOA,
+    ServiceType: Guid,
+    dwProtocols: {"kind":"UInt32"},
+    lpiProtocols: {"kind""Ptr","child":{"kind":"Int32"}},
+};
+// --------------------------------------------------------
+// Type: NETRESOURCE2W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NETRESOURCE2W = extern struct {
+    dwScope: {"kind":"UInt32"},
+    dwType: {"kind":"UInt32"},
+    dwUsage: {"kind":"UInt32"},
+    dwDisplayType: {"kind":"UInt32"},
+    lpLocalName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpRemoteName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpComment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ns_info: Windows.Win32.WinSock.NS_INFOA,
+    ServiceType: Guid,
+    dwProtocols: {"kind":"UInt32"},
+    lpiProtocols: {"kind""Ptr","child":{"kind":"Int32"}},
+};
+// --------------------------------------------------------
+// Type: LPFN_NSPAPI
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFN_NSPAPI = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPSERVICE_CALLBACK_PROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPSERVICE_CALLBACK_PROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: SERVICE_ASYNC_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVICE_ASYNC_INFO = extern struct {
+    lpServiceCallbackProc: Windows.Win32.WinSock.LPSERVICE_CALLBACK_PROC,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+    hAsyncTaskHandle: Windows.Win32.SystemServices.HANDLE,
+};
+// --------------------------------------------------------
+// Type: LPLOOKUPSERVICE_COMPLETION_ROUTINE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPLOOKUPSERVICE_COMPLETION_ROUTINE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSCWRITEPROVIDERORDER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSCWRITEPROVIDERORDER = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWSCWRITENAMESPACEORDER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWSCWRITENAMESPACEORDER = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn __WSAFDIsSet(
+    fd: {"kind":"UIntPtr"},
+    param1: {"kind""Ptr","child":Windows.Win32.WinSock.fd_set},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn accept(
+    s: {"kind":"UIntPtr"},
+    addr: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    addrlen: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn bind(
+    s: {"kind":"UIntPtr"},
+    name: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    namelen: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn closesocket(
+    s: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn connect(
+    s: {"kind":"UIntPtr"},
+    name: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    namelen: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn ioctlsocket(
+    s: {"kind":"UIntPtr"},
+    cmd: {"kind":"Int32"},
+    argp: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn getpeername(
+    s: {"kind":"UIntPtr"},
+    name: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    namelen: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn getsockname(
+    s: {"kind":"UIntPtr"},
+    name: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    namelen: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn getsockopt(
+    s: {"kind":"UIntPtr"},
+    level: {"kind":"Int32"},
+    optname: {"kind":"Int32"},
+    optval: {"kind""Ptr","child":{"kind":"SByte"}},
+    optlen: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn htonl(
+    hostlong: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn htons(
+    hostshort: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn inet_addr(
+    cp: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn inet_ntoa(
+    in: Windows.Win32.WinSock.in_addr,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn listen(
+    s: {"kind":"UIntPtr"},
+    backlog: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn ntohl(
+    netlong: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn ntohs(
+    netshort: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn recv(
+    s: {"kind":"UIntPtr"},
+    buf: {"kind""Ptr","child":{"kind":"SByte"}},
+    len: {"kind":"Int32"},
+    flags: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn recvfrom(
+    s: {"kind":"UIntPtr"},
+    buf: {"kind""Ptr","child":{"kind":"SByte"}},
+    len: {"kind":"Int32"},
+    flags: {"kind":"Int32"},
+    from: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    fromlen: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn select(
+    nfds: {"kind":"Int32"},
+    readfds: {"kind""Ptr","child":Windows.Win32.WinSock.fd_set},
+    writefds: {"kind""Ptr","child":Windows.Win32.WinSock.fd_set},
+    exceptfds: {"kind""Ptr","child":Windows.Win32.WinSock.fd_set},
+    timeout: {"kind""Ptr","child":Windows.Win32.WinSock.timeval},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn send(
+    s: {"kind":"UIntPtr"},
+    buf: {"kind""Ptr","child":{"kind":"SByte"}},
+    len: {"kind":"Int32"},
+    flags: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn sendto(
+    s: {"kind":"UIntPtr"},
+    buf: {"kind""Ptr","child":{"kind":"SByte"}},
+    len: {"kind":"Int32"},
+    flags: {"kind":"Int32"},
+    to: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    tolen: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn setsockopt(
+    s: {"kind":"UIntPtr"},
+    level: {"kind":"Int32"},
+    optname: {"kind":"Int32"},
+    optval: {"kind""Ptr","child":{"kind":"SByte"}},
+    optlen: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn shutdown(
+    s: {"kind":"UIntPtr"},
+    how: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn socket(
+    af: {"kind":"Int32"},
+    type: {"kind":"Int32"},
+    protocol: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn gethostbyaddr(
+    addr: {"kind""Ptr","child":{"kind":"SByte"}},
+    len: {"kind":"Int32"},
+    type: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn gethostbyname(
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn gethostname(
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    namelen: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn GetHostNameW(
+    name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    namelen: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn getservbyport(
+    port: {"kind":"Int32"},
+    proto: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn getservbyname(
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    proto: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn getprotobynumber(
+    number: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn getprotobyname(
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAStartup(
+    wVersionRequested: {"kind":"UInt16"},
+    lpWSAData: {"kind""Ptr","child":Windows.Win32.WinSock.WSAData},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSACleanup(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSASetLastError(
+    iError: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAGetLastError(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAIsBlocking(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAUnhookBlockingHook(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSASetBlockingHook(
+    lpBlockFunc: Windows.Win32.SystemServices.FARPROC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSACancelBlockingCall(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAAsyncGetServByName(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    wMsg: {"kind":"UInt32"},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    proto: {"kind""Ptr","child":{"kind":"SByte"}},
+    buf: {"kind""Ptr","child":{"kind":"SByte"}},
+    buflen: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAAsyncGetServByPort(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    wMsg: {"kind":"UInt32"},
+    port: {"kind":"Int32"},
+    proto: {"kind""Ptr","child":{"kind":"SByte"}},
+    buf: {"kind""Ptr","child":{"kind":"SByte"}},
+    buflen: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAAsyncGetProtoByName(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    wMsg: {"kind":"UInt32"},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    buf: {"kind""Ptr","child":{"kind":"SByte"}},
+    buflen: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAAsyncGetProtoByNumber(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    wMsg: {"kind":"UInt32"},
+    number: {"kind":"Int32"},
+    buf: {"kind""Ptr","child":{"kind":"SByte"}},
+    buflen: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAAsyncGetHostByName(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    wMsg: {"kind":"UInt32"},
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    buf: {"kind""Ptr","child":{"kind":"SByte"}},
+    buflen: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAAsyncGetHostByAddr(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    wMsg: {"kind":"UInt32"},
+    addr: {"kind""Ptr","child":{"kind":"SByte"}},
+    len: {"kind":"Int32"},
+    type: {"kind":"Int32"},
+    buf: {"kind""Ptr","child":{"kind":"SByte"}},
+    buflen: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSACancelAsyncRequest(
+    hAsyncTaskHandle: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAAsyncSelect(
+    s: {"kind":"UIntPtr"},
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    wMsg: {"kind":"UInt32"},
+    lEvent: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAAccept(
+    s: {"kind":"UIntPtr"},
+    addr: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    addrlen: {"kind""Ptr","child":{"kind":"Int32"}},
+    lpfnCondition: Windows.Win32.WinSock.LPCONDITIONPROC,
+    dwCallbackData: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSACloseEvent(
+    hEvent: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAConnect(
+    s: {"kind":"UIntPtr"},
+    name: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    namelen: {"kind":"Int32"},
+    lpCallerData: {"kind""Ptr","child":Windows.Win32.WinSock.WSABUF},
+    lpCalleeData: {"kind""Ptr","child":Windows.Win32.WinSock.WSABUF},
+    lpSQOS: {"kind""Ptr","child":Windows.Win32.QualityOfService.QOS},
+    lpGQOS: {"kind""Ptr","child":Windows.Win32.QualityOfService.QOS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAConnectByNameW(
+    s: {"kind":"UIntPtr"},
+    nodename: {"kind""Ptr","child":{"kind":"UInt16"}},
+    servicename: {"kind""Ptr","child":{"kind":"UInt16"}},
+    LocalAddressLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    LocalAddress: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    RemoteAddressLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    RemoteAddress: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    timeout: {"kind""Ptr","child":Windows.Win32.WinSock.timeval},
+    Reserved: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAConnectByNameA(
+    s: {"kind":"UIntPtr"},
+    nodename: {"kind""Ptr","child":{"kind":"SByte"}},
+    servicename: {"kind""Ptr","child":{"kind":"SByte"}},
+    LocalAddressLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    LocalAddress: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    RemoteAddressLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    RemoteAddress: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    timeout: {"kind""Ptr","child":Windows.Win32.WinSock.timeval},
+    Reserved: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAConnectByList(
+    s: {"kind":"UIntPtr"},
+    SocketAddress: {"kind""Ptr","child":Windows.Win32.NetworkDrivers.SOCKET_ADDRESS_LIST},
+    LocalAddressLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    LocalAddress: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    RemoteAddressLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    RemoteAddress: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    timeout: {"kind""Ptr","child":Windows.Win32.WinSock.timeval},
+    Reserved: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSACreateEvent(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSADuplicateSocketA(
+    s: {"kind":"UIntPtr"},
+    dwProcessId: {"kind":"UInt32"},
+    lpProtocolInfo: {"kind""Ptr","child":Windows.Win32.WinSock.WSAPROTOCOL_INFOA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSADuplicateSocketW(
+    s: {"kind":"UIntPtr"},
+    dwProcessId: {"kind":"UInt32"},
+    lpProtocolInfo: {"kind""Ptr","child":Windows.Win32.WinSock.WSAPROTOCOL_INFOW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAEnumNetworkEvents(
+    s: {"kind":"UIntPtr"},
+    hEventObject: Windows.Win32.SystemServices.HANDLE,
+    lpNetworkEvents: {"kind""Ptr","child":Windows.Win32.WinSock.WSANETWORKEVENTS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAEnumProtocolsA(
+    lpiProtocols: {"kind""Ptr","child":{"kind":"Int32"}},
+    lpProtocolBuffer: {"kind""Ptr","child":Windows.Win32.WinSock.WSAPROTOCOL_INFOA},
+    lpdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAEnumProtocolsW(
+    lpiProtocols: {"kind""Ptr","child":{"kind":"Int32"}},
+    lpProtocolBuffer: {"kind""Ptr","child":Windows.Win32.WinSock.WSAPROTOCOL_INFOW},
+    lpdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAEventSelect(
+    s: {"kind":"UIntPtr"},
+    hEventObject: Windows.Win32.SystemServices.HANDLE,
+    lNetworkEvents: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAGetOverlappedResult(
+    s: {"kind":"UIntPtr"},
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    lpcbTransfer: {"kind""Ptr","child":{"kind":"UInt32"}},
+    fWait: Windows.Win32.SystemServices.BOOL,
+    lpdwFlags: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAGetQOSByName(
+    s: {"kind":"UIntPtr"},
+    lpQOSName: {"kind""Ptr","child":Windows.Win32.WinSock.WSABUF},
+    lpQOS: {"kind""Ptr","child":Windows.Win32.QualityOfService.QOS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAHtonl(
+    s: {"kind":"UIntPtr"},
+    hostlong: {"kind":"UInt32"},
+    lpnetlong: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAHtons(
+    s: {"kind":"UIntPtr"},
+    hostshort: {"kind":"UInt16"},
+    lpnetshort: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAIoctl(
+    s: {"kind":"UIntPtr"},
+    dwIoControlCode: {"kind":"UInt32"},
+    lpvInBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    cbInBuffer: {"kind":"UInt32"},
+    lpvOutBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    cbOutBuffer: {"kind":"UInt32"},
+    lpcbBytesReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    lpCompletionRoutine: Windows.Win32.WinSock.LPWSAOVERLAPPED_COMPLETION_ROUTINE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAJoinLeaf(
+    s: {"kind":"UIntPtr"},
+    name: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    namelen: {"kind":"Int32"},
+    lpCallerData: {"kind""Ptr","child":Windows.Win32.WinSock.WSABUF},
+    lpCalleeData: {"kind""Ptr","child":Windows.Win32.WinSock.WSABUF},
+    lpSQOS: {"kind""Ptr","child":Windows.Win32.QualityOfService.QOS},
+    lpGQOS: {"kind""Ptr","child":Windows.Win32.QualityOfService.QOS},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSANtohl(
+    s: {"kind":"UIntPtr"},
+    netlong: {"kind":"UInt32"},
+    lphostlong: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSANtohs(
+    s: {"kind":"UIntPtr"},
+    netshort: {"kind":"UInt16"},
+    lphostshort: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSARecv(
+    s: {"kind":"UIntPtr"},
+    lpBuffers: {"kind""Ptr","child":Windows.Win32.WinSock.WSABUF},
+    dwBufferCount: {"kind":"UInt32"},
+    lpNumberOfBytesRecvd: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpFlags: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    lpCompletionRoutine: Windows.Win32.WinSock.LPWSAOVERLAPPED_COMPLETION_ROUTINE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSARecvDisconnect(
+    s: {"kind":"UIntPtr"},
+    lpInboundDisconnectData: {"kind""Ptr","child":Windows.Win32.WinSock.WSABUF},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSARecvFrom(
+    s: {"kind":"UIntPtr"},
+    lpBuffers: {"kind""Ptr","child":Windows.Win32.WinSock.WSABUF},
+    dwBufferCount: {"kind":"UInt32"},
+    lpNumberOfBytesRecvd: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpFlags: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpFrom: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    lpFromlen: {"kind""Ptr","child":{"kind":"Int32"}},
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    lpCompletionRoutine: Windows.Win32.WinSock.LPWSAOVERLAPPED_COMPLETION_ROUTINE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAResetEvent(
+    hEvent: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSASend(
+    s: {"kind":"UIntPtr"},
+    lpBuffers: {"kind""Ptr","child":Windows.Win32.WinSock.WSABUF},
+    dwBufferCount: {"kind":"UInt32"},
+    lpNumberOfBytesSent: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwFlags: {"kind":"UInt32"},
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    lpCompletionRoutine: Windows.Win32.WinSock.LPWSAOVERLAPPED_COMPLETION_ROUTINE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSASendMsg(
+    Handle: {"kind":"UIntPtr"},
+    lpMsg: {"kind""Ptr","child":Windows.Win32.WinSock.WSAMSG},
+    dwFlags: {"kind":"UInt32"},
+    lpNumberOfBytesSent: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    lpCompletionRoutine: Windows.Win32.WinSock.LPWSAOVERLAPPED_COMPLETION_ROUTINE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSASendDisconnect(
+    s: {"kind":"UIntPtr"},
+    lpOutboundDisconnectData: {"kind""Ptr","child":Windows.Win32.WinSock.WSABUF},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSASendTo(
+    s: {"kind":"UIntPtr"},
+    lpBuffers: {"kind""Ptr","child":Windows.Win32.WinSock.WSABUF},
+    dwBufferCount: {"kind":"UInt32"},
+    lpNumberOfBytesSent: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwFlags: {"kind":"UInt32"},
+    lpTo: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    iTolen: {"kind":"Int32"},
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    lpCompletionRoutine: Windows.Win32.WinSock.LPWSAOVERLAPPED_COMPLETION_ROUTINE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSASetEvent(
+    hEvent: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSASocketA(
+    af: {"kind":"Int32"},
+    type: {"kind":"Int32"},
+    protocol: {"kind":"Int32"},
+    lpProtocolInfo: {"kind""Ptr","child":Windows.Win32.WinSock.WSAPROTOCOL_INFOA},
+    g: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSASocketW(
+    af: {"kind":"Int32"},
+    type: {"kind":"Int32"},
+    protocol: {"kind":"Int32"},
+    lpProtocolInfo: {"kind""Ptr","child":Windows.Win32.WinSock.WSAPROTOCOL_INFOW},
+    g: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAWaitForMultipleEvents(
+    cEvents: {"kind":"UInt32"},
+    lphEvents: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    fWaitAll: Windows.Win32.SystemServices.BOOL,
+    dwTimeout: {"kind":"UInt32"},
+    fAlertable: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAAddressToStringA(
+    lpsaAddress: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    dwAddressLength: {"kind":"UInt32"},
+    lpProtocolInfo: {"kind""Ptr","child":Windows.Win32.WinSock.WSAPROTOCOL_INFOA},
+    lpszAddressString: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpdwAddressStringLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAAddressToStringW(
+    lpsaAddress: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    dwAddressLength: {"kind":"UInt32"},
+    lpProtocolInfo: {"kind""Ptr","child":Windows.Win32.WinSock.WSAPROTOCOL_INFOW},
+    lpszAddressString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpdwAddressStringLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAStringToAddressA(
+    AddressString: {"kind""Ptr","child":{"kind":"SByte"}},
+    AddressFamily: {"kind":"Int32"},
+    lpProtocolInfo: {"kind""Ptr","child":Windows.Win32.WinSock.WSAPROTOCOL_INFOA},
+    lpAddress: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    lpAddressLength: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAStringToAddressW(
+    AddressString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    AddressFamily: {"kind":"Int32"},
+    lpProtocolInfo: {"kind""Ptr","child":Windows.Win32.WinSock.WSAPROTOCOL_INFOW},
+    lpAddress: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    lpAddressLength: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSALookupServiceBeginA(
+    lpqsRestrictions: {"kind""Ptr","child":Windows.Win32.WinSock.WSAQUERYSETA},
+    dwControlFlags: {"kind":"UInt32"},
+    lphLookup: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSALookupServiceBeginW(
+    lpqsRestrictions: {"kind""Ptr","child":Windows.Win32.WinSock.WSAQUERYSETW},
+    dwControlFlags: {"kind":"UInt32"},
+    lphLookup: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSALookupServiceNextA(
+    hLookup: Windows.Win32.SystemServices.HANDLE,
+    dwControlFlags: {"kind":"UInt32"},
+    lpdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpqsResults: {"kind""Ptr","child":Windows.Win32.WinSock.WSAQUERYSETA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSALookupServiceNextW(
+    hLookup: Windows.Win32.SystemServices.HANDLE,
+    dwControlFlags: {"kind":"UInt32"},
+    lpdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpqsResults: {"kind""Ptr","child":Windows.Win32.WinSock.WSAQUERYSETW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSANSPIoctl(
+    hLookup: Windows.Win32.SystemServices.HANDLE,
+    dwControlCode: {"kind":"UInt32"},
+    lpvInBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    cbInBuffer: {"kind":"UInt32"},
+    lpvOutBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    cbOutBuffer: {"kind":"UInt32"},
+    lpcbBytesReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpCompletion: {"kind""Ptr","child":Windows.Win32.WinSock.WSACOMPLETION},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSALookupServiceEnd(
+    hLookup: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAInstallServiceClassA(
+    lpServiceClassInfo: {"kind""Ptr","child":Windows.Win32.WinSock.WSASERVICECLASSINFOA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAInstallServiceClassW(
+    lpServiceClassInfo: {"kind""Ptr","child":Windows.Win32.WinSock.WSASERVICECLASSINFOW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSARemoveServiceClass(
+    lpServiceClassId: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAGetServiceClassInfoA(
+    lpProviderId: {"kind""Ptr","child":Guid},
+    lpServiceClassId: {"kind""Ptr","child":Guid},
+    lpdwBufSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpServiceClassInfo: {"kind""Ptr","child":Windows.Win32.WinSock.WSASERVICECLASSINFOA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAGetServiceClassInfoW(
+    lpProviderId: {"kind""Ptr","child":Guid},
+    lpServiceClassId: {"kind""Ptr","child":Guid},
+    lpdwBufSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpServiceClassInfo: {"kind""Ptr","child":Windows.Win32.WinSock.WSASERVICECLASSINFOW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAEnumNameSpaceProvidersA(
+    lpdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpnspBuffer: {"kind""Ptr","child":Windows.Win32.WinSock.WSANAMESPACE_INFOA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAEnumNameSpaceProvidersW(
+    lpdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpnspBuffer: {"kind""Ptr","child":Windows.Win32.WinSock.WSANAMESPACE_INFOW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAEnumNameSpaceProvidersExA(
+    lpdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpnspBuffer: {"kind""Ptr","child":Windows.Win32.WinSock.WSANAMESPACE_INFOEXA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAEnumNameSpaceProvidersExW(
+    lpdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpnspBuffer: {"kind""Ptr","child":Windows.Win32.WinSock.WSANAMESPACE_INFOEXW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAGetServiceClassNameByClassIdA(
+    lpServiceClassId: {"kind""Ptr","child":Guid},
+    lpszServiceClassName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAGetServiceClassNameByClassIdW(
+    lpServiceClassId: {"kind""Ptr","child":Guid},
+    lpszServiceClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSASetServiceA(
+    lpqsRegInfo: {"kind""Ptr","child":Windows.Win32.WinSock.WSAQUERYSETA},
+    essoperation: Windows.Win32.WinSock.WSAESETSERVICEOP,
+    dwControlFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSASetServiceW(
+    lpqsRegInfo: {"kind""Ptr","child":Windows.Win32.WinSock.WSAQUERYSETW},
+    essoperation: Windows.Win32.WinSock.WSAESETSERVICEOP,
+    dwControlFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAProviderConfigChange(
+    lpNotificationHandle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    lpCompletionRoutine: Windows.Win32.WinSock.LPWSAOVERLAPPED_COMPLETION_ROUTINE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAPoll(
+    fdArray: {"kind""Ptr","child":Windows.Win32.WinSock.WSAPOLLFD},
+    fds: {"kind":"UInt32"},
+    timeout: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ntdll" fn RtlIpv4AddressToStringExA(
+    Address: {"kind""Ptr","child":Windows.Win32.WinSock.in_addr},
+    Port: {"kind":"UInt16"},
+    AddressString: {"kind""Ptr","child":{"kind":"SByte"}},
+    AddressStringLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ntdll" fn RtlIpv4StringToAddressExA(
+    AddressString: {"kind""Ptr","child":{"kind":"SByte"}},
+    Strict: {"kind":"Byte"},
+    Address: {"kind""Ptr","child":Windows.Win32.WinSock.in_addr},
+    Port: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ntdll" fn RtlIpv6AddressToStringExA(
+    Address: {"kind""Ptr","child":Windows.Win32.WinSock.in6_addr},
+    ScopeId: {"kind":"UInt32"},
+    Port: {"kind":"UInt16"},
+    AddressString: {"kind""Ptr","child":{"kind":"SByte"}},
+    AddressStringLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ntdll" fn RtlIpv6StringToAddressExA(
+    AddressString: {"kind""Ptr","child":{"kind":"SByte"}},
+    Address: {"kind""Ptr","child":Windows.Win32.WinSock.in6_addr},
+    ScopeId: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Port: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSWSOCK" fn WSARecvEx(
+    s: {"kind":"UIntPtr"},
+    buf: {"kind""Ptr","child":{"kind":"SByte"}},
+    len: {"kind":"Int32"},
+    flags: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSWSOCK" fn TransmitFile(
+    hSocket: {"kind":"UIntPtr"},
+    hFile: Windows.Win32.SystemServices.HANDLE,
+    nNumberOfBytesToWrite: {"kind":"UInt32"},
+    nNumberOfBytesPerSend: {"kind":"UInt32"},
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    lpTransmitBuffers: {"kind""Ptr","child":Windows.Win32.WinSock.TRANSMIT_FILE_BUFFERS},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSWSOCK" fn AcceptEx(
+    sListenSocket: {"kind":"UIntPtr"},
+    sAcceptSocket: {"kind":"UIntPtr"},
+    lpOutputBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwReceiveDataLength: {"kind":"UInt32"},
+    dwLocalAddressLength: {"kind":"UInt32"},
+    dwRemoteAddressLength: {"kind":"UInt32"},
+    lpdwBytesReceived: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSWSOCK" fn GetAcceptExSockaddrs(
+    lpOutputBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwReceiveDataLength: {"kind":"UInt32"},
+    dwLocalAddressLength: {"kind":"UInt32"},
+    dwRemoteAddressLength: {"kind":"UInt32"},
+    LocalSockaddr: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR}},
+    LocalSockaddrLength: {"kind""Ptr","child":{"kind":"Int32"}},
+    RemoteSockaddr: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR}},
+    RemoteSockaddrLength: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSCEnumProtocols(
+    lpiProtocols: {"kind""Ptr","child":{"kind":"Int32"}},
+    lpProtocolBuffer: {"kind""Ptr","child":Windows.Win32.WinSock.WSAPROTOCOL_INFOW},
+    lpdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpErrno: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSCDeinstallProvider(
+    lpProviderId: {"kind""Ptr","child":Guid},
+    lpErrno: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSCInstallProvider(
+    lpProviderId: {"kind""Ptr","child":Guid},
+    lpszProviderDllPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpProtocolInfoList: {"kind""Ptr","child":Windows.Win32.WinSock.WSAPROTOCOL_INFOW},
+    dwNumberOfEntries: {"kind":"UInt32"},
+    lpErrno: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSCGetProviderPath(
+    lpProviderId: {"kind""Ptr","child":Guid},
+    lpszProviderDllPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpProviderDllPathLen: {"kind""Ptr","child":{"kind":"Int32"}},
+    lpErrno: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSCUpdateProvider(
+    lpProviderId: {"kind""Ptr","child":Guid},
+    lpszProviderDllPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpProtocolInfoList: {"kind""Ptr","child":Windows.Win32.WinSock.WSAPROTOCOL_INFOW},
+    dwNumberOfEntries: {"kind":"UInt32"},
+    lpErrno: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSCSetProviderInfo(
+    lpProviderId: {"kind""Ptr","child":Guid},
+    InfoType: Windows.Win32.WinSock.WSC_PROVIDER_INFO_TYPE,
+    Info: {"kind""Ptr","child":{"kind":"Byte"}},
+    InfoSize: {"kind":"UIntPtr"},
+    Flags: {"kind":"UInt32"},
+    lpErrno: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSCGetProviderInfo(
+    lpProviderId: {"kind""Ptr","child":Guid},
+    InfoType: Windows.Win32.WinSock.WSC_PROVIDER_INFO_TYPE,
+    Info: {"kind""Ptr","child":{"kind":"Byte"}},
+    InfoSize: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    Flags: {"kind":"UInt32"},
+    lpErrno: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSCSetApplicationCategory(
+    Path: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PathLength: {"kind":"UInt32"},
+    Extra: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ExtraLength: {"kind":"UInt32"},
+    PermittedLspCategories: {"kind":"UInt32"},
+    pPrevPermLspCat: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpErrno: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSCGetApplicationCategory(
+    Path: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PathLength: {"kind":"UInt32"},
+    Extra: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ExtraLength: {"kind":"UInt32"},
+    pPermittedLspCategories: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpErrno: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WPUCompleteOverlappedRequest(
+    s: {"kind":"UIntPtr"},
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    dwError: {"kind":"UInt32"},
+    cbTransferred: {"kind":"UInt32"},
+    lpErrno: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSCInstallNameSpace(
+    lpszIdentifier: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszPathName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwNameSpace: {"kind":"UInt32"},
+    dwVersion: {"kind":"UInt32"},
+    lpProviderId: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSCUnInstallNameSpace(
+    lpProviderId: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSCInstallNameSpaceEx(
+    lpszIdentifier: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszPathName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwNameSpace: {"kind":"UInt32"},
+    dwVersion: {"kind":"UInt32"},
+    lpProviderId: {"kind""Ptr","child":Guid},
+    lpProviderSpecific: {"kind""Ptr","child":Windows.Win32.WinSock.BLOB},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSCEnableNSProvider(
+    lpProviderId: {"kind""Ptr","child":Guid},
+    fEnable: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAAdvertiseProvider(
+    puuidProviderId: {"kind""Ptr","child":Guid},
+    pNSPv2Routine: {"kind""Ptr","child":Windows.Win32.WinSock.NSPV2_ROUTINE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAUnadvertiseProvider(
+    puuidProviderId: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSAProviderCompleteAsyncCall(
+    hAsyncCall: Windows.Win32.SystemServices.HANDLE,
+    iRetCode: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "MSWSOCK" fn EnumProtocolsA(
+    lpiProtocols: {"kind""Ptr","child":{"kind":"Int32"}},
+    lpProtocolBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    lpdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "MSWSOCK" fn EnumProtocolsW(
+    lpiProtocols: {"kind""Ptr","child":{"kind":"Int32"}},
+    lpProtocolBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    lpdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "MSWSOCK" fn GetAddressByNameA(
+    dwNameSpace: {"kind":"UInt32"},
+    lpServiceType: {"kind""Ptr","child":Guid},
+    lpServiceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpiProtocols: {"kind""Ptr","child":{"kind":"Int32"}},
+    dwResolution: {"kind":"UInt32"},
+    lpServiceAsyncInfo: {"kind""Ptr","child":Windows.Win32.WinSock.SERVICE_ASYNC_INFO},
+    lpCsaddrBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    lpdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpAliasBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpdwAliasBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "MSWSOCK" fn GetAddressByNameW(
+    dwNameSpace: {"kind":"UInt32"},
+    lpServiceType: {"kind""Ptr","child":Guid},
+    lpServiceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpiProtocols: {"kind""Ptr","child":{"kind":"Int32"}},
+    dwResolution: {"kind":"UInt32"},
+    lpServiceAsyncInfo: {"kind""Ptr","child":Windows.Win32.WinSock.SERVICE_ASYNC_INFO},
+    lpCsaddrBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    lpdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpAliasBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpdwAliasBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "MSWSOCK" fn GetTypeByNameA(
+    lpServiceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpServiceType: {"kind""Ptr","child":Guid},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "MSWSOCK" fn GetTypeByNameW(
+    lpServiceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpServiceType: {"kind""Ptr","child":Guid},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "MSWSOCK" fn GetNameByTypeA(
+    lpServiceType: {"kind""Ptr","child":Guid},
+    lpServiceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwNameLength: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "MSWSOCK" fn GetNameByTypeW(
+    lpServiceType: {"kind""Ptr","child":Guid},
+    lpServiceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwNameLength: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "MSWSOCK" fn SetServiceA(
+    dwNameSpace: {"kind":"UInt32"},
+    dwOperation: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    lpServiceInfo: {"kind""Ptr","child":Windows.Win32.WinSock.SERVICE_INFOA},
+    lpServiceAsyncInfo: {"kind""Ptr","child":Windows.Win32.WinSock.SERVICE_ASYNC_INFO},
+    lpdwStatusFlags: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "MSWSOCK" fn SetServiceW(
+    dwNameSpace: {"kind":"UInt32"},
+    dwOperation: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    lpServiceInfo: {"kind""Ptr","child":Windows.Win32.WinSock.SERVICE_INFOW},
+    lpServiceAsyncInfo: {"kind""Ptr","child":Windows.Win32.WinSock.SERVICE_ASYNC_INFO},
+    lpdwStatusFlags: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "MSWSOCK" fn GetServiceA(
+    dwNameSpace: {"kind":"UInt32"},
+    lpGuid: {"kind""Ptr","child":Guid},
+    lpServiceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwProperties: {"kind":"UInt32"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    lpdwBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpServiceAsyncInfo: {"kind""Ptr","child":Windows.Win32.WinSock.SERVICE_ASYNC_INFO},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "MSWSOCK" fn GetServiceW(
+    dwNameSpace: {"kind":"UInt32"},
+    lpGuid: {"kind""Ptr","child":Guid},
+    lpServiceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwProperties: {"kind":"UInt32"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    lpdwBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpServiceAsyncInfo: {"kind""Ptr","child":Windows.Win32.WinSock.SERVICE_ASYNC_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn getaddrinfo(
+    pNodeName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pServiceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pHints: {"kind""Ptr","child":Windows.Win32.WinSock.ADDRINFOA},
+    ppResult: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WinSock.ADDRINFOA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn GetAddrInfoW(
+    pNodeName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pServiceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pHints: {"kind""Ptr","child":Windows.Win32.WinSock.addrinfoW},
+    ppResult: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WinSock.addrinfoW}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn GetAddrInfoExA(
+    pName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pServiceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwNameSpace: {"kind":"UInt32"},
+    lpNspId: {"kind""Ptr","child":Guid},
+    hints: {"kind""Ptr","child":Windows.Win32.WinSock.addrinfoexA},
+    ppResult: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WinSock.addrinfoexA}},
+    timeout: {"kind""Ptr","child":Windows.Win32.WinSock.timeval},
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    lpCompletionRoutine: Windows.Win32.WinSock.LPLOOKUPSERVICE_COMPLETION_ROUTINE,
+    lpNameHandle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn GetAddrInfoExW(
+    pName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pServiceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwNameSpace: {"kind":"UInt32"},
+    lpNspId: {"kind""Ptr","child":Guid},
+    hints: {"kind""Ptr","child":Windows.Win32.WinSock.addrinfoexW},
+    ppResult: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WinSock.addrinfoexW}},
+    timeout: {"kind""Ptr","child":Windows.Win32.WinSock.timeval},
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    lpCompletionRoutine: Windows.Win32.WinSock.LPLOOKUPSERVICE_COMPLETION_ROUTINE,
+    lpHandle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn GetAddrInfoExCancel(
+    lpHandle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn GetAddrInfoExOverlappedResult(
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn SetAddrInfoExA(
+    pName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pServiceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pAddresses: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKET_ADDRESS},
+    dwAddressCount: {"kind":"UInt32"},
+    lpBlob: {"kind""Ptr","child":Windows.Win32.WinSock.BLOB},
+    dwFlags: {"kind":"UInt32"},
+    dwNameSpace: {"kind":"UInt32"},
+    lpNspId: {"kind""Ptr","child":Guid},
+    timeout: {"kind""Ptr","child":Windows.Win32.WinSock.timeval},
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    lpCompletionRoutine: Windows.Win32.WinSock.LPLOOKUPSERVICE_COMPLETION_ROUTINE,
+    lpNameHandle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn SetAddrInfoExW(
+    pName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pServiceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pAddresses: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKET_ADDRESS},
+    dwAddressCount: {"kind":"UInt32"},
+    lpBlob: {"kind""Ptr","child":Windows.Win32.WinSock.BLOB},
+    dwFlags: {"kind":"UInt32"},
+    dwNameSpace: {"kind":"UInt32"},
+    lpNspId: {"kind""Ptr","child":Guid},
+    timeout: {"kind""Ptr","child":Windows.Win32.WinSock.timeval},
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    lpCompletionRoutine: Windows.Win32.WinSock.LPLOOKUPSERVICE_COMPLETION_ROUTINE,
+    lpNameHandle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn freeaddrinfo(
+    pAddrInfo: {"kind""Ptr","child":Windows.Win32.WinSock.ADDRINFOA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn FreeAddrInfoW(
+    pAddrInfo: {"kind""Ptr","child":Windows.Win32.WinSock.addrinfoW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn FreeAddrInfoEx(
+    pAddrInfoEx: {"kind""Ptr","child":Windows.Win32.WinSock.addrinfoexA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn FreeAddrInfoExW(
+    pAddrInfoEx: {"kind""Ptr","child":Windows.Win32.WinSock.addrinfoexW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn getnameinfo(
+    pSockaddr: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    SockaddrLength: {"kind":"Int32"},
+    pNodeBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    NodeBufferSize: {"kind":"UInt32"},
+    pServiceBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    ServiceBufferSize: {"kind":"UInt32"},
+    Flags: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn GetNameInfoW(
+    pSockaddr: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    SockaddrLength: {"kind":"Int32"},
+    pNodeBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    NodeBufferSize: {"kind":"UInt32"},
+    pServiceBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ServiceBufferSize: {"kind":"UInt32"},
+    Flags: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn inet_pton(
+    Family: {"kind":"Int32"},
+    pszAddrString: {"kind""Ptr","child":{"kind":"SByte"}},
+    pAddrBuf: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn InetPtonW(
+    Family: {"kind":"Int32"},
+    pszAddrString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pAddrBuf: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn inet_ntop(
+    Family: {"kind":"Int32"},
+    pAddr: {"kind""Ptr","child":{"kind":"Void"}},
+    pStringBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+    StringBufSize: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn InetNtopW(
+    Family: {"kind":"Int32"},
+    pAddr: {"kind""Ptr","child":{"kind":"Void"}},
+    pStringBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    StringBufSize: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "fwpuclnt" fn WSASetSocketSecurity(
+    Socket: {"kind":"UIntPtr"},
+    SecuritySettings: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKET_SECURITY_SETTINGS},
+    SecuritySettingsLen: {"kind":"UInt32"},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    CompletionRoutine: Windows.Win32.WinSock.LPWSAOVERLAPPED_COMPLETION_ROUTINE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "fwpuclnt" fn WSAQuerySocketSecurity(
+    Socket: {"kind":"UIntPtr"},
+    SecurityQueryTemplate: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKET_SECURITY_QUERY_TEMPLATE},
+    SecurityQueryTemplateLen: {"kind":"UInt32"},
+    SecurityQueryInfo: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKET_SECURITY_QUERY_INFO},
+    SecurityQueryInfoLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    CompletionRoutine: Windows.Win32.WinSock.LPWSAOVERLAPPED_COMPLETION_ROUTINE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "fwpuclnt" fn WSASetSocketPeerTargetName(
+    Socket: {"kind":"UIntPtr"},
+    PeerTargetName: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKET_PEER_TARGET_NAME},
+    PeerTargetNameLen: {"kind":"UInt32"},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    CompletionRoutine: Windows.Win32.WinSock.LPWSAOVERLAPPED_COMPLETION_ROUTINE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "fwpuclnt" fn WSADeleteSocketPeerTargetName(
+    Socket: {"kind":"UIntPtr"},
+    PeerAddr: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    PeerAddrLen: {"kind":"UInt32"},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    CompletionRoutine: Windows.Win32.WinSock.LPWSAOVERLAPPED_COMPLETION_ROUTINE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "fwpuclnt" fn WSAImpersonateSocketPeer(
+    Socket: {"kind":"UIntPtr"},
+    PeerAddr: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    PeerAddrLen: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "fwpuclnt" fn WSARevertImpersonation(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "Windows" fn SetSocketMediaStreamingMode(
+    value: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSCWriteProviderOrder(
+    lpwdCatalogEntryId: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwNumberOfEntries: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WS2_32" fn WSCWriteNameSpaceOrder(
+    lpProviderId: {"kind""Ptr","child":Guid},
+    dwNumberOfEntries: {"kind":"UInt32"},
+],
+
+"unicode_aliases": [
+     "addrinfoex"
+     "addrinfoex2"
+     "WSAPROTOCOL_INFO"
+     "WSAQUERYSET"
+     "WSAQUERYSET2"
+     "WSANSCLASSINFO"
+     "WSASERVICECLASSINFO"
+     "WSANAMESPACE_INFO"
+     "WSANAMESPACE_INFOEX"
+     "NS_INFO"
+     "SERVICE_TYPE_VALUE_ABS"
+     "SERVICE_TYPE_INFO_ABS"
+     "SERVICE_INFO"
+     "NS_SERVICE_INFO"
+     "PROTOCOL_INFO"
+     "NETRESOURCE2"
+     "WSAConnectByName"
+     "WSADuplicateSocket"
+     "WSAEnumProtocols"
+     "WSASocket"
+     "WSAAddressToString"
+     "WSAStringToAddress"
+     "WSALookupServiceBegin"
+     "WSALookupServiceNext"
+     "WSAInstallServiceClass"
+     "WSAGetServiceClassInfo"
+     "WSAEnumNameSpaceProviders"
+     "WSAEnumNameSpaceProvidersEx"
+     "WSAGetServiceClassNameByClassId"
+     "WSASetService"
+     "EnumProtocols"
+     "GetAddressByName"
+     "GetTypeByName"
+     "GetNameByType"
+     "SetService"
+     "GetService"
+     "GetAddrInfoEx"
+     "SetAddrInfoEx"
+]}

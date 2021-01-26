@@ -1,0 +1,1589 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: PERF_COUNTERSET_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PERF_COUNTERSET_INFO = extern struct {
+    CounterSetGuid: Guid,
+    ProviderGuid: Guid,
+    NumCounters: {"kind":"UInt32"},
+    InstanceType: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PERF_COUNTER_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PERF_COUNTER_INFO = extern struct {
+    CounterId: {"kind":"UInt32"},
+    Type: {"kind":"UInt32"},
+    Attrib: {"kind":"UInt64"},
+    Size: {"kind":"UInt32"},
+    DetailLevel: {"kind":"UInt32"},
+    Scale: {"kind":"Int32"},
+    Offset: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PERF_COUNTERSET_INSTANCE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PERF_COUNTERSET_INSTANCE = extern struct {
+    CounterSetGuid: Guid,
+    dwSize: {"kind":"UInt32"},
+    InstanceId: {"kind":"UInt32"},
+    InstanceNameOffset: {"kind":"UInt32"},
+    InstanceNameSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PERF_COUNTER_IDENTITY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PERF_COUNTER_IDENTITY = extern struct {
+    CounterSetGuid: Guid,
+    BufferSize: {"kind":"UInt32"},
+    CounterId: {"kind":"UInt32"},
+    InstanceId: {"kind":"UInt32"},
+    MachineOffset: {"kind":"UInt32"},
+    NameOffset: {"kind":"UInt32"},
+    Reserved: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PERFLIBREQUEST
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PERFLIBREQUEST = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PERF_MEM_ALLOC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PERF_MEM_ALLOC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PERF_MEM_FREE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PERF_MEM_FREE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PERF_PROVIDER_CONTEXT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PERF_PROVIDER_CONTEXT = extern struct {
+    ContextSize: {"kind":"UInt32"},
+    Reserved: {"kind":"UInt32"},
+    ControlCallback: Windows.Win32.Perf.PERFLIBREQUEST,
+    MemAllocRoutine: Windows.Win32.Perf.PERF_MEM_ALLOC,
+    MemFreeRoutine: Windows.Win32.Perf.PERF_MEM_FREE,
+    pMemContext: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: PERF_INSTANCE_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PERF_INSTANCE_HEADER = extern struct {
+    Size: {"kind":"UInt32"},
+    InstanceId: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PerfRegInfoType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PerfRegInfoType = *opaque{
+};
+// --------------------------------------------------------
+// Type: PERF_COUNTERSET_REG_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PERF_COUNTERSET_REG_INFO = extern struct {
+    CounterSetGuid: Guid,
+    CounterSetType: {"kind":"UInt32"},
+    DetailLevel: {"kind":"UInt32"},
+    NumCounters: {"kind":"UInt32"},
+    InstanceType: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PERF_COUNTER_REG_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PERF_COUNTER_REG_INFO = extern struct {
+    CounterId: {"kind":"UInt32"},
+    Type: {"kind":"UInt32"},
+    Attrib: {"kind":"UInt64"},
+    DetailLevel: {"kind":"UInt32"},
+    DefaultScale: {"kind":"Int32"},
+    BaseCounterId: {"kind":"UInt32"},
+    PerfTimeId: {"kind":"UInt32"},
+    PerfFreqId: {"kind":"UInt32"},
+    MultiId: {"kind":"UInt32"},
+    AggregateFunc: {"kind":"UInt32"},
+    Reserved: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PERF_STRING_BUFFER_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PERF_STRING_BUFFER_HEADER = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwCounters: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PERF_STRING_COUNTER_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PERF_STRING_COUNTER_HEADER = extern struct {
+    dwCounterId: {"kind":"UInt32"},
+    dwOffset: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PERF_COUNTER_IDENTIFIER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PERF_COUNTER_IDENTIFIER = extern struct {
+    CounterSetGuid: Guid,
+    Status: {"kind":"UInt32"},
+    Size: {"kind":"UInt32"},
+    CounterId: {"kind":"UInt32"},
+    InstanceId: {"kind":"UInt32"},
+    Index: {"kind":"UInt32"},
+    Reserved: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PERF_DATA_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PERF_DATA_HEADER = extern struct {
+    dwTotalSize: {"kind":"UInt32"},
+    dwNumCounters: {"kind":"UInt32"},
+    PerfTimeStamp: {"kind":"Int64"},
+    PerfTime100NSec: {"kind":"Int64"},
+    PerfFreq: {"kind":"Int64"},
+    SystemTime: Windows.Win32.WindowsProgramming.SYSTEMTIME,
+};
+// --------------------------------------------------------
+// Type: PerfCounterDataType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PerfCounterDataType = *opaque{
+};
+// --------------------------------------------------------
+// Type: PERF_COUNTER_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PERF_COUNTER_HEADER = extern struct {
+    dwStatus: {"kind":"UInt32"},
+    dwType: Windows.Win32.Perf.PerfCounterDataType,
+    dwSize: {"kind":"UInt32"},
+    Reserved: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PERF_MULTI_INSTANCES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PERF_MULTI_INSTANCES = extern struct {
+    dwTotalSize: {"kind":"UInt32"},
+    dwInstances: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PERF_MULTI_COUNTERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PERF_MULTI_COUNTERS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwCounters: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PERF_COUNTER_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PERF_COUNTER_DATA = extern struct {
+    dwDataSize: {"kind":"UInt32"},
+    dwSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PDH_RAW_COUNTER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PDH_RAW_COUNTER = extern struct {
+    CStatus: {"kind":"UInt32"},
+    TimeStamp: Windows.Win32.WindowsProgramming.FILETIME,
+    FirstValue: {"kind":"Int64"},
+    SecondValue: {"kind":"Int64"},
+    MultiCount: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PDH_RAW_COUNTER_ITEM_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PDH_RAW_COUNTER_ITEM_A = extern struct {
+    szName: {"kind""Ptr","child":{"kind":"SByte"}},
+    RawValue: Windows.Win32.Perf.PDH_RAW_COUNTER,
+};
+// --------------------------------------------------------
+// Type: PDH_RAW_COUNTER_ITEM_W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PDH_RAW_COUNTER_ITEM_W = extern struct {
+    szName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RawValue: Windows.Win32.Perf.PDH_RAW_COUNTER,
+};
+// --------------------------------------------------------
+// Type: PDH_FMT_COUNTERVALUE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PDH_FMT_COUNTERVALUE = extern struct {
+    CStatus: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.Perf.PDH_FMT_COUNTERVALUE+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: PDH_FMT_COUNTERVALUE_ITEM_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PDH_FMT_COUNTERVALUE_ITEM_A = extern struct {
+    szName: {"kind""Ptr","child":{"kind":"SByte"}},
+    FmtValue: Windows.Win32.Perf.PDH_FMT_COUNTERVALUE,
+};
+// --------------------------------------------------------
+// Type: PDH_FMT_COUNTERVALUE_ITEM_W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PDH_FMT_COUNTERVALUE_ITEM_W = extern struct {
+    szName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    FmtValue: Windows.Win32.Perf.PDH_FMT_COUNTERVALUE,
+};
+// --------------------------------------------------------
+// Type: PDH_STATISTICS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PDH_STATISTICS = extern struct {
+    dwFormat: {"kind":"UInt32"},
+    count: {"kind":"UInt32"},
+    min: Windows.Win32.Perf.PDH_FMT_COUNTERVALUE,
+    max: Windows.Win32.Perf.PDH_FMT_COUNTERVALUE,
+    mean: Windows.Win32.Perf.PDH_FMT_COUNTERVALUE,
+};
+// --------------------------------------------------------
+// Type: PDH_COUNTER_PATH_ELEMENTS_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PDH_COUNTER_PATH_ELEMENTS_A = extern struct {
+    szMachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szObjectName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szInstanceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szParentInstance: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwInstanceIndex: {"kind":"UInt32"},
+    szCounterName: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: PDH_COUNTER_PATH_ELEMENTS_W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PDH_COUNTER_PATH_ELEMENTS_W = extern struct {
+    szMachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szObjectName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szInstanceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szParentInstance: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwInstanceIndex: {"kind":"UInt32"},
+    szCounterName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: PDH_DATA_ITEM_PATH_ELEMENTS_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PDH_DATA_ITEM_PATH_ELEMENTS_A = extern struct {
+    szMachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ObjectGUID: Guid,
+    dwItemId: {"kind":"UInt32"},
+    szInstanceName: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: PDH_DATA_ITEM_PATH_ELEMENTS_W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PDH_DATA_ITEM_PATH_ELEMENTS_W = extern struct {
+    szMachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ObjectGUID: Guid,
+    dwItemId: {"kind":"UInt32"},
+    szInstanceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: PDH_COUNTER_INFO_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PDH_COUNTER_INFO_A = extern struct {
+    dwLength: {"kind":"UInt32"},
+    dwType: {"kind":"UInt32"},
+    CVersion: {"kind":"UInt32"},
+    CStatus: {"kind":"UInt32"},
+    lScale: {"kind":"Int32"},
+    lDefaultScale: {"kind":"Int32"},
+    dwUserData: {"kind":"UIntPtr"},
+    dwQueryUserData: {"kind":"UIntPtr"},
+    szFullPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    Anonymous: Windows.Win32.Perf.PDH_COUNTER_INFO_A+_Anonymous_e__Union,
+    szExplainText: {"kind""Ptr","child":{"kind":"SByte"}},
+    DataBuffer: {"kind":"Array","child": {"kind":"UInt32"}},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            szMachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+            szObjectName: {"kind""Ptr","child":{"kind":"SByte"}},
+            szInstanceName: {"kind""Ptr","child":{"kind":"SByte"}},
+            szParentInstance: {"kind""Ptr","child":{"kind":"SByte"}},
+            dwInstanceIndex: {"kind":"UInt32"},
+            szCounterName: {"kind""Ptr","child":{"kind":"SByte"}},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: PDH_COUNTER_INFO_W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PDH_COUNTER_INFO_W = extern struct {
+    dwLength: {"kind":"UInt32"},
+    dwType: {"kind":"UInt32"},
+    CVersion: {"kind":"UInt32"},
+    CStatus: {"kind":"UInt32"},
+    lScale: {"kind":"Int32"},
+    lDefaultScale: {"kind":"Int32"},
+    dwUserData: {"kind":"UIntPtr"},
+    dwQueryUserData: {"kind":"UIntPtr"},
+    szFullPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Anonymous: Windows.Win32.Perf.PDH_COUNTER_INFO_W+_Anonymous_e__Union,
+    szExplainText: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DataBuffer: {"kind":"Array","child": {"kind":"UInt32"}},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            szMachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+            szObjectName: {"kind""Ptr","child":{"kind":"UInt16"}},
+            szInstanceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+            szParentInstance: {"kind""Ptr","child":{"kind":"UInt16"}},
+            dwInstanceIndex: {"kind":"UInt32"},
+            szCounterName: {"kind""Ptr","child":{"kind":"UInt16"}},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: PDH_TIME_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PDH_TIME_INFO = extern struct {
+    StartTime: {"kind":"Int64"},
+    EndTime: {"kind":"Int64"},
+    SampleCount: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PDH_RAW_LOG_RECORD
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PDH_RAW_LOG_RECORD = extern struct {
+    dwStructureSize: {"kind":"UInt32"},
+    dwRecordType: {"kind":"UInt32"},
+    dwItems: {"kind":"UInt32"},
+    RawBytes: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: PDH_LOG_SERVICE_QUERY_INFO_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PDH_LOG_SERVICE_QUERY_INFO_A = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwLogQuota: {"kind":"UInt32"},
+    szLogFileCaption: {"kind""Ptr","child":{"kind":"SByte"}},
+    szDefaultDir: {"kind""Ptr","child":{"kind":"SByte"}},
+    szBaseFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwFileType: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.Perf.PDH_LOG_SERVICE_QUERY_INFO_A+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous2_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous2_e__Struct = extern struct {
+            TlNumberOfBuffers: {"kind":"UInt32"},
+            TlMinimumBuffers: {"kind":"UInt32"},
+            TlMaximumBuffers: {"kind":"UInt32"},
+            TlFreeBuffers: {"kind":"UInt32"},
+            TlBufferSize: {"kind":"UInt32"},
+            TlEventsLost: {"kind":"UInt32"},
+            TlLoggerThreadId: {"kind":"UInt32"},
+            TlBuffersWritten: {"kind":"UInt32"},
+            TlLogHandle: {"kind":"UInt32"},
+            TlLogFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+        };
+        // --------------------------------------------------------
+        // Type: _Anonymous1_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous1_e__Struct = extern struct {
+            PdlAutoNameInterval: {"kind":"UInt32"},
+            PdlAutoNameUnits: {"kind":"UInt32"},
+            PdlCommandFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+            PdlCounterList: {"kind""Ptr","child":{"kind":"SByte"}},
+            PdlAutoNameFormat: {"kind":"UInt32"},
+            PdlSampleInterval: {"kind":"UInt32"},
+            PdlLogStartTime: Windows.Win32.WindowsProgramming.FILETIME,
+            PdlLogEndTime: Windows.Win32.WindowsProgramming.FILETIME,
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: PDH_LOG_SERVICE_QUERY_INFO_W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PDH_LOG_SERVICE_QUERY_INFO_W = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwLogQuota: {"kind":"UInt32"},
+    szLogFileCaption: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szDefaultDir: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szBaseFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFileType: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.Perf.PDH_LOG_SERVICE_QUERY_INFO_W+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous2_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous2_e__Struct = extern struct {
+            TlNumberOfBuffers: {"kind":"UInt32"},
+            TlMinimumBuffers: {"kind":"UInt32"},
+            TlMaximumBuffers: {"kind":"UInt32"},
+            TlFreeBuffers: {"kind":"UInt32"},
+            TlBufferSize: {"kind":"UInt32"},
+            TlEventsLost: {"kind":"UInt32"},
+            TlLoggerThreadId: {"kind":"UInt32"},
+            TlBuffersWritten: {"kind":"UInt32"},
+            TlLogHandle: {"kind":"UInt32"},
+            TlLogFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+        };
+        // --------------------------------------------------------
+        // Type: _Anonymous1_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous1_e__Struct = extern struct {
+            PdlAutoNameInterval: {"kind":"UInt32"},
+            PdlAutoNameUnits: {"kind":"UInt32"},
+            PdlCommandFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+            PdlCounterList: {"kind""Ptr","child":{"kind":"UInt16"}},
+            PdlAutoNameFormat: {"kind":"UInt32"},
+            PdlSampleInterval: {"kind":"UInt32"},
+            PdlLogStartTime: Windows.Win32.WindowsProgramming.FILETIME,
+            PdlLogEndTime: Windows.Win32.WindowsProgramming.FILETIME,
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: CounterPathCallBack
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CounterPathCallBack = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDH_BROWSE_DLG_CONFIG_HW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PDH_BROWSE_DLG_CONFIG_HW = extern struct {
+    _bitfield: {"kind":"UInt32"},
+    hWndOwner: Windows.Win32.WindowsAndMessaging.HWND,
+    hDataSource: {"kind":"IntPtr"},
+    szReturnPathBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchReturnPathLength: {"kind":"UInt32"},
+    pCallBack: Windows.Win32.Perf.CounterPathCallBack,
+    dwCallBackArg: {"kind":"UIntPtr"},
+    CallBackStatus: {"kind":"Int32"},
+    dwDefaultDetailLevel: {"kind":"UInt32"},
+    szDialogBoxCaption: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: PDH_BROWSE_DLG_CONFIG_HA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PDH_BROWSE_DLG_CONFIG_HA = extern struct {
+    _bitfield: {"kind":"UInt32"},
+    hWndOwner: Windows.Win32.WindowsAndMessaging.HWND,
+    hDataSource: {"kind":"IntPtr"},
+    szReturnPathBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchReturnPathLength: {"kind":"UInt32"},
+    pCallBack: Windows.Win32.Perf.CounterPathCallBack,
+    dwCallBackArg: {"kind":"UIntPtr"},
+    CallBackStatus: {"kind":"Int32"},
+    dwDefaultDetailLevel: {"kind":"UInt32"},
+    szDialogBoxCaption: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: PDH_BROWSE_DLG_CONFIG_W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PDH_BROWSE_DLG_CONFIG_W = extern struct {
+    _bitfield: {"kind":"UInt32"},
+    hWndOwner: Windows.Win32.WindowsAndMessaging.HWND,
+    szDataSource: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szReturnPathBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchReturnPathLength: {"kind":"UInt32"},
+    pCallBack: Windows.Win32.Perf.CounterPathCallBack,
+    dwCallBackArg: {"kind":"UIntPtr"},
+    CallBackStatus: {"kind":"Int32"},
+    dwDefaultDetailLevel: {"kind":"UInt32"},
+    szDialogBoxCaption: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: PDH_BROWSE_DLG_CONFIG_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PDH_BROWSE_DLG_CONFIG_A = extern struct {
+    _bitfield: {"kind":"UInt32"},
+    hWndOwner: Windows.Win32.WindowsAndMessaging.HWND,
+    szDataSource: {"kind""Ptr","child":{"kind":"SByte"}},
+    szReturnPathBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchReturnPathLength: {"kind":"UInt32"},
+    pCallBack: Windows.Win32.Perf.CounterPathCallBack,
+    dwCallBackArg: {"kind":"UIntPtr"},
+    CallBackStatus: {"kind":"Int32"},
+    dwDefaultDetailLevel: {"kind":"UInt32"},
+    szDialogBoxCaption: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: PerfProviderHandle
+// TypeLayoutAttr: sequential
+// RAIIFree 'PerfStopProvider' (TODO: can we use this information?)
+pub const PerfProviderHandle = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: PerfQueryHandle
+// TypeLayoutAttr: sequential
+// RAIIFree 'PerfCloseQueryHandle' (TODO: can we use this information?)
+pub const PerfQueryHandle = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: PERF_DATA_BLOCK
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PERF_DATA_BLOCK = extern struct {
+    Signature: {"kind":"Array","child": {"kind":"UInt16"}},
+    LittleEndian: {"kind":"UInt32"},
+    Version: {"kind":"UInt32"},
+    Revision: {"kind":"UInt32"},
+    TotalByteLength: {"kind":"UInt32"},
+    HeaderLength: {"kind":"UInt32"},
+    NumObjectTypes: {"kind":"UInt32"},
+    DefaultObject: {"kind":"Int32"},
+    SystemTime: Windows.Win32.WindowsProgramming.SYSTEMTIME,
+    PerfTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    PerfFreq: Windows.Win32.SystemServices.LARGE_INTEGER,
+    PerfTime100nSec: Windows.Win32.SystemServices.LARGE_INTEGER,
+    SystemNameLength: {"kind":"UInt32"},
+    SystemNameOffset: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PERF_OBJECT_TYPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PERF_OBJECT_TYPE = extern struct {
+    TotalByteLength: {"kind":"UInt32"},
+    DefinitionLength: {"kind":"UInt32"},
+    HeaderLength: {"kind":"UInt32"},
+    ObjectNameTitleIndex: {"kind":"UInt32"},
+    ObjectNameTitle: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ObjectHelpTitleIndex: {"kind":"UInt32"},
+    ObjectHelpTitle: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DetailLevel: {"kind":"UInt32"},
+    NumCounters: {"kind":"UInt32"},
+    DefaultCounter: {"kind":"Int32"},
+    NumInstances: {"kind":"Int32"},
+    CodePage: {"kind":"UInt32"},
+    PerfTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    PerfFreq: Windows.Win32.SystemServices.LARGE_INTEGER,
+};
+// --------------------------------------------------------
+// Type: PERF_COUNTER_DEFINITION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PERF_COUNTER_DEFINITION = extern struct {
+    ByteLength: {"kind":"UInt32"},
+    CounterNameTitleIndex: {"kind":"UInt32"},
+    CounterNameTitle: {"kind""Ptr","child":{"kind":"UInt16"}},
+    CounterHelpTitleIndex: {"kind":"UInt32"},
+    CounterHelpTitle: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DefaultScale: {"kind":"Int32"},
+    DetailLevel: {"kind":"UInt32"},
+    CounterType: {"kind":"UInt32"},
+    CounterSize: {"kind":"UInt32"},
+    CounterOffset: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PERF_INSTANCE_DEFINITION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PERF_INSTANCE_DEFINITION = extern struct {
+    ByteLength: {"kind":"UInt32"},
+    ParentObjectTitleIndex: {"kind":"UInt32"},
+    ParentObjectInstance: {"kind":"UInt32"},
+    UniqueID: {"kind":"Int32"},
+    NameOffset: {"kind":"UInt32"},
+    NameLength: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PERF_COUNTER_BLOCK
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PERF_COUNTER_BLOCK = extern struct {
+    ByteLength: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PM_COLLECT_PROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PM_COLLECT_PROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PM_CLOSE_PROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PM_CLOSE_PROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "loadperf" fn LoadPerfCounterTextStringsA(
+    lpCommandLine: {"kind""Ptr","child":{"kind":"SByte"}},
+    bQuietModeArg: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "loadperf" fn LoadPerfCounterTextStringsW(
+    lpCommandLine: {"kind""Ptr","child":{"kind":"UInt16"}},
+    bQuietModeArg: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "loadperf" fn UnloadPerfCounterTextStringsW(
+    lpCommandLine: {"kind""Ptr","child":{"kind":"UInt16"}},
+    bQuietModeArg: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "loadperf" fn UnloadPerfCounterTextStringsA(
+    lpCommandLine: {"kind""Ptr","child":{"kind":"SByte"}},
+    bQuietModeArg: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "loadperf" fn UpdatePerfNameFilesA(
+    szNewCtrFilePath: {"kind""Ptr","child":{"kind":"SByte"}},
+    szNewHlpFilePath: {"kind""Ptr","child":{"kind":"SByte"}},
+    szLanguageID: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwFlags: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "loadperf" fn UpdatePerfNameFilesW(
+    szNewCtrFilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szNewHlpFilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szLanguageID: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "loadperf" fn SetServiceAsTrustedA(
+    szReserved: {"kind""Ptr","child":{"kind":"SByte"}},
+    szServiceName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "loadperf" fn SetServiceAsTrustedW(
+    szReserved: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szServiceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "loadperf" fn BackupPerfRegistryToFileW(
+    szFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szCommentString: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "loadperf" fn RestorePerfRegistryFromFileW(
+    szFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szLangId: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn PerfStartProvider(
+    ProviderGuid: {"kind""Ptr","child":Guid},
+    ControlCallback: Windows.Win32.Perf.PERFLIBREQUEST,
+    phProvider: {"kind""Ptr","child":Windows.Win32.Perf.PerfProviderHandle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn PerfStartProviderEx(
+    ProviderGuid: {"kind""Ptr","child":Guid},
+    ProviderContext: {"kind""Ptr","child":Windows.Win32.Perf.PERF_PROVIDER_CONTEXT},
+    Provider: {"kind""Ptr","child":Windows.Win32.Perf.PerfProviderHandle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn PerfStopProvider(
+    ProviderHandle: Windows.Win32.Perf.PerfProviderHandle,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn PerfSetCounterSetInfo(
+    ProviderHandle: Windows.Win32.SystemServices.HANDLE,
+    Template: {"kind""Ptr","child":Windows.Win32.Perf.PERF_COUNTERSET_INFO},
+    TemplateSize: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "ADVAPI32" fn PerfCreateInstance(
+    ProviderHandle: Windows.Win32.Perf.PerfProviderHandle,
+    CounterSetGuid: {"kind""Ptr","child":Guid},
+    Name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Id: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn PerfDeleteInstance(
+    Provider: Windows.Win32.Perf.PerfProviderHandle,
+    InstanceBlock: {"kind""Ptr","child":Windows.Win32.Perf.PERF_COUNTERSET_INSTANCE},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "ADVAPI32" fn PerfQueryInstance(
+    ProviderHandle: Windows.Win32.SystemServices.HANDLE,
+    CounterSetGuid: {"kind""Ptr","child":Guid},
+    Name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Id: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn PerfSetCounterRefValue(
+    Provider: Windows.Win32.SystemServices.HANDLE,
+    Instance: {"kind""Ptr","child":Windows.Win32.Perf.PERF_COUNTERSET_INSTANCE},
+    CounterId: {"kind":"UInt32"},
+    Address: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn PerfSetULongCounterValue(
+    Provider: Windows.Win32.SystemServices.HANDLE,
+    Instance: {"kind""Ptr","child":Windows.Win32.Perf.PERF_COUNTERSET_INSTANCE},
+    CounterId: {"kind":"UInt32"},
+    Value: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn PerfSetULongLongCounterValue(
+    Provider: Windows.Win32.SystemServices.HANDLE,
+    Instance: {"kind""Ptr","child":Windows.Win32.Perf.PERF_COUNTERSET_INSTANCE},
+    CounterId: {"kind":"UInt32"},
+    Value: {"kind":"UInt64"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn PerfIncrementULongCounterValue(
+    Provider: Windows.Win32.SystemServices.HANDLE,
+    Instance: {"kind""Ptr","child":Windows.Win32.Perf.PERF_COUNTERSET_INSTANCE},
+    CounterId: {"kind":"UInt32"},
+    Value: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn PerfIncrementULongLongCounterValue(
+    Provider: Windows.Win32.SystemServices.HANDLE,
+    Instance: {"kind""Ptr","child":Windows.Win32.Perf.PERF_COUNTERSET_INSTANCE},
+    CounterId: {"kind":"UInt32"},
+    Value: {"kind":"UInt64"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn PerfDecrementULongCounterValue(
+    Provider: Windows.Win32.SystemServices.HANDLE,
+    Instance: {"kind""Ptr","child":Windows.Win32.Perf.PERF_COUNTERSET_INSTANCE},
+    CounterId: {"kind":"UInt32"},
+    Value: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn PerfDecrementULongLongCounterValue(
+    Provider: Windows.Win32.SystemServices.HANDLE,
+    Instance: {"kind""Ptr","child":Windows.Win32.Perf.PERF_COUNTERSET_INSTANCE},
+    CounterId: {"kind":"UInt32"},
+    Value: {"kind":"UInt64"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn PerfEnumerateCounterSet(
+    szMachine: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pCounterSetIds: {"kind""Ptr","child":Guid},
+    cCounterSetIds: {"kind":"UInt32"},
+    pcCounterSetIdsActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn PerfEnumerateCounterSetInstances(
+    szMachine: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pCounterSetId: {"kind""Ptr","child":Guid},
+    pInstances: {"kind""Ptr","child":Windows.Win32.Perf.PERF_INSTANCE_HEADER},
+    cbInstances: {"kind":"UInt32"},
+    pcbInstancesActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn PerfQueryCounterSetRegistrationInfo(
+    szMachine: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pCounterSetId: {"kind""Ptr","child":Guid},
+    requestCode: Windows.Win32.Perf.PerfRegInfoType,
+    requestLangId: {"kind":"UInt32"},
+    pbRegInfo: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbRegInfo: {"kind":"UInt32"},
+    pcbRegInfoActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn PerfOpenQueryHandle(
+    szMachine: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phQuery: {"kind""Ptr","child":Windows.Win32.Perf.PerfQueryHandle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn PerfCloseQueryHandle(
+    hQuery: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn PerfQueryCounterInfo(
+    hQuery: Windows.Win32.Perf.PerfQueryHandle,
+    pCounters: {"kind""Ptr","child":Windows.Win32.Perf.PERF_COUNTER_IDENTIFIER},
+    cbCounters: {"kind":"UInt32"},
+    pcbCountersActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn PerfQueryCounterData(
+    hQuery: Windows.Win32.Perf.PerfQueryHandle,
+    pCounterBlock: {"kind""Ptr","child":Windows.Win32.Perf.PERF_DATA_HEADER},
+    cbCounterBlock: {"kind":"UInt32"},
+    pcbCounterBlockActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn PerfAddCounters(
+    hQuery: Windows.Win32.Perf.PerfQueryHandle,
+    pCounters: {"kind""Ptr","child":Windows.Win32.Perf.PERF_COUNTER_IDENTIFIER},
+    cbCounters: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn PerfDeleteCounters(
+    hQuery: Windows.Win32.Perf.PerfQueryHandle,
+    pCounters: {"kind""Ptr","child":Windows.Win32.Perf.PERF_COUNTER_IDENTIFIER},
+    cbCounters: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhGetDllVersion(
+    lpdwVersion: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhOpenQueryW(
+    szDataSource: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwUserData: {"kind":"UIntPtr"},
+    phQuery: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhOpenQueryA(
+    szDataSource: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwUserData: {"kind":"UIntPtr"},
+    phQuery: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhAddCounterW(
+    hQuery: {"kind":"IntPtr"},
+    szFullCounterPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwUserData: {"kind":"UIntPtr"},
+    phCounter: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhAddCounterA(
+    hQuery: {"kind":"IntPtr"},
+    szFullCounterPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwUserData: {"kind":"UIntPtr"},
+    phCounter: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhAddEnglishCounterW(
+    hQuery: {"kind":"IntPtr"},
+    szFullCounterPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwUserData: {"kind":"UIntPtr"},
+    phCounter: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhAddEnglishCounterA(
+    hQuery: {"kind":"IntPtr"},
+    szFullCounterPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwUserData: {"kind":"UIntPtr"},
+    phCounter: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhCollectQueryDataWithTime(
+    hQuery: {"kind":"IntPtr"},
+    pllTimeStamp: {"kind""Ptr","child":{"kind":"Int64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhValidatePathExW(
+    hDataSource: {"kind":"IntPtr"},
+    szFullPathBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhValidatePathExA(
+    hDataSource: {"kind":"IntPtr"},
+    szFullPathBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhRemoveCounter(
+    hCounter: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhCollectQueryData(
+    hQuery: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhCloseQuery(
+    hQuery: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhGetFormattedCounterValue(
+    hCounter: {"kind":"IntPtr"},
+    dwFormat: {"kind":"UInt32"},
+    lpdwType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pValue: {"kind""Ptr","child":Windows.Win32.Perf.PDH_FMT_COUNTERVALUE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhGetFormattedCounterArrayA(
+    hCounter: {"kind":"IntPtr"},
+    dwFormat: {"kind":"UInt32"},
+    lpdwBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpdwItemCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ItemBuffer: {"kind""Ptr","child":Windows.Win32.Perf.PDH_FMT_COUNTERVALUE_ITEM_A},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhGetFormattedCounterArrayW(
+    hCounter: {"kind":"IntPtr"},
+    dwFormat: {"kind":"UInt32"},
+    lpdwBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpdwItemCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ItemBuffer: {"kind""Ptr","child":Windows.Win32.Perf.PDH_FMT_COUNTERVALUE_ITEM_W},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhGetRawCounterValue(
+    hCounter: {"kind":"IntPtr"},
+    lpdwType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pValue: {"kind""Ptr","child":Windows.Win32.Perf.PDH_RAW_COUNTER},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhGetRawCounterArrayA(
+    hCounter: {"kind":"IntPtr"},
+    lpdwBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpdwItemCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ItemBuffer: {"kind""Ptr","child":Windows.Win32.Perf.PDH_RAW_COUNTER_ITEM_A},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhGetRawCounterArrayW(
+    hCounter: {"kind":"IntPtr"},
+    lpdwBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpdwItemCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ItemBuffer: {"kind""Ptr","child":Windows.Win32.Perf.PDH_RAW_COUNTER_ITEM_W},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhCalculateCounterFromRawValue(
+    hCounter: {"kind":"IntPtr"},
+    dwFormat: {"kind":"UInt32"},
+    rawValue1: {"kind""Ptr","child":Windows.Win32.Perf.PDH_RAW_COUNTER},
+    rawValue2: {"kind""Ptr","child":Windows.Win32.Perf.PDH_RAW_COUNTER},
+    fmtValue: {"kind""Ptr","child":Windows.Win32.Perf.PDH_FMT_COUNTERVALUE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhComputeCounterStatistics(
+    hCounter: {"kind":"IntPtr"},
+    dwFormat: {"kind":"UInt32"},
+    dwFirstEntry: {"kind":"UInt32"},
+    dwNumEntries: {"kind":"UInt32"},
+    lpRawValueArray: {"kind""Ptr","child":Windows.Win32.Perf.PDH_RAW_COUNTER},
+    data: {"kind""Ptr","child":Windows.Win32.Perf.PDH_STATISTICS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhGetCounterInfoW(
+    hCounter: {"kind":"IntPtr"},
+    bRetrieveExplainText: {"kind":"Byte"},
+    pdwBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpBuffer: {"kind""Ptr","child":Windows.Win32.Perf.PDH_COUNTER_INFO_W},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhGetCounterInfoA(
+    hCounter: {"kind":"IntPtr"},
+    bRetrieveExplainText: {"kind":"Byte"},
+    pdwBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpBuffer: {"kind""Ptr","child":Windows.Win32.Perf.PDH_COUNTER_INFO_A},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhSetCounterScaleFactor(
+    hCounter: {"kind":"IntPtr"},
+    lFactor: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhConnectMachineW(
+    szMachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhConnectMachineA(
+    szMachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhEnumMachinesW(
+    szDataSource: {"kind""Ptr","child":{"kind":"UInt16"}},
+    mszMachineList: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhEnumMachinesA(
+    szDataSource: {"kind""Ptr","child":{"kind":"SByte"}},
+    mszMachineList: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhEnumObjectsW(
+    szDataSource: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szMachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    mszObjectList: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwDetailLevel: {"kind":"UInt32"},
+    bRefresh: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhEnumObjectsA(
+    szDataSource: {"kind""Ptr","child":{"kind":"SByte"}},
+    szMachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    mszObjectList: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwDetailLevel: {"kind":"UInt32"},
+    bRefresh: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhEnumObjectItemsW(
+    szDataSource: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szMachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szObjectName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    mszCounterList: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchCounterListLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    mszInstanceList: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchInstanceListLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwDetailLevel: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhEnumObjectItemsA(
+    szDataSource: {"kind""Ptr","child":{"kind":"SByte"}},
+    szMachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szObjectName: {"kind""Ptr","child":{"kind":"SByte"}},
+    mszCounterList: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchCounterListLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    mszInstanceList: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchInstanceListLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwDetailLevel: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhMakeCounterPathW(
+    pCounterPathElements: {"kind""Ptr","child":Windows.Win32.Perf.PDH_COUNTER_PATH_ELEMENTS_W},
+    szFullPathBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhMakeCounterPathA(
+    pCounterPathElements: {"kind""Ptr","child":Windows.Win32.Perf.PDH_COUNTER_PATH_ELEMENTS_A},
+    szFullPathBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhParseCounterPathW(
+    szFullPathBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pCounterPathElements: {"kind""Ptr","child":Windows.Win32.Perf.PDH_COUNTER_PATH_ELEMENTS_W},
+    pdwBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhParseCounterPathA(
+    szFullPathBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    pCounterPathElements: {"kind""Ptr","child":Windows.Win32.Perf.PDH_COUNTER_PATH_ELEMENTS_A},
+    pdwBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhParseInstanceNameW(
+    szInstanceString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szInstanceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchInstanceNameLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    szParentName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchParentNameLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpIndex: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhParseInstanceNameA(
+    szInstanceString: {"kind""Ptr","child":{"kind":"SByte"}},
+    szInstanceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchInstanceNameLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    szParentName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchParentNameLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpIndex: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhValidatePathW(
+    szFullPathBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhValidatePathA(
+    szFullPathBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhGetDefaultPerfObjectW(
+    szDataSource: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szMachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szDefaultObjectName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhGetDefaultPerfObjectA(
+    szDataSource: {"kind""Ptr","child":{"kind":"SByte"}},
+    szMachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szDefaultObjectName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhGetDefaultPerfCounterW(
+    szDataSource: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szMachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szObjectName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szDefaultCounterName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhGetDefaultPerfCounterA(
+    szDataSource: {"kind""Ptr","child":{"kind":"SByte"}},
+    szMachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szObjectName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szDefaultCounterName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhBrowseCountersW(
+    pBrowseDlgData: {"kind""Ptr","child":Windows.Win32.Perf.PDH_BROWSE_DLG_CONFIG_W},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhBrowseCountersA(
+    pBrowseDlgData: {"kind""Ptr","child":Windows.Win32.Perf.PDH_BROWSE_DLG_CONFIG_A},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhExpandCounterPathW(
+    szWildCardPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    mszExpandedPathList: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchPathListLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhExpandCounterPathA(
+    szWildCardPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    mszExpandedPathList: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchPathListLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhLookupPerfNameByIndexW(
+    szMachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwNameIndex: {"kind":"UInt32"},
+    szNameBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchNameBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhLookupPerfNameByIndexA(
+    szMachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwNameIndex: {"kind":"UInt32"},
+    szNameBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchNameBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhLookupPerfIndexByNameW(
+    szMachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szNameBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pdwIndex: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhLookupPerfIndexByNameA(
+    szMachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szNameBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    pdwIndex: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhExpandWildCardPathA(
+    szDataSource: {"kind""Ptr","child":{"kind":"SByte"}},
+    szWildCardPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    mszExpandedPathList: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchPathListLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhExpandWildCardPathW(
+    szDataSource: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szWildCardPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    mszExpandedPathList: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchPathListLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhOpenLogW(
+    szLogFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwAccessFlags: {"kind":"UInt32"},
+    lpdwLogType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    hQuery: {"kind":"IntPtr"},
+    dwMaxSize: {"kind":"UInt32"},
+    szUserCaption: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phLog: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhOpenLogA(
+    szLogFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwAccessFlags: {"kind":"UInt32"},
+    lpdwLogType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    hQuery: {"kind":"IntPtr"},
+    dwMaxSize: {"kind":"UInt32"},
+    szUserCaption: {"kind""Ptr","child":{"kind":"SByte"}},
+    phLog: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhUpdateLogW(
+    hLog: {"kind":"IntPtr"},
+    szUserString: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhUpdateLogA(
+    hLog: {"kind":"IntPtr"},
+    szUserString: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhUpdateLogFileCatalog(
+    hLog: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhGetLogFileSize(
+    hLog: {"kind":"IntPtr"},
+    llSize: {"kind""Ptr","child":{"kind":"Int64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhCloseLog(
+    hLog: {"kind":"IntPtr"},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhSelectDataSourceW(
+    hWndOwner: Windows.Win32.WindowsAndMessaging.HWND,
+    dwFlags: {"kind":"UInt32"},
+    szDataSource: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhSelectDataSourceA(
+    hWndOwner: Windows.Win32.WindowsAndMessaging.HWND,
+    dwFlags: {"kind":"UInt32"},
+    szDataSource: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhIsRealTimeQuery(
+    hQuery: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhSetQueryTimeRange(
+    hQuery: {"kind":"IntPtr"},
+    pInfo: {"kind""Ptr","child":Windows.Win32.Perf.PDH_TIME_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhGetDataSourceTimeRangeW(
+    szDataSource: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pdwNumEntries: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pInfo: {"kind""Ptr","child":Windows.Win32.Perf.PDH_TIME_INFO},
+    pdwBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhGetDataSourceTimeRangeA(
+    szDataSource: {"kind""Ptr","child":{"kind":"SByte"}},
+    pdwNumEntries: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pInfo: {"kind""Ptr","child":Windows.Win32.Perf.PDH_TIME_INFO},
+    pdwBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhCollectQueryDataEx(
+    hQuery: {"kind":"IntPtr"},
+    dwIntervalTime: {"kind":"UInt32"},
+    hNewDataEvent: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhFormatFromRawValue(
+    dwCounterType: {"kind":"UInt32"},
+    dwFormat: {"kind":"UInt32"},
+    pTimeBase: {"kind""Ptr","child":{"kind":"Int64"}},
+    pRawValue1: {"kind""Ptr","child":Windows.Win32.Perf.PDH_RAW_COUNTER},
+    pRawValue2: {"kind""Ptr","child":Windows.Win32.Perf.PDH_RAW_COUNTER},
+    pFmtValue: {"kind""Ptr","child":Windows.Win32.Perf.PDH_FMT_COUNTERVALUE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhGetCounterTimeBase(
+    hCounter: {"kind":"IntPtr"},
+    pTimeBase: {"kind""Ptr","child":{"kind":"Int64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhReadRawLogRecord(
+    hLog: {"kind":"IntPtr"},
+    ftRecord: Windows.Win32.WindowsProgramming.FILETIME,
+    pRawLogRecord: {"kind""Ptr","child":Windows.Win32.Perf.PDH_RAW_LOG_RECORD},
+    pdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhSetDefaultRealTimeDataSource(
+    dwDataSourceId: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhBindInputDataSourceW(
+    phDataSource: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    LogFileNameList: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhBindInputDataSourceA(
+    phDataSource: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    LogFileNameList: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhOpenQueryH(
+    hDataSource: {"kind":"IntPtr"},
+    dwUserData: {"kind":"UIntPtr"},
+    phQuery: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhEnumMachinesHW(
+    hDataSource: {"kind":"IntPtr"},
+    mszMachineList: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhEnumMachinesHA(
+    hDataSource: {"kind":"IntPtr"},
+    mszMachineList: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhEnumObjectsHW(
+    hDataSource: {"kind":"IntPtr"},
+    szMachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    mszObjectList: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwDetailLevel: {"kind":"UInt32"},
+    bRefresh: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhEnumObjectsHA(
+    hDataSource: {"kind":"IntPtr"},
+    szMachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    mszObjectList: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwDetailLevel: {"kind":"UInt32"},
+    bRefresh: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhEnumObjectItemsHW(
+    hDataSource: {"kind":"IntPtr"},
+    szMachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szObjectName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    mszCounterList: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchCounterListLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    mszInstanceList: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchInstanceListLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwDetailLevel: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhEnumObjectItemsHA(
+    hDataSource: {"kind":"IntPtr"},
+    szMachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szObjectName: {"kind""Ptr","child":{"kind":"SByte"}},
+    mszCounterList: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchCounterListLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    mszInstanceList: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchInstanceListLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwDetailLevel: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhExpandWildCardPathHW(
+    hDataSource: {"kind":"IntPtr"},
+    szWildCardPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    mszExpandedPathList: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchPathListLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhExpandWildCardPathHA(
+    hDataSource: {"kind":"IntPtr"},
+    szWildCardPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    mszExpandedPathList: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchPathListLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhGetDataSourceTimeRangeH(
+    hDataSource: {"kind":"IntPtr"},
+    pdwNumEntries: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pInfo: {"kind""Ptr","child":Windows.Win32.Perf.PDH_TIME_INFO},
+    pdwBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhGetDefaultPerfObjectHW(
+    hDataSource: {"kind":"IntPtr"},
+    szMachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szDefaultObjectName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhGetDefaultPerfObjectHA(
+    hDataSource: {"kind":"IntPtr"},
+    szMachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szDefaultObjectName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhGetDefaultPerfCounterHW(
+    hDataSource: {"kind":"IntPtr"},
+    szMachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szObjectName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szDefaultCounterName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhGetDefaultPerfCounterHA(
+    hDataSource: {"kind":"IntPtr"},
+    szMachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szObjectName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szDefaultCounterName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhBrowseCountersHW(
+    pBrowseDlgData: {"kind""Ptr","child":Windows.Win32.Perf.PDH_BROWSE_DLG_CONFIG_HW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhBrowseCountersHA(
+    pBrowseDlgData: {"kind""Ptr","child":Windows.Win32.Perf.PDH_BROWSE_DLG_CONFIG_HA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhVerifySQLDBW(
+    szDataSource: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhVerifySQLDBA(
+    szDataSource: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhCreateSQLTablesW(
+    szDataSource: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhCreateSQLTablesA(
+    szDataSource: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhEnumLogSetNamesW(
+    szDataSource: {"kind""Ptr","child":{"kind":"UInt16"}},
+    mszDataSetNameList: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhEnumLogSetNamesA(
+    szDataSource: {"kind""Ptr","child":{"kind":"SByte"}},
+    mszDataSetNameList: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcchBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhGetLogSetGUID(
+    hLog: {"kind":"IntPtr"},
+    pGuid: {"kind""Ptr","child":Guid},
+    pRunId: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "pdh" fn PdhSetLogSetRunID(
+    hLog: {"kind":"IntPtr"},
+    RunId: {"kind":"Int32"},
+],
+
+"unicode_aliases": [
+     "PDH_RAW_COUNTER_ITEM_"
+     "PDH_FMT_COUNTERVALUE_ITEM_"
+     "PDH_COUNTER_PATH_ELEMENTS_"
+     "PDH_DATA_ITEM_PATH_ELEMENTS_"
+     "PDH_COUNTER_INFO_"
+     "PDH_LOG_SERVICE_QUERY_INFO_"
+     "PDH_BROWSE_DLG_CONFIG_H"
+     "PDH_BROWSE_DLG_CONFIG_"
+     "LoadPerfCounterTextStrings"
+     "UnloadPerfCounterTextStrings"
+     "UpdatePerfNameFiles"
+     "SetServiceAsTrusted"
+     "PdhOpenQuery"
+     "PdhAddCounter"
+     "PdhAddEnglishCounter"
+     "PdhValidatePathEx"
+     "PdhGetFormattedCounterArray"
+     "PdhGetRawCounterArray"
+     "PdhGetCounterInfo"
+     "PdhConnectMachine"
+     "PdhEnumMachines"
+     "PdhEnumObjects"
+     "PdhEnumObjectItems"
+     "PdhMakeCounterPath"
+     "PdhParseCounterPath"
+     "PdhParseInstanceName"
+     "PdhValidatePath"
+     "PdhGetDefaultPerfObject"
+     "PdhGetDefaultPerfCounter"
+     "PdhBrowseCounters"
+     "PdhExpandCounterPath"
+     "PdhLookupPerfNameByIndex"
+     "PdhLookupPerfIndexByName"
+     "PdhExpandWildCardPath"
+     "PdhOpenLog"
+     "PdhUpdateLog"
+     "PdhSelectDataSource"
+     "PdhGetDataSourceTimeRange"
+     "PdhBindInputDataSource"
+     "PdhEnumMachinesH"
+     "PdhEnumObjectsH"
+     "PdhEnumObjectItemsH"
+     "PdhExpandWildCardPathH"
+     "PdhGetDefaultPerfObjectH"
+     "PdhGetDefaultPerfCounterH"
+     "PdhBrowseCountersH"
+     "PdhVerifySQLDB"
+     "PdhCreateSQLTables"
+     "PdhEnumLogSetNames"
+]}

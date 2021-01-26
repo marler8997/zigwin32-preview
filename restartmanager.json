@@ -1,0 +1,164 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: RM_APP_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const RM_APP_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: RM_SHUTDOWN_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const RM_SHUTDOWN_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: RM_APP_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const RM_APP_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: RM_REBOOT_REASON
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const RM_REBOOT_REASON = *opaque{
+};
+// --------------------------------------------------------
+// Type: RM_UNIQUE_PROCESS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RM_UNIQUE_PROCESS = extern struct {
+    dwProcessId: {"kind":"UInt32"},
+    ProcessStartTime: Windows.Win32.WindowsProgramming.FILETIME,
+};
+// --------------------------------------------------------
+// Type: RM_PROCESS_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RM_PROCESS_INFO = extern struct {
+    Process: Windows.Win32.RestartManager.RM_UNIQUE_PROCESS,
+    strAppName: {"kind":"Array","child": {"kind":"UInt16"}},
+    strServiceShortName: {"kind":"Array","child": {"kind":"UInt16"}},
+    ApplicationType: Windows.Win32.RestartManager.RM_APP_TYPE,
+    AppStatus: {"kind":"UInt32"},
+    TSSessionId: {"kind":"UInt32"},
+    bRestartable: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: RM_FILTER_TRIGGER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const RM_FILTER_TRIGGER = *opaque{
+};
+// --------------------------------------------------------
+// Type: RM_FILTER_ACTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const RM_FILTER_ACTION = *opaque{
+};
+// --------------------------------------------------------
+// Type: RM_FILTER_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RM_FILTER_INFO = extern struct {
+    FilterAction: Windows.Win32.RestartManager.RM_FILTER_ACTION,
+    FilterTrigger: Windows.Win32.RestartManager.RM_FILTER_TRIGGER,
+    cbNextOffset: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.RestartManager.RM_FILTER_INFO+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: RM_WRITE_STATUS_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const RM_WRITE_STATUS_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "rstrtmgr" fn RmStartSession(
+    pSessionHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwSessionFlags: {"kind":"UInt32"},
+    strSessionKey: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "RstrtMgr" fn RmJoinSession(
+    pSessionHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+    strSessionKey: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "rstrtmgr" fn RmEndSession(
+    dwSessionHandle: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "rstrtmgr" fn RmRegisterResources(
+    dwSessionHandle: {"kind":"UInt32"},
+    nFiles: {"kind":"UInt32"},
+    rgsFileNames: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    nApplications: {"kind":"UInt32"},
+    rgApplications: {"kind""Ptr","child":Windows.Win32.RestartManager.RM_UNIQUE_PROCESS},
+    nServices: {"kind":"UInt32"},
+    rgsServiceNames: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "rstrtmgr" fn RmGetList(
+    dwSessionHandle: {"kind":"UInt32"},
+    pnProcInfoNeeded: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pnProcInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+    rgAffectedApps: {"kind""Ptr","child":Windows.Win32.RestartManager.RM_PROCESS_INFO},
+    lpdwRebootReasons: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "rstrtmgr" fn RmShutdown(
+    dwSessionHandle: {"kind":"UInt32"},
+    lActionFlags: {"kind":"UInt32"},
+    fnStatus: Windows.Win32.RestartManager.RM_WRITE_STATUS_CALLBACK,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "rstrtmgr" fn RmRestart(
+    dwSessionHandle: {"kind":"UInt32"},
+    dwRestartFlags: {"kind":"UInt32"},
+    fnStatus: Windows.Win32.RestartManager.RM_WRITE_STATUS_CALLBACK,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "RstrtMgr" fn RmCancelCurrentTask(
+    dwSessionHandle: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "RstrtMgr" fn RmAddFilter(
+    dwSessionHandle: {"kind":"UInt32"},
+    strModuleName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pProcess: {"kind""Ptr","child":Windows.Win32.RestartManager.RM_UNIQUE_PROCESS},
+    strServiceShortName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    FilterAction: Windows.Win32.RestartManager.RM_FILTER_ACTION,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "RstrtMgr" fn RmRemoveFilter(
+    dwSessionHandle: {"kind":"UInt32"},
+    strModuleName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pProcess: {"kind""Ptr","child":Windows.Win32.RestartManager.RM_UNIQUE_PROCESS},
+    strServiceShortName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "RstrtMgr" fn RmGetFilterList(
+    dwSessionHandle: {"kind":"UInt32"},
+    pbFilterBuf: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbFilterBuf: {"kind":"UInt32"},
+    cbFilterBufNeeded: {"kind""Ptr","child":{"kind":"UInt32"}},
+],
+
+"unicode_aliases": [
+]}

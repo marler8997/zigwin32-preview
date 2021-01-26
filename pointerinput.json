@@ -1,0 +1,203 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: POINTER_BUTTON_CHANGE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const POINTER_BUTTON_CHANGE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: POINTER_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const POINTER_INFO = extern struct {
+    pointerType: {"kind":"UInt32"},
+    pointerId: {"kind":"UInt32"},
+    frameId: {"kind":"UInt32"},
+    pointerFlags: {"kind":"UInt32"},
+    sourceDevice: Windows.Win32.SystemServices.HANDLE,
+    hwndTarget: Windows.Win32.WindowsAndMessaging.HWND,
+    ptPixelLocation: Windows.Win32.DisplayDevices.POINT,
+    ptHimetricLocation: Windows.Win32.DisplayDevices.POINT,
+    ptPixelLocationRaw: Windows.Win32.DisplayDevices.POINT,
+    ptHimetricLocationRaw: Windows.Win32.DisplayDevices.POINT,
+    dwTime: {"kind":"UInt32"},
+    historyCount: {"kind":"UInt32"},
+    InputData: {"kind":"Int32"},
+    dwKeyStates: {"kind":"UInt32"},
+    PerformanceCount: {"kind":"UInt64"},
+    ButtonChangeType: Windows.Win32.PointerInput.POINTER_BUTTON_CHANGE_TYPE,
+};
+// --------------------------------------------------------
+// Type: POINTER_TOUCH_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const POINTER_TOUCH_INFO = extern struct {
+    pointerInfo: Windows.Win32.PointerInput.POINTER_INFO,
+    touchFlags: {"kind":"UInt32"},
+    touchMask: {"kind":"UInt32"},
+    rcContact: Windows.Win32.DisplayDevices.RECT,
+    rcContactRaw: Windows.Win32.DisplayDevices.RECT,
+    orientation: {"kind":"UInt32"},
+    pressure: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: POINTER_PEN_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const POINTER_PEN_INFO = extern struct {
+    pointerInfo: Windows.Win32.PointerInput.POINTER_INFO,
+    penFlags: {"kind":"UInt32"},
+    penMask: {"kind":"UInt32"},
+    pressure: {"kind":"UInt32"},
+    rotation: {"kind":"UInt32"},
+    tiltX: {"kind":"Int32"},
+    tiltY: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: INPUT_TRANSFORM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INPUT_TRANSFORM = extern struct {
+    Anonymous: Windows.Win32.PointerInput.INPUT_TRANSFORM+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            _11: {"kind":"Single"},
+            _12: {"kind":"Single"},
+            _13: {"kind":"Single"},
+            _14: {"kind":"Single"},
+            _21: {"kind":"Single"},
+            _22: {"kind":"Single"},
+            _23: {"kind":"Single"},
+            _24: {"kind":"Single"},
+            _31: {"kind":"Single"},
+            _32: {"kind":"Single"},
+            _33: {"kind":"Single"},
+            _34: {"kind":"Single"},
+            _41: {"kind":"Single"},
+            _42: {"kind":"Single"},
+            _43: {"kind":"Single"},
+            _44: {"kind":"Single"},
+        };
+    };
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetUnpredictedMessagePos(
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetPointerType(
+    pointerId: {"kind":"UInt32"},
+    pointerType: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetPointerCursorId(
+    pointerId: {"kind":"UInt32"},
+    cursorId: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetPointerInfo(
+    pointerId: {"kind":"UInt32"},
+    pointerInfo: {"kind""Ptr","child":Windows.Win32.PointerInput.POINTER_INFO},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetPointerInfoHistory(
+    pointerId: {"kind":"UInt32"},
+    entriesCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pointerInfo: {"kind""Ptr","child":Windows.Win32.PointerInput.POINTER_INFO},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetPointerFrameInfo(
+    pointerId: {"kind":"UInt32"},
+    pointerCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pointerInfo: {"kind""Ptr","child":Windows.Win32.PointerInput.POINTER_INFO},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetPointerFrameInfoHistory(
+    pointerId: {"kind":"UInt32"},
+    entriesCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pointerCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pointerInfo: {"kind""Ptr","child":Windows.Win32.PointerInput.POINTER_INFO},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetPointerTouchInfo(
+    pointerId: {"kind":"UInt32"},
+    touchInfo: {"kind""Ptr","child":Windows.Win32.PointerInput.POINTER_TOUCH_INFO},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetPointerTouchInfoHistory(
+    pointerId: {"kind":"UInt32"},
+    entriesCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    touchInfo: {"kind""Ptr","child":Windows.Win32.PointerInput.POINTER_TOUCH_INFO},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetPointerFrameTouchInfo(
+    pointerId: {"kind":"UInt32"},
+    pointerCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    touchInfo: {"kind""Ptr","child":Windows.Win32.PointerInput.POINTER_TOUCH_INFO},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetPointerFrameTouchInfoHistory(
+    pointerId: {"kind":"UInt32"},
+    entriesCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pointerCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    touchInfo: {"kind""Ptr","child":Windows.Win32.PointerInput.POINTER_TOUCH_INFO},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetPointerPenInfo(
+    pointerId: {"kind":"UInt32"},
+    penInfo: {"kind""Ptr","child":Windows.Win32.PointerInput.POINTER_PEN_INFO},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetPointerPenInfoHistory(
+    pointerId: {"kind":"UInt32"},
+    entriesCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    penInfo: {"kind""Ptr","child":Windows.Win32.PointerInput.POINTER_PEN_INFO},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetPointerFramePenInfo(
+    pointerId: {"kind":"UInt32"},
+    pointerCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    penInfo: {"kind""Ptr","child":Windows.Win32.PointerInput.POINTER_PEN_INFO},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetPointerFramePenInfoHistory(
+    pointerId: {"kind":"UInt32"},
+    entriesCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pointerCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    penInfo: {"kind""Ptr","child":Windows.Win32.PointerInput.POINTER_PEN_INFO},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SkipPointerFrameMessages(
+    pointerId: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn EnableMouseInPointer(
+    fEnable: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn IsMouseInPointerEnabled(
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetPointerInputTransform(
+    pointerId: {"kind":"UInt32"},
+    historyCount: {"kind":"UInt32"},
+    inputTransform: {"kind""Ptr","child":Windows.Win32.PointerInput.INPUT_TRANSFORM},
+],
+
+"unicode_aliases": [
+]}

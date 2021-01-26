@@ -1,0 +1,1859 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: HTTP_SERVER_PROPERTY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_SERVER_PROPERTY = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_PROPERTY_FLAGS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_PROPERTY_FLAGS = extern struct {
+    _bitfield: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HTTP_ENABLED_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_ENABLED_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_STATE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_STATE_INFO = extern struct {
+    Flags: Windows.Win32.Http.HTTP_PROPERTY_FLAGS,
+    State: Windows.Win32.Http.HTTP_ENABLED_STATE,
+};
+// --------------------------------------------------------
+// Type: HTTP_503_RESPONSE_VERBOSITY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_503_RESPONSE_VERBOSITY = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_QOS_SETTING_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_QOS_SETTING_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_QOS_SETTING_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_QOS_SETTING_INFO = extern struct {
+    QosType: Windows.Win32.Http.HTTP_QOS_SETTING_TYPE,
+    QosSetting: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: HTTP_CONNECTION_LIMIT_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_CONNECTION_LIMIT_INFO = extern struct {
+    Flags: Windows.Win32.Http.HTTP_PROPERTY_FLAGS,
+    MaxConnections: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HTTP_BANDWIDTH_LIMIT_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_BANDWIDTH_LIMIT_INFO = extern struct {
+    Flags: Windows.Win32.Http.HTTP_PROPERTY_FLAGS,
+    MaxBandwidth: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HTTP_FLOWRATE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_FLOWRATE_INFO = extern struct {
+    Flags: Windows.Win32.Http.HTTP_PROPERTY_FLAGS,
+    MaxBandwidth: {"kind":"UInt32"},
+    MaxPeakBandwidth: {"kind":"UInt32"},
+    BurstSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_TIMEOUT_KEY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_SERVICE_CONFIG_TIMEOUT_KEY = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_TIMEOUT_SET
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_CONFIG_TIMEOUT_SET = extern struct {
+    KeyDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_TIMEOUT_KEY,
+    ParamDesc: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: HTTP_TIMEOUT_LIMIT_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_TIMEOUT_LIMIT_INFO = extern struct {
+    Flags: Windows.Win32.Http.HTTP_PROPERTY_FLAGS,
+    EntityBody: {"kind":"UInt16"},
+    DrainEntityBody: {"kind":"UInt16"},
+    RequestQueue: {"kind":"UInt16"},
+    IdleConnection: {"kind":"UInt16"},
+    HeaderWait: {"kind":"UInt16"},
+    MinSendRate: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_SETTING_KEY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_SERVICE_CONFIG_SETTING_KEY = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_SETTING_SET
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_CONFIG_SETTING_SET = extern struct {
+    KeyDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_SETTING_KEY,
+    ParamDesc: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HTTP_LISTEN_ENDPOINT_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_LISTEN_ENDPOINT_INFO = extern struct {
+    Flags: Windows.Win32.Http.HTTP_PROPERTY_FLAGS,
+    EnableSharing: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVER_AUTHENTICATION_DIGEST_PARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVER_AUTHENTICATION_DIGEST_PARAMS = extern struct {
+    DomainNameLength: {"kind":"UInt16"},
+    DomainName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RealmLength: {"kind":"UInt16"},
+    Realm: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVER_AUTHENTICATION_BASIC_PARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVER_AUTHENTICATION_BASIC_PARAMS = extern struct {
+    RealmLength: {"kind":"UInt16"},
+    Realm: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVER_AUTHENTICATION_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVER_AUTHENTICATION_INFO = extern struct {
+    Flags: Windows.Win32.Http.HTTP_PROPERTY_FLAGS,
+    AuthSchemes: {"kind":"UInt32"},
+    ReceiveMutualAuth: {"kind":"Byte"},
+    ReceiveContextHandle: {"kind":"Byte"},
+    DisableNTLMCredentialCaching: {"kind":"Byte"},
+    ExFlags: {"kind":"Byte"},
+    DigestParams: Windows.Win32.Http.HTTP_SERVER_AUTHENTICATION_DIGEST_PARAMS,
+    BasicParams: Windows.Win32.Http.HTTP_SERVER_AUTHENTICATION_BASIC_PARAMS,
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_BINDING_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_SERVICE_BINDING_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_BINDING_BASE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_BINDING_BASE = extern struct {
+    Type: Windows.Win32.Http.HTTP_SERVICE_BINDING_TYPE,
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_BINDING_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_BINDING_A = extern struct {
+    Base: Windows.Win32.Http.HTTP_SERVICE_BINDING_BASE,
+    Buffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    BufferSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_BINDING_W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_BINDING_W = extern struct {
+    Base: Windows.Win32.Http.HTTP_SERVICE_BINDING_BASE,
+    Buffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    BufferSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HTTP_AUTHENTICATION_HARDENING_LEVELS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_AUTHENTICATION_HARDENING_LEVELS = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_CHANNEL_BIND_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_CHANNEL_BIND_INFO = extern struct {
+    Hardening: Windows.Win32.Http.HTTP_AUTHENTICATION_HARDENING_LEVELS,
+    Flags: {"kind":"UInt32"},
+    ServiceNames: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Http.HTTP_SERVICE_BINDING_BASE}},
+    NumberOfServiceNames: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HTTP_REQUEST_CHANNEL_BIND_STATUS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_REQUEST_CHANNEL_BIND_STATUS = extern struct {
+    ServiceName: {"kind""Ptr","child":Windows.Win32.Http.HTTP_SERVICE_BINDING_BASE},
+    ChannelToken: {"kind""Ptr","child":{"kind":"Byte"}},
+    ChannelTokenSize: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HTTP_REQUEST_TOKEN_BINDING_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_REQUEST_TOKEN_BINDING_INFO = extern struct {
+    TokenBinding: {"kind""Ptr","child":{"kind":"Byte"}},
+    TokenBindingSize: {"kind":"UInt32"},
+    EKM: {"kind""Ptr","child":{"kind":"Byte"}},
+    EKMSize: {"kind":"UInt32"},
+    KeyType: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: HTTP_LOGGING_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_LOGGING_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_LOGGING_ROLLOVER_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_LOGGING_ROLLOVER_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_LOGGING_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_LOGGING_INFO = extern struct {
+    Flags: Windows.Win32.Http.HTTP_PROPERTY_FLAGS,
+    LoggingFlags: {"kind":"UInt32"},
+    SoftwareName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SoftwareNameLength: {"kind":"UInt16"},
+    DirectoryNameLength: {"kind":"UInt16"},
+    DirectoryName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Format: Windows.Win32.Http.HTTP_LOGGING_TYPE,
+    Fields: {"kind":"UInt32"},
+    pExtFields: {"kind""Ptr","child":{"kind":"Void"}},
+    NumOfExtFields: {"kind":"UInt16"},
+    MaxRecordSize: {"kind":"UInt16"},
+    RolloverType: Windows.Win32.Http.HTTP_LOGGING_ROLLOVER_TYPE,
+    RolloverSize: {"kind":"UInt32"},
+    pSecurityDescriptor: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: HTTP_BINDING_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_BINDING_INFO = extern struct {
+    Flags: Windows.Win32.Http.HTTP_PROPERTY_FLAGS,
+    RequestQueueHandle: Windows.Win32.SystemServices.HANDLE,
+};
+// --------------------------------------------------------
+// Type: HTTP_PROTECTION_LEVEL_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_PROTECTION_LEVEL_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_PROTECTION_LEVEL_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_PROTECTION_LEVEL_INFO = extern struct {
+    Flags: Windows.Win32.Http.HTTP_PROPERTY_FLAGS,
+    Level: Windows.Win32.Http.HTTP_PROTECTION_LEVEL_TYPE,
+};
+// --------------------------------------------------------
+// Type: HTTP_BYTE_RANGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_BYTE_RANGE = extern struct {
+    StartingOffset: Windows.Win32.SystemServices.ULARGE_INTEGER,
+    Length: Windows.Win32.SystemServices.ULARGE_INTEGER,
+};
+// --------------------------------------------------------
+// Type: HTTP_VERSION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_VERSION = extern struct {
+    MajorVersion: {"kind":"UInt16"},
+    MinorVersion: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: _HTTP_URI_SCHEME
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const _HTTP_URI_SCHEME = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_VERB
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_VERB = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_HEADER_ID
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_HEADER_ID = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_KNOWN_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_KNOWN_HEADER = extern struct {
+    RawValueLength: {"kind":"UInt16"},
+    pRawValue: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: HTTP_UNKNOWN_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_UNKNOWN_HEADER = extern struct {
+    NameLength: {"kind":"UInt16"},
+    RawValueLength: {"kind":"UInt16"},
+    pName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pRawValue: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: HTTP_LOG_DATA_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_LOG_DATA_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_LOG_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_LOG_DATA = extern struct {
+    Type: Windows.Win32.Http.HTTP_LOG_DATA_TYPE,
+};
+// --------------------------------------------------------
+// Type: HTTP_LOG_FIELDS_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_LOG_FIELDS_DATA = extern struct {
+    Base: Windows.Win32.Http.HTTP_LOG_DATA,
+    UserNameLength: {"kind":"UInt16"},
+    UriStemLength: {"kind":"UInt16"},
+    ClientIpLength: {"kind":"UInt16"},
+    ServerNameLength: {"kind":"UInt16"},
+    ServiceNameLength: {"kind":"UInt16"},
+    ServerIpLength: {"kind":"UInt16"},
+    MethodLength: {"kind":"UInt16"},
+    UriQueryLength: {"kind":"UInt16"},
+    HostLength: {"kind":"UInt16"},
+    UserAgentLength: {"kind":"UInt16"},
+    CookieLength: {"kind":"UInt16"},
+    ReferrerLength: {"kind":"UInt16"},
+    UserName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    UriStem: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientIp: {"kind""Ptr","child":{"kind":"SByte"}},
+    ServerName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ServiceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ServerIp: {"kind""Ptr","child":{"kind":"SByte"}},
+    Method: {"kind""Ptr","child":{"kind":"SByte"}},
+    UriQuery: {"kind""Ptr","child":{"kind":"SByte"}},
+    Host: {"kind""Ptr","child":{"kind":"SByte"}},
+    UserAgent: {"kind""Ptr","child":{"kind":"SByte"}},
+    Cookie: {"kind""Ptr","child":{"kind":"SByte"}},
+    Referrer: {"kind""Ptr","child":{"kind":"SByte"}},
+    ServerPort: {"kind":"UInt16"},
+    ProtocolStatus: {"kind":"UInt16"},
+    Win32Status: {"kind":"UInt32"},
+    MethodNum: Windows.Win32.Http.HTTP_VERB,
+    SubStatus: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: HTTP_DATA_CHUNK_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_DATA_CHUNK_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_DATA_CHUNK
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_DATA_CHUNK = extern struct {
+    DataChunkType: Windows.Win32.Http.HTTP_DATA_CHUNK_TYPE,
+    Anonymous: Windows.Win32.Http.HTTP_DATA_CHUNK+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _FromFragmentCacheEx_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _FromFragmentCacheEx_e__Struct = extern struct {
+            ByteRange: Windows.Win32.Http.HTTP_BYTE_RANGE,
+            pFragmentName: {"kind""Ptr","child":{"kind":"UInt16"}},
+        };
+        // --------------------------------------------------------
+        // Type: _FromFileHandle_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _FromFileHandle_e__Struct = extern struct {
+            ByteRange: Windows.Win32.Http.HTTP_BYTE_RANGE,
+            FileHandle: Windows.Win32.SystemServices.HANDLE,
+        };
+        // --------------------------------------------------------
+        // Type: _FromFragmentCache_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _FromFragmentCache_e__Struct = extern struct {
+            FragmentNameLength: {"kind":"UInt16"},
+            pFragmentName: {"kind""Ptr","child":{"kind":"UInt16"}},
+        };
+        // --------------------------------------------------------
+        // Type: _FromMemory_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _FromMemory_e__Struct = extern struct {
+            pBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+            BufferLength: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: HTTP_REQUEST_HEADERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_REQUEST_HEADERS = extern struct {
+    UnknownHeaderCount: {"kind":"UInt16"},
+    pUnknownHeaders: {"kind""Ptr","child":Windows.Win32.Http.HTTP_UNKNOWN_HEADER},
+    TrailerCount: {"kind":"UInt16"},
+    pTrailers: {"kind""Ptr","child":Windows.Win32.Http.HTTP_UNKNOWN_HEADER},
+    KnownHeaders: {"kind":"Array","child": Windows.Win32.Http.HTTP_KNOWN_HEADER},
+};
+// --------------------------------------------------------
+// Type: HTTP_RESPONSE_HEADERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_RESPONSE_HEADERS = extern struct {
+    UnknownHeaderCount: {"kind":"UInt16"},
+    pUnknownHeaders: {"kind""Ptr","child":Windows.Win32.Http.HTTP_UNKNOWN_HEADER},
+    TrailerCount: {"kind":"UInt16"},
+    pTrailers: {"kind""Ptr","child":Windows.Win32.Http.HTTP_UNKNOWN_HEADER},
+    KnownHeaders: {"kind":"Array","child": Windows.Win32.Http.HTTP_KNOWN_HEADER},
+};
+// --------------------------------------------------------
+// Type: HTTP_DELEGATE_REQUEST_PROPERTY_ID
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_DELEGATE_REQUEST_PROPERTY_ID = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_DELEGATE_REQUEST_PROPERTY_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_DELEGATE_REQUEST_PROPERTY_INFO = extern struct {
+    ProperyId: Windows.Win32.Http.HTTP_DELEGATE_REQUEST_PROPERTY_ID,
+    PropertyInfoLength: {"kind":"UInt32"},
+    PropertyInfo: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: HTTP_TRANSPORT_ADDRESS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_TRANSPORT_ADDRESS = extern struct {
+    pRemoteAddress: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    pLocalAddress: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+};
+// --------------------------------------------------------
+// Type: HTTP_COOKED_URL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_COOKED_URL = extern struct {
+    FullUrlLength: {"kind":"UInt16"},
+    HostLength: {"kind":"UInt16"},
+    AbsPathLength: {"kind":"UInt16"},
+    QueryStringLength: {"kind":"UInt16"},
+    pFullUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pHost: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pAbsPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pQueryString: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: HTTP_AUTH_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_AUTH_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_REQUEST_AUTH_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_REQUEST_AUTH_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_SSL_CLIENT_CERT_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SSL_CLIENT_CERT_INFO = extern struct {
+    CertFlags: {"kind":"UInt32"},
+    CertEncodedSize: {"kind":"UInt32"},
+    pCertEncoded: {"kind""Ptr","child":{"kind":"Byte"}},
+    Token: Windows.Win32.SystemServices.HANDLE,
+    CertDeniedByMapper: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: HTTP_SSL_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SSL_INFO = extern struct {
+    ServerCertKeySize: {"kind":"UInt16"},
+    ConnectionKeySize: {"kind":"UInt16"},
+    ServerCertIssuerSize: {"kind":"UInt32"},
+    ServerCertSubjectSize: {"kind":"UInt32"},
+    pServerCertIssuer: {"kind""Ptr","child":{"kind":"SByte"}},
+    pServerCertSubject: {"kind""Ptr","child":{"kind":"SByte"}},
+    pClientCertInfo: {"kind""Ptr","child":Windows.Win32.Http.HTTP_SSL_CLIENT_CERT_INFO},
+    SslClientCertNegotiated: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HTTP_SSL_PROTOCOL_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SSL_PROTOCOL_INFO = extern struct {
+    Protocol: {"kind":"UInt32"},
+    CipherType: {"kind":"UInt32"},
+    CipherStrength: {"kind":"UInt32"},
+    HashType: {"kind":"UInt32"},
+    HashStrength: {"kind":"UInt32"},
+    KeyExchangeType: {"kind":"UInt32"},
+    KeyExchangeStrength: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HTTP_REQUEST_SIZING_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_REQUEST_SIZING_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_REQUEST_SIZING_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_REQUEST_SIZING_INFO = extern struct {
+    Flags: {"kind":"UInt64"},
+    RequestIndex: {"kind":"UInt32"},
+    RequestSizingCount: {"kind":"UInt32"},
+    RequestSizing: {"kind":"Array","child": {"kind":"UInt64"}},
+};
+// --------------------------------------------------------
+// Type: HTTP_REQUEST_TIMING_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_REQUEST_TIMING_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_REQUEST_TIMING_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_REQUEST_TIMING_INFO = extern struct {
+    RequestTimingCount: {"kind":"UInt32"},
+    RequestTiming: {"kind":"Array","child": {"kind":"UInt64"}},
+};
+// --------------------------------------------------------
+// Type: HTTP_REQUEST_INFO_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_REQUEST_INFO_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_REQUEST_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_REQUEST_INFO = extern struct {
+    InfoType: Windows.Win32.Http.HTTP_REQUEST_INFO_TYPE,
+    InfoLength: {"kind":"UInt32"},
+    pInfo: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: HTTP_REQUEST_AUTH_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_REQUEST_AUTH_INFO = extern struct {
+    AuthStatus: Windows.Win32.Http.HTTP_AUTH_STATUS,
+    SecStatus: {"kind":"Int32"},
+    Flags: {"kind":"UInt32"},
+    AuthType: Windows.Win32.Http.HTTP_REQUEST_AUTH_TYPE,
+    AccessToken: Windows.Win32.SystemServices.HANDLE,
+    ContextAttributes: {"kind":"UInt32"},
+    PackedContextLength: {"kind":"UInt32"},
+    PackedContextType: {"kind":"UInt32"},
+    PackedContext: {"kind""Ptr","child":{"kind":"Void"}},
+    MutualAuthDataLength: {"kind":"UInt32"},
+    pMutualAuthData: {"kind""Ptr","child":{"kind":"SByte"}},
+    PackageNameLength: {"kind":"UInt16"},
+    pPackageName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: HTTP_REQUEST_V1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_REQUEST_V1 = extern struct {
+    Flags: {"kind":"UInt32"},
+    ConnectionId: {"kind":"UInt64"},
+    RequestId: {"kind":"UInt64"},
+    UrlContext: {"kind":"UInt64"},
+    Version: Windows.Win32.Http.HTTP_VERSION,
+    Verb: Windows.Win32.Http.HTTP_VERB,
+    UnknownVerbLength: {"kind":"UInt16"},
+    RawUrlLength: {"kind":"UInt16"},
+    pUnknownVerb: {"kind""Ptr","child":{"kind":"SByte"}},
+    pRawUrl: {"kind""Ptr","child":{"kind":"SByte"}},
+    CookedUrl: Windows.Win32.Http.HTTP_COOKED_URL,
+    Address: Windows.Win32.Http.HTTP_TRANSPORT_ADDRESS,
+    Headers: Windows.Win32.Http.HTTP_REQUEST_HEADERS,
+    BytesReceived: {"kind":"UInt64"},
+    EntityChunkCount: {"kind":"UInt16"},
+    pEntityChunks: {"kind""Ptr","child":Windows.Win32.Http.HTTP_DATA_CHUNK},
+    RawConnectionId: {"kind":"UInt64"},
+    pSslInfo: {"kind""Ptr","child":Windows.Win32.Http.HTTP_SSL_INFO},
+};
+// --------------------------------------------------------
+// Type: HTTP_REQUEST_V2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_REQUEST_V2 = extern struct {
+    __AnonymousBase_http_L1816_C35: Windows.Win32.Http.HTTP_REQUEST_V1,
+    RequestInfoCount: {"kind":"UInt16"},
+    pRequestInfo: {"kind""Ptr","child":Windows.Win32.Http.HTTP_REQUEST_INFO},
+};
+// --------------------------------------------------------
+// Type: HTTP_RESPONSE_V1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_RESPONSE_V1 = extern struct {
+    Flags: {"kind":"UInt32"},
+    Version: Windows.Win32.Http.HTTP_VERSION,
+    StatusCode: {"kind":"UInt16"},
+    ReasonLength: {"kind":"UInt16"},
+    pReason: {"kind""Ptr","child":{"kind":"SByte"}},
+    Headers: Windows.Win32.Http.HTTP_RESPONSE_HEADERS,
+    EntityChunkCount: {"kind":"UInt16"},
+    pEntityChunks: {"kind""Ptr","child":Windows.Win32.Http.HTTP_DATA_CHUNK},
+};
+// --------------------------------------------------------
+// Type: HTTP_RESPONSE_INFO_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_RESPONSE_INFO_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_RESPONSE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_RESPONSE_INFO = extern struct {
+    Type: Windows.Win32.Http.HTTP_RESPONSE_INFO_TYPE,
+    Length: {"kind":"UInt32"},
+    pInfo: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: HTTP_MULTIPLE_KNOWN_HEADERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_MULTIPLE_KNOWN_HEADERS = extern struct {
+    HeaderId: Windows.Win32.Http.HTTP_HEADER_ID,
+    Flags: {"kind":"UInt32"},
+    KnownHeaderCount: {"kind":"UInt16"},
+    KnownHeaders: {"kind""Ptr","child":Windows.Win32.Http.HTTP_KNOWN_HEADER},
+};
+// --------------------------------------------------------
+// Type: HTTP_RESPONSE_V2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_RESPONSE_V2 = extern struct {
+    __AnonymousBase_http_L2003_C36: Windows.Win32.Http.HTTP_RESPONSE_V1,
+    ResponseInfoCount: {"kind":"UInt16"},
+    pResponseInfo: {"kind""Ptr","child":Windows.Win32.Http.HTTP_RESPONSE_INFO},
+};
+// --------------------------------------------------------
+// Type: HTTPAPI_VERSION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTPAPI_VERSION = extern struct {
+    HttpApiMajorVersion: {"kind":"UInt16"},
+    HttpApiMinorVersion: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: HTTP_CACHE_POLICY_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_CACHE_POLICY_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_CACHE_POLICY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_CACHE_POLICY = extern struct {
+    Policy: Windows.Win32.Http.HTTP_CACHE_POLICY_TYPE,
+    SecondsToLive: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_ID
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_SERVICE_CONFIG_ID = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_QUERY_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_SERVICE_CONFIG_QUERY_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_SSL_KEY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_CONFIG_SSL_KEY = extern struct {
+    pIpPort: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_SSL_KEY_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_CONFIG_SSL_KEY_EX = extern struct {
+    IpPort: Windows.Win32.NetworkDrivers.SOCKADDR_STORAGE_LH,
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_SSL_SNI_KEY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_CONFIG_SSL_SNI_KEY = extern struct {
+    IpPort: Windows.Win32.NetworkDrivers.SOCKADDR_STORAGE_LH,
+    Host: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_SSL_CCS_KEY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_CONFIG_SSL_CCS_KEY = extern struct {
+    LocalAddress: Windows.Win32.NetworkDrivers.SOCKADDR_STORAGE_LH,
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_SSL_PARAM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_CONFIG_SSL_PARAM = extern struct {
+    SslHashLength: {"kind":"UInt32"},
+    pSslHash: {"kind""Ptr","child":{"kind":"Void"}},
+    AppId: Guid,
+    pSslCertStoreName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DefaultCertCheckMode: {"kind":"UInt32"},
+    DefaultRevocationFreshnessTime: {"kind":"UInt32"},
+    DefaultRevocationUrlRetrievalTimeout: {"kind":"UInt32"},
+    pDefaultSslCtlIdentifier: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pDefaultSslCtlStoreName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DefaultFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HTTP_SSL_SERVICE_CONFIG_EX_PARAM_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_SSL_SERVICE_CONFIG_EX_PARAM_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP2_WINDOW_SIZE_PARAM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP2_WINDOW_SIZE_PARAM = extern struct {
+    Http2ReceiveWindowSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HTTP2_SETTINGS_LIMITS_PARAM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP2_SETTINGS_LIMITS_PARAM = extern struct {
+    Http2MaxSettingsPerFrame: {"kind":"UInt32"},
+    Http2MaxSettingsPerMinute: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HTTP_PERFORMANCE_PARAM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_PERFORMANCE_PARAM = extern struct {
+    SendBufferingFlags: {"kind":"UInt64"},
+    EnableAggressiveICW: {"kind":"Byte"},
+    MaxBufferedSendBytes: {"kind":"UInt32"},
+    MaxConcurrentClientStreams: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_SSL_PARAM_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_CONFIG_SSL_PARAM_EX = extern struct {
+    ParamType: Windows.Win32.Http.HTTP_SSL_SERVICE_CONFIG_EX_PARAM_TYPE,
+    Flags: {"kind":"UInt64"},
+    Anonymous: Windows.Win32.Http.HTTP_SERVICE_CONFIG_SSL_PARAM_EX+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_SSL_SET
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_CONFIG_SSL_SET = extern struct {
+    KeyDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_SSL_KEY,
+    ParamDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_SSL_PARAM,
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_SSL_SNI_SET
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_CONFIG_SSL_SNI_SET = extern struct {
+    KeyDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_SSL_SNI_KEY,
+    ParamDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_SSL_PARAM,
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_SSL_CCS_SET
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_CONFIG_SSL_CCS_SET = extern struct {
+    KeyDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_SSL_CCS_KEY,
+    ParamDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_SSL_PARAM,
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_SSL_SET_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_CONFIG_SSL_SET_EX = extern struct {
+    KeyDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_SSL_KEY_EX,
+    ParamDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_SSL_PARAM_EX,
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_SSL_SNI_SET_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_CONFIG_SSL_SNI_SET_EX = extern struct {
+    KeyDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_SSL_SNI_KEY,
+    ParamDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_SSL_PARAM_EX,
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_SSL_CCS_SET_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_CONFIG_SSL_CCS_SET_EX = extern struct {
+    KeyDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_SSL_CCS_KEY,
+    ParamDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_SSL_PARAM_EX,
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_SSL_QUERY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_CONFIG_SSL_QUERY = extern struct {
+    QueryDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_QUERY_TYPE,
+    KeyDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_SSL_KEY,
+    dwToken: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_SSL_SNI_QUERY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_CONFIG_SSL_SNI_QUERY = extern struct {
+    QueryDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_QUERY_TYPE,
+    KeyDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_SSL_SNI_KEY,
+    dwToken: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_SSL_CCS_QUERY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_CONFIG_SSL_CCS_QUERY = extern struct {
+    QueryDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_QUERY_TYPE,
+    KeyDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_SSL_CCS_KEY,
+    dwToken: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_SSL_QUERY_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_CONFIG_SSL_QUERY_EX = extern struct {
+    QueryDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_QUERY_TYPE,
+    KeyDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_SSL_KEY_EX,
+    dwToken: {"kind":"UInt32"},
+    ParamType: Windows.Win32.Http.HTTP_SSL_SERVICE_CONFIG_EX_PARAM_TYPE,
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_SSL_SNI_QUERY_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_CONFIG_SSL_SNI_QUERY_EX = extern struct {
+    QueryDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_QUERY_TYPE,
+    KeyDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_SSL_SNI_KEY,
+    dwToken: {"kind":"UInt32"},
+    ParamType: Windows.Win32.Http.HTTP_SSL_SERVICE_CONFIG_EX_PARAM_TYPE,
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_SSL_CCS_QUERY_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_CONFIG_SSL_CCS_QUERY_EX = extern struct {
+    QueryDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_QUERY_TYPE,
+    KeyDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_SSL_CCS_KEY,
+    dwToken: {"kind":"UInt32"},
+    ParamType: Windows.Win32.Http.HTTP_SSL_SERVICE_CONFIG_EX_PARAM_TYPE,
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_IP_LISTEN_PARAM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_CONFIG_IP_LISTEN_PARAM = extern struct {
+    AddrLength: {"kind":"UInt16"},
+    pAddress: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_IP_LISTEN_QUERY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_CONFIG_IP_LISTEN_QUERY = extern struct {
+    AddrCount: {"kind":"UInt32"},
+    AddrList: {"kind":"Array","child": Windows.Win32.NetworkDrivers.SOCKADDR_STORAGE_LH},
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_URLACL_KEY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_CONFIG_URLACL_KEY = extern struct {
+    pUrlPrefix: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_URLACL_PARAM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_CONFIG_URLACL_PARAM = extern struct {
+    pStringSecurityDescriptor: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_URLACL_SET
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_CONFIG_URLACL_SET = extern struct {
+    KeyDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_URLACL_KEY,
+    ParamDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_URLACL_PARAM,
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_URLACL_QUERY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_CONFIG_URLACL_QUERY = extern struct {
+    QueryDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_QUERY_TYPE,
+    KeyDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_URLACL_KEY,
+    dwToken: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_CACHE_KEY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_SERVICE_CONFIG_CACHE_KEY = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_SERVICE_CONFIG_CACHE_SET
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_SERVICE_CONFIG_CACHE_SET = extern struct {
+    KeyDesc: Windows.Win32.Http.HTTP_SERVICE_CONFIG_CACHE_KEY,
+    ParamDesc: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HTTP_REQUEST_PROPERTY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_REQUEST_PROPERTY = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_QUERY_REQUEST_QUALIFIER_TCP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_QUERY_REQUEST_QUALIFIER_TCP = extern struct {
+    Freshness: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: HTTP_QUERY_REQUEST_QUALIFIER_QUIC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_QUERY_REQUEST_QUALIFIER_QUIC = extern struct {
+    Freshness: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: HTTP_REQUEST_PROPERTY_SNI
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_REQUEST_PROPERTY_SNI = extern struct {
+    Hostname: {"kind":"Array","child": {"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WINHTTP_ASYNC_RESULT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINHTTP_ASYNC_RESULT = extern struct {
+    dwResult: {"kind":"UIntPtr"},
+    dwError: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: URL_COMPONENTS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const URL_COMPONENTS = extern struct {
+    dwStructSize: {"kind":"UInt32"},
+    lpszScheme: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwSchemeLength: {"kind":"UInt32"},
+    nScheme: Windows.Win32.WinInet.INTERNET_SCHEME,
+    lpszHostName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwHostNameLength: {"kind":"UInt32"},
+    nPort: {"kind":"UInt16"},
+    lpszUserName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwUserNameLength: {"kind":"UInt32"},
+    lpszPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwPasswordLength: {"kind":"UInt32"},
+    lpszUrlPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwUrlPathLength: {"kind":"UInt32"},
+    lpszExtraInfo: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwExtraInfoLength: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WINHTTP_PROXY_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINHTTP_PROXY_INFO = extern struct {
+    dwAccessType: {"kind":"UInt32"},
+    lpszProxy: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszProxyBypass: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WINHTTP_AUTOPROXY_OPTIONS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINHTTP_AUTOPROXY_OPTIONS = extern struct {
+    dwFlags: {"kind":"UInt32"},
+    dwAutoDetectFlags: {"kind":"UInt32"},
+    lpszAutoConfigUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpvReserved: {"kind""Ptr","child":{"kind":"Void"}},
+    dwReserved: {"kind":"UInt32"},
+    fAutoLogonIfChallenged: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: WINHTTP_PROXY_RESULT_ENTRY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINHTTP_PROXY_RESULT_ENTRY = extern struct {
+    fProxy: Windows.Win32.SystemServices.BOOL,
+    fBypass: Windows.Win32.SystemServices.BOOL,
+    ProxyScheme: Windows.Win32.WinInet.INTERNET_SCHEME,
+    pwszProxy: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ProxyPort: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: WINHTTP_PROXY_RESULT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINHTTP_PROXY_RESULT = extern struct {
+    cEntries: {"kind":"UInt32"},
+    pEntries: {"kind""Ptr","child":Windows.Win32.Http.WINHTTP_PROXY_RESULT_ENTRY},
+};
+// --------------------------------------------------------
+// Type: WINHTTP_PROXY_RESULT_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINHTTP_PROXY_RESULT_EX = extern struct {
+    cEntries: {"kind":"UInt32"},
+    pEntries: {"kind""Ptr","child":Windows.Win32.Http.WINHTTP_PROXY_RESULT_ENTRY},
+    hProxyDetectionHandle: Windows.Win32.SystemServices.HANDLE,
+    dwProxyInterfaceAffinity: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: _WinHttpProxyNetworkKey
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _WinHttpProxyNetworkKey = extern struct {
+    pbBuffer: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: WINHTTP_PROXY_SETTINGS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINHTTP_PROXY_SETTINGS = extern struct {
+    dwStructSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwCurrentSettingsVersion: {"kind":"UInt32"},
+    pwszConnectionName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszProxy: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszProxyBypass: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszAutoconfigUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszAutoconfigSecondaryUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwAutoDiscoveryFlags: {"kind":"UInt32"},
+    pwszLastKnownGoodAutoConfigUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwAutoconfigReloadDelayMins: {"kind":"UInt32"},
+    ftLastKnownDetectTime: Windows.Win32.WindowsProgramming.FILETIME,
+    dwDetectedInterfaceIpCount: {"kind":"UInt32"},
+    pdwDetectedInterfaceIp: {"kind""Ptr","child":{"kind":"UInt32"}},
+    cNetworkKeys: {"kind":"UInt32"},
+    pNetworkKeys: {"kind""Ptr","child":Windows.Win32.Http._WinHttpProxyNetworkKey},
+};
+// --------------------------------------------------------
+// Type: WINHTTP_CERTIFICATE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINHTTP_CERTIFICATE_INFO = extern struct {
+    ftExpiry: Windows.Win32.WindowsProgramming.FILETIME,
+    ftStart: Windows.Win32.WindowsProgramming.FILETIME,
+    lpszSubjectInfo: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszIssuerInfo: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszProtocolName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszSignatureAlgName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszEncryptionAlgName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwKeySize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WINHTTP_CONNECTION_INFO
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=4 Size=0
+pub const WINHTTP_CONNECTION_INFO = *opaque{
+};
+// --------------------------------------------------------
+// Type: WINHTTP_REQUEST_TIME_ENTRY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WINHTTP_REQUEST_TIME_ENTRY = *opaque{
+};
+// --------------------------------------------------------
+// Type: WINHTTP_REQUEST_TIMES
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=4 Size=0
+pub const WINHTTP_REQUEST_TIMES = *opaque{
+};
+// --------------------------------------------------------
+// Type: WINHTTP_REQUEST_STAT_ENTRY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WINHTTP_REQUEST_STAT_ENTRY = *opaque{
+};
+// --------------------------------------------------------
+// Type: WINHTTP_REQUEST_STATS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=4 Size=0
+pub const WINHTTP_REQUEST_STATS = *opaque{
+};
+// --------------------------------------------------------
+// Type: WINHTTP_EXTENDED_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINHTTP_EXTENDED_HEADER = extern struct {
+    Anonymous1: Windows.Win32.Http.WINHTTP_EXTENDED_HEADER+_Anonymous1_e__Union,
+    Anonymous2: Windows.Win32.Http.WINHTTP_EXTENDED_HEADER+_Anonymous2_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: WINHTTP_CREDS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINHTTP_CREDS = extern struct {
+    lpszUserName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszPassword: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszRealm: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwAuthScheme: {"kind":"UInt32"},
+    lpszHostName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwPort: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WINHTTP_CREDS_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINHTTP_CREDS_EX = extern struct {
+    lpszUserName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszPassword: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszRealm: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwAuthScheme: {"kind":"UInt32"},
+    lpszHostName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwPort: {"kind":"UInt32"},
+    lpszUrl: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: WINHTTP_STATUS_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WINHTTP_STATUS_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWINHTTP_STATUS_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWINHTTP_STATUS_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WINHTTP_CURRENT_USER_IE_PROXY_CONFIG
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINHTTP_CURRENT_USER_IE_PROXY_CONFIG = extern struct {
+    fAutoDetect: Windows.Win32.SystemServices.BOOL,
+    lpszAutoConfigUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszProxy: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszProxyBypass: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WINHTTP_WEB_SOCKET_OPERATION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WINHTTP_WEB_SOCKET_OPERATION = *opaque{
+};
+// --------------------------------------------------------
+// Type: WINHTTP_WEB_SOCKET_BUFFER_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WINHTTP_WEB_SOCKET_BUFFER_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WINHTTP_WEB_SOCKET_CLOSE_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WINHTTP_WEB_SOCKET_CLOSE_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: WINHTTP_WEB_SOCKET_ASYNC_RESULT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINHTTP_WEB_SOCKET_ASYNC_RESULT = extern struct {
+    AsyncResult: Windows.Win32.Http.WINHTTP_ASYNC_RESULT,
+    Operation: Windows.Win32.Http.WINHTTP_WEB_SOCKET_OPERATION,
+};
+// --------------------------------------------------------
+// Type: WINHTTP_WEB_SOCKET_STATUS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINHTTP_WEB_SOCKET_STATUS = extern struct {
+    dwBytesTransferred: {"kind":"UInt32"},
+    eBufferType: Windows.Win32.Http.WINHTTP_WEB_SOCKET_BUFFER_TYPE,
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpInitialize(
+    Version: Windows.Win32.Http.HTTPAPI_VERSION,
+    Flags: {"kind":"UInt32"},
+    pReserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpTerminate(
+    Flags: {"kind":"UInt32"},
+    pReserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpCreateHttpHandle(
+    RequestQueueHandle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    Reserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpCreateRequestQueue(
+    Version: Windows.Win32.Http.HTTPAPI_VERSION,
+    Name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SecurityAttributes: {"kind""Ptr","child":Windows.Win32.SystemServices.SECURITY_ATTRIBUTES},
+    Flags: {"kind":"UInt32"},
+    RequestQueueHandle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpCloseRequestQueue(
+    RequestQueueHandle: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpSetRequestQueueProperty(
+    RequestQueueHandle: Windows.Win32.SystemServices.HANDLE,
+    Property: Windows.Win32.Http.HTTP_SERVER_PROPERTY,
+    PropertyInformation: {"kind""Ptr","child":{"kind":"Void"}},
+    PropertyInformationLength: {"kind":"UInt32"},
+    Reserved1: {"kind":"UInt32"},
+    Reserved2: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpQueryRequestQueueProperty(
+    RequestQueueHandle: Windows.Win32.SystemServices.HANDLE,
+    Property: Windows.Win32.Http.HTTP_SERVER_PROPERTY,
+    PropertyInformation: {"kind""Ptr","child":{"kind":"Void"}},
+    PropertyInformationLength: {"kind":"UInt32"},
+    Reserved1: {"kind":"UInt32"},
+    ReturnLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Reserved2: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpShutdownRequestQueue(
+    RequestQueueHandle: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpReceiveClientCertificate(
+    RequestQueueHandle: Windows.Win32.SystemServices.HANDLE,
+    ConnectionId: {"kind":"UInt64"},
+    Flags: {"kind":"UInt32"},
+    SslClientCertInfo: {"kind""Ptr","child":Windows.Win32.Http.HTTP_SSL_CLIENT_CERT_INFO},
+    SslClientCertInfoSize: {"kind":"UInt32"},
+    BytesReceived: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpCreateServerSession(
+    Version: Windows.Win32.Http.HTTPAPI_VERSION,
+    ServerSessionId: {"kind""Ptr","child":{"kind":"UInt64"}},
+    Reserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpCloseServerSession(
+    ServerSessionId: {"kind":"UInt64"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpQueryServerSessionProperty(
+    ServerSessionId: {"kind":"UInt64"},
+    Property: Windows.Win32.Http.HTTP_SERVER_PROPERTY,
+    PropertyInformation: {"kind""Ptr","child":{"kind":"Void"}},
+    PropertyInformationLength: {"kind":"UInt32"},
+    ReturnLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpSetServerSessionProperty(
+    ServerSessionId: {"kind":"UInt64"},
+    Property: Windows.Win32.Http.HTTP_SERVER_PROPERTY,
+    PropertyInformation: {"kind""Ptr","child":{"kind":"Void"}},
+    PropertyInformationLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpAddUrl(
+    RequestQueueHandle: Windows.Win32.SystemServices.HANDLE,
+    FullyQualifiedUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpRemoveUrl(
+    RequestQueueHandle: Windows.Win32.SystemServices.HANDLE,
+    FullyQualifiedUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpCreateUrlGroup(
+    ServerSessionId: {"kind":"UInt64"},
+    pUrlGroupId: {"kind""Ptr","child":{"kind":"UInt64"}},
+    Reserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpCloseUrlGroup(
+    UrlGroupId: {"kind":"UInt64"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpAddUrlToUrlGroup(
+    UrlGroupId: {"kind":"UInt64"},
+    pFullyQualifiedUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    UrlContext: {"kind":"UInt64"},
+    Reserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpRemoveUrlFromUrlGroup(
+    UrlGroupId: {"kind":"UInt64"},
+    pFullyQualifiedUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpSetUrlGroupProperty(
+    UrlGroupId: {"kind":"UInt64"},
+    Property: Windows.Win32.Http.HTTP_SERVER_PROPERTY,
+    PropertyInformation: {"kind""Ptr","child":{"kind":"Void"}},
+    PropertyInformationLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpQueryUrlGroupProperty(
+    UrlGroupId: {"kind":"UInt64"},
+    Property: Windows.Win32.Http.HTTP_SERVER_PROPERTY,
+    PropertyInformation: {"kind""Ptr","child":{"kind":"Void"}},
+    PropertyInformationLength: {"kind":"UInt32"},
+    ReturnLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpPrepareUrl(
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+    Flags: {"kind":"UInt32"},
+    Url: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PreparedUrl: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpReceiveHttpRequest(
+    RequestQueueHandle: Windows.Win32.SystemServices.HANDLE,
+    RequestId: {"kind":"UInt64"},
+    Flags: {"kind":"UInt32"},
+    RequestBuffer: {"kind""Ptr","child":Windows.Win32.Http.HTTP_REQUEST_V2},
+    RequestBufferLength: {"kind":"UInt32"},
+    BytesReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpReceiveRequestEntityBody(
+    RequestQueueHandle: Windows.Win32.SystemServices.HANDLE,
+    RequestId: {"kind":"UInt64"},
+    Flags: {"kind":"UInt32"},
+    EntityBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    EntityBufferLength: {"kind":"UInt32"},
+    BytesReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpSendHttpResponse(
+    RequestQueueHandle: Windows.Win32.SystemServices.HANDLE,
+    RequestId: {"kind":"UInt64"},
+    Flags: {"kind":"UInt32"},
+    HttpResponse: {"kind""Ptr","child":Windows.Win32.Http.HTTP_RESPONSE_V2},
+    CachePolicy: {"kind""Ptr","child":Windows.Win32.Http.HTTP_CACHE_POLICY},
+    BytesSent: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Reserved1: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved2: {"kind":"UInt32"},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    LogData: {"kind""Ptr","child":Windows.Win32.Http.HTTP_LOG_DATA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpSendResponseEntityBody(
+    RequestQueueHandle: Windows.Win32.SystemServices.HANDLE,
+    RequestId: {"kind":"UInt64"},
+    Flags: {"kind":"UInt32"},
+    EntityChunkCount: {"kind":"UInt16"},
+    EntityChunks: {"kind""Ptr","child":Windows.Win32.Http.HTTP_DATA_CHUNK},
+    BytesSent: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Reserved1: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved2: {"kind":"UInt32"},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    LogData: {"kind""Ptr","child":Windows.Win32.Http.HTTP_LOG_DATA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpDeclarePush(
+    RequestQueueHandle: Windows.Win32.SystemServices.HANDLE,
+    RequestId: {"kind":"UInt64"},
+    Verb: Windows.Win32.Http.HTTP_VERB,
+    Path: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Query: {"kind""Ptr","child":{"kind":"SByte"}},
+    Headers: {"kind""Ptr","child":Windows.Win32.Http.HTTP_REQUEST_HEADERS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpWaitForDisconnect(
+    RequestQueueHandle: Windows.Win32.SystemServices.HANDLE,
+    ConnectionId: {"kind":"UInt64"},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpWaitForDisconnectEx(
+    RequestQueueHandle: Windows.Win32.SystemServices.HANDLE,
+    ConnectionId: {"kind":"UInt64"},
+    Reserved: {"kind":"UInt32"},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpCancelHttpRequest(
+    RequestQueueHandle: Windows.Win32.SystemServices.HANDLE,
+    RequestId: {"kind":"UInt64"},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpWaitForDemandStart(
+    RequestQueueHandle: Windows.Win32.SystemServices.HANDLE,
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpFlushResponseCache(
+    RequestQueueHandle: Windows.Win32.SystemServices.HANDLE,
+    UrlPrefix: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpAddFragmentToCache(
+    RequestQueueHandle: Windows.Win32.SystemServices.HANDLE,
+    UrlPrefix: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DataChunk: {"kind""Ptr","child":Windows.Win32.Http.HTTP_DATA_CHUNK},
+    CachePolicy: {"kind""Ptr","child":Windows.Win32.Http.HTTP_CACHE_POLICY},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpReadFragmentFromCache(
+    RequestQueueHandle: Windows.Win32.SystemServices.HANDLE,
+    UrlPrefix: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ByteRange: {"kind""Ptr","child":Windows.Win32.Http.HTTP_BYTE_RANGE},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    BufferLength: {"kind":"UInt32"},
+    BytesRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpSetServiceConfiguration(
+    ServiceHandle: Windows.Win32.SystemServices.HANDLE,
+    ConfigId: Windows.Win32.Http.HTTP_SERVICE_CONFIG_ID,
+    pConfigInformation: {"kind""Ptr","child":{"kind":"Void"}},
+    ConfigInformationLength: {"kind":"UInt32"},
+    pOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpUpdateServiceConfiguration(
+    Handle: Windows.Win32.SystemServices.HANDLE,
+    ConfigId: Windows.Win32.Http.HTTP_SERVICE_CONFIG_ID,
+    ConfigInfo: {"kind""Ptr","child":{"kind":"Void"}},
+    ConfigInfoLength: {"kind":"UInt32"},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpDeleteServiceConfiguration(
+    ServiceHandle: Windows.Win32.SystemServices.HANDLE,
+    ConfigId: Windows.Win32.Http.HTTP_SERVICE_CONFIG_ID,
+    pConfigInformation: {"kind""Ptr","child":{"kind":"Void"}},
+    ConfigInformationLength: {"kind":"UInt32"},
+    pOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpQueryServiceConfiguration(
+    ServiceHandle: Windows.Win32.SystemServices.HANDLE,
+    ConfigId: Windows.Win32.Http.HTTP_SERVICE_CONFIG_ID,
+    pInput: {"kind""Ptr","child":{"kind":"Void"}},
+    InputLength: {"kind":"UInt32"},
+    pOutput: {"kind""Ptr","child":{"kind":"Void"}},
+    OutputLength: {"kind":"UInt32"},
+    pReturnLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HTTPAPI" fn HttpGetExtension(
+    Version: Windows.Win32.Http.HTTPAPI_VERSION,
+    Extension: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    BufferSize: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpSetStatusCallback(
+    hInternet: {"kind""Ptr","child":{"kind":"Void"}},
+    lpfnInternetCallback: Windows.Win32.Http.WINHTTP_STATUS_CALLBACK,
+    dwNotificationFlags: {"kind":"UInt32"},
+    dwReserved: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpTimeFromSystemTime(
+    pst: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.SYSTEMTIME},
+    pwszTime: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpTimeToSystemTime(
+    pwszTime: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pst: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.SYSTEMTIME},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpCrackUrl(
+    pwszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwUrlLength: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    lpUrlComponents: {"kind""Ptr","child":Windows.Win32.Http.URL_COMPONENTS},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpCreateUrl(
+    lpUrlComponents: {"kind""Ptr","child":Windows.Win32.Http.URL_COMPONENTS},
+    dwFlags: {"kind":"UInt32"},
+    pwszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pdwUrlLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpCheckPlatform(
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpGetDefaultProxyConfiguration(
+    pProxyInfo: {"kind""Ptr","child":Windows.Win32.Http.WINHTTP_PROXY_INFO},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpSetDefaultProxyConfiguration(
+    pProxyInfo: {"kind""Ptr","child":Windows.Win32.Http.WINHTTP_PROXY_INFO},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpOpen(
+    pszAgentW: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwAccessType: {"kind":"UInt32"},
+    pszProxyW: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszProxyBypassW: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpCloseHandle(
+    hInternet: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpConnect(
+    hSession: {"kind""Ptr","child":{"kind":"Void"}},
+    pswzServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    nServerPort: {"kind":"UInt16"},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpReadData(
+    hRequest: {"kind""Ptr","child":{"kind":"Void"}},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwNumberOfBytesToRead: {"kind":"UInt32"},
+    lpdwNumberOfBytesRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpWriteData(
+    hRequest: {"kind""Ptr","child":{"kind":"Void"}},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwNumberOfBytesToWrite: {"kind":"UInt32"},
+    lpdwNumberOfBytesWritten: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpQueryDataAvailable(
+    hRequest: {"kind""Ptr","child":{"kind":"Void"}},
+    lpdwNumberOfBytesAvailable: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpQueryOption(
+    hInternet: {"kind""Ptr","child":{"kind":"Void"}},
+    dwOption: {"kind":"UInt32"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    lpdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpSetOption(
+    hInternet: {"kind""Ptr","child":{"kind":"Void"}},
+    dwOption: {"kind":"UInt32"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwBufferLength: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpSetTimeouts(
+    hInternet: {"kind""Ptr","child":{"kind":"Void"}},
+    nResolveTimeout: {"kind":"Int32"},
+    nConnectTimeout: {"kind":"Int32"},
+    nSendTimeout: {"kind":"Int32"},
+    nReceiveTimeout: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpOpenRequest(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    pwszVerb: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszObjectName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszVersion: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszReferrer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppwszAcceptTypes: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpAddRequestHeaders(
+    hRequest: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszHeaders: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwHeadersLength: {"kind":"UInt32"},
+    dwModifiers: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpAddRequestHeadersEx(
+    hRequest: {"kind""Ptr","child":{"kind":"Void"}},
+    dwModifiers: {"kind":"UInt32"},
+    ullFlags: {"kind":"UInt64"},
+    ullExtra: {"kind":"UInt64"},
+    cHeaders: {"kind":"UInt32"},
+    pHeaders: {"kind""Ptr","child":Windows.Win32.Http.WINHTTP_EXTENDED_HEADER},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpSendRequest(
+    hRequest: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszHeaders: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwHeadersLength: {"kind":"UInt32"},
+    lpOptional: {"kind""Ptr","child":{"kind":"Void"}},
+    dwOptionalLength: {"kind":"UInt32"},
+    dwTotalLength: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpSetCredentials(
+    hRequest: {"kind""Ptr","child":{"kind":"Void"}},
+    AuthTargets: {"kind":"UInt32"},
+    AuthScheme: {"kind":"UInt32"},
+    pwszUserName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pAuthParams: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpQueryAuthSchemes(
+    hRequest: {"kind""Ptr","child":{"kind":"Void"}},
+    lpdwSupportedSchemes: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpdwFirstScheme: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pdwAuthTarget: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpReceiveResponse(
+    hRequest: {"kind""Ptr","child":{"kind":"Void"}},
+    lpReserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpQueryHeaders(
+    hRequest: {"kind""Ptr","child":{"kind":"Void"}},
+    dwInfoLevel: {"kind":"UInt32"},
+    pwszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    lpdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpdwIndex: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpDetectAutoProxyConfigUrl(
+    dwAutoDetectFlags: {"kind":"UInt32"},
+    ppwstrAutoConfigUrl: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpGetProxyForUrl(
+    hSession: {"kind""Ptr","child":{"kind":"Void"}},
+    lpcwszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pAutoProxyOptions: {"kind""Ptr","child":Windows.Win32.Http.WINHTTP_AUTOPROXY_OPTIONS},
+    pProxyInfo: {"kind""Ptr","child":Windows.Win32.Http.WINHTTP_PROXY_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpCreateProxyResolver(
+    hSession: {"kind""Ptr","child":{"kind":"Void"}},
+    phResolver: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpGetProxyForUrlEx(
+    hResolver: {"kind""Ptr","child":{"kind":"Void"}},
+    pcwszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pAutoProxyOptions: {"kind""Ptr","child":Windows.Win32.Http.WINHTTP_AUTOPROXY_OPTIONS},
+    pContext: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpGetProxyForUrlEx2(
+    hResolver: {"kind""Ptr","child":{"kind":"Void"}},
+    pcwszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pAutoProxyOptions: {"kind""Ptr","child":Windows.Win32.Http.WINHTTP_AUTOPROXY_OPTIONS},
+    cbInterfaceSelectionContext: {"kind":"UInt32"},
+    pInterfaceSelectionContext: {"kind""Ptr","child":{"kind":"Byte"}},
+    pContext: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpGetProxyResult(
+    hResolver: {"kind""Ptr","child":{"kind":"Void"}},
+    pProxyResult: {"kind""Ptr","child":Windows.Win32.Http.WINHTTP_PROXY_RESULT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpGetProxyResultEx(
+    hResolver: {"kind""Ptr","child":{"kind":"Void"}},
+    pProxyResultEx: {"kind""Ptr","child":Windows.Win32.Http.WINHTTP_PROXY_RESULT_EX},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpFreeProxyResult(
+    pProxyResult: {"kind""Ptr","child":Windows.Win32.Http.WINHTTP_PROXY_RESULT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpFreeProxyResultEx(
+    pProxyResultEx: {"kind""Ptr","child":Windows.Win32.Http.WINHTTP_PROXY_RESULT_EX},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpResetAutoProxy(
+    hSession: {"kind""Ptr","child":{"kind":"Void"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpGetIEProxyConfigForCurrentUser(
+    pProxyConfig: {"kind""Ptr","child":Windows.Win32.Http.WINHTTP_CURRENT_USER_IE_PROXY_CONFIG},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpWriteProxySettings(
+    hSession: {"kind""Ptr","child":{"kind":"Void"}},
+    fForceUpdate: Windows.Win32.SystemServices.BOOL,
+    pWinHttpProxySettings: {"kind""Ptr","child":Windows.Win32.Http.WINHTTP_PROXY_SETTINGS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpReadProxySettings(
+    hSession: {"kind""Ptr","child":{"kind":"Void"}},
+    pcwszConnectionName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fFallBackToDefaultSettings: Windows.Win32.SystemServices.BOOL,
+    fSetAutoDiscoverForDefaultSettings: Windows.Win32.SystemServices.BOOL,
+    pdwSettingsVersion: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pfDefaultSettingsAreReturned: {"kind""Ptr","child":{"kind":"Int32"}},
+    pWinHttpProxySettings: {"kind""Ptr","child":Windows.Win32.Http.WINHTTP_PROXY_SETTINGS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpFreeProxySettings(
+    pWinHttpProxySettings: {"kind""Ptr","child":Windows.Win32.Http.WINHTTP_PROXY_SETTINGS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpGetProxySettingsVersion(
+    hSession: {"kind""Ptr","child":{"kind":"Void"}},
+    pdwProxySettingsVersion: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpSetProxySettingsPerUser(
+    fProxySettingsPerUser: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpWebSocketCompleteUpgrade(
+    hRequest: {"kind""Ptr","child":{"kind":"Void"}},
+    pContext: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpWebSocketSend(
+    hWebSocket: {"kind""Ptr","child":{"kind":"Void"}},
+    eBufferType: Windows.Win32.Http.WINHTTP_WEB_SOCKET_BUFFER_TYPE,
+    pvBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwBufferLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpWebSocketReceive(
+    hWebSocket: {"kind""Ptr","child":{"kind":"Void"}},
+    pvBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwBufferLength: {"kind":"UInt32"},
+    pdwBytesRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    peBufferType: {"kind""Ptr","child":Windows.Win32.Http.WINHTTP_WEB_SOCKET_BUFFER_TYPE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpWebSocketShutdown(
+    hWebSocket: {"kind""Ptr","child":{"kind":"Void"}},
+    usStatus: {"kind":"UInt16"},
+    pvReason: {"kind""Ptr","child":{"kind":"Void"}},
+    dwReasonLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpWebSocketClose(
+    hWebSocket: {"kind""Ptr","child":{"kind":"Void"}},
+    usStatus: {"kind":"UInt16"},
+    pvReason: {"kind""Ptr","child":{"kind":"Void"}},
+    dwReasonLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINHTTP" fn WinHttpWebSocketQueryCloseStatus(
+    hWebSocket: {"kind""Ptr","child":{"kind":"Void"}},
+    pusStatus: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pvReason: {"kind""Ptr","child":{"kind":"Void"}},
+    dwReasonLength: {"kind":"UInt32"},
+    pdwReasonLengthConsumed: {"kind""Ptr","child":{"kind":"UInt32"}},
+],
+
+"unicode_aliases": [
+     "HTTP_SERVICE_BINDING_"
+]}

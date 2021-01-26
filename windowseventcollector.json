@@ -1,0 +1,177 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: EC_SUBSCRIPTION_PROPERTY_ID
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EC_SUBSCRIPTION_PROPERTY_ID = *opaque{
+};
+// --------------------------------------------------------
+// Type: EC_SUBSCRIPTION_CREDENTIALS_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EC_SUBSCRIPTION_CREDENTIALS_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: EC_SUBSCRIPTION_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EC_SUBSCRIPTION_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: EC_SUBSCRIPTION_RUNTIME_STATUS_INFO_ID
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EC_SUBSCRIPTION_RUNTIME_STATUS_INFO_ID = *opaque{
+};
+// --------------------------------------------------------
+// Type: EC_VARIANT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EC_VARIANT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: EC_VARIANT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EC_VARIANT = extern struct {
+    Anonymous: Windows.Win32.WindowsEventCollector.EC_VARIANT+_Anonymous_e__Union,
+    Count: {"kind":"UInt32"},
+    Type: {"kind":"UInt32"},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: EC_SUBSCRIPTION_CONFIGURATION_MODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EC_SUBSCRIPTION_CONFIGURATION_MODE = *opaque{
+};
+// --------------------------------------------------------
+// Type: EC_SUBSCRIPTION_DELIVERY_MODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EC_SUBSCRIPTION_DELIVERY_MODE = *opaque{
+};
+// --------------------------------------------------------
+// Type: EC_SUBSCRIPTION_CONTENT_FORMAT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EC_SUBSCRIPTION_CONTENT_FORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: EC_SUBSCRIPTION_RUNTIME_STATUS_ACTIVE_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EC_SUBSCRIPTION_RUNTIME_STATUS_ACTIVE_STATUS = *opaque{
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WecApi" fn EcOpenSubscriptionEnum(
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WecApi" fn EcEnumNextSubscription(
+    SubscriptionEnum: {"kind":"IntPtr"},
+    SubscriptionNameBufferSize: {"kind":"UInt32"},
+    SubscriptionNameBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubscriptionNameBufferUsed: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WecApi" fn EcOpenSubscription(
+    SubscriptionName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    AccessMask: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WecApi" fn EcSetSubscriptionProperty(
+    Subscription: {"kind":"IntPtr"},
+    PropertyId: Windows.Win32.WindowsEventCollector.EC_SUBSCRIPTION_PROPERTY_ID,
+    Flags: {"kind":"UInt32"},
+    PropertyValue: {"kind""Ptr","child":Windows.Win32.WindowsEventCollector.EC_VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WecApi" fn EcGetSubscriptionProperty(
+    Subscription: {"kind":"IntPtr"},
+    PropertyId: Windows.Win32.WindowsEventCollector.EC_SUBSCRIPTION_PROPERTY_ID,
+    Flags: {"kind":"UInt32"},
+    PropertyValueBufferSize: {"kind":"UInt32"},
+    PropertyValueBuffer: {"kind""Ptr","child":Windows.Win32.WindowsEventCollector.EC_VARIANT},
+    PropertyValueBufferUsed: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WecApi" fn EcSaveSubscription(
+    Subscription: {"kind":"IntPtr"},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WecApi" fn EcDeleteSubscription(
+    SubscriptionName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WecApi" fn EcGetObjectArraySize(
+    ObjectArray: {"kind":"IntPtr"},
+    ObjectArraySize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WecApi" fn EcSetObjectArrayProperty(
+    ObjectArray: {"kind":"IntPtr"},
+    PropertyId: Windows.Win32.WindowsEventCollector.EC_SUBSCRIPTION_PROPERTY_ID,
+    ArrayIndex: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+    PropertyValue: {"kind""Ptr","child":Windows.Win32.WindowsEventCollector.EC_VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WecApi" fn EcGetObjectArrayProperty(
+    ObjectArray: {"kind":"IntPtr"},
+    PropertyId: Windows.Win32.WindowsEventCollector.EC_SUBSCRIPTION_PROPERTY_ID,
+    ArrayIndex: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+    PropertyValueBufferSize: {"kind":"UInt32"},
+    PropertyValueBuffer: {"kind""Ptr","child":Windows.Win32.WindowsEventCollector.EC_VARIANT},
+    PropertyValueBufferUsed: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WecApi" fn EcInsertObjectArrayElement(
+    ObjectArray: {"kind":"IntPtr"},
+    ArrayIndex: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WecApi" fn EcRemoveObjectArrayElement(
+    ObjectArray: {"kind":"IntPtr"},
+    ArrayIndex: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WecApi" fn EcGetSubscriptionRunTimeStatus(
+    SubscriptionName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    StatusInfoId: Windows.Win32.WindowsEventCollector.EC_SUBSCRIPTION_RUNTIME_STATUS_INFO_ID,
+    EventSourceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    StatusValueBufferSize: {"kind":"UInt32"},
+    StatusValueBuffer: {"kind""Ptr","child":Windows.Win32.WindowsEventCollector.EC_VARIANT},
+    StatusValueBufferUsed: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WecApi" fn EcRetrySubscription(
+    SubscriptionName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    EventSourceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WecApi" fn EcClose(
+    Object: {"kind":"IntPtr"},
+],
+
+"unicode_aliases": [
+]}

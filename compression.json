@@ -1,0 +1,122 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: COMPRESSOR_HANDLE
+// TypeLayoutAttr: sequential
+// RAIIFree 'CloseDecompressor' (TODO: can we use this information?)
+pub const COMPRESSOR_HANDLE = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: PFN_COMPRESS_ALLOCATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFN_COMPRESS_ALLOCATE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFN_COMPRESS_FREE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFN_COMPRESS_FREE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: COMPRESS_ALLOCATION_ROUTINES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const COMPRESS_ALLOCATION_ROUTINES = extern struct {
+    Allocate: Windows.Win32.Compression.PFN_COMPRESS_ALLOCATE,
+    Free: Windows.Win32.Compression.PFN_COMPRESS_FREE,
+    UserContext: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: COMPRESS_INFORMATION_CLASS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const COMPRESS_INFORMATION_CLASS = *opaque{
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=True (can and should we use this?)
+pub extern "Cabinet" fn CreateCompressor(
+    Algorithm: {"kind":"UInt32"},
+    AllocationRoutines: {"kind""Ptr","child":Windows.Win32.Compression.COMPRESS_ALLOCATION_ROUTINES},
+    CompressorHandle: {"kind""Ptr","child":Windows.Win32.Compression.COMPRESSOR_HANDLE},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "Cabinet" fn SetCompressorInformation(
+    CompressorHandle: Windows.Win32.Compression.COMPRESSOR_HANDLE,
+    CompressInformationClass: Windows.Win32.Compression.COMPRESS_INFORMATION_CLASS,
+    CompressInformation: {"kind""Ptr","child":{"kind":"Void"}},
+    CompressInformationSize: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "Cabinet" fn QueryCompressorInformation(
+    CompressorHandle: Windows.Win32.Compression.COMPRESSOR_HANDLE,
+    CompressInformationClass: Windows.Win32.Compression.COMPRESS_INFORMATION_CLASS,
+    CompressInformation: {"kind""Ptr","child":{"kind":"Void"}},
+    CompressInformationSize: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "Cabinet" fn Compress(
+    CompressorHandle: Windows.Win32.Compression.COMPRESSOR_HANDLE,
+    UncompressedData: {"kind""Ptr","child":{"kind":"Void"}},
+    UncompressedDataSize: {"kind":"UIntPtr"},
+    CompressedBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    CompressedBufferSize: {"kind":"UIntPtr"},
+    CompressedDataSize: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "Cabinet" fn ResetCompressor(
+    CompressorHandle: Windows.Win32.Compression.COMPRESSOR_HANDLE,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "Cabinet" fn CloseCompressor(
+    CompressorHandle: Windows.Win32.Compression.COMPRESSOR_HANDLE,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "Cabinet" fn CreateDecompressor(
+    Algorithm: {"kind":"UInt32"},
+    AllocationRoutines: {"kind""Ptr","child":Windows.Win32.Compression.COMPRESS_ALLOCATION_ROUTINES},
+    DecompressorHandle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "Cabinet" fn SetDecompressorInformation(
+    DecompressorHandle: {"kind":"IntPtr"},
+    CompressInformationClass: Windows.Win32.Compression.COMPRESS_INFORMATION_CLASS,
+    CompressInformation: {"kind""Ptr","child":{"kind":"Void"}},
+    CompressInformationSize: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "Cabinet" fn QueryDecompressorInformation(
+    DecompressorHandle: {"kind":"IntPtr"},
+    CompressInformationClass: Windows.Win32.Compression.COMPRESS_INFORMATION_CLASS,
+    CompressInformation: {"kind""Ptr","child":{"kind":"Void"}},
+    CompressInformationSize: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "Cabinet" fn Decompress(
+    DecompressorHandle: {"kind":"IntPtr"},
+    CompressedData: {"kind""Ptr","child":{"kind":"Void"}},
+    CompressedDataSize: {"kind":"UIntPtr"},
+    UncompressedBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    UncompressedBufferSize: {"kind":"UIntPtr"},
+    UncompressedDataSize: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "Cabinet" fn ResetDecompressor(
+    DecompressorHandle: {"kind":"IntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "Cabinet" fn CloseDecompressor(
+    DecompressorHandle: {"kind":"IntPtr"},
+],
+
+"unicode_aliases": [
+]}

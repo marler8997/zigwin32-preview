@@ -1,0 +1,58 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: DedupBackupSupport
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const DedupBackupSupport = opaque {
+};
+// --------------------------------------------------------
+// Type: DEDUP_CONTAINER_EXTENT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DEDUP_CONTAINER_EXTENT = extern struct {
+    ContainerIndex: {"kind":"UInt32"},
+    StartOffset: {"kind":"Int64"},
+    Length: {"kind":"Int64"},
+};
+// --------------------------------------------------------
+// Type: DDP_FILE_EXTENT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDP_FILE_EXTENT = extern struct {
+    Length: {"kind":"Int64"},
+    Offset: {"kind":"Int64"},
+};
+// --------------------------------------------------------
+// Type: DEDUP_BACKUP_SUPPORT_PARAM_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DEDUP_BACKUP_SUPPORT_PARAM_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: IDedupReadFileCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDedupReadFileCallback = *opaque{
+    // TODO: Method 'ReadBackupFile'
+    // TODO: Method 'OrderContainersRestore'
+    // TODO: Method 'PreviewContainerRead'
+};
+// --------------------------------------------------------
+// Type: IDedupBackupSupport
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDedupBackupSupport = *opaque{
+    // TODO: Method 'RestoreFiles'
+};
+],
+
+"func_definitions": [
+],
+
+"unicode_aliases": [
+]}

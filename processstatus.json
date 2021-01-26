@@ -1,0 +1,346 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: MODULEINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MODULEINFO = extern struct {
+    lpBaseOfDll: {"kind""Ptr","child":{"kind":"Void"}},
+    SizeOfImage: {"kind":"UInt32"},
+    EntryPoint: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: PSAPI_WORKING_SET_BLOCK
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const PSAPI_WORKING_SET_BLOCK = *opaque{
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _Anonymous_e__Struct = extern struct {
+        _bitfield: {"kind":"UIntPtr"},
+    };
+};
+// --------------------------------------------------------
+// Type: PSAPI_WORKING_SET_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PSAPI_WORKING_SET_INFORMATION = extern struct {
+    NumberOfEntries: {"kind":"UIntPtr"},
+    WorkingSetInfo: {"kind":"Array","child": Windows.Win32.ProcessStatus.PSAPI_WORKING_SET_BLOCK},
+};
+// --------------------------------------------------------
+// Type: PSAPI_WORKING_SET_EX_BLOCK
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const PSAPI_WORKING_SET_EX_BLOCK = *opaque{
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Invalid_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Invalid_e__Struct = extern struct {
+            _bitfield: {"kind":"UIntPtr"},
+        };
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            _bitfield: {"kind":"UIntPtr"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: PSAPI_WORKING_SET_EX_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PSAPI_WORKING_SET_EX_INFORMATION = extern struct {
+    VirtualAddress: {"kind""Ptr","child":{"kind":"Void"}},
+    VirtualAttributes: Windows.Win32.ProcessStatus.PSAPI_WORKING_SET_EX_BLOCK,
+};
+// --------------------------------------------------------
+// Type: PSAPI_WS_WATCH_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PSAPI_WS_WATCH_INFORMATION = extern struct {
+    FaultingPc: {"kind""Ptr","child":{"kind":"Void"}},
+    FaultingVa: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: PSAPI_WS_WATCH_INFORMATION_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PSAPI_WS_WATCH_INFORMATION_EX = extern struct {
+    BasicInfo: Windows.Win32.ProcessStatus.PSAPI_WS_WATCH_INFORMATION,
+    FaultingThreadId: {"kind":"UIntPtr"},
+    Flags: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: PROCESS_MEMORY_COUNTERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PROCESS_MEMORY_COUNTERS = extern struct {
+    cb: {"kind":"UInt32"},
+    PageFaultCount: {"kind":"UInt32"},
+    PeakWorkingSetSize: {"kind":"UIntPtr"},
+    WorkingSetSize: {"kind":"UIntPtr"},
+    QuotaPeakPagedPoolUsage: {"kind":"UIntPtr"},
+    QuotaPagedPoolUsage: {"kind":"UIntPtr"},
+    QuotaPeakNonPagedPoolUsage: {"kind":"UIntPtr"},
+    QuotaNonPagedPoolUsage: {"kind":"UIntPtr"},
+    PagefileUsage: {"kind":"UIntPtr"},
+    PeakPagefileUsage: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: PROCESS_MEMORY_COUNTERS_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PROCESS_MEMORY_COUNTERS_EX = extern struct {
+    cb: {"kind":"UInt32"},
+    PageFaultCount: {"kind":"UInt32"},
+    PeakWorkingSetSize: {"kind":"UIntPtr"},
+    WorkingSetSize: {"kind":"UIntPtr"},
+    QuotaPeakPagedPoolUsage: {"kind":"UIntPtr"},
+    QuotaPagedPoolUsage: {"kind":"UIntPtr"},
+    QuotaPeakNonPagedPoolUsage: {"kind":"UIntPtr"},
+    QuotaNonPagedPoolUsage: {"kind":"UIntPtr"},
+    PagefileUsage: {"kind":"UIntPtr"},
+    PeakPagefileUsage: {"kind":"UIntPtr"},
+    PrivateUsage: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: PERFORMANCE_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PERFORMANCE_INFORMATION = extern struct {
+    cb: {"kind":"UInt32"},
+    CommitTotal: {"kind":"UIntPtr"},
+    CommitLimit: {"kind":"UIntPtr"},
+    CommitPeak: {"kind":"UIntPtr"},
+    PhysicalTotal: {"kind":"UIntPtr"},
+    PhysicalAvailable: {"kind":"UIntPtr"},
+    SystemCache: {"kind":"UIntPtr"},
+    KernelTotal: {"kind":"UIntPtr"},
+    KernelPaged: {"kind":"UIntPtr"},
+    KernelNonpaged: {"kind":"UIntPtr"},
+    PageSize: {"kind":"UIntPtr"},
+    HandleCount: {"kind":"UInt32"},
+    ProcessCount: {"kind":"UInt32"},
+    ThreadCount: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ENUM_PAGE_FILE_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ENUM_PAGE_FILE_INFORMATION = extern struct {
+    cb: {"kind":"UInt32"},
+    Reserved: {"kind":"UInt32"},
+    TotalSize: {"kind":"UIntPtr"},
+    TotalInUse: {"kind":"UIntPtr"},
+    PeakUsage: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: PENUM_PAGE_FILE_CALLBACKW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PENUM_PAGE_FILE_CALLBACKW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PENUM_PAGE_FILE_CALLBACKA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PENUM_PAGE_FILE_CALLBACKA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn K32EnumProcesses(
+    lpidProcess: {"kind""Ptr","child":{"kind":"UInt32"}},
+    cb: {"kind":"UInt32"},
+    lpcbNeeded: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn K32EnumProcessModules(
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+    lphModule: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    cb: {"kind":"UInt32"},
+    lpcbNeeded: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn K32EnumProcessModulesEx(
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+    lphModule: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    cb: {"kind":"UInt32"},
+    lpcbNeeded: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwFilterFlag: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn K32GetModuleBaseNameA(
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+    hModule: {"kind":"IntPtr"},
+    lpBaseName: {"kind""Ptr","child":{"kind":"SByte"}},
+    nSize: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn K32GetModuleBaseNameW(
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+    hModule: {"kind":"IntPtr"},
+    lpBaseName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    nSize: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn K32GetModuleFileNameExA(
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+    hModule: {"kind":"IntPtr"},
+    lpFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+    nSize: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn K32GetModuleFileNameExW(
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+    hModule: {"kind":"IntPtr"},
+    lpFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+    nSize: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn K32GetModuleInformation(
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+    hModule: {"kind":"IntPtr"},
+    lpmodinfo: {"kind""Ptr","child":Windows.Win32.ProcessStatus.MODULEINFO},
+    cb: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn K32EmptyWorkingSet(
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn K32QueryWorkingSet(
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+    pv: {"kind""Ptr","child":{"kind":"Void"}},
+    cb: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn K32QueryWorkingSetEx(
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+    pv: {"kind""Ptr","child":{"kind":"Void"}},
+    cb: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn K32InitializeProcessForWsWatch(
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn K32GetWsChanges(
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+    lpWatchInfo: {"kind""Ptr","child":Windows.Win32.ProcessStatus.PSAPI_WS_WATCH_INFORMATION},
+    cb: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn K32GetWsChangesEx(
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+    lpWatchInfoEx: {"kind""Ptr","child":Windows.Win32.ProcessStatus.PSAPI_WS_WATCH_INFORMATION_EX},
+    cb: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn K32GetMappedFileNameW(
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+    lpv: {"kind""Ptr","child":{"kind":"Void"}},
+    lpFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+    nSize: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn K32GetMappedFileNameA(
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+    lpv: {"kind""Ptr","child":{"kind":"Void"}},
+    lpFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+    nSize: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn K32EnumDeviceDrivers(
+    lpImageBase: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+    cb: {"kind":"UInt32"},
+    lpcbNeeded: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn K32GetDeviceDriverBaseNameA(
+    ImageBase: {"kind""Ptr","child":{"kind":"Void"}},
+    lpFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+    nSize: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn K32GetDeviceDriverBaseNameW(
+    ImageBase: {"kind""Ptr","child":{"kind":"Void"}},
+    lpBaseName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    nSize: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn K32GetDeviceDriverFileNameA(
+    ImageBase: {"kind""Ptr","child":{"kind":"Void"}},
+    lpFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+    nSize: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn K32GetDeviceDriverFileNameW(
+    ImageBase: {"kind""Ptr","child":{"kind":"Void"}},
+    lpFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+    nSize: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn K32GetProcessMemoryInfo(
+    Process: Windows.Win32.SystemServices.HANDLE,
+    ppsmemCounters: {"kind""Ptr","child":Windows.Win32.ProcessStatus.PROCESS_MEMORY_COUNTERS},
+    cb: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn K32GetPerformanceInfo(
+    pPerformanceInformation: {"kind""Ptr","child":Windows.Win32.ProcessStatus.PERFORMANCE_INFORMATION},
+    cb: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn K32EnumPageFilesW(
+    pCallBackRoutine: Windows.Win32.ProcessStatus.PENUM_PAGE_FILE_CALLBACKW,
+    pContext: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn K32EnumPageFilesA(
+    pCallBackRoutine: Windows.Win32.ProcessStatus.PENUM_PAGE_FILE_CALLBACKA,
+    pContext: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn K32GetProcessImageFileNameA(
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+    lpImageFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    nSize: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn K32GetProcessImageFileNameW(
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+    lpImageFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    nSize: {"kind":"UInt32"},
+],
+
+"unicode_aliases": [
+     "PENUM_PAGE_FILE_CALLBACK"
+     "K32GetModuleBaseName"
+     "K32GetModuleFileNameEx"
+     "K32GetMappedFileName"
+     "K32GetDeviceDriverBaseName"
+     "K32GetDeviceDriverFileName"
+     "K32EnumPageFiles"
+     "K32GetProcessImageFileName"
+]}

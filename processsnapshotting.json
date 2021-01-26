@@ -1,0 +1,380 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: PSS_HANDLE_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PSS_HANDLE_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PSS_OBJECT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PSS_OBJECT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PSS_CAPTURE_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PSS_CAPTURE_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PSS_QUERY_INFORMATION_CLASS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PSS_QUERY_INFORMATION_CLASS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PSS_WALK_INFORMATION_CLASS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PSS_WALK_INFORMATION_CLASS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PSS_DUPLICATE_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PSS_DUPLICATE_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: HPSS__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HPSS__ = extern struct {
+    unused: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: HPSSWALK__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HPSSWALK__ = extern struct {
+    unused: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: PSS_PROCESS_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PSS_PROCESS_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PSS_PROCESS_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PSS_PROCESS_INFORMATION = extern struct {
+    ExitStatus: {"kind":"UInt32"},
+    PebBaseAddress: {"kind""Ptr","child":{"kind":"Void"}},
+    AffinityMask: {"kind":"UIntPtr"},
+    BasePriority: {"kind":"Int32"},
+    ProcessId: {"kind":"UInt32"},
+    ParentProcessId: {"kind":"UInt32"},
+    Flags: Windows.Win32.ProcessSnapshotting.PSS_PROCESS_FLAGS,
+    CreateTime: Windows.Win32.WindowsProgramming.FILETIME,
+    ExitTime: Windows.Win32.WindowsProgramming.FILETIME,
+    KernelTime: Windows.Win32.WindowsProgramming.FILETIME,
+    UserTime: Windows.Win32.WindowsProgramming.FILETIME,
+    PriorityClass: {"kind":"UInt32"},
+    PeakVirtualSize: {"kind":"UIntPtr"},
+    VirtualSize: {"kind":"UIntPtr"},
+    PageFaultCount: {"kind":"UInt32"},
+    PeakWorkingSetSize: {"kind":"UIntPtr"},
+    WorkingSetSize: {"kind":"UIntPtr"},
+    QuotaPeakPagedPoolUsage: {"kind":"UIntPtr"},
+    QuotaPagedPoolUsage: {"kind":"UIntPtr"},
+    QuotaPeakNonPagedPoolUsage: {"kind":"UIntPtr"},
+    QuotaNonPagedPoolUsage: {"kind":"UIntPtr"},
+    PagefileUsage: {"kind":"UIntPtr"},
+    PeakPagefileUsage: {"kind":"UIntPtr"},
+    PrivateUsage: {"kind":"UIntPtr"},
+    ExecuteFlags: {"kind":"UInt32"},
+    ImageFileName: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: PSS_VA_CLONE_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PSS_VA_CLONE_INFORMATION = extern struct {
+    VaCloneHandle: Windows.Win32.SystemServices.HANDLE,
+};
+// --------------------------------------------------------
+// Type: PSS_AUXILIARY_PAGES_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PSS_AUXILIARY_PAGES_INFORMATION = extern struct {
+    AuxPagesCaptured: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PSS_VA_SPACE_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PSS_VA_SPACE_INFORMATION = extern struct {
+    RegionCount: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PSS_HANDLE_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PSS_HANDLE_INFORMATION = extern struct {
+    HandlesCaptured: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PSS_THREAD_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PSS_THREAD_INFORMATION = extern struct {
+    ThreadsCaptured: {"kind":"UInt32"},
+    ContextLength: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PSS_HANDLE_TRACE_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PSS_HANDLE_TRACE_INFORMATION = extern struct {
+    SectionHandle: Windows.Win32.SystemServices.HANDLE,
+    Size: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PSS_PERFORMANCE_COUNTERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PSS_PERFORMANCE_COUNTERS = extern struct {
+    TotalCycleCount: {"kind":"UInt64"},
+    TotalWallClockPeriod: {"kind":"UInt64"},
+    VaCloneCycleCount: {"kind":"UInt64"},
+    VaCloneWallClockPeriod: {"kind":"UInt64"},
+    VaSpaceCycleCount: {"kind":"UInt64"},
+    VaSpaceWallClockPeriod: {"kind":"UInt64"},
+    AuxPagesCycleCount: {"kind":"UInt64"},
+    AuxPagesWallClockPeriod: {"kind":"UInt64"},
+    HandlesCycleCount: {"kind":"UInt64"},
+    HandlesWallClockPeriod: {"kind":"UInt64"},
+    ThreadsCycleCount: {"kind":"UInt64"},
+    ThreadsWallClockPeriod: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: PSS_AUXILIARY_PAGE_ENTRY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PSS_AUXILIARY_PAGE_ENTRY = extern struct {
+    Address: {"kind""Ptr","child":{"kind":"Void"}},
+    BasicInformation: Windows.Win32.SystemServices.MEMORY_BASIC_INFORMATION,
+    CaptureTime: Windows.Win32.WindowsProgramming.FILETIME,
+    PageContents: {"kind""Ptr","child":{"kind":"Void"}},
+    PageSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PSS_VA_SPACE_ENTRY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PSS_VA_SPACE_ENTRY = extern struct {
+    BaseAddress: {"kind""Ptr","child":{"kind":"Void"}},
+    AllocationBase: {"kind""Ptr","child":{"kind":"Void"}},
+    AllocationProtect: {"kind":"UInt32"},
+    RegionSize: {"kind":"UIntPtr"},
+    State: {"kind":"UInt32"},
+    Protect: {"kind":"UInt32"},
+    Type: {"kind":"UInt32"},
+    TimeDateStamp: {"kind":"UInt32"},
+    SizeOfImage: {"kind":"UInt32"},
+    ImageBase: {"kind""Ptr","child":{"kind":"Void"}},
+    CheckSum: {"kind":"UInt32"},
+    MappedFileNameLength: {"kind":"UInt16"},
+    MappedFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: PSS_HANDLE_ENTRY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PSS_HANDLE_ENTRY = extern struct {
+    Handle: Windows.Win32.SystemServices.HANDLE,
+    Flags: Windows.Win32.ProcessSnapshotting.PSS_HANDLE_FLAGS,
+    ObjectType: Windows.Win32.ProcessSnapshotting.PSS_OBJECT_TYPE,
+    CaptureTime: Windows.Win32.WindowsProgramming.FILETIME,
+    Attributes: {"kind":"UInt32"},
+    GrantedAccess: {"kind":"UInt32"},
+    HandleCount: {"kind":"UInt32"},
+    PointerCount: {"kind":"UInt32"},
+    PagedPoolCharge: {"kind":"UInt32"},
+    NonPagedPoolCharge: {"kind":"UInt32"},
+    CreationTime: Windows.Win32.WindowsProgramming.FILETIME,
+    TypeNameLength: {"kind":"UInt16"},
+    TypeName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ObjectNameLength: {"kind":"UInt16"},
+    ObjectName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TypeSpecificInformation: Windows.Win32.ProcessSnapshotting.PSS_HANDLE_ENTRY+_TypeSpecificInformation_e__Union,
+    // --------------------------------------------------------
+    // Type: _TypeSpecificInformation_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _TypeSpecificInformation_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Section_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Section_e__Struct = extern struct {
+            BaseAddress: {"kind""Ptr","child":{"kind":"Void"}},
+            AllocationAttributes: {"kind":"UInt32"},
+            MaximumSize: Windows.Win32.SystemServices.LARGE_INTEGER,
+        };
+        // --------------------------------------------------------
+        // Type: _Mutant_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Mutant_e__Struct = extern struct {
+            CurrentCount: {"kind":"Int32"},
+            Abandoned: Windows.Win32.SystemServices.BOOL,
+            OwnerProcessId: {"kind":"UInt32"},
+            OwnerThreadId: {"kind":"UInt32"},
+        };
+        // --------------------------------------------------------
+        // Type: _Process_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Process_e__Struct = extern struct {
+            ExitStatus: {"kind":"UInt32"},
+            PebBaseAddress: {"kind""Ptr","child":{"kind":"Void"}},
+            AffinityMask: {"kind":"UIntPtr"},
+            BasePriority: {"kind":"Int32"},
+            ProcessId: {"kind":"UInt32"},
+            ParentProcessId: {"kind":"UInt32"},
+            Flags: {"kind":"UInt32"},
+        };
+        // --------------------------------------------------------
+        // Type: _Semaphore_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Semaphore_e__Struct = extern struct {
+            CurrentCount: {"kind":"Int32"},
+            MaximumCount: {"kind":"Int32"},
+        };
+        // --------------------------------------------------------
+        // Type: _Thread_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Thread_e__Struct = extern struct {
+            ExitStatus: {"kind":"UInt32"},
+            TebBaseAddress: {"kind""Ptr","child":{"kind":"Void"}},
+            ProcessId: {"kind":"UInt32"},
+            ThreadId: {"kind":"UInt32"},
+            AffinityMask: {"kind":"UIntPtr"},
+            Priority: {"kind":"Int32"},
+            BasePriority: {"kind":"Int32"},
+            Win32StartAddress: {"kind""Ptr","child":{"kind":"Void"}},
+        };
+        // --------------------------------------------------------
+        // Type: _Event_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Event_e__Struct = extern struct {
+            ManualReset: Windows.Win32.SystemServices.BOOL,
+            Signaled: Windows.Win32.SystemServices.BOOL,
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: PSS_THREAD_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PSS_THREAD_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PSS_THREAD_ENTRY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PSS_THREAD_ENTRY = extern struct {
+    ExitStatus: {"kind":"UInt32"},
+    TebBaseAddress: {"kind""Ptr","child":{"kind":"Void"}},
+    ProcessId: {"kind":"UInt32"},
+    ThreadId: {"kind":"UInt32"},
+    AffinityMask: {"kind":"UIntPtr"},
+    Priority: {"kind":"Int32"},
+    BasePriority: {"kind":"Int32"},
+    LastSyscallFirstArgument: {"kind""Ptr","child":{"kind":"Void"}},
+    LastSyscallNumber: {"kind":"UInt16"},
+    CreateTime: Windows.Win32.WindowsProgramming.FILETIME,
+    ExitTime: Windows.Win32.WindowsProgramming.FILETIME,
+    KernelTime: Windows.Win32.WindowsProgramming.FILETIME,
+    UserTime: Windows.Win32.WindowsProgramming.FILETIME,
+    Win32StartAddress: {"kind""Ptr","child":{"kind":"Void"}},
+    CaptureTime: Windows.Win32.WindowsProgramming.FILETIME,
+    Flags: Windows.Win32.ProcessSnapshotting.PSS_THREAD_FLAGS,
+    SuspendCount: {"kind":"UInt16"},
+    SizeOfContextRecord: {"kind":"UInt16"},
+    ContextRecord: {"kind""Ptr","child":Windows.Win32.Debug.CONTEXT},
+};
+// --------------------------------------------------------
+// Type: PSS_ALLOCATOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PSS_ALLOCATOR = extern struct {
+    Context: {"kind""Ptr","child":{"kind":"Void"}},
+    AllocRoutine: {"kind":"IntPtr"},
+    FreeRoutine: {"kind":"IntPtr"},
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn PssCaptureSnapshot(
+    ProcessHandle: Windows.Win32.SystemServices.HANDLE,
+    CaptureFlags: Windows.Win32.ProcessSnapshotting.PSS_CAPTURE_FLAGS,
+    ThreadContextFlags: {"kind":"UInt32"},
+    SnapshotHandle: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ProcessSnapshotting.HPSS__}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn PssFreeSnapshot(
+    ProcessHandle: Windows.Win32.SystemServices.HANDLE,
+    SnapshotHandle: {"kind""Ptr","child":Windows.Win32.ProcessSnapshotting.HPSS__},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn PssQuerySnapshot(
+    SnapshotHandle: {"kind""Ptr","child":Windows.Win32.ProcessSnapshotting.HPSS__},
+    InformationClass: Windows.Win32.ProcessSnapshotting.PSS_QUERY_INFORMATION_CLASS,
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    BufferLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn PssWalkSnapshot(
+    SnapshotHandle: {"kind""Ptr","child":Windows.Win32.ProcessSnapshotting.HPSS__},
+    InformationClass: Windows.Win32.ProcessSnapshotting.PSS_WALK_INFORMATION_CLASS,
+    WalkMarkerHandle: {"kind""Ptr","child":Windows.Win32.ProcessSnapshotting.HPSSWALK__},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    BufferLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn PssDuplicateSnapshot(
+    SourceProcessHandle: Windows.Win32.SystemServices.HANDLE,
+    SnapshotHandle: {"kind""Ptr","child":Windows.Win32.ProcessSnapshotting.HPSS__},
+    TargetProcessHandle: Windows.Win32.SystemServices.HANDLE,
+    TargetSnapshotHandle: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ProcessSnapshotting.HPSS__}},
+    Flags: Windows.Win32.ProcessSnapshotting.PSS_DUPLICATE_FLAGS,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn PssWalkMarkerCreate(
+    Allocator: {"kind""Ptr","child":Windows.Win32.ProcessSnapshotting.PSS_ALLOCATOR},
+    WalkMarkerHandle: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ProcessSnapshotting.HPSSWALK__}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn PssWalkMarkerFree(
+    WalkMarkerHandle: {"kind""Ptr","child":Windows.Win32.ProcessSnapshotting.HPSSWALK__},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn PssWalkMarkerGetPosition(
+    WalkMarkerHandle: {"kind""Ptr","child":Windows.Win32.ProcessSnapshotting.HPSSWALK__},
+    Position: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn PssWalkMarkerSetPosition(
+    WalkMarkerHandle: {"kind""Ptr","child":Windows.Win32.ProcessSnapshotting.HPSSWALK__},
+    Position: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn PssWalkMarkerSeekToBeginning(
+    WalkMarkerHandle: {"kind""Ptr","child":Windows.Win32.ProcessSnapshotting.HPSSWALK__},
+],
+
+"unicode_aliases": [
+]}

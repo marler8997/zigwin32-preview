@@ -1,0 +1,28 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+],
+
+"func_definitions": [
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn CreateNamedPipeA(
+    lpName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwOpenMode: {"kind":"UInt32"},
+    dwPipeMode: {"kind":"UInt32"},
+    nMaxInstances: {"kind":"UInt32"},
+    nOutBufferSize: {"kind":"UInt32"},
+    nInBufferSize: {"kind":"UInt32"},
+    nDefaultTimeOut: {"kind":"UInt32"},
+    lpSecurityAttributes: {"kind""Ptr","child":Windows.Win32.SystemServices.SECURITY_ATTRIBUTES},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn WaitNamedPipeA(
+    lpNamedPipeName: {"kind""Ptr","child":{"kind":"SByte"}},
+    nTimeOut: {"kind":"UInt32"},
+],
+
+"unicode_aliases": [
+]}

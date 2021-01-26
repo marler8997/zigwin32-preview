@@ -1,0 +1,74 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+],
+
+"func_definitions": [
+
+// set_last_errror=True (can and should we use this?)
+pub extern "ADVAPI32" fn ChangeServiceConfigA(
+    hService: {"kind""Ptr","child":Windows.Win32.Security.SC_HANDLE__},
+    dwServiceType: {"kind":"UInt32"},
+    dwStartType: {"kind":"UInt32"},
+    dwErrorControl: {"kind":"UInt32"},
+    lpBinaryPathName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpLoadOrderGroup: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpdwTagId: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpDependencies: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpServiceStartName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpPassword: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpDisplayName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "ADVAPI32" fn ChangeServiceConfigW(
+    hService: {"kind""Ptr","child":Windows.Win32.Security.SC_HANDLE__},
+    dwServiceType: {"kind":"UInt32"},
+    dwStartType: {"kind":"UInt32"},
+    dwErrorControl: {"kind":"UInt32"},
+    lpBinaryPathName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpLoadOrderGroup: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpdwTagId: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpDependencies: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpServiceStartName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpDisplayName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "ADVAPI32" fn CreateServiceA(
+    hSCManager: {"kind""Ptr","child":Windows.Win32.Security.SC_HANDLE__},
+    lpServiceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpDisplayName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwDesiredAccess: {"kind":"UInt32"},
+    dwServiceType: {"kind":"UInt32"},
+    dwStartType: {"kind":"UInt32"},
+    dwErrorControl: {"kind":"UInt32"},
+    lpBinaryPathName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpLoadOrderGroup: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpdwTagId: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpDependencies: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpServiceStartName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpPassword: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "ADVAPI32" fn CreateServiceW(
+    hSCManager: {"kind""Ptr","child":Windows.Win32.Security.SC_HANDLE__},
+    lpServiceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpDisplayName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwDesiredAccess: {"kind":"UInt32"},
+    dwServiceType: {"kind":"UInt32"},
+    dwStartType: {"kind":"UInt32"},
+    dwErrorControl: {"kind":"UInt32"},
+    lpBinaryPathName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpLoadOrderGroup: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpdwTagId: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpDependencies: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpServiceStartName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+],
+
+"unicode_aliases": [
+     "ChangeServiceConfig"
+     "CreateService"
+]}

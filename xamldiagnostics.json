@@ -1,0 +1,211 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: VisualMutationType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const VisualMutationType = *opaque{
+};
+// --------------------------------------------------------
+// Type: BaseValueSource
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const BaseValueSource = *opaque{
+};
+// --------------------------------------------------------
+// Type: SourceInfo
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SourceInfo = extern struct {
+    FileName: Windows.Win32.Automation.BSTR,
+    LineNumber: {"kind":"UInt32"},
+    ColumnNumber: {"kind":"UInt32"},
+    CharPosition: {"kind":"UInt32"},
+    Hash: Windows.Win32.Automation.BSTR,
+};
+// --------------------------------------------------------
+// Type: ParentChildRelation
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ParentChildRelation = extern struct {
+    Parent: {"kind":"UInt64"},
+    Child: {"kind":"UInt64"},
+    ChildIndex: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: VisualElement
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const VisualElement = extern struct {
+    Handle: {"kind":"UInt64"},
+    SrcInfo: Windows.Win32.XamlDiagnostics.SourceInfo,
+    Type: Windows.Win32.Automation.BSTR,
+    Name: Windows.Win32.Automation.BSTR,
+    NumChildren: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PropertyChainSource
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PropertyChainSource = extern struct {
+    Handle: {"kind":"UInt64"},
+    TargetType: Windows.Win32.Automation.BSTR,
+    Name: Windows.Win32.Automation.BSTR,
+    Source: Windows.Win32.XamlDiagnostics.BaseValueSource,
+    SrcInfo: Windows.Win32.XamlDiagnostics.SourceInfo,
+};
+// --------------------------------------------------------
+// Type: MetadataBit
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MetadataBit = *opaque{
+};
+// --------------------------------------------------------
+// Type: PropertyChainValue
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PropertyChainValue = extern struct {
+    Index: {"kind":"UInt32"},
+    Type: Windows.Win32.Automation.BSTR,
+    DeclaringType: Windows.Win32.Automation.BSTR,
+    ValueType: Windows.Win32.Automation.BSTR,
+    ItemType: Windows.Win32.Automation.BSTR,
+    Value: Windows.Win32.Automation.BSTR,
+    Overridden: Windows.Win32.SystemServices.BOOL,
+    MetadataBits: {"kind":"Int64"},
+    PropertyName: Windows.Win32.Automation.BSTR,
+    PropertyChainIndex: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EnumType
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EnumType = extern struct {
+    Name: Windows.Win32.Automation.BSTR,
+    ValueInts: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+    ValueStrings: {"kind""Ptr","child":Windows.Win32.Automation.SAFEARRAY},
+};
+// --------------------------------------------------------
+// Type: CollectionElementValue
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CollectionElementValue = extern struct {
+    Index: {"kind":"UInt32"},
+    ValueType: Windows.Win32.Automation.BSTR,
+    Value: Windows.Win32.Automation.BSTR,
+    MetadataBits: {"kind":"Int64"},
+};
+// --------------------------------------------------------
+// Type: RenderTargetBitmapOptions
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const RenderTargetBitmapOptions = *opaque{
+};
+// --------------------------------------------------------
+// Type: BitmapDescription
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BitmapDescription = extern struct {
+    Width: {"kind":"UInt32"},
+    Height: {"kind":"UInt32"},
+    Format: Windows.Win32.Dxgi.DXGI_FORMAT,
+    AlphaMode: Windows.Win32.Dxgi.DXGI_ALPHA_MODE,
+};
+// --------------------------------------------------------
+// Type: ResourceType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ResourceType = *opaque{
+};
+// --------------------------------------------------------
+// Type: VisualElementState
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const VisualElementState = *opaque{
+};
+// --------------------------------------------------------
+// Type: IVisualTreeServiceCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IVisualTreeServiceCallback = *opaque{
+    // TODO: Method 'OnVisualTreeChange'
+};
+// --------------------------------------------------------
+// Type: IVisualTreeServiceCallback2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IVisualTreeServiceCallback2 = *opaque{
+    // TODO: Method 'OnElementStateChanged'
+};
+// --------------------------------------------------------
+// Type: IVisualTreeService
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IVisualTreeService = *opaque{
+    // TODO: Method 'AdviseVisualTreeChange'
+    // TODO: Method 'UnadviseVisualTreeChange'
+    // TODO: Method 'GetEnums'
+    // TODO: Method 'CreateInstance'
+    // TODO: Method 'GetPropertyValuesChain'
+    // TODO: Method 'SetProperty'
+    // TODO: Method 'ClearProperty'
+    // TODO: Method 'GetCollectionCount'
+    // TODO: Method 'GetCollectionElements'
+    // TODO: Method 'AddChild'
+    // TODO: Method 'RemoveChild'
+    // TODO: Method 'ClearChildren'
+};
+// --------------------------------------------------------
+// Type: IXamlDiagnostics
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IXamlDiagnostics = *opaque{
+    // TODO: Method 'GetDispatcher'
+    // TODO: Method 'GetUiLayer'
+    // TODO: Method 'GetApplication'
+    // TODO: Method 'GetIInspectableFromHandle'
+    // TODO: Method 'GetHandleFromIInspectable'
+    // TODO: Method 'HitTest'
+    // TODO: Method 'RegisterInstance'
+    // TODO: Method 'GetInitializationData'
+};
+// --------------------------------------------------------
+// Type: IBitmapData
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IBitmapData = *opaque{
+    // TODO: Method 'CopyBytesTo'
+    // TODO: Method 'GetStride'
+    // TODO: Method 'GetBitmapDescription'
+    // TODO: Method 'GetSourceBitmapDescription'
+};
+// --------------------------------------------------------
+// Type: IVisualTreeService2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IVisualTreeService2 = *opaque{
+    // TODO: Method 'GetPropertyIndex'
+    // TODO: Method 'GetProperty'
+    // TODO: Method 'ReplaceResource'
+    // TODO: Method 'RenderTargetBitmap'
+};
+// --------------------------------------------------------
+// Type: IVisualTreeService3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IVisualTreeService3 = *opaque{
+    // TODO: Method 'ResolveResource'
+    // TODO: Method 'GetDictionaryItem'
+    // TODO: Method 'AddDictionaryItem'
+    // TODO: Method 'RemoveDictionaryItem'
+};
+],
+
+"func_definitions": [
+],
+
+"unicode_aliases": [
+]}

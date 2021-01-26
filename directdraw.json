@@ -1,0 +1,1218 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: _DDFXROP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _DDFXROP = opaque {
+};
+// --------------------------------------------------------
+// Type: LPDDENUMCALLBACKA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDDENUMCALLBACKA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPDDENUMCALLBACKW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDDENUMCALLBACKW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPDDENUMCALLBACKEXA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDDENUMCALLBACKEXA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPDDENUMCALLBACKEXW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDDENUMCALLBACKEXW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPDIRECTDRAWENUMERATEEXA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDIRECTDRAWENUMERATEEXA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPDIRECTDRAWENUMERATEEXW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDIRECTDRAWENUMERATEEXW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPDDENUMCALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDDENUMCALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPDDENUMCALLBACKEX
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDDENUMCALLBACKEX = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPDIRECTDRAWENUMERATEEX
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDIRECTDRAWENUMERATEEX = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPDDENUMMODESCALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDDENUMMODESCALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPDDENUMMODESCALLBACK2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDDENUMMODESCALLBACK2 = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPDDENUMSURFACESCALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDDENUMSURFACESCALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPDDENUMSURFACESCALLBACK2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDDENUMSURFACESCALLBACK2 = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPDDENUMSURFACESCALLBACK7
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDDENUMSURFACESCALLBACK7 = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DDARGB
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDARGB = extern struct {
+    blue: {"kind":"Byte"},
+    green: {"kind":"Byte"},
+    red: {"kind":"Byte"},
+    alpha: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: DDRGBA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDRGBA = extern struct {
+    red: {"kind":"Byte"},
+    green: {"kind":"Byte"},
+    blue: {"kind":"Byte"},
+    alpha: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: DDBLTFX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDBLTFX = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwDDFX: {"kind":"UInt32"},
+    dwROP: {"kind":"UInt32"},
+    dwDDROP: {"kind":"UInt32"},
+    dwRotationAngle: {"kind":"UInt32"},
+    dwZBufferOpCode: {"kind":"UInt32"},
+    dwZBufferLow: {"kind":"UInt32"},
+    dwZBufferHigh: {"kind":"UInt32"},
+    dwZBufferBaseDest: {"kind":"UInt32"},
+    dwZDestConstBitDepth: {"kind":"UInt32"},
+    Anonymous1: Windows.Win32.DirectDraw.DDBLTFX+_Anonymous1_e__Union,
+    dwZSrcConstBitDepth: {"kind":"UInt32"},
+    Anonymous2: Windows.Win32.DirectDraw.DDBLTFX+_Anonymous2_e__Union,
+    dwAlphaEdgeBlendBitDepth: {"kind":"UInt32"},
+    dwAlphaEdgeBlend: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+    dwAlphaDestConstBitDepth: {"kind":"UInt32"},
+    Anonymous3: Windows.Win32.DirectDraw.DDBLTFX+_Anonymous3_e__Union,
+    dwAlphaSrcConstBitDepth: {"kind":"UInt32"},
+    Anonymous4: Windows.Win32.DirectDraw.DDBLTFX+_Anonymous4_e__Union,
+    Anonymous5: Windows.Win32.DirectDraw.DDBLTFX+_Anonymous5_e__Union,
+    ddckDestColorkey: Windows.Win32.DirectShow.DDCOLORKEY,
+    ddckSrcColorkey: Windows.Win32.DirectShow.DDCOLORKEY,
+    // --------------------------------------------------------
+    // Type: _Anonymous4_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous4_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous3_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous3_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous5_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous5_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: DDSCAPS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDSCAPS = extern struct {
+    dwCaps: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DDOSCAPS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDOSCAPS = extern struct {
+    dwCaps: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DDSCAPSEX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDSCAPSEX = extern struct {
+    dwCaps2: {"kind":"UInt32"},
+    dwCaps3: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.DirectDraw.DDSCAPSEX+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: DDSCAPS2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDSCAPS2 = extern struct {
+    dwCaps: {"kind":"UInt32"},
+    dwCaps2: {"kind":"UInt32"},
+    dwCaps3: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.DirectDraw.DDSCAPS2+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: DDCAPS_DX1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDCAPS_DX1 = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwCaps: {"kind":"UInt32"},
+    dwCaps2: {"kind":"UInt32"},
+    dwCKeyCaps: {"kind":"UInt32"},
+    dwFXCaps: {"kind":"UInt32"},
+    dwFXAlphaCaps: {"kind":"UInt32"},
+    dwPalCaps: {"kind":"UInt32"},
+    dwSVCaps: {"kind":"UInt32"},
+    dwAlphaBltConstBitDepths: {"kind":"UInt32"},
+    dwAlphaBltPixelBitDepths: {"kind":"UInt32"},
+    dwAlphaBltSurfaceBitDepths: {"kind":"UInt32"},
+    dwAlphaOverlayConstBitDepths: {"kind":"UInt32"},
+    dwAlphaOverlayPixelBitDepths: {"kind":"UInt32"},
+    dwAlphaOverlaySurfaceBitDepths: {"kind":"UInt32"},
+    dwZBufferBitDepths: {"kind":"UInt32"},
+    dwVidMemTotal: {"kind":"UInt32"},
+    dwVidMemFree: {"kind":"UInt32"},
+    dwMaxVisibleOverlays: {"kind":"UInt32"},
+    dwCurrVisibleOverlays: {"kind":"UInt32"},
+    dwNumFourCCCodes: {"kind":"UInt32"},
+    dwAlignBoundarySrc: {"kind":"UInt32"},
+    dwAlignSizeSrc: {"kind":"UInt32"},
+    dwAlignBoundaryDest: {"kind":"UInt32"},
+    dwAlignSizeDest: {"kind":"UInt32"},
+    dwAlignStrideAlign: {"kind":"UInt32"},
+    dwRops: {"kind":"Array","child": {"kind":"UInt32"}},
+    ddsCaps: Windows.Win32.DirectDraw.DDSCAPS,
+    dwMinOverlayStretch: {"kind":"UInt32"},
+    dwMaxOverlayStretch: {"kind":"UInt32"},
+    dwMinLiveVideoStretch: {"kind":"UInt32"},
+    dwMaxLiveVideoStretch: {"kind":"UInt32"},
+    dwMinHwCodecStretch: {"kind":"UInt32"},
+    dwMaxHwCodecStretch: {"kind":"UInt32"},
+    dwReserved1: {"kind":"UInt32"},
+    dwReserved2: {"kind":"UInt32"},
+    dwReserved3: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DDCAPS_DX3
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDCAPS_DX3 = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwCaps: {"kind":"UInt32"},
+    dwCaps2: {"kind":"UInt32"},
+    dwCKeyCaps: {"kind":"UInt32"},
+    dwFXCaps: {"kind":"UInt32"},
+    dwFXAlphaCaps: {"kind":"UInt32"},
+    dwPalCaps: {"kind":"UInt32"},
+    dwSVCaps: {"kind":"UInt32"},
+    dwAlphaBltConstBitDepths: {"kind":"UInt32"},
+    dwAlphaBltPixelBitDepths: {"kind":"UInt32"},
+    dwAlphaBltSurfaceBitDepths: {"kind":"UInt32"},
+    dwAlphaOverlayConstBitDepths: {"kind":"UInt32"},
+    dwAlphaOverlayPixelBitDepths: {"kind":"UInt32"},
+    dwAlphaOverlaySurfaceBitDepths: {"kind":"UInt32"},
+    dwZBufferBitDepths: {"kind":"UInt32"},
+    dwVidMemTotal: {"kind":"UInt32"},
+    dwVidMemFree: {"kind":"UInt32"},
+    dwMaxVisibleOverlays: {"kind":"UInt32"},
+    dwCurrVisibleOverlays: {"kind":"UInt32"},
+    dwNumFourCCCodes: {"kind":"UInt32"},
+    dwAlignBoundarySrc: {"kind":"UInt32"},
+    dwAlignSizeSrc: {"kind":"UInt32"},
+    dwAlignBoundaryDest: {"kind":"UInt32"},
+    dwAlignSizeDest: {"kind":"UInt32"},
+    dwAlignStrideAlign: {"kind":"UInt32"},
+    dwRops: {"kind":"Array","child": {"kind":"UInt32"}},
+    ddsCaps: Windows.Win32.DirectDraw.DDSCAPS,
+    dwMinOverlayStretch: {"kind":"UInt32"},
+    dwMaxOverlayStretch: {"kind":"UInt32"},
+    dwMinLiveVideoStretch: {"kind":"UInt32"},
+    dwMaxLiveVideoStretch: {"kind":"UInt32"},
+    dwMinHwCodecStretch: {"kind":"UInt32"},
+    dwMaxHwCodecStretch: {"kind":"UInt32"},
+    dwReserved1: {"kind":"UInt32"},
+    dwReserved2: {"kind":"UInt32"},
+    dwReserved3: {"kind":"UInt32"},
+    dwSVBCaps: {"kind":"UInt32"},
+    dwSVBCKeyCaps: {"kind":"UInt32"},
+    dwSVBFXCaps: {"kind":"UInt32"},
+    dwSVBRops: {"kind":"Array","child": {"kind":"UInt32"}},
+    dwVSBCaps: {"kind":"UInt32"},
+    dwVSBCKeyCaps: {"kind":"UInt32"},
+    dwVSBFXCaps: {"kind":"UInt32"},
+    dwVSBRops: {"kind":"Array","child": {"kind":"UInt32"}},
+    dwSSBCaps: {"kind":"UInt32"},
+    dwSSBCKeyCaps: {"kind":"UInt32"},
+    dwSSBFXCaps: {"kind":"UInt32"},
+    dwSSBRops: {"kind":"Array","child": {"kind":"UInt32"}},
+    dwReserved4: {"kind":"UInt32"},
+    dwReserved5: {"kind":"UInt32"},
+    dwReserved6: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DDCAPS_DX5
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDCAPS_DX5 = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwCaps: {"kind":"UInt32"},
+    dwCaps2: {"kind":"UInt32"},
+    dwCKeyCaps: {"kind":"UInt32"},
+    dwFXCaps: {"kind":"UInt32"},
+    dwFXAlphaCaps: {"kind":"UInt32"},
+    dwPalCaps: {"kind":"UInt32"},
+    dwSVCaps: {"kind":"UInt32"},
+    dwAlphaBltConstBitDepths: {"kind":"UInt32"},
+    dwAlphaBltPixelBitDepths: {"kind":"UInt32"},
+    dwAlphaBltSurfaceBitDepths: {"kind":"UInt32"},
+    dwAlphaOverlayConstBitDepths: {"kind":"UInt32"},
+    dwAlphaOverlayPixelBitDepths: {"kind":"UInt32"},
+    dwAlphaOverlaySurfaceBitDepths: {"kind":"UInt32"},
+    dwZBufferBitDepths: {"kind":"UInt32"},
+    dwVidMemTotal: {"kind":"UInt32"},
+    dwVidMemFree: {"kind":"UInt32"},
+    dwMaxVisibleOverlays: {"kind":"UInt32"},
+    dwCurrVisibleOverlays: {"kind":"UInt32"},
+    dwNumFourCCCodes: {"kind":"UInt32"},
+    dwAlignBoundarySrc: {"kind":"UInt32"},
+    dwAlignSizeSrc: {"kind":"UInt32"},
+    dwAlignBoundaryDest: {"kind":"UInt32"},
+    dwAlignSizeDest: {"kind":"UInt32"},
+    dwAlignStrideAlign: {"kind":"UInt32"},
+    dwRops: {"kind":"Array","child": {"kind":"UInt32"}},
+    ddsCaps: Windows.Win32.DirectDraw.DDSCAPS,
+    dwMinOverlayStretch: {"kind":"UInt32"},
+    dwMaxOverlayStretch: {"kind":"UInt32"},
+    dwMinLiveVideoStretch: {"kind":"UInt32"},
+    dwMaxLiveVideoStretch: {"kind":"UInt32"},
+    dwMinHwCodecStretch: {"kind":"UInt32"},
+    dwMaxHwCodecStretch: {"kind":"UInt32"},
+    dwReserved1: {"kind":"UInt32"},
+    dwReserved2: {"kind":"UInt32"},
+    dwReserved3: {"kind":"UInt32"},
+    dwSVBCaps: {"kind":"UInt32"},
+    dwSVBCKeyCaps: {"kind":"UInt32"},
+    dwSVBFXCaps: {"kind":"UInt32"},
+    dwSVBRops: {"kind":"Array","child": {"kind":"UInt32"}},
+    dwVSBCaps: {"kind":"UInt32"},
+    dwVSBCKeyCaps: {"kind":"UInt32"},
+    dwVSBFXCaps: {"kind":"UInt32"},
+    dwVSBRops: {"kind":"Array","child": {"kind":"UInt32"}},
+    dwSSBCaps: {"kind":"UInt32"},
+    dwSSBCKeyCaps: {"kind":"UInt32"},
+    dwSSBFXCaps: {"kind":"UInt32"},
+    dwSSBRops: {"kind":"Array","child": {"kind":"UInt32"}},
+    dwMaxVideoPorts: {"kind":"UInt32"},
+    dwCurrVideoPorts: {"kind":"UInt32"},
+    dwSVBCaps2: {"kind":"UInt32"},
+    dwNLVBCaps: {"kind":"UInt32"},
+    dwNLVBCaps2: {"kind":"UInt32"},
+    dwNLVBCKeyCaps: {"kind":"UInt32"},
+    dwNLVBFXCaps: {"kind":"UInt32"},
+    dwNLVBRops: {"kind":"Array","child": {"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: DDCAPS_DX6
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDCAPS_DX6 = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwCaps: {"kind":"UInt32"},
+    dwCaps2: {"kind":"UInt32"},
+    dwCKeyCaps: {"kind":"UInt32"},
+    dwFXCaps: {"kind":"UInt32"},
+    dwFXAlphaCaps: {"kind":"UInt32"},
+    dwPalCaps: {"kind":"UInt32"},
+    dwSVCaps: {"kind":"UInt32"},
+    dwAlphaBltConstBitDepths: {"kind":"UInt32"},
+    dwAlphaBltPixelBitDepths: {"kind":"UInt32"},
+    dwAlphaBltSurfaceBitDepths: {"kind":"UInt32"},
+    dwAlphaOverlayConstBitDepths: {"kind":"UInt32"},
+    dwAlphaOverlayPixelBitDepths: {"kind":"UInt32"},
+    dwAlphaOverlaySurfaceBitDepths: {"kind":"UInt32"},
+    dwZBufferBitDepths: {"kind":"UInt32"},
+    dwVidMemTotal: {"kind":"UInt32"},
+    dwVidMemFree: {"kind":"UInt32"},
+    dwMaxVisibleOverlays: {"kind":"UInt32"},
+    dwCurrVisibleOverlays: {"kind":"UInt32"},
+    dwNumFourCCCodes: {"kind":"UInt32"},
+    dwAlignBoundarySrc: {"kind":"UInt32"},
+    dwAlignSizeSrc: {"kind":"UInt32"},
+    dwAlignBoundaryDest: {"kind":"UInt32"},
+    dwAlignSizeDest: {"kind":"UInt32"},
+    dwAlignStrideAlign: {"kind":"UInt32"},
+    dwRops: {"kind":"Array","child": {"kind":"UInt32"}},
+    ddsOldCaps: Windows.Win32.DirectDraw.DDSCAPS,
+    dwMinOverlayStretch: {"kind":"UInt32"},
+    dwMaxOverlayStretch: {"kind":"UInt32"},
+    dwMinLiveVideoStretch: {"kind":"UInt32"},
+    dwMaxLiveVideoStretch: {"kind":"UInt32"},
+    dwMinHwCodecStretch: {"kind":"UInt32"},
+    dwMaxHwCodecStretch: {"kind":"UInt32"},
+    dwReserved1: {"kind":"UInt32"},
+    dwReserved2: {"kind":"UInt32"},
+    dwReserved3: {"kind":"UInt32"},
+    dwSVBCaps: {"kind":"UInt32"},
+    dwSVBCKeyCaps: {"kind":"UInt32"},
+    dwSVBFXCaps: {"kind":"UInt32"},
+    dwSVBRops: {"kind":"Array","child": {"kind":"UInt32"}},
+    dwVSBCaps: {"kind":"UInt32"},
+    dwVSBCKeyCaps: {"kind":"UInt32"},
+    dwVSBFXCaps: {"kind":"UInt32"},
+    dwVSBRops: {"kind":"Array","child": {"kind":"UInt32"}},
+    dwSSBCaps: {"kind":"UInt32"},
+    dwSSBCKeyCaps: {"kind":"UInt32"},
+    dwSSBFXCaps: {"kind":"UInt32"},
+    dwSSBRops: {"kind":"Array","child": {"kind":"UInt32"}},
+    dwMaxVideoPorts: {"kind":"UInt32"},
+    dwCurrVideoPorts: {"kind":"UInt32"},
+    dwSVBCaps2: {"kind":"UInt32"},
+    dwNLVBCaps: {"kind":"UInt32"},
+    dwNLVBCaps2: {"kind":"UInt32"},
+    dwNLVBCKeyCaps: {"kind":"UInt32"},
+    dwNLVBFXCaps: {"kind":"UInt32"},
+    dwNLVBRops: {"kind":"Array","child": {"kind":"UInt32"}},
+    ddsCaps: Windows.Win32.DirectDraw.DDSCAPS2,
+};
+// --------------------------------------------------------
+// Type: DDCAPS_DX7
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDCAPS_DX7 = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwCaps: {"kind":"UInt32"},
+    dwCaps2: {"kind":"UInt32"},
+    dwCKeyCaps: {"kind":"UInt32"},
+    dwFXCaps: {"kind":"UInt32"},
+    dwFXAlphaCaps: {"kind":"UInt32"},
+    dwPalCaps: {"kind":"UInt32"},
+    dwSVCaps: {"kind":"UInt32"},
+    dwAlphaBltConstBitDepths: {"kind":"UInt32"},
+    dwAlphaBltPixelBitDepths: {"kind":"UInt32"},
+    dwAlphaBltSurfaceBitDepths: {"kind":"UInt32"},
+    dwAlphaOverlayConstBitDepths: {"kind":"UInt32"},
+    dwAlphaOverlayPixelBitDepths: {"kind":"UInt32"},
+    dwAlphaOverlaySurfaceBitDepths: {"kind":"UInt32"},
+    dwZBufferBitDepths: {"kind":"UInt32"},
+    dwVidMemTotal: {"kind":"UInt32"},
+    dwVidMemFree: {"kind":"UInt32"},
+    dwMaxVisibleOverlays: {"kind":"UInt32"},
+    dwCurrVisibleOverlays: {"kind":"UInt32"},
+    dwNumFourCCCodes: {"kind":"UInt32"},
+    dwAlignBoundarySrc: {"kind":"UInt32"},
+    dwAlignSizeSrc: {"kind":"UInt32"},
+    dwAlignBoundaryDest: {"kind":"UInt32"},
+    dwAlignSizeDest: {"kind":"UInt32"},
+    dwAlignStrideAlign: {"kind":"UInt32"},
+    dwRops: {"kind":"Array","child": {"kind":"UInt32"}},
+    ddsOldCaps: Windows.Win32.DirectDraw.DDSCAPS,
+    dwMinOverlayStretch: {"kind":"UInt32"},
+    dwMaxOverlayStretch: {"kind":"UInt32"},
+    dwMinLiveVideoStretch: {"kind":"UInt32"},
+    dwMaxLiveVideoStretch: {"kind":"UInt32"},
+    dwMinHwCodecStretch: {"kind":"UInt32"},
+    dwMaxHwCodecStretch: {"kind":"UInt32"},
+    dwReserved1: {"kind":"UInt32"},
+    dwReserved2: {"kind":"UInt32"},
+    dwReserved3: {"kind":"UInt32"},
+    dwSVBCaps: {"kind":"UInt32"},
+    dwSVBCKeyCaps: {"kind":"UInt32"},
+    dwSVBFXCaps: {"kind":"UInt32"},
+    dwSVBRops: {"kind":"Array","child": {"kind":"UInt32"}},
+    dwVSBCaps: {"kind":"UInt32"},
+    dwVSBCKeyCaps: {"kind":"UInt32"},
+    dwVSBFXCaps: {"kind":"UInt32"},
+    dwVSBRops: {"kind":"Array","child": {"kind":"UInt32"}},
+    dwSSBCaps: {"kind":"UInt32"},
+    dwSSBCKeyCaps: {"kind":"UInt32"},
+    dwSSBFXCaps: {"kind":"UInt32"},
+    dwSSBRops: {"kind":"Array","child": {"kind":"UInt32"}},
+    dwMaxVideoPorts: {"kind":"UInt32"},
+    dwCurrVideoPorts: {"kind":"UInt32"},
+    dwSVBCaps2: {"kind":"UInt32"},
+    dwNLVBCaps: {"kind":"UInt32"},
+    dwNLVBCaps2: {"kind":"UInt32"},
+    dwNLVBCKeyCaps: {"kind":"UInt32"},
+    dwNLVBFXCaps: {"kind":"UInt32"},
+    dwNLVBRops: {"kind":"Array","child": {"kind":"UInt32"}},
+    ddsCaps: Windows.Win32.DirectDraw.DDSCAPS2,
+};
+// --------------------------------------------------------
+// Type: DDPIXELFORMAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDPIXELFORMAT = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwFourCC: {"kind":"UInt32"},
+    Anonymous1: Windows.Win32.DirectDraw.DDPIXELFORMAT+_Anonymous1_e__Union,
+    Anonymous2: Windows.Win32.DirectDraw.DDPIXELFORMAT+_Anonymous2_e__Union,
+    Anonymous3: Windows.Win32.DirectDraw.DDPIXELFORMAT+_Anonymous3_e__Union,
+    Anonymous4: Windows.Win32.DirectDraw.DDPIXELFORMAT+_Anonymous4_e__Union,
+    Anonymous5: Windows.Win32.DirectDraw.DDPIXELFORMAT+_Anonymous5_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous5_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous5_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous3_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous3_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _MultiSampleCaps_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _MultiSampleCaps_e__Struct = extern struct {
+            wFlipMSTypes: {"kind":"UInt16"},
+            wBltMSTypes: {"kind":"UInt16"},
+        };
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous4_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous4_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: DDOVERLAYFX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDOVERLAYFX = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwAlphaEdgeBlendBitDepth: {"kind":"UInt32"},
+    dwAlphaEdgeBlend: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+    dwAlphaDestConstBitDepth: {"kind":"UInt32"},
+    Anonymous1: Windows.Win32.DirectDraw.DDOVERLAYFX+_Anonymous1_e__Union,
+    dwAlphaSrcConstBitDepth: {"kind":"UInt32"},
+    Anonymous2: Windows.Win32.DirectDraw.DDOVERLAYFX+_Anonymous2_e__Union,
+    dckDestColorkey: Windows.Win32.DirectShow.DDCOLORKEY,
+    dckSrcColorkey: Windows.Win32.DirectShow.DDCOLORKEY,
+    dwDDFX: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: DDBLTBATCH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDBLTBATCH = extern struct {
+    lprDest: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    lpDDSSrc: Windows.Win32.DirectDraw.IDirectDrawSurface,
+    lprSrc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    dwFlags: {"kind":"UInt32"},
+    lpDDBltFx: {"kind""Ptr","child":Windows.Win32.DirectDraw.DDBLTFX},
+};
+// --------------------------------------------------------
+// Type: DDGAMMARAMP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDGAMMARAMP = extern struct {
+    red: {"kind":"Array","child": {"kind":"UInt16"}},
+    green: {"kind":"Array","child": {"kind":"UInt16"}},
+    blue: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DDDEVICEIDENTIFIER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDDEVICEIDENTIFIER = extern struct {
+    szDriver: {"kind":"Array","child": {"kind":"SByte"}},
+    szDescription: {"kind":"Array","child": {"kind":"SByte"}},
+    liDriverVersion: Windows.Win32.SystemServices.LARGE_INTEGER,
+    dwVendorId: {"kind":"UInt32"},
+    dwDeviceId: {"kind":"UInt32"},
+    dwSubSysId: {"kind":"UInt32"},
+    dwRevision: {"kind":"UInt32"},
+    guidDeviceIdentifier: Guid,
+};
+// --------------------------------------------------------
+// Type: DDDEVICEIDENTIFIER2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDDEVICEIDENTIFIER2 = extern struct {
+    szDriver: {"kind":"Array","child": {"kind":"SByte"}},
+    szDescription: {"kind":"Array","child": {"kind":"SByte"}},
+    liDriverVersion: Windows.Win32.SystemServices.LARGE_INTEGER,
+    dwVendorId: {"kind":"UInt32"},
+    dwDeviceId: {"kind":"UInt32"},
+    dwSubSysId: {"kind":"UInt32"},
+    dwRevision: {"kind":"UInt32"},
+    guidDeviceIdentifier: Guid,
+    dwWHQLLevel: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: LPCLIPPERCALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPCLIPPERCALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IDirectDraw
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectDraw = *opaque{
+    // TODO: Method 'Compact'
+    // TODO: Method 'CreateClipper'
+    // TODO: Method 'CreatePalette'
+    // TODO: Method 'CreateSurface'
+    // TODO: Method 'DuplicateSurface'
+    // TODO: Method 'EnumDisplayModes'
+    // TODO: Method 'EnumSurfaces'
+    // TODO: Method 'FlipToGDISurface'
+    // TODO: Method 'GetCaps'
+    // TODO: Method 'GetDisplayMode'
+    // TODO: Method 'GetFourCCCodes'
+    // TODO: Method 'GetGDISurface'
+    // TODO: Method 'GetMonitorFrequency'
+    // TODO: Method 'GetScanLine'
+    // TODO: Method 'GetVerticalBlankStatus'
+    // TODO: Method 'Initialize'
+    // TODO: Method 'RestoreDisplayMode'
+    // TODO: Method 'SetCooperativeLevel'
+    // TODO: Method 'SetDisplayMode'
+    // TODO: Method 'WaitForVerticalBlank'
+};
+// --------------------------------------------------------
+// Type: IDirectDraw2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectDraw2 = *opaque{
+    // TODO: Method 'Compact'
+    // TODO: Method 'CreateClipper'
+    // TODO: Method 'CreatePalette'
+    // TODO: Method 'CreateSurface'
+    // TODO: Method 'DuplicateSurface'
+    // TODO: Method 'EnumDisplayModes'
+    // TODO: Method 'EnumSurfaces'
+    // TODO: Method 'FlipToGDISurface'
+    // TODO: Method 'GetCaps'
+    // TODO: Method 'GetDisplayMode'
+    // TODO: Method 'GetFourCCCodes'
+    // TODO: Method 'GetGDISurface'
+    // TODO: Method 'GetMonitorFrequency'
+    // TODO: Method 'GetScanLine'
+    // TODO: Method 'GetVerticalBlankStatus'
+    // TODO: Method 'Initialize'
+    // TODO: Method 'RestoreDisplayMode'
+    // TODO: Method 'SetCooperativeLevel'
+    // TODO: Method 'SetDisplayMode'
+    // TODO: Method 'WaitForVerticalBlank'
+    // TODO: Method 'GetAvailableVidMem'
+};
+// --------------------------------------------------------
+// Type: IDirectDraw4
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectDraw4 = *opaque{
+    // TODO: Method 'Compact'
+    // TODO: Method 'CreateClipper'
+    // TODO: Method 'CreatePalette'
+    // TODO: Method 'CreateSurface'
+    // TODO: Method 'DuplicateSurface'
+    // TODO: Method 'EnumDisplayModes'
+    // TODO: Method 'EnumSurfaces'
+    // TODO: Method 'FlipToGDISurface'
+    // TODO: Method 'GetCaps'
+    // TODO: Method 'GetDisplayMode'
+    // TODO: Method 'GetFourCCCodes'
+    // TODO: Method 'GetGDISurface'
+    // TODO: Method 'GetMonitorFrequency'
+    // TODO: Method 'GetScanLine'
+    // TODO: Method 'GetVerticalBlankStatus'
+    // TODO: Method 'Initialize'
+    // TODO: Method 'RestoreDisplayMode'
+    // TODO: Method 'SetCooperativeLevel'
+    // TODO: Method 'SetDisplayMode'
+    // TODO: Method 'WaitForVerticalBlank'
+    // TODO: Method 'GetAvailableVidMem'
+    // TODO: Method 'GetSurfaceFromDC'
+    // TODO: Method 'RestoreAllSurfaces'
+    // TODO: Method 'TestCooperativeLevel'
+    // TODO: Method 'GetDeviceIdentifier'
+};
+// --------------------------------------------------------
+// Type: IDirectDraw7
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectDraw7 = *opaque{
+    // TODO: Method 'Compact'
+    // TODO: Method 'CreateClipper'
+    // TODO: Method 'CreatePalette'
+    // TODO: Method 'CreateSurface'
+    // TODO: Method 'DuplicateSurface'
+    // TODO: Method 'EnumDisplayModes'
+    // TODO: Method 'EnumSurfaces'
+    // TODO: Method 'FlipToGDISurface'
+    // TODO: Method 'GetCaps'
+    // TODO: Method 'GetDisplayMode'
+    // TODO: Method 'GetFourCCCodes'
+    // TODO: Method 'GetGDISurface'
+    // TODO: Method 'GetMonitorFrequency'
+    // TODO: Method 'GetScanLine'
+    // TODO: Method 'GetVerticalBlankStatus'
+    // TODO: Method 'Initialize'
+    // TODO: Method 'RestoreDisplayMode'
+    // TODO: Method 'SetCooperativeLevel'
+    // TODO: Method 'SetDisplayMode'
+    // TODO: Method 'WaitForVerticalBlank'
+    // TODO: Method 'GetAvailableVidMem'
+    // TODO: Method 'GetSurfaceFromDC'
+    // TODO: Method 'RestoreAllSurfaces'
+    // TODO: Method 'TestCooperativeLevel'
+    // TODO: Method 'GetDeviceIdentifier'
+    // TODO: Method 'StartModeTest'
+    // TODO: Method 'EvaluateMode'
+};
+// --------------------------------------------------------
+// Type: IDirectDrawPalette
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectDrawPalette = *opaque{
+    // TODO: Method 'GetCaps'
+    // TODO: Method 'GetEntries'
+    // TODO: Method 'Initialize'
+    // TODO: Method 'SetEntries'
+};
+// --------------------------------------------------------
+// Type: IDirectDrawClipper
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectDrawClipper = *opaque{
+    // TODO: Method 'GetClipList'
+    // TODO: Method 'GetHWnd'
+    // TODO: Method 'Initialize'
+    // TODO: Method 'IsClipListChanged'
+    // TODO: Method 'SetClipList'
+    // TODO: Method 'SetHWnd'
+};
+// --------------------------------------------------------
+// Type: IDirectDrawSurface
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectDrawSurface = *opaque{
+    // TODO: Method 'AddAttachedSurface'
+    // TODO: Method 'AddOverlayDirtyRect'
+    // TODO: Method 'Blt'
+    // TODO: Method 'BltBatch'
+    // TODO: Method 'BltFast'
+    // TODO: Method 'DeleteAttachedSurface'
+    // TODO: Method 'EnumAttachedSurfaces'
+    // TODO: Method 'EnumOverlayZOrders'
+    // TODO: Method 'Flip'
+    // TODO: Method 'GetAttachedSurface'
+    // TODO: Method 'GetBltStatus'
+    // TODO: Method 'GetCaps'
+    // TODO: Method 'GetClipper'
+    // TODO: Method 'GetColorKey'
+    // TODO: Method 'GetDC'
+    // TODO: Method 'GetFlipStatus'
+    // TODO: Method 'GetOverlayPosition'
+    // TODO: Method 'GetPalette'
+    // TODO: Method 'GetPixelFormat'
+    // TODO: Method 'GetSurfaceDesc'
+    // TODO: Method 'Initialize'
+    // TODO: Method 'IsLost'
+    // TODO: Method 'Lock'
+    // TODO: Method 'ReleaseDC'
+    // TODO: Method 'Restore'
+    // TODO: Method 'SetClipper'
+    // TODO: Method 'SetColorKey'
+    // TODO: Method 'SetOverlayPosition'
+    // TODO: Method 'SetPalette'
+    // TODO: Method 'Unlock'
+    // TODO: Method 'UpdateOverlay'
+    // TODO: Method 'UpdateOverlayDisplay'
+    // TODO: Method 'UpdateOverlayZOrder'
+};
+// --------------------------------------------------------
+// Type: IDirectDrawSurface2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectDrawSurface2 = *opaque{
+    // TODO: Method 'AddAttachedSurface'
+    // TODO: Method 'AddOverlayDirtyRect'
+    // TODO: Method 'Blt'
+    // TODO: Method 'BltBatch'
+    // TODO: Method 'BltFast'
+    // TODO: Method 'DeleteAttachedSurface'
+    // TODO: Method 'EnumAttachedSurfaces'
+    // TODO: Method 'EnumOverlayZOrders'
+    // TODO: Method 'Flip'
+    // TODO: Method 'GetAttachedSurface'
+    // TODO: Method 'GetBltStatus'
+    // TODO: Method 'GetCaps'
+    // TODO: Method 'GetClipper'
+    // TODO: Method 'GetColorKey'
+    // TODO: Method 'GetDC'
+    // TODO: Method 'GetFlipStatus'
+    // TODO: Method 'GetOverlayPosition'
+    // TODO: Method 'GetPalette'
+    // TODO: Method 'GetPixelFormat'
+    // TODO: Method 'GetSurfaceDesc'
+    // TODO: Method 'Initialize'
+    // TODO: Method 'IsLost'
+    // TODO: Method 'Lock'
+    // TODO: Method 'ReleaseDC'
+    // TODO: Method 'Restore'
+    // TODO: Method 'SetClipper'
+    // TODO: Method 'SetColorKey'
+    // TODO: Method 'SetOverlayPosition'
+    // TODO: Method 'SetPalette'
+    // TODO: Method 'Unlock'
+    // TODO: Method 'UpdateOverlay'
+    // TODO: Method 'UpdateOverlayDisplay'
+    // TODO: Method 'UpdateOverlayZOrder'
+    // TODO: Method 'GetDDInterface'
+    // TODO: Method 'PageLock'
+    // TODO: Method 'PageUnlock'
+};
+// --------------------------------------------------------
+// Type: IDirectDrawSurface3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectDrawSurface3 = *opaque{
+    // TODO: Method 'AddAttachedSurface'
+    // TODO: Method 'AddOverlayDirtyRect'
+    // TODO: Method 'Blt'
+    // TODO: Method 'BltBatch'
+    // TODO: Method 'BltFast'
+    // TODO: Method 'DeleteAttachedSurface'
+    // TODO: Method 'EnumAttachedSurfaces'
+    // TODO: Method 'EnumOverlayZOrders'
+    // TODO: Method 'Flip'
+    // TODO: Method 'GetAttachedSurface'
+    // TODO: Method 'GetBltStatus'
+    // TODO: Method 'GetCaps'
+    // TODO: Method 'GetClipper'
+    // TODO: Method 'GetColorKey'
+    // TODO: Method 'GetDC'
+    // TODO: Method 'GetFlipStatus'
+    // TODO: Method 'GetOverlayPosition'
+    // TODO: Method 'GetPalette'
+    // TODO: Method 'GetPixelFormat'
+    // TODO: Method 'GetSurfaceDesc'
+    // TODO: Method 'Initialize'
+    // TODO: Method 'IsLost'
+    // TODO: Method 'Lock'
+    // TODO: Method 'ReleaseDC'
+    // TODO: Method 'Restore'
+    // TODO: Method 'SetClipper'
+    // TODO: Method 'SetColorKey'
+    // TODO: Method 'SetOverlayPosition'
+    // TODO: Method 'SetPalette'
+    // TODO: Method 'Unlock'
+    // TODO: Method 'UpdateOverlay'
+    // TODO: Method 'UpdateOverlayDisplay'
+    // TODO: Method 'UpdateOverlayZOrder'
+    // TODO: Method 'GetDDInterface'
+    // TODO: Method 'PageLock'
+    // TODO: Method 'PageUnlock'
+    // TODO: Method 'SetSurfaceDesc'
+};
+// --------------------------------------------------------
+// Type: IDirectDrawSurface4
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectDrawSurface4 = *opaque{
+    // TODO: Method 'AddAttachedSurface'
+    // TODO: Method 'AddOverlayDirtyRect'
+    // TODO: Method 'Blt'
+    // TODO: Method 'BltBatch'
+    // TODO: Method 'BltFast'
+    // TODO: Method 'DeleteAttachedSurface'
+    // TODO: Method 'EnumAttachedSurfaces'
+    // TODO: Method 'EnumOverlayZOrders'
+    // TODO: Method 'Flip'
+    // TODO: Method 'GetAttachedSurface'
+    // TODO: Method 'GetBltStatus'
+    // TODO: Method 'GetCaps'
+    // TODO: Method 'GetClipper'
+    // TODO: Method 'GetColorKey'
+    // TODO: Method 'GetDC'
+    // TODO: Method 'GetFlipStatus'
+    // TODO: Method 'GetOverlayPosition'
+    // TODO: Method 'GetPalette'
+    // TODO: Method 'GetPixelFormat'
+    // TODO: Method 'GetSurfaceDesc'
+    // TODO: Method 'Initialize'
+    // TODO: Method 'IsLost'
+    // TODO: Method 'Lock'
+    // TODO: Method 'ReleaseDC'
+    // TODO: Method 'Restore'
+    // TODO: Method 'SetClipper'
+    // TODO: Method 'SetColorKey'
+    // TODO: Method 'SetOverlayPosition'
+    // TODO: Method 'SetPalette'
+    // TODO: Method 'Unlock'
+    // TODO: Method 'UpdateOverlay'
+    // TODO: Method 'UpdateOverlayDisplay'
+    // TODO: Method 'UpdateOverlayZOrder'
+    // TODO: Method 'GetDDInterface'
+    // TODO: Method 'PageLock'
+    // TODO: Method 'PageUnlock'
+    // TODO: Method 'SetSurfaceDesc'
+    // TODO: Method 'SetPrivateData'
+    // TODO: Method 'GetPrivateData'
+    // TODO: Method 'FreePrivateData'
+    // TODO: Method 'GetUniquenessValue'
+    // TODO: Method 'ChangeUniquenessValue'
+};
+// --------------------------------------------------------
+// Type: IDirectDrawSurface7
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectDrawSurface7 = *opaque{
+    // TODO: Method 'AddAttachedSurface'
+    // TODO: Method 'AddOverlayDirtyRect'
+    // TODO: Method 'Blt'
+    // TODO: Method 'BltBatch'
+    // TODO: Method 'BltFast'
+    // TODO: Method 'DeleteAttachedSurface'
+    // TODO: Method 'EnumAttachedSurfaces'
+    // TODO: Method 'EnumOverlayZOrders'
+    // TODO: Method 'Flip'
+    // TODO: Method 'GetAttachedSurface'
+    // TODO: Method 'GetBltStatus'
+    // TODO: Method 'GetCaps'
+    // TODO: Method 'GetClipper'
+    // TODO: Method 'GetColorKey'
+    // TODO: Method 'GetDC'
+    // TODO: Method 'GetFlipStatus'
+    // TODO: Method 'GetOverlayPosition'
+    // TODO: Method 'GetPalette'
+    // TODO: Method 'GetPixelFormat'
+    // TODO: Method 'GetSurfaceDesc'
+    // TODO: Method 'Initialize'
+    // TODO: Method 'IsLost'
+    // TODO: Method 'Lock'
+    // TODO: Method 'ReleaseDC'
+    // TODO: Method 'Restore'
+    // TODO: Method 'SetClipper'
+    // TODO: Method 'SetColorKey'
+    // TODO: Method 'SetOverlayPosition'
+    // TODO: Method 'SetPalette'
+    // TODO: Method 'Unlock'
+    // TODO: Method 'UpdateOverlay'
+    // TODO: Method 'UpdateOverlayDisplay'
+    // TODO: Method 'UpdateOverlayZOrder'
+    // TODO: Method 'GetDDInterface'
+    // TODO: Method 'PageLock'
+    // TODO: Method 'PageUnlock'
+    // TODO: Method 'SetSurfaceDesc'
+    // TODO: Method 'SetPrivateData'
+    // TODO: Method 'GetPrivateData'
+    // TODO: Method 'FreePrivateData'
+    // TODO: Method 'GetUniquenessValue'
+    // TODO: Method 'ChangeUniquenessValue'
+    // TODO: Method 'SetPriority'
+    // TODO: Method 'GetPriority'
+    // TODO: Method 'SetLOD'
+    // TODO: Method 'GetLOD'
+};
+// --------------------------------------------------------
+// Type: IDirectDrawColorControl
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectDrawColorControl = *opaque{
+    // TODO: Method 'GetColorControls'
+    // TODO: Method 'SetColorControls'
+};
+// --------------------------------------------------------
+// Type: IDirectDrawGammaControl
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectDrawGammaControl = *opaque{
+    // TODO: Method 'GetGammaRamp'
+    // TODO: Method 'SetGammaRamp'
+};
+// --------------------------------------------------------
+// Type: DDSURFACEDESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDSURFACEDESC = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwHeight: {"kind":"UInt32"},
+    dwWidth: {"kind":"UInt32"},
+    Anonymous1: Windows.Win32.DirectDraw.DDSURFACEDESC+_Anonymous1_e__Union,
+    dwBackBufferCount: {"kind":"UInt32"},
+    Anonymous2: Windows.Win32.DirectDraw.DDSURFACEDESC+_Anonymous2_e__Union,
+    dwAlphaBitDepth: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+    lpSurface: {"kind""Ptr","child":{"kind":"Void"}},
+    ddckCKDestOverlay: Windows.Win32.DirectShow.DDCOLORKEY,
+    ddckCKDestBlt: Windows.Win32.DirectShow.DDCOLORKEY,
+    ddckCKSrcOverlay: Windows.Win32.DirectShow.DDCOLORKEY,
+    ddckCKSrcBlt: Windows.Win32.DirectShow.DDCOLORKEY,
+    ddpfPixelFormat: Windows.Win32.DirectDraw.DDPIXELFORMAT,
+    ddsCaps: Windows.Win32.DirectDraw.DDSCAPS,
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: DDSURFACEDESC2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDSURFACEDESC2 = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwHeight: {"kind":"UInt32"},
+    dwWidth: {"kind":"UInt32"},
+    Anonymous1: Windows.Win32.DirectDraw.DDSURFACEDESC2+_Anonymous1_e__Union,
+    Anonymous2: Windows.Win32.DirectDraw.DDSURFACEDESC2+_Anonymous2_e__Union,
+    Anonymous3: Windows.Win32.DirectDraw.DDSURFACEDESC2+_Anonymous3_e__Union,
+    dwAlphaBitDepth: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+    lpSurface: {"kind""Ptr","child":{"kind":"Void"}},
+    Anonymous4: Windows.Win32.DirectDraw.DDSURFACEDESC2+_Anonymous4_e__Union,
+    ddckCKDestBlt: Windows.Win32.DirectShow.DDCOLORKEY,
+    ddckCKSrcOverlay: Windows.Win32.DirectShow.DDCOLORKEY,
+    ddckCKSrcBlt: Windows.Win32.DirectShow.DDCOLORKEY,
+    Anonymous5: Windows.Win32.DirectDraw.DDSURFACEDESC2+_Anonymous5_e__Union,
+    ddsCaps: Windows.Win32.DirectDraw.DDSCAPS2,
+    dwTextureStage: {"kind":"UInt32"},
+    // --------------------------------------------------------
+    // Type: _Anonymous4_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous4_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous5_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous5_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous3_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous3_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: DDOPTSURFACEDESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDOPTSURFACEDESC = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    ddSCaps: Windows.Win32.DirectDraw.DDSCAPS2,
+    ddOSCaps: Windows.Win32.DirectDraw.DDOSCAPS,
+    guid: Guid,
+    dwCompressionRatio: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DDCOLORCONTROL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDCOLORCONTROL = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    lBrightness: {"kind":"Int32"},
+    lContrast: {"kind":"Int32"},
+    lHue: {"kind":"Int32"},
+    lSaturation: {"kind":"Int32"},
+    lSharpness: {"kind":"Int32"},
+    lGamma: {"kind":"Int32"},
+    lColorEnable: {"kind":"Int32"},
+    dwReserved1: {"kind":"UInt32"},
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DDRAW" fn DirectDrawEnumerateW(
+    lpCallback: Windows.Win32.DirectDraw.LPDDENUMCALLBACKW,
+    lpContext: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DDRAW" fn DirectDrawEnumerateA(
+    lpCallback: Windows.Win32.DirectDraw.LPDDENUMCALLBACKA,
+    lpContext: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DDRAW" fn DirectDrawEnumerateExW(
+    lpCallback: Windows.Win32.DirectDraw.LPDDENUMCALLBACKEXW,
+    lpContext: {"kind""Ptr","child":{"kind":"Void"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DDRAW" fn DirectDrawEnumerateExA(
+    lpCallback: Windows.Win32.DirectDraw.LPDDENUMCALLBACKEXA,
+    lpContext: {"kind""Ptr","child":{"kind":"Void"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DDRAW" fn DirectDrawCreate(
+    lpGUID: {"kind""Ptr","child":Guid},
+    lplpDD: {"kind""Ptr","child":Windows.Win32.DirectDraw.IDirectDraw},
+    pUnkOuter: Windows.Win32.Com.IUnknown,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DDRAW" fn DirectDrawCreateEx(
+    lpGuid: {"kind""Ptr","child":Guid},
+    lplpDD: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+    iid: {"kind""Ptr","child":Guid},
+    pUnkOuter: Windows.Win32.Com.IUnknown,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DDRAW" fn DirectDrawCreateClipper(
+    dwFlags: {"kind":"UInt32"},
+    lplpDDClipper: {"kind""Ptr","child":Windows.Win32.DirectDraw.IDirectDrawClipper},
+    pUnkOuter: Windows.Win32.Com.IUnknown,
+],
+
+"unicode_aliases": [
+     "DirectDrawEnumerate"
+     "DirectDrawEnumerateEx"
+]}

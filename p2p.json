@@ -1,0 +1,2164 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: PNRP_SCOPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PNRP_SCOPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PNRP_CLOUD_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PNRP_CLOUD_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PNRP_CLOUD_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PNRP_CLOUD_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PNRP_REGISTERED_ID_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PNRP_REGISTERED_ID_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PNRP_RESOLVE_CRITERIA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PNRP_RESOLVE_CRITERIA = *opaque{
+};
+// --------------------------------------------------------
+// Type: PNRP_CLOUD_ID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PNRP_CLOUD_ID = extern struct {
+    AddressFamily: {"kind":"Int32"},
+    Scope: Windows.Win32.P2P.PNRP_SCOPE,
+    ScopeId: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PNRP_EXTENDED_PAYLOAD_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PNRP_EXTENDED_PAYLOAD_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PNRPINFO_V1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PNRPINFO_V1 = extern struct {
+    dwSize: {"kind":"UInt32"},
+    lpwszIdentity: {"kind""Ptr","child":{"kind":"UInt16"}},
+    nMaxResolve: {"kind":"UInt32"},
+    dwTimeout: {"kind":"UInt32"},
+    dwLifetime: {"kind":"UInt32"},
+    enResolveCriteria: Windows.Win32.P2P.PNRP_RESOLVE_CRITERIA,
+    dwFlags: {"kind":"UInt32"},
+    saHint: Windows.Win32.WinSock.SOCKET_ADDRESS,
+    enNameState: Windows.Win32.P2P.PNRP_REGISTERED_ID_STATE,
+};
+// --------------------------------------------------------
+// Type: PNRPINFO_V2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PNRPINFO_V2 = extern struct {
+    dwSize: {"kind":"UInt32"},
+    lpwszIdentity: {"kind""Ptr","child":{"kind":"UInt16"}},
+    nMaxResolve: {"kind":"UInt32"},
+    dwTimeout: {"kind":"UInt32"},
+    dwLifetime: {"kind":"UInt32"},
+    enResolveCriteria: Windows.Win32.P2P.PNRP_RESOLVE_CRITERIA,
+    dwFlags: {"kind":"UInt32"},
+    saHint: Windows.Win32.WinSock.SOCKET_ADDRESS,
+    enNameState: Windows.Win32.P2P.PNRP_REGISTERED_ID_STATE,
+    enExtendedPayloadType: Windows.Win32.P2P.PNRP_EXTENDED_PAYLOAD_TYPE,
+    Anonymous: Windows.Win32.P2P.PNRPINFO_V2+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: PNRPCLOUDINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PNRPCLOUDINFO = extern struct {
+    dwSize: {"kind":"UInt32"},
+    Cloud: Windows.Win32.P2P.PNRP_CLOUD_ID,
+    enCloudState: Windows.Win32.P2P.PNRP_CLOUD_STATE,
+    enCloudFlags: Windows.Win32.P2P.PNRP_CLOUD_FLAGS,
+};
+// --------------------------------------------------------
+// Type: PEER_RECORD_CHANGE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEER_RECORD_CHANGE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PEER_CONNECTION_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEER_CONNECTION_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PEER_CONNECTION_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEER_CONNECTION_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PEER_RECORD_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEER_RECORD_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PEER_VERSION_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_VERSION_DATA = extern struct {
+    wVersion: {"kind":"UInt16"},
+    wHighestVersion: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: PEER_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_DATA = extern struct {
+    cbData: {"kind":"UInt32"},
+    pbData: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: PEER_RECORD
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_RECORD = extern struct {
+    dwSize: {"kind":"UInt32"},
+    type: Guid,
+    id: Guid,
+    dwVersion: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pwzCreatorId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzModifiedById: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzAttributes: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ftCreation: Windows.Win32.WindowsProgramming.FILETIME,
+    ftExpiration: Windows.Win32.WindowsProgramming.FILETIME,
+    ftLastModified: Windows.Win32.WindowsProgramming.FILETIME,
+    securityData: Windows.Win32.P2P.PEER_DATA,
+    data: Windows.Win32.P2P.PEER_DATA,
+};
+// --------------------------------------------------------
+// Type: PEER_ADDRESS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_ADDRESS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    sin6: Windows.Win32.NetworkDrivers.SOCKADDR_IN6_LH,
+};
+// --------------------------------------------------------
+// Type: PEER_CONNECTION_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_CONNECTION_INFO = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    ullConnectionId: {"kind":"UInt64"},
+    ullNodeId: {"kind":"UInt64"},
+    pwzPeerId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    address: Windows.Win32.P2P.PEER_ADDRESS,
+};
+// --------------------------------------------------------
+// Type: PEER_EVENT_INCOMING_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_EVENT_INCOMING_DATA = extern struct {
+    dwSize: {"kind":"UInt32"},
+    ullConnectionId: {"kind":"UInt64"},
+    type: Guid,
+    data: Windows.Win32.P2P.PEER_DATA,
+};
+// --------------------------------------------------------
+// Type: PEER_EVENT_RECORD_CHANGE_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_EVENT_RECORD_CHANGE_DATA = extern struct {
+    dwSize: {"kind":"UInt32"},
+    changeType: Windows.Win32.P2P.PEER_RECORD_CHANGE_TYPE,
+    recordId: Guid,
+    recordType: Guid,
+};
+// --------------------------------------------------------
+// Type: PEER_EVENT_CONNECTION_CHANGE_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_EVENT_CONNECTION_CHANGE_DATA = extern struct {
+    dwSize: {"kind":"UInt32"},
+    status: Windows.Win32.P2P.PEER_CONNECTION_STATUS,
+    ullConnectionId: {"kind":"UInt64"},
+    ullNodeId: {"kind":"UInt64"},
+    ullNextConnectionId: {"kind":"UInt64"},
+    hrConnectionFailedReason: Windows.Win32.Com.HRESULT,
+};
+// --------------------------------------------------------
+// Type: PEER_EVENT_SYNCHRONIZED_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_EVENT_SYNCHRONIZED_DATA = extern struct {
+    dwSize: {"kind":"UInt32"},
+    recordType: Guid,
+};
+// --------------------------------------------------------
+// Type: PEER_GRAPH_EVENT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEER_GRAPH_EVENT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PEER_NODE_CHANGE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEER_NODE_CHANGE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PEER_GRAPH_STATUS_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEER_GRAPH_STATUS_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PEER_GRAPH_PROPERTY_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEER_GRAPH_PROPERTY_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PEER_GRAPH_SCOPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEER_GRAPH_SCOPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PEER_GRAPH_PROPERTIES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_GRAPH_PROPERTIES = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwScope: {"kind":"UInt32"},
+    dwMaxRecordSize: {"kind":"UInt32"},
+    pwzGraphId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzCreatorId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzFriendlyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzComment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulPresenceLifetime: {"kind":"UInt32"},
+    cPresenceMax: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PEER_NODE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_NODE_INFO = extern struct {
+    dwSize: {"kind":"UInt32"},
+    ullNodeId: {"kind":"UInt64"},
+    pwzPeerId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cAddresses: {"kind":"UInt32"},
+    pAddresses: {"kind""Ptr","child":Windows.Win32.P2P.PEER_ADDRESS},
+    pwzAttributes: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: PEER_EVENT_NODE_CHANGE_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_EVENT_NODE_CHANGE_DATA = extern struct {
+    dwSize: {"kind":"UInt32"},
+    changeType: Windows.Win32.P2P.PEER_NODE_CHANGE_TYPE,
+    ullNodeId: {"kind":"UInt64"},
+    pwzPeerId: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: PEER_GRAPH_EVENT_REGISTRATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_GRAPH_EVENT_REGISTRATION = extern struct {
+    eventType: Windows.Win32.P2P.PEER_GRAPH_EVENT_TYPE,
+    pType: {"kind""Ptr","child":Guid},
+};
+// --------------------------------------------------------
+// Type: PEER_GRAPH_EVENT_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_GRAPH_EVENT_DATA = extern struct {
+    eventType: Windows.Win32.P2P.PEER_GRAPH_EVENT_TYPE,
+    Anonymous: Windows.Win32.P2P.PEER_GRAPH_EVENT_DATA+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: PFNPEER_VALIDATE_RECORD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFNPEER_VALIDATE_RECORD = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFNPEER_SECURE_RECORD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFNPEER_SECURE_RECORD = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFNPEER_FREE_SECURITY_DATA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFNPEER_FREE_SECURITY_DATA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFNPEER_ON_PASSWORD_AUTH_FAILED
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFNPEER_ON_PASSWORD_AUTH_FAILED = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PEER_SECURITY_INTERFACE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_SECURITY_INTERFACE = extern struct {
+    dwSize: {"kind":"UInt32"},
+    pwzSspFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzPackageName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cbSecurityInfo: {"kind":"UInt32"},
+    pbSecurityInfo: {"kind""Ptr","child":{"kind":"Byte"}},
+    pvContext: {"kind""Ptr","child":{"kind":"Void"}},
+    pfnValidateRecord: Windows.Win32.P2P.PFNPEER_VALIDATE_RECORD,
+    pfnSecureRecord: Windows.Win32.P2P.PFNPEER_SECURE_RECORD,
+    pfnFreeSecurityData: Windows.Win32.P2P.PFNPEER_FREE_SECURITY_DATA,
+    pfnAuthFailed: Windows.Win32.P2P.PFNPEER_ON_PASSWORD_AUTH_FAILED,
+};
+// --------------------------------------------------------
+// Type: PEER_GROUP_EVENT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEER_GROUP_EVENT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PEER_GROUP_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEER_GROUP_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PEER_GROUP_PROPERTY_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEER_GROUP_PROPERTY_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PEER_GROUP_AUTHENTICATION_SCHEME
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEER_GROUP_AUTHENTICATION_SCHEME = *opaque{
+};
+// --------------------------------------------------------
+// Type: PEER_MEMBER_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEER_MEMBER_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PEER_MEMBER_CHANGE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEER_MEMBER_CHANGE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PEER_GROUP_ISSUE_CREDENTIAL_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEER_GROUP_ISSUE_CREDENTIAL_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PEER_CREDENTIAL_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_CREDENTIAL_INFO = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pwzFriendlyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pPublicKey: {"kind""Ptr","child":Windows.Win32.Security.CERT_PUBLIC_KEY_INFO},
+    pwzIssuerPeerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzIssuerFriendlyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ftValidityStart: Windows.Win32.WindowsProgramming.FILETIME,
+    ftValidityEnd: Windows.Win32.WindowsProgramming.FILETIME,
+    cRoles: {"kind":"UInt32"},
+    pRoles: {"kind""Ptr","child":Guid},
+};
+// --------------------------------------------------------
+// Type: PEER_MEMBER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_MEMBER = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pwzIdentity: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzAttributes: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ullNodeId: {"kind":"UInt64"},
+    cAddresses: {"kind":"UInt32"},
+    pAddresses: {"kind""Ptr","child":Windows.Win32.P2P.PEER_ADDRESS},
+    pCredentialInfo: {"kind""Ptr","child":Windows.Win32.P2P.PEER_CREDENTIAL_INFO},
+};
+// --------------------------------------------------------
+// Type: PEER_INVITATION_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_INVITATION_INFO = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pwzCloudName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwScope: {"kind":"UInt32"},
+    dwCloudFlags: {"kind":"UInt32"},
+    pwzGroupPeerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzIssuerPeerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzSubjectPeerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzGroupFriendlyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzIssuerFriendlyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzSubjectFriendlyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ftValidityStart: Windows.Win32.WindowsProgramming.FILETIME,
+    ftValidityEnd: Windows.Win32.WindowsProgramming.FILETIME,
+    cRoles: {"kind":"UInt32"},
+    pRoles: {"kind""Ptr","child":Guid},
+    cClassifiers: {"kind":"UInt32"},
+    ppwzClassifiers: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    pSubjectPublicKey: {"kind""Ptr","child":Windows.Win32.Security.CERT_PUBLIC_KEY_INFO},
+    authScheme: Windows.Win32.P2P.PEER_GROUP_AUTHENTICATION_SCHEME,
+};
+// --------------------------------------------------------
+// Type: PEER_GROUP_PROPERTIES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_GROUP_PROPERTIES = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pwzCloud: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzClassifier: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzGroupPeerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzCreatorPeerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzFriendlyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzComment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulMemberDataLifetime: {"kind":"UInt32"},
+    ulPresenceLifetime: {"kind":"UInt32"},
+    dwAuthenticationSchemes: {"kind":"UInt32"},
+    pwzGroupPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    groupPasswordRole: Guid,
+};
+// --------------------------------------------------------
+// Type: PEER_EVENT_MEMBER_CHANGE_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_EVENT_MEMBER_CHANGE_DATA = extern struct {
+    dwSize: {"kind":"UInt32"},
+    changeType: Windows.Win32.P2P.PEER_MEMBER_CHANGE_TYPE,
+    pwzIdentity: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: PEER_GROUP_EVENT_REGISTRATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_GROUP_EVENT_REGISTRATION = extern struct {
+    eventType: Windows.Win32.P2P.PEER_GROUP_EVENT_TYPE,
+    pType: {"kind""Ptr","child":Guid},
+};
+// --------------------------------------------------------
+// Type: PEER_GROUP_EVENT_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_GROUP_EVENT_DATA = extern struct {
+    eventType: Windows.Win32.P2P.PEER_GROUP_EVENT_TYPE,
+    Anonymous: Windows.Win32.P2P.PEER_GROUP_EVENT_DATA+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: PEER_NAME_PAIR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_NAME_PAIR = extern struct {
+    dwSize: {"kind":"UInt32"},
+    pwzPeerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzFriendlyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: PEER_SIGNIN_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEER_SIGNIN_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PEER_WATCH_PERMISSION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEER_WATCH_PERMISSION = *opaque{
+};
+// --------------------------------------------------------
+// Type: PEER_PUBLICATION_SCOPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEER_PUBLICATION_SCOPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PEER_APPLICATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_APPLICATION = extern struct {
+    id: Guid,
+    data: Windows.Win32.P2P.PEER_DATA,
+    pwzDescription: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: PEER_OBJECT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_OBJECT = extern struct {
+    id: Guid,
+    data: Windows.Win32.P2P.PEER_DATA,
+    dwPublicationScope: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PEER_CONTACT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_CONTACT = extern struct {
+    pwzPeerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzNickName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzDisplayName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzEmailAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fWatch: Windows.Win32.SystemServices.BOOL,
+    WatcherPermissions: Windows.Win32.P2P.PEER_WATCH_PERMISSION,
+    credentials: Windows.Win32.P2P.PEER_DATA,
+};
+// --------------------------------------------------------
+// Type: PEER_ENDPOINT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_ENDPOINT = extern struct {
+    address: Windows.Win32.P2P.PEER_ADDRESS,
+    pwzEndpointName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: PEER_PEOPLE_NEAR_ME
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_PEOPLE_NEAR_ME = extern struct {
+    pwzNickName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    endpoint: Windows.Win32.P2P.PEER_ENDPOINT,
+    id: Guid,
+};
+// --------------------------------------------------------
+// Type: PEER_INVITATION_RESPONSE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEER_INVITATION_RESPONSE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PEER_APPLICATION_REGISTRATION_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEER_APPLICATION_REGISTRATION_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PEER_INVITATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_INVITATION = extern struct {
+    applicationId: Guid,
+    applicationData: Windows.Win32.P2P.PEER_DATA,
+    pwzMessage: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: PEER_INVITATION_RESPONSE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_INVITATION_RESPONSE = extern struct {
+    action: Windows.Win32.P2P.PEER_INVITATION_RESPONSE_TYPE,
+    pwzMessage: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hrExtendedInfo: Windows.Win32.Com.HRESULT,
+};
+// --------------------------------------------------------
+// Type: PEER_APP_LAUNCH_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_APP_LAUNCH_INFO = extern struct {
+    pContact: {"kind""Ptr","child":Windows.Win32.P2P.PEER_CONTACT},
+    pEndpoint: {"kind""Ptr","child":Windows.Win32.P2P.PEER_ENDPOINT},
+    pInvitation: {"kind""Ptr","child":Windows.Win32.P2P.PEER_INVITATION},
+};
+// --------------------------------------------------------
+// Type: PEER_APPLICATION_REGISTRATION_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_APPLICATION_REGISTRATION_INFO = extern struct {
+    application: Windows.Win32.P2P.PEER_APPLICATION,
+    pwzApplicationToLaunch: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzApplicationArguments: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwPublicationScope: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PEER_PRESENCE_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEER_PRESENCE_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PEER_PRESENCE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_PRESENCE_INFO = extern struct {
+    status: Windows.Win32.P2P.PEER_PRESENCE_STATUS,
+    pwzDescriptiveText: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: PEER_CHANGE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEER_CHANGE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PEER_COLLAB_EVENT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEER_COLLAB_EVENT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PEER_COLLAB_EVENT_REGISTRATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_COLLAB_EVENT_REGISTRATION = extern struct {
+    eventType: Windows.Win32.P2P.PEER_COLLAB_EVENT_TYPE,
+    pInstance: {"kind""Ptr","child":Guid},
+};
+// --------------------------------------------------------
+// Type: PEER_EVENT_WATCHLIST_CHANGED_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_EVENT_WATCHLIST_CHANGED_DATA = extern struct {
+    pContact: {"kind""Ptr","child":Windows.Win32.P2P.PEER_CONTACT},
+    changeType: Windows.Win32.P2P.PEER_CHANGE_TYPE,
+};
+// --------------------------------------------------------
+// Type: PEER_EVENT_PRESENCE_CHANGED_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_EVENT_PRESENCE_CHANGED_DATA = extern struct {
+    pContact: {"kind""Ptr","child":Windows.Win32.P2P.PEER_CONTACT},
+    pEndpoint: {"kind""Ptr","child":Windows.Win32.P2P.PEER_ENDPOINT},
+    changeType: Windows.Win32.P2P.PEER_CHANGE_TYPE,
+    pPresenceInfo: {"kind""Ptr","child":Windows.Win32.P2P.PEER_PRESENCE_INFO},
+};
+// --------------------------------------------------------
+// Type: PEER_EVENT_APPLICATION_CHANGED_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_EVENT_APPLICATION_CHANGED_DATA = extern struct {
+    pContact: {"kind""Ptr","child":Windows.Win32.P2P.PEER_CONTACT},
+    pEndpoint: {"kind""Ptr","child":Windows.Win32.P2P.PEER_ENDPOINT},
+    changeType: Windows.Win32.P2P.PEER_CHANGE_TYPE,
+    pApplication: {"kind""Ptr","child":Windows.Win32.P2P.PEER_APPLICATION},
+};
+// --------------------------------------------------------
+// Type: PEER_EVENT_OBJECT_CHANGED_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_EVENT_OBJECT_CHANGED_DATA = extern struct {
+    pContact: {"kind""Ptr","child":Windows.Win32.P2P.PEER_CONTACT},
+    pEndpoint: {"kind""Ptr","child":Windows.Win32.P2P.PEER_ENDPOINT},
+    changeType: Windows.Win32.P2P.PEER_CHANGE_TYPE,
+    pObject: {"kind""Ptr","child":Windows.Win32.P2P.PEER_OBJECT},
+};
+// --------------------------------------------------------
+// Type: PEER_EVENT_ENDPOINT_CHANGED_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_EVENT_ENDPOINT_CHANGED_DATA = extern struct {
+    pContact: {"kind""Ptr","child":Windows.Win32.P2P.PEER_CONTACT},
+    pEndpoint: {"kind""Ptr","child":Windows.Win32.P2P.PEER_ENDPOINT},
+};
+// --------------------------------------------------------
+// Type: PEER_EVENT_PEOPLE_NEAR_ME_CHANGED_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_EVENT_PEOPLE_NEAR_ME_CHANGED_DATA = extern struct {
+    changeType: Windows.Win32.P2P.PEER_CHANGE_TYPE,
+    pPeopleNearMe: {"kind""Ptr","child":Windows.Win32.P2P.PEER_PEOPLE_NEAR_ME},
+};
+// --------------------------------------------------------
+// Type: PEER_EVENT_REQUEST_STATUS_CHANGED_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_EVENT_REQUEST_STATUS_CHANGED_DATA = extern struct {
+    pEndpoint: {"kind""Ptr","child":Windows.Win32.P2P.PEER_ENDPOINT},
+    hrChange: Windows.Win32.Com.HRESULT,
+};
+// --------------------------------------------------------
+// Type: PEER_COLLAB_EVENT_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_COLLAB_EVENT_DATA = extern struct {
+    eventType: Windows.Win32.P2P.PEER_COLLAB_EVENT_TYPE,
+    Anonymous: Windows.Win32.P2P.PEER_COLLAB_EVENT_DATA+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: PEER_PNRP_ENDPOINT_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_PNRP_ENDPOINT_INFO = extern struct {
+    pwzPeerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cAddresses: {"kind":"UInt32"},
+    ppAddresses: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR}},
+    pwzComment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    payload: Windows.Win32.P2P.PEER_DATA,
+};
+// --------------------------------------------------------
+// Type: PEER_PNRP_CLOUD_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_PNRP_CLOUD_INFO = extern struct {
+    pwzCloudName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwScope: Windows.Win32.P2P.PNRP_SCOPE,
+    dwScopeId: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PEER_PNRP_REGISTRATION_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEER_PNRP_REGISTRATION_INFO = extern struct {
+    pwzCloudName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzPublishingIdentity: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cAddresses: {"kind":"UInt32"},
+    ppAddresses: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR}},
+    wPort: {"kind":"UInt16"},
+    pwzComment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    payload: Windows.Win32.P2P.PEER_DATA,
+};
+// --------------------------------------------------------
+// Type: DRT_SCOPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DRT_SCOPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DRT_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DRT_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: DRT_MATCH_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DRT_MATCH_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DRT_LEAFSET_KEY_CHANGE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DRT_LEAFSET_KEY_CHANGE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DRT_EVENT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DRT_EVENT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DRT_SECURITY_MODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DRT_SECURITY_MODE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DRT_REGISTRATION_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DRT_REGISTRATION_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DRT_ADDRESS_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DRT_ADDRESS_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: DRT_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DRT_DATA = extern struct {
+    cb: {"kind":"UInt32"},
+    pb: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: DRT_REGISTRATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DRT_REGISTRATION = extern struct {
+    key: Windows.Win32.P2P.DRT_DATA,
+    appData: Windows.Win32.P2P.DRT_DATA,
+};
+// --------------------------------------------------------
+// Type: DRT_SECURITY_PROVIDER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DRT_SECURITY_PROVIDER = extern struct {
+    pvContext: {"kind""Ptr","child":{"kind":"Void"}},
+    Attach: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Com.HRESULT}}}}}}}}},
+    Detach: {"kind":"IntPtr"},
+    RegisterKey: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Com.HRESULT}}}}}}}}},
+    UnregisterKey: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Com.HRESULT}}}}}}}}},
+    ValidateAndUnpackPayload: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Com.HRESULT}}}}}}}}},
+    SecureAndPackPayload: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Com.HRESULT}}}}}}}}},
+    FreeData: {"kind":"IntPtr"},
+    EncryptData: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Com.HRESULT}}}}}}}}},
+    DecryptData: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Com.HRESULT}}}}}}}}},
+    GetSerializedCredential: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Com.HRESULT}}}}}}}}},
+    ValidateRemoteCredential: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Com.HRESULT}}}}}}}}},
+    SignData: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Com.HRESULT}}}}}}}}},
+    VerifyData: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Com.HRESULT}}}}}}}}},
+};
+// --------------------------------------------------------
+// Type: DRT_BOOTSTRAP_RESOLVE_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DRT_BOOTSTRAP_RESOLVE_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DRT_BOOTSTRAP_PROVIDER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DRT_BOOTSTRAP_PROVIDER = extern struct {
+    pvContext: {"kind""Ptr","child":{"kind":"Void"}},
+    Attach: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Com.HRESULT}}}}}}}}},
+    Detach: {"kind":"IntPtr"},
+    InitResolve: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Com.HRESULT}}}}}}}}},
+    IssueResolve: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Com.HRESULT}}}}}}}}},
+    EndResolve: {"kind":"IntPtr"},
+    Register: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Com.HRESULT}}}}}}}}},
+    Unregister: {"kind":"IntPtr"},
+};
+// --------------------------------------------------------
+// Type: DRT_SETTINGS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DRT_SETTINGS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    cbKey: {"kind":"UInt32"},
+    bProtocolMajorVersion: {"kind":"Byte"},
+    bProtocolMinorVersion: {"kind":"Byte"},
+    ulMaxRoutingAddresses: {"kind":"UInt32"},
+    pwzDrtInstancePrefix: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hTransport: {"kind""Ptr","child":{"kind":"Void"}},
+    pSecurityProvider: {"kind""Ptr","child":Windows.Win32.P2P.DRT_SECURITY_PROVIDER},
+    pBootstrapProvider: {"kind""Ptr","child":Windows.Win32.P2P.DRT_BOOTSTRAP_PROVIDER},
+    eSecurityMode: Windows.Win32.P2P.DRT_SECURITY_MODE,
+};
+// --------------------------------------------------------
+// Type: DRT_SEARCH_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DRT_SEARCH_INFO = extern struct {
+    dwSize: {"kind":"UInt32"},
+    fIterative: Windows.Win32.SystemServices.BOOL,
+    fAllowCurrentInstanceMatch: Windows.Win32.SystemServices.BOOL,
+    fAnyMatchInRange: Windows.Win32.SystemServices.BOOL,
+    cMaxEndpoints: {"kind":"UInt32"},
+    pMaximumKey: {"kind""Ptr","child":Windows.Win32.P2P.DRT_DATA},
+    pMinimumKey: {"kind""Ptr","child":Windows.Win32.P2P.DRT_DATA},
+};
+// --------------------------------------------------------
+// Type: DRT_ADDRESS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DRT_ADDRESS = extern struct {
+    socketAddress: Windows.Win32.NetworkDrivers.SOCKADDR_STORAGE_LH,
+    flags: {"kind":"UInt32"},
+    nearness: {"kind":"Int32"},
+    latency: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DRT_ADDRESS_LIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DRT_ADDRESS_LIST = extern struct {
+    AddressCount: {"kind":"UInt32"},
+    AddressList: {"kind":"Array","child": Windows.Win32.P2P.DRT_ADDRESS},
+};
+// --------------------------------------------------------
+// Type: DRT_SEARCH_RESULT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DRT_SEARCH_RESULT = extern struct {
+    dwSize: {"kind":"UInt32"},
+    type: Windows.Win32.P2P.DRT_MATCH_TYPE,
+    pvContext: {"kind""Ptr","child":{"kind":"Void"}},
+    registration: Windows.Win32.P2P.DRT_REGISTRATION,
+};
+// --------------------------------------------------------
+// Type: DRT_EVENT_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DRT_EVENT_DATA = extern struct {
+    type: Windows.Win32.P2P.DRT_EVENT_TYPE,
+    hr: Windows.Win32.Com.HRESULT,
+    pvContext: {"kind""Ptr","child":{"kind":"Void"}},
+    Anonymous: Windows.Win32.P2P.DRT_EVENT_DATA+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _statusChange_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _statusChange_e__Struct = extern struct {
+            status: Windows.Win32.P2P.DRT_STATUS,
+            bootstrapAddresses: Windows.Win32.P2P.DRT_EVENT_DATA+_Anonymous_e__Union+_statusChange_e__Struct+_bootstrapAddresses_e__Struct,
+            // --------------------------------------------------------
+            // Type: _bootstrapAddresses_e__Struct
+            // TypeLayoutAttr: sequential
+            // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+            pub const _bootstrapAddresses_e__Struct = extern struct {
+                cntAddress: {"kind":"UInt32"},
+                pAddresses: {"kind""Ptr","child":Windows.Win32.NetworkDrivers.SOCKADDR_STORAGE_LH},
+            };
+        };
+        // --------------------------------------------------------
+        // Type: _leafsetKeyChange_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _leafsetKeyChange_e__Struct = extern struct {
+            change: Windows.Win32.P2P.DRT_LEAFSET_KEY_CHANGE_TYPE,
+            localKey: Windows.Win32.P2P.DRT_DATA,
+            remoteKey: Windows.Win32.P2P.DRT_DATA,
+        };
+        // --------------------------------------------------------
+        // Type: _registrationStateChange_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _registrationStateChange_e__Struct = extern struct {
+            state: Windows.Win32.P2P.DRT_REGISTRATION_STATE,
+            localKey: Windows.Win32.P2P.DRT_DATA,
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: PEERDIST_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEERDIST_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PEERDIST_PUBLICATION_OPTIONS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEERDIST_PUBLICATION_OPTIONS = extern struct {
+    dwVersion: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PEERDIST_CONTENT_TAG
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEERDIST_CONTENT_TAG = extern struct {
+    Data: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: PEERDIST_RETRIEVAL_OPTIONS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEERDIST_RETRIEVAL_OPTIONS = extern struct {
+    cbSize: {"kind":"UInt32"},
+    dwContentInfoMinVersion: {"kind":"UInt32"},
+    dwContentInfoMaxVersion: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PEERDIST_STATUS_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEERDIST_STATUS_INFO = extern struct {
+    cbSize: {"kind":"UInt32"},
+    status: Windows.Win32.P2P.PEERDIST_STATUS,
+    dwMinVer: {"kind":"UInt32"},
+    dwMaxVer: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PEERDIST_CLIENT_INFO_BY_HANDLE_CLASS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEERDIST_CLIENT_INFO_BY_HANDLE_CLASS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PEERDIST_CLIENT_BASIC_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PEERDIST_CLIENT_BASIC_INFO = extern struct {
+    fFlashCrowd: Windows.Win32.SystemServices.BOOL,
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphStartup(
+    wVersionRequested: {"kind":"UInt16"},
+    pVersionData: {"kind""Ptr","child":Windows.Win32.P2P.PEER_VERSION_DATA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphShutdown(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphFreeData(
+    pvData: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphGetItemCount(
+    hPeerEnum: {"kind""Ptr","child":{"kind":"Void"}},
+    pCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphGetNextItem(
+    hPeerEnum: {"kind""Ptr","child":{"kind":"Void"}},
+    pCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pppvItems: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphEndEnumeration(
+    hPeerEnum: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphCreate(
+    pGraphProperties: {"kind""Ptr","child":Windows.Win32.P2P.PEER_GRAPH_PROPERTIES},
+    pwzDatabaseName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pSecurityInterface: {"kind""Ptr","child":Windows.Win32.P2P.PEER_SECURITY_INTERFACE},
+    phGraph: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphOpen(
+    pwzGraphId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzPeerId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzDatabaseName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pSecurityInterface: {"kind""Ptr","child":Windows.Win32.P2P.PEER_SECURITY_INTERFACE},
+    cRecordTypeSyncPrecedence: {"kind":"UInt32"},
+    pRecordTypeSyncPrecedence: {"kind""Ptr","child":Guid},
+    phGraph: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphListen(
+    hGraph: {"kind""Ptr","child":{"kind":"Void"}},
+    dwScope: {"kind":"UInt32"},
+    dwScopeId: {"kind":"UInt32"},
+    wPort: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphConnect(
+    hGraph: {"kind""Ptr","child":{"kind":"Void"}},
+    pwzPeerId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pAddress: {"kind""Ptr","child":Windows.Win32.P2P.PEER_ADDRESS},
+    pullConnectionId: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphClose(
+    hGraph: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphDelete(
+    pwzGraphId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzPeerId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzDatabaseName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphGetStatus(
+    hGraph: {"kind""Ptr","child":{"kind":"Void"}},
+    pdwStatus: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphGetProperties(
+    hGraph: {"kind""Ptr","child":{"kind":"Void"}},
+    ppGraphProperties: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.P2P.PEER_GRAPH_PROPERTIES}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphSetProperties(
+    hGraph: {"kind""Ptr","child":{"kind":"Void"}},
+    pGraphProperties: {"kind""Ptr","child":Windows.Win32.P2P.PEER_GRAPH_PROPERTIES},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphRegisterEvent(
+    hGraph: {"kind""Ptr","child":{"kind":"Void"}},
+    hEvent: Windows.Win32.SystemServices.HANDLE,
+    cEventRegistrations: {"kind":"UInt32"},
+    pEventRegistrations: {"kind""Ptr","child":Windows.Win32.P2P.PEER_GRAPH_EVENT_REGISTRATION},
+    phPeerEvent: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphUnregisterEvent(
+    hPeerEvent: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphGetEventData(
+    hPeerEvent: {"kind""Ptr","child":{"kind":"Void"}},
+    ppEventData: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.P2P.PEER_GRAPH_EVENT_DATA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphGetRecord(
+    hGraph: {"kind""Ptr","child":{"kind":"Void"}},
+    pRecordId: {"kind""Ptr","child":Guid},
+    ppRecord: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.P2P.PEER_RECORD}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphAddRecord(
+    hGraph: {"kind""Ptr","child":{"kind":"Void"}},
+    pRecord: {"kind""Ptr","child":Windows.Win32.P2P.PEER_RECORD},
+    pRecordId: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphUpdateRecord(
+    hGraph: {"kind""Ptr","child":{"kind":"Void"}},
+    pRecord: {"kind""Ptr","child":Windows.Win32.P2P.PEER_RECORD},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphDeleteRecord(
+    hGraph: {"kind""Ptr","child":{"kind":"Void"}},
+    pRecordId: {"kind""Ptr","child":Guid},
+    fLocal: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphEnumRecords(
+    hGraph: {"kind""Ptr","child":{"kind":"Void"}},
+    pRecordType: {"kind""Ptr","child":Guid},
+    pwzPeerId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phPeerEnum: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphSearchRecords(
+    hGraph: {"kind""Ptr","child":{"kind":"Void"}},
+    pwzCriteria: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phPeerEnum: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphExportDatabase(
+    hGraph: {"kind""Ptr","child":{"kind":"Void"}},
+    pwzFilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphImportDatabase(
+    hGraph: {"kind""Ptr","child":{"kind":"Void"}},
+    pwzFilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphValidateDeferredRecords(
+    hGraph: {"kind""Ptr","child":{"kind":"Void"}},
+    cRecordIds: {"kind":"UInt32"},
+    pRecordIds: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphOpenDirectConnection(
+    hGraph: {"kind""Ptr","child":{"kind":"Void"}},
+    pwzPeerId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pAddress: {"kind""Ptr","child":Windows.Win32.P2P.PEER_ADDRESS},
+    pullConnectionId: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphSendData(
+    hGraph: {"kind""Ptr","child":{"kind":"Void"}},
+    ullConnectionId: {"kind":"UInt64"},
+    pType: {"kind""Ptr","child":Guid},
+    cbData: {"kind":"UInt32"},
+    pvData: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphCloseDirectConnection(
+    hGraph: {"kind""Ptr","child":{"kind":"Void"}},
+    ullConnectionId: {"kind":"UInt64"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphEnumConnections(
+    hGraph: {"kind""Ptr","child":{"kind":"Void"}},
+    dwFlags: {"kind":"UInt32"},
+    phPeerEnum: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphEnumNodes(
+    hGraph: {"kind""Ptr","child":{"kind":"Void"}},
+    pwzPeerId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phPeerEnum: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphSetPresence(
+    hGraph: {"kind""Ptr","child":{"kind":"Void"}},
+    fPresent: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphGetNodeInfo(
+    hGraph: {"kind""Ptr","child":{"kind":"Void"}},
+    ullNodeId: {"kind":"UInt64"},
+    ppNodeInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.P2P.PEER_NODE_INFO}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphSetNodeAttributes(
+    hGraph: {"kind""Ptr","child":{"kind":"Void"}},
+    pwzAttributes: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphPeerTimeToUniversalTime(
+    hGraph: {"kind""Ptr","child":{"kind":"Void"}},
+    pftPeerTime: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+    pftUniversalTime: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2PGRAPH" fn PeerGraphUniversalTimeToPeerTime(
+    hGraph: {"kind""Ptr","child":{"kind":"Void"}},
+    pftUniversalTime: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+    pftPeerTime: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerFreeData(
+    pvData: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGetItemCount(
+    hPeerEnum: {"kind""Ptr","child":{"kind":"Void"}},
+    pCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGetNextItem(
+    hPeerEnum: {"kind""Ptr","child":{"kind":"Void"}},
+    pCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pppvItems: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerEndEnumeration(
+    hPeerEnum: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupStartup(
+    wVersionRequested: {"kind":"UInt16"},
+    pVersionData: {"kind""Ptr","child":Windows.Win32.P2P.PEER_VERSION_DATA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupShutdown(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupCreate(
+    pProperties: {"kind""Ptr","child":Windows.Win32.P2P.PEER_GROUP_PROPERTIES},
+    phGroup: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupOpen(
+    pwzIdentity: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzGroupPeerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzCloud: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phGroup: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupJoin(
+    pwzIdentity: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzInvitation: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzCloud: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phGroup: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupPasswordJoin(
+    pwzIdentity: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzInvitation: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzCloud: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phGroup: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupConnect(
+    hGroup: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupConnectByAddress(
+    hGroup: {"kind""Ptr","child":{"kind":"Void"}},
+    cAddresses: {"kind":"UInt32"},
+    pAddresses: {"kind""Ptr","child":Windows.Win32.P2P.PEER_ADDRESS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupClose(
+    hGroup: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupDelete(
+    pwzIdentity: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzGroupPeerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupCreateInvitation(
+    hGroup: {"kind""Ptr","child":{"kind":"Void"}},
+    pwzIdentityInfo: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pftExpiration: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+    cRoles: {"kind":"UInt32"},
+    pRoles: {"kind""Ptr","child":Guid},
+    ppwzInvitation: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupCreatePasswordInvitation(
+    hGroup: {"kind""Ptr","child":{"kind":"Void"}},
+    ppwzInvitation: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupParseInvitation(
+    pwzInvitation: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppInvitationInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.P2P.PEER_INVITATION_INFO}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupGetStatus(
+    hGroup: {"kind""Ptr","child":{"kind":"Void"}},
+    pdwStatus: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupGetProperties(
+    hGroup: {"kind""Ptr","child":{"kind":"Void"}},
+    ppProperties: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.P2P.PEER_GROUP_PROPERTIES}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupSetProperties(
+    hGroup: {"kind""Ptr","child":{"kind":"Void"}},
+    pProperties: {"kind""Ptr","child":Windows.Win32.P2P.PEER_GROUP_PROPERTIES},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupEnumMembers(
+    hGroup: {"kind""Ptr","child":{"kind":"Void"}},
+    dwFlags: {"kind":"UInt32"},
+    pwzIdentity: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phPeerEnum: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupOpenDirectConnection(
+    hGroup: {"kind""Ptr","child":{"kind":"Void"}},
+    pwzIdentity: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pAddress: {"kind""Ptr","child":Windows.Win32.P2P.PEER_ADDRESS},
+    pullConnectionId: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupCloseDirectConnection(
+    hGroup: {"kind""Ptr","child":{"kind":"Void"}},
+    ullConnectionId: {"kind":"UInt64"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupEnumConnections(
+    hGroup: {"kind""Ptr","child":{"kind":"Void"}},
+    dwFlags: {"kind":"UInt32"},
+    phPeerEnum: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupSendData(
+    hGroup: {"kind""Ptr","child":{"kind":"Void"}},
+    ullConnectionId: {"kind":"UInt64"},
+    pType: {"kind""Ptr","child":Guid},
+    cbData: {"kind":"UInt32"},
+    pvData: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupRegisterEvent(
+    hGroup: {"kind""Ptr","child":{"kind":"Void"}},
+    hEvent: Windows.Win32.SystemServices.HANDLE,
+    cEventRegistration: {"kind":"UInt32"},
+    pEventRegistrations: {"kind""Ptr","child":Windows.Win32.P2P.PEER_GROUP_EVENT_REGISTRATION},
+    phPeerEvent: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupUnregisterEvent(
+    hPeerEvent: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupGetEventData(
+    hPeerEvent: {"kind""Ptr","child":{"kind":"Void"}},
+    ppEventData: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.P2P.PEER_GROUP_EVENT_DATA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupGetRecord(
+    hGroup: {"kind""Ptr","child":{"kind":"Void"}},
+    pRecordId: {"kind""Ptr","child":Guid},
+    ppRecord: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.P2P.PEER_RECORD}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupAddRecord(
+    hGroup: {"kind""Ptr","child":{"kind":"Void"}},
+    pRecord: {"kind""Ptr","child":Windows.Win32.P2P.PEER_RECORD},
+    pRecordId: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupUpdateRecord(
+    hGroup: {"kind""Ptr","child":{"kind":"Void"}},
+    pRecord: {"kind""Ptr","child":Windows.Win32.P2P.PEER_RECORD},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupDeleteRecord(
+    hGroup: {"kind""Ptr","child":{"kind":"Void"}},
+    pRecordId: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupEnumRecords(
+    hGroup: {"kind""Ptr","child":{"kind":"Void"}},
+    pRecordType: {"kind""Ptr","child":Guid},
+    phPeerEnum: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupSearchRecords(
+    hGroup: {"kind""Ptr","child":{"kind":"Void"}},
+    pwzCriteria: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phPeerEnum: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupExportDatabase(
+    hGroup: {"kind""Ptr","child":{"kind":"Void"}},
+    pwzFilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupImportDatabase(
+    hGroup: {"kind""Ptr","child":{"kind":"Void"}},
+    pwzFilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupIssueCredentials(
+    hGroup: {"kind""Ptr","child":{"kind":"Void"}},
+    pwzSubjectIdentity: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pCredentialInfo: {"kind""Ptr","child":Windows.Win32.P2P.PEER_CREDENTIAL_INFO},
+    dwFlags: {"kind":"UInt32"},
+    ppwzInvitation: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupExportConfig(
+    hGroup: {"kind""Ptr","child":{"kind":"Void"}},
+    pwzPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppwzXML: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupImportConfig(
+    pwzXML: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fOverwrite: Windows.Win32.SystemServices.BOOL,
+    ppwzIdentity: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    ppwzGroup: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupPeerTimeToUniversalTime(
+    hGroup: {"kind""Ptr","child":{"kind":"Void"}},
+    pftPeerTime: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+    pftUniversalTime: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupUniversalTimeToPeerTime(
+    hGroup: {"kind""Ptr","child":{"kind":"Void"}},
+    pftUniversalTime: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+    pftPeerTime: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerGroupResumePasswordAuthentication(
+    hGroup: {"kind""Ptr","child":{"kind":"Void"}},
+    hPeerEventHandle: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerIdentityCreate(
+    pwzClassifier: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzFriendlyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hCryptProv: {"kind":"UIntPtr"},
+    ppwzIdentity: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerIdentityGetFriendlyName(
+    pwzIdentity: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppwzFriendlyName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerIdentitySetFriendlyName(
+    pwzIdentity: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzFriendlyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerIdentityGetCryptKey(
+    pwzIdentity: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phCryptProv: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerIdentityDelete(
+    pwzIdentity: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerEnumIdentities(
+    phPeerEnum: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerEnumGroups(
+    pwzIdentity: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phPeerEnum: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCreatePeerName(
+    pwzIdentity: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzClassifier: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppwzPeerName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerIdentityGetXML(
+    pwzIdentity: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppwzIdentityXML: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerIdentityExport(
+    pwzIdentity: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppwzExportXML: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerIdentityImport(
+    pwzImportXML: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppwzIdentity: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerIdentityGetDefault(
+    ppwzPeerName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabStartup(
+    wVersionRequested: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabShutdown(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabSignin(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    dwSigninOptions: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabSignout(
+    dwSigninOptions: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabGetSigninOptions(
+    pdwSigninOptions: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabAsyncInviteContact(
+    pcContact: {"kind""Ptr","child":Windows.Win32.P2P.PEER_CONTACT},
+    pcEndpoint: {"kind""Ptr","child":Windows.Win32.P2P.PEER_ENDPOINT},
+    pcInvitation: {"kind""Ptr","child":Windows.Win32.P2P.PEER_INVITATION},
+    hEvent: Windows.Win32.SystemServices.HANDLE,
+    phInvitation: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabGetInvitationResponse(
+    hInvitation: Windows.Win32.SystemServices.HANDLE,
+    ppInvitationResponse: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.P2P.PEER_INVITATION_RESPONSE}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabCancelInvitation(
+    hInvitation: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabCloseHandle(
+    hInvitation: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabInviteContact(
+    pcContact: {"kind""Ptr","child":Windows.Win32.P2P.PEER_CONTACT},
+    pcEndpoint: {"kind""Ptr","child":Windows.Win32.P2P.PEER_ENDPOINT},
+    pcInvitation: {"kind""Ptr","child":Windows.Win32.P2P.PEER_INVITATION},
+    ppResponse: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.P2P.PEER_INVITATION_RESPONSE}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabAsyncInviteEndpoint(
+    pcEndpoint: {"kind""Ptr","child":Windows.Win32.P2P.PEER_ENDPOINT},
+    pcInvitation: {"kind""Ptr","child":Windows.Win32.P2P.PEER_INVITATION},
+    hEvent: Windows.Win32.SystemServices.HANDLE,
+    phInvitation: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabInviteEndpoint(
+    pcEndpoint: {"kind""Ptr","child":Windows.Win32.P2P.PEER_ENDPOINT},
+    pcInvitation: {"kind""Ptr","child":Windows.Win32.P2P.PEER_INVITATION},
+    ppResponse: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.P2P.PEER_INVITATION_RESPONSE}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabGetAppLaunchInfo(
+    ppLaunchInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.P2P.PEER_APP_LAUNCH_INFO}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabRegisterApplication(
+    pcApplication: {"kind""Ptr","child":Windows.Win32.P2P.PEER_APPLICATION_REGISTRATION_INFO},
+    registrationType: Windows.Win32.P2P.PEER_APPLICATION_REGISTRATION_TYPE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabUnregisterApplication(
+    pApplicationId: {"kind""Ptr","child":Guid},
+    registrationType: Windows.Win32.P2P.PEER_APPLICATION_REGISTRATION_TYPE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabGetApplicationRegistrationInfo(
+    pApplicationId: {"kind""Ptr","child":Guid},
+    registrationType: Windows.Win32.P2P.PEER_APPLICATION_REGISTRATION_TYPE,
+    ppApplication: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.P2P.PEER_APPLICATION_REGISTRATION_INFO}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabEnumApplicationRegistrationInfo(
+    registrationType: Windows.Win32.P2P.PEER_APPLICATION_REGISTRATION_TYPE,
+    phPeerEnum: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabGetPresenceInfo(
+    pcEndpoint: {"kind""Ptr","child":Windows.Win32.P2P.PEER_ENDPOINT},
+    ppPresenceInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.P2P.PEER_PRESENCE_INFO}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabEnumApplications(
+    pcEndpoint: {"kind""Ptr","child":Windows.Win32.P2P.PEER_ENDPOINT},
+    pApplicationId: {"kind""Ptr","child":Guid},
+    phPeerEnum: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabEnumObjects(
+    pcEndpoint: {"kind""Ptr","child":Windows.Win32.P2P.PEER_ENDPOINT},
+    pObjectId: {"kind""Ptr","child":Guid},
+    phPeerEnum: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabEnumEndpoints(
+    pcContact: {"kind""Ptr","child":Windows.Win32.P2P.PEER_CONTACT},
+    phPeerEnum: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabRefreshEndpointData(
+    pcEndpoint: {"kind""Ptr","child":Windows.Win32.P2P.PEER_ENDPOINT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabDeleteEndpointData(
+    pcEndpoint: {"kind""Ptr","child":Windows.Win32.P2P.PEER_ENDPOINT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabQueryContactData(
+    pcEndpoint: {"kind""Ptr","child":Windows.Win32.P2P.PEER_ENDPOINT},
+    ppwzContactData: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabSubscribeEndpointData(
+    pcEndpoint: {"kind""Ptr","child":Windows.Win32.P2P.PEER_ENDPOINT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabUnsubscribeEndpointData(
+    pcEndpoint: {"kind""Ptr","child":Windows.Win32.P2P.PEER_ENDPOINT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabSetPresenceInfo(
+    pcPresenceInfo: {"kind""Ptr","child":Windows.Win32.P2P.PEER_PRESENCE_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabGetEndpointName(
+    ppwzEndpointName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabSetEndpointName(
+    pwzEndpointName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabSetObject(
+    pcObject: {"kind""Ptr","child":Windows.Win32.P2P.PEER_OBJECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabDeleteObject(
+    pObjectId: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabRegisterEvent(
+    hEvent: Windows.Win32.SystemServices.HANDLE,
+    cEventRegistration: {"kind":"UInt32"},
+    pEventRegistrations: {"kind""Ptr","child":Windows.Win32.P2P.PEER_COLLAB_EVENT_REGISTRATION},
+    phPeerEvent: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabGetEventData(
+    hPeerEvent: {"kind""Ptr","child":{"kind":"Void"}},
+    ppEventData: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.P2P.PEER_COLLAB_EVENT_DATA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabUnregisterEvent(
+    hPeerEvent: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabEnumPeopleNearMe(
+    phPeerEnum: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabAddContact(
+    pwzContactData: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppContact: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.P2P.PEER_CONTACT}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabDeleteContact(
+    pwzPeerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabGetContact(
+    pwzPeerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppContact: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.P2P.PEER_CONTACT}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabUpdateContact(
+    pContact: {"kind""Ptr","child":Windows.Win32.P2P.PEER_CONTACT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabEnumContacts(
+    phPeerEnum: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabExportContact(
+    pwzPeerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppwzContactData: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerCollabParseContact(
+    pwzContactData: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppContact: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.P2P.PEER_CONTACT}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerNameToPeerHostName(
+    pwzPeerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppwzHostName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerHostNameToPeerName(
+    pwzHostName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppwzPeerName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerPnrpStartup(
+    wVersionRequested: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerPnrpShutdown(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerPnrpRegister(
+    pcwzPeerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pRegistrationInfo: {"kind""Ptr","child":Windows.Win32.P2P.PEER_PNRP_REGISTRATION_INFO},
+    phRegistration: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerPnrpUpdateRegistration(
+    hRegistration: {"kind""Ptr","child":{"kind":"Void"}},
+    pRegistrationInfo: {"kind""Ptr","child":Windows.Win32.P2P.PEER_PNRP_REGISTRATION_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerPnrpUnregister(
+    hRegistration: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerPnrpResolve(
+    pcwzPeerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcwzCloudName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcEndpoints: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ppEndpoints: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.P2P.PEER_PNRP_ENDPOINT_INFO}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerPnrpStartResolve(
+    pcwzPeerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcwzCloudName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cMaxEndpoints: {"kind":"UInt32"},
+    hEvent: Windows.Win32.SystemServices.HANDLE,
+    phResolve: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerPnrpGetCloudInfo(
+    pcNumClouds: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ppCloudInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.P2P.PEER_PNRP_CLOUD_INFO}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerPnrpGetEndpoint(
+    hResolve: {"kind""Ptr","child":{"kind":"Void"}},
+    ppEndpoint: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.P2P.PEER_PNRP_ENDPOINT_INFO}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "P2P" fn PeerPnrpEndResolve(
+    hResolve: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "drtprov" fn DrtCreatePnrpBootstrapResolver(
+    fPublish: Windows.Win32.SystemServices.BOOL,
+    pwzPeerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzCloudName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzPublishingIdentity: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppResolver: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.P2P.DRT_BOOTSTRAP_PROVIDER}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "drtprov" fn DrtDeletePnrpBootstrapResolver(
+    pResolver: {"kind""Ptr","child":Windows.Win32.P2P.DRT_BOOTSTRAP_PROVIDER},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "drtprov" fn DrtCreateDnsBootstrapResolver(
+    port: {"kind":"UInt16"},
+    pwszAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppModule: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.P2P.DRT_BOOTSTRAP_PROVIDER}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "drtprov" fn DrtDeleteDnsBootstrapResolver(
+    pResolver: {"kind""Ptr","child":Windows.Win32.P2P.DRT_BOOTSTRAP_PROVIDER},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "drttransport" fn DrtCreateIpv6UdpTransport(
+    scope: Windows.Win32.P2P.DRT_SCOPE,
+    dwScopeId: {"kind":"UInt32"},
+    dwLocalityThreshold: {"kind":"UInt32"},
+    pwPort: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phTransport: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "drttransport" fn DrtDeleteIpv6UdpTransport(
+    hTransport: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "drtprov" fn DrtCreateDerivedKeySecurityProvider(
+    pRootCert: {"kind""Ptr","child":Windows.Win32.Security.CERT_CONTEXT},
+    pLocalCert: {"kind""Ptr","child":Windows.Win32.Security.CERT_CONTEXT},
+    ppSecurityProvider: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.P2P.DRT_SECURITY_PROVIDER}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "drtprov" fn DrtCreateDerivedKey(
+    pLocalCert: {"kind""Ptr","child":Windows.Win32.Security.CERT_CONTEXT},
+    pKey: {"kind""Ptr","child":Windows.Win32.P2P.DRT_DATA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "drtprov" fn DrtDeleteDerivedKeySecurityProvider(
+    pSecurityProvider: {"kind""Ptr","child":Windows.Win32.P2P.DRT_SECURITY_PROVIDER},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "drtprov" fn DrtCreateNullSecurityProvider(
+    ppSecurityProvider: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.P2P.DRT_SECURITY_PROVIDER}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "drtprov" fn DrtDeleteNullSecurityProvider(
+    pSecurityProvider: {"kind""Ptr","child":Windows.Win32.P2P.DRT_SECURITY_PROVIDER},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "drt" fn DrtOpen(
+    pSettings: {"kind""Ptr","child":Windows.Win32.P2P.DRT_SETTINGS},
+    hEvent: Windows.Win32.SystemServices.HANDLE,
+    pvContext: {"kind""Ptr","child":{"kind":"Void"}},
+    phDrt: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "drt" fn DrtClose(
+    hDrt: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "drt" fn DrtGetEventDataSize(
+    hDrt: {"kind""Ptr","child":{"kind":"Void"}},
+    pulEventDataLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "drt" fn DrtGetEventData(
+    hDrt: {"kind""Ptr","child":{"kind":"Void"}},
+    ulEventDataLen: {"kind":"UInt32"},
+    pEventData: {"kind""Ptr","child":Windows.Win32.P2P.DRT_EVENT_DATA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "drt" fn DrtRegisterKey(
+    hDrt: {"kind""Ptr","child":{"kind":"Void"}},
+    pRegistration: {"kind""Ptr","child":Windows.Win32.P2P.DRT_REGISTRATION},
+    pvKeyContext: {"kind""Ptr","child":{"kind":"Void"}},
+    phKeyRegistration: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "drt" fn DrtUpdateKey(
+    hKeyRegistration: {"kind""Ptr","child":{"kind":"Void"}},
+    pAppData: {"kind""Ptr","child":Windows.Win32.P2P.DRT_DATA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "drt" fn DrtUnregisterKey(
+    hKeyRegistration: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "drt" fn DrtStartSearch(
+    hDrt: {"kind""Ptr","child":{"kind":"Void"}},
+    pKey: {"kind""Ptr","child":Windows.Win32.P2P.DRT_DATA},
+    pInfo: {"kind""Ptr","child":Windows.Win32.P2P.DRT_SEARCH_INFO},
+    timeout: {"kind":"UInt32"},
+    hEvent: Windows.Win32.SystemServices.HANDLE,
+    pvContext: {"kind""Ptr","child":{"kind":"Void"}},
+    hSearchContext: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "drt" fn DrtContinueSearch(
+    hSearchContext: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "drt" fn DrtGetSearchResultSize(
+    hSearchContext: {"kind""Ptr","child":{"kind":"Void"}},
+    pulSearchResultSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "drt" fn DrtGetSearchResult(
+    hSearchContext: {"kind""Ptr","child":{"kind":"Void"}},
+    ulSearchResultSize: {"kind":"UInt32"},
+    pSearchResult: {"kind""Ptr","child":Windows.Win32.P2P.DRT_SEARCH_RESULT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "drt" fn DrtGetSearchPathSize(
+    hSearchContext: {"kind""Ptr","child":{"kind":"Void"}},
+    pulSearchPathSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "drt" fn DrtGetSearchPath(
+    hSearchContext: {"kind""Ptr","child":{"kind":"Void"}},
+    ulSearchPathSize: {"kind":"UInt32"},
+    pSearchPath: {"kind""Ptr","child":Windows.Win32.P2P.DRT_ADDRESS_LIST},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "drt" fn DrtEndSearch(
+    hSearchContext: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "drt" fn DrtGetInstanceName(
+    hDrt: {"kind""Ptr","child":{"kind":"Void"}},
+    ulcbInstanceNameSize: {"kind":"UInt32"},
+    pwzDrtInstanceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "drt" fn DrtGetInstanceNameSize(
+    hDrt: {"kind""Ptr","child":{"kind":"Void"}},
+    pulcbInstanceNameSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PeerDist" fn PeerDistStartup(
+    dwVersionRequested: {"kind":"UInt32"},
+    phPeerDist: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    pdwSupportedVersion: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PeerDist" fn PeerDistShutdown(
+    hPeerDist: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PeerDist" fn PeerDistGetStatus(
+    hPeerDist: {"kind":"IntPtr"},
+    pPeerDistStatus: {"kind""Ptr","child":Windows.Win32.P2P.PEERDIST_STATUS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PeerDist" fn PeerDistRegisterForStatusChangeNotification(
+    hPeerDist: {"kind":"IntPtr"},
+    hCompletionPort: Windows.Win32.SystemServices.HANDLE,
+    ulCompletionKey: {"kind":"UIntPtr"},
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    pPeerDistStatus: {"kind""Ptr","child":Windows.Win32.P2P.PEERDIST_STATUS},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "PeerDist" fn PeerDistUnregisterForStatusChangeNotification(
+    hPeerDist: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PeerDist" fn PeerDistServerPublishStream(
+    hPeerDist: {"kind":"IntPtr"},
+    cbContentIdentifier: {"kind":"UInt32"},
+    pContentIdentifier: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbContentLength: {"kind":"UInt64"},
+    pPublishOptions: {"kind""Ptr","child":Windows.Win32.P2P.PEERDIST_PUBLICATION_OPTIONS},
+    hCompletionPort: Windows.Win32.SystemServices.HANDLE,
+    ulCompletionKey: {"kind":"UIntPtr"},
+    phStream: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PeerDist" fn PeerDistServerPublishAddToStream(
+    hPeerDist: {"kind":"IntPtr"},
+    hStream: {"kind":"IntPtr"},
+    cbNumberOfBytes: {"kind":"UInt32"},
+    pBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PeerDist" fn PeerDistServerPublishCompleteStream(
+    hPeerDist: {"kind":"IntPtr"},
+    hStream: {"kind":"IntPtr"},
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PeerDist" fn PeerDistServerCloseStreamHandle(
+    hPeerDist: {"kind":"IntPtr"},
+    hStream: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PeerDist" fn PeerDistServerUnpublish(
+    hPeerDist: {"kind":"IntPtr"},
+    cbContentIdentifier: {"kind":"UInt32"},
+    pContentIdentifier: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PeerDist" fn PeerDistServerOpenContentInformation(
+    hPeerDist: {"kind":"IntPtr"},
+    cbContentIdentifier: {"kind":"UInt32"},
+    pContentIdentifier: {"kind""Ptr","child":{"kind":"Byte"}},
+    ullContentOffset: {"kind":"UInt64"},
+    cbContentLength: {"kind":"UInt64"},
+    hCompletionPort: Windows.Win32.SystemServices.HANDLE,
+    ulCompletionKey: {"kind":"UIntPtr"},
+    phContentInfo: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PeerDist" fn PeerDistServerRetrieveContentInformation(
+    hPeerDist: {"kind":"IntPtr"},
+    hContentInfo: {"kind":"IntPtr"},
+    cbMaxNumberOfBytes: {"kind":"UInt32"},
+    pBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PeerDist" fn PeerDistServerCloseContentInformation(
+    hPeerDist: {"kind":"IntPtr"},
+    hContentInfo: {"kind":"IntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "PeerDist" fn PeerDistServerCancelAsyncOperation(
+    hPeerDist: {"kind":"IntPtr"},
+    cbContentIdentifier: {"kind":"UInt32"},
+    pContentIdentifier: {"kind""Ptr","child":{"kind":"Byte"}},
+    pOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PeerDist" fn PeerDistClientOpenContent(
+    hPeerDist: {"kind":"IntPtr"},
+    pContentTag: {"kind""Ptr","child":Windows.Win32.P2P.PEERDIST_CONTENT_TAG},
+    hCompletionPort: Windows.Win32.SystemServices.HANDLE,
+    ulCompletionKey: {"kind":"UIntPtr"},
+    phContentHandle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PeerDist" fn PeerDistClientCloseContent(
+    hPeerDist: {"kind":"IntPtr"},
+    hContentHandle: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PeerDist" fn PeerDistClientAddContentInformation(
+    hPeerDist: {"kind":"IntPtr"},
+    hContentHandle: {"kind":"IntPtr"},
+    cbNumberOfBytes: {"kind":"UInt32"},
+    pBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PeerDist" fn PeerDistClientCompleteContentInformation(
+    hPeerDist: {"kind":"IntPtr"},
+    hContentHandle: {"kind":"IntPtr"},
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PeerDist" fn PeerDistClientAddData(
+    hPeerDist: {"kind":"IntPtr"},
+    hContentHandle: {"kind":"IntPtr"},
+    cbNumberOfBytes: {"kind":"UInt32"},
+    pBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PeerDist" fn PeerDistClientBlockRead(
+    hPeerDist: {"kind":"IntPtr"},
+    hContentHandle: {"kind":"IntPtr"},
+    cbMaxNumberOfBytes: {"kind":"UInt32"},
+    pBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwTimeoutInMilliseconds: {"kind":"UInt32"},
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PeerDist" fn PeerDistClientStreamRead(
+    hPeerDist: {"kind":"IntPtr"},
+    hContentHandle: {"kind":"IntPtr"},
+    cbMaxNumberOfBytes: {"kind":"UInt32"},
+    pBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwTimeoutInMilliseconds: {"kind":"UInt32"},
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PeerDist" fn PeerDistClientFlushContent(
+    hPeerDist: {"kind":"IntPtr"},
+    pContentTag: {"kind""Ptr","child":Windows.Win32.P2P.PEERDIST_CONTENT_TAG},
+    hCompletionPort: Windows.Win32.SystemServices.HANDLE,
+    ulCompletionKey: {"kind":"UIntPtr"},
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "PeerDist" fn PeerDistClientCancelAsyncOperation(
+    hPeerDist: {"kind":"IntPtr"},
+    hContentHandle: {"kind":"IntPtr"},
+    pOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PeerDist" fn PeerDistGetStatusEx(
+    hPeerDist: {"kind":"IntPtr"},
+    pPeerDistStatus: {"kind""Ptr","child":Windows.Win32.P2P.PEERDIST_STATUS_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PeerDist" fn PeerDistRegisterForStatusChangeNotificationEx(
+    hPeerDist: {"kind":"IntPtr"},
+    hCompletionPort: Windows.Win32.SystemServices.HANDLE,
+    ulCompletionKey: {"kind":"UIntPtr"},
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    pPeerDistStatus: {"kind""Ptr","child":Windows.Win32.P2P.PEERDIST_STATUS_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PeerDist" fn PeerDistGetOverlappedResult(
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    lpNumberOfBytesTransferred: {"kind""Ptr","child":{"kind":"UInt32"}},
+    bWait: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PeerDist" fn PeerDistServerOpenContentInformationEx(
+    hPeerDist: {"kind":"IntPtr"},
+    cbContentIdentifier: {"kind":"UInt32"},
+    pContentIdentifier: {"kind""Ptr","child":{"kind":"Byte"}},
+    ullContentOffset: {"kind":"UInt64"},
+    cbContentLength: {"kind":"UInt64"},
+    pRetrievalOptions: {"kind""Ptr","child":Windows.Win32.P2P.PEERDIST_RETRIEVAL_OPTIONS},
+    hCompletionPort: Windows.Win32.SystemServices.HANDLE,
+    ulCompletionKey: {"kind":"UIntPtr"},
+    phContentInfo: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PeerDist" fn PeerDistClientGetInformationByHandle(
+    hPeerDist: {"kind":"IntPtr"},
+    hContentHandle: {"kind":"IntPtr"},
+    PeerDistClientInfoClass: Windows.Win32.P2P.PEERDIST_CLIENT_INFO_BY_HANDLE_CLASS,
+    dwBufferSize: {"kind":"UInt32"},
+    lpInformation: {"kind""Ptr","child":{"kind":"Void"}},
+],
+
+"unicode_aliases": [
+]}

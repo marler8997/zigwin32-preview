@@ -1,0 +1,4103 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: CQFORM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CQFORM = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    clsid: Guid,
+    hIcon: Windows.Win32.Gdi.HICON,
+    pszTitle: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: LPCQADDFORMSPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPCQADDFORMSPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPCQADDPAGESPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPCQADDPAGESPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPCQPAGEPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPCQPAGEPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: CQPAGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CQPAGE = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pPageProc: Windows.Win32.ActiveDirectory.LPCQPAGEPROC,
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    idPageName: {"kind":"Int32"},
+    idPageTemplate: {"kind":"Int32"},
+    pDlgProc: Windows.Win32.WindowsAndMessaging.DLGPROC,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+};
+// --------------------------------------------------------
+// Type: IQueryForm
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IQueryForm = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'AddForms'
+    // TODO: Method 'AddPages'
+};
+// --------------------------------------------------------
+// Type: IPersistQuery
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPersistQuery = *opaque{
+    // TODO: Method 'WriteString'
+    // TODO: Method 'ReadString'
+    // TODO: Method 'WriteInt'
+    // TODO: Method 'ReadInt'
+    // TODO: Method 'WriteStruct'
+    // TODO: Method 'ReadStruct'
+    // TODO: Method 'Clear'
+};
+// --------------------------------------------------------
+// Type: OPENQUERYWINDOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const OPENQUERYWINDOW = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    clsidHandler: Guid,
+    pHandlerParameters: {"kind""Ptr","child":{"kind":"Void"}},
+    clsidDefaultForm: Guid,
+    pPersistQuery: Windows.Win32.ActiveDirectory.IPersistQuery,
+    Anonymous: Windows.Win32.ActiveDirectory.OPENQUERYWINDOW+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: ICommonQuery
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICommonQuery = *opaque{
+    // TODO: Method 'OpenQueryWindow'
+};
+// --------------------------------------------------------
+// Type: PropertyEntry
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const PropertyEntry = opaque {
+};
+// --------------------------------------------------------
+// Type: PropertyValue
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const PropertyValue = opaque {
+};
+// --------------------------------------------------------
+// Type: AccessControlEntry
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const AccessControlEntry = opaque {
+};
+// --------------------------------------------------------
+// Type: AccessControlList
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const AccessControlList = opaque {
+};
+// --------------------------------------------------------
+// Type: SecurityDescriptor
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const SecurityDescriptor = opaque {
+};
+// --------------------------------------------------------
+// Type: LargeInteger
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const LargeInteger = opaque {
+};
+// --------------------------------------------------------
+// Type: NameTranslate
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const NameTranslate = opaque {
+};
+// --------------------------------------------------------
+// Type: CaseIgnoreList
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const CaseIgnoreList = opaque {
+};
+// --------------------------------------------------------
+// Type: FaxNumber
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FaxNumber = opaque {
+};
+// --------------------------------------------------------
+// Type: NetAddress
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const NetAddress = opaque {
+};
+// --------------------------------------------------------
+// Type: OctetList
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const OctetList = opaque {
+};
+// --------------------------------------------------------
+// Type: Email
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const Email = opaque {
+};
+// --------------------------------------------------------
+// Type: Path
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const Path = opaque {
+};
+// --------------------------------------------------------
+// Type: ReplicaPointer
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const ReplicaPointer = opaque {
+};
+// --------------------------------------------------------
+// Type: Timestamp
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const Timestamp = opaque {
+};
+// --------------------------------------------------------
+// Type: PostalAddress
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const PostalAddress = opaque {
+};
+// --------------------------------------------------------
+// Type: BackLink
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const BackLink = opaque {
+};
+// --------------------------------------------------------
+// Type: TypedName
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const TypedName = opaque {
+};
+// --------------------------------------------------------
+// Type: Hold
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const Hold = opaque {
+};
+// --------------------------------------------------------
+// Type: Pathname
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const Pathname = opaque {
+};
+// --------------------------------------------------------
+// Type: ADSystemInfo
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const ADSystemInfo = opaque {
+};
+// --------------------------------------------------------
+// Type: WinNTSystemInfo
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WinNTSystemInfo = opaque {
+};
+// --------------------------------------------------------
+// Type: DNWithBinary
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const DNWithBinary = opaque {
+};
+// --------------------------------------------------------
+// Type: DNWithString
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const DNWithString = opaque {
+};
+// --------------------------------------------------------
+// Type: ADsSecurityUtility
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const ADsSecurityUtility = opaque {
+};
+// --------------------------------------------------------
+// Type: ADSTYPEENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADSTYPEENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADS_OCTET_STRING
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADS_OCTET_STRING = extern struct {
+    dwLength: {"kind":"UInt32"},
+    lpValue: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: ADS_NT_SECURITY_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADS_NT_SECURITY_DESCRIPTOR = extern struct {
+    dwLength: {"kind":"UInt32"},
+    lpValue: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: ADS_PROV_SPECIFIC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADS_PROV_SPECIFIC = extern struct {
+    dwLength: {"kind":"UInt32"},
+    lpValue: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: ADS_CASEIGNORE_LIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADS_CASEIGNORE_LIST = extern struct {
+    Next: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.ADS_CASEIGNORE_LIST},
+    String: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: ADS_OCTET_LIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADS_OCTET_LIST = extern struct {
+    Next: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.ADS_OCTET_LIST},
+    Length: {"kind":"UInt32"},
+    Data: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: ADS_PATH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADS_PATH = extern struct {
+    Type: {"kind":"UInt32"},
+    VolumeName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Path: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: ADS_POSTALADDRESS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADS_POSTALADDRESS = extern struct {
+    PostalAddress: {"kind":"Array","child": {"kind""Ptr","child":{"kind":"UInt16"}}},
+};
+// --------------------------------------------------------
+// Type: ADS_TIMESTAMP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADS_TIMESTAMP = extern struct {
+    WholeSeconds: {"kind":"UInt32"},
+    EventID: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ADS_BACKLINK
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADS_BACKLINK = extern struct {
+    RemoteID: {"kind":"UInt32"},
+    ObjectName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: ADS_TYPEDNAME
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADS_TYPEDNAME = extern struct {
+    ObjectName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Level: {"kind":"UInt32"},
+    Interval: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ADS_HOLD
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADS_HOLD = extern struct {
+    ObjectName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Amount: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ADS_NETADDRESS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADS_NETADDRESS = extern struct {
+    AddressType: {"kind":"UInt32"},
+    AddressLength: {"kind":"UInt32"},
+    Address: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: ADS_REPLICAPOINTER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADS_REPLICAPOINTER = extern struct {
+    ServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReplicaType: {"kind":"UInt32"},
+    ReplicaNumber: {"kind":"UInt32"},
+    Count: {"kind":"UInt32"},
+    ReplicaAddressHints: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.ADS_NETADDRESS},
+};
+// --------------------------------------------------------
+// Type: ADS_FAXNUMBER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADS_FAXNUMBER = extern struct {
+    TelephoneNumber: {"kind""Ptr","child":{"kind":"UInt16"}},
+    NumberOfBits: {"kind":"UInt32"},
+    Parameters: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: ADS_EMAIL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADS_EMAIL = extern struct {
+    Address: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Type: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ADS_DN_WITH_BINARY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADS_DN_WITH_BINARY = extern struct {
+    dwLength: {"kind":"UInt32"},
+    lpBinaryValue: {"kind""Ptr","child":{"kind":"Byte"}},
+    pszDNString: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: ADS_DN_WITH_STRING
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADS_DN_WITH_STRING = extern struct {
+    pszStringValue: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszDNString: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: ADSVALUE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADSVALUE = extern struct {
+    dwType: Windows.Win32.ActiveDirectory.ADSTYPEENUM,
+    Anonymous: Windows.Win32.ActiveDirectory.ADSVALUE+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: ADS_ATTR_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADS_ATTR_INFO = extern struct {
+    pszAttrName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwControlCode: {"kind":"UInt32"},
+    dwADsType: Windows.Win32.ActiveDirectory.ADSTYPEENUM,
+    pADsValues: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.ADSVALUE},
+    dwNumValues: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ADS_AUTHENTICATION_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADS_AUTHENTICATION_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADS_OBJECT_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADS_OBJECT_INFO = extern struct {
+    pszRDN: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszObjectDN: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszParentDN: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszSchemaDN: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: ADS_STATUSENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADS_STATUSENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADS_DEREFENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADS_DEREFENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADS_SCOPEENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADS_SCOPEENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADS_PREFERENCES_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADS_PREFERENCES_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADSI_DIALECT_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADSI_DIALECT_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADS_CHASE_REFERRALS_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADS_CHASE_REFERRALS_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADS_SEARCHPREF_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADS_SEARCHPREF_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADS_PASSWORD_ENCODING_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADS_PASSWORD_ENCODING_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ads_searchpref_info
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ads_searchpref_info = extern struct {
+    dwSearchPref: Windows.Win32.ActiveDirectory.ADS_SEARCHPREF_ENUM,
+    vValue: Windows.Win32.ActiveDirectory.ADSVALUE,
+    dwStatus: Windows.Win32.ActiveDirectory.ADS_STATUSENUM,
+};
+// --------------------------------------------------------
+// Type: ads_search_column
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ads_search_column = extern struct {
+    pszAttrName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwADsType: Windows.Win32.ActiveDirectory.ADSTYPEENUM,
+    pADsValues: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.ADSVALUE},
+    dwNumValues: {"kind":"UInt32"},
+    hReserved: Windows.Win32.SystemServices.HANDLE,
+};
+// --------------------------------------------------------
+// Type: ADS_ATTR_DEF
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADS_ATTR_DEF = extern struct {
+    pszAttrName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwADsType: Windows.Win32.ActiveDirectory.ADSTYPEENUM,
+    dwMinRange: {"kind":"UInt32"},
+    dwMaxRange: {"kind":"UInt32"},
+    fMultiValued: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: ADS_CLASS_DEF
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADS_CLASS_DEF = extern struct {
+    pszClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwMandatoryAttrs: {"kind":"UInt32"},
+    ppszMandatoryAttrs: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    optionalAttrs: {"kind":"UInt32"},
+    ppszOptionalAttrs: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}}},
+    dwNamingAttrs: {"kind":"UInt32"},
+    ppszNamingAttrs: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}}},
+    dwSuperClasses: {"kind":"UInt32"},
+    ppszSuperClasses: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}}},
+    fIsContainer: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: ADS_SORTKEY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADS_SORTKEY = extern struct {
+    pszAttrType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszReserved: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fReverseorder: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: ADS_VLV
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADS_VLV = extern struct {
+    dwBeforeCount: {"kind":"UInt32"},
+    dwAfterCount: {"kind":"UInt32"},
+    dwOffset: {"kind":"UInt32"},
+    dwContentCount: {"kind":"UInt32"},
+    pszTarget: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwContextIDLength: {"kind":"UInt32"},
+    lpContextID: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: ADS_PROPERTY_OPERATION_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADS_PROPERTY_OPERATION_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADS_SYSTEMFLAG_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADS_SYSTEMFLAG_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADS_GROUP_TYPE_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADS_GROUP_TYPE_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADS_USER_FLAG_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADS_USER_FLAG_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADS_RIGHTS_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADS_RIGHTS_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADS_ACETYPE_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADS_ACETYPE_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADS_ACEFLAG_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADS_ACEFLAG_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADS_FLAGTYPE_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADS_FLAGTYPE_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADS_SD_CONTROL_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADS_SD_CONTROL_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADS_SD_REVISION_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADS_SD_REVISION_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADS_NAME_TYPE_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADS_NAME_TYPE_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADS_NAME_INITTYPE_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADS_NAME_INITTYPE_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADS_OPTION_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADS_OPTION_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADS_SECURITY_INFO_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADS_SECURITY_INFO_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADS_SETTYPE_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADS_SETTYPE_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADS_FORMAT_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADS_FORMAT_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADS_DISPLAY_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADS_DISPLAY_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADS_ESCAPE_MODE_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADS_ESCAPE_MODE_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADS_PATHTYPE_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADS_PATHTYPE_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: ADS_SD_FORMAT_ENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ADS_SD_FORMAT_ENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: IADs
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADs = *opaque{
+    // TODO: Method 'get_Name'
+    // TODO: Method 'get_Class'
+    // TODO: Method 'get_GUID'
+    // TODO: Method 'get_ADsPath'
+    // TODO: Method 'get_Parent'
+    // TODO: Method 'get_Schema'
+    // TODO: Method 'GetInfo'
+    // TODO: Method 'SetInfo'
+    // TODO: Method 'Get'
+    // TODO: Method 'Put'
+    // TODO: Method 'GetEx'
+    // TODO: Method 'PutEx'
+    // TODO: Method 'GetInfoEx'
+};
+// --------------------------------------------------------
+// Type: IADsContainer
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsContainer = *opaque{
+    // TODO: Method 'get_Count'
+    // TODO: Method 'get__NewEnum'
+    // TODO: Method 'get_Filter'
+    // TODO: Method 'put_Filter'
+    // TODO: Method 'get_Hints'
+    // TODO: Method 'put_Hints'
+    // TODO: Method 'GetObjectA'
+    // TODO: Method 'Create'
+    // TODO: Method 'Delete'
+    // TODO: Method 'CopyHere'
+    // TODO: Method 'MoveHere'
+};
+// --------------------------------------------------------
+// Type: IADsCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsCollection = *opaque{
+    // TODO: Method 'get__NewEnum'
+    // TODO: Method 'Add'
+    // TODO: Method 'Remove'
+    // TODO: Method 'GetObjectA'
+};
+// --------------------------------------------------------
+// Type: IADsMembers
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsMembers = *opaque{
+    // TODO: Method 'get_Count'
+    // TODO: Method 'get__NewEnum'
+    // TODO: Method 'get_Filter'
+    // TODO: Method 'put_Filter'
+};
+// --------------------------------------------------------
+// Type: IADsPropertyList
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsPropertyList = *opaque{
+    // TODO: Method 'get_PropertyCount'
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Item'
+    // TODO: Method 'GetPropertyItem'
+    // TODO: Method 'PutPropertyItem'
+    // TODO: Method 'ResetPropertyItem'
+    // TODO: Method 'PurgePropertyList'
+};
+// --------------------------------------------------------
+// Type: IADsPropertyEntry
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsPropertyEntry = *opaque{
+    // TODO: Method 'Clear'
+    // TODO: Method 'get_Name'
+    // TODO: Method 'put_Name'
+    // TODO: Method 'get_ADsType'
+    // TODO: Method 'put_ADsType'
+    // TODO: Method 'get_ControlCode'
+    // TODO: Method 'put_ControlCode'
+    // TODO: Method 'get_Values'
+    // TODO: Method 'put_Values'
+};
+// --------------------------------------------------------
+// Type: IADsPropertyValue
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsPropertyValue = *opaque{
+    // TODO: Method 'Clear'
+    // TODO: Method 'get_ADsType'
+    // TODO: Method 'put_ADsType'
+    // TODO: Method 'get_DNString'
+    // TODO: Method 'put_DNString'
+    // TODO: Method 'get_CaseExactString'
+    // TODO: Method 'put_CaseExactString'
+    // TODO: Method 'get_CaseIgnoreString'
+    // TODO: Method 'put_CaseIgnoreString'
+    // TODO: Method 'get_PrintableString'
+    // TODO: Method 'put_PrintableString'
+    // TODO: Method 'get_NumericString'
+    // TODO: Method 'put_NumericString'
+    // TODO: Method 'get_Boolean'
+    // TODO: Method 'put_Boolean'
+    // TODO: Method 'get_Integer'
+    // TODO: Method 'put_Integer'
+    // TODO: Method 'get_OctetString'
+    // TODO: Method 'put_OctetString'
+    // TODO: Method 'get_SecurityDescriptor'
+    // TODO: Method 'put_SecurityDescriptor'
+    // TODO: Method 'get_LargeInteger'
+    // TODO: Method 'put_LargeInteger'
+    // TODO: Method 'get_UTCTime'
+    // TODO: Method 'put_UTCTime'
+};
+// --------------------------------------------------------
+// Type: IADsPropertyValue2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsPropertyValue2 = *opaque{
+    // TODO: Method 'GetObjectProperty'
+    // TODO: Method 'PutObjectProperty'
+};
+// --------------------------------------------------------
+// Type: IPrivateDispatch
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPrivateDispatch = *opaque{
+    // TODO: Method 'ADSIInitializeDispatchManager'
+    // TODO: Method 'ADSIGetTypeInfoCount'
+    // TODO: Method 'ADSIGetTypeInfo'
+    // TODO: Method 'ADSIGetIDsOfNames'
+    // TODO: Method 'ADSIInvoke'
+};
+// --------------------------------------------------------
+// Type: IPrivateUnknown
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPrivateUnknown = *opaque{
+    // TODO: Method 'ADSIInitializeObject'
+    // TODO: Method 'ADSIReleaseObject'
+};
+// --------------------------------------------------------
+// Type: IADsExtension
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsExtension = *opaque{
+    // TODO: Method 'Operate'
+    // TODO: Method 'PrivateGetIDsOfNames'
+    // TODO: Method 'PrivateInvoke'
+};
+// --------------------------------------------------------
+// Type: IADsDeleteOps
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsDeleteOps = *opaque{
+    // TODO: Method 'DeleteObject'
+};
+// --------------------------------------------------------
+// Type: IADsNamespaces
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsNamespaces = *opaque{
+    // TODO: Method 'get_DefaultContainer'
+    // TODO: Method 'put_DefaultContainer'
+};
+// --------------------------------------------------------
+// Type: IADsClass
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsClass = *opaque{
+    // TODO: Method 'get_PrimaryInterface'
+    // TODO: Method 'get_CLSID'
+    // TODO: Method 'put_CLSID'
+    // TODO: Method 'get_OID'
+    // TODO: Method 'put_OID'
+    // TODO: Method 'get_Abstract'
+    // TODO: Method 'put_Abstract'
+    // TODO: Method 'get_Auxiliary'
+    // TODO: Method 'put_Auxiliary'
+    // TODO: Method 'get_MandatoryProperties'
+    // TODO: Method 'put_MandatoryProperties'
+    // TODO: Method 'get_OptionalProperties'
+    // TODO: Method 'put_OptionalProperties'
+    // TODO: Method 'get_NamingProperties'
+    // TODO: Method 'put_NamingProperties'
+    // TODO: Method 'get_DerivedFrom'
+    // TODO: Method 'put_DerivedFrom'
+    // TODO: Method 'get_AuxDerivedFrom'
+    // TODO: Method 'put_AuxDerivedFrom'
+    // TODO: Method 'get_PossibleSuperiors'
+    // TODO: Method 'put_PossibleSuperiors'
+    // TODO: Method 'get_Containment'
+    // TODO: Method 'put_Containment'
+    // TODO: Method 'get_Container'
+    // TODO: Method 'put_Container'
+    // TODO: Method 'get_HelpFileName'
+    // TODO: Method 'put_HelpFileName'
+    // TODO: Method 'get_HelpFileContext'
+    // TODO: Method 'put_HelpFileContext'
+    // TODO: Method 'Qualifiers'
+};
+// --------------------------------------------------------
+// Type: IADsProperty
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsProperty = *opaque{
+    // TODO: Method 'get_OID'
+    // TODO: Method 'put_OID'
+    // TODO: Method 'get_Syntax'
+    // TODO: Method 'put_Syntax'
+    // TODO: Method 'get_MaxRange'
+    // TODO: Method 'put_MaxRange'
+    // TODO: Method 'get_MinRange'
+    // TODO: Method 'put_MinRange'
+    // TODO: Method 'get_MultiValued'
+    // TODO: Method 'put_MultiValued'
+    // TODO: Method 'Qualifiers'
+};
+// --------------------------------------------------------
+// Type: IADsSyntax
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsSyntax = *opaque{
+    // TODO: Method 'get_OleAutoDataType'
+    // TODO: Method 'put_OleAutoDataType'
+};
+// --------------------------------------------------------
+// Type: IADsLocality
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsLocality = *opaque{
+    // TODO: Method 'get_Description'
+    // TODO: Method 'put_Description'
+    // TODO: Method 'get_LocalityName'
+    // TODO: Method 'put_LocalityName'
+    // TODO: Method 'get_PostalAddress'
+    // TODO: Method 'put_PostalAddress'
+    // TODO: Method 'get_SeeAlso'
+    // TODO: Method 'put_SeeAlso'
+};
+// --------------------------------------------------------
+// Type: IADsO
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsO = *opaque{
+    // TODO: Method 'get_Description'
+    // TODO: Method 'put_Description'
+    // TODO: Method 'get_LocalityName'
+    // TODO: Method 'put_LocalityName'
+    // TODO: Method 'get_PostalAddress'
+    // TODO: Method 'put_PostalAddress'
+    // TODO: Method 'get_TelephoneNumber'
+    // TODO: Method 'put_TelephoneNumber'
+    // TODO: Method 'get_FaxNumber'
+    // TODO: Method 'put_FaxNumber'
+    // TODO: Method 'get_SeeAlso'
+    // TODO: Method 'put_SeeAlso'
+};
+// --------------------------------------------------------
+// Type: IADsOU
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsOU = *opaque{
+    // TODO: Method 'get_Description'
+    // TODO: Method 'put_Description'
+    // TODO: Method 'get_LocalityName'
+    // TODO: Method 'put_LocalityName'
+    // TODO: Method 'get_PostalAddress'
+    // TODO: Method 'put_PostalAddress'
+    // TODO: Method 'get_TelephoneNumber'
+    // TODO: Method 'put_TelephoneNumber'
+    // TODO: Method 'get_FaxNumber'
+    // TODO: Method 'put_FaxNumber'
+    // TODO: Method 'get_SeeAlso'
+    // TODO: Method 'put_SeeAlso'
+    // TODO: Method 'get_BusinessCategory'
+    // TODO: Method 'put_BusinessCategory'
+};
+// --------------------------------------------------------
+// Type: IADsDomain
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsDomain = *opaque{
+    // TODO: Method 'get_IsWorkgroup'
+    // TODO: Method 'get_MinPasswordLength'
+    // TODO: Method 'put_MinPasswordLength'
+    // TODO: Method 'get_MinPasswordAge'
+    // TODO: Method 'put_MinPasswordAge'
+    // TODO: Method 'get_MaxPasswordAge'
+    // TODO: Method 'put_MaxPasswordAge'
+    // TODO: Method 'get_MaxBadPasswordsAllowed'
+    // TODO: Method 'put_MaxBadPasswordsAllowed'
+    // TODO: Method 'get_PasswordHistoryLength'
+    // TODO: Method 'put_PasswordHistoryLength'
+    // TODO: Method 'get_PasswordAttributes'
+    // TODO: Method 'put_PasswordAttributes'
+    // TODO: Method 'get_AutoUnlockInterval'
+    // TODO: Method 'put_AutoUnlockInterval'
+    // TODO: Method 'get_LockoutObservationInterval'
+    // TODO: Method 'put_LockoutObservationInterval'
+};
+// --------------------------------------------------------
+// Type: IADsComputer
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsComputer = *opaque{
+    // TODO: Method 'get_ComputerID'
+    // TODO: Method 'get_Site'
+    // TODO: Method 'get_Description'
+    // TODO: Method 'put_Description'
+    // TODO: Method 'get_Location'
+    // TODO: Method 'put_Location'
+    // TODO: Method 'get_PrimaryUser'
+    // TODO: Method 'put_PrimaryUser'
+    // TODO: Method 'get_Owner'
+    // TODO: Method 'put_Owner'
+    // TODO: Method 'get_Division'
+    // TODO: Method 'put_Division'
+    // TODO: Method 'get_Department'
+    // TODO: Method 'put_Department'
+    // TODO: Method 'get_Role'
+    // TODO: Method 'put_Role'
+    // TODO: Method 'get_OperatingSystem'
+    // TODO: Method 'put_OperatingSystem'
+    // TODO: Method 'get_OperatingSystemVersion'
+    // TODO: Method 'put_OperatingSystemVersion'
+    // TODO: Method 'get_Model'
+    // TODO: Method 'put_Model'
+    // TODO: Method 'get_Processor'
+    // TODO: Method 'put_Processor'
+    // TODO: Method 'get_ProcessorCount'
+    // TODO: Method 'put_ProcessorCount'
+    // TODO: Method 'get_MemorySize'
+    // TODO: Method 'put_MemorySize'
+    // TODO: Method 'get_StorageCapacity'
+    // TODO: Method 'put_StorageCapacity'
+    // TODO: Method 'get_NetAddresses'
+    // TODO: Method 'put_NetAddresses'
+};
+// --------------------------------------------------------
+// Type: IADsComputerOperations
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsComputerOperations = *opaque{
+    // TODO: Method 'Status'
+    // TODO: Method 'Shutdown'
+};
+// --------------------------------------------------------
+// Type: IADsGroup
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsGroup = *opaque{
+    // TODO: Method 'get_Description'
+    // TODO: Method 'put_Description'
+    // TODO: Method 'Members'
+    // TODO: Method 'IsMember'
+    // TODO: Method 'Add'
+    // TODO: Method 'Remove'
+};
+// --------------------------------------------------------
+// Type: IADsUser
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsUser = *opaque{
+    // TODO: Method 'get_BadLoginAddress'
+    // TODO: Method 'get_BadLoginCount'
+    // TODO: Method 'get_LastLogin'
+    // TODO: Method 'get_LastLogoff'
+    // TODO: Method 'get_LastFailedLogin'
+    // TODO: Method 'get_PasswordLastChanged'
+    // TODO: Method 'get_Description'
+    // TODO: Method 'put_Description'
+    // TODO: Method 'get_Division'
+    // TODO: Method 'put_Division'
+    // TODO: Method 'get_Department'
+    // TODO: Method 'put_Department'
+    // TODO: Method 'get_EmployeeID'
+    // TODO: Method 'put_EmployeeID'
+    // TODO: Method 'get_FullName'
+    // TODO: Method 'put_FullName'
+    // TODO: Method 'get_FirstName'
+    // TODO: Method 'put_FirstName'
+    // TODO: Method 'get_LastName'
+    // TODO: Method 'put_LastName'
+    // TODO: Method 'get_OtherName'
+    // TODO: Method 'put_OtherName'
+    // TODO: Method 'get_NamePrefix'
+    // TODO: Method 'put_NamePrefix'
+    // TODO: Method 'get_NameSuffix'
+    // TODO: Method 'put_NameSuffix'
+    // TODO: Method 'get_Title'
+    // TODO: Method 'put_Title'
+    // TODO: Method 'get_Manager'
+    // TODO: Method 'put_Manager'
+    // TODO: Method 'get_TelephoneHome'
+    // TODO: Method 'put_TelephoneHome'
+    // TODO: Method 'get_TelephoneMobile'
+    // TODO: Method 'put_TelephoneMobile'
+    // TODO: Method 'get_TelephoneNumber'
+    // TODO: Method 'put_TelephoneNumber'
+    // TODO: Method 'get_TelephonePager'
+    // TODO: Method 'put_TelephonePager'
+    // TODO: Method 'get_FaxNumber'
+    // TODO: Method 'put_FaxNumber'
+    // TODO: Method 'get_OfficeLocations'
+    // TODO: Method 'put_OfficeLocations'
+    // TODO: Method 'get_PostalAddresses'
+    // TODO: Method 'put_PostalAddresses'
+    // TODO: Method 'get_PostalCodes'
+    // TODO: Method 'put_PostalCodes'
+    // TODO: Method 'get_SeeAlso'
+    // TODO: Method 'put_SeeAlso'
+    // TODO: Method 'get_AccountDisabled'
+    // TODO: Method 'put_AccountDisabled'
+    // TODO: Method 'get_AccountExpirationDate'
+    // TODO: Method 'put_AccountExpirationDate'
+    // TODO: Method 'get_GraceLoginsAllowed'
+    // TODO: Method 'put_GraceLoginsAllowed'
+    // TODO: Method 'get_GraceLoginsRemaining'
+    // TODO: Method 'put_GraceLoginsRemaining'
+    // TODO: Method 'get_IsAccountLocked'
+    // TODO: Method 'put_IsAccountLocked'
+    // TODO: Method 'get_LoginHours'
+    // TODO: Method 'put_LoginHours'
+    // TODO: Method 'get_LoginWorkstations'
+    // TODO: Method 'put_LoginWorkstations'
+    // TODO: Method 'get_MaxLogins'
+    // TODO: Method 'put_MaxLogins'
+    // TODO: Method 'get_MaxStorage'
+    // TODO: Method 'put_MaxStorage'
+    // TODO: Method 'get_PasswordExpirationDate'
+    // TODO: Method 'put_PasswordExpirationDate'
+    // TODO: Method 'get_PasswordMinimumLength'
+    // TODO: Method 'put_PasswordMinimumLength'
+    // TODO: Method 'get_PasswordRequired'
+    // TODO: Method 'put_PasswordRequired'
+    // TODO: Method 'get_RequireUniquePassword'
+    // TODO: Method 'put_RequireUniquePassword'
+    // TODO: Method 'get_EmailAddress'
+    // TODO: Method 'put_EmailAddress'
+    // TODO: Method 'get_HomeDirectory'
+    // TODO: Method 'put_HomeDirectory'
+    // TODO: Method 'get_Languages'
+    // TODO: Method 'put_Languages'
+    // TODO: Method 'get_Profile'
+    // TODO: Method 'put_Profile'
+    // TODO: Method 'get_LoginScript'
+    // TODO: Method 'put_LoginScript'
+    // TODO: Method 'get_Picture'
+    // TODO: Method 'put_Picture'
+    // TODO: Method 'get_HomePage'
+    // TODO: Method 'put_HomePage'
+    // TODO: Method 'Groups'
+    // TODO: Method 'SetPassword'
+    // TODO: Method 'ChangePassword'
+};
+// --------------------------------------------------------
+// Type: IADsPrintQueue
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsPrintQueue = *opaque{
+    // TODO: Method 'get_PrinterPath'
+    // TODO: Method 'put_PrinterPath'
+    // TODO: Method 'get_Model'
+    // TODO: Method 'put_Model'
+    // TODO: Method 'get_Datatype'
+    // TODO: Method 'put_Datatype'
+    // TODO: Method 'get_PrintProcessor'
+    // TODO: Method 'put_PrintProcessor'
+    // TODO: Method 'get_Description'
+    // TODO: Method 'put_Description'
+    // TODO: Method 'get_Location'
+    // TODO: Method 'put_Location'
+    // TODO: Method 'get_StartTime'
+    // TODO: Method 'put_StartTime'
+    // TODO: Method 'get_UntilTime'
+    // TODO: Method 'put_UntilTime'
+    // TODO: Method 'get_DefaultJobPriority'
+    // TODO: Method 'put_DefaultJobPriority'
+    // TODO: Method 'get_Priority'
+    // TODO: Method 'put_Priority'
+    // TODO: Method 'get_BannerPage'
+    // TODO: Method 'put_BannerPage'
+    // TODO: Method 'get_PrintDevices'
+    // TODO: Method 'put_PrintDevices'
+    // TODO: Method 'get_NetAddresses'
+    // TODO: Method 'put_NetAddresses'
+};
+// --------------------------------------------------------
+// Type: IADsPrintQueueOperations
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsPrintQueueOperations = *opaque{
+    // TODO: Method 'get_Status'
+    // TODO: Method 'PrintJobs'
+    // TODO: Method 'Pause'
+    // TODO: Method 'Resume'
+    // TODO: Method 'Purge'
+};
+// --------------------------------------------------------
+// Type: IADsPrintJob
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsPrintJob = *opaque{
+    // TODO: Method 'get_HostPrintQueue'
+    // TODO: Method 'get_User'
+    // TODO: Method 'get_UserPath'
+    // TODO: Method 'get_TimeSubmitted'
+    // TODO: Method 'get_TotalPages'
+    // TODO: Method 'get_Size'
+    // TODO: Method 'get_Description'
+    // TODO: Method 'put_Description'
+    // TODO: Method 'get_Priority'
+    // TODO: Method 'put_Priority'
+    // TODO: Method 'get_StartTime'
+    // TODO: Method 'put_StartTime'
+    // TODO: Method 'get_UntilTime'
+    // TODO: Method 'put_UntilTime'
+    // TODO: Method 'get_Notify'
+    // TODO: Method 'put_Notify'
+    // TODO: Method 'get_NotifyPath'
+    // TODO: Method 'put_NotifyPath'
+};
+// --------------------------------------------------------
+// Type: IADsPrintJobOperations
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsPrintJobOperations = *opaque{
+    // TODO: Method 'get_Status'
+    // TODO: Method 'get_TimeElapsed'
+    // TODO: Method 'get_PagesPrinted'
+    // TODO: Method 'get_Position'
+    // TODO: Method 'put_Position'
+    // TODO: Method 'Pause'
+    // TODO: Method 'Resume'
+};
+// --------------------------------------------------------
+// Type: IADsService
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsService = *opaque{
+    // TODO: Method 'get_HostComputer'
+    // TODO: Method 'put_HostComputer'
+    // TODO: Method 'get_DisplayName'
+    // TODO: Method 'put_DisplayName'
+    // TODO: Method 'get_Version'
+    // TODO: Method 'put_Version'
+    // TODO: Method 'get_ServiceType'
+    // TODO: Method 'put_ServiceType'
+    // TODO: Method 'get_StartType'
+    // TODO: Method 'put_StartType'
+    // TODO: Method 'get_Path'
+    // TODO: Method 'put_Path'
+    // TODO: Method 'get_StartupParameters'
+    // TODO: Method 'put_StartupParameters'
+    // TODO: Method 'get_ErrorControl'
+    // TODO: Method 'put_ErrorControl'
+    // TODO: Method 'get_LoadOrderGroup'
+    // TODO: Method 'put_LoadOrderGroup'
+    // TODO: Method 'get_ServiceAccountName'
+    // TODO: Method 'put_ServiceAccountName'
+    // TODO: Method 'get_ServiceAccountPath'
+    // TODO: Method 'put_ServiceAccountPath'
+    // TODO: Method 'get_Dependencies'
+    // TODO: Method 'put_Dependencies'
+};
+// --------------------------------------------------------
+// Type: IADsServiceOperations
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsServiceOperations = *opaque{
+    // TODO: Method 'get_Status'
+    // TODO: Method 'Start'
+    // TODO: Method 'Stop'
+    // TODO: Method 'Pause'
+    // TODO: Method 'Continue'
+    // TODO: Method 'SetPassword'
+};
+// --------------------------------------------------------
+// Type: IADsFileService
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsFileService = *opaque{
+    // TODO: Method 'get_Description'
+    // TODO: Method 'put_Description'
+    // TODO: Method 'get_MaxUserCount'
+    // TODO: Method 'put_MaxUserCount'
+};
+// --------------------------------------------------------
+// Type: IADsFileServiceOperations
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsFileServiceOperations = *opaque{
+    // TODO: Method 'Sessions'
+    // TODO: Method 'Resources'
+};
+// --------------------------------------------------------
+// Type: IADsFileShare
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsFileShare = *opaque{
+    // TODO: Method 'get_CurrentUserCount'
+    // TODO: Method 'get_Description'
+    // TODO: Method 'put_Description'
+    // TODO: Method 'get_HostComputer'
+    // TODO: Method 'put_HostComputer'
+    // TODO: Method 'get_Path'
+    // TODO: Method 'put_Path'
+    // TODO: Method 'get_MaxUserCount'
+    // TODO: Method 'put_MaxUserCount'
+};
+// --------------------------------------------------------
+// Type: IADsSession
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsSession = *opaque{
+    // TODO: Method 'get_User'
+    // TODO: Method 'get_UserPath'
+    // TODO: Method 'get_Computer'
+    // TODO: Method 'get_ComputerPath'
+    // TODO: Method 'get_ConnectTime'
+    // TODO: Method 'get_IdleTime'
+};
+// --------------------------------------------------------
+// Type: IADsResource
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsResource = *opaque{
+    // TODO: Method 'get_User'
+    // TODO: Method 'get_UserPath'
+    // TODO: Method 'get_Path'
+    // TODO: Method 'get_LockCount'
+};
+// --------------------------------------------------------
+// Type: IADsOpenDSObject
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsOpenDSObject = *opaque{
+    // TODO: Method 'OpenDSObject'
+};
+// --------------------------------------------------------
+// Type: IDirectoryObject
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectoryObject = *opaque{
+    // TODO: Method 'GetObjectInformation'
+    // TODO: Method 'GetObjectAttributes'
+    // TODO: Method 'SetObjectAttributes'
+    // TODO: Method 'CreateDSObject'
+    // TODO: Method 'DeleteDSObject'
+};
+// --------------------------------------------------------
+// Type: IDirectorySearch
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectorySearch = *opaque{
+    // TODO: Method 'SetSearchPreference'
+    // TODO: Method 'ExecuteSearch'
+    // TODO: Method 'AbandonSearch'
+    // TODO: Method 'GetFirstRow'
+    // TODO: Method 'GetNextRow'
+    // TODO: Method 'GetPreviousRow'
+    // TODO: Method 'GetNextColumnName'
+    // TODO: Method 'GetColumn'
+    // TODO: Method 'FreeColumn'
+    // TODO: Method 'CloseSearchHandle'
+};
+// --------------------------------------------------------
+// Type: IDirectorySchemaMgmt
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectorySchemaMgmt = *opaque{
+    // TODO: Method 'EnumAttributes'
+    // TODO: Method 'CreateAttributeDefinition'
+    // TODO: Method 'WriteAttributeDefinition'
+    // TODO: Method 'DeleteAttributeDefinition'
+    // TODO: Method 'EnumClasses'
+    // TODO: Method 'WriteClassDefinition'
+    // TODO: Method 'CreateClassDefinition'
+    // TODO: Method 'DeleteClassDefinition'
+};
+// --------------------------------------------------------
+// Type: IADsAggregatee
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsAggregatee = *opaque{
+    // TODO: Method 'ConnectAsAggregatee'
+    // TODO: Method 'DisconnectAsAggregatee'
+    // TODO: Method 'RelinquishInterface'
+    // TODO: Method 'RestoreInterface'
+};
+// --------------------------------------------------------
+// Type: IADsAggregator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsAggregator = *opaque{
+    // TODO: Method 'ConnectAsAggregator'
+    // TODO: Method 'DisconnectAsAggregator'
+};
+// --------------------------------------------------------
+// Type: IADsAccessControlEntry
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsAccessControlEntry = *opaque{
+    // TODO: Method 'get_AccessMask'
+    // TODO: Method 'put_AccessMask'
+    // TODO: Method 'get_AceType'
+    // TODO: Method 'put_AceType'
+    // TODO: Method 'get_AceFlags'
+    // TODO: Method 'put_AceFlags'
+    // TODO: Method 'get_Flags'
+    // TODO: Method 'put_Flags'
+    // TODO: Method 'get_ObjectType'
+    // TODO: Method 'put_ObjectType'
+    // TODO: Method 'get_InheritedObjectType'
+    // TODO: Method 'put_InheritedObjectType'
+    // TODO: Method 'get_Trustee'
+    // TODO: Method 'put_Trustee'
+};
+// --------------------------------------------------------
+// Type: IADsAccessControlList
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsAccessControlList = *opaque{
+    // TODO: Method 'get_AclRevision'
+    // TODO: Method 'put_AclRevision'
+    // TODO: Method 'get_AceCount'
+    // TODO: Method 'put_AceCount'
+    // TODO: Method 'AddAce'
+    // TODO: Method 'RemoveAce'
+    // TODO: Method 'CopyAccessList'
+    // TODO: Method 'get__NewEnum'
+};
+// --------------------------------------------------------
+// Type: IADsSecurityDescriptor
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsSecurityDescriptor = *opaque{
+    // TODO: Method 'get_Revision'
+    // TODO: Method 'put_Revision'
+    // TODO: Method 'get_Control'
+    // TODO: Method 'put_Control'
+    // TODO: Method 'get_Owner'
+    // TODO: Method 'put_Owner'
+    // TODO: Method 'get_OwnerDefaulted'
+    // TODO: Method 'put_OwnerDefaulted'
+    // TODO: Method 'get_Group'
+    // TODO: Method 'put_Group'
+    // TODO: Method 'get_GroupDefaulted'
+    // TODO: Method 'put_GroupDefaulted'
+    // TODO: Method 'get_DiscretionaryAcl'
+    // TODO: Method 'put_DiscretionaryAcl'
+    // TODO: Method 'get_DaclDefaulted'
+    // TODO: Method 'put_DaclDefaulted'
+    // TODO: Method 'get_SystemAcl'
+    // TODO: Method 'put_SystemAcl'
+    // TODO: Method 'get_SaclDefaulted'
+    // TODO: Method 'put_SaclDefaulted'
+    // TODO: Method 'CopySecurityDescriptor'
+};
+// --------------------------------------------------------
+// Type: IADsLargeInteger
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsLargeInteger = *opaque{
+    // TODO: Method 'get_HighPart'
+    // TODO: Method 'put_HighPart'
+    // TODO: Method 'get_LowPart'
+    // TODO: Method 'put_LowPart'
+};
+// --------------------------------------------------------
+// Type: IADsNameTranslate
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsNameTranslate = *opaque{
+    // TODO: Method 'put_ChaseReferral'
+    // TODO: Method 'Init'
+    // TODO: Method 'InitEx'
+    // TODO: Method 'Set'
+    // TODO: Method 'Get'
+    // TODO: Method 'SetEx'
+    // TODO: Method 'GetEx'
+};
+// --------------------------------------------------------
+// Type: IADsCaseIgnoreList
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsCaseIgnoreList = *opaque{
+    // TODO: Method 'get_CaseIgnoreList'
+    // TODO: Method 'put_CaseIgnoreList'
+};
+// --------------------------------------------------------
+// Type: IADsFaxNumber
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsFaxNumber = *opaque{
+    // TODO: Method 'get_TelephoneNumber'
+    // TODO: Method 'put_TelephoneNumber'
+    // TODO: Method 'get_Parameters'
+    // TODO: Method 'put_Parameters'
+};
+// --------------------------------------------------------
+// Type: IADsNetAddress
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsNetAddress = *opaque{
+    // TODO: Method 'get_AddressType'
+    // TODO: Method 'put_AddressType'
+    // TODO: Method 'get_Address'
+    // TODO: Method 'put_Address'
+};
+// --------------------------------------------------------
+// Type: IADsOctetList
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsOctetList = *opaque{
+    // TODO: Method 'get_OctetList'
+    // TODO: Method 'put_OctetList'
+};
+// --------------------------------------------------------
+// Type: IADsEmail
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsEmail = *opaque{
+    // TODO: Method 'get_Type'
+    // TODO: Method 'put_Type'
+    // TODO: Method 'get_Address'
+    // TODO: Method 'put_Address'
+};
+// --------------------------------------------------------
+// Type: IADsPath
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsPath = *opaque{
+    // TODO: Method 'get_Type'
+    // TODO: Method 'put_Type'
+    // TODO: Method 'get_VolumeName'
+    // TODO: Method 'put_VolumeName'
+    // TODO: Method 'get_Path'
+    // TODO: Method 'put_Path'
+};
+// --------------------------------------------------------
+// Type: IADsReplicaPointer
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsReplicaPointer = *opaque{
+    // TODO: Method 'get_ServerName'
+    // TODO: Method 'put_ServerName'
+    // TODO: Method 'get_ReplicaType'
+    // TODO: Method 'put_ReplicaType'
+    // TODO: Method 'get_ReplicaNumber'
+    // TODO: Method 'put_ReplicaNumber'
+    // TODO: Method 'get_Count'
+    // TODO: Method 'put_Count'
+    // TODO: Method 'get_ReplicaAddressHints'
+    // TODO: Method 'put_ReplicaAddressHints'
+};
+// --------------------------------------------------------
+// Type: IADsAcl
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsAcl = *opaque{
+    // TODO: Method 'get_ProtectedAttrName'
+    // TODO: Method 'put_ProtectedAttrName'
+    // TODO: Method 'get_SubjectName'
+    // TODO: Method 'put_SubjectName'
+    // TODO: Method 'get_Privileges'
+    // TODO: Method 'put_Privileges'
+    // TODO: Method 'CopyAcl'
+};
+// --------------------------------------------------------
+// Type: IADsTimestamp
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsTimestamp = *opaque{
+    // TODO: Method 'get_WholeSeconds'
+    // TODO: Method 'put_WholeSeconds'
+    // TODO: Method 'get_EventID'
+    // TODO: Method 'put_EventID'
+};
+// --------------------------------------------------------
+// Type: IADsPostalAddress
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsPostalAddress = *opaque{
+    // TODO: Method 'get_PostalAddress'
+    // TODO: Method 'put_PostalAddress'
+};
+// --------------------------------------------------------
+// Type: IADsBackLink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsBackLink = *opaque{
+    // TODO: Method 'get_RemoteID'
+    // TODO: Method 'put_RemoteID'
+    // TODO: Method 'get_ObjectName'
+    // TODO: Method 'put_ObjectName'
+};
+// --------------------------------------------------------
+// Type: IADsTypedName
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsTypedName = *opaque{
+    // TODO: Method 'get_ObjectName'
+    // TODO: Method 'put_ObjectName'
+    // TODO: Method 'get_Level'
+    // TODO: Method 'put_Level'
+    // TODO: Method 'get_Interval'
+    // TODO: Method 'put_Interval'
+};
+// --------------------------------------------------------
+// Type: IADsHold
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsHold = *opaque{
+    // TODO: Method 'get_ObjectName'
+    // TODO: Method 'put_ObjectName'
+    // TODO: Method 'get_Amount'
+    // TODO: Method 'put_Amount'
+};
+// --------------------------------------------------------
+// Type: IADsObjectOptions
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsObjectOptions = *opaque{
+    // TODO: Method 'GetOption'
+    // TODO: Method 'SetOption'
+};
+// --------------------------------------------------------
+// Type: IADsPathname
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsPathname = *opaque{
+    // TODO: Method 'Set'
+    // TODO: Method 'SetDisplayType'
+    // TODO: Method 'Retrieve'
+    // TODO: Method 'GetNumElements'
+    // TODO: Method 'GetElement'
+    // TODO: Method 'AddLeafElement'
+    // TODO: Method 'RemoveLeafElement'
+    // TODO: Method 'CopyPath'
+    // TODO: Method 'GetEscapedElement'
+    // TODO: Method 'get_EscapedMode'
+    // TODO: Method 'put_EscapedMode'
+};
+// --------------------------------------------------------
+// Type: IADsADSystemInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsADSystemInfo = *opaque{
+    // TODO: Method 'get_UserName'
+    // TODO: Method 'get_ComputerName'
+    // TODO: Method 'get_SiteName'
+    // TODO: Method 'get_DomainShortName'
+    // TODO: Method 'get_DomainDNSName'
+    // TODO: Method 'get_ForestDNSName'
+    // TODO: Method 'get_PDCRoleOwner'
+    // TODO: Method 'get_SchemaRoleOwner'
+    // TODO: Method 'get_IsNativeMode'
+    // TODO: Method 'GetAnyDCName'
+    // TODO: Method 'GetDCSiteName'
+    // TODO: Method 'RefreshSchemaCache'
+    // TODO: Method 'GetTrees'
+};
+// --------------------------------------------------------
+// Type: IADsWinNTSystemInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsWinNTSystemInfo = *opaque{
+    // TODO: Method 'get_UserName'
+    // TODO: Method 'get_ComputerName'
+    // TODO: Method 'get_DomainName'
+    // TODO: Method 'get_PDC'
+};
+// --------------------------------------------------------
+// Type: IADsDNWithBinary
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsDNWithBinary = *opaque{
+    // TODO: Method 'get_BinaryValue'
+    // TODO: Method 'put_BinaryValue'
+    // TODO: Method 'get_DNString'
+    // TODO: Method 'put_DNString'
+};
+// --------------------------------------------------------
+// Type: IADsDNWithString
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsDNWithString = *opaque{
+    // TODO: Method 'get_StringValue'
+    // TODO: Method 'put_StringValue'
+    // TODO: Method 'get_DNString'
+    // TODO: Method 'put_DNString'
+};
+// --------------------------------------------------------
+// Type: IADsSecurityUtility
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsSecurityUtility = *opaque{
+    // TODO: Method 'GetSecurityDescriptor'
+    // TODO: Method 'SetSecurityDescriptor'
+    // TODO: Method 'ConvertSecurityDescriptor'
+    // TODO: Method 'get_SecurityMask'
+    // TODO: Method 'put_SecurityMask'
+};
+// --------------------------------------------------------
+// Type: DSOBJECT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSOBJECT = extern struct {
+    dwFlags: {"kind":"UInt32"},
+    dwProviderFlags: {"kind":"UInt32"},
+    offsetName: {"kind":"UInt32"},
+    offsetClass: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DSOBJECTNAMES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSOBJECTNAMES = extern struct {
+    clsidNamespace: Guid,
+    cItems: {"kind":"UInt32"},
+    aObjects: {"kind":"Array","child": Windows.Win32.ActiveDirectory.DSOBJECT},
+};
+// --------------------------------------------------------
+// Type: DSDISPLAYSPECOPTIONS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSDISPLAYSPECOPTIONS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    offsetAttribPrefix: {"kind":"UInt32"},
+    offsetUserName: {"kind":"UInt32"},
+    offsetPassword: {"kind":"UInt32"},
+    offsetServer: {"kind":"UInt32"},
+    offsetServerConfigPath: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DSPROPERTYPAGEINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSPROPERTYPAGEINFO = extern struct {
+    offsetString: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DOMAINDESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DOMAINDESC = extern struct {
+    pszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszNCName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszTrustParent: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszObjectClass: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulFlags: {"kind":"UInt32"},
+    fDownLevel: Windows.Win32.SystemServices.BOOL,
+    pdChildList: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.DOMAINDESC},
+    pdNextSibling: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.DOMAINDESC},
+};
+// --------------------------------------------------------
+// Type: DOMAIN_TREE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DOMAIN_TREE = extern struct {
+    dsSize: {"kind":"UInt32"},
+    dwCount: {"kind":"UInt32"},
+    aDomains: {"kind":"Array","child": Windows.Win32.ActiveDirectory.DOMAINDESC},
+};
+// --------------------------------------------------------
+// Type: IDsBrowseDomainTree
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDsBrowseDomainTree = *opaque{
+    // TODO: Method 'BrowseTo'
+    // TODO: Method 'GetDomains'
+    // TODO: Method 'FreeDomains'
+    // TODO: Method 'FlushCachedDomains'
+    // TODO: Method 'SetComputer'
+};
+// --------------------------------------------------------
+// Type: LPDSENUMATTRIBUTES
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDSENUMATTRIBUTES = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DSCLASSCREATIONINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSCLASSCREATIONINFO = extern struct {
+    dwFlags: {"kind":"UInt32"},
+    clsidWizardDialog: Guid,
+    clsidWizardPrimaryPage: Guid,
+    cWizardExtensions: {"kind":"UInt32"},
+    aWizardExtensions: {"kind":"Array","child": Guid},
+};
+// --------------------------------------------------------
+// Type: IDsDisplaySpecifier
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDsDisplaySpecifier = *opaque{
+    // TODO: Method 'SetServer'
+    // TODO: Method 'SetLanguageID'
+    // TODO: Method 'GetDisplaySpecifier'
+    // TODO: Method 'GetIconLocation'
+    // TODO: Method 'GetIcon'
+    // TODO: Method 'GetFriendlyClassName'
+    // TODO: Method 'GetFriendlyAttributeName'
+    // TODO: Method 'IsClassContainer'
+    // TODO: Method 'GetClassCreationInfo'
+    // TODO: Method 'EnumClassAttributes'
+    // TODO: Method 'GetAttributeADsType'
+};
+// --------------------------------------------------------
+// Type: DSBROWSEINFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSBROWSEINFOW = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    hwndOwner: Windows.Win32.WindowsAndMessaging.HWND,
+    pszCaption: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszTitle: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszRoot: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchPath: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pfnCallback: Windows.Win32.ActiveDirectory.BFFCALLBACK,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+    dwReturnFormat: {"kind":"UInt32"},
+    pUserName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszObjectClass: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchObjectClass: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DSBROWSEINFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSBROWSEINFOA = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    hwndOwner: Windows.Win32.WindowsAndMessaging.HWND,
+    pszCaption: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszTitle: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszRoot: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchPath: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pfnCallback: Windows.Win32.ActiveDirectory.BFFCALLBACK,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+    dwReturnFormat: {"kind":"UInt32"},
+    pUserName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszObjectClass: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchObjectClass: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DSBITEMW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSBITEMW = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    pszADsPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszClass: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwMask: {"kind":"UInt32"},
+    dwState: {"kind":"UInt32"},
+    dwStateMask: {"kind":"UInt32"},
+    szDisplayName: {"kind":"Array","child": {"kind":"UInt16"}},
+    szIconLocation: {"kind":"Array","child": {"kind":"UInt16"}},
+    iIconResID: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: DSBITEMA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSBITEMA = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    pszADsPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszClass: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwMask: {"kind":"UInt32"},
+    dwState: {"kind":"UInt32"},
+    dwStateMask: {"kind":"UInt32"},
+    szDisplayName: {"kind":"Array","child": {"kind":"SByte"}},
+    szIconLocation: {"kind":"Array","child": {"kind":"SByte"}},
+    iIconResID: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: DSOP_UPLEVEL_FILTER_FLAGS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSOP_UPLEVEL_FILTER_FLAGS = extern struct {
+    flBothModes: {"kind":"UInt32"},
+    flMixedModeOnly: {"kind":"UInt32"},
+    flNativeModeOnly: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DSOP_FILTER_FLAGS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSOP_FILTER_FLAGS = extern struct {
+    Uplevel: Windows.Win32.ActiveDirectory.DSOP_UPLEVEL_FILTER_FLAGS,
+    flDownlevel: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DSOP_SCOPE_INIT_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSOP_SCOPE_INIT_INFO = extern struct {
+    cbSize: {"kind":"UInt32"},
+    flType: {"kind":"UInt32"},
+    flScope: {"kind":"UInt32"},
+    FilterFlags: Windows.Win32.ActiveDirectory.DSOP_FILTER_FLAGS,
+    pwzDcName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzADsPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hr: Windows.Win32.Com.HRESULT,
+};
+// --------------------------------------------------------
+// Type: DSOP_INIT_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSOP_INIT_INFO = extern struct {
+    cbSize: {"kind":"UInt32"},
+    pwzTargetComputer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cDsScopeInfos: {"kind":"UInt32"},
+    aDsScopeInfos: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.DSOP_SCOPE_INIT_INFO},
+    flOptions: {"kind":"UInt32"},
+    cAttributesToFetch: {"kind":"UInt32"},
+    apwzAttributeNames: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+};
+// --------------------------------------------------------
+// Type: DS_SELECTION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_SELECTION = extern struct {
+    pwzName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzADsPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzClass: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwzUPN: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pvarFetchedAttributes: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    flScopeType: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DS_SELECTION_LIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_SELECTION_LIST = extern struct {
+    cItems: {"kind":"UInt32"},
+    cFetchedAttributes: {"kind":"UInt32"},
+    aDsSelection: {"kind":"Array","child": Windows.Win32.ActiveDirectory.DS_SELECTION},
+};
+// --------------------------------------------------------
+// Type: IDsObjectPicker
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDsObjectPicker = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'InvokeDialog'
+};
+// --------------------------------------------------------
+// Type: IDsObjectPickerCredentials
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDsObjectPickerCredentials = *opaque{
+    // TODO: Method 'SetCredentials'
+};
+// --------------------------------------------------------
+// Type: DSQUERYINITPARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSQUERYINITPARAMS = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pDefaultScope: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pDefaultSaveLocation: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pUserName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pServer: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DSCOLUMN
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSCOLUMN = extern struct {
+    dwFlags: {"kind":"UInt32"},
+    fmt: {"kind":"Int32"},
+    cx: {"kind":"Int32"},
+    idsName: {"kind":"Int32"},
+    offsetProperty: {"kind":"Int32"},
+    dwReserved: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DSQUERYPARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSQUERYPARAMS = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    offsetQuery: {"kind":"Int32"},
+    iColumns: {"kind":"Int32"},
+    dwReserved: {"kind":"UInt32"},
+    aColumns: {"kind":"Array","child": Windows.Win32.ActiveDirectory.DSCOLUMN},
+};
+// --------------------------------------------------------
+// Type: DSQUERYCLASSLIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSQUERYCLASSLIST = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    cClasses: {"kind":"Int32"},
+    offsetClass: {"kind":"Array","child": {"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: IDsAdminCreateObj
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDsAdminCreateObj = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'CreateModal'
+};
+// --------------------------------------------------------
+// Type: IDsAdminNewObj
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDsAdminNewObj = *opaque{
+    // TODO: Method 'SetButtons'
+    // TODO: Method 'GetPageCounts'
+};
+// --------------------------------------------------------
+// Type: IDsAdminNewObjPrimarySite
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDsAdminNewObjPrimarySite = *opaque{
+    // TODO: Method 'CreateNew'
+    // TODO: Method 'Commit'
+};
+// --------------------------------------------------------
+// Type: DSA_NEWOBJ_DISPINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSA_NEWOBJ_DISPINFO = extern struct {
+    dwSize: {"kind":"UInt32"},
+    hObjClassIcon: Windows.Win32.Gdi.HICON,
+    lpszWizTitle: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszContDisplayName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: IDsAdminNewObjExt
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDsAdminNewObjExt = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'AddPages'
+    // TODO: Method 'SetObject'
+    // TODO: Method 'WriteData'
+    // TODO: Method 'OnError'
+    // TODO: Method 'GetSummaryInfo'
+};
+// --------------------------------------------------------
+// Type: IDsAdminNotifyHandler
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDsAdminNotifyHandler = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'Begin'
+    // TODO: Method 'Notify'
+    // TODO: Method 'End'
+};
+// --------------------------------------------------------
+// Type: ADSPROPINITPARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADSPROPINITPARAMS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    hr: Windows.Win32.Com.HRESULT,
+    pDsObj: Windows.Win32.ActiveDirectory.IDirectoryObject,
+    pwzCN: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pWritableAttrs: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.ADS_ATTR_INFO},
+};
+// --------------------------------------------------------
+// Type: ADSPROPERROR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADSPROPERROR = extern struct {
+    hwndPage: Windows.Win32.WindowsAndMessaging.HWND,
+    pszPageTitle: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszObjPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszObjClass: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hr: Windows.Win32.Com.HRESULT,
+    pszError: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: SCHEDULE_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SCHEDULE_HEADER = extern struct {
+    Type: {"kind":"UInt32"},
+    Offset: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SCHEDULE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SCHEDULE = extern struct {
+    Size: {"kind":"UInt32"},
+    Bandwidth: {"kind":"UInt32"},
+    NumberOfSchedules: {"kind":"UInt32"},
+    Schedules: {"kind":"Array","child": Windows.Win32.ActiveDirectory.SCHEDULE_HEADER},
+};
+// --------------------------------------------------------
+// Type: DS_MANGLE_FOR
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DS_MANGLE_FOR = *opaque{
+};
+// --------------------------------------------------------
+// Type: DS_NAME_FORMAT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DS_NAME_FORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: DS_NAME_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DS_NAME_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: DS_NAME_ERROR
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DS_NAME_ERROR = *opaque{
+};
+// --------------------------------------------------------
+// Type: DS_SPN_NAME_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DS_SPN_NAME_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DS_SPN_WRITE_OP
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DS_SPN_WRITE_OP = *opaque{
+};
+// --------------------------------------------------------
+// Type: DS_NAME_RESULT_ITEMA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_NAME_RESULT_ITEMA = extern struct {
+    status: {"kind":"UInt32"},
+    pDomain: {"kind""Ptr","child":{"kind":"SByte"}},
+    pName: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: DS_NAME_RESULTA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_NAME_RESULTA = extern struct {
+    cItems: {"kind":"UInt32"},
+    rItems: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_NAME_RESULT_ITEMA},
+};
+// --------------------------------------------------------
+// Type: DS_NAME_RESULT_ITEMW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_NAME_RESULT_ITEMW = extern struct {
+    status: {"kind":"UInt32"},
+    pDomain: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DS_NAME_RESULTW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_NAME_RESULTW = extern struct {
+    cItems: {"kind":"UInt32"},
+    rItems: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_NAME_RESULT_ITEMW},
+};
+// --------------------------------------------------------
+// Type: DS_REPSYNCALL_ERROR
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DS_REPSYNCALL_ERROR = *opaque{
+};
+// --------------------------------------------------------
+// Type: DS_REPSYNCALL_EVENT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DS_REPSYNCALL_EVENT = *opaque{
+};
+// --------------------------------------------------------
+// Type: DS_REPSYNCALL_SYNCA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPSYNCALL_SYNCA = extern struct {
+    pszSrcId: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszDstId: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszNC: {"kind""Ptr","child":{"kind":"SByte"}},
+    pguidSrc: {"kind""Ptr","child":Guid},
+    pguidDst: {"kind""Ptr","child":Guid},
+};
+// --------------------------------------------------------
+// Type: DS_REPSYNCALL_SYNCW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPSYNCALL_SYNCW = extern struct {
+    pszSrcId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszDstId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszNC: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pguidSrc: {"kind""Ptr","child":Guid},
+    pguidDst: {"kind""Ptr","child":Guid},
+};
+// --------------------------------------------------------
+// Type: DS_REPSYNCALL_ERRINFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPSYNCALL_ERRINFOA = extern struct {
+    pszSvrId: {"kind""Ptr","child":{"kind":"SByte"}},
+    error: Windows.Win32.ActiveDirectory.DS_REPSYNCALL_ERROR,
+    dwWin32Err: {"kind":"UInt32"},
+    pszSrcId: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: DS_REPSYNCALL_ERRINFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPSYNCALL_ERRINFOW = extern struct {
+    pszSvrId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    error: Windows.Win32.ActiveDirectory.DS_REPSYNCALL_ERROR,
+    dwWin32Err: {"kind":"UInt32"},
+    pszSrcId: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DS_REPSYNCALL_UPDATEA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPSYNCALL_UPDATEA = extern struct {
+    event: Windows.Win32.ActiveDirectory.DS_REPSYNCALL_EVENT,
+    pErrInfo: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_REPSYNCALL_ERRINFOA},
+    pSync: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_REPSYNCALL_SYNCA},
+};
+// --------------------------------------------------------
+// Type: DS_REPSYNCALL_UPDATEW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPSYNCALL_UPDATEW = extern struct {
+    event: Windows.Win32.ActiveDirectory.DS_REPSYNCALL_EVENT,
+    pErrInfo: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_REPSYNCALL_ERRINFOW},
+    pSync: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_REPSYNCALL_SYNCW},
+};
+// --------------------------------------------------------
+// Type: DS_SITE_COST_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_SITE_COST_INFO = extern struct {
+    errorCode: {"kind":"UInt32"},
+    cost: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DS_SCHEMA_GUID_MAPA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_SCHEMA_GUID_MAPA = extern struct {
+    guid: Guid,
+    guidType: {"kind":"UInt32"},
+    pName: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: DS_SCHEMA_GUID_MAPW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_SCHEMA_GUID_MAPW = extern struct {
+    guid: Guid,
+    guidType: {"kind":"UInt32"},
+    pName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DS_DOMAIN_CONTROLLER_INFO_1A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_DOMAIN_CONTROLLER_INFO_1A = extern struct {
+    NetbiosName: {"kind""Ptr","child":{"kind":"SByte"}},
+    DnsHostName: {"kind""Ptr","child":{"kind":"SByte"}},
+    SiteName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ComputerObjectName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ServerObjectName: {"kind""Ptr","child":{"kind":"SByte"}},
+    fIsPdc: Windows.Win32.SystemServices.BOOL,
+    fDsEnabled: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: DS_DOMAIN_CONTROLLER_INFO_1W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_DOMAIN_CONTROLLER_INFO_1W = extern struct {
+    NetbiosName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DnsHostName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SiteName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ComputerObjectName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ServerObjectName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fIsPdc: Windows.Win32.SystemServices.BOOL,
+    fDsEnabled: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: DS_DOMAIN_CONTROLLER_INFO_2A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_DOMAIN_CONTROLLER_INFO_2A = extern struct {
+    NetbiosName: {"kind""Ptr","child":{"kind":"SByte"}},
+    DnsHostName: {"kind""Ptr","child":{"kind":"SByte"}},
+    SiteName: {"kind""Ptr","child":{"kind":"SByte"}},
+    SiteObjectName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ComputerObjectName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ServerObjectName: {"kind""Ptr","child":{"kind":"SByte"}},
+    NtdsDsaObjectName: {"kind""Ptr","child":{"kind":"SByte"}},
+    fIsPdc: Windows.Win32.SystemServices.BOOL,
+    fDsEnabled: Windows.Win32.SystemServices.BOOL,
+    fIsGc: Windows.Win32.SystemServices.BOOL,
+    SiteObjectGuid: Guid,
+    ComputerObjectGuid: Guid,
+    ServerObjectGuid: Guid,
+    NtdsDsaObjectGuid: Guid,
+};
+// --------------------------------------------------------
+// Type: DS_DOMAIN_CONTROLLER_INFO_2W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_DOMAIN_CONTROLLER_INFO_2W = extern struct {
+    NetbiosName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DnsHostName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SiteName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SiteObjectName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ComputerObjectName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ServerObjectName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    NtdsDsaObjectName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fIsPdc: Windows.Win32.SystemServices.BOOL,
+    fDsEnabled: Windows.Win32.SystemServices.BOOL,
+    fIsGc: Windows.Win32.SystemServices.BOOL,
+    SiteObjectGuid: Guid,
+    ComputerObjectGuid: Guid,
+    ServerObjectGuid: Guid,
+    NtdsDsaObjectGuid: Guid,
+};
+// --------------------------------------------------------
+// Type: DS_DOMAIN_CONTROLLER_INFO_3A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_DOMAIN_CONTROLLER_INFO_3A = extern struct {
+    NetbiosName: {"kind""Ptr","child":{"kind":"SByte"}},
+    DnsHostName: {"kind""Ptr","child":{"kind":"SByte"}},
+    SiteName: {"kind""Ptr","child":{"kind":"SByte"}},
+    SiteObjectName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ComputerObjectName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ServerObjectName: {"kind""Ptr","child":{"kind":"SByte"}},
+    NtdsDsaObjectName: {"kind""Ptr","child":{"kind":"SByte"}},
+    fIsPdc: Windows.Win32.SystemServices.BOOL,
+    fDsEnabled: Windows.Win32.SystemServices.BOOL,
+    fIsGc: Windows.Win32.SystemServices.BOOL,
+    fIsRodc: Windows.Win32.SystemServices.BOOL,
+    SiteObjectGuid: Guid,
+    ComputerObjectGuid: Guid,
+    ServerObjectGuid: Guid,
+    NtdsDsaObjectGuid: Guid,
+};
+// --------------------------------------------------------
+// Type: DS_DOMAIN_CONTROLLER_INFO_3W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_DOMAIN_CONTROLLER_INFO_3W = extern struct {
+    NetbiosName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DnsHostName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SiteName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SiteObjectName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ComputerObjectName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ServerObjectName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    NtdsDsaObjectName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fIsPdc: Windows.Win32.SystemServices.BOOL,
+    fDsEnabled: Windows.Win32.SystemServices.BOOL,
+    fIsGc: Windows.Win32.SystemServices.BOOL,
+    fIsRodc: Windows.Win32.SystemServices.BOOL,
+    SiteObjectGuid: Guid,
+    ComputerObjectGuid: Guid,
+    ServerObjectGuid: Guid,
+    NtdsDsaObjectGuid: Guid,
+};
+// --------------------------------------------------------
+// Type: DS_KCC_TASKID
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DS_KCC_TASKID = *opaque{
+};
+// --------------------------------------------------------
+// Type: DS_REPL_INFO_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DS_REPL_INFO_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DS_REPL_NEIGHBORW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_NEIGHBORW = extern struct {
+    pszNamingContext: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszSourceDsaDN: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszSourceDsaAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszAsyncIntersiteTransportDN: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwReplicaFlags: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+    uuidNamingContextObjGuid: Guid,
+    uuidSourceDsaObjGuid: Guid,
+    uuidSourceDsaInvocationID: Guid,
+    uuidAsyncIntersiteTransportObjGuid: Guid,
+    usnLastObjChangeSynced: {"kind":"Int64"},
+    usnAttributeFilter: {"kind":"Int64"},
+    ftimeLastSyncSuccess: Windows.Win32.WindowsProgramming.FILETIME,
+    ftimeLastSyncAttempt: Windows.Win32.WindowsProgramming.FILETIME,
+    dwLastSyncResult: {"kind":"UInt32"},
+    cNumConsecutiveSyncFailures: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DS_REPL_NEIGHBORW_BLOB
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_NEIGHBORW_BLOB = extern struct {
+    oszNamingContext: {"kind":"UInt32"},
+    oszSourceDsaDN: {"kind":"UInt32"},
+    oszSourceDsaAddress: {"kind":"UInt32"},
+    oszAsyncIntersiteTransportDN: {"kind":"UInt32"},
+    dwReplicaFlags: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+    uuidNamingContextObjGuid: Guid,
+    uuidSourceDsaObjGuid: Guid,
+    uuidSourceDsaInvocationID: Guid,
+    uuidAsyncIntersiteTransportObjGuid: Guid,
+    usnLastObjChangeSynced: {"kind":"Int64"},
+    usnAttributeFilter: {"kind":"Int64"},
+    ftimeLastSyncSuccess: Windows.Win32.WindowsProgramming.FILETIME,
+    ftimeLastSyncAttempt: Windows.Win32.WindowsProgramming.FILETIME,
+    dwLastSyncResult: {"kind":"UInt32"},
+    cNumConsecutiveSyncFailures: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DS_REPL_NEIGHBORSW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_NEIGHBORSW = extern struct {
+    cNumNeighbors: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+    rgNeighbor: {"kind":"Array","child": Windows.Win32.ActiveDirectory.DS_REPL_NEIGHBORW},
+};
+// --------------------------------------------------------
+// Type: DS_REPL_CURSOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_CURSOR = extern struct {
+    uuidSourceDsaInvocationID: Guid,
+    usnAttributeFilter: {"kind":"Int64"},
+};
+// --------------------------------------------------------
+// Type: DS_REPL_CURSOR_2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_CURSOR_2 = extern struct {
+    uuidSourceDsaInvocationID: Guid,
+    usnAttributeFilter: {"kind":"Int64"},
+    ftimeLastSyncSuccess: Windows.Win32.WindowsProgramming.FILETIME,
+};
+// --------------------------------------------------------
+// Type: DS_REPL_CURSOR_3W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_CURSOR_3W = extern struct {
+    uuidSourceDsaInvocationID: Guid,
+    usnAttributeFilter: {"kind":"Int64"},
+    ftimeLastSyncSuccess: Windows.Win32.WindowsProgramming.FILETIME,
+    pszSourceDsaDN: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DS_REPL_CURSOR_BLOB
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_CURSOR_BLOB = extern struct {
+    uuidSourceDsaInvocationID: Guid,
+    usnAttributeFilter: {"kind":"Int64"},
+    ftimeLastSyncSuccess: Windows.Win32.WindowsProgramming.FILETIME,
+    oszSourceDsaDN: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DS_REPL_CURSORS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_CURSORS = extern struct {
+    cNumCursors: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+    rgCursor: {"kind":"Array","child": Windows.Win32.ActiveDirectory.DS_REPL_CURSOR},
+};
+// --------------------------------------------------------
+// Type: DS_REPL_CURSORS_2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_CURSORS_2 = extern struct {
+    cNumCursors: {"kind":"UInt32"},
+    dwEnumerationContext: {"kind":"UInt32"},
+    rgCursor: {"kind":"Array","child": Windows.Win32.ActiveDirectory.DS_REPL_CURSOR_2},
+};
+// --------------------------------------------------------
+// Type: DS_REPL_CURSORS_3W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_CURSORS_3W = extern struct {
+    cNumCursors: {"kind":"UInt32"},
+    dwEnumerationContext: {"kind":"UInt32"},
+    rgCursor: {"kind":"Array","child": Windows.Win32.ActiveDirectory.DS_REPL_CURSOR_3W},
+};
+// --------------------------------------------------------
+// Type: DS_REPL_ATTR_META_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_ATTR_META_DATA = extern struct {
+    pszAttributeName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwVersion: {"kind":"UInt32"},
+    ftimeLastOriginatingChange: Windows.Win32.WindowsProgramming.FILETIME,
+    uuidLastOriginatingDsaInvocationID: Guid,
+    usnOriginatingChange: {"kind":"Int64"},
+    usnLocalChange: {"kind":"Int64"},
+};
+// --------------------------------------------------------
+// Type: DS_REPL_ATTR_META_DATA_2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_ATTR_META_DATA_2 = extern struct {
+    pszAttributeName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwVersion: {"kind":"UInt32"},
+    ftimeLastOriginatingChange: Windows.Win32.WindowsProgramming.FILETIME,
+    uuidLastOriginatingDsaInvocationID: Guid,
+    usnOriginatingChange: {"kind":"Int64"},
+    usnLocalChange: {"kind":"Int64"},
+    pszLastOriginatingDsaDN: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DS_REPL_ATTR_META_DATA_BLOB
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_ATTR_META_DATA_BLOB = extern struct {
+    oszAttributeName: {"kind":"UInt32"},
+    dwVersion: {"kind":"UInt32"},
+    ftimeLastOriginatingChange: Windows.Win32.WindowsProgramming.FILETIME,
+    uuidLastOriginatingDsaInvocationID: Guid,
+    usnOriginatingChange: {"kind":"Int64"},
+    usnLocalChange: {"kind":"Int64"},
+    oszLastOriginatingDsaDN: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DS_REPL_OBJ_META_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_OBJ_META_DATA = extern struct {
+    cNumEntries: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+    rgMetaData: {"kind":"Array","child": Windows.Win32.ActiveDirectory.DS_REPL_ATTR_META_DATA},
+};
+// --------------------------------------------------------
+// Type: DS_REPL_OBJ_META_DATA_2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_OBJ_META_DATA_2 = extern struct {
+    cNumEntries: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+    rgMetaData: {"kind":"Array","child": Windows.Win32.ActiveDirectory.DS_REPL_ATTR_META_DATA_2},
+};
+// --------------------------------------------------------
+// Type: DS_REPL_KCC_DSA_FAILUREW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_KCC_DSA_FAILUREW = extern struct {
+    pszDsaDN: {"kind""Ptr","child":{"kind":"UInt16"}},
+    uuidDsaObjGuid: Guid,
+    ftimeFirstFailure: Windows.Win32.WindowsProgramming.FILETIME,
+    cNumFailures: {"kind":"UInt32"},
+    dwLastResult: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DS_REPL_KCC_DSA_FAILUREW_BLOB
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_KCC_DSA_FAILUREW_BLOB = extern struct {
+    oszDsaDN: {"kind":"UInt32"},
+    uuidDsaObjGuid: Guid,
+    ftimeFirstFailure: Windows.Win32.WindowsProgramming.FILETIME,
+    cNumFailures: {"kind":"UInt32"},
+    dwLastResult: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DS_REPL_KCC_DSA_FAILURESW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_KCC_DSA_FAILURESW = extern struct {
+    cNumEntries: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+    rgDsaFailure: {"kind":"Array","child": Windows.Win32.ActiveDirectory.DS_REPL_KCC_DSA_FAILUREW},
+};
+// --------------------------------------------------------
+// Type: DS_REPL_OP_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DS_REPL_OP_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DS_REPL_OPW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_OPW = extern struct {
+    ftimeEnqueued: Windows.Win32.WindowsProgramming.FILETIME,
+    ulSerialNumber: {"kind":"UInt32"},
+    ulPriority: {"kind":"UInt32"},
+    OpType: Windows.Win32.ActiveDirectory.DS_REPL_OP_TYPE,
+    ulOptions: {"kind":"UInt32"},
+    pszNamingContext: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszDsaDN: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszDsaAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    uuidNamingContextObjGuid: Guid,
+    uuidDsaObjGuid: Guid,
+};
+// --------------------------------------------------------
+// Type: DS_REPL_OPW_BLOB
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_OPW_BLOB = extern struct {
+    ftimeEnqueued: Windows.Win32.WindowsProgramming.FILETIME,
+    ulSerialNumber: {"kind":"UInt32"},
+    ulPriority: {"kind":"UInt32"},
+    OpType: Windows.Win32.ActiveDirectory.DS_REPL_OP_TYPE,
+    ulOptions: {"kind":"UInt32"},
+    oszNamingContext: {"kind":"UInt32"},
+    oszDsaDN: {"kind":"UInt32"},
+    oszDsaAddress: {"kind":"UInt32"},
+    uuidNamingContextObjGuid: Guid,
+    uuidDsaObjGuid: Guid,
+};
+// --------------------------------------------------------
+// Type: DS_REPL_PENDING_OPSW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_PENDING_OPSW = extern struct {
+    ftimeCurrentOpStarted: Windows.Win32.WindowsProgramming.FILETIME,
+    cNumPendingOps: {"kind":"UInt32"},
+    rgPendingOp: {"kind":"Array","child": Windows.Win32.ActiveDirectory.DS_REPL_OPW},
+};
+// --------------------------------------------------------
+// Type: DS_REPL_VALUE_META_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_VALUE_META_DATA = extern struct {
+    pszAttributeName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszObjectDn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cbData: {"kind":"UInt32"},
+    pbData: {"kind""Ptr","child":{"kind":"Byte"}},
+    ftimeDeleted: Windows.Win32.WindowsProgramming.FILETIME,
+    ftimeCreated: Windows.Win32.WindowsProgramming.FILETIME,
+    dwVersion: {"kind":"UInt32"},
+    ftimeLastOriginatingChange: Windows.Win32.WindowsProgramming.FILETIME,
+    uuidLastOriginatingDsaInvocationID: Guid,
+    usnOriginatingChange: {"kind":"Int64"},
+    usnLocalChange: {"kind":"Int64"},
+};
+// --------------------------------------------------------
+// Type: DS_REPL_VALUE_META_DATA_2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_VALUE_META_DATA_2 = extern struct {
+    pszAttributeName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszObjectDn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cbData: {"kind":"UInt32"},
+    pbData: {"kind""Ptr","child":{"kind":"Byte"}},
+    ftimeDeleted: Windows.Win32.WindowsProgramming.FILETIME,
+    ftimeCreated: Windows.Win32.WindowsProgramming.FILETIME,
+    dwVersion: {"kind":"UInt32"},
+    ftimeLastOriginatingChange: Windows.Win32.WindowsProgramming.FILETIME,
+    uuidLastOriginatingDsaInvocationID: Guid,
+    usnOriginatingChange: {"kind":"Int64"},
+    usnLocalChange: {"kind":"Int64"},
+    pszLastOriginatingDsaDN: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DS_REPL_VALUE_META_DATA_EXT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_VALUE_META_DATA_EXT = extern struct {
+    pszAttributeName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszObjectDn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cbData: {"kind":"UInt32"},
+    pbData: {"kind""Ptr","child":{"kind":"Byte"}},
+    ftimeDeleted: Windows.Win32.WindowsProgramming.FILETIME,
+    ftimeCreated: Windows.Win32.WindowsProgramming.FILETIME,
+    dwVersion: {"kind":"UInt32"},
+    ftimeLastOriginatingChange: Windows.Win32.WindowsProgramming.FILETIME,
+    uuidLastOriginatingDsaInvocationID: Guid,
+    usnOriginatingChange: {"kind":"Int64"},
+    usnLocalChange: {"kind":"Int64"},
+    pszLastOriginatingDsaDN: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwUserIdentifier: {"kind":"UInt32"},
+    dwPriorLinkState: {"kind":"UInt32"},
+    dwCurrentLinkState: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DS_REPL_VALUE_META_DATA_BLOB
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_VALUE_META_DATA_BLOB = extern struct {
+    oszAttributeName: {"kind":"UInt32"},
+    oszObjectDn: {"kind":"UInt32"},
+    cbData: {"kind":"UInt32"},
+    obData: {"kind":"UInt32"},
+    ftimeDeleted: Windows.Win32.WindowsProgramming.FILETIME,
+    ftimeCreated: Windows.Win32.WindowsProgramming.FILETIME,
+    dwVersion: {"kind":"UInt32"},
+    ftimeLastOriginatingChange: Windows.Win32.WindowsProgramming.FILETIME,
+    uuidLastOriginatingDsaInvocationID: Guid,
+    usnOriginatingChange: {"kind":"Int64"},
+    usnLocalChange: {"kind":"Int64"},
+    oszLastOriginatingDsaDN: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DS_REPL_VALUE_META_DATA_BLOB_EXT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_VALUE_META_DATA_BLOB_EXT = extern struct {
+    oszAttributeName: {"kind":"UInt32"},
+    oszObjectDn: {"kind":"UInt32"},
+    cbData: {"kind":"UInt32"},
+    obData: {"kind":"UInt32"},
+    ftimeDeleted: Windows.Win32.WindowsProgramming.FILETIME,
+    ftimeCreated: Windows.Win32.WindowsProgramming.FILETIME,
+    dwVersion: {"kind":"UInt32"},
+    ftimeLastOriginatingChange: Windows.Win32.WindowsProgramming.FILETIME,
+    uuidLastOriginatingDsaInvocationID: Guid,
+    usnOriginatingChange: {"kind":"Int64"},
+    usnLocalChange: {"kind":"Int64"},
+    oszLastOriginatingDsaDN: {"kind":"UInt32"},
+    dwUserIdentifier: {"kind":"UInt32"},
+    dwPriorLinkState: {"kind":"UInt32"},
+    dwCurrentLinkState: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DS_REPL_ATTR_VALUE_META_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_ATTR_VALUE_META_DATA = extern struct {
+    cNumEntries: {"kind":"UInt32"},
+    dwEnumerationContext: {"kind":"UInt32"},
+    rgMetaData: {"kind":"Array","child": Windows.Win32.ActiveDirectory.DS_REPL_VALUE_META_DATA},
+};
+// --------------------------------------------------------
+// Type: DS_REPL_ATTR_VALUE_META_DATA_2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_ATTR_VALUE_META_DATA_2 = extern struct {
+    cNumEntries: {"kind":"UInt32"},
+    dwEnumerationContext: {"kind":"UInt32"},
+    rgMetaData: {"kind":"Array","child": Windows.Win32.ActiveDirectory.DS_REPL_VALUE_META_DATA_2},
+};
+// --------------------------------------------------------
+// Type: DS_REPL_ATTR_VALUE_META_DATA_EXT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_ATTR_VALUE_META_DATA_EXT = extern struct {
+    cNumEntries: {"kind":"UInt32"},
+    dwEnumerationContext: {"kind":"UInt32"},
+    rgMetaData: {"kind":"Array","child": Windows.Win32.ActiveDirectory.DS_REPL_VALUE_META_DATA_EXT},
+};
+// --------------------------------------------------------
+// Type: DS_REPL_QUEUE_STATISTICSW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_REPL_QUEUE_STATISTICSW = extern struct {
+    ftimeCurrentOpStarted: Windows.Win32.WindowsProgramming.FILETIME,
+    cNumPendingOps: {"kind":"UInt32"},
+    ftimeOldestSync: Windows.Win32.WindowsProgramming.FILETIME,
+    ftimeOldestAdd: Windows.Win32.WindowsProgramming.FILETIME,
+    ftimeOldestMod: Windows.Win32.WindowsProgramming.FILETIME,
+    ftimeOldestDel: Windows.Win32.WindowsProgramming.FILETIME,
+    ftimeOldestUpdRefs: Windows.Win32.WindowsProgramming.FILETIME,
+};
+// --------------------------------------------------------
+// Type: DSROLE_MACHINE_ROLE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DSROLE_MACHINE_ROLE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DSROLE_SERVER_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DSROLE_SERVER_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DSROLE_PRIMARY_DOMAIN_INFO_LEVEL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DSROLE_PRIMARY_DOMAIN_INFO_LEVEL = *opaque{
+};
+// --------------------------------------------------------
+// Type: DSROLE_PRIMARY_DOMAIN_INFO_BASIC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSROLE_PRIMARY_DOMAIN_INFO_BASIC = extern struct {
+    MachineRole: Windows.Win32.ActiveDirectory.DSROLE_MACHINE_ROLE,
+    Flags: {"kind":"UInt32"},
+    DomainNameFlat: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DomainNameDns: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DomainForestName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DomainGuid: Guid,
+};
+// --------------------------------------------------------
+// Type: DSROLE_UPGRADE_STATUS_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSROLE_UPGRADE_STATUS_INFO = extern struct {
+    OperationState: {"kind":"UInt32"},
+    PreviousServerState: Windows.Win32.ActiveDirectory.DSROLE_SERVER_STATE,
+};
+// --------------------------------------------------------
+// Type: DSROLE_OPERATION_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DSROLE_OPERATION_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DSROLE_OPERATION_STATE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSROLE_OPERATION_STATE_INFO = extern struct {
+    OperationState: Windows.Win32.ActiveDirectory.DSROLE_OPERATION_STATE,
+};
+// --------------------------------------------------------
+// Type: DOMAIN_CONTROLLER_INFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DOMAIN_CONTROLLER_INFOA = extern struct {
+    DomainControllerName: {"kind""Ptr","child":{"kind":"SByte"}},
+    DomainControllerAddress: {"kind""Ptr","child":{"kind":"SByte"}},
+    DomainControllerAddressType: {"kind":"UInt32"},
+    DomainGuid: Guid,
+    DomainName: {"kind""Ptr","child":{"kind":"SByte"}},
+    DnsForestName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Flags: {"kind":"UInt32"},
+    DcSiteName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ClientSiteName: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: DOMAIN_CONTROLLER_INFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DOMAIN_CONTROLLER_INFOW = extern struct {
+    DomainControllerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DomainControllerAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DomainControllerAddressType: {"kind":"UInt32"},
+    DomainGuid: Guid,
+    DomainName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DnsForestName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    DcSiteName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientSiteName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DS_DOMAIN_TRUSTSW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_DOMAIN_TRUSTSW = extern struct {
+    NetbiosDomainName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DnsDomainName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    ParentIndex: {"kind":"UInt32"},
+    TrustType: {"kind":"UInt32"},
+    TrustAttributes: {"kind":"UInt32"},
+    DomainSid: {"kind""Ptr","child":{"kind":"Void"}},
+    DomainGuid: Guid,
+};
+// --------------------------------------------------------
+// Type: DS_DOMAIN_TRUSTSA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS_DOMAIN_TRUSTSA = extern struct {
+    NetbiosDomainName: {"kind""Ptr","child":{"kind":"SByte"}},
+    DnsDomainName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Flags: {"kind":"UInt32"},
+    ParentIndex: {"kind":"UInt32"},
+    TrustType: {"kind":"UInt32"},
+    TrustAttributes: {"kind":"UInt32"},
+    DomainSid: {"kind""Ptr","child":{"kind":"Void"}},
+    DomainGuid: Guid,
+};
+// --------------------------------------------------------
+// Type: BFFCALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const BFFCALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: GetDcContextHandle
+// TypeLayoutAttr: sequential
+// RAIIFree 'DsGetDcCloseW' (TODO: can we use this information?)
+pub const GetDcContextHandle = {"kind":"IntPtr"};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ACTIVEDS" fn ADsGetObject(
+    lpszPathName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    riid: {"kind""Ptr","child":Guid},
+    ppObject: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ACTIVEDS" fn ADsBuildEnumerator(
+    pADsContainer: Windows.Win32.ActiveDirectory.IADsContainer,
+    ppEnumVariant: {"kind""Ptr","child":Windows.Win32.Automation.IEnumVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ACTIVEDS" fn ADsFreeEnumerator(
+    pEnumVariant: Windows.Win32.Automation.IEnumVARIANT,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ACTIVEDS" fn ADsEnumerateNext(
+    pEnumVariant: Windows.Win32.Automation.IEnumVARIANT,
+    cElements: {"kind":"UInt32"},
+    pvar: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pcElementsFetched: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ACTIVEDS" fn ADsBuildVarArrayStr(
+    lppPathNames: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    dwPathNames: {"kind":"UInt32"},
+    pVar: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ACTIVEDS" fn ADsBuildVarArrayInt(
+    lpdwObjectTypes: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwObjectTypes: {"kind":"UInt32"},
+    pVar: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ACTIVEDS" fn ADsOpenObject(
+    lpszPathName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszUserName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwReserved: {"kind":"UInt32"},
+    riid: {"kind""Ptr","child":Guid},
+    ppObject: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "ACTIVEDS" fn ADsGetLastError(
+    lpError: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpErrorBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwErrorBufLen: {"kind":"UInt32"},
+    lpNameBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwNameBufLen: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ACTIVEDS" fn ADsSetLastError(
+    dwErr: {"kind":"UInt32"},
+    pszError: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszProvider: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ACTIVEDS" fn AllocADsMem(
+    cb: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ACTIVEDS" fn FreeADsMem(
+    pMem: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ACTIVEDS" fn ReallocADsMem(
+    pOldMem: {"kind""Ptr","child":{"kind":"Void"}},
+    cbOld: {"kind":"UInt32"},
+    cbNew: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ACTIVEDS" fn AllocADsStr(
+    pStr: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ACTIVEDS" fn FreeADsStr(
+    pStr: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ACTIVEDS" fn ReallocADsStr(
+    ppStr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    pStr: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ACTIVEDS" fn ADsEncodeBinaryData(
+    pbSrcData: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwSrcLen: {"kind":"UInt32"},
+    ppszDestData: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ACTIVEDS" fn ADsDecodeBinaryData(
+    szSrcData: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppbDestData: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    pdwDestLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ACTIVEDS" fn PropVariantToAdsType(
+    pVariant: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    dwNumVariant: {"kind":"UInt32"},
+    ppAdsValues: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ActiveDirectory.ADSVALUE}},
+    pdwNumValues: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ACTIVEDS" fn AdsTypeToPropVariant(
+    pAdsValues: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.ADSVALUE},
+    dwNumValues: {"kind":"UInt32"},
+    pVariant: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ACTIVEDS" fn AdsFreeAdsValues(
+    pAdsValues: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.ADSVALUE},
+    dwNumValues: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ACTIVEDS" fn BinarySDToSecurityDescriptor(
+    pSecurityDescriptor: {"kind""Ptr","child":{"kind":"Void"}},
+    pVarsec: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pszServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    userName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    passWord: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ACTIVEDS" fn SecurityDescriptorToBinarySD(
+    vVarSecDes: Windows.Win32.Automation.VARIANT,
+    ppSecurityDescriptor: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+    pdwSDLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pszServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    userName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    passWord: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dsuiext" fn DsBrowseForContainerW(
+    pInfo: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.DSBROWSEINFOW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dsuiext" fn DsBrowseForContainerA(
+    pInfo: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.DSBROWSEINFOA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dsuiext" fn DsGetIcon(
+    dwFlags: {"kind":"UInt32"},
+    pszObjectClass: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cxImage: {"kind":"Int32"},
+    cyImage: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dsuiext" fn DsGetFriendlyClassName(
+    pszObjectClass: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchBuffer: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dsprop" fn ADsPropCreateNotifyObj(
+    pAppThdDataObj: Windows.Win32.Com.IDataObject,
+    pwzADsObjName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phNotifyObj: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.HWND},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dsprop" fn ADsPropGetInitInfo(
+    hNotifyObj: Windows.Win32.WindowsAndMessaging.HWND,
+    pInitParams: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.ADSPROPINITPARAMS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dsprop" fn ADsPropSetHwndWithTitle(
+    hNotifyObj: Windows.Win32.WindowsAndMessaging.HWND,
+    hPage: Windows.Win32.WindowsAndMessaging.HWND,
+    ptzTitle: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dsprop" fn ADsPropSetHwnd(
+    hNotifyObj: Windows.Win32.WindowsAndMessaging.HWND,
+    hPage: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dsprop" fn ADsPropCheckIfWritable(
+    pwzAttr: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pWritableAttrs: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.ADS_ATTR_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dsprop" fn ADsPropSendErrorMessage(
+    hNotifyObj: Windows.Win32.WindowsAndMessaging.HWND,
+    pError: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.ADSPROPERROR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dsprop" fn ADsPropShowErrorDialog(
+    hNotifyObj: Windows.Win32.WindowsAndMessaging.HWND,
+    hPage: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSPARSE" fn DsMakeSpnW(
+    ServiceClass: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ServiceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InstanceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InstancePort: {"kind":"UInt16"},
+    Referrer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcSpnLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pszSpn: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSPARSE" fn DsMakeSpnA(
+    ServiceClass: {"kind""Ptr","child":{"kind":"SByte"}},
+    ServiceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    InstanceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    InstancePort: {"kind":"UInt16"},
+    Referrer: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcSpnLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pszSpn: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSPARSE" fn DsCrackSpnA(
+    pszSpn: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcServiceClass: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ServiceClass: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcServiceName: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ServiceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcInstanceName: {"kind""Ptr","child":{"kind":"UInt32"}},
+    InstanceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pInstancePort: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSPARSE" fn DsCrackSpnW(
+    pszSpn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcServiceClass: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ServiceClass: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcServiceName: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ServiceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcInstanceName: {"kind""Ptr","child":{"kind":"UInt32"}},
+    InstanceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pInstancePort: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSPARSE" fn DsQuoteRdnValueW(
+    cUnquotedRdnValueLength: {"kind":"UInt32"},
+    psUnquotedRdnValue: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcQuotedRdnValueLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    psQuotedRdnValue: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSPARSE" fn DsQuoteRdnValueA(
+    cUnquotedRdnValueLength: {"kind":"UInt32"},
+    psUnquotedRdnValue: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcQuotedRdnValueLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    psQuotedRdnValue: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSPARSE" fn DsUnquoteRdnValueW(
+    cQuotedRdnValueLength: {"kind":"UInt32"},
+    psQuotedRdnValue: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcUnquotedRdnValueLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    psUnquotedRdnValue: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSPARSE" fn DsUnquoteRdnValueA(
+    cQuotedRdnValueLength: {"kind":"UInt32"},
+    psQuotedRdnValue: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcUnquotedRdnValueLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    psUnquotedRdnValue: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSPARSE" fn DsGetRdnW(
+    ppDN: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    pcDN: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ppKey: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    pcKey: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ppVal: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    pcVal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSPARSE" fn DsCrackUnquotedMangledRdnW(
+    pszRDN: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchRDN: {"kind":"UInt32"},
+    pGuid: {"kind""Ptr","child":Guid},
+    peDsMangleFor: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_MANGLE_FOR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSPARSE" fn DsCrackUnquotedMangledRdnA(
+    pszRDN: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchRDN: {"kind":"UInt32"},
+    pGuid: {"kind""Ptr","child":Guid},
+    peDsMangleFor: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_MANGLE_FOR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSPARSE" fn DsIsMangledRdnValueW(
+    pszRdn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cRdn: {"kind":"UInt32"},
+    eDsMangleForDesired: Windows.Win32.ActiveDirectory.DS_MANGLE_FOR,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSPARSE" fn DsIsMangledRdnValueA(
+    pszRdn: {"kind""Ptr","child":{"kind":"SByte"}},
+    cRdn: {"kind":"UInt32"},
+    eDsMangleForDesired: Windows.Win32.ActiveDirectory.DS_MANGLE_FOR,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSPARSE" fn DsIsMangledDnA(
+    pszDn: {"kind""Ptr","child":{"kind":"SByte"}},
+    eDsMangleFor: Windows.Win32.ActiveDirectory.DS_MANGLE_FOR,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSPARSE" fn DsIsMangledDnW(
+    pszDn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    eDsMangleFor: Windows.Win32.ActiveDirectory.DS_MANGLE_FOR,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSPARSE" fn DsCrackSpn2A(
+    pszSpn: {"kind""Ptr","child":{"kind":"SByte"}},
+    cSpn: {"kind":"UInt32"},
+    pcServiceClass: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ServiceClass: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcServiceName: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ServiceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcInstanceName: {"kind""Ptr","child":{"kind":"UInt32"}},
+    InstanceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pInstancePort: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSPARSE" fn DsCrackSpn2W(
+    pszSpn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cSpn: {"kind":"UInt32"},
+    pcServiceClass: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ServiceClass: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcServiceName: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ServiceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcInstanceName: {"kind""Ptr","child":{"kind":"UInt32"}},
+    InstanceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pInstancePort: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSPARSE" fn DsCrackSpn3W(
+    pszSpn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cSpn: {"kind":"UInt32"},
+    pcHostName: {"kind""Ptr","child":{"kind":"UInt32"}},
+    HostName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcInstanceName: {"kind""Ptr","child":{"kind":"UInt32"}},
+    InstanceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pPortNumber: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcDomainName: {"kind""Ptr","child":{"kind":"UInt32"}},
+    DomainName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcRealmName: {"kind""Ptr","child":{"kind":"UInt32"}},
+    RealmName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSPARSE" fn DsCrackSpn4W(
+    pszSpn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cSpn: {"kind":"UInt32"},
+    pcHostName: {"kind""Ptr","child":{"kind":"UInt32"}},
+    HostName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcInstanceName: {"kind""Ptr","child":{"kind":"UInt32"}},
+    InstanceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcPortName: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PortName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcDomainName: {"kind""Ptr","child":{"kind":"UInt32"}},
+    DomainName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcRealmName: {"kind""Ptr","child":{"kind":"UInt32"}},
+    RealmName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsBindW(
+    DomainControllerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DnsDomainName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phDS: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsBindA(
+    DomainControllerName: {"kind""Ptr","child":{"kind":"SByte"}},
+    DnsDomainName: {"kind""Ptr","child":{"kind":"SByte"}},
+    phDS: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsBindWithCredW(
+    DomainControllerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DnsDomainName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    AuthIdentity: {"kind""Ptr","child":{"kind":"Void"}},
+    phDS: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsBindWithCredA(
+    DomainControllerName: {"kind""Ptr","child":{"kind":"SByte"}},
+    DnsDomainName: {"kind""Ptr","child":{"kind":"SByte"}},
+    AuthIdentity: {"kind""Ptr","child":{"kind":"Void"}},
+    phDS: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsBindWithSpnW(
+    DomainControllerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DnsDomainName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    AuthIdentity: {"kind""Ptr","child":{"kind":"Void"}},
+    ServicePrincipalName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phDS: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsBindWithSpnA(
+    DomainControllerName: {"kind""Ptr","child":{"kind":"SByte"}},
+    DnsDomainName: {"kind""Ptr","child":{"kind":"SByte"}},
+    AuthIdentity: {"kind""Ptr","child":{"kind":"Void"}},
+    ServicePrincipalName: {"kind""Ptr","child":{"kind":"SByte"}},
+    phDS: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsBindWithSpnExW(
+    DomainControllerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DnsDomainName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    AuthIdentity: {"kind""Ptr","child":{"kind":"Void"}},
+    ServicePrincipalName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    BindFlags: {"kind":"UInt32"},
+    phDS: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsBindWithSpnExA(
+    DomainControllerName: {"kind""Ptr","child":{"kind":"SByte"}},
+    DnsDomainName: {"kind""Ptr","child":{"kind":"SByte"}},
+    AuthIdentity: {"kind""Ptr","child":{"kind":"Void"}},
+    ServicePrincipalName: {"kind""Ptr","child":{"kind":"SByte"}},
+    BindFlags: {"kind":"UInt32"},
+    phDS: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsBindByInstanceW(
+    ServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Annotation: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InstanceGuid: {"kind""Ptr","child":Guid},
+    DnsDomainName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    AuthIdentity: {"kind""Ptr","child":{"kind":"Void"}},
+    ServicePrincipalName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    BindFlags: {"kind":"UInt32"},
+    phDS: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsBindByInstanceA(
+    ServerName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Annotation: {"kind""Ptr","child":{"kind":"SByte"}},
+    InstanceGuid: {"kind""Ptr","child":Guid},
+    DnsDomainName: {"kind""Ptr","child":{"kind":"SByte"}},
+    AuthIdentity: {"kind""Ptr","child":{"kind":"Void"}},
+    ServicePrincipalName: {"kind""Ptr","child":{"kind":"SByte"}},
+    BindFlags: {"kind":"UInt32"},
+    phDS: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsBindToISTGW(
+    SiteName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phDS: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsBindToISTGA(
+    SiteName: {"kind""Ptr","child":{"kind":"SByte"}},
+    phDS: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsBindingSetTimeout(
+    hDS: Windows.Win32.SystemServices.HANDLE,
+    cTimeoutSecs: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsUnBindW(
+    phDS: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsUnBindA(
+    phDS: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsMakePasswordCredentialsW(
+    User: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Domain: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Password: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pAuthIdentity: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsMakePasswordCredentialsA(
+    User: {"kind""Ptr","child":{"kind":"SByte"}},
+    Domain: {"kind""Ptr","child":{"kind":"SByte"}},
+    Password: {"kind""Ptr","child":{"kind":"SByte"}},
+    pAuthIdentity: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsFreePasswordCredentials(
+    AuthIdentity: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsCrackNamesW(
+    hDS: Windows.Win32.SystemServices.HANDLE,
+    flags: Windows.Win32.ActiveDirectory.DS_NAME_FLAGS,
+    formatOffered: Windows.Win32.ActiveDirectory.DS_NAME_FORMAT,
+    formatDesired: Windows.Win32.ActiveDirectory.DS_NAME_FORMAT,
+    cNames: {"kind":"UInt32"},
+    rpNames: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    ppResult: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_NAME_RESULTW}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsCrackNamesA(
+    hDS: Windows.Win32.SystemServices.HANDLE,
+    flags: Windows.Win32.ActiveDirectory.DS_NAME_FLAGS,
+    formatOffered: Windows.Win32.ActiveDirectory.DS_NAME_FORMAT,
+    formatDesired: Windows.Win32.ActiveDirectory.DS_NAME_FORMAT,
+    cNames: {"kind":"UInt32"},
+    rpNames: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    ppResult: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_NAME_RESULTA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsFreeNameResultW(
+    pResult: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_NAME_RESULTW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsFreeNameResultA(
+    pResult: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_NAME_RESULTA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsGetSpnA(
+    ServiceType: Windows.Win32.ActiveDirectory.DS_SPN_NAME_TYPE,
+    ServiceClass: {"kind""Ptr","child":{"kind":"SByte"}},
+    ServiceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    InstancePort: {"kind":"UInt16"},
+    cInstanceNames: {"kind":"UInt16"},
+    pInstanceNames: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    pInstancePorts: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcSpn: {"kind""Ptr","child":{"kind":"UInt32"}},
+    prpszSpn: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsGetSpnW(
+    ServiceType: Windows.Win32.ActiveDirectory.DS_SPN_NAME_TYPE,
+    ServiceClass: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ServiceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InstancePort: {"kind":"UInt16"},
+    cInstanceNames: {"kind":"UInt16"},
+    pInstanceNames: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    pInstancePorts: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcSpn: {"kind""Ptr","child":{"kind":"UInt32"}},
+    prpszSpn: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsFreeSpnArrayA(
+    cSpn: {"kind":"UInt32"},
+    rpszSpn: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsFreeSpnArrayW(
+    cSpn: {"kind":"UInt32"},
+    rpszSpn: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsWriteAccountSpnA(
+    hDS: Windows.Win32.SystemServices.HANDLE,
+    Operation: Windows.Win32.ActiveDirectory.DS_SPN_WRITE_OP,
+    pszAccount: {"kind""Ptr","child":{"kind":"SByte"}},
+    cSpn: {"kind":"UInt32"},
+    rpszSpn: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsWriteAccountSpnW(
+    hDS: Windows.Win32.SystemServices.HANDLE,
+    Operation: Windows.Win32.ActiveDirectory.DS_SPN_WRITE_OP,
+    pszAccount: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cSpn: {"kind":"UInt32"},
+    rpszSpn: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsClientMakeSpnForTargetServerW(
+    ServiceClass: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ServiceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcSpnLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pszSpn: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsClientMakeSpnForTargetServerA(
+    ServiceClass: {"kind""Ptr","child":{"kind":"SByte"}},
+    ServiceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcSpnLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pszSpn: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsServerRegisterSpnA(
+    Operation: Windows.Win32.ActiveDirectory.DS_SPN_WRITE_OP,
+    ServiceClass: {"kind""Ptr","child":{"kind":"SByte"}},
+    UserObjectDN: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsServerRegisterSpnW(
+    Operation: Windows.Win32.ActiveDirectory.DS_SPN_WRITE_OP,
+    ServiceClass: {"kind""Ptr","child":{"kind":"UInt16"}},
+    UserObjectDN: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsReplicaSyncA(
+    hDS: Windows.Win32.SystemServices.HANDLE,
+    NameContext: {"kind""Ptr","child":{"kind":"SByte"}},
+    pUuidDsaSrc: {"kind""Ptr","child":Guid},
+    Options: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsReplicaSyncW(
+    hDS: Windows.Win32.SystemServices.HANDLE,
+    NameContext: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pUuidDsaSrc: {"kind""Ptr","child":Guid},
+    Options: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsReplicaAddA(
+    hDS: Windows.Win32.SystemServices.HANDLE,
+    NameContext: {"kind""Ptr","child":{"kind":"SByte"}},
+    SourceDsaDn: {"kind""Ptr","child":{"kind":"SByte"}},
+    TransportDn: {"kind""Ptr","child":{"kind":"SByte"}},
+    SourceDsaAddress: {"kind""Ptr","child":{"kind":"SByte"}},
+    pSchedule: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.SCHEDULE},
+    Options: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsReplicaAddW(
+    hDS: Windows.Win32.SystemServices.HANDLE,
+    NameContext: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SourceDsaDn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TransportDn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SourceDsaAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pSchedule: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.SCHEDULE},
+    Options: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsReplicaDelA(
+    hDS: Windows.Win32.SystemServices.HANDLE,
+    NameContext: {"kind""Ptr","child":{"kind":"SByte"}},
+    DsaSrc: {"kind""Ptr","child":{"kind":"SByte"}},
+    Options: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsReplicaDelW(
+    hDS: Windows.Win32.SystemServices.HANDLE,
+    NameContext: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DsaSrc: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Options: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsReplicaModifyA(
+    hDS: Windows.Win32.SystemServices.HANDLE,
+    NameContext: {"kind""Ptr","child":{"kind":"SByte"}},
+    pUuidSourceDsa: {"kind""Ptr","child":Guid},
+    TransportDn: {"kind""Ptr","child":{"kind":"SByte"}},
+    SourceDsaAddress: {"kind""Ptr","child":{"kind":"SByte"}},
+    pSchedule: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.SCHEDULE},
+    ReplicaFlags: {"kind":"UInt32"},
+    ModifyFields: {"kind":"UInt32"},
+    Options: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsReplicaModifyW(
+    hDS: Windows.Win32.SystemServices.HANDLE,
+    NameContext: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pUuidSourceDsa: {"kind""Ptr","child":Guid},
+    TransportDn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SourceDsaAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pSchedule: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.SCHEDULE},
+    ReplicaFlags: {"kind":"UInt32"},
+    ModifyFields: {"kind":"UInt32"},
+    Options: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsReplicaUpdateRefsA(
+    hDS: Windows.Win32.SystemServices.HANDLE,
+    NameContext: {"kind""Ptr","child":{"kind":"SByte"}},
+    DsaDest: {"kind""Ptr","child":{"kind":"SByte"}},
+    pUuidDsaDest: {"kind""Ptr","child":Guid},
+    Options: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsReplicaUpdateRefsW(
+    hDS: Windows.Win32.SystemServices.HANDLE,
+    NameContext: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DsaDest: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pUuidDsaDest: {"kind""Ptr","child":Guid},
+    Options: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsReplicaSyncAllA(
+    hDS: Windows.Win32.SystemServices.HANDLE,
+    pszNameContext: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulFlags: {"kind":"UInt32"},
+    pFnCallBack: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.SystemServices.BOOL}}}}}}}}}}},
+    pCallbackData: {"kind""Ptr","child":{"kind":"Void"}},
+    pErrors: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_REPSYNCALL_ERRINFOA}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsReplicaSyncAllW(
+    hDS: Windows.Win32.SystemServices.HANDLE,
+    pszNameContext: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulFlags: {"kind":"UInt32"},
+    pFnCallBack: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.SystemServices.BOOL}}}}}}}}}}},
+    pCallbackData: {"kind""Ptr","child":{"kind":"Void"}},
+    pErrors: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_REPSYNCALL_ERRINFOW}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsRemoveDsServerW(
+    hDs: Windows.Win32.SystemServices.HANDLE,
+    ServerDN: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DomainDN: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fLastDcInDomain: {"kind""Ptr","child":{"kind":"Int32"}},
+    fCommit: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsRemoveDsServerA(
+    hDs: Windows.Win32.SystemServices.HANDLE,
+    ServerDN: {"kind""Ptr","child":{"kind":"SByte"}},
+    DomainDN: {"kind""Ptr","child":{"kind":"SByte"}},
+    fLastDcInDomain: {"kind""Ptr","child":{"kind":"Int32"}},
+    fCommit: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsRemoveDsDomainW(
+    hDs: Windows.Win32.SystemServices.HANDLE,
+    DomainDN: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsRemoveDsDomainA(
+    hDs: Windows.Win32.SystemServices.HANDLE,
+    DomainDN: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsListSitesA(
+    hDs: Windows.Win32.SystemServices.HANDLE,
+    ppSites: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_NAME_RESULTA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsListSitesW(
+    hDs: Windows.Win32.SystemServices.HANDLE,
+    ppSites: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_NAME_RESULTW}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsListServersInSiteA(
+    hDs: Windows.Win32.SystemServices.HANDLE,
+    site: {"kind""Ptr","child":{"kind":"SByte"}},
+    ppServers: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_NAME_RESULTA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsListServersInSiteW(
+    hDs: Windows.Win32.SystemServices.HANDLE,
+    site: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppServers: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_NAME_RESULTW}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsListDomainsInSiteA(
+    hDs: Windows.Win32.SystemServices.HANDLE,
+    site: {"kind""Ptr","child":{"kind":"SByte"}},
+    ppDomains: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_NAME_RESULTA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsListDomainsInSiteW(
+    hDs: Windows.Win32.SystemServices.HANDLE,
+    site: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppDomains: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_NAME_RESULTW}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsListServersForDomainInSiteA(
+    hDs: Windows.Win32.SystemServices.HANDLE,
+    domain: {"kind""Ptr","child":{"kind":"SByte"}},
+    site: {"kind""Ptr","child":{"kind":"SByte"}},
+    ppServers: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_NAME_RESULTA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsListServersForDomainInSiteW(
+    hDs: Windows.Win32.SystemServices.HANDLE,
+    domain: {"kind""Ptr","child":{"kind":"UInt16"}},
+    site: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppServers: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_NAME_RESULTW}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsListInfoForServerA(
+    hDs: Windows.Win32.SystemServices.HANDLE,
+    server: {"kind""Ptr","child":{"kind":"SByte"}},
+    ppInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_NAME_RESULTA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsListInfoForServerW(
+    hDs: Windows.Win32.SystemServices.HANDLE,
+    server: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_NAME_RESULTW}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsListRolesA(
+    hDs: Windows.Win32.SystemServices.HANDLE,
+    ppRoles: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_NAME_RESULTA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsListRolesW(
+    hDs: Windows.Win32.SystemServices.HANDLE,
+    ppRoles: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_NAME_RESULTW}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsQuerySitesByCostW(
+    hDS: Windows.Win32.SystemServices.HANDLE,
+    pwszFromSite: {"kind""Ptr","child":{"kind":"UInt16"}},
+    rgwszToSites: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    cToSites: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    prgSiteInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_SITE_COST_INFO}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsQuerySitesByCostA(
+    hDS: Windows.Win32.SystemServices.HANDLE,
+    pszFromSite: {"kind""Ptr","child":{"kind":"SByte"}},
+    rgszToSites: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    cToSites: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    prgSiteInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_SITE_COST_INFO}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsQuerySitesFree(
+    rgSiteInfo: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_SITE_COST_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsMapSchemaGuidsA(
+    hDs: Windows.Win32.SystemServices.HANDLE,
+    cGuids: {"kind":"UInt32"},
+    rGuids: {"kind""Ptr","child":Guid},
+    ppGuidMap: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_SCHEMA_GUID_MAPA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsFreeSchemaGuidMapA(
+    pGuidMap: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_SCHEMA_GUID_MAPA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsMapSchemaGuidsW(
+    hDs: Windows.Win32.SystemServices.HANDLE,
+    cGuids: {"kind":"UInt32"},
+    rGuids: {"kind""Ptr","child":Guid},
+    ppGuidMap: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_SCHEMA_GUID_MAPW}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsFreeSchemaGuidMapW(
+    pGuidMap: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_SCHEMA_GUID_MAPW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsGetDomainControllerInfoA(
+    hDs: Windows.Win32.SystemServices.HANDLE,
+    DomainName: {"kind""Ptr","child":{"kind":"SByte"}},
+    InfoLevel: {"kind":"UInt32"},
+    pcOut: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ppInfo: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsGetDomainControllerInfoW(
+    hDs: Windows.Win32.SystemServices.HANDLE,
+    DomainName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InfoLevel: {"kind":"UInt32"},
+    pcOut: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ppInfo: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsFreeDomainControllerInfoA(
+    InfoLevel: {"kind":"UInt32"},
+    cInfo: {"kind":"UInt32"},
+    pInfo: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsFreeDomainControllerInfoW(
+    InfoLevel: {"kind":"UInt32"},
+    cInfo: {"kind":"UInt32"},
+    pInfo: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsReplicaConsistencyCheck(
+    hDS: Windows.Win32.SystemServices.HANDLE,
+    TaskID: Windows.Win32.ActiveDirectory.DS_KCC_TASKID,
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsReplicaVerifyObjectsW(
+    hDS: Windows.Win32.SystemServices.HANDLE,
+    NameContext: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pUuidDsaSrc: {"kind""Ptr","child":Guid},
+    ulOptions: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsReplicaVerifyObjectsA(
+    hDS: Windows.Win32.SystemServices.HANDLE,
+    NameContext: {"kind""Ptr","child":{"kind":"SByte"}},
+    pUuidDsaSrc: {"kind""Ptr","child":Guid},
+    ulOptions: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsReplicaGetInfoW(
+    hDS: Windows.Win32.SystemServices.HANDLE,
+    InfoType: Windows.Win32.ActiveDirectory.DS_REPL_INFO_TYPE,
+    pszObject: {"kind""Ptr","child":{"kind":"UInt16"}},
+    puuidForSourceDsaObjGuid: {"kind""Ptr","child":Guid},
+    ppInfo: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsReplicaGetInfo2W(
+    hDS: Windows.Win32.SystemServices.HANDLE,
+    InfoType: Windows.Win32.ActiveDirectory.DS_REPL_INFO_TYPE,
+    pszObject: {"kind""Ptr","child":{"kind":"UInt16"}},
+    puuidForSourceDsaObjGuid: {"kind""Ptr","child":Guid},
+    pszAttributeName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszValue: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+    dwEnumerationContext: {"kind":"UInt32"},
+    ppInfo: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsReplicaFreeInfo(
+    InfoType: Windows.Win32.ActiveDirectory.DS_REPL_INFO_TYPE,
+    pInfo: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsAddSidHistoryW(
+    hDS: Windows.Win32.SystemServices.HANDLE,
+    Flags: {"kind":"UInt32"},
+    SrcDomain: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SrcPrincipal: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SrcDomainController: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SrcDomainCreds: {"kind""Ptr","child":{"kind":"Void"}},
+    DstDomain: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DstPrincipal: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsAddSidHistoryA(
+    hDS: Windows.Win32.SystemServices.HANDLE,
+    Flags: {"kind":"UInt32"},
+    SrcDomain: {"kind""Ptr","child":{"kind":"SByte"}},
+    SrcPrincipal: {"kind""Ptr","child":{"kind":"SByte"}},
+    SrcDomainController: {"kind""Ptr","child":{"kind":"SByte"}},
+    SrcDomainCreds: {"kind""Ptr","child":{"kind":"Void"}},
+    DstDomain: {"kind""Ptr","child":{"kind":"SByte"}},
+    DstPrincipal: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsInheritSecurityIdentityW(
+    hDS: Windows.Win32.SystemServices.HANDLE,
+    Flags: {"kind":"UInt32"},
+    SrcPrincipal: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DstPrincipal: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NTDSAPI" fn DsInheritSecurityIdentityA(
+    hDS: Windows.Win32.SystemServices.HANDLE,
+    Flags: {"kind":"UInt32"},
+    SrcPrincipal: {"kind""Ptr","child":{"kind":"SByte"}},
+    DstPrincipal: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSROLE" fn DsRoleGetPrimaryDomainInformation(
+    lpServer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InfoLevel: Windows.Win32.ActiveDirectory.DSROLE_PRIMARY_DOMAIN_INFO_LEVEL,
+    Buffer: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSROLE" fn DsRoleFreeMemory(
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "logoncli" fn DsGetDcNameA(
+    ComputerName: {"kind""Ptr","child":{"kind":"SByte"}},
+    DomainName: {"kind""Ptr","child":{"kind":"SByte"}},
+    DomainGuid: {"kind""Ptr","child":Guid},
+    SiteName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Flags: {"kind":"UInt32"},
+    DomainControllerInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ActiveDirectory.DOMAIN_CONTROLLER_INFOA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "logoncli" fn DsGetDcNameW(
+    ComputerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DomainName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DomainGuid: {"kind""Ptr","child":Guid},
+    SiteName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    DomainControllerInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ActiveDirectory.DOMAIN_CONTROLLER_INFOW}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "logoncli" fn DsGetSiteNameA(
+    ComputerName: {"kind""Ptr","child":{"kind":"SByte"}},
+    SiteName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "logoncli" fn DsGetSiteNameW(
+    ComputerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SiteName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "logoncli" fn DsValidateSubnetNameW(
+    SubnetName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "logoncli" fn DsValidateSubnetNameA(
+    SubnetName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "logoncli" fn DsAddressToSiteNamesW(
+    ComputerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    EntryCount: {"kind":"UInt32"},
+    SocketAddresses: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKET_ADDRESS},
+    SiteNames: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "logoncli" fn DsAddressToSiteNamesA(
+    ComputerName: {"kind""Ptr","child":{"kind":"SByte"}},
+    EntryCount: {"kind":"UInt32"},
+    SocketAddresses: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKET_ADDRESS},
+    SiteNames: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "logoncli" fn DsAddressToSiteNamesExW(
+    ComputerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    EntryCount: {"kind":"UInt32"},
+    SocketAddresses: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKET_ADDRESS},
+    SiteNames: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}}},
+    SubnetNames: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "logoncli" fn DsAddressToSiteNamesExA(
+    ComputerName: {"kind""Ptr","child":{"kind":"SByte"}},
+    EntryCount: {"kind":"UInt32"},
+    SocketAddresses: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKET_ADDRESS},
+    SiteNames: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}}},
+    SubnetNames: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "logoncli" fn DsEnumerateDomainTrustsW(
+    ServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    Domains: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_DOMAIN_TRUSTSW}},
+    DomainCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "logoncli" fn DsEnumerateDomainTrustsA(
+    ServerName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Flags: {"kind":"UInt32"},
+    Domains: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ActiveDirectory.DS_DOMAIN_TRUSTSA}},
+    DomainCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "logoncli" fn DsGetForestTrustInformationW(
+    ServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TrustedDomainName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    ForestTrustInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Security.LSA_FOREST_TRUST_INFORMATION}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "logoncli" fn DsMergeForestTrustInformationW(
+    DomainName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    NewForestTrustInfo: {"kind""Ptr","child":Windows.Win32.Security.LSA_FOREST_TRUST_INFORMATION},
+    OldForestTrustInfo: {"kind""Ptr","child":Windows.Win32.Security.LSA_FOREST_TRUST_INFORMATION},
+    MergedForestTrustInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Security.LSA_FOREST_TRUST_INFORMATION}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "logoncli" fn DsGetDcSiteCoverageW(
+    ServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    EntryCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    SiteNames: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "logoncli" fn DsGetDcSiteCoverageA(
+    ServerName: {"kind""Ptr","child":{"kind":"SByte"}},
+    EntryCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    SiteNames: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "logoncli" fn DsDeregisterDnsHostRecordsW(
+    ServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DnsDomainName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DomainGuid: {"kind""Ptr","child":Guid},
+    DsaGuid: {"kind""Ptr","child":Guid},
+    DnsHostName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "logoncli" fn DsDeregisterDnsHostRecordsA(
+    ServerName: {"kind""Ptr","child":{"kind":"SByte"}},
+    DnsDomainName: {"kind""Ptr","child":{"kind":"SByte"}},
+    DomainGuid: {"kind""Ptr","child":Guid},
+    DsaGuid: {"kind""Ptr","child":Guid},
+    DnsHostName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "logoncli" fn DsGetDcOpenW(
+    DnsName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    OptionFlags: {"kind":"UInt32"},
+    SiteName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DomainGuid: {"kind""Ptr","child":Guid},
+    DnsForestName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DcFlags: {"kind":"UInt32"},
+    RetGetDcContext: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.GetDcContextHandle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "logoncli" fn DsGetDcOpenA(
+    DnsName: {"kind""Ptr","child":{"kind":"SByte"}},
+    OptionFlags: {"kind":"UInt32"},
+    SiteName: {"kind""Ptr","child":{"kind":"SByte"}},
+    DomainGuid: {"kind""Ptr","child":Guid},
+    DnsForestName: {"kind""Ptr","child":{"kind":"SByte"}},
+    DcFlags: {"kind":"UInt32"},
+    RetGetDcContext: {"kind""Ptr","child":Windows.Win32.ActiveDirectory.GetDcContextHandle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "logoncli" fn DsGetDcNextW(
+    GetDcContextHandle: Windows.Win32.SystemServices.HANDLE,
+    SockAddressCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    SockAddresses: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WinSock.SOCKET_ADDRESS}},
+    DnsHostName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "logoncli" fn DsGetDcNextA(
+    GetDcContextHandle: Windows.Win32.SystemServices.HANDLE,
+    SockAddressCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    SockAddresses: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WinSock.SOCKET_ADDRESS}},
+    DnsHostName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "logoncli" fn DsGetDcCloseW(
+    GetDcContextHandle: Windows.Win32.ActiveDirectory.GetDcContextHandle,
+],
+
+"unicode_aliases": [
+     "DSBROWSEINFO"
+     "DSBITEM"
+     "DS_NAME_RESULT_ITEM"
+     "DS_NAME_RESULT"
+     "DS_REPSYNCALL_SYNC"
+     "DS_REPSYNCALL_ERRINFO"
+     "DS_REPSYNCALL_UPDATE"
+     "DS_SCHEMA_GUID_MAP"
+     "DS_DOMAIN_CONTROLLER_INFO_1"
+     "DS_DOMAIN_CONTROLLER_INFO_2"
+     "DS_DOMAIN_CONTROLLER_INFO_3"
+     "DOMAIN_CONTROLLER_INFO"
+     "DS_DOMAIN_TRUSTS"
+     "DsBrowseForContainer"
+     "DsMakeSpn"
+     "DsCrackSpn"
+     "DsQuoteRdnValue"
+     "DsUnquoteRdnValue"
+     "DsCrackUnquotedMangledRdn"
+     "DsIsMangledRdnValue"
+     "DsIsMangledDn"
+     "DsCrackSpn2"
+     "DsBind"
+     "DsBindWithCred"
+     "DsBindWithSpn"
+     "DsBindWithSpnEx"
+     "DsBindByInstance"
+     "DsBindToISTG"
+     "DsUnBind"
+     "DsMakePasswordCredentials"
+     "DsCrackNames"
+     "DsFreeNameResult"
+     "DsGetSpn"
+     "DsFreeSpnArray"
+     "DsWriteAccountSpn"
+     "DsClientMakeSpnForTargetServer"
+     "DsServerRegisterSpn"
+     "DsReplicaSync"
+     "DsReplicaAdd"
+     "DsReplicaDel"
+     "DsReplicaModify"
+     "DsReplicaUpdateRefs"
+     "DsReplicaSyncAll"
+     "DsRemoveDsServer"
+     "DsRemoveDsDomain"
+     "DsListSites"
+     "DsListServersInSite"
+     "DsListDomainsInSite"
+     "DsListServersForDomainInSite"
+     "DsListInfoForServer"
+     "DsListRoles"
+     "DsQuerySitesByCost"
+     "DsMapSchemaGuids"
+     "DsFreeSchemaGuidMap"
+     "DsGetDomainControllerInfo"
+     "DsFreeDomainControllerInfo"
+     "DsReplicaVerifyObjects"
+     "DsAddSidHistory"
+     "DsInheritSecurityIdentity"
+     "DsGetDcName"
+     "DsGetSiteName"
+     "DsValidateSubnetName"
+     "DsAddressToSiteNames"
+     "DsAddressToSiteNamesEx"
+     "DsEnumerateDomainTrusts"
+     "DsGetDcSiteCoverage"
+     "DsDeregisterDnsHostRecords"
+     "DsGetDcOpen"
+     "DsGetDcNext"
+]}

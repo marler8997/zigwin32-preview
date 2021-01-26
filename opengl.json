@@ -1,0 +1,237 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: PIXELFORMATDESCRIPTOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PIXELFORMATDESCRIPTOR = extern struct {
+    nSize: {"kind":"UInt16"},
+    nVersion: {"kind":"UInt16"},
+    dwFlags: {"kind":"UInt32"},
+    iPixelType: {"kind":"Byte"},
+    cColorBits: {"kind":"Byte"},
+    cRedBits: {"kind":"Byte"},
+    cRedShift: {"kind":"Byte"},
+    cGreenBits: {"kind":"Byte"},
+    cGreenShift: {"kind":"Byte"},
+    cBlueBits: {"kind":"Byte"},
+    cBlueShift: {"kind":"Byte"},
+    cAlphaBits: {"kind":"Byte"},
+    cAlphaShift: {"kind":"Byte"},
+    cAccumBits: {"kind":"Byte"},
+    cAccumRedBits: {"kind":"Byte"},
+    cAccumGreenBits: {"kind":"Byte"},
+    cAccumBlueBits: {"kind":"Byte"},
+    cAccumAlphaBits: {"kind":"Byte"},
+    cDepthBits: {"kind":"Byte"},
+    cStencilBits: {"kind":"Byte"},
+    cAuxBuffers: {"kind":"Byte"},
+    iLayerType: {"kind":"Byte"},
+    bReserved: {"kind":"Byte"},
+    dwLayerMask: {"kind":"UInt32"},
+    dwVisibleMask: {"kind":"UInt32"},
+    dwDamageMask: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: POINTFLOAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const POINTFLOAT = extern struct {
+    x: {"kind":"Single"},
+    y: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: GLYPHMETRICSFLOAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GLYPHMETRICSFLOAT = extern struct {
+    gmfBlackBoxX: {"kind":"Single"},
+    gmfBlackBoxY: {"kind":"Single"},
+    gmfptGlyphOrigin: Windows.Win32.OpenGL.POINTFLOAT,
+    gmfCellIncX: {"kind":"Single"},
+    gmfCellIncY: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: LAYERPLANEDESCRIPTOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LAYERPLANEDESCRIPTOR = extern struct {
+    nSize: {"kind":"UInt16"},
+    nVersion: {"kind":"UInt16"},
+    dwFlags: {"kind":"UInt32"},
+    iPixelType: {"kind":"Byte"},
+    cColorBits: {"kind":"Byte"},
+    cRedBits: {"kind":"Byte"},
+    cRedShift: {"kind":"Byte"},
+    cGreenBits: {"kind":"Byte"},
+    cGreenShift: {"kind":"Byte"},
+    cBlueBits: {"kind":"Byte"},
+    cBlueShift: {"kind":"Byte"},
+    cAlphaBits: {"kind":"Byte"},
+    cAlphaShift: {"kind":"Byte"},
+    cAccumBits: {"kind":"Byte"},
+    cAccumRedBits: {"kind":"Byte"},
+    cAccumGreenBits: {"kind":"Byte"},
+    cAccumBlueBits: {"kind":"Byte"},
+    cAccumAlphaBits: {"kind":"Byte"},
+    cDepthBits: {"kind":"Byte"},
+    cStencilBits: {"kind":"Byte"},
+    cAuxBuffers: {"kind":"Byte"},
+    iLayerPlane: {"kind":"Byte"},
+    bReserved: {"kind":"Byte"},
+    crTransparent: {"kind":"UInt32"},
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=True (can and should we use this?)
+pub extern "GDI32" fn ChoosePixelFormat(
+    hdc: Windows.Win32.Gdi.HDC,
+    ppfd: {"kind""Ptr","child":Windows.Win32.OpenGL.PIXELFORMATDESCRIPTOR},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "GDI32" fn DescribePixelFormat(
+    hdc: Windows.Win32.Gdi.HDC,
+    iPixelFormat: {"kind":"Int32"},
+    nBytes: {"kind":"UInt32"},
+    ppfd: {"kind""Ptr","child":Windows.Win32.OpenGL.PIXELFORMATDESCRIPTOR},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "GDI32" fn GetPixelFormat(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "GDI32" fn SetPixelFormat(
+    hdc: Windows.Win32.Gdi.HDC,
+    format: {"kind":"Int32"},
+    ppfd: {"kind""Ptr","child":Windows.Win32.OpenGL.PIXELFORMATDESCRIPTOR},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "GDI32" fn GetEnhMetaFilePixelFormat(
+    hemf: {"kind":"IntPtr"},
+    cbBuffer: {"kind":"UInt32"},
+    ppfd: {"kind""Ptr","child":Windows.Win32.OpenGL.PIXELFORMATDESCRIPTOR},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "OPENGL32" fn wglCopyContext(
+    param0: {"kind":"IntPtr"},
+    param1: {"kind":"IntPtr"},
+    param2: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "OPENGL32" fn wglCreateContext(
+    param0: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "OPENGL32" fn wglCreateLayerContext(
+    param0: Windows.Win32.Gdi.HDC,
+    param1: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "OPENGL32" fn wglDeleteContext(
+    param0: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OPENGL32" fn wglGetCurrentContext(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OPENGL32" fn wglGetCurrentDC(
+
+// set_last_errror=True (can and should we use this?)
+pub extern "OPENGL32" fn wglGetProcAddress(
+    param0: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "OPENGL32" fn wglMakeCurrent(
+    param0: Windows.Win32.Gdi.HDC,
+    param1: {"kind":"IntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "OPENGL32" fn wglShareLists(
+    param0: {"kind":"IntPtr"},
+    param1: {"kind":"IntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "OPENGL32" fn wglUseFontBitmapsA(
+    param0: Windows.Win32.Gdi.HDC,
+    param1: {"kind":"UInt32"},
+    param2: {"kind":"UInt32"},
+    param3: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "OPENGL32" fn wglUseFontBitmapsW(
+    param0: Windows.Win32.Gdi.HDC,
+    param1: {"kind":"UInt32"},
+    param2: {"kind":"UInt32"},
+    param3: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "GDI32" fn SwapBuffers(
+    param0: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "OPENGL32" fn wglUseFontOutlinesA(
+    param0: Windows.Win32.Gdi.HDC,
+    param1: {"kind":"UInt32"},
+    param2: {"kind":"UInt32"},
+    param3: {"kind":"UInt32"},
+    param4: {"kind":"Single"},
+    param5: {"kind":"Single"},
+    param6: {"kind":"Int32"},
+    param7: {"kind""Ptr","child":Windows.Win32.OpenGL.GLYPHMETRICSFLOAT},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "OPENGL32" fn wglUseFontOutlinesW(
+    param0: Windows.Win32.Gdi.HDC,
+    param1: {"kind":"UInt32"},
+    param2: {"kind":"UInt32"},
+    param3: {"kind":"UInt32"},
+    param4: {"kind":"Single"},
+    param5: {"kind":"Single"},
+    param6: {"kind":"Int32"},
+    param7: {"kind""Ptr","child":Windows.Win32.OpenGL.GLYPHMETRICSFLOAT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OPENGL32" fn wglDescribeLayerPlane(
+    param0: Windows.Win32.Gdi.HDC,
+    param1: {"kind":"Int32"},
+    param2: {"kind":"Int32"},
+    param3: {"kind":"UInt32"},
+    param4: {"kind""Ptr","child":Windows.Win32.OpenGL.LAYERPLANEDESCRIPTOR},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "OPENGL32" fn wglSetLayerPaletteEntries(
+    param0: Windows.Win32.Gdi.HDC,
+    param1: {"kind":"Int32"},
+    param2: {"kind":"Int32"},
+    param3: {"kind":"Int32"},
+    param4: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "OPENGL32" fn wglGetLayerPaletteEntries(
+    param0: Windows.Win32.Gdi.HDC,
+    param1: {"kind":"Int32"},
+    param2: {"kind":"Int32"},
+    param3: {"kind":"Int32"},
+    param4: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "OPENGL32" fn wglRealizeLayerPalette(
+    param0: Windows.Win32.Gdi.HDC,
+    param1: {"kind":"Int32"},
+    param2: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "OPENGL32" fn wglSwapLayerBuffers(
+    param0: Windows.Win32.Gdi.HDC,
+    param1: {"kind":"UInt32"},
+],
+
+"unicode_aliases": [
+     "wglUseFontBitmaps"
+     "wglUseFontOutlines"
+]}

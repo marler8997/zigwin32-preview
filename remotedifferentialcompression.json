@@ -1,0 +1,497 @@
+﻿{
+"constants": [
+     {
+         "name": "MSRDC_VERSION"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 65536
+    }
+    ,{
+         "name": "MSRDC_MINIMUM_COMPATIBLE_APP_VERSION"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 65536
+    }
+    ,{
+         "name": "MSRDC_MINIMUM_DEPTH"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 1
+    }
+    ,{
+         "name": "MSRDC_MAXIMUM_DEPTH"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 8
+    }
+    ,{
+         "name": "MSRDC_MINIMUM_COMPAREBUFFER"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 100000
+    }
+    ,{
+         "name": "MSRDC_MAXIMUM_COMPAREBUFFER"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 1073741824
+    }
+    ,{
+         "name": "MSRDC_DEFAULT_COMPAREBUFFER"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 3200000
+    }
+    ,{
+         "name": "MSRDC_MINIMUM_INPUTBUFFERSIZE"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 1024
+    }
+    ,{
+         "name": "MSRDC_MINIMUM_HORIZONSIZE"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 128
+    }
+    ,{
+         "name": "MSRDC_MAXIMUM_HORIZONSIZE"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 16384
+    }
+    ,{
+         "name": "MSRDC_MINIMUM_HASHWINDOWSIZE"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 2
+    }
+    ,{
+         "name": "MSRDC_MAXIMUM_HASHWINDOWSIZE"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 96
+    }
+    ,{
+         "name": "MSRDC_DEFAULT_HASHWINDOWSIZE_1"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 48
+    }
+    ,{
+         "name": "MSRDC_DEFAULT_HORIZONSIZE_1"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 1024
+    }
+    ,{
+         "name": "MSRDC_DEFAULT_HASHWINDOWSIZE_N"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 2
+    }
+    ,{
+         "name": "MSRDC_DEFAULT_HORIZONSIZE_N"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 128
+    }
+    ,{
+         "name": "MSRDC_MAXIMUM_TRAITVALUE"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 63
+    }
+    ,{
+         "name": "MSRDC_MINIMUM_MATCHESREQUIRED"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 1
+    }
+    ,{
+         "name": "MSRDC_MAXIMUM_MATCHESREQUIRED"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 16
+    }
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: RdcLibrary
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const RdcLibrary = opaque {
+};
+// --------------------------------------------------------
+// Type: RdcGeneratorParameters
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const RdcGeneratorParameters = opaque {
+};
+// --------------------------------------------------------
+// Type: RdcGeneratorFilterMaxParameters
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const RdcGeneratorFilterMaxParameters = opaque {
+};
+// --------------------------------------------------------
+// Type: RdcGenerator
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const RdcGenerator = opaque {
+};
+// --------------------------------------------------------
+// Type: RdcFileReader
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const RdcFileReader = opaque {
+};
+// --------------------------------------------------------
+// Type: RdcSignatureReader
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const RdcSignatureReader = opaque {
+};
+// --------------------------------------------------------
+// Type: RdcComparator
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const RdcComparator = opaque {
+};
+// --------------------------------------------------------
+// Type: SimilarityReportProgress
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const SimilarityReportProgress = opaque {
+};
+// --------------------------------------------------------
+// Type: SimilarityTableDumpState
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const SimilarityTableDumpState = opaque {
+};
+// --------------------------------------------------------
+// Type: SimilarityTraitsTable
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const SimilarityTraitsTable = opaque {
+};
+// --------------------------------------------------------
+// Type: SimilarityFileIdTable
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const SimilarityFileIdTable = opaque {
+};
+// --------------------------------------------------------
+// Type: Similarity
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const Similarity = opaque {
+};
+// --------------------------------------------------------
+// Type: RdcSimilarityGenerator
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const RdcSimilarityGenerator = opaque {
+};
+// --------------------------------------------------------
+// Type: FindSimilarResults
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const FindSimilarResults = opaque {
+};
+// --------------------------------------------------------
+// Type: SimilarityTraitsMapping
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const SimilarityTraitsMapping = opaque {
+};
+// --------------------------------------------------------
+// Type: SimilarityTraitsMappedView
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const SimilarityTraitsMappedView = opaque {
+};
+// --------------------------------------------------------
+// Type: RDC_ErrorCode
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const RDC_ErrorCode = *opaque{
+};
+// --------------------------------------------------------
+// Type: GeneratorParametersType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const GeneratorParametersType = *opaque{
+};
+// --------------------------------------------------------
+// Type: RdcNeedType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const RdcNeedType = *opaque{
+};
+// --------------------------------------------------------
+// Type: RdcNeed
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RdcNeed = extern struct {
+    m_BlockType: Windows.Win32.RemoteDifferentialCompression.RdcNeedType,
+    m_FileOffset: {"kind":"UInt64"},
+    m_BlockLength: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: RdcBufferPointer
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RdcBufferPointer = extern struct {
+    m_Size: {"kind":"UInt32"},
+    m_Used: {"kind":"UInt32"},
+    m_Data: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: RdcNeedPointer
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RdcNeedPointer = extern struct {
+    m_Size: {"kind":"UInt32"},
+    m_Used: {"kind":"UInt32"},
+    m_Data: {"kind""Ptr","child":Windows.Win32.RemoteDifferentialCompression.RdcNeed},
+};
+// --------------------------------------------------------
+// Type: RdcSignature
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RdcSignature = extern struct {
+    m_Signature: {"kind":"Array","child": {"kind":"Byte"}},
+    m_BlockLength: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: RdcSignaturePointer
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RdcSignaturePointer = extern struct {
+    m_Size: {"kind":"UInt32"},
+    m_Used: {"kind":"UInt32"},
+    m_Data: {"kind""Ptr","child":Windows.Win32.RemoteDifferentialCompression.RdcSignature},
+};
+// --------------------------------------------------------
+// Type: RdcCreatedTables
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const RdcCreatedTables = *opaque{
+};
+// --------------------------------------------------------
+// Type: RdcMappingAccessMode
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const RdcMappingAccessMode = *opaque{
+};
+// --------------------------------------------------------
+// Type: SimilarityMappedViewInfo
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SimilarityMappedViewInfo = extern struct {
+    m_Data: {"kind""Ptr","child":{"kind":"Byte"}},
+    m_Length: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SimilarityData
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SimilarityData = extern struct {
+    m_Data: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: FindSimilarFileIndexResults
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FindSimilarFileIndexResults = extern struct {
+    m_FileIndex: {"kind":"UInt32"},
+    m_MatchCount: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SimilarityDumpData
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SimilarityDumpData = extern struct {
+    m_FileIndex: {"kind":"UInt32"},
+    m_Data: Windows.Win32.RemoteDifferentialCompression.SimilarityData,
+};
+// --------------------------------------------------------
+// Type: SimilarityFileId
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SimilarityFileId = extern struct {
+    m_FileId: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: IRdcGeneratorParameters
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRdcGeneratorParameters = *opaque{
+    // TODO: Method 'GetGeneratorParametersType'
+    // TODO: Method 'GetParametersVersion'
+    // TODO: Method 'GetSerializeSize'
+    // TODO: Method 'Serialize'
+};
+// --------------------------------------------------------
+// Type: IRdcGeneratorFilterMaxParameters
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRdcGeneratorFilterMaxParameters = *opaque{
+    // TODO: Method 'GetHorizonSize'
+    // TODO: Method 'SetHorizonSize'
+    // TODO: Method 'GetHashWindowSize'
+    // TODO: Method 'SetHashWindowSize'
+};
+// --------------------------------------------------------
+// Type: IRdcGenerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRdcGenerator = *opaque{
+    // TODO: Method 'GetGeneratorParameters'
+    // TODO: Method 'Process'
+};
+// --------------------------------------------------------
+// Type: IRdcFileReader
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRdcFileReader = *opaque{
+    // TODO: Method 'GetFileSize'
+    // TODO: Method 'Read'
+    // TODO: Method 'GetFilePosition'
+};
+// --------------------------------------------------------
+// Type: IRdcFileWriter
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRdcFileWriter = *opaque{
+    // TODO: Method 'Write'
+    // TODO: Method 'Truncate'
+    // TODO: Method 'DeleteOnClose'
+};
+// --------------------------------------------------------
+// Type: IRdcSignatureReader
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRdcSignatureReader = *opaque{
+    // TODO: Method 'ReadHeader'
+    // TODO: Method 'ReadSignatures'
+};
+// --------------------------------------------------------
+// Type: IRdcComparator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRdcComparator = *opaque{
+    // TODO: Method 'Process'
+};
+// --------------------------------------------------------
+// Type: IRdcLibrary
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRdcLibrary = *opaque{
+    // TODO: Method 'ComputeDefaultRecursionDepth'
+    // TODO: Method 'CreateGeneratorParameters'
+    // TODO: Method 'OpenGeneratorParameters'
+    // TODO: Method 'CreateGenerator'
+    // TODO: Method 'CreateComparator'
+    // TODO: Method 'CreateSignatureReader'
+    // TODO: Method 'GetRDCVersion'
+};
+// --------------------------------------------------------
+// Type: ISimilarityReportProgress
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISimilarityReportProgress = *opaque{
+    // TODO: Method 'ReportProgress'
+};
+// --------------------------------------------------------
+// Type: ISimilarityTableDumpState
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISimilarityTableDumpState = *opaque{
+    // TODO: Method 'GetNextData'
+};
+// --------------------------------------------------------
+// Type: ISimilarityTraitsMappedView
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISimilarityTraitsMappedView = *opaque{
+    // TODO: Method 'Flush'
+    // TODO: Method 'Unmap'
+    // TODO: Method 'Get'
+    // TODO: Method 'GetView'
+};
+// --------------------------------------------------------
+// Type: ISimilarityTraitsMapping
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISimilarityTraitsMapping = *opaque{
+    // TODO: Method 'CloseMapping'
+    // TODO: Method 'SetFileSize'
+    // TODO: Method 'GetFileSize'
+    // TODO: Method 'OpenMapping'
+    // TODO: Method 'ResizeMapping'
+    // TODO: Method 'GetPageSize'
+    // TODO: Method 'CreateView'
+};
+// --------------------------------------------------------
+// Type: ISimilarityTraitsTable
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISimilarityTraitsTable = *opaque{
+    // TODO: Method 'CreateTable'
+    // TODO: Method 'CreateTableIndirect'
+    // TODO: Method 'CloseTable'
+    // TODO: Method 'Append'
+    // TODO: Method 'FindSimilarFileIndex'
+    // TODO: Method 'BeginDump'
+    // TODO: Method 'GetLastIndex'
+};
+// --------------------------------------------------------
+// Type: ISimilarityFileIdTable
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISimilarityFileIdTable = *opaque{
+    // TODO: Method 'CreateTable'
+    // TODO: Method 'CreateTableIndirect'
+    // TODO: Method 'CloseTable'
+    // TODO: Method 'Append'
+    // TODO: Method 'Lookup'
+    // TODO: Method 'Invalidate'
+    // TODO: Method 'GetRecordCount'
+};
+// --------------------------------------------------------
+// Type: IRdcSimilarityGenerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRdcSimilarityGenerator = *opaque{
+    // TODO: Method 'EnableSimilarity'
+    // TODO: Method 'Results'
+};
+// --------------------------------------------------------
+// Type: IFindSimilarResults
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFindSimilarResults = *opaque{
+    // TODO: Method 'GetSize'
+    // TODO: Method 'GetNextFileId'
+};
+// --------------------------------------------------------
+// Type: ISimilarity
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISimilarity = *opaque{
+    // TODO: Method 'CreateTable'
+    // TODO: Method 'CreateTableIndirect'
+    // TODO: Method 'CloseTable'
+    // TODO: Method 'Append'
+    // TODO: Method 'FindSimilarFileId'
+    // TODO: Method 'CopyAndSwap'
+    // TODO: Method 'GetRecordCount'
+};
+],
+
+"func_definitions": [
+],
+
+"unicode_aliases": [
+]}

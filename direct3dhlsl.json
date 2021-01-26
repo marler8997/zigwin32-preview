@@ -1,0 +1,491 @@
+﻿{
+"constants": [
+     {
+         "name": "D3DCOMPILER_DLL"
+        ,"type": {"kind":"String"}
+        ,"value": "d3dcompiler_47.dll"
+    }
+    ,{
+         "name": "D3D_COMPILER_VERSION"
+        ,"type": {"kind":"Int32"}
+        ,"value": 47
+    }
+    ,{
+         "name": "D3DCOMPILE_DEBUG"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 1
+    }
+    ,{
+         "name": "D3DCOMPILE_SKIP_VALIDATION"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 2
+    }
+    ,{
+         "name": "D3DCOMPILE_SKIP_OPTIMIZATION"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 4
+    }
+    ,{
+         "name": "D3DCOMPILE_PACK_MATRIX_ROW_MAJOR"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 8
+    }
+    ,{
+         "name": "D3DCOMPILE_PACK_MATRIX_COLUMN_MAJOR"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 16
+    }
+    ,{
+         "name": "D3DCOMPILE_PARTIAL_PRECISION"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 32
+    }
+    ,{
+         "name": "D3DCOMPILE_FORCE_VS_SOFTWARE_NO_OPT"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 64
+    }
+    ,{
+         "name": "D3DCOMPILE_FORCE_PS_SOFTWARE_NO_OPT"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 128
+    }
+    ,{
+         "name": "D3DCOMPILE_NO_PRESHADER"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 256
+    }
+    ,{
+         "name": "D3DCOMPILE_AVOID_FLOW_CONTROL"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 512
+    }
+    ,{
+         "name": "D3DCOMPILE_PREFER_FLOW_CONTROL"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 1024
+    }
+    ,{
+         "name": "D3DCOMPILE_ENABLE_STRICTNESS"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 2048
+    }
+    ,{
+         "name": "D3DCOMPILE_ENABLE_BACKWARDS_COMPATIBILITY"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 4096
+    }
+    ,{
+         "name": "D3DCOMPILE_IEEE_STRICTNESS"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 8192
+    }
+    ,{
+         "name": "D3DCOMPILE_OPTIMIZATION_LEVEL0"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 16384
+    }
+    ,{
+         "name": "D3DCOMPILE_OPTIMIZATION_LEVEL1"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 0
+    }
+    ,{
+         "name": "D3DCOMPILE_OPTIMIZATION_LEVEL2"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 49152
+    }
+    ,{
+         "name": "D3DCOMPILE_OPTIMIZATION_LEVEL3"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 32768
+    }
+    ,{
+         "name": "D3DCOMPILE_RESERVED16"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 65536
+    }
+    ,{
+         "name": "D3DCOMPILE_RESERVED17"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 131072
+    }
+    ,{
+         "name": "D3DCOMPILE_WARNINGS_ARE_ERRORS"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 262144
+    }
+    ,{
+         "name": "D3DCOMPILE_RESOURCES_MAY_ALIAS"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 524288
+    }
+    ,{
+         "name": "D3DCOMPILE_ENABLE_UNBOUNDED_DESCRIPTOR_TABLES"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 1048576
+    }
+    ,{
+         "name": "D3DCOMPILE_ALL_RESOURCES_BOUND"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 2097152
+    }
+    ,{
+         "name": "D3DCOMPILE_DEBUG_NAME_FOR_SOURCE"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 4194304
+    }
+    ,{
+         "name": "D3DCOMPILE_DEBUG_NAME_FOR_BINARY"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 8388608
+    }
+    ,{
+         "name": "D3DCOMPILE_EFFECT_CHILD_EFFECT"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 1
+    }
+    ,{
+         "name": "D3DCOMPILE_EFFECT_ALLOW_SLOW_OPS"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 2
+    }
+    ,{
+         "name": "D3DCOMPILE_FLAGS2_FORCE_ROOT_SIGNATURE_LATEST"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 0
+    }
+    ,{
+         "name": "D3DCOMPILE_FLAGS2_FORCE_ROOT_SIGNATURE_1_0"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 16
+    }
+    ,{
+         "name": "D3DCOMPILE_FLAGS2_FORCE_ROOT_SIGNATURE_1_1"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 32
+    }
+    ,{
+         "name": "D3D_COMPILE_STANDARD_FILE_INCLUDE"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 1
+    }
+    ,{
+         "name": "D3DCOMPILE_SECDATA_MERGE_UAV_SLOTS"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 1
+    }
+    ,{
+         "name": "D3DCOMPILE_SECDATA_PRESERVE_TEMPLATE_SLOTS"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 2
+    }
+    ,{
+         "name": "D3DCOMPILE_SECDATA_REQUIRE_TEMPLATE_MATCH"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 4
+    }
+    ,{
+         "name": "D3D_DISASM_ENABLE_COLOR_CODE"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 1
+    }
+    ,{
+         "name": "D3D_DISASM_ENABLE_DEFAULT_VALUE_PRINTS"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 2
+    }
+    ,{
+         "name": "D3D_DISASM_ENABLE_INSTRUCTION_NUMBERING"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 4
+    }
+    ,{
+         "name": "D3D_DISASM_ENABLE_INSTRUCTION_CYCLE"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 8
+    }
+    ,{
+         "name": "D3D_DISASM_DISABLE_DEBUG_INFO"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 16
+    }
+    ,{
+         "name": "D3D_DISASM_ENABLE_INSTRUCTION_OFFSET"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 32
+    }
+    ,{
+         "name": "D3D_DISASM_INSTRUCTION_ONLY"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 64
+    }
+    ,{
+         "name": "D3D_DISASM_PRINT_HEX_LITERALS"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 128
+    }
+    ,{
+         "name": "D3D_GET_INST_OFFSETS_INCLUDE_NON_EXECUTABLE"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 1
+    }
+    ,{
+         "name": "D3D_COMPRESS_SHADER_KEEP_ALL_PARTS"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 1
+    }
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: pD3DCompile
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const pD3DCompile = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: pD3DPreprocess
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const pD3DPreprocess = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: pD3DDisassemble
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const pD3DDisassemble = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: D3DCOMPILER_STRIP_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DCOMPILER_STRIP_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D_BLOB_PART
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D_BLOB_PART = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D_SHADER_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D_SHADER_DATA = extern struct {
+    pBytecode: {"kind""Ptr","child":{"kind":"Void"}},
+    BytecodeLength: {"kind":"UIntPtr"},
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "D3DCOMPILER_47" fn D3DReadFileToBlob(
+    pFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppContents: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "D3DCOMPILER_47" fn D3DWriteBlobToFile(
+    pBlob: Windows.Win32.Direct3D11.ID3DBlob,
+    pFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    bOverwrite: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "D3DCOMPILER_47" fn D3DCompile(
+    pSrcData: {"kind""Ptr","child":{"kind":"Void"}},
+    SrcDataSize: {"kind":"UIntPtr"},
+    pSourceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pDefines: {"kind""Ptr","child":Windows.Win32.Direct3D11.D3D_SHADER_MACRO},
+    pInclude: Windows.Win32.Direct3D11.ID3DInclude,
+    pEntrypoint: {"kind""Ptr","child":{"kind":"SByte"}},
+    pTarget: {"kind""Ptr","child":{"kind":"SByte"}},
+    Flags1: {"kind":"UInt32"},
+    Flags2: {"kind":"UInt32"},
+    ppCode: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+    ppErrorMsgs: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "D3DCOMPILER_47" fn D3DCompile2(
+    pSrcData: {"kind""Ptr","child":{"kind":"Void"}},
+    SrcDataSize: {"kind":"UIntPtr"},
+    pSourceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pDefines: {"kind""Ptr","child":Windows.Win32.Direct3D11.D3D_SHADER_MACRO},
+    pInclude: Windows.Win32.Direct3D11.ID3DInclude,
+    pEntrypoint: {"kind""Ptr","child":{"kind":"SByte"}},
+    pTarget: {"kind""Ptr","child":{"kind":"SByte"}},
+    Flags1: {"kind":"UInt32"},
+    Flags2: {"kind":"UInt32"},
+    SecondaryDataFlags: {"kind":"UInt32"},
+    pSecondaryData: {"kind""Ptr","child":{"kind":"Void"}},
+    SecondaryDataSize: {"kind":"UIntPtr"},
+    ppCode: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+    ppErrorMsgs: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "D3DCOMPILER_47" fn D3DCompileFromFile(
+    pFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pDefines: {"kind""Ptr","child":Windows.Win32.Direct3D11.D3D_SHADER_MACRO},
+    pInclude: Windows.Win32.Direct3D11.ID3DInclude,
+    pEntrypoint: {"kind""Ptr","child":{"kind":"SByte"}},
+    pTarget: {"kind""Ptr","child":{"kind":"SByte"}},
+    Flags1: {"kind":"UInt32"},
+    Flags2: {"kind":"UInt32"},
+    ppCode: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+    ppErrorMsgs: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "D3DCOMPILER_47" fn D3DPreprocess(
+    pSrcData: {"kind""Ptr","child":{"kind":"Void"}},
+    SrcDataSize: {"kind":"UIntPtr"},
+    pSourceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pDefines: {"kind""Ptr","child":Windows.Win32.Direct3D11.D3D_SHADER_MACRO},
+    pInclude: Windows.Win32.Direct3D11.ID3DInclude,
+    ppCodeText: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+    ppErrorMsgs: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "D3DCOMPILER_47" fn D3DGetDebugInfo(
+    pSrcData: {"kind""Ptr","child":{"kind":"Void"}},
+    SrcDataSize: {"kind":"UIntPtr"},
+    ppDebugInfo: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "D3DCOMPILER_47" fn D3DReflect(
+    pSrcData: {"kind""Ptr","child":{"kind":"Void"}},
+    SrcDataSize: {"kind":"UIntPtr"},
+    pInterface: {"kind""Ptr","child":Guid},
+    ppReflector: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "D3DCOMPILER_47" fn D3DReflectLibrary(
+    pSrcData: {"kind""Ptr","child":{"kind":"Void"}},
+    SrcDataSize: {"kind":"UIntPtr"},
+    riid: {"kind""Ptr","child":Guid},
+    ppReflector: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "D3DCOMPILER_47" fn D3DDisassemble(
+    pSrcData: {"kind""Ptr","child":{"kind":"Void"}},
+    SrcDataSize: {"kind":"UIntPtr"},
+    Flags: {"kind":"UInt32"},
+    szComments: {"kind""Ptr","child":{"kind":"SByte"}},
+    ppDisassembly: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "D3DCOMPILER_47" fn D3DDisassembleRegion(
+    pSrcData: {"kind""Ptr","child":{"kind":"Void"}},
+    SrcDataSize: {"kind":"UIntPtr"},
+    Flags: {"kind":"UInt32"},
+    szComments: {"kind""Ptr","child":{"kind":"SByte"}},
+    StartByteOffset: {"kind":"UIntPtr"},
+    NumInsts: {"kind":"UIntPtr"},
+    pFinishByteOffset: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    ppDisassembly: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "D3DCOMPILER_47" fn D3DCreateLinker(
+    ppLinker: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3D11Linker},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "D3DCOMPILER_47" fn D3DLoadModule(
+    pSrcData: {"kind""Ptr","child":{"kind":"Void"}},
+    cbSrcDataSize: {"kind":"UIntPtr"},
+    ppModule: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3D11Module},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "D3DCOMPILER_47" fn D3DCreateFunctionLinkingGraph(
+    uFlags: {"kind":"UInt32"},
+    ppFunctionLinkingGraph: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3D11FunctionLinkingGraph},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "D3DCOMPILER_47" fn D3DGetTraceInstructionOffsets(
+    pSrcData: {"kind""Ptr","child":{"kind":"Void"}},
+    SrcDataSize: {"kind":"UIntPtr"},
+    Flags: {"kind":"UInt32"},
+    StartInstIndex: {"kind":"UIntPtr"},
+    NumInsts: {"kind":"UIntPtr"},
+    pOffsets: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    pTotalInsts: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "D3DCOMPILER_47" fn D3DGetInputSignatureBlob(
+    pSrcData: {"kind""Ptr","child":{"kind":"Void"}},
+    SrcDataSize: {"kind":"UIntPtr"},
+    ppSignatureBlob: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "D3DCOMPILER_47" fn D3DGetOutputSignatureBlob(
+    pSrcData: {"kind""Ptr","child":{"kind":"Void"}},
+    SrcDataSize: {"kind":"UIntPtr"},
+    ppSignatureBlob: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "D3DCOMPILER_47" fn D3DGetInputAndOutputSignatureBlob(
+    pSrcData: {"kind""Ptr","child":{"kind":"Void"}},
+    SrcDataSize: {"kind":"UIntPtr"},
+    ppSignatureBlob: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "D3DCOMPILER_47" fn D3DStripShader(
+    pShaderBytecode: {"kind""Ptr","child":{"kind":"Void"}},
+    BytecodeLength: {"kind":"UIntPtr"},
+    uStripFlags: {"kind":"UInt32"},
+    ppStrippedBlob: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "D3DCOMPILER_47" fn D3DGetBlobPart(
+    pSrcData: {"kind""Ptr","child":{"kind":"Void"}},
+    SrcDataSize: {"kind":"UIntPtr"},
+    Part: Windows.Win32.Direct3DHlsl.D3D_BLOB_PART,
+    Flags: {"kind":"UInt32"},
+    ppPart: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "D3DCOMPILER_47" fn D3DSetBlobPart(
+    pSrcData: {"kind""Ptr","child":{"kind":"Void"}},
+    SrcDataSize: {"kind":"UIntPtr"},
+    Part: Windows.Win32.Direct3DHlsl.D3D_BLOB_PART,
+    Flags: {"kind":"UInt32"},
+    pPart: {"kind""Ptr","child":{"kind":"Void"}},
+    PartSize: {"kind":"UIntPtr"},
+    ppNewShader: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "D3DCOMPILER_47" fn D3DCreateBlob(
+    Size: {"kind":"UIntPtr"},
+    ppBlob: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "D3DCOMPILER_47" fn D3DCompressShaders(
+    uNumShaders: {"kind":"UInt32"},
+    pShaderData: {"kind""Ptr","child":Windows.Win32.Direct3DHlsl.D3D_SHADER_DATA},
+    uFlags: {"kind":"UInt32"},
+    ppCompressedData: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "D3DCOMPILER_47" fn D3DDecompressShaders(
+    pSrcData: {"kind""Ptr","child":{"kind":"Void"}},
+    SrcDataSize: {"kind":"UIntPtr"},
+    uNumShaders: {"kind":"UInt32"},
+    uStartIndex: {"kind":"UInt32"},
+    pIndices: {"kind""Ptr","child":{"kind":"UInt32"}},
+    uFlags: {"kind":"UInt32"},
+    ppShaders: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+    pTotalShaders: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "D3DCOMPILER_47" fn D3DDisassemble10Effect(
+    pEffect: Windows.Win32.Direct3D10.ID3D10Effect,
+    Flags: {"kind":"UInt32"},
+    ppDisassembly: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+],
+
+"unicode_aliases": [
+]}

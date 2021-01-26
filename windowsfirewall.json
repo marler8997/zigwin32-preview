@@ -1,0 +1,925 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: UPnPNAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const UPnPNAT = opaque {
+};
+// --------------------------------------------------------
+// Type: IUPnPNAT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IUPnPNAT = *opaque{
+    // TODO: Method 'get_StaticPortMappingCollection'
+    // TODO: Method 'get_DynamicPortMappingCollection'
+    // TODO: Method 'get_NATEventManager'
+};
+// --------------------------------------------------------
+// Type: INATEventManager
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INATEventManager = *opaque{
+    // TODO: Method 'put_ExternalIPAddressCallback'
+    // TODO: Method 'put_NumberOfEntriesCallback'
+};
+// --------------------------------------------------------
+// Type: INATExternalIPAddressCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INATExternalIPAddressCallback = *opaque{
+    // TODO: Method 'NewExternalIPAddress'
+};
+// --------------------------------------------------------
+// Type: INATNumberOfEntriesCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INATNumberOfEntriesCallback = *opaque{
+    // TODO: Method 'NewNumberOfEntries'
+};
+// --------------------------------------------------------
+// Type: IDynamicPortMappingCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDynamicPortMappingCollection = *opaque{
+    // TODO: Method 'get__NewEnum'
+    // TODO: Method 'get_Item'
+    // TODO: Method 'get_Count'
+    // TODO: Method 'Remove'
+    // TODO: Method 'Add'
+};
+// --------------------------------------------------------
+// Type: IDynamicPortMapping
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDynamicPortMapping = *opaque{
+    // TODO: Method 'get_ExternalIPAddress'
+    // TODO: Method 'get_RemoteHost'
+    // TODO: Method 'get_ExternalPort'
+    // TODO: Method 'get_Protocol'
+    // TODO: Method 'get_InternalPort'
+    // TODO: Method 'get_InternalClient'
+    // TODO: Method 'get_Enabled'
+    // TODO: Method 'get_Description'
+    // TODO: Method 'get_LeaseDuration'
+    // TODO: Method 'RenewLease'
+    // TODO: Method 'EditInternalClient'
+    // TODO: Method 'Enable'
+    // TODO: Method 'EditDescription'
+    // TODO: Method 'EditInternalPort'
+};
+// --------------------------------------------------------
+// Type: IStaticPortMappingCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IStaticPortMappingCollection = *opaque{
+    // TODO: Method 'get__NewEnum'
+    // TODO: Method 'get_Item'
+    // TODO: Method 'get_Count'
+    // TODO: Method 'Remove'
+    // TODO: Method 'Add'
+};
+// --------------------------------------------------------
+// Type: IStaticPortMapping
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IStaticPortMapping = *opaque{
+    // TODO: Method 'get_ExternalIPAddress'
+    // TODO: Method 'get_ExternalPort'
+    // TODO: Method 'get_InternalPort'
+    // TODO: Method 'get_Protocol'
+    // TODO: Method 'get_InternalClient'
+    // TODO: Method 'get_Enabled'
+    // TODO: Method 'get_Description'
+    // TODO: Method 'EditInternalClient'
+    // TODO: Method 'Enable'
+    // TODO: Method 'EditDescription'
+    // TODO: Method 'EditInternalPort'
+};
+// --------------------------------------------------------
+// Type: NetSharingManager
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const NetSharingManager = opaque {
+};
+// --------------------------------------------------------
+// Type: IEnumNetConnection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumNetConnection = *opaque{
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: NETCON_CHARACTERISTIC_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NETCON_CHARACTERISTIC_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: NETCON_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NETCON_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: NETCON_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NETCON_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: NETCON_MEDIATYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NETCON_MEDIATYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: NETCON_PROPERTIES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NETCON_PROPERTIES = extern struct {
+    guidId: Guid,
+    pszwName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszwDeviceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Status: Windows.Win32.WindowsFirewall.NETCON_STATUS,
+    MediaType: Windows.Win32.WindowsFirewall.NETCON_MEDIATYPE,
+    dwCharacter: {"kind":"UInt32"},
+    clsidThisObject: Guid,
+    clsidUiObject: Guid,
+};
+// --------------------------------------------------------
+// Type: INetConnection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetConnection = *opaque{
+    // TODO: Method 'Connect'
+    // TODO: Method 'Disconnect'
+    // TODO: Method 'Delete'
+    // TODO: Method 'Duplicate'
+    // TODO: Method 'GetProperties'
+    // TODO: Method 'GetUiObjectClassId'
+    // TODO: Method 'Rename'
+};
+// --------------------------------------------------------
+// Type: NETCONMGR_ENUM_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NETCONMGR_ENUM_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: INetConnectionManager
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetConnectionManager = *opaque{
+    // TODO: Method 'EnumConnections'
+};
+// --------------------------------------------------------
+// Type: NETCONUI_CONNECT_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NETCONUI_CONNECT_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: INetConnectionConnectUi
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetConnectionConnectUi = *opaque{
+    // TODO: Method 'SetConnection'
+    // TODO: Method 'Connect'
+    // TODO: Method 'Disconnect'
+};
+// --------------------------------------------------------
+// Type: IEnumNetSharingPortMapping
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumNetSharingPortMapping = *opaque{
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: INetSharingPortMappingProps
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetSharingPortMappingProps = *opaque{
+    // TODO: Method 'get_Name'
+    // TODO: Method 'get_IPProtocol'
+    // TODO: Method 'get_ExternalPort'
+    // TODO: Method 'get_InternalPort'
+    // TODO: Method 'get_Options'
+    // TODO: Method 'get_TargetName'
+    // TODO: Method 'get_TargetIPAddress'
+    // TODO: Method 'get_Enabled'
+};
+// --------------------------------------------------------
+// Type: INetSharingPortMapping
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetSharingPortMapping = *opaque{
+    // TODO: Method 'Disable'
+    // TODO: Method 'Enable'
+    // TODO: Method 'get_Properties'
+    // TODO: Method 'Delete'
+};
+// --------------------------------------------------------
+// Type: IEnumNetSharingEveryConnection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumNetSharingEveryConnection = *opaque{
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IEnumNetSharingPublicConnection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumNetSharingPublicConnection = *opaque{
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IEnumNetSharingPrivateConnection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumNetSharingPrivateConnection = *opaque{
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: INetSharingPortMappingCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetSharingPortMappingCollection = *opaque{
+    // TODO: Method 'get__NewEnum'
+    // TODO: Method 'get_Count'
+};
+// --------------------------------------------------------
+// Type: INetConnectionProps
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetConnectionProps = *opaque{
+    // TODO: Method 'get_Guid'
+    // TODO: Method 'get_Name'
+    // TODO: Method 'get_DeviceName'
+    // TODO: Method 'get_Status'
+    // TODO: Method 'get_MediaType'
+    // TODO: Method 'get_Characteristics'
+};
+// --------------------------------------------------------
+// Type: SHARINGCONNECTIONTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SHARINGCONNECTIONTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: SHARINGCONNECTION_ENUM_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SHARINGCONNECTION_ENUM_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: ICS_TARGETTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ICS_TARGETTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: INetSharingConfiguration
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetSharingConfiguration = *opaque{
+    // TODO: Method 'get_SharingEnabled'
+    // TODO: Method 'get_SharingConnectionType'
+    // TODO: Method 'DisableSharing'
+    // TODO: Method 'EnableSharing'
+    // TODO: Method 'get_InternetFirewallEnabled'
+    // TODO: Method 'DisableInternetFirewall'
+    // TODO: Method 'EnableInternetFirewall'
+    // TODO: Method 'get_EnumPortMappings'
+    // TODO: Method 'AddPortMapping'
+    // TODO: Method 'RemovePortMapping'
+};
+// --------------------------------------------------------
+// Type: INetSharingEveryConnectionCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetSharingEveryConnectionCollection = *opaque{
+    // TODO: Method 'get__NewEnum'
+    // TODO: Method 'get_Count'
+};
+// --------------------------------------------------------
+// Type: INetSharingPublicConnectionCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetSharingPublicConnectionCollection = *opaque{
+    // TODO: Method 'get__NewEnum'
+    // TODO: Method 'get_Count'
+};
+// --------------------------------------------------------
+// Type: INetSharingPrivateConnectionCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetSharingPrivateConnectionCollection = *opaque{
+    // TODO: Method 'get__NewEnum'
+    // TODO: Method 'get_Count'
+};
+// --------------------------------------------------------
+// Type: INetSharingManager
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetSharingManager = *opaque{
+    // TODO: Method 'get_SharingInstalled'
+    // TODO: Method 'get_EnumPublicConnections'
+    // TODO: Method 'get_EnumPrivateConnections'
+    // TODO: Method 'get_INetSharingConfigurationForINetConnection'
+    // TODO: Method 'get_EnumEveryConnection'
+    // TODO: Method 'get_NetConnectionProps'
+};
+// --------------------------------------------------------
+// Type: NetFwRule
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const NetFwRule = opaque {
+};
+// --------------------------------------------------------
+// Type: NetFwOpenPort
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const NetFwOpenPort = opaque {
+};
+// --------------------------------------------------------
+// Type: NetFwAuthorizedApplication
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const NetFwAuthorizedApplication = opaque {
+};
+// --------------------------------------------------------
+// Type: NetFwPolicy2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const NetFwPolicy2 = opaque {
+};
+// --------------------------------------------------------
+// Type: NetFwProduct
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const NetFwProduct = opaque {
+};
+// --------------------------------------------------------
+// Type: NetFwProducts
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const NetFwProducts = opaque {
+};
+// --------------------------------------------------------
+// Type: NetFwMgr
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const NetFwMgr = opaque {
+};
+// --------------------------------------------------------
+// Type: NET_FW_POLICY_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NET_FW_POLICY_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: NET_FW_PROFILE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NET_FW_PROFILE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: NET_FW_PROFILE_TYPE2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NET_FW_PROFILE_TYPE2 = *opaque{
+};
+// --------------------------------------------------------
+// Type: NET_FW_IP_VERSION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NET_FW_IP_VERSION = *opaque{
+};
+// --------------------------------------------------------
+// Type: NET_FW_SCOPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NET_FW_SCOPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: NET_FW_IP_PROTOCOL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NET_FW_IP_PROTOCOL = *opaque{
+};
+// --------------------------------------------------------
+// Type: NET_FW_SERVICE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NET_FW_SERVICE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: NET_FW_RULE_DIRECTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NET_FW_RULE_DIRECTION = *opaque{
+};
+// --------------------------------------------------------
+// Type: NET_FW_ACTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NET_FW_ACTION = *opaque{
+};
+// --------------------------------------------------------
+// Type: NET_FW_MODIFY_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NET_FW_MODIFY_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: NET_FW_RULE_CATEGORY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NET_FW_RULE_CATEGORY = *opaque{
+};
+// --------------------------------------------------------
+// Type: NET_FW_EDGE_TRAVERSAL_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NET_FW_EDGE_TRAVERSAL_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: NET_FW_AUTHENTICATE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NET_FW_AUTHENTICATE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: NETISO_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NETISO_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: INET_FIREWALL_AC_CREATION_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const INET_FIREWALL_AC_CREATION_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: INET_FIREWALL_AC_CHANGE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const INET_FIREWALL_AC_CHANGE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: INET_FIREWALL_AC_CAPABILITIES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INET_FIREWALL_AC_CAPABILITIES = extern struct {
+    count: {"kind":"UInt32"},
+    capabilities: {"kind""Ptr","child":Windows.Win32.Security.SID_AND_ATTRIBUTES},
+};
+// --------------------------------------------------------
+// Type: INET_FIREWALL_AC_BINARIES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INET_FIREWALL_AC_BINARIES = extern struct {
+    count: {"kind":"UInt32"},
+    binaries: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+};
+// --------------------------------------------------------
+// Type: INET_FIREWALL_AC_CHANGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INET_FIREWALL_AC_CHANGE = extern struct {
+    changeType: Windows.Win32.WindowsFirewall.INET_FIREWALL_AC_CHANGE_TYPE,
+    createType: Windows.Win32.WindowsFirewall.INET_FIREWALL_AC_CREATION_TYPE,
+    appContainerSid: {"kind""Ptr","child":Windows.Win32.Security.SID},
+    userSid: {"kind""Ptr","child":Windows.Win32.Security.SID},
+    displayName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Anonymous: Windows.Win32.WindowsFirewall.INET_FIREWALL_AC_CHANGE+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: INET_FIREWALL_APP_CONTAINER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INET_FIREWALL_APP_CONTAINER = extern struct {
+    appContainerSid: {"kind""Ptr","child":Windows.Win32.Security.SID},
+    userSid: {"kind""Ptr","child":Windows.Win32.Security.SID},
+    appContainerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    displayName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    description: {"kind""Ptr","child":{"kind":"UInt16"}},
+    capabilities: Windows.Win32.WindowsFirewall.INET_FIREWALL_AC_CAPABILITIES,
+    binaries: Windows.Win32.WindowsFirewall.INET_FIREWALL_AC_BINARIES,
+    workingDirectory: {"kind""Ptr","child":{"kind":"UInt16"}},
+    packageFullName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: PAC_CHANGES_CALLBACK_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PAC_CHANGES_CALLBACK_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: NETISO_ERROR_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NETISO_ERROR_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PNETISO_EDP_ID_CALLBACK_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PNETISO_EDP_ID_CALLBACK_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: INetFwRemoteAdminSettings
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetFwRemoteAdminSettings = *opaque{
+    // TODO: Method 'get_IpVersion'
+    // TODO: Method 'put_IpVersion'
+    // TODO: Method 'get_Scope'
+    // TODO: Method 'put_Scope'
+    // TODO: Method 'get_RemoteAddresses'
+    // TODO: Method 'put_RemoteAddresses'
+    // TODO: Method 'get_Enabled'
+    // TODO: Method 'put_Enabled'
+};
+// --------------------------------------------------------
+// Type: INetFwIcmpSettings
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetFwIcmpSettings = *opaque{
+    // TODO: Method 'get_AllowOutboundDestinationUnreachable'
+    // TODO: Method 'put_AllowOutboundDestinationUnreachable'
+    // TODO: Method 'get_AllowRedirect'
+    // TODO: Method 'put_AllowRedirect'
+    // TODO: Method 'get_AllowInboundEchoRequest'
+    // TODO: Method 'put_AllowInboundEchoRequest'
+    // TODO: Method 'get_AllowOutboundTimeExceeded'
+    // TODO: Method 'put_AllowOutboundTimeExceeded'
+    // TODO: Method 'get_AllowOutboundParameterProblem'
+    // TODO: Method 'put_AllowOutboundParameterProblem'
+    // TODO: Method 'get_AllowOutboundSourceQuench'
+    // TODO: Method 'put_AllowOutboundSourceQuench'
+    // TODO: Method 'get_AllowInboundRouterRequest'
+    // TODO: Method 'put_AllowInboundRouterRequest'
+    // TODO: Method 'get_AllowInboundTimestampRequest'
+    // TODO: Method 'put_AllowInboundTimestampRequest'
+    // TODO: Method 'get_AllowInboundMaskRequest'
+    // TODO: Method 'put_AllowInboundMaskRequest'
+    // TODO: Method 'get_AllowOutboundPacketTooBig'
+    // TODO: Method 'put_AllowOutboundPacketTooBig'
+};
+// --------------------------------------------------------
+// Type: INetFwOpenPort
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetFwOpenPort = *opaque{
+    // TODO: Method 'get_Name'
+    // TODO: Method 'put_Name'
+    // TODO: Method 'get_IpVersion'
+    // TODO: Method 'put_IpVersion'
+    // TODO: Method 'get_Protocol'
+    // TODO: Method 'put_Protocol'
+    // TODO: Method 'get_Port'
+    // TODO: Method 'put_Port'
+    // TODO: Method 'get_Scope'
+    // TODO: Method 'put_Scope'
+    // TODO: Method 'get_RemoteAddresses'
+    // TODO: Method 'put_RemoteAddresses'
+    // TODO: Method 'get_Enabled'
+    // TODO: Method 'put_Enabled'
+    // TODO: Method 'get_BuiltIn'
+};
+// --------------------------------------------------------
+// Type: INetFwOpenPorts
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetFwOpenPorts = *opaque{
+    // TODO: Method 'get_Count'
+    // TODO: Method 'Add'
+    // TODO: Method 'Remove'
+    // TODO: Method 'Item'
+    // TODO: Method 'get__NewEnum'
+};
+// --------------------------------------------------------
+// Type: INetFwService
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetFwService = *opaque{
+    // TODO: Method 'get_Name'
+    // TODO: Method 'get_Type'
+    // TODO: Method 'get_Customized'
+    // TODO: Method 'get_IpVersion'
+    // TODO: Method 'put_IpVersion'
+    // TODO: Method 'get_Scope'
+    // TODO: Method 'put_Scope'
+    // TODO: Method 'get_RemoteAddresses'
+    // TODO: Method 'put_RemoteAddresses'
+    // TODO: Method 'get_Enabled'
+    // TODO: Method 'put_Enabled'
+    // TODO: Method 'get_GloballyOpenPorts'
+};
+// --------------------------------------------------------
+// Type: INetFwServices
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetFwServices = *opaque{
+    // TODO: Method 'get_Count'
+    // TODO: Method 'Item'
+    // TODO: Method 'get__NewEnum'
+};
+// --------------------------------------------------------
+// Type: INetFwAuthorizedApplication
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetFwAuthorizedApplication = *opaque{
+    // TODO: Method 'get_Name'
+    // TODO: Method 'put_Name'
+    // TODO: Method 'get_ProcessImageFileName'
+    // TODO: Method 'put_ProcessImageFileName'
+    // TODO: Method 'get_IpVersion'
+    // TODO: Method 'put_IpVersion'
+    // TODO: Method 'get_Scope'
+    // TODO: Method 'put_Scope'
+    // TODO: Method 'get_RemoteAddresses'
+    // TODO: Method 'put_RemoteAddresses'
+    // TODO: Method 'get_Enabled'
+    // TODO: Method 'put_Enabled'
+};
+// --------------------------------------------------------
+// Type: INetFwAuthorizedApplications
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetFwAuthorizedApplications = *opaque{
+    // TODO: Method 'get_Count'
+    // TODO: Method 'Add'
+    // TODO: Method 'Remove'
+    // TODO: Method 'Item'
+    // TODO: Method 'get__NewEnum'
+};
+// --------------------------------------------------------
+// Type: INetFwRule
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetFwRule = *opaque{
+    // TODO: Method 'get_Name'
+    // TODO: Method 'put_Name'
+    // TODO: Method 'get_Description'
+    // TODO: Method 'put_Description'
+    // TODO: Method 'get_ApplicationName'
+    // TODO: Method 'put_ApplicationName'
+    // TODO: Method 'get_ServiceName'
+    // TODO: Method 'put_ServiceName'
+    // TODO: Method 'get_Protocol'
+    // TODO: Method 'put_Protocol'
+    // TODO: Method 'get_LocalPorts'
+    // TODO: Method 'put_LocalPorts'
+    // TODO: Method 'get_RemotePorts'
+    // TODO: Method 'put_RemotePorts'
+    // TODO: Method 'get_LocalAddresses'
+    // TODO: Method 'put_LocalAddresses'
+    // TODO: Method 'get_RemoteAddresses'
+    // TODO: Method 'put_RemoteAddresses'
+    // TODO: Method 'get_IcmpTypesAndCodes'
+    // TODO: Method 'put_IcmpTypesAndCodes'
+    // TODO: Method 'get_Direction'
+    // TODO: Method 'put_Direction'
+    // TODO: Method 'get_Interfaces'
+    // TODO: Method 'put_Interfaces'
+    // TODO: Method 'get_InterfaceTypes'
+    // TODO: Method 'put_InterfaceTypes'
+    // TODO: Method 'get_Enabled'
+    // TODO: Method 'put_Enabled'
+    // TODO: Method 'get_Grouping'
+    // TODO: Method 'put_Grouping'
+    // TODO: Method 'get_Profiles'
+    // TODO: Method 'put_Profiles'
+    // TODO: Method 'get_EdgeTraversal'
+    // TODO: Method 'put_EdgeTraversal'
+    // TODO: Method 'get_Action'
+    // TODO: Method 'put_Action'
+};
+// --------------------------------------------------------
+// Type: INetFwRule2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetFwRule2 = *opaque{
+    // TODO: Method 'get_EdgeTraversalOptions'
+    // TODO: Method 'put_EdgeTraversalOptions'
+};
+// --------------------------------------------------------
+// Type: INetFwRule3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetFwRule3 = *opaque{
+    // TODO: Method 'get_LocalAppPackageId'
+    // TODO: Method 'put_LocalAppPackageId'
+    // TODO: Method 'get_LocalUserOwner'
+    // TODO: Method 'put_LocalUserOwner'
+    // TODO: Method 'get_LocalUserAuthorizedList'
+    // TODO: Method 'put_LocalUserAuthorizedList'
+    // TODO: Method 'get_RemoteUserAuthorizedList'
+    // TODO: Method 'put_RemoteUserAuthorizedList'
+    // TODO: Method 'get_RemoteMachineAuthorizedList'
+    // TODO: Method 'put_RemoteMachineAuthorizedList'
+    // TODO: Method 'get_SecureFlags'
+    // TODO: Method 'put_SecureFlags'
+};
+// --------------------------------------------------------
+// Type: INetFwRules
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetFwRules = *opaque{
+    // TODO: Method 'get_Count'
+    // TODO: Method 'Add'
+    // TODO: Method 'Remove'
+    // TODO: Method 'Item'
+    // TODO: Method 'get__NewEnum'
+};
+// --------------------------------------------------------
+// Type: INetFwServiceRestriction
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetFwServiceRestriction = *opaque{
+    // TODO: Method 'RestrictService'
+    // TODO: Method 'ServiceRestricted'
+    // TODO: Method 'get_Rules'
+};
+// --------------------------------------------------------
+// Type: INetFwProfile
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetFwProfile = *opaque{
+    // TODO: Method 'get_Type'
+    // TODO: Method 'get_FirewallEnabled'
+    // TODO: Method 'put_FirewallEnabled'
+    // TODO: Method 'get_ExceptionsNotAllowed'
+    // TODO: Method 'put_ExceptionsNotAllowed'
+    // TODO: Method 'get_NotificationsDisabled'
+    // TODO: Method 'put_NotificationsDisabled'
+    // TODO: Method 'get_UnicastResponsesToMulticastBroadcastDisabled'
+    // TODO: Method 'put_UnicastResponsesToMulticastBroadcastDisabled'
+    // TODO: Method 'get_RemoteAdminSettings'
+    // TODO: Method 'get_IcmpSettings'
+    // TODO: Method 'get_GloballyOpenPorts'
+    // TODO: Method 'get_Services'
+    // TODO: Method 'get_AuthorizedApplications'
+};
+// --------------------------------------------------------
+// Type: INetFwPolicy
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetFwPolicy = *opaque{
+    // TODO: Method 'get_CurrentProfile'
+    // TODO: Method 'GetProfileByType'
+};
+// --------------------------------------------------------
+// Type: INetFwPolicy2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetFwPolicy2 = *opaque{
+    // TODO: Method 'get_CurrentProfileTypes'
+    // TODO: Method 'get_FirewallEnabled'
+    // TODO: Method 'put_FirewallEnabled'
+    // TODO: Method 'get_ExcludedInterfaces'
+    // TODO: Method 'put_ExcludedInterfaces'
+    // TODO: Method 'get_BlockAllInboundTraffic'
+    // TODO: Method 'put_BlockAllInboundTraffic'
+    // TODO: Method 'get_NotificationsDisabled'
+    // TODO: Method 'put_NotificationsDisabled'
+    // TODO: Method 'get_UnicastResponsesToMulticastBroadcastDisabled'
+    // TODO: Method 'put_UnicastResponsesToMulticastBroadcastDisabled'
+    // TODO: Method 'get_Rules'
+    // TODO: Method 'get_ServiceRestriction'
+    // TODO: Method 'EnableRuleGroup'
+    // TODO: Method 'IsRuleGroupEnabled'
+    // TODO: Method 'RestoreLocalFirewallDefaults'
+    // TODO: Method 'get_DefaultInboundAction'
+    // TODO: Method 'put_DefaultInboundAction'
+    // TODO: Method 'get_DefaultOutboundAction'
+    // TODO: Method 'put_DefaultOutboundAction'
+    // TODO: Method 'get_IsRuleGroupCurrentlyEnabled'
+    // TODO: Method 'get_LocalPolicyModifyState'
+};
+// --------------------------------------------------------
+// Type: INetFwMgr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetFwMgr = *opaque{
+    // TODO: Method 'get_LocalPolicy'
+    // TODO: Method 'get_CurrentProfileType'
+    // TODO: Method 'RestoreDefaults'
+    // TODO: Method 'IsPortAllowed'
+    // TODO: Method 'IsIcmpTypeAllowed'
+};
+// --------------------------------------------------------
+// Type: INetFwProduct
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetFwProduct = *opaque{
+    // TODO: Method 'get_RuleCategories'
+    // TODO: Method 'put_RuleCategories'
+    // TODO: Method 'get_DisplayName'
+    // TODO: Method 'put_DisplayName'
+    // TODO: Method 'get_PathToSignedProductExe'
+};
+// --------------------------------------------------------
+// Type: INetFwProducts
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetFwProducts = *opaque{
+    // TODO: Method 'get_Count'
+    // TODO: Method 'Register'
+    // TODO: Method 'Item'
+    // TODO: Method 'get__NewEnum'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-net-isolation-l1-1-0" fn NetworkIsolationSetupAppContainerBinaries(
+    applicationContainerSid: {"kind""Ptr","child":{"kind":"Void"}},
+    packageFullName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    packageFolder: {"kind""Ptr","child":{"kind":"UInt16"}},
+    displayName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    bBinariesFullyComputed: Windows.Win32.SystemServices.BOOL,
+    binaries: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    binariesCount: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-net-isolation-l1-1-0" fn NetworkIsolationRegisterForAppContainerChanges(
+    flags: {"kind":"UInt32"},
+    callback: Windows.Win32.WindowsFirewall.PAC_CHANGES_CALLBACK_FN,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+    registrationObject: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-net-isolation-l1-1-0" fn NetworkIsolationUnregisterForAppContainerChanges(
+    registrationObject: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-net-isolation-l1-1-0" fn NetworkIsolationFreeAppContainers(
+    pPublicAppCs: {"kind""Ptr","child":Windows.Win32.WindowsFirewall.INET_FIREWALL_APP_CONTAINER},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-net-isolation-l1-1-0" fn NetworkIsolationEnumAppContainers(
+    Flags: {"kind":"UInt32"},
+    pdwNumPublicAppCs: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ppPublicAppCs: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WindowsFirewall.INET_FIREWALL_APP_CONTAINER}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-net-isolation-l1-1-0" fn NetworkIsolationGetAppContainerConfig(
+    pdwNumPublicAppCs: {"kind""Ptr","child":{"kind":"UInt32"}},
+    appContainerSids: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Security.SID_AND_ATTRIBUTES}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-net-isolation-l1-1-0" fn NetworkIsolationSetAppContainerConfig(
+    dwNumPublicAppCs: {"kind":"UInt32"},
+    appContainerSids: {"kind""Ptr","child":Windows.Win32.Security.SID_AND_ATTRIBUTES},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-net-isolation-l1-1-0" fn NetworkIsolationDiagnoseConnectFailureAndGetInfo(
+    wszServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    netIsoError: {"kind""Ptr","child":Windows.Win32.WindowsFirewall.NETISO_ERROR_TYPE},
+],
+
+"unicode_aliases": [
+]}

@@ -1,0 +1,55 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: RendezvousApplication
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const RendezvousApplication = opaque {
+};
+// --------------------------------------------------------
+// Type: RENDEZVOUS_SESSION_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const RENDEZVOUS_SESSION_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: RENDEZVOUS_SESSION_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const RENDEZVOUS_SESSION_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: IRendezvousSession
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRendezvousSession = *opaque{
+    // TODO: Method 'get_State'
+    // TODO: Method 'get_RemoteUser'
+    // TODO: Method 'get_Flags'
+    // TODO: Method 'SendContextData'
+    // TODO: Method 'Terminate'
+};
+// --------------------------------------------------------
+// Type: DRendezvousSessionEvents
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const DRendezvousSessionEvents = *opaque{
+};
+// --------------------------------------------------------
+// Type: IRendezvousApplication
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRendezvousApplication = *opaque{
+    // TODO: Method 'SetRendezvousSession'
+};
+],
+
+"func_definitions": [
+],
+
+"unicode_aliases": [
+]}

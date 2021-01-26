@@ -1,0 +1,197 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: HEAPLIST32
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HEAPLIST32 = extern struct {
+    dwSize: {"kind":"UIntPtr"},
+    th32ProcessID: {"kind":"UInt32"},
+    th32HeapID: {"kind":"UIntPtr"},
+    dwFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HEAPENTRY32
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HEAPENTRY32 = extern struct {
+    dwSize: {"kind":"UIntPtr"},
+    hHandle: Windows.Win32.SystemServices.HANDLE,
+    dwAddress: {"kind":"UIntPtr"},
+    dwBlockSize: {"kind":"UIntPtr"},
+    dwFlags: {"kind":"UInt32"},
+    dwLockCount: {"kind":"UInt32"},
+    dwResvd: {"kind":"UInt32"},
+    th32ProcessID: {"kind":"UInt32"},
+    th32HeapID: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: PROCESSENTRY32W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PROCESSENTRY32W = extern struct {
+    dwSize: {"kind":"UInt32"},
+    cntUsage: {"kind":"UInt32"},
+    th32ProcessID: {"kind":"UInt32"},
+    th32DefaultHeapID: {"kind":"UIntPtr"},
+    th32ModuleID: {"kind":"UInt32"},
+    cntThreads: {"kind":"UInt32"},
+    th32ParentProcessID: {"kind":"UInt32"},
+    pcPriClassBase: {"kind":"Int32"},
+    dwFlags: {"kind":"UInt32"},
+    szExeFile: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: PROCESSENTRY32
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PROCESSENTRY32 = extern struct {
+    dwSize: {"kind":"UInt32"},
+    cntUsage: {"kind":"UInt32"},
+    th32ProcessID: {"kind":"UInt32"},
+    th32DefaultHeapID: {"kind":"UIntPtr"},
+    th32ModuleID: {"kind":"UInt32"},
+    cntThreads: {"kind":"UInt32"},
+    th32ParentProcessID: {"kind":"UInt32"},
+    pcPriClassBase: {"kind":"Int32"},
+    dwFlags: {"kind":"UInt32"},
+    szExeFile: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: THREADENTRY32
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const THREADENTRY32 = extern struct {
+    dwSize: {"kind":"UInt32"},
+    cntUsage: {"kind":"UInt32"},
+    th32ThreadID: {"kind":"UInt32"},
+    th32OwnerProcessID: {"kind":"UInt32"},
+    tpBasePri: {"kind":"Int32"},
+    tpDeltaPri: {"kind":"Int32"},
+    dwFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MODULEENTRY32W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MODULEENTRY32W = extern struct {
+    dwSize: {"kind":"UInt32"},
+    th32ModuleID: {"kind":"UInt32"},
+    th32ProcessID: {"kind":"UInt32"},
+    GlblcntUsage: {"kind":"UInt32"},
+    ProccntUsage: {"kind":"UInt32"},
+    modBaseAddr: {"kind""Ptr","child":{"kind":"Byte"}},
+    modBaseSize: {"kind":"UInt32"},
+    hModule: {"kind":"IntPtr"},
+    szModule: {"kind":"Array","child": {"kind":"UInt16"}},
+    szExePath: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: MODULEENTRY32
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MODULEENTRY32 = extern struct {
+    dwSize: {"kind":"UInt32"},
+    th32ModuleID: {"kind":"UInt32"},
+    th32ProcessID: {"kind":"UInt32"},
+    GlblcntUsage: {"kind":"UInt32"},
+    ProccntUsage: {"kind":"UInt32"},
+    modBaseAddr: {"kind""Ptr","child":{"kind":"Byte"}},
+    modBaseSize: {"kind":"UInt32"},
+    hModule: {"kind":"IntPtr"},
+    szModule: {"kind":"Array","child": {"kind":"SByte"}},
+    szExePath: {"kind":"Array","child": {"kind":"SByte"}},
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn CreateToolhelp32Snapshot(
+    dwFlags: {"kind":"UInt32"},
+    th32ProcessID: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn Heap32ListFirst(
+    hSnapshot: Windows.Win32.SystemServices.HANDLE,
+    lphl: {"kind""Ptr","child":Windows.Win32.ToolHelp.HEAPLIST32},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn Heap32ListNext(
+    hSnapshot: Windows.Win32.SystemServices.HANDLE,
+    lphl: {"kind""Ptr","child":Windows.Win32.ToolHelp.HEAPLIST32},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn Heap32First(
+    lphe: {"kind""Ptr","child":Windows.Win32.ToolHelp.HEAPENTRY32},
+    th32ProcessID: {"kind":"UInt32"},
+    th32HeapID: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn Heap32Next(
+    lphe: {"kind""Ptr","child":Windows.Win32.ToolHelp.HEAPENTRY32},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn Toolhelp32ReadProcessMemory(
+    th32ProcessID: {"kind":"UInt32"},
+    lpBaseAddress: {"kind""Ptr","child":{"kind":"Void"}},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    cbRead: {"kind":"UIntPtr"},
+    lpNumberOfBytesRead: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn Process32FirstW(
+    hSnapshot: Windows.Win32.SystemServices.HANDLE,
+    lppe: {"kind""Ptr","child":Windows.Win32.ToolHelp.PROCESSENTRY32W},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn Process32NextW(
+    hSnapshot: Windows.Win32.SystemServices.HANDLE,
+    lppe: {"kind""Ptr","child":Windows.Win32.ToolHelp.PROCESSENTRY32W},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn Process32First(
+    hSnapshot: Windows.Win32.SystemServices.HANDLE,
+    lppe: {"kind""Ptr","child":Windows.Win32.ToolHelp.PROCESSENTRY32},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn Process32Next(
+    hSnapshot: Windows.Win32.SystemServices.HANDLE,
+    lppe: {"kind""Ptr","child":Windows.Win32.ToolHelp.PROCESSENTRY32},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn Thread32First(
+    hSnapshot: Windows.Win32.SystemServices.HANDLE,
+    lpte: {"kind""Ptr","child":Windows.Win32.ToolHelp.THREADENTRY32},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn Thread32Next(
+    hSnapshot: Windows.Win32.SystemServices.HANDLE,
+    lpte: {"kind""Ptr","child":Windows.Win32.ToolHelp.THREADENTRY32},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn Module32FirstW(
+    hSnapshot: Windows.Win32.SystemServices.HANDLE,
+    lpme: {"kind""Ptr","child":Windows.Win32.ToolHelp.MODULEENTRY32W},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn Module32NextW(
+    hSnapshot: Windows.Win32.SystemServices.HANDLE,
+    lpme: {"kind""Ptr","child":Windows.Win32.ToolHelp.MODULEENTRY32W},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn Module32First(
+    hSnapshot: Windows.Win32.SystemServices.HANDLE,
+    lpme: {"kind""Ptr","child":Windows.Win32.ToolHelp.MODULEENTRY32},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn Module32Next(
+    hSnapshot: Windows.Win32.SystemServices.HANDLE,
+    lpme: {"kind""Ptr","child":Windows.Win32.ToolHelp.MODULEENTRY32},
+],
+
+"unicode_aliases": [
+]}

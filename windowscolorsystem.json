@@ -1,0 +1,1442 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: CIEXYZ
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CIEXYZ = extern struct {
+    ciexyzX: {"kind":"Int32"},
+    ciexyzY: {"kind":"Int32"},
+    ciexyzZ: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: CIEXYZTRIPLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CIEXYZTRIPLE = extern struct {
+    ciexyzRed: Windows.Win32.WindowsColorSystem.CIEXYZ,
+    ciexyzGreen: Windows.Win32.WindowsColorSystem.CIEXYZ,
+    ciexyzBlue: Windows.Win32.WindowsColorSystem.CIEXYZ,
+};
+// --------------------------------------------------------
+// Type: LOGCOLORSPACEA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LOGCOLORSPACEA = extern struct {
+    lcsSignature: {"kind":"UInt32"},
+    lcsVersion: {"kind":"UInt32"},
+    lcsSize: {"kind":"UInt32"},
+    lcsCSType: {"kind":"Int32"},
+    lcsIntent: {"kind":"Int32"},
+    lcsEndpoints: Windows.Win32.WindowsColorSystem.CIEXYZTRIPLE,
+    lcsGammaRed: {"kind":"UInt32"},
+    lcsGammaGreen: {"kind":"UInt32"},
+    lcsGammaBlue: {"kind":"UInt32"},
+    lcsFilename: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: LOGCOLORSPACEW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LOGCOLORSPACEW = extern struct {
+    lcsSignature: {"kind":"UInt32"},
+    lcsVersion: {"kind":"UInt32"},
+    lcsSize: {"kind":"UInt32"},
+    lcsCSType: {"kind":"Int32"},
+    lcsIntent: {"kind":"Int32"},
+    lcsEndpoints: Windows.Win32.WindowsColorSystem.CIEXYZTRIPLE,
+    lcsGammaRed: {"kind":"UInt32"},
+    lcsGammaGreen: {"kind":"UInt32"},
+    lcsGammaBlue: {"kind":"UInt32"},
+    lcsFilename: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: ICMENUMPROCA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ICMENUMPROCA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: ICMENUMPROCW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ICMENUMPROCW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: XYZColorF
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const XYZColorF = extern struct {
+    X: {"kind":"Single"},
+    Y: {"kind":"Single"},
+    Z: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: JChColorF
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JChColorF = extern struct {
+    J: {"kind":"Single"},
+    C: {"kind":"Single"},
+    h: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: JabColorF
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JabColorF = extern struct {
+    J: {"kind":"Single"},
+    a: {"kind":"Single"},
+    b: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: GamutShellTriangle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GamutShellTriangle = extern struct {
+    aVertexIndex: {"kind":"Array","child": {"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: GamutShell
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GamutShell = extern struct {
+    JMin: {"kind":"Single"},
+    JMax: {"kind":"Single"},
+    cVertices: {"kind":"UInt32"},
+    cTriangles: {"kind":"UInt32"},
+    pVertices: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.JabColorF},
+    pTriangles: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.GamutShellTriangle},
+};
+// --------------------------------------------------------
+// Type: PrimaryJabColors
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PrimaryJabColors = extern struct {
+    red: Windows.Win32.WindowsColorSystem.JabColorF,
+    yellow: Windows.Win32.WindowsColorSystem.JabColorF,
+    green: Windows.Win32.WindowsColorSystem.JabColorF,
+    cyan: Windows.Win32.WindowsColorSystem.JabColorF,
+    blue: Windows.Win32.WindowsColorSystem.JabColorF,
+    magenta: Windows.Win32.WindowsColorSystem.JabColorF,
+    black: Windows.Win32.WindowsColorSystem.JabColorF,
+    white: Windows.Win32.WindowsColorSystem.JabColorF,
+};
+// --------------------------------------------------------
+// Type: PrimaryXYZColors
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PrimaryXYZColors = extern struct {
+    red: Windows.Win32.WindowsColorSystem.XYZColorF,
+    yellow: Windows.Win32.WindowsColorSystem.XYZColorF,
+    green: Windows.Win32.WindowsColorSystem.XYZColorF,
+    cyan: Windows.Win32.WindowsColorSystem.XYZColorF,
+    blue: Windows.Win32.WindowsColorSystem.XYZColorF,
+    magenta: Windows.Win32.WindowsColorSystem.XYZColorF,
+    black: Windows.Win32.WindowsColorSystem.XYZColorF,
+    white: Windows.Win32.WindowsColorSystem.XYZColorF,
+};
+// --------------------------------------------------------
+// Type: GamutBoundaryDescription
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GamutBoundaryDescription = extern struct {
+    pPrimaries: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.PrimaryJabColors},
+    cNeutralSamples: {"kind":"UInt32"},
+    pNeutralSamples: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.JabColorF},
+    pReferenceShell: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.GamutShell},
+    pPlausibleShell: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.GamutShell},
+    pPossibleShell: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.GamutShell},
+};
+// --------------------------------------------------------
+// Type: BlackInformation
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BlackInformation = extern struct {
+    fBlackOnly: Windows.Win32.SystemServices.BOOL,
+    blackWeight: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: IDeviceModelPlugIn
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDeviceModelPlugIn = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'GetNumChannels'
+    // TODO: Method 'DeviceToColorimetricColors'
+    // TODO: Method 'ColorimetricToDeviceColors'
+    // TODO: Method 'ColorimetricToDeviceColorsWithBlack'
+    // TODO: Method 'SetTransformDeviceModelInfo'
+    // TODO: Method 'GetPrimarySamples'
+    // TODO: Method 'GetGamutBoundaryMeshSize'
+    // TODO: Method 'GetGamutBoundaryMesh'
+    // TODO: Method 'GetNeutralAxisSize'
+    // TODO: Method 'GetNeutralAxis'
+};
+// --------------------------------------------------------
+// Type: IGamutMapModelPlugIn
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IGamutMapModelPlugIn = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'SourceToDestinationAppearanceColors'
+};
+// --------------------------------------------------------
+// Type: NAMED_PROFILE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NAMED_PROFILE_INFO = extern struct {
+    dwFlags: {"kind":"UInt32"},
+    dwCount: {"kind":"UInt32"},
+    dwCountDevCoordinates: {"kind":"UInt32"},
+    szPrefix: {"kind":"Array","child": {"kind":"SByte"}},
+    szSuffix: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: GRAYCOLOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GRAYCOLOR = extern struct {
+    gray: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: RGBCOLOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RGBCOLOR = extern struct {
+    red: {"kind":"UInt16"},
+    green: {"kind":"UInt16"},
+    blue: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: CMYKCOLOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CMYKCOLOR = extern struct {
+    cyan: {"kind":"UInt16"},
+    magenta: {"kind":"UInt16"},
+    yellow: {"kind":"UInt16"},
+    black: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: XYZCOLOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const XYZCOLOR = extern struct {
+    X: {"kind":"UInt16"},
+    Y: {"kind":"UInt16"},
+    Z: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: YxyCOLOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const YxyCOLOR = extern struct {
+    Y: {"kind":"UInt16"},
+    x: {"kind":"UInt16"},
+    y: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: LabCOLOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LabCOLOR = extern struct {
+    L: {"kind":"UInt16"},
+    a: {"kind":"UInt16"},
+    b: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: GENERIC3CHANNEL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GENERIC3CHANNEL = extern struct {
+    ch1: {"kind":"UInt16"},
+    ch2: {"kind":"UInt16"},
+    ch3: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: NAMEDCOLOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NAMEDCOLOR = extern struct {
+    dwIndex: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HiFiCOLOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HiFiCOLOR = extern struct {
+    channel: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: COLOR
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const COLOR = *opaque{
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _Anonymous_e__Struct = extern struct {
+        reserved1: {"kind":"UInt32"},
+        reserved2: {"kind""Ptr","child":{"kind":"Void"}},
+    };
+};
+// --------------------------------------------------------
+// Type: COLORTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const COLORTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: COLORPROFILETYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const COLORPROFILETYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: COLORPROFILESUBTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const COLORPROFILESUBTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: COLORDATATYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const COLORDATATYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: BMFORMAT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const BMFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: PBMCALLBACKFN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PBMCALLBACKFN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPBMCALLBACKFN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPBMCALLBACKFN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PROFILEHEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PROFILEHEADER = extern struct {
+    phSize: {"kind":"UInt32"},
+    phCMMType: {"kind":"UInt32"},
+    phVersion: {"kind":"UInt32"},
+    phClass: {"kind":"UInt32"},
+    phDataColorSpace: {"kind":"UInt32"},
+    phConnectionSpace: {"kind":"UInt32"},
+    phDateTime: {"kind":"Array","child": {"kind":"UInt32"}},
+    phSignature: {"kind":"UInt32"},
+    phPlatform: {"kind":"UInt32"},
+    phProfileFlags: {"kind":"UInt32"},
+    phManufacturer: {"kind":"UInt32"},
+    phModel: {"kind":"UInt32"},
+    phAttributes: {"kind":"Array","child": {"kind":"UInt32"}},
+    phRenderingIntent: {"kind":"UInt32"},
+    phIlluminant: Windows.Win32.WindowsColorSystem.CIEXYZ,
+    phCreator: {"kind":"UInt32"},
+    phReserved: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: PROFILE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PROFILE = extern struct {
+    dwType: {"kind":"UInt32"},
+    pProfileData: {"kind""Ptr","child":{"kind":"Void"}},
+    cbDataSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ENUMTYPEA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ENUMTYPEA = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwVersion: {"kind":"UInt32"},
+    dwFields: {"kind":"UInt32"},
+    pDeviceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwMediaType: {"kind":"UInt32"},
+    dwDitheringMode: {"kind":"UInt32"},
+    dwResolution: {"kind":"Array","child": {"kind":"UInt32"}},
+    dwCMMType: {"kind":"UInt32"},
+    dwClass: {"kind":"UInt32"},
+    dwDataColorSpace: {"kind":"UInt32"},
+    dwConnectionSpace: {"kind":"UInt32"},
+    dwSignature: {"kind":"UInt32"},
+    dwPlatform: {"kind":"UInt32"},
+    dwProfileFlags: {"kind":"UInt32"},
+    dwManufacturer: {"kind":"UInt32"},
+    dwModel: {"kind":"UInt32"},
+    dwAttributes: {"kind":"Array","child": {"kind":"UInt32"}},
+    dwRenderingIntent: {"kind":"UInt32"},
+    dwCreator: {"kind":"UInt32"},
+    dwDeviceClass: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ENUMTYPEW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ENUMTYPEW = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwVersion: {"kind":"UInt32"},
+    dwFields: {"kind":"UInt32"},
+    pDeviceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwMediaType: {"kind":"UInt32"},
+    dwDitheringMode: {"kind":"UInt32"},
+    dwResolution: {"kind":"Array","child": {"kind":"UInt32"}},
+    dwCMMType: {"kind":"UInt32"},
+    dwClass: {"kind":"UInt32"},
+    dwDataColorSpace: {"kind":"UInt32"},
+    dwConnectionSpace: {"kind":"UInt32"},
+    dwSignature: {"kind":"UInt32"},
+    dwPlatform: {"kind":"UInt32"},
+    dwProfileFlags: {"kind":"UInt32"},
+    dwManufacturer: {"kind":"UInt32"},
+    dwModel: {"kind":"UInt32"},
+    dwAttributes: {"kind":"Array","child": {"kind":"UInt32"}},
+    dwRenderingIntent: {"kind":"UInt32"},
+    dwCreator: {"kind":"UInt32"},
+    dwDeviceClass: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WCS_PROFILE_MANAGEMENT_SCOPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WCS_PROFILE_MANAGEMENT_SCOPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PCMSCALLBACKW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PCMSCALLBACKW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PCMSCALLBACKA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PCMSCALLBACKA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: COLORMATCHSETUPW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const COLORMATCHSETUPW = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwVersion: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    hwndOwner: Windows.Win32.WindowsAndMessaging.HWND,
+    pSourceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pDisplayName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pPrinterName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwRenderIntent: {"kind":"UInt32"},
+    dwProofingIntent: {"kind":"UInt32"},
+    pMonitorProfile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ccMonitorProfile: {"kind":"UInt32"},
+    pPrinterProfile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ccPrinterProfile: {"kind":"UInt32"},
+    pTargetProfile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ccTargetProfile: {"kind":"UInt32"},
+    lpfnHook: Windows.Win32.WindowsAndMessaging.DLGPROC,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+    lpfnApplyCallback: Windows.Win32.WindowsColorSystem.PCMSCALLBACKW,
+    lParamApplyCallback: Windows.Win32.WindowsAndMessaging.LPARAM,
+};
+// --------------------------------------------------------
+// Type: COLORMATCHSETUPA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const COLORMATCHSETUPA = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwVersion: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    hwndOwner: Windows.Win32.WindowsAndMessaging.HWND,
+    pSourceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pDisplayName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pPrinterName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwRenderIntent: {"kind":"UInt32"},
+    dwProofingIntent: {"kind":"UInt32"},
+    pMonitorProfile: {"kind""Ptr","child":{"kind":"SByte"}},
+    ccMonitorProfile: {"kind":"UInt32"},
+    pPrinterProfile: {"kind""Ptr","child":{"kind":"SByte"}},
+    ccPrinterProfile: {"kind":"UInt32"},
+    pTargetProfile: {"kind""Ptr","child":{"kind":"SByte"}},
+    ccTargetProfile: {"kind":"UInt32"},
+    lpfnHook: Windows.Win32.WindowsAndMessaging.DLGPROC,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+    lpfnApplyCallback: Windows.Win32.WindowsColorSystem.PCMSCALLBACKA,
+    lParamApplyCallback: Windows.Win32.WindowsAndMessaging.LPARAM,
+};
+// --------------------------------------------------------
+// Type: XYYPoint
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const XYYPoint = extern struct {
+    x: {"kind":"Single"},
+    y: {"kind":"Single"},
+    Y: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: WhitePoint
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WhitePoint = extern struct {
+    type: {"kind":"Int32"},
+    Anonymous: Windows.Win32.WindowsColorSystem.WhitePoint+_Anonymous_e__Union,
+    CHROMATICITY: {"kind":"Int32"},
+    TEMPERATURE: {"kind":"Int32"},
+    D65: {"kind":"Int32"},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: DisplayID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DisplayID = extern struct {
+    targetAdapterID: Windows.Win32.Kernel.LUID,
+    sourceInfoID: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DisplayStateID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DisplayStateID = extern struct {
+    profileID: {"kind":"UInt32"},
+    transformID: {"kind":"UInt32"},
+    whitepointID: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DisplayTransformLut
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DisplayTransformLut = extern struct {
+    red: {"kind":"Array","child": {"kind":"UInt16"}},
+    green: {"kind":"Array","child": {"kind":"UInt16"}},
+    blue: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetICMMode(
+    hdc: Windows.Win32.Gdi.HDC,
+    mode: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CheckColorsInGamut(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpRGBTriple: {"kind""Ptr","child":Windows.Win32.Gdi.RGBTRIPLE},
+    dlpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    nCount: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetColorSpace(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetLogColorSpaceA(
+    hColorSpace: Windows.Win32.Gdi.HCOLORSPACE,
+    lpBuffer: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.LOGCOLORSPACEA},
+    nSize: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetLogColorSpaceW(
+    hColorSpace: Windows.Win32.Gdi.HCOLORSPACE,
+    lpBuffer: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.LOGCOLORSPACEW},
+    nSize: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateColorSpaceA(
+    lplcs: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.LOGCOLORSPACEA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateColorSpaceW(
+    lplcs: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.LOGCOLORSPACEW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetColorSpace(
+    hdc: Windows.Win32.Gdi.HDC,
+    hcs: Windows.Win32.Gdi.HCOLORSPACE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn DeleteColorSpace(
+    hcs: Windows.Win32.Gdi.HCOLORSPACE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetICMProfileA(
+    hdc: Windows.Win32.Gdi.HDC,
+    pBufSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pszFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetICMProfileW(
+    hdc: Windows.Win32.Gdi.HDC,
+    pBufSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pszFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetICMProfileA(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetICMProfileW(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetDeviceGammaRamp(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpRamp: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetDeviceGammaRamp(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpRamp: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn ColorMatchToTarget(
+    hdc: Windows.Win32.Gdi.HDC,
+    hdcTarget: Windows.Win32.Gdi.HDC,
+    action: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EnumICMProfilesA(
+    hdc: Windows.Win32.Gdi.HDC,
+    proc: Windows.Win32.WindowsColorSystem.ICMENUMPROCA,
+    param2: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EnumICMProfilesW(
+    hdc: Windows.Win32.Gdi.HDC,
+    proc: Windows.Win32.WindowsColorSystem.ICMENUMPROCW,
+    param2: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn UpdateICMRegKeyA(
+    reserved: {"kind":"UInt32"},
+    lpszCMID: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    command: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn UpdateICMRegKeyW(
+    reserved: {"kind":"UInt32"},
+    lpszCMID: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    command: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn ColorCorrectPalette(
+    hdc: Windows.Win32.Gdi.HDC,
+    hPal: Windows.Win32.Gdi.HPALETTE,
+    deFirst: {"kind":"UInt32"},
+    num: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn OpenColorProfileA(
+    pProfile: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.PROFILE},
+    dwDesiredAccess: {"kind":"UInt32"},
+    dwShareMode: {"kind":"UInt32"},
+    dwCreationMode: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn OpenColorProfileW(
+    pProfile: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.PROFILE},
+    dwDesiredAccess: {"kind":"UInt32"},
+    dwShareMode: {"kind":"UInt32"},
+    dwCreationMode: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn CloseColorProfile(
+    hProfile: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn GetColorProfileFromHandle(
+    hProfile: {"kind":"IntPtr"},
+    pProfile: {"kind""Ptr","child":{"kind":"Byte"}},
+    pcbProfile: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn IsColorProfileValid(
+    hProfile: {"kind":"IntPtr"},
+    pbValid: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn CreateProfileFromLogColorSpaceA(
+    pLogColorSpace: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.LOGCOLORSPACEA},
+    pProfile: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn CreateProfileFromLogColorSpaceW(
+    pLogColorSpace: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.LOGCOLORSPACEW},
+    pProfile: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn GetCountColorProfileElements(
+    hProfile: {"kind":"IntPtr"},
+    pnElementCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn GetColorProfileHeader(
+    hProfile: {"kind":"IntPtr"},
+    pHeader: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.PROFILEHEADER},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn GetColorProfileElementTag(
+    hProfile: {"kind":"IntPtr"},
+    dwIndex: {"kind":"UInt32"},
+    pTag: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn IsColorProfileTagPresent(
+    hProfile: {"kind":"IntPtr"},
+    tag: {"kind":"UInt32"},
+    pbPresent: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn GetColorProfileElement(
+    hProfile: {"kind":"IntPtr"},
+    tag: {"kind":"UInt32"},
+    dwOffset: {"kind":"UInt32"},
+    pcbElement: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pElement: {"kind""Ptr","child":{"kind":"Void"}},
+    pbReference: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn SetColorProfileHeader(
+    hProfile: {"kind":"IntPtr"},
+    pHeader: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.PROFILEHEADER},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn SetColorProfileElementSize(
+    hProfile: {"kind":"IntPtr"},
+    tagType: {"kind":"UInt32"},
+    pcbElement: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn SetColorProfileElement(
+    hProfile: {"kind":"IntPtr"},
+    tag: {"kind":"UInt32"},
+    dwOffset: {"kind":"UInt32"},
+    pcbElement: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pElement: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn SetColorProfileElementReference(
+    hProfile: {"kind":"IntPtr"},
+    newTag: {"kind":"UInt32"},
+    refTag: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn GetPS2ColorSpaceArray(
+    hProfile: {"kind":"IntPtr"},
+    dwIntent: {"kind":"UInt32"},
+    dwCSAType: {"kind":"UInt32"},
+    pPS2ColorSpaceArray: {"kind""Ptr","child":{"kind":"Byte"}},
+    pcbPS2ColorSpaceArray: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pbBinary: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn GetPS2ColorRenderingIntent(
+    hProfile: {"kind":"IntPtr"},
+    dwIntent: {"kind":"UInt32"},
+    pBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    pcbPS2ColorRenderingIntent: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn GetPS2ColorRenderingDictionary(
+    hProfile: {"kind":"IntPtr"},
+    dwIntent: {"kind":"UInt32"},
+    pPS2ColorRenderingDictionary: {"kind""Ptr","child":{"kind":"Byte"}},
+    pcbPS2ColorRenderingDictionary: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pbBinary: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn GetNamedProfileInfo(
+    hProfile: {"kind":"IntPtr"},
+    pNamedProfileInfo: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.NAMED_PROFILE_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn ConvertColorNameToIndex(
+    hProfile: {"kind":"IntPtr"},
+    paColorName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    paIndex: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwCount: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn ConvertIndexToColorName(
+    hProfile: {"kind":"IntPtr"},
+    paIndex: {"kind""Ptr","child":{"kind":"UInt32"}},
+    paColorName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    dwCount: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn CreateDeviceLinkProfile(
+    hProfile: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    nProfiles: {"kind":"UInt32"},
+    padwIntent: {"kind""Ptr","child":{"kind":"UInt32"}},
+    nIntents: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pProfileData: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    indexPreferredCMM: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn CreateColorTransformA(
+    pLogColorSpace: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.LOGCOLORSPACEA},
+    hDestProfile: {"kind":"IntPtr"},
+    hTargetProfile: {"kind":"IntPtr"},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn CreateColorTransformW(
+    pLogColorSpace: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.LOGCOLORSPACEW},
+    hDestProfile: {"kind":"IntPtr"},
+    hTargetProfile: {"kind":"IntPtr"},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn CreateMultiProfileTransform(
+    pahProfiles: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    nProfiles: {"kind":"UInt32"},
+    padwIntent: {"kind""Ptr","child":{"kind":"UInt32"}},
+    nIntents: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    indexPreferredCMM: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn DeleteColorTransform(
+    hxform: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn TranslateBitmapBits(
+    hColorTransform: {"kind":"IntPtr"},
+    pSrcBits: {"kind""Ptr","child":{"kind":"Void"}},
+    bmInput: Windows.Win32.WindowsColorSystem.BMFORMAT,
+    dwWidth: {"kind":"UInt32"},
+    dwHeight: {"kind":"UInt32"},
+    dwInputStride: {"kind":"UInt32"},
+    pDestBits: {"kind""Ptr","child":{"kind":"Void"}},
+    bmOutput: Windows.Win32.WindowsColorSystem.BMFORMAT,
+    dwOutputStride: {"kind":"UInt32"},
+    pfnCallBack: Windows.Win32.WindowsColorSystem.PBMCALLBACKFN,
+    ulCallbackData: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn CheckBitmapBits(
+    hColorTransform: {"kind":"IntPtr"},
+    pSrcBits: {"kind""Ptr","child":{"kind":"Void"}},
+    bmInput: Windows.Win32.WindowsColorSystem.BMFORMAT,
+    dwWidth: {"kind":"UInt32"},
+    dwHeight: {"kind":"UInt32"},
+    dwStride: {"kind":"UInt32"},
+    paResult: {"kind""Ptr","child":{"kind":"Byte"}},
+    pfnCallback: Windows.Win32.WindowsColorSystem.PBMCALLBACKFN,
+    lpCallbackData: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn TranslateColors(
+    hColorTransform: {"kind":"IntPtr"},
+    paInputColors: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.COLOR},
+    nColors: {"kind":"UInt32"},
+    ctInput: Windows.Win32.WindowsColorSystem.COLORTYPE,
+    paOutputColors: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.COLOR},
+    ctOutput: Windows.Win32.WindowsColorSystem.COLORTYPE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn CheckColors(
+    hColorTransform: {"kind":"IntPtr"},
+    paInputColors: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.COLOR},
+    nColors: {"kind":"UInt32"},
+    ctInput: Windows.Win32.WindowsColorSystem.COLORTYPE,
+    paResult: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn GetCMMInfo(
+    hColorTransform: {"kind":"IntPtr"},
+    param1: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn RegisterCMMA(
+    pMachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    cmmID: {"kind":"UInt32"},
+    pCMMdll: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn RegisterCMMW(
+    pMachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cmmID: {"kind":"UInt32"},
+    pCMMdll: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn UnregisterCMMA(
+    pMachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    cmmID: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn UnregisterCMMW(
+    pMachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cmmID: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn SelectCMM(
+    dwCMMType: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn GetColorDirectoryA(
+    pMachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    pdwSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn GetColorDirectoryW(
+    pMachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pdwSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn InstallColorProfileA(
+    pMachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pProfileName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn InstallColorProfileW(
+    pMachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pProfileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn UninstallColorProfileA(
+    pMachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pProfileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    bDelete: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn UninstallColorProfileW(
+    pMachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pProfileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    bDelete: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn EnumColorProfilesA(
+    pMachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pEnumRecord: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.ENUMTYPEA},
+    pEnumerationBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    pdwSizeOfEnumerationBuffer: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pnProfiles: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn EnumColorProfilesW(
+    pMachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pEnumRecord: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.ENUMTYPEW},
+    pEnumerationBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    pdwSizeOfEnumerationBuffer: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pnProfiles: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn SetStandardColorSpaceProfileA(
+    pMachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwProfileID: {"kind":"UInt32"},
+    pProfilename: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn SetStandardColorSpaceProfileW(
+    pMachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwProfileID: {"kind":"UInt32"},
+    pProfileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn GetStandardColorSpaceProfileA(
+    pMachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwSCS: {"kind":"UInt32"},
+    pBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcbSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn GetStandardColorSpaceProfileW(
+    pMachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwSCS: {"kind":"UInt32"},
+    pBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcbSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn AssociateColorProfileWithDeviceA(
+    pMachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pProfileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pDeviceName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn AssociateColorProfileWithDeviceW(
+    pMachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pProfileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pDeviceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn DisassociateColorProfileFromDeviceA(
+    pMachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pProfileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pDeviceName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn DisassociateColorProfileFromDeviceW(
+    pMachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pProfileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pDeviceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ICMUI" fn SetupColorMatchingW(
+    pcms: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.COLORMATCHSETUPW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ICMUI" fn SetupColorMatchingA(
+    pcms: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.COLORMATCHSETUPA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn WcsAssociateColorProfileWithDevice(
+    scope: Windows.Win32.WindowsColorSystem.WCS_PROFILE_MANAGEMENT_SCOPE,
+    pProfileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pDeviceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn WcsDisassociateColorProfileFromDevice(
+    scope: Windows.Win32.WindowsColorSystem.WCS_PROFILE_MANAGEMENT_SCOPE,
+    pProfileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pDeviceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn WcsEnumColorProfilesSize(
+    scope: Windows.Win32.WindowsColorSystem.WCS_PROFILE_MANAGEMENT_SCOPE,
+    pEnumRecord: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.ENUMTYPEW},
+    pdwSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn WcsEnumColorProfiles(
+    scope: Windows.Win32.WindowsColorSystem.WCS_PROFILE_MANAGEMENT_SCOPE,
+    pEnumRecord: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.ENUMTYPEW},
+    pBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwSize: {"kind":"UInt32"},
+    pnProfiles: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn WcsGetDefaultColorProfileSize(
+    scope: Windows.Win32.WindowsColorSystem.WCS_PROFILE_MANAGEMENT_SCOPE,
+    pDeviceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cptColorProfileType: Windows.Win32.WindowsColorSystem.COLORPROFILETYPE,
+    cpstColorProfileSubType: Windows.Win32.WindowsColorSystem.COLORPROFILESUBTYPE,
+    dwProfileID: {"kind":"UInt32"},
+    pcbProfileName: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn WcsGetDefaultColorProfile(
+    scope: Windows.Win32.WindowsColorSystem.WCS_PROFILE_MANAGEMENT_SCOPE,
+    pDeviceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cptColorProfileType: Windows.Win32.WindowsColorSystem.COLORPROFILETYPE,
+    cpstColorProfileSubType: Windows.Win32.WindowsColorSystem.COLORPROFILESUBTYPE,
+    dwProfileID: {"kind":"UInt32"},
+    cbProfileName: {"kind":"UInt32"},
+    pProfileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn WcsSetDefaultColorProfile(
+    scope: Windows.Win32.WindowsColorSystem.WCS_PROFILE_MANAGEMENT_SCOPE,
+    pDeviceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cptColorProfileType: Windows.Win32.WindowsColorSystem.COLORPROFILETYPE,
+    cpstColorProfileSubType: Windows.Win32.WindowsColorSystem.COLORPROFILESUBTYPE,
+    dwProfileID: {"kind":"UInt32"},
+    pProfileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn WcsSetDefaultRenderingIntent(
+    scope: Windows.Win32.WindowsColorSystem.WCS_PROFILE_MANAGEMENT_SCOPE,
+    dwRenderingIntent: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn WcsGetDefaultRenderingIntent(
+    scope: Windows.Win32.WindowsColorSystem.WCS_PROFILE_MANAGEMENT_SCOPE,
+    pdwRenderingIntent: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn WcsGetUsePerUserProfiles(
+    pDeviceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwDeviceClass: {"kind":"UInt32"},
+    pUsePerUserProfiles: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn WcsSetUsePerUserProfiles(
+    pDeviceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwDeviceClass: {"kind":"UInt32"},
+    usePerUserProfiles: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn WcsTranslateColors(
+    hColorTransform: {"kind":"IntPtr"},
+    nColors: {"kind":"UInt32"},
+    nInputChannels: {"kind":"UInt32"},
+    cdtInput: Windows.Win32.WindowsColorSystem.COLORDATATYPE,
+    cbInput: {"kind":"UInt32"},
+    pInputData: {"kind""Ptr","child":{"kind":"Void"}},
+    nOutputChannels: {"kind":"UInt32"},
+    cdtOutput: Windows.Win32.WindowsColorSystem.COLORDATATYPE,
+    cbOutput: {"kind":"UInt32"},
+    pOutputData: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn WcsCheckColors(
+    hColorTransform: {"kind":"IntPtr"},
+    nColors: {"kind":"UInt32"},
+    nInputChannels: {"kind":"UInt32"},
+    cdtInput: Windows.Win32.WindowsColorSystem.COLORDATATYPE,
+    cbInput: {"kind":"UInt32"},
+    pInputData: {"kind""Ptr","child":{"kind":"Void"}},
+    paResult: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ICM32" fn CMCheckColors(
+    hcmTransform: {"kind":"IntPtr"},
+    lpaInputColors: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.COLOR},
+    nColors: {"kind":"UInt32"},
+    ctInput: Windows.Win32.WindowsColorSystem.COLORTYPE,
+    lpaResult: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ICM32" fn CMCheckRGBs(
+    hcmTransform: {"kind":"IntPtr"},
+    lpSrcBits: {"kind""Ptr","child":{"kind":"Void"}},
+    bmInput: Windows.Win32.WindowsColorSystem.BMFORMAT,
+    dwWidth: {"kind":"UInt32"},
+    dwHeight: {"kind":"UInt32"},
+    dwStride: {"kind":"UInt32"},
+    lpaResult: {"kind""Ptr","child":{"kind":"Byte"}},
+    pfnCallback: Windows.Win32.WindowsColorSystem.PBMCALLBACKFN,
+    ulCallbackData: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ICM32" fn CMConvertColorNameToIndex(
+    hProfile: {"kind":"IntPtr"},
+    paColorName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    paIndex: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwCount: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ICM32" fn CMConvertIndexToColorName(
+    hProfile: {"kind":"IntPtr"},
+    paIndex: {"kind""Ptr","child":{"kind":"UInt32"}},
+    paColorName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    dwCount: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ICM32" fn CMCreateDeviceLinkProfile(
+    pahProfiles: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    nProfiles: {"kind":"UInt32"},
+    padwIntents: {"kind""Ptr","child":{"kind":"UInt32"}},
+    nIntents: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    lpProfileData: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ICM32" fn CMCreateMultiProfileTransform(
+    pahProfiles: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    nProfiles: {"kind":"UInt32"},
+    padwIntents: {"kind""Ptr","child":{"kind":"UInt32"}},
+    nIntents: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ICM32" fn CMCreateProfileW(
+    lpColorSpace: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.LOGCOLORSPACEW},
+    lpProfileData: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ICM32" fn CMCreateTransform(
+    lpColorSpace: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.LOGCOLORSPACEA},
+    lpDevCharacter: {"kind""Ptr","child":{"kind":"Void"}},
+    lpTargetDevCharacter: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ICM32" fn CMCreateTransformW(
+    lpColorSpace: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.LOGCOLORSPACEW},
+    lpDevCharacter: {"kind""Ptr","child":{"kind":"Void"}},
+    lpTargetDevCharacter: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ICM32" fn CMCreateTransformExt(
+    lpColorSpace: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.LOGCOLORSPACEA},
+    lpDevCharacter: {"kind""Ptr","child":{"kind":"Void"}},
+    lpTargetDevCharacter: {"kind""Ptr","child":{"kind":"Void"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ICM32" fn CMCheckColorsInGamut(
+    hcmTransform: {"kind":"IntPtr"},
+    lpaRGBTriple: {"kind""Ptr","child":Windows.Win32.Gdi.RGBTRIPLE},
+    lpaResult: {"kind""Ptr","child":{"kind":"Byte"}},
+    nCount: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ICM32" fn CMCreateProfile(
+    lpColorSpace: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.LOGCOLORSPACEA},
+    lpProfileData: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ICM32" fn CMTranslateRGB(
+    hcmTransform: {"kind":"IntPtr"},
+    ColorRef: {"kind":"UInt32"},
+    lpColorRef: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ICM32" fn CMTranslateRGBs(
+    hcmTransform: {"kind":"IntPtr"},
+    lpSrcBits: {"kind""Ptr","child":{"kind":"Void"}},
+    bmInput: Windows.Win32.WindowsColorSystem.BMFORMAT,
+    dwWidth: {"kind":"UInt32"},
+    dwHeight: {"kind":"UInt32"},
+    dwStride: {"kind":"UInt32"},
+    lpDestBits: {"kind""Ptr","child":{"kind":"Void"}},
+    bmOutput: Windows.Win32.WindowsColorSystem.BMFORMAT,
+    dwTranslateDirection: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ICM32" fn CMCreateTransformExtW(
+    lpColorSpace: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.LOGCOLORSPACEW},
+    lpDevCharacter: {"kind""Ptr","child":{"kind":"Void"}},
+    lpTargetDevCharacter: {"kind""Ptr","child":{"kind":"Void"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ICM32" fn CMDeleteTransform(
+    hcmTransform: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ICM32" fn CMGetInfo(
+    dwInfo: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ICM32" fn CMGetNamedProfileInfo(
+    hProfile: {"kind":"IntPtr"},
+    pNamedProfileInfo: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.NAMED_PROFILE_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ICM32" fn CMIsProfileValid(
+    hProfile: {"kind":"IntPtr"},
+    lpbValid: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ICM32" fn CMTranslateColors(
+    hcmTransform: {"kind":"IntPtr"},
+    lpaInputColors: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.COLOR},
+    nColors: {"kind":"UInt32"},
+    ctInput: Windows.Win32.WindowsColorSystem.COLORTYPE,
+    lpaOutputColors: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.COLOR},
+    ctOutput: Windows.Win32.WindowsColorSystem.COLORTYPE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ICM32" fn CMTranslateRGBsExt(
+    hcmTransform: {"kind":"IntPtr"},
+    lpSrcBits: {"kind""Ptr","child":{"kind":"Void"}},
+    bmInput: Windows.Win32.WindowsColorSystem.BMFORMAT,
+    dwWidth: {"kind":"UInt32"},
+    dwHeight: {"kind":"UInt32"},
+    dwInputStride: {"kind":"UInt32"},
+    lpDestBits: {"kind""Ptr","child":{"kind":"Void"}},
+    bmOutput: Windows.Win32.WindowsColorSystem.BMFORMAT,
+    dwOutputStride: {"kind":"UInt32"},
+    lpfnCallback: Windows.Win32.WindowsColorSystem.LPBMCALLBACKFN,
+    ulCallbackData: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn WcsOpenColorProfileA(
+    pCDMPProfile: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.PROFILE},
+    pCAMPProfile: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.PROFILE},
+    pGMMPProfile: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.PROFILE},
+    dwDesireAccess: {"kind":"UInt32"},
+    dwShareMode: {"kind":"UInt32"},
+    dwCreationMode: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn WcsOpenColorProfileW(
+    pCDMPProfile: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.PROFILE},
+    pCAMPProfile: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.PROFILE},
+    pGMMPProfile: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.PROFILE},
+    dwDesireAccess: {"kind":"UInt32"},
+    dwShareMode: {"kind":"UInt32"},
+    dwCreationMode: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn WcsCreateIccProfile(
+    hWcsProfile: {"kind":"IntPtr"},
+    dwOptions: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn WcsGetCalibrationManagementState(
+    pbIsEnabled: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn WcsSetCalibrationManagementState(
+    bIsEnabled: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn ColorAdapterGetSystemModifyWhitePointCaps(
+    whitePointAdjCapable: {"kind""Ptr","child":{"kind":"Int32"}},
+    isColorOverrideActive: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn ColorAdapterUpdateDisplayGamma(
+    displayID: Windows.Win32.WindowsColorSystem.DisplayID,
+    displayTransform: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.DisplayTransformLut},
+    internal: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn ColorAdapterUpdateDeviceProfile(
+    displayID: Windows.Win32.WindowsColorSystem.DisplayID,
+    profName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn ColorAdapterGetDisplayCurrentStateID(
+    displayID: Windows.Win32.WindowsColorSystem.DisplayID,
+    displayStateID: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.DisplayStateID},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn ColorAdapterGetDisplayTransformData(
+    displayID: Windows.Win32.WindowsColorSystem.DisplayID,
+    displayTransformLut: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.DisplayTransformLut},
+    transformID: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn ColorAdapterGetDisplayTargetWhitePoint(
+    displayID: Windows.Win32.WindowsColorSystem.DisplayID,
+    wtpt: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.WhitePoint},
+    transitionTime: {"kind""Ptr","child":{"kind":"UInt32"}},
+    whitepointID: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn ColorAdapterGetDisplayProfile(
+    displayID: Windows.Win32.WindowsColorSystem.DisplayID,
+    displayProfile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    profileID: {"kind""Ptr","child":{"kind":"UInt32"}},
+    bUseAccurate: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn ColorAdapterGetCurrentProfileCalibration(
+    displayID: Windows.Win32.WindowsColorSystem.DisplayID,
+    maxCalibrationBlobSize: {"kind":"UInt32"},
+    blobSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    calibrationBlob: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn ColorAdapterRegisterOEMColorService(
+    registration: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn ColorAdapterUnregisterOEMColorService(
+    registration: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn ColorProfileAddDisplayAssociation(
+    scope: Windows.Win32.WindowsColorSystem.WCS_PROFILE_MANAGEMENT_SCOPE,
+    profileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    targetAdapterID: Windows.Win32.Kernel.LUID,
+    sourceID: {"kind":"UInt32"},
+    setAsDefault: Windows.Win32.SystemServices.BOOL,
+    associateAsAdvancedColor: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn ColorProfileRemoveDisplayAssociation(
+    scope: Windows.Win32.WindowsColorSystem.WCS_PROFILE_MANAGEMENT_SCOPE,
+    profileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    targetAdapterID: Windows.Win32.Kernel.LUID,
+    sourceID: {"kind":"UInt32"},
+    dissociateAdvancedColor: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn ColorProfileSetDisplayDefaultAssociation(
+    scope: Windows.Win32.WindowsColorSystem.WCS_PROFILE_MANAGEMENT_SCOPE,
+    profileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    profileType: Windows.Win32.WindowsColorSystem.COLORPROFILETYPE,
+    profileSubType: Windows.Win32.WindowsColorSystem.COLORPROFILESUBTYPE,
+    targetAdapterID: Windows.Win32.Kernel.LUID,
+    sourceID: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn ColorProfileGetDisplayList(
+    scope: Windows.Win32.WindowsColorSystem.WCS_PROFILE_MANAGEMENT_SCOPE,
+    targetAdapterID: Windows.Win32.Kernel.LUID,
+    sourceID: {"kind":"UInt32"},
+    profileList: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}}},
+    profileCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn ColorProfileGetDisplayDefault(
+    scope: Windows.Win32.WindowsColorSystem.WCS_PROFILE_MANAGEMENT_SCOPE,
+    targetAdapterID: Windows.Win32.Kernel.LUID,
+    sourceID: {"kind":"UInt32"},
+    profileType: Windows.Win32.WindowsColorSystem.COLORPROFILETYPE,
+    profileSubType: Windows.Win32.WindowsColorSystem.COLORPROFILESUBTYPE,
+    profileName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mscms" fn ColorProfileGetDisplayUserScope(
+    targetAdapterID: Windows.Win32.Kernel.LUID,
+    sourceID: {"kind":"UInt32"},
+    scope: {"kind""Ptr","child":Windows.Win32.WindowsColorSystem.WCS_PROFILE_MANAGEMENT_SCOPE},
+],
+
+"unicode_aliases": [
+     "LOGCOLORSPACE"
+     "ICMENUMPROC"
+     "ENUMTYPE"
+     "PCMSCALLBACK"
+     "COLORMATCHSETUP"
+     "GetLogColorSpace"
+     "CreateColorSpace"
+     "GetICMProfile"
+     "SetICMProfile"
+     "EnumICMProfiles"
+     "UpdateICMRegKey"
+     "OpenColorProfile"
+     "CreateProfileFromLogColorSpace"
+     "CreateColorTransform"
+     "RegisterCMM"
+     "UnregisterCMM"
+     "GetColorDirectory"
+     "InstallColorProfile"
+     "UninstallColorProfile"
+     "EnumColorProfiles"
+     "SetStandardColorSpaceProfile"
+     "GetStandardColorSpaceProfile"
+     "AssociateColorProfileWithDevice"
+     "DisassociateColorProfileFromDevice"
+     "SetupColorMatching"
+     "WcsOpenColorProfile"
+]}

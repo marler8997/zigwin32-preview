@@ -1,0 +1,1213 @@
+﻿{
+"constants": [
+     {
+         "name": "CastingSourceInfo_Property_PreferredSourceUriScheme"
+        ,"type": {"kind":"String"}
+        ,"value": "PreferredSourceUriScheme"
+    }
+    ,{
+         "name": "CastingSourceInfo_Property_CastingTypes"
+        ,"type": {"kind":"String"}
+        ,"value": "CastingTypes"
+    }
+    ,{
+         "name": "CastingSourceInfo_Property_ProtectedMedia"
+        ,"type": {"kind":"String"}
+        ,"value": "ProtectedMedia"
+    }
+    ,{
+         "name": "InterfaceName_Windows_UI_Xaml_Interop_IBindableIterable"
+        ,"type": {"kind":"String"}
+        ,"value": "Windows.UI.Xaml.Interop.IBindableIterable"
+    }
+    ,{
+         "name": "InterfaceName_Windows_UI_Xaml_Interop_IBindableIterator"
+        ,"type": {"kind":"String"}
+        ,"value": "Windows.UI.Xaml.Interop.IBindableIterator"
+    }
+    ,{
+         "name": "InterfaceName_Windows_UI_Xaml_Interop_IBindableObservableVector"
+        ,"type": {"kind":"String"}
+        ,"value": "Windows.UI.Xaml.Interop.IBindableObservableVector"
+    }
+    ,{
+         "name": "InterfaceName_Windows_UI_Xaml_Interop_IBindableVector"
+        ,"type": {"kind":"String"}
+        ,"value": "Windows.UI.Xaml.Interop.IBindableVector"
+    }
+    ,{
+         "name": "InterfaceName_Windows_UI_Xaml_Interop_IBindableVectorView"
+        ,"type": {"kind":"String"}
+        ,"value": "Windows.UI.Xaml.Interop.IBindableVectorView"
+    }
+    ,{
+         "name": "InterfaceName_Windows_UI_Xaml_Interop_INotifyCollectionChanged"
+        ,"type": {"kind":"String"}
+        ,"value": "Windows.UI.Xaml.Interop.INotifyCollectionChanged"
+    }
+    ,{
+         "name": "InterfaceName_Windows_UI_Xaml_Interop_INotifyCollectionChangedEventArgs"
+        ,"type": {"kind":"String"}
+        ,"value": "Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgs"
+    }
+    ,{
+         "name": "InterfaceName_Windows_UI_Xaml_Interop_INotifyCollectionChangedEventArgsFactory"
+        ,"type": {"kind":"String"}
+        ,"value": "Windows.UI.Xaml.Interop.INotifyCollectionChangedEventArgsFactory"
+    }
+    ,{
+         "name": "RuntimeClass_Windows_UI_Xaml_Interop_NotifyCollectionChangedEventArgs"
+        ,"type": {"kind":"String"}
+        ,"value": "Windows.UI.Xaml.Interop.NotifyCollectionChangedEventArgs"
+    }
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: EventRegistrationToken
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EventRegistrationToken = extern struct {
+    value: {"kind":"Int64"},
+};
+// --------------------------------------------------------
+// Type: ACTIVATIONTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ACTIVATIONTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: IAgileReference
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAgileReference = *opaque{
+    // TODO: Method 'Resolve'
+};
+// --------------------------------------------------------
+// Type: ServerInformation
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ServerInformation = extern struct {
+    dwServerPid: {"kind":"UInt32"},
+    dwServerTid: {"kind":"UInt32"},
+    ui64ServerAddress: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: AgileReferenceOptions
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const AgileReferenceOptions = *opaque{
+};
+// --------------------------------------------------------
+// Type: IApartmentShutdown
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IApartmentShutdown = *opaque{
+    // TODO: Method 'OnUninitialize'
+};
+// --------------------------------------------------------
+// Type: HSTRING__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HSTRING__ = extern struct {
+    unused: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: HSTRING_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HSTRING_HEADER = extern struct {
+    Reserved: Windows.Win32.WinRT.HSTRING_HEADER+_Reserved_e__Union,
+    // --------------------------------------------------------
+    // Type: _Reserved_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Reserved_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: HSTRING_BUFFER__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HSTRING_BUFFER__ = extern struct {
+    unused: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: TrustLevel
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TrustLevel = *opaque{
+};
+// --------------------------------------------------------
+// Type: IInspectable
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IInspectable = *opaque{
+    // TODO: Method 'GetIids'
+    // TODO: Method 'GetRuntimeClassName'
+    // TODO: Method 'GetTrustLevel'
+};
+// --------------------------------------------------------
+// Type: IAccountsSettingsPaneInterop
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAccountsSettingsPaneInterop = *opaque{
+    // TODO: Method 'GetForWindow'
+    // TODO: Method 'ShowManageAccountsForWindowAsync'
+    // TODO: Method 'ShowAddAccountForWindowAsync'
+};
+// --------------------------------------------------------
+// Type: IAppServiceConnectionExtendedExecution
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppServiceConnectionExtendedExecution = *opaque{
+    // TODO: Method 'OpenForExtendedExecutionAsync'
+};
+// --------------------------------------------------------
+// Type: ICorrelationVectorSource
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICorrelationVectorSource = *opaque{
+    // TODO: Method 'get_CorrelationVector'
+};
+// --------------------------------------------------------
+// Type: CASTING_CONNECTION_ERROR_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CASTING_CONNECTION_ERROR_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CASTING_CONNECTION_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CASTING_CONNECTION_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: ICastingEventHandler
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICastingEventHandler = *opaque{
+    // TODO: Method 'OnStateChanged'
+    // TODO: Method 'OnError'
+};
+// --------------------------------------------------------
+// Type: ICastingController
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICastingController = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'Connect'
+    // TODO: Method 'Disconnect'
+    // TODO: Method 'Advise'
+    // TODO: Method 'UnAdvise'
+};
+// --------------------------------------------------------
+// Type: ICastingSourceInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICastingSourceInfo = *opaque{
+    // TODO: Method 'GetController'
+    // TODO: Method 'GetProperties'
+};
+// --------------------------------------------------------
+// Type: IDragDropManagerInterop
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDragDropManagerInterop = *opaque{
+    // TODO: Method 'GetForWindow'
+};
+// --------------------------------------------------------
+// Type: IInputPaneInterop
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IInputPaneInterop = *opaque{
+    // TODO: Method 'GetForWindow'
+};
+// --------------------------------------------------------
+// Type: IPlayToManagerInterop
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPlayToManagerInterop = *opaque{
+    // TODO: Method 'GetForWindow'
+    // TODO: Method 'ShowPlayToUIForWindow'
+};
+// --------------------------------------------------------
+// Type: IPrinting3DManagerInterop
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPrinting3DManagerInterop = *opaque{
+    // TODO: Method 'GetForWindow'
+    // TODO: Method 'ShowPrintUIForWindowAsync'
+};
+// --------------------------------------------------------
+// Type: IPrintManagerInterop
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPrintManagerInterop = *opaque{
+    // TODO: Method 'GetForWindow'
+    // TODO: Method 'ShowPrintUIForWindowAsync'
+};
+// --------------------------------------------------------
+// Type: ICorrelationVectorInformation
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICorrelationVectorInformation = *opaque{
+    // TODO: Method 'get_LastCorrelationVectorForThread'
+    // TODO: Method 'get_NextCorrelationVectorForThread'
+    // TODO: Method 'put_NextCorrelationVectorForThread'
+};
+// --------------------------------------------------------
+// Type: IUIViewSettingsInterop
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IUIViewSettingsInterop = *opaque{
+    // TODO: Method 'GetForWindow'
+};
+// --------------------------------------------------------
+// Type: IUserActivityInterop
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IUserActivityInterop = *opaque{
+    // TODO: Method 'CreateSessionForWindow'
+};
+// --------------------------------------------------------
+// Type: IUserActivitySourceHostInterop
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IUserActivitySourceHostInterop = *opaque{
+    // TODO: Method 'SetActivitySourceHost'
+};
+// --------------------------------------------------------
+// Type: IUserActivityRequestManagerInterop
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IUserActivityRequestManagerInterop = *opaque{
+    // TODO: Method 'GetForWindow'
+};
+// --------------------------------------------------------
+// Type: IUserConsentVerifierInterop
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IUserConsentVerifierInterop = *opaque{
+    // TODO: Method 'RequestVerificationForWindowAsync'
+};
+// --------------------------------------------------------
+// Type: IWebAuthenticationCoreManagerInterop
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWebAuthenticationCoreManagerInterop = *opaque{
+    // TODO: Method 'RequestTokenForWindowAsync'
+    // TODO: Method 'RequestTokenWithWebAccountForWindowAsync'
+};
+// --------------------------------------------------------
+// Type: PFN_PDF_CREATE_RENDERER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFN_PDF_CREATE_RENDERER = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDF_RENDER_PARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PDF_RENDER_PARAMS = extern struct {
+    SourceRect: Windows.Win32.Direct2D.D2D_RECT_F,
+    DestinationWidth: {"kind":"UInt32"},
+    DestinationHeight: {"kind":"UInt32"},
+    BackgroundColor: Windows.Win32.Dxgi.DXGI_RGBA,
+    IgnoreHighContrast: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: IPdfRendererNative
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPdfRendererNative = *opaque{
+    // TODO: Method 'RenderPageToSurface'
+    // TODO: Method 'RenderPageToDeviceContext'
+};
+// --------------------------------------------------------
+// Type: IDisplayDeviceInterop
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDisplayDeviceInterop = *opaque{
+    // TODO: Method 'CreateSharedHandle'
+    // TODO: Method 'OpenSharedHandle'
+};
+// --------------------------------------------------------
+// Type: IDisplayPathInterop
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDisplayPathInterop = *opaque{
+    // TODO: Method 'CreateSourcePresentationHandle'
+    // TODO: Method 'GetSourceId'
+};
+// --------------------------------------------------------
+// Type: PINSPECT_HSTRING_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PINSPECT_HSTRING_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PINSPECT_HSTRING_CALLBACK2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PINSPECT_HSTRING_CALLBACK2 = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IGraphicsCaptureItemInterop
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IGraphicsCaptureItemInterop = *opaque{
+    // TODO: Method 'CreateForWindow'
+    // TODO: Method 'CreateForMonitor'
+};
+// --------------------------------------------------------
+// Type: IDirect3DDxgiInterfaceAccess
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirect3DDxgiInterfaceAccess = *opaque{
+    // TODO: Method 'GetInterface'
+};
+// --------------------------------------------------------
+// Type: ISoftwareBitmapNative
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISoftwareBitmapNative = *opaque{
+    // TODO: Method 'GetData'
+};
+// --------------------------------------------------------
+// Type: ISoftwareBitmapNativeFactory
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISoftwareBitmapNativeFactory = *opaque{
+    // TODO: Method 'CreateFromWICBitmap'
+    // TODO: Method 'CreateFromMF2DBuffer2'
+};
+// --------------------------------------------------------
+// Type: IAudioFrameNative
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAudioFrameNative = *opaque{
+    // TODO: Method 'GetData'
+};
+// --------------------------------------------------------
+// Type: IVideoFrameNative
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IVideoFrameNative = *opaque{
+    // TODO: Method 'GetData'
+    // TODO: Method 'GetDevice'
+};
+// --------------------------------------------------------
+// Type: IAudioFrameNativeFactory
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAudioFrameNativeFactory = *opaque{
+    // TODO: Method 'CreateFromMFSample'
+};
+// --------------------------------------------------------
+// Type: IVideoFrameNativeFactory
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IVideoFrameNativeFactory = *opaque{
+    // TODO: Method 'CreateFromMFSample'
+};
+// --------------------------------------------------------
+// Type: ISurfaceImageSourceNative
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISurfaceImageSourceNative = *opaque{
+    // TODO: Method 'SetDevice'
+    // TODO: Method 'BeginDraw'
+    // TODO: Method 'EndDraw'
+};
+// --------------------------------------------------------
+// Type: IVirtualSurfaceUpdatesCallbackNative
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IVirtualSurfaceUpdatesCallbackNative = *opaque{
+    // TODO: Method 'UpdatesNeeded'
+};
+// --------------------------------------------------------
+// Type: IVirtualSurfaceImageSourceNative
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IVirtualSurfaceImageSourceNative = *opaque{
+    // TODO: Method 'Invalidate'
+    // TODO: Method 'GetUpdateRectCount'
+    // TODO: Method 'GetUpdateRects'
+    // TODO: Method 'GetVisibleBounds'
+    // TODO: Method 'RegisterForUpdatesNeeded'
+    // TODO: Method 'Resize'
+};
+// --------------------------------------------------------
+// Type: ISwapChainBackgroundPanelNative
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISwapChainBackgroundPanelNative = *opaque{
+    // TODO: Method 'SetSwapChain'
+};
+// --------------------------------------------------------
+// Type: ISurfaceImageSourceManagerNative
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISurfaceImageSourceManagerNative = *opaque{
+    // TODO: Method 'FlushAllSurfacesWithDevice'
+};
+// --------------------------------------------------------
+// Type: ISurfaceImageSourceNativeWithD2D
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISurfaceImageSourceNativeWithD2D = *opaque{
+    // TODO: Method 'SetDevice'
+    // TODO: Method 'BeginDraw'
+    // TODO: Method 'EndDraw'
+    // TODO: Method 'SuspendDraw'
+    // TODO: Method 'ResumeDraw'
+};
+// --------------------------------------------------------
+// Type: ISwapChainPanelNative
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISwapChainPanelNative = *opaque{
+    // TODO: Method 'SetSwapChain'
+};
+// --------------------------------------------------------
+// Type: ISwapChainPanelNative2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISwapChainPanelNative2 = *opaque{
+    // TODO: Method 'SetSwapChainHandle'
+};
+// --------------------------------------------------------
+// Type: GRAPHICS_EFFECT_PROPERTY_MAPPING
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const GRAPHICS_EFFECT_PROPERTY_MAPPING = *opaque{
+};
+// --------------------------------------------------------
+// Type: IGraphicsEffectD2D1Interop
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IGraphicsEffectD2D1Interop = *opaque{
+    // TODO: Method 'GetEffectId'
+    // TODO: Method 'GetNamedPropertyMapping'
+    // TODO: Method 'GetPropertyCount'
+    // TODO: Method 'GetProperty'
+    // TODO: Method 'GetSource'
+    // TODO: Method 'GetSourceCount'
+};
+// --------------------------------------------------------
+// Type: IGeometrySource2DInterop
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IGeometrySource2DInterop = *opaque{
+    // TODO: Method 'GetGeometry'
+    // TODO: Method 'TryGetGeometryUsingFactory'
+};
+// --------------------------------------------------------
+// Type: ICompositionDrawingSurfaceInterop
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICompositionDrawingSurfaceInterop = *opaque{
+    // TODO: Method 'BeginDraw'
+    // TODO: Method 'EndDraw'
+    // TODO: Method 'Resize'
+    // TODO: Method 'Scroll'
+    // TODO: Method 'ResumeDraw'
+    // TODO: Method 'SuspendDraw'
+};
+// --------------------------------------------------------
+// Type: ICompositionDrawingSurfaceInterop2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICompositionDrawingSurfaceInterop2 = *opaque{
+    // TODO: Method 'CopySurface'
+};
+// --------------------------------------------------------
+// Type: ICompositionGraphicsDeviceInterop
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICompositionGraphicsDeviceInterop = *opaque{
+    // TODO: Method 'GetRenderingDevice'
+    // TODO: Method 'SetRenderingDevice'
+};
+// --------------------------------------------------------
+// Type: ICompositorInterop
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICompositorInterop = *opaque{
+    // TODO: Method 'CreateCompositionSurfaceForHandle'
+    // TODO: Method 'CreateCompositionSurfaceForSwapChain'
+    // TODO: Method 'CreateGraphicsDevice'
+};
+// --------------------------------------------------------
+// Type: ISwapChainInterop
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISwapChainInterop = *opaque{
+    // TODO: Method 'SetSwapChain'
+};
+// --------------------------------------------------------
+// Type: IVisualInteractionSourceInterop
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IVisualInteractionSourceInterop = *opaque{
+    // TODO: Method 'TryRedirectForManipulation'
+};
+// --------------------------------------------------------
+// Type: ICompositionCapabilitiesInteropFactory
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICompositionCapabilitiesInteropFactory = *opaque{
+    // TODO: Method 'GetForWindow'
+};
+// --------------------------------------------------------
+// Type: ICompositorDesktopInterop
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICompositorDesktopInterop = *opaque{
+    // TODO: Method 'CreateDesktopWindowTarget'
+    // TODO: Method 'EnsureOnThread'
+};
+// --------------------------------------------------------
+// Type: IDesktopWindowTargetInterop
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDesktopWindowTargetInterop = *opaque{
+    // TODO: Method 'get_Hwnd'
+};
+// --------------------------------------------------------
+// Type: IDesktopWindowContentBridgeInterop
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDesktopWindowContentBridgeInterop = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'get_Hwnd'
+    // TODO: Method 'get_AppliedScaleFactor'
+};
+// --------------------------------------------------------
+// Type: NotifyCollectionChangedEventArgs
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const NotifyCollectionChangedEventArgs = opaque {
+};
+// --------------------------------------------------------
+// Type: NotifyCollectionChangedAction
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NotifyCollectionChangedAction = *opaque{
+};
+// --------------------------------------------------------
+// Type: TypeKind
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TypeKind = *opaque{
+};
+// --------------------------------------------------------
+// Type: TypeName
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TypeName = extern struct {
+    Name: {"kind":"IntPtr"},
+    Kind: Windows.Win32.WinRT.TypeKind,
+};
+// --------------------------------------------------------
+// Type: IBindableVectorChangedEventHandler
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IBindableVectorChangedEventHandler = *opaque{
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: INotifyCollectionChangedEventHandler
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INotifyCollectionChangedEventHandler = *opaque{
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IBindableIterable
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IBindableIterable = *opaque{
+    // TODO: Method 'First'
+};
+// --------------------------------------------------------
+// Type: IBindableIterator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IBindableIterator = *opaque{
+    // TODO: Method 'get_Current'
+    // TODO: Method 'get_HasCurrent'
+    // TODO: Method 'MoveNext'
+};
+// --------------------------------------------------------
+// Type: IBindableObservableVector
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IBindableObservableVector = *opaque{
+    // TODO: Method 'add_VectorChanged'
+    // TODO: Method 'remove_VectorChanged'
+};
+// --------------------------------------------------------
+// Type: IBindableVector
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IBindableVector = *opaque{
+    // TODO: Method 'GetAt'
+    // TODO: Method 'get_Size'
+    // TODO: Method 'GetView'
+    // TODO: Method 'IndexOf'
+    // TODO: Method 'SetAt'
+    // TODO: Method 'InsertAt'
+    // TODO: Method 'RemoveAt'
+    // TODO: Method 'Append'
+    // TODO: Method 'RemoveAtEnd'
+    // TODO: Method 'Clear'
+};
+// --------------------------------------------------------
+// Type: IBindableVectorView
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IBindableVectorView = *opaque{
+    // TODO: Method 'GetAt'
+    // TODO: Method 'get_Size'
+    // TODO: Method 'IndexOf'
+};
+// --------------------------------------------------------
+// Type: INotifyCollectionChanged
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INotifyCollectionChanged = *opaque{
+    // TODO: Method 'add_CollectionChanged'
+    // TODO: Method 'remove_CollectionChanged'
+};
+// --------------------------------------------------------
+// Type: INotifyCollectionChangedEventArgs
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INotifyCollectionChangedEventArgs = *opaque{
+    // TODO: Method 'get_Action'
+    // TODO: Method 'get_NewItems'
+    // TODO: Method 'get_OldItems'
+    // TODO: Method 'get_NewStartingIndex'
+    // TODO: Method 'get_OldStartingIndex'
+};
+// --------------------------------------------------------
+// Type: INotifyCollectionChangedEventArgsFactory
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INotifyCollectionChangedEventArgsFactory = *opaque{
+    // TODO: Method 'CreateInstanceWithAllParameters'
+};
+// --------------------------------------------------------
+// Type: IRestrictedErrorInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRestrictedErrorInfo = *opaque{
+    // TODO: Method 'GetErrorDetails'
+    // TODO: Method 'GetReference'
+};
+// --------------------------------------------------------
+// Type: ILanguageExceptionErrorInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ILanguageExceptionErrorInfo = *opaque{
+    // TODO: Method 'GetLanguageException'
+};
+// --------------------------------------------------------
+// Type: ILanguageExceptionTransform
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ILanguageExceptionTransform = *opaque{
+    // TODO: Method 'GetTransformedRestrictedErrorInfo'
+};
+// --------------------------------------------------------
+// Type: ILanguageExceptionStackBackTrace
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ILanguageExceptionStackBackTrace = *opaque{
+    // TODO: Method 'GetStackBackTrace'
+};
+// --------------------------------------------------------
+// Type: ILanguageExceptionErrorInfo2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ILanguageExceptionErrorInfo2 = *opaque{
+    // TODO: Method 'GetPreviousLanguageExceptionErrorInfo'
+    // TODO: Method 'CapturePropagationContext'
+    // TODO: Method 'GetPropagationContextHead'
+};
+// --------------------------------------------------------
+// Type: RO_INIT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const RO_INIT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: __AnonymousRecord_roapi_L45_C9
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const __AnonymousRecord_roapi_L45_C9 = opaque {
+};
+// --------------------------------------------------------
+// Type: APARTMENT_SHUTDOWN_REGISTRATION_COOKIE__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const APARTMENT_SHUTDOWN_REGISTRATION_COOKIE__ = extern struct {
+    unused: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: IBufferByteAccess
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IBufferByteAccess = *opaque{
+    // TODO: Method 'Buffer'
+};
+// --------------------------------------------------------
+// Type: RO_ERROR_REPORTING_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const RO_ERROR_REPORTING_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PINSPECT_MEMORY_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PINSPECT_MEMORY_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: ROPARAMIIDHANDLE__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ROPARAMIIDHANDLE__ = extern struct {
+    unused: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: IRoSimpleMetaDataBuilder
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRoSimpleMetaDataBuilder = *opaque{
+    // TODO: Method 'SetWinRtInterface'
+    // TODO: Method 'SetDelegate'
+    // TODO: Method 'SetInterfaceGroupSimpleDefault'
+    // TODO: Method 'SetInterfaceGroupParameterizedDefault'
+    // TODO: Method 'SetRuntimeClassSimpleDefault'
+    // TODO: Method 'SetRuntimeClassParameterizedDefault'
+    // TODO: Method 'SetStruct'
+    // TODO: Method 'SetEnum'
+    // TODO: Method 'SetParameterizedInterface'
+    // TODO: Method 'SetParameterizedDelegate'
+};
+// --------------------------------------------------------
+// Type: IRoMetaDataLocator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRoMetaDataLocator = *opaque{
+    // TODO: Method 'Locate'
+};
+// --------------------------------------------------------
+// Type: BSOS_OPTIONS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const BSOS_OPTIONS = *opaque{
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn CoDecodeProxy(
+    dwClientPid: {"kind":"UInt32"},
+    ui64ProxyAddress: {"kind":"UInt64"},
+    pServerInformation: {"kind""Ptr","child":Windows.Win32.WinRT.ServerInformation},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn RoGetAgileReference(
+    options: Windows.Win32.WinRT.AgileReferenceOptions,
+    riid: {"kind""Ptr","child":Guid},
+    pUnk: Windows.Win32.Com.IUnknown,
+    ppAgileReference: {"kind""Ptr","child":Windows.Win32.WinRT.IAgileReference},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-string-l1-1-0" fn HSTRING_UserSize(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind":"UInt32"},
+    param2: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-string-l1-1-0" fn HSTRING_UserMarshal(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":{"kind":"Byte"}},
+    param2: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-string-l1-1-0" fn HSTRING_UserUnmarshal(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":{"kind":"Byte"}},
+    param2: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-string-l1-1-0" fn HSTRING_UserFree(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-string-l1-1-0" fn HSTRING_UserSize64(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind":"UInt32"},
+    param2: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-string-l1-1-0" fn HSTRING_UserMarshal64(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":{"kind":"Byte"}},
+    param2: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-string-l1-1-0" fn HSTRING_UserUnmarshal64(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":{"kind":"Byte"}},
+    param2: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-string-l1-1-0" fn HSTRING_UserFree64(
+    param0: {"kind""Ptr","child":{"kind":"UInt32"}},
+    param1: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "Windows" fn PdfCreateRenderer(
+    pDevice: Windows.Win32.Dxgi.IDXGIDevice,
+    ppRenderer: {"kind""Ptr","child":Windows.Win32.WinRT.IPdfRendererNative},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-string-l1-1-0" fn WindowsCreateString(
+    sourceString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    length: {"kind":"UInt32"},
+    string: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-string-l1-1-0" fn WindowsCreateStringReference(
+    sourceString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    length: {"kind":"UInt32"},
+    hstringHeader: {"kind""Ptr","child":Windows.Win32.WinRT.HSTRING_HEADER},
+    string: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-string-l1-1-0" fn WindowsDeleteString(
+    string: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-string-l1-1-0" fn WindowsDuplicateString(
+    string: {"kind":"IntPtr"},
+    newString: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-string-l1-1-0" fn WindowsGetStringLen(
+    string: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-string-l1-1-0" fn WindowsGetStringRawBuffer(
+    string: {"kind":"IntPtr"},
+    length: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-string-l1-1-0" fn WindowsIsStringEmpty(
+    string: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-string-l1-1-0" fn WindowsStringHasEmbeddedNull(
+    string: {"kind":"IntPtr"},
+    hasEmbedNull: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-string-l1-1-0" fn WindowsCompareStringOrdinal(
+    string1: {"kind":"IntPtr"},
+    string2: {"kind":"IntPtr"},
+    result: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-string-l1-1-0" fn WindowsSubstring(
+    string: {"kind":"IntPtr"},
+    startIndex: {"kind":"UInt32"},
+    newString: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-string-l1-1-0" fn WindowsSubstringWithSpecifiedLength(
+    string: {"kind":"IntPtr"},
+    startIndex: {"kind":"UInt32"},
+    length: {"kind":"UInt32"},
+    newString: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-string-l1-1-0" fn WindowsConcatString(
+    string1: {"kind":"IntPtr"},
+    string2: {"kind":"IntPtr"},
+    newString: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-string-l1-1-0" fn WindowsReplaceString(
+    string: {"kind":"IntPtr"},
+    stringReplaced: {"kind":"IntPtr"},
+    stringReplaceWith: {"kind":"IntPtr"},
+    newString: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-string-l1-1-0" fn WindowsTrimStringStart(
+    string: {"kind":"IntPtr"},
+    trimString: {"kind":"IntPtr"},
+    newString: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-string-l1-1-0" fn WindowsTrimStringEnd(
+    string: {"kind":"IntPtr"},
+    trimString: {"kind":"IntPtr"},
+    newString: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-string-l1-1-0" fn WindowsPreallocateStringBuffer(
+    length: {"kind":"UInt32"},
+    charBuffer: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    bufferHandle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-string-l1-1-0" fn WindowsPromoteStringBuffer(
+    bufferHandle: {"kind":"IntPtr"},
+    string: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-string-l1-1-0" fn WindowsDeleteStringBuffer(
+    bufferHandle: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-string-l1-1-0" fn WindowsInspectString(
+    targetHString: {"kind":"UIntPtr"},
+    machine: {"kind":"UInt16"},
+    callback: Windows.Win32.WinRT.PINSPECT_HSTRING_CALLBACK,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+    length: {"kind""Ptr","child":{"kind":"UInt32"}},
+    targetStringAddress: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-string-l1-1-1" fn WindowsInspectString2(
+    targetHString: {"kind":"UInt64"},
+    machine: {"kind":"UInt16"},
+    callback: Windows.Win32.WinRT.PINSPECT_HSTRING_CALLBACK2,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+    length: {"kind""Ptr","child":{"kind":"UInt32"}},
+    targetStringAddress: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d11" fn CreateDirect3D11DeviceFromDXGIDevice(
+    dxgiDevice: Windows.Win32.Dxgi.IDXGIDevice,
+    graphicsDevice: {"kind""Ptr","child":Windows.Win32.WinRT.IInspectable},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d11" fn CreateDirect3D11SurfaceFromDXGISurface(
+    dgxiSurface: Windows.Win32.Dxgi.IDXGISurface,
+    graphicsSurface: {"kind""Ptr","child":Windows.Win32.WinRT.IInspectable},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-l1-1-0" fn RoInitialize(
+    initType: Windows.Win32.WinRT.RO_INIT_TYPE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-l1-1-0" fn RoUninitialize(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-l1-1-0" fn RoActivateInstance(
+    activatableClassId: {"kind":"IntPtr"},
+    instance: {"kind""Ptr","child":Windows.Win32.WinRT.IInspectable},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-l1-1-0" fn RoRegisterActivationFactories(
+    activatableClassIds: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    activationFactoryCallbacks: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    count: {"kind":"UInt32"},
+    cookie: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-l1-1-0" fn RoRevokeActivationFactories(
+    cookie: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-l1-1-0" fn RoGetActivationFactory(
+    activatableClassId: {"kind":"IntPtr"},
+    iid: {"kind""Ptr","child":Guid},
+    factory: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-l1-1-0" fn RoRegisterForApartmentShutdown(
+    callbackObject: Windows.Win32.WinRT.IApartmentShutdown,
+    apartmentIdentifier: {"kind""Ptr","child":{"kind":"UInt64"}},
+    regCookie: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-l1-1-0" fn RoUnregisterForApartmentShutdown(
+    regCookie: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-l1-1-0" fn RoGetApartmentIdentifier(
+    apartmentIdentifier: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-robuffer-l1-1-0" fn RoGetBufferMarshaler(
+    bufferMarshaler: {"kind""Ptr","child":Windows.Win32.Com.IMarshal},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-error-l1-1-0" fn RoGetErrorReportingFlags(
+    pflags: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-error-l1-1-0" fn RoSetErrorReportingFlags(
+    flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-error-l1-1-0" fn RoResolveRestrictedErrorInfoReference(
+    reference: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppRestrictedErrorInfo: {"kind""Ptr","child":Windows.Win32.WinRT.IRestrictedErrorInfo},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-error-l1-1-0" fn SetRestrictedErrorInfo(
+    pRestrictedErrorInfo: Windows.Win32.WinRT.IRestrictedErrorInfo,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-error-l1-1-0" fn GetRestrictedErrorInfo(
+    ppRestrictedErrorInfo: {"kind""Ptr","child":Windows.Win32.WinRT.IRestrictedErrorInfo},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-error-l1-1-0" fn RoOriginateErrorW(
+    error: Windows.Win32.Com.HRESULT,
+    cchMax: {"kind":"UInt32"},
+    message: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-error-l1-1-0" fn RoOriginateError(
+    error: Windows.Win32.Com.HRESULT,
+    message: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-error-l1-1-0" fn RoTransformErrorW(
+    oldError: Windows.Win32.Com.HRESULT,
+    newError: Windows.Win32.Com.HRESULT,
+    cchMax: {"kind":"UInt32"},
+    message: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-error-l1-1-0" fn RoTransformError(
+    oldError: Windows.Win32.Com.HRESULT,
+    newError: Windows.Win32.Com.HRESULT,
+    message: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-error-l1-1-0" fn RoCaptureErrorContext(
+    hr: Windows.Win32.Com.HRESULT,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-error-l1-1-0" fn RoFailFastWithErrorContext(
+    hrError: Windows.Win32.Com.HRESULT,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-error-l1-1-1" fn RoOriginateLanguageException(
+    error: Windows.Win32.Com.HRESULT,
+    message: {"kind":"IntPtr"},
+    languageException: Windows.Win32.Com.IUnknown,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-error-l1-1-1" fn RoClearError(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-error-l1-1-1" fn RoReportUnhandledError(
+    pRestrictedErrorInfo: Windows.Win32.WinRT.IRestrictedErrorInfo,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-error-l1-1-1" fn RoInspectThreadErrorInfo(
+    targetTebAddress: {"kind":"UIntPtr"},
+    machine: {"kind":"UInt16"},
+    readMemoryCallback: Windows.Win32.WinRT.PINSPECT_MEMORY_CALLBACK,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+    targetErrorInfoAddress: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-error-l1-1-1" fn RoInspectCapturedStackBackTrace(
+    targetErrorInfoAddress: {"kind":"UIntPtr"},
+    machine: {"kind":"UInt16"},
+    readMemoryCallback: Windows.Win32.WinRT.PINSPECT_MEMORY_CALLBACK,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+    frameCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    targetBackTraceAddress: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-error-l1-1-1" fn RoGetMatchingRestrictedErrorInfo(
+    hrIn: Windows.Win32.Com.HRESULT,
+    ppRestrictedErrorInfo: {"kind""Ptr","child":Windows.Win32.WinRT.IRestrictedErrorInfo},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-error-l1-1-1" fn RoReportFailedDelegate(
+    punkDelegate: Windows.Win32.Com.IUnknown,
+    pRestrictedErrorInfo: Windows.Win32.WinRT.IRestrictedErrorInfo,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-error-l1-1-1" fn IsErrorPropagationEnabled(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "RoMetadata" fn MetaDataGetDispenser(
+    rclsid: {"kind""Ptr","child":Guid},
+    riid: {"kind""Ptr","child":Guid},
+    ppv: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-roparameterizediid-l1-1-0" fn RoGetParameterizedTypeInstanceIID(
+    nameElementCount: {"kind":"UInt32"},
+    nameElements: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    metaDataLocator: Windows.Win32.WinRT.IRoMetaDataLocator,
+    iid: {"kind""Ptr","child":Guid},
+    pExtra: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-roparameterizediid-l1-1-0" fn RoFreeParameterizedTypeExtra(
+    extra: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-roparameterizediid-l1-1-0" fn RoParameterizedTypeExtraGetTypeSignature(
+    extra: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-core-winrt-registration-l1-1-0" fn RoGetServerActivatableClasses(
+    serverName: {"kind":"IntPtr"},
+    activatableClassIds: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"IntPtr"}}},
+    count: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-shcore-stream-winrt-l1-1-0" fn CreateRandomAccessStreamOnFile(
+    filePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    accessMode: {"kind":"UInt32"},
+    riid: {"kind""Ptr","child":Guid},
+    ppv: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-shcore-stream-winrt-l1-1-0" fn CreateRandomAccessStreamOverStream(
+    stream: Windows.Win32.StructuredStorage.IStream,
+    options: Windows.Win32.WinRT.BSOS_OPTIONS,
+    riid: {"kind""Ptr","child":Guid},
+    ppv: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-shcore-stream-winrt-l1-1-0" fn CreateStreamOverRandomAccessStream(
+    randomAccessStream: Windows.Win32.Com.IUnknown,
+    riid: {"kind""Ptr","child":Guid},
+    ppv: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+],
+
+"unicode_aliases": [
+]}

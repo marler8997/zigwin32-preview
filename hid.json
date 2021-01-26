@@ -1,0 +1,2018 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: DICONSTANTFORCE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DICONSTANTFORCE = extern struct {
+    lMagnitude: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: DIRAMPFORCE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIRAMPFORCE = extern struct {
+    lStart: {"kind":"Int32"},
+    lEnd: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: DIPERIODIC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIPERIODIC = extern struct {
+    dwMagnitude: {"kind":"UInt32"},
+    lOffset: {"kind":"Int32"},
+    dwPhase: {"kind":"UInt32"},
+    dwPeriod: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DICONDITION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DICONDITION = extern struct {
+    lOffset: {"kind":"Int32"},
+    lPositiveCoefficient: {"kind":"Int32"},
+    lNegativeCoefficient: {"kind":"Int32"},
+    dwPositiveSaturation: {"kind":"UInt32"},
+    dwNegativeSaturation: {"kind":"UInt32"},
+    lDeadBand: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: DICUSTOMFORCE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DICUSTOMFORCE = extern struct {
+    cChannels: {"kind":"UInt32"},
+    dwSamplePeriod: {"kind":"UInt32"},
+    cSamples: {"kind":"UInt32"},
+    rglForceData: {"kind""Ptr","child":{"kind":"Int32"}},
+};
+// --------------------------------------------------------
+// Type: DIENVELOPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIENVELOPE = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwAttackLevel: {"kind":"UInt32"},
+    dwAttackTime: {"kind":"UInt32"},
+    dwFadeLevel: {"kind":"UInt32"},
+    dwFadeTime: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DIEFFECT_DX5
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIEFFECT_DX5 = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwDuration: {"kind":"UInt32"},
+    dwSamplePeriod: {"kind":"UInt32"},
+    dwGain: {"kind":"UInt32"},
+    dwTriggerButton: {"kind":"UInt32"},
+    dwTriggerRepeatInterval: {"kind":"UInt32"},
+    cAxes: {"kind":"UInt32"},
+    rgdwAxes: {"kind""Ptr","child":{"kind":"UInt32"}},
+    rglDirection: {"kind""Ptr","child":{"kind":"Int32"}},
+    lpEnvelope: {"kind""Ptr","child":Windows.Win32.Hid.DIENVELOPE},
+    cbTypeSpecificParams: {"kind":"UInt32"},
+    lpvTypeSpecificParams: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DIEFFECT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIEFFECT = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwDuration: {"kind":"UInt32"},
+    dwSamplePeriod: {"kind":"UInt32"},
+    dwGain: {"kind":"UInt32"},
+    dwTriggerButton: {"kind":"UInt32"},
+    dwTriggerRepeatInterval: {"kind":"UInt32"},
+    cAxes: {"kind":"UInt32"},
+    rgdwAxes: {"kind""Ptr","child":{"kind":"UInt32"}},
+    rglDirection: {"kind""Ptr","child":{"kind":"Int32"}},
+    lpEnvelope: {"kind""Ptr","child":Windows.Win32.Hid.DIENVELOPE},
+    cbTypeSpecificParams: {"kind":"UInt32"},
+    lpvTypeSpecificParams: {"kind""Ptr","child":{"kind":"Void"}},
+    dwStartDelay: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DIFILEEFFECT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIFILEEFFECT = extern struct {
+    dwSize: {"kind":"UInt32"},
+    GuidEffect: Guid,
+    lpDiEffect: {"kind""Ptr","child":Windows.Win32.Hid.DIEFFECT},
+    szFriendlyName: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: LPDIENUMEFFECTSINFILECALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDIENUMEFFECTSINFILECALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DIEFFESCAPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIEFFESCAPE = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwCommand: {"kind":"UInt32"},
+    lpvInBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    cbInBuffer: {"kind":"UInt32"},
+    lpvOutBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    cbOutBuffer: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: IDirectInputEffect
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectInputEffect = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'GetEffectGuid'
+    // TODO: Method 'GetParameters'
+    // TODO: Method 'SetParameters'
+    // TODO: Method 'Start'
+    // TODO: Method 'Stop'
+    // TODO: Method 'GetEffectStatus'
+    // TODO: Method 'Download'
+    // TODO: Method 'Unload'
+    // TODO: Method 'Escape'
+};
+// --------------------------------------------------------
+// Type: DIDEVCAPS_DX3
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIDEVCAPS_DX3 = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwDevType: {"kind":"UInt32"},
+    dwAxes: {"kind":"UInt32"},
+    dwButtons: {"kind":"UInt32"},
+    dwPOVs: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DIDEVCAPS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIDEVCAPS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwDevType: {"kind":"UInt32"},
+    dwAxes: {"kind":"UInt32"},
+    dwButtons: {"kind":"UInt32"},
+    dwPOVs: {"kind":"UInt32"},
+    dwFFSamplePeriod: {"kind":"UInt32"},
+    dwFFMinTimeResolution: {"kind":"UInt32"},
+    dwFirmwareRevision: {"kind":"UInt32"},
+    dwHardwareRevision: {"kind":"UInt32"},
+    dwFFDriverVersion: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DIOBJECTDATAFORMAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIOBJECTDATAFORMAT = extern struct {
+    pguid: {"kind""Ptr","child":Guid},
+    dwOfs: {"kind":"UInt32"},
+    dwType: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DIDATAFORMAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIDATAFORMAT = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwObjSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwDataSize: {"kind":"UInt32"},
+    dwNumObjs: {"kind":"UInt32"},
+    rgodf: {"kind""Ptr","child":Windows.Win32.Hid.DIOBJECTDATAFORMAT},
+};
+// --------------------------------------------------------
+// Type: DIACTIONA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIACTIONA = extern struct {
+    uAppData: {"kind":"UIntPtr"},
+    dwSemantic: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.Hid.DIACTIONA+_Anonymous_e__Union,
+    guidInstance: Guid,
+    dwObjID: {"kind":"UInt32"},
+    dwHow: {"kind":"UInt32"},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: DIACTIONW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIACTIONW = extern struct {
+    uAppData: {"kind":"UIntPtr"},
+    dwSemantic: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.Hid.DIACTIONW+_Anonymous_e__Union,
+    guidInstance: Guid,
+    dwObjID: {"kind":"UInt32"},
+    dwHow: {"kind":"UInt32"},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: DIACTIONFORMATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIACTIONFORMATA = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwActionSize: {"kind":"UInt32"},
+    dwDataSize: {"kind":"UInt32"},
+    dwNumActions: {"kind":"UInt32"},
+    rgoAction: {"kind""Ptr","child":Windows.Win32.Hid.DIACTIONA},
+    guidActionMap: Guid,
+    dwGenre: {"kind":"UInt32"},
+    dwBufferSize: {"kind":"UInt32"},
+    lAxisMin: {"kind":"Int32"},
+    lAxisMax: {"kind":"Int32"},
+    hInstString: Windows.Win32.SystemServices.HINSTANCE,
+    ftTimeStamp: Windows.Win32.WindowsProgramming.FILETIME,
+    dwCRC: {"kind":"UInt32"},
+    tszActionMap: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: DIACTIONFORMATW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIACTIONFORMATW = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwActionSize: {"kind":"UInt32"},
+    dwDataSize: {"kind":"UInt32"},
+    dwNumActions: {"kind":"UInt32"},
+    rgoAction: {"kind""Ptr","child":Windows.Win32.Hid.DIACTIONW},
+    guidActionMap: Guid,
+    dwGenre: {"kind":"UInt32"},
+    dwBufferSize: {"kind":"UInt32"},
+    lAxisMin: {"kind":"Int32"},
+    lAxisMax: {"kind":"Int32"},
+    hInstString: Windows.Win32.SystemServices.HINSTANCE,
+    ftTimeStamp: Windows.Win32.WindowsProgramming.FILETIME,
+    dwCRC: {"kind":"UInt32"},
+    tszActionMap: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DICOLORSET
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DICOLORSET = extern struct {
+    dwSize: {"kind":"UInt32"},
+    cTextFore: {"kind":"UInt32"},
+    cTextHighlight: {"kind":"UInt32"},
+    cCalloutLine: {"kind":"UInt32"},
+    cCalloutHighlight: {"kind":"UInt32"},
+    cBorder: {"kind":"UInt32"},
+    cControlFill: {"kind":"UInt32"},
+    cHighlightFill: {"kind":"UInt32"},
+    cAreaFill: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DICONFIGUREDEVICESPARAMSA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DICONFIGUREDEVICESPARAMSA = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwcUsers: {"kind":"UInt32"},
+    lptszUserNames: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwcFormats: {"kind":"UInt32"},
+    lprgFormats: {"kind""Ptr","child":Windows.Win32.Hid.DIACTIONFORMATA},
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    dics: Windows.Win32.Hid.DICOLORSET,
+    lpUnkDDSTarget: Windows.Win32.Com.IUnknown,
+};
+// --------------------------------------------------------
+// Type: DICONFIGUREDEVICESPARAMSW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DICONFIGUREDEVICESPARAMSW = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwcUsers: {"kind":"UInt32"},
+    lptszUserNames: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwcFormats: {"kind":"UInt32"},
+    lprgFormats: {"kind""Ptr","child":Windows.Win32.Hid.DIACTIONFORMATW},
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    dics: Windows.Win32.Hid.DICOLORSET,
+    lpUnkDDSTarget: Windows.Win32.Com.IUnknown,
+};
+// --------------------------------------------------------
+// Type: DIDEVICEIMAGEINFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIDEVICEIMAGEINFOA = extern struct {
+    tszImagePath: {"kind":"Array","child": {"kind":"SByte"}},
+    dwFlags: {"kind":"UInt32"},
+    dwViewID: {"kind":"UInt32"},
+    rcOverlay: Windows.Win32.DisplayDevices.RECT,
+    dwObjID: {"kind":"UInt32"},
+    dwcValidPts: {"kind":"UInt32"},
+    rgptCalloutLine: {"kind":"Array","child": Windows.Win32.DisplayDevices.POINT},
+    rcCalloutRect: Windows.Win32.DisplayDevices.RECT,
+    dwTextAlign: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DIDEVICEIMAGEINFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIDEVICEIMAGEINFOW = extern struct {
+    tszImagePath: {"kind":"Array","child": {"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+    dwViewID: {"kind":"UInt32"},
+    rcOverlay: Windows.Win32.DisplayDevices.RECT,
+    dwObjID: {"kind":"UInt32"},
+    dwcValidPts: {"kind":"UInt32"},
+    rgptCalloutLine: {"kind":"Array","child": Windows.Win32.DisplayDevices.POINT},
+    rcCalloutRect: Windows.Win32.DisplayDevices.RECT,
+    dwTextAlign: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DIDEVICEIMAGEINFOHEADERA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIDEVICEIMAGEINFOHEADERA = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwSizeImageInfo: {"kind":"UInt32"},
+    dwcViews: {"kind":"UInt32"},
+    dwcButtons: {"kind":"UInt32"},
+    dwcAxes: {"kind":"UInt32"},
+    dwcPOVs: {"kind":"UInt32"},
+    dwBufferSize: {"kind":"UInt32"},
+    dwBufferUsed: {"kind":"UInt32"},
+    lprgImageInfoArray: {"kind""Ptr","child":Windows.Win32.Hid.DIDEVICEIMAGEINFOA},
+};
+// --------------------------------------------------------
+// Type: DIDEVICEIMAGEINFOHEADERW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIDEVICEIMAGEINFOHEADERW = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwSizeImageInfo: {"kind":"UInt32"},
+    dwcViews: {"kind":"UInt32"},
+    dwcButtons: {"kind":"UInt32"},
+    dwcAxes: {"kind":"UInt32"},
+    dwcPOVs: {"kind":"UInt32"},
+    dwBufferSize: {"kind":"UInt32"},
+    dwBufferUsed: {"kind":"UInt32"},
+    lprgImageInfoArray: {"kind""Ptr","child":Windows.Win32.Hid.DIDEVICEIMAGEINFOW},
+};
+// --------------------------------------------------------
+// Type: DIDEVICEOBJECTINSTANCE_DX3A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIDEVICEOBJECTINSTANCE_DX3A = extern struct {
+    dwSize: {"kind":"UInt32"},
+    guidType: Guid,
+    dwOfs: {"kind":"UInt32"},
+    dwType: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    tszName: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: DIDEVICEOBJECTINSTANCE_DX3W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIDEVICEOBJECTINSTANCE_DX3W = extern struct {
+    dwSize: {"kind":"UInt32"},
+    guidType: Guid,
+    dwOfs: {"kind":"UInt32"},
+    dwType: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    tszName: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DIDEVICEOBJECTINSTANCEA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIDEVICEOBJECTINSTANCEA = extern struct {
+    dwSize: {"kind":"UInt32"},
+    guidType: Guid,
+    dwOfs: {"kind":"UInt32"},
+    dwType: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    tszName: {"kind":"Array","child": {"kind":"SByte"}},
+    dwFFMaxForce: {"kind":"UInt32"},
+    dwFFForceResolution: {"kind":"UInt32"},
+    wCollectionNumber: {"kind":"UInt16"},
+    wDesignatorIndex: {"kind":"UInt16"},
+    wUsagePage: {"kind":"UInt16"},
+    wUsage: {"kind":"UInt16"},
+    dwDimension: {"kind":"UInt32"},
+    wExponent: {"kind":"UInt16"},
+    wReportId: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: DIDEVICEOBJECTINSTANCEW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIDEVICEOBJECTINSTANCEW = extern struct {
+    dwSize: {"kind":"UInt32"},
+    guidType: Guid,
+    dwOfs: {"kind":"UInt32"},
+    dwType: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    tszName: {"kind":"Array","child": {"kind":"UInt16"}},
+    dwFFMaxForce: {"kind":"UInt32"},
+    dwFFForceResolution: {"kind":"UInt32"},
+    wCollectionNumber: {"kind":"UInt16"},
+    wDesignatorIndex: {"kind":"UInt16"},
+    wUsagePage: {"kind":"UInt16"},
+    wUsage: {"kind":"UInt16"},
+    dwDimension: {"kind":"UInt32"},
+    wExponent: {"kind":"UInt16"},
+    wReportId: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: LPDIENUMDEVICEOBJECTSCALLBACKA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDIENUMDEVICEOBJECTSCALLBACKA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPDIENUMDEVICEOBJECTSCALLBACKW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDIENUMDEVICEOBJECTSCALLBACKW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DIPROPHEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIPROPHEADER = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwHeaderSize: {"kind":"UInt32"},
+    dwObj: {"kind":"UInt32"},
+    dwHow: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DIPROPDWORD
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIPROPDWORD = extern struct {
+    diph: Windows.Win32.Hid.DIPROPHEADER,
+    dwData: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DIPROPPOINTER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIPROPPOINTER = extern struct {
+    diph: Windows.Win32.Hid.DIPROPHEADER,
+    uData: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: DIPROPRANGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIPROPRANGE = extern struct {
+    diph: Windows.Win32.Hid.DIPROPHEADER,
+    lMin: {"kind":"Int32"},
+    lMax: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: DIPROPCAL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIPROPCAL = extern struct {
+    diph: Windows.Win32.Hid.DIPROPHEADER,
+    lMin: {"kind":"Int32"},
+    lCenter: {"kind":"Int32"},
+    lMax: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: DIPROPCALPOV
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIPROPCALPOV = extern struct {
+    diph: Windows.Win32.Hid.DIPROPHEADER,
+    lMin: {"kind":"Array","child": {"kind":"Int32"}},
+    lMax: {"kind":"Array","child": {"kind":"Int32"}},
+};
+// --------------------------------------------------------
+// Type: DIPROPGUIDANDPATH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIPROPGUIDANDPATH = extern struct {
+    diph: Windows.Win32.Hid.DIPROPHEADER,
+    guidClass: Guid,
+    wszPath: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DIPROPSTRING
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIPROPSTRING = extern struct {
+    diph: Windows.Win32.Hid.DIPROPHEADER,
+    wsz: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: CPOINT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CPOINT = extern struct {
+    lP: {"kind":"Int32"},
+    dwLog: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DIPROPCPOINTS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIPROPCPOINTS = extern struct {
+    diph: Windows.Win32.Hid.DIPROPHEADER,
+    dwCPointsNum: {"kind":"UInt32"},
+    cp: {"kind":"Array","child": Windows.Win32.Hid.CPOINT},
+};
+// --------------------------------------------------------
+// Type: DIDEVICEOBJECTDATA_DX3
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIDEVICEOBJECTDATA_DX3 = extern struct {
+    dwOfs: {"kind":"UInt32"},
+    dwData: {"kind":"UInt32"},
+    dwTimeStamp: {"kind":"UInt32"},
+    dwSequence: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DIDEVICEOBJECTDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIDEVICEOBJECTDATA = extern struct {
+    dwOfs: {"kind":"UInt32"},
+    dwData: {"kind":"UInt32"},
+    dwTimeStamp: {"kind":"UInt32"},
+    dwSequence: {"kind":"UInt32"},
+    uAppData: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: DIDEVICEINSTANCE_DX3A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIDEVICEINSTANCE_DX3A = extern struct {
+    dwSize: {"kind":"UInt32"},
+    guidInstance: Guid,
+    guidProduct: Guid,
+    dwDevType: {"kind":"UInt32"},
+    tszInstanceName: {"kind":"Array","child": {"kind":"SByte"}},
+    tszProductName: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: DIDEVICEINSTANCE_DX3W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIDEVICEINSTANCE_DX3W = extern struct {
+    dwSize: {"kind":"UInt32"},
+    guidInstance: Guid,
+    guidProduct: Guid,
+    dwDevType: {"kind":"UInt32"},
+    tszInstanceName: {"kind":"Array","child": {"kind":"UInt16"}},
+    tszProductName: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DIDEVICEINSTANCEA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIDEVICEINSTANCEA = extern struct {
+    dwSize: {"kind":"UInt32"},
+    guidInstance: Guid,
+    guidProduct: Guid,
+    dwDevType: {"kind":"UInt32"},
+    tszInstanceName: {"kind":"Array","child": {"kind":"SByte"}},
+    tszProductName: {"kind":"Array","child": {"kind":"SByte"}},
+    guidFFDriver: Guid,
+    wUsagePage: {"kind":"UInt16"},
+    wUsage: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: DIDEVICEINSTANCEW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIDEVICEINSTANCEW = extern struct {
+    dwSize: {"kind":"UInt32"},
+    guidInstance: Guid,
+    guidProduct: Guid,
+    dwDevType: {"kind":"UInt32"},
+    tszInstanceName: {"kind":"Array","child": {"kind":"UInt16"}},
+    tszProductName: {"kind":"Array","child": {"kind":"UInt16"}},
+    guidFFDriver: Guid,
+    wUsagePage: {"kind":"UInt16"},
+    wUsage: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: IDirectInputDeviceW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectInputDeviceW = *opaque{
+    // TODO: Method 'GetCapabilities'
+    // TODO: Method 'EnumObjects'
+    // TODO: Method 'GetProperty'
+    // TODO: Method 'SetProperty'
+    // TODO: Method 'Acquire'
+    // TODO: Method 'Unacquire'
+    // TODO: Method 'GetDeviceState'
+    // TODO: Method 'GetDeviceData'
+    // TODO: Method 'SetDataFormat'
+    // TODO: Method 'SetEventNotification'
+    // TODO: Method 'SetCooperativeLevel'
+    // TODO: Method 'GetObjectInfo'
+    // TODO: Method 'GetDeviceInfo'
+    // TODO: Method 'RunControlPanel'
+    // TODO: Method 'Initialize'
+};
+// --------------------------------------------------------
+// Type: IDirectInputDeviceA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectInputDeviceA = *opaque{
+    // TODO: Method 'GetCapabilities'
+    // TODO: Method 'EnumObjects'
+    // TODO: Method 'GetProperty'
+    // TODO: Method 'SetProperty'
+    // TODO: Method 'Acquire'
+    // TODO: Method 'Unacquire'
+    // TODO: Method 'GetDeviceState'
+    // TODO: Method 'GetDeviceData'
+    // TODO: Method 'SetDataFormat'
+    // TODO: Method 'SetEventNotification'
+    // TODO: Method 'SetCooperativeLevel'
+    // TODO: Method 'GetObjectInfo'
+    // TODO: Method 'GetDeviceInfo'
+    // TODO: Method 'RunControlPanel'
+    // TODO: Method 'Initialize'
+};
+// --------------------------------------------------------
+// Type: DIEFFECTINFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIEFFECTINFOA = extern struct {
+    dwSize: {"kind":"UInt32"},
+    guid: Guid,
+    dwEffType: {"kind":"UInt32"},
+    dwStaticParams: {"kind":"UInt32"},
+    dwDynamicParams: {"kind":"UInt32"},
+    tszName: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: DIEFFECTINFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIEFFECTINFOW = extern struct {
+    dwSize: {"kind":"UInt32"},
+    guid: Guid,
+    dwEffType: {"kind":"UInt32"},
+    dwStaticParams: {"kind":"UInt32"},
+    dwDynamicParams: {"kind":"UInt32"},
+    tszName: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: LPDIENUMEFFECTSCALLBACKA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDIENUMEFFECTSCALLBACKA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPDIENUMEFFECTSCALLBACKW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDIENUMEFFECTSCALLBACKW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPDIENUMCREATEDEFFECTOBJECTSCALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDIENUMCREATEDEFFECTOBJECTSCALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IDirectInputDevice2W
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectInputDevice2W = *opaque{
+    // TODO: Method 'CreateEffect'
+    // TODO: Method 'EnumEffects'
+    // TODO: Method 'GetEffectInfo'
+    // TODO: Method 'GetForceFeedbackState'
+    // TODO: Method 'SendForceFeedbackCommand'
+    // TODO: Method 'EnumCreatedEffectObjects'
+    // TODO: Method 'Escape'
+    // TODO: Method 'Poll'
+    // TODO: Method 'SendDeviceData'
+};
+// --------------------------------------------------------
+// Type: IDirectInputDevice2A
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectInputDevice2A = *opaque{
+    // TODO: Method 'CreateEffect'
+    // TODO: Method 'EnumEffects'
+    // TODO: Method 'GetEffectInfo'
+    // TODO: Method 'GetForceFeedbackState'
+    // TODO: Method 'SendForceFeedbackCommand'
+    // TODO: Method 'EnumCreatedEffectObjects'
+    // TODO: Method 'Escape'
+    // TODO: Method 'Poll'
+    // TODO: Method 'SendDeviceData'
+};
+// --------------------------------------------------------
+// Type: IDirectInputDevice7W
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectInputDevice7W = *opaque{
+    // TODO: Method 'EnumEffectsInFile'
+    // TODO: Method 'WriteEffectToFile'
+};
+// --------------------------------------------------------
+// Type: IDirectInputDevice7A
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectInputDevice7A = *opaque{
+    // TODO: Method 'EnumEffectsInFile'
+    // TODO: Method 'WriteEffectToFile'
+};
+// --------------------------------------------------------
+// Type: IDirectInputDevice8W
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectInputDevice8W = *opaque{
+    // TODO: Method 'GetCapabilities'
+    // TODO: Method 'EnumObjects'
+    // TODO: Method 'GetProperty'
+    // TODO: Method 'SetProperty'
+    // TODO: Method 'Acquire'
+    // TODO: Method 'Unacquire'
+    // TODO: Method 'GetDeviceState'
+    // TODO: Method 'GetDeviceData'
+    // TODO: Method 'SetDataFormat'
+    // TODO: Method 'SetEventNotification'
+    // TODO: Method 'SetCooperativeLevel'
+    // TODO: Method 'GetObjectInfo'
+    // TODO: Method 'GetDeviceInfo'
+    // TODO: Method 'RunControlPanel'
+    // TODO: Method 'Initialize'
+    // TODO: Method 'CreateEffect'
+    // TODO: Method 'EnumEffects'
+    // TODO: Method 'GetEffectInfo'
+    // TODO: Method 'GetForceFeedbackState'
+    // TODO: Method 'SendForceFeedbackCommand'
+    // TODO: Method 'EnumCreatedEffectObjects'
+    // TODO: Method 'Escape'
+    // TODO: Method 'Poll'
+    // TODO: Method 'SendDeviceData'
+    // TODO: Method 'EnumEffectsInFile'
+    // TODO: Method 'WriteEffectToFile'
+    // TODO: Method 'BuildActionMap'
+    // TODO: Method 'SetActionMap'
+    // TODO: Method 'GetImageInfo'
+};
+// --------------------------------------------------------
+// Type: IDirectInputDevice8A
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectInputDevice8A = *opaque{
+    // TODO: Method 'GetCapabilities'
+    // TODO: Method 'EnumObjects'
+    // TODO: Method 'GetProperty'
+    // TODO: Method 'SetProperty'
+    // TODO: Method 'Acquire'
+    // TODO: Method 'Unacquire'
+    // TODO: Method 'GetDeviceState'
+    // TODO: Method 'GetDeviceData'
+    // TODO: Method 'SetDataFormat'
+    // TODO: Method 'SetEventNotification'
+    // TODO: Method 'SetCooperativeLevel'
+    // TODO: Method 'GetObjectInfo'
+    // TODO: Method 'GetDeviceInfo'
+    // TODO: Method 'RunControlPanel'
+    // TODO: Method 'Initialize'
+    // TODO: Method 'CreateEffect'
+    // TODO: Method 'EnumEffects'
+    // TODO: Method 'GetEffectInfo'
+    // TODO: Method 'GetForceFeedbackState'
+    // TODO: Method 'SendForceFeedbackCommand'
+    // TODO: Method 'EnumCreatedEffectObjects'
+    // TODO: Method 'Escape'
+    // TODO: Method 'Poll'
+    // TODO: Method 'SendDeviceData'
+    // TODO: Method 'EnumEffectsInFile'
+    // TODO: Method 'WriteEffectToFile'
+    // TODO: Method 'BuildActionMap'
+    // TODO: Method 'SetActionMap'
+    // TODO: Method 'GetImageInfo'
+};
+// --------------------------------------------------------
+// Type: DIMOUSESTATE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIMOUSESTATE = extern struct {
+    lX: {"kind":"Int32"},
+    lY: {"kind":"Int32"},
+    lZ: {"kind":"Int32"},
+    rgbButtons: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: DIMOUSESTATE2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIMOUSESTATE2 = extern struct {
+    lX: {"kind":"Int32"},
+    lY: {"kind":"Int32"},
+    lZ: {"kind":"Int32"},
+    rgbButtons: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: DIJOYSTATE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIJOYSTATE = extern struct {
+    lX: {"kind":"Int32"},
+    lY: {"kind":"Int32"},
+    lZ: {"kind":"Int32"},
+    lRx: {"kind":"Int32"},
+    lRy: {"kind":"Int32"},
+    lRz: {"kind":"Int32"},
+    rglSlider: {"kind":"Array","child": {"kind":"Int32"}},
+    rgdwPOV: {"kind":"Array","child": {"kind":"UInt32"}},
+    rgbButtons: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: DIJOYSTATE2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIJOYSTATE2 = extern struct {
+    lX: {"kind":"Int32"},
+    lY: {"kind":"Int32"},
+    lZ: {"kind":"Int32"},
+    lRx: {"kind":"Int32"},
+    lRy: {"kind":"Int32"},
+    lRz: {"kind":"Int32"},
+    rglSlider: {"kind":"Array","child": {"kind":"Int32"}},
+    rgdwPOV: {"kind":"Array","child": {"kind":"UInt32"}},
+    rgbButtons: {"kind":"Array","child": {"kind":"Byte"}},
+    lVX: {"kind":"Int32"},
+    lVY: {"kind":"Int32"},
+    lVZ: {"kind":"Int32"},
+    lVRx: {"kind":"Int32"},
+    lVRy: {"kind":"Int32"},
+    lVRz: {"kind":"Int32"},
+    rglVSlider: {"kind":"Array","child": {"kind":"Int32"}},
+    lAX: {"kind":"Int32"},
+    lAY: {"kind":"Int32"},
+    lAZ: {"kind":"Int32"},
+    lARx: {"kind":"Int32"},
+    lARy: {"kind":"Int32"},
+    lARz: {"kind":"Int32"},
+    rglASlider: {"kind":"Array","child": {"kind":"Int32"}},
+    lFX: {"kind":"Int32"},
+    lFY: {"kind":"Int32"},
+    lFZ: {"kind":"Int32"},
+    lFRx: {"kind":"Int32"},
+    lFRy: {"kind":"Int32"},
+    lFRz: {"kind":"Int32"},
+    rglFSlider: {"kind":"Array","child": {"kind":"Int32"}},
+};
+// --------------------------------------------------------
+// Type: LPDIENUMDEVICESCALLBACKA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDIENUMDEVICESCALLBACKA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPDIENUMDEVICESCALLBACKW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDIENUMDEVICESCALLBACKW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPDICONFIGUREDEVICESCALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDICONFIGUREDEVICESCALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPDIENUMDEVICESBYSEMANTICSCBA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDIENUMDEVICESBYSEMANTICSCBA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPDIENUMDEVICESBYSEMANTICSCBW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDIENUMDEVICESBYSEMANTICSCBW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IDirectInputW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectInputW = *opaque{
+    // TODO: Method 'CreateDevice'
+    // TODO: Method 'EnumDevices'
+    // TODO: Method 'GetDeviceStatus'
+    // TODO: Method 'RunControlPanel'
+    // TODO: Method 'Initialize'
+};
+// --------------------------------------------------------
+// Type: IDirectInputA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectInputA = *opaque{
+    // TODO: Method 'CreateDevice'
+    // TODO: Method 'EnumDevices'
+    // TODO: Method 'GetDeviceStatus'
+    // TODO: Method 'RunControlPanel'
+    // TODO: Method 'Initialize'
+};
+// --------------------------------------------------------
+// Type: IDirectInput2W
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectInput2W = *opaque{
+    // TODO: Method 'FindDevice'
+};
+// --------------------------------------------------------
+// Type: IDirectInput2A
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectInput2A = *opaque{
+    // TODO: Method 'FindDevice'
+};
+// --------------------------------------------------------
+// Type: IDirectInput7W
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectInput7W = *opaque{
+    // TODO: Method 'CreateDeviceEx'
+};
+// --------------------------------------------------------
+// Type: IDirectInput7A
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectInput7A = *opaque{
+    // TODO: Method 'CreateDeviceEx'
+};
+// --------------------------------------------------------
+// Type: IDirectInput8W
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectInput8W = *opaque{
+    // TODO: Method 'CreateDevice'
+    // TODO: Method 'EnumDevices'
+    // TODO: Method 'GetDeviceStatus'
+    // TODO: Method 'RunControlPanel'
+    // TODO: Method 'Initialize'
+    // TODO: Method 'FindDevice'
+    // TODO: Method 'EnumDevicesBySemantics'
+    // TODO: Method 'ConfigureDevices'
+};
+// --------------------------------------------------------
+// Type: IDirectInput8A
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectInput8A = *opaque{
+    // TODO: Method 'CreateDevice'
+    // TODO: Method 'EnumDevices'
+    // TODO: Method 'GetDeviceStatus'
+    // TODO: Method 'RunControlPanel'
+    // TODO: Method 'Initialize'
+    // TODO: Method 'FindDevice'
+    // TODO: Method 'EnumDevicesBySemantics'
+    // TODO: Method 'ConfigureDevices'
+};
+// --------------------------------------------------------
+// Type: LPFNSHOWJOYCPL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFNSHOWJOYCPL = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DIOBJECTATTRIBUTES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIOBJECTATTRIBUTES = extern struct {
+    dwFlags: {"kind":"UInt32"},
+    wUsagePage: {"kind":"UInt16"},
+    wUsage: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: DIFFOBJECTATTRIBUTES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIFFOBJECTATTRIBUTES = extern struct {
+    dwFFMaxForce: {"kind":"UInt32"},
+    dwFFForceResolution: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DIOBJECTCALIBRATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIOBJECTCALIBRATION = extern struct {
+    lMin: {"kind":"Int32"},
+    lCenter: {"kind":"Int32"},
+    lMax: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: DIPOVCALIBRATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIPOVCALIBRATION = extern struct {
+    lMin: {"kind":"Array","child": {"kind":"Int32"}},
+    lMax: {"kind":"Array","child": {"kind":"Int32"}},
+};
+// --------------------------------------------------------
+// Type: DIEFFECTATTRIBUTES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIEFFECTATTRIBUTES = extern struct {
+    dwEffectId: {"kind":"UInt32"},
+    dwEffType: {"kind":"UInt32"},
+    dwStaticParams: {"kind":"UInt32"},
+    dwDynamicParams: {"kind":"UInt32"},
+    dwCoords: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DIFFDEVICEATTRIBUTES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIFFDEVICEATTRIBUTES = extern struct {
+    dwFlags: {"kind":"UInt32"},
+    dwFFSamplePeriod: {"kind":"UInt32"},
+    dwFFMinTimeResolution: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DIDRIVERVERSIONS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIDRIVERVERSIONS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFirmwareRevision: {"kind":"UInt32"},
+    dwHardwareRevision: {"kind":"UInt32"},
+    dwFFDriverVersion: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DIDEVICESTATE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIDEVICESTATE = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwState: {"kind":"UInt32"},
+    dwLoad: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DIHIDFFINITINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIHIDFFINITINFO = extern struct {
+    dwSize: {"kind":"UInt32"},
+    pwszDeviceInterface: {"kind""Ptr","child":{"kind":"UInt16"}},
+    GuidInstance: Guid,
+};
+// --------------------------------------------------------
+// Type: IDirectInputEffectDriver
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectInputEffectDriver = *opaque{
+    // TODO: Method 'DeviceID'
+    // TODO: Method 'GetVersions'
+    // TODO: Method 'Escape'
+    // TODO: Method 'SetGain'
+    // TODO: Method 'SendForceFeedbackCommand'
+    // TODO: Method 'GetForceFeedbackState'
+    // TODO: Method 'DownloadEffect'
+    // TODO: Method 'DestroyEffect'
+    // TODO: Method 'StartEffect'
+    // TODO: Method 'StopEffect'
+    // TODO: Method 'GetEffectStatus'
+};
+// --------------------------------------------------------
+// Type: LPDIJOYTYPECALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDIJOYTYPECALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DIJOYTYPEINFO_DX5
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIJOYTYPEINFO_DX5 = extern struct {
+    dwSize: {"kind":"UInt32"},
+    hws: Windows.Win32.Multimedia.joyreghwsettings_tag,
+    clsidConfig: Guid,
+    wszDisplayName: {"kind":"Array","child": {"kind":"UInt16"}},
+    wszCallout: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DIJOYTYPEINFO_DX6
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIJOYTYPEINFO_DX6 = extern struct {
+    dwSize: {"kind":"UInt32"},
+    hws: Windows.Win32.Multimedia.joyreghwsettings_tag,
+    clsidConfig: Guid,
+    wszDisplayName: {"kind":"Array","child": {"kind":"UInt16"}},
+    wszCallout: {"kind":"Array","child": {"kind":"UInt16"}},
+    wszHardwareId: {"kind":"Array","child": {"kind":"UInt16"}},
+    dwFlags1: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DIJOYTYPEINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIJOYTYPEINFO = extern struct {
+    dwSize: {"kind":"UInt32"},
+    hws: Windows.Win32.Multimedia.joyreghwsettings_tag,
+    clsidConfig: Guid,
+    wszDisplayName: {"kind":"Array","child": {"kind":"UInt16"}},
+    wszCallout: {"kind":"Array","child": {"kind":"UInt16"}},
+    wszHardwareId: {"kind":"Array","child": {"kind":"UInt16"}},
+    dwFlags1: {"kind":"UInt32"},
+    dwFlags2: {"kind":"UInt32"},
+    wszMapFile: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DIJOYCONFIG_DX5
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIJOYCONFIG_DX5 = extern struct {
+    dwSize: {"kind":"UInt32"},
+    guidInstance: Guid,
+    hwc: Windows.Win32.Multimedia.joyreghwconfig_tag,
+    dwGain: {"kind":"UInt32"},
+    wszType: {"kind":"Array","child": {"kind":"UInt16"}},
+    wszCallout: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DIJOYCONFIG
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIJOYCONFIG = extern struct {
+    dwSize: {"kind":"UInt32"},
+    guidInstance: Guid,
+    hwc: Windows.Win32.Multimedia.joyreghwconfig_tag,
+    dwGain: {"kind":"UInt32"},
+    wszType: {"kind":"Array","child": {"kind":"UInt16"}},
+    wszCallout: {"kind":"Array","child": {"kind":"UInt16"}},
+    guidGameport: Guid,
+};
+// --------------------------------------------------------
+// Type: DIJOYUSERVALUES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIJOYUSERVALUES = extern struct {
+    dwSize: {"kind":"UInt32"},
+    ruv: Windows.Win32.Multimedia.joyreguservalues_tag,
+    wszGlobalDriver: {"kind":"Array","child": {"kind":"UInt16"}},
+    wszGameportEmulator: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: IDirectInputJoyConfig
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectInputJoyConfig = *opaque{
+    // TODO: Method 'Acquire'
+    // TODO: Method 'Unacquire'
+    // TODO: Method 'SetCooperativeLevel'
+    // TODO: Method 'SendNotify'
+    // TODO: Method 'EnumTypes'
+    // TODO: Method 'GetTypeInfo'
+    // TODO: Method 'SetTypeInfo'
+    // TODO: Method 'DeleteType'
+    // TODO: Method 'GetConfig'
+    // TODO: Method 'SetConfig'
+    // TODO: Method 'DeleteConfig'
+    // TODO: Method 'GetUserValues'
+    // TODO: Method 'SetUserValues'
+    // TODO: Method 'AddNewHardware'
+    // TODO: Method 'OpenTypeKey'
+    // TODO: Method 'OpenConfigKey'
+};
+// --------------------------------------------------------
+// Type: IDirectInputJoyConfig8
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectInputJoyConfig8 = *opaque{
+    // TODO: Method 'Acquire'
+    // TODO: Method 'Unacquire'
+    // TODO: Method 'SetCooperativeLevel'
+    // TODO: Method 'SendNotify'
+    // TODO: Method 'EnumTypes'
+    // TODO: Method 'GetTypeInfo'
+    // TODO: Method 'SetTypeInfo'
+    // TODO: Method 'DeleteType'
+    // TODO: Method 'GetConfig'
+    // TODO: Method 'SetConfig'
+    // TODO: Method 'DeleteConfig'
+    // TODO: Method 'GetUserValues'
+    // TODO: Method 'SetUserValues'
+    // TODO: Method 'AddNewHardware'
+    // TODO: Method 'OpenTypeKey'
+    // TODO: Method 'OpenAppStatusKey'
+};
+// --------------------------------------------------------
+// Type: KEYBOARD_INPUT_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const KEYBOARD_INPUT_DATA = extern struct {
+    UnitId: {"kind":"UInt16"},
+    MakeCode: {"kind":"UInt16"},
+    Flags: {"kind":"UInt16"},
+    Reserved: {"kind":"UInt16"},
+    ExtraInformation: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: KEYBOARD_TYPEMATIC_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const KEYBOARD_TYPEMATIC_PARAMETERS = extern struct {
+    UnitId: {"kind":"UInt16"},
+    Rate: {"kind":"UInt16"},
+    Delay: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: KEYBOARD_ID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const KEYBOARD_ID = extern struct {
+    Type: {"kind":"Byte"},
+    Subtype: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: KEYBOARD_ATTRIBUTES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const KEYBOARD_ATTRIBUTES = extern struct {
+    KeyboardIdentifier: Windows.Win32.Hid.KEYBOARD_ID,
+    KeyboardMode: {"kind":"UInt16"},
+    NumberOfFunctionKeys: {"kind":"UInt16"},
+    NumberOfIndicators: {"kind":"UInt16"},
+    NumberOfKeysTotal: {"kind":"UInt16"},
+    InputDataQueueLength: {"kind":"UInt32"},
+    KeyRepeatMinimum: Windows.Win32.Hid.KEYBOARD_TYPEMATIC_PARAMETERS,
+    KeyRepeatMaximum: Windows.Win32.Hid.KEYBOARD_TYPEMATIC_PARAMETERS,
+};
+// --------------------------------------------------------
+// Type: KEYBOARD_EXTENDED_ATTRIBUTES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const KEYBOARD_EXTENDED_ATTRIBUTES = extern struct {
+    Version: {"kind":"Byte"},
+    FormFactor: {"kind":"Byte"},
+    KeyType: {"kind":"Byte"},
+    PhysicalLayout: {"kind":"Byte"},
+    VendorSpecificPhysicalLayout: {"kind":"Byte"},
+    IETFLanguageTagIndex: {"kind":"Byte"},
+    ImplementedInputAssistControls: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: KEYBOARD_INDICATOR_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const KEYBOARD_INDICATOR_PARAMETERS = extern struct {
+    UnitId: {"kind":"UInt16"},
+    LedFlags: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: INDICATOR_LIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INDICATOR_LIST = extern struct {
+    MakeCode: {"kind":"UInt16"},
+    IndicatorFlags: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: KEYBOARD_INDICATOR_TRANSLATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const KEYBOARD_INDICATOR_TRANSLATION = extern struct {
+    NumberOfIndicatorKeys: {"kind":"UInt16"},
+    IndicatorList: {"kind":"Array","child": Windows.Win32.Hid.INDICATOR_LIST},
+};
+// --------------------------------------------------------
+// Type: KEYBOARD_UNIT_ID_PARAMETER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const KEYBOARD_UNIT_ID_PARAMETER = extern struct {
+    UnitId: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: KEYBOARD_IME_STATUS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const KEYBOARD_IME_STATUS = extern struct {
+    UnitId: {"kind":"UInt16"},
+    ImeOpen: {"kind":"UInt32"},
+    ImeConvMode: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MOUSE_INPUT_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MOUSE_INPUT_DATA = extern struct {
+    UnitId: {"kind":"UInt16"},
+    Flags: {"kind":"UInt16"},
+    Anonymous: Windows.Win32.Hid.MOUSE_INPUT_DATA+_Anonymous_e__Union,
+    RawButtons: {"kind":"UInt32"},
+    LastX: {"kind":"Int32"},
+    LastY: {"kind":"Int32"},
+    ExtraInformation: {"kind":"UInt32"},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            ButtonFlags: {"kind":"UInt16"},
+            ButtonData: {"kind":"UInt16"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: MOUSE_ATTRIBUTES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MOUSE_ATTRIBUTES = extern struct {
+    MouseIdentifier: {"kind":"UInt16"},
+    NumberOfButtons: {"kind":"UInt16"},
+    SampleRate: {"kind":"UInt16"},
+    InputDataQueueLength: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MOUSE_UNIT_ID_PARAMETER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MOUSE_UNIT_ID_PARAMETER = extern struct {
+    UnitId: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: HIDP_REPORT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HIDP_REPORT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: USAGE_AND_PAGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USAGE_AND_PAGE = extern struct {
+    Usage: {"kind":"UInt16"},
+    UsagePage: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: HIDP_BUTTON_CAPS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HIDP_BUTTON_CAPS = extern struct {
+    UsagePage: {"kind":"UInt16"},
+    ReportID: {"kind":"Byte"},
+    IsAlias: {"kind":"Byte"},
+    BitField: {"kind":"UInt16"},
+    LinkCollection: {"kind":"UInt16"},
+    LinkUsage: {"kind":"UInt16"},
+    LinkUsagePage: {"kind":"UInt16"},
+    IsRange: {"kind":"Byte"},
+    IsStringRange: {"kind":"Byte"},
+    IsDesignatorRange: {"kind":"Byte"},
+    IsAbsolute: {"kind":"Byte"},
+    Reserved: {"kind":"Array","child": {"kind":"UInt32"}},
+    Anonymous: Windows.Win32.Hid.HIDP_BUTTON_CAPS+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Range_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Range_e__Struct = extern struct {
+            UsageMin: {"kind":"UInt16"},
+            UsageMax: {"kind":"UInt16"},
+            StringMin: {"kind":"UInt16"},
+            StringMax: {"kind":"UInt16"},
+            DesignatorMin: {"kind":"UInt16"},
+            DesignatorMax: {"kind":"UInt16"},
+            DataIndexMin: {"kind":"UInt16"},
+            DataIndexMax: {"kind":"UInt16"},
+        };
+        // --------------------------------------------------------
+        // Type: _NotRange_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _NotRange_e__Struct = extern struct {
+            Usage: {"kind":"UInt16"},
+            Reserved1: {"kind":"UInt16"},
+            StringIndex: {"kind":"UInt16"},
+            Reserved2: {"kind":"UInt16"},
+            DesignatorIndex: {"kind":"UInt16"},
+            Reserved3: {"kind":"UInt16"},
+            DataIndex: {"kind":"UInt16"},
+            Reserved4: {"kind":"UInt16"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: HIDP_VALUE_CAPS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HIDP_VALUE_CAPS = extern struct {
+    UsagePage: {"kind":"UInt16"},
+    ReportID: {"kind":"Byte"},
+    IsAlias: {"kind":"Byte"},
+    BitField: {"kind":"UInt16"},
+    LinkCollection: {"kind":"UInt16"},
+    LinkUsage: {"kind":"UInt16"},
+    LinkUsagePage: {"kind":"UInt16"},
+    IsRange: {"kind":"Byte"},
+    IsStringRange: {"kind":"Byte"},
+    IsDesignatorRange: {"kind":"Byte"},
+    IsAbsolute: {"kind":"Byte"},
+    HasNull: {"kind":"Byte"},
+    Reserved: {"kind":"Byte"},
+    BitSize: {"kind":"UInt16"},
+    ReportCount: {"kind":"UInt16"},
+    Reserved2: {"kind":"Array","child": {"kind":"UInt16"}},
+    UnitsExp: {"kind":"UInt32"},
+    Units: {"kind":"UInt32"},
+    LogicalMin: {"kind":"Int32"},
+    LogicalMax: {"kind":"Int32"},
+    PhysicalMin: {"kind":"Int32"},
+    PhysicalMax: {"kind":"Int32"},
+    Anonymous: Windows.Win32.Hid.HIDP_VALUE_CAPS+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Range_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Range_e__Struct = extern struct {
+            UsageMin: {"kind":"UInt16"},
+            UsageMax: {"kind":"UInt16"},
+            StringMin: {"kind":"UInt16"},
+            StringMax: {"kind":"UInt16"},
+            DesignatorMin: {"kind":"UInt16"},
+            DesignatorMax: {"kind":"UInt16"},
+            DataIndexMin: {"kind":"UInt16"},
+            DataIndexMax: {"kind":"UInt16"},
+        };
+        // --------------------------------------------------------
+        // Type: _NotRange_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _NotRange_e__Struct = extern struct {
+            Usage: {"kind":"UInt16"},
+            Reserved1: {"kind":"UInt16"},
+            StringIndex: {"kind":"UInt16"},
+            Reserved2: {"kind":"UInt16"},
+            DesignatorIndex: {"kind":"UInt16"},
+            Reserved3: {"kind":"UInt16"},
+            DataIndex: {"kind":"UInt16"},
+            Reserved4: {"kind":"UInt16"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: HIDP_LINK_COLLECTION_NODE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HIDP_LINK_COLLECTION_NODE = extern struct {
+    LinkUsage: {"kind":"UInt16"},
+    LinkUsagePage: {"kind":"UInt16"},
+    Parent: {"kind":"UInt16"},
+    NumberOfChildren: {"kind":"UInt16"},
+    NextSibling: {"kind":"UInt16"},
+    FirstChild: {"kind":"UInt16"},
+    _bitfield: {"kind":"UInt32"},
+    UserContext: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: _HIDP_PREPARSED_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _HIDP_PREPARSED_DATA = opaque {
+};
+// --------------------------------------------------------
+// Type: HIDP_CAPS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HIDP_CAPS = extern struct {
+    Usage: {"kind":"UInt16"},
+    UsagePage: {"kind":"UInt16"},
+    InputReportByteLength: {"kind":"UInt16"},
+    OutputReportByteLength: {"kind":"UInt16"},
+    FeatureReportByteLength: {"kind":"UInt16"},
+    Reserved: {"kind":"Array","child": {"kind":"UInt16"}},
+    NumberLinkCollectionNodes: {"kind":"UInt16"},
+    NumberInputButtonCaps: {"kind":"UInt16"},
+    NumberInputValueCaps: {"kind":"UInt16"},
+    NumberInputDataIndices: {"kind":"UInt16"},
+    NumberOutputButtonCaps: {"kind":"UInt16"},
+    NumberOutputValueCaps: {"kind":"UInt16"},
+    NumberOutputDataIndices: {"kind":"UInt16"},
+    NumberFeatureButtonCaps: {"kind":"UInt16"},
+    NumberFeatureValueCaps: {"kind":"UInt16"},
+    NumberFeatureDataIndices: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: HIDP_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HIDP_DATA = extern struct {
+    DataIndex: {"kind":"UInt16"},
+    Reserved: {"kind":"UInt16"},
+    Anonymous: Windows.Win32.Hid.HIDP_DATA+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: HIDP_UNKNOWN_TOKEN
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HIDP_UNKNOWN_TOKEN = extern struct {
+    Token: {"kind":"Byte"},
+    Reserved: {"kind":"Array","child": {"kind":"Byte"}},
+    BitField: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HIDP_EXTENDED_ATTRIBUTES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HIDP_EXTENDED_ATTRIBUTES = extern struct {
+    NumGlobalUnknowns: {"kind":"Byte"},
+    Reserved: {"kind":"Array","child": {"kind":"Byte"}},
+    GlobalUnknowns: {"kind""Ptr","child":Windows.Win32.Hid.HIDP_UNKNOWN_TOKEN},
+    Data: {"kind":"Array","child": {"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: HIDP_KEYBOARD_DIRECTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HIDP_KEYBOARD_DIRECTION = *opaque{
+};
+// --------------------------------------------------------
+// Type: HIDP_KEYBOARD_MODIFIER_STATE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HIDP_KEYBOARD_MODIFIER_STATE = extern struct {
+    Anonymous: Windows.Win32.Hid.HIDP_KEYBOARD_MODIFIER_STATE+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            _bitfield: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: PHIDP_INSERT_SCANCODES
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PHIDP_INSERT_SCANCODES = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: HIDD_CONFIGURATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HIDD_CONFIGURATION = extern struct {
+    cookie: {"kind""Ptr","child":{"kind":"Void"}},
+    size: {"kind":"UInt32"},
+    RingBufferSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HIDD_ATTRIBUTES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HIDD_ATTRIBUTES = extern struct {
+    Size: {"kind":"UInt32"},
+    VendorID: {"kind":"UInt16"},
+    ProductID: {"kind":"UInt16"},
+    VersionNumber: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: JOYREGHWVALUES
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const JOYREGHWVALUES = *opaque{
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DINPUT8" fn DirectInput8Create(
+    hinst: Windows.Win32.SystemServices.HINSTANCE,
+    dwVersion: {"kind":"UInt32"},
+    riidltf: {"kind""Ptr","child":Guid},
+    ppvOut: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+    punkOuter: Windows.Win32.Com.IUnknown,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidP_GetCaps(
+    PreparsedData: {"kind":"IntPtr"},
+    Capabilities: {"kind""Ptr","child":Windows.Win32.Hid.HIDP_CAPS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidP_GetLinkCollectionNodes(
+    LinkCollectionNodes: {"kind""Ptr","child":Windows.Win32.Hid.HIDP_LINK_COLLECTION_NODE},
+    LinkCollectionNodesLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreparsedData: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidP_GetSpecificButtonCaps(
+    ReportType: Windows.Win32.Hid.HIDP_REPORT_TYPE,
+    UsagePage: {"kind":"UInt16"},
+    LinkCollection: {"kind":"UInt16"},
+    Usage: {"kind":"UInt16"},
+    ButtonCaps: {"kind""Ptr","child":Windows.Win32.Hid.HIDP_BUTTON_CAPS},
+    ButtonCapsLength: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PreparsedData: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidP_GetButtonCaps(
+    ReportType: Windows.Win32.Hid.HIDP_REPORT_TYPE,
+    ButtonCaps: {"kind""Ptr","child":Windows.Win32.Hid.HIDP_BUTTON_CAPS},
+    ButtonCapsLength: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PreparsedData: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidP_GetSpecificValueCaps(
+    ReportType: Windows.Win32.Hid.HIDP_REPORT_TYPE,
+    UsagePage: {"kind":"UInt16"},
+    LinkCollection: {"kind":"UInt16"},
+    Usage: {"kind":"UInt16"},
+    ValueCaps: {"kind""Ptr","child":Windows.Win32.Hid.HIDP_VALUE_CAPS},
+    ValueCapsLength: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PreparsedData: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidP_GetValueCaps(
+    ReportType: Windows.Win32.Hid.HIDP_REPORT_TYPE,
+    ValueCaps: {"kind""Ptr","child":Windows.Win32.Hid.HIDP_VALUE_CAPS},
+    ValueCapsLength: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PreparsedData: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidP_GetExtendedAttributes(
+    ReportType: Windows.Win32.Hid.HIDP_REPORT_TYPE,
+    DataIndex: {"kind":"UInt16"},
+    PreparsedData: {"kind":"IntPtr"},
+    Attributes: {"kind""Ptr","child":Windows.Win32.Hid.HIDP_EXTENDED_ATTRIBUTES},
+    LengthAttributes: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidP_InitializeReportForID(
+    ReportType: Windows.Win32.Hid.HIDP_REPORT_TYPE,
+    ReportID: {"kind":"Byte"},
+    PreparsedData: {"kind":"IntPtr"},
+    Report: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReportLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidP_SetData(
+    ReportType: Windows.Win32.Hid.HIDP_REPORT_TYPE,
+    DataList: {"kind""Ptr","child":Windows.Win32.Hid.HIDP_DATA},
+    DataLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreparsedData: {"kind":"IntPtr"},
+    Report: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReportLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidP_GetData(
+    ReportType: Windows.Win32.Hid.HIDP_REPORT_TYPE,
+    DataList: {"kind""Ptr","child":Windows.Win32.Hid.HIDP_DATA},
+    DataLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreparsedData: {"kind":"IntPtr"},
+    Report: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReportLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidP_MaxDataListLength(
+    ReportType: Windows.Win32.Hid.HIDP_REPORT_TYPE,
+    PreparsedData: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidP_SetUsages(
+    ReportType: Windows.Win32.Hid.HIDP_REPORT_TYPE,
+    UsagePage: {"kind":"UInt16"},
+    LinkCollection: {"kind":"UInt16"},
+    UsageList: {"kind""Ptr","child":{"kind":"UInt16"}},
+    UsageLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreparsedData: {"kind":"IntPtr"},
+    Report: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReportLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidP_UnsetUsages(
+    ReportType: Windows.Win32.Hid.HIDP_REPORT_TYPE,
+    UsagePage: {"kind":"UInt16"},
+    LinkCollection: {"kind":"UInt16"},
+    UsageList: {"kind""Ptr","child":{"kind":"UInt16"}},
+    UsageLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreparsedData: {"kind":"IntPtr"},
+    Report: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReportLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidP_GetUsages(
+    ReportType: Windows.Win32.Hid.HIDP_REPORT_TYPE,
+    UsagePage: {"kind":"UInt16"},
+    LinkCollection: {"kind":"UInt16"},
+    UsageList: {"kind""Ptr","child":{"kind":"UInt16"}},
+    UsageLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreparsedData: {"kind":"IntPtr"},
+    Report: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReportLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidP_GetUsagesEx(
+    ReportType: Windows.Win32.Hid.HIDP_REPORT_TYPE,
+    LinkCollection: {"kind":"UInt16"},
+    ButtonList: {"kind""Ptr","child":Windows.Win32.Hid.USAGE_AND_PAGE},
+    UsageLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreparsedData: {"kind":"IntPtr"},
+    Report: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReportLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidP_MaxUsageListLength(
+    ReportType: Windows.Win32.Hid.HIDP_REPORT_TYPE,
+    UsagePage: {"kind":"UInt16"},
+    PreparsedData: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidP_SetUsageValue(
+    ReportType: Windows.Win32.Hid.HIDP_REPORT_TYPE,
+    UsagePage: {"kind":"UInt16"},
+    LinkCollection: {"kind":"UInt16"},
+    Usage: {"kind":"UInt16"},
+    UsageValue: {"kind":"UInt32"},
+    PreparsedData: {"kind":"IntPtr"},
+    Report: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReportLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidP_SetScaledUsageValue(
+    ReportType: Windows.Win32.Hid.HIDP_REPORT_TYPE,
+    UsagePage: {"kind":"UInt16"},
+    LinkCollection: {"kind":"UInt16"},
+    Usage: {"kind":"UInt16"},
+    UsageValue: {"kind":"Int32"},
+    PreparsedData: {"kind":"IntPtr"},
+    Report: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReportLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidP_SetUsageValueArray(
+    ReportType: Windows.Win32.Hid.HIDP_REPORT_TYPE,
+    UsagePage: {"kind":"UInt16"},
+    LinkCollection: {"kind":"UInt16"},
+    Usage: {"kind":"UInt16"},
+    UsageValue: {"kind""Ptr","child":{"kind":"SByte"}},
+    UsageValueByteLength: {"kind":"UInt16"},
+    PreparsedData: {"kind":"IntPtr"},
+    Report: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReportLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidP_GetUsageValue(
+    ReportType: Windows.Win32.Hid.HIDP_REPORT_TYPE,
+    UsagePage: {"kind":"UInt16"},
+    LinkCollection: {"kind":"UInt16"},
+    Usage: {"kind":"UInt16"},
+    UsageValue: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreparsedData: {"kind":"IntPtr"},
+    Report: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReportLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidP_GetScaledUsageValue(
+    ReportType: Windows.Win32.Hid.HIDP_REPORT_TYPE,
+    UsagePage: {"kind":"UInt16"},
+    LinkCollection: {"kind":"UInt16"},
+    Usage: {"kind":"UInt16"},
+    UsageValue: {"kind""Ptr","child":{"kind":"Int32"}},
+    PreparsedData: {"kind":"IntPtr"},
+    Report: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReportLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidP_GetUsageValueArray(
+    ReportType: Windows.Win32.Hid.HIDP_REPORT_TYPE,
+    UsagePage: {"kind":"UInt16"},
+    LinkCollection: {"kind":"UInt16"},
+    Usage: {"kind":"UInt16"},
+    UsageValue: {"kind""Ptr","child":{"kind":"SByte"}},
+    UsageValueByteLength: {"kind":"UInt16"},
+    PreparsedData: {"kind":"IntPtr"},
+    Report: {"kind""Ptr","child":{"kind":"SByte"}},
+    ReportLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidP_UsageListDifference(
+    PreviousUsageList: {"kind""Ptr","child":{"kind":"UInt16"}},
+    CurrentUsageList: {"kind""Ptr","child":{"kind":"UInt16"}},
+    BreakUsageList: {"kind""Ptr","child":{"kind":"UInt16"}},
+    MakeUsageList: {"kind""Ptr","child":{"kind":"UInt16"}},
+    UsageListLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidP_TranslateUsagesToI8042ScanCodes(
+    ChangedUsageList: {"kind""Ptr","child":{"kind":"UInt16"}},
+    UsageListLength: {"kind":"UInt32"},
+    KeyAction: Windows.Win32.Hid.HIDP_KEYBOARD_DIRECTION,
+    ModifierState: {"kind""Ptr","child":Windows.Win32.Hid.HIDP_KEYBOARD_MODIFIER_STATE},
+    InsertCodesProcedure: Windows.Win32.Hid.PHIDP_INSERT_SCANCODES,
+    InsertCodesContext: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidD_GetAttributes(
+    HidDeviceObject: Windows.Win32.SystemServices.HANDLE,
+    Attributes: {"kind""Ptr","child":Windows.Win32.Hid.HIDD_ATTRIBUTES},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidD_GetHidGuid(
+    HidGuid: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidD_GetPreparsedData(
+    HidDeviceObject: Windows.Win32.SystemServices.HANDLE,
+    PreparsedData: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidD_FreePreparsedData(
+    PreparsedData: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidD_FlushQueue(
+    HidDeviceObject: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidD_GetConfiguration(
+    HidDeviceObject: Windows.Win32.SystemServices.HANDLE,
+    Configuration: {"kind""Ptr","child":Windows.Win32.Hid.HIDD_CONFIGURATION},
+    ConfigurationLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidD_SetConfiguration(
+    HidDeviceObject: Windows.Win32.SystemServices.HANDLE,
+    Configuration: {"kind""Ptr","child":Windows.Win32.Hid.HIDD_CONFIGURATION},
+    ConfigurationLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidD_GetFeature(
+    HidDeviceObject: Windows.Win32.SystemServices.HANDLE,
+    ReportBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    ReportBufferLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidD_SetFeature(
+    HidDeviceObject: Windows.Win32.SystemServices.HANDLE,
+    ReportBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    ReportBufferLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidD_GetInputReport(
+    HidDeviceObject: Windows.Win32.SystemServices.HANDLE,
+    ReportBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    ReportBufferLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidD_SetOutputReport(
+    HidDeviceObject: Windows.Win32.SystemServices.HANDLE,
+    ReportBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    ReportBufferLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidD_GetNumInputBuffers(
+    HidDeviceObject: Windows.Win32.SystemServices.HANDLE,
+    NumberBuffers: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidD_SetNumInputBuffers(
+    HidDeviceObject: Windows.Win32.SystemServices.HANDLE,
+    NumberBuffers: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidD_GetPhysicalDescriptor(
+    HidDeviceObject: Windows.Win32.SystemServices.HANDLE,
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    BufferLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidD_GetManufacturerString(
+    HidDeviceObject: Windows.Win32.SystemServices.HANDLE,
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    BufferLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidD_GetProductString(
+    HidDeviceObject: Windows.Win32.SystemServices.HANDLE,
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    BufferLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidD_GetIndexedString(
+    HidDeviceObject: Windows.Win32.SystemServices.HANDLE,
+    StringIndex: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    BufferLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidD_GetSerialNumberString(
+    HidDeviceObject: Windows.Win32.SystemServices.HANDLE,
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    BufferLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "HID" fn HidD_GetMsGenreDescriptor(
+    HidDeviceObject: Windows.Win32.SystemServices.HANDLE,
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    BufferLength: {"kind":"UInt32"},
+],
+
+"unicode_aliases": [
+     "DIACTION"
+     "DIACTIONFORMAT"
+     "DICONFIGUREDEVICESPARAMS"
+     "DIDEVICEIMAGEINFO"
+     "DIDEVICEIMAGEINFOHEADER"
+     "DIDEVICEOBJECTINSTANCE_DX3"
+     "DIDEVICEOBJECTINSTANCE"
+     "LPDIENUMDEVICEOBJECTSCALLBACK"
+     "DIDEVICEINSTANCE_DX3"
+     "DIDEVICEINSTANCE"
+     "IDirectInputDevice"
+     "DIEFFECTINFO"
+     "LPDIENUMEFFECTSCALLBACK"
+     "IDirectInputDevice2"
+     "IDirectInputDevice7"
+     "IDirectInputDevice8"
+     "LPDIENUMDEVICESCALLBACK"
+     "LPDIENUMDEVICESBYSEMANTICSCB"
+     "IDirectInput"
+     "IDirectInput2"
+     "IDirectInput7"
+     "IDirectInput8"
+]}

@@ -1,0 +1,437 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: EVT_VARIANT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EVT_VARIANT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: EVT_VARIANT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVT_VARIANT = extern struct {
+    Anonymous: Windows.Win32.WindowsEventLog.EVT_VARIANT+_Anonymous_e__Union,
+    Count: {"kind":"UInt32"},
+    Type: {"kind":"UInt32"},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: EVT_LOGIN_CLASS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EVT_LOGIN_CLASS = *opaque{
+};
+// --------------------------------------------------------
+// Type: EVT_RPC_LOGIN_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EVT_RPC_LOGIN_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: EVT_RPC_LOGIN
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVT_RPC_LOGIN = extern struct {
+    Server: {"kind""Ptr","child":{"kind":"UInt16"}},
+    User: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Domain: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Password: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EVT_QUERY_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EVT_QUERY_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: EVT_SEEK_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EVT_SEEK_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: EVT_SUBSCRIBE_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EVT_SUBSCRIBE_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: EVT_SUBSCRIBE_NOTIFY_ACTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EVT_SUBSCRIBE_NOTIFY_ACTION = *opaque{
+};
+// --------------------------------------------------------
+// Type: EVT_SUBSCRIBE_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EVT_SUBSCRIBE_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: EVT_SYSTEM_PROPERTY_ID
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EVT_SYSTEM_PROPERTY_ID = *opaque{
+};
+// --------------------------------------------------------
+// Type: EVT_RENDER_CONTEXT_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EVT_RENDER_CONTEXT_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: EVT_RENDER_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EVT_RENDER_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: EVT_FORMAT_MESSAGE_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EVT_FORMAT_MESSAGE_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: EVT_OPEN_LOG_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EVT_OPEN_LOG_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: EVT_LOG_PROPERTY_ID
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EVT_LOG_PROPERTY_ID = *opaque{
+};
+// --------------------------------------------------------
+// Type: EVT_EXPORTLOG_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EVT_EXPORTLOG_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: EVT_CHANNEL_CONFIG_PROPERTY_ID
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EVT_CHANNEL_CONFIG_PROPERTY_ID = *opaque{
+};
+// --------------------------------------------------------
+// Type: EVT_CHANNEL_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EVT_CHANNEL_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: EVT_CHANNEL_ISOLATION_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EVT_CHANNEL_ISOLATION_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: EVT_CHANNEL_CLOCK_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EVT_CHANNEL_CLOCK_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: EVT_CHANNEL_SID_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EVT_CHANNEL_SID_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: EVT_CHANNEL_REFERENCE_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EVT_CHANNEL_REFERENCE_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: EVT_PUBLISHER_METADATA_PROPERTY_ID
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EVT_PUBLISHER_METADATA_PROPERTY_ID = *opaque{
+};
+// --------------------------------------------------------
+// Type: EVT_EVENT_METADATA_PROPERTY_ID
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EVT_EVENT_METADATA_PROPERTY_ID = *opaque{
+};
+// --------------------------------------------------------
+// Type: EVT_QUERY_PROPERTY_ID
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EVT_QUERY_PROPERTY_ID = *opaque{
+};
+// --------------------------------------------------------
+// Type: EVT_EVENT_PROPERTY_ID
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EVT_EVENT_PROPERTY_ID = *opaque{
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtOpenSession(
+    LoginClass: Windows.Win32.WindowsEventLog.EVT_LOGIN_CLASS,
+    Login: {"kind""Ptr","child":{"kind":"Void"}},
+    Timeout: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtClose(
+    Object: {"kind":"IntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtCancel(
+    Object: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wevtapi" fn EvtGetExtendedStatus(
+    BufferSize: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    BufferUsed: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtQuery(
+    Session: {"kind":"IntPtr"},
+    Path: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Query: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtNext(
+    ResultSet: {"kind":"IntPtr"},
+    EventsSize: {"kind":"UInt32"},
+    Events: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    Timeout: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+    Returned: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtSeek(
+    ResultSet: {"kind":"IntPtr"},
+    Position: {"kind":"Int64"},
+    Bookmark: {"kind":"IntPtr"},
+    Timeout: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtSubscribe(
+    Session: {"kind":"IntPtr"},
+    SignalEvent: Windows.Win32.SystemServices.HANDLE,
+    ChannelPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Query: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Bookmark: {"kind":"IntPtr"},
+    Context: {"kind""Ptr","child":{"kind":"Void"}},
+    Callback: Windows.Win32.WindowsEventLog.EVT_SUBSCRIBE_CALLBACK,
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtCreateRenderContext(
+    ValuePathsCount: {"kind":"UInt32"},
+    ValuePaths: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtRender(
+    Context: {"kind":"IntPtr"},
+    Fragment: {"kind":"IntPtr"},
+    Flags: {"kind":"UInt32"},
+    BufferSize: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    BufferUsed: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PropertyCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtFormatMessage(
+    PublisherMetadata: {"kind":"IntPtr"},
+    Event: {"kind":"IntPtr"},
+    MessageId: {"kind":"UInt32"},
+    ValueCount: {"kind":"UInt32"},
+    Values: {"kind""Ptr","child":Windows.Win32.WindowsEventLog.EVT_VARIANT},
+    Flags: {"kind":"UInt32"},
+    BufferSize: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    BufferUsed: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtOpenLog(
+    Session: {"kind":"IntPtr"},
+    Path: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtGetLogInfo(
+    Log: {"kind":"IntPtr"},
+    PropertyId: Windows.Win32.WindowsEventLog.EVT_LOG_PROPERTY_ID,
+    PropertyValueBufferSize: {"kind":"UInt32"},
+    PropertyValueBuffer: {"kind""Ptr","child":Windows.Win32.WindowsEventLog.EVT_VARIANT},
+    PropertyValueBufferUsed: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtClearLog(
+    Session: {"kind":"IntPtr"},
+    ChannelPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TargetFilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtExportLog(
+    Session: {"kind":"IntPtr"},
+    Path: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Query: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TargetFilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtArchiveExportedLog(
+    Session: {"kind":"IntPtr"},
+    LogFilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Locale: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtOpenChannelEnum(
+    Session: {"kind":"IntPtr"},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtNextChannelPath(
+    ChannelEnum: {"kind":"IntPtr"},
+    ChannelPathBufferSize: {"kind":"UInt32"},
+    ChannelPathBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ChannelPathBufferUsed: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtOpenChannelConfig(
+    Session: {"kind":"IntPtr"},
+    ChannelPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtSaveChannelConfig(
+    ChannelConfig: {"kind":"IntPtr"},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtSetChannelConfigProperty(
+    ChannelConfig: {"kind":"IntPtr"},
+    PropertyId: Windows.Win32.WindowsEventLog.EVT_CHANNEL_CONFIG_PROPERTY_ID,
+    Flags: {"kind":"UInt32"},
+    PropertyValue: {"kind""Ptr","child":Windows.Win32.WindowsEventLog.EVT_VARIANT},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtGetChannelConfigProperty(
+    ChannelConfig: {"kind":"IntPtr"},
+    PropertyId: Windows.Win32.WindowsEventLog.EVT_CHANNEL_CONFIG_PROPERTY_ID,
+    Flags: {"kind":"UInt32"},
+    PropertyValueBufferSize: {"kind":"UInt32"},
+    PropertyValueBuffer: {"kind""Ptr","child":Windows.Win32.WindowsEventLog.EVT_VARIANT},
+    PropertyValueBufferUsed: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtOpenPublisherEnum(
+    Session: {"kind":"IntPtr"},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtNextPublisherId(
+    PublisherEnum: {"kind":"IntPtr"},
+    PublisherIdBufferSize: {"kind":"UInt32"},
+    PublisherIdBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PublisherIdBufferUsed: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtOpenPublisherMetadata(
+    Session: {"kind":"IntPtr"},
+    PublisherId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    LogFilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Locale: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtGetPublisherMetadataProperty(
+    PublisherMetadata: {"kind":"IntPtr"},
+    PropertyId: Windows.Win32.WindowsEventLog.EVT_PUBLISHER_METADATA_PROPERTY_ID,
+    Flags: {"kind":"UInt32"},
+    PublisherMetadataPropertyBufferSize: {"kind":"UInt32"},
+    PublisherMetadataPropertyBuffer: {"kind""Ptr","child":Windows.Win32.WindowsEventLog.EVT_VARIANT},
+    PublisherMetadataPropertyBufferUsed: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtOpenEventMetadataEnum(
+    PublisherMetadata: {"kind":"IntPtr"},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtNextEventMetadata(
+    EventMetadataEnum: {"kind":"IntPtr"},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtGetEventMetadataProperty(
+    EventMetadata: {"kind":"IntPtr"},
+    PropertyId: Windows.Win32.WindowsEventLog.EVT_EVENT_METADATA_PROPERTY_ID,
+    Flags: {"kind":"UInt32"},
+    EventMetadataPropertyBufferSize: {"kind":"UInt32"},
+    EventMetadataPropertyBuffer: {"kind""Ptr","child":Windows.Win32.WindowsEventLog.EVT_VARIANT},
+    EventMetadataPropertyBufferUsed: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtGetObjectArraySize(
+    ObjectArray: {"kind":"IntPtr"},
+    ObjectArraySize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtGetObjectArrayProperty(
+    ObjectArray: {"kind":"IntPtr"},
+    PropertyId: {"kind":"UInt32"},
+    ArrayIndex: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+    PropertyValueBufferSize: {"kind":"UInt32"},
+    PropertyValueBuffer: {"kind""Ptr","child":Windows.Win32.WindowsEventLog.EVT_VARIANT},
+    PropertyValueBufferUsed: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtGetQueryInfo(
+    QueryOrSubscription: {"kind":"IntPtr"},
+    PropertyId: Windows.Win32.WindowsEventLog.EVT_QUERY_PROPERTY_ID,
+    PropertyValueBufferSize: {"kind":"UInt32"},
+    PropertyValueBuffer: {"kind""Ptr","child":Windows.Win32.WindowsEventLog.EVT_VARIANT},
+    PropertyValueBufferUsed: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtCreateBookmark(
+    BookmarkXml: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtUpdateBookmark(
+    Bookmark: {"kind":"IntPtr"},
+    Event: {"kind":"IntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "wevtapi" fn EvtGetEventInfo(
+    Event: {"kind":"IntPtr"},
+    PropertyId: Windows.Win32.WindowsEventLog.EVT_EVENT_PROPERTY_ID,
+    PropertyValueBufferSize: {"kind":"UInt32"},
+    PropertyValueBuffer: {"kind""Ptr","child":Windows.Win32.WindowsEventLog.EVT_VARIANT},
+    PropertyValueBufferUsed: {"kind""Ptr","child":{"kind":"UInt32"}},
+],
+
+"unicode_aliases": [
+]}

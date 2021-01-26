@@ -1,0 +1,540 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: MOUSEMOVEPOINT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MOUSEMOVEPOINT = extern struct {
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    time: {"kind":"UInt32"},
+    dwExtraInfo: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: TRACKMOUSEEVENT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TRACKMOUSEEVENT = extern struct {
+    cbSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    hwndTrack: Windows.Win32.WindowsAndMessaging.HWND,
+    dwHoverTime: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MOUSEINPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MOUSEINPUT = extern struct {
+    dx: {"kind":"Int32"},
+    dy: {"kind":"Int32"},
+    mouseData: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    time: {"kind":"UInt32"},
+    dwExtraInfo: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: KEYBDINPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const KEYBDINPUT = extern struct {
+    wVk: {"kind":"UInt16"},
+    wScan: {"kind":"UInt16"},
+    dwFlags: {"kind":"UInt32"},
+    time: {"kind":"UInt32"},
+    dwExtraInfo: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: HARDWAREINPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HARDWAREINPUT = extern struct {
+    uMsg: {"kind":"UInt32"},
+    wParamL: {"kind":"UInt16"},
+    wParamH: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: INPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INPUT = extern struct {
+    type: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.KeyboardAndMouseInput.INPUT+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: LASTINPUTINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LASTINPUTINFO = extern struct {
+    cbSize: {"kind":"UInt32"},
+    dwTime: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: RAWINPUTHEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RAWINPUTHEADER = extern struct {
+    dwType: {"kind":"UInt32"},
+    dwSize: {"kind":"UInt32"},
+    hDevice: Windows.Win32.SystemServices.HANDLE,
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+};
+// --------------------------------------------------------
+// Type: RAWMOUSE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RAWMOUSE = extern struct {
+    usFlags: {"kind":"UInt16"},
+    Anonymous: Windows.Win32.KeyboardAndMouseInput.RAWMOUSE+_Anonymous_e__Union,
+    ulRawButtons: {"kind":"UInt32"},
+    lLastX: {"kind":"Int32"},
+    lLastY: {"kind":"Int32"},
+    ulExtraInformation: {"kind":"UInt32"},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            usButtonFlags: {"kind":"UInt16"},
+            usButtonData: {"kind":"UInt16"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: RAWKEYBOARD
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RAWKEYBOARD = extern struct {
+    MakeCode: {"kind":"UInt16"},
+    Flags: {"kind":"UInt16"},
+    Reserved: {"kind":"UInt16"},
+    VKey: {"kind":"UInt16"},
+    Message: {"kind":"UInt32"},
+    ExtraInformation: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: RAWHID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RAWHID = extern struct {
+    dwSizeHid: {"kind":"UInt32"},
+    dwCount: {"kind":"UInt32"},
+    bRawData: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: RAWINPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RAWINPUT = extern struct {
+    header: Windows.Win32.KeyboardAndMouseInput.RAWINPUTHEADER,
+    data: Windows.Win32.KeyboardAndMouseInput.RAWINPUT+_data_e__Union,
+    // --------------------------------------------------------
+    // Type: _data_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _data_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: RID_DEVICE_INFO_MOUSE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RID_DEVICE_INFO_MOUSE = extern struct {
+    dwId: {"kind":"UInt32"},
+    dwNumberOfButtons: {"kind":"UInt32"},
+    dwSampleRate: {"kind":"UInt32"},
+    fHasHorizontalWheel: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: RID_DEVICE_INFO_KEYBOARD
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RID_DEVICE_INFO_KEYBOARD = extern struct {
+    dwType: {"kind":"UInt32"},
+    dwSubType: {"kind":"UInt32"},
+    dwKeyboardMode: {"kind":"UInt32"},
+    dwNumberOfFunctionKeys: {"kind":"UInt32"},
+    dwNumberOfIndicators: {"kind":"UInt32"},
+    dwNumberOfKeysTotal: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: RID_DEVICE_INFO_HID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RID_DEVICE_INFO_HID = extern struct {
+    dwVendorId: {"kind":"UInt32"},
+    dwProductId: {"kind":"UInt32"},
+    dwVersionNumber: {"kind":"UInt32"},
+    usUsagePage: {"kind":"UInt16"},
+    usUsage: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: RID_DEVICE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RID_DEVICE_INFO = extern struct {
+    cbSize: {"kind":"UInt32"},
+    dwType: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.KeyboardAndMouseInput.RID_DEVICE_INFO+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: RAWINPUTDEVICE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RAWINPUTDEVICE = extern struct {
+    usUsagePage: {"kind":"UInt16"},
+    usUsage: {"kind":"UInt16"},
+    dwFlags: {"kind":"UInt32"},
+    hwndTarget: Windows.Win32.WindowsAndMessaging.HWND,
+};
+// --------------------------------------------------------
+// Type: RAWINPUTDEVICELIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RAWINPUTDEVICELIST = extern struct {
+    hDevice: Windows.Win32.SystemServices.HANDLE,
+    dwType: {"kind":"UInt32"},
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn LoadKeyboardLayoutA(
+    pwszKLID: {"kind""Ptr","child":{"kind":"SByte"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn LoadKeyboardLayoutW(
+    pwszKLID: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn ActivateKeyboardLayout(
+    hkl: {"kind":"IntPtr"},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn ToUnicodeEx(
+    wVirtKey: {"kind":"UInt32"},
+    wScanCode: {"kind":"UInt32"},
+    lpKeyState: {"kind""Ptr","child":{"kind":"Byte"}},
+    pwszBuff: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchBuff: {"kind":"Int32"},
+    wFlags: {"kind":"UInt32"},
+    dwhkl: {"kind":"IntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn UnloadKeyboardLayout(
+    hkl: {"kind":"IntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetKeyboardLayoutNameA(
+    pwszKLID: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetKeyboardLayoutNameW(
+    pwszKLID: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetKeyboardLayoutList(
+    nBuff: {"kind":"Int32"},
+    lpList: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetKeyboardLayout(
+    idThread: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetMouseMovePointsEx(
+    cbSize: {"kind":"UInt32"},
+    lppt: {"kind""Ptr","child":Windows.Win32.KeyboardAndMouseInput.MOUSEMOVEPOINT},
+    lpptBuf: {"kind""Ptr","child":Windows.Win32.KeyboardAndMouseInput.MOUSEMOVEPOINT},
+    nBufPoints: {"kind":"Int32"},
+    resolution: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn TrackMouseEvent(
+    lpEventTrack: {"kind""Ptr","child":Windows.Win32.KeyboardAndMouseInput.TRACKMOUSEEVENT},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn RegisterHotKey(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    id: {"kind":"Int32"},
+    fsModifiers: {"kind":"UInt32"},
+    vk: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn UnregisterHotKey(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    id: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn SwapMouseButton(
+    fSwap: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetDoubleClickTime(
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetDoubleClickTime(
+    param0: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetFocus(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetActiveWindow(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetFocus(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetKBCodePage(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetKeyState(
+    nVirtKey: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetAsyncKeyState(
+    vKey: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetKeyboardState(
+    lpKeyState: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetKeyboardState(
+    lpKeyState: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetKeyNameTextA(
+    lParam: {"kind":"Int32"},
+    lpString: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchSize: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetKeyNameTextW(
+    lParam: {"kind":"Int32"},
+    lpString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchSize: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetKeyboardType(
+    nTypeFlag: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn ToAscii(
+    uVirtKey: {"kind":"UInt32"},
+    uScanCode: {"kind":"UInt32"},
+    lpKeyState: {"kind""Ptr","child":{"kind":"Byte"}},
+    lpChar: {"kind""Ptr","child":{"kind":"UInt16"}},
+    uFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn ToAsciiEx(
+    uVirtKey: {"kind":"UInt32"},
+    uScanCode: {"kind":"UInt32"},
+    lpKeyState: {"kind""Ptr","child":{"kind":"Byte"}},
+    lpChar: {"kind""Ptr","child":{"kind":"UInt16"}},
+    uFlags: {"kind":"UInt32"},
+    dwhkl: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn ToUnicode(
+    wVirtKey: {"kind":"UInt32"},
+    wScanCode: {"kind":"UInt32"},
+    lpKeyState: {"kind""Ptr","child":{"kind":"Byte"}},
+    pwszBuff: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchBuff: {"kind":"Int32"},
+    wFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn OemKeyScan(
+    wOemChar: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn VkKeyScanA(
+    ch: {"kind":"SByte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn VkKeyScanW(
+    ch: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn VkKeyScanExA(
+    ch: {"kind":"SByte"},
+    dwhkl: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn VkKeyScanExW(
+    ch: {"kind":"UInt16"},
+    dwhkl: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn keybd_event(
+    bVk: {"kind":"Byte"},
+    bScan: {"kind":"Byte"},
+    dwFlags: {"kind":"UInt32"},
+    dwExtraInfo: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn mouse_event(
+    dwFlags: {"kind":"UInt32"},
+    dx: {"kind":"UInt32"},
+    dy: {"kind":"UInt32"},
+    dwData: {"kind":"UInt32"},
+    dwExtraInfo: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SendInput(
+    cInputs: {"kind":"UInt32"},
+    pInputs: {"kind""Ptr","child":Windows.Win32.KeyboardAndMouseInput.INPUT},
+    cbSize: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetLastInputInfo(
+    plii: {"kind""Ptr","child":Windows.Win32.KeyboardAndMouseInput.LASTINPUTINFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn MapVirtualKeyA(
+    uCode: {"kind":"UInt32"},
+    uMapType: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn MapVirtualKeyW(
+    uCode: {"kind":"UInt32"},
+    uMapType: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn MapVirtualKeyExA(
+    uCode: {"kind":"UInt32"},
+    uMapType: {"kind":"UInt32"},
+    dwhkl: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn MapVirtualKeyExW(
+    uCode: {"kind":"UInt32"},
+    uMapType: {"kind":"UInt32"},
+    dwhkl: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetCapture(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn SetCapture(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn ReleaseCapture(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn EnableWindow(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    bEnable: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn IsWindowEnabled(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DragDetect(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    pt: Windows.Win32.DisplayDevices.POINT,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetActiveWindow(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn BlockInput(
+    fBlockIt: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetRawInputData(
+    hRawInput: {"kind":"IntPtr"},
+    uiCommand: {"kind":"UInt32"},
+    pData: {"kind""Ptr","child":{"kind":"Void"}},
+    pcbSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    cbSizeHeader: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetRawInputDeviceInfoA(
+    hDevice: Windows.Win32.SystemServices.HANDLE,
+    uiCommand: {"kind":"UInt32"},
+    pData: {"kind""Ptr","child":{"kind":"Void"}},
+    pcbSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetRawInputDeviceInfoW(
+    hDevice: Windows.Win32.SystemServices.HANDLE,
+    uiCommand: {"kind":"UInt32"},
+    pData: {"kind""Ptr","child":{"kind":"Void"}},
+    pcbSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetRawInputBuffer(
+    pData: {"kind""Ptr","child":Windows.Win32.KeyboardAndMouseInput.RAWINPUT},
+    pcbSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    cbSizeHeader: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn RegisterRawInputDevices(
+    pRawInputDevices: {"kind""Ptr","child":Windows.Win32.KeyboardAndMouseInput.RAWINPUTDEVICE},
+    uiNumDevices: {"kind":"UInt32"},
+    cbSize: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetRegisteredRawInputDevices(
+    pRawInputDevices: {"kind""Ptr","child":Windows.Win32.KeyboardAndMouseInput.RAWINPUTDEVICE},
+    puiNumDevices: {"kind""Ptr","child":{"kind":"UInt32"}},
+    cbSize: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetRawInputDeviceList(
+    pRawInputDeviceList: {"kind""Ptr","child":Windows.Win32.KeyboardAndMouseInput.RAWINPUTDEVICELIST},
+    puiNumDevices: {"kind""Ptr","child":{"kind":"UInt32"}},
+    cbSize: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DefRawInputProc(
+    paRawInput: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.KeyboardAndMouseInput.RAWINPUT}},
+    nInput: {"kind":"Int32"},
+    cbSizeHeader: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "COMCTL32" fn _TrackMouseEvent(
+    lpEventTrack: {"kind""Ptr","child":Windows.Win32.KeyboardAndMouseInput.TRACKMOUSEEVENT},
+],
+
+"unicode_aliases": [
+     "LoadKeyboardLayout"
+     "GetKeyboardLayoutName"
+     "GetKeyNameText"
+     "VkKeyScan"
+     "VkKeyScanEx"
+     "MapVirtualKey"
+     "MapVirtualKeyEx"
+     "GetRawInputDeviceInfo"
+]}

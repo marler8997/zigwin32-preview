@@ -1,0 +1,80 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: InkDesktopHost
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const InkDesktopHost = opaque {
+};
+// --------------------------------------------------------
+// Type: IInkCommitRequestHandler
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IInkCommitRequestHandler = *opaque{
+    // TODO: Method 'OnCommitRequested'
+};
+// --------------------------------------------------------
+// Type: IInkPresenterDesktop
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IInkPresenterDesktop = *opaque{
+    // TODO: Method 'SetRootVisual'
+    // TODO: Method 'SetCommitRequestHandler'
+    // TODO: Method 'GetSize'
+    // TODO: Method 'SetSize'
+    // TODO: Method 'OnHighContrastChanged'
+};
+// --------------------------------------------------------
+// Type: IInkHostWorkItem
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IInkHostWorkItem = *opaque{
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IInkDesktopHost
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IInkDesktopHost = *opaque{
+    // TODO: Method 'QueueWorkItem'
+    // TODO: Method 'CreateInkPresenter'
+    // TODO: Method 'CreateAndInitializeInkPresenter'
+};
+// --------------------------------------------------------
+// Type: InkD2DRenderer
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const InkD2DRenderer = opaque {
+};
+// --------------------------------------------------------
+// Type: __MIDL___MIDL_itf_inkrenderer_0000_0000_0001
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const __MIDL___MIDL_itf_inkrenderer_0000_0000_0001 = *opaque{
+};
+// --------------------------------------------------------
+// Type: IInkD2DRenderer
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IInkD2DRenderer = *opaque{
+    // TODO: Method 'Draw'
+};
+// --------------------------------------------------------
+// Type: IInkD2DRenderer2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IInkD2DRenderer2 = *opaque{
+    // TODO: Method 'Draw'
+};
+],
+
+"func_definitions": [
+],
+
+"unicode_aliases": [
+]}

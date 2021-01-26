@@ -1,0 +1,1064 @@
+﻿{
+"constants": [
+     {
+         "name": "IS_GUAR_RSPEC"
+        ,"type": {"kind":"Int32"}
+        ,"value": 130
+    }
+    ,{
+         "name": "GUAR_ADSPARM_C"
+        ,"type": {"kind":"Int32"}
+        ,"value": 131
+    }
+    ,{
+         "name": "GUAR_ADSPARM_D"
+        ,"type": {"kind":"Int32"}
+        ,"value": 132
+    }
+    ,{
+         "name": "GUAR_ADSPARM_Ctot"
+        ,"type": {"kind":"Int32"}
+        ,"value": 133
+    }
+    ,{
+         "name": "GUAR_ADSPARM_Dtot"
+        ,"type": {"kind":"Int32"}
+        ,"value": 134
+    }
+    ,{
+         "name": "GUAR_ADSPARM_Csum"
+        ,"type": {"kind":"Int32"}
+        ,"value": 135
+    }
+    ,{
+         "name": "GUAR_ADSPARM_Dsum"
+        ,"type": {"kind":"Int32"}
+        ,"value": 136
+    }
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: FLOWSPEC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FLOWSPEC = extern struct {
+    TokenRate: {"kind":"UInt32"},
+    TokenBucketSize: {"kind":"UInt32"},
+    PeakBandwidth: {"kind":"UInt32"},
+    Latency: {"kind":"UInt32"},
+    DelayVariation: {"kind":"UInt32"},
+    ServiceType: {"kind":"UInt32"},
+    MaxSduSize: {"kind":"UInt32"},
+    MinimumPolicedSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: QOS_OBJECT_HDR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const QOS_OBJECT_HDR = extern struct {
+    ObjectType: {"kind":"UInt32"},
+    ObjectLength: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: QOS_SD_MODE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const QOS_SD_MODE = extern struct {
+    ObjectHdr: Windows.Win32.QualityOfService.QOS_OBJECT_HDR,
+    ShapeDiscardMode: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: QOS_SHAPING_RATE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const QOS_SHAPING_RATE = extern struct {
+    ObjectHdr: Windows.Win32.QualityOfService.QOS_OBJECT_HDR,
+    ShapingRate: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: RsvpObjHdr
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RsvpObjHdr = extern struct {
+    obj_length: {"kind":"UInt16"},
+    obj_class: {"kind":"Byte"},
+    obj_ctype: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: Session_IPv4
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const Session_IPv4 = extern struct {
+    sess_destaddr: Windows.Win32.WinSock.in_addr,
+    sess_protid: {"kind":"Byte"},
+    sess_flags: {"kind":"Byte"},
+    sess_destport: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: RSVP_SESSION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RSVP_SESSION = extern struct {
+    sess_header: Windows.Win32.QualityOfService.RsvpObjHdr,
+    sess_u: Windows.Win32.QualityOfService.RSVP_SESSION+_sess_u_e__Union,
+    // --------------------------------------------------------
+    // Type: _sess_u_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _sess_u_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: Rsvp_Hop_IPv4
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const Rsvp_Hop_IPv4 = extern struct {
+    hop_ipaddr: Windows.Win32.WinSock.in_addr,
+    hop_LIH: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: RSVP_HOP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RSVP_HOP = extern struct {
+    hop_header: Windows.Win32.QualityOfService.RsvpObjHdr,
+    hop_u: Windows.Win32.QualityOfService.RSVP_HOP+_hop_u_e__Union,
+    // --------------------------------------------------------
+    // Type: _hop_u_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _hop_u_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: RESV_STYLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RESV_STYLE = extern struct {
+    style_header: Windows.Win32.QualityOfService.RsvpObjHdr,
+    style_word: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: Filter_Spec_IPv4
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const Filter_Spec_IPv4 = extern struct {
+    filt_ipaddr: Windows.Win32.WinSock.in_addr,
+    filt_unused: {"kind":"UInt16"},
+    filt_port: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: Filter_Spec_IPv4GPI
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const Filter_Spec_IPv4GPI = extern struct {
+    filt_ipaddr: Windows.Win32.WinSock.in_addr,
+    filt_gpi: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: FILTER_SPEC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FILTER_SPEC = extern struct {
+    filt_header: Windows.Win32.QualityOfService.RsvpObjHdr,
+    filt_u: Windows.Win32.QualityOfService.FILTER_SPEC+_filt_u_e__Union,
+    // --------------------------------------------------------
+    // Type: _filt_u_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _filt_u_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: Scope_list_ipv4
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const Scope_list_ipv4 = extern struct {
+    scopl_ipaddr: {"kind":"Array","child": Windows.Win32.WinSock.in_addr},
+};
+// --------------------------------------------------------
+// Type: RSVP_SCOPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RSVP_SCOPE = extern struct {
+    scopl_header: Windows.Win32.QualityOfService.RsvpObjHdr,
+    scope_u: Windows.Win32.QualityOfService.RSVP_SCOPE+_scope_u_e__Union,
+    // --------------------------------------------------------
+    // Type: _scope_u_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _scope_u_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: Error_Spec_IPv4
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const Error_Spec_IPv4 = extern struct {
+    errs_errnode: Windows.Win32.WinSock.in_addr,
+    errs_flags: {"kind":"Byte"},
+    errs_code: {"kind":"Byte"},
+    errs_value: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: ERROR_SPEC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ERROR_SPEC = extern struct {
+    errs_header: Windows.Win32.QualityOfService.RsvpObjHdr,
+    errs_u: Windows.Win32.QualityOfService.ERROR_SPEC+_errs_u_e__Union,
+    // --------------------------------------------------------
+    // Type: _errs_u_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _errs_u_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: POLICY_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const POLICY_DATA = extern struct {
+    PolicyObjHdr: Windows.Win32.QualityOfService.RsvpObjHdr,
+    usPeOffset: {"kind":"UInt16"},
+    usReserved: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: POLICY_ELEMENT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const POLICY_ELEMENT = extern struct {
+    usPeLength: {"kind":"UInt16"},
+    usPeType: {"kind":"UInt16"},
+    ucPeData: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: int_serv_wkp
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const int_serv_wkp = *opaque{
+};
+// --------------------------------------------------------
+// Type: IntServMainHdr
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IntServMainHdr = extern struct {
+    ismh_version: {"kind":"Byte"},
+    ismh_unused: {"kind":"Byte"},
+    ismh_len32b: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: IntServServiceHdr
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IntServServiceHdr = extern struct {
+    issh_service: {"kind":"Byte"},
+    issh_flags: {"kind":"Byte"},
+    issh_len32b: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: IntServParmHdr
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IntServParmHdr = extern struct {
+    isph_parm_num: {"kind":"Byte"},
+    isph_flags: {"kind":"Byte"},
+    isph_len32b: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: GenTspecParms
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GenTspecParms = extern struct {
+    TB_Tspec_r: {"kind":"Single"},
+    TB_Tspec_b: {"kind":"Single"},
+    TB_Tspec_p: {"kind":"Single"},
+    TB_Tspec_m: {"kind":"UInt32"},
+    TB_Tspec_M: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: GenTspec
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GenTspec = extern struct {
+    gen_Tspec_serv_hdr: Windows.Win32.QualityOfService.IntServServiceHdr,
+    gen_Tspec_parm_hdr: Windows.Win32.QualityOfService.IntServParmHdr,
+    gen_Tspec_parms: Windows.Win32.QualityOfService.GenTspecParms,
+};
+// --------------------------------------------------------
+// Type: QualTspecParms
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const QualTspecParms = extern struct {
+    TB_Tspec_M: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: QualTspec
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const QualTspec = extern struct {
+    qual_Tspec_serv_hdr: Windows.Win32.QualityOfService.IntServServiceHdr,
+    qual_Tspec_parm_hdr: Windows.Win32.QualityOfService.IntServParmHdr,
+    qual_Tspec_parms: Windows.Win32.QualityOfService.QualTspecParms,
+};
+// --------------------------------------------------------
+// Type: QualAppFlowSpec
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const QualAppFlowSpec = extern struct {
+    Q_spec_serv_hdr: Windows.Win32.QualityOfService.IntServServiceHdr,
+    Q_spec_parm_hdr: Windows.Win32.QualityOfService.IntServParmHdr,
+    Q_spec_parms: Windows.Win32.QualityOfService.QualTspecParms,
+};
+// --------------------------------------------------------
+// Type: IntServTspecBody
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IntServTspecBody = extern struct {
+    st_mh: Windows.Win32.QualityOfService.IntServMainHdr,
+    tspec_u: Windows.Win32.QualityOfService.IntServTspecBody+_tspec_u_e__Union,
+    // --------------------------------------------------------
+    // Type: _tspec_u_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _tspec_u_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: SENDER_TSPEC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SENDER_TSPEC = extern struct {
+    stspec_header: Windows.Win32.QualityOfService.RsvpObjHdr,
+    stspec_body: Windows.Win32.QualityOfService.IntServTspecBody,
+};
+// --------------------------------------------------------
+// Type: CtrlLoadFlowspec
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CtrlLoadFlowspec = extern struct {
+    CL_spec_serv_hdr: Windows.Win32.QualityOfService.IntServServiceHdr,
+    CL_spec_parm_hdr: Windows.Win32.QualityOfService.IntServParmHdr,
+    CL_spec_parms: Windows.Win32.QualityOfService.GenTspecParms,
+};
+// --------------------------------------------------------
+// Type: GuarRspec
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GuarRspec = extern struct {
+    Guar_R: {"kind":"Single"},
+    Guar_S: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: GuarFlowSpec
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GuarFlowSpec = extern struct {
+    Guar_serv_hdr: Windows.Win32.QualityOfService.IntServServiceHdr,
+    Guar_Tspec_hdr: Windows.Win32.QualityOfService.IntServParmHdr,
+    Guar_Tspec_parms: Windows.Win32.QualityOfService.GenTspecParms,
+    Guar_Rspec_hdr: Windows.Win32.QualityOfService.IntServParmHdr,
+    Guar_Rspec: Windows.Win32.QualityOfService.GuarRspec,
+};
+// --------------------------------------------------------
+// Type: IntServFlowSpec
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IntServFlowSpec = extern struct {
+    spec_mh: Windows.Win32.QualityOfService.IntServMainHdr,
+    spec_u: Windows.Win32.QualityOfService.IntServFlowSpec+_spec_u_e__Union,
+    // --------------------------------------------------------
+    // Type: _spec_u_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _spec_u_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: IS_FLOWSPEC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IS_FLOWSPEC = extern struct {
+    flow_header: Windows.Win32.QualityOfService.RsvpObjHdr,
+    flow_body: Windows.Win32.QualityOfService.IntServFlowSpec,
+};
+// --------------------------------------------------------
+// Type: flow_desc
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const flow_desc = extern struct {
+    u1: Windows.Win32.QualityOfService.flow_desc+_u1_e__Union,
+    u2: Windows.Win32.QualityOfService.flow_desc+_u2_e__Union,
+    // --------------------------------------------------------
+    // Type: _u1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _u1_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _u2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _u2_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: Gads_parms_t
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const Gads_parms_t = extern struct {
+    Gads_serv_hdr: Windows.Win32.QualityOfService.IntServServiceHdr,
+    Gads_Ctot_hdr: Windows.Win32.QualityOfService.IntServParmHdr,
+    Gads_Ctot: {"kind":"UInt32"},
+    Gads_Dtot_hdr: Windows.Win32.QualityOfService.IntServParmHdr,
+    Gads_Dtot: {"kind":"UInt32"},
+    Gads_Csum_hdr: Windows.Win32.QualityOfService.IntServParmHdr,
+    Gads_Csum: {"kind":"UInt32"},
+    Gads_Dsum_hdr: Windows.Win32.QualityOfService.IntServParmHdr,
+    Gads_Dsum: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: GenAdspecParams
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GenAdspecParams = extern struct {
+    gen_parm_hdr: Windows.Win32.QualityOfService.IntServServiceHdr,
+    gen_parm_hopcnt_hdr: Windows.Win32.QualityOfService.IntServParmHdr,
+    gen_parm_hopcnt: {"kind":"UInt32"},
+    gen_parm_pathbw_hdr: Windows.Win32.QualityOfService.IntServParmHdr,
+    gen_parm_path_bw: {"kind":"Single"},
+    gen_parm_minlat_hdr: Windows.Win32.QualityOfService.IntServParmHdr,
+    gen_parm_min_latency: {"kind":"UInt32"},
+    gen_parm_compmtu_hdr: Windows.Win32.QualityOfService.IntServParmHdr,
+    gen_parm_composed_MTU: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: IS_ADSPEC_BODY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IS_ADSPEC_BODY = extern struct {
+    adspec_mh: Windows.Win32.QualityOfService.IntServMainHdr,
+    adspec_genparms: Windows.Win32.QualityOfService.GenAdspecParams,
+};
+// --------------------------------------------------------
+// Type: ADSPEC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADSPEC = extern struct {
+    adspec_header: Windows.Win32.QualityOfService.RsvpObjHdr,
+    adspec_body: Windows.Win32.QualityOfService.IS_ADSPEC_BODY,
+};
+// --------------------------------------------------------
+// Type: ID_ERROR_OBJECT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ID_ERROR_OBJECT = extern struct {
+    usIdErrLength: {"kind":"UInt16"},
+    ucAType: {"kind":"Byte"},
+    ucSubType: {"kind":"Byte"},
+    usReserved: {"kind":"UInt16"},
+    usIdErrorValue: {"kind":"UInt16"},
+    ucIdErrData: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: LPM_HANDLE__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LPM_HANDLE__ = extern struct {
+    unused: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: RHANDLE__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RHANDLE__ = extern struct {
+    unused: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: RSVP_MSG_OBJS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RSVP_MSG_OBJS = extern struct {
+    RsvpMsgType: {"kind":"Int32"},
+    pRsvpSession: {"kind""Ptr","child":Windows.Win32.QualityOfService.RSVP_SESSION},
+    pRsvpFromHop: {"kind""Ptr","child":Windows.Win32.QualityOfService.RSVP_HOP},
+    pRsvpToHop: {"kind""Ptr","child":Windows.Win32.QualityOfService.RSVP_HOP},
+    pResvStyle: {"kind""Ptr","child":Windows.Win32.QualityOfService.RESV_STYLE},
+    pRsvpScope: {"kind""Ptr","child":Windows.Win32.QualityOfService.RSVP_SCOPE},
+    FlowDescCount: {"kind":"Int32"},
+    pFlowDescs: {"kind""Ptr","child":Windows.Win32.QualityOfService.flow_desc},
+    PdObjectCount: {"kind":"Int32"},
+    ppPdObjects: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.QualityOfService.POLICY_DATA}},
+    pErrorSpec: {"kind""Ptr","child":Windows.Win32.QualityOfService.ERROR_SPEC},
+    pAdspec: {"kind""Ptr","child":Windows.Win32.QualityOfService.ADSPEC},
+};
+// --------------------------------------------------------
+// Type: PALLOCMEM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PALLOCMEM = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFREEMEM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFREEMEM = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: policy_decision
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const policy_decision = extern struct {
+    lpvResult: {"kind":"UInt32"},
+    wPolicyErrCode: {"kind":"UInt16"},
+    wPolicyErrValue: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: CBADMITRESULT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CBADMITRESULT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: CBGETRSVPOBJECTS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CBGETRSVPOBJECTS = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPM_INIT_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LPM_INIT_INFO = extern struct {
+    PcmVersionNumber: {"kind":"UInt32"},
+    ResultTimeLimit: {"kind":"UInt32"},
+    ConfiguredLpmCount: {"kind":"Int32"},
+    AllocMemory: Windows.Win32.QualityOfService.PALLOCMEM,
+    FreeMemory: Windows.Win32.QualityOfService.PFREEMEM,
+    PcmAdmitResultCallback: Windows.Win32.QualityOfService.CBADMITRESULT,
+    GetRsvpObjectsCallback: Windows.Win32.QualityOfService.CBGETRSVPOBJECTS,
+};
+// --------------------------------------------------------
+// Type: lpmiptable
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const lpmiptable = extern struct {
+    ulIfIndex: {"kind":"UInt32"},
+    MediaType: {"kind":"UInt32"},
+    IfIpAddr: Windows.Win32.WinSock.in_addr,
+    IfNetMask: Windows.Win32.WinSock.in_addr,
+};
+// --------------------------------------------------------
+// Type: QOS_TRAFFIC_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const QOS_TRAFFIC_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: QOS_SET_FLOW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const QOS_SET_FLOW = *opaque{
+};
+// --------------------------------------------------------
+// Type: QOS_PACKET_PRIORITY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const QOS_PACKET_PRIORITY = extern struct {
+    ConformantDSCPValue: {"kind":"UInt32"},
+    NonConformantDSCPValue: {"kind":"UInt32"},
+    ConformantL2Value: {"kind":"UInt32"},
+    NonConformantL2Value: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: QOS_FLOW_FUNDAMENTALS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const QOS_FLOW_FUNDAMENTALS = extern struct {
+    BottleneckBandwidthSet: Windows.Win32.SystemServices.BOOL,
+    BottleneckBandwidth: {"kind":"UInt64"},
+    AvailableBandwidthSet: Windows.Win32.SystemServices.BOOL,
+    AvailableBandwidth: {"kind":"UInt64"},
+    RTTSet: Windows.Win32.SystemServices.BOOL,
+    RTT: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: QOS_FLOWRATE_REASON
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const QOS_FLOWRATE_REASON = *opaque{
+};
+// --------------------------------------------------------
+// Type: QOS_SHAPING
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const QOS_SHAPING = *opaque{
+};
+// --------------------------------------------------------
+// Type: QOS_FLOWRATE_OUTGOING
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const QOS_FLOWRATE_OUTGOING = extern struct {
+    Bandwidth: {"kind":"UInt64"},
+    ShapingBehavior: Windows.Win32.QualityOfService.QOS_SHAPING,
+    Reason: Windows.Win32.QualityOfService.QOS_FLOWRATE_REASON,
+};
+// --------------------------------------------------------
+// Type: QOS_QUERY_FLOW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const QOS_QUERY_FLOW = *opaque{
+};
+// --------------------------------------------------------
+// Type: QOS_NOTIFY_FLOW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const QOS_NOTIFY_FLOW = *opaque{
+};
+// --------------------------------------------------------
+// Type: QOS_VERSION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const QOS_VERSION = extern struct {
+    MajorVersion: {"kind":"UInt16"},
+    MinorVersion: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: QOS_FRIENDLY_NAME
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const QOS_FRIENDLY_NAME = extern struct {
+    ObjectHdr: Windows.Win32.QualityOfService.QOS_OBJECT_HDR,
+    FriendlyName: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: QOS_TRAFFIC_CLASS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const QOS_TRAFFIC_CLASS = extern struct {
+    ObjectHdr: Windows.Win32.QualityOfService.QOS_OBJECT_HDR,
+    TrafficClass: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: QOS_DS_CLASS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const QOS_DS_CLASS = extern struct {
+    ObjectHdr: Windows.Win32.QualityOfService.QOS_OBJECT_HDR,
+    DSField: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: QOS_DIFFSERV
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const QOS_DIFFSERV = extern struct {
+    ObjectHdr: Windows.Win32.QualityOfService.QOS_OBJECT_HDR,
+    DSFieldCount: {"kind":"UInt32"},
+    DiffservRule: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: QOS_DIFFSERV_RULE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const QOS_DIFFSERV_RULE = extern struct {
+    InboundDSField: {"kind":"Byte"},
+    ConformingOutboundDSField: {"kind":"Byte"},
+    NonConformingOutboundDSField: {"kind":"Byte"},
+    ConformingUserPriority: {"kind":"Byte"},
+    NonConformingUserPriority: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: QOS_TCP_TRAFFIC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const QOS_TCP_TRAFFIC = extern struct {
+    ObjectHdr: Windows.Win32.QualityOfService.QOS_OBJECT_HDR,
+};
+// --------------------------------------------------------
+// Type: TCI_NOTIFY_HANDLER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TCI_NOTIFY_HANDLER = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: TCI_ADD_FLOW_COMPLETE_HANDLER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TCI_ADD_FLOW_COMPLETE_HANDLER = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: TCI_MOD_FLOW_COMPLETE_HANDLER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TCI_MOD_FLOW_COMPLETE_HANDLER = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: TCI_DEL_FLOW_COMPLETE_HANDLER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TCI_DEL_FLOW_COMPLETE_HANDLER = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: TCI_CLIENT_FUNC_LIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TCI_CLIENT_FUNC_LIST = extern struct {
+    ClNotifyHandler: Windows.Win32.QualityOfService.TCI_NOTIFY_HANDLER,
+    ClAddFlowCompleteHandler: Windows.Win32.QualityOfService.TCI_ADD_FLOW_COMPLETE_HANDLER,
+    ClModifyFlowCompleteHandler: Windows.Win32.QualityOfService.TCI_MOD_FLOW_COMPLETE_HANDLER,
+    ClDeleteFlowCompleteHandler: Windows.Win32.QualityOfService.TCI_DEL_FLOW_COMPLETE_HANDLER,
+};
+// --------------------------------------------------------
+// Type: ADDRESS_LIST_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADDRESS_LIST_DESCRIPTOR = extern struct {
+    MediaType: {"kind":"UInt32"},
+    AddressList: Windows.Win32.NativeWiFi.NETWORK_ADDRESS_LIST,
+};
+// --------------------------------------------------------
+// Type: TC_IFC_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TC_IFC_DESCRIPTOR = extern struct {
+    Length: {"kind":"UInt32"},
+    pInterfaceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pInterfaceID: {"kind""Ptr","child":{"kind":"UInt16"}},
+    AddressListDesc: Windows.Win32.QualityOfService.ADDRESS_LIST_DESCRIPTOR,
+};
+// --------------------------------------------------------
+// Type: TC_SUPPORTED_INFO_BUFFER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TC_SUPPORTED_INFO_BUFFER = extern struct {
+    InstanceIDLength: {"kind":"UInt16"},
+    InstanceID: {"kind":"Array","child": {"kind":"UInt16"}},
+    InterfaceLuid: {"kind":"UInt64"},
+    AddrListDesc: Windows.Win32.QualityOfService.ADDRESS_LIST_DESCRIPTOR,
+};
+// --------------------------------------------------------
+// Type: TC_GEN_FILTER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TC_GEN_FILTER = extern struct {
+    AddressType: {"kind":"UInt16"},
+    PatternSize: {"kind":"UInt32"},
+    Pattern: {"kind""Ptr","child":{"kind":"Void"}},
+    Mask: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: TC_GEN_FLOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TC_GEN_FLOW = extern struct {
+    SendingFlowspec: Windows.Win32.QualityOfService.FLOWSPEC,
+    ReceivingFlowspec: Windows.Win32.QualityOfService.FLOWSPEC,
+    TcObjectsLength: {"kind":"UInt32"},
+    TcObjects: {"kind":"Array","child": Windows.Win32.QualityOfService.QOS_OBJECT_HDR},
+};
+// --------------------------------------------------------
+// Type: IP_PATTERN
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IP_PATTERN = extern struct {
+    Reserved1: {"kind":"UInt32"},
+    Reserved2: {"kind":"UInt32"},
+    SrcAddr: {"kind":"UInt32"},
+    DstAddr: {"kind":"UInt32"},
+    S_un: Windows.Win32.QualityOfService.IP_PATTERN+_S_un_e__Union,
+    ProtocolId: {"kind":"Byte"},
+    Reserved3: {"kind":"Array","child": {"kind":"Byte"}},
+    // --------------------------------------------------------
+    // Type: _S_un_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _S_un_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _S_un_ports_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _S_un_ports_e__Struct = extern struct {
+            s_srcport: {"kind":"UInt16"},
+            s_dstport: {"kind":"UInt16"},
+        };
+        // --------------------------------------------------------
+        // Type: _S_un_icmp_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _S_un_icmp_e__Struct = extern struct {
+            s_type: {"kind":"Byte"},
+            s_code: {"kind":"Byte"},
+            filler: {"kind":"UInt16"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: IPX_PATTERN
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IPX_PATTERN = extern struct {
+    Src: Windows.Win32.QualityOfService.IPX_PATTERN+_Src_e__Struct,
+    Dest: Windows.Win32.QualityOfService.IPX_PATTERN+_Src_e__Struct,
+    // --------------------------------------------------------
+    // Type: _Src_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _Src_e__Struct = extern struct {
+        NetworkAddress: {"kind":"UInt32"},
+        NodeAddress: {"kind":"Array","child": {"kind":"Byte"}},
+        Socket: {"kind":"UInt16"},
+    };
+};
+// --------------------------------------------------------
+// Type: ENUMERATION_BUFFER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ENUMERATION_BUFFER = extern struct {
+    Length: {"kind":"UInt32"},
+    OwnerProcessId: {"kind":"UInt32"},
+    FlowNameLength: {"kind":"UInt16"},
+    FlowName: {"kind":"Array","child": {"kind":"UInt16"}},
+    pFlow: {"kind""Ptr","child":Windows.Win32.QualityOfService.TC_GEN_FLOW},
+    NumberOfFilters: {"kind":"UInt32"},
+    GenericFilter: {"kind":"Array","child": Windows.Win32.QualityOfService.TC_GEN_FILTER},
+};
+// --------------------------------------------------------
+// Type: QOS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const QOS = extern struct {
+    SendingFlowspec: Windows.Win32.QualityOfService.FLOWSPEC,
+    ReceivingFlowspec: Windows.Win32.QualityOfService.FLOWSPEC,
+    ProviderSpecific: Windows.Win32.WinSock.WSABUF,
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "qwave" fn QOSCreateHandle(
+    Version: {"kind""Ptr","child":Windows.Win32.QualityOfService.QOS_VERSION},
+    QOSHandle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "qwave" fn QOSCloseHandle(
+    QOSHandle: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "qwave" fn QOSStartTrackingClient(
+    QOSHandle: Windows.Win32.SystemServices.HANDLE,
+    DestAddr: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "qwave" fn QOSStopTrackingClient(
+    QOSHandle: Windows.Win32.SystemServices.HANDLE,
+    DestAddr: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "qwave" fn QOSEnumerateFlows(
+    QOSHandle: Windows.Win32.SystemServices.HANDLE,
+    Size: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "qwave" fn QOSAddSocketToFlow(
+    QOSHandle: Windows.Win32.SystemServices.HANDLE,
+    Socket: {"kind":"UIntPtr"},
+    DestAddr: {"kind""Ptr","child":Windows.Win32.WinSock.SOCKADDR},
+    TrafficType: Windows.Win32.QualityOfService.QOS_TRAFFIC_TYPE,
+    Flags: {"kind":"UInt32"},
+    FlowId: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "qwave" fn QOSRemoveSocketFromFlow(
+    QOSHandle: Windows.Win32.SystemServices.HANDLE,
+    Socket: {"kind":"UIntPtr"},
+    FlowId: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "qwave" fn QOSSetFlow(
+    QOSHandle: Windows.Win32.SystemServices.HANDLE,
+    FlowId: {"kind":"UInt32"},
+    Operation: Windows.Win32.QualityOfService.QOS_SET_FLOW,
+    Size: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    Flags: {"kind":"UInt32"},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "qwave" fn QOSQueryFlow(
+    QOSHandle: Windows.Win32.SystemServices.HANDLE,
+    FlowId: {"kind":"UInt32"},
+    Operation: Windows.Win32.QualityOfService.QOS_QUERY_FLOW,
+    Size: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    Flags: {"kind":"UInt32"},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "qwave" fn QOSNotifyFlow(
+    QOSHandle: Windows.Win32.SystemServices.HANDLE,
+    FlowId: {"kind":"UInt32"},
+    Operation: Windows.Win32.QualityOfService.QOS_NOTIFY_FLOW,
+    Size: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    Flags: {"kind":"UInt32"},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "qwave" fn QOSCancel(
+    QOSHandle: Windows.Win32.SystemServices.HANDLE,
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TRAFFIC" fn TcRegisterClient(
+    TciVersion: {"kind":"UInt32"},
+    ClRegCtx: Windows.Win32.SystemServices.HANDLE,
+    ClientHandlerList: {"kind""Ptr","child":Windows.Win32.QualityOfService.TCI_CLIENT_FUNC_LIST},
+    pClientHandle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TRAFFIC" fn TcEnumerateInterfaces(
+    ClientHandle: Windows.Win32.SystemServices.HANDLE,
+    pBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    InterfaceBuffer: {"kind""Ptr","child":Windows.Win32.QualityOfService.TC_IFC_DESCRIPTOR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TRAFFIC" fn TcOpenInterfaceA(
+    pInterfaceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ClientHandle: Windows.Win32.SystemServices.HANDLE,
+    ClIfcCtx: Windows.Win32.SystemServices.HANDLE,
+    pIfcHandle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TRAFFIC" fn TcOpenInterfaceW(
+    pInterfaceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientHandle: Windows.Win32.SystemServices.HANDLE,
+    ClIfcCtx: Windows.Win32.SystemServices.HANDLE,
+    pIfcHandle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TRAFFIC" fn TcCloseInterface(
+    IfcHandle: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TRAFFIC" fn TcQueryInterface(
+    IfcHandle: Windows.Win32.SystemServices.HANDLE,
+    pGuidParam: {"kind""Ptr","child":Guid},
+    NotifyChange: {"kind":"Byte"},
+    pBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TRAFFIC" fn TcSetInterface(
+    IfcHandle: Windows.Win32.SystemServices.HANDLE,
+    pGuidParam: {"kind""Ptr","child":Guid},
+    BufferSize: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TRAFFIC" fn TcQueryFlowA(
+    pFlowName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pGuidParam: {"kind""Ptr","child":Guid},
+    pBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TRAFFIC" fn TcQueryFlowW(
+    pFlowName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pGuidParam: {"kind""Ptr","child":Guid},
+    pBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TRAFFIC" fn TcSetFlowA(
+    pFlowName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pGuidParam: {"kind""Ptr","child":Guid},
+    BufferSize: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TRAFFIC" fn TcSetFlowW(
+    pFlowName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pGuidParam: {"kind""Ptr","child":Guid},
+    BufferSize: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TRAFFIC" fn TcAddFlow(
+    IfcHandle: Windows.Win32.SystemServices.HANDLE,
+    ClFlowCtx: Windows.Win32.SystemServices.HANDLE,
+    Flags: {"kind":"UInt32"},
+    pGenericFlow: {"kind""Ptr","child":Windows.Win32.QualityOfService.TC_GEN_FLOW},
+    pFlowHandle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TRAFFIC" fn TcGetFlowNameA(
+    FlowHandle: Windows.Win32.SystemServices.HANDLE,
+    StrSize: {"kind":"UInt32"},
+    pFlowName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TRAFFIC" fn TcGetFlowNameW(
+    FlowHandle: Windows.Win32.SystemServices.HANDLE,
+    StrSize: {"kind":"UInt32"},
+    pFlowName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TRAFFIC" fn TcModifyFlow(
+    FlowHandle: Windows.Win32.SystemServices.HANDLE,
+    pGenericFlow: {"kind""Ptr","child":Windows.Win32.QualityOfService.TC_GEN_FLOW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TRAFFIC" fn TcAddFilter(
+    FlowHandle: Windows.Win32.SystemServices.HANDLE,
+    pGenericFilter: {"kind""Ptr","child":Windows.Win32.QualityOfService.TC_GEN_FILTER},
+    pFilterHandle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TRAFFIC" fn TcDeregisterClient(
+    ClientHandle: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TRAFFIC" fn TcDeleteFlow(
+    FlowHandle: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TRAFFIC" fn TcDeleteFilter(
+    FilterHandle: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TRAFFIC" fn TcEnumerateFlows(
+    IfcHandle: Windows.Win32.SystemServices.HANDLE,
+    pEnumHandle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    pFlowCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pBufSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":Windows.Win32.QualityOfService.ENUMERATION_BUFFER},
+],
+
+"unicode_aliases": [
+     "TcOpenInterface"
+     "TcQueryFlow"
+     "TcSetFlow"
+     "TcGetFlowName"
+]}

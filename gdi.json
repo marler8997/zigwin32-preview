@@ -1,0 +1,4793 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: GRAYSTRINGPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const GRAYSTRINGPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DRAWSTATEPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DRAWSTATEPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PAINTSTRUCT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PAINTSTRUCT = extern struct {
+    hdc: Windows.Win32.Gdi.HDC,
+    fErase: Windows.Win32.SystemServices.BOOL,
+    rcPaint: Windows.Win32.DisplayDevices.RECT,
+    fRestore: Windows.Win32.SystemServices.BOOL,
+    fIncUpdate: Windows.Win32.SystemServices.BOOL,
+    rgbReserved: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: DRAWTEXTPARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DRAWTEXTPARAMS = extern struct {
+    cbSize: {"kind":"UInt32"},
+    iTabLength: {"kind":"Int32"},
+    iLeftMargin: {"kind":"Int32"},
+    iRightMargin: {"kind":"Int32"},
+    uiLengthDrawn: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MONITORINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MONITORINFO = extern struct {
+    cbSize: {"kind":"UInt32"},
+    rcMonitor: Windows.Win32.DisplayDevices.RECT,
+    rcWork: Windows.Win32.DisplayDevices.RECT,
+    dwFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MONITORINFOEXA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MONITORINFOEXA = extern struct {
+    __AnonymousBase_winuser_L13554_C43: Windows.Win32.Gdi.MONITORINFO,
+    szDevice: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: MONITORINFOEXW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MONITORINFOEXW = extern struct {
+    __AnonymousBase_winuser_L13558_C43: Windows.Win32.Gdi.MONITORINFO,
+    szDevice: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: MONITORENUMPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MONITORENUMPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: HBITMAP
+// TypeLayoutAttr: sequential
+// RAIIFree 'DeleteObject' (TODO: can we use this information?)
+pub const HBITMAP = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: HBRUSH
+// TypeLayoutAttr: sequential
+// RAIIFree 'DeleteObject' (TODO: can we use this information?)
+pub const HBRUSH = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: HCOLORSPACE
+// TypeLayoutAttr: sequential
+// RAIIFree 'DeleteColorSpace' (TODO: can we use this information?)
+pub const HCOLORSPACE = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: HCURSOR
+// TypeLayoutAttr: sequential
+// RAIIFree 'DestroyCursor' (TODO: can we use this information?)
+pub const HCURSOR = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: HDC
+// TypeLayoutAttr: sequential
+// RAIIFree 'DeleteDC' (TODO: can we use this information?)
+pub const HDC = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: HdcMetdataEnhFileHandle
+// TypeLayoutAttr: sequential
+// RAIIFree 'DeleteEnhMetaFile' (TODO: can we use this information?)
+pub const HdcMetdataEnhFileHandle = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: HdcMetdataFileHandle
+// TypeLayoutAttr: sequential
+// RAIIFree 'DeleteMetaFile' (TODO: can we use this information?)
+pub const HdcMetdataFileHandle = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: HFONT
+// TypeLayoutAttr: sequential
+// RAIIFree 'DeleteObject' (TODO: can we use this information?)
+pub const HFONT = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: HICON
+// TypeLayoutAttr: sequential
+// RAIIFree 'DestroyIcon' (TODO: can we use this information?)
+pub const HICON = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: HPALETTE
+// TypeLayoutAttr: sequential
+// RAIIFree 'DeleteObject' (TODO: can we use this information?)
+pub const HPALETTE = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: HPEN
+// TypeLayoutAttr: sequential
+// RAIIFree 'DeleteObject' (TODO: can we use this information?)
+pub const HPEN = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: HRGN
+// TypeLayoutAttr: sequential
+// RAIIFree 'DeleteObject' (TODO: can we use this information?)
+pub const HRGN = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: XFORM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const XFORM = extern struct {
+    eM11: {"kind":"Single"},
+    eM12: {"kind":"Single"},
+    eM21: {"kind":"Single"},
+    eM22: {"kind":"Single"},
+    eDx: {"kind":"Single"},
+    eDy: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: BITMAP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BITMAP = extern struct {
+    bmType: {"kind":"Int32"},
+    bmWidth: {"kind":"Int32"},
+    bmHeight: {"kind":"Int32"},
+    bmWidthBytes: {"kind":"Int32"},
+    bmPlanes: {"kind":"UInt16"},
+    bmBitsPixel: {"kind":"UInt16"},
+    bmBits: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: RGBTRIPLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RGBTRIPLE = extern struct {
+    rgbtBlue: {"kind":"Byte"},
+    rgbtGreen: {"kind":"Byte"},
+    rgbtRed: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: RGBQUAD
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RGBQUAD = extern struct {
+    rgbBlue: {"kind":"Byte"},
+    rgbGreen: {"kind":"Byte"},
+    rgbRed: {"kind":"Byte"},
+    rgbReserved: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: BITMAPCOREHEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BITMAPCOREHEADER = extern struct {
+    bcSize: {"kind":"UInt32"},
+    bcWidth: {"kind":"UInt16"},
+    bcHeight: {"kind":"UInt16"},
+    bcPlanes: {"kind":"UInt16"},
+    bcBitCount: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: BITMAPV4HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BITMAPV4HEADER = extern struct {
+    bV4Size: {"kind":"UInt32"},
+    bV4Width: {"kind":"Int32"},
+    bV4Height: {"kind":"Int32"},
+    bV4Planes: {"kind":"UInt16"},
+    bV4BitCount: {"kind":"UInt16"},
+    bV4V4Compression: {"kind":"UInt32"},
+    bV4SizeImage: {"kind":"UInt32"},
+    bV4XPelsPerMeter: {"kind":"Int32"},
+    bV4YPelsPerMeter: {"kind":"Int32"},
+    bV4ClrUsed: {"kind":"UInt32"},
+    bV4ClrImportant: {"kind":"UInt32"},
+    bV4RedMask: {"kind":"UInt32"},
+    bV4GreenMask: {"kind":"UInt32"},
+    bV4BlueMask: {"kind":"UInt32"},
+    bV4AlphaMask: {"kind":"UInt32"},
+    bV4CSType: {"kind":"UInt32"},
+    bV4Endpoints: Windows.Win32.WindowsColorSystem.CIEXYZTRIPLE,
+    bV4GammaRed: {"kind":"UInt32"},
+    bV4GammaGreen: {"kind":"UInt32"},
+    bV4GammaBlue: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: BITMAPV5HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BITMAPV5HEADER = extern struct {
+    bV5Size: {"kind":"UInt32"},
+    bV5Width: {"kind":"Int32"},
+    bV5Height: {"kind":"Int32"},
+    bV5Planes: {"kind":"UInt16"},
+    bV5BitCount: {"kind":"UInt16"},
+    bV5Compression: {"kind":"UInt32"},
+    bV5SizeImage: {"kind":"UInt32"},
+    bV5XPelsPerMeter: {"kind":"Int32"},
+    bV5YPelsPerMeter: {"kind":"Int32"},
+    bV5ClrUsed: {"kind":"UInt32"},
+    bV5ClrImportant: {"kind":"UInt32"},
+    bV5RedMask: {"kind":"UInt32"},
+    bV5GreenMask: {"kind":"UInt32"},
+    bV5BlueMask: {"kind":"UInt32"},
+    bV5AlphaMask: {"kind":"UInt32"},
+    bV5CSType: {"kind":"UInt32"},
+    bV5Endpoints: Windows.Win32.WindowsColorSystem.CIEXYZTRIPLE,
+    bV5GammaRed: {"kind":"UInt32"},
+    bV5GammaGreen: {"kind":"UInt32"},
+    bV5GammaBlue: {"kind":"UInt32"},
+    bV5Intent: {"kind":"UInt32"},
+    bV5ProfileData: {"kind":"UInt32"},
+    bV5ProfileSize: {"kind":"UInt32"},
+    bV5Reserved: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: BITMAPINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BITMAPINFO = extern struct {
+    bmiHeader: Windows.Win32.DirectShow.BITMAPINFOHEADER,
+    bmiColors: {"kind":"Array","child": Windows.Win32.Gdi.RGBQUAD},
+};
+// --------------------------------------------------------
+// Type: BITMAPCOREINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BITMAPCOREINFO = extern struct {
+    bmciHeader: Windows.Win32.Gdi.BITMAPCOREHEADER,
+    bmciColors: {"kind":"Array","child": Windows.Win32.Gdi.RGBTRIPLE},
+};
+// --------------------------------------------------------
+// Type: BITMAPFILEHEADER
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const BITMAPFILEHEADER = *opaque{
+};
+// --------------------------------------------------------
+// Type: HANDLETABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HANDLETABLE = extern struct {
+    objectHandle: {"kind":"Array","child": {"kind":"IntPtr"}},
+};
+// --------------------------------------------------------
+// Type: METARECORD
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const METARECORD = extern struct {
+    rdSize: {"kind":"UInt32"},
+    rdFunction: {"kind":"UInt16"},
+    rdParm: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: METAHEADER
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const METAHEADER = *opaque{
+};
+// --------------------------------------------------------
+// Type: ENHMETARECORD
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ENHMETARECORD = extern struct {
+    iType: {"kind":"UInt32"},
+    nSize: {"kind":"UInt32"},
+    dParm: {"kind":"Array","child": {"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: ENHMETAHEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ENHMETAHEADER = extern struct {
+    iType: {"kind":"UInt32"},
+    nSize: {"kind":"UInt32"},
+    rclBounds: Windows.Win32.DisplayDevices.RECTL,
+    rclFrame: Windows.Win32.DisplayDevices.RECTL,
+    dSignature: {"kind":"UInt32"},
+    nVersion: {"kind":"UInt32"},
+    nBytes: {"kind":"UInt32"},
+    nRecords: {"kind":"UInt32"},
+    nHandles: {"kind":"UInt16"},
+    sReserved: {"kind":"UInt16"},
+    nDescription: {"kind":"UInt32"},
+    offDescription: {"kind":"UInt32"},
+    nPalEntries: {"kind":"UInt32"},
+    szlDevice: Windows.Win32.DisplayDevices.SIZE,
+    szlMillimeters: Windows.Win32.DisplayDevices.SIZE,
+    cbPixelFormat: {"kind":"UInt32"},
+    offPixelFormat: {"kind":"UInt32"},
+    bOpenGL: {"kind":"UInt32"},
+    szlMicrometers: Windows.Win32.DisplayDevices.SIZE,
+};
+// --------------------------------------------------------
+// Type: TEXTMETRICA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TEXTMETRICA = extern struct {
+    tmHeight: {"kind":"Int32"},
+    tmAscent: {"kind":"Int32"},
+    tmDescent: {"kind":"Int32"},
+    tmInternalLeading: {"kind":"Int32"},
+    tmExternalLeading: {"kind":"Int32"},
+    tmAveCharWidth: {"kind":"Int32"},
+    tmMaxCharWidth: {"kind":"Int32"},
+    tmWeight: {"kind":"Int32"},
+    tmOverhang: {"kind":"Int32"},
+    tmDigitizedAspectX: {"kind":"Int32"},
+    tmDigitizedAspectY: {"kind":"Int32"},
+    tmFirstChar: {"kind":"Byte"},
+    tmLastChar: {"kind":"Byte"},
+    tmDefaultChar: {"kind":"Byte"},
+    tmBreakChar: {"kind":"Byte"},
+    tmItalic: {"kind":"Byte"},
+    tmUnderlined: {"kind":"Byte"},
+    tmStruckOut: {"kind":"Byte"},
+    tmPitchAndFamily: {"kind":"Byte"},
+    tmCharSet: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: TEXTMETRICW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TEXTMETRICW = extern struct {
+    tmHeight: {"kind":"Int32"},
+    tmAscent: {"kind":"Int32"},
+    tmDescent: {"kind":"Int32"},
+    tmInternalLeading: {"kind":"Int32"},
+    tmExternalLeading: {"kind":"Int32"},
+    tmAveCharWidth: {"kind":"Int32"},
+    tmMaxCharWidth: {"kind":"Int32"},
+    tmWeight: {"kind":"Int32"},
+    tmOverhang: {"kind":"Int32"},
+    tmDigitizedAspectX: {"kind":"Int32"},
+    tmDigitizedAspectY: {"kind":"Int32"},
+    tmFirstChar: {"kind":"UInt16"},
+    tmLastChar: {"kind":"UInt16"},
+    tmDefaultChar: {"kind":"UInt16"},
+    tmBreakChar: {"kind":"UInt16"},
+    tmItalic: {"kind":"Byte"},
+    tmUnderlined: {"kind":"Byte"},
+    tmStruckOut: {"kind":"Byte"},
+    tmPitchAndFamily: {"kind":"Byte"},
+    tmCharSet: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: NEWTEXTMETRICA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NEWTEXTMETRICA = extern struct {
+    tmHeight: {"kind":"Int32"},
+    tmAscent: {"kind":"Int32"},
+    tmDescent: {"kind":"Int32"},
+    tmInternalLeading: {"kind":"Int32"},
+    tmExternalLeading: {"kind":"Int32"},
+    tmAveCharWidth: {"kind":"Int32"},
+    tmMaxCharWidth: {"kind":"Int32"},
+    tmWeight: {"kind":"Int32"},
+    tmOverhang: {"kind":"Int32"},
+    tmDigitizedAspectX: {"kind":"Int32"},
+    tmDigitizedAspectY: {"kind":"Int32"},
+    tmFirstChar: {"kind":"Byte"},
+    tmLastChar: {"kind":"Byte"},
+    tmDefaultChar: {"kind":"Byte"},
+    tmBreakChar: {"kind":"Byte"},
+    tmItalic: {"kind":"Byte"},
+    tmUnderlined: {"kind":"Byte"},
+    tmStruckOut: {"kind":"Byte"},
+    tmPitchAndFamily: {"kind":"Byte"},
+    tmCharSet: {"kind":"Byte"},
+    ntmFlags: {"kind":"UInt32"},
+    ntmSizeEM: {"kind":"UInt32"},
+    ntmCellHeight: {"kind":"UInt32"},
+    ntmAvgWidth: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: NEWTEXTMETRICW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NEWTEXTMETRICW = extern struct {
+    tmHeight: {"kind":"Int32"},
+    tmAscent: {"kind":"Int32"},
+    tmDescent: {"kind":"Int32"},
+    tmInternalLeading: {"kind":"Int32"},
+    tmExternalLeading: {"kind":"Int32"},
+    tmAveCharWidth: {"kind":"Int32"},
+    tmMaxCharWidth: {"kind":"Int32"},
+    tmWeight: {"kind":"Int32"},
+    tmOverhang: {"kind":"Int32"},
+    tmDigitizedAspectX: {"kind":"Int32"},
+    tmDigitizedAspectY: {"kind":"Int32"},
+    tmFirstChar: {"kind":"UInt16"},
+    tmLastChar: {"kind":"UInt16"},
+    tmDefaultChar: {"kind":"UInt16"},
+    tmBreakChar: {"kind":"UInt16"},
+    tmItalic: {"kind":"Byte"},
+    tmUnderlined: {"kind":"Byte"},
+    tmStruckOut: {"kind":"Byte"},
+    tmPitchAndFamily: {"kind":"Byte"},
+    tmCharSet: {"kind":"Byte"},
+    ntmFlags: {"kind":"UInt32"},
+    ntmSizeEM: {"kind":"UInt32"},
+    ntmCellHeight: {"kind":"UInt32"},
+    ntmAvgWidth: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: NEWTEXTMETRICEXA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NEWTEXTMETRICEXA = extern struct {
+    ntmTm: Windows.Win32.Gdi.NEWTEXTMETRICA,
+    ntmFontSig: Windows.Win32.Intl.FONTSIGNATURE,
+};
+// --------------------------------------------------------
+// Type: NEWTEXTMETRICEXW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NEWTEXTMETRICEXW = extern struct {
+    ntmTm: Windows.Win32.Gdi.NEWTEXTMETRICW,
+    ntmFontSig: Windows.Win32.Intl.FONTSIGNATURE,
+};
+// --------------------------------------------------------
+// Type: PELARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PELARRAY = extern struct {
+    paXCount: {"kind":"Int32"},
+    paYCount: {"kind":"Int32"},
+    paXExt: {"kind":"Int32"},
+    paYExt: {"kind":"Int32"},
+    paRGBs: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: LOGBRUSH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LOGBRUSH = extern struct {
+    lbStyle: {"kind":"UInt32"},
+    lbColor: {"kind":"UInt32"},
+    lbHatch: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: LOGBRUSH32
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LOGBRUSH32 = extern struct {
+    lbStyle: {"kind":"UInt32"},
+    lbColor: {"kind":"UInt32"},
+    lbHatch: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: LOGPEN
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LOGPEN = extern struct {
+    lopnStyle: {"kind":"UInt32"},
+    lopnWidth: Windows.Win32.DisplayDevices.POINT,
+    lopnColor: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EXTLOGPEN
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EXTLOGPEN = extern struct {
+    elpPenStyle: {"kind":"UInt32"},
+    elpWidth: {"kind":"UInt32"},
+    elpBrushStyle: {"kind":"UInt32"},
+    elpColor: {"kind":"UInt32"},
+    elpHatch: {"kind":"UIntPtr"},
+    elpNumEntries: {"kind":"UInt32"},
+    elpStyleEntry: {"kind":"Array","child": {"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: EXTLOGPEN32
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EXTLOGPEN32 = extern struct {
+    elpPenStyle: {"kind":"UInt32"},
+    elpWidth: {"kind":"UInt32"},
+    elpBrushStyle: {"kind":"UInt32"},
+    elpColor: {"kind":"UInt32"},
+    elpHatch: {"kind":"UInt32"},
+    elpNumEntries: {"kind":"UInt32"},
+    elpStyleEntry: {"kind":"Array","child": {"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: LOGPALETTE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LOGPALETTE = extern struct {
+    palVersion: {"kind":"UInt16"},
+    palNumEntries: {"kind":"UInt16"},
+    palPalEntry: {"kind":"Array","child": Windows.Win32.Direct2D.PALETTEENTRY},
+};
+// --------------------------------------------------------
+// Type: ENUMLOGFONTA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ENUMLOGFONTA = extern struct {
+    elfLogFont: Windows.Win32.Shell.LOGFONTA,
+    elfFullName: {"kind":"Array","child": {"kind":"Byte"}},
+    elfStyle: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: ENUMLOGFONTW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ENUMLOGFONTW = extern struct {
+    elfLogFont: Windows.Win32.Shell.LOGFONTW,
+    elfFullName: {"kind":"Array","child": {"kind":"UInt16"}},
+    elfStyle: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: ENUMLOGFONTEXA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ENUMLOGFONTEXA = extern struct {
+    elfLogFont: Windows.Win32.Shell.LOGFONTA,
+    elfFullName: {"kind":"Array","child": {"kind":"Byte"}},
+    elfStyle: {"kind":"Array","child": {"kind":"Byte"}},
+    elfScript: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: ENUMLOGFONTEXW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ENUMLOGFONTEXW = extern struct {
+    elfLogFont: Windows.Win32.Shell.LOGFONTW,
+    elfFullName: {"kind":"Array","child": {"kind":"UInt16"}},
+    elfStyle: {"kind":"Array","child": {"kind":"UInt16"}},
+    elfScript: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: PANOSE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PANOSE = extern struct {
+    bFamilyType: {"kind":"Byte"},
+    bSerifStyle: {"kind":"Byte"},
+    bWeight: {"kind":"Byte"},
+    bProportion: {"kind":"Byte"},
+    bContrast: {"kind":"Byte"},
+    bStrokeVariation: {"kind":"Byte"},
+    bArmStyle: {"kind":"Byte"},
+    bLetterform: {"kind":"Byte"},
+    bMidline: {"kind":"Byte"},
+    bXHeight: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: EXTLOGFONTA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EXTLOGFONTA = extern struct {
+    elfLogFont: Windows.Win32.Shell.LOGFONTA,
+    elfFullName: {"kind":"Array","child": {"kind":"Byte"}},
+    elfStyle: {"kind":"Array","child": {"kind":"Byte"}},
+    elfVersion: {"kind":"UInt32"},
+    elfStyleSize: {"kind":"UInt32"},
+    elfMatch: {"kind":"UInt32"},
+    elfReserved: {"kind":"UInt32"},
+    elfVendorId: {"kind":"Array","child": {"kind":"Byte"}},
+    elfCulture: {"kind":"UInt32"},
+    elfPanose: Windows.Win32.Gdi.PANOSE,
+};
+// --------------------------------------------------------
+// Type: EXTLOGFONTW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EXTLOGFONTW = extern struct {
+    elfLogFont: Windows.Win32.Shell.LOGFONTW,
+    elfFullName: {"kind":"Array","child": {"kind":"UInt16"}},
+    elfStyle: {"kind":"Array","child": {"kind":"UInt16"}},
+    elfVersion: {"kind":"UInt32"},
+    elfStyleSize: {"kind":"UInt32"},
+    elfMatch: {"kind":"UInt32"},
+    elfReserved: {"kind":"UInt32"},
+    elfVendorId: {"kind":"Array","child": {"kind":"Byte"}},
+    elfCulture: {"kind":"UInt32"},
+    elfPanose: Windows.Win32.Gdi.PANOSE,
+};
+// --------------------------------------------------------
+// Type: DISPLAY_DEVICEA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DISPLAY_DEVICEA = extern struct {
+    cb: {"kind":"UInt32"},
+    DeviceName: {"kind":"Array","child": {"kind":"SByte"}},
+    DeviceString: {"kind":"Array","child": {"kind":"SByte"}},
+    StateFlags: {"kind":"UInt32"},
+    DeviceID: {"kind":"Array","child": {"kind":"SByte"}},
+    DeviceKey: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: DISPLAY_DEVICEW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DISPLAY_DEVICEW = extern struct {
+    cb: {"kind":"UInt32"},
+    DeviceName: {"kind":"Array","child": {"kind":"UInt16"}},
+    DeviceString: {"kind":"Array","child": {"kind":"UInt16"}},
+    StateFlags: {"kind":"UInt32"},
+    DeviceID: {"kind":"Array","child": {"kind":"UInt16"}},
+    DeviceKey: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_COLOR_ENCODING
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DISPLAYCONFIG_COLOR_ENCODING = *opaque{
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO = extern struct {
+    header: Windows.Win32.DisplayDevices.DISPLAYCONFIG_DEVICE_INFO_HEADER,
+    Anonymous: Windows.Win32.Gdi.DISPLAYCONFIG_GET_ADVANCED_COLOR_INFO+_Anonymous_e__Union,
+    colorEncoding: Windows.Win32.Gdi.DISPLAYCONFIG_COLOR_ENCODING,
+    bitsPerColorChannel: {"kind":"UInt32"},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            _bitfield: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE = extern struct {
+    header: Windows.Win32.DisplayDevices.DISPLAYCONFIG_DEVICE_INFO_HEADER,
+    Anonymous: Windows.Win32.Gdi.DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            _bitfield: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: DISPLAYCONFIG_SDR_WHITE_LEVEL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DISPLAYCONFIG_SDR_WHITE_LEVEL = extern struct {
+    header: Windows.Win32.DisplayDevices.DISPLAYCONFIG_DEVICE_INFO_HEADER,
+    SDRWhiteLevel: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: RGNDATAHEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RGNDATAHEADER = extern struct {
+    dwSize: {"kind":"UInt32"},
+    iType: {"kind":"UInt32"},
+    nCount: {"kind":"UInt32"},
+    nRgnSize: {"kind":"UInt32"},
+    rcBound: Windows.Win32.DisplayDevices.RECT,
+};
+// --------------------------------------------------------
+// Type: RGNDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RGNDATA = extern struct {
+    rdh: Windows.Win32.Gdi.RGNDATAHEADER,
+    Buffer: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: ABC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ABC = extern struct {
+    abcA: {"kind":"Int32"},
+    abcB: {"kind":"UInt32"},
+    abcC: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: ABCFLOAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ABCFLOAT = extern struct {
+    abcfA: {"kind":"Single"},
+    abcfB: {"kind":"Single"},
+    abcfC: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: OUTLINETEXTMETRICA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const OUTLINETEXTMETRICA = extern struct {
+    otmSize: {"kind":"UInt32"},
+    otmTextMetrics: Windows.Win32.Gdi.TEXTMETRICA,
+    otmFiller: {"kind":"Byte"},
+    otmPanoseNumber: Windows.Win32.Gdi.PANOSE,
+    otmfsSelection: {"kind":"UInt32"},
+    otmfsType: {"kind":"UInt32"},
+    otmsCharSlopeRise: {"kind":"Int32"},
+    otmsCharSlopeRun: {"kind":"Int32"},
+    otmItalicAngle: {"kind":"Int32"},
+    otmEMSquare: {"kind":"UInt32"},
+    otmAscent: {"kind":"Int32"},
+    otmDescent: {"kind":"Int32"},
+    otmLineGap: {"kind":"UInt32"},
+    otmsCapEmHeight: {"kind":"UInt32"},
+    otmsXHeight: {"kind":"UInt32"},
+    otmrcFontBox: Windows.Win32.DisplayDevices.RECT,
+    otmMacAscent: {"kind":"Int32"},
+    otmMacDescent: {"kind":"Int32"},
+    otmMacLineGap: {"kind":"UInt32"},
+    otmusMinimumPPEM: {"kind":"UInt32"},
+    otmptSubscriptSize: Windows.Win32.DisplayDevices.POINT,
+    otmptSubscriptOffset: Windows.Win32.DisplayDevices.POINT,
+    otmptSuperscriptSize: Windows.Win32.DisplayDevices.POINT,
+    otmptSuperscriptOffset: Windows.Win32.DisplayDevices.POINT,
+    otmsStrikeoutSize: {"kind":"UInt32"},
+    otmsStrikeoutPosition: {"kind":"Int32"},
+    otmsUnderscoreSize: {"kind":"Int32"},
+    otmsUnderscorePosition: {"kind":"Int32"},
+    otmpFamilyName: {"kind""Ptr","child":{"kind":"SByte"}},
+    otmpFaceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    otmpStyleName: {"kind""Ptr","child":{"kind":"SByte"}},
+    otmpFullName: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: OUTLINETEXTMETRICW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const OUTLINETEXTMETRICW = extern struct {
+    otmSize: {"kind":"UInt32"},
+    otmTextMetrics: Windows.Win32.Gdi.TEXTMETRICW,
+    otmFiller: {"kind":"Byte"},
+    otmPanoseNumber: Windows.Win32.Gdi.PANOSE,
+    otmfsSelection: {"kind":"UInt32"},
+    otmfsType: {"kind":"UInt32"},
+    otmsCharSlopeRise: {"kind":"Int32"},
+    otmsCharSlopeRun: {"kind":"Int32"},
+    otmItalicAngle: {"kind":"Int32"},
+    otmEMSquare: {"kind":"UInt32"},
+    otmAscent: {"kind":"Int32"},
+    otmDescent: {"kind":"Int32"},
+    otmLineGap: {"kind":"UInt32"},
+    otmsCapEmHeight: {"kind":"UInt32"},
+    otmsXHeight: {"kind":"UInt32"},
+    otmrcFontBox: Windows.Win32.DisplayDevices.RECT,
+    otmMacAscent: {"kind":"Int32"},
+    otmMacDescent: {"kind":"Int32"},
+    otmMacLineGap: {"kind":"UInt32"},
+    otmusMinimumPPEM: {"kind":"UInt32"},
+    otmptSubscriptSize: Windows.Win32.DisplayDevices.POINT,
+    otmptSubscriptOffset: Windows.Win32.DisplayDevices.POINT,
+    otmptSuperscriptSize: Windows.Win32.DisplayDevices.POINT,
+    otmptSuperscriptOffset: Windows.Win32.DisplayDevices.POINT,
+    otmsStrikeoutSize: {"kind":"UInt32"},
+    otmsStrikeoutPosition: {"kind":"Int32"},
+    otmsUnderscoreSize: {"kind":"Int32"},
+    otmsUnderscorePosition: {"kind":"Int32"},
+    otmpFamilyName: {"kind""Ptr","child":{"kind":"SByte"}},
+    otmpFaceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    otmpStyleName: {"kind""Ptr","child":{"kind":"SByte"}},
+    otmpFullName: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: POLYTEXTA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const POLYTEXTA = extern struct {
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    n: {"kind":"UInt32"},
+    lpstr: {"kind""Ptr","child":{"kind":"SByte"}},
+    uiFlags: {"kind":"UInt32"},
+    rcl: Windows.Win32.DisplayDevices.RECT,
+    pdx: {"kind""Ptr","child":{"kind":"Int32"}},
+};
+// --------------------------------------------------------
+// Type: POLYTEXTW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const POLYTEXTW = extern struct {
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    n: {"kind":"UInt32"},
+    lpstr: {"kind""Ptr","child":{"kind":"UInt16"}},
+    uiFlags: {"kind":"UInt32"},
+    rcl: Windows.Win32.DisplayDevices.RECT,
+    pdx: {"kind""Ptr","child":{"kind":"Int32"}},
+};
+// --------------------------------------------------------
+// Type: FIXED
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FIXED = extern struct {
+    fract: {"kind":"UInt16"},
+    value: {"kind":"Int16"},
+};
+// --------------------------------------------------------
+// Type: MAT2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MAT2 = extern struct {
+    eM11: Windows.Win32.Gdi.FIXED,
+    eM12: Windows.Win32.Gdi.FIXED,
+    eM21: Windows.Win32.Gdi.FIXED,
+    eM22: Windows.Win32.Gdi.FIXED,
+};
+// --------------------------------------------------------
+// Type: GLYPHMETRICS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GLYPHMETRICS = extern struct {
+    gmBlackBoxX: {"kind":"UInt32"},
+    gmBlackBoxY: {"kind":"UInt32"},
+    gmptGlyphOrigin: Windows.Win32.DisplayDevices.POINT,
+    gmCellIncX: {"kind":"Int16"},
+    gmCellIncY: {"kind":"Int16"},
+};
+// --------------------------------------------------------
+// Type: POINTFX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const POINTFX = extern struct {
+    x: Windows.Win32.Gdi.FIXED,
+    y: Windows.Win32.Gdi.FIXED,
+};
+// --------------------------------------------------------
+// Type: TTPOLYCURVE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TTPOLYCURVE = extern struct {
+    wType: {"kind":"UInt16"},
+    cpfx: {"kind":"UInt16"},
+    apfx: {"kind":"Array","child": Windows.Win32.Gdi.POINTFX},
+};
+// --------------------------------------------------------
+// Type: TTPOLYGONHEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TTPOLYGONHEADER = extern struct {
+    cb: {"kind":"UInt32"},
+    dwType: {"kind":"UInt32"},
+    pfxStart: Windows.Win32.Gdi.POINTFX,
+};
+// --------------------------------------------------------
+// Type: GCP_RESULTSA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GCP_RESULTSA = extern struct {
+    lStructSize: {"kind":"UInt32"},
+    lpOutString: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpOrder: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpDx: {"kind""Ptr","child":{"kind":"Int32"}},
+    lpCaretPos: {"kind""Ptr","child":{"kind":"Int32"}},
+    lpClass: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpGlyphs: {"kind""Ptr","child":{"kind":"UInt16"}},
+    nGlyphs: {"kind":"UInt32"},
+    nMaxFit: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: GCP_RESULTSW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GCP_RESULTSW = extern struct {
+    lStructSize: {"kind":"UInt32"},
+    lpOutString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpOrder: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpDx: {"kind""Ptr","child":{"kind":"Int32"}},
+    lpCaretPos: {"kind""Ptr","child":{"kind":"Int32"}},
+    lpClass: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpGlyphs: {"kind""Ptr","child":{"kind":"UInt16"}},
+    nGlyphs: {"kind":"UInt32"},
+    nMaxFit: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: RASTERIZER_STATUS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RASTERIZER_STATUS = extern struct {
+    nSize: {"kind":"Int16"},
+    wFlags: {"kind":"Int16"},
+    nLanguageID: {"kind":"Int16"},
+};
+// --------------------------------------------------------
+// Type: OLDFONTENUMPROCA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const OLDFONTENUMPROCA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: OLDFONTENUMPROCW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const OLDFONTENUMPROCW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: FONTENUMPROCA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FONTENUMPROCA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: FONTENUMPROCW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FONTENUMPROCW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: FONTENUMPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FONTENUMPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: GOBJENUMPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const GOBJENUMPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LINEDDAPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LINEDDAPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPFNDEVMODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFNDEVMODE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPFNDEVCAPS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFNDEVCAPS = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WCRANGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WCRANGE = extern struct {
+    wcLow: {"kind":"UInt16"},
+    cGlyphs: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: GLYPHSET
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GLYPHSET = extern struct {
+    cbThis: {"kind":"UInt32"},
+    flAccel: {"kind":"UInt32"},
+    cGlyphsSupported: {"kind":"UInt32"},
+    cRanges: {"kind":"UInt32"},
+    ranges: {"kind":"Array","child": Windows.Win32.Gdi.WCRANGE},
+};
+// --------------------------------------------------------
+// Type: DESIGNVECTOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DESIGNVECTOR = extern struct {
+    dvReserved: {"kind":"UInt32"},
+    dvNumAxes: {"kind":"UInt32"},
+    dvValues: {"kind":"Array","child": {"kind":"Int32"}},
+};
+// --------------------------------------------------------
+// Type: AXISINFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AXISINFOA = extern struct {
+    axMinValue: {"kind":"Int32"},
+    axMaxValue: {"kind":"Int32"},
+    axAxisName: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: AXISINFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AXISINFOW = extern struct {
+    axMinValue: {"kind":"Int32"},
+    axMaxValue: {"kind":"Int32"},
+    axAxisName: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: AXESLISTA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AXESLISTA = extern struct {
+    axlReserved: {"kind":"UInt32"},
+    axlNumAxes: {"kind":"UInt32"},
+    axlAxisInfo: {"kind":"Array","child": Windows.Win32.Gdi.AXISINFOA},
+};
+// --------------------------------------------------------
+// Type: AXESLISTW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AXESLISTW = extern struct {
+    axlReserved: {"kind":"UInt32"},
+    axlNumAxes: {"kind":"UInt32"},
+    axlAxisInfo: {"kind":"Array","child": Windows.Win32.Gdi.AXISINFOW},
+};
+// --------------------------------------------------------
+// Type: ENUMLOGFONTEXDVA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ENUMLOGFONTEXDVA = extern struct {
+    elfEnumLogfontEx: Windows.Win32.Gdi.ENUMLOGFONTEXA,
+    elfDesignVector: Windows.Win32.Gdi.DESIGNVECTOR,
+};
+// --------------------------------------------------------
+// Type: ENUMLOGFONTEXDVW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ENUMLOGFONTEXDVW = extern struct {
+    elfEnumLogfontEx: Windows.Win32.Gdi.ENUMLOGFONTEXW,
+    elfDesignVector: Windows.Win32.Gdi.DESIGNVECTOR,
+};
+// --------------------------------------------------------
+// Type: ENUMTEXTMETRICA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ENUMTEXTMETRICA = extern struct {
+    etmNewTextMetricEx: Windows.Win32.Gdi.NEWTEXTMETRICEXA,
+    etmAxesList: Windows.Win32.Gdi.AXESLISTA,
+};
+// --------------------------------------------------------
+// Type: ENUMTEXTMETRICW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ENUMTEXTMETRICW = extern struct {
+    etmNewTextMetricEx: Windows.Win32.Gdi.NEWTEXTMETRICEXW,
+    etmAxesList: Windows.Win32.Gdi.AXESLISTW,
+};
+// --------------------------------------------------------
+// Type: TRIVERTEX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TRIVERTEX = extern struct {
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    Red: {"kind":"UInt16"},
+    Green: {"kind":"UInt16"},
+    Blue: {"kind":"UInt16"},
+    Alpha: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: GRADIENT_TRIANGLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GRADIENT_TRIANGLE = extern struct {
+    Vertex1: {"kind":"UInt32"},
+    Vertex2: {"kind":"UInt32"},
+    Vertex3: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: GRADIENT_RECT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GRADIENT_RECT = extern struct {
+    UpperLeft: {"kind":"UInt32"},
+    LowerRight: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: BLENDFUNCTION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BLENDFUNCTION = extern struct {
+    BlendOp: {"kind":"Byte"},
+    BlendFlags: {"kind":"Byte"},
+    SourceConstantAlpha: {"kind":"Byte"},
+    AlphaFormat: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: MFENUMPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MFENUMPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: ENHMFENUMPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ENHMFENUMPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DIBSECTION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DIBSECTION = extern struct {
+    dsBm: Windows.Win32.Gdi.BITMAP,
+    dsBmih: Windows.Win32.DirectShow.BITMAPINFOHEADER,
+    dsBitfields: {"kind":"Array","child": {"kind":"UInt32"}},
+    dshSection: Windows.Win32.SystemServices.HANDLE,
+    dsOffset: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: COLORADJUSTMENT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const COLORADJUSTMENT = extern struct {
+    caSize: {"kind":"UInt16"},
+    caFlags: {"kind":"UInt16"},
+    caIlluminantIndex: {"kind":"UInt16"},
+    caRedGamma: {"kind":"UInt16"},
+    caGreenGamma: {"kind":"UInt16"},
+    caBlueGamma: {"kind":"UInt16"},
+    caReferenceBlack: {"kind":"UInt16"},
+    caReferenceWhite: {"kind":"UInt16"},
+    caContrast: {"kind":"Int16"},
+    caBrightness: {"kind":"Int16"},
+    caColorfulness: {"kind":"Int16"},
+    caRedGreenTint: {"kind":"Int16"},
+};
+// --------------------------------------------------------
+// Type: KERNINGPAIR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const KERNINGPAIR = extern struct {
+    wFirst: {"kind":"UInt16"},
+    wSecond: {"kind":"UInt16"},
+    iKernAmount: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: EMR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMR = extern struct {
+    iType: {"kind":"UInt32"},
+    nSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EMRTEXT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRTEXT = extern struct {
+    ptlReference: Windows.Win32.DisplayDevices.POINTL,
+    nChars: {"kind":"UInt32"},
+    offString: {"kind":"UInt32"},
+    fOptions: {"kind":"UInt32"},
+    rcl: Windows.Win32.DisplayDevices.RECTL,
+    offDx: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ABORTPATH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ABORTPATH = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+};
+// --------------------------------------------------------
+// Type: EMRSELECTCLIPPATH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRSELECTCLIPPATH = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    iMode: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EMRSETMITERLIMIT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRSETMITERLIMIT = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    eMiterLimit: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: EMRRESTOREDC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRRESTOREDC = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    iRelative: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: EMRSETARCDIRECTION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRSETARCDIRECTION = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    iArcDirection: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EMRSETMAPPERFLAGS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRSETMAPPERFLAGS = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    dwFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EMRSETTEXTCOLOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRSETTEXTCOLOR = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    crColor: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EMRSELECTOBJECT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRSELECTOBJECT = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    ihObject: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EMRSELECTPALETTE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRSELECTPALETTE = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    ihPal: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EMRRESIZEPALETTE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRRESIZEPALETTE = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    ihPal: {"kind":"UInt32"},
+    cEntries: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EMRSETPALETTEENTRIES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRSETPALETTEENTRIES = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    ihPal: {"kind":"UInt32"},
+    iStart: {"kind":"UInt32"},
+    cEntries: {"kind":"UInt32"},
+    aPalEntries: {"kind":"Array","child": Windows.Win32.Direct2D.PALETTEENTRY},
+};
+// --------------------------------------------------------
+// Type: EMRSETCOLORADJUSTMENT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRSETCOLORADJUSTMENT = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    ColorAdjustment: Windows.Win32.Gdi.COLORADJUSTMENT,
+};
+// --------------------------------------------------------
+// Type: EMRGDICOMMENT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRGDICOMMENT = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    cbData: {"kind":"UInt32"},
+    Data: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: EMREOF
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMREOF = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    nPalEntries: {"kind":"UInt32"},
+    offPalEntries: {"kind":"UInt32"},
+    nSizeLast: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EMRLINETO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRLINETO = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    ptl: Windows.Win32.DisplayDevices.POINTL,
+};
+// --------------------------------------------------------
+// Type: EMROFFSETCLIPRGN
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMROFFSETCLIPRGN = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    ptlOffset: Windows.Win32.DisplayDevices.POINTL,
+};
+// --------------------------------------------------------
+// Type: EMRFILLPATH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRFILLPATH = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    rclBounds: Windows.Win32.DisplayDevices.RECTL,
+};
+// --------------------------------------------------------
+// Type: EMREXCLUDECLIPRECT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMREXCLUDECLIPRECT = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    rclClip: Windows.Win32.DisplayDevices.RECTL,
+};
+// --------------------------------------------------------
+// Type: EMRSETVIEWPORTORGEX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRSETVIEWPORTORGEX = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    ptlOrigin: Windows.Win32.DisplayDevices.POINTL,
+};
+// --------------------------------------------------------
+// Type: EMRSETVIEWPORTEXTEX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRSETVIEWPORTEXTEX = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    szlExtent: Windows.Win32.DisplayDevices.SIZE,
+};
+// --------------------------------------------------------
+// Type: EMRSCALEVIEWPORTEXTEX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRSCALEVIEWPORTEXTEX = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    xNum: {"kind":"Int32"},
+    xDenom: {"kind":"Int32"},
+    yNum: {"kind":"Int32"},
+    yDenom: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: EMRSETWORLDTRANSFORM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRSETWORLDTRANSFORM = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    xform: Windows.Win32.Gdi.XFORM,
+};
+// --------------------------------------------------------
+// Type: EMRMODIFYWORLDTRANSFORM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRMODIFYWORLDTRANSFORM = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    xform: Windows.Win32.Gdi.XFORM,
+    iMode: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EMRSETPIXELV
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRSETPIXELV = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    ptlPixel: Windows.Win32.DisplayDevices.POINTL,
+    crColor: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EMREXTFLOODFILL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMREXTFLOODFILL = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    ptlStart: Windows.Win32.DisplayDevices.POINTL,
+    crColor: {"kind":"UInt32"},
+    iMode: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EMRELLIPSE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRELLIPSE = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    rclBox: Windows.Win32.DisplayDevices.RECTL,
+};
+// --------------------------------------------------------
+// Type: EMRROUNDRECT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRROUNDRECT = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    rclBox: Windows.Win32.DisplayDevices.RECTL,
+    szlCorner: Windows.Win32.DisplayDevices.SIZE,
+};
+// --------------------------------------------------------
+// Type: EMRARC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRARC = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    rclBox: Windows.Win32.DisplayDevices.RECTL,
+    ptlStart: Windows.Win32.DisplayDevices.POINTL,
+    ptlEnd: Windows.Win32.DisplayDevices.POINTL,
+};
+// --------------------------------------------------------
+// Type: EMRANGLEARC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRANGLEARC = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    ptlCenter: Windows.Win32.DisplayDevices.POINTL,
+    nRadius: {"kind":"UInt32"},
+    eStartAngle: {"kind":"Single"},
+    eSweepAngle: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: EMRPOLYLINE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRPOLYLINE = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    rclBounds: Windows.Win32.DisplayDevices.RECTL,
+    cptl: {"kind":"UInt32"},
+    aptl: {"kind":"Array","child": Windows.Win32.DisplayDevices.POINTL},
+};
+// --------------------------------------------------------
+// Type: EMRPOLYLINE16
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRPOLYLINE16 = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    rclBounds: Windows.Win32.DisplayDevices.RECTL,
+    cpts: {"kind":"UInt32"},
+    apts: {"kind":"Array","child": Windows.Win32.DisplayDevices.POINTS},
+};
+// --------------------------------------------------------
+// Type: EMRPOLYDRAW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRPOLYDRAW = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    rclBounds: Windows.Win32.DisplayDevices.RECTL,
+    cptl: {"kind":"UInt32"},
+    aptl: {"kind":"Array","child": Windows.Win32.DisplayDevices.POINTL},
+    abTypes: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: EMRPOLYDRAW16
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRPOLYDRAW16 = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    rclBounds: Windows.Win32.DisplayDevices.RECTL,
+    cpts: {"kind":"UInt32"},
+    apts: {"kind":"Array","child": Windows.Win32.DisplayDevices.POINTS},
+    abTypes: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: EMRPOLYPOLYLINE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRPOLYPOLYLINE = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    rclBounds: Windows.Win32.DisplayDevices.RECTL,
+    nPolys: {"kind":"UInt32"},
+    cptl: {"kind":"UInt32"},
+    aPolyCounts: {"kind":"Array","child": {"kind":"UInt32"}},
+    aptl: {"kind":"Array","child": Windows.Win32.DisplayDevices.POINTL},
+};
+// --------------------------------------------------------
+// Type: EMRPOLYPOLYLINE16
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRPOLYPOLYLINE16 = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    rclBounds: Windows.Win32.DisplayDevices.RECTL,
+    nPolys: {"kind":"UInt32"},
+    cpts: {"kind":"UInt32"},
+    aPolyCounts: {"kind":"Array","child": {"kind":"UInt32"}},
+    apts: {"kind":"Array","child": Windows.Win32.DisplayDevices.POINTS},
+};
+// --------------------------------------------------------
+// Type: EMRINVERTRGN
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRINVERTRGN = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    rclBounds: Windows.Win32.DisplayDevices.RECTL,
+    cbRgnData: {"kind":"UInt32"},
+    RgnData: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: EMRFILLRGN
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRFILLRGN = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    rclBounds: Windows.Win32.DisplayDevices.RECTL,
+    cbRgnData: {"kind":"UInt32"},
+    ihBrush: {"kind":"UInt32"},
+    RgnData: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: EMRFRAMERGN
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRFRAMERGN = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    rclBounds: Windows.Win32.DisplayDevices.RECTL,
+    cbRgnData: {"kind":"UInt32"},
+    ihBrush: {"kind":"UInt32"},
+    szlStroke: Windows.Win32.DisplayDevices.SIZE,
+    RgnData: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: EMREXTSELECTCLIPRGN
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMREXTSELECTCLIPRGN = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    cbRgnData: {"kind":"UInt32"},
+    iMode: {"kind":"UInt32"},
+    RgnData: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: EMREXTTEXTOUTA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMREXTTEXTOUTA = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    rclBounds: Windows.Win32.DisplayDevices.RECTL,
+    iGraphicsMode: {"kind":"UInt32"},
+    exScale: {"kind":"Single"},
+    eyScale: {"kind":"Single"},
+    emrtext: Windows.Win32.Gdi.EMRTEXT,
+};
+// --------------------------------------------------------
+// Type: EMRPOLYTEXTOUTA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRPOLYTEXTOUTA = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    rclBounds: Windows.Win32.DisplayDevices.RECTL,
+    iGraphicsMode: {"kind":"UInt32"},
+    exScale: {"kind":"Single"},
+    eyScale: {"kind":"Single"},
+    cStrings: {"kind":"Int32"},
+    aemrtext: {"kind":"Array","child": Windows.Win32.Gdi.EMRTEXT},
+};
+// --------------------------------------------------------
+// Type: EMRBITBLT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRBITBLT = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    rclBounds: Windows.Win32.DisplayDevices.RECTL,
+    xDest: {"kind":"Int32"},
+    yDest: {"kind":"Int32"},
+    cxDest: {"kind":"Int32"},
+    cyDest: {"kind":"Int32"},
+    dwRop: {"kind":"UInt32"},
+    xSrc: {"kind":"Int32"},
+    ySrc: {"kind":"Int32"},
+    xformSrc: Windows.Win32.Gdi.XFORM,
+    crBkColorSrc: {"kind":"UInt32"},
+    iUsageSrc: {"kind":"UInt32"},
+    offBmiSrc: {"kind":"UInt32"},
+    cbBmiSrc: {"kind":"UInt32"},
+    offBitsSrc: {"kind":"UInt32"},
+    cbBitsSrc: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EMRSTRETCHBLT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRSTRETCHBLT = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    rclBounds: Windows.Win32.DisplayDevices.RECTL,
+    xDest: {"kind":"Int32"},
+    yDest: {"kind":"Int32"},
+    cxDest: {"kind":"Int32"},
+    cyDest: {"kind":"Int32"},
+    dwRop: {"kind":"UInt32"},
+    xSrc: {"kind":"Int32"},
+    ySrc: {"kind":"Int32"},
+    xformSrc: Windows.Win32.Gdi.XFORM,
+    crBkColorSrc: {"kind":"UInt32"},
+    iUsageSrc: {"kind":"UInt32"},
+    offBmiSrc: {"kind":"UInt32"},
+    cbBmiSrc: {"kind":"UInt32"},
+    offBitsSrc: {"kind":"UInt32"},
+    cbBitsSrc: {"kind":"UInt32"},
+    cxSrc: {"kind":"Int32"},
+    cySrc: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: EMRMASKBLT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRMASKBLT = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    rclBounds: Windows.Win32.DisplayDevices.RECTL,
+    xDest: {"kind":"Int32"},
+    yDest: {"kind":"Int32"},
+    cxDest: {"kind":"Int32"},
+    cyDest: {"kind":"Int32"},
+    dwRop: {"kind":"UInt32"},
+    xSrc: {"kind":"Int32"},
+    ySrc: {"kind":"Int32"},
+    xformSrc: Windows.Win32.Gdi.XFORM,
+    crBkColorSrc: {"kind":"UInt32"},
+    iUsageSrc: {"kind":"UInt32"},
+    offBmiSrc: {"kind":"UInt32"},
+    cbBmiSrc: {"kind":"UInt32"},
+    offBitsSrc: {"kind":"UInt32"},
+    cbBitsSrc: {"kind":"UInt32"},
+    xMask: {"kind":"Int32"},
+    yMask: {"kind":"Int32"},
+    iUsageMask: {"kind":"UInt32"},
+    offBmiMask: {"kind":"UInt32"},
+    cbBmiMask: {"kind":"UInt32"},
+    offBitsMask: {"kind":"UInt32"},
+    cbBitsMask: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EMRPLGBLT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRPLGBLT = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    rclBounds: Windows.Win32.DisplayDevices.RECTL,
+    aptlDest: {"kind":"Array","child": Windows.Win32.DisplayDevices.POINTL},
+    xSrc: {"kind":"Int32"},
+    ySrc: {"kind":"Int32"},
+    cxSrc: {"kind":"Int32"},
+    cySrc: {"kind":"Int32"},
+    xformSrc: Windows.Win32.Gdi.XFORM,
+    crBkColorSrc: {"kind":"UInt32"},
+    iUsageSrc: {"kind":"UInt32"},
+    offBmiSrc: {"kind":"UInt32"},
+    cbBmiSrc: {"kind":"UInt32"},
+    offBitsSrc: {"kind":"UInt32"},
+    cbBitsSrc: {"kind":"UInt32"},
+    xMask: {"kind":"Int32"},
+    yMask: {"kind":"Int32"},
+    iUsageMask: {"kind":"UInt32"},
+    offBmiMask: {"kind":"UInt32"},
+    cbBmiMask: {"kind":"UInt32"},
+    offBitsMask: {"kind":"UInt32"},
+    cbBitsMask: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EMRSETDIBITSTODEVICE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRSETDIBITSTODEVICE = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    rclBounds: Windows.Win32.DisplayDevices.RECTL,
+    xDest: {"kind":"Int32"},
+    yDest: {"kind":"Int32"},
+    xSrc: {"kind":"Int32"},
+    ySrc: {"kind":"Int32"},
+    cxSrc: {"kind":"Int32"},
+    cySrc: {"kind":"Int32"},
+    offBmiSrc: {"kind":"UInt32"},
+    cbBmiSrc: {"kind":"UInt32"},
+    offBitsSrc: {"kind":"UInt32"},
+    cbBitsSrc: {"kind":"UInt32"},
+    iUsageSrc: {"kind":"UInt32"},
+    iStartScan: {"kind":"UInt32"},
+    cScans: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EMRSTRETCHDIBITS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRSTRETCHDIBITS = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    rclBounds: Windows.Win32.DisplayDevices.RECTL,
+    xDest: {"kind":"Int32"},
+    yDest: {"kind":"Int32"},
+    xSrc: {"kind":"Int32"},
+    ySrc: {"kind":"Int32"},
+    cxSrc: {"kind":"Int32"},
+    cySrc: {"kind":"Int32"},
+    offBmiSrc: {"kind":"UInt32"},
+    cbBmiSrc: {"kind":"UInt32"},
+    offBitsSrc: {"kind":"UInt32"},
+    cbBitsSrc: {"kind":"UInt32"},
+    iUsageSrc: {"kind":"UInt32"},
+    dwRop: {"kind":"UInt32"},
+    cxDest: {"kind":"Int32"},
+    cyDest: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: EMREXTCREATEFONTINDIRECTW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMREXTCREATEFONTINDIRECTW = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    ihFont: {"kind":"UInt32"},
+    elfw: Windows.Win32.Gdi.EXTLOGFONTW,
+};
+// --------------------------------------------------------
+// Type: EMRCREATEPALETTE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRCREATEPALETTE = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    ihPal: {"kind":"UInt32"},
+    lgpl: Windows.Win32.Gdi.LOGPALETTE,
+};
+// --------------------------------------------------------
+// Type: EMRCREATEPEN
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRCREATEPEN = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    ihPen: {"kind":"UInt32"},
+    lopn: Windows.Win32.Gdi.LOGPEN,
+};
+// --------------------------------------------------------
+// Type: EMREXTCREATEPEN
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMREXTCREATEPEN = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    ihPen: {"kind":"UInt32"},
+    offBmi: {"kind":"UInt32"},
+    cbBmi: {"kind":"UInt32"},
+    offBits: {"kind":"UInt32"},
+    cbBits: {"kind":"UInt32"},
+    elp: Windows.Win32.Gdi.EXTLOGPEN32,
+};
+// --------------------------------------------------------
+// Type: EMRCREATEBRUSHINDIRECT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRCREATEBRUSHINDIRECT = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    ihBrush: {"kind":"UInt32"},
+    lb: Windows.Win32.Gdi.LOGBRUSH32,
+};
+// --------------------------------------------------------
+// Type: EMRCREATEMONOBRUSH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRCREATEMONOBRUSH = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    ihBrush: {"kind":"UInt32"},
+    iUsage: {"kind":"UInt32"},
+    offBmi: {"kind":"UInt32"},
+    cbBmi: {"kind":"UInt32"},
+    offBits: {"kind":"UInt32"},
+    cbBits: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EMRCREATEDIBPATTERNBRUSHPT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRCREATEDIBPATTERNBRUSHPT = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    ihBrush: {"kind":"UInt32"},
+    iUsage: {"kind":"UInt32"},
+    offBmi: {"kind":"UInt32"},
+    cbBmi: {"kind":"UInt32"},
+    offBits: {"kind":"UInt32"},
+    cbBits: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EMRFORMAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRFORMAT = extern struct {
+    dSignature: {"kind":"UInt32"},
+    nVersion: {"kind":"UInt32"},
+    cbData: {"kind":"UInt32"},
+    offData: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EMRGLSRECORD
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRGLSRECORD = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    cbData: {"kind":"UInt32"},
+    Data: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: EMRGLSBOUNDEDRECORD
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRGLSBOUNDEDRECORD = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    rclBounds: Windows.Win32.DisplayDevices.RECTL,
+    cbData: {"kind":"UInt32"},
+    Data: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: EMRPIXELFORMAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRPIXELFORMAT = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    pfd: Windows.Win32.OpenGL.PIXELFORMATDESCRIPTOR,
+};
+// --------------------------------------------------------
+// Type: EMRCREATECOLORSPACE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRCREATECOLORSPACE = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    ihCS: {"kind":"UInt32"},
+    lcs: Windows.Win32.WindowsColorSystem.LOGCOLORSPACEA,
+};
+// --------------------------------------------------------
+// Type: EMRSETCOLORSPACE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRSETCOLORSPACE = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    ihCS: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EMREXTESCAPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMREXTESCAPE = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    iEscape: {"kind":"Int32"},
+    cbEscData: {"kind":"Int32"},
+    EscData: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: EMRNAMEDESCAPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRNAMEDESCAPE = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    iEscape: {"kind":"Int32"},
+    cbDriver: {"kind":"Int32"},
+    cbEscData: {"kind":"Int32"},
+    EscData: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: EMRSETICMPROFILE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRSETICMPROFILE = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    dwFlags: {"kind":"UInt32"},
+    cbName: {"kind":"UInt32"},
+    cbData: {"kind":"UInt32"},
+    Data: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: EMRCREATECOLORSPACEW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRCREATECOLORSPACEW = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    ihCS: {"kind":"UInt32"},
+    lcs: Windows.Win32.WindowsColorSystem.LOGCOLORSPACEW,
+    dwFlags: {"kind":"UInt32"},
+    cbData: {"kind":"UInt32"},
+    Data: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: COLORMATCHTOTARGET
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const COLORMATCHTOTARGET = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    dwAction: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    cbName: {"kind":"UInt32"},
+    cbData: {"kind":"UInt32"},
+    Data: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: COLORCORRECTPALETTE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const COLORCORRECTPALETTE = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    ihPalette: {"kind":"UInt32"},
+    nFirstEntry: {"kind":"UInt32"},
+    nPalEntries: {"kind":"UInt32"},
+    nReserved: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EMRALPHABLEND
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRALPHABLEND = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    rclBounds: Windows.Win32.DisplayDevices.RECTL,
+    xDest: {"kind":"Int32"},
+    yDest: {"kind":"Int32"},
+    cxDest: {"kind":"Int32"},
+    cyDest: {"kind":"Int32"},
+    dwRop: {"kind":"UInt32"},
+    xSrc: {"kind":"Int32"},
+    ySrc: {"kind":"Int32"},
+    xformSrc: Windows.Win32.Gdi.XFORM,
+    crBkColorSrc: {"kind":"UInt32"},
+    iUsageSrc: {"kind":"UInt32"},
+    offBmiSrc: {"kind":"UInt32"},
+    cbBmiSrc: {"kind":"UInt32"},
+    offBitsSrc: {"kind":"UInt32"},
+    cbBitsSrc: {"kind":"UInt32"},
+    cxSrc: {"kind":"Int32"},
+    cySrc: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: EMRGRADIENTFILL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRGRADIENTFILL = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    rclBounds: Windows.Win32.DisplayDevices.RECTL,
+    nVer: {"kind":"UInt32"},
+    nTri: {"kind":"UInt32"},
+    ulMode: {"kind":"UInt32"},
+    Ver: {"kind":"Array","child": Windows.Win32.Gdi.TRIVERTEX},
+};
+// --------------------------------------------------------
+// Type: EMRTRANSPARENTBLT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EMRTRANSPARENTBLT = extern struct {
+    emr: Windows.Win32.Gdi.EMR,
+    rclBounds: Windows.Win32.DisplayDevices.RECTL,
+    xDest: {"kind":"Int32"},
+    yDest: {"kind":"Int32"},
+    cxDest: {"kind":"Int32"},
+    cyDest: {"kind":"Int32"},
+    dwRop: {"kind":"UInt32"},
+    xSrc: {"kind":"Int32"},
+    ySrc: {"kind":"Int32"},
+    xformSrc: Windows.Win32.Gdi.XFORM,
+    crBkColorSrc: {"kind":"UInt32"},
+    iUsageSrc: {"kind":"UInt32"},
+    offBmiSrc: {"kind":"UInt32"},
+    cbBmiSrc: {"kind":"UInt32"},
+    offBitsSrc: {"kind":"UInt32"},
+    cbBitsSrc: {"kind":"UInt32"},
+    cxSrc: {"kind":"Int32"},
+    cySrc: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: WGLSWAP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WGLSWAP = extern struct {
+    hdc: Windows.Win32.Gdi.HDC,
+    uiFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: CFP_ALLOCPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CFP_ALLOCPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: CFP_REALLOCPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CFP_REALLOCPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: CFP_FREEPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CFP_FREEPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: READEMBEDPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const READEMBEDPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WRITEEMBEDPROC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WRITEEMBEDPROC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: TTLOADINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TTLOADINFO = extern struct {
+    usStructSize: {"kind":"UInt16"},
+    usRefStrSize: {"kind":"UInt16"},
+    pusRefStr: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: TTEMBEDINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TTEMBEDINFO = extern struct {
+    usStructSize: {"kind":"UInt16"},
+    usRootStrSize: {"kind":"UInt16"},
+    pusRootStr: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: TTVALIDATIONTESTSPARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TTVALIDATIONTESTSPARAMS = extern struct {
+    ulStructSize: {"kind":"UInt32"},
+    lTestFromSize: {"kind":"Int32"},
+    lTestToSize: {"kind":"Int32"},
+    ulCharSet: {"kind":"UInt32"},
+    usReserved1: {"kind":"UInt16"},
+    usCharCodeCount: {"kind":"UInt16"},
+    pusCharCodeSet: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: TTVALIDATIONTESTSPARAMSEX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TTVALIDATIONTESTSPARAMSEX = extern struct {
+    ulStructSize: {"kind":"UInt32"},
+    lTestFromSize: {"kind":"Int32"},
+    lTestToSize: {"kind":"Int32"},
+    ulCharSet: {"kind":"UInt32"},
+    usReserved1: {"kind":"UInt16"},
+    usCharCodeCount: {"kind":"UInt16"},
+    pulCharCodeSet: {"kind""Ptr","child":{"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: tagMxdcLandscapeRotationEnums
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const tagMxdcLandscapeRotationEnums = *opaque{
+};
+// --------------------------------------------------------
+// Type: tagMxdcImageTypeEnums
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const tagMxdcImageTypeEnums = *opaque{
+};
+// --------------------------------------------------------
+// Type: tagMxdcEscapeHeader
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const tagMxdcEscapeHeader = *opaque{
+};
+// --------------------------------------------------------
+// Type: tagMxdcGetFileNameData
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const tagMxdcGetFileNameData = *opaque{
+};
+// --------------------------------------------------------
+// Type: tagMxdcS0PageData
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const tagMxdcS0PageData = *opaque{
+};
+// --------------------------------------------------------
+// Type: tagMxdcS0PageEnums
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const tagMxdcS0PageEnums = *opaque{
+};
+// --------------------------------------------------------
+// Type: tagMxdcXpsS0PageResource
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const tagMxdcXpsS0PageResource = *opaque{
+};
+// --------------------------------------------------------
+// Type: tagMxdcPrintTicketPassthrough
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const tagMxdcPrintTicketPassthrough = *opaque{
+};
+// --------------------------------------------------------
+// Type: tagMxdcPrintTicketEscape
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const tagMxdcPrintTicketEscape = extern struct {
+    mxdcEscape: Windows.Win32.Gdi.tagMxdcEscapeHeader,
+    printTicketData: Windows.Win32.Gdi.tagMxdcPrintTicketPassthrough,
+};
+// --------------------------------------------------------
+// Type: tagMxdcS0PagePassthroughEscape
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const tagMxdcS0PagePassthroughEscape = extern struct {
+    mxdcEscape: Windows.Win32.Gdi.tagMxdcEscapeHeader,
+    xpsS0PageData: Windows.Win32.Gdi.tagMxdcS0PageData,
+};
+// --------------------------------------------------------
+// Type: tagMxdcS0PageResourceEscape
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const tagMxdcS0PageResourceEscape = extern struct {
+    mxdcEscape: Windows.Win32.Gdi.tagMxdcEscapeHeader,
+    xpsS0PageResourcePassthrough: Windows.Win32.Gdi.tagMxdcXpsS0PageResource,
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DrawEdge(
+    hdc: Windows.Win32.Gdi.HDC,
+    qrc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    edge: {"kind":"UInt32"},
+    grfFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DrawFrameControl(
+    param0: Windows.Win32.Gdi.HDC,
+    param1: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    param2: {"kind":"UInt32"},
+    param3: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DrawCaption(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hdc: Windows.Win32.Gdi.HDC,
+    lprect: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DrawAnimatedRects(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    idAni: {"kind":"Int32"},
+    lprcFrom: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    lprcTo: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DrawTextA(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpchText: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchText: {"kind":"Int32"},
+    lprc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    format: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DrawTextW(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpchText: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchText: {"kind":"Int32"},
+    lprc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    format: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DrawTextExA(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpchText: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchText: {"kind":"Int32"},
+    lprc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    format: {"kind":"UInt32"},
+    lpdtp: {"kind""Ptr","child":Windows.Win32.Gdi.DRAWTEXTPARAMS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DrawTextExW(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpchText: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchText: {"kind":"Int32"},
+    lprc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    format: {"kind":"UInt32"},
+    lpdtp: {"kind""Ptr","child":Windows.Win32.Gdi.DRAWTEXTPARAMS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GrayStringA(
+    hDC: Windows.Win32.Gdi.HDC,
+    hBrush: Windows.Win32.Gdi.HBRUSH,
+    lpOutputFunc: Windows.Win32.Gdi.GRAYSTRINGPROC,
+    lpData: Windows.Win32.WindowsAndMessaging.LPARAM,
+    nCount: {"kind":"Int32"},
+    X: {"kind":"Int32"},
+    Y: {"kind":"Int32"},
+    nWidth: {"kind":"Int32"},
+    nHeight: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GrayStringW(
+    hDC: Windows.Win32.Gdi.HDC,
+    hBrush: Windows.Win32.Gdi.HBRUSH,
+    lpOutputFunc: Windows.Win32.Gdi.GRAYSTRINGPROC,
+    lpData: Windows.Win32.WindowsAndMessaging.LPARAM,
+    nCount: {"kind":"Int32"},
+    X: {"kind":"Int32"},
+    Y: {"kind":"Int32"},
+    nWidth: {"kind":"Int32"},
+    nHeight: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DrawStateA(
+    hdc: Windows.Win32.Gdi.HDC,
+    hbrFore: Windows.Win32.Gdi.HBRUSH,
+    qfnCallBack: Windows.Win32.Gdi.DRAWSTATEPROC,
+    lData: Windows.Win32.WindowsAndMessaging.LPARAM,
+    wData: Windows.Win32.WindowsAndMessaging.WPARAM,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    cx: {"kind":"Int32"},
+    cy: {"kind":"Int32"},
+    uFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DrawStateW(
+    hdc: Windows.Win32.Gdi.HDC,
+    hbrFore: Windows.Win32.Gdi.HBRUSH,
+    qfnCallBack: Windows.Win32.Gdi.DRAWSTATEPROC,
+    lData: Windows.Win32.WindowsAndMessaging.LPARAM,
+    wData: Windows.Win32.WindowsAndMessaging.WPARAM,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    cx: {"kind":"Int32"},
+    cy: {"kind":"Int32"},
+    uFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn TabbedTextOutA(
+    hdc: Windows.Win32.Gdi.HDC,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    lpString: {"kind""Ptr","child":{"kind":"SByte"}},
+    chCount: {"kind":"Int32"},
+    nTabPositions: {"kind":"Int32"},
+    lpnTabStopPositions: {"kind""Ptr","child":{"kind":"Int32"}},
+    nTabOrigin: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn TabbedTextOutW(
+    hdc: Windows.Win32.Gdi.HDC,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    lpString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    chCount: {"kind":"Int32"},
+    nTabPositions: {"kind":"Int32"},
+    lpnTabStopPositions: {"kind""Ptr","child":{"kind":"Int32"}},
+    nTabOrigin: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetTabbedTextExtentA(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpString: {"kind""Ptr","child":{"kind":"SByte"}},
+    chCount: {"kind":"Int32"},
+    nTabPositions: {"kind":"Int32"},
+    lpnTabStopPositions: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetTabbedTextExtentW(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    chCount: {"kind":"Int32"},
+    nTabPositions: {"kind":"Int32"},
+    lpnTabStopPositions: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn UpdateWindow(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn PaintDesktop(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn WindowFromDC(
+    hDC: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetDC(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetDCEx(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hrgnClip: Windows.Win32.Gdi.HRGN,
+    flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetWindowDC(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn ReleaseDC(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hDC: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn BeginPaint(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpPaint: {"kind""Ptr","child":Windows.Win32.Gdi.PAINTSTRUCT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn EndPaint(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpPaint: {"kind""Ptr","child":Windows.Win32.Gdi.PAINTSTRUCT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetUpdateRect(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpRect: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    bErase: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetUpdateRgn(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hRgn: Windows.Win32.Gdi.HRGN,
+    bErase: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn SetWindowRgn(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hRgn: Windows.Win32.Gdi.HRGN,
+    bRedraw: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetWindowRgn(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hRgn: Windows.Win32.Gdi.HRGN,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetWindowRgnBox(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lprc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn ExcludeUpdateRgn(
+    hDC: Windows.Win32.Gdi.HDC,
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn InvalidateRect(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpRect: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    bErase: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn ValidateRect(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpRect: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn InvalidateRgn(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hRgn: Windows.Win32.Gdi.HRGN,
+    bErase: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn ValidateRgn(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hRgn: Windows.Win32.Gdi.HRGN,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn RedrawWindow(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lprcUpdate: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    hrgnUpdate: Windows.Win32.Gdi.HRGN,
+    flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn LockWindowUpdate(
+    hWndLock: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn ClientToScreen(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpPoint: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn ScreenToClient(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpPoint: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn MapWindowPoints(
+    hWndFrom: Windows.Win32.WindowsAndMessaging.HWND,
+    hWndTo: Windows.Win32.WindowsAndMessaging.HWND,
+    lpPoints: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+    cPoints: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetSysColorBrush(
+    nIndex: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DrawFocusRect(
+    hDC: Windows.Win32.Gdi.HDC,
+    lprc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn FillRect(
+    hDC: Windows.Win32.Gdi.HDC,
+    lprc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    hbr: Windows.Win32.Gdi.HBRUSH,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn FrameRect(
+    hDC: Windows.Win32.Gdi.HDC,
+    lprc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    hbr: Windows.Win32.Gdi.HBRUSH,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn InvertRect(
+    hDC: Windows.Win32.Gdi.HDC,
+    lprc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn SetRect(
+    lprc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    xLeft: {"kind":"Int32"},
+    yTop: {"kind":"Int32"},
+    xRight: {"kind":"Int32"},
+    yBottom: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn SetRectEmpty(
+    lprc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn CopyRect(
+    lprcDst: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    lprcSrc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn InflateRect(
+    lprc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    dx: {"kind":"Int32"},
+    dy: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn IntersectRect(
+    lprcDst: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    lprcSrc1: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    lprcSrc2: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn UnionRect(
+    lprcDst: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    lprcSrc1: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    lprcSrc2: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn SubtractRect(
+    lprcDst: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    lprcSrc1: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    lprcSrc2: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn OffsetRect(
+    lprc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    dx: {"kind":"Int32"},
+    dy: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn IsRectEmpty(
+    lprc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn EqualRect(
+    lprc1: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    lprc2: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn PtInRect(
+    lprc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    pt: Windows.Win32.DisplayDevices.POINT,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn LoadBitmapA(
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    lpBitmapName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn LoadBitmapW(
+    hInstance: Windows.Win32.SystemServices.HINSTANCE,
+    lpBitmapName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn ChangeDisplaySettingsA(
+    lpDevMode: {"kind""Ptr","child":Windows.Win32.Xps.DEVMODEA},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn ChangeDisplaySettingsW(
+    lpDevMode: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DEVMODEW},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn ChangeDisplaySettingsExA(
+    lpszDeviceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpDevMode: {"kind""Ptr","child":Windows.Win32.Xps.DEVMODEA},
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    dwflags: {"kind":"UInt32"},
+    lParam: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn ChangeDisplaySettingsExW(
+    lpszDeviceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpDevMode: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DEVMODEW},
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    dwflags: {"kind":"UInt32"},
+    lParam: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn EnumDisplaySettingsA(
+    lpszDeviceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    iModeNum: {"kind":"UInt32"},
+    lpDevMode: {"kind""Ptr","child":Windows.Win32.Xps.DEVMODEA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn EnumDisplaySettingsW(
+    lpszDeviceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    iModeNum: {"kind":"UInt32"},
+    lpDevMode: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DEVMODEW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn EnumDisplaySettingsExA(
+    lpszDeviceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    iModeNum: {"kind":"UInt32"},
+    lpDevMode: {"kind""Ptr","child":Windows.Win32.Xps.DEVMODEA},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn EnumDisplaySettingsExW(
+    lpszDeviceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    iModeNum: {"kind":"UInt32"},
+    lpDevMode: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DEVMODEW},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn EnumDisplayDevicesA(
+    lpDevice: {"kind""Ptr","child":{"kind":"SByte"}},
+    iDevNum: {"kind":"UInt32"},
+    lpDisplayDevice: {"kind""Ptr","child":Windows.Win32.Gdi.DISPLAY_DEVICEA},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn EnumDisplayDevicesW(
+    lpDevice: {"kind""Ptr","child":{"kind":"UInt16"}},
+    iDevNum: {"kind":"UInt32"},
+    lpDisplayDevice: {"kind""Ptr","child":Windows.Win32.Gdi.DISPLAY_DEVICEW},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn MonitorFromPoint(
+    pt: Windows.Win32.DisplayDevices.POINT,
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn MonitorFromRect(
+    lprc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn MonitorFromWindow(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetMonitorInfoA(
+    hMonitor: {"kind":"IntPtr"},
+    lpmi: {"kind""Ptr","child":Windows.Win32.Gdi.MONITORINFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetMonitorInfoW(
+    hMonitor: {"kind":"IntPtr"},
+    lpmi: {"kind""Ptr","child":Windows.Win32.Gdi.MONITORINFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn EnumDisplayMonitors(
+    hdc: Windows.Win32.Gdi.HDC,
+    lprcClip: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    lpfnEnum: Windows.Win32.Gdi.MONITORENUMPROC,
+    dwData: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn AddFontResourceA(
+    param0: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn AddFontResourceW(
+    param0: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn AnimatePalette(
+    hPal: Windows.Win32.Gdi.HPALETTE,
+    iStartIndex: {"kind":"UInt32"},
+    cEntries: {"kind":"UInt32"},
+    ppe: {"kind""Ptr","child":Windows.Win32.Direct2D.PALETTEENTRY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn Arc(
+    hdc: Windows.Win32.Gdi.HDC,
+    x1: {"kind":"Int32"},
+    y1: {"kind":"Int32"},
+    x2: {"kind":"Int32"},
+    y2: {"kind":"Int32"},
+    x3: {"kind":"Int32"},
+    y3: {"kind":"Int32"},
+    x4: {"kind":"Int32"},
+    y4: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "GDI32" fn BitBlt(
+    hdc: Windows.Win32.Gdi.HDC,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    cx: {"kind":"Int32"},
+    cy: {"kind":"Int32"},
+    hdcSrc: Windows.Win32.Gdi.HDC,
+    x1: {"kind":"Int32"},
+    y1: {"kind":"Int32"},
+    rop: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CancelDC(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn Chord(
+    hdc: Windows.Win32.Gdi.HDC,
+    x1: {"kind":"Int32"},
+    y1: {"kind":"Int32"},
+    x2: {"kind":"Int32"},
+    y2: {"kind":"Int32"},
+    x3: {"kind":"Int32"},
+    y3: {"kind":"Int32"},
+    x4: {"kind":"Int32"},
+    y4: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CloseMetaFile(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CombineRgn(
+    hrgnDst: Windows.Win32.Gdi.HRGN,
+    hrgnSrc1: Windows.Win32.Gdi.HRGN,
+    hrgnSrc2: Windows.Win32.Gdi.HRGN,
+    iMode: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CopyMetaFileA(
+    param0: {"kind":"IntPtr"},
+    param1: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CopyMetaFileW(
+    param0: {"kind":"IntPtr"},
+    param1: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateBitmap(
+    nWidth: {"kind":"Int32"},
+    nHeight: {"kind":"Int32"},
+    nPlanes: {"kind":"UInt32"},
+    nBitCount: {"kind":"UInt32"},
+    lpBits: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateBitmapIndirect(
+    pbm: {"kind""Ptr","child":Windows.Win32.Gdi.BITMAP},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateBrushIndirect(
+    plbrush: {"kind""Ptr","child":Windows.Win32.Gdi.LOGBRUSH},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateCompatibleBitmap(
+    hdc: Windows.Win32.Gdi.HDC,
+    cx: {"kind":"Int32"},
+    cy: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateDiscardableBitmap(
+    hdc: Windows.Win32.Gdi.HDC,
+    cx: {"kind":"Int32"},
+    cy: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateCompatibleDC(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateDCA(
+    pwszDriver: {"kind""Ptr","child":{"kind":"SByte"}},
+    pwszDevice: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszPort: {"kind""Ptr","child":{"kind":"SByte"}},
+    pdm: {"kind""Ptr","child":Windows.Win32.Xps.DEVMODEA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateDCW(
+    pwszDriver: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszDevice: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszPort: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pdm: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DEVMODEW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateDIBitmap(
+    hdc: Windows.Win32.Gdi.HDC,
+    pbmih: {"kind""Ptr","child":Windows.Win32.DirectShow.BITMAPINFOHEADER},
+    flInit: {"kind":"UInt32"},
+    pjBits: {"kind""Ptr","child":{"kind":"Void"}},
+    pbmi: {"kind""Ptr","child":Windows.Win32.Gdi.BITMAPINFO},
+    iUsage: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateDIBPatternBrush(
+    h: {"kind":"IntPtr"},
+    iUsage: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateDIBPatternBrushPt(
+    lpPackedDIB: {"kind""Ptr","child":{"kind":"Void"}},
+    iUsage: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateEllipticRgn(
+    x1: {"kind":"Int32"},
+    y1: {"kind":"Int32"},
+    x2: {"kind":"Int32"},
+    y2: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateEllipticRgnIndirect(
+    lprect: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateFontIndirectA(
+    lplf: {"kind""Ptr","child":Windows.Win32.Shell.LOGFONTA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateFontIndirectW(
+    lplf: {"kind""Ptr","child":Windows.Win32.Shell.LOGFONTW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateFontA(
+    cHeight: {"kind":"Int32"},
+    cWidth: {"kind":"Int32"},
+    cEscapement: {"kind":"Int32"},
+    cOrientation: {"kind":"Int32"},
+    cWeight: {"kind":"Int32"},
+    bItalic: {"kind":"UInt32"},
+    bUnderline: {"kind":"UInt32"},
+    bStrikeOut: {"kind":"UInt32"},
+    iCharSet: {"kind":"UInt32"},
+    iOutPrecision: {"kind":"UInt32"},
+    iClipPrecision: {"kind":"UInt32"},
+    iQuality: {"kind":"UInt32"},
+    iPitchAndFamily: {"kind":"UInt32"},
+    pszFaceName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateFontW(
+    cHeight: {"kind":"Int32"},
+    cWidth: {"kind":"Int32"},
+    cEscapement: {"kind":"Int32"},
+    cOrientation: {"kind":"Int32"},
+    cWeight: {"kind":"Int32"},
+    bItalic: {"kind":"UInt32"},
+    bUnderline: {"kind":"UInt32"},
+    bStrikeOut: {"kind":"UInt32"},
+    iCharSet: {"kind":"UInt32"},
+    iOutPrecision: {"kind":"UInt32"},
+    iClipPrecision: {"kind":"UInt32"},
+    iQuality: {"kind":"UInt32"},
+    iPitchAndFamily: {"kind":"UInt32"},
+    pszFaceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateHatchBrush(
+    iHatch: {"kind":"Int32"},
+    color: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateICA(
+    pszDriver: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszDevice: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszPort: {"kind""Ptr","child":{"kind":"SByte"}},
+    pdm: {"kind""Ptr","child":Windows.Win32.Xps.DEVMODEA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateICW(
+    pszDriver: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszDevice: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszPort: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pdm: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DEVMODEW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateMetaFileA(
+    pszFile: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateMetaFileW(
+    pszFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreatePalette(
+    plpal: {"kind""Ptr","child":Windows.Win32.Gdi.LOGPALETTE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreatePen(
+    iStyle: {"kind":"Int32"},
+    cWidth: {"kind":"Int32"},
+    color: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreatePenIndirect(
+    plpen: {"kind""Ptr","child":Windows.Win32.Gdi.LOGPEN},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreatePolyPolygonRgn(
+    pptl: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+    pc: {"kind""Ptr","child":{"kind":"Int32"}},
+    cPoly: {"kind":"Int32"},
+    iMode: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreatePatternBrush(
+    hbm: Windows.Win32.Gdi.HBITMAP,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateRectRgn(
+    x1: {"kind":"Int32"},
+    y1: {"kind":"Int32"},
+    x2: {"kind":"Int32"},
+    y2: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateRectRgnIndirect(
+    lprect: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateRoundRectRgn(
+    x1: {"kind":"Int32"},
+    y1: {"kind":"Int32"},
+    x2: {"kind":"Int32"},
+    y2: {"kind":"Int32"},
+    w: {"kind":"Int32"},
+    h: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "GDI32" fn CreateScalableFontResourceA(
+    fdwHidden: {"kind":"UInt32"},
+    lpszFont: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszPath: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "GDI32" fn CreateScalableFontResourceW(
+    fdwHidden: {"kind":"UInt32"},
+    lpszFont: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateSolidBrush(
+    color: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn DeleteDC(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn DeleteMetaFile(
+    hmf: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn DeleteObject(
+    ho: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn DrawEscape(
+    hdc: Windows.Win32.Gdi.HDC,
+    iEscape: {"kind":"Int32"},
+    cjIn: {"kind":"Int32"},
+    lpIn: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn Ellipse(
+    hdc: Windows.Win32.Gdi.HDC,
+    left: {"kind":"Int32"},
+    top: {"kind":"Int32"},
+    right: {"kind":"Int32"},
+    bottom: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EnumFontFamiliesExA(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpLogfont: {"kind""Ptr","child":Windows.Win32.Shell.LOGFONTA},
+    lpProc: Windows.Win32.Gdi.FONTENUMPROCA,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EnumFontFamiliesExW(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpLogfont: {"kind""Ptr","child":Windows.Win32.Shell.LOGFONTW},
+    lpProc: Windows.Win32.Gdi.FONTENUMPROCW,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EnumFontFamiliesA(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpLogfont: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpProc: Windows.Win32.Gdi.FONTENUMPROCA,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EnumFontFamiliesW(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpLogfont: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpProc: Windows.Win32.Gdi.FONTENUMPROCW,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EnumFontsA(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpLogfont: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpProc: Windows.Win32.Gdi.FONTENUMPROCA,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EnumFontsW(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpLogfont: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpProc: Windows.Win32.Gdi.FONTENUMPROCW,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EnumObjects(
+    hdc: Windows.Win32.Gdi.HDC,
+    nType: {"kind":"Int32"},
+    lpFunc: Windows.Win32.Gdi.GOBJENUMPROC,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EqualRgn(
+    hrgn1: Windows.Win32.Gdi.HRGN,
+    hrgn2: Windows.Win32.Gdi.HRGN,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn ExcludeClipRect(
+    hdc: Windows.Win32.Gdi.HDC,
+    left: {"kind":"Int32"},
+    top: {"kind":"Int32"},
+    right: {"kind":"Int32"},
+    bottom: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn ExtCreateRegion(
+    lpx: {"kind""Ptr","child":Windows.Win32.Gdi.XFORM},
+    nCount: {"kind":"UInt32"},
+    lpData: {"kind""Ptr","child":Windows.Win32.Gdi.RGNDATA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn ExtFloodFill(
+    hdc: Windows.Win32.Gdi.HDC,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    color: {"kind":"UInt32"},
+    type: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn FillRgn(
+    hdc: Windows.Win32.Gdi.HDC,
+    hrgn: Windows.Win32.Gdi.HRGN,
+    hbr: Windows.Win32.Gdi.HBRUSH,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn FloodFill(
+    hdc: Windows.Win32.Gdi.HDC,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    color: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn FrameRgn(
+    hdc: Windows.Win32.Gdi.HDC,
+    hrgn: Windows.Win32.Gdi.HRGN,
+    hbr: Windows.Win32.Gdi.HBRUSH,
+    w: {"kind":"Int32"},
+    h: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetROP2(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetAspectRatioFilterEx(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpsize: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SIZE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetBkColor(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetDCBrushColor(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetDCPenColor(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetBkMode(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetBitmapBits(
+    hbit: Windows.Win32.Gdi.HBITMAP,
+    cb: {"kind":"Int32"},
+    lpvBits: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetBitmapDimensionEx(
+    hbit: Windows.Win32.Gdi.HBITMAP,
+    lpsize: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SIZE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetBoundsRect(
+    hdc: Windows.Win32.Gdi.HDC,
+    lprect: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetBrushOrgEx(
+    hdc: Windows.Win32.Gdi.HDC,
+    lppt: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetCharWidthA(
+    hdc: Windows.Win32.Gdi.HDC,
+    iFirst: {"kind":"UInt32"},
+    iLast: {"kind":"UInt32"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetCharWidthW(
+    hdc: Windows.Win32.Gdi.HDC,
+    iFirst: {"kind":"UInt32"},
+    iLast: {"kind":"UInt32"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetCharWidth32A(
+    hdc: Windows.Win32.Gdi.HDC,
+    iFirst: {"kind":"UInt32"},
+    iLast: {"kind":"UInt32"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetCharWidth32W(
+    hdc: Windows.Win32.Gdi.HDC,
+    iFirst: {"kind":"UInt32"},
+    iLast: {"kind":"UInt32"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetCharWidthFloatA(
+    hdc: Windows.Win32.Gdi.HDC,
+    iFirst: {"kind":"UInt32"},
+    iLast: {"kind":"UInt32"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Single"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetCharWidthFloatW(
+    hdc: Windows.Win32.Gdi.HDC,
+    iFirst: {"kind":"UInt32"},
+    iLast: {"kind":"UInt32"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Single"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetCharABCWidthsA(
+    hdc: Windows.Win32.Gdi.HDC,
+    wFirst: {"kind":"UInt32"},
+    wLast: {"kind":"UInt32"},
+    lpABC: {"kind""Ptr","child":Windows.Win32.Gdi.ABC},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetCharABCWidthsW(
+    hdc: Windows.Win32.Gdi.HDC,
+    wFirst: {"kind":"UInt32"},
+    wLast: {"kind":"UInt32"},
+    lpABC: {"kind""Ptr","child":Windows.Win32.Gdi.ABC},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetCharABCWidthsFloatA(
+    hdc: Windows.Win32.Gdi.HDC,
+    iFirst: {"kind":"UInt32"},
+    iLast: {"kind":"UInt32"},
+    lpABC: {"kind""Ptr","child":Windows.Win32.Gdi.ABCFLOAT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetCharABCWidthsFloatW(
+    hdc: Windows.Win32.Gdi.HDC,
+    iFirst: {"kind":"UInt32"},
+    iLast: {"kind":"UInt32"},
+    lpABC: {"kind""Ptr","child":Windows.Win32.Gdi.ABCFLOAT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetClipBox(
+    hdc: Windows.Win32.Gdi.HDC,
+    lprect: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetClipRgn(
+    hdc: Windows.Win32.Gdi.HDC,
+    hrgn: Windows.Win32.Gdi.HRGN,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetMetaRgn(
+    hdc: Windows.Win32.Gdi.HDC,
+    hrgn: Windows.Win32.Gdi.HRGN,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetCurrentObject(
+    hdc: Windows.Win32.Gdi.HDC,
+    type: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetCurrentPositionEx(
+    hdc: Windows.Win32.Gdi.HDC,
+    lppt: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetDeviceCaps(
+    hdc: Windows.Win32.Gdi.HDC,
+    index: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetDIBits(
+    hdc: Windows.Win32.Gdi.HDC,
+    hbm: Windows.Win32.Gdi.HBITMAP,
+    start: {"kind":"UInt32"},
+    cLines: {"kind":"UInt32"},
+    lpvBits: {"kind""Ptr","child":{"kind":"Void"}},
+    lpbmi: {"kind""Ptr","child":Windows.Win32.Gdi.BITMAPINFO},
+    usage: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetFontData(
+    hdc: Windows.Win32.Gdi.HDC,
+    dwTable: {"kind":"UInt32"},
+    dwOffset: {"kind":"UInt32"},
+    pvBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    cjBuffer: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetGlyphOutlineA(
+    hdc: Windows.Win32.Gdi.HDC,
+    uChar: {"kind":"UInt32"},
+    fuFormat: {"kind":"UInt32"},
+    lpgm: {"kind""Ptr","child":Windows.Win32.Gdi.GLYPHMETRICS},
+    cjBuffer: {"kind":"UInt32"},
+    pvBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    lpmat2: {"kind""Ptr","child":Windows.Win32.Gdi.MAT2},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetGlyphOutlineW(
+    hdc: Windows.Win32.Gdi.HDC,
+    uChar: {"kind":"UInt32"},
+    fuFormat: {"kind":"UInt32"},
+    lpgm: {"kind""Ptr","child":Windows.Win32.Gdi.GLYPHMETRICS},
+    cjBuffer: {"kind":"UInt32"},
+    pvBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    lpmat2: {"kind""Ptr","child":Windows.Win32.Gdi.MAT2},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetGraphicsMode(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetMapMode(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetMetaFileBitsEx(
+    hMF: {"kind":"IntPtr"},
+    cbBuffer: {"kind":"UInt32"},
+    lpData: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetMetaFileA(
+    lpName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetMetaFileW(
+    lpName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetNearestColor(
+    hdc: Windows.Win32.Gdi.HDC,
+    color: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetNearestPaletteIndex(
+    h: Windows.Win32.Gdi.HPALETTE,
+    color: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetObjectType(
+    h: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetOutlineTextMetricsA(
+    hdc: Windows.Win32.Gdi.HDC,
+    cjCopy: {"kind":"UInt32"},
+    potm: {"kind""Ptr","child":Windows.Win32.Gdi.OUTLINETEXTMETRICA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetOutlineTextMetricsW(
+    hdc: Windows.Win32.Gdi.HDC,
+    cjCopy: {"kind":"UInt32"},
+    potm: {"kind""Ptr","child":Windows.Win32.Gdi.OUTLINETEXTMETRICW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetPaletteEntries(
+    hpal: Windows.Win32.Gdi.HPALETTE,
+    iStart: {"kind":"UInt32"},
+    cEntries: {"kind":"UInt32"},
+    pPalEntries: {"kind""Ptr","child":Windows.Win32.Direct2D.PALETTEENTRY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetPixel(
+    hdc: Windows.Win32.Gdi.HDC,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetPolyFillMode(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetRasterizerCaps(
+    lpraststat: {"kind""Ptr","child":Windows.Win32.Gdi.RASTERIZER_STATUS},
+    cjBytes: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetRandomRgn(
+    hdc: Windows.Win32.Gdi.HDC,
+    hrgn: Windows.Win32.Gdi.HRGN,
+    i: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetRegionData(
+    hrgn: Windows.Win32.Gdi.HRGN,
+    nCount: {"kind":"UInt32"},
+    lpRgnData: {"kind""Ptr","child":Windows.Win32.Gdi.RGNDATA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetRgnBox(
+    hrgn: Windows.Win32.Gdi.HRGN,
+    lprc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetStockObject(
+    i: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetStretchBltMode(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetSystemPaletteEntries(
+    hdc: Windows.Win32.Gdi.HDC,
+    iStart: {"kind":"UInt32"},
+    cEntries: {"kind":"UInt32"},
+    pPalEntries: {"kind""Ptr","child":Windows.Win32.Direct2D.PALETTEENTRY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetSystemPaletteUse(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetTextCharacterExtra(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetTextAlign(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetTextColor(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetTextExtentPointA(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpString: {"kind""Ptr","child":{"kind":"SByte"}},
+    c: {"kind":"Int32"},
+    lpsz: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SIZE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetTextExtentPointW(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    c: {"kind":"Int32"},
+    lpsz: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SIZE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetTextExtentPoint32A(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpString: {"kind""Ptr","child":{"kind":"SByte"}},
+    c: {"kind":"Int32"},
+    psizl: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SIZE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetTextExtentPoint32W(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    c: {"kind":"Int32"},
+    psizl: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SIZE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetTextExtentExPointA(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpszString: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchString: {"kind":"Int32"},
+    nMaxExtent: {"kind":"Int32"},
+    lpnFit: {"kind""Ptr","child":{"kind":"Int32"}},
+    lpnDx: {"kind""Ptr","child":{"kind":"Int32"}},
+    lpSize: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SIZE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetTextExtentExPointW(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpszString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchString: {"kind":"Int32"},
+    nMaxExtent: {"kind":"Int32"},
+    lpnFit: {"kind""Ptr","child":{"kind":"Int32"}},
+    lpnDx: {"kind""Ptr","child":{"kind":"Int32"}},
+    lpSize: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SIZE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetFontLanguageInfo(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetCharacterPlacementA(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpString: {"kind""Ptr","child":{"kind":"SByte"}},
+    nCount: {"kind":"Int32"},
+    nMexExtent: {"kind":"Int32"},
+    lpResults: {"kind""Ptr","child":Windows.Win32.Gdi.GCP_RESULTSA},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetCharacterPlacementW(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    nCount: {"kind":"Int32"},
+    nMexExtent: {"kind":"Int32"},
+    lpResults: {"kind""Ptr","child":Windows.Win32.Gdi.GCP_RESULTSW},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetFontUnicodeRanges(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpgs: {"kind""Ptr","child":Windows.Win32.Gdi.GLYPHSET},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetGlyphIndicesA(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpstr: {"kind""Ptr","child":{"kind":"SByte"}},
+    c: {"kind":"Int32"},
+    pgi: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fl: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetGlyphIndicesW(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpstr: {"kind""Ptr","child":{"kind":"UInt16"}},
+    c: {"kind":"Int32"},
+    pgi: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fl: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetTextExtentPointI(
+    hdc: Windows.Win32.Gdi.HDC,
+    pgiIn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cgi: {"kind":"Int32"},
+    psize: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SIZE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetTextExtentExPointI(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpwszString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cwchString: {"kind":"Int32"},
+    nMaxExtent: {"kind":"Int32"},
+    lpnFit: {"kind""Ptr","child":{"kind":"Int32"}},
+    lpnDx: {"kind""Ptr","child":{"kind":"Int32"}},
+    lpSize: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SIZE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetCharWidthI(
+    hdc: Windows.Win32.Gdi.HDC,
+    giFirst: {"kind":"UInt32"},
+    cgi: {"kind":"UInt32"},
+    pgi: {"kind""Ptr","child":{"kind":"UInt16"}},
+    piWidths: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetCharABCWidthsI(
+    hdc: Windows.Win32.Gdi.HDC,
+    giFirst: {"kind":"UInt32"},
+    cgi: {"kind":"UInt32"},
+    pgi: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pabc: {"kind""Ptr","child":Windows.Win32.Gdi.ABC},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn AddFontResourceExA(
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    fl: {"kind":"UInt32"},
+    res: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn AddFontResourceExW(
+    name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fl: {"kind":"UInt32"},
+    res: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn RemoveFontResourceExA(
+    name: {"kind""Ptr","child":{"kind":"SByte"}},
+    fl: {"kind":"UInt32"},
+    pdv: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn RemoveFontResourceExW(
+    name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fl: {"kind":"UInt32"},
+    pdv: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn AddFontMemResourceEx(
+    pFileView: {"kind""Ptr","child":{"kind":"Void"}},
+    cjSize: {"kind":"UInt32"},
+    pvResrved: {"kind""Ptr","child":{"kind":"Void"}},
+    pNumFonts: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn RemoveFontMemResourceEx(
+    h: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateFontIndirectExA(
+    param0: {"kind""Ptr","child":Windows.Win32.Gdi.ENUMLOGFONTEXDVA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateFontIndirectExW(
+    param0: {"kind""Ptr","child":Windows.Win32.Gdi.ENUMLOGFONTEXDVW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetViewportExtEx(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpsize: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SIZE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetViewportOrgEx(
+    hdc: Windows.Win32.Gdi.HDC,
+    lppoint: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetWindowExtEx(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpsize: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SIZE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetWindowOrgEx(
+    hdc: Windows.Win32.Gdi.HDC,
+    lppoint: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn IntersectClipRect(
+    hdc: Windows.Win32.Gdi.HDC,
+    left: {"kind":"Int32"},
+    top: {"kind":"Int32"},
+    right: {"kind":"Int32"},
+    bottom: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn InvertRgn(
+    hdc: Windows.Win32.Gdi.HDC,
+    hrgn: Windows.Win32.Gdi.HRGN,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn LineDDA(
+    xStart: {"kind":"Int32"},
+    yStart: {"kind":"Int32"},
+    xEnd: {"kind":"Int32"},
+    yEnd: {"kind":"Int32"},
+    lpProc: Windows.Win32.Gdi.LINEDDAPROC,
+    data: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn LineTo(
+    hdc: Windows.Win32.Gdi.HDC,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn MaskBlt(
+    hdcDest: Windows.Win32.Gdi.HDC,
+    xDest: {"kind":"Int32"},
+    yDest: {"kind":"Int32"},
+    width: {"kind":"Int32"},
+    height: {"kind":"Int32"},
+    hdcSrc: Windows.Win32.Gdi.HDC,
+    xSrc: {"kind":"Int32"},
+    ySrc: {"kind":"Int32"},
+    hbmMask: Windows.Win32.Gdi.HBITMAP,
+    xMask: {"kind":"Int32"},
+    yMask: {"kind":"Int32"},
+    rop: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn PlgBlt(
+    hdcDest: Windows.Win32.Gdi.HDC,
+    lpPoint: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+    hdcSrc: Windows.Win32.Gdi.HDC,
+    xSrc: {"kind":"Int32"},
+    ySrc: {"kind":"Int32"},
+    width: {"kind":"Int32"},
+    height: {"kind":"Int32"},
+    hbmMask: Windows.Win32.Gdi.HBITMAP,
+    xMask: {"kind":"Int32"},
+    yMask: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn OffsetClipRgn(
+    hdc: Windows.Win32.Gdi.HDC,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn OffsetRgn(
+    hrgn: Windows.Win32.Gdi.HRGN,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn PatBlt(
+    hdc: Windows.Win32.Gdi.HDC,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    w: {"kind":"Int32"},
+    h: {"kind":"Int32"},
+    rop: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn Pie(
+    hdc: Windows.Win32.Gdi.HDC,
+    left: {"kind":"Int32"},
+    top: {"kind":"Int32"},
+    right: {"kind":"Int32"},
+    bottom: {"kind":"Int32"},
+    xr1: {"kind":"Int32"},
+    yr1: {"kind":"Int32"},
+    xr2: {"kind":"Int32"},
+    yr2: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn PlayMetaFile(
+    hdc: Windows.Win32.Gdi.HDC,
+    hmf: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn PaintRgn(
+    hdc: Windows.Win32.Gdi.HDC,
+    hrgn: Windows.Win32.Gdi.HRGN,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn PolyPolygon(
+    hdc: Windows.Win32.Gdi.HDC,
+    apt: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+    asz: {"kind""Ptr","child":{"kind":"Int32"}},
+    csz: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn PtInRegion(
+    hrgn: Windows.Win32.Gdi.HRGN,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn PtVisible(
+    hdc: Windows.Win32.Gdi.HDC,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn RectInRegion(
+    hrgn: Windows.Win32.Gdi.HRGN,
+    lprect: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn RectVisible(
+    hdc: Windows.Win32.Gdi.HDC,
+    lprect: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn Rectangle(
+    hdc: Windows.Win32.Gdi.HDC,
+    left: {"kind":"Int32"},
+    top: {"kind":"Int32"},
+    right: {"kind":"Int32"},
+    bottom: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn RestoreDC(
+    hdc: Windows.Win32.Gdi.HDC,
+    nSavedDC: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn ResetDCA(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpdm: {"kind""Ptr","child":Windows.Win32.Xps.DEVMODEA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn ResetDCW(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpdm: {"kind""Ptr","child":Windows.Win32.DisplayDevices.DEVMODEW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn RealizePalette(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn RemoveFontResourceA(
+    lpFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn RemoveFontResourceW(
+    lpFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn RoundRect(
+    hdc: Windows.Win32.Gdi.HDC,
+    left: {"kind":"Int32"},
+    top: {"kind":"Int32"},
+    right: {"kind":"Int32"},
+    bottom: {"kind":"Int32"},
+    width: {"kind":"Int32"},
+    height: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn ResizePalette(
+    hpal: Windows.Win32.Gdi.HPALETTE,
+    n: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SaveDC(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SelectClipRgn(
+    hdc: Windows.Win32.Gdi.HDC,
+    hrgn: Windows.Win32.Gdi.HRGN,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn ExtSelectClipRgn(
+    hdc: Windows.Win32.Gdi.HDC,
+    hrgn: Windows.Win32.Gdi.HRGN,
+    mode: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetMetaRgn(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SelectObject(
+    hdc: Windows.Win32.Gdi.HDC,
+    h: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SelectPalette(
+    hdc: Windows.Win32.Gdi.HDC,
+    hPal: Windows.Win32.Gdi.HPALETTE,
+    bForceBkgd: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetBkColor(
+    hdc: Windows.Win32.Gdi.HDC,
+    color: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetDCBrushColor(
+    hdc: Windows.Win32.Gdi.HDC,
+    color: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetDCPenColor(
+    hdc: Windows.Win32.Gdi.HDC,
+    color: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetBkMode(
+    hdc: Windows.Win32.Gdi.HDC,
+    mode: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetBitmapBits(
+    hbm: Windows.Win32.Gdi.HBITMAP,
+    cb: {"kind":"UInt32"},
+    pvBits: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetBoundsRect(
+    hdc: Windows.Win32.Gdi.HDC,
+    lprect: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetDIBits(
+    hdc: Windows.Win32.Gdi.HDC,
+    hbm: Windows.Win32.Gdi.HBITMAP,
+    start: {"kind":"UInt32"},
+    cLines: {"kind":"UInt32"},
+    lpBits: {"kind""Ptr","child":{"kind":"Void"}},
+    lpbmi: {"kind""Ptr","child":Windows.Win32.Gdi.BITMAPINFO},
+    ColorUse: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetDIBitsToDevice(
+    hdc: Windows.Win32.Gdi.HDC,
+    xDest: {"kind":"Int32"},
+    yDest: {"kind":"Int32"},
+    w: {"kind":"UInt32"},
+    h: {"kind":"UInt32"},
+    xSrc: {"kind":"Int32"},
+    ySrc: {"kind":"Int32"},
+    StartScan: {"kind":"UInt32"},
+    cLines: {"kind":"UInt32"},
+    lpvBits: {"kind""Ptr","child":{"kind":"Void"}},
+    lpbmi: {"kind""Ptr","child":Windows.Win32.Gdi.BITMAPINFO},
+    ColorUse: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetMapperFlags(
+    hdc: Windows.Win32.Gdi.HDC,
+    flags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetGraphicsMode(
+    hdc: Windows.Win32.Gdi.HDC,
+    iMode: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetMapMode(
+    hdc: Windows.Win32.Gdi.HDC,
+    iMode: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetLayout(
+    hdc: Windows.Win32.Gdi.HDC,
+    l: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "GDI32" fn GetLayout(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetMetaFileBitsEx(
+    cbBuffer: {"kind":"UInt32"},
+    lpData: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetPaletteEntries(
+    hpal: Windows.Win32.Gdi.HPALETTE,
+    iStart: {"kind":"UInt32"},
+    cEntries: {"kind":"UInt32"},
+    pPalEntries: {"kind""Ptr","child":Windows.Win32.Direct2D.PALETTEENTRY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetPixel(
+    hdc: Windows.Win32.Gdi.HDC,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    color: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetPixelV(
+    hdc: Windows.Win32.Gdi.HDC,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    color: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetPolyFillMode(
+    hdc: Windows.Win32.Gdi.HDC,
+    mode: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn StretchBlt(
+    hdcDest: Windows.Win32.Gdi.HDC,
+    xDest: {"kind":"Int32"},
+    yDest: {"kind":"Int32"},
+    wDest: {"kind":"Int32"},
+    hDest: {"kind":"Int32"},
+    hdcSrc: Windows.Win32.Gdi.HDC,
+    xSrc: {"kind":"Int32"},
+    ySrc: {"kind":"Int32"},
+    wSrc: {"kind":"Int32"},
+    hSrc: {"kind":"Int32"},
+    rop: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetRectRgn(
+    hrgn: Windows.Win32.Gdi.HRGN,
+    left: {"kind":"Int32"},
+    top: {"kind":"Int32"},
+    right: {"kind":"Int32"},
+    bottom: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn StretchDIBits(
+    hdc: Windows.Win32.Gdi.HDC,
+    xDest: {"kind":"Int32"},
+    yDest: {"kind":"Int32"},
+    DestWidth: {"kind":"Int32"},
+    DestHeight: {"kind":"Int32"},
+    xSrc: {"kind":"Int32"},
+    ySrc: {"kind":"Int32"},
+    SrcWidth: {"kind":"Int32"},
+    SrcHeight: {"kind":"Int32"},
+    lpBits: {"kind""Ptr","child":{"kind":"Void"}},
+    lpbmi: {"kind""Ptr","child":Windows.Win32.Gdi.BITMAPINFO},
+    iUsage: {"kind":"UInt32"},
+    rop: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetROP2(
+    hdc: Windows.Win32.Gdi.HDC,
+    rop2: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetStretchBltMode(
+    hdc: Windows.Win32.Gdi.HDC,
+    mode: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetSystemPaletteUse(
+    hdc: Windows.Win32.Gdi.HDC,
+    use: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetTextCharacterExtra(
+    hdc: Windows.Win32.Gdi.HDC,
+    extra: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetTextColor(
+    hdc: Windows.Win32.Gdi.HDC,
+    color: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetTextAlign(
+    hdc: Windows.Win32.Gdi.HDC,
+    align: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetTextJustification(
+    hdc: Windows.Win32.Gdi.HDC,
+    extra: {"kind":"Int32"},
+    count: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn UpdateColors(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSIMG32" fn AlphaBlend(
+    hdcDest: Windows.Win32.Gdi.HDC,
+    xoriginDest: {"kind":"Int32"},
+    yoriginDest: {"kind":"Int32"},
+    wDest: {"kind":"Int32"},
+    hDest: {"kind":"Int32"},
+    hdcSrc: Windows.Win32.Gdi.HDC,
+    xoriginSrc: {"kind":"Int32"},
+    yoriginSrc: {"kind":"Int32"},
+    wSrc: {"kind":"Int32"},
+    hSrc: {"kind":"Int32"},
+    ftn: Windows.Win32.Gdi.BLENDFUNCTION,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSIMG32" fn TransparentBlt(
+    hdcDest: Windows.Win32.Gdi.HDC,
+    xoriginDest: {"kind":"Int32"},
+    yoriginDest: {"kind":"Int32"},
+    wDest: {"kind":"Int32"},
+    hDest: {"kind":"Int32"},
+    hdcSrc: Windows.Win32.Gdi.HDC,
+    xoriginSrc: {"kind":"Int32"},
+    yoriginSrc: {"kind":"Int32"},
+    wSrc: {"kind":"Int32"},
+    hSrc: {"kind":"Int32"},
+    crTransparent: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSIMG32" fn GradientFill(
+    hdc: Windows.Win32.Gdi.HDC,
+    pVertex: {"kind""Ptr","child":Windows.Win32.Gdi.TRIVERTEX},
+    nVertex: {"kind":"UInt32"},
+    pMesh: {"kind""Ptr","child":{"kind":"Void"}},
+    nMesh: {"kind":"UInt32"},
+    ulMode: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GdiAlphaBlend(
+    hdcDest: Windows.Win32.Gdi.HDC,
+    xoriginDest: {"kind":"Int32"},
+    yoriginDest: {"kind":"Int32"},
+    wDest: {"kind":"Int32"},
+    hDest: {"kind":"Int32"},
+    hdcSrc: Windows.Win32.Gdi.HDC,
+    xoriginSrc: {"kind":"Int32"},
+    yoriginSrc: {"kind":"Int32"},
+    wSrc: {"kind":"Int32"},
+    hSrc: {"kind":"Int32"},
+    ftn: Windows.Win32.Gdi.BLENDFUNCTION,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GdiTransparentBlt(
+    hdcDest: Windows.Win32.Gdi.HDC,
+    xoriginDest: {"kind":"Int32"},
+    yoriginDest: {"kind":"Int32"},
+    wDest: {"kind":"Int32"},
+    hDest: {"kind":"Int32"},
+    hdcSrc: Windows.Win32.Gdi.HDC,
+    xoriginSrc: {"kind":"Int32"},
+    yoriginSrc: {"kind":"Int32"},
+    wSrc: {"kind":"Int32"},
+    hSrc: {"kind":"Int32"},
+    crTransparent: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GdiGradientFill(
+    hdc: Windows.Win32.Gdi.HDC,
+    pVertex: {"kind""Ptr","child":Windows.Win32.Gdi.TRIVERTEX},
+    nVertex: {"kind":"UInt32"},
+    pMesh: {"kind""Ptr","child":{"kind":"Void"}},
+    nCount: {"kind":"UInt32"},
+    ulMode: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn PlayMetaFileRecord(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpHandleTable: {"kind""Ptr","child":Windows.Win32.Gdi.HANDLETABLE},
+    lpMR: {"kind""Ptr","child":Windows.Win32.Gdi.METARECORD},
+    noObjs: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EnumMetaFile(
+    hdc: Windows.Win32.Gdi.HDC,
+    hmf: {"kind":"IntPtr"},
+    proc: Windows.Win32.Gdi.MFENUMPROC,
+    param3: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CloseEnhMetaFile(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CopyEnhMetaFileA(
+    hEnh: {"kind":"IntPtr"},
+    lpFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CopyEnhMetaFileW(
+    hEnh: {"kind":"IntPtr"},
+    lpFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateEnhMetaFileA(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+    lprc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    lpDesc: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateEnhMetaFileW(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lprc: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    lpDesc: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn DeleteEnhMetaFile(
+    hmf: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EnumEnhMetaFile(
+    hdc: Windows.Win32.Gdi.HDC,
+    hmf: {"kind":"IntPtr"},
+    proc: Windows.Win32.Gdi.ENHMFENUMPROC,
+    param3: {"kind""Ptr","child":{"kind":"Void"}},
+    lpRect: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetEnhMetaFileA(
+    lpName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetEnhMetaFileW(
+    lpName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetEnhMetaFileBits(
+    hEMF: {"kind":"IntPtr"},
+    nSize: {"kind":"UInt32"},
+    lpData: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetEnhMetaFileDescriptionA(
+    hemf: {"kind":"IntPtr"},
+    cchBuffer: {"kind":"UInt32"},
+    lpDescription: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetEnhMetaFileDescriptionW(
+    hemf: {"kind":"IntPtr"},
+    cchBuffer: {"kind":"UInt32"},
+    lpDescription: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetEnhMetaFileHeader(
+    hemf: {"kind":"IntPtr"},
+    nSize: {"kind":"UInt32"},
+    lpEnhMetaHeader: {"kind""Ptr","child":Windows.Win32.Gdi.ENHMETAHEADER},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetEnhMetaFilePaletteEntries(
+    hemf: {"kind":"IntPtr"},
+    nNumEntries: {"kind":"UInt32"},
+    lpPaletteEntries: {"kind""Ptr","child":Windows.Win32.Direct2D.PALETTEENTRY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetWinMetaFileBits(
+    hemf: {"kind":"IntPtr"},
+    cbData16: {"kind":"UInt32"},
+    pData16: {"kind""Ptr","child":{"kind":"Byte"}},
+    iMapMode: {"kind":"Int32"},
+    hdcRef: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn PlayEnhMetaFile(
+    hdc: Windows.Win32.Gdi.HDC,
+    hmf: {"kind":"IntPtr"},
+    lprect: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn PlayEnhMetaFileRecord(
+    hdc: Windows.Win32.Gdi.HDC,
+    pht: {"kind""Ptr","child":Windows.Win32.Gdi.HANDLETABLE},
+    pmr: {"kind""Ptr","child":Windows.Win32.Gdi.ENHMETARECORD},
+    cht: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetEnhMetaFileBits(
+    nSize: {"kind":"UInt32"},
+    pb: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetWinMetaFileBits(
+    nSize: {"kind":"UInt32"},
+    lpMeta16Data: {"kind""Ptr","child":{"kind":"Byte"}},
+    hdcRef: Windows.Win32.Gdi.HDC,
+    lpMFP: {"kind""Ptr","child":Windows.Win32.DataExchange.METAFILEPICT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GdiComment(
+    hdc: Windows.Win32.Gdi.HDC,
+    nSize: {"kind":"UInt32"},
+    lpData: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetTextMetricsA(
+    hdc: Windows.Win32.Gdi.HDC,
+    lptm: {"kind""Ptr","child":Windows.Win32.Gdi.TEXTMETRICA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetTextMetricsW(
+    hdc: Windows.Win32.Gdi.HDC,
+    lptm: {"kind""Ptr","child":Windows.Win32.Gdi.TEXTMETRICW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn AngleArc(
+    hdc: Windows.Win32.Gdi.HDC,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    r: {"kind":"UInt32"},
+    StartAngle: {"kind":"Single"},
+    SweepAngle: {"kind":"Single"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn PolyPolyline(
+    hdc: Windows.Win32.Gdi.HDC,
+    apt: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+    asz: {"kind""Ptr","child":{"kind":"UInt32"}},
+    csz: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetWorldTransform(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpxf: {"kind""Ptr","child":Windows.Win32.Gdi.XFORM},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetWorldTransform(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpxf: {"kind""Ptr","child":Windows.Win32.Gdi.XFORM},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn ModifyWorldTransform(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpxf: {"kind""Ptr","child":Windows.Win32.Gdi.XFORM},
+    mode: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CombineTransform(
+    lpxfOut: {"kind""Ptr","child":Windows.Win32.Gdi.XFORM},
+    lpxf1: {"kind""Ptr","child":Windows.Win32.Gdi.XFORM},
+    lpxf2: {"kind""Ptr","child":Windows.Win32.Gdi.XFORM},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateDIBSection(
+    hdc: Windows.Win32.Gdi.HDC,
+    pbmi: {"kind""Ptr","child":Windows.Win32.Gdi.BITMAPINFO},
+    usage: {"kind":"UInt32"},
+    ppvBits: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+    hSection: Windows.Win32.SystemServices.HANDLE,
+    offset: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetDIBColorTable(
+    hdc: Windows.Win32.Gdi.HDC,
+    iStart: {"kind":"UInt32"},
+    cEntries: {"kind":"UInt32"},
+    prgbq: {"kind""Ptr","child":Windows.Win32.Gdi.RGBQUAD},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetDIBColorTable(
+    hdc: Windows.Win32.Gdi.HDC,
+    iStart: {"kind":"UInt32"},
+    cEntries: {"kind":"UInt32"},
+    prgbq: {"kind""Ptr","child":Windows.Win32.Gdi.RGBQUAD},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetColorAdjustment(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpca: {"kind""Ptr","child":Windows.Win32.Gdi.COLORADJUSTMENT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetColorAdjustment(
+    hdc: Windows.Win32.Gdi.HDC,
+    lpca: {"kind""Ptr","child":Windows.Win32.Gdi.COLORADJUSTMENT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreateHalftonePalette(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn AbortPath(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn ArcTo(
+    hdc: Windows.Win32.Gdi.HDC,
+    left: {"kind":"Int32"},
+    top: {"kind":"Int32"},
+    right: {"kind":"Int32"},
+    bottom: {"kind":"Int32"},
+    xr1: {"kind":"Int32"},
+    yr1: {"kind":"Int32"},
+    xr2: {"kind":"Int32"},
+    yr2: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn BeginPath(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CloseFigure(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn EndPath(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn FillPath(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn FlattenPath(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetPath(
+    hdc: Windows.Win32.Gdi.HDC,
+    apt: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+    aj: {"kind""Ptr","child":{"kind":"Byte"}},
+    cpt: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn PathToRegion(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn PolyDraw(
+    hdc: Windows.Win32.Gdi.HDC,
+    apt: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+    aj: {"kind""Ptr","child":{"kind":"Byte"}},
+    cpt: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SelectClipPath(
+    hdc: Windows.Win32.Gdi.HDC,
+    mode: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetArcDirection(
+    hdc: Windows.Win32.Gdi.HDC,
+    dir: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetMiterLimit(
+    hdc: Windows.Win32.Gdi.HDC,
+    limit: {"kind":"Single"},
+    old: {"kind""Ptr","child":{"kind":"Single"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn StrokeAndFillPath(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn StrokePath(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn WidenPath(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn ExtCreatePen(
+    iPenStyle: {"kind":"UInt32"},
+    cWidth: {"kind":"UInt32"},
+    plbrush: {"kind""Ptr","child":Windows.Win32.Gdi.LOGBRUSH},
+    cStyle: {"kind":"UInt32"},
+    pstyle: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetMiterLimit(
+    hdc: Windows.Win32.Gdi.HDC,
+    plimit: {"kind""Ptr","child":{"kind":"Single"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetArcDirection(
+    hdc: Windows.Win32.Gdi.HDC,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetObjectA(
+    h: Windows.Win32.SystemServices.HANDLE,
+    c: {"kind":"Int32"},
+    pv: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetObjectW(
+    h: Windows.Win32.SystemServices.HANDLE,
+    c: {"kind":"Int32"},
+    pv: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn MoveToEx(
+    hdc: Windows.Win32.Gdi.HDC,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    lppt: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn TextOutA(
+    hdc: Windows.Win32.Gdi.HDC,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    lpString: {"kind""Ptr","child":{"kind":"SByte"}},
+    c: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn TextOutW(
+    hdc: Windows.Win32.Gdi.HDC,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    lpString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    c: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn ExtTextOutA(
+    hdc: Windows.Win32.Gdi.HDC,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    options: {"kind":"UInt32"},
+    lprect: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    lpString: {"kind""Ptr","child":{"kind":"SByte"}},
+    c: {"kind":"UInt32"},
+    lpDx: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn ExtTextOutW(
+    hdc: Windows.Win32.Gdi.HDC,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    options: {"kind":"UInt32"},
+    lprect: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    lpString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    c: {"kind":"UInt32"},
+    lpDx: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn PolyTextOutA(
+    hdc: Windows.Win32.Gdi.HDC,
+    ppt: {"kind""Ptr","child":Windows.Win32.Gdi.POLYTEXTA},
+    nstrings: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn PolyTextOutW(
+    hdc: Windows.Win32.Gdi.HDC,
+    ppt: {"kind""Ptr","child":Windows.Win32.Gdi.POLYTEXTW},
+    nstrings: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn CreatePolygonRgn(
+    pptl: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+    cPoint: {"kind":"Int32"},
+    iMode: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn DPtoLP(
+    hdc: Windows.Win32.Gdi.HDC,
+    lppt: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+    c: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn LPtoDP(
+    hdc: Windows.Win32.Gdi.HDC,
+    lppt: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+    c: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn Polygon(
+    hdc: Windows.Win32.Gdi.HDC,
+    apt: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+    cpt: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn Polyline(
+    hdc: Windows.Win32.Gdi.HDC,
+    apt: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+    cpt: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn PolyBezier(
+    hdc: Windows.Win32.Gdi.HDC,
+    apt: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+    cpt: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn PolyBezierTo(
+    hdc: Windows.Win32.Gdi.HDC,
+    apt: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+    cpt: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn PolylineTo(
+    hdc: Windows.Win32.Gdi.HDC,
+    apt: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+    cpt: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetViewportExtEx(
+    hdc: Windows.Win32.Gdi.HDC,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    lpsz: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SIZE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetViewportOrgEx(
+    hdc: Windows.Win32.Gdi.HDC,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    lppt: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetWindowExtEx(
+    hdc: Windows.Win32.Gdi.HDC,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    lpsz: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SIZE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetWindowOrgEx(
+    hdc: Windows.Win32.Gdi.HDC,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    lppt: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn OffsetViewportOrgEx(
+    hdc: Windows.Win32.Gdi.HDC,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    lppt: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn OffsetWindowOrgEx(
+    hdc: Windows.Win32.Gdi.HDC,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    lppt: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn ScaleViewportExtEx(
+    hdc: Windows.Win32.Gdi.HDC,
+    xn: {"kind":"Int32"},
+    dx: {"kind":"Int32"},
+    yn: {"kind":"Int32"},
+    yd: {"kind":"Int32"},
+    lpsz: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SIZE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn ScaleWindowExtEx(
+    hdc: Windows.Win32.Gdi.HDC,
+    xn: {"kind":"Int32"},
+    xd: {"kind":"Int32"},
+    yn: {"kind":"Int32"},
+    yd: {"kind":"Int32"},
+    lpsz: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SIZE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetBitmapDimensionEx(
+    hbm: Windows.Win32.Gdi.HBITMAP,
+    w: {"kind":"Int32"},
+    h: {"kind":"Int32"},
+    lpsz: {"kind""Ptr","child":Windows.Win32.DisplayDevices.SIZE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn SetBrushOrgEx(
+    hdc: Windows.Win32.Gdi.HDC,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    lppt: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetTextFaceA(
+    hdc: Windows.Win32.Gdi.HDC,
+    c: {"kind":"Int32"},
+    lpName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetTextFaceW(
+    hdc: Windows.Win32.Gdi.HDC,
+    c: {"kind":"Int32"},
+    lpName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetKerningPairsA(
+    hdc: Windows.Win32.Gdi.HDC,
+    nPairs: {"kind":"UInt32"},
+    lpKernPair: {"kind""Ptr","child":Windows.Win32.Gdi.KERNINGPAIR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetKerningPairsW(
+    hdc: Windows.Win32.Gdi.HDC,
+    nPairs: {"kind":"UInt32"},
+    lpKernPair: {"kind""Ptr","child":Windows.Win32.Gdi.KERNINGPAIR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GetDCOrgEx(
+    hdc: Windows.Win32.Gdi.HDC,
+    lppt: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn FixBrushOrgEx(
+    hdc: Windows.Win32.Gdi.HDC,
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    ptl: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn UnrealizeObject(
+    h: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GdiFlush(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GdiSetBatchLimit(
+    dw: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "GDI32" fn GdiGetBatchLimit(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OPENGL32" fn wglSwapMultipleBuffers(
+    param0: {"kind":"UInt32"},
+    param1: {"kind""Ptr","child":Windows.Win32.Gdi.WGLSWAP},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FONTSUB" fn CreateFontPackage(
+    puchSrcBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    ulSrcBufferSize: {"kind":"UInt32"},
+    ppuchFontPackageBuffer: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    pulFontPackageBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pulBytesWritten: {"kind""Ptr","child":{"kind":"UInt32"}},
+    usFlag: {"kind":"UInt16"},
+    usTTCIndex: {"kind":"UInt16"},
+    usSubsetFormat: {"kind":"UInt16"},
+    usSubsetLanguage: {"kind":"UInt16"},
+    usSubsetPlatform: {"kind":"UInt16"},
+    usSubsetEncoding: {"kind":"UInt16"},
+    pusSubsetKeepList: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usSubsetListCount: {"kind":"UInt16"},
+    lpfnAllocate: Windows.Win32.Gdi.CFP_ALLOCPROC,
+    lpfnReAllocate: Windows.Win32.Gdi.CFP_REALLOCPROC,
+    lpfnFree: Windows.Win32.Gdi.CFP_FREEPROC,
+    lpvReserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FONTSUB" fn MergeFontPackage(
+    puchMergeFontBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    ulMergeFontBufferSize: {"kind":"UInt32"},
+    puchFontPackageBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    ulFontPackageBufferSize: {"kind":"UInt32"},
+    ppuchDestBuffer: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    pulDestBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pulBytesWritten: {"kind""Ptr","child":{"kind":"UInt32"}},
+    usMode: {"kind":"UInt16"},
+    lpfnAllocate: Windows.Win32.Gdi.CFP_ALLOCPROC,
+    lpfnReAllocate: Windows.Win32.Gdi.CFP_REALLOCPROC,
+    lpfnFree: Windows.Win32.Gdi.CFP_FREEPROC,
+    lpvReserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "t2embed" fn TTEmbedFont(
+    hDC: Windows.Win32.Gdi.HDC,
+    ulFlags: {"kind":"UInt32"},
+    ulCharSet: {"kind":"UInt32"},
+    pulPrivStatus: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pulStatus: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpfnWriteToStream: Windows.Win32.Gdi.WRITEEMBEDPROC,
+    lpvWriteStream: {"kind""Ptr","child":{"kind":"Void"}},
+    pusCharCodeSet: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usCharCodeCount: {"kind":"UInt16"},
+    usLanguage: {"kind":"UInt16"},
+    pTTEmbedInfo: {"kind""Ptr","child":Windows.Win32.Gdi.TTEMBEDINFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "t2embed" fn TTEmbedFontFromFileA(
+    hDC: Windows.Win32.Gdi.HDC,
+    szFontFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    usTTCIndex: {"kind":"UInt16"},
+    ulFlags: {"kind":"UInt32"},
+    ulCharSet: {"kind":"UInt32"},
+    pulPrivStatus: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pulStatus: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpfnWriteToStream: Windows.Win32.Gdi.WRITEEMBEDPROC,
+    lpvWriteStream: {"kind""Ptr","child":{"kind":"Void"}},
+    pusCharCodeSet: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usCharCodeCount: {"kind":"UInt16"},
+    usLanguage: {"kind":"UInt16"},
+    pTTEmbedInfo: {"kind""Ptr","child":Windows.Win32.Gdi.TTEMBEDINFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "t2embed" fn TTLoadEmbeddedFont(
+    phFontReference: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+    ulFlags: {"kind":"UInt32"},
+    pulPrivStatus: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulPrivs: {"kind":"UInt32"},
+    pulStatus: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpfnReadFromStream: Windows.Win32.Gdi.READEMBEDPROC,
+    lpvReadStream: {"kind""Ptr","child":{"kind":"Void"}},
+    szWinFamilyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szMacFamilyName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pTTLoadInfo: {"kind""Ptr","child":Windows.Win32.Gdi.TTLOADINFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "t2embed" fn TTGetEmbeddedFontInfo(
+    ulFlags: {"kind":"UInt32"},
+    pulPrivStatus: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ulPrivs: {"kind":"UInt32"},
+    pulStatus: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpfnReadFromStream: Windows.Win32.Gdi.READEMBEDPROC,
+    lpvReadStream: {"kind""Ptr","child":{"kind":"Void"}},
+    pTTLoadInfo: {"kind""Ptr","child":Windows.Win32.Gdi.TTLOADINFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "t2embed" fn TTDeleteEmbeddedFont(
+    hFontReference: Windows.Win32.SystemServices.HANDLE,
+    ulFlags: {"kind":"UInt32"},
+    pulStatus: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "t2embed" fn TTGetEmbeddingType(
+    hDC: Windows.Win32.Gdi.HDC,
+    pulEmbedType: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "t2embed" fn TTCharToUnicode(
+    hDC: Windows.Win32.Gdi.HDC,
+    pucCharCodes: {"kind""Ptr","child":{"kind":"Byte"}},
+    ulCharCodeSize: {"kind":"UInt32"},
+    pusShortCodes: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulShortCodeSize: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "t2embed" fn TTRunValidationTests(
+    hDC: Windows.Win32.Gdi.HDC,
+    pTestParam: {"kind""Ptr","child":Windows.Win32.Gdi.TTVALIDATIONTESTSPARAMS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "t2embed" fn TTIsEmbeddingEnabled(
+    hDC: Windows.Win32.Gdi.HDC,
+    pbEnabled: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "t2embed" fn TTIsEmbeddingEnabledForFacename(
+    lpszFacename: {"kind""Ptr","child":{"kind":"SByte"}},
+    pbEnabled: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "t2embed" fn TTEnableEmbeddingForFacename(
+    lpszFacename: {"kind""Ptr","child":{"kind":"SByte"}},
+    bEnable: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "t2embed" fn TTEmbedFontEx(
+    hDC: Windows.Win32.Gdi.HDC,
+    ulFlags: {"kind":"UInt32"},
+    ulCharSet: {"kind":"UInt32"},
+    pulPrivStatus: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pulStatus: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpfnWriteToStream: Windows.Win32.Gdi.WRITEEMBEDPROC,
+    lpvWriteStream: {"kind""Ptr","child":{"kind":"Void"}},
+    pulCharCodeSet: {"kind""Ptr","child":{"kind":"UInt32"}},
+    usCharCodeCount: {"kind":"UInt16"},
+    usLanguage: {"kind":"UInt16"},
+    pTTEmbedInfo: {"kind""Ptr","child":Windows.Win32.Gdi.TTEMBEDINFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "t2embed" fn TTRunValidationTestsEx(
+    hDC: Windows.Win32.Gdi.HDC,
+    pTestParam: {"kind""Ptr","child":Windows.Win32.Gdi.TTVALIDATIONTESTSPARAMSEX},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "t2embed" fn TTGetNewFontName(
+    phFontReference: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+    wzWinFamilyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchMaxWinName: {"kind":"Int32"},
+    szMacFamilyName: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchMaxMacName: {"kind":"Int32"},
+],
+
+"unicode_aliases": [
+     "MONITORINFOEX"
+     "TEXTMETRIC"
+     "NEWTEXTMETRIC"
+     "NEWTEXTMETRICEX"
+     "ENUMLOGFONT"
+     "ENUMLOGFONTEX"
+     "EXTLOGFONT"
+     "DISPLAY_DEVICE"
+     "OUTLINETEXTMETRIC"
+     "POLYTEXT"
+     "GCP_RESULTS"
+     "OLDFONTENUMPROC"
+     "AXISINFO"
+     "AXESLIST"
+     "ENUMLOGFONTEXDV"
+     "ENUMTEXTMETRIC"
+     "DrawText"
+     "DrawTextEx"
+     "GrayString"
+     "DrawState"
+     "TabbedTextOut"
+     "GetTabbedTextExtent"
+     "LoadBitmap"
+     "ChangeDisplaySettings"
+     "ChangeDisplaySettingsEx"
+     "EnumDisplaySettings"
+     "EnumDisplaySettingsEx"
+     "EnumDisplayDevices"
+     "GetMonitorInfo"
+     "AddFontResource"
+     "CopyMetaFile"
+     "CreateDC"
+     "CreateFontIndirect"
+     "CreateFont"
+     "CreateIC"
+     "CreateMetaFile"
+     "CreateScalableFontResource"
+     "EnumFontFamiliesEx"
+     "EnumFontFamilies"
+     "EnumFonts"
+     "GetCharWidth"
+     "GetCharWidth32"
+     "GetCharWidthFloat"
+     "GetCharABCWidths"
+     "GetCharABCWidthsFloat"
+     "GetGlyphOutline"
+     "GetMetaFile"
+     "GetOutlineTextMetrics"
+     "GetTextExtentPoint"
+     "GetTextExtentPoint32"
+     "GetTextExtentExPoint"
+     "GetCharacterPlacement"
+     "GetGlyphIndices"
+     "AddFontResourceEx"
+     "RemoveFontResourceEx"
+     "CreateFontIndirectEx"
+     "ResetDC"
+     "RemoveFontResource"
+     "CopyEnhMetaFile"
+     "CreateEnhMetaFile"
+     "GetEnhMetaFile"
+     "GetEnhMetaFileDescription"
+     "GetTextMetrics"
+     "GetObject"
+     "TextOut"
+     "ExtTextOut"
+     "PolyTextOut"
+     "GetTextFace"
+     "GetKerningPairs"
+]}

@@ -1,0 +1,3187 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: DHCPV6CAPI_PARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCPV6CAPI_PARAMS = extern struct {
+    Flags: {"kind":"UInt32"},
+    OptionId: {"kind":"UInt32"},
+    IsVendor: Windows.Win32.SystemServices.BOOL,
+    Data: {"kind""Ptr","child":{"kind":"Byte"}},
+    nBytesData: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DHCPV6CAPI_PARAMS_ARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCPV6CAPI_PARAMS_ARRAY = extern struct {
+    nParams: {"kind":"UInt32"},
+    Params: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCPV6CAPI_PARAMS},
+};
+// --------------------------------------------------------
+// Type: DHCPV6CAPI_CLASSID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCPV6CAPI_CLASSID = extern struct {
+    Flags: {"kind":"UInt32"},
+    Data: {"kind""Ptr","child":{"kind":"Byte"}},
+    nBytesData: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: StatusCode
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const StatusCode = *opaque{
+};
+// --------------------------------------------------------
+// Type: DHCPV6Prefix
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCPV6Prefix = extern struct {
+    prefix: {"kind":"Array","child": {"kind":"Byte"}},
+    prefixLength: {"kind":"UInt32"},
+    preferredLifeTime: {"kind":"UInt32"},
+    validLifeTime: {"kind":"UInt32"},
+    status: Windows.Win32.Dhcp.StatusCode,
+};
+// --------------------------------------------------------
+// Type: DHCPV6PrefixLeaseInformation
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCPV6PrefixLeaseInformation = extern struct {
+    nPrefixes: {"kind":"UInt32"},
+    prefixArray: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCPV6Prefix},
+    iaid: {"kind":"UInt32"},
+    T1: {"kind":"Int64"},
+    T2: {"kind":"Int64"},
+    MaxLeaseExpirationTime: {"kind":"Int64"},
+    LastRenewalTime: {"kind":"Int64"},
+    status: Windows.Win32.Dhcp.StatusCode,
+    ServerId: {"kind""Ptr","child":{"kind":"Byte"}},
+    ServerIdLen: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DHCPAPI_PARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCPAPI_PARAMS = extern struct {
+    Flags: {"kind":"UInt32"},
+    OptionId: {"kind":"UInt32"},
+    IsVendor: Windows.Win32.SystemServices.BOOL,
+    Data: {"kind""Ptr","child":{"kind":"Byte"}},
+    nBytesData: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DHCPCAPI_PARAMS_ARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCPCAPI_PARAMS_ARRAY = extern struct {
+    nParams: {"kind":"UInt32"},
+    Params: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCPAPI_PARAMS},
+};
+// --------------------------------------------------------
+// Type: DHCPCAPI_CLASSID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCPCAPI_CLASSID = extern struct {
+    Flags: {"kind":"UInt32"},
+    Data: {"kind""Ptr","child":{"kind":"Byte"}},
+    nBytesData: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DHCP_SERVER_OPTIONS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_SERVER_OPTIONS = extern struct {
+    MessageType: {"kind""Ptr","child":{"kind":"Byte"}},
+    SubnetMask: {"kind""Ptr","child":{"kind":"UInt32"}},
+    RequestedAddress: {"kind""Ptr","child":{"kind":"UInt32"}},
+    RequestLeaseTime: {"kind""Ptr","child":{"kind":"UInt32"}},
+    OverlayFields: {"kind""Ptr","child":{"kind":"Byte"}},
+    RouterAddress: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Server: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ParameterRequestList: {"kind""Ptr","child":{"kind":"Byte"}},
+    ParameterRequestListLength: {"kind":"UInt32"},
+    MachineName: {"kind""Ptr","child":{"kind":"SByte"}},
+    MachineNameLength: {"kind":"UInt32"},
+    ClientHardwareAddressType: {"kind":"Byte"},
+    ClientHardwareAddressLength: {"kind":"Byte"},
+    ClientHardwareAddress: {"kind""Ptr","child":{"kind":"Byte"}},
+    ClassIdentifier: {"kind""Ptr","child":{"kind":"SByte"}},
+    ClassIdentifierLength: {"kind":"UInt32"},
+    VendorClass: {"kind""Ptr","child":{"kind":"Byte"}},
+    VendorClassLength: {"kind":"UInt32"},
+    DNSFlags: {"kind":"UInt32"},
+    DNSNameLength: {"kind":"UInt32"},
+    DNSName: {"kind""Ptr","child":{"kind":"Byte"}},
+    DSDomainNameRequested: {"kind":"Byte"},
+    DSDomainName: {"kind""Ptr","child":{"kind":"SByte"}},
+    DSDomainNameLen: {"kind":"UInt32"},
+    ScopeId: {"kind""Ptr","child":{"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: LPDHCP_CONTROL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDHCP_CONTROL = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPDHCP_NEWPKT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDHCP_NEWPKT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPDHCP_DROP_SEND
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDHCP_DROP_SEND = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPDHCP_PROB
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDHCP_PROB = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPDHCP_GIVE_ADDRESS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDHCP_GIVE_ADDRESS = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPDHCP_HANDLE_OPTIONS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDHCP_HANDLE_OPTIONS = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPDHCP_DELETE_CLIENT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDHCP_DELETE_CLIENT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DHCP_CALLOUT_TABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_CALLOUT_TABLE = extern struct {
+    DhcpControlHook: Windows.Win32.Dhcp.LPDHCP_CONTROL,
+    DhcpNewPktHook: Windows.Win32.Dhcp.LPDHCP_NEWPKT,
+    DhcpPktDropHook: Windows.Win32.Dhcp.LPDHCP_DROP_SEND,
+    DhcpPktSendHook: Windows.Win32.Dhcp.LPDHCP_DROP_SEND,
+    DhcpAddressDelHook: Windows.Win32.Dhcp.LPDHCP_PROB,
+    DhcpAddressOfferHook: Windows.Win32.Dhcp.LPDHCP_GIVE_ADDRESS,
+    DhcpHandleOptionsHook: Windows.Win32.Dhcp.LPDHCP_HANDLE_OPTIONS,
+    DhcpDeleteClientHook: Windows.Win32.Dhcp.LPDHCP_DELETE_CLIENT,
+    DhcpExtensionHook: {"kind""Ptr","child":{"kind":"Void"}},
+    DhcpReservedHook: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: LPDHCP_ENTRY_POINT_FUNC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDHCP_ENTRY_POINT_FUNC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DATE_TIME
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DATE_TIME = extern struct {
+    dwLowDateTime: {"kind":"UInt32"},
+    dwHighDateTime: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DHCP_IP_RANGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_IP_RANGE = extern struct {
+    StartAddress: {"kind":"UInt32"},
+    EndAddress: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DHCP_BINARY_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_BINARY_DATA = extern struct {
+    DataLength: {"kind":"UInt32"},
+    Data: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: DHCP_HOST_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_HOST_INFO = extern struct {
+    IpAddress: {"kind":"UInt32"},
+    NetBiosName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    HostName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DHCP_FORCE_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DHCP_FORCE_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: DWORD_DWORD
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DWORD_DWORD = extern struct {
+    DWord1: {"kind":"UInt32"},
+    DWord2: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DHCP_SUBNET_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DHCP_SUBNET_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DHCP_SUBNET_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_SUBNET_INFO = extern struct {
+    SubnetAddress: {"kind":"UInt32"},
+    SubnetMask: {"kind":"UInt32"},
+    SubnetName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetComment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PrimaryHost: Windows.Win32.Dhcp.DHCP_HOST_INFO,
+    SubnetState: Windows.Win32.Dhcp.DHCP_SUBNET_STATE,
+};
+// --------------------------------------------------------
+// Type: DHCP_SUBNET_INFO_VQ
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_SUBNET_INFO_VQ = extern struct {
+    SubnetAddress: {"kind":"UInt32"},
+    SubnetMask: {"kind":"UInt32"},
+    SubnetName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetComment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PrimaryHost: Windows.Win32.Dhcp.DHCP_HOST_INFO,
+    SubnetState: Windows.Win32.Dhcp.DHCP_SUBNET_STATE,
+    QuarantineOn: {"kind":"UInt32"},
+    Reserved1: {"kind":"UInt32"},
+    Reserved2: {"kind":"UInt32"},
+    Reserved3: {"kind":"Int64"},
+    Reserved4: {"kind":"Int64"},
+};
+// --------------------------------------------------------
+// Type: DHCP_IP_ARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_IP_ARRAY = extern struct {
+    NumElements: {"kind":"UInt32"},
+    Elements: {"kind""Ptr","child":{"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: DHCP_IP_CLUSTER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_IP_CLUSTER = extern struct {
+    ClusterAddress: {"kind":"UInt32"},
+    ClusterMask: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DHCP_IP_RESERVATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_IP_RESERVATION = extern struct {
+    ReservedIpAddress: {"kind":"UInt32"},
+    ReservedForClient: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_BINARY_DATA},
+};
+// --------------------------------------------------------
+// Type: DHCP_SUBNET_ELEMENT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DHCP_SUBNET_ELEMENT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DHCP_SUBNET_ELEMENT_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_SUBNET_ELEMENT_DATA = extern struct {
+    ElementType: Windows.Win32.Dhcp.DHCP_SUBNET_ELEMENT_TYPE,
+    Element: Windows.Win32.Dhcp.DHCP_SUBNET_ELEMENT_DATA+DHCP_SUBNET_ELEMENT_UNION,
+    // --------------------------------------------------------
+    // Type: DHCP_SUBNET_ELEMENT_UNION
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const DHCP_SUBNET_ELEMENT_UNION = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: DHCP_SUBNET_ELEMENT_UNION
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const DHCP_SUBNET_ELEMENT_UNION = *opaque{
+};
+// --------------------------------------------------------
+// Type: DHCP_SUBNET_ELEMENT_INFO_ARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_SUBNET_ELEMENT_INFO_ARRAY = extern struct {
+    NumElements: {"kind":"UInt32"},
+    Elements: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SUBNET_ELEMENT_DATA},
+};
+// --------------------------------------------------------
+// Type: DHCP_IPV6_ADDRESS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_IPV6_ADDRESS = extern struct {
+    HighOrderBits: {"kind":"UInt64"},
+    LowOrderBits: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: DHCP_FILTER_LIST_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DHCP_FILTER_LIST_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DHCP_ADDR_PATTERN
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_ADDR_PATTERN = extern struct {
+    MatchHWType: Windows.Win32.SystemServices.BOOL,
+    HWType: {"kind":"Byte"},
+    IsWildcard: Windows.Win32.SystemServices.BOOL,
+    Length: {"kind":"Byte"},
+    Pattern: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: DHCP_FILTER_ADD_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_FILTER_ADD_INFO = extern struct {
+    AddrPatt: Windows.Win32.Dhcp.DHCP_ADDR_PATTERN,
+    Comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ListType: Windows.Win32.Dhcp.DHCP_FILTER_LIST_TYPE,
+};
+// --------------------------------------------------------
+// Type: DHCP_FILTER_GLOBAL_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_FILTER_GLOBAL_INFO = extern struct {
+    EnforceAllowList: Windows.Win32.SystemServices.BOOL,
+    EnforceDenyList: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: DHCP_FILTER_RECORD
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_FILTER_RECORD = extern struct {
+    AddrPatt: Windows.Win32.Dhcp.DHCP_ADDR_PATTERN,
+    Comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DHCP_FILTER_ENUM_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_FILTER_ENUM_INFO = extern struct {
+    NumElements: {"kind":"UInt32"},
+    pEnumRecords: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_FILTER_RECORD},
+};
+// --------------------------------------------------------
+// Type: DHCP_OPTION_DATA_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DHCP_OPTION_DATA_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DHCP_OPTION_DATA_ELEMENT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_OPTION_DATA_ELEMENT = extern struct {
+    OptionType: Windows.Win32.Dhcp.DHCP_OPTION_DATA_TYPE,
+    Element: Windows.Win32.Dhcp.DHCP_OPTION_DATA_ELEMENT+DHCP_OPTION_ELEMENT_UNION,
+    // --------------------------------------------------------
+    // Type: DHCP_OPTION_ELEMENT_UNION
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const DHCP_OPTION_ELEMENT_UNION = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: DHCP_OPTION_ELEMENT_UNION
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const DHCP_OPTION_ELEMENT_UNION = *opaque{
+};
+// --------------------------------------------------------
+// Type: DHCP_OPTION_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_OPTION_DATA = extern struct {
+    NumElements: {"kind":"UInt32"},
+    Elements: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_DATA_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: DHCP_OPTION_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DHCP_OPTION_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DHCP_OPTION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_OPTION = extern struct {
+    OptionID: {"kind":"UInt32"},
+    OptionName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    OptionComment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DefaultValue: Windows.Win32.Dhcp.DHCP_OPTION_DATA,
+    OptionType: Windows.Win32.Dhcp.DHCP_OPTION_TYPE,
+};
+// --------------------------------------------------------
+// Type: DHCP_OPTION_ARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_OPTION_ARRAY = extern struct {
+    NumElements: {"kind":"UInt32"},
+    Options: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION},
+};
+// --------------------------------------------------------
+// Type: DHCP_OPTION_VALUE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_OPTION_VALUE = extern struct {
+    OptionID: {"kind":"UInt32"},
+    Value: Windows.Win32.Dhcp.DHCP_OPTION_DATA,
+};
+// --------------------------------------------------------
+// Type: DHCP_OPTION_VALUE_ARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_OPTION_VALUE_ARRAY = extern struct {
+    NumElements: {"kind":"UInt32"},
+    Values: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_VALUE},
+};
+// --------------------------------------------------------
+// Type: DHCP_OPTION_SCOPE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DHCP_OPTION_SCOPE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DHCP_RESERVED_SCOPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_RESERVED_SCOPE = extern struct {
+    ReservedIpAddress: {"kind":"UInt32"},
+    ReservedIpSubnetAddress: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DHCP_OPTION_SCOPE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_OPTION_SCOPE_INFO = extern struct {
+    ScopeType: Windows.Win32.Dhcp.DHCP_OPTION_SCOPE_TYPE,
+    ScopeInfo: Windows.Win32.Dhcp.DHCP_OPTION_SCOPE_INFO+_DHCP_OPTION_SCOPE_UNION,
+    // --------------------------------------------------------
+    // Type: _DHCP_OPTION_SCOPE_UNION
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _DHCP_OPTION_SCOPE_UNION = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: DHCP_OPTION_SCOPE_TYPE6
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DHCP_OPTION_SCOPE_TYPE6 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DHCP_RESERVED_SCOPE6
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_RESERVED_SCOPE6 = extern struct {
+    ReservedIpAddress: Windows.Win32.Dhcp.DHCP_IPV6_ADDRESS,
+    ReservedIpSubnetAddress: Windows.Win32.Dhcp.DHCP_IPV6_ADDRESS,
+};
+// --------------------------------------------------------
+// Type: DHCP_OPTION_SCOPE_INFO6
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_OPTION_SCOPE_INFO6 = extern struct {
+    ScopeType: Windows.Win32.Dhcp.DHCP_OPTION_SCOPE_TYPE6,
+    ScopeInfo: Windows.Win32.Dhcp.DHCP_OPTION_SCOPE_INFO6+DHCP_OPTION_SCOPE_UNION6,
+    // --------------------------------------------------------
+    // Type: DHCP_OPTION_SCOPE_UNION6
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const DHCP_OPTION_SCOPE_UNION6 = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: DHCP_OPTION_SCOPE_UNION6
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const DHCP_OPTION_SCOPE_UNION6 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DHCP_OPTION_LIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_OPTION_LIST = extern struct {
+    NumOptions: {"kind":"UInt32"},
+    Options: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_VALUE},
+};
+// --------------------------------------------------------
+// Type: DHCP_CLIENT_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_CLIENT_INFO = extern struct {
+    ClientIpAddress: {"kind":"UInt32"},
+    SubnetMask: {"kind":"UInt32"},
+    ClientHardwareAddress: Windows.Win32.Dhcp.DHCP_BINARY_DATA,
+    ClientName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientComment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientLeaseExpires: Windows.Win32.Dhcp.DATE_TIME,
+    OwnerHost: Windows.Win32.Dhcp.DHCP_HOST_INFO,
+};
+// --------------------------------------------------------
+// Type: DHCP_CLIENT_INFO_ARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_CLIENT_INFO_ARRAY = extern struct {
+    NumElements: {"kind":"UInt32"},
+    Clients: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO}},
+};
+// --------------------------------------------------------
+// Type: QuarantineStatus
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const QuarantineStatus = *opaque{
+};
+// --------------------------------------------------------
+// Type: DHCP_CLIENT_INFO_VQ
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_CLIENT_INFO_VQ = extern struct {
+    ClientIpAddress: {"kind":"UInt32"},
+    SubnetMask: {"kind":"UInt32"},
+    ClientHardwareAddress: Windows.Win32.Dhcp.DHCP_BINARY_DATA,
+    ClientName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientComment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientLeaseExpires: Windows.Win32.Dhcp.DATE_TIME,
+    OwnerHost: Windows.Win32.Dhcp.DHCP_HOST_INFO,
+    bClientType: {"kind":"Byte"},
+    AddressState: {"kind":"Byte"},
+    Status: Windows.Win32.Dhcp.QuarantineStatus,
+    ProbationEnds: Windows.Win32.Dhcp.DATE_TIME,
+    QuarantineCapable: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: DHCP_CLIENT_INFO_ARRAY_VQ
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_CLIENT_INFO_ARRAY_VQ = extern struct {
+    NumElements: {"kind":"UInt32"},
+    Clients: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO_VQ}},
+};
+// --------------------------------------------------------
+// Type: DHCP_CLIENT_FILTER_STATUS_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_CLIENT_FILTER_STATUS_INFO = extern struct {
+    ClientIpAddress: {"kind":"UInt32"},
+    SubnetMask: {"kind":"UInt32"},
+    ClientHardwareAddress: Windows.Win32.Dhcp.DHCP_BINARY_DATA,
+    ClientName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientComment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientLeaseExpires: Windows.Win32.Dhcp.DATE_TIME,
+    OwnerHost: Windows.Win32.Dhcp.DHCP_HOST_INFO,
+    bClientType: {"kind":"Byte"},
+    AddressState: {"kind":"Byte"},
+    Status: Windows.Win32.Dhcp.QuarantineStatus,
+    ProbationEnds: Windows.Win32.Dhcp.DATE_TIME,
+    QuarantineCapable: Windows.Win32.SystemServices.BOOL,
+    FilterStatus: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DHCP_CLIENT_FILTER_STATUS_INFO_ARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_CLIENT_FILTER_STATUS_INFO_ARRAY = extern struct {
+    NumElements: {"kind":"UInt32"},
+    Clients: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_FILTER_STATUS_INFO}},
+};
+// --------------------------------------------------------
+// Type: DHCP_CLIENT_INFO_PB
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_CLIENT_INFO_PB = extern struct {
+    ClientIpAddress: {"kind":"UInt32"},
+    SubnetMask: {"kind":"UInt32"},
+    ClientHardwareAddress: Windows.Win32.Dhcp.DHCP_BINARY_DATA,
+    ClientName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientComment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientLeaseExpires: Windows.Win32.Dhcp.DATE_TIME,
+    OwnerHost: Windows.Win32.Dhcp.DHCP_HOST_INFO,
+    bClientType: {"kind":"Byte"},
+    AddressState: {"kind":"Byte"},
+    Status: Windows.Win32.Dhcp.QuarantineStatus,
+    ProbationEnds: Windows.Win32.Dhcp.DATE_TIME,
+    QuarantineCapable: Windows.Win32.SystemServices.BOOL,
+    FilterStatus: {"kind":"UInt32"},
+    PolicyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DHCP_CLIENT_INFO_PB_ARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_CLIENT_INFO_PB_ARRAY = extern struct {
+    NumElements: {"kind":"UInt32"},
+    Clients: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO_PB}},
+};
+// --------------------------------------------------------
+// Type: DHCP_SEARCH_INFO_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DHCP_SEARCH_INFO_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DHCP_SEARCH_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_SEARCH_INFO = extern struct {
+    SearchType: Windows.Win32.Dhcp.DHCP_SEARCH_INFO_TYPE,
+    SearchInfo: Windows.Win32.Dhcp.DHCP_SEARCH_INFO+DHCP_CLIENT_SEARCH_UNION,
+    // --------------------------------------------------------
+    // Type: DHCP_CLIENT_SEARCH_UNION
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const DHCP_CLIENT_SEARCH_UNION = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: DHCP_CLIENT_SEARCH_UNION
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const DHCP_CLIENT_SEARCH_UNION = *opaque{
+};
+// --------------------------------------------------------
+// Type: DHCP_PROPERTY_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DHCP_PROPERTY_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DHCP_PROPERTY_ID
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DHCP_PROPERTY_ID = *opaque{
+};
+// --------------------------------------------------------
+// Type: DHCP_PROPERTY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_PROPERTY = extern struct {
+    ID: Windows.Win32.Dhcp.DHCP_PROPERTY_ID,
+    Type: Windows.Win32.Dhcp.DHCP_PROPERTY_TYPE,
+    Value: Windows.Win32.Dhcp.DHCP_PROPERTY+_DHCP_PROPERTY_VALUE_UNION,
+    // --------------------------------------------------------
+    // Type: _DHCP_PROPERTY_VALUE_UNION
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _DHCP_PROPERTY_VALUE_UNION = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: DHCP_PROPERTY_ARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_PROPERTY_ARRAY = extern struct {
+    NumElements: {"kind":"UInt32"},
+    Elements: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_PROPERTY},
+};
+// --------------------------------------------------------
+// Type: DHCP_CLIENT_INFO_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_CLIENT_INFO_EX = extern struct {
+    ClientIpAddress: {"kind":"UInt32"},
+    SubnetMask: {"kind":"UInt32"},
+    ClientHardwareAddress: Windows.Win32.Dhcp.DHCP_BINARY_DATA,
+    ClientName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientComment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientLeaseExpires: Windows.Win32.Dhcp.DATE_TIME,
+    OwnerHost: Windows.Win32.Dhcp.DHCP_HOST_INFO,
+    bClientType: {"kind":"Byte"},
+    AddressState: {"kind":"Byte"},
+    Status: Windows.Win32.Dhcp.QuarantineStatus,
+    ProbationEnds: Windows.Win32.Dhcp.DATE_TIME,
+    QuarantineCapable: Windows.Win32.SystemServices.BOOL,
+    FilterStatus: {"kind":"UInt32"},
+    PolicyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Properties: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_PROPERTY_ARRAY},
+};
+// --------------------------------------------------------
+// Type: DHCP_CLIENT_INFO_EX_ARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_CLIENT_INFO_EX_ARRAY = extern struct {
+    NumElements: {"kind":"UInt32"},
+    Clients: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO_EX}},
+};
+// --------------------------------------------------------
+// Type: SCOPE_MIB_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SCOPE_MIB_INFO = extern struct {
+    Subnet: {"kind":"UInt32"},
+    NumAddressesInuse: {"kind":"UInt32"},
+    NumAddressesFree: {"kind":"UInt32"},
+    NumPendingOffers: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DHCP_MIB_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_MIB_INFO = extern struct {
+    Discovers: {"kind":"UInt32"},
+    Offers: {"kind":"UInt32"},
+    Requests: {"kind":"UInt32"},
+    Acks: {"kind":"UInt32"},
+    Naks: {"kind":"UInt32"},
+    Declines: {"kind":"UInt32"},
+    Releases: {"kind":"UInt32"},
+    ServerStartTime: Windows.Win32.Dhcp.DATE_TIME,
+    Scopes: {"kind":"UInt32"},
+    ScopeInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.SCOPE_MIB_INFO},
+};
+// --------------------------------------------------------
+// Type: SCOPE_MIB_INFO_VQ
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SCOPE_MIB_INFO_VQ = extern struct {
+    Subnet: {"kind":"UInt32"},
+    NumAddressesInuse: {"kind":"UInt32"},
+    NumAddressesFree: {"kind":"UInt32"},
+    NumPendingOffers: {"kind":"UInt32"},
+    QtnNumLeases: {"kind":"UInt32"},
+    QtnPctQtnLeases: {"kind":"UInt32"},
+    QtnProbationLeases: {"kind":"UInt32"},
+    QtnNonQtnLeases: {"kind":"UInt32"},
+    QtnExemptLeases: {"kind":"UInt32"},
+    QtnCapableClients: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DHCP_MIB_INFO_VQ
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_MIB_INFO_VQ = extern struct {
+    Discovers: {"kind":"UInt32"},
+    Offers: {"kind":"UInt32"},
+    Requests: {"kind":"UInt32"},
+    Acks: {"kind":"UInt32"},
+    Naks: {"kind":"UInt32"},
+    Declines: {"kind":"UInt32"},
+    Releases: {"kind":"UInt32"},
+    ServerStartTime: Windows.Win32.Dhcp.DATE_TIME,
+    QtnNumLeases: {"kind":"UInt32"},
+    QtnPctQtnLeases: {"kind":"UInt32"},
+    QtnProbationLeases: {"kind":"UInt32"},
+    QtnNonQtnLeases: {"kind":"UInt32"},
+    QtnExemptLeases: {"kind":"UInt32"},
+    QtnCapableClients: {"kind":"UInt32"},
+    QtnIASErrors: {"kind":"UInt32"},
+    Scopes: {"kind":"UInt32"},
+    ScopeInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.SCOPE_MIB_INFO_VQ},
+};
+// --------------------------------------------------------
+// Type: SCOPE_MIB_INFO_V5
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SCOPE_MIB_INFO_V5 = extern struct {
+    Subnet: {"kind":"UInt32"},
+    NumAddressesInuse: {"kind":"UInt32"},
+    NumAddressesFree: {"kind":"UInt32"},
+    NumPendingOffers: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DHCP_MIB_INFO_V5
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_MIB_INFO_V5 = extern struct {
+    Discovers: {"kind":"UInt32"},
+    Offers: {"kind":"UInt32"},
+    Requests: {"kind":"UInt32"},
+    Acks: {"kind":"UInt32"},
+    Naks: {"kind":"UInt32"},
+    Declines: {"kind":"UInt32"},
+    Releases: {"kind":"UInt32"},
+    ServerStartTime: Windows.Win32.Dhcp.DATE_TIME,
+    QtnNumLeases: {"kind":"UInt32"},
+    QtnPctQtnLeases: {"kind":"UInt32"},
+    QtnProbationLeases: {"kind":"UInt32"},
+    QtnNonQtnLeases: {"kind":"UInt32"},
+    QtnExemptLeases: {"kind":"UInt32"},
+    QtnCapableClients: {"kind":"UInt32"},
+    QtnIASErrors: {"kind":"UInt32"},
+    DelayedOffers: {"kind":"UInt32"},
+    ScopesWithDelayedOffers: {"kind":"UInt32"},
+    Scopes: {"kind":"UInt32"},
+    ScopeInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.SCOPE_MIB_INFO_V5},
+};
+// --------------------------------------------------------
+// Type: DHCP_SERVER_CONFIG_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_SERVER_CONFIG_INFO = extern struct {
+    APIProtocolSupport: {"kind":"UInt32"},
+    DatabaseName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DatabasePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    BackupPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    BackupInterval: {"kind":"UInt32"},
+    DatabaseLoggingFlag: {"kind":"UInt32"},
+    RestoreFlag: {"kind":"UInt32"},
+    DatabaseCleanupInterval: {"kind":"UInt32"},
+    DebugFlag: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DHCP_SCAN_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DHCP_SCAN_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: DHCP_SCAN_ITEM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_SCAN_ITEM = extern struct {
+    IpAddress: {"kind":"UInt32"},
+    ScanFlag: Windows.Win32.Dhcp.DHCP_SCAN_FLAG,
+};
+// --------------------------------------------------------
+// Type: DHCP_SCAN_LIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_SCAN_LIST = extern struct {
+    NumScanItems: {"kind":"UInt32"},
+    ScanItems: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SCAN_ITEM},
+};
+// --------------------------------------------------------
+// Type: DHCP_CLASS_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_CLASS_INFO = extern struct {
+    ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClassComment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClassDataLength: {"kind":"UInt32"},
+    IsVendor: Windows.Win32.SystemServices.BOOL,
+    Flags: {"kind":"UInt32"},
+    ClassData: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: DHCP_CLASS_INFO_ARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_CLASS_INFO_ARRAY = extern struct {
+    NumElements: {"kind":"UInt32"},
+    Classes: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLASS_INFO},
+};
+// --------------------------------------------------------
+// Type: DHCP_CLASS_INFO_V6
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_CLASS_INFO_V6 = extern struct {
+    ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClassComment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClassDataLength: {"kind":"UInt32"},
+    IsVendor: Windows.Win32.SystemServices.BOOL,
+    EnterpriseNumber: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+    ClassData: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: DHCP_CLASS_INFO_ARRAY_V6
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_CLASS_INFO_ARRAY_V6 = extern struct {
+    NumElements: {"kind":"UInt32"},
+    Classes: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLASS_INFO_V6},
+};
+// --------------------------------------------------------
+// Type: DHCP_SERVER_SPECIFIC_STRINGS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_SERVER_SPECIFIC_STRINGS = extern struct {
+    DefaultVendorClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DefaultUserClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DHCP_IP_RESERVATION_V4
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_IP_RESERVATION_V4 = extern struct {
+    ReservedIpAddress: {"kind":"UInt32"},
+    ReservedForClient: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_BINARY_DATA},
+    bAllowedClientTypes: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: DHCP_IP_RESERVATION_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_IP_RESERVATION_INFO = extern struct {
+    ReservedIpAddress: {"kind":"UInt32"},
+    ReservedForClient: Windows.Win32.Dhcp.DHCP_BINARY_DATA,
+    ReservedClientName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReservedClientDesc: {"kind""Ptr","child":{"kind":"UInt16"}},
+    bAllowedClientTypes: {"kind":"Byte"},
+    fOptionsPresent: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: DHCP_RESERVATION_INFO_ARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_RESERVATION_INFO_ARRAY = extern struct {
+    NumElements: {"kind":"UInt32"},
+    Elements: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_IP_RESERVATION_INFO}},
+};
+// --------------------------------------------------------
+// Type: DHCP_SUBNET_ELEMENT_DATA_V4
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_SUBNET_ELEMENT_DATA_V4 = extern struct {
+    ElementType: Windows.Win32.Dhcp.DHCP_SUBNET_ELEMENT_TYPE,
+    Element: Windows.Win32.Dhcp.DHCP_SUBNET_ELEMENT_DATA_V4+DHCP_SUBNET_ELEMENT_UNION_V4,
+    // --------------------------------------------------------
+    // Type: DHCP_SUBNET_ELEMENT_UNION_V4
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const DHCP_SUBNET_ELEMENT_UNION_V4 = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: DHCP_SUBNET_ELEMENT_UNION_V4
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const DHCP_SUBNET_ELEMENT_UNION_V4 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DHCP_SUBNET_ELEMENT_INFO_ARRAY_V4
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_SUBNET_ELEMENT_INFO_ARRAY_V4 = extern struct {
+    NumElements: {"kind":"UInt32"},
+    Elements: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SUBNET_ELEMENT_DATA_V4},
+};
+// --------------------------------------------------------
+// Type: DHCP_CLIENT_INFO_V4
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_CLIENT_INFO_V4 = extern struct {
+    ClientIpAddress: {"kind":"UInt32"},
+    SubnetMask: {"kind":"UInt32"},
+    ClientHardwareAddress: Windows.Win32.Dhcp.DHCP_BINARY_DATA,
+    ClientName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientComment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientLeaseExpires: Windows.Win32.Dhcp.DATE_TIME,
+    OwnerHost: Windows.Win32.Dhcp.DHCP_HOST_INFO,
+    bClientType: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: DHCP_CLIENT_INFO_ARRAY_V4
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_CLIENT_INFO_ARRAY_V4 = extern struct {
+    NumElements: {"kind":"UInt32"},
+    Clients: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO_V4}},
+};
+// --------------------------------------------------------
+// Type: DHCP_SERVER_CONFIG_INFO_V4
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_SERVER_CONFIG_INFO_V4 = extern struct {
+    APIProtocolSupport: {"kind":"UInt32"},
+    DatabaseName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DatabasePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    BackupPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    BackupInterval: {"kind":"UInt32"},
+    DatabaseLoggingFlag: {"kind":"UInt32"},
+    RestoreFlag: {"kind":"UInt32"},
+    DatabaseCleanupInterval: {"kind":"UInt32"},
+    DebugFlag: {"kind":"UInt32"},
+    dwPingRetries: {"kind":"UInt32"},
+    cbBootTableString: {"kind":"UInt32"},
+    wszBootTableString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fAuditLog: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: DHCP_SERVER_CONFIG_INFO_VQ
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_SERVER_CONFIG_INFO_VQ = extern struct {
+    APIProtocolSupport: {"kind":"UInt32"},
+    DatabaseName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DatabasePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    BackupPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    BackupInterval: {"kind":"UInt32"},
+    DatabaseLoggingFlag: {"kind":"UInt32"},
+    RestoreFlag: {"kind":"UInt32"},
+    DatabaseCleanupInterval: {"kind":"UInt32"},
+    DebugFlag: {"kind":"UInt32"},
+    dwPingRetries: {"kind":"UInt32"},
+    cbBootTableString: {"kind":"UInt32"},
+    wszBootTableString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fAuditLog: Windows.Win32.SystemServices.BOOL,
+    QuarantineOn: Windows.Win32.SystemServices.BOOL,
+    QuarDefFail: {"kind":"UInt32"},
+    QuarRuntimeStatus: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: DHCP_SERVER_CONFIG_INFO_V6
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_SERVER_CONFIG_INFO_V6 = extern struct {
+    UnicastFlag: Windows.Win32.SystemServices.BOOL,
+    RapidCommitFlag: Windows.Win32.SystemServices.BOOL,
+    PreferredLifetime: {"kind":"UInt32"},
+    ValidLifetime: {"kind":"UInt32"},
+    T1: {"kind":"UInt32"},
+    T2: {"kind":"UInt32"},
+    PreferredLifetimeIATA: {"kind":"UInt32"},
+    ValidLifetimeIATA: {"kind":"UInt32"},
+    fAuditLog: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: DHCP_SUPER_SCOPE_TABLE_ENTRY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_SUPER_SCOPE_TABLE_ENTRY = extern struct {
+    SubnetAddress: {"kind":"UInt32"},
+    SuperScopeNumber: {"kind":"UInt32"},
+    NextInSuperScope: {"kind":"UInt32"},
+    SuperScopeName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DHCP_SUPER_SCOPE_TABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_SUPER_SCOPE_TABLE = extern struct {
+    cEntries: {"kind":"UInt32"},
+    pEntries: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SUPER_SCOPE_TABLE_ENTRY},
+};
+// --------------------------------------------------------
+// Type: DHCP_CLIENT_INFO_V5
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_CLIENT_INFO_V5 = extern struct {
+    ClientIpAddress: {"kind":"UInt32"},
+    SubnetMask: {"kind":"UInt32"},
+    ClientHardwareAddress: Windows.Win32.Dhcp.DHCP_BINARY_DATA,
+    ClientName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientComment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientLeaseExpires: Windows.Win32.Dhcp.DATE_TIME,
+    OwnerHost: Windows.Win32.Dhcp.DHCP_HOST_INFO,
+    bClientType: {"kind":"Byte"},
+    AddressState: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: DHCP_CLIENT_INFO_ARRAY_V5
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_CLIENT_INFO_ARRAY_V5 = extern struct {
+    NumElements: {"kind":"UInt32"},
+    Clients: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO_V5}},
+};
+// --------------------------------------------------------
+// Type: DHCP_ALL_OPTIONS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_ALL_OPTIONS = extern struct {
+    Flags: {"kind":"UInt32"},
+    NonVendorOptions: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_ARRAY},
+    NumVendorOptions: {"kind":"UInt32"},
+    VendorOptions: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_ALL_OPTIONS+_Anonymous_e__Struct},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _Anonymous_e__Struct = extern struct {
+        Option: Windows.Win32.Dhcp.DHCP_OPTION,
+        VendorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+        ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    };
+};
+// --------------------------------------------------------
+// Type: DHCP_ALL_OPTION_VALUES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_ALL_OPTION_VALUES = extern struct {
+    Flags: {"kind":"UInt32"},
+    NumElements: {"kind":"UInt32"},
+    Options: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_ALL_OPTION_VALUES+_Anonymous_e__Struct},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _Anonymous_e__Struct = extern struct {
+        ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+        VendorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+        IsVendor: Windows.Win32.SystemServices.BOOL,
+        OptionsArray: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_VALUE_ARRAY},
+    };
+};
+// --------------------------------------------------------
+// Type: DHCP_ALL_OPTION_VALUES_PB
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_ALL_OPTION_VALUES_PB = extern struct {
+    Flags: {"kind":"UInt32"},
+    NumElements: {"kind":"UInt32"},
+    Options: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_ALL_OPTION_VALUES_PB+_Anonymous_e__Struct},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _Anonymous_e__Struct = extern struct {
+        PolicyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+        VendorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+        IsVendor: Windows.Win32.SystemServices.BOOL,
+        OptionsArray: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_VALUE_ARRAY},
+    };
+};
+// --------------------------------------------------------
+// Type: DHCPDS_SERVER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCPDS_SERVER = extern struct {
+    Version: {"kind":"UInt32"},
+    ServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ServerAddress: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+    State: {"kind":"UInt32"},
+    DsLocation: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DsLocType: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DHCPDS_SERVERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCPDS_SERVERS = extern struct {
+    Flags: {"kind":"UInt32"},
+    NumElements: {"kind":"UInt32"},
+    Servers: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCPDS_SERVER},
+};
+// --------------------------------------------------------
+// Type: DHCP_ATTRIB
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_ATTRIB = extern struct {
+    DhcpAttribId: {"kind":"UInt32"},
+    DhcpAttribType: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.Dhcp.DHCP_ATTRIB+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: DHCP_ATTRIB_ARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_ATTRIB_ARRAY = extern struct {
+    NumElements: {"kind":"UInt32"},
+    DhcpAttribs: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_ATTRIB},
+};
+// --------------------------------------------------------
+// Type: DHCP_BOOTP_IP_RANGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_BOOTP_IP_RANGE = extern struct {
+    StartAddress: {"kind":"UInt32"},
+    EndAddress: {"kind":"UInt32"},
+    BootpAllocated: {"kind":"UInt32"},
+    MaxBootpAllowed: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DHCP_SUBNET_ELEMENT_DATA_V5
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_SUBNET_ELEMENT_DATA_V5 = extern struct {
+    ElementType: Windows.Win32.Dhcp.DHCP_SUBNET_ELEMENT_TYPE,
+    Element: Windows.Win32.Dhcp.DHCP_SUBNET_ELEMENT_DATA_V5+_DHCP_SUBNET_ELEMENT_UNION_V5,
+    // --------------------------------------------------------
+    // Type: _DHCP_SUBNET_ELEMENT_UNION_V5
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _DHCP_SUBNET_ELEMENT_UNION_V5 = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: DHCP_SUBNET_ELEMENT_INFO_ARRAY_V5
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_SUBNET_ELEMENT_INFO_ARRAY_V5 = extern struct {
+    NumElements: {"kind":"UInt32"},
+    Elements: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SUBNET_ELEMENT_DATA_V5},
+};
+// --------------------------------------------------------
+// Type: DHCP_PERF_STATS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_PERF_STATS = extern struct {
+    dwNumPacketsReceived: {"kind":"UInt32"},
+    dwNumPacketsDuplicate: {"kind":"UInt32"},
+    dwNumPacketsExpired: {"kind":"UInt32"},
+    dwNumMilliSecondsProcessed: {"kind":"UInt32"},
+    dwNumPacketsInActiveQueue: {"kind":"UInt32"},
+    dwNumPacketsInPingQueue: {"kind":"UInt32"},
+    dwNumDiscoversReceived: {"kind":"UInt32"},
+    dwNumOffersSent: {"kind":"UInt32"},
+    dwNumRequestsReceived: {"kind":"UInt32"},
+    dwNumInformsReceived: {"kind":"UInt32"},
+    dwNumAcksSent: {"kind":"UInt32"},
+    dwNumNacksSent: {"kind":"UInt32"},
+    dwNumDeclinesReceived: {"kind":"UInt32"},
+    dwNumReleasesReceived: {"kind":"UInt32"},
+    dwNumDelayedOfferInQueue: {"kind":"UInt32"},
+    dwNumPacketsProcessed: {"kind":"UInt32"},
+    dwNumPacketsInQuarWaitingQueue: {"kind":"UInt32"},
+    dwNumPacketsInQuarReadyQueue: {"kind":"UInt32"},
+    dwNumPacketsInQuarDecisionQueue: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DHCP_BIND_ELEMENT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_BIND_ELEMENT = extern struct {
+    Flags: {"kind":"UInt32"},
+    fBoundToDHCPServer: Windows.Win32.SystemServices.BOOL,
+    AdapterPrimaryAddress: {"kind":"UInt32"},
+    AdapterSubnetAddress: {"kind":"UInt32"},
+    IfDescription: {"kind""Ptr","child":{"kind":"UInt16"}},
+    IfIdSize: {"kind":"UInt32"},
+    IfId: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: DHCP_BIND_ELEMENT_ARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_BIND_ELEMENT_ARRAY = extern struct {
+    NumElements: {"kind":"UInt32"},
+    Elements: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_BIND_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: DHCPV6_BIND_ELEMENT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCPV6_BIND_ELEMENT = extern struct {
+    Flags: {"kind":"UInt32"},
+    fBoundToDHCPServer: Windows.Win32.SystemServices.BOOL,
+    AdapterPrimaryAddress: Windows.Win32.Dhcp.DHCP_IPV6_ADDRESS,
+    AdapterSubnetAddress: Windows.Win32.Dhcp.DHCP_IPV6_ADDRESS,
+    IfDescription: {"kind""Ptr","child":{"kind":"UInt16"}},
+    IpV6IfIndex: {"kind":"UInt32"},
+    IfIdSize: {"kind":"UInt32"},
+    IfId: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: DHCPV6_BIND_ELEMENT_ARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCPV6_BIND_ELEMENT_ARRAY = extern struct {
+    NumElements: {"kind":"UInt32"},
+    Elements: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCPV6_BIND_ELEMENT},
+};
+// --------------------------------------------------------
+// Type: DHCP_IP_RANGE_V6
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_IP_RANGE_V6 = extern struct {
+    StartAddress: Windows.Win32.Dhcp.DHCP_IPV6_ADDRESS,
+    EndAddress: Windows.Win32.Dhcp.DHCP_IPV6_ADDRESS,
+};
+// --------------------------------------------------------
+// Type: DHCP_HOST_INFO_V6
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_HOST_INFO_V6 = extern struct {
+    IpAddress: Windows.Win32.Dhcp.DHCP_IPV6_ADDRESS,
+    NetBiosName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    HostName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DHCP_SUBNET_INFO_V6
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_SUBNET_INFO_V6 = extern struct {
+    SubnetAddress: Windows.Win32.Dhcp.DHCP_IPV6_ADDRESS,
+    Prefix: {"kind":"UInt32"},
+    Preference: {"kind":"UInt16"},
+    SubnetName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetComment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    State: {"kind":"UInt32"},
+    ScopeId: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SCOPE_MIB_INFO_V6
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SCOPE_MIB_INFO_V6 = extern struct {
+    Subnet: Windows.Win32.Dhcp.DHCP_IPV6_ADDRESS,
+    NumAddressesInuse: {"kind":"UInt64"},
+    NumAddressesFree: {"kind":"UInt64"},
+    NumPendingAdvertises: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: DHCP_MIB_INFO_V6
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_MIB_INFO_V6 = extern struct {
+    Solicits: {"kind":"UInt32"},
+    Advertises: {"kind":"UInt32"},
+    Requests: {"kind":"UInt32"},
+    Renews: {"kind":"UInt32"},
+    Rebinds: {"kind":"UInt32"},
+    Replies: {"kind":"UInt32"},
+    Confirms: {"kind":"UInt32"},
+    Declines: {"kind":"UInt32"},
+    Releases: {"kind":"UInt32"},
+    Informs: {"kind":"UInt32"},
+    ServerStartTime: Windows.Win32.Dhcp.DATE_TIME,
+    Scopes: {"kind":"UInt32"},
+    ScopeInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.SCOPE_MIB_INFO_V6},
+};
+// --------------------------------------------------------
+// Type: DHCP_IP_RESERVATION_V6
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_IP_RESERVATION_V6 = extern struct {
+    ReservedIpAddress: Windows.Win32.Dhcp.DHCP_IPV6_ADDRESS,
+    ReservedForClient: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_BINARY_DATA},
+    InterfaceId: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DHCP_SUBNET_ELEMENT_TYPE_V6
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DHCP_SUBNET_ELEMENT_TYPE_V6 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DHCP_SUBNET_ELEMENT_DATA_V6
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_SUBNET_ELEMENT_DATA_V6 = extern struct {
+    ElementType: Windows.Win32.Dhcp.DHCP_SUBNET_ELEMENT_TYPE_V6,
+    Element: Windows.Win32.Dhcp.DHCP_SUBNET_ELEMENT_DATA_V6+DHCP_SUBNET_ELEMENT_UNION_V6,
+    // --------------------------------------------------------
+    // Type: DHCP_SUBNET_ELEMENT_UNION_V6
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const DHCP_SUBNET_ELEMENT_UNION_V6 = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: DHCP_SUBNET_ELEMENT_UNION_V6
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const DHCP_SUBNET_ELEMENT_UNION_V6 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DHCP_SUBNET_ELEMENT_INFO_ARRAY_V6
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_SUBNET_ELEMENT_INFO_ARRAY_V6 = extern struct {
+    NumElements: {"kind":"UInt32"},
+    Elements: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SUBNET_ELEMENT_DATA_V6},
+};
+// --------------------------------------------------------
+// Type: DHCP_CLIENT_INFO_V6
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_CLIENT_INFO_V6 = extern struct {
+    ClientIpAddress: Windows.Win32.Dhcp.DHCP_IPV6_ADDRESS,
+    ClientDUID: Windows.Win32.Dhcp.DHCP_BINARY_DATA,
+    AddressType: {"kind":"UInt32"},
+    IAID: {"kind":"UInt32"},
+    ClientName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientComment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientValidLeaseExpires: Windows.Win32.Dhcp.DATE_TIME,
+    ClientPrefLeaseExpires: Windows.Win32.Dhcp.DATE_TIME,
+    OwnerHost: Windows.Win32.Dhcp.DHCP_HOST_INFO_V6,
+};
+// --------------------------------------------------------
+// Type: DHCPV6_IP_ARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCPV6_IP_ARRAY = extern struct {
+    NumElements: {"kind":"UInt32"},
+    Elements: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_IPV6_ADDRESS},
+};
+// --------------------------------------------------------
+// Type: DHCP_CLIENT_INFO_ARRAY_V6
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_CLIENT_INFO_ARRAY_V6 = extern struct {
+    NumElements: {"kind":"UInt32"},
+    Clients: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO_V6}},
+};
+// --------------------------------------------------------
+// Type: DHCP_SEARCH_INFO_TYPE_V6
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DHCP_SEARCH_INFO_TYPE_V6 = *opaque{
+};
+// --------------------------------------------------------
+// Type: DHCP_SEARCH_INFO_V6
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_SEARCH_INFO_V6 = extern struct {
+    SearchType: Windows.Win32.Dhcp.DHCP_SEARCH_INFO_TYPE_V6,
+    SearchInfo: Windows.Win32.Dhcp.DHCP_SEARCH_INFO_V6+_DHCP_CLIENT_SEARCH_UNION_V6,
+    // --------------------------------------------------------
+    // Type: _DHCP_CLIENT_SEARCH_UNION_V6
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _DHCP_CLIENT_SEARCH_UNION_V6 = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: DHCP_POL_ATTR_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DHCP_POL_ATTR_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DHCP_POL_COMPARATOR
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DHCP_POL_COMPARATOR = *opaque{
+};
+// --------------------------------------------------------
+// Type: DHCP_POL_LOGIC_OPER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DHCP_POL_LOGIC_OPER = *opaque{
+};
+// --------------------------------------------------------
+// Type: DHCP_POLICY_FIELDS_TO_UPDATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DHCP_POLICY_FIELDS_TO_UPDATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DHCP_POL_COND
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_POL_COND = extern struct {
+    ParentExpr: {"kind":"UInt32"},
+    Type: Windows.Win32.Dhcp.DHCP_POL_ATTR_TYPE,
+    OptionID: {"kind":"UInt32"},
+    SubOptionID: {"kind":"UInt32"},
+    VendorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Operator: Windows.Win32.Dhcp.DHCP_POL_COMPARATOR,
+    Value: {"kind""Ptr","child":{"kind":"Byte"}},
+    ValueLength: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DHCP_POL_COND_ARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_POL_COND_ARRAY = extern struct {
+    NumElements: {"kind":"UInt32"},
+    Elements: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POL_COND},
+};
+// --------------------------------------------------------
+// Type: DHCP_POL_EXPR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_POL_EXPR = extern struct {
+    ParentExpr: {"kind":"UInt32"},
+    Operator: Windows.Win32.Dhcp.DHCP_POL_LOGIC_OPER,
+};
+// --------------------------------------------------------
+// Type: DHCP_POL_EXPR_ARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_POL_EXPR_ARRAY = extern struct {
+    NumElements: {"kind":"UInt32"},
+    Elements: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POL_EXPR},
+};
+// --------------------------------------------------------
+// Type: DHCP_IP_RANGE_ARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_IP_RANGE_ARRAY = extern struct {
+    NumElements: {"kind":"UInt32"},
+    Elements: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_IP_RANGE},
+};
+// --------------------------------------------------------
+// Type: DHCP_POLICY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_POLICY = extern struct {
+    PolicyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    IsGlobalPolicy: Windows.Win32.SystemServices.BOOL,
+    Subnet: {"kind":"UInt32"},
+    ProcessingOrder: {"kind":"UInt32"},
+    Conditions: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POL_COND_ARRAY},
+    Expressions: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POL_EXPR_ARRAY},
+    Ranges: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_IP_RANGE_ARRAY},
+    Description: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Enabled: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: DHCP_POLICY_ARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_POLICY_ARRAY = extern struct {
+    NumElements: {"kind":"UInt32"},
+    Elements: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POLICY},
+};
+// --------------------------------------------------------
+// Type: DHCP_POLICY_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_POLICY_EX = extern struct {
+    PolicyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    IsGlobalPolicy: Windows.Win32.SystemServices.BOOL,
+    Subnet: {"kind":"UInt32"},
+    ProcessingOrder: {"kind":"UInt32"},
+    Conditions: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POL_COND_ARRAY},
+    Expressions: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POL_EXPR_ARRAY},
+    Ranges: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_IP_RANGE_ARRAY},
+    Description: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Enabled: Windows.Win32.SystemServices.BOOL,
+    Properties: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_PROPERTY_ARRAY},
+};
+// --------------------------------------------------------
+// Type: DHCP_POLICY_EX_ARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_POLICY_EX_ARRAY = extern struct {
+    NumElements: {"kind":"UInt32"},
+    Elements: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POLICY_EX},
+};
+// --------------------------------------------------------
+// Type: DHCPV6_STATELESS_PARAM_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DHCPV6_STATELESS_PARAM_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DHCPV6_STATELESS_PARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCPV6_STATELESS_PARAMS = extern struct {
+    Status: Windows.Win32.SystemServices.BOOL,
+    PurgeInterval: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DHCPV6_STATELESS_SCOPE_STATS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCPV6_STATELESS_SCOPE_STATS = extern struct {
+    SubnetAddress: Windows.Win32.Dhcp.DHCP_IPV6_ADDRESS,
+    NumStatelessClientsAdded: {"kind":"UInt64"},
+    NumStatelessClientsRemoved: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: DHCPV6_STATELESS_STATS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCPV6_STATELESS_STATS = extern struct {
+    NumScopes: {"kind":"UInt32"},
+    ScopeStats: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCPV6_STATELESS_SCOPE_STATS},
+};
+// --------------------------------------------------------
+// Type: DHCP_FAILOVER_MODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DHCP_FAILOVER_MODE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DHCP_FAILOVER_SERVER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DHCP_FAILOVER_SERVER = *opaque{
+};
+// --------------------------------------------------------
+// Type: FSM_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FSM_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DHCP_FAILOVER_RELATIONSHIP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_FAILOVER_RELATIONSHIP = extern struct {
+    PrimaryServer: {"kind":"UInt32"},
+    SecondaryServer: {"kind":"UInt32"},
+    Mode: Windows.Win32.Dhcp.DHCP_FAILOVER_MODE,
+    ServerType: Windows.Win32.Dhcp.DHCP_FAILOVER_SERVER,
+    State: Windows.Win32.Dhcp.FSM_STATE,
+    PrevState: Windows.Win32.Dhcp.FSM_STATE,
+    Mclt: {"kind":"UInt32"},
+    SafePeriod: {"kind":"UInt32"},
+    RelationshipName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PrimaryServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SecondaryServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pScopes: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_IP_ARRAY},
+    Percentage: {"kind":"Byte"},
+    SharedSecret: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DHCP_FAILOVER_RELATIONSHIP_ARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_FAILOVER_RELATIONSHIP_ARRAY = extern struct {
+    NumElements: {"kind":"UInt32"},
+    pRelationships: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_FAILOVER_RELATIONSHIP},
+};
+// --------------------------------------------------------
+// Type: DHCPV4_FAILOVER_CLIENT_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCPV4_FAILOVER_CLIENT_INFO = extern struct {
+    ClientIpAddress: {"kind":"UInt32"},
+    SubnetMask: {"kind":"UInt32"},
+    ClientHardwareAddress: Windows.Win32.Dhcp.DHCP_BINARY_DATA,
+    ClientName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientComment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientLeaseExpires: Windows.Win32.Dhcp.DATE_TIME,
+    OwnerHost: Windows.Win32.Dhcp.DHCP_HOST_INFO,
+    bClientType: {"kind":"Byte"},
+    AddressState: {"kind":"Byte"},
+    Status: Windows.Win32.Dhcp.QuarantineStatus,
+    ProbationEnds: Windows.Win32.Dhcp.DATE_TIME,
+    QuarantineCapable: Windows.Win32.SystemServices.BOOL,
+    SentPotExpTime: {"kind":"UInt32"},
+    AckPotExpTime: {"kind":"UInt32"},
+    RecvPotExpTime: {"kind":"UInt32"},
+    StartTime: {"kind":"UInt32"},
+    CltLastTransTime: {"kind":"UInt32"},
+    LastBndUpdTime: {"kind":"UInt32"},
+    BndMsgStatus: {"kind":"UInt32"},
+    PolicyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: DHCPV4_FAILOVER_CLIENT_INFO_ARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCPV4_FAILOVER_CLIENT_INFO_ARRAY = extern struct {
+    NumElements: {"kind":"UInt32"},
+    Clients: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCPV4_FAILOVER_CLIENT_INFO}},
+};
+// --------------------------------------------------------
+// Type: DHCPV4_FAILOVER_CLIENT_INFO_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCPV4_FAILOVER_CLIENT_INFO_EX = extern struct {
+    ClientIpAddress: {"kind":"UInt32"},
+    SubnetMask: {"kind":"UInt32"},
+    ClientHardwareAddress: Windows.Win32.Dhcp.DHCP_BINARY_DATA,
+    ClientName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientComment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientLeaseExpires: Windows.Win32.Dhcp.DATE_TIME,
+    OwnerHost: Windows.Win32.Dhcp.DHCP_HOST_INFO,
+    bClientType: {"kind":"Byte"},
+    AddressState: {"kind":"Byte"},
+    Status: Windows.Win32.Dhcp.QuarantineStatus,
+    ProbationEnds: Windows.Win32.Dhcp.DATE_TIME,
+    QuarantineCapable: Windows.Win32.SystemServices.BOOL,
+    SentPotExpTime: {"kind":"UInt32"},
+    AckPotExpTime: {"kind":"UInt32"},
+    RecvPotExpTime: {"kind":"UInt32"},
+    StartTime: {"kind":"UInt32"},
+    CltLastTransTime: {"kind":"UInt32"},
+    LastBndUpdTime: {"kind":"UInt32"},
+    BndMsgStatus: {"kind":"UInt32"},
+    PolicyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"Byte"},
+    AddressStateEx: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DHCP_FAILOVER_STATISTICS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DHCP_FAILOVER_STATISTICS = extern struct {
+    NumAddr: {"kind":"UInt32"},
+    AddrFree: {"kind":"UInt32"},
+    AddrInUse: {"kind":"UInt32"},
+    PartnerAddrFree: {"kind":"UInt32"},
+    ThisAddrFree: {"kind":"UInt32"},
+    PartnerAddrInUse: {"kind":"UInt32"},
+    ThisAddrInUse: {"kind":"UInt32"},
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dhcpcsvc6" fn Dhcpv6CApiInitialize(
+    Version: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dhcpcsvc6" fn Dhcpv6CApiCleanup(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dhcpcsvc6" fn Dhcpv6RequestParams(
+    forceNewInform: Windows.Win32.SystemServices.BOOL,
+    reserved: {"kind""Ptr","child":{"kind":"Void"}},
+    adapterName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    classId: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCPV6CAPI_CLASSID},
+    recdParams: Windows.Win32.Dhcp.DHCPV6CAPI_PARAMS_ARRAY,
+    buffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    pSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dhcpcsvc6" fn Dhcpv6RequestPrefix(
+    adapterName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pclassId: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCPV6CAPI_CLASSID},
+    prefixleaseInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCPV6PrefixLeaseInformation},
+    pdwTimeToWait: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dhcpcsvc6" fn Dhcpv6RenewPrefix(
+    adapterName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pclassId: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCPV6CAPI_CLASSID},
+    prefixleaseInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCPV6PrefixLeaseInformation},
+    pdwTimeToWait: {"kind""Ptr","child":{"kind":"UInt32"}},
+    bValidatePrefix: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dhcpcsvc6" fn Dhcpv6ReleasePrefix(
+    adapterName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    classId: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCPV6CAPI_CLASSID},
+    leaseInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCPV6PrefixLeaseInformation},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dhcpcsvc" fn DhcpCApiInitialize(
+    Version: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dhcpcsvc" fn DhcpCApiCleanup(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dhcpcsvc" fn DhcpRequestParams(
+    Flags: {"kind":"UInt32"},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+    AdapterName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClassId: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCPCAPI_CLASSID},
+    SendParams: Windows.Win32.Dhcp.DHCPCAPI_PARAMS_ARRAY,
+    RecdParams: Windows.Win32.Dhcp.DHCPCAPI_PARAMS_ARRAY,
+    Buffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    pSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    RequestIdStr: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dhcpcsvc" fn DhcpUndoRequestParams(
+    Flags: {"kind":"UInt32"},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+    AdapterName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RequestIdStr: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dhcpcsvc" fn DhcpRegisterParamChange(
+    Flags: {"kind":"UInt32"},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+    AdapterName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClassId: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCPCAPI_CLASSID},
+    Params: Windows.Win32.Dhcp.DHCPCAPI_PARAMS_ARRAY,
+    Handle: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dhcpcsvc" fn DhcpDeRegisterParamChange(
+    Flags: {"kind":"UInt32"},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+    Event: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dhcpcsvc" fn DhcpRemoveDNSRegistrations(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dhcpcsvc" fn DhcpGetOriginalSubnetMask(
+    sAdapterName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwSubnetMask: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpAddFilterV4(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    AddFilterInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_FILTER_ADD_INFO},
+    ForceFlag: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpDeleteFilterV4(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DeleteFilterInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_ADDR_PATTERN},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpSetFilterV4(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    GlobalFilterInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_FILTER_GLOBAL_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetFilterV4(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    GlobalFilterInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_FILTER_GLOBAL_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpEnumFilterV4(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ResumeHandle: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_ADDR_PATTERN},
+    PreferredMaximum: {"kind":"UInt32"},
+    ListType: Windows.Win32.Dhcp.DHCP_FILTER_LIST_TYPE,
+    EnumFilterInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_FILTER_ENUM_INFO}},
+    ElementsRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ElementsTotal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpCreateSubnet(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    SubnetInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SUBNET_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpSetSubnetInfo(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    SubnetInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SUBNET_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetSubnetInfo(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    SubnetInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SUBNET_INFO}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpEnumSubnets(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ResumeHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreferredMaximum: {"kind":"UInt32"},
+    EnumInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_IP_ARRAY}},
+    ElementsRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ElementsTotal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpAddSubnetElement(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    AddElementInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SUBNET_ELEMENT_DATA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpEnumSubnetElements(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    EnumElementType: Windows.Win32.Dhcp.DHCP_SUBNET_ELEMENT_TYPE,
+    ResumeHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreferredMaximum: {"kind":"UInt32"},
+    EnumElementInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SUBNET_ELEMENT_INFO_ARRAY}},
+    ElementsRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ElementsTotal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpRemoveSubnetElement(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    RemoveElementInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SUBNET_ELEMENT_DATA},
+    ForceFlag: Windows.Win32.Dhcp.DHCP_FORCE_FLAG,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpDeleteSubnet(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    ForceFlag: Windows.Win32.Dhcp.DHCP_FORCE_FLAG,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpCreateOption(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    OptionID: {"kind":"UInt32"},
+    OptionInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpSetOptionInfo(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    OptionID: {"kind":"UInt32"},
+    OptionInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetOptionInfo(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    OptionID: {"kind":"UInt32"},
+    OptionInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpEnumOptions(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ResumeHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreferredMaximum: {"kind":"UInt32"},
+    Options: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_ARRAY}},
+    OptionsRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    OptionsTotal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpRemoveOption(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    OptionID: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpSetOptionValue(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    OptionID: {"kind":"UInt32"},
+    ScopeInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_SCOPE_INFO},
+    OptionValue: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_DATA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpSetOptionValues(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ScopeInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_SCOPE_INFO},
+    OptionValues: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_VALUE_ARRAY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetOptionValue(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    OptionID: {"kind":"UInt32"},
+    ScopeInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_SCOPE_INFO},
+    OptionValue: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_VALUE}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpEnumOptionValues(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ScopeInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_SCOPE_INFO},
+    ResumeHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreferredMaximum: {"kind":"UInt32"},
+    OptionValues: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_VALUE_ARRAY}},
+    OptionsRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    OptionsTotal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpRemoveOptionValue(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    OptionID: {"kind":"UInt32"},
+    ScopeInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_SCOPE_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpCreateClientInfoVQ(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO_VQ},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpSetClientInfoVQ(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO_VQ},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetClientInfoVQ(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SearchInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SEARCH_INFO},
+    ClientInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO_VQ}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpEnumSubnetClientsVQ(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    ResumeHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreferredMaximum: {"kind":"UInt32"},
+    ClientInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO_ARRAY_VQ}},
+    ClientsRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ClientsTotal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpEnumSubnetClientsFilterStatusInfo(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    ResumeHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreferredMaximum: {"kind":"UInt32"},
+    ClientInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_FILTER_STATUS_INFO_ARRAY}},
+    ClientsRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ClientsTotal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpCreateClientInfo(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpSetClientInfo(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetClientInfo(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SearchInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SEARCH_INFO},
+    ClientInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpDeleteClientInfo(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SEARCH_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpEnumSubnetClients(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    ResumeHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreferredMaximum: {"kind":"UInt32"},
+    ClientInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO_ARRAY}},
+    ClientsRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ClientsTotal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetClientOptions(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientIpAddress: {"kind":"UInt32"},
+    ClientSubnetMask: {"kind":"UInt32"},
+    ClientOptions: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_LIST}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetMibInfo(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    MibInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_MIB_INFO}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpServerSetConfig(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    FieldsToSet: {"kind":"UInt32"},
+    ConfigInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SERVER_CONFIG_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpServerGetConfig(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ConfigInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SERVER_CONFIG_INFO}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpScanDatabase(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    FixFlag: {"kind":"UInt32"},
+    ScanList: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SCAN_LIST}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpRpcFreeMemory(
+    BufferPointer: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetVersion(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    MajorVersion: {"kind""Ptr","child":{"kind":"UInt32"}},
+    MinorVersion: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpAddSubnetElementV4(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    AddElementInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SUBNET_ELEMENT_DATA_V4},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpEnumSubnetElementsV4(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    EnumElementType: Windows.Win32.Dhcp.DHCP_SUBNET_ELEMENT_TYPE,
+    ResumeHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreferredMaximum: {"kind":"UInt32"},
+    EnumElementInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SUBNET_ELEMENT_INFO_ARRAY_V4}},
+    ElementsRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ElementsTotal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpRemoveSubnetElementV4(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    RemoveElementInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SUBNET_ELEMENT_DATA_V4},
+    ForceFlag: Windows.Win32.Dhcp.DHCP_FORCE_FLAG,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpCreateClientInfoV4(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO_V4},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpSetClientInfoV4(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO_V4},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetClientInfoV4(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SearchInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SEARCH_INFO},
+    ClientInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO_V4}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpEnumSubnetClientsV4(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    ResumeHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreferredMaximum: {"kind":"UInt32"},
+    ClientInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO_ARRAY_V4}},
+    ClientsRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ClientsTotal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpServerSetConfigV4(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    FieldsToSet: {"kind":"UInt32"},
+    ConfigInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SERVER_CONFIG_INFO_V4},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpServerGetConfigV4(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ConfigInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SERVER_CONFIG_INFO_V4}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpSetSuperScopeV4(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    SuperScopeName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ChangeExisting: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpDeleteSuperScopeV4(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SuperScopeName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetSuperScopeInfoV4(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SuperScopeTable: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SUPER_SCOPE_TABLE}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpEnumSubnetClientsV5(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    ResumeHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreferredMaximum: {"kind":"UInt32"},
+    ClientInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO_ARRAY_V5}},
+    ClientsRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ClientsTotal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpCreateOptionV5(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    OptionId: {"kind":"UInt32"},
+    ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    VendorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    OptionInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpSetOptionInfoV5(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    OptionID: {"kind":"UInt32"},
+    ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    VendorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    OptionInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetOptionInfoV5(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    OptionID: {"kind":"UInt32"},
+    ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    VendorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    OptionInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpEnumOptionsV5(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    VendorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ResumeHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreferredMaximum: {"kind":"UInt32"},
+    Options: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_ARRAY}},
+    OptionsRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    OptionsTotal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpRemoveOptionV5(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    OptionID: {"kind":"UInt32"},
+    ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    VendorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpSetOptionValueV5(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    OptionId: {"kind":"UInt32"},
+    ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    VendorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ScopeInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_SCOPE_INFO},
+    OptionValue: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_DATA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpSetOptionValuesV5(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    VendorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ScopeInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_SCOPE_INFO},
+    OptionValues: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_VALUE_ARRAY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetOptionValueV5(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    OptionID: {"kind":"UInt32"},
+    ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    VendorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ScopeInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_SCOPE_INFO},
+    OptionValue: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_VALUE}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetOptionValueV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    OptionID: {"kind":"UInt32"},
+    ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    VendorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ScopeInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_SCOPE_INFO6},
+    OptionValue: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_VALUE}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpEnumOptionValuesV5(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    VendorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ScopeInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_SCOPE_INFO},
+    ResumeHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreferredMaximum: {"kind":"UInt32"},
+    OptionValues: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_VALUE_ARRAY}},
+    OptionsRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    OptionsTotal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpRemoveOptionValueV5(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    OptionID: {"kind":"UInt32"},
+    ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    VendorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ScopeInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_SCOPE_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpCreateClass(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReservedMustBeZero: {"kind":"UInt32"},
+    ClassInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLASS_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpModifyClass(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReservedMustBeZero: {"kind":"UInt32"},
+    ClassInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLASS_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpDeleteClass(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReservedMustBeZero: {"kind":"UInt32"},
+    ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetClassInfo(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReservedMustBeZero: {"kind":"UInt32"},
+    PartialClassInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLASS_INFO},
+    FilledClassInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLASS_INFO}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dhcpcsvc" fn DhcpEnumClasses(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReservedMustBeZero: {"kind":"UInt32"},
+    ResumeHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreferredMaximum: {"kind":"UInt32"},
+    ClassInfoArray: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLASS_INFO_ARRAY}},
+    nRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    nTotal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetAllOptions(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    OptionStruct: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_ALL_OPTIONS}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetAllOptionsV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    OptionStruct: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_ALL_OPTIONS}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetAllOptionValues(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    ScopeInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_SCOPE_INFO},
+    Values: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_ALL_OPTION_VALUES}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetAllOptionValuesV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    ScopeInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_SCOPE_INFO6},
+    Values: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_ALL_OPTION_VALUES}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpEnumServers(
+    Flags: {"kind":"UInt32"},
+    IdInfo: {"kind""Ptr","child":{"kind":"Void"}},
+    Servers: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCPDS_SERVERS}},
+    CallbackFn: {"kind""Ptr","child":{"kind":"Void"}},
+    CallbackData: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpAddServer(
+    Flags: {"kind":"UInt32"},
+    IdInfo: {"kind""Ptr","child":{"kind":"Void"}},
+    NewServer: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCPDS_SERVER},
+    CallbackFn: {"kind""Ptr","child":{"kind":"Void"}},
+    CallbackData: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpDeleteServer(
+    Flags: {"kind":"UInt32"},
+    IdInfo: {"kind""Ptr","child":{"kind":"Void"}},
+    NewServer: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCPDS_SERVER},
+    CallbackFn: {"kind""Ptr","child":{"kind":"Void"}},
+    CallbackData: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetServerBindingInfo(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    BindElementsInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_BIND_ELEMENT_ARRAY}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpSetServerBindingInfo(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    BindElementInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_BIND_ELEMENT_ARRAY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpAddSubnetElementV5(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    AddElementInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SUBNET_ELEMENT_DATA_V5},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpEnumSubnetElementsV5(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    EnumElementType: Windows.Win32.Dhcp.DHCP_SUBNET_ELEMENT_TYPE,
+    ResumeHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreferredMaximum: {"kind":"UInt32"},
+    EnumElementInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SUBNET_ELEMENT_INFO_ARRAY_V5}},
+    ElementsRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ElementsTotal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpRemoveSubnetElementV5(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    RemoveElementInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SUBNET_ELEMENT_DATA_V5},
+    ForceFlag: Windows.Win32.Dhcp.DHCP_FORCE_FLAG,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4EnumSubnetReservations(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    ResumeHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreferredMaximum: {"kind":"UInt32"},
+    EnumElementInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_RESERVATION_INFO_ARRAY}},
+    ElementsRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ElementsTotal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpCreateOptionV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    OptionId: {"kind":"UInt32"},
+    ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    VendorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    OptionInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpRemoveOptionV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    OptionID: {"kind":"UInt32"},
+    ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    VendorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpEnumOptionsV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    VendorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ResumeHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreferredMaximum: {"kind":"UInt32"},
+    Options: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_ARRAY}},
+    OptionsRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    OptionsTotal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpRemoveOptionValueV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    OptionID: {"kind":"UInt32"},
+    ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    VendorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ScopeInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_SCOPE_INFO6},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetOptionInfoV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    OptionID: {"kind":"UInt32"},
+    ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    VendorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    OptionInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpSetOptionInfoV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    OptionID: {"kind":"UInt32"},
+    ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    VendorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    OptionInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpSetOptionValueV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    OptionId: {"kind":"UInt32"},
+    ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    VendorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ScopeInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_SCOPE_INFO6},
+    OptionValue: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_DATA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetSubnetInfoVQ(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    SubnetInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SUBNET_INFO_VQ}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpCreateSubnetVQ(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    SubnetInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SUBNET_INFO_VQ},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpSetSubnetInfoVQ(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    SubnetInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SUBNET_INFO_VQ},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpEnumOptionValuesV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    VendorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ScopeInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_SCOPE_INFO6},
+    ResumeHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreferredMaximum: {"kind":"UInt32"},
+    OptionValues: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_VALUE_ARRAY}},
+    OptionsRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    OptionsTotal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpDsInit(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpDsCleanup(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpSetThreadOptions(
+    Flags: {"kind":"UInt32"},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetThreadOptions(
+    pFlags: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpServerQueryAttribute(
+    ServerIpAddr: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwReserved: {"kind":"UInt32"},
+    DhcpAttribId: {"kind":"UInt32"},
+    pDhcpAttrib: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_ATTRIB}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpServerQueryAttributes(
+    ServerIpAddr: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwReserved: {"kind":"UInt32"},
+    dwAttribCount: {"kind":"UInt32"},
+    pDhcpAttribs: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pDhcpAttribArr: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_ATTRIB_ARRAY}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpServerRedoAuthorization(
+    ServerIpAddr: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpAuditLogSetParams(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    AuditLogDir: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DiskCheckInterval: {"kind":"UInt32"},
+    MaxLogFilesSize: {"kind":"UInt32"},
+    MinSpaceOnDisk: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpAuditLogGetParams(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    AuditLogDir: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    DiskCheckInterval: {"kind""Ptr","child":{"kind":"UInt32"}},
+    MaxLogFilesSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    MinSpaceOnDisk: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpServerQueryDnsRegCredentials(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    UnameSize: {"kind":"UInt32"},
+    Uname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DomainSize: {"kind":"UInt32"},
+    Domain: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpServerSetDnsRegCredentials(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Uname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Domain: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Passwd: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpServerSetDnsRegCredentialsV5(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Uname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Domain: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Passwd: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpServerBackupDatabase(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Path: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpServerRestoreDatabase(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Path: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpServerSetConfigVQ(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    FieldsToSet: {"kind":"UInt32"},
+    ConfigInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SERVER_CONFIG_INFO_VQ},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpServerGetConfigVQ(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ConfigInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SERVER_CONFIG_INFO_VQ}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetServerSpecificStrings(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ServerSpecificStrings: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SERVER_SPECIFIC_STRINGS}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpServerAuditlogParamsFree(
+    ConfigInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SERVER_CONFIG_INFO_VQ},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpCreateSubnetV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: Windows.Win32.Dhcp.DHCP_IPV6_ADDRESS,
+    SubnetInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SUBNET_INFO_V6},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpDeleteSubnetV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: Windows.Win32.Dhcp.DHCP_IPV6_ADDRESS,
+    ForceFlag: Windows.Win32.Dhcp.DHCP_FORCE_FLAG,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpEnumSubnetsV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ResumeHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreferredMaximum: {"kind":"UInt32"},
+    EnumInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCPV6_IP_ARRAY}},
+    ElementsRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ElementsTotal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpAddSubnetElementV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: Windows.Win32.Dhcp.DHCP_IPV6_ADDRESS,
+    AddElementInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SUBNET_ELEMENT_DATA_V6},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpRemoveSubnetElementV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: Windows.Win32.Dhcp.DHCP_IPV6_ADDRESS,
+    RemoveElementInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SUBNET_ELEMENT_DATA_V6},
+    ForceFlag: Windows.Win32.Dhcp.DHCP_FORCE_FLAG,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpEnumSubnetElementsV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: Windows.Win32.Dhcp.DHCP_IPV6_ADDRESS,
+    EnumElementType: Windows.Win32.Dhcp.DHCP_SUBNET_ELEMENT_TYPE_V6,
+    ResumeHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreferredMaximum: {"kind":"UInt32"},
+    EnumElementInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SUBNET_ELEMENT_INFO_ARRAY_V6}},
+    ElementsRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ElementsTotal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetSubnetInfoV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: Windows.Win32.Dhcp.DHCP_IPV6_ADDRESS,
+    SubnetInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SUBNET_INFO_V6}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpEnumSubnetClientsV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: Windows.Win32.Dhcp.DHCP_IPV6_ADDRESS,
+    ResumeHandle: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_IPV6_ADDRESS},
+    PreferredMaximum: {"kind":"UInt32"},
+    ClientInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO_ARRAY_V6}},
+    ClientsRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ClientsTotal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpServerGetConfigV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ScopeInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_SCOPE_INFO6},
+    ConfigInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SERVER_CONFIG_INFO_V6}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpServerSetConfigV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ScopeInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_SCOPE_INFO6},
+    FieldsToSet: {"kind":"UInt32"},
+    ConfigInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SERVER_CONFIG_INFO_V6},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpSetSubnetInfoV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: Windows.Win32.Dhcp.DHCP_IPV6_ADDRESS,
+    SubnetInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SUBNET_INFO_V6},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetMibInfoV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    MibInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_MIB_INFO_V6}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetServerBindingInfoV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    BindElementsInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCPV6_BIND_ELEMENT_ARRAY}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpSetServerBindingInfoV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    BindElementInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCPV6_BIND_ELEMENT_ARRAY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpSetClientInfoV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO_V6},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetClientInfoV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SearchInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SEARCH_INFO_V6},
+    ClientInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO_V6}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpDeleteClientInfoV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SEARCH_INFO_V6},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpCreateClassV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReservedMustBeZero: {"kind":"UInt32"},
+    ClassInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLASS_INFO_V6},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpModifyClassV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReservedMustBeZero: {"kind":"UInt32"},
+    ClassInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLASS_INFO_V6},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpDeleteClassV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReservedMustBeZero: {"kind":"UInt32"},
+    ClassName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpEnumClassesV6(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ReservedMustBeZero: {"kind":"UInt32"},
+    ResumeHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreferredMaximum: {"kind":"UInt32"},
+    ClassInfoArray: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLASS_INFO_ARRAY_V6}},
+    nRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    nTotal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpSetSubnetDelayOffer(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    TimeDelayInMilliseconds: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetSubnetDelayOffer(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    TimeDelayInMilliseconds: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpGetMibInfoV5(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    MibInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_MIB_INFO_V5}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpAddSecurityGroup(
+    pServer: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4GetOptionValue(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    OptionID: {"kind":"UInt32"},
+    PolicyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    VendorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ScopeInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_SCOPE_INFO},
+    OptionValue: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_VALUE}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4SetOptionValue(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    OptionId: {"kind":"UInt32"},
+    PolicyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    VendorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ScopeInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_SCOPE_INFO},
+    OptionValue: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_DATA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4SetOptionValues(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    PolicyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    VendorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ScopeInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_SCOPE_INFO},
+    OptionValues: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_VALUE_ARRAY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4RemoveOptionValue(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    OptionID: {"kind":"UInt32"},
+    PolicyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    VendorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ScopeInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_SCOPE_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4GetAllOptionValues(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    ScopeInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_OPTION_SCOPE_INFO},
+    Values: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_ALL_OPTION_VALUES_PB}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4FailoverCreateRelationship(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pRelationship: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_FAILOVER_RELATIONSHIP},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4FailoverSetRelationship(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+    pRelationship: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_FAILOVER_RELATIONSHIP},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4FailoverDeleteRelationship(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pRelationshipName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4FailoverGetRelationship(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pRelationshipName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pRelationship: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_FAILOVER_RELATIONSHIP}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4FailoverEnumRelationship(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ResumeHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreferredMaximum: {"kind":"UInt32"},
+    pRelationship: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_FAILOVER_RELATIONSHIP_ARRAY}},
+    RelationshipRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    RelationshipTotal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4FailoverAddScopeToRelationship(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pRelationship: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_FAILOVER_RELATIONSHIP},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4FailoverDeleteScopeFromRelationship(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pRelationship: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_FAILOVER_RELATIONSHIP},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4FailoverGetScopeRelationship(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ScopeId: {"kind":"UInt32"},
+    pRelationship: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_FAILOVER_RELATIONSHIP}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4FailoverGetScopeStatistics(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ScopeId: {"kind":"UInt32"},
+    pStats: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_FAILOVER_STATISTICS}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4FailoverGetClientInfo(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SearchInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SEARCH_INFO},
+    ClientInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCPV4_FAILOVER_CLIENT_INFO}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4FailoverGetSystemTime(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pTime: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pMaxAllowedDeltaTime: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4FailoverGetAddressStatus(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    pStatus: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4FailoverTriggerAddrAllocation(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pFailRelName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpHlprCreateV4Policy(
+    PolicyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fGlobalPolicy: Windows.Win32.SystemServices.BOOL,
+    Subnet: {"kind":"UInt32"},
+    ProcessingOrder: {"kind":"UInt32"},
+    RootOperator: Windows.Win32.Dhcp.DHCP_POL_LOGIC_OPER,
+    Description: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Enabled: Windows.Win32.SystemServices.BOOL,
+    Policy: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POLICY}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpHlprCreateV4PolicyEx(
+    PolicyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fGlobalPolicy: Windows.Win32.SystemServices.BOOL,
+    Subnet: {"kind":"UInt32"},
+    ProcessingOrder: {"kind":"UInt32"},
+    RootOperator: Windows.Win32.Dhcp.DHCP_POL_LOGIC_OPER,
+    Description: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Enabled: Windows.Win32.SystemServices.BOOL,
+    Policy: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POLICY_EX}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpHlprAddV4PolicyExpr(
+    Policy: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POLICY},
+    ParentExpr: {"kind":"UInt32"},
+    Operator: Windows.Win32.Dhcp.DHCP_POL_LOGIC_OPER,
+    ExprIndex: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpHlprAddV4PolicyCondition(
+    Policy: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POLICY},
+    ParentExpr: {"kind":"UInt32"},
+    Type: Windows.Win32.Dhcp.DHCP_POL_ATTR_TYPE,
+    OptionID: {"kind":"UInt32"},
+    SubOptionID: {"kind":"UInt32"},
+    VendorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Operator: Windows.Win32.Dhcp.DHCP_POL_COMPARATOR,
+    Value: {"kind""Ptr","child":{"kind":"Byte"}},
+    ValueLength: {"kind":"UInt32"},
+    ConditionIndex: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpHlprAddV4PolicyRange(
+    Policy: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POLICY},
+    Range: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_IP_RANGE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpHlprResetV4PolicyExpr(
+    Policy: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POLICY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpHlprModifyV4PolicyExpr(
+    Policy: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POLICY},
+    Operator: Windows.Win32.Dhcp.DHCP_POL_LOGIC_OPER,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpHlprFreeV4Policy(
+    Policy: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POLICY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpHlprFreeV4PolicyArray(
+    PolicyArray: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POLICY_ARRAY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpHlprFreeV4PolicyEx(
+    PolicyEx: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POLICY_EX},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpHlprFreeV4PolicyExArray(
+    PolicyExArray: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POLICY_EX_ARRAY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpHlprFreeV4DhcpProperty(
+    Property: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_PROPERTY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpHlprFreeV4DhcpPropertyArray(
+    PropertyArray: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_PROPERTY_ARRAY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpHlprFindV4DhcpProperty(
+    PropertyArray: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_PROPERTY_ARRAY},
+    ID: Windows.Win32.Dhcp.DHCP_PROPERTY_ID,
+    Type: Windows.Win32.Dhcp.DHCP_PROPERTY_TYPE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpHlprIsV4PolicySingleUC(
+    Policy: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POLICY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4QueryPolicyEnforcement(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fGlobalPolicy: Windows.Win32.SystemServices.BOOL,
+    SubnetAddress: {"kind":"UInt32"},
+    Enabled: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4SetPolicyEnforcement(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fGlobalPolicy: Windows.Win32.SystemServices.BOOL,
+    SubnetAddress: {"kind":"UInt32"},
+    Enable: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpHlprIsV4PolicyWellFormed(
+    pPolicy: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POLICY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpHlprIsV4PolicyValid(
+    pPolicy: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POLICY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4CreatePolicy(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pPolicy: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POLICY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4GetPolicy(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fGlobalPolicy: Windows.Win32.SystemServices.BOOL,
+    SubnetAddress: {"kind":"UInt32"},
+    PolicyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Policy: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POLICY}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4SetPolicy(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    FieldsModified: {"kind":"UInt32"},
+    fGlobalPolicy: Windows.Win32.SystemServices.BOOL,
+    SubnetAddress: {"kind":"UInt32"},
+    PolicyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Policy: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POLICY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4DeletePolicy(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fGlobalPolicy: Windows.Win32.SystemServices.BOOL,
+    SubnetAddress: {"kind":"UInt32"},
+    PolicyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4EnumPolicies(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ResumeHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreferredMaximum: {"kind":"UInt32"},
+    fGlobalPolicy: Windows.Win32.SystemServices.BOOL,
+    SubnetAddress: {"kind":"UInt32"},
+    EnumInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POLICY_ARRAY}},
+    ElementsRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ElementsTotal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4AddPolicyRange(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    PolicyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Range: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_IP_RANGE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4RemovePolicyRange(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    PolicyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Range: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_IP_RANGE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV6SetStatelessStoreParams(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fServerLevel: Windows.Win32.SystemServices.BOOL,
+    SubnetAddress: Windows.Win32.Dhcp.DHCP_IPV6_ADDRESS,
+    FieldModified: {"kind":"UInt32"},
+    Params: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCPV6_STATELESS_PARAMS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV6GetStatelessStoreParams(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fServerLevel: Windows.Win32.SystemServices.BOOL,
+    SubnetAddress: Windows.Win32.Dhcp.DHCP_IPV6_ADDRESS,
+    Params: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCPV6_STATELESS_PARAMS}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV6GetStatelessStatistics(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    StatelessStats: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCPV6_STATELESS_STATS}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4CreateClientInfo(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO_PB},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4EnumSubnetClients(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    ResumeHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreferredMaximum: {"kind":"UInt32"},
+    ClientInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO_PB_ARRAY}},
+    ClientsRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ClientsTotal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4GetClientInfo(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SearchInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SEARCH_INFO},
+    ClientInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO_PB}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV6CreateClientInfo(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO_V6},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4GetFreeIPAddress(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ScopeId: {"kind":"UInt32"},
+    StartIP: {"kind":"UInt32"},
+    EndIP: {"kind":"UInt32"},
+    NumFreeAddrReq: {"kind":"UInt32"},
+    IPAddrList: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_IP_ARRAY}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV6GetFreeIPAddress(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ScopeId: Windows.Win32.Dhcp.DHCP_IPV6_ADDRESS,
+    StartIP: Windows.Win32.Dhcp.DHCP_IPV6_ADDRESS,
+    EndIP: Windows.Win32.Dhcp.DHCP_IPV6_ADDRESS,
+    NumFreeAddrReq: {"kind":"UInt32"},
+    IPAddrList: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCPV6_IP_ARRAY}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4CreateClientInfoEx(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO_EX},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4EnumSubnetClientsEx(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SubnetAddress: {"kind":"UInt32"},
+    ResumeHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreferredMaximum: {"kind":"UInt32"},
+    ClientInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO_EX_ARRAY}},
+    ClientsRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ClientsTotal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4GetClientInfoEx(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SearchInfo: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_SEARCH_INFO},
+    ClientInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_CLIENT_INFO_EX}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4CreatePolicyEx(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PolicyEx: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POLICY_EX},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4GetPolicyEx(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    GlobalPolicy: Windows.Win32.SystemServices.BOOL,
+    SubnetAddress: {"kind":"UInt32"},
+    PolicyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Policy: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POLICY_EX}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4SetPolicyEx(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    FieldsModified: {"kind":"UInt32"},
+    GlobalPolicy: Windows.Win32.SystemServices.BOOL,
+    SubnetAddress: {"kind":"UInt32"},
+    PolicyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Policy: {"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POLICY_EX},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DHCPSAPI" fn DhcpV4EnumPoliciesEx(
+    ServerIpAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ResumeHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PreferredMaximum: {"kind":"UInt32"},
+    GlobalPolicy: Windows.Win32.SystemServices.BOOL,
+    SubnetAddress: {"kind":"UInt32"},
+    EnumInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Dhcp.DHCP_POLICY_EX_ARRAY}},
+    ElementsRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ElementsTotal: {"kind""Ptr","child":{"kind":"UInt32"}},
+],
+
+"unicode_aliases": [
+]}

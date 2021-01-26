@@ -1,0 +1,117 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: IProtectionPolicyManagerInterop
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IProtectionPolicyManagerInterop = *opaque{
+    // TODO: Method 'RequestAccessForWindowAsync'
+    // TODO: Method 'GetForWindow'
+};
+// --------------------------------------------------------
+// Type: IProtectionPolicyManagerInterop2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IProtectionPolicyManagerInterop2 = *opaque{
+    // TODO: Method 'RequestAccessForAppWithWindowAsync'
+    // TODO: Method 'RequestAccessWithAuditingInfoForWindowAsync'
+    // TODO: Method 'RequestAccessWithMessageForWindowAsync'
+    // TODO: Method 'RequestAccessForAppWithAuditingInfoForWindowAsync'
+    // TODO: Method 'RequestAccessForAppWithMessageForWindowAsync'
+};
+// --------------------------------------------------------
+// Type: IProtectionPolicyManagerInterop3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IProtectionPolicyManagerInterop3 = *opaque{
+    // TODO: Method 'RequestAccessWithBehaviorForWindowAsync'
+    // TODO: Method 'RequestAccessForAppWithBehaviorForWindowAsync'
+    // TODO: Method 'RequestAccessToFilesForAppForWindowAsync'
+    // TODO: Method 'RequestAccessToFilesForAppWithMessageAndBehaviorForWindowAsync'
+    // TODO: Method 'RequestAccessToFilesForProcessForWindowAsync'
+    // TODO: Method 'RequestAccessToFilesForProcessWithMessageAndBehaviorForWindowAsync'
+};
+// --------------------------------------------------------
+// Type: HTHREAD_NETWORK_CONTEXT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTHREAD_NETWORK_CONTEXT = extern struct {
+    ThreadId: {"kind":"UInt32"},
+    ThreadContext: Windows.Win32.SystemServices.HANDLE,
+};
+// --------------------------------------------------------
+// Type: ENTERPRISE_DATA_POLICIES
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ENTERPRISE_DATA_POLICIES = *opaque{
+};
+// --------------------------------------------------------
+// Type: FILE_UNPROTECT_OPTIONS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FILE_UNPROTECT_OPTIONS = extern struct {
+    audit: {"kind":"Boolean"},
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "srpapi" fn SrpCreateThreadNetworkContext(
+    enterpriseId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    threadNetworkContext: {"kind""Ptr","child":Windows.Win32.WindowsInformationProtection.HTHREAD_NETWORK_CONTEXT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "srpapi" fn SrpCloseThreadNetworkContext(
+    threadNetworkContext: {"kind""Ptr","child":Windows.Win32.WindowsInformationProtection.HTHREAD_NETWORK_CONTEXT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "srpapi" fn SrpSetTokenEnterpriseId(
+    tokenHandle: Windows.Win32.SystemServices.HANDLE,
+    enterpriseId: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "srpapi" fn SrpGetEnterpriseIds(
+    tokenHandle: Windows.Win32.SystemServices.HANDLE,
+    numberOfBytes: {"kind""Ptr","child":{"kind":"UInt32"}},
+    enterpriseIds: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    enterpriseIdCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "srpapi" fn SrpEnablePermissiveModeFileEncryption(
+    enterpriseId: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "srpapi" fn SrpDisablePermissiveModeFileEncryption(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "srpapi" fn SrpGetEnterprisePolicy(
+    tokenHandle: Windows.Win32.SystemServices.HANDLE,
+    policyFlags: {"kind""Ptr","child":Windows.Win32.WindowsInformationProtection.ENTERPRISE_DATA_POLICIES},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "srpapi" fn SrpIsTokenService(
+    TokenHandle: Windows.Win32.SystemServices.HANDLE,
+    IsTokenService: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "srpapi" fn SrpDoesPolicyAllowAppExecution(
+    packageId: {"kind""Ptr","child":Windows.Win32.AppxPackaging.PACKAGE_ID},
+    isAllowed: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "efswrt" fn ProtectFileToEnterpriseIdentity(
+    fileOrFolderPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    identity: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "efswrt" fn UnprotectFile(
+    fileOrFolderPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    options: {"kind""Ptr","child":Windows.Win32.WindowsInformationProtection.FILE_UNPROTECT_OPTIONS},
+],
+
+"unicode_aliases": [
+]}

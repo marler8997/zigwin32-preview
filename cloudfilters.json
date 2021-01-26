@@ -1,0 +1,998 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: CF_CONNECTION_KEY__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CF_CONNECTION_KEY__ = extern struct {
+    Internal: {"kind":"Int64"},
+};
+// --------------------------------------------------------
+// Type: CF_FS_METADATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CF_FS_METADATA = extern struct {
+    BasicInfo: Windows.Win32.FileSystem.FILE_BASIC_INFO,
+    FileSize: Windows.Win32.SystemServices.LARGE_INTEGER,
+};
+// --------------------------------------------------------
+// Type: CF_PLACEHOLDER_CREATE_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_PLACEHOLDER_CREATE_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_PLACEHOLDER_CREATE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CF_PLACEHOLDER_CREATE_INFO = extern struct {
+    RelativeFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    FsMetadata: Windows.Win32.CloudFilters.CF_FS_METADATA,
+    FileIdentity: {"kind""Ptr","child":{"kind":"Void"}},
+    FileIdentityLength: {"kind":"UInt32"},
+    Flags: Windows.Win32.CloudFilters.CF_PLACEHOLDER_CREATE_FLAGS,
+    Result: Windows.Win32.Com.HRESULT,
+    CreateUsn: {"kind":"Int64"},
+};
+// --------------------------------------------------------
+// Type: CF_SYNC_PROVIDER_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_SYNC_PROVIDER_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_PROCESS_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CF_PROCESS_INFO = extern struct {
+    StructSize: {"kind":"UInt32"},
+    ProcessId: {"kind":"UInt32"},
+    ImagePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PackageName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ApplicationId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    CommandLine: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SessionId: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: CF_PLATFORM_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CF_PLATFORM_INFO = extern struct {
+    BuildNumber: {"kind":"UInt32"},
+    RevisionNumber: {"kind":"UInt32"},
+    IntegrationNumber: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: CF_REGISTER_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_REGISTER_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_HYDRATION_POLICY_PRIMARY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_HYDRATION_POLICY_PRIMARY = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_HYDRATION_POLICY_PRIMARY_USHORT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CF_HYDRATION_POLICY_PRIMARY_USHORT = extern struct {
+    us: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: CF_HYDRATION_POLICY_MODIFIER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_HYDRATION_POLICY_MODIFIER = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_HYDRATION_POLICY_MODIFIER_USHORT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CF_HYDRATION_POLICY_MODIFIER_USHORT = extern struct {
+    us: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: CF_HYDRATION_POLICY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CF_HYDRATION_POLICY = extern struct {
+    Primary: Windows.Win32.CloudFilters.CF_HYDRATION_POLICY_PRIMARY_USHORT,
+    Modifier: Windows.Win32.CloudFilters.CF_HYDRATION_POLICY_MODIFIER_USHORT,
+};
+// --------------------------------------------------------
+// Type: CF_POPULATION_POLICY_PRIMARY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_POPULATION_POLICY_PRIMARY = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_POPULATION_POLICY_PRIMARY_USHORT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CF_POPULATION_POLICY_PRIMARY_USHORT = extern struct {
+    us: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: CF_POPULATION_POLICY_MODIFIER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_POPULATION_POLICY_MODIFIER = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_POPULATION_POLICY_MODIFIER_USHORT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CF_POPULATION_POLICY_MODIFIER_USHORT = extern struct {
+    us: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: CF_POPULATION_POLICY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CF_POPULATION_POLICY = extern struct {
+    Primary: Windows.Win32.CloudFilters.CF_POPULATION_POLICY_PRIMARY_USHORT,
+    Modifier: Windows.Win32.CloudFilters.CF_POPULATION_POLICY_MODIFIER_USHORT,
+};
+// --------------------------------------------------------
+// Type: CF_PLACEHOLDER_MANAGEMENT_POLICY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_PLACEHOLDER_MANAGEMENT_POLICY = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_INSYNC_POLICY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_INSYNC_POLICY = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_HARDLINK_POLICY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_HARDLINK_POLICY = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_SYNC_POLICIES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CF_SYNC_POLICIES = extern struct {
+    StructSize: {"kind":"UInt32"},
+    Hydration: Windows.Win32.CloudFilters.CF_HYDRATION_POLICY,
+    Population: Windows.Win32.CloudFilters.CF_POPULATION_POLICY,
+    InSync: Windows.Win32.CloudFilters.CF_INSYNC_POLICY,
+    HardLink: Windows.Win32.CloudFilters.CF_HARDLINK_POLICY,
+    PlaceholderManagement: Windows.Win32.CloudFilters.CF_PLACEHOLDER_MANAGEMENT_POLICY,
+};
+// --------------------------------------------------------
+// Type: CF_SYNC_REGISTRATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CF_SYNC_REGISTRATION = extern struct {
+    StructSize: {"kind":"UInt32"},
+    ProviderName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ProviderVersion: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SyncRootIdentity: {"kind""Ptr","child":{"kind":"Void"}},
+    SyncRootIdentityLength: {"kind":"UInt32"},
+    FileIdentity: {"kind""Ptr","child":{"kind":"Void"}},
+    FileIdentityLength: {"kind":"UInt32"},
+    ProviderId: Guid,
+};
+// --------------------------------------------------------
+// Type: CF_CALLBACK_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CF_CALLBACK_INFO = extern struct {
+    StructSize: {"kind":"UInt32"},
+    ConnectionKey: Windows.Win32.CloudFilters.CF_CONNECTION_KEY__,
+    CallbackContext: {"kind""Ptr","child":{"kind":"Void"}},
+    VolumeGuidName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    VolumeDosName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    VolumeSerialNumber: {"kind":"UInt32"},
+    SyncRootFileId: Windows.Win32.SystemServices.LARGE_INTEGER,
+    SyncRootIdentity: {"kind""Ptr","child":{"kind":"Void"}},
+    SyncRootIdentityLength: {"kind":"UInt32"},
+    FileId: Windows.Win32.SystemServices.LARGE_INTEGER,
+    FileSize: Windows.Win32.SystemServices.LARGE_INTEGER,
+    FileIdentity: {"kind""Ptr","child":{"kind":"Void"}},
+    FileIdentityLength: {"kind":"UInt32"},
+    NormalizedPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TransferKey: Windows.Win32.SystemServices.LARGE_INTEGER,
+    PriorityHint: {"kind":"Byte"},
+    CorrelationVector: {"kind""Ptr","child":Windows.Win32.SystemServices.CORRELATION_VECTOR},
+    ProcessInfo: {"kind""Ptr","child":Windows.Win32.CloudFilters.CF_PROCESS_INFO},
+    RequestKey: Windows.Win32.SystemServices.LARGE_INTEGER,
+};
+// --------------------------------------------------------
+// Type: CF_CALLBACK_CANCEL_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_CALLBACK_CANCEL_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_CALLBACK_FETCH_DATA_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_CALLBACK_FETCH_DATA_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_CALLBACK_VALIDATE_DATA_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_CALLBACK_VALIDATE_DATA_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_CALLBACK_FETCH_PLACEHOLDERS_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_CALLBACK_FETCH_PLACEHOLDERS_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_CALLBACK_OPEN_COMPLETION_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_CALLBACK_OPEN_COMPLETION_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_CALLBACK_CLOSE_COMPLETION_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_CALLBACK_CLOSE_COMPLETION_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_CALLBACK_DEHYDRATE_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_CALLBACK_DEHYDRATE_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_CALLBACK_DEHYDRATE_COMPLETION_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_CALLBACK_DEHYDRATE_COMPLETION_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_CALLBACK_DELETE_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_CALLBACK_DELETE_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_CALLBACK_DELETE_COMPLETION_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_CALLBACK_DELETE_COMPLETION_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_CALLBACK_RENAME_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_CALLBACK_RENAME_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_CALLBACK_RENAME_COMPLETION_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_CALLBACK_RENAME_COMPLETION_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_CALLBACK_DEHYDRATION_REASON
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_CALLBACK_DEHYDRATION_REASON = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_CALLBACK_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CF_CALLBACK_PARAMETERS = extern struct {
+    ParamSize: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.CloudFilters.CF_CALLBACK_PARAMETERS+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _RenameCompletion_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _RenameCompletion_e__Struct = extern struct {
+            Flags: Windows.Win32.CloudFilters.CF_CALLBACK_RENAME_COMPLETION_FLAGS,
+            SourcePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+        };
+        // --------------------------------------------------------
+        // Type: _DeleteCompletion_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _DeleteCompletion_e__Struct = extern struct {
+            Flags: Windows.Win32.CloudFilters.CF_CALLBACK_DELETE_COMPLETION_FLAGS,
+        };
+        // --------------------------------------------------------
+        // Type: _DehydrateCompletion_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _DehydrateCompletion_e__Struct = extern struct {
+            Flags: Windows.Win32.CloudFilters.CF_CALLBACK_DEHYDRATE_COMPLETION_FLAGS,
+            Reason: Windows.Win32.CloudFilters.CF_CALLBACK_DEHYDRATION_REASON,
+        };
+        // --------------------------------------------------------
+        // Type: _CloseCompletion_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _CloseCompletion_e__Struct = extern struct {
+            Flags: Windows.Win32.CloudFilters.CF_CALLBACK_CLOSE_COMPLETION_FLAGS,
+        };
+        // --------------------------------------------------------
+        // Type: _FetchPlaceholders_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _FetchPlaceholders_e__Struct = extern struct {
+            Flags: Windows.Win32.CloudFilters.CF_CALLBACK_FETCH_PLACEHOLDERS_FLAGS,
+            Pattern: {"kind""Ptr","child":{"kind":"UInt16"}},
+        };
+        // --------------------------------------------------------
+        // Type: _FetchData_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _FetchData_e__Struct = extern struct {
+            Flags: Windows.Win32.CloudFilters.CF_CALLBACK_FETCH_DATA_FLAGS,
+            RequiredFileOffset: Windows.Win32.SystemServices.LARGE_INTEGER,
+            RequiredLength: Windows.Win32.SystemServices.LARGE_INTEGER,
+            OptionalFileOffset: Windows.Win32.SystemServices.LARGE_INTEGER,
+            OptionalLength: Windows.Win32.SystemServices.LARGE_INTEGER,
+            LastDehydrationTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+            LastDehydrationReason: Windows.Win32.CloudFilters.CF_CALLBACK_DEHYDRATION_REASON,
+        };
+        // --------------------------------------------------------
+        // Type: _Cancel_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Cancel_e__Struct = extern struct {
+            Flags: Windows.Win32.CloudFilters.CF_CALLBACK_CANCEL_FLAGS,
+            Anonymous: Windows.Win32.CloudFilters.CF_CALLBACK_PARAMETERS+_Anonymous_e__Union+_Cancel_e__Struct+_Anonymous_e__Union,
+            // --------------------------------------------------------
+            // Type: _Anonymous_e__Union
+            // TypeLayoutAttr: explicit
+            // not generating the actual code for this type because it has an explicit layout
+            pub const _Anonymous_e__Union = *opaque{
+                // --------------------------------------------------------
+                // Type: _FetchData_e__Struct
+                // TypeLayoutAttr: sequential
+                // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+                pub const _FetchData_e__Struct = extern struct {
+                    FileOffset: Windows.Win32.SystemServices.LARGE_INTEGER,
+                    Length: Windows.Win32.SystemServices.LARGE_INTEGER,
+                };
+            };
+        };
+        // --------------------------------------------------------
+        // Type: _Rename_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Rename_e__Struct = extern struct {
+            Flags: Windows.Win32.CloudFilters.CF_CALLBACK_RENAME_FLAGS,
+            TargetPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+        };
+        // --------------------------------------------------------
+        // Type: _Dehydrate_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Dehydrate_e__Struct = extern struct {
+            Flags: Windows.Win32.CloudFilters.CF_CALLBACK_DEHYDRATE_FLAGS,
+            Reason: Windows.Win32.CloudFilters.CF_CALLBACK_DEHYDRATION_REASON,
+        };
+        // --------------------------------------------------------
+        // Type: _ValidateData_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _ValidateData_e__Struct = extern struct {
+            Flags: Windows.Win32.CloudFilters.CF_CALLBACK_VALIDATE_DATA_FLAGS,
+            RequiredFileOffset: Windows.Win32.SystemServices.LARGE_INTEGER,
+            RequiredLength: Windows.Win32.SystemServices.LARGE_INTEGER,
+        };
+        // --------------------------------------------------------
+        // Type: _OpenCompletion_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _OpenCompletion_e__Struct = extern struct {
+            Flags: Windows.Win32.CloudFilters.CF_CALLBACK_OPEN_COMPLETION_FLAGS,
+        };
+        // --------------------------------------------------------
+        // Type: _Delete_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Delete_e__Struct = extern struct {
+            Flags: Windows.Win32.CloudFilters.CF_CALLBACK_DELETE_FLAGS,
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: CF_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: CF_CALLBACK_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_CALLBACK_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_CALLBACK_REGISTRATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CF_CALLBACK_REGISTRATION = extern struct {
+    Type: Windows.Win32.CloudFilters.CF_CALLBACK_TYPE,
+    Callback: Windows.Win32.CloudFilters.CF_CALLBACK,
+};
+// --------------------------------------------------------
+// Type: CF_CONNECT_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_CONNECT_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_OPERATION_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_OPERATION_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_SYNC_STATUS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CF_SYNC_STATUS = extern struct {
+    StructSize: {"kind":"UInt32"},
+    Code: {"kind":"UInt32"},
+    DescriptionOffset: {"kind":"UInt32"},
+    DescriptionLength: {"kind":"UInt32"},
+    DeviceIdOffset: {"kind":"UInt32"},
+    DeviceIdLength: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: CF_OPERATION_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CF_OPERATION_INFO = extern struct {
+    StructSize: {"kind":"UInt32"},
+    Type: Windows.Win32.CloudFilters.CF_OPERATION_TYPE,
+    ConnectionKey: Windows.Win32.CloudFilters.CF_CONNECTION_KEY__,
+    TransferKey: Windows.Win32.SystemServices.LARGE_INTEGER,
+    CorrelationVector: {"kind""Ptr","child":Windows.Win32.SystemServices.CORRELATION_VECTOR},
+    SyncStatus: {"kind""Ptr","child":Windows.Win32.CloudFilters.CF_SYNC_STATUS},
+    RequestKey: Windows.Win32.SystemServices.LARGE_INTEGER,
+};
+// --------------------------------------------------------
+// Type: CF_OPERATION_TRANSFER_DATA_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_OPERATION_TRANSFER_DATA_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_OPERATION_RETRIEVE_DATA_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_OPERATION_RETRIEVE_DATA_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_OPERATION_ACK_DATA_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_OPERATION_ACK_DATA_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_OPERATION_RESTART_HYDRATION_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_OPERATION_RESTART_HYDRATION_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_OPERATION_TRANSFER_PLACEHOLDERS_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_OPERATION_TRANSFER_PLACEHOLDERS_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_OPERATION_ACK_DEHYDRATE_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_OPERATION_ACK_DEHYDRATE_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_OPERATION_ACK_RENAME_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_OPERATION_ACK_RENAME_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_OPERATION_ACK_DELETE_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_OPERATION_ACK_DELETE_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_OPERATION_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CF_OPERATION_PARAMETERS = extern struct {
+    ParamSize: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.CloudFilters.CF_OPERATION_PARAMETERS+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _AckDelete_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _AckDelete_e__Struct = extern struct {
+            Flags: Windows.Win32.CloudFilters.CF_OPERATION_ACK_DELETE_FLAGS,
+            CompletionStatus: Windows.Win32.SystemServices.NTSTATUS,
+        };
+        // --------------------------------------------------------
+        // Type: _AckDehydrate_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _AckDehydrate_e__Struct = extern struct {
+            Flags: Windows.Win32.CloudFilters.CF_OPERATION_ACK_DEHYDRATE_FLAGS,
+            CompletionStatus: Windows.Win32.SystemServices.NTSTATUS,
+            FileIdentity: {"kind""Ptr","child":{"kind":"Void"}},
+            FileIdentityLength: {"kind":"UInt32"},
+        };
+        // --------------------------------------------------------
+        // Type: _RestartHydration_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _RestartHydration_e__Struct = extern struct {
+            Flags: Windows.Win32.CloudFilters.CF_OPERATION_RESTART_HYDRATION_FLAGS,
+            FsMetadata: {"kind""Ptr","child":Windows.Win32.CloudFilters.CF_FS_METADATA},
+            FileIdentity: {"kind""Ptr","child":{"kind":"Void"}},
+            FileIdentityLength: {"kind":"UInt32"},
+        };
+        // --------------------------------------------------------
+        // Type: _RetrieveData_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _RetrieveData_e__Struct = extern struct {
+            Flags: Windows.Win32.CloudFilters.CF_OPERATION_RETRIEVE_DATA_FLAGS,
+            Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+            Offset: Windows.Win32.SystemServices.LARGE_INTEGER,
+            Length: Windows.Win32.SystemServices.LARGE_INTEGER,
+            ReturnedLength: Windows.Win32.SystemServices.LARGE_INTEGER,
+        };
+        // --------------------------------------------------------
+        // Type: _AckRename_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _AckRename_e__Struct = extern struct {
+            Flags: Windows.Win32.CloudFilters.CF_OPERATION_ACK_RENAME_FLAGS,
+            CompletionStatus: Windows.Win32.SystemServices.NTSTATUS,
+        };
+        // --------------------------------------------------------
+        // Type: _AckData_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _AckData_e__Struct = extern struct {
+            Flags: Windows.Win32.CloudFilters.CF_OPERATION_ACK_DATA_FLAGS,
+            CompletionStatus: Windows.Win32.SystemServices.NTSTATUS,
+            Offset: Windows.Win32.SystemServices.LARGE_INTEGER,
+            Length: Windows.Win32.SystemServices.LARGE_INTEGER,
+        };
+        // --------------------------------------------------------
+        // Type: _TransferData_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _TransferData_e__Struct = extern struct {
+            Flags: Windows.Win32.CloudFilters.CF_OPERATION_TRANSFER_DATA_FLAGS,
+            CompletionStatus: Windows.Win32.SystemServices.NTSTATUS,
+            Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+            Offset: Windows.Win32.SystemServices.LARGE_INTEGER,
+            Length: Windows.Win32.SystemServices.LARGE_INTEGER,
+        };
+        // --------------------------------------------------------
+        // Type: _TransferPlaceholders_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _TransferPlaceholders_e__Struct = extern struct {
+            Flags: Windows.Win32.CloudFilters.CF_OPERATION_TRANSFER_PLACEHOLDERS_FLAGS,
+            CompletionStatus: Windows.Win32.SystemServices.NTSTATUS,
+            PlaceholderTotalCount: Windows.Win32.SystemServices.LARGE_INTEGER,
+            PlaceholderArray: {"kind""Ptr","child":Windows.Win32.CloudFilters.CF_PLACEHOLDER_CREATE_INFO},
+            PlaceholderCount: {"kind":"UInt32"},
+            EntriesProcessed: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: CF_CREATE_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_CREATE_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_OPEN_FILE_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_OPEN_FILE_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_FILE_RANGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CF_FILE_RANGE = extern struct {
+    StartingOffset: Windows.Win32.SystemServices.LARGE_INTEGER,
+    Length: Windows.Win32.SystemServices.LARGE_INTEGER,
+};
+// --------------------------------------------------------
+// Type: CF_CONVERT_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_CONVERT_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_UPDATE_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_UPDATE_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_REVERT_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_REVERT_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_HYDRATE_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_HYDRATE_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_DEHYDRATE_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_DEHYDRATE_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_PIN_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_PIN_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_SET_PIN_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_SET_PIN_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_IN_SYNC_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_IN_SYNC_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_SET_IN_SYNC_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_SET_IN_SYNC_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_PLACEHOLDER_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_PLACEHOLDER_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_PLACEHOLDER_INFO_CLASS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_PLACEHOLDER_INFO_CLASS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_PLACEHOLDER_BASIC_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CF_PLACEHOLDER_BASIC_INFO = extern struct {
+    PinState: Windows.Win32.CloudFilters.CF_PIN_STATE,
+    InSyncState: Windows.Win32.CloudFilters.CF_IN_SYNC_STATE,
+    FileId: Windows.Win32.SystemServices.LARGE_INTEGER,
+    SyncRootFileId: Windows.Win32.SystemServices.LARGE_INTEGER,
+    FileIdentityLength: {"kind":"UInt32"},
+    FileIdentity: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: CF_PLACEHOLDER_STANDARD_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CF_PLACEHOLDER_STANDARD_INFO = extern struct {
+    OnDiskDataSize: Windows.Win32.SystemServices.LARGE_INTEGER,
+    ValidatedDataSize: Windows.Win32.SystemServices.LARGE_INTEGER,
+    ModifiedDataSize: Windows.Win32.SystemServices.LARGE_INTEGER,
+    PropertiesSize: Windows.Win32.SystemServices.LARGE_INTEGER,
+    PinState: Windows.Win32.CloudFilters.CF_PIN_STATE,
+    InSyncState: Windows.Win32.CloudFilters.CF_IN_SYNC_STATE,
+    FileId: Windows.Win32.SystemServices.LARGE_INTEGER,
+    SyncRootFileId: Windows.Win32.SystemServices.LARGE_INTEGER,
+    FileIdentityLength: {"kind":"UInt32"},
+    FileIdentity: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: CF_SYNC_ROOT_INFO_CLASS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_SYNC_ROOT_INFO_CLASS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CF_SYNC_ROOT_BASIC_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CF_SYNC_ROOT_BASIC_INFO = extern struct {
+    SyncRootFileId: Windows.Win32.SystemServices.LARGE_INTEGER,
+};
+// --------------------------------------------------------
+// Type: CF_SYNC_ROOT_PROVIDER_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CF_SYNC_ROOT_PROVIDER_INFO = extern struct {
+    ProviderStatus: Windows.Win32.CloudFilters.CF_SYNC_PROVIDER_STATUS,
+    ProviderName: {"kind":"Array","child": {"kind":"UInt16"}},
+    ProviderVersion: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: CF_SYNC_ROOT_STANDARD_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CF_SYNC_ROOT_STANDARD_INFO = extern struct {
+    SyncRootFileId: Windows.Win32.SystemServices.LARGE_INTEGER,
+    HydrationPolicy: Windows.Win32.CloudFilters.CF_HYDRATION_POLICY,
+    PopulationPolicy: Windows.Win32.CloudFilters.CF_POPULATION_POLICY,
+    InSyncPolicy: Windows.Win32.CloudFilters.CF_INSYNC_POLICY,
+    HardLinkPolicy: Windows.Win32.CloudFilters.CF_HARDLINK_POLICY,
+    ProviderStatus: Windows.Win32.CloudFilters.CF_SYNC_PROVIDER_STATUS,
+    ProviderName: {"kind":"Array","child": {"kind":"UInt16"}},
+    ProviderVersion: {"kind":"Array","child": {"kind":"UInt16"}},
+    SyncRootIdentityLength: {"kind":"UInt32"},
+    SyncRootIdentity: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: CF_PLACEHOLDER_RANGE_INFO_CLASS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CF_PLACEHOLDER_RANGE_INFO_CLASS = *opaque{
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfGetPlatformInfo(
+    PlatformVersion: {"kind""Ptr","child":Windows.Win32.CloudFilters.CF_PLATFORM_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfRegisterSyncRoot(
+    SyncRootPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Registration: {"kind""Ptr","child":Windows.Win32.CloudFilters.CF_SYNC_REGISTRATION},
+    Policies: {"kind""Ptr","child":Windows.Win32.CloudFilters.CF_SYNC_POLICIES},
+    RegisterFlags: Windows.Win32.CloudFilters.CF_REGISTER_FLAGS,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfUnregisterSyncRoot(
+    SyncRootPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfConnectSyncRoot(
+    SyncRootPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    CallbackTable: {"kind""Ptr","child":Windows.Win32.CloudFilters.CF_CALLBACK_REGISTRATION},
+    CallbackContext: {"kind""Ptr","child":{"kind":"Void"}},
+    ConnectFlags: Windows.Win32.CloudFilters.CF_CONNECT_FLAGS,
+    ConnectionKey: {"kind""Ptr","child":Windows.Win32.CloudFilters.CF_CONNECTION_KEY__},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfDisconnectSyncRoot(
+    ConnectionKey: Windows.Win32.CloudFilters.CF_CONNECTION_KEY__,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfGetTransferKey(
+    FileHandle: Windows.Win32.SystemServices.HANDLE,
+    TransferKey: {"kind""Ptr","child":Windows.Win32.SystemServices.LARGE_INTEGER},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfReleaseTransferKey(
+    FileHandle: Windows.Win32.SystemServices.HANDLE,
+    TransferKey: {"kind""Ptr","child":Windows.Win32.SystemServices.LARGE_INTEGER},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfExecute(
+    OpInfo: {"kind""Ptr","child":Windows.Win32.CloudFilters.CF_OPERATION_INFO},
+    OpParams: {"kind""Ptr","child":Windows.Win32.CloudFilters.CF_OPERATION_PARAMETERS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfUpdateSyncProviderStatus(
+    ConnectionKey: Windows.Win32.CloudFilters.CF_CONNECTION_KEY__,
+    ProviderStatus: Windows.Win32.CloudFilters.CF_SYNC_PROVIDER_STATUS,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfQuerySyncProviderStatus(
+    ConnectionKey: Windows.Win32.CloudFilters.CF_CONNECTION_KEY__,
+    ProviderStatus: {"kind""Ptr","child":Windows.Win32.CloudFilters.CF_SYNC_PROVIDER_STATUS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfReportSyncStatus(
+    SyncRootPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SyncStatus: {"kind""Ptr","child":Windows.Win32.CloudFilters.CF_SYNC_STATUS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfCreatePlaceholders(
+    BaseDirectoryPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PlaceholderArray: {"kind""Ptr","child":Windows.Win32.CloudFilters.CF_PLACEHOLDER_CREATE_INFO},
+    PlaceholderCount: {"kind":"UInt32"},
+    CreateFlags: Windows.Win32.CloudFilters.CF_CREATE_FLAGS,
+    EntriesProcessed: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfOpenFileWithOplock(
+    FilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: Windows.Win32.CloudFilters.CF_OPEN_FILE_FLAGS,
+    ProtectedHandle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfReferenceProtectedHandle(
+    ProtectedHandle: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfGetWin32HandleFromProtectedHandle(
+    ProtectedHandle: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfReleaseProtectedHandle(
+    ProtectedHandle: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfCloseHandle(
+    FileHandle: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfConvertToPlaceholder(
+    FileHandle: Windows.Win32.SystemServices.HANDLE,
+    FileIdentity: {"kind""Ptr","child":{"kind":"Void"}},
+    FileIdentityLength: {"kind":"UInt32"},
+    ConvertFlags: Windows.Win32.CloudFilters.CF_CONVERT_FLAGS,
+    ConvertUsn: {"kind""Ptr","child":{"kind":"Int64"}},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfUpdatePlaceholder(
+    FileHandle: Windows.Win32.SystemServices.HANDLE,
+    FsMetadata: {"kind""Ptr","child":Windows.Win32.CloudFilters.CF_FS_METADATA},
+    FileIdentity: {"kind""Ptr","child":{"kind":"Void"}},
+    FileIdentityLength: {"kind":"UInt32"},
+    DehydrateRangeArray: {"kind""Ptr","child":Windows.Win32.CloudFilters.CF_FILE_RANGE},
+    DehydrateRangeCount: {"kind":"UInt32"},
+    UpdateFlags: Windows.Win32.CloudFilters.CF_UPDATE_FLAGS,
+    UpdateUsn: {"kind""Ptr","child":{"kind":"Int64"}},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfRevertPlaceholder(
+    FileHandle: Windows.Win32.SystemServices.HANDLE,
+    RevertFlags: Windows.Win32.CloudFilters.CF_REVERT_FLAGS,
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfHydratePlaceholder(
+    FileHandle: Windows.Win32.SystemServices.HANDLE,
+    StartingOffset: Windows.Win32.SystemServices.LARGE_INTEGER,
+    Length: Windows.Win32.SystemServices.LARGE_INTEGER,
+    HydrateFlags: Windows.Win32.CloudFilters.CF_HYDRATE_FLAGS,
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfDehydratePlaceholder(
+    FileHandle: Windows.Win32.SystemServices.HANDLE,
+    StartingOffset: Windows.Win32.SystemServices.LARGE_INTEGER,
+    Length: Windows.Win32.SystemServices.LARGE_INTEGER,
+    DehydrateFlags: Windows.Win32.CloudFilters.CF_DEHYDRATE_FLAGS,
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfSetPinState(
+    FileHandle: Windows.Win32.SystemServices.HANDLE,
+    PinState: Windows.Win32.CloudFilters.CF_PIN_STATE,
+    PinFlags: Windows.Win32.CloudFilters.CF_SET_PIN_FLAGS,
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfSetInSyncState(
+    FileHandle: Windows.Win32.SystemServices.HANDLE,
+    InSyncState: Windows.Win32.CloudFilters.CF_IN_SYNC_STATE,
+    InSyncFlags: Windows.Win32.CloudFilters.CF_SET_IN_SYNC_FLAGS,
+    InSyncUsn: {"kind""Ptr","child":{"kind":"Int64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfSetCorrelationVector(
+    FileHandle: Windows.Win32.SystemServices.HANDLE,
+    CorrelationVector: {"kind""Ptr","child":Windows.Win32.SystemServices.CORRELATION_VECTOR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfGetCorrelationVector(
+    FileHandle: Windows.Win32.SystemServices.HANDLE,
+    CorrelationVector: {"kind""Ptr","child":Windows.Win32.SystemServices.CORRELATION_VECTOR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfGetPlaceholderStateFromAttributeTag(
+    FileAttributes: {"kind":"UInt32"},
+    ReparseTag: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfGetPlaceholderStateFromFileInfo(
+    InfoBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    InfoClass: Windows.Win32.FileSystem.FILE_INFO_BY_HANDLE_CLASS,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfGetPlaceholderStateFromFindData(
+    FindData: {"kind""Ptr","child":Windows.Win32.FileSystem.WIN32_FIND_DATAA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfGetPlaceholderInfo(
+    FileHandle: Windows.Win32.SystemServices.HANDLE,
+    InfoClass: Windows.Win32.CloudFilters.CF_PLACEHOLDER_INFO_CLASS,
+    InfoBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    InfoBufferLength: {"kind":"UInt32"},
+    ReturnedLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfGetSyncRootInfoByPath(
+    FilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InfoClass: Windows.Win32.CloudFilters.CF_SYNC_ROOT_INFO_CLASS,
+    InfoBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    InfoBufferLength: {"kind":"UInt32"},
+    ReturnedLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfGetSyncRootInfoByHandle(
+    FileHandle: Windows.Win32.SystemServices.HANDLE,
+    InfoClass: Windows.Win32.CloudFilters.CF_SYNC_ROOT_INFO_CLASS,
+    InfoBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    InfoBufferLength: {"kind":"UInt32"},
+    ReturnedLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfGetPlaceholderRangeInfo(
+    FileHandle: Windows.Win32.SystemServices.HANDLE,
+    InfoClass: Windows.Win32.CloudFilters.CF_PLACEHOLDER_RANGE_INFO_CLASS,
+    StartingOffset: Windows.Win32.SystemServices.LARGE_INTEGER,
+    Length: Windows.Win32.SystemServices.LARGE_INTEGER,
+    InfoBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    InfoBufferLength: {"kind":"UInt32"},
+    ReturnedLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfReportProviderProgress(
+    ConnectionKey: Windows.Win32.CloudFilters.CF_CONNECTION_KEY__,
+    TransferKey: Windows.Win32.SystemServices.LARGE_INTEGER,
+    ProviderProgressTotal: Windows.Win32.SystemServices.LARGE_INTEGER,
+    ProviderProgressCompleted: Windows.Win32.SystemServices.LARGE_INTEGER,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "cldapi" fn CfReportProviderProgress2(
+    ConnectionKey: Windows.Win32.CloudFilters.CF_CONNECTION_KEY__,
+    TransferKey: Windows.Win32.SystemServices.LARGE_INTEGER,
+    RequestKey: Windows.Win32.SystemServices.LARGE_INTEGER,
+    ProviderProgressTotal: Windows.Win32.SystemServices.LARGE_INTEGER,
+    ProviderProgressCompleted: Windows.Win32.SystemServices.LARGE_INTEGER,
+    TargetSessionId: {"kind":"UInt32"},
+],
+
+"unicode_aliases": [
+]}

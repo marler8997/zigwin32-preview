@@ -1,0 +1,2964 @@
+﻿{
+"constants": [
+     {
+         "name": "g_dwWMSpecialAttributes"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 20
+    }
+    ,{
+         "name": "g_wszWMDuration"
+        ,"type": {"kind":"String"}
+        ,"value": "Duration"
+    }
+    ,{
+         "name": "g_wszWMBitrate"
+        ,"type": {"kind":"String"}
+        ,"value": "Bitrate"
+    }
+    ,{
+         "name": "g_wszWMSeekable"
+        ,"type": {"kind":"String"}
+        ,"value": "Seekable"
+    }
+    ,{
+         "name": "g_wszWMStridable"
+        ,"type": {"kind":"String"}
+        ,"value": "Stridable"
+    }
+    ,{
+         "name": "g_wszWMBroadcast"
+        ,"type": {"kind":"String"}
+        ,"value": "Broadcast"
+    }
+    ,{
+         "name": "g_wszWMProtected"
+        ,"type": {"kind":"String"}
+        ,"value": "Is_Protected"
+    }
+    ,{
+         "name": "g_wszWMTrusted"
+        ,"type": {"kind":"String"}
+        ,"value": "Is_Trusted"
+    }
+    ,{
+         "name": "g_wszWMSignature_Name"
+        ,"type": {"kind":"String"}
+        ,"value": "Signature_Name"
+    }
+    ,{
+         "name": "g_wszWMHasAudio"
+        ,"type": {"kind":"String"}
+        ,"value": "HasAudio"
+    }
+    ,{
+         "name": "g_wszWMHasImage"
+        ,"type": {"kind":"String"}
+        ,"value": "HasImage"
+    }
+    ,{
+         "name": "g_wszWMHasScript"
+        ,"type": {"kind":"String"}
+        ,"value": "HasScript"
+    }
+    ,{
+         "name": "g_wszWMHasVideo"
+        ,"type": {"kind":"String"}
+        ,"value": "HasVideo"
+    }
+    ,{
+         "name": "g_wszWMCurrentBitrate"
+        ,"type": {"kind":"String"}
+        ,"value": "CurrentBitrate"
+    }
+    ,{
+         "name": "g_wszWMOptimalBitrate"
+        ,"type": {"kind":"String"}
+        ,"value": "OptimalBitrate"
+    }
+    ,{
+         "name": "g_wszWMHasAttachedImages"
+        ,"type": {"kind":"String"}
+        ,"value": "HasAttachedImages"
+    }
+    ,{
+         "name": "g_wszWMSkipBackward"
+        ,"type": {"kind":"String"}
+        ,"value": "Can_Skip_Backward"
+    }
+    ,{
+         "name": "g_wszWMSkipForward"
+        ,"type": {"kind":"String"}
+        ,"value": "Can_Skip_Forward"
+    }
+    ,{
+         "name": "g_wszWMNumberOfFrames"
+        ,"type": {"kind":"String"}
+        ,"value": "NumberOfFrames"
+    }
+    ,{
+         "name": "g_wszWMFileSize"
+        ,"type": {"kind":"String"}
+        ,"value": "FileSize"
+    }
+    ,{
+         "name": "g_wszWMHasArbitraryDataStream"
+        ,"type": {"kind":"String"}
+        ,"value": "HasArbitraryDataStream"
+    }
+    ,{
+         "name": "g_wszWMHasFileTransferStream"
+        ,"type": {"kind":"String"}
+        ,"value": "HasFileTransferStream"
+    }
+    ,{
+         "name": "g_wszWMContainerFormat"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/ContainerFormat"
+    }
+    ,{
+         "name": "g_dwWMContentAttributes"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 5
+    }
+    ,{
+         "name": "g_wszWMTitle"
+        ,"type": {"kind":"String"}
+        ,"value": "Title"
+    }
+    ,{
+         "name": "g_wszWMTitleSort"
+        ,"type": {"kind":"String"}
+        ,"value": "TitleSort"
+    }
+    ,{
+         "name": "g_wszWMAuthor"
+        ,"type": {"kind":"String"}
+        ,"value": "Author"
+    }
+    ,{
+         "name": "g_wszWMAuthorSort"
+        ,"type": {"kind":"String"}
+        ,"value": "AuthorSort"
+    }
+    ,{
+         "name": "g_wszWMDescription"
+        ,"type": {"kind":"String"}
+        ,"value": "Description"
+    }
+    ,{
+         "name": "g_wszWMRating"
+        ,"type": {"kind":"String"}
+        ,"value": "Rating"
+    }
+    ,{
+         "name": "g_wszWMCopyright"
+        ,"type": {"kind":"String"}
+        ,"value": "Copyright"
+    }
+    ,{
+         "name": "g_wszWMUse_DRM"
+        ,"type": {"kind":"String"}
+        ,"value": "Use_DRM"
+    }
+    ,{
+         "name": "g_wszWMDRM_Flags"
+        ,"type": {"kind":"String"}
+        ,"value": "DRM_Flags"
+    }
+    ,{
+         "name": "g_wszWMDRM_Level"
+        ,"type": {"kind":"String"}
+        ,"value": "DRM_Level"
+    }
+    ,{
+         "name": "g_wszWMUse_Advanced_DRM"
+        ,"type": {"kind":"String"}
+        ,"value": "Use_Advanced_DRM"
+    }
+    ,{
+         "name": "g_wszWMDRM_KeySeed"
+        ,"type": {"kind":"String"}
+        ,"value": "DRM_KeySeed"
+    }
+    ,{
+         "name": "g_wszWMDRM_KeyID"
+        ,"type": {"kind":"String"}
+        ,"value": "DRM_KeyID"
+    }
+    ,{
+         "name": "g_wszWMDRM_ContentID"
+        ,"type": {"kind":"String"}
+        ,"value": "DRM_ContentID"
+    }
+    ,{
+         "name": "g_wszWMDRM_SourceID"
+        ,"type": {"kind":"String"}
+        ,"value": "DRM_SourceID"
+    }
+    ,{
+         "name": "g_wszWMDRM_IndividualizedVersion"
+        ,"type": {"kind":"String"}
+        ,"value": "DRM_IndividualizedVersion"
+    }
+    ,{
+         "name": "g_wszWMDRM_LicenseAcqURL"
+        ,"type": {"kind":"String"}
+        ,"value": "DRM_LicenseAcqURL"
+    }
+    ,{
+         "name": "g_wszWMDRM_V1LicenseAcqURL"
+        ,"type": {"kind":"String"}
+        ,"value": "DRM_V1LicenseAcqURL"
+    }
+    ,{
+         "name": "g_wszWMDRM_HeaderSignPrivKey"
+        ,"type": {"kind":"String"}
+        ,"value": "DRM_HeaderSignPrivKey"
+    }
+    ,{
+         "name": "g_wszWMDRM_LASignaturePrivKey"
+        ,"type": {"kind":"String"}
+        ,"value": "DRM_LASignaturePrivKey"
+    }
+    ,{
+         "name": "g_wszWMDRM_LASignatureCert"
+        ,"type": {"kind":"String"}
+        ,"value": "DRM_LASignatureCert"
+    }
+    ,{
+         "name": "g_wszWMDRM_LASignatureLicSrvCert"
+        ,"type": {"kind":"String"}
+        ,"value": "DRM_LASignatureLicSrvCert"
+    }
+    ,{
+         "name": "g_wszWMDRM_LASignatureRootCert"
+        ,"type": {"kind":"String"}
+        ,"value": "DRM_LASignatureRootCert"
+    }
+    ,{
+         "name": "g_wszWMAlbumTitle"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/AlbumTitle"
+    }
+    ,{
+         "name": "g_wszWMAlbumTitleSort"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/AlbumTitleSort"
+    }
+    ,{
+         "name": "g_wszWMTrack"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/Track"
+    }
+    ,{
+         "name": "g_wszWMPromotionURL"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/PromotionURL"
+    }
+    ,{
+         "name": "g_wszWMAlbumCoverURL"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/AlbumCoverURL"
+    }
+    ,{
+         "name": "g_wszWMGenre"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/Genre"
+    }
+    ,{
+         "name": "g_wszWMYear"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/Year"
+    }
+    ,{
+         "name": "g_wszWMGenreID"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/GenreID"
+    }
+    ,{
+         "name": "g_wszWMMCDI"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/MCDI"
+    }
+    ,{
+         "name": "g_wszWMComposer"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/Composer"
+    }
+    ,{
+         "name": "g_wszWMComposerSort"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/ComposerSort"
+    }
+    ,{
+         "name": "g_wszWMLyrics"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/Lyrics"
+    }
+    ,{
+         "name": "g_wszWMTrackNumber"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/TrackNumber"
+    }
+    ,{
+         "name": "g_wszWMToolName"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/ToolName"
+    }
+    ,{
+         "name": "g_wszWMToolVersion"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/ToolVersion"
+    }
+    ,{
+         "name": "g_wszWMIsVBR"
+        ,"type": {"kind":"String"}
+        ,"value": "IsVBR"
+    }
+    ,{
+         "name": "g_wszWMAlbumArtist"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/AlbumArtist"
+    }
+    ,{
+         "name": "g_wszWMAlbumArtistSort"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/AlbumArtistSort"
+    }
+    ,{
+         "name": "g_wszWMBannerImageType"
+        ,"type": {"kind":"String"}
+        ,"value": "BannerImageType"
+    }
+    ,{
+         "name": "g_wszWMBannerImageData"
+        ,"type": {"kind":"String"}
+        ,"value": "BannerImageData"
+    }
+    ,{
+         "name": "g_wszWMBannerImageURL"
+        ,"type": {"kind":"String"}
+        ,"value": "BannerImageURL"
+    }
+    ,{
+         "name": "g_wszWMCopyrightURL"
+        ,"type": {"kind":"String"}
+        ,"value": "CopyrightURL"
+    }
+    ,{
+         "name": "g_wszWMAspectRatioX"
+        ,"type": {"kind":"String"}
+        ,"value": "AspectRatioX"
+    }
+    ,{
+         "name": "g_wszWMAspectRatioY"
+        ,"type": {"kind":"String"}
+        ,"value": "AspectRatioY"
+    }
+    ,{
+         "name": "g_wszASFLeakyBucketPairs"
+        ,"type": {"kind":"String"}
+        ,"value": "ASFLeakyBucketPairs"
+    }
+    ,{
+         "name": "g_dwWMNSCAttributes"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 5
+    }
+    ,{
+         "name": "g_wszWMNSCName"
+        ,"type": {"kind":"String"}
+        ,"value": "NSC_Name"
+    }
+    ,{
+         "name": "g_wszWMNSCAddress"
+        ,"type": {"kind":"String"}
+        ,"value": "NSC_Address"
+    }
+    ,{
+         "name": "g_wszWMNSCPhone"
+        ,"type": {"kind":"String"}
+        ,"value": "NSC_Phone"
+    }
+    ,{
+         "name": "g_wszWMNSCEmail"
+        ,"type": {"kind":"String"}
+        ,"value": "NSC_Email"
+    }
+    ,{
+         "name": "g_wszWMNSCDescription"
+        ,"type": {"kind":"String"}
+        ,"value": "NSC_Description"
+    }
+    ,{
+         "name": "g_wszWMWriter"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/Writer"
+    }
+    ,{
+         "name": "g_wszWMConductor"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/Conductor"
+    }
+    ,{
+         "name": "g_wszWMProducer"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/Producer"
+    }
+    ,{
+         "name": "g_wszWMDirector"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/Director"
+    }
+    ,{
+         "name": "g_wszWMContentGroupDescription"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/ContentGroupDescription"
+    }
+    ,{
+         "name": "g_wszWMSubTitle"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/SubTitle"
+    }
+    ,{
+         "name": "g_wszWMPartOfSet"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/PartOfSet"
+    }
+    ,{
+         "name": "g_wszWMProtectionType"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/ProtectionType"
+    }
+    ,{
+         "name": "g_wszWMVideoHeight"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/VideoHeight"
+    }
+    ,{
+         "name": "g_wszWMVideoWidth"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/VideoWidth"
+    }
+    ,{
+         "name": "g_wszWMVideoFrameRate"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/VideoFrameRate"
+    }
+    ,{
+         "name": "g_wszWMMediaClassPrimaryID"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/MediaClassPrimaryID"
+    }
+    ,{
+         "name": "g_wszWMMediaClassSecondaryID"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/MediaClassSecondaryID"
+    }
+    ,{
+         "name": "g_wszWMPeriod"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/Period"
+    }
+    ,{
+         "name": "g_wszWMCategory"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/Category"
+    }
+    ,{
+         "name": "g_wszWMPicture"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/Picture"
+    }
+    ,{
+         "name": "g_wszWMLyrics_Synchronised"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/Lyrics_Synchronised"
+    }
+    ,{
+         "name": "g_wszWMOriginalLyricist"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/OriginalLyricist"
+    }
+    ,{
+         "name": "g_wszWMOriginalArtist"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/OriginalArtist"
+    }
+    ,{
+         "name": "g_wszWMOriginalAlbumTitle"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/OriginalAlbumTitle"
+    }
+    ,{
+         "name": "g_wszWMOriginalReleaseYear"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/OriginalReleaseYear"
+    }
+    ,{
+         "name": "g_wszWMOriginalFilename"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/OriginalFilename"
+    }
+    ,{
+         "name": "g_wszWMPublisher"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/Publisher"
+    }
+    ,{
+         "name": "g_wszWMEncodedBy"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/EncodedBy"
+    }
+    ,{
+         "name": "g_wszWMEncodingSettings"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/EncodingSettings"
+    }
+    ,{
+         "name": "g_wszWMEncodingTime"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/EncodingTime"
+    }
+    ,{
+         "name": "g_wszWMAuthorURL"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/AuthorURL"
+    }
+    ,{
+         "name": "g_wszWMUserWebURL"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/UserWebURL"
+    }
+    ,{
+         "name": "g_wszWMAudioFileURL"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/AudioFileURL"
+    }
+    ,{
+         "name": "g_wszWMAudioSourceURL"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/AudioSourceURL"
+    }
+    ,{
+         "name": "g_wszWMLanguage"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/Language"
+    }
+    ,{
+         "name": "g_wszWMParentalRating"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/ParentalRating"
+    }
+    ,{
+         "name": "g_wszWMBeatsPerMinute"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/BeatsPerMinute"
+    }
+    ,{
+         "name": "g_wszWMInitialKey"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/InitialKey"
+    }
+    ,{
+         "name": "g_wszWMMood"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/Mood"
+    }
+    ,{
+         "name": "g_wszWMText"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/Text"
+    }
+    ,{
+         "name": "g_wszWMDVDID"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/DVDID"
+    }
+    ,{
+         "name": "g_wszWMWMContentID"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/WMContentID"
+    }
+    ,{
+         "name": "g_wszWMWMCollectionID"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/WMCollectionID"
+    }
+    ,{
+         "name": "g_wszWMWMCollectionGroupID"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/WMCollectionGroupID"
+    }
+    ,{
+         "name": "g_wszWMUniqueFileIdentifier"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/UniqueFileIdentifier"
+    }
+    ,{
+         "name": "g_wszWMModifiedBy"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/ModifiedBy"
+    }
+    ,{
+         "name": "g_wszWMRadioStationName"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/RadioStationName"
+    }
+    ,{
+         "name": "g_wszWMRadioStationOwner"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/RadioStationOwner"
+    }
+    ,{
+         "name": "g_wszWMPlaylistDelay"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/PlaylistDelay"
+    }
+    ,{
+         "name": "g_wszWMCodec"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/Codec"
+    }
+    ,{
+         "name": "g_wszWMDRM"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/DRM"
+    }
+    ,{
+         "name": "g_wszWMISRC"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/ISRC"
+    }
+    ,{
+         "name": "g_wszWMProvider"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/Provider"
+    }
+    ,{
+         "name": "g_wszWMProviderRating"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/ProviderRating"
+    }
+    ,{
+         "name": "g_wszWMProviderStyle"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/ProviderStyle"
+    }
+    ,{
+         "name": "g_wszWMContentDistributor"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/ContentDistributor"
+    }
+    ,{
+         "name": "g_wszWMSubscriptionContentID"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/SubscriptionContentID"
+    }
+    ,{
+         "name": "g_wszWMWMADRCPeakReference"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/WMADRCPeakReference"
+    }
+    ,{
+         "name": "g_wszWMWMADRCPeakTarget"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/WMADRCPeakTarget"
+    }
+    ,{
+         "name": "g_wszWMWMADRCAverageReference"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/WMADRCAverageReference"
+    }
+    ,{
+         "name": "g_wszWMWMADRCAverageTarget"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/WMADRCAverageTarget"
+    }
+    ,{
+         "name": "g_wszWMStreamTypeInfo"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/StreamTypeInfo"
+    }
+    ,{
+         "name": "g_wszWMPeakBitrate"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/PeakBitrate"
+    }
+    ,{
+         "name": "g_wszWMASFPacketCount"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/ASFPacketCount"
+    }
+    ,{
+         "name": "g_wszWMASFSecurityObjectsSize"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/ASFSecurityObjectsSize"
+    }
+    ,{
+         "name": "g_wszWMSharedUserRating"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/SharedUserRating"
+    }
+    ,{
+         "name": "g_wszWMSubTitleDescription"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/SubTitleDescription"
+    }
+    ,{
+         "name": "g_wszWMMediaCredits"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/MediaCredits"
+    }
+    ,{
+         "name": "g_wszWMParentalRatingReason"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/ParentalRatingReason"
+    }
+    ,{
+         "name": "g_wszWMOriginalReleaseTime"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/OriginalReleaseTime"
+    }
+    ,{
+         "name": "g_wszWMMediaStationCallSign"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/MediaStationCallSign"
+    }
+    ,{
+         "name": "g_wszWMMediaStationName"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/MediaStationName"
+    }
+    ,{
+         "name": "g_wszWMMediaNetworkAffiliation"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/MediaNetworkAffiliation"
+    }
+    ,{
+         "name": "g_wszWMMediaOriginalChannel"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/MediaOriginalChannel"
+    }
+    ,{
+         "name": "g_wszWMMediaOriginalBroadcastDateTime"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/MediaOriginalBroadcastDateTime"
+    }
+    ,{
+         "name": "g_wszWMMediaIsStereo"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/MediaIsStereo"
+    }
+    ,{
+         "name": "g_wszWMVideoClosedCaptioning"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/VideoClosedCaptioning"
+    }
+    ,{
+         "name": "g_wszWMMediaIsRepeat"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/MediaIsRepeat"
+    }
+    ,{
+         "name": "g_wszWMMediaIsLive"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/MediaIsLive"
+    }
+    ,{
+         "name": "g_wszWMMediaIsTape"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/MediaIsTape"
+    }
+    ,{
+         "name": "g_wszWMMediaIsDelay"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/MediaIsDelay"
+    }
+    ,{
+         "name": "g_wszWMMediaIsSubtitled"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/MediaIsSubtitled"
+    }
+    ,{
+         "name": "g_wszWMMediaIsPremiere"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/MediaIsPremiere"
+    }
+    ,{
+         "name": "g_wszWMMediaIsFinale"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/MediaIsFinale"
+    }
+    ,{
+         "name": "g_wszWMMediaIsSAP"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/MediaIsSAP"
+    }
+    ,{
+         "name": "g_wszWMProviderCopyright"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/ProviderCopyright"
+    }
+    ,{
+         "name": "g_wszWMISAN"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/ISAN"
+    }
+    ,{
+         "name": "g_wszWMADID"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/ADID"
+    }
+    ,{
+         "name": "g_wszWMWMShadowFileSourceFileType"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/WMShadowFileSourceFileType"
+    }
+    ,{
+         "name": "g_wszWMWMShadowFileSourceDRMType"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/WMShadowFileSourceDRMType"
+    }
+    ,{
+         "name": "g_wszWMWMCPDistributor"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/WMCPDistributor"
+    }
+    ,{
+         "name": "g_wszWMWMCPDistributorID"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/WMCPDistributorID"
+    }
+    ,{
+         "name": "g_wszWMSeasonNumber"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/SeasonNumber"
+    }
+    ,{
+         "name": "g_wszWMEpisodeNumber"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/EpisodeNumber"
+    }
+    ,{
+         "name": "g_wszEarlyDataDelivery"
+        ,"type": {"kind":"String"}
+        ,"value": "EarlyDataDelivery"
+    }
+    ,{
+         "name": "g_wszJustInTimeDecode"
+        ,"type": {"kind":"String"}
+        ,"value": "JustInTimeDecode"
+    }
+    ,{
+         "name": "g_wszSingleOutputBuffer"
+        ,"type": {"kind":"String"}
+        ,"value": "SingleOutputBuffer"
+    }
+    ,{
+         "name": "g_wszSoftwareScaling"
+        ,"type": {"kind":"String"}
+        ,"value": "SoftwareScaling"
+    }
+    ,{
+         "name": "g_wszDeliverOnReceive"
+        ,"type": {"kind":"String"}
+        ,"value": "DeliverOnReceive"
+    }
+    ,{
+         "name": "g_wszScrambledAudio"
+        ,"type": {"kind":"String"}
+        ,"value": "ScrambledAudio"
+    }
+    ,{
+         "name": "g_wszDedicatedDeliveryThread"
+        ,"type": {"kind":"String"}
+        ,"value": "DedicatedDeliveryThread"
+    }
+    ,{
+         "name": "g_wszEnableDiscreteOutput"
+        ,"type": {"kind":"String"}
+        ,"value": "EnableDiscreteOutput"
+    }
+    ,{
+         "name": "g_wszSpeakerConfig"
+        ,"type": {"kind":"String"}
+        ,"value": "SpeakerConfig"
+    }
+    ,{
+         "name": "g_wszDynamicRangeControl"
+        ,"type": {"kind":"String"}
+        ,"value": "DynamicRangeControl"
+    }
+    ,{
+         "name": "g_wszAllowInterlacedOutput"
+        ,"type": {"kind":"String"}
+        ,"value": "AllowInterlacedOutput"
+    }
+    ,{
+         "name": "g_wszVideoSampleDurations"
+        ,"type": {"kind":"String"}
+        ,"value": "VideoSampleDurations"
+    }
+    ,{
+         "name": "g_wszStreamLanguage"
+        ,"type": {"kind":"String"}
+        ,"value": "StreamLanguage"
+    }
+    ,{
+         "name": "g_wszEnableWMAProSPDIFOutput"
+        ,"type": {"kind":"String"}
+        ,"value": "EnableWMAProSPDIFOutput"
+    }
+    ,{
+         "name": "g_wszDeinterlaceMode"
+        ,"type": {"kind":"String"}
+        ,"value": "DeinterlaceMode"
+    }
+    ,{
+         "name": "g_wszInitialPatternForInverseTelecine"
+        ,"type": {"kind":"String"}
+        ,"value": "InitialPatternForInverseTelecine"
+    }
+    ,{
+         "name": "g_wszJPEGCompressionQuality"
+        ,"type": {"kind":"String"}
+        ,"value": "JPEGCompressionQuality"
+    }
+    ,{
+         "name": "g_wszWatermarkCLSID"
+        ,"type": {"kind":"String"}
+        ,"value": "WatermarkCLSID"
+    }
+    ,{
+         "name": "g_wszWatermarkConfig"
+        ,"type": {"kind":"String"}
+        ,"value": "WatermarkConfig"
+    }
+    ,{
+         "name": "g_wszInterlacedCoding"
+        ,"type": {"kind":"String"}
+        ,"value": "InterlacedCoding"
+    }
+    ,{
+         "name": "g_wszFixedFrameRate"
+        ,"type": {"kind":"String"}
+        ,"value": "FixedFrameRate"
+    }
+    ,{
+         "name": "g_wszOriginalSourceFormatTag"
+        ,"type": {"kind":"String"}
+        ,"value": "_SOURCEFORMATTAG"
+    }
+    ,{
+         "name": "g_wszOriginalWaveFormat"
+        ,"type": {"kind":"String"}
+        ,"value": "_ORIGINALWAVEFORMAT"
+    }
+    ,{
+         "name": "g_wszEDL"
+        ,"type": {"kind":"String"}
+        ,"value": "_EDL"
+    }
+    ,{
+         "name": "g_wszComplexity"
+        ,"type": {"kind":"String"}
+        ,"value": "_COMPLEXITYEX"
+    }
+    ,{
+         "name": "g_wszDecoderComplexityRequested"
+        ,"type": {"kind":"String"}
+        ,"value": "_DECODERCOMPLEXITYPROFILE"
+    }
+    ,{
+         "name": "g_wszReloadIndexOnSeek"
+        ,"type": {"kind":"String"}
+        ,"value": "ReloadIndexOnSeek"
+    }
+    ,{
+         "name": "g_wszStreamNumIndexObjects"
+        ,"type": {"kind":"String"}
+        ,"value": "StreamNumIndexObjects"
+    }
+    ,{
+         "name": "g_wszFailSeekOnError"
+        ,"type": {"kind":"String"}
+        ,"value": "FailSeekOnError"
+    }
+    ,{
+         "name": "g_wszPermitSeeksBeyondEndOfStream"
+        ,"type": {"kind":"String"}
+        ,"value": "PermitSeeksBeyondEndOfStream"
+    }
+    ,{
+         "name": "g_wszUsePacketAtSeekPoint"
+        ,"type": {"kind":"String"}
+        ,"value": "UsePacketAtSeekPoint"
+    }
+    ,{
+         "name": "g_wszSourceBufferTime"
+        ,"type": {"kind":"String"}
+        ,"value": "SourceBufferTime"
+    }
+    ,{
+         "name": "g_wszSourceMaxBytesAtOnce"
+        ,"type": {"kind":"String"}
+        ,"value": "SourceMaxBytesAtOnce"
+    }
+    ,{
+         "name": "g_wszVBREnabled"
+        ,"type": {"kind":"String"}
+        ,"value": "_VBRENABLED"
+    }
+    ,{
+         "name": "g_wszVBRQuality"
+        ,"type": {"kind":"String"}
+        ,"value": "_VBRQUALITY"
+    }
+    ,{
+         "name": "g_wszVBRBitrateMax"
+        ,"type": {"kind":"String"}
+        ,"value": "_RMAX"
+    }
+    ,{
+         "name": "g_wszVBRBufferWindowMax"
+        ,"type": {"kind":"String"}
+        ,"value": "_BMAX"
+    }
+    ,{
+         "name": "g_wszVBRPeak"
+        ,"type": {"kind":"String"}
+        ,"value": "VBR Peak"
+    }
+    ,{
+         "name": "g_wszBufferAverage"
+        ,"type": {"kind":"String"}
+        ,"value": "Buffer Average"
+    }
+    ,{
+         "name": "g_wszComplexityMax"
+        ,"type": {"kind":"String"}
+        ,"value": "_COMPLEXITYEXMAX"
+    }
+    ,{
+         "name": "g_wszComplexityOffline"
+        ,"type": {"kind":"String"}
+        ,"value": "_COMPLEXITYEXOFFLINE"
+    }
+    ,{
+         "name": "g_wszComplexityLive"
+        ,"type": {"kind":"String"}
+        ,"value": "_COMPLEXITYEXLIVE"
+    }
+    ,{
+         "name": "g_wszIsVBRSupported"
+        ,"type": {"kind":"String"}
+        ,"value": "_ISVBRSUPPORTED"
+    }
+    ,{
+         "name": "g_wszNumPasses"
+        ,"type": {"kind":"String"}
+        ,"value": "_PASSESUSED"
+    }
+    ,{
+         "name": "g_wszMusicSpeechClassMode"
+        ,"type": {"kind":"String"}
+        ,"value": "MusicSpeechClassMode"
+    }
+    ,{
+         "name": "g_wszMusicClassMode"
+        ,"type": {"kind":"String"}
+        ,"value": "MusicClassMode"
+    }
+    ,{
+         "name": "g_wszSpeechClassMode"
+        ,"type": {"kind":"String"}
+        ,"value": "SpeechClassMode"
+    }
+    ,{
+         "name": "g_wszMixedClassMode"
+        ,"type": {"kind":"String"}
+        ,"value": "MixedClassMode"
+    }
+    ,{
+         "name": "g_wszSpeechCaps"
+        ,"type": {"kind":"String"}
+        ,"value": "SpeechFormatCap"
+    }
+    ,{
+         "name": "g_wszPeakValue"
+        ,"type": {"kind":"String"}
+        ,"value": "PeakValue"
+    }
+    ,{
+         "name": "g_wszAverageLevel"
+        ,"type": {"kind":"String"}
+        ,"value": "AverageLevel"
+    }
+    ,{
+         "name": "g_wszFold6To2Channels3"
+        ,"type": {"kind":"String"}
+        ,"value": "Fold6To2Channels3"
+    }
+    ,{
+         "name": "g_wszFoldToChannelsTemplate"
+        ,"type": {"kind":"String"}
+        ,"value": "Fold%luTo%luChannels%lu"
+    }
+    ,{
+         "name": "g_wszDeviceConformanceTemplate"
+        ,"type": {"kind":"String"}
+        ,"value": "DeviceConformanceTemplate"
+    }
+    ,{
+         "name": "g_wszEnableFrameInterpolation"
+        ,"type": {"kind":"String"}
+        ,"value": "EnableFrameInterpolation"
+    }
+    ,{
+         "name": "g_wszNeedsPreviousSample"
+        ,"type": {"kind":"String"}
+        ,"value": "NeedsPreviousSample"
+    }
+    ,{
+         "name": "g_wszWMIsCompilation"
+        ,"type": {"kind":"String"}
+        ,"value": "WM/IsCompilation"
+    }
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: IAMWMBufferPass
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAMWMBufferPass = *opaque{
+    // TODO: Method 'SetNotify'
+};
+// --------------------------------------------------------
+// Type: IAMWMBufferPassCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAMWMBufferPassCallback = *opaque{
+    // TODO: Method 'Notify'
+};
+// --------------------------------------------------------
+// Type: _AM_ASFWRITERCONFIG_PARAM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const _AM_ASFWRITERCONFIG_PARAM = *opaque{
+};
+// --------------------------------------------------------
+// Type: AM_WMT_EVENT_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AM_WMT_EVENT_DATA = extern struct {
+    hrStatus: Windows.Win32.Com.HRESULT,
+    pData: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: INSSBuffer
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INSSBuffer = *opaque{
+    // TODO: Method 'GetLength'
+    // TODO: Method 'SetLength'
+    // TODO: Method 'GetMaxLength'
+    // TODO: Method 'GetBuffer'
+    // TODO: Method 'GetBufferAndLength'
+};
+// --------------------------------------------------------
+// Type: INSSBuffer2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INSSBuffer2 = *opaque{
+    // TODO: Method 'GetSampleProperties'
+    // TODO: Method 'SetSampleProperties'
+};
+// --------------------------------------------------------
+// Type: INSSBuffer3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INSSBuffer3 = *opaque{
+    // TODO: Method 'SetProperty'
+    // TODO: Method 'GetProperty'
+};
+// --------------------------------------------------------
+// Type: INSSBuffer4
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INSSBuffer4 = *opaque{
+    // TODO: Method 'GetPropertyCount'
+    // TODO: Method 'GetPropertyByIndex'
+};
+// --------------------------------------------------------
+// Type: IWMSBufferAllocator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMSBufferAllocator = *opaque{
+    // TODO: Method 'AllocateBuffer'
+    // TODO: Method 'AllocatePageSizeBuffer'
+};
+// --------------------------------------------------------
+// Type: __MIDL___MIDL_itf_wmsdkidl_0000_0000_0001
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const __MIDL___MIDL_itf_wmsdkidl_0000_0000_0001 = *opaque{
+};
+// --------------------------------------------------------
+// Type: __MIDL___MIDL_itf_wmsdkidl_0000_0000_0002
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const __MIDL___MIDL_itf_wmsdkidl_0000_0000_0002 = *opaque{
+};
+// --------------------------------------------------------
+// Type: __MIDL___MIDL_itf_wmsdkidl_0000_0000_0003
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const __MIDL___MIDL_itf_wmsdkidl_0000_0000_0003 = *opaque{
+};
+// --------------------------------------------------------
+// Type: WMT_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WMT_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: WMT_STREAM_SELECTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WMT_STREAM_SELECTION = *opaque{
+};
+// --------------------------------------------------------
+// Type: WMT_IMAGE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WMT_IMAGE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WMT_ATTR_DATATYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WMT_ATTR_DATATYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WMT_ATTR_IMAGETYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WMT_ATTR_IMAGETYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WMT_VERSION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WMT_VERSION = *opaque{
+};
+// --------------------------------------------------------
+// Type: WMT_STORAGE_FORMAT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WMT_STORAGE_FORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: WMT_DRMLA_TRUST
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WMT_DRMLA_TRUST = *opaque{
+};
+// --------------------------------------------------------
+// Type: WMT_TRANSPORT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WMT_TRANSPORT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WMT_NET_PROTOCOL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WMT_NET_PROTOCOL = *opaque{
+};
+// --------------------------------------------------------
+// Type: WMT_PLAY_MODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WMT_PLAY_MODE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WMT_PROXY_SETTINGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WMT_PROXY_SETTINGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: WMT_CODEC_INFO_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WMT_CODEC_INFO_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: __MIDL___MIDL_itf_wmsdkidl_0000_0000_0004
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const __MIDL___MIDL_itf_wmsdkidl_0000_0000_0004 = *opaque{
+};
+// --------------------------------------------------------
+// Type: __MIDL___MIDL_itf_wmsdkidl_0000_0000_0005
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const __MIDL___MIDL_itf_wmsdkidl_0000_0000_0005 = *opaque{
+};
+// --------------------------------------------------------
+// Type: WMT_OFFSET_FORMAT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WMT_OFFSET_FORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: WMT_INDEXER_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WMT_INDEXER_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WMT_INDEX_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WMT_INDEX_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WMT_FILESINK_MODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WMT_FILESINK_MODE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WMT_MUSICSPEECH_CLASS_MODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WMT_MUSICSPEECH_CLASS_MODE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WMT_WATERMARK_ENTRY_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WMT_WATERMARK_ENTRY_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: __MIDL___MIDL_itf_wmsdkidl_0000_0000_0006
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const __MIDL___MIDL_itf_wmsdkidl_0000_0000_0006 = *opaque{
+};
+// --------------------------------------------------------
+// Type: __MIDL___MIDL_itf_wmsdkidl_0000_0000_0007
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const __MIDL___MIDL_itf_wmsdkidl_0000_0000_0007 = *opaque{
+};
+// --------------------------------------------------------
+// Type: WMT_CREDENTIAL_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WMT_CREDENTIAL_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: WM_AETYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WM_AETYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WMT_RIGHTS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WMT_RIGHTS = *opaque{
+};
+// --------------------------------------------------------
+// Type: WM_STREAM_PRIORITY_RECORD
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const WM_STREAM_PRIORITY_RECORD = *opaque{
+};
+// --------------------------------------------------------
+// Type: WM_WRITER_STATISTICS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WM_WRITER_STATISTICS = extern struct {
+    qwSampleCount: {"kind":"UInt64"},
+    qwByteCount: {"kind":"UInt64"},
+    qwDroppedSampleCount: {"kind":"UInt64"},
+    qwDroppedByteCount: {"kind":"UInt64"},
+    dwCurrentBitrate: {"kind":"UInt32"},
+    dwAverageBitrate: {"kind":"UInt32"},
+    dwExpectedBitrate: {"kind":"UInt32"},
+    dwCurrentSampleRate: {"kind":"UInt32"},
+    dwAverageSampleRate: {"kind":"UInt32"},
+    dwExpectedSampleRate: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WM_WRITER_STATISTICS_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WM_WRITER_STATISTICS_EX = extern struct {
+    dwBitratePlusOverhead: {"kind":"UInt32"},
+    dwCurrentSampleDropRateInQueue: {"kind":"UInt32"},
+    dwCurrentSampleDropRateInCodec: {"kind":"UInt32"},
+    dwCurrentSampleDropRateInMultiplexer: {"kind":"UInt32"},
+    dwTotalSampleDropsInQueue: {"kind":"UInt32"},
+    dwTotalSampleDropsInCodec: {"kind":"UInt32"},
+    dwTotalSampleDropsInMultiplexer: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WM_READER_STATISTICS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WM_READER_STATISTICS = extern struct {
+    cbSize: {"kind":"UInt32"},
+    dwBandwidth: {"kind":"UInt32"},
+    cPacketsReceived: {"kind":"UInt32"},
+    cPacketsRecovered: {"kind":"UInt32"},
+    cPacketsLost: {"kind":"UInt32"},
+    wQuality: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: WM_READER_CLIENTINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WM_READER_CLIENTINFO = extern struct {
+    cbSize: {"kind":"UInt32"},
+    wszLang: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszBrowserUserAgent: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wszBrowserWebPage: {"kind""Ptr","child":{"kind":"UInt16"}},
+    qwReserved: {"kind":"UInt64"},
+    pReserved: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.LPARAM},
+    wszHostExe: {"kind""Ptr","child":{"kind":"UInt16"}},
+    qwHostVersion: {"kind":"UInt64"},
+    wszPlayerUserAgent: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WM_CLIENT_PROPERTIES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WM_CLIENT_PROPERTIES = extern struct {
+    dwIPAddress: {"kind":"UInt32"},
+    dwPort: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WM_CLIENT_PROPERTIES_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WM_CLIENT_PROPERTIES_EX = extern struct {
+    cbSize: {"kind":"UInt32"},
+    pwszIPAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszPort: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszDNSName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WM_PORT_NUMBER_RANGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WM_PORT_NUMBER_RANGE = extern struct {
+    wPortBegin: {"kind":"UInt16"},
+    wPortEnd: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: WMT_BUFFER_SEGMENT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WMT_BUFFER_SEGMENT = extern struct {
+    pBuffer: Windows.Win32.WindowsMediaFormat.INSSBuffer,
+    cbOffset: {"kind":"UInt32"},
+    cbLength: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WMT_PAYLOAD_FRAGMENT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WMT_PAYLOAD_FRAGMENT = extern struct {
+    dwPayloadIndex: {"kind":"UInt32"},
+    segmentData: Windows.Win32.WindowsMediaFormat.WMT_BUFFER_SEGMENT,
+};
+// --------------------------------------------------------
+// Type: WMT_FILESINK_DATA_UNIT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WMT_FILESINK_DATA_UNIT = extern struct {
+    packetHeaderBuffer: Windows.Win32.WindowsMediaFormat.WMT_BUFFER_SEGMENT,
+    cPayloads: {"kind":"UInt32"},
+    pPayloadHeaderBuffers: {"kind""Ptr","child":Windows.Win32.WindowsMediaFormat.WMT_BUFFER_SEGMENT},
+    cPayloadDataFragments: {"kind":"UInt32"},
+    pPayloadDataFragments: {"kind""Ptr","child":Windows.Win32.WindowsMediaFormat.WMT_PAYLOAD_FRAGMENT},
+};
+// --------------------------------------------------------
+// Type: WMT_WEBSTREAM_FORMAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WMT_WEBSTREAM_FORMAT = extern struct {
+    cbSize: {"kind":"UInt16"},
+    cbSampleHeaderFixedData: {"kind":"UInt16"},
+    wVersion: {"kind":"UInt16"},
+    wReserved: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: WMT_WEBSTREAM_SAMPLE_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WMT_WEBSTREAM_SAMPLE_HEADER = extern struct {
+    cbLength: {"kind":"UInt16"},
+    wPart: {"kind":"UInt16"},
+    cTotalParts: {"kind":"UInt16"},
+    wSampleType: {"kind":"UInt16"},
+    wszURL: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WM_ADDRESS_ACCESSENTRY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WM_ADDRESS_ACCESSENTRY = extern struct {
+    dwIPAddress: {"kind":"UInt32"},
+    dwMask: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WM_PICTURE
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const WM_PICTURE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WM_SYNCHRONISED_LYRICS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const WM_SYNCHRONISED_LYRICS = *opaque{
+};
+// --------------------------------------------------------
+// Type: WM_USER_WEB_URL
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const WM_USER_WEB_URL = *opaque{
+};
+// --------------------------------------------------------
+// Type: WM_USER_TEXT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const WM_USER_TEXT = *opaque{
+};
+// --------------------------------------------------------
+// Type: WM_LEAKY_BUCKET_PAIR
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const WM_LEAKY_BUCKET_PAIR = *opaque{
+};
+// --------------------------------------------------------
+// Type: WM_STREAM_TYPE_INFO
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const WM_STREAM_TYPE_INFO = *opaque{
+};
+// --------------------------------------------------------
+// Type: WMT_WATERMARK_ENTRY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WMT_WATERMARK_ENTRY = extern struct {
+    wmetType: Windows.Win32.WindowsMediaFormat.WMT_WATERMARK_ENTRY_TYPE,
+    clsid: Guid,
+    cbDisplayName: {"kind":"UInt32"},
+    pwszDisplayName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WMT_VIDEOIMAGE_SAMPLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WMT_VIDEOIMAGE_SAMPLE = extern struct {
+    dwMagic: {"kind":"UInt32"},
+    cbStruct: {"kind":"UInt32"},
+    dwControlFlags: {"kind":"UInt32"},
+    dwInputFlagsCur: {"kind":"UInt32"},
+    lCurMotionXtoX: {"kind":"Int32"},
+    lCurMotionYtoX: {"kind":"Int32"},
+    lCurMotionXoffset: {"kind":"Int32"},
+    lCurMotionXtoY: {"kind":"Int32"},
+    lCurMotionYtoY: {"kind":"Int32"},
+    lCurMotionYoffset: {"kind":"Int32"},
+    lCurBlendCoef1: {"kind":"Int32"},
+    lCurBlendCoef2: {"kind":"Int32"},
+    dwInputFlagsPrev: {"kind":"UInt32"},
+    lPrevMotionXtoX: {"kind":"Int32"},
+    lPrevMotionYtoX: {"kind":"Int32"},
+    lPrevMotionXoffset: {"kind":"Int32"},
+    lPrevMotionXtoY: {"kind":"Int32"},
+    lPrevMotionYtoY: {"kind":"Int32"},
+    lPrevMotionYoffset: {"kind":"Int32"},
+    lPrevBlendCoef1: {"kind":"Int32"},
+    lPrevBlendCoef2: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: WMT_VIDEOIMAGE_SAMPLE2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WMT_VIDEOIMAGE_SAMPLE2 = extern struct {
+    dwMagic: {"kind":"UInt32"},
+    dwStructSize: {"kind":"UInt32"},
+    dwControlFlags: {"kind":"UInt32"},
+    dwViewportWidth: {"kind":"UInt32"},
+    dwViewportHeight: {"kind":"UInt32"},
+    dwCurrImageWidth: {"kind":"UInt32"},
+    dwCurrImageHeight: {"kind":"UInt32"},
+    fCurrRegionX0: {"kind":"Single"},
+    fCurrRegionY0: {"kind":"Single"},
+    fCurrRegionWidth: {"kind":"Single"},
+    fCurrRegionHeight: {"kind":"Single"},
+    fCurrBlendCoef: {"kind":"Single"},
+    dwPrevImageWidth: {"kind":"UInt32"},
+    dwPrevImageHeight: {"kind":"UInt32"},
+    fPrevRegionX0: {"kind":"Single"},
+    fPrevRegionY0: {"kind":"Single"},
+    fPrevRegionWidth: {"kind":"Single"},
+    fPrevRegionHeight: {"kind":"Single"},
+    fPrevBlendCoef: {"kind":"Single"},
+    dwEffectType: {"kind":"UInt32"},
+    dwNumEffectParas: {"kind":"UInt32"},
+    fEffectPara0: {"kind":"Single"},
+    fEffectPara1: {"kind":"Single"},
+    fEffectPara2: {"kind":"Single"},
+    fEffectPara3: {"kind":"Single"},
+    fEffectPara4: {"kind":"Single"},
+    bKeepPrevImage: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: WM_MEDIA_TYPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WM_MEDIA_TYPE = extern struct {
+    majortype: Guid,
+    subtype: Guid,
+    bFixedSizeSamples: Windows.Win32.SystemServices.BOOL,
+    bTemporalCompression: Windows.Win32.SystemServices.BOOL,
+    lSampleSize: {"kind":"UInt32"},
+    formattype: Guid,
+    pUnk: Windows.Win32.Com.IUnknown,
+    cbFormat: {"kind":"UInt32"},
+    pbFormat: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: WMVIDEOINFOHEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WMVIDEOINFOHEADER = extern struct {
+    rcSource: Windows.Win32.DisplayDevices.RECT,
+    rcTarget: Windows.Win32.DisplayDevices.RECT,
+    dwBitRate: {"kind":"UInt32"},
+    dwBitErrorRate: {"kind":"UInt32"},
+    AvgTimePerFrame: {"kind":"Int64"},
+    bmiHeader: Windows.Win32.DirectShow.BITMAPINFOHEADER,
+};
+// --------------------------------------------------------
+// Type: WMVIDEOINFOHEADER2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WMVIDEOINFOHEADER2 = extern struct {
+    rcSource: Windows.Win32.DisplayDevices.RECT,
+    rcTarget: Windows.Win32.DisplayDevices.RECT,
+    dwBitRate: {"kind":"UInt32"},
+    dwBitErrorRate: {"kind":"UInt32"},
+    AvgTimePerFrame: {"kind":"Int64"},
+    dwInterlaceFlags: {"kind":"UInt32"},
+    dwCopyProtectFlags: {"kind":"UInt32"},
+    dwPictAspectRatioX: {"kind":"UInt32"},
+    dwPictAspectRatioY: {"kind":"UInt32"},
+    dwReserved1: {"kind":"UInt32"},
+    dwReserved2: {"kind":"UInt32"},
+    bmiHeader: Windows.Win32.DirectShow.BITMAPINFOHEADER,
+};
+// --------------------------------------------------------
+// Type: WMMPEG2VIDEOINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WMMPEG2VIDEOINFO = extern struct {
+    hdr: Windows.Win32.WindowsMediaFormat.WMVIDEOINFOHEADER2,
+    dwStartTimeCode: {"kind":"UInt32"},
+    cbSequenceHeader: {"kind":"UInt32"},
+    dwProfile: {"kind":"UInt32"},
+    dwLevel: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwSequenceHeader: {"kind":"Array","child": {"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: WMSCRIPTFORMAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WMSCRIPTFORMAT = extern struct {
+    scriptType: Guid,
+};
+// --------------------------------------------------------
+// Type: WMT_COLORSPACEINFO_EXTENSION_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WMT_COLORSPACEINFO_EXTENSION_DATA = extern struct {
+    ucColorPrimaries: {"kind":"Byte"},
+    ucColorTransferChar: {"kind":"Byte"},
+    ucColorMatrixCoef: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: WMT_TIMECODE_EXTENSION_DATA
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const WMT_TIMECODE_EXTENSION_DATA = *opaque{
+};
+// --------------------------------------------------------
+// Type: DRM_VAL16
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DRM_VAL16 = extern struct {
+    val: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: IWMMediaProps
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMMediaProps = *opaque{
+    // TODO: Method 'GetType'
+    // TODO: Method 'GetMediaType'
+    // TODO: Method 'SetMediaType'
+};
+// --------------------------------------------------------
+// Type: IWMVideoMediaProps
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMVideoMediaProps = *opaque{
+    // TODO: Method 'GetMaxKeyFrameSpacing'
+    // TODO: Method 'SetMaxKeyFrameSpacing'
+    // TODO: Method 'GetQuality'
+    // TODO: Method 'SetQuality'
+};
+// --------------------------------------------------------
+// Type: IWMWriter
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMWriter = *opaque{
+    // TODO: Method 'SetProfileByID'
+    // TODO: Method 'SetProfile'
+    // TODO: Method 'SetOutputFilename'
+    // TODO: Method 'GetInputCount'
+    // TODO: Method 'GetInputProps'
+    // TODO: Method 'SetInputProps'
+    // TODO: Method 'GetInputFormatCount'
+    // TODO: Method 'GetInputFormat'
+    // TODO: Method 'BeginWriting'
+    // TODO: Method 'EndWriting'
+    // TODO: Method 'AllocateSample'
+    // TODO: Method 'WriteSample'
+    // TODO: Method 'Flush'
+};
+// --------------------------------------------------------
+// Type: IWMDRMWriter
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMDRMWriter = *opaque{
+    // TODO: Method 'GenerateKeySeed'
+    // TODO: Method 'GenerateKeyID'
+    // TODO: Method 'GenerateSigningKeyPair'
+    // TODO: Method 'SetDRMAttribute'
+};
+// --------------------------------------------------------
+// Type: WMDRM_IMPORT_INIT_STRUCT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WMDRM_IMPORT_INIT_STRUCT = extern struct {
+    dwVersion: {"kind":"UInt32"},
+    cbEncryptedSessionKeyMessage: {"kind":"UInt32"},
+    pbEncryptedSessionKeyMessage: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbEncryptedKeyMessage: {"kind":"UInt32"},
+    pbEncryptedKeyMessage: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: IWMDRMWriter2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMDRMWriter2 = *opaque{
+    // TODO: Method 'SetWMDRMNetEncryption'
+};
+// --------------------------------------------------------
+// Type: IWMDRMWriter3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMDRMWriter3 = *opaque{
+    // TODO: Method 'SetProtectStreamSamples'
+};
+// --------------------------------------------------------
+// Type: IWMInputMediaProps
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMInputMediaProps = *opaque{
+    // TODO: Method 'GetConnectionName'
+    // TODO: Method 'GetGroupName'
+};
+// --------------------------------------------------------
+// Type: IWMPropertyVault
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMPropertyVault = *opaque{
+    // TODO: Method 'GetPropertyCount'
+    // TODO: Method 'GetPropertyByName'
+    // TODO: Method 'SetProperty'
+    // TODO: Method 'GetPropertyByIndex'
+    // TODO: Method 'CopyPropertiesFrom'
+    // TODO: Method 'Clear'
+};
+// --------------------------------------------------------
+// Type: IWMIStreamProps
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMIStreamProps = *opaque{
+    // TODO: Method 'GetProperty'
+};
+// --------------------------------------------------------
+// Type: IWMReader
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMReader = *opaque{
+    // TODO: Method 'Open'
+    // TODO: Method 'Close'
+    // TODO: Method 'GetOutputCount'
+    // TODO: Method 'GetOutputProps'
+    // TODO: Method 'SetOutputProps'
+    // TODO: Method 'GetOutputFormatCount'
+    // TODO: Method 'GetOutputFormat'
+    // TODO: Method 'Start'
+    // TODO: Method 'Stop'
+    // TODO: Method 'Pause'
+    // TODO: Method 'Resume'
+};
+// --------------------------------------------------------
+// Type: IWMSyncReader
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMSyncReader = *opaque{
+    // TODO: Method 'Open'
+    // TODO: Method 'Close'
+    // TODO: Method 'SetRange'
+    // TODO: Method 'SetRangeByFrame'
+    // TODO: Method 'GetNextSample'
+    // TODO: Method 'SetStreamsSelected'
+    // TODO: Method 'GetStreamSelected'
+    // TODO: Method 'SetReadStreamSamples'
+    // TODO: Method 'GetReadStreamSamples'
+    // TODO: Method 'GetOutputSetting'
+    // TODO: Method 'SetOutputSetting'
+    // TODO: Method 'GetOutputCount'
+    // TODO: Method 'GetOutputProps'
+    // TODO: Method 'SetOutputProps'
+    // TODO: Method 'GetOutputFormatCount'
+    // TODO: Method 'GetOutputFormat'
+    // TODO: Method 'GetOutputNumberForStream'
+    // TODO: Method 'GetStreamNumberForOutput'
+    // TODO: Method 'GetMaxOutputSampleSize'
+    // TODO: Method 'GetMaxStreamSampleSize'
+    // TODO: Method 'OpenStream'
+};
+// --------------------------------------------------------
+// Type: IWMSyncReader2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMSyncReader2 = *opaque{
+    // TODO: Method 'SetRangeByTimecode'
+    // TODO: Method 'SetRangeByFrameEx'
+    // TODO: Method 'SetAllocateForOutput'
+    // TODO: Method 'GetAllocateForOutput'
+    // TODO: Method 'SetAllocateForStream'
+    // TODO: Method 'GetAllocateForStream'
+};
+// --------------------------------------------------------
+// Type: IWMOutputMediaProps
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMOutputMediaProps = *opaque{
+    // TODO: Method 'GetStreamGroupName'
+    // TODO: Method 'GetConnectionName'
+};
+// --------------------------------------------------------
+// Type: IWMStatusCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMStatusCallback = *opaque{
+    // TODO: Method 'OnStatus'
+};
+// --------------------------------------------------------
+// Type: IWMReaderCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMReaderCallback = *opaque{
+    // TODO: Method 'OnSample'
+};
+// --------------------------------------------------------
+// Type: IWMCredentialCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMCredentialCallback = *opaque{
+    // TODO: Method 'AcquireCredentials'
+};
+// --------------------------------------------------------
+// Type: IWMMetadataEditor
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMMetadataEditor = *opaque{
+    // TODO: Method 'Open'
+    // TODO: Method 'Close'
+    // TODO: Method 'Flush'
+};
+// --------------------------------------------------------
+// Type: IWMMetadataEditor2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMMetadataEditor2 = *opaque{
+    // TODO: Method 'OpenEx'
+};
+// --------------------------------------------------------
+// Type: IWMDRMEditor
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMDRMEditor = *opaque{
+    // TODO: Method 'GetDRMProperty'
+};
+// --------------------------------------------------------
+// Type: IWMHeaderInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMHeaderInfo = *opaque{
+    // TODO: Method 'GetAttributeCount'
+    // TODO: Method 'GetAttributeByIndex'
+    // TODO: Method 'GetAttributeByName'
+    // TODO: Method 'SetAttribute'
+    // TODO: Method 'GetMarkerCount'
+    // TODO: Method 'GetMarker'
+    // TODO: Method 'AddMarker'
+    // TODO: Method 'RemoveMarker'
+    // TODO: Method 'GetScriptCount'
+    // TODO: Method 'GetScript'
+    // TODO: Method 'AddScript'
+    // TODO: Method 'RemoveScript'
+};
+// --------------------------------------------------------
+// Type: IWMHeaderInfo2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMHeaderInfo2 = *opaque{
+    // TODO: Method 'GetCodecInfoCount'
+    // TODO: Method 'GetCodecInfo'
+};
+// --------------------------------------------------------
+// Type: IWMHeaderInfo3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMHeaderInfo3 = *opaque{
+    // TODO: Method 'GetAttributeCountEx'
+    // TODO: Method 'GetAttributeIndices'
+    // TODO: Method 'GetAttributeByIndexEx'
+    // TODO: Method 'ModifyAttribute'
+    // TODO: Method 'AddAttribute'
+    // TODO: Method 'DeleteAttribute'
+    // TODO: Method 'AddCodecInfo'
+};
+// --------------------------------------------------------
+// Type: IWMProfileManager
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMProfileManager = *opaque{
+    // TODO: Method 'CreateEmptyProfile'
+    // TODO: Method 'LoadProfileByID'
+    // TODO: Method 'LoadProfileByData'
+    // TODO: Method 'SaveProfile'
+    // TODO: Method 'GetSystemProfileCount'
+    // TODO: Method 'LoadSystemProfile'
+};
+// --------------------------------------------------------
+// Type: IWMProfileManager2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMProfileManager2 = *opaque{
+    // TODO: Method 'GetSystemProfileVersion'
+    // TODO: Method 'SetSystemProfileVersion'
+};
+// --------------------------------------------------------
+// Type: IWMProfileManagerLanguage
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMProfileManagerLanguage = *opaque{
+    // TODO: Method 'GetUserLanguageID'
+    // TODO: Method 'SetUserLanguageID'
+};
+// --------------------------------------------------------
+// Type: IWMProfile
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMProfile = *opaque{
+    // TODO: Method 'GetVersion'
+    // TODO: Method 'GetName'
+    // TODO: Method 'SetName'
+    // TODO: Method 'GetDescription'
+    // TODO: Method 'SetDescription'
+    // TODO: Method 'GetStreamCount'
+    // TODO: Method 'GetStream'
+    // TODO: Method 'GetStreamByNumber'
+    // TODO: Method 'RemoveStream'
+    // TODO: Method 'RemoveStreamByNumber'
+    // TODO: Method 'AddStream'
+    // TODO: Method 'ReconfigStream'
+    // TODO: Method 'CreateNewStream'
+    // TODO: Method 'GetMutualExclusionCount'
+    // TODO: Method 'GetMutualExclusion'
+    // TODO: Method 'RemoveMutualExclusion'
+    // TODO: Method 'AddMutualExclusion'
+    // TODO: Method 'CreateNewMutualExclusion'
+};
+// --------------------------------------------------------
+// Type: IWMProfile2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMProfile2 = *opaque{
+    // TODO: Method 'GetProfileID'
+};
+// --------------------------------------------------------
+// Type: IWMProfile3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMProfile3 = *opaque{
+    // TODO: Method 'GetStorageFormat'
+    // TODO: Method 'SetStorageFormat'
+    // TODO: Method 'GetBandwidthSharingCount'
+    // TODO: Method 'GetBandwidthSharing'
+    // TODO: Method 'RemoveBandwidthSharing'
+    // TODO: Method 'AddBandwidthSharing'
+    // TODO: Method 'CreateNewBandwidthSharing'
+    // TODO: Method 'GetStreamPrioritization'
+    // TODO: Method 'SetStreamPrioritization'
+    // TODO: Method 'RemoveStreamPrioritization'
+    // TODO: Method 'CreateNewStreamPrioritization'
+    // TODO: Method 'GetExpectedPacketCount'
+};
+// --------------------------------------------------------
+// Type: IWMStreamConfig
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMStreamConfig = *opaque{
+    // TODO: Method 'GetStreamType'
+    // TODO: Method 'GetStreamNumber'
+    // TODO: Method 'SetStreamNumber'
+    // TODO: Method 'GetStreamName'
+    // TODO: Method 'SetStreamName'
+    // TODO: Method 'GetConnectionName'
+    // TODO: Method 'SetConnectionName'
+    // TODO: Method 'GetBitrate'
+    // TODO: Method 'SetBitrate'
+    // TODO: Method 'GetBufferWindow'
+    // TODO: Method 'SetBufferWindow'
+};
+// --------------------------------------------------------
+// Type: IWMStreamConfig2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMStreamConfig2 = *opaque{
+    // TODO: Method 'GetTransportType'
+    // TODO: Method 'SetTransportType'
+    // TODO: Method 'AddDataUnitExtension'
+    // TODO: Method 'GetDataUnitExtensionCount'
+    // TODO: Method 'GetDataUnitExtension'
+    // TODO: Method 'RemoveAllDataUnitExtensions'
+};
+// --------------------------------------------------------
+// Type: IWMStreamConfig3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMStreamConfig3 = *opaque{
+    // TODO: Method 'GetLanguage'
+    // TODO: Method 'SetLanguage'
+};
+// --------------------------------------------------------
+// Type: IWMPacketSize
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMPacketSize = *opaque{
+    // TODO: Method 'GetMaxPacketSize'
+    // TODO: Method 'SetMaxPacketSize'
+};
+// --------------------------------------------------------
+// Type: IWMPacketSize2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMPacketSize2 = *opaque{
+    // TODO: Method 'GetMinPacketSize'
+    // TODO: Method 'SetMinPacketSize'
+};
+// --------------------------------------------------------
+// Type: IWMStreamList
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMStreamList = *opaque{
+    // TODO: Method 'GetStreams'
+    // TODO: Method 'AddStream'
+    // TODO: Method 'RemoveStream'
+};
+// --------------------------------------------------------
+// Type: IWMMutualExclusion
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMMutualExclusion = *opaque{
+    // TODO: Method 'GetType'
+    // TODO: Method 'SetType'
+};
+// --------------------------------------------------------
+// Type: IWMMutualExclusion2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMMutualExclusion2 = *opaque{
+    // TODO: Method 'GetName'
+    // TODO: Method 'SetName'
+    // TODO: Method 'GetRecordCount'
+    // TODO: Method 'AddRecord'
+    // TODO: Method 'RemoveRecord'
+    // TODO: Method 'GetRecordName'
+    // TODO: Method 'SetRecordName'
+    // TODO: Method 'GetStreamsForRecord'
+    // TODO: Method 'AddStreamForRecord'
+    // TODO: Method 'RemoveStreamForRecord'
+};
+// --------------------------------------------------------
+// Type: IWMBandwidthSharing
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMBandwidthSharing = *opaque{
+    // TODO: Method 'GetType'
+    // TODO: Method 'SetType'
+    // TODO: Method 'GetBandwidth'
+    // TODO: Method 'SetBandwidth'
+};
+// --------------------------------------------------------
+// Type: IWMStreamPrioritization
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMStreamPrioritization = *opaque{
+    // TODO: Method 'GetPriorityRecords'
+    // TODO: Method 'SetPriorityRecords'
+};
+// --------------------------------------------------------
+// Type: IWMWriterAdvanced
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMWriterAdvanced = *opaque{
+    // TODO: Method 'GetSinkCount'
+    // TODO: Method 'GetSink'
+    // TODO: Method 'AddSink'
+    // TODO: Method 'RemoveSink'
+    // TODO: Method 'WriteStreamSample'
+    // TODO: Method 'SetLiveSource'
+    // TODO: Method 'IsRealTime'
+    // TODO: Method 'GetWriterTime'
+    // TODO: Method 'GetStatistics'
+    // TODO: Method 'SetSyncTolerance'
+    // TODO: Method 'GetSyncTolerance'
+};
+// --------------------------------------------------------
+// Type: IWMWriterAdvanced2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMWriterAdvanced2 = *opaque{
+    // TODO: Method 'GetInputSetting'
+    // TODO: Method 'SetInputSetting'
+};
+// --------------------------------------------------------
+// Type: IWMWriterAdvanced3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMWriterAdvanced3 = *opaque{
+    // TODO: Method 'GetStatisticsEx'
+    // TODO: Method 'SetNonBlocking'
+};
+// --------------------------------------------------------
+// Type: IWMWriterPreprocess
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMWriterPreprocess = *opaque{
+    // TODO: Method 'GetMaxPreprocessingPasses'
+    // TODO: Method 'SetNumPreprocessingPasses'
+    // TODO: Method 'BeginPreprocessingPass'
+    // TODO: Method 'PreprocessSample'
+    // TODO: Method 'EndPreprocessingPass'
+};
+// --------------------------------------------------------
+// Type: IWMWriterPostViewCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMWriterPostViewCallback = *opaque{
+    // TODO: Method 'OnPostViewSample'
+    // TODO: Method 'AllocateForPostView'
+};
+// --------------------------------------------------------
+// Type: IWMWriterPostView
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMWriterPostView = *opaque{
+    // TODO: Method 'SetPostViewCallback'
+    // TODO: Method 'SetReceivePostViewSamples'
+    // TODO: Method 'GetReceivePostViewSamples'
+    // TODO: Method 'GetPostViewProps'
+    // TODO: Method 'SetPostViewProps'
+    // TODO: Method 'GetPostViewFormatCount'
+    // TODO: Method 'GetPostViewFormat'
+    // TODO: Method 'SetAllocateForPostView'
+    // TODO: Method 'GetAllocateForPostView'
+};
+// --------------------------------------------------------
+// Type: IWMWriterSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMWriterSink = *opaque{
+    // TODO: Method 'OnHeader'
+    // TODO: Method 'IsRealTime'
+    // TODO: Method 'AllocateDataUnit'
+    // TODO: Method 'OnDataUnit'
+    // TODO: Method 'OnEndWriting'
+};
+// --------------------------------------------------------
+// Type: IWMRegisterCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMRegisterCallback = *opaque{
+    // TODO: Method 'Advise'
+    // TODO: Method 'Unadvise'
+};
+// --------------------------------------------------------
+// Type: IWMWriterFileSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMWriterFileSink = *opaque{
+    // TODO: Method 'Open'
+};
+// --------------------------------------------------------
+// Type: IWMWriterFileSink2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMWriterFileSink2 = *opaque{
+    // TODO: Method 'Start'
+    // TODO: Method 'Stop'
+    // TODO: Method 'IsStopped'
+    // TODO: Method 'GetFileDuration'
+    // TODO: Method 'GetFileSize'
+    // TODO: Method 'Close'
+    // TODO: Method 'IsClosed'
+};
+// --------------------------------------------------------
+// Type: IWMWriterFileSink3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMWriterFileSink3 = *opaque{
+    // TODO: Method 'SetAutoIndexing'
+    // TODO: Method 'GetAutoIndexing'
+    // TODO: Method 'SetControlStream'
+    // TODO: Method 'GetMode'
+    // TODO: Method 'OnDataUnitEx'
+    // TODO: Method 'SetUnbufferedIO'
+    // TODO: Method 'GetUnbufferedIO'
+    // TODO: Method 'CompleteOperations'
+};
+// --------------------------------------------------------
+// Type: IWMWriterNetworkSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMWriterNetworkSink = *opaque{
+    // TODO: Method 'SetMaximumClients'
+    // TODO: Method 'GetMaximumClients'
+    // TODO: Method 'SetNetworkProtocol'
+    // TODO: Method 'GetNetworkProtocol'
+    // TODO: Method 'GetHostURL'
+    // TODO: Method 'Open'
+    // TODO: Method 'Disconnect'
+    // TODO: Method 'Close'
+};
+// --------------------------------------------------------
+// Type: IWMClientConnections
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMClientConnections = *opaque{
+    // TODO: Method 'GetClientCount'
+    // TODO: Method 'GetClientProperties'
+};
+// --------------------------------------------------------
+// Type: IWMClientConnections2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMClientConnections2 = *opaque{
+    // TODO: Method 'GetClientInfo'
+};
+// --------------------------------------------------------
+// Type: IWMReaderAdvanced
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMReaderAdvanced = *opaque{
+    // TODO: Method 'SetUserProvidedClock'
+    // TODO: Method 'GetUserProvidedClock'
+    // TODO: Method 'DeliverTime'
+    // TODO: Method 'SetManualStreamSelection'
+    // TODO: Method 'GetManualStreamSelection'
+    // TODO: Method 'SetStreamsSelected'
+    // TODO: Method 'GetStreamSelected'
+    // TODO: Method 'SetReceiveSelectionCallbacks'
+    // TODO: Method 'GetReceiveSelectionCallbacks'
+    // TODO: Method 'SetReceiveStreamSamples'
+    // TODO: Method 'GetReceiveStreamSamples'
+    // TODO: Method 'SetAllocateForOutput'
+    // TODO: Method 'GetAllocateForOutput'
+    // TODO: Method 'SetAllocateForStream'
+    // TODO: Method 'GetAllocateForStream'
+    // TODO: Method 'GetStatistics'
+    // TODO: Method 'SetClientInfo'
+    // TODO: Method 'GetMaxOutputSampleSize'
+    // TODO: Method 'GetMaxStreamSampleSize'
+    // TODO: Method 'NotifyLateDelivery'
+};
+// --------------------------------------------------------
+// Type: IWMReaderAdvanced2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMReaderAdvanced2 = *opaque{
+    // TODO: Method 'SetPlayMode'
+    // TODO: Method 'GetPlayMode'
+    // TODO: Method 'GetBufferProgress'
+    // TODO: Method 'GetDownloadProgress'
+    // TODO: Method 'GetSaveAsProgress'
+    // TODO: Method 'SaveFileAs'
+    // TODO: Method 'GetProtocolName'
+    // TODO: Method 'StartAtMarker'
+    // TODO: Method 'GetOutputSetting'
+    // TODO: Method 'SetOutputSetting'
+    // TODO: Method 'Preroll'
+    // TODO: Method 'SetLogClientID'
+    // TODO: Method 'GetLogClientID'
+    // TODO: Method 'StopBuffering'
+    // TODO: Method 'OpenStream'
+};
+// --------------------------------------------------------
+// Type: IWMReaderAdvanced3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMReaderAdvanced3 = *opaque{
+    // TODO: Method 'StopNetStreaming'
+    // TODO: Method 'StartAtPosition'
+};
+// --------------------------------------------------------
+// Type: IWMReaderAdvanced4
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMReaderAdvanced4 = *opaque{
+    // TODO: Method 'GetLanguageCount'
+    // TODO: Method 'GetLanguage'
+    // TODO: Method 'GetMaxSpeedFactor'
+    // TODO: Method 'IsUsingFastCache'
+    // TODO: Method 'AddLogParam'
+    // TODO: Method 'SendLogParams'
+    // TODO: Method 'CanSaveFileAs'
+    // TODO: Method 'CancelSaveFileAs'
+    // TODO: Method 'GetURL'
+};
+// --------------------------------------------------------
+// Type: IWMReaderAdvanced5
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMReaderAdvanced5 = *opaque{
+    // TODO: Method 'SetPlayerHook'
+};
+// --------------------------------------------------------
+// Type: IWMReaderAdvanced6
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMReaderAdvanced6 = *opaque{
+    // TODO: Method 'SetProtectStreamSamples'
+};
+// --------------------------------------------------------
+// Type: IWMPlayerHook
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMPlayerHook = *opaque{
+    // TODO: Method 'PreDecode'
+};
+// --------------------------------------------------------
+// Type: IWMReaderAllocatorEx
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMReaderAllocatorEx = *opaque{
+    // TODO: Method 'AllocateForStreamEx'
+    // TODO: Method 'AllocateForOutputEx'
+};
+// --------------------------------------------------------
+// Type: IWMReaderTypeNegotiation
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMReaderTypeNegotiation = *opaque{
+    // TODO: Method 'TryOutputProps'
+};
+// --------------------------------------------------------
+// Type: IWMReaderCallbackAdvanced
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMReaderCallbackAdvanced = *opaque{
+    // TODO: Method 'OnStreamSample'
+    // TODO: Method 'OnTime'
+    // TODO: Method 'OnStreamSelection'
+    // TODO: Method 'OnOutputPropsChanged'
+    // TODO: Method 'AllocateForStream'
+    // TODO: Method 'AllocateForOutput'
+};
+// --------------------------------------------------------
+// Type: IWMDRMReader
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMDRMReader = *opaque{
+    // TODO: Method 'AcquireLicense'
+    // TODO: Method 'CancelLicenseAcquisition'
+    // TODO: Method 'Individualize'
+    // TODO: Method 'CancelIndividualization'
+    // TODO: Method 'MonitorLicenseAcquisition'
+    // TODO: Method 'CancelMonitorLicenseAcquisition'
+    // TODO: Method 'SetDRMProperty'
+    // TODO: Method 'GetDRMProperty'
+};
+// --------------------------------------------------------
+// Type: DRM_MINIMUM_OUTPUT_PROTECTION_LEVELS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DRM_MINIMUM_OUTPUT_PROTECTION_LEVELS = extern struct {
+    wCompressedDigitalVideo: {"kind":"UInt16"},
+    wUncompressedDigitalVideo: {"kind":"UInt16"},
+    wAnalogVideo: {"kind":"UInt16"},
+    wCompressedDigitalAudio: {"kind":"UInt16"},
+    wUncompressedDigitalAudio: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: DRM_OPL_OUTPUT_IDS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DRM_OPL_OUTPUT_IDS = extern struct {
+    cIds: {"kind":"UInt16"},
+    rgIds: {"kind""Ptr","child":Guid},
+};
+// --------------------------------------------------------
+// Type: DRM_OUTPUT_PROTECTION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DRM_OUTPUT_PROTECTION = extern struct {
+    guidId: Guid,
+    bConfigData: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: DRM_VIDEO_OUTPUT_PROTECTION_IDS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DRM_VIDEO_OUTPUT_PROTECTION_IDS = extern struct {
+    cEntries: {"kind":"UInt16"},
+    rgVop: {"kind""Ptr","child":Windows.Win32.WindowsMediaFormat.DRM_OUTPUT_PROTECTION},
+};
+// --------------------------------------------------------
+// Type: DRM_PLAY_OPL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DRM_PLAY_OPL = extern struct {
+    minOPL: Windows.Win32.WindowsMediaFormat.DRM_MINIMUM_OUTPUT_PROTECTION_LEVELS,
+    oplIdReserved: Windows.Win32.WindowsMediaFormat.DRM_OPL_OUTPUT_IDS,
+    vopi: Windows.Win32.WindowsMediaFormat.DRM_VIDEO_OUTPUT_PROTECTION_IDS,
+};
+// --------------------------------------------------------
+// Type: DRM_COPY_OPL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DRM_COPY_OPL = extern struct {
+    wMinimumCopyLevel: {"kind":"UInt16"},
+    oplIdIncludes: Windows.Win32.WindowsMediaFormat.DRM_OPL_OUTPUT_IDS,
+    oplIdExcludes: Windows.Win32.WindowsMediaFormat.DRM_OPL_OUTPUT_IDS,
+};
+// --------------------------------------------------------
+// Type: IWMDRMReader2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMDRMReader2 = *opaque{
+    // TODO: Method 'SetEvaluateOutputLevelLicenses'
+    // TODO: Method 'GetPlayOutputLevels'
+    // TODO: Method 'GetCopyOutputLevels'
+    // TODO: Method 'TryNextLicense'
+};
+// --------------------------------------------------------
+// Type: IWMDRMReader3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMDRMReader3 = *opaque{
+    // TODO: Method 'GetInclusionList'
+};
+// --------------------------------------------------------
+// Type: IWMReaderPlaylistBurn
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMReaderPlaylistBurn = *opaque{
+    // TODO: Method 'InitPlaylistBurn'
+    // TODO: Method 'GetInitResults'
+    // TODO: Method 'Cancel'
+    // TODO: Method 'EndPlaylistBurn'
+};
+// --------------------------------------------------------
+// Type: IWMReaderNetworkConfig
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMReaderNetworkConfig = *opaque{
+    // TODO: Method 'GetBufferingTime'
+    // TODO: Method 'SetBufferingTime'
+    // TODO: Method 'GetUDPPortRanges'
+    // TODO: Method 'SetUDPPortRanges'
+    // TODO: Method 'GetProxySettings'
+    // TODO: Method 'SetProxySettings'
+    // TODO: Method 'GetProxyHostName'
+    // TODO: Method 'SetProxyHostName'
+    // TODO: Method 'GetProxyPort'
+    // TODO: Method 'SetProxyPort'
+    // TODO: Method 'GetProxyExceptionList'
+    // TODO: Method 'SetProxyExceptionList'
+    // TODO: Method 'GetProxyBypassForLocal'
+    // TODO: Method 'SetProxyBypassForLocal'
+    // TODO: Method 'GetForceRerunAutoProxyDetection'
+    // TODO: Method 'SetForceRerunAutoProxyDetection'
+    // TODO: Method 'GetEnableMulticast'
+    // TODO: Method 'SetEnableMulticast'
+    // TODO: Method 'GetEnableHTTP'
+    // TODO: Method 'SetEnableHTTP'
+    // TODO: Method 'GetEnableUDP'
+    // TODO: Method 'SetEnableUDP'
+    // TODO: Method 'GetEnableTCP'
+    // TODO: Method 'SetEnableTCP'
+    // TODO: Method 'ResetProtocolRollover'
+    // TODO: Method 'GetConnectionBandwidth'
+    // TODO: Method 'SetConnectionBandwidth'
+    // TODO: Method 'GetNumProtocolsSupported'
+    // TODO: Method 'GetSupportedProtocolName'
+    // TODO: Method 'AddLoggingUrl'
+    // TODO: Method 'GetLoggingUrl'
+    // TODO: Method 'GetLoggingUrlCount'
+    // TODO: Method 'ResetLoggingUrlList'
+};
+// --------------------------------------------------------
+// Type: IWMReaderNetworkConfig2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMReaderNetworkConfig2 = *opaque{
+    // TODO: Method 'GetEnableContentCaching'
+    // TODO: Method 'SetEnableContentCaching'
+    // TODO: Method 'GetEnableFastCache'
+    // TODO: Method 'SetEnableFastCache'
+    // TODO: Method 'GetAcceleratedStreamingDuration'
+    // TODO: Method 'SetAcceleratedStreamingDuration'
+    // TODO: Method 'GetAutoReconnectLimit'
+    // TODO: Method 'SetAutoReconnectLimit'
+    // TODO: Method 'GetEnableResends'
+    // TODO: Method 'SetEnableResends'
+    // TODO: Method 'GetEnableThinning'
+    // TODO: Method 'SetEnableThinning'
+    // TODO: Method 'GetMaxNetPacketSize'
+};
+// --------------------------------------------------------
+// Type: IWMReaderStreamClock
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMReaderStreamClock = *opaque{
+    // TODO: Method 'GetTime'
+    // TODO: Method 'SetTimer'
+    // TODO: Method 'KillTimer'
+};
+// --------------------------------------------------------
+// Type: IWMIndexer
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMIndexer = *opaque{
+    // TODO: Method 'StartIndexing'
+    // TODO: Method 'Cancel'
+};
+// --------------------------------------------------------
+// Type: IWMIndexer2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMIndexer2 = *opaque{
+    // TODO: Method 'Configure'
+};
+// --------------------------------------------------------
+// Type: IWMLicenseBackup
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMLicenseBackup = *opaque{
+    // TODO: Method 'BackupLicenses'
+    // TODO: Method 'CancelLicenseBackup'
+};
+// --------------------------------------------------------
+// Type: IWMLicenseRestore
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMLicenseRestore = *opaque{
+    // TODO: Method 'RestoreLicenses'
+    // TODO: Method 'CancelLicenseRestore'
+};
+// --------------------------------------------------------
+// Type: IWMBackupRestoreProps
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMBackupRestoreProps = *opaque{
+    // TODO: Method 'GetPropCount'
+    // TODO: Method 'GetPropByIndex'
+    // TODO: Method 'GetPropByName'
+    // TODO: Method 'SetPropA'
+    // TODO: Method 'RemovePropA'
+    // TODO: Method 'RemoveAllProps'
+};
+// --------------------------------------------------------
+// Type: IWMCodecInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMCodecInfo = *opaque{
+    // TODO: Method 'GetCodecInfoCount'
+    // TODO: Method 'GetCodecFormatCount'
+    // TODO: Method 'GetCodecFormat'
+};
+// --------------------------------------------------------
+// Type: IWMCodecInfo2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMCodecInfo2 = *opaque{
+    // TODO: Method 'GetCodecName'
+    // TODO: Method 'GetCodecFormatDesc'
+};
+// --------------------------------------------------------
+// Type: IWMCodecInfo3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMCodecInfo3 = *opaque{
+    // TODO: Method 'GetCodecFormatProp'
+    // TODO: Method 'GetCodecProp'
+    // TODO: Method 'SetCodecEnumerationSetting'
+    // TODO: Method 'GetCodecEnumerationSetting'
+};
+// --------------------------------------------------------
+// Type: IWMLanguageList
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMLanguageList = *opaque{
+    // TODO: Method 'GetLanguageCount'
+    // TODO: Method 'GetLanguageDetails'
+    // TODO: Method 'AddLanguageByRFC1766String'
+};
+// --------------------------------------------------------
+// Type: IWMWriterPushSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMWriterPushSink = *opaque{
+    // TODO: Method 'Connect'
+    // TODO: Method 'Disconnect'
+    // TODO: Method 'EndSession'
+};
+// --------------------------------------------------------
+// Type: IWMDeviceRegistration
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMDeviceRegistration = *opaque{
+    // TODO: Method 'RegisterDevice'
+    // TODO: Method 'UnregisterDevice'
+    // TODO: Method 'GetRegistrationStats'
+    // TODO: Method 'GetFirstRegisteredDevice'
+    // TODO: Method 'GetNextRegisteredDevice'
+    // TODO: Method 'GetRegisteredDeviceByID'
+};
+// --------------------------------------------------------
+// Type: IWMRegisteredDevice
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMRegisteredDevice = *opaque{
+    // TODO: Method 'GetDeviceSerialNumber'
+    // TODO: Method 'GetDeviceCertificate'
+    // TODO: Method 'GetDeviceType'
+    // TODO: Method 'GetAttributeCount'
+    // TODO: Method 'GetAttributeByIndex'
+    // TODO: Method 'GetAttributeByName'
+    // TODO: Method 'SetAttributeByName'
+    // TODO: Method 'Approve'
+    // TODO: Method 'IsValid'
+    // TODO: Method 'IsApproved'
+    // TODO: Method 'IsWmdrmCompliant'
+    // TODO: Method 'IsOpened'
+    // TODO: Method 'Open'
+    // TODO: Method 'Close'
+};
+// --------------------------------------------------------
+// Type: IWMProximityDetection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMProximityDetection = *opaque{
+    // TODO: Method 'StartDetection'
+};
+// --------------------------------------------------------
+// Type: IWMDRMMessageParser
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMDRMMessageParser = *opaque{
+    // TODO: Method 'ParseRegistrationReqMsg'
+    // TODO: Method 'ParseLicenseRequestMsg'
+};
+// --------------------------------------------------------
+// Type: IWMDRMTranscryptor
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMDRMTranscryptor = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'Seek'
+    // TODO: Method 'Read'
+    // TODO: Method 'Close'
+};
+// --------------------------------------------------------
+// Type: IWMDRMTranscryptor2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMDRMTranscryptor2 = *opaque{
+    // TODO: Method 'SeekEx'
+    // TODO: Method 'ZeroAdjustTimestamps'
+    // TODO: Method 'GetSeekStartTime'
+    // TODO: Method 'GetDuration'
+};
+// --------------------------------------------------------
+// Type: IWMDRMTranscryptionManager
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMDRMTranscryptionManager = *opaque{
+    // TODO: Method 'CreateTranscryptor'
+};
+// --------------------------------------------------------
+// Type: IWMWatermarkInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMWatermarkInfo = *opaque{
+    // TODO: Method 'GetWatermarkEntryCount'
+    // TODO: Method 'GetWatermarkEntry'
+};
+// --------------------------------------------------------
+// Type: IWMReaderAccelerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMReaderAccelerator = *opaque{
+    // TODO: Method 'GetCodecInterface'
+    // TODO: Method 'Notify'
+};
+// --------------------------------------------------------
+// Type: IWMReaderTimecode
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMReaderTimecode = *opaque{
+    // TODO: Method 'GetTimecodeRangeCount'
+    // TODO: Method 'GetTimecodeRangeBounds'
+};
+// --------------------------------------------------------
+// Type: IWMAddressAccess
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMAddressAccess = *opaque{
+    // TODO: Method 'GetAccessEntryCount'
+    // TODO: Method 'GetAccessEntry'
+    // TODO: Method 'AddAccessEntry'
+    // TODO: Method 'RemoveAccessEntry'
+};
+// --------------------------------------------------------
+// Type: IWMAddressAccess2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMAddressAccess2 = *opaque{
+    // TODO: Method 'GetAccessEntryEx'
+    // TODO: Method 'AddAccessEntryEx'
+};
+// --------------------------------------------------------
+// Type: IWMImageInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMImageInfo = *opaque{
+    // TODO: Method 'GetImageCount'
+    // TODO: Method 'GetImage'
+};
+// --------------------------------------------------------
+// Type: IWMLicenseRevocationAgent
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMLicenseRevocationAgent = *opaque{
+    // TODO: Method 'GetLRBChallenge'
+    // TODO: Method 'ProcessLRB'
+};
+// --------------------------------------------------------
+// Type: IWMAuthorizer
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMAuthorizer = *opaque{
+    // TODO: Method 'GetCertCount'
+    // TODO: Method 'GetCert'
+    // TODO: Method 'GetSharedData'
+};
+// --------------------------------------------------------
+// Type: IWMSecureChannel
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMSecureChannel = *opaque{
+    // TODO: Method 'WMSC_AddCertificate'
+    // TODO: Method 'WMSC_AddSignature'
+    // TODO: Method 'WMSC_Connect'
+    // TODO: Method 'WMSC_IsConnected'
+    // TODO: Method 'WMSC_Disconnect'
+    // TODO: Method 'WMSC_GetValidCertificate'
+    // TODO: Method 'WMSC_Encrypt'
+    // TODO: Method 'WMSC_Decrypt'
+    // TODO: Method 'WMSC_Lock'
+    // TODO: Method 'WMSC_Unlock'
+    // TODO: Method 'WMSC_SetSharedData'
+};
+// --------------------------------------------------------
+// Type: IWMGetSecureChannel
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMGetSecureChannel = *opaque{
+    // TODO: Method 'GetPeerSecureChannelInterface'
+};
+// --------------------------------------------------------
+// Type: INSNetSourceCreator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INSNetSourceCreator = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'CreateNetSource'
+    // TODO: Method 'GetNetSourceProperties'
+    // TODO: Method 'GetNetSourceSharedNamespace'
+    // TODO: Method 'GetNetSourceAdminInterface'
+    // TODO: Method 'GetNumProtocolsSupported'
+    // TODO: Method 'GetProtocolName'
+    // TODO: Method 'Shutdown'
+};
+// --------------------------------------------------------
+// Type: IWMPlayerTimestampHook
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMPlayerTimestampHook = *opaque{
+    // TODO: Method 'MapTimestamp'
+};
+// --------------------------------------------------------
+// Type: IWMCodecAMVideoAccelerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMCodecAMVideoAccelerator = *opaque{
+    // TODO: Method 'SetAcceleratorInterface'
+    // TODO: Method 'NegotiateConnection'
+    // TODO: Method 'SetPlayerNotify'
+};
+// --------------------------------------------------------
+// Type: IWMCodecVideoAccelerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMCodecVideoAccelerator = *opaque{
+    // TODO: Method 'NegotiateConnection'
+    // TODO: Method 'SetPlayerNotify'
+};
+// --------------------------------------------------------
+// Type: NETSOURCE_URLCREDPOLICY_SETTINGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NETSOURCE_URLCREDPOLICY_SETTINGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: IWMSInternalAdminNetSource
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMSInternalAdminNetSource = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'GetNetSourceCreator'
+    // TODO: Method 'SetCredentials'
+    // TODO: Method 'GetCredentials'
+    // TODO: Method 'DeleteCredentials'
+    // TODO: Method 'GetCredentialFlags'
+    // TODO: Method 'SetCredentialFlags'
+    // TODO: Method 'FindProxyForURL'
+    // TODO: Method 'RegisterProxyFailure'
+    // TODO: Method 'ShutdownProxyContext'
+    // TODO: Method 'IsUsingIE'
+};
+// --------------------------------------------------------
+// Type: IWMSInternalAdminNetSource2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMSInternalAdminNetSource2 = *opaque{
+    // TODO: Method 'SetCredentialsEx'
+    // TODO: Method 'GetCredentialsEx'
+    // TODO: Method 'DeleteCredentialsEx'
+    // TODO: Method 'FindProxyForURLEx'
+};
+// --------------------------------------------------------
+// Type: IWMSInternalAdminNetSource3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWMSInternalAdminNetSource3 = *opaque{
+    // TODO: Method 'GetNetSourceCreator2'
+    // TODO: Method 'FindProxyForURLEx2'
+    // TODO: Method 'RegisterProxyFailure2'
+    // TODO: Method 'ShutdownProxyContext2'
+    // TODO: Method 'IsUsingIE2'
+    // TODO: Method 'SetCredentialsEx2'
+    // TODO: Method 'GetCredentialsEx2'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WMVCore" fn WMIsContentProtected(
+    pwszFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pfIsProtected: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WMVCore" fn WMCreateWriter(
+    pUnkCert: Windows.Win32.Com.IUnknown,
+    ppWriter: {"kind""Ptr","child":Windows.Win32.WindowsMediaFormat.IWMWriter},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WMVCore" fn WMCreateReader(
+    pUnkCert: Windows.Win32.Com.IUnknown,
+    dwRights: {"kind":"UInt32"},
+    ppReader: {"kind""Ptr","child":Windows.Win32.WindowsMediaFormat.IWMReader},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WMVCore" fn WMCreateSyncReader(
+    pUnkCert: Windows.Win32.Com.IUnknown,
+    dwRights: {"kind":"UInt32"},
+    ppSyncReader: {"kind""Ptr","child":Windows.Win32.WindowsMediaFormat.IWMSyncReader},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WMVCore" fn WMCreateEditor(
+    ppEditor: {"kind""Ptr","child":Windows.Win32.WindowsMediaFormat.IWMMetadataEditor},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WMVCore" fn WMCreateIndexer(
+    ppIndexer: {"kind""Ptr","child":Windows.Win32.WindowsMediaFormat.IWMIndexer},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WMVCore" fn WMCreateBackupRestorer(
+    pCallback: Windows.Win32.Com.IUnknown,
+    ppBackup: {"kind""Ptr","child":Windows.Win32.WindowsMediaFormat.IWMLicenseBackup},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WMVCore" fn WMCreateProfileManager(
+    ppProfileManager: {"kind""Ptr","child":Windows.Win32.WindowsMediaFormat.IWMProfileManager},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WMVCore" fn WMCreateWriterFileSink(
+    ppSink: {"kind""Ptr","child":Windows.Win32.WindowsMediaFormat.IWMWriterFileSink},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WMVCore" fn WMCreateWriterNetworkSink(
+    ppSink: {"kind""Ptr","child":Windows.Win32.WindowsMediaFormat.IWMWriterNetworkSink},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WMVCore" fn WMCreateWriterPushSink(
+    ppSink: {"kind""Ptr","child":Windows.Win32.WindowsMediaFormat.IWMWriterPushSink},
+],
+
+"unicode_aliases": [
+]}

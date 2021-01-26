@@ -1,0 +1,683 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: COPYDATASTRUCT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const COPYDATASTRUCT = extern struct {
+    dwData: {"kind":"UIntPtr"},
+    cbData: {"kind":"UInt32"},
+    lpData: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: METAFILEPICT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const METAFILEPICT = extern struct {
+    mm: {"kind":"Int32"},
+    xExt: {"kind":"Int32"},
+    yExt: {"kind":"Int32"},
+    hMF: {"kind":"IntPtr"},
+};
+// --------------------------------------------------------
+// Type: DDEACK
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDEACK = extern struct {
+    _bitfield: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: DDEADVISE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDEADVISE = extern struct {
+    _bitfield: {"kind":"UInt16"},
+    cfFormat: {"kind":"Int16"},
+};
+// --------------------------------------------------------
+// Type: DDEDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDEDATA = extern struct {
+    _bitfield: {"kind":"UInt16"},
+    cfFormat: {"kind":"Int16"},
+    Value: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: DDEPOKE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDEPOKE = extern struct {
+    _bitfield: {"kind":"UInt16"},
+    cfFormat: {"kind":"Int16"},
+    Value: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: DDELN
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDELN = extern struct {
+    _bitfield: {"kind":"UInt16"},
+    cfFormat: {"kind":"Int16"},
+};
+// --------------------------------------------------------
+// Type: DDEUP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDEUP = extern struct {
+    _bitfield: {"kind":"UInt16"},
+    cfFormat: {"kind":"Int16"},
+    rgb: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: HCONVLIST__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HCONVLIST__ = extern struct {
+    unused: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: HCONV__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HCONV__ = extern struct {
+    unused: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: HSZ__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HSZ__ = extern struct {
+    unused: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: HDDEDATA__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HDDEDATA__ = extern struct {
+    unused: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: HSZPAIR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HSZPAIR = extern struct {
+    hszSvc: {"kind":"IntPtr"},
+    hszTopic: {"kind":"IntPtr"},
+};
+// --------------------------------------------------------
+// Type: CONVCONTEXT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CONVCONTEXT = extern struct {
+    cb: {"kind":"UInt32"},
+    wFlags: {"kind":"UInt32"},
+    wCountryID: {"kind":"UInt32"},
+    iCodePage: {"kind":"Int32"},
+    dwLangID: {"kind":"UInt32"},
+    dwSecurity: {"kind":"UInt32"},
+    qos: Windows.Win32.Security.SECURITY_QUALITY_OF_SERVICE,
+};
+// --------------------------------------------------------
+// Type: CONVINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CONVINFO = extern struct {
+    cb: {"kind":"UInt32"},
+    hUser: {"kind":"UIntPtr"},
+    hConvPartner: {"kind":"IntPtr"},
+    hszSvcPartner: {"kind":"IntPtr"},
+    hszServiceReq: {"kind":"IntPtr"},
+    hszTopic: {"kind":"IntPtr"},
+    hszItem: {"kind":"IntPtr"},
+    wFmt: {"kind":"UInt32"},
+    wType: {"kind":"UInt32"},
+    wStatus: {"kind":"UInt32"},
+    wConvst: {"kind":"UInt32"},
+    wLastError: {"kind":"UInt32"},
+    hConvList: {"kind":"IntPtr"},
+    ConvCtxt: Windows.Win32.DataExchange.CONVCONTEXT,
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hwndPartner: Windows.Win32.WindowsAndMessaging.HWND,
+};
+// --------------------------------------------------------
+// Type: FNCALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FNCALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFNCALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFNCALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DDEML_MSG_HOOK_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DDEML_MSG_HOOK_DATA = extern struct {
+    uiLo: {"kind":"UIntPtr"},
+    uiHi: {"kind":"UIntPtr"},
+    cbData: {"kind":"UInt32"},
+    Data: {"kind":"Array","child": {"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: MONMSGSTRUCT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MONMSGSTRUCT = extern struct {
+    cb: {"kind":"UInt32"},
+    hwndTo: Windows.Win32.WindowsAndMessaging.HWND,
+    dwTime: {"kind":"UInt32"},
+    hTask: Windows.Win32.SystemServices.HANDLE,
+    wMsg: {"kind":"UInt32"},
+    wParam: Windows.Win32.WindowsAndMessaging.WPARAM,
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+    dmhd: Windows.Win32.DataExchange.DDEML_MSG_HOOK_DATA,
+};
+// --------------------------------------------------------
+// Type: MONCBSTRUCT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MONCBSTRUCT = extern struct {
+    cb: {"kind":"UInt32"},
+    dwTime: {"kind":"UInt32"},
+    hTask: Windows.Win32.SystemServices.HANDLE,
+    dwRet: {"kind":"UInt32"},
+    wType: {"kind":"UInt32"},
+    wFmt: {"kind":"UInt32"},
+    hConv: {"kind":"IntPtr"},
+    hsz1: {"kind":"IntPtr"},
+    hsz2: {"kind":"IntPtr"},
+    hData: {"kind":"IntPtr"},
+    dwData1: {"kind":"UIntPtr"},
+    dwData2: {"kind":"UIntPtr"},
+    cc: Windows.Win32.DataExchange.CONVCONTEXT,
+    cbData: {"kind":"UInt32"},
+    Data: {"kind":"Array","child": {"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: MONHSZSTRUCTA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MONHSZSTRUCTA = extern struct {
+    cb: {"kind":"UInt32"},
+    fsAction: Windows.Win32.SystemServices.BOOL,
+    dwTime: {"kind":"UInt32"},
+    hsz: {"kind":"IntPtr"},
+    hTask: Windows.Win32.SystemServices.HANDLE,
+    str: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: MONHSZSTRUCTW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MONHSZSTRUCTW = extern struct {
+    cb: {"kind":"UInt32"},
+    fsAction: Windows.Win32.SystemServices.BOOL,
+    dwTime: {"kind":"UInt32"},
+    hsz: {"kind":"IntPtr"},
+    hTask: Windows.Win32.SystemServices.HANDLE,
+    str: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: MONERRSTRUCT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MONERRSTRUCT = extern struct {
+    cb: {"kind":"UInt32"},
+    wLastError: {"kind":"UInt32"},
+    dwTime: {"kind":"UInt32"},
+    hTask: Windows.Win32.SystemServices.HANDLE,
+};
+// --------------------------------------------------------
+// Type: MONLINKSTRUCT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MONLINKSTRUCT = extern struct {
+    cb: {"kind":"UInt32"},
+    dwTime: {"kind":"UInt32"},
+    hTask: Windows.Win32.SystemServices.HANDLE,
+    fEstablished: Windows.Win32.SystemServices.BOOL,
+    fNoData: Windows.Win32.SystemServices.BOOL,
+    hszSvc: {"kind":"IntPtr"},
+    hszTopic: {"kind":"IntPtr"},
+    hszItem: {"kind":"IntPtr"},
+    wFmt: {"kind":"UInt32"},
+    fServer: Windows.Win32.SystemServices.BOOL,
+    hConvServer: {"kind":"IntPtr"},
+    hConvClient: {"kind":"IntPtr"},
+};
+// --------------------------------------------------------
+// Type: MONCONVSTRUCT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MONCONVSTRUCT = extern struct {
+    cb: {"kind":"UInt32"},
+    fConnect: Windows.Win32.SystemServices.BOOL,
+    dwTime: {"kind":"UInt32"},
+    hTask: Windows.Win32.SystemServices.HANDLE,
+    hszSvc: {"kind":"IntPtr"},
+    hszTopic: {"kind":"IntPtr"},
+    hConvClient: {"kind":"IntPtr"},
+    hConvServer: {"kind":"IntPtr"},
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn OpenClipboard(
+    hWndNewOwner: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CloseClipboard(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetClipboardSequenceNumber(
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetClipboardOwner(
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetClipboardViewer(
+    hWndNewViewer: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetClipboardViewer(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn ChangeClipboardChain(
+    hWndRemove: Windows.Win32.WindowsAndMessaging.HWND,
+    hWndNewNext: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetClipboardData(
+    uFormat: {"kind":"UInt32"},
+    hMem: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetClipboardData(
+    uFormat: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn RegisterClipboardFormatA(
+    lpszFormat: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn RegisterClipboardFormatW(
+    lpszFormat: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CountClipboardFormats(
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn EnumClipboardFormats(
+    format: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetClipboardFormatNameA(
+    format: {"kind":"UInt32"},
+    lpszFormatName: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchMaxCount: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetClipboardFormatNameW(
+    format: {"kind":"UInt32"},
+    lpszFormatName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchMaxCount: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn EmptyClipboard(
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn IsClipboardFormatAvailable(
+    format: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetPriorityClipboardFormat(
+    paFormatPriorityList: {"kind""Ptr","child":{"kind":"UInt32"}},
+    cFormats: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetOpenClipboardWindow(
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn AddClipboardFormatListener(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn RemoveClipboardFormatListener(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetUpdatedClipboardFormats(
+    lpuiFormats: {"kind""Ptr","child":{"kind":"UInt32"}},
+    cFormats: {"kind":"UInt32"},
+    pcFormatsOut: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn DdeSetQualityOfService(
+    hwndClient: Windows.Win32.WindowsAndMessaging.HWND,
+    pqosNew: {"kind""Ptr","child":Windows.Win32.Security.SECURITY_QUALITY_OF_SERVICE},
+    pqosPrev: {"kind""Ptr","child":Windows.Win32.Security.SECURITY_QUALITY_OF_SERVICE},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn ImpersonateDdeClientWindow(
+    hWndClient: Windows.Win32.WindowsAndMessaging.HWND,
+    hWndServer: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn PackDDElParam(
+    msg: {"kind":"UInt32"},
+    uiLo: {"kind":"UIntPtr"},
+    uiHi: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn UnpackDDElParam(
+    msg: {"kind":"UInt32"},
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+    puiLo: {"kind""Ptr","child":{"kind":"UInt32"}},
+    puiHi: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn FreeDDElParam(
+    msg: {"kind":"UInt32"},
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn ReuseDDElParam(
+    lParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+    msgIn: {"kind":"UInt32"},
+    msgOut: {"kind":"UInt32"},
+    uiLo: {"kind":"UIntPtr"},
+    uiHi: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdeInitializeA(
+    pidInst: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pfnCallback: Windows.Win32.DataExchange.PFNCALLBACK,
+    afCmd: {"kind":"UInt32"},
+    ulRes: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdeInitializeW(
+    pidInst: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pfnCallback: Windows.Win32.DataExchange.PFNCALLBACK,
+    afCmd: {"kind":"UInt32"},
+    ulRes: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdeUninitialize(
+    idInst: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdeConnectList(
+    idInst: {"kind":"UInt32"},
+    hszService: {"kind":"IntPtr"},
+    hszTopic: {"kind":"IntPtr"},
+    hConvList: {"kind":"IntPtr"},
+    pCC: {"kind""Ptr","child":Windows.Win32.DataExchange.CONVCONTEXT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdeQueryNextServer(
+    hConvList: {"kind":"IntPtr"},
+    hConvPrev: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdeDisconnectList(
+    hConvList: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdeConnect(
+    idInst: {"kind":"UInt32"},
+    hszService: {"kind":"IntPtr"},
+    hszTopic: {"kind":"IntPtr"},
+    pCC: {"kind""Ptr","child":Windows.Win32.DataExchange.CONVCONTEXT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdeDisconnect(
+    hConv: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdeReconnect(
+    hConv: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdeQueryConvInfo(
+    hConv: {"kind":"IntPtr"},
+    idTransaction: {"kind":"UInt32"},
+    pConvInfo: {"kind""Ptr","child":Windows.Win32.DataExchange.CONVINFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdeSetUserHandle(
+    hConv: {"kind":"IntPtr"},
+    id: {"kind":"UInt32"},
+    hUser: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdeAbandonTransaction(
+    idInst: {"kind":"UInt32"},
+    hConv: {"kind":"IntPtr"},
+    idTransaction: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdePostAdvise(
+    idInst: {"kind":"UInt32"},
+    hszTopic: {"kind":"IntPtr"},
+    hszItem: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdeEnableCallback(
+    idInst: {"kind":"UInt32"},
+    hConv: {"kind":"IntPtr"},
+    wCmd: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn DdeImpersonateClient(
+    hConv: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdeNameService(
+    idInst: {"kind":"UInt32"},
+    hsz1: {"kind":"IntPtr"},
+    hsz2: {"kind":"IntPtr"},
+    afCmd: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdeClientTransaction(
+    pData: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbData: {"kind":"UInt32"},
+    hConv: {"kind":"IntPtr"},
+    hszItem: {"kind":"IntPtr"},
+    wFmt: {"kind":"UInt32"},
+    wType: {"kind":"UInt32"},
+    dwTimeout: {"kind":"UInt32"},
+    pdwResult: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdeCreateDataHandle(
+    idInst: {"kind":"UInt32"},
+    pSrc: {"kind""Ptr","child":{"kind":"Byte"}},
+    cb: {"kind":"UInt32"},
+    cbOff: {"kind":"UInt32"},
+    hszItem: {"kind":"IntPtr"},
+    wFmt: {"kind":"UInt32"},
+    afCmd: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdeAddData(
+    hData: {"kind":"IntPtr"},
+    pSrc: {"kind""Ptr","child":{"kind":"Byte"}},
+    cb: {"kind":"UInt32"},
+    cbOff: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdeGetData(
+    hData: {"kind":"IntPtr"},
+    pDst: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbMax: {"kind":"UInt32"},
+    cbOff: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdeAccessData(
+    hData: {"kind":"IntPtr"},
+    pcbDataSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdeUnaccessData(
+    hData: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdeFreeDataHandle(
+    hData: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdeGetLastError(
+    idInst: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdeCreateStringHandleA(
+    idInst: {"kind":"UInt32"},
+    psz: {"kind""Ptr","child":{"kind":"SByte"}},
+    iCodePage: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdeCreateStringHandleW(
+    idInst: {"kind":"UInt32"},
+    psz: {"kind""Ptr","child":{"kind":"UInt16"}},
+    iCodePage: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdeQueryStringA(
+    idInst: {"kind":"UInt32"},
+    hsz: {"kind":"IntPtr"},
+    psz: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchMax: {"kind":"UInt32"},
+    iCodePage: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdeQueryStringW(
+    idInst: {"kind":"UInt32"},
+    hsz: {"kind":"IntPtr"},
+    psz: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchMax: {"kind":"UInt32"},
+    iCodePage: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdeFreeStringHandle(
+    idInst: {"kind":"UInt32"},
+    hsz: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdeKeepStringHandle(
+    idInst: {"kind":"UInt32"},
+    hsz: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn DdeCmpStringHandles(
+    hsz1: {"kind":"IntPtr"},
+    hsz2: {"kind":"IntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn GlobalDeleteAtom(
+    nAtom: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn InitAtomTable(
+    nSize: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn DeleteAtom(
+    nAtom: {"kind":"UInt16"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn GlobalAddAtomA(
+    lpString: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn GlobalAddAtomW(
+    lpString: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn GlobalAddAtomExA(
+    lpString: {"kind""Ptr","child":{"kind":"SByte"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn GlobalAddAtomExW(
+    lpString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn GlobalFindAtomA(
+    lpString: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn GlobalFindAtomW(
+    lpString: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn GlobalGetAtomNameA(
+    nAtom: {"kind":"UInt16"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    nSize: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn GlobalGetAtomNameW(
+    nAtom: {"kind":"UInt16"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    nSize: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn AddAtomA(
+    lpString: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn AddAtomW(
+    lpString: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn FindAtomA(
+    lpString: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn FindAtomW(
+    lpString: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn GetAtomNameA(
+    nAtom: {"kind":"UInt16"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    nSize: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn GetAtomNameW(
+    nAtom: {"kind":"UInt16"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    nSize: {"kind":"Int32"},
+],
+
+"unicode_aliases": [
+     "MONHSZSTRUCT"
+     "RegisterClipboardFormat"
+     "GetClipboardFormatName"
+     "DdeInitialize"
+     "DdeCreateStringHandle"
+     "DdeQueryString"
+     "GlobalAddAtom"
+     "GlobalAddAtomEx"
+     "GlobalFindAtom"
+     "GlobalGetAtomName"
+     "AddAtom"
+     "FindAtom"
+     "GetAtomName"
+]}

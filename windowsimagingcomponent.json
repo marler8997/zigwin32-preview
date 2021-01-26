@@ -1,0 +1,1174 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: WICRect
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WICRect = extern struct {
+    X: {"kind":"Int32"},
+    Y: {"kind":"Int32"},
+    Width: {"kind":"Int32"},
+    Height: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: WICColorContextType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICColorContextType = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICBitmapCreateCacheOption
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICBitmapCreateCacheOption = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICDecodeOptions
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICDecodeOptions = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICBitmapEncoderCacheOption
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICBitmapEncoderCacheOption = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICComponentType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICComponentType = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICComponentEnumerateOptions
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICComponentEnumerateOptions = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICBitmapPattern
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WICBitmapPattern = extern struct {
+    Position: Windows.Win32.SystemServices.ULARGE_INTEGER,
+    Length: {"kind":"UInt32"},
+    Pattern: {"kind""Ptr","child":{"kind":"Byte"}},
+    Mask: {"kind""Ptr","child":{"kind":"Byte"}},
+    EndOfStream: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: WICBitmapInterpolationMode
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICBitmapInterpolationMode = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICBitmapPaletteType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICBitmapPaletteType = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICBitmapDitherType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICBitmapDitherType = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICBitmapAlphaChannelOption
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICBitmapAlphaChannelOption = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICBitmapTransformOptions
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICBitmapTransformOptions = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICBitmapLockFlags
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICBitmapLockFlags = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICBitmapDecoderCapabilities
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICBitmapDecoderCapabilities = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICProgressOperation
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICProgressOperation = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICProgressNotification
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICProgressNotification = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICComponentSigning
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICComponentSigning = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICGifLogicalScreenDescriptorProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICGifLogicalScreenDescriptorProperties = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICGifImageDescriptorProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICGifImageDescriptorProperties = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICGifGraphicControlExtensionProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICGifGraphicControlExtensionProperties = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICGifApplicationExtensionProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICGifApplicationExtensionProperties = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICGifCommentExtensionProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICGifCommentExtensionProperties = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICJpegCommentProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICJpegCommentProperties = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICJpegLuminanceProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICJpegLuminanceProperties = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICJpegChrominanceProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICJpegChrominanceProperties = *opaque{
+};
+// --------------------------------------------------------
+// Type: WIC8BIMIptcProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WIC8BIMIptcProperties = *opaque{
+};
+// --------------------------------------------------------
+// Type: WIC8BIMResolutionInfoProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WIC8BIMResolutionInfoProperties = *opaque{
+};
+// --------------------------------------------------------
+// Type: WIC8BIMIptcDigestProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WIC8BIMIptcDigestProperties = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICPngGamaProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICPngGamaProperties = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICPngBkgdProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICPngBkgdProperties = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICPngItxtProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICPngItxtProperties = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICPngChrmProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICPngChrmProperties = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICPngHistProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICPngHistProperties = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICPngIccpProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICPngIccpProperties = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICPngSrgbProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICPngSrgbProperties = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICPngTimeProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICPngTimeProperties = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICHeifProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICHeifProperties = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICHeifHdrProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICHeifHdrProperties = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICWebpAnimProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICWebpAnimProperties = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICWebpAnmfProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICWebpAnmfProperties = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICSectionAccessLevel
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICSectionAccessLevel = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICPixelFormatNumericRepresentation
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICPixelFormatNumericRepresentation = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICPlanarOptions
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICPlanarOptions = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICJpegIndexingOptions
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICJpegIndexingOptions = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICJpegTransferMatrix
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICJpegTransferMatrix = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICJpegScanType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICJpegScanType = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICImageParameters
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WICImageParameters = extern struct {
+    PixelFormat: Windows.Win32.Direct2D.D2D1_PIXEL_FORMAT,
+    DpiX: {"kind":"Single"},
+    DpiY: {"kind":"Single"},
+    Top: {"kind":"Single"},
+    Left: {"kind":"Single"},
+    PixelWidth: {"kind":"UInt32"},
+    PixelHeight: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WICBitmapPlaneDescription
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WICBitmapPlaneDescription = extern struct {
+    Format: Guid,
+    Width: {"kind":"UInt32"},
+    Height: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WICBitmapPlane
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WICBitmapPlane = extern struct {
+    Format: Guid,
+    pbBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbStride: {"kind":"UInt32"},
+    cbBufferSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WICJpegFrameHeader
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WICJpegFrameHeader = extern struct {
+    Width: {"kind":"UInt32"},
+    Height: {"kind":"UInt32"},
+    TransferMatrix: Windows.Win32.WindowsImagingComponent.WICJpegTransferMatrix,
+    ScanType: Windows.Win32.WindowsImagingComponent.WICJpegScanType,
+    cComponents: {"kind":"UInt32"},
+    ComponentIdentifiers: {"kind":"UInt32"},
+    SampleFactors: {"kind":"UInt32"},
+    QuantizationTableIndices: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WICJpegScanHeader
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WICJpegScanHeader = extern struct {
+    cComponents: {"kind":"UInt32"},
+    RestartInterval: {"kind":"UInt32"},
+    ComponentSelectors: {"kind":"UInt32"},
+    HuffmanTableIndices: {"kind":"UInt32"},
+    StartSpectralSelection: {"kind":"Byte"},
+    EndSpectralSelection: {"kind":"Byte"},
+    SuccessiveApproximationHigh: {"kind":"Byte"},
+    SuccessiveApproximationLow: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: IWICPalette
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICPalette = *opaque{
+    // TODO: Method 'InitializePredefined'
+    // TODO: Method 'InitializeCustom'
+    // TODO: Method 'InitializeFromBitmap'
+    // TODO: Method 'InitializeFromPalette'
+    // TODO: Method 'GetType'
+    // TODO: Method 'GetColorCount'
+    // TODO: Method 'GetColors'
+    // TODO: Method 'IsBlackWhite'
+    // TODO: Method 'IsGrayscale'
+    // TODO: Method 'HasAlpha'
+};
+// --------------------------------------------------------
+// Type: IWICBitmapSource
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICBitmapSource = *opaque{
+    // TODO: Method 'GetSize'
+    // TODO: Method 'GetPixelFormat'
+    // TODO: Method 'GetResolution'
+    // TODO: Method 'CopyPalette'
+    // TODO: Method 'CopyPixels'
+};
+// --------------------------------------------------------
+// Type: IWICFormatConverter
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICFormatConverter = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'CanConvert'
+};
+// --------------------------------------------------------
+// Type: IWICPlanarFormatConverter
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICPlanarFormatConverter = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'CanConvert'
+};
+// --------------------------------------------------------
+// Type: IWICBitmapScaler
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICBitmapScaler = *opaque{
+    // TODO: Method 'Initialize'
+};
+// --------------------------------------------------------
+// Type: IWICBitmapClipper
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICBitmapClipper = *opaque{
+    // TODO: Method 'Initialize'
+};
+// --------------------------------------------------------
+// Type: IWICBitmapFlipRotator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICBitmapFlipRotator = *opaque{
+    // TODO: Method 'Initialize'
+};
+// --------------------------------------------------------
+// Type: IWICBitmapLock
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICBitmapLock = *opaque{
+    // TODO: Method 'GetSize'
+    // TODO: Method 'GetStride'
+    // TODO: Method 'GetDataPointer'
+    // TODO: Method 'GetPixelFormat'
+};
+// --------------------------------------------------------
+// Type: IWICBitmap
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICBitmap = *opaque{
+    // TODO: Method 'Lock'
+    // TODO: Method 'SetPalette'
+    // TODO: Method 'SetResolution'
+};
+// --------------------------------------------------------
+// Type: IWICColorContext
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICColorContext = *opaque{
+    // TODO: Method 'InitializeFromFilename'
+    // TODO: Method 'InitializeFromMemory'
+    // TODO: Method 'InitializeFromExifColorSpace'
+    // TODO: Method 'GetType'
+    // TODO: Method 'GetProfileBytes'
+    // TODO: Method 'GetExifColorSpace'
+};
+// --------------------------------------------------------
+// Type: IWICColorTransform
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICColorTransform = *opaque{
+    // TODO: Method 'Initialize'
+};
+// --------------------------------------------------------
+// Type: IWICFastMetadataEncoder
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICFastMetadataEncoder = *opaque{
+    // TODO: Method 'Commit'
+    // TODO: Method 'GetMetadataQueryWriter'
+};
+// --------------------------------------------------------
+// Type: IWICStream
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICStream = *opaque{
+    // TODO: Method 'InitializeFromIStream'
+    // TODO: Method 'InitializeFromFilename'
+    // TODO: Method 'InitializeFromMemory'
+    // TODO: Method 'InitializeFromIStreamRegion'
+};
+// --------------------------------------------------------
+// Type: IWICEnumMetadataItem
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICEnumMetadataItem = *opaque{
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IWICMetadataQueryReader
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICMetadataQueryReader = *opaque{
+    // TODO: Method 'GetContainerFormat'
+    // TODO: Method 'GetLocation'
+    // TODO: Method 'GetMetadataByName'
+    // TODO: Method 'GetEnumerator'
+};
+// --------------------------------------------------------
+// Type: IWICMetadataQueryWriter
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICMetadataQueryWriter = *opaque{
+    // TODO: Method 'SetMetadataByName'
+    // TODO: Method 'RemoveMetadataByName'
+};
+// --------------------------------------------------------
+// Type: IWICBitmapEncoder
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICBitmapEncoder = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'GetContainerFormat'
+    // TODO: Method 'GetEncoderInfo'
+    // TODO: Method 'SetColorContexts'
+    // TODO: Method 'SetPalette'
+    // TODO: Method 'SetThumbnail'
+    // TODO: Method 'SetPreview'
+    // TODO: Method 'CreateNewFrame'
+    // TODO: Method 'Commit'
+    // TODO: Method 'GetMetadataQueryWriter'
+};
+// --------------------------------------------------------
+// Type: IWICBitmapFrameEncode
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICBitmapFrameEncode = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'SetSize'
+    // TODO: Method 'SetResolution'
+    // TODO: Method 'SetPixelFormat'
+    // TODO: Method 'SetColorContexts'
+    // TODO: Method 'SetPalette'
+    // TODO: Method 'SetThumbnail'
+    // TODO: Method 'WritePixels'
+    // TODO: Method 'WriteSource'
+    // TODO: Method 'Commit'
+    // TODO: Method 'GetMetadataQueryWriter'
+};
+// --------------------------------------------------------
+// Type: IWICPlanarBitmapFrameEncode
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICPlanarBitmapFrameEncode = *opaque{
+    // TODO: Method 'WritePixels'
+    // TODO: Method 'WriteSource'
+};
+// --------------------------------------------------------
+// Type: IWICImageEncoder
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICImageEncoder = *opaque{
+    // TODO: Method 'WriteFrame'
+    // TODO: Method 'WriteFrameThumbnail'
+    // TODO: Method 'WriteThumbnail'
+};
+// --------------------------------------------------------
+// Type: IWICBitmapDecoder
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICBitmapDecoder = *opaque{
+    // TODO: Method 'QueryCapability'
+    // TODO: Method 'Initialize'
+    // TODO: Method 'GetContainerFormat'
+    // TODO: Method 'GetDecoderInfo'
+    // TODO: Method 'CopyPalette'
+    // TODO: Method 'GetMetadataQueryReader'
+    // TODO: Method 'GetPreview'
+    // TODO: Method 'GetColorContexts'
+    // TODO: Method 'GetThumbnail'
+    // TODO: Method 'GetFrameCount'
+    // TODO: Method 'GetFrame'
+};
+// --------------------------------------------------------
+// Type: IWICBitmapSourceTransform
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICBitmapSourceTransform = *opaque{
+    // TODO: Method 'CopyPixels'
+    // TODO: Method 'GetClosestSize'
+    // TODO: Method 'GetClosestPixelFormat'
+    // TODO: Method 'DoesSupportTransform'
+};
+// --------------------------------------------------------
+// Type: IWICPlanarBitmapSourceTransform
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICPlanarBitmapSourceTransform = *opaque{
+    // TODO: Method 'DoesSupportTransform'
+    // TODO: Method 'CopyPixels'
+};
+// --------------------------------------------------------
+// Type: IWICBitmapFrameDecode
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICBitmapFrameDecode = *opaque{
+    // TODO: Method 'GetMetadataQueryReader'
+    // TODO: Method 'GetColorContexts'
+    // TODO: Method 'GetThumbnail'
+};
+// --------------------------------------------------------
+// Type: IWICProgressiveLevelControl
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICProgressiveLevelControl = *opaque{
+    // TODO: Method 'GetLevelCount'
+    // TODO: Method 'GetCurrentLevel'
+    // TODO: Method 'SetCurrentLevel'
+};
+// --------------------------------------------------------
+// Type: IWICProgressCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICProgressCallback = *opaque{
+    // TODO: Method 'Notify'
+};
+// --------------------------------------------------------
+// Type: PFNProgressNotification
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFNProgressNotification = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IWICBitmapCodecProgressNotification
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICBitmapCodecProgressNotification = *opaque{
+    // TODO: Method 'RegisterProgressNotification'
+};
+// --------------------------------------------------------
+// Type: IWICComponentInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICComponentInfo = *opaque{
+    // TODO: Method 'GetComponentType'
+    // TODO: Method 'GetCLSID'
+    // TODO: Method 'GetSigningStatus'
+    // TODO: Method 'GetAuthor'
+    // TODO: Method 'GetVendorGUID'
+    // TODO: Method 'GetVersion'
+    // TODO: Method 'GetSpecVersion'
+    // TODO: Method 'GetFriendlyName'
+};
+// --------------------------------------------------------
+// Type: IWICFormatConverterInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICFormatConverterInfo = *opaque{
+    // TODO: Method 'GetPixelFormats'
+    // TODO: Method 'CreateInstance'
+};
+// --------------------------------------------------------
+// Type: IWICBitmapCodecInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICBitmapCodecInfo = *opaque{
+    // TODO: Method 'GetContainerFormat'
+    // TODO: Method 'GetPixelFormats'
+    // TODO: Method 'GetColorManagementVersion'
+    // TODO: Method 'GetDeviceManufacturer'
+    // TODO: Method 'GetDeviceModels'
+    // TODO: Method 'GetMimeTypes'
+    // TODO: Method 'GetFileExtensions'
+    // TODO: Method 'DoesSupportAnimation'
+    // TODO: Method 'DoesSupportChromakey'
+    // TODO: Method 'DoesSupportLossless'
+    // TODO: Method 'DoesSupportMultiframe'
+    // TODO: Method 'MatchesMimeType'
+};
+// --------------------------------------------------------
+// Type: IWICBitmapEncoderInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICBitmapEncoderInfo = *opaque{
+    // TODO: Method 'CreateInstance'
+};
+// --------------------------------------------------------
+// Type: IWICBitmapDecoderInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICBitmapDecoderInfo = *opaque{
+    // TODO: Method 'GetPatterns'
+    // TODO: Method 'MatchesPattern'
+    // TODO: Method 'CreateInstance'
+};
+// --------------------------------------------------------
+// Type: IWICPixelFormatInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICPixelFormatInfo = *opaque{
+    // TODO: Method 'GetFormatGUID'
+    // TODO: Method 'GetColorContext'
+    // TODO: Method 'GetBitsPerPixel'
+    // TODO: Method 'GetChannelCount'
+    // TODO: Method 'GetChannelMask'
+};
+// --------------------------------------------------------
+// Type: IWICPixelFormatInfo2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICPixelFormatInfo2 = *opaque{
+    // TODO: Method 'SupportsTransparency'
+    // TODO: Method 'GetNumericRepresentation'
+};
+// --------------------------------------------------------
+// Type: IWICImagingFactory
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICImagingFactory = *opaque{
+    // TODO: Method 'CreateDecoderFromFilename'
+    // TODO: Method 'CreateDecoderFromStream'
+    // TODO: Method 'CreateDecoderFromFileHandle'
+    // TODO: Method 'CreateComponentInfo'
+    // TODO: Method 'CreateDecoder'
+    // TODO: Method 'CreateEncoder'
+    // TODO: Method 'CreatePalette'
+    // TODO: Method 'CreateFormatConverter'
+    // TODO: Method 'CreateBitmapScaler'
+    // TODO: Method 'CreateBitmapClipper'
+    // TODO: Method 'CreateBitmapFlipRotator'
+    // TODO: Method 'CreateStream'
+    // TODO: Method 'CreateColorContext'
+    // TODO: Method 'CreateColorTransformer'
+    // TODO: Method 'CreateBitmap'
+    // TODO: Method 'CreateBitmapFromSource'
+    // TODO: Method 'CreateBitmapFromSourceRect'
+    // TODO: Method 'CreateBitmapFromMemory'
+    // TODO: Method 'CreateBitmapFromHBITMAP'
+    // TODO: Method 'CreateBitmapFromHICON'
+    // TODO: Method 'CreateComponentEnumerator'
+    // TODO: Method 'CreateFastMetadataEncoderFromDecoder'
+    // TODO: Method 'CreateFastMetadataEncoderFromFrameDecode'
+    // TODO: Method 'CreateQueryWriter'
+    // TODO: Method 'CreateQueryWriterFromReader'
+};
+// --------------------------------------------------------
+// Type: IWICImagingFactory2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICImagingFactory2 = *opaque{
+    // TODO: Method 'CreateImageEncoder'
+};
+// --------------------------------------------------------
+// Type: WICTiffCompressionOption
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICTiffCompressionOption = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICJpegYCrCbSubsamplingOption
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICJpegYCrCbSubsamplingOption = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICPngFilterOption
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICPngFilterOption = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICNamedWhitePoint
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICNamedWhitePoint = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICRawCapabilities
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICRawCapabilities = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICRawRotationCapabilities
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICRawRotationCapabilities = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICRawCapabilitiesInfo
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WICRawCapabilitiesInfo = extern struct {
+    cbSize: {"kind":"UInt32"},
+    CodecMajorVersion: {"kind":"UInt32"},
+    CodecMinorVersion: {"kind":"UInt32"},
+    ExposureCompensationSupport: Windows.Win32.WindowsImagingComponent.WICRawCapabilities,
+    ContrastSupport: Windows.Win32.WindowsImagingComponent.WICRawCapabilities,
+    RGBWhitePointSupport: Windows.Win32.WindowsImagingComponent.WICRawCapabilities,
+    NamedWhitePointSupport: Windows.Win32.WindowsImagingComponent.WICRawCapabilities,
+    NamedWhitePointSupportMask: {"kind":"UInt32"},
+    KelvinWhitePointSupport: Windows.Win32.WindowsImagingComponent.WICRawCapabilities,
+    GammaSupport: Windows.Win32.WindowsImagingComponent.WICRawCapabilities,
+    TintSupport: Windows.Win32.WindowsImagingComponent.WICRawCapabilities,
+    SaturationSupport: Windows.Win32.WindowsImagingComponent.WICRawCapabilities,
+    SharpnessSupport: Windows.Win32.WindowsImagingComponent.WICRawCapabilities,
+    NoiseReductionSupport: Windows.Win32.WindowsImagingComponent.WICRawCapabilities,
+    DestinationColorProfileSupport: Windows.Win32.WindowsImagingComponent.WICRawCapabilities,
+    ToneCurveSupport: Windows.Win32.WindowsImagingComponent.WICRawCapabilities,
+    RotationSupport: Windows.Win32.WindowsImagingComponent.WICRawRotationCapabilities,
+    RenderModeSupport: Windows.Win32.WindowsImagingComponent.WICRawCapabilities,
+};
+// --------------------------------------------------------
+// Type: WICRawParameterSet
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICRawParameterSet = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICRawRenderMode
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICRawRenderMode = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICRawToneCurvePoint
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WICRawToneCurvePoint = extern struct {
+    Input: {"kind":"Double"},
+    Output: {"kind":"Double"},
+};
+// --------------------------------------------------------
+// Type: WICRawToneCurve
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WICRawToneCurve = extern struct {
+    cPoints: {"kind":"UInt32"},
+    aPoints: {"kind":"Array","child": Windows.Win32.WindowsImagingComponent.WICRawToneCurvePoint},
+};
+// --------------------------------------------------------
+// Type: IWICDevelopRawNotificationCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICDevelopRawNotificationCallback = *opaque{
+    // TODO: Method 'Notify'
+};
+// --------------------------------------------------------
+// Type: IWICDevelopRaw
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICDevelopRaw = *opaque{
+    // TODO: Method 'QueryRawCapabilitiesInfo'
+    // TODO: Method 'LoadParameterSet'
+    // TODO: Method 'GetCurrentParameterSet'
+    // TODO: Method 'SetExposureCompensation'
+    // TODO: Method 'GetExposureCompensation'
+    // TODO: Method 'SetWhitePointRGB'
+    // TODO: Method 'GetWhitePointRGB'
+    // TODO: Method 'SetNamedWhitePoint'
+    // TODO: Method 'GetNamedWhitePoint'
+    // TODO: Method 'SetWhitePointKelvin'
+    // TODO: Method 'GetWhitePointKelvin'
+    // TODO: Method 'GetKelvinRangeInfo'
+    // TODO: Method 'SetContrast'
+    // TODO: Method 'GetContrast'
+    // TODO: Method 'SetGamma'
+    // TODO: Method 'GetGamma'
+    // TODO: Method 'SetSharpness'
+    // TODO: Method 'GetSharpness'
+    // TODO: Method 'SetSaturation'
+    // TODO: Method 'GetSaturation'
+    // TODO: Method 'SetTint'
+    // TODO: Method 'GetTint'
+    // TODO: Method 'SetNoiseReduction'
+    // TODO: Method 'GetNoiseReduction'
+    // TODO: Method 'SetDestinationColorContext'
+    // TODO: Method 'SetToneCurve'
+    // TODO: Method 'GetToneCurve'
+    // TODO: Method 'SetRotation'
+    // TODO: Method 'GetRotation'
+    // TODO: Method 'SetRenderMode'
+    // TODO: Method 'GetRenderMode'
+    // TODO: Method 'SetNotificationCallback'
+};
+// --------------------------------------------------------
+// Type: WICDdsDimension
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICDdsDimension = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICDdsAlphaMode
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICDdsAlphaMode = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICDdsParameters
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WICDdsParameters = extern struct {
+    Width: {"kind":"UInt32"},
+    Height: {"kind":"UInt32"},
+    Depth: {"kind":"UInt32"},
+    MipLevels: {"kind":"UInt32"},
+    ArraySize: {"kind":"UInt32"},
+    DxgiFormat: Windows.Win32.Dxgi.DXGI_FORMAT,
+    Dimension: Windows.Win32.WindowsImagingComponent.WICDdsDimension,
+    AlphaMode: Windows.Win32.WindowsImagingComponent.WICDdsAlphaMode,
+};
+// --------------------------------------------------------
+// Type: IWICDdsDecoder
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICDdsDecoder = *opaque{
+    // TODO: Method 'GetParameters'
+    // TODO: Method 'GetFrame'
+};
+// --------------------------------------------------------
+// Type: IWICDdsEncoder
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICDdsEncoder = *opaque{
+    // TODO: Method 'SetParameters'
+    // TODO: Method 'GetParameters'
+    // TODO: Method 'CreateNewFrame'
+};
+// --------------------------------------------------------
+// Type: WICDdsFormatInfo
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WICDdsFormatInfo = extern struct {
+    DxgiFormat: Windows.Win32.Dxgi.DXGI_FORMAT,
+    BytesPerBlock: {"kind":"UInt32"},
+    BlockWidth: {"kind":"UInt32"},
+    BlockHeight: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: IWICDdsFrameDecode
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICDdsFrameDecode = *opaque{
+    // TODO: Method 'GetSizeInBlocks'
+    // TODO: Method 'GetFormatInfo'
+    // TODO: Method 'CopyBlocks'
+};
+// --------------------------------------------------------
+// Type: IWICJpegFrameDecode
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICJpegFrameDecode = *opaque{
+    // TODO: Method 'DoesSupportIndexing'
+    // TODO: Method 'SetIndexing'
+    // TODO: Method 'ClearIndexing'
+    // TODO: Method 'GetAcHuffmanTable'
+    // TODO: Method 'GetDcHuffmanTable'
+    // TODO: Method 'GetQuantizationTable'
+    // TODO: Method 'GetFrameHeader'
+    // TODO: Method 'GetScanHeader'
+    // TODO: Method 'CopyScan'
+    // TODO: Method 'CopyMinimalStream'
+};
+// --------------------------------------------------------
+// Type: IWICJpegFrameEncode
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICJpegFrameEncode = *opaque{
+    // TODO: Method 'GetAcHuffmanTable'
+    // TODO: Method 'GetDcHuffmanTable'
+    // TODO: Method 'GetQuantizationTable'
+    // TODO: Method 'WriteScan'
+};
+// --------------------------------------------------------
+// Type: WICMetadataCreationOptions
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICMetadataCreationOptions = *opaque{
+};
+// --------------------------------------------------------
+// Type: WICPersistOptions
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WICPersistOptions = *opaque{
+};
+// --------------------------------------------------------
+// Type: IWICMetadataBlockReader
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICMetadataBlockReader = *opaque{
+    // TODO: Method 'GetContainerFormat'
+    // TODO: Method 'GetCount'
+    // TODO: Method 'GetReaderByIndex'
+    // TODO: Method 'GetEnumerator'
+};
+// --------------------------------------------------------
+// Type: IWICMetadataBlockWriter
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICMetadataBlockWriter = *opaque{
+    // TODO: Method 'InitializeFromBlockReader'
+    // TODO: Method 'GetWriterByIndex'
+    // TODO: Method 'AddWriter'
+    // TODO: Method 'SetWriterByIndex'
+    // TODO: Method 'RemoveWriterByIndex'
+};
+// --------------------------------------------------------
+// Type: IWICMetadataReader
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICMetadataReader = *opaque{
+    // TODO: Method 'GetMetadataFormat'
+    // TODO: Method 'GetMetadataHandlerInfo'
+    // TODO: Method 'GetCount'
+    // TODO: Method 'GetValueByIndex'
+    // TODO: Method 'GetValue'
+    // TODO: Method 'GetEnumerator'
+};
+// --------------------------------------------------------
+// Type: IWICMetadataWriter
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICMetadataWriter = *opaque{
+    // TODO: Method 'SetValue'
+    // TODO: Method 'SetValueByIndex'
+    // TODO: Method 'RemoveValue'
+    // TODO: Method 'RemoveValueByIndex'
+};
+// --------------------------------------------------------
+// Type: IWICStreamProvider
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICStreamProvider = *opaque{
+    // TODO: Method 'GetStream'
+    // TODO: Method 'GetPersistOptions'
+    // TODO: Method 'GetPreferredVendorGUID'
+    // TODO: Method 'RefreshStream'
+};
+// --------------------------------------------------------
+// Type: IWICPersistStream
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICPersistStream = *opaque{
+    // TODO: Method 'LoadEx'
+    // TODO: Method 'SaveEx'
+};
+// --------------------------------------------------------
+// Type: IWICMetadataHandlerInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICMetadataHandlerInfo = *opaque{
+    // TODO: Method 'GetMetadataFormat'
+    // TODO: Method 'GetContainerFormats'
+    // TODO: Method 'GetDeviceManufacturer'
+    // TODO: Method 'GetDeviceModels'
+    // TODO: Method 'DoesRequireFullStream'
+    // TODO: Method 'DoesSupportPadding'
+    // TODO: Method 'DoesRequireFixedSize'
+};
+// --------------------------------------------------------
+// Type: WICMetadataPattern
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WICMetadataPattern = extern struct {
+    Position: Windows.Win32.SystemServices.ULARGE_INTEGER,
+    Length: {"kind":"UInt32"},
+    Pattern: {"kind""Ptr","child":{"kind":"Byte"}},
+    Mask: {"kind""Ptr","child":{"kind":"Byte"}},
+    DataOffset: Windows.Win32.SystemServices.ULARGE_INTEGER,
+};
+// --------------------------------------------------------
+// Type: IWICMetadataReaderInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICMetadataReaderInfo = *opaque{
+    // TODO: Method 'GetPatterns'
+    // TODO: Method 'MatchesPattern'
+    // TODO: Method 'CreateInstance'
+};
+// --------------------------------------------------------
+// Type: WICMetadataHeader
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WICMetadataHeader = extern struct {
+    Position: Windows.Win32.SystemServices.ULARGE_INTEGER,
+    Length: {"kind":"UInt32"},
+    Header: {"kind""Ptr","child":{"kind":"Byte"}},
+    DataOffset: Windows.Win32.SystemServices.ULARGE_INTEGER,
+};
+// --------------------------------------------------------
+// Type: IWICMetadataWriterInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICMetadataWriterInfo = *opaque{
+    // TODO: Method 'GetHeader'
+    // TODO: Method 'CreateInstance'
+};
+// --------------------------------------------------------
+// Type: IWICComponentFactory
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWICComponentFactory = *opaque{
+    // TODO: Method 'CreateMetadataReader'
+    // TODO: Method 'CreateMetadataReaderFromContainer'
+    // TODO: Method 'CreateMetadataWriter'
+    // TODO: Method 'CreateMetadataWriterFromReader'
+    // TODO: Method 'CreateQueryReaderFromBlockReader'
+    // TODO: Method 'CreateQueryWriterFromBlockWriter'
+    // TODO: Method 'CreateEncoderPropertyBag'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WindowsCodecs" fn WICConvertBitmapSource(
+    dstFormat: {"kind""Ptr","child":Guid},
+    pISrc: Windows.Win32.WindowsImagingComponent.IWICBitmapSource,
+    ppIDst: {"kind""Ptr","child":Windows.Win32.WindowsImagingComponent.IWICBitmapSource},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WindowsCodecs" fn WICCreateBitmapFromSection(
+    width: {"kind":"UInt32"},
+    height: {"kind":"UInt32"},
+    pixelFormat: {"kind""Ptr","child":Guid},
+    hSection: Windows.Win32.SystemServices.HANDLE,
+    stride: {"kind":"UInt32"},
+    offset: {"kind":"UInt32"},
+    ppIBitmap: {"kind""Ptr","child":Windows.Win32.WindowsImagingComponent.IWICBitmap},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WindowsCodecs" fn WICCreateBitmapFromSectionEx(
+    width: {"kind":"UInt32"},
+    height: {"kind":"UInt32"},
+    pixelFormat: {"kind""Ptr","child":Guid},
+    hSection: Windows.Win32.SystemServices.HANDLE,
+    stride: {"kind":"UInt32"},
+    offset: {"kind":"UInt32"},
+    desiredAccessLevel: Windows.Win32.WindowsImagingComponent.WICSectionAccessLevel,
+    ppIBitmap: {"kind""Ptr","child":Windows.Win32.WindowsImagingComponent.IWICBitmap},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WindowsCodecs" fn WICMapGuidToShortName(
+    guid: {"kind""Ptr","child":Guid},
+    cchName: {"kind":"UInt32"},
+    wzName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WindowsCodecs" fn WICMapShortNameToGuid(
+    wzName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pguid: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WindowsCodecs" fn WICMapSchemaToName(
+    guidMetadataFormat: {"kind""Ptr","child":Guid},
+    pwzSchema: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchName: {"kind":"UInt32"},
+    wzName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcchActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WindowsCodecs" fn WICMatchMetadataContent(
+    guidContainerFormat: {"kind""Ptr","child":Guid},
+    pguidVendor: {"kind""Ptr","child":Guid},
+    pIStream: Windows.Win32.StructuredStorage.IStream,
+    pguidMetadataFormat: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WindowsCodecs" fn WICSerializeMetadataContent(
+    guidContainerFormat: {"kind""Ptr","child":Guid},
+    pIWriter: Windows.Win32.WindowsImagingComponent.IWICMetadataWriter,
+    dwPersistOptions: {"kind":"UInt32"},
+    pIStream: Windows.Win32.StructuredStorage.IStream,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WindowsCodecs" fn WICGetMetadataContentSize(
+    guidContainerFormat: {"kind""Ptr","child":Guid},
+    pIWriter: Windows.Win32.WindowsImagingComponent.IWICMetadataWriter,
+    pcbSize: {"kind""Ptr","child":Windows.Win32.SystemServices.ULARGE_INTEGER},
+],
+
+"unicode_aliases": [
+]}

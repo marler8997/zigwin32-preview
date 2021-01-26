@@ -1,0 +1,1200 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: ENTRYID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ENTRYID = extern struct {
+    abFlags: {"kind":"Array","child": {"kind":"Byte"}},
+    ab: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: MAPIUID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MAPIUID = extern struct {
+    ab: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: SPropTagArray
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SPropTagArray = extern struct {
+    cValues: {"kind":"UInt32"},
+    aulPropTag: {"kind":"Array","child": {"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: SBinary
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SBinary = extern struct {
+    cb: {"kind":"UInt32"},
+    lpb: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: SShortArray
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SShortArray = extern struct {
+    cValues: {"kind":"UInt32"},
+    lpi: {"kind""Ptr","child":{"kind":"Int16"}},
+};
+// --------------------------------------------------------
+// Type: SGuidArray
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SGuidArray = extern struct {
+    cValues: {"kind":"UInt32"},
+    lpguid: {"kind""Ptr","child":Guid},
+};
+// --------------------------------------------------------
+// Type: SRealArray
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SRealArray = extern struct {
+    cValues: {"kind":"UInt32"},
+    lpflt: {"kind""Ptr","child":{"kind":"Single"}},
+};
+// --------------------------------------------------------
+// Type: SLongArray
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SLongArray = extern struct {
+    cValues: {"kind":"UInt32"},
+    lpl: {"kind""Ptr","child":{"kind":"Int32"}},
+};
+// --------------------------------------------------------
+// Type: SLargeIntegerArray
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SLargeIntegerArray = extern struct {
+    cValues: {"kind":"UInt32"},
+    lpli: {"kind""Ptr","child":Windows.Win32.SystemServices.LARGE_INTEGER},
+};
+// --------------------------------------------------------
+// Type: SDateTimeArray
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SDateTimeArray = extern struct {
+    cValues: {"kind":"UInt32"},
+    lpft: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+};
+// --------------------------------------------------------
+// Type: SAppTimeArray
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SAppTimeArray = extern struct {
+    cValues: {"kind":"UInt32"},
+    lpat: {"kind""Ptr","child":{"kind":"Double"}},
+};
+// --------------------------------------------------------
+// Type: SCurrencyArray
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SCurrencyArray = extern struct {
+    cValues: {"kind":"UInt32"},
+    lpcur: {"kind""Ptr","child":Windows.Win32.SystemServices.CY},
+};
+// --------------------------------------------------------
+// Type: SBinaryArray
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SBinaryArray = extern struct {
+    cValues: {"kind":"UInt32"},
+    lpbin: {"kind""Ptr","child":Windows.Win32.WindowsAddressBook.SBinary},
+};
+// --------------------------------------------------------
+// Type: SDoubleArray
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SDoubleArray = extern struct {
+    cValues: {"kind":"UInt32"},
+    lpdbl: {"kind""Ptr","child":{"kind":"Double"}},
+};
+// --------------------------------------------------------
+// Type: SWStringArray
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SWStringArray = extern struct {
+    cValues: {"kind":"UInt32"},
+    lppszW: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+};
+// --------------------------------------------------------
+// Type: SLPSTRArray
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SLPSTRArray = extern struct {
+    cValues: {"kind":"UInt32"},
+    lppszA: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+};
+// --------------------------------------------------------
+// Type: _PV
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const _PV = *opaque{
+};
+// --------------------------------------------------------
+// Type: SPropValue
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SPropValue = extern struct {
+    ulPropTag: {"kind":"UInt32"},
+    dwAlignPad: {"kind":"UInt32"},
+    Value: Windows.Win32.WindowsAddressBook._PV,
+};
+// --------------------------------------------------------
+// Type: SPropProblem
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SPropProblem = extern struct {
+    ulIndex: {"kind":"UInt32"},
+    ulPropTag: {"kind":"UInt32"},
+    scode: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: SPropProblemArray
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SPropProblemArray = extern struct {
+    cProblem: {"kind":"UInt32"},
+    aProblem: {"kind":"Array","child": Windows.Win32.WindowsAddressBook.SPropProblem},
+};
+// --------------------------------------------------------
+// Type: FLATENTRY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FLATENTRY = extern struct {
+    cb: {"kind":"UInt32"},
+    abEntry: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: FLATENTRYLIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FLATENTRYLIST = extern struct {
+    cEntries: {"kind":"UInt32"},
+    cbEntries: {"kind":"UInt32"},
+    abEntries: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: MTSID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MTSID = extern struct {
+    cb: {"kind":"UInt32"},
+    ab: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: FLATMTSIDLIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FLATMTSIDLIST = extern struct {
+    cMTSIDs: {"kind":"UInt32"},
+    cbMTSIDs: {"kind":"UInt32"},
+    abMTSIDs: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: ADRENTRY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADRENTRY = extern struct {
+    ulReserved1: {"kind":"UInt32"},
+    cValues: {"kind":"UInt32"},
+    rgPropVals: {"kind""Ptr","child":Windows.Win32.WindowsAddressBook.SPropValue},
+};
+// --------------------------------------------------------
+// Type: ADRLIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADRLIST = extern struct {
+    cEntries: {"kind":"UInt32"},
+    aEntries: {"kind":"Array","child": Windows.Win32.WindowsAddressBook.ADRENTRY},
+};
+// --------------------------------------------------------
+// Type: SRow
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SRow = extern struct {
+    ulAdrEntryPad: {"kind":"UInt32"},
+    cValues: {"kind":"UInt32"},
+    lpProps: {"kind""Ptr","child":Windows.Win32.WindowsAddressBook.SPropValue},
+};
+// --------------------------------------------------------
+// Type: SRowSet
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SRowSet = extern struct {
+    cRows: {"kind":"UInt32"},
+    aRow: {"kind":"Array","child": Windows.Win32.WindowsAddressBook.SRow},
+};
+// --------------------------------------------------------
+// Type: ALLOCATEBUFFER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ALLOCATEBUFFER = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: ALLOCATEMORE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ALLOCATEMORE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: FREEBUFFER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FREEBUFFER = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPALLOCATEBUFFER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPALLOCATEBUFFER = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPALLOCATEMORE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPALLOCATEMORE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPFREEBUFFER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFREEBUFFER = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: MAPIERROR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MAPIERROR = extern struct {
+    ulVersion: {"kind":"UInt32"},
+    lpszError: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszComponent: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulLowLevelError: {"kind":"UInt32"},
+    ulContext: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ERROR_NOTIFICATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ERROR_NOTIFICATION = extern struct {
+    cbEntryID: {"kind":"UInt32"},
+    lpEntryID: {"kind""Ptr","child":Windows.Win32.WindowsAddressBook.ENTRYID},
+    scode: {"kind":"Int32"},
+    ulFlags: {"kind":"UInt32"},
+    lpMAPIError: {"kind""Ptr","child":Windows.Win32.WindowsAddressBook.MAPIERROR},
+};
+// --------------------------------------------------------
+// Type: NEWMAIL_NOTIFICATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NEWMAIL_NOTIFICATION = extern struct {
+    cbEntryID: {"kind":"UInt32"},
+    lpEntryID: {"kind""Ptr","child":Windows.Win32.WindowsAddressBook.ENTRYID},
+    cbParentID: {"kind":"UInt32"},
+    lpParentID: {"kind""Ptr","child":Windows.Win32.WindowsAddressBook.ENTRYID},
+    ulFlags: {"kind":"UInt32"},
+    lpszMessageClass: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulMessageFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: OBJECT_NOTIFICATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const OBJECT_NOTIFICATION = extern struct {
+    cbEntryID: {"kind":"UInt32"},
+    lpEntryID: {"kind""Ptr","child":Windows.Win32.WindowsAddressBook.ENTRYID},
+    ulObjType: {"kind":"UInt32"},
+    cbParentID: {"kind":"UInt32"},
+    lpParentID: {"kind""Ptr","child":Windows.Win32.WindowsAddressBook.ENTRYID},
+    cbOldID: {"kind":"UInt32"},
+    lpOldID: {"kind""Ptr","child":Windows.Win32.WindowsAddressBook.ENTRYID},
+    cbOldParentID: {"kind":"UInt32"},
+    lpOldParentID: {"kind""Ptr","child":Windows.Win32.WindowsAddressBook.ENTRYID},
+    lpPropTagArray: {"kind""Ptr","child":Windows.Win32.WindowsAddressBook.SPropTagArray},
+};
+// --------------------------------------------------------
+// Type: TABLE_NOTIFICATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TABLE_NOTIFICATION = extern struct {
+    ulTableEvent: {"kind":"UInt32"},
+    hResult: Windows.Win32.Com.HRESULT,
+    propIndex: Windows.Win32.WindowsAddressBook.SPropValue,
+    propPrior: Windows.Win32.WindowsAddressBook.SPropValue,
+    row: Windows.Win32.WindowsAddressBook.SRow,
+    ulPad: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EXTENDED_NOTIFICATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EXTENDED_NOTIFICATION = extern struct {
+    ulEvent: {"kind":"UInt32"},
+    cb: {"kind":"UInt32"},
+    pbEventParameters: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: STATUS_OBJECT_NOTIFICATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const STATUS_OBJECT_NOTIFICATION = extern struct {
+    cbEntryID: {"kind":"UInt32"},
+    lpEntryID: {"kind""Ptr","child":Windows.Win32.WindowsAddressBook.ENTRYID},
+    cValues: {"kind":"UInt32"},
+    lpPropVals: {"kind""Ptr","child":Windows.Win32.WindowsAddressBook.SPropValue},
+};
+// --------------------------------------------------------
+// Type: NOTIFICATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NOTIFICATION = extern struct {
+    ulEventType: {"kind":"UInt32"},
+    ulAlignPad: {"kind":"UInt32"},
+    info: Windows.Win32.WindowsAddressBook.NOTIFICATION+_info_e__Union,
+    // --------------------------------------------------------
+    // Type: _info_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _info_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: IMAPIAdviseSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IMAPIAdviseSink = *opaque{
+    // TODO: Method 'OnNotify'
+};
+// --------------------------------------------------------
+// Type: NOTIFCALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NOTIFCALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPNOTIFCALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPNOTIFCALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IMAPIProgress
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IMAPIProgress = *opaque{
+    // TODO: Method 'Progress'
+    // TODO: Method 'GetFlags'
+    // TODO: Method 'GetMax'
+    // TODO: Method 'GetMin'
+    // TODO: Method 'SetLimits'
+};
+// --------------------------------------------------------
+// Type: MAPINAMEID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MAPINAMEID = extern struct {
+    lpguid: {"kind""Ptr","child":Guid},
+    ulKind: {"kind":"UInt32"},
+    Kind: Windows.Win32.WindowsAddressBook.MAPINAMEID+_Kind_e__Union,
+    // --------------------------------------------------------
+    // Type: _Kind_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Kind_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: IMAPIProp
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IMAPIProp = *opaque{
+    // TODO: Method 'GetLastError'
+    // TODO: Method 'SaveChanges'
+    // TODO: Method 'GetProps'
+    // TODO: Method 'GetPropList'
+    // TODO: Method 'OpenProperty'
+    // TODO: Method 'SetProps'
+    // TODO: Method 'DeleteProps'
+    // TODO: Method 'CopyTo'
+    // TODO: Method 'CopyProps'
+    // TODO: Method 'GetNamesFromIDs'
+    // TODO: Method 'GetIDsFromNames'
+};
+// --------------------------------------------------------
+// Type: SSortOrder
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SSortOrder = extern struct {
+    ulPropTag: {"kind":"UInt32"},
+    ulOrder: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SSortOrderSet
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SSortOrderSet = extern struct {
+    cSorts: {"kind":"UInt32"},
+    cCategories: {"kind":"UInt32"},
+    cExpanded: {"kind":"UInt32"},
+    aSort: {"kind":"Array","child": Windows.Win32.WindowsAddressBook.SSortOrder},
+};
+// --------------------------------------------------------
+// Type: SAndRestriction
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SAndRestriction = extern struct {
+    cRes: {"kind":"UInt32"},
+    lpRes: {"kind""Ptr","child":Windows.Win32.WindowsAddressBook.SRestriction},
+};
+// --------------------------------------------------------
+// Type: SOrRestriction
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SOrRestriction = extern struct {
+    cRes: {"kind":"UInt32"},
+    lpRes: {"kind""Ptr","child":Windows.Win32.WindowsAddressBook.SRestriction},
+};
+// --------------------------------------------------------
+// Type: SNotRestriction
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SNotRestriction = extern struct {
+    ulReserved: {"kind":"UInt32"},
+    lpRes: {"kind""Ptr","child":Windows.Win32.WindowsAddressBook.SRestriction},
+};
+// --------------------------------------------------------
+// Type: SContentRestriction
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SContentRestriction = extern struct {
+    ulFuzzyLevel: {"kind":"UInt32"},
+    ulPropTag: {"kind":"UInt32"},
+    lpProp: {"kind""Ptr","child":Windows.Win32.WindowsAddressBook.SPropValue},
+};
+// --------------------------------------------------------
+// Type: SBitMaskRestriction
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SBitMaskRestriction = extern struct {
+    relBMR: {"kind":"UInt32"},
+    ulPropTag: {"kind":"UInt32"},
+    ulMask: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SPropertyRestriction
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SPropertyRestriction = extern struct {
+    relop: {"kind":"UInt32"},
+    ulPropTag: {"kind":"UInt32"},
+    lpProp: {"kind""Ptr","child":Windows.Win32.WindowsAddressBook.SPropValue},
+};
+// --------------------------------------------------------
+// Type: SComparePropsRestriction
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SComparePropsRestriction = extern struct {
+    relop: {"kind":"UInt32"},
+    ulPropTag1: {"kind":"UInt32"},
+    ulPropTag2: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SSizeRestriction
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SSizeRestriction = extern struct {
+    relop: {"kind":"UInt32"},
+    ulPropTag: {"kind":"UInt32"},
+    cb: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SExistRestriction
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SExistRestriction = extern struct {
+    ulReserved1: {"kind":"UInt32"},
+    ulPropTag: {"kind":"UInt32"},
+    ulReserved2: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SSubRestriction
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SSubRestriction = extern struct {
+    ulSubObject: {"kind":"UInt32"},
+    lpRes: {"kind""Ptr","child":Windows.Win32.WindowsAddressBook.SRestriction},
+};
+// --------------------------------------------------------
+// Type: SCommentRestriction
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SCommentRestriction = extern struct {
+    cValues: {"kind":"UInt32"},
+    lpRes: {"kind""Ptr","child":Windows.Win32.WindowsAddressBook.SRestriction},
+    lpProp: {"kind""Ptr","child":Windows.Win32.WindowsAddressBook.SPropValue},
+};
+// --------------------------------------------------------
+// Type: SRestriction
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SRestriction = extern struct {
+    rt: {"kind":"UInt32"},
+    res: Windows.Win32.WindowsAddressBook.SRestriction+_res_e__Union,
+    // --------------------------------------------------------
+    // Type: _res_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _res_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: IMAPITable
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IMAPITable = *opaque{
+    // TODO: Method 'GetLastError'
+    // TODO: Method 'Advise'
+    // TODO: Method 'Unadvise'
+    // TODO: Method 'GetStatus'
+    // TODO: Method 'SetColumns'
+    // TODO: Method 'QueryColumns'
+    // TODO: Method 'GetRowCount'
+    // TODO: Method 'SeekRow'
+    // TODO: Method 'SeekRowApprox'
+    // TODO: Method 'QueryPosition'
+    // TODO: Method 'FindRow'
+    // TODO: Method 'Restrict'
+    // TODO: Method 'CreateBookmark'
+    // TODO: Method 'FreeBookmark'
+    // TODO: Method 'SortTable'
+    // TODO: Method 'QuerySortOrder'
+    // TODO: Method 'QueryRows'
+    // TODO: Method 'Abort'
+    // TODO: Method 'ExpandRow'
+    // TODO: Method 'CollapseRow'
+    // TODO: Method 'WaitForCompletion'
+    // TODO: Method 'GetCollapseState'
+    // TODO: Method 'SetCollapseState'
+};
+// --------------------------------------------------------
+// Type: IProfSect
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IProfSect = *opaque{
+};
+// --------------------------------------------------------
+// Type: IMAPIStatus
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IMAPIStatus = *opaque{
+    // TODO: Method 'ValidateState'
+    // TODO: Method 'SettingsDialog'
+    // TODO: Method 'ChangePassword'
+    // TODO: Method 'FlushQueues'
+};
+// --------------------------------------------------------
+// Type: IMAPIContainer
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IMAPIContainer = *opaque{
+    // TODO: Method 'GetContentsTable'
+    // TODO: Method 'GetHierarchyTable'
+    // TODO: Method 'OpenEntry'
+    // TODO: Method 'SetSearchCriteria'
+    // TODO: Method 'GetSearchCriteria'
+};
+// --------------------------------------------------------
+// Type: _flaglist
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _flaglist = extern struct {
+    cFlags: {"kind":"UInt32"},
+    ulFlag: {"kind":"Array","child": {"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: IABContainer
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IABContainer = *opaque{
+    // TODO: Method 'CreateEntry'
+    // TODO: Method 'CopyEntries'
+    // TODO: Method 'DeleteEntries'
+    // TODO: Method 'ResolveNames'
+};
+// --------------------------------------------------------
+// Type: IMailUser
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IMailUser = *opaque{
+};
+// --------------------------------------------------------
+// Type: IDistList
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDistList = *opaque{
+    // TODO: Method 'CreateEntry'
+    // TODO: Method 'CopyEntries'
+    // TODO: Method 'DeleteEntries'
+    // TODO: Method 'ResolveNames'
+};
+// --------------------------------------------------------
+// Type: IMAPIFolder
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IMAPIFolder = *opaque{
+    // TODO: Method 'CreateMessage'
+    // TODO: Method 'CopyMessages'
+    // TODO: Method 'DeleteMessages'
+    // TODO: Method 'CreateFolder'
+    // TODO: Method 'CopyFolder'
+    // TODO: Method 'DeleteFolder'
+    // TODO: Method 'SetReadFlags'
+    // TODO: Method 'GetMessageStatus'
+    // TODO: Method 'SetMessageStatus'
+    // TODO: Method 'SaveContentsSort'
+    // TODO: Method 'EmptyFolder'
+};
+// --------------------------------------------------------
+// Type: IMsgStore
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IMsgStore = *opaque{
+    // TODO: Method 'Advise'
+    // TODO: Method 'Unadvise'
+    // TODO: Method 'CompareEntryIDs'
+    // TODO: Method 'OpenEntry'
+    // TODO: Method 'SetReceiveFolder'
+    // TODO: Method 'GetReceiveFolder'
+    // TODO: Method 'GetReceiveFolderTable'
+    // TODO: Method 'StoreLogoff'
+    // TODO: Method 'AbortSubmit'
+    // TODO: Method 'GetOutgoingQueue'
+    // TODO: Method 'SetLockState'
+    // TODO: Method 'FinishedMsg'
+    // TODO: Method 'NotifyNewMail'
+};
+// --------------------------------------------------------
+// Type: IMessage
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IMessage = *opaque{
+    // TODO: Method 'GetAttachmentTable'
+    // TODO: Method 'OpenAttach'
+    // TODO: Method 'CreateAttach'
+    // TODO: Method 'DeleteAttach'
+    // TODO: Method 'GetRecipientTable'
+    // TODO: Method 'ModifyRecipients'
+    // TODO: Method 'SubmitMessage'
+    // TODO: Method 'SetReadFlag'
+};
+// --------------------------------------------------------
+// Type: IAttach
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAttach = *opaque{
+};
+// --------------------------------------------------------
+// Type: ACCELERATEABSDI
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ACCELERATEABSDI = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPFNABSDI
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFNABSDI = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DISMISSMODELESS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DISMISSMODELESS = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPFNDISMISS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFNDISMISS = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPFNBUTTON
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPFNBUTTON = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: ADRPARM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADRPARM = extern struct {
+    cbABContEntryID: {"kind":"UInt32"},
+    lpABContEntryID: {"kind""Ptr","child":Windows.Win32.WindowsAddressBook.ENTRYID},
+    ulFlags: {"kind":"UInt32"},
+    lpReserved: {"kind""Ptr","child":{"kind":"Void"}},
+    ulHelpContext: {"kind":"UInt32"},
+    lpszHelpFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpfnABSDI: Windows.Win32.WindowsAddressBook.LPFNABSDI,
+    lpfnDismiss: Windows.Win32.WindowsAddressBook.LPFNDISMISS,
+    lpvDismissContext: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszCaption: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszNewEntryTitle: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszDestWellsTitle: {"kind""Ptr","child":{"kind":"SByte"}},
+    cDestFields: {"kind":"UInt32"},
+    nDestFieldFocus: {"kind":"UInt32"},
+    lppszDestTitles: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    lpulDestComps: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpContRestriction: {"kind""Ptr","child":Windows.Win32.WindowsAddressBook.SRestriction},
+    lpHierRestriction: {"kind""Ptr","child":Windows.Win32.WindowsAddressBook.SRestriction},
+};
+// --------------------------------------------------------
+// Type: IMAPIControl
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IMAPIControl = *opaque{
+    // TODO: Method 'GetLastError'
+    // TODO: Method 'Activate'
+    // TODO: Method 'GetState'
+};
+// --------------------------------------------------------
+// Type: DTBLLABEL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DTBLLABEL = extern struct {
+    ulbLpszLabelName: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DTBLEDIT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DTBLEDIT = extern struct {
+    ulbLpszCharsAllowed: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    ulNumCharsAllowed: {"kind":"UInt32"},
+    ulPropTag: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DTBLLBX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DTBLLBX = extern struct {
+    ulFlags: {"kind":"UInt32"},
+    ulPRSetProperty: {"kind":"UInt32"},
+    ulPRTableName: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DTBLCOMBOBOX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DTBLCOMBOBOX = extern struct {
+    ulbLpszCharsAllowed: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    ulNumCharsAllowed: {"kind":"UInt32"},
+    ulPRPropertyName: {"kind":"UInt32"},
+    ulPRTableName: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DTBLDDLBX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DTBLDDLBX = extern struct {
+    ulFlags: {"kind":"UInt32"},
+    ulPRDisplayProperty: {"kind":"UInt32"},
+    ulPRSetProperty: {"kind":"UInt32"},
+    ulPRTableName: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DTBLCHECKBOX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DTBLCHECKBOX = extern struct {
+    ulbLpszLabel: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    ulPRPropertyName: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DTBLGROUPBOX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DTBLGROUPBOX = extern struct {
+    ulbLpszLabel: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DTBLBUTTON
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DTBLBUTTON = extern struct {
+    ulbLpszLabel: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    ulPRControl: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DTBLPAGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DTBLPAGE = extern struct {
+    ulbLpszLabel: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    ulbLpszComponent: {"kind":"UInt32"},
+    ulContext: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DTBLRADIOBUTTON
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DTBLRADIOBUTTON = extern struct {
+    ulbLpszLabel: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+    ulcButtons: {"kind":"UInt32"},
+    ulPropTag: {"kind":"UInt32"},
+    lReturnValue: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: DTBLMVLISTBOX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DTBLMVLISTBOX = extern struct {
+    ulFlags: {"kind":"UInt32"},
+    ulMVPropTag: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DTBLMVDDLBX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DTBLMVDDLBX = extern struct {
+    ulFlags: {"kind":"UInt32"},
+    ulMVPropTag: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: IProviderAdmin
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IProviderAdmin = *opaque{
+    // TODO: Method 'GetLastError'
+    // TODO: Method 'GetProviderTable'
+    // TODO: Method 'CreateProvider'
+    // TODO: Method 'DeleteProvider'
+    // TODO: Method 'OpenProfileSection'
+};
+// --------------------------------------------------------
+// Type: IAddrBook
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAddrBook = *opaque{
+    // TODO: Method 'OpenEntry'
+    // TODO: Method 'CompareEntryIDs'
+    // TODO: Method 'Advise'
+    // TODO: Method 'Unadvise'
+    // TODO: Method 'CreateOneOff'
+    // TODO: Method 'NewEntry'
+    // TODO: Method 'ResolveName'
+    // TODO: Method 'Address'
+    // TODO: Method 'Details'
+    // TODO: Method 'RecipOptions'
+    // TODO: Method 'QueryDefaultRecipOpt'
+    // TODO: Method 'GetPAB'
+    // TODO: Method 'SetPAB'
+    // TODO: Method 'GetDefaultDir'
+    // TODO: Method 'SetDefaultDir'
+    // TODO: Method 'GetSearchPath'
+    // TODO: Method 'SetSearchPath'
+    // TODO: Method 'PrepareRecips'
+};
+// --------------------------------------------------------
+// Type: _WABACTIONITEM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _WABACTIONITEM = opaque {
+};
+// --------------------------------------------------------
+// Type: IWABObject
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWABObject = *opaque{
+    // TODO: Method 'GetLastError'
+    // TODO: Method 'AllocateBuffer'
+    // TODO: Method 'AllocateMore'
+    // TODO: Method 'FreeBuffer'
+    // TODO: Method 'Backup'
+    // TODO: Method 'Import'
+    // TODO: Method 'Find'
+    // TODO: Method 'VCardDisplay'
+    // TODO: Method 'LDAPUrl'
+    // TODO: Method 'VCardCreate'
+    // TODO: Method 'VCardRetrieve'
+    // TODO: Method 'GetMe'
+    // TODO: Method 'SetMe'
+};
+// --------------------------------------------------------
+// Type: IWABOBJECT_QueryInterface_METHOD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const IWABOBJECT_QueryInterface_METHOD = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IWABOBJECT_AddRef_METHOD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const IWABOBJECT_AddRef_METHOD = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IWABOBJECT_Release_METHOD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const IWABOBJECT_Release_METHOD = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IWABOBJECT_GetLastError_METHOD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const IWABOBJECT_GetLastError_METHOD = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IWABOBJECT_AllocateBuffer_METHOD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const IWABOBJECT_AllocateBuffer_METHOD = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IWABOBJECT_AllocateMore_METHOD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const IWABOBJECT_AllocateMore_METHOD = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IWABOBJECT_FreeBuffer_METHOD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const IWABOBJECT_FreeBuffer_METHOD = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IWABOBJECT_Backup_METHOD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const IWABOBJECT_Backup_METHOD = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IWABOBJECT_Import_METHOD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const IWABOBJECT_Import_METHOD = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IWABOBJECT_Find_METHOD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const IWABOBJECT_Find_METHOD = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IWABOBJECT_VCardDisplay_METHOD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const IWABOBJECT_VCardDisplay_METHOD = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IWABOBJECT_LDAPUrl_METHOD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const IWABOBJECT_LDAPUrl_METHOD = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IWABOBJECT_VCardCreate_METHOD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const IWABOBJECT_VCardCreate_METHOD = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IWABOBJECT_VCardRetrieve_METHOD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const IWABOBJECT_VCardRetrieve_METHOD = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IWABOBJECT_GetMe_METHOD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const IWABOBJECT_GetMe_METHOD = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IWABOBJECT_SetMe_METHOD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const IWABOBJECT_SetMe_METHOD = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IWABOBJECT_
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWABOBJECT_ = *opaque{
+    // TODO: Method 'QueryInterface'
+    // TODO: Method 'AddRef'
+    // TODO: Method 'Release'
+    // TODO: Method 'GetLastError'
+    // TODO: Method 'AllocateBuffer'
+    // TODO: Method 'AllocateMore'
+    // TODO: Method 'FreeBuffer'
+    // TODO: Method 'Backup'
+    // TODO: Method 'Import'
+    // TODO: Method 'Find'
+    // TODO: Method 'VCardDisplay'
+    // TODO: Method 'LDAPUrl'
+    // TODO: Method 'VCardCreate'
+    // TODO: Method 'VCardRetrieve'
+    // TODO: Method 'GetMe'
+    // TODO: Method 'SetMe'
+};
+// --------------------------------------------------------
+// Type: WAB_PARAM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WAB_PARAM = extern struct {
+    cbSize: {"kind":"UInt32"},
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    szFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulFlags: {"kind":"UInt32"},
+    guidPSExt: Guid,
+};
+// --------------------------------------------------------
+// Type: WABOPEN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WABOPEN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWABOPEN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWABOPEN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WABOPENEX
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WABOPENEX = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPWABOPENEX
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPWABOPENEX = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WABIMPORTPARAM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WABIMPORTPARAM = extern struct {
+    cbSize: {"kind":"UInt32"},
+    lpAdrBook: Windows.Win32.WindowsAddressBook.IAddrBook,
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    ulFlags: {"kind":"UInt32"},
+    lpszFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: WABEXTDISPLAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WABEXTDISPLAY = extern struct {
+    cbSize: {"kind":"UInt32"},
+    lpWABObject: Windows.Win32.WindowsAddressBook.IWABObject,
+    lpAdrBook: Windows.Win32.WindowsAddressBook.IAddrBook,
+    lpPropObj: Windows.Win32.WindowsAddressBook.IMAPIProp,
+    fReadOnly: Windows.Win32.SystemServices.BOOL,
+    fDataChanged: Windows.Win32.SystemServices.BOOL,
+    ulFlags: {"kind":"UInt32"},
+    lpv: {"kind""Ptr","child":{"kind":"Void"}},
+    lpsz: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: IWABExtInit
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWABExtInit = *opaque{
+    // TODO: Method 'Initialize'
+};
+// --------------------------------------------------------
+// Type: Gender
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const Gender = *opaque{
+};
+],
+
+"func_definitions": [
+],
+
+"unicode_aliases": [
+]}

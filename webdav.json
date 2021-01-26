@@ -1,0 +1,123 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: DAV_CALLBACK_AUTH_BLOB
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DAV_CALLBACK_AUTH_BLOB = extern struct {
+    pBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    ulSize: {"kind":"UInt32"},
+    ulType: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DAV_CALLBACK_AUTH_UNP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DAV_CALLBACK_AUTH_UNP = extern struct {
+    pszUserName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulUserNameLength: {"kind":"UInt32"},
+    pszPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulPasswordLength: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DAV_CALLBACK_CRED
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DAV_CALLBACK_CRED = extern struct {
+    AuthBlob: Windows.Win32.WebDav.DAV_CALLBACK_AUTH_BLOB,
+    UNPBlob: Windows.Win32.WebDav.DAV_CALLBACK_AUTH_UNP,
+    bAuthBlobValid: Windows.Win32.SystemServices.BOOL,
+    bSave: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: AUTHNEXTSTEP
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const AUTHNEXTSTEP = *opaque{
+};
+// --------------------------------------------------------
+// Type: PFNDAVAUTHCALLBACK_FREECRED
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFNDAVAUTHCALLBACK_FREECRED = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFNDAVAUTHCALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFNDAVAUTHCALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn DavAddConnection(
+    ConnectionHandle: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+    RemoteName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    UserName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Password: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ClientCert: {"kind""Ptr","child":{"kind":"Byte"}},
+    CertSize: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn DavDeleteConnection(
+    ConnectionHandle: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn DavGetUNCFromHTTPPath(
+    Url: {"kind""Ptr","child":{"kind":"UInt16"}},
+    UncPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn DavGetHTTPFromUNCPath(
+    UncPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Url: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "davclnt" fn DavGetTheLockOwnerOfTheFile(
+    FileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    LockOwnerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    LockOwnerNameLengthInBytes: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn DavGetExtendedError(
+    hFile: Windows.Win32.SystemServices.HANDLE,
+    ExtError: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ExtErrorString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cChSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn DavFlushFile(
+    hFile: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "davclnt" fn DavInvalidateCache(
+    URLName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "davclnt" fn DavCancelConnectionsToServer(
+    lpName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fForce: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "davclnt" fn DavRegisterAuthCallback(
+    CallBack: Windows.Win32.WebDav.PFNDAVAUTHCALLBACK,
+    Version: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "davclnt" fn DavUnregisterAuthCallback(
+    hCallback: {"kind":"UInt32"},
+],
+
+"unicode_aliases": [
+]}

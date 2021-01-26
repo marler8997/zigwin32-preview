@@ -1,0 +1,2012 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: TDH_HANDLE
+// TypeLayoutAttr: sequential
+// RAIIFree 'TdhCloseDecodingHandle' (TODO: can we use this information?)
+pub const TDH_HANDLE = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: WNODE_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WNODE_HEADER = extern struct {
+    BufferSize: {"kind":"UInt32"},
+    ProviderId: {"kind":"UInt32"},
+    Anonymous1: Windows.Win32.Etw.WNODE_HEADER+_Anonymous1_e__Union,
+    Anonymous2: Windows.Win32.Etw.WNODE_HEADER+_Anonymous2_e__Union,
+    Guid: Guid,
+    ClientContext: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            Version: {"kind":"UInt32"},
+            Linkage: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: OFFSETINSTANCEDATAANDLENGTH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const OFFSETINSTANCEDATAANDLENGTH = extern struct {
+    OffsetInstanceData: {"kind":"UInt32"},
+    LengthInstanceData: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WNODE_ALL_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WNODE_ALL_DATA = extern struct {
+    WnodeHeader: Windows.Win32.Etw.WNODE_HEADER,
+    DataBlockOffset: {"kind":"UInt32"},
+    InstanceCount: {"kind":"UInt32"},
+    OffsetInstanceNameOffsets: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.Etw.WNODE_ALL_DATA+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: WNODE_SINGLE_INSTANCE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WNODE_SINGLE_INSTANCE = extern struct {
+    WnodeHeader: Windows.Win32.Etw.WNODE_HEADER,
+    OffsetInstanceName: {"kind":"UInt32"},
+    InstanceIndex: {"kind":"UInt32"},
+    DataBlockOffset: {"kind":"UInt32"},
+    SizeDataBlock: {"kind":"UInt32"},
+    VariableData: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: WNODE_SINGLE_ITEM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WNODE_SINGLE_ITEM = extern struct {
+    WnodeHeader: Windows.Win32.Etw.WNODE_HEADER,
+    OffsetInstanceName: {"kind":"UInt32"},
+    InstanceIndex: {"kind":"UInt32"},
+    ItemId: {"kind":"UInt32"},
+    DataBlockOffset: {"kind":"UInt32"},
+    SizeDataItem: {"kind":"UInt32"},
+    VariableData: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: WNODE_METHOD_ITEM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WNODE_METHOD_ITEM = extern struct {
+    WnodeHeader: Windows.Win32.Etw.WNODE_HEADER,
+    OffsetInstanceName: {"kind":"UInt32"},
+    InstanceIndex: {"kind":"UInt32"},
+    MethodId: {"kind":"UInt32"},
+    DataBlockOffset: {"kind":"UInt32"},
+    SizeDataBlock: {"kind":"UInt32"},
+    VariableData: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: WNODE_EVENT_ITEM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WNODE_EVENT_ITEM = extern struct {
+    WnodeHeader: Windows.Win32.Etw.WNODE_HEADER,
+};
+// --------------------------------------------------------
+// Type: WNODE_EVENT_REFERENCE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WNODE_EVENT_REFERENCE = extern struct {
+    WnodeHeader: Windows.Win32.Etw.WNODE_HEADER,
+    TargetGuid: Guid,
+    TargetDataBlockSize: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.Etw.WNODE_EVENT_REFERENCE+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: WNODE_TOO_SMALL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WNODE_TOO_SMALL = extern struct {
+    WnodeHeader: Windows.Win32.Etw.WNODE_HEADER,
+    SizeNeeded: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WMIREGGUIDW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WMIREGGUIDW = extern struct {
+    Guid: Guid,
+    Flags: {"kind":"UInt32"},
+    InstanceCount: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.Etw.WMIREGGUIDW+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: WMIREGINFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WMIREGINFOW = extern struct {
+    BufferSize: {"kind":"UInt32"},
+    NextWmiRegInfo: {"kind":"UInt32"},
+    RegistryPath: {"kind":"UInt32"},
+    MofResourceName: {"kind":"UInt32"},
+    GuidCount: {"kind":"UInt32"},
+    WmiRegGuid: Windows.Win32.Etw.WMIREGGUIDW,
+};
+// --------------------------------------------------------
+// Type: WMIDPREQUESTCODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WMIDPREQUESTCODE = *opaque{
+};
+// --------------------------------------------------------
+// Type: ETW_COMPRESSION_RESUMPTION_MODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ETW_COMPRESSION_RESUMPTION_MODE = *opaque{
+};
+// --------------------------------------------------------
+// Type: EVENT_TRACE_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_TRACE_HEADER = extern struct {
+    Size: {"kind":"UInt16"},
+    Anonymous1: Windows.Win32.Etw.EVENT_TRACE_HEADER+_Anonymous1_e__Union,
+    Anonymous2: Windows.Win32.Etw.EVENT_TRACE_HEADER+_Anonymous2_e__Union,
+    ThreadId: {"kind":"UInt32"},
+    ProcessId: {"kind":"UInt32"},
+    TimeStamp: Windows.Win32.SystemServices.LARGE_INTEGER,
+    Anonymous3: Windows.Win32.Etw.EVENT_TRACE_HEADER+_Anonymous3_e__Union,
+    Anonymous4: Windows.Win32.Etw.EVENT_TRACE_HEADER+_Anonymous4_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous4_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous4_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous1_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous1_e__Struct = extern struct {
+            KernelTime: {"kind":"UInt32"},
+            UserTime: {"kind":"UInt32"},
+        };
+        // --------------------------------------------------------
+        // Type: _Anonymous2_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous2_e__Struct = extern struct {
+            ClientContext: {"kind":"UInt32"},
+            Flags: {"kind":"UInt32"},
+        };
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Class_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Class_e__Struct = extern struct {
+            Type: {"kind":"Byte"},
+            Level: {"kind":"Byte"},
+            Version: {"kind":"UInt16"},
+        };
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            HeaderType: {"kind":"Byte"},
+            MarkerFlags: {"kind":"Byte"},
+        };
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous3_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous3_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: EVENT_INSTANCE_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_INSTANCE_HEADER = extern struct {
+    Size: {"kind":"UInt16"},
+    Anonymous1: Windows.Win32.Etw.EVENT_INSTANCE_HEADER+_Anonymous1_e__Union,
+    Anonymous2: Windows.Win32.Etw.EVENT_INSTANCE_HEADER+_Anonymous2_e__Union,
+    ThreadId: {"kind":"UInt32"},
+    ProcessId: {"kind":"UInt32"},
+    TimeStamp: Windows.Win32.SystemServices.LARGE_INTEGER,
+    RegHandle: {"kind":"UInt64"},
+    InstanceId: {"kind":"UInt32"},
+    ParentInstanceId: {"kind":"UInt32"},
+    Anonymous3: Windows.Win32.Etw.EVENT_INSTANCE_HEADER+_Anonymous3_e__Union,
+    ParentRegHandle: {"kind":"UInt64"},
+    // --------------------------------------------------------
+    // Type: _Anonymous3_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous3_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous1_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous1_e__Struct = extern struct {
+            KernelTime: {"kind":"UInt32"},
+            UserTime: {"kind":"UInt32"},
+        };
+        // --------------------------------------------------------
+        // Type: _Anonymous2_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous2_e__Struct = extern struct {
+            EventId: {"kind":"UInt32"},
+            Flags: {"kind":"UInt32"},
+        };
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Class_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Class_e__Struct = extern struct {
+            Type: {"kind":"Byte"},
+            Level: {"kind":"Byte"},
+            Version: {"kind":"UInt16"},
+        };
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            HeaderType: {"kind":"Byte"},
+            MarkerFlags: {"kind":"Byte"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: MOF_FIELD
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MOF_FIELD = extern struct {
+    DataPtr: {"kind":"UInt64"},
+    Length: {"kind":"UInt32"},
+    DataType: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: TRACE_LOGFILE_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TRACE_LOGFILE_HEADER = extern struct {
+    BufferSize: {"kind":"UInt32"},
+    Anonymous1: Windows.Win32.Etw.TRACE_LOGFILE_HEADER+_Anonymous1_e__Union,
+    ProviderVersion: {"kind":"UInt32"},
+    NumberOfProcessors: {"kind":"UInt32"},
+    EndTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    TimerResolution: {"kind":"UInt32"},
+    MaximumFileSize: {"kind":"UInt32"},
+    LogFileMode: {"kind":"UInt32"},
+    BuffersWritten: {"kind":"UInt32"},
+    Anonymous2: Windows.Win32.Etw.TRACE_LOGFILE_HEADER+_Anonymous2_e__Union,
+    LoggerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    LogFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TimeZone: Windows.Win32.WindowsProgramming.TIME_ZONE_INFORMATION,
+    BootTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    PerfFreq: Windows.Win32.SystemServices.LARGE_INTEGER,
+    StartTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    ReservedFlags: {"kind":"UInt32"},
+    BuffersLost: {"kind":"UInt32"},
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            StartBuffers: {"kind":"UInt32"},
+            PointerSize: {"kind":"UInt32"},
+            EventsLost: {"kind":"UInt32"},
+            CpuSpeedInMHz: {"kind":"UInt32"},
+        };
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _VersionDetail_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _VersionDetail_e__Struct = extern struct {
+            MajorVersion: {"kind":"Byte"},
+            MinorVersion: {"kind":"Byte"},
+            SubVersion: {"kind":"Byte"},
+            SubMinorVersion: {"kind":"Byte"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: TRACE_LOGFILE_HEADER32
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TRACE_LOGFILE_HEADER32 = extern struct {
+    BufferSize: {"kind":"UInt32"},
+    Anonymous1: Windows.Win32.Etw.TRACE_LOGFILE_HEADER32+_Anonymous1_e__Union,
+    ProviderVersion: {"kind":"UInt32"},
+    NumberOfProcessors: {"kind":"UInt32"},
+    EndTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    TimerResolution: {"kind":"UInt32"},
+    MaximumFileSize: {"kind":"UInt32"},
+    LogFileMode: {"kind":"UInt32"},
+    BuffersWritten: {"kind":"UInt32"},
+    Anonymous2: Windows.Win32.Etw.TRACE_LOGFILE_HEADER32+_Anonymous2_e__Union,
+    LoggerName: {"kind":"UInt32"},
+    LogFileName: {"kind":"UInt32"},
+    TimeZone: Windows.Win32.WindowsProgramming.TIME_ZONE_INFORMATION,
+    BootTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    PerfFreq: Windows.Win32.SystemServices.LARGE_INTEGER,
+    StartTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    ReservedFlags: {"kind":"UInt32"},
+    BuffersLost: {"kind":"UInt32"},
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            StartBuffers: {"kind":"UInt32"},
+            PointerSize: {"kind":"UInt32"},
+            EventsLost: {"kind":"UInt32"},
+            CpuSpeedInMHz: {"kind":"UInt32"},
+        };
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _VersionDetail_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _VersionDetail_e__Struct = extern struct {
+            MajorVersion: {"kind":"Byte"},
+            MinorVersion: {"kind":"Byte"},
+            SubVersion: {"kind":"Byte"},
+            SubMinorVersion: {"kind":"Byte"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: TRACE_LOGFILE_HEADER64
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TRACE_LOGFILE_HEADER64 = extern struct {
+    BufferSize: {"kind":"UInt32"},
+    Anonymous1: Windows.Win32.Etw.TRACE_LOGFILE_HEADER64+_Anonymous1_e__Union,
+    ProviderVersion: {"kind":"UInt32"},
+    NumberOfProcessors: {"kind":"UInt32"},
+    EndTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    TimerResolution: {"kind":"UInt32"},
+    MaximumFileSize: {"kind":"UInt32"},
+    LogFileMode: {"kind":"UInt32"},
+    BuffersWritten: {"kind":"UInt32"},
+    Anonymous2: Windows.Win32.Etw.TRACE_LOGFILE_HEADER64+_Anonymous2_e__Union,
+    LoggerName: {"kind":"UInt64"},
+    LogFileName: {"kind":"UInt64"},
+    TimeZone: Windows.Win32.WindowsProgramming.TIME_ZONE_INFORMATION,
+    BootTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    PerfFreq: Windows.Win32.SystemServices.LARGE_INTEGER,
+    StartTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    ReservedFlags: {"kind":"UInt32"},
+    BuffersLost: {"kind":"UInt32"},
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            StartBuffers: {"kind":"UInt32"},
+            PointerSize: {"kind":"UInt32"},
+            EventsLost: {"kind":"UInt32"},
+            CpuSpeedInMHz: {"kind":"UInt32"},
+        };
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _VersionDetail_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _VersionDetail_e__Struct = extern struct {
+            MajorVersion: {"kind":"Byte"},
+            MinorVersion: {"kind":"Byte"},
+            SubVersion: {"kind":"Byte"},
+            SubMinorVersion: {"kind":"Byte"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: EVENT_INSTANCE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_INSTANCE_INFO = extern struct {
+    RegHandle: Windows.Win32.SystemServices.HANDLE,
+    InstanceId: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EVENT_TRACE_PROPERTIES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_TRACE_PROPERTIES = extern struct {
+    Wnode: Windows.Win32.Etw.WNODE_HEADER,
+    BufferSize: {"kind":"UInt32"},
+    MinimumBuffers: {"kind":"UInt32"},
+    MaximumBuffers: {"kind":"UInt32"},
+    MaximumFileSize: {"kind":"UInt32"},
+    LogFileMode: {"kind":"UInt32"},
+    FlushTimer: {"kind":"UInt32"},
+    EnableFlags: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.Etw.EVENT_TRACE_PROPERTIES+_Anonymous_e__Union,
+    NumberOfBuffers: {"kind":"UInt32"},
+    FreeBuffers: {"kind":"UInt32"},
+    EventsLost: {"kind":"UInt32"},
+    BuffersWritten: {"kind":"UInt32"},
+    LogBuffersLost: {"kind":"UInt32"},
+    RealTimeBuffersLost: {"kind":"UInt32"},
+    LoggerThreadId: Windows.Win32.SystemServices.HANDLE,
+    LogFileNameOffset: {"kind":"UInt32"},
+    LoggerNameOffset: {"kind":"UInt32"},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: EVENT_TRACE_PROPERTIES_V2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_TRACE_PROPERTIES_V2 = extern struct {
+    Wnode: Windows.Win32.Etw.WNODE_HEADER,
+    BufferSize: {"kind":"UInt32"},
+    MinimumBuffers: {"kind":"UInt32"},
+    MaximumBuffers: {"kind":"UInt32"},
+    MaximumFileSize: {"kind":"UInt32"},
+    LogFileMode: {"kind":"UInt32"},
+    FlushTimer: {"kind":"UInt32"},
+    EnableFlags: {"kind":"UInt32"},
+    Anonymous1: Windows.Win32.Etw.EVENT_TRACE_PROPERTIES_V2+_Anonymous1_e__Union,
+    NumberOfBuffers: {"kind":"UInt32"},
+    FreeBuffers: {"kind":"UInt32"},
+    EventsLost: {"kind":"UInt32"},
+    BuffersWritten: {"kind":"UInt32"},
+    LogBuffersLost: {"kind":"UInt32"},
+    RealTimeBuffersLost: {"kind":"UInt32"},
+    LoggerThreadId: Windows.Win32.SystemServices.HANDLE,
+    LogFileNameOffset: {"kind":"UInt32"},
+    LoggerNameOffset: {"kind":"UInt32"},
+    Anonymous2: Windows.Win32.Etw.EVENT_TRACE_PROPERTIES_V2+_Anonymous2_e__Union,
+    FilterDescCount: {"kind":"UInt32"},
+    FilterDesc: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_FILTER_DESCRIPTOR},
+    Anonymous3: Windows.Win32.Etw.EVENT_TRACE_PROPERTIES_V2+_Anonymous3_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous3_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous3_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            _bitfield: {"kind":"UInt32"},
+        };
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            _bitfield: {"kind":"UInt32"},
+        };
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: TRACE_GUID_REGISTRATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TRACE_GUID_REGISTRATION = extern struct {
+    Guid: {"kind""Ptr","child":Guid},
+    RegHandle: Windows.Win32.SystemServices.HANDLE,
+};
+// --------------------------------------------------------
+// Type: TRACE_GUID_PROPERTIES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TRACE_GUID_PROPERTIES = extern struct {
+    Guid: Guid,
+    GuidType: {"kind":"UInt32"},
+    LoggerId: {"kind":"UInt32"},
+    EnableLevel: {"kind":"UInt32"},
+    EnableFlags: {"kind":"UInt32"},
+    IsEnable: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: ETW_BUFFER_CONTEXT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ETW_BUFFER_CONTEXT = extern struct {
+    Anonymous: Windows.Win32.Etw.ETW_BUFFER_CONTEXT+_Anonymous_e__Union,
+    LoggerId: {"kind":"UInt16"},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            ProcessorNumber: {"kind":"Byte"},
+            Alignment: {"kind":"Byte"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: TRACE_ENABLE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TRACE_ENABLE_INFO = extern struct {
+    IsEnabled: {"kind":"UInt32"},
+    Level: {"kind":"Byte"},
+    Reserved1: {"kind":"Byte"},
+    LoggerId: {"kind":"UInt16"},
+    EnableProperty: {"kind":"UInt32"},
+    Reserved2: {"kind":"UInt32"},
+    MatchAnyKeyword: {"kind":"UInt64"},
+    MatchAllKeyword: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: TRACE_PROVIDER_INSTANCE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TRACE_PROVIDER_INSTANCE_INFO = extern struct {
+    NextOffset: {"kind":"UInt32"},
+    EnableCount: {"kind":"UInt32"},
+    Pid: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: TRACE_GUID_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TRACE_GUID_INFO = extern struct {
+    InstanceCount: {"kind":"UInt32"},
+    Reserved: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PROFILE_SOURCE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PROFILE_SOURCE_INFO = extern struct {
+    NextEntryOffset: {"kind":"UInt32"},
+    Source: {"kind":"UInt32"},
+    MinInterval: {"kind":"UInt32"},
+    MaxInterval: {"kind":"UInt32"},
+    Reserved: {"kind":"UInt64"},
+    Description: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: EVENT_TRACE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_TRACE = extern struct {
+    Header: Windows.Win32.Etw.EVENT_TRACE_HEADER,
+    InstanceId: {"kind":"UInt32"},
+    ParentInstanceId: {"kind":"UInt32"},
+    ParentGuid: Guid,
+    MofData: {"kind""Ptr","child":{"kind":"Void"}},
+    MofLength: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.Etw.EVENT_TRACE+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: PEVENT_TRACE_BUFFER_CALLBACKW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEVENT_TRACE_BUFFER_CALLBACKW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PEVENT_TRACE_BUFFER_CALLBACKA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEVENT_TRACE_BUFFER_CALLBACKA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PEVENT_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEVENT_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PEVENT_RECORD_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PEVENT_RECORD_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WMIDPREQUEST
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WMIDPREQUEST = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: EVENT_TRACE_LOGFILEW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_TRACE_LOGFILEW = extern struct {
+    LogFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    LoggerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    CurrentTime: {"kind":"Int64"},
+    BuffersRead: {"kind":"UInt32"},
+    Anonymous1: Windows.Win32.Etw.EVENT_TRACE_LOGFILEW+_Anonymous1_e__Union,
+    CurrentEvent: Windows.Win32.Etw.EVENT_TRACE,
+    LogfileHeader: Windows.Win32.Etw.TRACE_LOGFILE_HEADER,
+    BufferCallback: Windows.Win32.Etw.PEVENT_TRACE_BUFFER_CALLBACKW,
+    BufferSize: {"kind":"UInt32"},
+    Filled: {"kind":"UInt32"},
+    EventsLost: {"kind":"UInt32"},
+    Anonymous2: Windows.Win32.Etw.EVENT_TRACE_LOGFILEW+_Anonymous2_e__Union,
+    IsKernelTrace: {"kind":"UInt32"},
+    Context: {"kind""Ptr","child":{"kind":"Void"}},
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: EVENT_TRACE_LOGFILEA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_TRACE_LOGFILEA = extern struct {
+    LogFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    LoggerName: {"kind""Ptr","child":{"kind":"SByte"}},
+    CurrentTime: {"kind":"Int64"},
+    BuffersRead: {"kind":"UInt32"},
+    Anonymous1: Windows.Win32.Etw.EVENT_TRACE_LOGFILEA+_Anonymous1_e__Union,
+    CurrentEvent: Windows.Win32.Etw.EVENT_TRACE,
+    LogfileHeader: Windows.Win32.Etw.TRACE_LOGFILE_HEADER,
+    BufferCallback: Windows.Win32.Etw.PEVENT_TRACE_BUFFER_CALLBACKA,
+    BufferSize: {"kind":"UInt32"},
+    Filled: {"kind":"UInt32"},
+    EventsLost: {"kind":"UInt32"},
+    Anonymous2: Windows.Win32.Etw.EVENT_TRACE_LOGFILEA+_Anonymous2_e__Union,
+    IsKernelTrace: {"kind":"UInt32"},
+    Context: {"kind""Ptr","child":{"kind":"Void"}},
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: ENABLE_TRACE_PARAMETERS_V1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ENABLE_TRACE_PARAMETERS_V1 = extern struct {
+    Version: {"kind":"UInt32"},
+    EnableProperty: {"kind":"UInt32"},
+    ControlFlags: {"kind":"UInt32"},
+    SourceId: Guid,
+    EnableFilterDesc: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_FILTER_DESCRIPTOR},
+};
+// --------------------------------------------------------
+// Type: ENABLE_TRACE_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ENABLE_TRACE_PARAMETERS = extern struct {
+    Version: {"kind":"UInt32"},
+    EnableProperty: {"kind":"UInt32"},
+    ControlFlags: {"kind":"UInt32"},
+    SourceId: Guid,
+    EnableFilterDesc: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_FILTER_DESCRIPTOR},
+    FilterDescCount: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: TRACE_QUERY_INFO_CLASS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TRACE_QUERY_INFO_CLASS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CLASSIC_EVENT_ID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CLASSIC_EVENT_ID = extern struct {
+    EventGuid: Guid,
+    Type: {"kind":"Byte"},
+    Reserved: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: TRACE_PROFILE_INTERVAL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TRACE_PROFILE_INTERVAL = extern struct {
+    Source: {"kind":"UInt32"},
+    Interval: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: TRACE_VERSION_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TRACE_VERSION_INFO = extern struct {
+    EtwTraceProcessingVersion: {"kind":"UInt32"},
+    Reserved: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: TRACE_PERIODIC_CAPTURE_STATE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TRACE_PERIODIC_CAPTURE_STATE_INFO = extern struct {
+    CaptureStateFrequencyInSeconds: {"kind":"UInt32"},
+    ProviderCount: {"kind":"UInt16"},
+    Reserved: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: ETW_PROCESS_HANDLE_INFO_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ETW_PROCESS_HANDLE_INFO_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: ETW_TRACE_PARTITION_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ETW_TRACE_PARTITION_INFORMATION = extern struct {
+    PartitionId: Guid,
+    ParentId: Guid,
+    QpcOffsetFromRoot: {"kind":"Int64"},
+    PartitionType: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ETW_TRACE_PARTITION_INFORMATION_V2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ETW_TRACE_PARTITION_INFORMATION_V2 = extern struct {
+    QpcOffsetFromRoot: {"kind":"Int64"},
+    PartitionType: {"kind":"UInt32"},
+    PartitionId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ParentId: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: EVENT_DATA_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_DATA_DESCRIPTOR = extern struct {
+    Ptr: {"kind":"UInt64"},
+    Size: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.Etw.EVENT_DATA_DESCRIPTOR+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            Type: {"kind":"Byte"},
+            Reserved1: {"kind":"Byte"},
+            Reserved2: {"kind":"UInt16"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: EVENT_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_DESCRIPTOR = extern struct {
+    Id: {"kind":"UInt16"},
+    Version: {"kind":"Byte"},
+    Channel: {"kind":"Byte"},
+    Level: {"kind":"Byte"},
+    Opcode: {"kind":"Byte"},
+    Task: {"kind":"UInt16"},
+    Keyword: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: EVENT_FILTER_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_FILTER_DESCRIPTOR = extern struct {
+    Ptr: {"kind":"UInt64"},
+    Size: {"kind":"UInt32"},
+    Type: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EVENT_FILTER_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_FILTER_HEADER = extern struct {
+    Id: {"kind":"UInt16"},
+    Version: {"kind":"Byte"},
+    Reserved: {"kind":"Array","child": {"kind":"Byte"}},
+    InstanceId: {"kind":"UInt64"},
+    Size: {"kind":"UInt32"},
+    NextOffset: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EVENT_FILTER_EVENT_ID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_FILTER_EVENT_ID = extern struct {
+    FilterIn: {"kind":"Byte"},
+    Reserved: {"kind":"Byte"},
+    Count: {"kind":"UInt16"},
+    Events: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: EVENT_FILTER_EVENT_NAME
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_FILTER_EVENT_NAME = extern struct {
+    MatchAnyKeyword: {"kind":"UInt64"},
+    MatchAllKeyword: {"kind":"UInt64"},
+    Level: {"kind":"Byte"},
+    FilterIn: {"kind":"Byte"},
+    NameCount: {"kind":"UInt16"},
+    Names: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: EVENT_FILTER_LEVEL_KW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_FILTER_LEVEL_KW = extern struct {
+    MatchAnyKeyword: {"kind":"UInt64"},
+    MatchAllKeyword: {"kind":"UInt64"},
+    Level: {"kind":"Byte"},
+    FilterIn: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: EVENT_INFO_CLASS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EVENT_INFO_CLASS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PENABLECALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PENABLECALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: EVENT_HEADER_EXTENDED_DATA_ITEM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_HEADER_EXTENDED_DATA_ITEM = extern struct {
+    Reserved1: {"kind":"UInt16"},
+    ExtType: {"kind":"UInt16"},
+    Anonymous: Windows.Win32.Etw.EVENT_HEADER_EXTENDED_DATA_ITEM+_Anonymous_e__Struct,
+    DataSize: {"kind":"UInt16"},
+    DataPtr: {"kind":"UInt64"},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _Anonymous_e__Struct = extern struct {
+        _bitfield: {"kind":"UInt16"},
+    };
+};
+// --------------------------------------------------------
+// Type: EVENT_EXTENDED_ITEM_INSTANCE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_EXTENDED_ITEM_INSTANCE = extern struct {
+    InstanceId: {"kind":"UInt32"},
+    ParentInstanceId: {"kind":"UInt32"},
+    ParentGuid: Guid,
+};
+// --------------------------------------------------------
+// Type: EVENT_EXTENDED_ITEM_RELATED_ACTIVITYID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_EXTENDED_ITEM_RELATED_ACTIVITYID = extern struct {
+    RelatedActivityId: Guid,
+};
+// --------------------------------------------------------
+// Type: EVENT_EXTENDED_ITEM_TS_ID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_EXTENDED_ITEM_TS_ID = extern struct {
+    SessionId: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EVENT_EXTENDED_ITEM_STACK_TRACE32
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_EXTENDED_ITEM_STACK_TRACE32 = extern struct {
+    MatchId: {"kind":"UInt64"},
+    Address: {"kind":"Array","child": {"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: EVENT_EXTENDED_ITEM_STACK_TRACE64
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_EXTENDED_ITEM_STACK_TRACE64 = extern struct {
+    MatchId: {"kind":"UInt64"},
+    Address: {"kind":"Array","child": {"kind":"UInt64"}},
+};
+// --------------------------------------------------------
+// Type: EVENT_EXTENDED_ITEM_PEBS_INDEX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_EXTENDED_ITEM_PEBS_INDEX = extern struct {
+    PebsIndex: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: EVENT_EXTENDED_ITEM_PMC_COUNTERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_EXTENDED_ITEM_PMC_COUNTERS = extern struct {
+    Counter: {"kind":"Array","child": {"kind":"UInt64"}},
+};
+// --------------------------------------------------------
+// Type: EVENT_EXTENDED_ITEM_PROCESS_START_KEY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_EXTENDED_ITEM_PROCESS_START_KEY = extern struct {
+    ProcessStartKey: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: EVENT_EXTENDED_ITEM_EVENT_KEY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_EXTENDED_ITEM_EVENT_KEY = extern struct {
+    Key: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: EVENT_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_HEADER = extern struct {
+    Size: {"kind":"UInt16"},
+    HeaderType: {"kind":"UInt16"},
+    Flags: {"kind":"UInt16"},
+    EventProperty: {"kind":"UInt16"},
+    ThreadId: {"kind":"UInt32"},
+    ProcessId: {"kind":"UInt32"},
+    TimeStamp: Windows.Win32.SystemServices.LARGE_INTEGER,
+    ProviderId: Guid,
+    EventDescriptor: Windows.Win32.Etw.EVENT_DESCRIPTOR,
+    Anonymous: Windows.Win32.Etw.EVENT_HEADER+_Anonymous_e__Union,
+    ActivityId: Guid,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            KernelTime: {"kind":"UInt32"},
+            UserTime: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: EVENT_RECORD
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_RECORD = extern struct {
+    EventHeader: Windows.Win32.Etw.EVENT_HEADER,
+    BufferContext: Windows.Win32.Etw.ETW_BUFFER_CONTEXT,
+    ExtendedDataCount: {"kind":"UInt16"},
+    UserDataLength: {"kind":"UInt16"},
+    ExtendedData: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_HEADER_EXTENDED_DATA_ITEM},
+    UserData: {"kind""Ptr","child":{"kind":"Void"}},
+    UserContext: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: ETW_PROVIDER_TRAIT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ETW_PROVIDER_TRAIT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: EVENTSECURITYOPERATION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EVENTSECURITYOPERATION = *opaque{
+};
+// --------------------------------------------------------
+// Type: EVENT_MAP_ENTRY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_MAP_ENTRY = extern struct {
+    OutputOffset: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.Etw.EVENT_MAP_ENTRY+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: MAP_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MAP_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: MAP_VALUETYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MAP_VALUETYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: EVENT_MAP_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_MAP_INFO = extern struct {
+    NameOffset: {"kind":"UInt32"},
+    Flag: Windows.Win32.Etw.MAP_FLAGS,
+    EntryCount: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.Etw.EVENT_MAP_INFO+_Anonymous_e__Union,
+    MapEntryArray: {"kind":"Array","child": Windows.Win32.Etw.EVENT_MAP_ENTRY},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: _TDH_IN_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const _TDH_IN_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: _TDH_OUT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const _TDH_OUT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PROPERTY_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PROPERTY_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: EVENT_PROPERTY_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EVENT_PROPERTY_INFO = extern struct {
+    Flags: Windows.Win32.Etw.PROPERTY_FLAGS,
+    NameOffset: {"kind":"UInt32"},
+    Anonymous1: Windows.Win32.Etw.EVENT_PROPERTY_INFO+_Anonymous1_e__Union,
+    Anonymous2: Windows.Win32.Etw.EVENT_PROPERTY_INFO+_Anonymous2_e__Union,
+    Anonymous3: Windows.Win32.Etw.EVENT_PROPERTY_INFO+_Anonymous3_e__Union,
+    Anonymous4: Windows.Win32.Etw.EVENT_PROPERTY_INFO+_Anonymous4_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous4_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous4_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            _bitfield: {"kind":"UInt32"},
+        };
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _structType
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _structType = extern struct {
+            StructStartIndex: {"kind":"UInt16"},
+            NumOfStructMembers: {"kind":"UInt16"},
+            padding: {"kind":"UInt32"},
+        };
+        // --------------------------------------------------------
+        // Type: _nonStructType
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _nonStructType = extern struct {
+            InType: {"kind":"UInt16"},
+            OutType: {"kind":"UInt16"},
+            MapNameOffset: {"kind":"UInt32"},
+        };
+        // --------------------------------------------------------
+        // Type: _customSchemaType
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _customSchemaType = extern struct {
+            InType: {"kind":"UInt16"},
+            OutType: {"kind":"UInt16"},
+            CustomSchemaOffset: {"kind":"UInt32"},
+        };
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous3_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous3_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: DECODING_SOURCE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DECODING_SOURCE = *opaque{
+};
+// --------------------------------------------------------
+// Type: TEMPLATE_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TEMPLATE_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: TRACE_EVENT_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TRACE_EVENT_INFO = extern struct {
+    ProviderGuid: Guid,
+    EventGuid: Guid,
+    EventDescriptor: Windows.Win32.Etw.EVENT_DESCRIPTOR,
+    DecodingSource: Windows.Win32.Etw.DECODING_SOURCE,
+    ProviderNameOffset: {"kind":"UInt32"},
+    LevelNameOffset: {"kind":"UInt32"},
+    ChannelNameOffset: {"kind":"UInt32"},
+    KeywordsNameOffset: {"kind":"UInt32"},
+    TaskNameOffset: {"kind":"UInt32"},
+    OpcodeNameOffset: {"kind":"UInt32"},
+    EventMessageOffset: {"kind":"UInt32"},
+    ProviderMessageOffset: {"kind":"UInt32"},
+    BinaryXMLOffset: {"kind":"UInt32"},
+    BinaryXMLSize: {"kind":"UInt32"},
+    Anonymous1: Windows.Win32.Etw.TRACE_EVENT_INFO+_Anonymous1_e__Union,
+    Anonymous2: Windows.Win32.Etw.TRACE_EVENT_INFO+_Anonymous2_e__Union,
+    PropertyCount: {"kind":"UInt32"},
+    TopLevelPropertyCount: {"kind":"UInt32"},
+    Anonymous3: Windows.Win32.Etw.TRACE_EVENT_INFO+_Anonymous3_e__Union,
+    EventPropertyInfoArray: {"kind":"Array","child": Windows.Win32.Etw.EVENT_PROPERTY_INFO},
+    // --------------------------------------------------------
+    // Type: _Anonymous3_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous3_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            _bitfield: {"kind":"UInt32"},
+        };
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: PROPERTY_DATA_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PROPERTY_DATA_DESCRIPTOR = extern struct {
+    PropertyName: {"kind":"UInt64"},
+    ArrayIndex: {"kind":"UInt32"},
+    Reserved: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PAYLOAD_OPERATOR
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PAYLOAD_OPERATOR = *opaque{
+};
+// --------------------------------------------------------
+// Type: PAYLOAD_FILTER_PREDICATE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PAYLOAD_FILTER_PREDICATE = extern struct {
+    FieldName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    CompareOp: {"kind":"UInt16"},
+    Value: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: PROVIDER_FILTER_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PROVIDER_FILTER_INFO = extern struct {
+    Id: {"kind":"Byte"},
+    Version: {"kind":"Byte"},
+    MessageOffset: {"kind":"UInt32"},
+    Reserved: {"kind":"UInt32"},
+    PropertyCount: {"kind":"UInt32"},
+    EventPropertyInfoArray: {"kind":"Array","child": Windows.Win32.Etw.EVENT_PROPERTY_INFO},
+};
+// --------------------------------------------------------
+// Type: EVENT_FIELD_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EVENT_FIELD_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PROVIDER_FIELD_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PROVIDER_FIELD_INFO = extern struct {
+    NameOffset: {"kind":"UInt32"},
+    DescriptionOffset: {"kind":"UInt32"},
+    Value: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: PROVIDER_FIELD_INFOARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PROVIDER_FIELD_INFOARRAY = extern struct {
+    NumberOfElements: {"kind":"UInt32"},
+    FieldType: Windows.Win32.Etw.EVENT_FIELD_TYPE,
+    FieldInfoArray: {"kind":"Array","child": Windows.Win32.Etw.PROVIDER_FIELD_INFO},
+};
+// --------------------------------------------------------
+// Type: TRACE_PROVIDER_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TRACE_PROVIDER_INFO = extern struct {
+    ProviderGuid: Guid,
+    SchemaSource: {"kind":"UInt32"},
+    ProviderNameOffset: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PROVIDER_ENUMERATION_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PROVIDER_ENUMERATION_INFO = extern struct {
+    NumberOfProviders: {"kind":"UInt32"},
+    Reserved: {"kind":"UInt32"},
+    TraceProviderInfoArray: {"kind":"Array","child": Windows.Win32.Etw.TRACE_PROVIDER_INFO},
+};
+// --------------------------------------------------------
+// Type: PROVIDER_EVENT_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PROVIDER_EVENT_INFO = extern struct {
+    NumberOfEvents: {"kind":"UInt32"},
+    Reserved: {"kind":"UInt32"},
+    EventDescriptorsArray: {"kind":"Array","child": Windows.Win32.Etw.EVENT_DESCRIPTOR},
+};
+// --------------------------------------------------------
+// Type: TDH_CONTEXT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TDH_CONTEXT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: TDH_CONTEXT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TDH_CONTEXT = extern struct {
+    ParameterValue: {"kind":"UInt64"},
+    ParameterType: Windows.Win32.Etw.TDH_CONTEXT_TYPE,
+    ParameterSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: CTraceRelogger
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const CTraceRelogger = opaque {
+};
+// --------------------------------------------------------
+// Type: ITraceEvent
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITraceEvent = *opaque{
+    // TODO: Method 'Clone'
+    // TODO: Method 'GetUserContext'
+    // TODO: Method 'GetEventRecord'
+    // TODO: Method 'SetPayload'
+    // TODO: Method 'SetEventDescriptor'
+    // TODO: Method 'SetProcessId'
+    // TODO: Method 'SetProcessorIndex'
+    // TODO: Method 'SetThreadId'
+    // TODO: Method 'SetThreadTimes'
+    // TODO: Method 'SetActivityId'
+    // TODO: Method 'SetTimeStamp'
+    // TODO: Method 'SetProviderId'
+};
+// --------------------------------------------------------
+// Type: ITraceEventCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITraceEventCallback = *opaque{
+    // TODO: Method 'OnBeginProcessTrace'
+    // TODO: Method 'OnFinalizeProcessTrace'
+    // TODO: Method 'OnEvent'
+};
+// --------------------------------------------------------
+// Type: ITraceRelogger
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITraceRelogger = *opaque{
+    // TODO: Method 'AddLogfileTraceStream'
+    // TODO: Method 'AddRealtimeTraceStream'
+    // TODO: Method 'RegisterCallback'
+    // TODO: Method 'Inject'
+    // TODO: Method 'CreateEventInstance'
+    // TODO: Method 'ProcessTrace'
+    // TODO: Method 'SetOutputFilename'
+    // TODO: Method 'SetCompressionMode'
+    // TODO: Method 'Cancel'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn StartTraceW(
+    TraceHandle: {"kind""Ptr","child":{"kind":"UInt64"}},
+    InstanceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Properties: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_TRACE_PROPERTIES},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn StartTraceA(
+    TraceHandle: {"kind""Ptr","child":{"kind":"UInt64"}},
+    InstanceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Properties: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_TRACE_PROPERTIES},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn StopTraceW(
+    TraceHandle: {"kind":"UInt64"},
+    InstanceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Properties: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_TRACE_PROPERTIES},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn StopTraceA(
+    TraceHandle: {"kind":"UInt64"},
+    InstanceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Properties: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_TRACE_PROPERTIES},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn QueryTraceW(
+    TraceHandle: {"kind":"UInt64"},
+    InstanceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Properties: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_TRACE_PROPERTIES},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn QueryTraceA(
+    TraceHandle: {"kind":"UInt64"},
+    InstanceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Properties: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_TRACE_PROPERTIES},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn UpdateTraceW(
+    TraceHandle: {"kind":"UInt64"},
+    InstanceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Properties: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_TRACE_PROPERTIES},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn UpdateTraceA(
+    TraceHandle: {"kind":"UInt64"},
+    InstanceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Properties: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_TRACE_PROPERTIES},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn FlushTraceW(
+    TraceHandle: {"kind":"UInt64"},
+    InstanceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Properties: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_TRACE_PROPERTIES},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn FlushTraceA(
+    TraceHandle: {"kind":"UInt64"},
+    InstanceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Properties: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_TRACE_PROPERTIES},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn ControlTraceW(
+    TraceHandle: {"kind":"UInt64"},
+    InstanceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Properties: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_TRACE_PROPERTIES},
+    ControlCode: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn ControlTraceA(
+    TraceHandle: {"kind":"UInt64"},
+    InstanceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Properties: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_TRACE_PROPERTIES},
+    ControlCode: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn QueryAllTracesW(
+    PropertyArray: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Etw.EVENT_TRACE_PROPERTIES}},
+    PropertyArrayCount: {"kind":"UInt32"},
+    LoggerCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn QueryAllTracesA(
+    PropertyArray: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Etw.EVENT_TRACE_PROPERTIES}},
+    PropertyArrayCount: {"kind":"UInt32"},
+    LoggerCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn EnableTrace(
+    Enable: {"kind":"UInt32"},
+    EnableFlag: {"kind":"UInt32"},
+    EnableLevel: {"kind":"UInt32"},
+    ControlGuid: {"kind""Ptr","child":Guid},
+    TraceHandle: {"kind":"UInt64"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn EnableTraceEx(
+    ProviderId: {"kind""Ptr","child":Guid},
+    SourceId: {"kind""Ptr","child":Guid},
+    TraceHandle: {"kind":"UInt64"},
+    IsEnabled: {"kind":"UInt32"},
+    Level: {"kind":"Byte"},
+    MatchAnyKeyword: {"kind":"UInt64"},
+    MatchAllKeyword: {"kind":"UInt64"},
+    EnableProperty: {"kind":"UInt32"},
+    EnableFilterDesc: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_FILTER_DESCRIPTOR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn EnableTraceEx2(
+    TraceHandle: {"kind":"UInt64"},
+    ProviderId: {"kind""Ptr","child":Guid},
+    ControlCode: {"kind":"UInt32"},
+    Level: {"kind":"Byte"},
+    MatchAnyKeyword: {"kind":"UInt64"},
+    MatchAllKeyword: {"kind":"UInt64"},
+    Timeout: {"kind":"UInt32"},
+    EnableParameters: {"kind""Ptr","child":Windows.Win32.Etw.ENABLE_TRACE_PARAMETERS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn EnumerateTraceGuidsEx(
+    TraceQueryInfoClass: Windows.Win32.Etw.TRACE_QUERY_INFO_CLASS,
+    InBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    InBufferSize: {"kind":"UInt32"},
+    OutBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    OutBufferSize: {"kind":"UInt32"},
+    ReturnLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn TraceSetInformation(
+    SessionHandle: {"kind":"UInt64"},
+    InformationClass: Windows.Win32.Etw.TRACE_QUERY_INFO_CLASS,
+    TraceInformation: {"kind""Ptr","child":{"kind":"Void"}},
+    InformationLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn TraceQueryInformation(
+    SessionHandle: {"kind":"UInt64"},
+    InformationClass: Windows.Win32.Etw.TRACE_QUERY_INFO_CLASS,
+    TraceInformation: {"kind""Ptr","child":{"kind":"Void"}},
+    InformationLength: {"kind":"UInt32"},
+    ReturnLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn CreateTraceInstanceId(
+    RegHandle: Windows.Win32.SystemServices.HANDLE,
+    InstInfo: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_INSTANCE_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn TraceEvent(
+    TraceHandle: {"kind":"UInt64"},
+    EventTrace: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_TRACE_HEADER},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn TraceEventInstance(
+    TraceHandle: {"kind":"UInt64"},
+    EventTrace: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_INSTANCE_HEADER},
+    InstInfo: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_INSTANCE_INFO},
+    ParentInstInfo: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_INSTANCE_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn RegisterTraceGuidsW(
+    RequestAddress: Windows.Win32.Etw.WMIDPREQUEST,
+    RequestContext: {"kind""Ptr","child":{"kind":"Void"}},
+    ControlGuid: {"kind""Ptr","child":Guid},
+    GuidCount: {"kind":"UInt32"},
+    TraceGuidReg: {"kind""Ptr","child":Windows.Win32.Etw.TRACE_GUID_REGISTRATION},
+    MofImagePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    MofResourceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    RegistrationHandle: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn RegisterTraceGuidsA(
+    RequestAddress: Windows.Win32.Etw.WMIDPREQUEST,
+    RequestContext: {"kind""Ptr","child":{"kind":"Void"}},
+    ControlGuid: {"kind""Ptr","child":Guid},
+    GuidCount: {"kind":"UInt32"},
+    TraceGuidReg: {"kind""Ptr","child":Windows.Win32.Etw.TRACE_GUID_REGISTRATION},
+    MofImagePath: {"kind""Ptr","child":{"kind":"SByte"}},
+    MofResourceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    RegistrationHandle: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn EnumerateTraceGuids(
+    GuidPropertiesArray: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Etw.TRACE_GUID_PROPERTIES}},
+    PropertyArrayCount: {"kind":"UInt32"},
+    GuidCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn UnregisterTraceGuids(
+    RegistrationHandle: {"kind":"UInt64"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "ADVAPI32" fn GetTraceLoggerHandle(
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "ADVAPI32" fn GetTraceEnableLevel(
+    TraceHandle: {"kind":"UInt64"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "ADVAPI32" fn GetTraceEnableFlags(
+    TraceHandle: {"kind":"UInt64"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "ADVAPI32" fn OpenTraceW(
+    Logfile: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_TRACE_LOGFILEW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn ProcessTrace(
+    HandleArray: {"kind""Ptr","child":{"kind":"UInt64"}},
+    HandleCount: {"kind":"UInt32"},
+    StartTime: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+    EndTime: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn CloseTrace(
+    TraceHandle: {"kind":"UInt64"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn QueryTraceProcessingHandle(
+    ProcessingHandle: {"kind":"UInt64"},
+    InformationClass: Windows.Win32.Etw.ETW_PROCESS_HANDLE_INFO_TYPE,
+    InBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    InBufferSize: {"kind":"UInt32"},
+    OutBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    OutBufferSize: {"kind":"UInt32"},
+    ReturnLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "ADVAPI32" fn OpenTraceA(
+    Logfile: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_TRACE_LOGFILEA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn SetTraceCallback(
+    pGuid: {"kind""Ptr","child":Guid},
+    EventCallback: Windows.Win32.Etw.PEVENT_CALLBACK,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn RemoveTraceCallback(
+    pGuid: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn TraceMessage(
+    LoggerHandle: {"kind":"UInt64"},
+    MessageFlags: {"kind":"UInt32"},
+    MessageGuid: {"kind""Ptr","child":Guid},
+    MessageNumber: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn TraceMessageVa(
+    LoggerHandle: {"kind":"UInt64"},
+    MessageFlags: {"kind":"UInt32"},
+    MessageGuid: {"kind""Ptr","child":Guid},
+    MessageNumber: {"kind":"UInt16"},
+    MessageArgList: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn EventRegister(
+    ProviderId: {"kind""Ptr","child":Guid},
+    EnableCallback: Windows.Win32.Etw.PENABLECALLBACK,
+    CallbackContext: {"kind""Ptr","child":{"kind":"Void"}},
+    RegHandle: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn EventUnregister(
+    RegHandle: {"kind":"UInt64"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn EventSetInformation(
+    RegHandle: {"kind":"UInt64"},
+    InformationClass: Windows.Win32.Etw.EVENT_INFO_CLASS,
+    EventInformation: {"kind""Ptr","child":{"kind":"Void"}},
+    InformationLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn EventEnabled(
+    RegHandle: {"kind":"UInt64"},
+    EventDescriptor: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_DESCRIPTOR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn EventProviderEnabled(
+    RegHandle: {"kind":"UInt64"},
+    Level: {"kind":"Byte"},
+    Keyword: {"kind":"UInt64"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn EventWrite(
+    RegHandle: {"kind":"UInt64"},
+    EventDescriptor: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_DESCRIPTOR},
+    UserDataCount: {"kind":"UInt32"},
+    UserData: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_DATA_DESCRIPTOR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn EventWriteTransfer(
+    RegHandle: {"kind":"UInt64"},
+    EventDescriptor: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_DESCRIPTOR},
+    ActivityId: {"kind""Ptr","child":Guid},
+    RelatedActivityId: {"kind""Ptr","child":Guid},
+    UserDataCount: {"kind":"UInt32"},
+    UserData: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_DATA_DESCRIPTOR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn EventWriteEx(
+    RegHandle: {"kind":"UInt64"},
+    EventDescriptor: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_DESCRIPTOR},
+    Filter: {"kind":"UInt64"},
+    Flags: {"kind":"UInt32"},
+    ActivityId: {"kind""Ptr","child":Guid},
+    RelatedActivityId: {"kind""Ptr","child":Guid},
+    UserDataCount: {"kind":"UInt32"},
+    UserData: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_DATA_DESCRIPTOR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn EventWriteString(
+    RegHandle: {"kind":"UInt64"},
+    Level: {"kind":"Byte"},
+    Keyword: {"kind":"UInt64"},
+    String: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn EventActivityIdControl(
+    ControlCode: {"kind":"UInt32"},
+    ActivityId: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn EventAccessControl(
+    Guid: {"kind""Ptr","child":Guid},
+    Operation: {"kind":"UInt32"},
+    Sid: {"kind""Ptr","child":{"kind":"Void"}},
+    Rights: {"kind":"UInt32"},
+    AllowOrDeny: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn EventAccessQuery(
+    Guid: {"kind""Ptr","child":Guid},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    BufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn EventAccessRemove(
+    Guid: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "tdh" fn TdhCreatePayloadFilter(
+    ProviderGuid: {"kind""Ptr","child":Guid},
+    EventDescriptor: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_DESCRIPTOR},
+    EventMatchANY: {"kind":"Byte"},
+    PayloadPredicateCount: {"kind":"UInt32"},
+    PayloadPredicates: {"kind""Ptr","child":Windows.Win32.Etw.PAYLOAD_FILTER_PREDICATE},
+    PayloadFilter: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "tdh" fn TdhDeletePayloadFilter(
+    PayloadFilter: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "tdh" fn TdhAggregatePayloadFilters(
+    PayloadFilterCount: {"kind":"UInt32"},
+    PayloadFilterPtrs: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+    EventMatchALLFlags: {"kind""Ptr","child":{"kind":"Byte"}},
+    EventFilterDescriptor: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_FILTER_DESCRIPTOR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "tdh" fn TdhCleanupPayloadEventFilterDescriptor(
+    EventFilterDescriptor: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_FILTER_DESCRIPTOR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TDH" fn TdhGetEventInformation(
+    Event: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_RECORD},
+    TdhContextCount: {"kind":"UInt32"},
+    TdhContext: {"kind""Ptr","child":Windows.Win32.Etw.TDH_CONTEXT},
+    Buffer: {"kind""Ptr","child":Windows.Win32.Etw.TRACE_EVENT_INFO},
+    BufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TDH" fn TdhGetEventMapInformation(
+    pEvent: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_RECORD},
+    pMapName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pBuffer: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_MAP_INFO},
+    pBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TDH" fn TdhGetPropertySize(
+    pEvent: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_RECORD},
+    TdhContextCount: {"kind":"UInt32"},
+    pTdhContext: {"kind""Ptr","child":Windows.Win32.Etw.TDH_CONTEXT},
+    PropertyDataCount: {"kind":"UInt32"},
+    pPropertyData: {"kind""Ptr","child":Windows.Win32.Etw.PROPERTY_DATA_DESCRIPTOR},
+    pPropertySize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TDH" fn TdhGetProperty(
+    pEvent: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_RECORD},
+    TdhContextCount: {"kind":"UInt32"},
+    pTdhContext: {"kind""Ptr","child":Windows.Win32.Etw.TDH_CONTEXT},
+    PropertyDataCount: {"kind":"UInt32"},
+    pPropertyData: {"kind""Ptr","child":Windows.Win32.Etw.PROPERTY_DATA_DESCRIPTOR},
+    BufferSize: {"kind":"UInt32"},
+    pBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TDH" fn TdhEnumerateProviders(
+    pBuffer: {"kind""Ptr","child":Windows.Win32.Etw.PROVIDER_ENUMERATION_INFO},
+    pBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TDH" fn TdhQueryProviderFieldInformation(
+    pGuid: {"kind""Ptr","child":Guid},
+    EventFieldValue: {"kind":"UInt64"},
+    EventFieldType: Windows.Win32.Etw.EVENT_FIELD_TYPE,
+    pBuffer: {"kind""Ptr","child":Windows.Win32.Etw.PROVIDER_FIELD_INFOARRAY},
+    pBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TDH" fn TdhEnumerateProviderFieldInformation(
+    pGuid: {"kind""Ptr","child":Guid},
+    EventFieldType: Windows.Win32.Etw.EVENT_FIELD_TYPE,
+    pBuffer: {"kind""Ptr","child":Windows.Win32.Etw.PROVIDER_FIELD_INFOARRAY},
+    pBufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "tdh" fn TdhEnumerateProviderFilters(
+    Guid: {"kind""Ptr","child":Guid},
+    TdhContextCount: {"kind":"UInt32"},
+    TdhContext: {"kind""Ptr","child":Windows.Win32.Etw.TDH_CONTEXT},
+    FilterCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Etw.PROVIDER_FILTER_INFO}},
+    BufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TDH" fn TdhLoadManifest(
+    Manifest: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TDH" fn TdhLoadManifestFromMemory(
+    pData: {"kind""Ptr","child":{"kind":"Void"}},
+    cbData: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TDH" fn TdhUnloadManifest(
+    Manifest: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TDH" fn TdhUnloadManifestFromMemory(
+    pData: {"kind""Ptr","child":{"kind":"Void"}},
+    cbData: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TDH" fn TdhFormatProperty(
+    EventInfo: {"kind""Ptr","child":Windows.Win32.Etw.TRACE_EVENT_INFO},
+    MapInfo: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_MAP_INFO},
+    PointerSize: {"kind":"UInt32"},
+    PropertyInType: {"kind":"UInt16"},
+    PropertyOutType: {"kind":"UInt16"},
+    PropertyLength: {"kind":"UInt16"},
+    UserDataLength: {"kind":"UInt16"},
+    UserData: {"kind""Ptr","child":{"kind":"Byte"}},
+    BufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    UserDataConsumed: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "tdh" fn TdhOpenDecodingHandle(
+    Handle: {"kind""Ptr","child":Windows.Win32.Etw.TDH_HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "tdh" fn TdhSetDecodingParameter(
+    Handle: Windows.Win32.Etw.TDH_HANDLE,
+    TdhContext: {"kind""Ptr","child":Windows.Win32.Etw.TDH_CONTEXT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "tdh" fn TdhGetDecodingParameter(
+    Handle: Windows.Win32.Etw.TDH_HANDLE,
+    TdhContext: {"kind""Ptr","child":Windows.Win32.Etw.TDH_CONTEXT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "tdh" fn TdhGetWppProperty(
+    Handle: Windows.Win32.Etw.TDH_HANDLE,
+    EventRecord: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_RECORD},
+    PropertyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    BufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "tdh" fn TdhGetWppMessage(
+    Handle: Windows.Win32.Etw.TDH_HANDLE,
+    EventRecord: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_RECORD},
+    BufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "tdh" fn TdhCloseDecodingHandle(
+    Handle: Windows.Win32.Etw.TDH_HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "tdh" fn TdhLoadManifestFromBinary(
+    BinaryPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TDH" fn TdhEnumerateManifestProviderEvents(
+    ProviderGuid: {"kind""Ptr","child":Guid},
+    Buffer: {"kind""Ptr","child":Windows.Win32.Etw.PROVIDER_EVENT_INFO},
+    BufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "TDH" fn TdhGetManifestEventInformation(
+    ProviderGuid: {"kind""Ptr","child":Guid},
+    EventDescriptor: {"kind""Ptr","child":Windows.Win32.Etw.EVENT_DESCRIPTOR},
+    Buffer: {"kind""Ptr","child":Windows.Win32.Etw.TRACE_EVENT_INFO},
+    BufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn CveEventWrite(
+    CveId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    AdditionalDetails: {"kind""Ptr","child":{"kind":"UInt16"}},
+],
+
+"unicode_aliases": [
+     "PEVENT_TRACE_BUFFER_CALLBACK"
+     "EVENT_TRACE_LOGFILE"
+     "StartTrace"
+     "StopTrace"
+     "QueryTrace"
+     "UpdateTrace"
+     "FlushTrace"
+     "ControlTrace"
+     "QueryAllTraces"
+     "RegisterTraceGuids"
+     "OpenTrace"
+]}

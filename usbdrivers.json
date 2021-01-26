@@ -1,0 +1,1525 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: USB_DEVICE_SPEED
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const USB_DEVICE_SPEED = *opaque{
+};
+// --------------------------------------------------------
+// Type: USB_DEVICE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const USB_DEVICE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: BM_REQUEST_TYPE
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const BM_REQUEST_TYPE = *opaque{
+    // --------------------------------------------------------
+    // Type: _BM
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _BM = extern struct {
+        _bitfield: {"kind":"Byte"},
+    };
+};
+// --------------------------------------------------------
+// Type: USB_DEFAULT_PIPE_SETUP_PACKET
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_DEFAULT_PIPE_SETUP_PACKET = *opaque{
+    // --------------------------------------------------------
+    // Type: _wIndex
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _wIndex = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            LowByte: {"kind":"Byte"},
+            HiByte: {"kind":"Byte"},
+        };
+    };
+    // --------------------------------------------------------
+    // Type: _wValue
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _wValue = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            LowByte: {"kind":"Byte"},
+            HiByte: {"kind":"Byte"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: USB_DEVICE_STATUS
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const USB_DEVICE_STATUS = *opaque{
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Struct
+    // TypeLayoutAttr: sequential
+    // not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+    pub const _Anonymous_e__Struct = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: USB_INTERFACE_STATUS
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const USB_INTERFACE_STATUS = *opaque{
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Struct
+    // TypeLayoutAttr: sequential
+    // not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+    pub const _Anonymous_e__Struct = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: USB_ENDPOINT_STATUS
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const USB_ENDPOINT_STATUS = *opaque{
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Struct
+    // TypeLayoutAttr: sequential
+    // not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+    pub const _Anonymous_e__Struct = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: USB_COMMON_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USB_COMMON_DESCRIPTOR = extern struct {
+    bLength: {"kind":"Byte"},
+    bDescriptorType: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: USB_DEVICE_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_DEVICE_DESCRIPTOR = *opaque{
+};
+// --------------------------------------------------------
+// Type: USB_DEVICE_QUALIFIER_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_DEVICE_QUALIFIER_DESCRIPTOR = *opaque{
+};
+// --------------------------------------------------------
+// Type: USB_BOS_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_BOS_DESCRIPTOR = *opaque{
+};
+// --------------------------------------------------------
+// Type: USB_DEVICE_CAPABILITY_USB20_EXTENSION_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USB_DEVICE_CAPABILITY_USB20_EXTENSION_DESCRIPTOR = extern struct {
+    bLength: {"kind":"Byte"},
+    bDescriptorType: {"kind":"Byte"},
+    bDevCapabilityType: {"kind":"Byte"},
+    bmAttributes: Windows.Win32.UsbDrivers.USB_DEVICE_CAPABILITY_USB20_EXTENSION_DESCRIPTOR+_bmAttributes_e__Union,
+    // --------------------------------------------------------
+    // Type: _bmAttributes_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _bmAttributes_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+        pub const _Anonymous_e__Struct = *opaque{
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: USB_DEVICE_CAPABILITY_POWER_DELIVERY_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_DEVICE_CAPABILITY_POWER_DELIVERY_DESCRIPTOR = *opaque{
+    // --------------------------------------------------------
+    // Type: _bmAttributes_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _bmAttributes_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+        pub const _Anonymous_e__Struct = *opaque{
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: USB_DEVICE_CAPABILITY_PD_CONSUMER_PORT_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_DEVICE_CAPABILITY_PD_CONSUMER_PORT_DESCRIPTOR = *opaque{
+    // --------------------------------------------------------
+    // Type: _bmCapabilities_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _bmCapabilities_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+        pub const _Anonymous_e__Struct = *opaque{
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: USB_DEVICE_CAPABILITY_SUPERSPEED_USB_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_DEVICE_CAPABILITY_SUPERSPEED_USB_DESCRIPTOR = *opaque{
+};
+// --------------------------------------------------------
+// Type: USB_DEVICE_CAPABILITY_SUPERSPEEDPLUS_SPEED
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const USB_DEVICE_CAPABILITY_SUPERSPEEDPLUS_SPEED = *opaque{
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Struct
+    // TypeLayoutAttr: sequential
+    // not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+    pub const _Anonymous_e__Struct = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: USB_DEVICE_CAPABILITY_SUPERSPEEDPLUS_USB_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_DEVICE_CAPABILITY_SUPERSPEEDPLUS_USB_DESCRIPTOR = *opaque{
+    // --------------------------------------------------------
+    // Type: _wFunctionalitySupport_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _wFunctionalitySupport_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+        pub const _Anonymous_e__Struct = *opaque{
+        };
+    };
+    // --------------------------------------------------------
+    // Type: _bmAttributes_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _bmAttributes_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+        pub const _Anonymous_e__Struct = *opaque{
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: USB_DEVICE_CAPABILITY_CONTAINER_ID_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USB_DEVICE_CAPABILITY_CONTAINER_ID_DESCRIPTOR = extern struct {
+    bLength: {"kind":"Byte"},
+    bDescriptorType: {"kind":"Byte"},
+    bDevCapabilityType: {"kind":"Byte"},
+    bReserved: {"kind":"Byte"},
+    ContainerID: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: USB_DEVICE_CAPABILITY_PLATFORM_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_DEVICE_CAPABILITY_PLATFORM_DESCRIPTOR = *opaque{
+};
+// --------------------------------------------------------
+// Type: USB_DEVICE_CAPABILITY_BILLBOARD_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_DEVICE_CAPABILITY_BILLBOARD_DESCRIPTOR = *opaque{
+    // --------------------------------------------------------
+    // Type: _VconnPower_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _VconnPower_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+        pub const _Anonymous_e__Struct = *opaque{
+        };
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Struct
+    // TypeLayoutAttr: sequential
+    // not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+    pub const _Anonymous_e__Struct = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: USB_DEVICE_CAPABILITY_FIRMWARE_STATUS_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USB_DEVICE_CAPABILITY_FIRMWARE_STATUS_DESCRIPTOR = extern struct {
+    bLength: {"kind":"Byte"},
+    bDescriptorType: {"kind":"Byte"},
+    bDevCapabilityType: {"kind":"Byte"},
+    bcdDescriptorVersion: {"kind":"Byte"},
+    bmAttributes: Windows.Win32.UsbDrivers.USB_DEVICE_CAPABILITY_FIRMWARE_STATUS_DESCRIPTOR+_bmAttributes_e__Union,
+    // --------------------------------------------------------
+    // Type: _bmAttributes_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _bmAttributes_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+        pub const _Anonymous_e__Struct = *opaque{
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: USB_DEVICE_CAPABILITY_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USB_DEVICE_CAPABILITY_DESCRIPTOR = extern struct {
+    bLength: {"kind":"Byte"},
+    bDescriptorType: {"kind":"Byte"},
+    bDevCapabilityType: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: USB_CONFIGURATION_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_CONFIGURATION_DESCRIPTOR = *opaque{
+};
+// --------------------------------------------------------
+// Type: USB_INTERFACE_ASSOCIATION_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USB_INTERFACE_ASSOCIATION_DESCRIPTOR = extern struct {
+    bLength: {"kind":"Byte"},
+    bDescriptorType: {"kind":"Byte"},
+    bFirstInterface: {"kind":"Byte"},
+    bInterfaceCount: {"kind":"Byte"},
+    bFunctionClass: {"kind":"Byte"},
+    bFunctionSubClass: {"kind":"Byte"},
+    bFunctionProtocol: {"kind":"Byte"},
+    iFunction: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: USB_INTERFACE_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USB_INTERFACE_DESCRIPTOR = extern struct {
+    bLength: {"kind":"Byte"},
+    bDescriptorType: {"kind":"Byte"},
+    bInterfaceNumber: {"kind":"Byte"},
+    bAlternateSetting: {"kind":"Byte"},
+    bNumEndpoints: {"kind":"Byte"},
+    bInterfaceClass: {"kind":"Byte"},
+    bInterfaceSubClass: {"kind":"Byte"},
+    bInterfaceProtocol: {"kind":"Byte"},
+    iInterface: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: USB_ENDPOINT_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_ENDPOINT_DESCRIPTOR = *opaque{
+};
+// --------------------------------------------------------
+// Type: USB_HIGH_SPEED_MAXPACKET
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const USB_HIGH_SPEED_MAXPACKET = *opaque{
+    // --------------------------------------------------------
+    // Type: _MP
+    // TypeLayoutAttr: sequential
+    // not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+    pub const _MP = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: USB_STRING_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_STRING_DESCRIPTOR = *opaque{
+};
+// --------------------------------------------------------
+// Type: USB_SUPERSPEED_ENDPOINT_COMPANION_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_SUPERSPEED_ENDPOINT_COMPANION_DESCRIPTOR = *opaque{
+    // --------------------------------------------------------
+    // Type: _bmAttributes_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _bmAttributes_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Isochronous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Isochronous_e__Struct = extern struct {
+            _bitfield: {"kind":"Byte"},
+        };
+        // --------------------------------------------------------
+        // Type: _Bulk_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Bulk_e__Struct = extern struct {
+            _bitfield: {"kind":"Byte"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: USB_SUPERSPEEDPLUS_ISOCH_ENDPOINT_COMPANION_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_SUPERSPEEDPLUS_ISOCH_ENDPOINT_COMPANION_DESCRIPTOR = *opaque{
+};
+// --------------------------------------------------------
+// Type: USB_HUB_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_HUB_DESCRIPTOR = *opaque{
+};
+// --------------------------------------------------------
+// Type: USB_30_HUB_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_30_HUB_DESCRIPTOR = *opaque{
+};
+// --------------------------------------------------------
+// Type: USB_HUB_STATUS
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const USB_HUB_STATUS = *opaque{
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Struct
+    // TypeLayoutAttr: sequential
+    // not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+    pub const _Anonymous_e__Struct = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: USB_HUB_CHANGE
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const USB_HUB_CHANGE = *opaque{
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Struct
+    // TypeLayoutAttr: sequential
+    // not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+    pub const _Anonymous_e__Struct = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: USB_HUB_STATUS_AND_CHANGE
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const USB_HUB_STATUS_AND_CHANGE = *opaque{
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _Anonymous_e__Struct = extern struct {
+        HubStatus: Windows.Win32.UsbDrivers.USB_HUB_STATUS,
+        HubChange: Windows.Win32.UsbDrivers.USB_HUB_CHANGE,
+    };
+};
+// --------------------------------------------------------
+// Type: USB_20_PORT_STATUS
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const USB_20_PORT_STATUS = *opaque{
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Struct
+    // TypeLayoutAttr: sequential
+    // not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+    pub const _Anonymous_e__Struct = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: USB_20_PORT_CHANGE
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const USB_20_PORT_CHANGE = *opaque{
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Struct
+    // TypeLayoutAttr: sequential
+    // not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+    pub const _Anonymous_e__Struct = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: USB_30_PORT_STATUS
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const USB_30_PORT_STATUS = *opaque{
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Struct
+    // TypeLayoutAttr: sequential
+    // not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+    pub const _Anonymous_e__Struct = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: USB_30_PORT_CHANGE
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const USB_30_PORT_CHANGE = *opaque{
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Struct
+    // TypeLayoutAttr: sequential
+    // not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+    pub const _Anonymous_e__Struct = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: USB_PORT_STATUS
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const USB_PORT_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: USB_PORT_CHANGE
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const USB_PORT_CHANGE = *opaque{
+};
+// --------------------------------------------------------
+// Type: USB_PORT_EXT_STATUS
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const USB_PORT_EXT_STATUS = *opaque{
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Struct
+    // TypeLayoutAttr: sequential
+    // not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+    pub const _Anonymous_e__Struct = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: USB_PORT_STATUS_AND_CHANGE
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const USB_PORT_STATUS_AND_CHANGE = *opaque{
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _Anonymous_e__Struct = extern struct {
+        PortStatus: Windows.Win32.UsbDrivers.USB_PORT_STATUS,
+        PortChange: Windows.Win32.UsbDrivers.USB_PORT_CHANGE,
+    };
+};
+// --------------------------------------------------------
+// Type: USB_PORT_EXT_STATUS_AND_CHANGE
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const USB_PORT_EXT_STATUS_AND_CHANGE = *opaque{
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _Anonymous_e__Struct = extern struct {
+        PortStatusChange: Windows.Win32.UsbDrivers.USB_PORT_STATUS_AND_CHANGE,
+        PortExtStatus: Windows.Win32.UsbDrivers.USB_PORT_EXT_STATUS,
+    };
+};
+// --------------------------------------------------------
+// Type: USB_HUB_30_PORT_REMOTE_WAKE_MASK
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const USB_HUB_30_PORT_REMOTE_WAKE_MASK = *opaque{
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _Anonymous_e__Struct = extern struct {
+        _bitfield: {"kind":"Byte"},
+    };
+};
+// --------------------------------------------------------
+// Type: USB_FUNCTION_SUSPEND_OPTIONS
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const USB_FUNCTION_SUSPEND_OPTIONS = *opaque{
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _Anonymous_e__Struct = extern struct {
+        _bitfield: {"kind":"Byte"},
+    };
+};
+// --------------------------------------------------------
+// Type: USB_CONFIGURATION_POWER_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_CONFIGURATION_POWER_DESCRIPTOR = *opaque{
+};
+// --------------------------------------------------------
+// Type: USB_INTERFACE_POWER_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_INTERFACE_POWER_DESCRIPTOR = *opaque{
+};
+// --------------------------------------------------------
+// Type: USB_CONTROLLER_FLAVOR
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const USB_CONTROLLER_FLAVOR = *opaque{
+};
+// --------------------------------------------------------
+// Type: USBD_VERSION_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USBD_VERSION_INFORMATION = extern struct {
+    USBDI_Version: {"kind":"UInt32"},
+    Supported_USB_Version: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: USBD_PIPE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const USBD_PIPE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: USBD_DEVICE_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USBD_DEVICE_INFORMATION = extern struct {
+    OffsetNext: {"kind":"UInt32"},
+    UsbdDeviceHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceDescriptor: Windows.Win32.UsbDrivers.USB_DEVICE_DESCRIPTOR,
+};
+// --------------------------------------------------------
+// Type: USBD_PIPE_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USBD_PIPE_INFORMATION = extern struct {
+    MaximumPacketSize: {"kind":"UInt16"},
+    EndpointAddress: {"kind":"Byte"},
+    Interval: {"kind":"Byte"},
+    PipeType: Windows.Win32.UsbDrivers.USBD_PIPE_TYPE,
+    PipeHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    MaximumTransferSize: {"kind":"UInt32"},
+    PipeFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: USBD_ENDPOINT_OFFLOAD_MODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const USBD_ENDPOINT_OFFLOAD_MODE = *opaque{
+};
+// --------------------------------------------------------
+// Type: USBD_ENDPOINT_OFFLOAD_INFORMATION
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USBD_ENDPOINT_OFFLOAD_INFORMATION = *opaque{
+};
+// --------------------------------------------------------
+// Type: USBD_INTERFACE_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USBD_INTERFACE_INFORMATION = extern struct {
+    Length: {"kind":"UInt16"},
+    InterfaceNumber: {"kind":"Byte"},
+    AlternateSetting: {"kind":"Byte"},
+    Class: {"kind":"Byte"},
+    SubClass: {"kind":"Byte"},
+    Protocol: {"kind":"Byte"},
+    Reserved: {"kind":"Byte"},
+    InterfaceHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    NumberOfPipes: {"kind":"UInt32"},
+    Pipes: {"kind":"Array","child": Windows.Win32.UsbDrivers.USBD_PIPE_INFORMATION},
+};
+// --------------------------------------------------------
+// Type: _URB_HCD_AREA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _URB_HCD_AREA = extern struct {
+    Reserved8: {"kind":"Array","child": {"kind""Ptr","child":{"kind":"Void"}}},
+};
+// --------------------------------------------------------
+// Type: _URB_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _URB_HEADER = extern struct {
+    Length: {"kind":"UInt16"},
+    Function: {"kind":"UInt16"},
+    Status: {"kind":"Int32"},
+    UsbdDeviceHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    UsbdFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: _URB_SELECT_INTERFACE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _URB_SELECT_INTERFACE = extern struct {
+    Hdr: Windows.Win32.UsbDrivers._URB_HEADER,
+    ConfigurationHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    Interface: Windows.Win32.UsbDrivers.USBD_INTERFACE_INFORMATION,
+};
+// --------------------------------------------------------
+// Type: _URB_SELECT_CONFIGURATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _URB_SELECT_CONFIGURATION = extern struct {
+    Hdr: Windows.Win32.UsbDrivers._URB_HEADER,
+    ConfigurationDescriptor: {"kind""Ptr","child":Windows.Win32.UsbDrivers.USB_CONFIGURATION_DESCRIPTOR},
+    ConfigurationHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    Interface: Windows.Win32.UsbDrivers.USBD_INTERFACE_INFORMATION,
+};
+// --------------------------------------------------------
+// Type: _URB_PIPE_REQUEST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _URB_PIPE_REQUEST = extern struct {
+    Hdr: Windows.Win32.UsbDrivers._URB_HEADER,
+    PipeHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: _URB_FRAME_LENGTH_CONTROL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _URB_FRAME_LENGTH_CONTROL = extern struct {
+    Hdr: Windows.Win32.UsbDrivers._URB_HEADER,
+};
+// --------------------------------------------------------
+// Type: _URB_GET_FRAME_LENGTH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _URB_GET_FRAME_LENGTH = extern struct {
+    Hdr: Windows.Win32.UsbDrivers._URB_HEADER,
+    FrameLength: {"kind":"UInt32"},
+    FrameNumber: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: _URB_SET_FRAME_LENGTH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _URB_SET_FRAME_LENGTH = extern struct {
+    Hdr: Windows.Win32.UsbDrivers._URB_HEADER,
+    FrameLengthDelta: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: _URB_GET_CURRENT_FRAME_NUMBER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _URB_GET_CURRENT_FRAME_NUMBER = extern struct {
+    Hdr: Windows.Win32.UsbDrivers._URB_HEADER,
+    FrameNumber: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: _URB_CONTROL_DESCRIPTOR_REQUEST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _URB_CONTROL_DESCRIPTOR_REQUEST = extern struct {
+    Hdr: Windows.Win32.UsbDrivers._URB_HEADER,
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved0: {"kind":"UInt32"},
+    TransferBufferLength: {"kind":"UInt32"},
+    TransferBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    TransferBufferMDL: {"kind""Ptr","child":{"kind":"Void"}},
+    UrbLink: {"kind""Ptr","child":Windows.Win32.UsbDrivers.URB},
+    hca: Windows.Win32.UsbDrivers._URB_HCD_AREA,
+    Reserved1: {"kind":"UInt16"},
+    Index: {"kind":"Byte"},
+    DescriptorType: {"kind":"Byte"},
+    LanguageId: {"kind":"UInt16"},
+    Reserved2: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: _URB_CONTROL_GET_STATUS_REQUEST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _URB_CONTROL_GET_STATUS_REQUEST = extern struct {
+    Hdr: Windows.Win32.UsbDrivers._URB_HEADER,
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved0: {"kind":"UInt32"},
+    TransferBufferLength: {"kind":"UInt32"},
+    TransferBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    TransferBufferMDL: {"kind""Ptr","child":{"kind":"Void"}},
+    UrbLink: {"kind""Ptr","child":Windows.Win32.UsbDrivers.URB},
+    hca: Windows.Win32.UsbDrivers._URB_HCD_AREA,
+    Reserved1: {"kind":"Array","child": {"kind":"Byte"}},
+    Index: {"kind":"UInt16"},
+    Reserved2: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: _URB_CONTROL_FEATURE_REQUEST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _URB_CONTROL_FEATURE_REQUEST = extern struct {
+    Hdr: Windows.Win32.UsbDrivers._URB_HEADER,
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved2: {"kind":"UInt32"},
+    Reserved3: {"kind":"UInt32"},
+    Reserved4: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved5: {"kind""Ptr","child":{"kind":"Void"}},
+    UrbLink: {"kind""Ptr","child":Windows.Win32.UsbDrivers.URB},
+    hca: Windows.Win32.UsbDrivers._URB_HCD_AREA,
+    Reserved0: {"kind":"UInt16"},
+    FeatureSelector: {"kind":"UInt16"},
+    Index: {"kind":"UInt16"},
+    Reserved1: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: _URB_CONTROL_VENDOR_OR_CLASS_REQUEST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _URB_CONTROL_VENDOR_OR_CLASS_REQUEST = extern struct {
+    Hdr: Windows.Win32.UsbDrivers._URB_HEADER,
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+    TransferFlags: {"kind":"UInt32"},
+    TransferBufferLength: {"kind":"UInt32"},
+    TransferBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    TransferBufferMDL: {"kind""Ptr","child":{"kind":"Void"}},
+    UrbLink: {"kind""Ptr","child":Windows.Win32.UsbDrivers.URB},
+    hca: Windows.Win32.UsbDrivers._URB_HCD_AREA,
+    RequestTypeReservedBits: {"kind":"Byte"},
+    Request: {"kind":"Byte"},
+    Value: {"kind":"UInt16"},
+    Index: {"kind":"UInt16"},
+    Reserved1: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: _URB_CONTROL_GET_INTERFACE_REQUEST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _URB_CONTROL_GET_INTERFACE_REQUEST = extern struct {
+    Hdr: Windows.Win32.UsbDrivers._URB_HEADER,
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved0: {"kind":"UInt32"},
+    TransferBufferLength: {"kind":"UInt32"},
+    TransferBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    TransferBufferMDL: {"kind""Ptr","child":{"kind":"Void"}},
+    UrbLink: {"kind""Ptr","child":Windows.Win32.UsbDrivers.URB},
+    hca: Windows.Win32.UsbDrivers._URB_HCD_AREA,
+    Reserved1: {"kind":"Array","child": {"kind":"Byte"}},
+    Interface: {"kind":"UInt16"},
+    Reserved2: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: _URB_CONTROL_GET_CONFIGURATION_REQUEST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _URB_CONTROL_GET_CONFIGURATION_REQUEST = extern struct {
+    Hdr: Windows.Win32.UsbDrivers._URB_HEADER,
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved0: {"kind":"UInt32"},
+    TransferBufferLength: {"kind":"UInt32"},
+    TransferBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    TransferBufferMDL: {"kind""Ptr","child":{"kind":"Void"}},
+    UrbLink: {"kind""Ptr","child":Windows.Win32.UsbDrivers.URB},
+    hca: Windows.Win32.UsbDrivers._URB_HCD_AREA,
+    Reserved1: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: OS_STRING
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const OS_STRING = extern struct {
+    bLength: {"kind":"Byte"},
+    bDescriptorType: {"kind":"Byte"},
+    MicrosoftString: {"kind":"Array","child": {"kind":"UInt16"}},
+    bVendorCode: {"kind":"Byte"},
+    Anonymous: Windows.Win32.UsbDrivers.OS_STRING+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: _URB_OS_FEATURE_DESCRIPTOR_REQUEST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _URB_OS_FEATURE_DESCRIPTOR_REQUEST = extern struct {
+    Hdr: Windows.Win32.UsbDrivers._URB_HEADER,
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved0: {"kind":"UInt32"},
+    TransferBufferLength: {"kind":"UInt32"},
+    TransferBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    TransferBufferMDL: {"kind""Ptr","child":{"kind":"Void"}},
+    UrbLink: {"kind""Ptr","child":Windows.Win32.UsbDrivers.URB},
+    hca: Windows.Win32.UsbDrivers._URB_HCD_AREA,
+    _bitfield: {"kind":"Byte"},
+    Reserved2: {"kind":"Byte"},
+    InterfaceNumber: {"kind":"Byte"},
+    MS_PageIndex: {"kind":"Byte"},
+    MS_FeatureDescriptorIndex: {"kind":"UInt16"},
+    Reserved3: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: _URB_CONTROL_TRANSFER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _URB_CONTROL_TRANSFER = extern struct {
+    Hdr: Windows.Win32.UsbDrivers._URB_HEADER,
+    PipeHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    TransferFlags: {"kind":"UInt32"},
+    TransferBufferLength: {"kind":"UInt32"},
+    TransferBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    TransferBufferMDL: {"kind""Ptr","child":{"kind":"Void"}},
+    UrbLink: {"kind""Ptr","child":Windows.Win32.UsbDrivers.URB},
+    hca: Windows.Win32.UsbDrivers._URB_HCD_AREA,
+    SetupPacket: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: _URB_CONTROL_TRANSFER_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _URB_CONTROL_TRANSFER_EX = extern struct {
+    Hdr: Windows.Win32.UsbDrivers._URB_HEADER,
+    PipeHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    TransferFlags: {"kind":"UInt32"},
+    TransferBufferLength: {"kind":"UInt32"},
+    TransferBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    TransferBufferMDL: {"kind""Ptr","child":{"kind":"Void"}},
+    Timeout: {"kind":"UInt32"},
+    hca: Windows.Win32.UsbDrivers._URB_HCD_AREA,
+    SetupPacket: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: _URB_BULK_OR_INTERRUPT_TRANSFER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _URB_BULK_OR_INTERRUPT_TRANSFER = extern struct {
+    Hdr: Windows.Win32.UsbDrivers._URB_HEADER,
+    PipeHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    TransferFlags: {"kind":"UInt32"},
+    TransferBufferLength: {"kind":"UInt32"},
+    TransferBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    TransferBufferMDL: {"kind""Ptr","child":{"kind":"Void"}},
+    UrbLink: {"kind""Ptr","child":Windows.Win32.UsbDrivers.URB},
+    hca: Windows.Win32.UsbDrivers._URB_HCD_AREA,
+};
+// --------------------------------------------------------
+// Type: USBD_ISO_PACKET_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USBD_ISO_PACKET_DESCRIPTOR = extern struct {
+    Offset: {"kind":"UInt32"},
+    Length: {"kind":"UInt32"},
+    Status: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: _URB_ISOCH_TRANSFER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _URB_ISOCH_TRANSFER = extern struct {
+    Hdr: Windows.Win32.UsbDrivers._URB_HEADER,
+    PipeHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    TransferFlags: {"kind":"UInt32"},
+    TransferBufferLength: {"kind":"UInt32"},
+    TransferBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    TransferBufferMDL: {"kind""Ptr","child":{"kind":"Void"}},
+    UrbLink: {"kind""Ptr","child":Windows.Win32.UsbDrivers.URB},
+    hca: Windows.Win32.UsbDrivers._URB_HCD_AREA,
+    StartFrame: {"kind":"UInt32"},
+    NumberOfPackets: {"kind":"UInt32"},
+    ErrorCount: {"kind":"UInt32"},
+    IsoPacket: {"kind":"Array","child": Windows.Win32.UsbDrivers.USBD_ISO_PACKET_DESCRIPTOR},
+};
+// --------------------------------------------------------
+// Type: USBD_STREAM_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USBD_STREAM_INFORMATION = extern struct {
+    PipeHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    StreamID: {"kind":"UInt32"},
+    MaximumTransferSize: {"kind":"UInt32"},
+    PipeFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: _URB_OPEN_STATIC_STREAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _URB_OPEN_STATIC_STREAMS = extern struct {
+    Hdr: Windows.Win32.UsbDrivers._URB_HEADER,
+    PipeHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    NumberOfStreams: {"kind":"UInt32"},
+    StreamInfoVersion: {"kind":"UInt16"},
+    StreamInfoSize: {"kind":"UInt16"},
+    Streams: {"kind""Ptr","child":Windows.Win32.UsbDrivers.USBD_STREAM_INFORMATION},
+};
+// --------------------------------------------------------
+// Type: _URB_GET_ISOCH_PIPE_TRANSFER_PATH_DELAYS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _URB_GET_ISOCH_PIPE_TRANSFER_PATH_DELAYS = extern struct {
+    Hdr: Windows.Win32.UsbDrivers._URB_HEADER,
+    PipeHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    MaximumSendPathDelayInMilliSeconds: {"kind":"UInt32"},
+    MaximumCompletionPathDelayInMilliSeconds: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: URB
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const URB = extern struct {
+    Anonymous: Windows.Win32.UsbDrivers.URB+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: USB_IDLE_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const USB_IDLE_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: USB_IDLE_CALLBACK_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USB_IDLE_CALLBACK_INFO = extern struct {
+    IdleCallback: Windows.Win32.UsbDrivers.USB_IDLE_CALLBACK,
+    IdleContext: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: USB_USER_ERROR_CODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const USB_USER_ERROR_CODE = *opaque{
+};
+// --------------------------------------------------------
+// Type: USBUSER_REQUEST_HEADER
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USBUSER_REQUEST_HEADER = *opaque{
+};
+// --------------------------------------------------------
+// Type: PACKET_PARAMETERS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const PACKET_PARAMETERS = *opaque{
+};
+// --------------------------------------------------------
+// Type: USBUSER_SEND_ONE_PACKET
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USBUSER_SEND_ONE_PACKET = extern struct {
+    Header: Windows.Win32.UsbDrivers.USBUSER_REQUEST_HEADER,
+    PacketParameters: Windows.Win32.UsbDrivers.PACKET_PARAMETERS,
+};
+// --------------------------------------------------------
+// Type: RAW_RESET_PORT_PARAMETERS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const RAW_RESET_PORT_PARAMETERS = *opaque{
+};
+// --------------------------------------------------------
+// Type: USBUSER_RAW_RESET_ROOT_PORT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USBUSER_RAW_RESET_ROOT_PORT = extern struct {
+    Header: Windows.Win32.UsbDrivers.USBUSER_REQUEST_HEADER,
+    Parameters: Windows.Win32.UsbDrivers.RAW_RESET_PORT_PARAMETERS,
+};
+// --------------------------------------------------------
+// Type: RAW_ROOTPORT_FEATURE
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const RAW_ROOTPORT_FEATURE = *opaque{
+};
+// --------------------------------------------------------
+// Type: USBUSER_ROOTPORT_FEATURE_REQUEST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USBUSER_ROOTPORT_FEATURE_REQUEST = extern struct {
+    Header: Windows.Win32.UsbDrivers.USBUSER_REQUEST_HEADER,
+    Parameters: Windows.Win32.UsbDrivers.RAW_ROOTPORT_FEATURE,
+};
+// --------------------------------------------------------
+// Type: RAW_ROOTPORT_PARAMETERS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const RAW_ROOTPORT_PARAMETERS = *opaque{
+};
+// --------------------------------------------------------
+// Type: USBUSER_ROOTPORT_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USBUSER_ROOTPORT_PARAMETERS = extern struct {
+    Header: Windows.Win32.UsbDrivers.USBUSER_REQUEST_HEADER,
+    Parameters: Windows.Win32.UsbDrivers.RAW_ROOTPORT_PARAMETERS,
+};
+// --------------------------------------------------------
+// Type: USB_CONTROLLER_INFO_0
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_CONTROLLER_INFO_0 = *opaque{
+};
+// --------------------------------------------------------
+// Type: USBUSER_CONTROLLER_INFO_0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USBUSER_CONTROLLER_INFO_0 = extern struct {
+    Header: Windows.Win32.UsbDrivers.USBUSER_REQUEST_HEADER,
+    Info0: Windows.Win32.UsbDrivers.USB_CONTROLLER_INFO_0,
+};
+// --------------------------------------------------------
+// Type: USB_UNICODE_NAME
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_UNICODE_NAME = *opaque{
+};
+// --------------------------------------------------------
+// Type: USBUSER_CONTROLLER_UNICODE_NAME
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USBUSER_CONTROLLER_UNICODE_NAME = extern struct {
+    Header: Windows.Win32.UsbDrivers.USBUSER_REQUEST_HEADER,
+    UnicodeName: Windows.Win32.UsbDrivers.USB_UNICODE_NAME,
+};
+// --------------------------------------------------------
+// Type: USB_PASS_THRU_PARAMETERS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_PASS_THRU_PARAMETERS = *opaque{
+};
+// --------------------------------------------------------
+// Type: USBUSER_PASS_THRU_REQUEST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USBUSER_PASS_THRU_REQUEST = extern struct {
+    Header: Windows.Win32.UsbDrivers.USBUSER_REQUEST_HEADER,
+    PassThru: Windows.Win32.UsbDrivers.USB_PASS_THRU_PARAMETERS,
+};
+// --------------------------------------------------------
+// Type: WDMUSB_POWER_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WDMUSB_POWER_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: USB_POWER_INFO
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_POWER_INFO = *opaque{
+};
+// --------------------------------------------------------
+// Type: USBUSER_POWER_INFO_REQUEST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USBUSER_POWER_INFO_REQUEST = extern struct {
+    Header: Windows.Win32.UsbDrivers.USBUSER_REQUEST_HEADER,
+    PowerInformation: Windows.Win32.UsbDrivers.USB_POWER_INFO,
+};
+// --------------------------------------------------------
+// Type: USB_OPEN_RAW_DEVICE_PARAMETERS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_OPEN_RAW_DEVICE_PARAMETERS = *opaque{
+};
+// --------------------------------------------------------
+// Type: USBUSER_OPEN_RAW_DEVICE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USBUSER_OPEN_RAW_DEVICE = extern struct {
+    Header: Windows.Win32.UsbDrivers.USBUSER_REQUEST_HEADER,
+    Parameters: Windows.Win32.UsbDrivers.USB_OPEN_RAW_DEVICE_PARAMETERS,
+};
+// --------------------------------------------------------
+// Type: USB_CLOSE_RAW_DEVICE_PARAMETERS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_CLOSE_RAW_DEVICE_PARAMETERS = *opaque{
+};
+// --------------------------------------------------------
+// Type: USBUSER_CLOSE_RAW_DEVICE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USBUSER_CLOSE_RAW_DEVICE = extern struct {
+    Header: Windows.Win32.UsbDrivers.USBUSER_REQUEST_HEADER,
+    Parameters: Windows.Win32.UsbDrivers.USB_CLOSE_RAW_DEVICE_PARAMETERS,
+};
+// --------------------------------------------------------
+// Type: USB_SEND_RAW_COMMAND_PARAMETERS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_SEND_RAW_COMMAND_PARAMETERS = *opaque{
+};
+// --------------------------------------------------------
+// Type: USBUSER_SEND_RAW_COMMAND
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USBUSER_SEND_RAW_COMMAND = extern struct {
+    Header: Windows.Win32.UsbDrivers.USBUSER_REQUEST_HEADER,
+    Parameters: Windows.Win32.UsbDrivers.USB_SEND_RAW_COMMAND_PARAMETERS,
+};
+// --------------------------------------------------------
+// Type: USB_BANDWIDTH_INFO
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_BANDWIDTH_INFO = *opaque{
+};
+// --------------------------------------------------------
+// Type: USBUSER_BANDWIDTH_INFO_REQUEST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USBUSER_BANDWIDTH_INFO_REQUEST = extern struct {
+    Header: Windows.Win32.UsbDrivers.USBUSER_REQUEST_HEADER,
+    BandwidthInformation: Windows.Win32.UsbDrivers.USB_BANDWIDTH_INFO,
+};
+// --------------------------------------------------------
+// Type: USB_BUS_STATISTICS_0
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_BUS_STATISTICS_0 = *opaque{
+};
+// --------------------------------------------------------
+// Type: USBUSER_BUS_STATISTICS_0_REQUEST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USBUSER_BUS_STATISTICS_0_REQUEST = extern struct {
+    Header: Windows.Win32.UsbDrivers.USBUSER_REQUEST_HEADER,
+    BusStatistics0: Windows.Win32.UsbDrivers.USB_BUS_STATISTICS_0,
+};
+// --------------------------------------------------------
+// Type: USB_DRIVER_VERSION_PARAMETERS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_DRIVER_VERSION_PARAMETERS = *opaque{
+};
+// --------------------------------------------------------
+// Type: USBUSER_GET_DRIVER_VERSION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USBUSER_GET_DRIVER_VERSION = extern struct {
+    Header: Windows.Win32.UsbDrivers.USBUSER_REQUEST_HEADER,
+    Parameters: Windows.Win32.UsbDrivers.USB_DRIVER_VERSION_PARAMETERS,
+};
+// --------------------------------------------------------
+// Type: USB_USB2HW_VERSION_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USB_USB2HW_VERSION_PARAMETERS = extern struct {
+    Usb2HwRevision: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: USBUSER_GET_USB2HW_VERSION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USBUSER_GET_USB2HW_VERSION = extern struct {
+    Header: Windows.Win32.UsbDrivers.USBUSER_REQUEST_HEADER,
+    Parameters: Windows.Win32.UsbDrivers.USB_USB2HW_VERSION_PARAMETERS,
+};
+// --------------------------------------------------------
+// Type: USBUSER_REFRESH_HCT_REG
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USBUSER_REFRESH_HCT_REG = *opaque{
+};
+// --------------------------------------------------------
+// Type: WINUSB_PIPE_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINUSB_PIPE_INFORMATION = extern struct {
+    PipeType: Windows.Win32.UsbDrivers.USBD_PIPE_TYPE,
+    PipeId: {"kind":"Byte"},
+    MaximumPacketSize: {"kind":"UInt16"},
+    Interval: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: WINUSB_PIPE_INFORMATION_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINUSB_PIPE_INFORMATION_EX = extern struct {
+    PipeType: Windows.Win32.UsbDrivers.USBD_PIPE_TYPE,
+    PipeId: {"kind":"Byte"},
+    MaximumPacketSize: {"kind":"UInt16"},
+    Interval: {"kind":"Byte"},
+    MaximumBytesPerInterval: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WINUSB_SETUP_PACKET
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const WINUSB_SETUP_PACKET = *opaque{
+};
+// --------------------------------------------------------
+// Type: USB_START_TRACKING_FOR_TIME_SYNC_INFORMATION
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_START_TRACKING_FOR_TIME_SYNC_INFORMATION = *opaque{
+};
+// --------------------------------------------------------
+// Type: USB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION = *opaque{
+};
+// --------------------------------------------------------
+// Type: USB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const USB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION = *opaque{
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_Initialize(
+    DeviceHandle: Windows.Win32.SystemServices.HANDLE,
+    InterfaceHandle: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_Free(
+    InterfaceHandle: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_GetAssociatedInterface(
+    InterfaceHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    AssociatedInterfaceIndex: {"kind":"Byte"},
+    AssociatedInterfaceHandle: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_GetDescriptor(
+    InterfaceHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    DescriptorType: {"kind":"Byte"},
+    Index: {"kind":"Byte"},
+    LanguageID: {"kind":"UInt16"},
+    Buffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    BufferLength: {"kind":"UInt32"},
+    LengthTransferred: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_QueryInterfaceSettings(
+    InterfaceHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    AlternateInterfaceNumber: {"kind":"Byte"},
+    UsbAltInterfaceDescriptor: {"kind""Ptr","child":Windows.Win32.UsbDrivers.USB_INTERFACE_DESCRIPTOR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_QueryDeviceInformation(
+    InterfaceHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    InformationType: {"kind":"UInt32"},
+    BufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_SetCurrentAlternateSetting(
+    InterfaceHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    SettingNumber: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_GetCurrentAlternateSetting(
+    InterfaceHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    SettingNumber: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_QueryPipe(
+    InterfaceHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    AlternateInterfaceNumber: {"kind":"Byte"},
+    PipeIndex: {"kind":"Byte"},
+    PipeInformation: {"kind""Ptr","child":Windows.Win32.UsbDrivers.WINUSB_PIPE_INFORMATION},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_QueryPipeEx(
+    InterfaceHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    AlternateSettingNumber: {"kind":"Byte"},
+    PipeIndex: {"kind":"Byte"},
+    PipeInformationEx: {"kind""Ptr","child":Windows.Win32.UsbDrivers.WINUSB_PIPE_INFORMATION_EX},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_SetPipePolicy(
+    InterfaceHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    PipeID: {"kind":"Byte"},
+    PolicyType: {"kind":"UInt32"},
+    ValueLength: {"kind":"UInt32"},
+    Value: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_GetPipePolicy(
+    InterfaceHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    PipeID: {"kind":"Byte"},
+    PolicyType: {"kind":"UInt32"},
+    ValueLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Value: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_ReadPipe(
+    InterfaceHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    PipeID: {"kind":"Byte"},
+    Buffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    BufferLength: {"kind":"UInt32"},
+    LengthTransferred: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_WritePipe(
+    InterfaceHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    PipeID: {"kind":"Byte"},
+    Buffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    BufferLength: {"kind":"UInt32"},
+    LengthTransferred: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_ControlTransfer(
+    InterfaceHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    SetupPacket: Windows.Win32.UsbDrivers.WINUSB_SETUP_PACKET,
+    Buffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    BufferLength: {"kind":"UInt32"},
+    LengthTransferred: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_ResetPipe(
+    InterfaceHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    PipeID: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_AbortPipe(
+    InterfaceHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    PipeID: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_FlushPipe(
+    InterfaceHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    PipeID: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_SetPowerPolicy(
+    InterfaceHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    PolicyType: {"kind":"UInt32"},
+    ValueLength: {"kind":"UInt32"},
+    Value: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_GetPowerPolicy(
+    InterfaceHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    PolicyType: {"kind":"UInt32"},
+    ValueLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Value: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_GetOverlappedResult(
+    InterfaceHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    lpNumberOfBytesTransferred: {"kind""Ptr","child":{"kind":"UInt32"}},
+    bWait: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_ParseConfigurationDescriptor(
+    ConfigurationDescriptor: {"kind""Ptr","child":Windows.Win32.UsbDrivers.USB_CONFIGURATION_DESCRIPTOR},
+    StartPosition: {"kind""Ptr","child":{"kind":"Void"}},
+    InterfaceNumber: {"kind":"Int32"},
+    AlternateSetting: {"kind":"Int32"},
+    InterfaceClass: {"kind":"Int32"},
+    InterfaceSubClass: {"kind":"Int32"},
+    InterfaceProtocol: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_ParseDescriptors(
+    DescriptorBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    TotalLength: {"kind":"UInt32"},
+    StartPosition: {"kind""Ptr","child":{"kind":"Void"}},
+    DescriptorType: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_GetCurrentFrameNumber(
+    InterfaceHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    CurrentFrameNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+    TimeStamp: {"kind""Ptr","child":Windows.Win32.SystemServices.LARGE_INTEGER},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_GetAdjustedFrameNumber(
+    CurrentFrameNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+    TimeStamp: Windows.Win32.SystemServices.LARGE_INTEGER,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_RegisterIsochBuffer(
+    InterfaceHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    PipeID: {"kind":"Byte"},
+    Buffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    BufferLength: {"kind":"UInt32"},
+    IsochBufferHandle: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_UnregisterIsochBuffer(
+    IsochBufferHandle: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_WriteIsochPipe(
+    BufferHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    Offset: {"kind":"UInt32"},
+    Length: {"kind":"UInt32"},
+    FrameNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_ReadIsochPipe(
+    BufferHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    Offset: {"kind":"UInt32"},
+    Length: {"kind":"UInt32"},
+    FrameNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+    NumberOfPackets: {"kind":"UInt32"},
+    IsoPacketDescriptors: {"kind""Ptr","child":Windows.Win32.UsbDrivers.USBD_ISO_PACKET_DESCRIPTOR},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_WriteIsochPipeAsap(
+    BufferHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    Offset: {"kind":"UInt32"},
+    Length: {"kind":"UInt32"},
+    ContinueStream: Windows.Win32.SystemServices.BOOL,
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_ReadIsochPipeAsap(
+    BufferHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    Offset: {"kind":"UInt32"},
+    Length: {"kind":"UInt32"},
+    ContinueStream: Windows.Win32.SystemServices.BOOL,
+    NumberOfPackets: {"kind":"UInt32"},
+    IsoPacketDescriptors: {"kind""Ptr","child":Windows.Win32.UsbDrivers.USBD_ISO_PACKET_DESCRIPTOR},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_StartTrackingForTimeSync(
+    InterfaceHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    StartTrackingInfo: {"kind""Ptr","child":Windows.Win32.UsbDrivers.USB_START_TRACKING_FOR_TIME_SYNC_INFORMATION},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_GetCurrentFrameNumberAndQpc(
+    InterfaceHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    FrameQpcInfo: {"kind""Ptr","child":Windows.Win32.UsbDrivers.USB_FRAME_NUMBER_AND_QPC_FOR_TIME_SYNC_INFORMATION},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WINUSB" fn WinUsb_StopTrackingForTimeSync(
+    InterfaceHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    StopTrackingInfo: {"kind""Ptr","child":Windows.Win32.UsbDrivers.USB_STOP_TRACKING_FOR_TIME_SYNC_INFORMATION},
+],
+
+"unicode_aliases": [
+]}

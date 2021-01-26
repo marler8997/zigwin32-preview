@@ -1,0 +1,246 @@
+﻿{
+"constants": [
+     {
+         "name": "POSITIVE_INFINITY"
+        ,"type": {"kind":"Single"}
+        ,"value": "inf"
+    }
+    ,{
+         "name": "NEGATIVE_INFINITY"
+        ,"type": {"kind":"Single"}
+        ,"value": "-inf"
+    }
+    ,{
+         "name": "NaN"
+        ,"type": {"kind":"Single"}
+        ,"value": "nan"
+    }
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: TOUCHINPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TOUCHINPUT = extern struct {
+    x: {"kind":"Int32"},
+    y: {"kind":"Int32"},
+    hSource: Windows.Win32.SystemServices.HANDLE,
+    dwID: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwMask: {"kind":"UInt32"},
+    dwTime: {"kind":"UInt32"},
+    dwExtraInfo: {"kind":"UIntPtr"},
+    cxContact: {"kind":"UInt32"},
+    cyContact: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: GESTUREINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GESTUREINFO = extern struct {
+    cbSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwID: {"kind":"UInt32"},
+    hwndTarget: Windows.Win32.WindowsAndMessaging.HWND,
+    ptsLocation: Windows.Win32.DisplayDevices.POINTS,
+    dwInstanceID: {"kind":"UInt32"},
+    dwSequenceID: {"kind":"UInt32"},
+    ullArguments: {"kind":"UInt64"},
+    cbExtraArgs: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: GESTURENOTIFYSTRUCT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GESTURENOTIFYSTRUCT = extern struct {
+    cbSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    hwndTarget: Windows.Win32.WindowsAndMessaging.HWND,
+    ptsLocation: Windows.Win32.DisplayDevices.POINTS,
+    dwInstanceID: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: GESTURECONFIG
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GESTURECONFIG = extern struct {
+    dwID: {"kind":"UInt32"},
+    dwWant: {"kind":"UInt32"},
+    dwBlock: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: InertiaProcessor
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const InertiaProcessor = opaque {
+};
+// --------------------------------------------------------
+// Type: ManipulationProcessor
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const ManipulationProcessor = opaque {
+};
+// --------------------------------------------------------
+// Type: MANIPULATION_PROCESSOR_MANIPULATIONS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MANIPULATION_PROCESSOR_MANIPULATIONS = *opaque{
+};
+// --------------------------------------------------------
+// Type: _IManipulationEvents
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const _IManipulationEvents = *opaque{
+    // TODO: Method 'ManipulationStarted'
+    // TODO: Method 'ManipulationDelta'
+    // TODO: Method 'ManipulationCompleted'
+};
+// --------------------------------------------------------
+// Type: IInertiaProcessor
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IInertiaProcessor = *opaque{
+    // TODO: Method 'get_InitialOriginX'
+    // TODO: Method 'put_InitialOriginX'
+    // TODO: Method 'get_InitialOriginY'
+    // TODO: Method 'put_InitialOriginY'
+    // TODO: Method 'get_InitialVelocityX'
+    // TODO: Method 'put_InitialVelocityX'
+    // TODO: Method 'get_InitialVelocityY'
+    // TODO: Method 'put_InitialVelocityY'
+    // TODO: Method 'get_InitialAngularVelocity'
+    // TODO: Method 'put_InitialAngularVelocity'
+    // TODO: Method 'get_InitialExpansionVelocity'
+    // TODO: Method 'put_InitialExpansionVelocity'
+    // TODO: Method 'get_InitialRadius'
+    // TODO: Method 'put_InitialRadius'
+    // TODO: Method 'get_BoundaryLeft'
+    // TODO: Method 'put_BoundaryLeft'
+    // TODO: Method 'get_BoundaryTop'
+    // TODO: Method 'put_BoundaryTop'
+    // TODO: Method 'get_BoundaryRight'
+    // TODO: Method 'put_BoundaryRight'
+    // TODO: Method 'get_BoundaryBottom'
+    // TODO: Method 'put_BoundaryBottom'
+    // TODO: Method 'get_ElasticMarginLeft'
+    // TODO: Method 'put_ElasticMarginLeft'
+    // TODO: Method 'get_ElasticMarginTop'
+    // TODO: Method 'put_ElasticMarginTop'
+    // TODO: Method 'get_ElasticMarginRight'
+    // TODO: Method 'put_ElasticMarginRight'
+    // TODO: Method 'get_ElasticMarginBottom'
+    // TODO: Method 'put_ElasticMarginBottom'
+    // TODO: Method 'get_DesiredDisplacement'
+    // TODO: Method 'put_DesiredDisplacement'
+    // TODO: Method 'get_DesiredRotation'
+    // TODO: Method 'put_DesiredRotation'
+    // TODO: Method 'get_DesiredExpansion'
+    // TODO: Method 'put_DesiredExpansion'
+    // TODO: Method 'get_DesiredDeceleration'
+    // TODO: Method 'put_DesiredDeceleration'
+    // TODO: Method 'get_DesiredAngularDeceleration'
+    // TODO: Method 'put_DesiredAngularDeceleration'
+    // TODO: Method 'get_DesiredExpansionDeceleration'
+    // TODO: Method 'put_DesiredExpansionDeceleration'
+    // TODO: Method 'get_InitialTimestamp'
+    // TODO: Method 'put_InitialTimestamp'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Process'
+    // TODO: Method 'ProcessTime'
+    // TODO: Method 'Complete'
+    // TODO: Method 'CompleteTime'
+};
+// --------------------------------------------------------
+// Type: IManipulationProcessor
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IManipulationProcessor = *opaque{
+    // TODO: Method 'get_SupportedManipulations'
+    // TODO: Method 'put_SupportedManipulations'
+    // TODO: Method 'get_PivotPointX'
+    // TODO: Method 'put_PivotPointX'
+    // TODO: Method 'get_PivotPointY'
+    // TODO: Method 'put_PivotPointY'
+    // TODO: Method 'get_PivotRadius'
+    // TODO: Method 'put_PivotRadius'
+    // TODO: Method 'CompleteManipulation'
+    // TODO: Method 'ProcessDown'
+    // TODO: Method 'ProcessMove'
+    // TODO: Method 'ProcessUp'
+    // TODO: Method 'ProcessDownWithTime'
+    // TODO: Method 'ProcessMoveWithTime'
+    // TODO: Method 'ProcessUpWithTime'
+    // TODO: Method 'GetVelocityX'
+    // TODO: Method 'GetVelocityY'
+    // TODO: Method 'GetExpansionVelocity'
+    // TODO: Method 'GetAngularVelocity'
+    // TODO: Method 'get_MinimumScaleRotateRadius'
+    // TODO: Method 'put_MinimumScaleRotateRadius'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetTouchInputInfo(
+    hTouchInput: {"kind":"IntPtr"},
+    cInputs: {"kind":"UInt32"},
+    pInputs: {"kind""Ptr","child":Windows.Win32.TouchInput.TOUCHINPUT},
+    cbSize: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CloseTouchInputHandle(
+    hTouchInput: {"kind":"IntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn RegisterTouchWindow(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    ulFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn UnregisterTouchWindow(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn IsTouchWindow(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    pulFlags: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetGestureInfo(
+    hGestureInfo: {"kind":"IntPtr"},
+    pGestureInfo: {"kind""Ptr","child":Windows.Win32.TouchInput.GESTUREINFO},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetGestureExtraArgs(
+    hGestureInfo: {"kind":"IntPtr"},
+    cbExtraArgs: {"kind":"UInt32"},
+    pExtraArgs: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn CloseGestureInfoHandle(
+    hGestureInfo: {"kind":"IntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetGestureConfig(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    dwReserved: {"kind":"UInt32"},
+    cIDs: {"kind":"UInt32"},
+    pGestureConfig: {"kind""Ptr","child":Windows.Win32.TouchInput.GESTURECONFIG},
+    cbSize: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetGestureConfig(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    dwReserved: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pcIDs: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pGestureConfig: {"kind""Ptr","child":Windows.Win32.TouchInput.GESTURECONFIG},
+    cbSize: {"kind":"UInt32"},
+],
+
+"unicode_aliases": [
+]}

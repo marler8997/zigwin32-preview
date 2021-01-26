@@ -1,0 +1,162 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: IPhraseSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPhraseSink = *opaque{
+    // TODO: Method 'PutSmallPhrase'
+    // TODO: Method 'PutPhrase'
+};
+// --------------------------------------------------------
+// Type: WORDREP_BREAK_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WORDREP_BREAK_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBKINDENUM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBKINDENUM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DBID
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=2 Size=0
+pub const DBID = *opaque{
+    // --------------------------------------------------------
+    // Type: _uGuid_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _uGuid_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _uName_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _uName_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: CI_STATE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CI_STATE = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    cWordList: {"kind":"UInt32"},
+    cPersistentIndex: {"kind":"UInt32"},
+    cQueries: {"kind":"UInt32"},
+    cDocuments: {"kind":"UInt32"},
+    cFreshTest: {"kind":"UInt32"},
+    dwMergeProgress: {"kind":"UInt32"},
+    eState: {"kind":"UInt32"},
+    cFilteredDocuments: {"kind":"UInt32"},
+    cTotalDocuments: {"kind":"UInt32"},
+    cPendingScans: {"kind":"UInt32"},
+    dwIndexSize: {"kind":"UInt32"},
+    cUniqueKeys: {"kind":"UInt32"},
+    cSecQDocuments: {"kind":"UInt32"},
+    dwPropCacheSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: FULLPROPSPEC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FULLPROPSPEC = extern struct {
+    guidPropSet: Guid,
+    psProperty: Windows.Win32.StructuredStorage.PROPSPEC,
+};
+// --------------------------------------------------------
+// Type: IFILTER_INIT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const IFILTER_INIT = *opaque{
+};
+// --------------------------------------------------------
+// Type: IFILTER_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const IFILTER_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: CHUNKSTATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CHUNKSTATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: CHUNK_BREAKTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CHUNK_BREAKTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: FILTERREGION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FILTERREGION = extern struct {
+    idChunk: {"kind":"UInt32"},
+    cwcStart: {"kind":"UInt32"},
+    cwcExtent: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: STAT_CHUNK
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const STAT_CHUNK = extern struct {
+    idChunk: {"kind":"UInt32"},
+    breakType: Windows.Win32.IndexServer.CHUNK_BREAKTYPE,
+    flags: Windows.Win32.IndexServer.CHUNKSTATE,
+    locale: {"kind":"UInt32"},
+    attribute: Windows.Win32.IndexServer.FULLPROPSPEC,
+    idChunkSource: {"kind":"UInt32"},
+    cwcStartSource: {"kind":"UInt32"},
+    cwcLenSource: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: IFilter
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFilter = *opaque{
+    // TODO: Method 'Init'
+    // TODO: Method 'GetChunk'
+    // TODO: Method 'GetText'
+    // TODO: Method 'GetValue'
+    // TODO: Method 'BindRegion'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "query" fn LoadIFilter(
+    pwcsPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pUnkOuter: Windows.Win32.Com.IUnknown,
+    ppIUnk: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "query" fn LoadIFilterEx(
+    pwcsPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+    riid: {"kind""Ptr","child":Guid},
+    ppIUnk: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "query" fn BindIFilterFromStorage(
+    pStg: Windows.Win32.StructuredStorage.IStorage,
+    pUnkOuter: Windows.Win32.Com.IUnknown,
+    ppIUnk: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "query" fn BindIFilterFromStream(
+    pStm: Windows.Win32.StructuredStorage.IStream,
+    pUnkOuter: Windows.Win32.Com.IUnknown,
+    ppIUnk: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+],
+
+"unicode_aliases": [
+]}

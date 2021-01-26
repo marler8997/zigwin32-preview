@@ -1,0 +1,57 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: HCOMDB__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HCOMDB__ = extern struct {
+    unused: {"kind":"Int32"},
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSPORTS" fn ComDBOpen(
+    PHComDB: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.SerialController.HCOMDB__}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSPORTS" fn ComDBClose(
+    HComDB: {"kind""Ptr","child":Windows.Win32.SerialController.HCOMDB__},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSPORTS" fn ComDBGetCurrentPortUsage(
+    HComDB: {"kind""Ptr","child":Windows.Win32.SerialController.HCOMDB__},
+    Buffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    BufferSize: {"kind":"UInt32"},
+    ReportType: {"kind":"UInt32"},
+    MaxPortsReported: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSPORTS" fn ComDBClaimNextFreePort(
+    HComDB: {"kind""Ptr","child":Windows.Win32.SerialController.HCOMDB__},
+    ComNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSPORTS" fn ComDBClaimPort(
+    HComDB: {"kind""Ptr","child":Windows.Win32.SerialController.HCOMDB__},
+    ComNumber: {"kind":"UInt32"},
+    ForceClaim: Windows.Win32.SystemServices.BOOL,
+    Forced: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSPORTS" fn ComDBReleasePort(
+    HComDB: {"kind""Ptr","child":Windows.Win32.SerialController.HCOMDB__},
+    ComNumber: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MSPORTS" fn ComDBResizeDatabase(
+    HComDB: {"kind""Ptr","child":Windows.Win32.SerialController.HCOMDB__},
+    NewSize: {"kind":"UInt32"},
+],
+
+"unicode_aliases": [
+]}

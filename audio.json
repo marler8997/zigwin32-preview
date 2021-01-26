@@ -1,0 +1,1680 @@
+﻿{
+"constants": [
+     {
+         "name": "DSFXR_PRESENT"
+        ,"type": {"kind":"Int32"}
+        ,"value": 0
+    }
+    ,{
+         "name": "DSFXR_LOCHARDWARE"
+        ,"type": {"kind":"Int32"}
+        ,"value": 1
+    }
+    ,{
+         "name": "DSFXR_LOCSOFTWARE"
+        ,"type": {"kind":"Int32"}
+        ,"value": 2
+    }
+    ,{
+         "name": "DSFXR_UNALLOCATED"
+        ,"type": {"kind":"Int32"}
+        ,"value": 3
+    }
+    ,{
+         "name": "DSFXR_FAILED"
+        ,"type": {"kind":"Int32"}
+        ,"value": 4
+    }
+    ,{
+         "name": "DSFXR_UNKNOWN"
+        ,"type": {"kind":"Int32"}
+        ,"value": 5
+    }
+    ,{
+         "name": "DSFXR_SENDLOOP"
+        ,"type": {"kind":"Int32"}
+        ,"value": 6
+    }
+    ,{
+         "name": "DSFX_I3DL2_MATERIAL_PRESET_SINGLEWINDOW"
+        ,"type": {"kind":"Int32"}
+        ,"value": 0
+    }
+    ,{
+         "name": "DSFX_I3DL2_MATERIAL_PRESET_DOUBLEWINDOW"
+        ,"type": {"kind":"Int32"}
+        ,"value": 1
+    }
+    ,{
+         "name": "DSFX_I3DL2_MATERIAL_PRESET_THINDOOR"
+        ,"type": {"kind":"Int32"}
+        ,"value": 2
+    }
+    ,{
+         "name": "DSFX_I3DL2_MATERIAL_PRESET_THICKDOOR"
+        ,"type": {"kind":"Int32"}
+        ,"value": 3
+    }
+    ,{
+         "name": "DSFX_I3DL2_MATERIAL_PRESET_WOODWALL"
+        ,"type": {"kind":"Int32"}
+        ,"value": 4
+    }
+    ,{
+         "name": "DSFX_I3DL2_MATERIAL_PRESET_BRICKWALL"
+        ,"type": {"kind":"Int32"}
+        ,"value": 5
+    }
+    ,{
+         "name": "DSFX_I3DL2_MATERIAL_PRESET_STONEWALL"
+        ,"type": {"kind":"Int32"}
+        ,"value": 6
+    }
+    ,{
+         "name": "DSFX_I3DL2_MATERIAL_PRESET_CURTAIN"
+        ,"type": {"kind":"Int32"}
+        ,"value": 7
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_DEFAULT"
+        ,"type": {"kind":"Int32"}
+        ,"value": 0
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_GENERIC"
+        ,"type": {"kind":"Int32"}
+        ,"value": 1
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_PADDEDCELL"
+        ,"type": {"kind":"Int32"}
+        ,"value": 2
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_ROOM"
+        ,"type": {"kind":"Int32"}
+        ,"value": 3
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_BATHROOM"
+        ,"type": {"kind":"Int32"}
+        ,"value": 4
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_LIVINGROOM"
+        ,"type": {"kind":"Int32"}
+        ,"value": 5
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_STONEROOM"
+        ,"type": {"kind":"Int32"}
+        ,"value": 6
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_AUDITORIUM"
+        ,"type": {"kind":"Int32"}
+        ,"value": 7
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_CONCERTHALL"
+        ,"type": {"kind":"Int32"}
+        ,"value": 8
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_CAVE"
+        ,"type": {"kind":"Int32"}
+        ,"value": 9
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_ARENA"
+        ,"type": {"kind":"Int32"}
+        ,"value": 10
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_HANGAR"
+        ,"type": {"kind":"Int32"}
+        ,"value": 11
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_CARPETEDHALLWAY"
+        ,"type": {"kind":"Int32"}
+        ,"value": 12
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_HALLWAY"
+        ,"type": {"kind":"Int32"}
+        ,"value": 13
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_STONECORRIDOR"
+        ,"type": {"kind":"Int32"}
+        ,"value": 14
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_ALLEY"
+        ,"type": {"kind":"Int32"}
+        ,"value": 15
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_FOREST"
+        ,"type": {"kind":"Int32"}
+        ,"value": 16
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_CITY"
+        ,"type": {"kind":"Int32"}
+        ,"value": 17
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_MOUNTAINS"
+        ,"type": {"kind":"Int32"}
+        ,"value": 18
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_QUARRY"
+        ,"type": {"kind":"Int32"}
+        ,"value": 19
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_PLAIN"
+        ,"type": {"kind":"Int32"}
+        ,"value": 20
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_PARKINGLOT"
+        ,"type": {"kind":"Int32"}
+        ,"value": 21
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_SEWERPIPE"
+        ,"type": {"kind":"Int32"}
+        ,"value": 22
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_UNDERWATER"
+        ,"type": {"kind":"Int32"}
+        ,"value": 23
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_SMALLROOM"
+        ,"type": {"kind":"Int32"}
+        ,"value": 24
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_MEDIUMROOM"
+        ,"type": {"kind":"Int32"}
+        ,"value": 25
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_LARGEROOM"
+        ,"type": {"kind":"Int32"}
+        ,"value": 26
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_MEDIUMHALL"
+        ,"type": {"kind":"Int32"}
+        ,"value": 27
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_LARGEHALL"
+        ,"type": {"kind":"Int32"}
+        ,"value": 28
+    }
+    ,{
+         "name": "DSFX_I3DL2_ENVIRONMENT_PRESET_PLATE"
+        ,"type": {"kind":"Int32"}
+        ,"value": 29
+    }
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: UNCOMPRESSEDAUDIOFORMAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const UNCOMPRESSEDAUDIOFORMAT = extern struct {
+    guidFormatType: Guid,
+    dwSamplesPerFrame: {"kind":"UInt32"},
+    dwBytesPerSampleContainer: {"kind":"UInt32"},
+    dwValidBitsPerSample: {"kind":"UInt32"},
+    fFramesPerSecond: {"kind":"Single"},
+    dwChannelMask: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: IAudioMediaType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAudioMediaType = *opaque{
+    // TODO: Method 'IsCompressedFormat'
+    // TODO: Method 'IsEqual'
+    // TODO: Method 'GetAudioFormat'
+    // TODO: Method 'GetUncompressedAudioFormat'
+};
+// --------------------------------------------------------
+// Type: APO_CONNECTION_BUFFER_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const APO_CONNECTION_BUFFER_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: APO_CONNECTION_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const APO_CONNECTION_DESCRIPTOR = extern struct {
+    Type: Windows.Win32.Audio.APO_CONNECTION_BUFFER_TYPE,
+    pBuffer: {"kind":"UIntPtr"},
+    u32MaxFrameCount: {"kind":"UInt32"},
+    pFormat: Windows.Win32.Audio.IAudioMediaType,
+    u32Signature: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: APO_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const APO_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: APO_REG_PROPERTIES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const APO_REG_PROPERTIES = extern struct {
+    clsid: Guid,
+    Flags: Windows.Win32.Audio.APO_FLAG,
+    szFriendlyName: {"kind":"Array","child": {"kind":"UInt16"}},
+    szCopyrightInfo: {"kind":"Array","child": {"kind":"UInt16"}},
+    u32MajorVersion: {"kind":"UInt32"},
+    u32MinorVersion: {"kind":"UInt32"},
+    u32MinInputConnections: {"kind":"UInt32"},
+    u32MaxInputConnections: {"kind":"UInt32"},
+    u32MinOutputConnections: {"kind":"UInt32"},
+    u32MaxOutputConnections: {"kind":"UInt32"},
+    u32MaxInstances: {"kind":"UInt32"},
+    u32NumAPOInterfaces: {"kind":"UInt32"},
+    iidAPOInterfaceList: {"kind":"Array","child": Guid},
+};
+// --------------------------------------------------------
+// Type: APOInitBaseStruct
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const APOInitBaseStruct = extern struct {
+    cbSize: {"kind":"UInt32"},
+    clsid: Guid,
+};
+// --------------------------------------------------------
+// Type: AUDIO_FLOW_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const AUDIO_FLOW_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: EAudioConstriction
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EAudioConstriction = *opaque{
+};
+// --------------------------------------------------------
+// Type: IAudioProcessingObjectRT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAudioProcessingObjectRT = *opaque{
+    // TODO: Method 'APOProcess'
+    // TODO: Method 'CalcInputFrames'
+    // TODO: Method 'CalcOutputFrames'
+};
+// --------------------------------------------------------
+// Type: IAudioProcessingObjectVBR
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAudioProcessingObjectVBR = *opaque{
+    // TODO: Method 'CalcMaxInputFrames'
+    // TODO: Method 'CalcMaxOutputFrames'
+};
+// --------------------------------------------------------
+// Type: IAudioProcessingObjectConfiguration
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAudioProcessingObjectConfiguration = *opaque{
+    // TODO: Method 'LockForProcess'
+    // TODO: Method 'UnlockForProcess'
+};
+// --------------------------------------------------------
+// Type: IAudioProcessingObject
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAudioProcessingObject = *opaque{
+    // TODO: Method 'Reset'
+    // TODO: Method 'GetLatency'
+    // TODO: Method 'GetRegistrationProperties'
+    // TODO: Method 'Initialize'
+    // TODO: Method 'IsInputFormatSupported'
+    // TODO: Method 'IsOutputFormatSupported'
+    // TODO: Method 'GetInputChannelCount'
+};
+// --------------------------------------------------------
+// Type: IAudioDeviceModulesClient
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAudioDeviceModulesClient = *opaque{
+    // TODO: Method 'SetAudioDeviceModulesManager'
+};
+// --------------------------------------------------------
+// Type: FNAPONOTIFICATIONCALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FNAPONOTIFICATIONCALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IAudioSystemEffects
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAudioSystemEffects = *opaque{
+};
+// --------------------------------------------------------
+// Type: IAudioSystemEffects2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAudioSystemEffects2 = *opaque{
+    // TODO: Method 'GetEffectsList'
+};
+// --------------------------------------------------------
+// Type: IAudioSystemEffectsCustomFormats
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAudioSystemEffectsCustomFormats = *opaque{
+    // TODO: Method 'GetFormatCount'
+    // TODO: Method 'GetFormat'
+    // TODO: Method 'GetFormatRepresentation'
+};
+// --------------------------------------------------------
+// Type: APOInitSystemEffects
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const APOInitSystemEffects = extern struct {
+    APOInit: Windows.Win32.Audio.APOInitBaseStruct,
+    pAPOEndpointProperties: Windows.Win32.Audio.IPropertyStore,
+    pAPOSystemEffectsProperties: Windows.Win32.Audio.IPropertyStore,
+    pReserved: {"kind""Ptr","child":{"kind":"Void"}},
+    pDeviceCollection: Windows.Win32.CoreAudio.IMMDeviceCollection,
+};
+// --------------------------------------------------------
+// Type: APOInitSystemEffects2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const APOInitSystemEffects2 = extern struct {
+    APOInit: Windows.Win32.Audio.APOInitBaseStruct,
+    pAPOEndpointProperties: Windows.Win32.Audio.IPropertyStore,
+    pAPOSystemEffectsProperties: Windows.Win32.Audio.IPropertyStore,
+    pReserved: {"kind""Ptr","child":{"kind":"Void"}},
+    pDeviceCollection: Windows.Win32.CoreAudio.IMMDeviceCollection,
+    nSoftwareIoDeviceInCollection: {"kind":"UInt32"},
+    nSoftwareIoConnectorIndex: {"kind":"UInt32"},
+    AudioProcessingMode: Guid,
+    InitializeForDiscoveryOnly: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: AudioFXExtensionParams
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AudioFXExtensionParams = extern struct {
+    AddPageParam: Windows.Win32.WindowsAndMessaging.LPARAM,
+    pwstrEndpointID: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pFxProperties: Windows.Win32.Audio.IPropertyStore,
+};
+// --------------------------------------------------------
+// Type: DLSID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DLSID = extern struct {
+    ulData1: {"kind":"UInt32"},
+    usData2: {"kind":"UInt16"},
+    usData3: {"kind":"UInt16"},
+    abData4: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: DLSVERSION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DLSVERSION = extern struct {
+    dwVersionMS: {"kind":"UInt32"},
+    dwVersionLS: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: CONNECTION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CONNECTION = extern struct {
+    usSource: {"kind":"UInt16"},
+    usControl: {"kind":"UInt16"},
+    usDestination: {"kind":"UInt16"},
+    usTransform: {"kind":"UInt16"},
+    lScale: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: CONNECTIONLIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CONNECTIONLIST = extern struct {
+    cbSize: {"kind":"UInt32"},
+    cConnections: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: RGNRANGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RGNRANGE = extern struct {
+    usLow: {"kind":"UInt16"},
+    usHigh: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: MIDILOCALE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MIDILOCALE = extern struct {
+    ulBank: {"kind":"UInt32"},
+    ulInstrument: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: RGNHEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RGNHEADER = extern struct {
+    RangeKey: Windows.Win32.Audio.RGNRANGE,
+    RangeVelocity: Windows.Win32.Audio.RGNRANGE,
+    fusOptions: {"kind":"UInt16"},
+    usKeyGroup: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: INSTHEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INSTHEADER = extern struct {
+    cRegions: {"kind":"UInt32"},
+    Locale: Windows.Win32.Audio.MIDILOCALE,
+};
+// --------------------------------------------------------
+// Type: DLSHEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DLSHEADER = extern struct {
+    cInstruments: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WAVELINK
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WAVELINK = extern struct {
+    fusOptions: {"kind":"UInt16"},
+    usPhaseGroup: {"kind":"UInt16"},
+    ulChannel: {"kind":"UInt32"},
+    ulTableIndex: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: POOLCUE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const POOLCUE = extern struct {
+    ulOffset: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: POOLTABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const POOLTABLE = extern struct {
+    cbSize: {"kind":"UInt32"},
+    cCues: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: _rwsmp
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _rwsmp = extern struct {
+    cbSize: {"kind":"UInt32"},
+    usUnityNote: {"kind":"UInt16"},
+    sFineTune: {"kind":"Int16"},
+    lAttenuation: {"kind":"Int32"},
+    fulOptions: {"kind":"UInt32"},
+    cSampleLoops: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: _rloop
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _rloop = extern struct {
+    cbSize: {"kind":"UInt32"},
+    ulType: {"kind":"UInt32"},
+    ulStart: {"kind":"UInt32"},
+    ulLength: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DMUS_DOWNLOADINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DMUS_DOWNLOADINFO = extern struct {
+    dwDLType: {"kind":"UInt32"},
+    dwDLId: {"kind":"UInt32"},
+    dwNumOffsetTableEntries: {"kind":"UInt32"},
+    cbSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DMUS_OFFSETTABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DMUS_OFFSETTABLE = extern struct {
+    ulOffsetTable: {"kind":"Array","child": {"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: DMUS_INSTRUMENT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DMUS_INSTRUMENT = extern struct {
+    ulPatch: {"kind":"UInt32"},
+    ulFirstRegionIdx: {"kind":"UInt32"},
+    ulGlobalArtIdx: {"kind":"UInt32"},
+    ulFirstExtCkIdx: {"kind":"UInt32"},
+    ulCopyrightIdx: {"kind":"UInt32"},
+    ulFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DMUS_REGION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DMUS_REGION = extern struct {
+    RangeKey: Windows.Win32.Audio.RGNRANGE,
+    RangeVelocity: Windows.Win32.Audio.RGNRANGE,
+    fusOptions: {"kind":"UInt16"},
+    usKeyGroup: {"kind":"UInt16"},
+    ulRegionArtIdx: {"kind":"UInt32"},
+    ulNextRegionIdx: {"kind":"UInt32"},
+    ulFirstExtCkIdx: {"kind":"UInt32"},
+    WaveLink: Windows.Win32.Audio.WAVELINK,
+    WSMP: Windows.Win32.Audio._rwsmp,
+    WLOOP: {"kind":"Array","child": Windows.Win32.Audio._rloop},
+};
+// --------------------------------------------------------
+// Type: DMUS_LFOPARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DMUS_LFOPARAMS = extern struct {
+    pcFrequency: {"kind":"Int32"},
+    tcDelay: {"kind":"Int32"},
+    gcVolumeScale: {"kind":"Int32"},
+    pcPitchScale: {"kind":"Int32"},
+    gcMWToVolume: {"kind":"Int32"},
+    pcMWToPitch: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: DMUS_VEGPARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DMUS_VEGPARAMS = extern struct {
+    tcAttack: {"kind":"Int32"},
+    tcDecay: {"kind":"Int32"},
+    ptSustain: {"kind":"Int32"},
+    tcRelease: {"kind":"Int32"},
+    tcVel2Attack: {"kind":"Int32"},
+    tcKey2Decay: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: DMUS_PEGPARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DMUS_PEGPARAMS = extern struct {
+    tcAttack: {"kind":"Int32"},
+    tcDecay: {"kind":"Int32"},
+    ptSustain: {"kind":"Int32"},
+    tcRelease: {"kind":"Int32"},
+    tcVel2Attack: {"kind":"Int32"},
+    tcKey2Decay: {"kind":"Int32"},
+    pcRange: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: DMUS_MSCPARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DMUS_MSCPARAMS = extern struct {
+    ptDefaultPan: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: DMUS_ARTICPARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DMUS_ARTICPARAMS = extern struct {
+    LFO: Windows.Win32.Audio.DMUS_LFOPARAMS,
+    VolEG: Windows.Win32.Audio.DMUS_VEGPARAMS,
+    PitchEG: Windows.Win32.Audio.DMUS_PEGPARAMS,
+    Misc: Windows.Win32.Audio.DMUS_MSCPARAMS,
+};
+// --------------------------------------------------------
+// Type: DMUS_ARTICULATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DMUS_ARTICULATION = extern struct {
+    ulArt1Idx: {"kind":"UInt32"},
+    ulFirstExtCkIdx: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DMUS_ARTICULATION2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DMUS_ARTICULATION2 = extern struct {
+    ulArtIdx: {"kind":"UInt32"},
+    ulFirstExtCkIdx: {"kind":"UInt32"},
+    ulNextArtIdx: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DMUS_EXTENSIONCHUNK
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DMUS_EXTENSIONCHUNK = extern struct {
+    cbSize: {"kind":"UInt32"},
+    ulNextExtCkIdx: {"kind":"UInt32"},
+    ExtCkID: {"kind":"UInt32"},
+    byExtCk: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: DMUS_COPYRIGHT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DMUS_COPYRIGHT = extern struct {
+    cbSize: {"kind":"UInt32"},
+    byCopyright: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: DMUS_WAVEDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DMUS_WAVEDATA = extern struct {
+    cbSize: {"kind":"UInt32"},
+    byData: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: DMUS_WAVE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DMUS_WAVE = extern struct {
+    ulFirstExtCkIdx: {"kind":"UInt32"},
+    ulCopyrightIdx: {"kind":"UInt32"},
+    ulWaveDataIdx: {"kind":"UInt32"},
+    WaveformatEx: Windows.Win32.Multimedia.WAVEFORMATEX,
+};
+// --------------------------------------------------------
+// Type: DMUS_NOTERANGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DMUS_NOTERANGE = extern struct {
+    dwLowNote: {"kind":"UInt32"},
+    dwHighNote: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DMUS_WAVEARTDL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DMUS_WAVEARTDL = extern struct {
+    ulDownloadIdIdx: {"kind":"UInt32"},
+    ulBus: {"kind":"UInt32"},
+    ulBuffers: {"kind":"UInt32"},
+    ulMasterDLId: {"kind":"UInt32"},
+    usOptions: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: DMUS_WAVEDL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DMUS_WAVEDL = extern struct {
+    cbWaveData: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DSCAPS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSCAPS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwMinSecondarySampleRate: {"kind":"UInt32"},
+    dwMaxSecondarySampleRate: {"kind":"UInt32"},
+    dwPrimaryBuffers: {"kind":"UInt32"},
+    dwMaxHwMixingAllBuffers: {"kind":"UInt32"},
+    dwMaxHwMixingStaticBuffers: {"kind":"UInt32"},
+    dwMaxHwMixingStreamingBuffers: {"kind":"UInt32"},
+    dwFreeHwMixingAllBuffers: {"kind":"UInt32"},
+    dwFreeHwMixingStaticBuffers: {"kind":"UInt32"},
+    dwFreeHwMixingStreamingBuffers: {"kind":"UInt32"},
+    dwMaxHw3DAllBuffers: {"kind":"UInt32"},
+    dwMaxHw3DStaticBuffers: {"kind":"UInt32"},
+    dwMaxHw3DStreamingBuffers: {"kind":"UInt32"},
+    dwFreeHw3DAllBuffers: {"kind":"UInt32"},
+    dwFreeHw3DStaticBuffers: {"kind":"UInt32"},
+    dwFreeHw3DStreamingBuffers: {"kind":"UInt32"},
+    dwTotalHwMemBytes: {"kind":"UInt32"},
+    dwFreeHwMemBytes: {"kind":"UInt32"},
+    dwMaxContigFreeHwMemBytes: {"kind":"UInt32"},
+    dwUnlockTransferRateHwBuffers: {"kind":"UInt32"},
+    dwPlayCpuOverheadSwBuffers: {"kind":"UInt32"},
+    dwReserved1: {"kind":"UInt32"},
+    dwReserved2: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DSBCAPS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSBCAPS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwBufferBytes: {"kind":"UInt32"},
+    dwUnlockTransferRate: {"kind":"UInt32"},
+    dwPlayCpuOverhead: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DSEFFECTDESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSEFFECTDESC = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    guidDSFXClass: Guid,
+    dwReserved1: {"kind":"UIntPtr"},
+    dwReserved2: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: DSCEFFECTDESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSCEFFECTDESC = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    guidDSCFXClass: Guid,
+    guidDSCFXInstance: Guid,
+    dwReserved1: {"kind":"UInt32"},
+    dwReserved2: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DSBUFFERDESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSBUFFERDESC = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwBufferBytes: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+    lpwfxFormat: {"kind""Ptr","child":Windows.Win32.Multimedia.WAVEFORMATEX},
+    guid3DAlgorithm: Guid,
+};
+// --------------------------------------------------------
+// Type: DSBUFFERDESC1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSBUFFERDESC1 = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwBufferBytes: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+    lpwfxFormat: {"kind""Ptr","child":Windows.Win32.Multimedia.WAVEFORMATEX},
+};
+// --------------------------------------------------------
+// Type: DS3DBUFFER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS3DBUFFER = extern struct {
+    dwSize: {"kind":"UInt32"},
+    vPosition: Windows.Win32.SystemServices.D3DVECTOR,
+    vVelocity: Windows.Win32.SystemServices.D3DVECTOR,
+    dwInsideConeAngle: {"kind":"UInt32"},
+    dwOutsideConeAngle: {"kind":"UInt32"},
+    vConeOrientation: Windows.Win32.SystemServices.D3DVECTOR,
+    lConeOutsideVolume: {"kind":"Int32"},
+    flMinDistance: {"kind":"Single"},
+    flMaxDistance: {"kind":"Single"},
+    dwMode: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DS3DLISTENER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DS3DLISTENER = extern struct {
+    dwSize: {"kind":"UInt32"},
+    vPosition: Windows.Win32.SystemServices.D3DVECTOR,
+    vVelocity: Windows.Win32.SystemServices.D3DVECTOR,
+    vOrientFront: Windows.Win32.SystemServices.D3DVECTOR,
+    vOrientTop: Windows.Win32.SystemServices.D3DVECTOR,
+    flDistanceFactor: {"kind":"Single"},
+    flRolloffFactor: {"kind":"Single"},
+    flDopplerFactor: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: DSCCAPS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSCCAPS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwFormats: {"kind":"UInt32"},
+    dwChannels: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DSCBUFFERDESC1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSCBUFFERDESC1 = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwBufferBytes: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+    lpwfxFormat: {"kind""Ptr","child":Windows.Win32.Multimedia.WAVEFORMATEX},
+};
+// --------------------------------------------------------
+// Type: DSCBUFFERDESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSCBUFFERDESC = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwBufferBytes: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+    lpwfxFormat: {"kind""Ptr","child":Windows.Win32.Multimedia.WAVEFORMATEX},
+    dwFXCount: {"kind":"UInt32"},
+    lpDSCFXDesc: {"kind""Ptr","child":Windows.Win32.Audio.DSCEFFECTDESC},
+};
+// --------------------------------------------------------
+// Type: DSCBCAPS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSCBCAPS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwBufferBytes: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DSBPOSITIONNOTIFY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSBPOSITIONNOTIFY = extern struct {
+    dwOffset: {"kind":"UInt32"},
+    hEventNotify: Windows.Win32.SystemServices.HANDLE,
+};
+// --------------------------------------------------------
+// Type: LPDSENUMCALLBACKA
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDSENUMCALLBACKA = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPDSENUMCALLBACKW
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPDSENUMCALLBACKW = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IDirectSound
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectSound = *opaque{
+    // TODO: Method 'CreateSoundBuffer'
+    // TODO: Method 'GetCaps'
+    // TODO: Method 'DuplicateSoundBuffer'
+    // TODO: Method 'SetCooperativeLevel'
+    // TODO: Method 'Compact'
+    // TODO: Method 'GetSpeakerConfig'
+    // TODO: Method 'SetSpeakerConfig'
+    // TODO: Method 'Initialize'
+};
+// --------------------------------------------------------
+// Type: IDirectSound8
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectSound8 = *opaque{
+    // TODO: Method 'VerifyCertification'
+};
+// --------------------------------------------------------
+// Type: IDirectSoundBuffer
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectSoundBuffer = *opaque{
+    // TODO: Method 'GetCaps'
+    // TODO: Method 'GetCurrentPosition'
+    // TODO: Method 'GetFormat'
+    // TODO: Method 'GetVolume'
+    // TODO: Method 'GetPan'
+    // TODO: Method 'GetFrequency'
+    // TODO: Method 'GetStatus'
+    // TODO: Method 'Initialize'
+    // TODO: Method 'Lock'
+    // TODO: Method 'Play'
+    // TODO: Method 'SetCurrentPosition'
+    // TODO: Method 'SetFormat'
+    // TODO: Method 'SetVolume'
+    // TODO: Method 'SetPan'
+    // TODO: Method 'SetFrequency'
+    // TODO: Method 'Stop'
+    // TODO: Method 'Unlock'
+    // TODO: Method 'Restore'
+};
+// --------------------------------------------------------
+// Type: IDirectSoundBuffer8
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectSoundBuffer8 = *opaque{
+    // TODO: Method 'SetFX'
+    // TODO: Method 'AcquireResources'
+    // TODO: Method 'GetObjectInPath'
+};
+// --------------------------------------------------------
+// Type: IDirectSound3DListener
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectSound3DListener = *opaque{
+    // TODO: Method 'GetAllParameters'
+    // TODO: Method 'GetDistanceFactor'
+    // TODO: Method 'GetDopplerFactor'
+    // TODO: Method 'GetOrientation'
+    // TODO: Method 'GetPosition'
+    // TODO: Method 'GetRolloffFactor'
+    // TODO: Method 'GetVelocity'
+    // TODO: Method 'SetAllParameters'
+    // TODO: Method 'SetDistanceFactor'
+    // TODO: Method 'SetDopplerFactor'
+    // TODO: Method 'SetOrientation'
+    // TODO: Method 'SetPosition'
+    // TODO: Method 'SetRolloffFactor'
+    // TODO: Method 'SetVelocity'
+    // TODO: Method 'CommitDeferredSettings'
+};
+// --------------------------------------------------------
+// Type: IDirectSound3DBuffer
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectSound3DBuffer = *opaque{
+    // TODO: Method 'GetAllParameters'
+    // TODO: Method 'GetConeAngles'
+    // TODO: Method 'GetConeOrientation'
+    // TODO: Method 'GetConeOutsideVolume'
+    // TODO: Method 'GetMaxDistance'
+    // TODO: Method 'GetMinDistance'
+    // TODO: Method 'GetMode'
+    // TODO: Method 'GetPosition'
+    // TODO: Method 'GetVelocity'
+    // TODO: Method 'SetAllParameters'
+    // TODO: Method 'SetConeAngles'
+    // TODO: Method 'SetConeOrientation'
+    // TODO: Method 'SetConeOutsideVolume'
+    // TODO: Method 'SetMaxDistance'
+    // TODO: Method 'SetMinDistance'
+    // TODO: Method 'SetMode'
+    // TODO: Method 'SetPosition'
+    // TODO: Method 'SetVelocity'
+};
+// --------------------------------------------------------
+// Type: IDirectSoundCapture
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectSoundCapture = *opaque{
+    // TODO: Method 'CreateCaptureBuffer'
+    // TODO: Method 'GetCaps'
+    // TODO: Method 'Initialize'
+};
+// --------------------------------------------------------
+// Type: IDirectSoundCaptureBuffer
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectSoundCaptureBuffer = *opaque{
+    // TODO: Method 'GetCaps'
+    // TODO: Method 'GetCurrentPosition'
+    // TODO: Method 'GetFormat'
+    // TODO: Method 'GetStatus'
+    // TODO: Method 'Initialize'
+    // TODO: Method 'Lock'
+    // TODO: Method 'Start'
+    // TODO: Method 'Stop'
+    // TODO: Method 'Unlock'
+};
+// --------------------------------------------------------
+// Type: IDirectSoundCaptureBuffer8
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectSoundCaptureBuffer8 = *opaque{
+    // TODO: Method 'GetObjectInPath'
+    // TODO: Method 'GetFXStatus'
+};
+// --------------------------------------------------------
+// Type: IDirectSoundNotify
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectSoundNotify = *opaque{
+    // TODO: Method 'SetNotificationPositions'
+};
+// --------------------------------------------------------
+// Type: DSFXGargle
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSFXGargle = extern struct {
+    dwRateHz: {"kind":"UInt32"},
+    dwWaveShape: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: IDirectSoundFXGargle
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectSoundFXGargle = *opaque{
+    // TODO: Method 'SetAllParameters'
+    // TODO: Method 'GetAllParameters'
+};
+// --------------------------------------------------------
+// Type: DSFXChorus
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSFXChorus = extern struct {
+    fWetDryMix: {"kind":"Single"},
+    fDepth: {"kind":"Single"},
+    fFeedback: {"kind":"Single"},
+    fFrequency: {"kind":"Single"},
+    lWaveform: {"kind":"Int32"},
+    fDelay: {"kind":"Single"},
+    lPhase: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: IDirectSoundFXChorus
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectSoundFXChorus = *opaque{
+    // TODO: Method 'SetAllParameters'
+    // TODO: Method 'GetAllParameters'
+};
+// --------------------------------------------------------
+// Type: DSFXFlanger
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSFXFlanger = extern struct {
+    fWetDryMix: {"kind":"Single"},
+    fDepth: {"kind":"Single"},
+    fFeedback: {"kind":"Single"},
+    fFrequency: {"kind":"Single"},
+    lWaveform: {"kind":"Int32"},
+    fDelay: {"kind":"Single"},
+    lPhase: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: IDirectSoundFXFlanger
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectSoundFXFlanger = *opaque{
+    // TODO: Method 'SetAllParameters'
+    // TODO: Method 'GetAllParameters'
+};
+// --------------------------------------------------------
+// Type: DSFXEcho
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSFXEcho = extern struct {
+    fWetDryMix: {"kind":"Single"},
+    fFeedback: {"kind":"Single"},
+    fLeftDelay: {"kind":"Single"},
+    fRightDelay: {"kind":"Single"},
+    lPanDelay: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: IDirectSoundFXEcho
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectSoundFXEcho = *opaque{
+    // TODO: Method 'SetAllParameters'
+    // TODO: Method 'GetAllParameters'
+};
+// --------------------------------------------------------
+// Type: DSFXDistortion
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSFXDistortion = extern struct {
+    fGain: {"kind":"Single"},
+    fEdge: {"kind":"Single"},
+    fPostEQCenterFrequency: {"kind":"Single"},
+    fPostEQBandwidth: {"kind":"Single"},
+    fPreLowpassCutoff: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: IDirectSoundFXDistortion
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectSoundFXDistortion = *opaque{
+    // TODO: Method 'SetAllParameters'
+    // TODO: Method 'GetAllParameters'
+};
+// --------------------------------------------------------
+// Type: DSFXCompressor
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSFXCompressor = extern struct {
+    fGain: {"kind":"Single"},
+    fAttack: {"kind":"Single"},
+    fRelease: {"kind":"Single"},
+    fThreshold: {"kind":"Single"},
+    fRatio: {"kind":"Single"},
+    fPredelay: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: IDirectSoundFXCompressor
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectSoundFXCompressor = *opaque{
+    // TODO: Method 'SetAllParameters'
+    // TODO: Method 'GetAllParameters'
+};
+// --------------------------------------------------------
+// Type: DSFXParamEq
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSFXParamEq = extern struct {
+    fCenter: {"kind":"Single"},
+    fBandwidth: {"kind":"Single"},
+    fGain: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: IDirectSoundFXParamEq
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectSoundFXParamEq = *opaque{
+    // TODO: Method 'SetAllParameters'
+    // TODO: Method 'GetAllParameters'
+};
+// --------------------------------------------------------
+// Type: DSFXI3DL2Reverb
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSFXI3DL2Reverb = extern struct {
+    lRoom: {"kind":"Int32"},
+    lRoomHF: {"kind":"Int32"},
+    flRoomRolloffFactor: {"kind":"Single"},
+    flDecayTime: {"kind":"Single"},
+    flDecayHFRatio: {"kind":"Single"},
+    lReflections: {"kind":"Int32"},
+    flReflectionsDelay: {"kind":"Single"},
+    lReverb: {"kind":"Int32"},
+    flReverbDelay: {"kind":"Single"},
+    flDiffusion: {"kind":"Single"},
+    flDensity: {"kind":"Single"},
+    flHFReference: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: IDirectSoundFXI3DL2Reverb
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectSoundFXI3DL2Reverb = *opaque{
+    // TODO: Method 'SetAllParameters'
+    // TODO: Method 'GetAllParameters'
+    // TODO: Method 'SetPreset'
+    // TODO: Method 'GetPreset'
+    // TODO: Method 'SetQuality'
+    // TODO: Method 'GetQuality'
+};
+// --------------------------------------------------------
+// Type: DSFXWavesReverb
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSFXWavesReverb = extern struct {
+    fInGain: {"kind":"Single"},
+    fReverbMix: {"kind":"Single"},
+    fReverbTime: {"kind":"Single"},
+    fHighFreqRTRatio: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: IDirectSoundFXWavesReverb
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectSoundFXWavesReverb = *opaque{
+    // TODO: Method 'SetAllParameters'
+    // TODO: Method 'GetAllParameters'
+};
+// --------------------------------------------------------
+// Type: DSCFXAec
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSCFXAec = extern struct {
+    fEnable: Windows.Win32.SystemServices.BOOL,
+    fNoiseFill: Windows.Win32.SystemServices.BOOL,
+    dwMode: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: IDirectSoundCaptureFXAec
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectSoundCaptureFXAec = *opaque{
+    // TODO: Method 'SetAllParameters'
+    // TODO: Method 'GetAllParameters'
+    // TODO: Method 'GetStatus'
+    // TODO: Method 'Reset'
+};
+// --------------------------------------------------------
+// Type: DSCFXNoiseSuppress
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSCFXNoiseSuppress = extern struct {
+    fEnable: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: IDirectSoundCaptureFXNoiseSuppress
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectSoundCaptureFXNoiseSuppress = *opaque{
+    // TODO: Method 'SetAllParameters'
+    // TODO: Method 'GetAllParameters'
+    // TODO: Method 'Reset'
+};
+// --------------------------------------------------------
+// Type: IDirectSoundFullDuplex
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectSoundFullDuplex = *opaque{
+    // TODO: Method 'Initialize'
+};
+// --------------------------------------------------------
+// Type: DMUS_EVENTHEADER
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=4 Size=0
+pub const DMUS_EVENTHEADER = *opaque{
+};
+// --------------------------------------------------------
+// Type: DMUS_BUFFERDESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DMUS_BUFFERDESC = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    guidBufferFormat: Guid,
+    cbBuffer: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DMUS_PORTCAPS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DMUS_PORTCAPS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    guidPort: Guid,
+    dwClass: {"kind":"UInt32"},
+    dwType: {"kind":"UInt32"},
+    dwMemorySize: {"kind":"UInt32"},
+    dwMaxChannelGroups: {"kind":"UInt32"},
+    dwMaxVoices: {"kind":"UInt32"},
+    dwMaxAudioChannels: {"kind":"UInt32"},
+    dwEffectFlags: {"kind":"UInt32"},
+    wszDescription: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: _DMUS_PORTPARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _DMUS_PORTPARAMS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwValidParams: {"kind":"UInt32"},
+    dwVoices: {"kind":"UInt32"},
+    dwChannelGroups: {"kind":"UInt32"},
+    dwAudioChannels: {"kind":"UInt32"},
+    dwSampleRate: {"kind":"UInt32"},
+    dwEffectFlags: {"kind":"UInt32"},
+    fShare: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: DMUS_PORTPARAMS8
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DMUS_PORTPARAMS8 = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwValidParams: {"kind":"UInt32"},
+    dwVoices: {"kind":"UInt32"},
+    dwChannelGroups: {"kind":"UInt32"},
+    dwAudioChannels: {"kind":"UInt32"},
+    dwSampleRate: {"kind":"UInt32"},
+    dwEffectFlags: {"kind":"UInt32"},
+    fShare: Windows.Win32.SystemServices.BOOL,
+    dwFeatures: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DMUS_SYNTHSTATS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DMUS_SYNTHSTATS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwValidStats: {"kind":"UInt32"},
+    dwVoices: {"kind":"UInt32"},
+    dwTotalCPU: {"kind":"UInt32"},
+    dwCPUPerVoice: {"kind":"UInt32"},
+    dwLostNotes: {"kind":"UInt32"},
+    dwFreeMemory: {"kind":"UInt32"},
+    lPeakVolume: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: DMUS_SYNTHSTATS8
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DMUS_SYNTHSTATS8 = extern struct {
+    dwSize: {"kind":"UInt32"},
+    dwValidStats: {"kind":"UInt32"},
+    dwVoices: {"kind":"UInt32"},
+    dwTotalCPU: {"kind":"UInt32"},
+    dwCPUPerVoice: {"kind":"UInt32"},
+    dwLostNotes: {"kind":"UInt32"},
+    dwFreeMemory: {"kind":"UInt32"},
+    lPeakVolume: {"kind":"Int32"},
+    dwSynthMemUse: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DMUS_WAVES_REVERB_PARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DMUS_WAVES_REVERB_PARAMS = extern struct {
+    fInGain: {"kind":"Single"},
+    fReverbMix: {"kind":"Single"},
+    fReverbTime: {"kind":"Single"},
+    fHighFreqRTRatio: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: DMUS_CLOCKTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DMUS_CLOCKTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DMUS_CLOCKINFO7
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DMUS_CLOCKINFO7 = extern struct {
+    dwSize: {"kind":"UInt32"},
+    ctType: Windows.Win32.Audio.DMUS_CLOCKTYPE,
+    guidClock: Guid,
+    wszDescription: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DMUS_CLOCKINFO8
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DMUS_CLOCKINFO8 = extern struct {
+    dwSize: {"kind":"UInt32"},
+    ctType: Windows.Win32.Audio.DMUS_CLOCKTYPE,
+    guidClock: Guid,
+    wszDescription: {"kind":"Array","child": {"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: IDirectMusic
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectMusic = *opaque{
+    // TODO: Method 'EnumPort'
+    // TODO: Method 'CreateMusicBuffer'
+    // TODO: Method 'CreatePort'
+    // TODO: Method 'EnumMasterClock'
+    // TODO: Method 'GetMasterClock'
+    // TODO: Method 'SetMasterClock'
+    // TODO: Method 'Activate'
+    // TODO: Method 'GetDefaultPort'
+    // TODO: Method 'SetDirectSound'
+};
+// --------------------------------------------------------
+// Type: IDirectMusic8
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectMusic8 = *opaque{
+    // TODO: Method 'SetExternalMasterClock'
+};
+// --------------------------------------------------------
+// Type: IDirectMusicBuffer
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectMusicBuffer = *opaque{
+    // TODO: Method 'Flush'
+    // TODO: Method 'TotalTime'
+    // TODO: Method 'PackStructured'
+    // TODO: Method 'PackUnstructured'
+    // TODO: Method 'ResetReadPtr'
+    // TODO: Method 'GetNextEvent'
+    // TODO: Method 'GetRawBufferPtr'
+    // TODO: Method 'GetStartTime'
+    // TODO: Method 'GetUsedBytes'
+    // TODO: Method 'GetMaxBytes'
+    // TODO: Method 'GetBufferFormat'
+    // TODO: Method 'SetStartTime'
+    // TODO: Method 'SetUsedBytes'
+};
+// --------------------------------------------------------
+// Type: IDirectMusicInstrument
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectMusicInstrument = *opaque{
+    // TODO: Method 'GetPatch'
+    // TODO: Method 'SetPatch'
+};
+// --------------------------------------------------------
+// Type: IDirectMusicDownloadedInstrument
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectMusicDownloadedInstrument = *opaque{
+};
+// --------------------------------------------------------
+// Type: IDirectMusicCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectMusicCollection = *opaque{
+    // TODO: Method 'GetInstrument'
+    // TODO: Method 'EnumInstrument'
+};
+// --------------------------------------------------------
+// Type: IDirectMusicDownload
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectMusicDownload = *opaque{
+    // TODO: Method 'GetBuffer'
+};
+// --------------------------------------------------------
+// Type: IDirectMusicPortDownload
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectMusicPortDownload = *opaque{
+    // TODO: Method 'GetBuffer'
+    // TODO: Method 'AllocateBuffer'
+    // TODO: Method 'GetDLId'
+    // TODO: Method 'GetAppend'
+    // TODO: Method 'Download'
+    // TODO: Method 'Unload'
+};
+// --------------------------------------------------------
+// Type: IDirectMusicPort
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectMusicPort = *opaque{
+    // TODO: Method 'PlayBuffer'
+    // TODO: Method 'SetReadNotificationHandle'
+    // TODO: Method 'Read'
+    // TODO: Method 'DownloadInstrument'
+    // TODO: Method 'UnloadInstrument'
+    // TODO: Method 'GetLatencyClock'
+    // TODO: Method 'GetRunningStats'
+    // TODO: Method 'Compact'
+    // TODO: Method 'GetCaps'
+    // TODO: Method 'DeviceIoControl'
+    // TODO: Method 'SetNumChannelGroups'
+    // TODO: Method 'GetNumChannelGroups'
+    // TODO: Method 'Activate'
+    // TODO: Method 'SetChannelPriority'
+    // TODO: Method 'GetChannelPriority'
+    // TODO: Method 'SetDirectSound'
+    // TODO: Method 'GetFormat'
+};
+// --------------------------------------------------------
+// Type: IDirectMusicThru
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectMusicThru = *opaque{
+    // TODO: Method 'ThruChannel'
+};
+// --------------------------------------------------------
+// Type: DMUS_VOICE_STATE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DMUS_VOICE_STATE = extern struct {
+    bExists: Windows.Win32.SystemServices.BOOL,
+    spPosition: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: IDirectMusicSynth
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectMusicSynth = *opaque{
+    // TODO: Method 'Open'
+    // TODO: Method 'Close'
+    // TODO: Method 'SetNumChannelGroups'
+    // TODO: Method 'Download'
+    // TODO: Method 'Unload'
+    // TODO: Method 'PlayBuffer'
+    // TODO: Method 'GetRunningStats'
+    // TODO: Method 'GetPortCaps'
+    // TODO: Method 'SetMasterClock'
+    // TODO: Method 'GetLatencyClock'
+    // TODO: Method 'Activate'
+    // TODO: Method 'SetSynthSink'
+    // TODO: Method 'Render'
+    // TODO: Method 'SetChannelPriority'
+    // TODO: Method 'GetChannelPriority'
+    // TODO: Method 'GetFormat'
+    // TODO: Method 'GetAppend'
+};
+// --------------------------------------------------------
+// Type: IDirectMusicSynth8
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectMusicSynth8 = *opaque{
+    // TODO: Method 'PlayVoice'
+    // TODO: Method 'StopVoice'
+    // TODO: Method 'GetVoiceState'
+    // TODO: Method 'Refresh'
+    // TODO: Method 'AssignChannelToBuses'
+};
+// --------------------------------------------------------
+// Type: IDirectMusicSynthSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectMusicSynthSink = *opaque{
+    // TODO: Method 'Init'
+    // TODO: Method 'SetMasterClock'
+    // TODO: Method 'GetLatencyClock'
+    // TODO: Method 'Activate'
+    // TODO: Method 'SampleToRefTime'
+    // TODO: Method 'RefTimeToSample'
+    // TODO: Method 'SetDirectSound'
+    // TODO: Method 'GetDesiredBufferSize'
+};
+// --------------------------------------------------------
+// Type: KSPROPSETID_AudioEffectsDiscovery
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const KSPROPSETID_AudioEffectsDiscovery = opaque {
+};
+// --------------------------------------------------------
+// Type: KSPROPERTY_AUDIOEFFECTSDISCOVERY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const KSPROPERTY_AUDIOEFFECTSDISCOVERY = *opaque{
+};
+// --------------------------------------------------------
+// Type: KSP_PINMODE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const KSP_PINMODE = extern struct {
+    PinProperty: Windows.Win32.CoreAudio.KSP_PIN,
+    AudioProcessingMode: Guid,
+};
+// --------------------------------------------------------
+// Type: IPropertyStore
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPropertyStore = *opaque{
+    // TODO: Method 'GetCount'
+    // TODO: Method 'GetAt'
+    // TODO: Method 'GetValue'
+    // TODO: Method 'SetValue'
+    // TODO: Method 'Commit'
+};
+// --------------------------------------------------------
+// Type: MDEVICECAPSEX
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MDEVICECAPSEX = *opaque{
+};
+// --------------------------------------------------------
+// Type: MIDIOPENDESC
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const MIDIOPENDESC = *opaque{
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSOUND" fn DirectSoundCreate(
+    pcGuidDevice: {"kind""Ptr","child":Guid},
+    ppDS: {"kind""Ptr","child":Windows.Win32.Audio.IDirectSound},
+    pUnkOuter: Windows.Win32.Com.IUnknown,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSOUND" fn DirectSoundEnumerateA(
+    pDSEnumCallback: Windows.Win32.Audio.LPDSENUMCALLBACKA,
+    pContext: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSOUND" fn DirectSoundEnumerateW(
+    pDSEnumCallback: Windows.Win32.Audio.LPDSENUMCALLBACKW,
+    pContext: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSOUND" fn DirectSoundCaptureCreate(
+    pcGuidDevice: {"kind""Ptr","child":Guid},
+    ppDSC: {"kind""Ptr","child":Windows.Win32.Audio.IDirectSoundCapture},
+    pUnkOuter: Windows.Win32.Com.IUnknown,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSOUND" fn DirectSoundCaptureEnumerateA(
+    pDSEnumCallback: Windows.Win32.Audio.LPDSENUMCALLBACKA,
+    pContext: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSOUND" fn DirectSoundCaptureEnumerateW(
+    pDSEnumCallback: Windows.Win32.Audio.LPDSENUMCALLBACKW,
+    pContext: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSOUND" fn DirectSoundCreate8(
+    pcGuidDevice: {"kind""Ptr","child":Guid},
+    ppDS8: {"kind""Ptr","child":Windows.Win32.Audio.IDirectSound8},
+    pUnkOuter: Windows.Win32.Com.IUnknown,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSOUND" fn DirectSoundCaptureCreate8(
+    pcGuidDevice: {"kind""Ptr","child":Guid},
+    ppDSC8: {"kind""Ptr","child":Windows.Win32.Audio.IDirectSoundCapture},
+    pUnkOuter: Windows.Win32.Com.IUnknown,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DSOUND" fn DirectSoundFullDuplexCreate(
+    pcGuidCaptureDevice: {"kind""Ptr","child":Guid},
+    pcGuidRenderDevice: {"kind""Ptr","child":Guid},
+    pcDSCBufferDesc: {"kind""Ptr","child":Windows.Win32.Audio.DSCBUFFERDESC},
+    pcDSBufferDesc: {"kind""Ptr","child":Windows.Win32.Audio.DSBUFFERDESC},
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    dwLevel: {"kind":"UInt32"},
+    ppDSFD: {"kind""Ptr","child":Windows.Win32.Audio.IDirectSoundFullDuplex},
+    ppDSCBuffer8: {"kind""Ptr","child":Windows.Win32.Audio.IDirectSoundCaptureBuffer8},
+    ppDSBuffer8: {"kind""Ptr","child":Windows.Win32.Audio.IDirectSoundBuffer8},
+    pUnkOuter: Windows.Win32.Com.IUnknown,
+],
+
+"unicode_aliases": [
+     "LPDSENUMCALLBACK"
+     "DirectSoundEnumerate"
+     "DirectSoundCaptureEnumerate"
+]}

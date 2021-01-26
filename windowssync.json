@@ -1,0 +1,948 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: ID_PARAMETER_PAIR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ID_PARAMETER_PAIR = extern struct {
+    fIsVariable: Windows.Win32.SystemServices.BOOL,
+    cbIdSize: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: ID_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ID_PARAMETERS = extern struct {
+    dwSize: {"kind":"UInt32"},
+    replicaId: Windows.Win32.WindowsSync.ID_PARAMETER_PAIR,
+    itemId: Windows.Win32.WindowsSync.ID_PARAMETER_PAIR,
+    changeUnitId: Windows.Win32.WindowsSync.ID_PARAMETER_PAIR,
+};
+// --------------------------------------------------------
+// Type: SYNC_SESSION_STATISTICS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SYNC_SESSION_STATISTICS = extern struct {
+    dwChangesApplied: {"kind":"UInt32"},
+    dwChangesFailed: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SYNC_VERSION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SYNC_VERSION = extern struct {
+    dwLastUpdatingReplicaKey: {"kind":"UInt32"},
+    ullTickCount: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: SYNC_RANGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SYNC_RANGE = extern struct {
+    pbClosedLowerBound: {"kind""Ptr","child":{"kind":"Byte"}},
+    pbClosedUpperBound: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: SYNC_TIME
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SYNC_TIME = extern struct {
+    dwDate: {"kind":"UInt32"},
+    dwTime: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SYNC_FILTER_CHANGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SYNC_FILTER_CHANGE = extern struct {
+    fMoveIn: Windows.Win32.SystemServices.BOOL,
+    moveVersion: Windows.Win32.WindowsSync.SYNC_VERSION,
+};
+// --------------------------------------------------------
+// Type: SYNC_PROVIDER_ROLE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SYNC_PROVIDER_ROLE = *opaque{
+};
+// --------------------------------------------------------
+// Type: CONFLICT_RESOLUTION_POLICY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CONFLICT_RESOLUTION_POLICY = *opaque{
+};
+// --------------------------------------------------------
+// Type: SYNC_PROGRESS_STAGE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SYNC_PROGRESS_STAGE = *opaque{
+};
+// --------------------------------------------------------
+// Type: SYNC_FULL_ENUMERATION_ACTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SYNC_FULL_ENUMERATION_ACTION = *opaque{
+};
+// --------------------------------------------------------
+// Type: SYNC_RESOLVE_ACTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SYNC_RESOLVE_ACTION = *opaque{
+};
+// --------------------------------------------------------
+// Type: SYNC_STATISTICS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SYNC_STATISTICS = *opaque{
+};
+// --------------------------------------------------------
+// Type: SYNC_SERIALIZATION_VERSION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SYNC_SERIALIZATION_VERSION = *opaque{
+};
+// --------------------------------------------------------
+// Type: FILTERING_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FILTERING_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: __MIDL___MIDL_itf_winsync_0000_0000_0009
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const __MIDL___MIDL_itf_winsync_0000_0000_0009 = *opaque{
+};
+// --------------------------------------------------------
+// Type: __MIDL___MIDL_itf_winsync_0000_0000_0010
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const __MIDL___MIDL_itf_winsync_0000_0000_0010 = *opaque{
+};
+// --------------------------------------------------------
+// Type: KNOWLEDGE_COOKIE_COMPARISON_RESULT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const KNOWLEDGE_COOKIE_COMPARISON_RESULT = *opaque{
+};
+// --------------------------------------------------------
+// Type: IClockVectorElement
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IClockVectorElement = *opaque{
+    // TODO: Method 'GetReplicaKey'
+    // TODO: Method 'GetTickCount'
+};
+// --------------------------------------------------------
+// Type: IFeedClockVectorElement
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFeedClockVectorElement = *opaque{
+    // TODO: Method 'GetSyncTime'
+    // TODO: Method 'GetFlags'
+};
+// --------------------------------------------------------
+// Type: IClockVector
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IClockVector = *opaque{
+    // TODO: Method 'GetClockVectorElements'
+    // TODO: Method 'GetClockVectorElementCount'
+};
+// --------------------------------------------------------
+// Type: IFeedClockVector
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFeedClockVector = *opaque{
+    // TODO: Method 'GetUpdateCount'
+    // TODO: Method 'IsNoConflictsSpecified'
+};
+// --------------------------------------------------------
+// Type: IEnumClockVector
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumClockVector = *opaque{
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IEnumFeedClockVector
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumFeedClockVector = *opaque{
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: ICoreFragment
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICoreFragment = *opaque{
+    // TODO: Method 'NextColumn'
+    // TODO: Method 'NextRange'
+    // TODO: Method 'Reset'
+    // TODO: Method 'GetColumnCount'
+    // TODO: Method 'GetRangeCount'
+};
+// --------------------------------------------------------
+// Type: ICoreFragmentInspector
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICoreFragmentInspector = *opaque{
+    // TODO: Method 'NextCoreFragments'
+    // TODO: Method 'Reset'
+};
+// --------------------------------------------------------
+// Type: IRangeException
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRangeException = *opaque{
+    // TODO: Method 'GetClosedRangeStart'
+    // TODO: Method 'GetClosedRangeEnd'
+    // TODO: Method 'GetClockVector'
+};
+// --------------------------------------------------------
+// Type: IEnumRangeExceptions
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumRangeExceptions = *opaque{
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: ISingleItemException
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISingleItemException = *opaque{
+    // TODO: Method 'GetItemId'
+    // TODO: Method 'GetClockVector'
+};
+// --------------------------------------------------------
+// Type: IEnumSingleItemExceptions
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumSingleItemExceptions = *opaque{
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IChangeUnitException
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IChangeUnitException = *opaque{
+    // TODO: Method 'GetItemId'
+    // TODO: Method 'GetChangeUnitId'
+    // TODO: Method 'GetClockVector'
+};
+// --------------------------------------------------------
+// Type: IEnumChangeUnitExceptions
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumChangeUnitExceptions = *opaque{
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IReplicaKeyMap
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IReplicaKeyMap = *opaque{
+    // TODO: Method 'LookupReplicaKey'
+    // TODO: Method 'LookupReplicaId'
+    // TODO: Method 'Serialize'
+};
+// --------------------------------------------------------
+// Type: IConstructReplicaKeyMap
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IConstructReplicaKeyMap = *opaque{
+    // TODO: Method 'FindOrAddReplica'
+};
+// --------------------------------------------------------
+// Type: ISyncKnowledge
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncKnowledge = *opaque{
+    // TODO: Method 'GetOwnerReplicaId'
+    // TODO: Method 'Serialize'
+    // TODO: Method 'SetLocalTickCount'
+    // TODO: Method 'ContainsChange'
+    // TODO: Method 'ContainsChangeUnit'
+    // TODO: Method 'GetScopeVector'
+    // TODO: Method 'GetReplicaKeyMap'
+    // TODO: Method 'Clone'
+    // TODO: Method 'ConvertVersion'
+    // TODO: Method 'MapRemoteToLocal'
+    // TODO: Method 'Union'
+    // TODO: Method 'ProjectOntoItem'
+    // TODO: Method 'ProjectOntoChangeUnit'
+    // TODO: Method 'ProjectOntoRange'
+    // TODO: Method 'ExcludeItem'
+    // TODO: Method 'ExcludeChangeUnit'
+    // TODO: Method 'ContainsKnowledge'
+    // TODO: Method 'FindMinTickCountForReplica'
+    // TODO: Method 'GetRangeExceptions'
+    // TODO: Method 'GetSingleItemExceptions'
+    // TODO: Method 'GetChangeUnitExceptions'
+    // TODO: Method 'FindClockVectorForItem'
+    // TODO: Method 'FindClockVectorForChangeUnit'
+    // TODO: Method 'GetVersion'
+};
+// --------------------------------------------------------
+// Type: IForgottenKnowledge
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IForgottenKnowledge = *opaque{
+    // TODO: Method 'ForgetToVersion'
+};
+// --------------------------------------------------------
+// Type: ISyncKnowledge2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncKnowledge2 = *opaque{
+    // TODO: Method 'GetIdParameters'
+    // TODO: Method 'ProjectOntoColumnSet'
+    // TODO: Method 'SerializeWithOptions'
+    // TODO: Method 'GetLowestUncontainedId'
+    // TODO: Method 'GetInspector'
+    // TODO: Method 'GetMinimumSupportedVersion'
+    // TODO: Method 'GetStatistics'
+    // TODO: Method 'ContainsKnowledgeForItem'
+    // TODO: Method 'ContainsKnowledgeForChangeUnit'
+    // TODO: Method 'ProjectOntoKnowledgeWithPrerequisite'
+    // TODO: Method 'Complement'
+    // TODO: Method 'IntersectsWithKnowledge'
+    // TODO: Method 'GetKnowledgeCookie'
+    // TODO: Method 'CompareToKnowledgeCookie'
+};
+// --------------------------------------------------------
+// Type: IRecoverableErrorData
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRecoverableErrorData = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'GetItemDisplayName'
+    // TODO: Method 'GetErrorDescription'
+};
+// --------------------------------------------------------
+// Type: IRecoverableError
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRecoverableError = *opaque{
+    // TODO: Method 'GetStage'
+    // TODO: Method 'GetProvider'
+    // TODO: Method 'GetChangeWithRecoverableError'
+    // TODO: Method 'GetRecoverableErrorDataForChange'
+    // TODO: Method 'GetRecoverableErrorDataForChangeUnit'
+};
+// --------------------------------------------------------
+// Type: IChangeConflict
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IChangeConflict = *opaque{
+    // TODO: Method 'GetDestinationProviderConflictingChange'
+    // TODO: Method 'GetSourceProviderConflictingChange'
+    // TODO: Method 'GetDestinationProviderConflictingData'
+    // TODO: Method 'GetSourceProviderConflictingData'
+    // TODO: Method 'GetResolveActionForChange'
+    // TODO: Method 'SetResolveActionForChange'
+    // TODO: Method 'GetResolveActionForChangeUnit'
+    // TODO: Method 'SetResolveActionForChangeUnit'
+};
+// --------------------------------------------------------
+// Type: IConstraintConflict
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IConstraintConflict = *opaque{
+    // TODO: Method 'GetDestinationProviderConflictingChange'
+    // TODO: Method 'GetSourceProviderConflictingChange'
+    // TODO: Method 'GetDestinationProviderOriginalChange'
+    // TODO: Method 'GetDestinationProviderConflictingData'
+    // TODO: Method 'GetSourceProviderConflictingData'
+    // TODO: Method 'GetDestinationProviderOriginalData'
+    // TODO: Method 'GetConstraintResolveActionForChange'
+    // TODO: Method 'SetConstraintResolveActionForChange'
+    // TODO: Method 'GetConstraintResolveActionForChangeUnit'
+    // TODO: Method 'SetConstraintResolveActionForChangeUnit'
+    // TODO: Method 'GetConstraintConflictReason'
+    // TODO: Method 'IsTemporary'
+};
+// --------------------------------------------------------
+// Type: ISyncCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncCallback = *opaque{
+    // TODO: Method 'OnProgress'
+    // TODO: Method 'OnChange'
+    // TODO: Method 'OnConflict'
+    // TODO: Method 'OnFullEnumerationNeeded'
+    // TODO: Method 'OnRecoverableError'
+};
+// --------------------------------------------------------
+// Type: ISyncCallback2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncCallback2 = *opaque{
+    // TODO: Method 'OnChangeApplied'
+    // TODO: Method 'OnChangeFailed'
+};
+// --------------------------------------------------------
+// Type: ISyncConstraintCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncConstraintCallback = *opaque{
+    // TODO: Method 'OnConstraintConflict'
+};
+// --------------------------------------------------------
+// Type: ISyncProvider
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncProvider = *opaque{
+    // TODO: Method 'GetIdParameters'
+};
+// --------------------------------------------------------
+// Type: ISyncSessionState
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncSessionState = *opaque{
+    // TODO: Method 'IsCanceled'
+    // TODO: Method 'GetInfoForChangeApplication'
+    // TODO: Method 'LoadInfoFromChangeApplication'
+    // TODO: Method 'GetForgottenKnowledgeRecoveryRangeStart'
+    // TODO: Method 'GetForgottenKnowledgeRecoveryRangeEnd'
+    // TODO: Method 'SetForgottenKnowledgeRecoveryRange'
+    // TODO: Method 'OnProgress'
+};
+// --------------------------------------------------------
+// Type: ISyncSessionExtendedErrorInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncSessionExtendedErrorInfo = *opaque{
+    // TODO: Method 'GetSyncProviderWithError'
+};
+// --------------------------------------------------------
+// Type: ISyncSessionState2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncSessionState2 = *opaque{
+    // TODO: Method 'SetProviderWithError'
+    // TODO: Method 'GetSessionErrorStatus'
+};
+// --------------------------------------------------------
+// Type: ISyncFilterInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncFilterInfo = *opaque{
+    // TODO: Method 'Serialize'
+};
+// --------------------------------------------------------
+// Type: ISyncFilterInfo2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncFilterInfo2 = *opaque{
+    // TODO: Method 'GetFlags'
+};
+// --------------------------------------------------------
+// Type: IChangeUnitListFilterInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IChangeUnitListFilterInfo = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'GetChangeUnitIdCount'
+    // TODO: Method 'GetChangeUnitId'
+};
+// --------------------------------------------------------
+// Type: ISyncFilter
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncFilter = *opaque{
+    // TODO: Method 'IsIdentical'
+    // TODO: Method 'Serialize'
+};
+// --------------------------------------------------------
+// Type: ISyncFilterDeserializer
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncFilterDeserializer = *opaque{
+    // TODO: Method 'DeserializeSyncFilter'
+};
+// --------------------------------------------------------
+// Type: ICustomFilterInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICustomFilterInfo = *opaque{
+    // TODO: Method 'GetSyncFilter'
+};
+// --------------------------------------------------------
+// Type: __MIDL___MIDL_itf_winsync_0000_0036_0001
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const __MIDL___MIDL_itf_winsync_0000_0036_0001 = *opaque{
+};
+// --------------------------------------------------------
+// Type: ICombinedFilterInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ICombinedFilterInfo = *opaque{
+    // TODO: Method 'GetFilterCount'
+    // TODO: Method 'GetFilterInfo'
+    // TODO: Method 'GetFilterCombinationType'
+};
+// --------------------------------------------------------
+// Type: IEnumSyncChanges
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumSyncChanges = *opaque{
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: ISyncChangeBuilder
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncChangeBuilder = *opaque{
+    // TODO: Method 'AddChangeUnitMetadata'
+};
+// --------------------------------------------------------
+// Type: IFilterTrackingSyncChangeBuilder
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFilterTrackingSyncChangeBuilder = *opaque{
+    // TODO: Method 'AddFilterChange'
+    // TODO: Method 'SetAllChangeUnitsPresentFlag'
+};
+// --------------------------------------------------------
+// Type: ISyncChangeBatchBase
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncChangeBatchBase = *opaque{
+    // TODO: Method 'GetChangeEnumerator'
+    // TODO: Method 'GetIsLastBatch'
+    // TODO: Method 'GetWorkEstimateForBatch'
+    // TODO: Method 'GetRemainingWorkEstimateForSession'
+    // TODO: Method 'BeginOrderedGroup'
+    // TODO: Method 'EndOrderedGroup'
+    // TODO: Method 'AddItemMetadataToGroup'
+    // TODO: Method 'GetLearnedKnowledge'
+    // TODO: Method 'GetPrerequisiteKnowledge'
+    // TODO: Method 'GetSourceForgottenKnowledge'
+    // TODO: Method 'SetLastBatch'
+    // TODO: Method 'SetWorkEstimateForBatch'
+    // TODO: Method 'SetRemainingWorkEstimateForSession'
+    // TODO: Method 'Serialize'
+};
+// --------------------------------------------------------
+// Type: ISyncChangeBatch
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncChangeBatch = *opaque{
+    // TODO: Method 'BeginUnorderedGroup'
+    // TODO: Method 'EndUnorderedGroup'
+    // TODO: Method 'AddLoggedConflict'
+};
+// --------------------------------------------------------
+// Type: ISyncFullEnumerationChangeBatch
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncFullEnumerationChangeBatch = *opaque{
+    // TODO: Method 'GetLearnedKnowledgeAfterRecoveryComplete'
+    // TODO: Method 'GetClosedLowerBoundItemId'
+    // TODO: Method 'GetClosedUpperBoundItemId'
+};
+// --------------------------------------------------------
+// Type: ISyncChangeBatchWithPrerequisite
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncChangeBatchWithPrerequisite = *opaque{
+    // TODO: Method 'SetPrerequisiteKnowledge'
+    // TODO: Method 'GetLearnedKnowledgeWithPrerequisite'
+    // TODO: Method 'GetLearnedForgottenKnowledge'
+};
+// --------------------------------------------------------
+// Type: ISyncChangeBatchBase2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncChangeBatchBase2 = *opaque{
+    // TODO: Method 'SerializeWithOptions'
+};
+// --------------------------------------------------------
+// Type: ISyncChangeBatchAdvanced
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncChangeBatchAdvanced = *opaque{
+    // TODO: Method 'GetFilterInfo'
+    // TODO: Method 'ConvertFullEnumerationChangeBatchToRegularChangeBatch'
+    // TODO: Method 'GetUpperBoundItemId'
+    // TODO: Method 'GetBatchLevelKnowledgeShouldBeApplied'
+};
+// --------------------------------------------------------
+// Type: ISyncChangeBatch2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncChangeBatch2 = *opaque{
+    // TODO: Method 'AddMergeTombstoneMetadataToGroup'
+    // TODO: Method 'AddMergeTombstoneLoggedConflict'
+};
+// --------------------------------------------------------
+// Type: ISyncFullEnumerationChangeBatch2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncFullEnumerationChangeBatch2 = *opaque{
+    // TODO: Method 'AddMergeTombstoneMetadataToGroup'
+};
+// --------------------------------------------------------
+// Type: IKnowledgeSyncProvider
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IKnowledgeSyncProvider = *opaque{
+    // TODO: Method 'BeginSession'
+    // TODO: Method 'GetSyncBatchParameters'
+    // TODO: Method 'GetChangeBatch'
+    // TODO: Method 'GetFullEnumerationChangeBatch'
+    // TODO: Method 'ProcessChangeBatch'
+    // TODO: Method 'ProcessFullEnumerationChangeBatch'
+    // TODO: Method 'EndSession'
+};
+// --------------------------------------------------------
+// Type: ISyncChangeUnit
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncChangeUnit = *opaque{
+    // TODO: Method 'GetItemChange'
+    // TODO: Method 'GetChangeUnitId'
+    // TODO: Method 'GetChangeUnitVersion'
+};
+// --------------------------------------------------------
+// Type: IEnumSyncChangeUnits
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumSyncChangeUnits = *opaque{
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: ISyncChange
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncChange = *opaque{
+    // TODO: Method 'GetOwnerReplicaId'
+    // TODO: Method 'GetRootItemId'
+    // TODO: Method 'GetChangeVersion'
+    // TODO: Method 'GetCreationVersion'
+    // TODO: Method 'GetFlags'
+    // TODO: Method 'GetWorkEstimate'
+    // TODO: Method 'GetChangeUnits'
+    // TODO: Method 'GetMadeWithKnowledge'
+    // TODO: Method 'GetLearnedKnowledge'
+    // TODO: Method 'SetWorkEstimate'
+};
+// --------------------------------------------------------
+// Type: ISyncChangeWithPrerequisite
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncChangeWithPrerequisite = *opaque{
+    // TODO: Method 'GetPrerequisiteKnowledge'
+    // TODO: Method 'GetLearnedKnowledgeWithPrerequisite'
+};
+// --------------------------------------------------------
+// Type: ISyncFullEnumerationChange
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncFullEnumerationChange = *opaque{
+    // TODO: Method 'GetLearnedKnowledgeAfterRecoveryComplete'
+    // TODO: Method 'GetLearnedForgottenKnowledge'
+};
+// --------------------------------------------------------
+// Type: ISyncMergeTombstoneChange
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncMergeTombstoneChange = *opaque{
+    // TODO: Method 'GetWinnerItemId'
+};
+// --------------------------------------------------------
+// Type: IEnumItemIds
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumItemIds = *opaque{
+    // TODO: Method 'Next'
+};
+// --------------------------------------------------------
+// Type: IFilterKeyMap
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFilterKeyMap = *opaque{
+    // TODO: Method 'GetCount'
+    // TODO: Method 'AddFilter'
+    // TODO: Method 'GetFilter'
+    // TODO: Method 'Serialize'
+};
+// --------------------------------------------------------
+// Type: ISyncChangeWithFilterKeyMap
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncChangeWithFilterKeyMap = *opaque{
+    // TODO: Method 'GetFilterCount'
+    // TODO: Method 'GetFilterChange'
+    // TODO: Method 'GetAllChangeUnitsPresentFlag'
+    // TODO: Method 'GetFilterForgottenKnowledge'
+    // TODO: Method 'GetFilteredReplicaLearnedKnowledge'
+    // TODO: Method 'GetLearnedFilterForgottenKnowledge'
+    // TODO: Method 'GetFilteredReplicaLearnedForgottenKnowledge'
+    // TODO: Method 'GetFilteredReplicaLearnedForgottenKnowledgeAfterRecoveryComplete'
+    // TODO: Method 'GetLearnedFilterForgottenKnowledgeAfterRecoveryComplete'
+};
+// --------------------------------------------------------
+// Type: ISyncChangeBatchWithFilterKeyMap
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncChangeBatchWithFilterKeyMap = *opaque{
+    // TODO: Method 'GetFilterKeyMap'
+    // TODO: Method 'SetFilterKeyMap'
+    // TODO: Method 'SetFilterForgottenKnowledge'
+    // TODO: Method 'GetFilteredReplicaLearnedKnowledge'
+    // TODO: Method 'GetLearnedFilterForgottenKnowledge'
+    // TODO: Method 'GetFilteredReplicaLearnedForgottenKnowledge'
+    // TODO: Method 'GetFilteredReplicaLearnedForgottenKnowledgeAfterRecoveryComplete'
+    // TODO: Method 'GetLearnedFilterForgottenKnowledgeAfterRecoveryComplete'
+};
+// --------------------------------------------------------
+// Type: IDataRetrieverCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDataRetrieverCallback = *opaque{
+    // TODO: Method 'LoadChangeDataComplete'
+    // TODO: Method 'LoadChangeDataError'
+};
+// --------------------------------------------------------
+// Type: ILoadChangeContext
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ILoadChangeContext = *opaque{
+    // TODO: Method 'GetSyncChange'
+    // TODO: Method 'SetRecoverableErrorOnChange'
+    // TODO: Method 'SetRecoverableErrorOnChangeUnit'
+};
+// --------------------------------------------------------
+// Type: ISynchronousDataRetriever
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISynchronousDataRetriever = *opaque{
+    // TODO: Method 'GetIdParameters'
+    // TODO: Method 'LoadChangeData'
+};
+// --------------------------------------------------------
+// Type: IAsynchronousDataRetriever
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAsynchronousDataRetriever = *opaque{
+    // TODO: Method 'GetIdParameters'
+    // TODO: Method 'RegisterCallback'
+    // TODO: Method 'RevokeCallback'
+    // TODO: Method 'LoadChangeData'
+};
+// --------------------------------------------------------
+// Type: IFilterRequestCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFilterRequestCallback = *opaque{
+    // TODO: Method 'RequestFilter'
+};
+// --------------------------------------------------------
+// Type: IRequestFilteredSync
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRequestFilteredSync = *opaque{
+    // TODO: Method 'SpecifyFilter'
+};
+// --------------------------------------------------------
+// Type: ISupportFilteredSync
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISupportFilteredSync = *opaque{
+    // TODO: Method 'AddFilter'
+};
+// --------------------------------------------------------
+// Type: IFilterTrackingRequestCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFilterTrackingRequestCallback = *opaque{
+    // TODO: Method 'RequestTrackedFilter'
+};
+// --------------------------------------------------------
+// Type: IFilterTrackingProvider
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFilterTrackingProvider = *opaque{
+    // TODO: Method 'SpecifyTrackedFilters'
+    // TODO: Method 'AddTrackedFilter'
+};
+// --------------------------------------------------------
+// Type: ISupportLastWriteTime
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISupportLastWriteTime = *opaque{
+    // TODO: Method 'GetItemChangeTime'
+    // TODO: Method 'GetChangeUnitChangeTime'
+};
+// --------------------------------------------------------
+// Type: IProviderConverter
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IProviderConverter = *opaque{
+    // TODO: Method 'Initialize'
+};
+// --------------------------------------------------------
+// Type: ISyncDataConverter
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncDataConverter = *opaque{
+    // TODO: Method 'ConvertDataRetrieverFromProviderFormat'
+    // TODO: Method 'ConvertDataRetrieverToProviderFormat'
+    // TODO: Method 'ConvertDataFromProviderFormat'
+    // TODO: Method 'ConvertDataToProviderFormat'
+};
+// --------------------------------------------------------
+// Type: SyncProviderRegistration
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const SyncProviderRegistration = opaque {
+};
+// --------------------------------------------------------
+// Type: SyncProviderConfiguration
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SyncProviderConfiguration = extern struct {
+    dwVersion: {"kind":"UInt32"},
+    guidInstanceId: Guid,
+    clsidProvider: Guid,
+    guidConfigUIInstanceId: Guid,
+    guidContentType: Guid,
+    dwCapabilities: {"kind":"UInt32"},
+    dwSupportedArchitecture: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SyncProviderConfigUIConfiguration
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SyncProviderConfigUIConfiguration = extern struct {
+    dwVersion: {"kind":"UInt32"},
+    guidInstanceId: Guid,
+    clsidConfigUI: Guid,
+    guidContentType: Guid,
+    dwCapabilities: {"kind":"UInt32"},
+    dwSupportedArchitecture: {"kind":"UInt32"},
+    fIsGlobal: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: ISyncProviderRegistration
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncProviderRegistration = *opaque{
+    // TODO: Method 'CreateSyncProviderConfigUIRegistrationInstance'
+    // TODO: Method 'UnregisterSyncProviderConfigUI'
+    // TODO: Method 'EnumerateSyncProviderConfigUIs'
+    // TODO: Method 'CreateSyncProviderRegistrationInstance'
+    // TODO: Method 'UnregisterSyncProvider'
+    // TODO: Method 'GetSyncProviderConfigUIInfoforProvider'
+    // TODO: Method 'EnumerateSyncProviders'
+    // TODO: Method 'GetSyncProviderInfo'
+    // TODO: Method 'GetSyncProviderFromInstanceId'
+    // TODO: Method 'GetSyncProviderConfigUIInfo'
+    // TODO: Method 'GetSyncProviderConfigUIFromInstanceId'
+    // TODO: Method 'GetSyncProviderState'
+    // TODO: Method 'SetSyncProviderState'
+    // TODO: Method 'RegisterForEvent'
+    // TODO: Method 'RevokeEvent'
+    // TODO: Method 'GetChange'
+};
+// --------------------------------------------------------
+// Type: IEnumSyncProviderConfigUIInfos
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumSyncProviderConfigUIInfos = *opaque{
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IEnumSyncProviderInfos
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumSyncProviderInfos = *opaque{
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: ISyncProviderInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncProviderInfo = *opaque{
+    // TODO: Method 'GetSyncProvider'
+};
+// --------------------------------------------------------
+// Type: ISyncProviderConfigUIInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncProviderConfigUIInfo = *opaque{
+    // TODO: Method 'GetSyncProviderConfigUI'
+};
+// --------------------------------------------------------
+// Type: ISyncProviderConfigUI
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncProviderConfigUI = *opaque{
+    // TODO: Method 'Init'
+    // TODO: Method 'GetRegisteredProperties'
+    // TODO: Method 'CreateAndRegisterNewSyncProvider'
+    // TODO: Method 'ModifySyncProvider'
+};
+// --------------------------------------------------------
+// Type: IRegisteredSyncProvider
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRegisteredSyncProvider = *opaque{
+    // TODO: Method 'Init'
+    // TODO: Method 'GetInstanceId'
+    // TODO: Method 'Reset'
+};
+// --------------------------------------------------------
+// Type: SYNC_REGISTRATION_EVENT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SYNC_REGISTRATION_EVENT = *opaque{
+};
+// --------------------------------------------------------
+// Type: ISyncRegistrationChange
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISyncRegistrationChange = *opaque{
+    // TODO: Method 'GetEvent'
+    // TODO: Method 'GetInstanceId'
+};
+],
+
+"func_definitions": [
+],
+
+"unicode_aliases": [
+]}

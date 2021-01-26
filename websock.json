@@ -1,0 +1,183 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: WEB_SOCKET_HANDLE__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WEB_SOCKET_HANDLE__ = extern struct {
+    unused: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: WEB_SOCKET_CLOSE_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WEB_SOCKET_CLOSE_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: WEB_SOCKET_PROPERTY_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WEB_SOCKET_PROPERTY_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WEB_SOCKET_ACTION_QUEUE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WEB_SOCKET_ACTION_QUEUE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WEB_SOCKET_BUFFER_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WEB_SOCKET_BUFFER_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WEB_SOCKET_ACTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WEB_SOCKET_ACTION = *opaque{
+};
+// --------------------------------------------------------
+// Type: WEB_SOCKET_PROPERTY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WEB_SOCKET_PROPERTY = extern struct {
+    Type: Windows.Win32.WebSock.WEB_SOCKET_PROPERTY_TYPE,
+    pvValue: {"kind""Ptr","child":{"kind":"Void"}},
+    ulValueSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WEB_SOCKET_HTTP_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WEB_SOCKET_HTTP_HEADER = extern struct {
+    pcName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulNameLength: {"kind":"UInt32"},
+    pcValue: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulValueLength: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WEB_SOCKET_BUFFER
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const WEB_SOCKET_BUFFER = *opaque{
+    // --------------------------------------------------------
+    // Type: _CloseStatus_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _CloseStatus_e__Struct = extern struct {
+        pbReason: {"kind""Ptr","child":{"kind":"Byte"}},
+        ulReasonLength: {"kind":"UInt32"},
+        usStatus: {"kind":"UInt16"},
+    };
+    // --------------------------------------------------------
+    // Type: _Data_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _Data_e__Struct = extern struct {
+        pbBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+        ulBufferLength: {"kind":"UInt32"},
+    };
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "websocket" fn WebSocketCreateClientHandle(
+    pProperties: {"kind""Ptr","child":Windows.Win32.WebSock.WEB_SOCKET_PROPERTY},
+    ulPropertyCount: {"kind":"UInt32"},
+    phWebSocket: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WebSock.WEB_SOCKET_HANDLE__}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "websocket" fn WebSocketBeginClientHandshake(
+    hWebSocket: {"kind""Ptr","child":Windows.Win32.WebSock.WEB_SOCKET_HANDLE__},
+    pszSubprotocols: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    ulSubprotocolCount: {"kind":"UInt32"},
+    pszExtensions: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    ulExtensionCount: {"kind":"UInt32"},
+    pInitialHeaders: {"kind""Ptr","child":Windows.Win32.WebSock.WEB_SOCKET_HTTP_HEADER},
+    ulInitialHeaderCount: {"kind":"UInt32"},
+    pAdditionalHeaders: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WebSock.WEB_SOCKET_HTTP_HEADER}},
+    pulAdditionalHeaderCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "websocket" fn WebSocketEndClientHandshake(
+    hWebSocket: {"kind""Ptr","child":Windows.Win32.WebSock.WEB_SOCKET_HANDLE__},
+    pResponseHeaders: {"kind""Ptr","child":Windows.Win32.WebSock.WEB_SOCKET_HTTP_HEADER},
+    ulReponseHeaderCount: {"kind":"UInt32"},
+    pulSelectedExtensions: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pulSelectedExtensionCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pulSelectedSubprotocol: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "websocket" fn WebSocketCreateServerHandle(
+    pProperties: {"kind""Ptr","child":Windows.Win32.WebSock.WEB_SOCKET_PROPERTY},
+    ulPropertyCount: {"kind":"UInt32"},
+    phWebSocket: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WebSock.WEB_SOCKET_HANDLE__}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "websocket" fn WebSocketBeginServerHandshake(
+    hWebSocket: {"kind""Ptr","child":Windows.Win32.WebSock.WEB_SOCKET_HANDLE__},
+    pszSubprotocolSelected: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszExtensionSelected: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    ulExtensionSelectedCount: {"kind":"UInt32"},
+    pRequestHeaders: {"kind""Ptr","child":Windows.Win32.WebSock.WEB_SOCKET_HTTP_HEADER},
+    ulRequestHeaderCount: {"kind":"UInt32"},
+    pResponseHeaders: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WebSock.WEB_SOCKET_HTTP_HEADER}},
+    pulResponseHeaderCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "websocket" fn WebSocketEndServerHandshake(
+    hWebSocket: {"kind""Ptr","child":Windows.Win32.WebSock.WEB_SOCKET_HANDLE__},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "websocket" fn WebSocketSend(
+    hWebSocket: {"kind""Ptr","child":Windows.Win32.WebSock.WEB_SOCKET_HANDLE__},
+    BufferType: Windows.Win32.WebSock.WEB_SOCKET_BUFFER_TYPE,
+    pBuffer: {"kind""Ptr","child":Windows.Win32.WebSock.WEB_SOCKET_BUFFER},
+    Context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "websocket" fn WebSocketReceive(
+    hWebSocket: {"kind""Ptr","child":Windows.Win32.WebSock.WEB_SOCKET_HANDLE__},
+    pBuffer: {"kind""Ptr","child":Windows.Win32.WebSock.WEB_SOCKET_BUFFER},
+    pvContext: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "websocket" fn WebSocketGetAction(
+    hWebSocket: {"kind""Ptr","child":Windows.Win32.WebSock.WEB_SOCKET_HANDLE__},
+    eActionQueue: Windows.Win32.WebSock.WEB_SOCKET_ACTION_QUEUE,
+    pDataBuffers: {"kind""Ptr","child":Windows.Win32.WebSock.WEB_SOCKET_BUFFER},
+    pulDataBufferCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pAction: {"kind""Ptr","child":Windows.Win32.WebSock.WEB_SOCKET_ACTION},
+    pBufferType: {"kind""Ptr","child":Windows.Win32.WebSock.WEB_SOCKET_BUFFER_TYPE},
+    pvApplicationContext: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+    pvActionContext: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "websocket" fn WebSocketCompleteAction(
+    hWebSocket: {"kind""Ptr","child":Windows.Win32.WebSock.WEB_SOCKET_HANDLE__},
+    pvActionContext: {"kind""Ptr","child":{"kind":"Void"}},
+    ulBytesTransferred: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "websocket" fn WebSocketAbortHandle(
+    hWebSocket: {"kind""Ptr","child":Windows.Win32.WebSock.WEB_SOCKET_HANDLE__},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "websocket" fn WebSocketDeleteHandle(
+    hWebSocket: {"kind""Ptr","child":Windows.Win32.WebSock.WEB_SOCKET_HANDLE__},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "websocket" fn WebSocketGetGlobalProperty(
+    eType: Windows.Win32.WebSock.WEB_SOCKET_PROPERTY_TYPE,
+    pvValue: {"kind""Ptr","child":{"kind":"Void"}},
+    ulSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+],
+
+"unicode_aliases": [
+]}

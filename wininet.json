@@ -1,0 +1,3149 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: HTTP_VERSION_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_VERSION_INFO = extern struct {
+    dwMajorVersion: {"kind":"UInt32"},
+    dwMinorVersion: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: INTERNET_SCHEME
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const INTERNET_SCHEME = *opaque{
+};
+// --------------------------------------------------------
+// Type: INTERNET_ASYNC_RESULT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_ASYNC_RESULT = extern struct {
+    dwResult: {"kind":"UIntPtr"},
+    dwError: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: INTERNET_DIAGNOSTIC_SOCKET_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_DIAGNOSTIC_SOCKET_INFO = extern struct {
+    Socket: {"kind":"UIntPtr"},
+    SourcePort: {"kind":"UInt32"},
+    DestPort: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: INTERNET_PROXY_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_PROXY_INFO = extern struct {
+    dwAccessType: {"kind":"UInt32"},
+    lpszProxy: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszProxyBypass: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: INTERNET_PER_CONN_OPTIONA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_PER_CONN_OPTIONA = extern struct {
+    dwOption: {"kind":"UInt32"},
+    Value: Windows.Win32.WinInet.INTERNET_PER_CONN_OPTIONA+_Value_e__Union,
+    // --------------------------------------------------------
+    // Type: _Value_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Value_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: INTERNET_PER_CONN_OPTIONW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_PER_CONN_OPTIONW = extern struct {
+    dwOption: {"kind":"UInt32"},
+    Value: Windows.Win32.WinInet.INTERNET_PER_CONN_OPTIONW+_Value_e__Union,
+    // --------------------------------------------------------
+    // Type: _Value_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Value_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: INTERNET_PER_CONN_OPTION_LISTA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_PER_CONN_OPTION_LISTA = extern struct {
+    dwSize: {"kind":"UInt32"},
+    pszConnection: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwOptionCount: {"kind":"UInt32"},
+    dwOptionError: {"kind":"UInt32"},
+    pOptions: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_PER_CONN_OPTIONA},
+};
+// --------------------------------------------------------
+// Type: INTERNET_PER_CONN_OPTION_LISTW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_PER_CONN_OPTION_LISTW = extern struct {
+    dwSize: {"kind":"UInt32"},
+    pszConnection: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwOptionCount: {"kind":"UInt32"},
+    dwOptionError: {"kind":"UInt32"},
+    pOptions: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_PER_CONN_OPTIONW},
+};
+// --------------------------------------------------------
+// Type: INTERNET_VERSION_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_VERSION_INFO = extern struct {
+    dwMajorVersion: {"kind":"UInt32"},
+    dwMinorVersion: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: INTERNET_CONNECTED_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_CONNECTED_INFO = extern struct {
+    dwConnectedState: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: URL_COMPONENTSA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const URL_COMPONENTSA = extern struct {
+    dwStructSize: {"kind":"UInt32"},
+    lpszScheme: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwSchemeLength: {"kind":"UInt32"},
+    nScheme: Windows.Win32.WinInet.INTERNET_SCHEME,
+    lpszHostName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwHostNameLength: {"kind":"UInt32"},
+    nPort: {"kind":"UInt16"},
+    lpszUserName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwUserNameLength: {"kind":"UInt32"},
+    lpszPassword: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwPasswordLength: {"kind":"UInt32"},
+    lpszUrlPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwUrlPathLength: {"kind":"UInt32"},
+    lpszExtraInfo: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwExtraInfoLength: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: URL_COMPONENTSW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const URL_COMPONENTSW = extern struct {
+    dwStructSize: {"kind":"UInt32"},
+    lpszScheme: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwSchemeLength: {"kind":"UInt32"},
+    nScheme: Windows.Win32.WinInet.INTERNET_SCHEME,
+    lpszHostName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwHostNameLength: {"kind":"UInt32"},
+    nPort: {"kind":"UInt16"},
+    lpszUserName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwUserNameLength: {"kind":"UInt32"},
+    lpszPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwPasswordLength: {"kind":"UInt32"},
+    lpszUrlPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwUrlPathLength: {"kind":"UInt32"},
+    lpszExtraInfo: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwExtraInfoLength: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: INTERNET_CERTIFICATE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_CERTIFICATE_INFO = extern struct {
+    ftExpiry: Windows.Win32.WindowsProgramming.FILETIME,
+    ftStart: Windows.Win32.WindowsProgramming.FILETIME,
+    lpszSubjectInfo: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszIssuerInfo: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszProtocolName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszSignatureAlgName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszEncryptionAlgName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwKeySize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: INTERNET_BUFFERSA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_BUFFERSA = extern struct {
+    dwStructSize: {"kind":"UInt32"},
+    Next: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_BUFFERSA},
+    lpcszHeader: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwHeadersLength: {"kind":"UInt32"},
+    dwHeadersTotal: {"kind":"UInt32"},
+    lpvBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwBufferLength: {"kind":"UInt32"},
+    dwBufferTotal: {"kind":"UInt32"},
+    dwOffsetLow: {"kind":"UInt32"},
+    dwOffsetHigh: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: INTERNET_BUFFERSW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_BUFFERSW = extern struct {
+    dwStructSize: {"kind":"UInt32"},
+    Next: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_BUFFERSW},
+    lpcszHeader: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwHeadersLength: {"kind":"UInt32"},
+    dwHeadersTotal: {"kind":"UInt32"},
+    lpvBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwBufferLength: {"kind":"UInt32"},
+    dwBufferTotal: {"kind":"UInt32"},
+    dwOffsetLow: {"kind":"UInt32"},
+    dwOffsetHigh: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: INTERNET_STATUS_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const INTERNET_STATUS_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LPINTERNET_STATUS_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LPINTERNET_STATUS_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: InternetCookieState
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const InternetCookieState = *opaque{
+};
+// --------------------------------------------------------
+// Type: IncomingCookieState
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IncomingCookieState = extern struct {
+    cSession: {"kind":"Int32"},
+    cPersistent: {"kind":"Int32"},
+    cAccepted: {"kind":"Int32"},
+    cLeashed: {"kind":"Int32"},
+    cDowngraded: {"kind":"Int32"},
+    cBlocked: {"kind":"Int32"},
+    pszLocation: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: OutgoingCookieState
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const OutgoingCookieState = extern struct {
+    cSent: {"kind":"Int32"},
+    cSuppressed: {"kind":"Int32"},
+    pszLocation: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: InternetCookieHistory
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const InternetCookieHistory = extern struct {
+    fAccepted: Windows.Win32.SystemServices.BOOL,
+    fLeashed: Windows.Win32.SystemServices.BOOL,
+    fDowngraded: Windows.Win32.SystemServices.BOOL,
+    fRejected: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: CookieDecision
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CookieDecision = extern struct {
+    dwCookieState: {"kind":"UInt32"},
+    fAllowSession: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: GOPHER_FIND_DATAA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GOPHER_FIND_DATAA = extern struct {
+    DisplayString: {"kind":"Array","child": {"kind":"SByte"}},
+    GopherType: {"kind":"UInt32"},
+    SizeLow: {"kind":"UInt32"},
+    SizeHigh: {"kind":"UInt32"},
+    LastModificationTime: Windows.Win32.WindowsProgramming.FILETIME,
+    Locator: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: GOPHER_FIND_DATAW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GOPHER_FIND_DATAW = extern struct {
+    DisplayString: {"kind":"Array","child": {"kind":"UInt16"}},
+    GopherType: {"kind":"UInt32"},
+    SizeLow: {"kind":"UInt32"},
+    SizeHigh: {"kind":"UInt32"},
+    LastModificationTime: Windows.Win32.WindowsProgramming.FILETIME,
+    Locator: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: GOPHER_ADMIN_ATTRIBUTE_TYPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GOPHER_ADMIN_ATTRIBUTE_TYPE = extern struct {
+    Comment: {"kind""Ptr","child":{"kind":"SByte"}},
+    EmailAddress: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: GOPHER_MOD_DATE_ATTRIBUTE_TYPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GOPHER_MOD_DATE_ATTRIBUTE_TYPE = extern struct {
+    DateAndTime: Windows.Win32.WindowsProgramming.FILETIME,
+};
+// --------------------------------------------------------
+// Type: GOPHER_TTL_ATTRIBUTE_TYPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GOPHER_TTL_ATTRIBUTE_TYPE = extern struct {
+    Ttl: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: GOPHER_SCORE_ATTRIBUTE_TYPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GOPHER_SCORE_ATTRIBUTE_TYPE = extern struct {
+    Score: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: GOPHER_SCORE_RANGE_ATTRIBUTE_TYPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GOPHER_SCORE_RANGE_ATTRIBUTE_TYPE = extern struct {
+    LowerBound: {"kind":"Int32"},
+    UpperBound: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: GOPHER_SITE_ATTRIBUTE_TYPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GOPHER_SITE_ATTRIBUTE_TYPE = extern struct {
+    Site: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: GOPHER_ORGANIZATION_ATTRIBUTE_TYPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GOPHER_ORGANIZATION_ATTRIBUTE_TYPE = extern struct {
+    Organization: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: GOPHER_LOCATION_ATTRIBUTE_TYPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GOPHER_LOCATION_ATTRIBUTE_TYPE = extern struct {
+    Location: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: GOPHER_GEOGRAPHICAL_LOCATION_ATTRIBUTE_TYPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GOPHER_GEOGRAPHICAL_LOCATION_ATTRIBUTE_TYPE = extern struct {
+    DegreesNorth: {"kind":"Int32"},
+    MinutesNorth: {"kind":"Int32"},
+    SecondsNorth: {"kind":"Int32"},
+    DegreesEast: {"kind":"Int32"},
+    MinutesEast: {"kind":"Int32"},
+    SecondsEast: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: GOPHER_TIMEZONE_ATTRIBUTE_TYPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GOPHER_TIMEZONE_ATTRIBUTE_TYPE = extern struct {
+    Zone: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: GOPHER_PROVIDER_ATTRIBUTE_TYPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GOPHER_PROVIDER_ATTRIBUTE_TYPE = extern struct {
+    Provider: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: GOPHER_VERSION_ATTRIBUTE_TYPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GOPHER_VERSION_ATTRIBUTE_TYPE = extern struct {
+    Version: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: GOPHER_ABSTRACT_ATTRIBUTE_TYPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GOPHER_ABSTRACT_ATTRIBUTE_TYPE = extern struct {
+    ShortAbstract: {"kind""Ptr","child":{"kind":"SByte"}},
+    AbstractFile: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: GOPHER_VIEW_ATTRIBUTE_TYPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GOPHER_VIEW_ATTRIBUTE_TYPE = extern struct {
+    ContentType: {"kind""Ptr","child":{"kind":"SByte"}},
+    Language: {"kind""Ptr","child":{"kind":"SByte"}},
+    Size: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: GOPHER_VERONICA_ATTRIBUTE_TYPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GOPHER_VERONICA_ATTRIBUTE_TYPE = extern struct {
+    TreeWalk: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: GOPHER_ASK_ATTRIBUTE_TYPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GOPHER_ASK_ATTRIBUTE_TYPE = extern struct {
+    QuestionType: {"kind""Ptr","child":{"kind":"SByte"}},
+    QuestionText: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: GOPHER_UNKNOWN_ATTRIBUTE_TYPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GOPHER_UNKNOWN_ATTRIBUTE_TYPE = extern struct {
+    Text: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: GOPHER_ATTRIBUTE_TYPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GOPHER_ATTRIBUTE_TYPE = extern struct {
+    CategoryId: {"kind":"UInt32"},
+    AttributeId: {"kind":"UInt32"},
+    AttributeType: Windows.Win32.WinInet.GOPHER_ATTRIBUTE_TYPE+_AttributeType_e__Union,
+    // --------------------------------------------------------
+    // Type: _AttributeType_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _AttributeType_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: GOPHER_ATTRIBUTE_ENUMERATOR
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const GOPHER_ATTRIBUTE_ENUMERATOR = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: INTERNET_COOKIE2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_COOKIE2 = extern struct {
+    pwszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszValue: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszDomain: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+    ftExpires: Windows.Win32.WindowsProgramming.FILETIME,
+    fExpiresSet: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: PFN_AUTH_NOTIFY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFN_AUTH_NOTIFY = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: INTERNET_AUTH_NOTIFY_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_AUTH_NOTIFY_DATA = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    dwOptions: {"kind":"UInt32"},
+    pfnNotify: Windows.Win32.WinInet.PFN_AUTH_NOTIFY,
+    dwContext: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: INTERNET_CACHE_ENTRY_INFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_CACHE_ENTRY_INFOA = extern struct {
+    dwStructSize: {"kind":"UInt32"},
+    lpszSourceUrlName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszLocalFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    CacheEntryType: {"kind":"UInt32"},
+    dwUseCount: {"kind":"UInt32"},
+    dwHitRate: {"kind":"UInt32"},
+    dwSizeLow: {"kind":"UInt32"},
+    dwSizeHigh: {"kind":"UInt32"},
+    LastModifiedTime: Windows.Win32.WindowsProgramming.FILETIME,
+    ExpireTime: Windows.Win32.WindowsProgramming.FILETIME,
+    LastAccessTime: Windows.Win32.WindowsProgramming.FILETIME,
+    LastSyncTime: Windows.Win32.WindowsProgramming.FILETIME,
+    lpHeaderInfo: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwHeaderInfoSize: {"kind":"UInt32"},
+    lpszFileExtension: {"kind""Ptr","child":{"kind":"SByte"}},
+    Anonymous: Windows.Win32.WinInet.INTERNET_CACHE_ENTRY_INFOA+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: INTERNET_CACHE_ENTRY_INFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_CACHE_ENTRY_INFOW = extern struct {
+    dwStructSize: {"kind":"UInt32"},
+    lpszSourceUrlName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszLocalFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    CacheEntryType: {"kind":"UInt32"},
+    dwUseCount: {"kind":"UInt32"},
+    dwHitRate: {"kind":"UInt32"},
+    dwSizeLow: {"kind":"UInt32"},
+    dwSizeHigh: {"kind":"UInt32"},
+    LastModifiedTime: Windows.Win32.WindowsProgramming.FILETIME,
+    ExpireTime: Windows.Win32.WindowsProgramming.FILETIME,
+    LastAccessTime: Windows.Win32.WindowsProgramming.FILETIME,
+    LastSyncTime: Windows.Win32.WindowsProgramming.FILETIME,
+    lpHeaderInfo: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwHeaderInfoSize: {"kind":"UInt32"},
+    lpszFileExtension: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Anonymous: Windows.Win32.WinInet.INTERNET_CACHE_ENTRY_INFOW+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: INTERNET_CACHE_TIMESTAMPS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_CACHE_TIMESTAMPS = extern struct {
+    ftExpires: Windows.Win32.WindowsProgramming.FILETIME,
+    ftLastModified: Windows.Win32.WindowsProgramming.FILETIME,
+};
+// --------------------------------------------------------
+// Type: INTERNET_CACHE_GROUP_INFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_CACHE_GROUP_INFOA = extern struct {
+    dwGroupSize: {"kind":"UInt32"},
+    dwGroupFlags: {"kind":"UInt32"},
+    dwGroupType: {"kind":"UInt32"},
+    dwDiskUsage: {"kind":"UInt32"},
+    dwDiskQuota: {"kind":"UInt32"},
+    dwOwnerStorage: {"kind":"Array","child": {"kind":"UInt32"}},
+    szGroupName: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: INTERNET_CACHE_GROUP_INFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_CACHE_GROUP_INFOW = extern struct {
+    dwGroupSize: {"kind":"UInt32"},
+    dwGroupFlags: {"kind":"UInt32"},
+    dwGroupType: {"kind":"UInt32"},
+    dwDiskUsage: {"kind":"UInt32"},
+    dwDiskQuota: {"kind":"UInt32"},
+    dwOwnerStorage: {"kind":"Array","child": {"kind":"UInt32"}},
+    szGroupName: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: AutoProxyHelperVtbl
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AutoProxyHelperVtbl = extern struct {
+    IsResolvable: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.SystemServices.BOOL}}}}}}}}}},
+    GetIPAddress: {"kind":"IntPtr"},
+    ResolveHostName: {"kind":"IntPtr"},
+    IsInNet: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.SystemServices.BOOL}}}}}}}}}},
+    IsResolvableEx: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.SystemServices.BOOL}}}}}}}}}},
+    GetIPAddressEx: {"kind":"IntPtr"},
+    ResolveHostNameEx: {"kind":"IntPtr"},
+    IsInNetEx: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.SystemServices.BOOL}}}}}}}}}},
+    SortIpList: {"kind":"IntPtr"},
+};
+// --------------------------------------------------------
+// Type: AUTO_PROXY_SCRIPT_BUFFER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AUTO_PROXY_SCRIPT_BUFFER = extern struct {
+    dwStructSize: {"kind":"UInt32"},
+    lpszScriptBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwScriptBufferSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: AutoProxyHelperFunctions
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AutoProxyHelperFunctions = extern struct {
+    lpVtbl: {"kind""Ptr","child":Windows.Win32.WinInet.AutoProxyHelperVtbl},
+};
+// --------------------------------------------------------
+// Type: pfnInternetInitializeAutoProxyDll
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const pfnInternetInitializeAutoProxyDll = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: pfnInternetDeInitializeAutoProxyDll
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const pfnInternetDeInitializeAutoProxyDll = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: pfnInternetGetProxyInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const pfnInternetGetProxyInfo = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WPAD_CACHE_DELETE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WPAD_CACHE_DELETE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PFN_DIAL_HANDLER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFN_DIAL_HANDLER = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: IDialEventSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDialEventSink = *opaque{
+    // TODO: Method 'OnEvent'
+};
+// --------------------------------------------------------
+// Type: IDialEngine
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDialEngine = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'GetProperty'
+    // TODO: Method 'SetProperty'
+    // TODO: Method 'Dial'
+    // TODO: Method 'HangUp'
+    // TODO: Method 'GetConnectedState'
+    // TODO: Method 'GetConnectHandle'
+};
+// --------------------------------------------------------
+// Type: IDialBranding
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDialBranding = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'GetBitmap'
+};
+// --------------------------------------------------------
+// Type: INTERNET_PREFETCH_STATUS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_PREFETCH_STATUS = extern struct {
+    dwStatus: {"kind":"UInt32"},
+    dwSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: INTERNET_SECURITY_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_SECURITY_INFO = extern struct {
+    dwSize: {"kind":"UInt32"},
+    pCertificate: {"kind""Ptr","child":Windows.Win32.Security.CERT_CONTEXT},
+    pcCertChain: {"kind""Ptr","child":Windows.Win32.Security.CERT_CHAIN_CONTEXT},
+    connectionInfo: Windows.Win32.Security.SecPkgContext_ConnectionInfo,
+    cipherInfo: Windows.Win32.Security.SecPkgContext_CipherInfo,
+    pcUnverifiedCertChain: {"kind""Ptr","child":Windows.Win32.Security.CERT_CHAIN_CONTEXT},
+    channelBindingToken: Windows.Win32.Security.SecPkgContext_Bindings,
+};
+// --------------------------------------------------------
+// Type: INTERNET_SECURITY_CONNECTION_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_SECURITY_CONNECTION_INFO = extern struct {
+    dwSize: {"kind":"UInt32"},
+    fSecure: Windows.Win32.SystemServices.BOOL,
+    connectionInfo: Windows.Win32.Security.SecPkgContext_ConnectionInfo,
+    cipherInfo: Windows.Win32.Security.SecPkgContext_CipherInfo,
+};
+// --------------------------------------------------------
+// Type: FORTCMD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FORTCMD = *opaque{
+};
+// --------------------------------------------------------
+// Type: FORTSTAT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FORTSTAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: INTERNET_DOWNLOAD_MODE_HANDLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_DOWNLOAD_MODE_HANDLE = extern struct {
+    pcwszFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phFile: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+};
+// --------------------------------------------------------
+// Type: REQUEST_TIMES
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const REQUEST_TIMES = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_REQUEST_TIMES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_REQUEST_TIMES = extern struct {
+    cTimes: {"kind":"UInt32"},
+    rgTimes: {"kind":"Array","child": {"kind":"UInt64"}},
+};
+// --------------------------------------------------------
+// Type: INTERNET_SERVER_CONNECTION_STATE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_SERVER_CONNECTION_STATE = extern struct {
+    lpcwszHostName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fProxy: Windows.Win32.SystemServices.BOOL,
+    dwCounter: {"kind":"UInt32"},
+    dwConnectionLimit: {"kind":"UInt32"},
+    dwAvailableCreates: {"kind":"UInt32"},
+    dwAvailableKeepAlives: {"kind":"UInt32"},
+    dwActiveConnections: {"kind":"UInt32"},
+    dwWaiters: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: INTERNET_END_BROWSER_SESSION_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_END_BROWSER_SESSION_DATA = extern struct {
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwBufferLength: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: INTERNET_CALLBACK_COOKIE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_CALLBACK_COOKIE = extern struct {
+    pcwszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcwszValue: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcwszDomain: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcwszPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ftExpires: Windows.Win32.WindowsProgramming.FILETIME,
+    dwFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: INTERNET_CREDENTIALS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_CREDENTIALS = extern struct {
+    lpcwszHostName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwPort: {"kind":"UInt32"},
+    dwScheme: {"kind":"UInt32"},
+    lpcwszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpcwszRealm: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fAuthIdentity: Windows.Win32.SystemServices.BOOL,
+    Anonymous: Windows.Win32.WinInet.INTERNET_CREDENTIALS+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            lpcwszUserName: {"kind""Ptr","child":{"kind":"UInt16"}},
+            lpcwszPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: HTTP_PUSH_WAIT_HANDLE__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_PUSH_WAIT_HANDLE__ = extern struct {
+    unused: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: HTTP_PUSH_TRANSPORT_SETTING
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_PUSH_TRANSPORT_SETTING = extern struct {
+    TransportSettingId: Guid,
+    BrokerEventId: Guid,
+};
+// --------------------------------------------------------
+// Type: HTTP_PUSH_NOTIFICATION_STATUS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_PUSH_NOTIFICATION_STATUS = extern struct {
+    ChannelStatusValid: Windows.Win32.SystemServices.BOOL,
+    ChannelStatus: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HTTP_PUSH_WAIT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_PUSH_WAIT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: INTERNET_COOKIE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_COOKIE = extern struct {
+    cbSize: {"kind":"UInt32"},
+    pszName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszData: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszDomain: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    pftExpires: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+    dwFlags: {"kind":"UInt32"},
+    pszUrl: {"kind""Ptr","child":{"kind":"SByte"}},
+    pszP3PPolicy: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: COOKIE_DLG_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const COOKIE_DLG_INFO = extern struct {
+    pszServer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pic: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_COOKIE},
+    dwStopWarning: {"kind":"UInt32"},
+    cx: {"kind":"Int32"},
+    cy: {"kind":"Int32"},
+    pszHeader: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwOperation: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: INTERNET_CACHE_CONFIG_PATH_ENTRYA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_CACHE_CONFIG_PATH_ENTRYA = extern struct {
+    CachePath: {"kind":"Array","child": {"kind":"SByte"}},
+    dwCacheSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: INTERNET_CACHE_CONFIG_PATH_ENTRYW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_CACHE_CONFIG_PATH_ENTRYW = extern struct {
+    CachePath: {"kind":"Array","child": {"kind":"UInt16"}},
+    dwCacheSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: INTERNET_CACHE_CONFIG_INFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_CACHE_CONFIG_INFOA = extern struct {
+    dwStructSize: {"kind":"UInt32"},
+    dwContainer: {"kind":"UInt32"},
+    dwQuota: {"kind":"UInt32"},
+    dwReserved4: {"kind":"UInt32"},
+    fPerUser: Windows.Win32.SystemServices.BOOL,
+    dwSyncMode: {"kind":"UInt32"},
+    dwNumCachePaths: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.WinInet.INTERNET_CACHE_CONFIG_INFOA+_Anonymous_e__Union,
+    dwNormalUsage: {"kind":"UInt32"},
+    dwExemptUsage: {"kind":"UInt32"},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            CachePath: {"kind":"Array","child": {"kind":"SByte"}},
+            dwCacheSize: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: INTERNET_CACHE_CONFIG_INFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_CACHE_CONFIG_INFOW = extern struct {
+    dwStructSize: {"kind":"UInt32"},
+    dwContainer: {"kind":"UInt32"},
+    dwQuota: {"kind":"UInt32"},
+    dwReserved4: {"kind":"UInt32"},
+    fPerUser: Windows.Win32.SystemServices.BOOL,
+    dwSyncMode: {"kind":"UInt32"},
+    dwNumCachePaths: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.WinInet.INTERNET_CACHE_CONFIG_INFOW+_Anonymous_e__Union,
+    dwNormalUsage: {"kind":"UInt32"},
+    dwExemptUsage: {"kind":"UInt32"},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            CachePath: {"kind":"Array","child": {"kind":"UInt16"}},
+            dwCacheSize: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: INTERNET_CACHE_CONTAINER_INFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_CACHE_CONTAINER_INFOA = extern struct {
+    dwCacheVersion: {"kind":"UInt32"},
+    lpszName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszCachePrefix: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszVolumeLabel: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszVolumeTitle: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: INTERNET_CACHE_CONTAINER_INFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERNET_CACHE_CONTAINER_INFOW = extern struct {
+    dwCacheVersion: {"kind":"UInt32"},
+    lpszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszCachePrefix: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszVolumeLabel: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszVolumeTitle: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WININET_SYNC_MODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WININET_SYNC_MODE = *opaque{
+};
+// --------------------------------------------------------
+// Type: APP_CACHE_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const APP_CACHE_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: APP_CACHE_DOWNLOAD_ENTRY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const APP_CACHE_DOWNLOAD_ENTRY = extern struct {
+    pwszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwEntryType: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: APP_CACHE_DOWNLOAD_LIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const APP_CACHE_DOWNLOAD_LIST = extern struct {
+    dwEntryCount: {"kind":"UInt32"},
+    pEntries: {"kind""Ptr","child":Windows.Win32.WinInet.APP_CACHE_DOWNLOAD_ENTRY},
+};
+// --------------------------------------------------------
+// Type: APP_CACHE_FINALIZE_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const APP_CACHE_FINALIZE_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: APP_CACHE_GROUP_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const APP_CACHE_GROUP_INFO = extern struct {
+    pwszManifestUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ftLastAccessTime: Windows.Win32.WindowsProgramming.FILETIME,
+    ullSize: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: APP_CACHE_GROUP_LIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const APP_CACHE_GROUP_LIST = extern struct {
+    dwAppCacheGroupCount: {"kind":"UInt32"},
+    pAppCacheGroups: {"kind""Ptr","child":Windows.Win32.WinInet.APP_CACHE_GROUP_INFO},
+};
+// --------------------------------------------------------
+// Type: URLCACHE_ENTRY_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const URLCACHE_ENTRY_INFO = extern struct {
+    pwszSourceUrlName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszLocalFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwCacheEntryType: {"kind":"UInt32"},
+    dwUseCount: {"kind":"UInt32"},
+    dwHitRate: {"kind":"UInt32"},
+    dwSizeLow: {"kind":"UInt32"},
+    dwSizeHigh: {"kind":"UInt32"},
+    ftLastModifiedTime: Windows.Win32.WindowsProgramming.FILETIME,
+    ftExpireTime: Windows.Win32.WindowsProgramming.FILETIME,
+    ftLastAccessTime: Windows.Win32.WindowsProgramming.FILETIME,
+    ftLastSyncTime: Windows.Win32.WindowsProgramming.FILETIME,
+    pbHeaderInfo: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbHeaderInfoSize: {"kind":"UInt32"},
+    pbExtraData: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbExtraDataSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: URL_CACHE_LIMIT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const URL_CACHE_LIMIT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WININET_PROXY_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WININET_PROXY_INFO = extern struct {
+    fProxy: Windows.Win32.SystemServices.BOOL,
+    fBypass: Windows.Win32.SystemServices.BOOL,
+    ProxyScheme: Windows.Win32.WinInet.INTERNET_SCHEME,
+    pwszProxy: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ProxyPort: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: WININET_PROXY_INFO_LIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WININET_PROXY_INFO_LIST = extern struct {
+    dwProxyInfoCount: {"kind":"UInt32"},
+    pProxyInfo: {"kind""Ptr","child":Windows.Win32.WinInet.WININET_PROXY_INFO},
+};
+// --------------------------------------------------------
+// Type: CACHE_OPERATOR
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CACHE_OPERATOR = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: HTTP_WEB_SOCKET_OPERATION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_WEB_SOCKET_OPERATION = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_WEB_SOCKET_BUFFER_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_WEB_SOCKET_BUFFER_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_WEB_SOCKET_CLOSE_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HTTP_WEB_SOCKET_CLOSE_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: HTTP_WEB_SOCKET_ASYNC_RESULT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HTTP_WEB_SOCKET_ASYNC_RESULT = extern struct {
+    AsyncResult: Windows.Win32.WinInet.INTERNET_ASYNC_RESULT,
+    Operation: Windows.Win32.WinInet.HTTP_WEB_SOCKET_OPERATION,
+    BufferType: Windows.Win32.WinInet.HTTP_WEB_SOCKET_BUFFER_TYPE,
+    dwBytesTransferred: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ProofOfPossessionCookieInfoManager
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const ProofOfPossessionCookieInfoManager = opaque {
+};
+// --------------------------------------------------------
+// Type: ProofOfPossessionCookieInfo
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ProofOfPossessionCookieInfo = extern struct {
+    name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    data: {"kind""Ptr","child":{"kind":"UInt16"}},
+    flags: {"kind":"UInt32"},
+    p3pHeader: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: IProofOfPossessionCookieInfoManager
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IProofOfPossessionCookieInfoManager = *opaque{
+    // TODO: Method 'GetCookieInfoForUri'
+};
+// --------------------------------------------------------
+// Type: IProofOfPossessionCookieInfoManager2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IProofOfPossessionCookieInfoManager2 = *opaque{
+    // TODO: Method 'GetCookieInfoWithUriForAccount'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetTimeFromSystemTimeA(
+    pst: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.SYSTEMTIME},
+    dwRFC: {"kind":"UInt32"},
+    lpszTime: {"kind""Ptr","child":{"kind":"SByte"}},
+    cbTime: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetTimeFromSystemTimeW(
+    pst: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.SYSTEMTIME},
+    dwRFC: {"kind":"UInt32"},
+    lpszTime: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cbTime: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetTimeFromSystemTime(
+    pst: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.SYSTEMTIME},
+    dwRFC: {"kind":"UInt32"},
+    lpszTime: {"kind""Ptr","child":{"kind":"SByte"}},
+    cbTime: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetTimeToSystemTimeA(
+    lpszTime: {"kind""Ptr","child":{"kind":"SByte"}},
+    pst: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.SYSTEMTIME},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetTimeToSystemTimeW(
+    lpszTime: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pst: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.SYSTEMTIME},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetTimeToSystemTime(
+    lpszTime: {"kind""Ptr","child":{"kind":"SByte"}},
+    pst: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.SYSTEMTIME},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetCrackUrlA(
+    lpszUrl: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwUrlLength: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    lpUrlComponents: {"kind""Ptr","child":Windows.Win32.WinInet.URL_COMPONENTSA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetCrackUrlW(
+    lpszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwUrlLength: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    lpUrlComponents: {"kind""Ptr","child":Windows.Win32.WinInet.URL_COMPONENTSW},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetCreateUrlA(
+    lpUrlComponents: {"kind""Ptr","child":Windows.Win32.WinInet.URL_COMPONENTSA},
+    dwFlags: {"kind":"UInt32"},
+    lpszUrl: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpdwUrlLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetCreateUrlW(
+    lpUrlComponents: {"kind""Ptr","child":Windows.Win32.WinInet.URL_COMPONENTSW},
+    dwFlags: {"kind":"UInt32"},
+    lpszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpdwUrlLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetCanonicalizeUrlA(
+    lpszUrl: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetCanonicalizeUrlW(
+    lpszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetCombineUrlA(
+    lpszBaseUrl: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszRelativeUrl: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetCombineUrlW(
+    lpszBaseUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszRelativeUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetOpenA(
+    lpszAgent: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwAccessType: {"kind":"UInt32"},
+    lpszProxy: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszProxyBypass: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetOpenW(
+    lpszAgent: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwAccessType: {"kind":"UInt32"},
+    lpszProxy: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszProxyBypass: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetCloseHandle(
+    hInternet: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetConnectA(
+    hInternet: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszServerName: {"kind""Ptr","child":{"kind":"SByte"}},
+    nServerPort: {"kind":"UInt16"},
+    lpszUserName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszPassword: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwService: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetConnectW(
+    hInternet: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    nServerPort: {"kind":"UInt16"},
+    lpszUserName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwService: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetOpenUrlA(
+    hInternet: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszUrl: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszHeaders: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwHeadersLength: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetOpenUrlW(
+    hInternet: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszHeaders: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwHeadersLength: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetReadFile(
+    hFile: {"kind""Ptr","child":{"kind":"Void"}},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwNumberOfBytesToRead: {"kind":"UInt32"},
+    lpdwNumberOfBytesRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetReadFileExA(
+    hFile: {"kind""Ptr","child":{"kind":"Void"}},
+    lpBuffersOut: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_BUFFERSA},
+    dwFlags: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetReadFileExW(
+    hFile: {"kind""Ptr","child":{"kind":"Void"}},
+    lpBuffersOut: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_BUFFERSW},
+    dwFlags: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetSetFilePointer(
+    hFile: {"kind""Ptr","child":{"kind":"Void"}},
+    lDistanceToMove: {"kind":"Int32"},
+    lpDistanceToMoveHigh: {"kind""Ptr","child":{"kind":"Int32"}},
+    dwMoveMethod: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetWriteFile(
+    hFile: {"kind""Ptr","child":{"kind":"Void"}},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwNumberOfBytesToWrite: {"kind":"UInt32"},
+    lpdwNumberOfBytesWritten: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetQueryDataAvailable(
+    hFile: {"kind""Ptr","child":{"kind":"Void"}},
+    lpdwNumberOfBytesAvailable: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwFlags: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetFindNextFileA(
+    hFind: {"kind""Ptr","child":{"kind":"Void"}},
+    lpvFindData: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetFindNextFileW(
+    hFind: {"kind""Ptr","child":{"kind":"Void"}},
+    lpvFindData: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetQueryOptionA(
+    hInternet: {"kind""Ptr","child":{"kind":"Void"}},
+    dwOption: {"kind":"UInt32"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    lpdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetQueryOptionW(
+    hInternet: {"kind""Ptr","child":{"kind":"Void"}},
+    dwOption: {"kind":"UInt32"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    lpdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetSetOptionA(
+    hInternet: {"kind""Ptr","child":{"kind":"Void"}},
+    dwOption: {"kind":"UInt32"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwBufferLength: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetSetOptionW(
+    hInternet: {"kind""Ptr","child":{"kind":"Void"}},
+    dwOption: {"kind":"UInt32"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwBufferLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetSetOptionExA(
+    hInternet: {"kind""Ptr","child":{"kind":"Void"}},
+    dwOption: {"kind":"UInt32"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwBufferLength: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetSetOptionExW(
+    hInternet: {"kind""Ptr","child":{"kind":"Void"}},
+    dwOption: {"kind":"UInt32"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwBufferLength: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetLockRequestFile(
+    hInternet: {"kind""Ptr","child":{"kind":"Void"}},
+    lphLockRequestInfo: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetUnlockRequestFile(
+    hLockRequestInfo: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetGetLastResponseInfoA(
+    lpdwError: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpszBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetGetLastResponseInfoW(
+    lpdwError: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpszBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetSetStatusCallbackA(
+    hInternet: {"kind""Ptr","child":{"kind":"Void"}},
+    lpfnInternetCallback: Windows.Win32.WinInet.INTERNET_STATUS_CALLBACK,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetSetStatusCallbackW(
+    hInternet: {"kind""Ptr","child":{"kind":"Void"}},
+    lpfnInternetCallback: Windows.Win32.WinInet.INTERNET_STATUS_CALLBACK,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetSetStatusCallback(
+    hInternet: {"kind""Ptr","child":{"kind":"Void"}},
+    lpfnInternetCallback: Windows.Win32.WinInet.INTERNET_STATUS_CALLBACK,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FtpFindFirstFileA(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszSearchFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpFindFileData: {"kind""Ptr","child":Windows.Win32.FileSystem.WIN32_FIND_DATAA},
+    dwFlags: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FtpFindFirstFileW(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszSearchFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpFindFileData: {"kind""Ptr","child":Windows.Win32.FileSystem.WIN32_FIND_DATAW},
+    dwFlags: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FtpGetFileA(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszRemoteFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszNewFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    fFailIfExists: Windows.Win32.SystemServices.BOOL,
+    dwFlagsAndAttributes: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FtpGetFileW(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszRemoteFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszNewFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fFailIfExists: Windows.Win32.SystemServices.BOOL,
+    dwFlagsAndAttributes: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FtpPutFileA(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszLocalFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszNewRemoteFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwFlags: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FtpPutFileW(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszLocalFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszNewRemoteFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn FtpGetFileEx(
+    hFtpSession: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszRemoteFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszNewFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fFailIfExists: Windows.Win32.SystemServices.BOOL,
+    dwFlagsAndAttributes: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn FtpPutFileEx(
+    hFtpSession: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszLocalFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszNewRemoteFile: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwFlags: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FtpDeleteFileA(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FtpDeleteFileW(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FtpRenameFileA(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszExisting: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszNew: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FtpRenameFileW(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszExisting: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszNew: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FtpOpenFileA(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwAccess: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FtpOpenFileW(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwAccess: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FtpCreateDirectoryA(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszDirectory: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FtpCreateDirectoryW(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszDirectory: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FtpRemoveDirectoryA(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszDirectory: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FtpRemoveDirectoryW(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszDirectory: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FtpSetCurrentDirectoryA(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszDirectory: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FtpSetCurrentDirectoryW(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszDirectory: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FtpGetCurrentDirectoryA(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszCurrentDirectory: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpdwCurrentDirectory: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FtpGetCurrentDirectoryW(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszCurrentDirectory: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpdwCurrentDirectory: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FtpCommandA(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    fExpectResponse: Windows.Win32.SystemServices.BOOL,
+    dwFlags: {"kind":"UInt32"},
+    lpszCommand: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwContext: {"kind":"UIntPtr"},
+    phFtpCommand: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FtpCommandW(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    fExpectResponse: Windows.Win32.SystemServices.BOOL,
+    dwFlags: {"kind":"UInt32"},
+    lpszCommand: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwContext: {"kind":"UIntPtr"},
+    phFtpCommand: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn FtpGetFileSize(
+    hFile: {"kind""Ptr","child":{"kind":"Void"}},
+    lpdwFileSizeHigh: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn GopherCreateLocatorA(
+    lpszHost: {"kind""Ptr","child":{"kind":"SByte"}},
+    nServerPort: {"kind":"UInt16"},
+    lpszDisplayString: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszSelectorString: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwGopherType: {"kind":"UInt32"},
+    lpszLocator: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn GopherCreateLocatorW(
+    lpszHost: {"kind""Ptr","child":{"kind":"UInt16"}},
+    nServerPort: {"kind":"UInt16"},
+    lpszDisplayString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszSelectorString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwGopherType: {"kind":"UInt32"},
+    lpszLocator: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn GopherGetLocatorTypeA(
+    lpszLocator: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpdwGopherType: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn GopherGetLocatorTypeW(
+    lpszLocator: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpdwGopherType: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn GopherFindFirstFileA(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszLocator: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszSearchString: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpFindData: {"kind""Ptr","child":Windows.Win32.WinInet.GOPHER_FIND_DATAA},
+    dwFlags: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn GopherFindFirstFileW(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszLocator: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszSearchString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpFindData: {"kind""Ptr","child":Windows.Win32.WinInet.GOPHER_FIND_DATAW},
+    dwFlags: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn GopherOpenFileA(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszLocator: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszView: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwFlags: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn GopherOpenFileW(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszLocator: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszView: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn GopherGetAttributeA(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszLocator: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszAttributeName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwBufferLength: {"kind":"UInt32"},
+    lpdwCharactersReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpfnEnumerator: Windows.Win32.WinInet.GOPHER_ATTRIBUTE_ENUMERATOR,
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn GopherGetAttributeW(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszLocator: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszAttributeName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwBufferLength: {"kind":"UInt32"},
+    lpdwCharactersReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpfnEnumerator: Windows.Win32.WinInet.GOPHER_ATTRIBUTE_ENUMERATOR,
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn HttpOpenRequestA(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszVerb: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszObjectName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszVersion: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszReferrer: {"kind""Ptr","child":{"kind":"SByte"}},
+    lplpszAcceptTypes: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    dwFlags: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn HttpOpenRequestW(
+    hConnect: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszVerb: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszObjectName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszVersion: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszReferrer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lplpszAcceptTypes: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    dwFlags: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn HttpAddRequestHeadersA(
+    hRequest: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszHeaders: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwHeadersLength: {"kind":"UInt32"},
+    dwModifiers: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn HttpAddRequestHeadersW(
+    hRequest: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszHeaders: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwHeadersLength: {"kind":"UInt32"},
+    dwModifiers: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn HttpSendRequestA(
+    hRequest: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszHeaders: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwHeadersLength: {"kind":"UInt32"},
+    lpOptional: {"kind""Ptr","child":{"kind":"Void"}},
+    dwOptionalLength: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn HttpSendRequestW(
+    hRequest: {"kind""Ptr","child":{"kind":"Void"}},
+    lpszHeaders: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwHeadersLength: {"kind":"UInt32"},
+    lpOptional: {"kind""Ptr","child":{"kind":"Void"}},
+    dwOptionalLength: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn HttpSendRequestExA(
+    hRequest: {"kind""Ptr","child":{"kind":"Void"}},
+    lpBuffersIn: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_BUFFERSA},
+    lpBuffersOut: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_BUFFERSA},
+    dwFlags: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn HttpSendRequestExW(
+    hRequest: {"kind""Ptr","child":{"kind":"Void"}},
+    lpBuffersIn: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_BUFFERSW},
+    lpBuffersOut: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_BUFFERSW},
+    dwFlags: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn HttpEndRequestA(
+    hRequest: {"kind""Ptr","child":{"kind":"Void"}},
+    lpBuffersOut: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_BUFFERSA},
+    dwFlags: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn HttpEndRequestW(
+    hRequest: {"kind""Ptr","child":{"kind":"Void"}},
+    lpBuffersOut: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_BUFFERSW},
+    dwFlags: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn HttpQueryInfoA(
+    hRequest: {"kind""Ptr","child":{"kind":"Void"}},
+    dwInfoLevel: {"kind":"UInt32"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    lpdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpdwIndex: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn HttpQueryInfoW(
+    hRequest: {"kind""Ptr","child":{"kind":"Void"}},
+    dwInfoLevel: {"kind":"UInt32"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    lpdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpdwIndex: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetSetCookieA(
+    lpszUrl: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszCookieName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszCookieData: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetSetCookieW(
+    lpszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszCookieName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszCookieData: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetGetCookieA(
+    lpszUrl: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszCookieName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszCookieData: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpdwSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetGetCookieW(
+    lpszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszCookieName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszCookieData: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpdwSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetSetCookieExA(
+    lpszUrl: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszCookieName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszCookieData: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwFlags: {"kind":"UInt32"},
+    dwReserved: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetSetCookieExW(
+    lpszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszCookieName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszCookieData: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+    dwReserved: {"kind":"UIntPtr"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetGetCookieExA(
+    lpszUrl: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszCookieName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszCookieData: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpdwSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwFlags: {"kind":"UInt32"},
+    lpReserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetGetCookieExW(
+    lpszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszCookieName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszCookieData: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpdwSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwFlags: {"kind":"UInt32"},
+    lpReserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetFreeCookies(
+    pCookies: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_COOKIE2},
+    dwCookieCount: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetGetCookieEx2(
+    pcwszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcwszCookieName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+    ppCookies: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_COOKIE2}},
+    pdwCookieCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetSetCookieEx2(
+    pcwszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pCookie: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_COOKIE2},
+    pcwszP3PPolicy: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+    pdwCookieState: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetAttemptConnect(
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetCheckConnectionA(
+    lpszUrl: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwFlags: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetCheckConnectionW(
+    lpszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn ResumeSuspendedDownload(
+    hRequest: {"kind""Ptr","child":{"kind":"Void"}},
+    dwResultCode: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetErrorDlg(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hRequest: {"kind""Ptr","child":{"kind":"Void"}},
+    dwError: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    lppvData: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetConfirmZoneCrossingA(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    szUrlPrev: {"kind""Ptr","child":{"kind":"SByte"}},
+    szUrlNew: {"kind""Ptr","child":{"kind":"SByte"}},
+    bPost: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetConfirmZoneCrossingW(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    szUrlPrev: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szUrlNew: {"kind""Ptr","child":{"kind":"UInt16"}},
+    bPost: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetConfirmZoneCrossing(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    szUrlPrev: {"kind""Ptr","child":{"kind":"SByte"}},
+    szUrlNew: {"kind""Ptr","child":{"kind":"SByte"}},
+    bPost: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn CreateUrlCacheEntryA(
+    lpszUrlName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwExpectedFileSize: {"kind":"UInt32"},
+    lpszFileExtension: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn CreateUrlCacheEntryW(
+    lpszUrlName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwExpectedFileSize: {"kind":"UInt32"},
+    lpszFileExtension: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn CommitUrlCacheEntryA(
+    lpszUrlName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszLocalFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ExpireTime: Windows.Win32.WindowsProgramming.FILETIME,
+    LastModifiedTime: Windows.Win32.WindowsProgramming.FILETIME,
+    CacheEntryType: {"kind":"UInt32"},
+    lpHeaderInfo: {"kind""Ptr","child":{"kind":"Byte"}},
+    cchHeaderInfo: {"kind":"UInt32"},
+    lpszFileExtension: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszOriginalUrl: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn CommitUrlCacheEntryW(
+    lpszUrlName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszLocalFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ExpireTime: Windows.Win32.WindowsProgramming.FILETIME,
+    LastModifiedTime: Windows.Win32.WindowsProgramming.FILETIME,
+    CacheEntryType: {"kind":"UInt32"},
+    lpszHeaderInfo: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchHeaderInfo: {"kind":"UInt32"},
+    lpszFileExtension: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszOriginalUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn RetrieveUrlCacheEntryFileA(
+    lpszUrlName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpCacheEntryInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_ENTRY_INFOA},
+    lpcbCacheEntryInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn RetrieveUrlCacheEntryFileW(
+    lpszUrlName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpCacheEntryInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_ENTRY_INFOW},
+    lpcbCacheEntryInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn UnlockUrlCacheEntryFileA(
+    lpszUrlName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn UnlockUrlCacheEntryFileW(
+    lpszUrlName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn UnlockUrlCacheEntryFile(
+    lpszUrlName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn RetrieveUrlCacheEntryStreamA(
+    lpszUrlName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpCacheEntryInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_ENTRY_INFOA},
+    lpcbCacheEntryInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+    fRandomRead: Windows.Win32.SystemServices.BOOL,
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn RetrieveUrlCacheEntryStreamW(
+    lpszUrlName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpCacheEntryInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_ENTRY_INFOW},
+    lpcbCacheEntryInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+    fRandomRead: Windows.Win32.SystemServices.BOOL,
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn ReadUrlCacheEntryStream(
+    hUrlCacheStream: Windows.Win32.SystemServices.HANDLE,
+    dwLocation: {"kind":"UInt32"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    lpdwLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Reserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn ReadUrlCacheEntryStreamEx(
+    hUrlCacheStream: Windows.Win32.SystemServices.HANDLE,
+    qwLocation: {"kind":"UInt64"},
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    lpdwLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn UnlockUrlCacheEntryStream(
+    hUrlCacheStream: Windows.Win32.SystemServices.HANDLE,
+    Reserved: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn GetUrlCacheEntryInfoA(
+    lpszUrlName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpCacheEntryInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_ENTRY_INFOA},
+    lpcbCacheEntryInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn GetUrlCacheEntryInfoW(
+    lpszUrlName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpCacheEntryInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_ENTRY_INFOW},
+    lpcbCacheEntryInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FindFirstUrlCacheGroup(
+    dwFlags: {"kind":"UInt32"},
+    dwFilter: {"kind":"UInt32"},
+    lpSearchCondition: {"kind""Ptr","child":{"kind":"Void"}},
+    dwSearchCondition: {"kind":"UInt32"},
+    lpGroupId: {"kind""Ptr","child":{"kind":"Int64"}},
+    lpReserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FindNextUrlCacheGroup(
+    hFind: Windows.Win32.SystemServices.HANDLE,
+    lpGroupId: {"kind""Ptr","child":{"kind":"Int64"}},
+    lpReserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn GetUrlCacheGroupAttributeA(
+    gid: {"kind":"Int64"},
+    dwFlags: {"kind":"UInt32"},
+    dwAttributes: {"kind":"UInt32"},
+    lpGroupInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_GROUP_INFOA},
+    lpcbGroupInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpReserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn GetUrlCacheGroupAttributeW(
+    gid: {"kind":"Int64"},
+    dwFlags: {"kind":"UInt32"},
+    dwAttributes: {"kind":"UInt32"},
+    lpGroupInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_GROUP_INFOW},
+    lpcbGroupInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpReserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn SetUrlCacheGroupAttributeA(
+    gid: {"kind":"Int64"},
+    dwFlags: {"kind":"UInt32"},
+    dwAttributes: {"kind":"UInt32"},
+    lpGroupInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_GROUP_INFOA},
+    lpReserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn SetUrlCacheGroupAttributeW(
+    gid: {"kind":"Int64"},
+    dwFlags: {"kind":"UInt32"},
+    dwAttributes: {"kind":"UInt32"},
+    lpGroupInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_GROUP_INFOW},
+    lpReserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn GetUrlCacheEntryInfoExA(
+    lpszUrl: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpCacheEntryInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_ENTRY_INFOA},
+    lpcbCacheEntryInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpszRedirectUrl: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpcbRedirectUrl: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpReserved: {"kind""Ptr","child":{"kind":"Void"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn GetUrlCacheEntryInfoExW(
+    lpszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpCacheEntryInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_ENTRY_INFOW},
+    lpcbCacheEntryInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpszRedirectUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpcbRedirectUrl: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpReserved: {"kind""Ptr","child":{"kind":"Void"}},
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn SetUrlCacheEntryInfoA(
+    lpszUrlName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpCacheEntryInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_ENTRY_INFOA},
+    dwFieldControl: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn SetUrlCacheEntryInfoW(
+    lpszUrlName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpCacheEntryInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_ENTRY_INFOW},
+    dwFieldControl: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn CreateUrlCacheGroup(
+    dwFlags: {"kind":"UInt32"},
+    lpReserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn DeleteUrlCacheGroup(
+    GroupId: {"kind":"Int64"},
+    dwFlags: {"kind":"UInt32"},
+    lpReserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn SetUrlCacheEntryGroupA(
+    lpszUrlName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwFlags: {"kind":"UInt32"},
+    GroupId: {"kind":"Int64"},
+    pbGroupAttributes: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbGroupAttributes: {"kind":"UInt32"},
+    lpReserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn SetUrlCacheEntryGroupW(
+    lpszUrlName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+    GroupId: {"kind":"Int64"},
+    pbGroupAttributes: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbGroupAttributes: {"kind":"UInt32"},
+    lpReserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn SetUrlCacheEntryGroup(
+    lpszUrlName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwFlags: {"kind":"UInt32"},
+    GroupId: {"kind":"Int64"},
+    pbGroupAttributes: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbGroupAttributes: {"kind":"UInt32"},
+    lpReserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FindFirstUrlCacheEntryExA(
+    lpszUrlSearchPattern: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwFlags: {"kind":"UInt32"},
+    dwFilter: {"kind":"UInt32"},
+    GroupId: {"kind":"Int64"},
+    lpFirstCacheEntryInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_ENTRY_INFOA},
+    lpcbCacheEntryInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpGroupAttributes: {"kind""Ptr","child":{"kind":"Void"}},
+    lpcbGroupAttributes: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpReserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FindFirstUrlCacheEntryExW(
+    lpszUrlSearchPattern: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+    dwFilter: {"kind":"UInt32"},
+    GroupId: {"kind":"Int64"},
+    lpFirstCacheEntryInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_ENTRY_INFOW},
+    lpcbCacheEntryInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpGroupAttributes: {"kind""Ptr","child":{"kind":"Void"}},
+    lpcbGroupAttributes: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpReserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FindNextUrlCacheEntryExA(
+    hEnumHandle: Windows.Win32.SystemServices.HANDLE,
+    lpNextCacheEntryInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_ENTRY_INFOA},
+    lpcbCacheEntryInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpGroupAttributes: {"kind""Ptr","child":{"kind":"Void"}},
+    lpcbGroupAttributes: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpReserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FindNextUrlCacheEntryExW(
+    hEnumHandle: Windows.Win32.SystemServices.HANDLE,
+    lpNextCacheEntryInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_ENTRY_INFOW},
+    lpcbCacheEntryInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpGroupAttributes: {"kind""Ptr","child":{"kind":"Void"}},
+    lpcbGroupAttributes: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpReserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FindFirstUrlCacheEntryA(
+    lpszUrlSearchPattern: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpFirstCacheEntryInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_ENTRY_INFOA},
+    lpcbCacheEntryInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FindFirstUrlCacheEntryW(
+    lpszUrlSearchPattern: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpFirstCacheEntryInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_ENTRY_INFOW},
+    lpcbCacheEntryInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FindNextUrlCacheEntryA(
+    hEnumHandle: Windows.Win32.SystemServices.HANDLE,
+    lpNextCacheEntryInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_ENTRY_INFOA},
+    lpcbCacheEntryInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FindNextUrlCacheEntryW(
+    hEnumHandle: Windows.Win32.SystemServices.HANDLE,
+    lpNextCacheEntryInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_ENTRY_INFOW},
+    lpcbCacheEntryInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FindCloseUrlCache(
+    hEnumHandle: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn DeleteUrlCacheEntryA(
+    lpszUrlName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn DeleteUrlCacheEntryW(
+    lpszUrlName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn DeleteUrlCacheEntry(
+    lpszUrlName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetDialA(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    lpszConnectoid: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwFlags: {"kind":"UInt32"},
+    lpdwConnection: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetDialW(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    lpszConnectoid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+    lpdwConnection: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetDial(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    lpszConnectoid: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwFlags: {"kind":"UInt32"},
+    lpdwConnection: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetHangUp(
+    dwConnection: {"kind":"UIntPtr"},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetGoOnlineA(
+    lpszURL: {"kind""Ptr","child":{"kind":"SByte"}},
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetGoOnlineW(
+    lpszURL: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetGoOnline(
+    lpszURL: {"kind""Ptr","child":{"kind":"SByte"}},
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetAutodial(
+    dwFlags: {"kind":"UInt32"},
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetAutodialHangup(
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetGetConnectedState(
+    lpdwFlags: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetGetConnectedStateExA(
+    lpdwFlags: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpszConnectionName: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchNameLen: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetGetConnectedStateExW(
+    lpdwFlags: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpszConnectionName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchNameLen: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn DeleteWpadCacheForNetworks(
+    param0: Windows.Win32.WinInet.WPAD_CACHE_DELETE,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetInitializeAutoProxyDll(
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn DetectAutoProxyUrl(
+    pszAutoProxyUrl: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchAutoProxyUrl: {"kind":"UInt32"},
+    dwDetectFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn CreateMD5SSOHash(
+    pszChallengeInfo: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszRealm: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszTarget: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pbHexHash: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn InternetGetConnectedStateEx(
+    lpdwFlags: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpszConnectionName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwNameLen: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetSetDialStateA(
+    lpszConnectoid: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwState: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetSetDialStateW(
+    lpszConnectoid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwState: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetSetDialState(
+    lpszConnectoid: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwState: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetSetPerSiteCookieDecisionA(
+    pchHostName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwDecision: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetSetPerSiteCookieDecisionW(
+    pchHostName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwDecision: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetGetPerSiteCookieDecisionA(
+    pchHostName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pResult: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetGetPerSiteCookieDecisionW(
+    pchHostName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pResult: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetClearAllPerSiteCookieDecisions(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetEnumPerSiteCookieDecisionA(
+    pszSiteName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcSiteNameSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pdwDecision: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwIndex: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetEnumPerSiteCookieDecisionW(
+    pszSiteName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcSiteNameSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pdwDecision: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwIndex: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn PrivacySetZonePreferenceW(
+    dwZone: {"kind":"UInt32"},
+    dwType: {"kind":"UInt32"},
+    dwTemplate: {"kind":"UInt32"},
+    pszPreference: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn PrivacyGetZonePreferenceW(
+    dwZone: {"kind":"UInt32"},
+    dwType: {"kind":"UInt32"},
+    pdwTemplate: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pszBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pdwBufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn HttpIsHostHstsEnabled(
+    pcwszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pfIsHsts: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetAlgIdToStringA(
+    ai: {"kind":"UInt32"},
+    lpstr: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpdwstrLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetAlgIdToStringW(
+    ai: {"kind":"UInt32"},
+    lpstr: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpdwstrLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetSecurityProtocolToStringA(
+    dwProtocol: {"kind":"UInt32"},
+    lpstr: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpdwstrLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetSecurityProtocolToStringW(
+    dwProtocol: {"kind":"UInt32"},
+    lpstr: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpdwstrLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetGetSecurityInfoByURLA(
+    lpszURL: {"kind""Ptr","child":{"kind":"SByte"}},
+    ppCertChain: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Security.CERT_CHAIN_CONTEXT}},
+    pdwSecureFlags: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetGetSecurityInfoByURLW(
+    lpszURL: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppCertChain: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Security.CERT_CHAIN_CONTEXT}},
+    pdwSecureFlags: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetGetSecurityInfoByURL(
+    lpszURL: {"kind""Ptr","child":{"kind":"SByte"}},
+    ppCertChain: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Security.CERT_CHAIN_CONTEXT}},
+    pdwSecureFlags: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn ShowSecurityInfo(
+    hWndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    pSecurityInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_SECURITY_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn ShowX509EncodedCertificate(
+    hWndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    lpCert: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbCert: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn ShowClientAuthCerts(
+    hWndParent: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn ParseX509EncodedCertificateForListBoxEntry(
+    lpCert: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbCert: {"kind":"UInt32"},
+    lpszListBoxEntry: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpdwListBoxEntry: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetShowSecurityInfoByURLA(
+    lpszURL: {"kind""Ptr","child":{"kind":"SByte"}},
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetShowSecurityInfoByURLW(
+    lpszURL: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetShowSecurityInfoByURL(
+    lpszURL: {"kind""Ptr","child":{"kind":"SByte"}},
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetFortezzaCommand(
+    dwCommand: {"kind":"UInt32"},
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    dwReserved: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetQueryFortezzaStatus(
+    pdwStatus: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwReserved: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetWriteFileExA(
+    hFile: {"kind""Ptr","child":{"kind":"Void"}},
+    lpBuffersIn: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_BUFFERSA},
+    dwFlags: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetWriteFileExW(
+    hFile: {"kind""Ptr","child":{"kind":"Void"}},
+    lpBuffersIn: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_BUFFERSW},
+    dwFlags: {"kind":"UInt32"},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn FindP3PPolicySymbol(
+    pszSymbol: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn HttpGetServerCredentials(
+    pwszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppwszUserName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    ppwszPassword: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn HttpPushEnable(
+    hRequest: {"kind""Ptr","child":{"kind":"Void"}},
+    pTransportSetting: {"kind""Ptr","child":Windows.Win32.WinInet.HTTP_PUSH_TRANSPORT_SETTING},
+    phWait: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WinInet.HTTP_PUSH_WAIT_HANDLE__}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn HttpPushWait(
+    hWait: {"kind""Ptr","child":Windows.Win32.WinInet.HTTP_PUSH_WAIT_HANDLE__},
+    eType: Windows.Win32.WinInet.HTTP_PUSH_WAIT_TYPE,
+    pNotificationStatus: {"kind""Ptr","child":Windows.Win32.WinInet.HTTP_PUSH_NOTIFICATION_STATUS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn HttpPushClose(
+    hWait: {"kind""Ptr","child":Windows.Win32.WinInet.HTTP_PUSH_WAIT_HANDLE__},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn HttpCheckDavComplianceA(
+    lpszUrl: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszComplianceToken: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpfFound: {"kind""Ptr","child":{"kind":"Int32"}},
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpvReserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn HttpCheckDavComplianceW(
+    lpszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszComplianceToken: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpfFound: {"kind""Ptr","child":{"kind":"Int32"}},
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpvReserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn IsUrlCacheEntryExpiredA(
+    lpszUrlName: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwFlags: {"kind":"UInt32"},
+    pftLastModified: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn IsUrlCacheEntryExpiredW(
+    lpszUrlName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+    pftLastModified: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn CreateUrlCacheEntryExW(
+    lpszUrlName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwExpectedFileSize: {"kind":"UInt32"},
+    lpszFileExtension: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwReserved: {"kind":"UInt32"},
+    fPreserveIncomingFileName: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn GetUrlCacheEntryBinaryBlob(
+    pwszUrlName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwType: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pftExpireTime: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+    pftAccessTime: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+    pftModifiedTime: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+    ppbBlob: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    pcbBlob: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn CommitUrlCacheEntryBinaryBlob(
+    pwszUrlName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwType: {"kind":"UInt32"},
+    ftExpireTime: Windows.Win32.WindowsProgramming.FILETIME,
+    ftModifiedTime: Windows.Win32.WindowsProgramming.FILETIME,
+    pbBlob: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbBlob: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn CreateUrlCacheContainerA(
+    Name: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpCachePrefix: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszCachePath: {"kind""Ptr","child":{"kind":"SByte"}},
+    KBCacheLimit: {"kind":"UInt32"},
+    dwContainerType: {"kind":"UInt32"},
+    dwOptions: {"kind":"UInt32"},
+    pvBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    cbBuffer: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn CreateUrlCacheContainerW(
+    Name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpCachePrefix: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpszCachePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    KBCacheLimit: {"kind":"UInt32"},
+    dwContainerType: {"kind":"UInt32"},
+    dwOptions: {"kind":"UInt32"},
+    pvBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    cbBuffer: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn DeleteUrlCacheContainerA(
+    Name: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwOptions: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn DeleteUrlCacheContainerW(
+    Name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwOptions: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn FindFirstUrlCacheContainerA(
+    pdwModified: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpContainerInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_CONTAINER_INFOA},
+    lpcbContainerInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwOptions: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn FindFirstUrlCacheContainerW(
+    pdwModified: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpContainerInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_CONTAINER_INFOW},
+    lpcbContainerInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwOptions: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn FindNextUrlCacheContainerA(
+    hEnumHandle: Windows.Win32.SystemServices.HANDLE,
+    lpContainerInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_CONTAINER_INFOA},
+    lpcbContainerInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn FindNextUrlCacheContainerW(
+    hEnumHandle: Windows.Win32.SystemServices.HANDLE,
+    lpContainerInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_CONTAINER_INFOW},
+    lpcbContainerInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FreeUrlCacheSpaceA(
+    lpszCachePath: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwSize: {"kind":"UInt32"},
+    dwFilter: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn FreeUrlCacheSpaceW(
+    lpszCachePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwSize: {"kind":"UInt32"},
+    dwFilter: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn UrlCacheFreeGlobalSpace(
+    ullTargetSize: {"kind":"UInt64"},
+    dwFilter: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn UrlCacheGetGlobalCacheSize(
+    dwFilter: {"kind":"UInt32"},
+    pullSize: {"kind""Ptr","child":{"kind":"UInt64"}},
+    pullLimit: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn GetUrlCacheConfigInfoA(
+    lpCacheConfigInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_CONFIG_INFOA},
+    lpcbCacheConfigInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwFieldControl: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WININET" fn GetUrlCacheConfigInfoW(
+    lpCacheConfigInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_CONFIG_INFOW},
+    lpcbCacheConfigInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dwFieldControl: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn SetUrlCacheConfigInfoA(
+    lpCacheConfigInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_CONFIG_INFOA},
+    dwFieldControl: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn SetUrlCacheConfigInfoW(
+    lpCacheConfigInfo: {"kind""Ptr","child":Windows.Win32.WinInet.INTERNET_CACHE_CONFIG_INFOW},
+    dwFieldControl: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn RunOnceUrlCache(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hinst: Windows.Win32.SystemServices.HINSTANCE,
+    lpszCmd: {"kind""Ptr","child":{"kind":"SByte"}},
+    nCmdShow: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn DeleteIE3Cache(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    hinst: Windows.Win32.SystemServices.HINSTANCE,
+    lpszCmd: {"kind""Ptr","child":{"kind":"SByte"}},
+    nCmdShow: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn UpdateUrlCacheContentPath(
+    szNewPath: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn RegisterUrlCacheNotification(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    uMsg: {"kind":"UInt32"},
+    gid: {"kind":"Int64"},
+    dwOpsFilter: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn GetUrlCacheHeaderData(
+    nIdx: {"kind":"UInt32"},
+    lpdwData: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn SetUrlCacheHeaderData(
+    nIdx: {"kind":"UInt32"},
+    dwData: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn IncrementUrlCacheHeaderData(
+    nIdx: {"kind":"UInt32"},
+    lpdwData: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn LoadUrlCacheContent(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn AppCacheLookup(
+    pwszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+    phAppCache: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn AppCacheCheckManifest(
+    pwszMasterUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszManifestUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pbManifestData: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwManifestDataSize: {"kind":"UInt32"},
+    pbManifestResponseHeaders: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwManifestResponseHeadersSize: {"kind":"UInt32"},
+    peState: {"kind""Ptr","child":Windows.Win32.WinInet.APP_CACHE_STATE},
+    phNewAppCache: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn AppCacheGetDownloadList(
+    hAppCache: {"kind""Ptr","child":{"kind":"Void"}},
+    pDownloadList: {"kind""Ptr","child":Windows.Win32.WinInet.APP_CACHE_DOWNLOAD_LIST},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn AppCacheFreeDownloadList(
+    pDownloadList: {"kind""Ptr","child":Windows.Win32.WinInet.APP_CACHE_DOWNLOAD_LIST},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn AppCacheFinalize(
+    hAppCache: {"kind""Ptr","child":{"kind":"Void"}},
+    pbManifestData: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwManifestDataSize: {"kind":"UInt32"},
+    peState: {"kind""Ptr","child":Windows.Win32.WinInet.APP_CACHE_FINALIZE_STATE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn AppCacheGetFallbackUrl(
+    hAppCache: {"kind""Ptr","child":{"kind":"Void"}},
+    pwszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppwszFallbackUrl: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn AppCacheGetManifestUrl(
+    hAppCache: {"kind""Ptr","child":{"kind":"Void"}},
+    ppwszManifestUrl: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn AppCacheDuplicateHandle(
+    hAppCache: {"kind""Ptr","child":{"kind":"Void"}},
+    phDuplicatedAppCache: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn AppCacheCloseHandle(
+    hAppCache: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn AppCacheFreeGroupList(
+    pAppCacheGroupList: {"kind""Ptr","child":Windows.Win32.WinInet.APP_CACHE_GROUP_LIST},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn AppCacheGetGroupList(
+    pAppCacheGroupList: {"kind""Ptr","child":Windows.Win32.WinInet.APP_CACHE_GROUP_LIST},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn AppCacheGetInfo(
+    hAppCache: {"kind""Ptr","child":{"kind":"Void"}},
+    pAppCacheInfo: {"kind""Ptr","child":Windows.Win32.WinInet.APP_CACHE_GROUP_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn AppCacheDeleteGroup(
+    pwszManifestUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn AppCacheFreeSpace(
+    ftCutOff: Windows.Win32.WindowsProgramming.FILETIME,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn AppCacheGetIEGroupList(
+    pAppCacheGroupList: {"kind""Ptr","child":Windows.Win32.WinInet.APP_CACHE_GROUP_LIST},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn AppCacheDeleteIEGroup(
+    pwszManifestUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn AppCacheFreeIESpace(
+    ftCutOff: Windows.Win32.WindowsProgramming.FILETIME,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn AppCacheCreateAndCommitFile(
+    hAppCache: {"kind""Ptr","child":{"kind":"Void"}},
+    pwszSourceFilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pbResponseHeaders: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwResponseHeadersSize: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn HttpOpenDependencyHandle(
+    hRequestHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    fBackground: Windows.Win32.SystemServices.BOOL,
+    phDependencyHandle: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn HttpCloseDependencyHandle(
+    hDependencyHandle: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn HttpDuplicateDependencyHandle(
+    hDependencyHandle: {"kind""Ptr","child":{"kind":"Void"}},
+    phDuplicatedDependencyHandle: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn HttpIndicatePageLoadComplete(
+    hDependencyHandle: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn UrlCacheFreeEntryInfo(
+    pCacheEntryInfo: {"kind""Ptr","child":Windows.Win32.WinInet.URLCACHE_ENTRY_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn UrlCacheGetEntryInfo(
+    hAppCache: {"kind""Ptr","child":{"kind":"Void"}},
+    pcwszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pCacheEntryInfo: {"kind""Ptr","child":Windows.Win32.WinInet.URLCACHE_ENTRY_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn UrlCacheCloseEntryHandle(
+    hEntryFile: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn UrlCacheRetrieveEntryFile(
+    hAppCache: {"kind""Ptr","child":{"kind":"Void"}},
+    pcwszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pCacheEntryInfo: {"kind""Ptr","child":Windows.Win32.WinInet.URLCACHE_ENTRY_INFO},
+    phEntryFile: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn UrlCacheReadEntryStream(
+    hUrlCacheStream: {"kind""Ptr","child":{"kind":"Void"}},
+    ullLocation: {"kind":"UInt64"},
+    pBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwBufferLen: {"kind":"UInt32"},
+    pdwBufferLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn UrlCacheRetrieveEntryStream(
+    hAppCache: {"kind""Ptr","child":{"kind":"Void"}},
+    pcwszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fRandomRead: Windows.Win32.SystemServices.BOOL,
+    pCacheEntryInfo: {"kind""Ptr","child":Windows.Win32.WinInet.URLCACHE_ENTRY_INFO},
+    phEntryStream: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn UrlCacheUpdateEntryExtraData(
+    hAppCache: {"kind""Ptr","child":{"kind":"Void"}},
+    pcwszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pbExtraData: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbExtraData: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn UrlCacheCreateContainer(
+    pwszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszPrefix: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszDirectory: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ullLimit: {"kind":"UInt64"},
+    dwOptions: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn UrlCacheCheckEntriesExist(
+    rgpwszUrls: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    cEntries: {"kind":"UInt32"},
+    rgfExist: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn UrlCacheGetContentPaths(
+    pppwszDirectories: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}}},
+    pcDirectories: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn UrlCacheGetGlobalLimit(
+    limitType: Windows.Win32.WinInet.URL_CACHE_LIMIT_TYPE,
+    pullLimit: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn UrlCacheSetGlobalLimit(
+    limitType: Windows.Win32.WinInet.URL_CACHE_LIMIT_TYPE,
+    ullLimit: {"kind":"UInt64"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn UrlCacheReloadSettings(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn UrlCacheContainerSetEntryMaximumAge(
+    pwszPrefix: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwEntryMaxAge: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn UrlCacheFindFirstEntry(
+    pwszPrefix: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+    dwFilter: {"kind":"UInt32"},
+    GroupId: {"kind":"Int64"},
+    pCacheEntryInfo: {"kind""Ptr","child":Windows.Win32.WinInet.URLCACHE_ENTRY_INFO},
+    phFind: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn UrlCacheFindNextEntry(
+    hFind: Windows.Win32.SystemServices.HANDLE,
+    pCacheEntryInfo: {"kind""Ptr","child":Windows.Win32.WinInet.URLCACHE_ENTRY_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn UrlCacheServer(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn ReadGuidsForConnectedNetworks(
+    pcNetworks: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pppwszNetworkGuids: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}}},
+    pppbstrNetworkNames: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Automation.BSTR}},
+    pppwszGWMacs: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}}},
+    pcGatewayMacs: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pdwFlags: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn IsHostInProxyBypassList(
+    tScheme: Windows.Win32.WinInet.INTERNET_SCHEME,
+    lpszHost: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchHost: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetFreeProxyInfoList(
+    pProxyInfoList: {"kind""Ptr","child":Windows.Win32.WinInet.WININET_PROXY_INFO_LIST},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetGetProxyForUrl(
+    hInternet: {"kind""Ptr","child":{"kind":"Void"}},
+    pcwszUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pProxyInfoList: {"kind""Ptr","child":Windows.Win32.WinInet.WININET_PROXY_INFO_LIST},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn DoConnectoidsExist(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn GetDiskInfoA(
+    pszPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    pdwClusterSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pdlAvail: {"kind""Ptr","child":{"kind":"UInt64"}},
+    pdlTotal: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn PerformOperationOverUrlCacheA(
+    pszUrlSearchPattern: {"kind""Ptr","child":{"kind":"SByte"}},
+    dwFlags: {"kind":"UInt32"},
+    dwFilter: {"kind":"UInt32"},
+    GroupId: {"kind":"Int64"},
+    pReserved1: {"kind""Ptr","child":{"kind":"Void"}},
+    pdwReserved2: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pReserved3: {"kind""Ptr","child":{"kind":"Void"}},
+    op: Windows.Win32.WinInet.CACHE_OPERATOR,
+    pOperatorData: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn IsProfilesEnabled(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternalInternetGetCookie(
+    lpszUrl: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpszCookieData: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpdwDataSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn ImportCookieFileA(
+    szFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn ImportCookieFileW(
+    szFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn ExportCookieFileA(
+    szFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+    fAppend: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn ExportCookieFileW(
+    szFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fAppend: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn IsDomainLegalCookieDomainA(
+    pchDomain: {"kind""Ptr","child":{"kind":"SByte"}},
+    pchFullDomain: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn IsDomainLegalCookieDomainW(
+    pchDomain: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pchFullDomain: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn HttpWebSocketCompleteUpgrade(
+    hRequest: {"kind""Ptr","child":{"kind":"Void"}},
+    dwContext: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn HttpWebSocketSend(
+    hWebSocket: {"kind""Ptr","child":{"kind":"Void"}},
+    BufferType: Windows.Win32.WinInet.HTTP_WEB_SOCKET_BUFFER_TYPE,
+    pvBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwBufferLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn HttpWebSocketReceive(
+    hWebSocket: {"kind""Ptr","child":{"kind":"Void"}},
+    pvBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwBufferLength: {"kind":"UInt32"},
+    pdwBytesRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pBufferType: {"kind""Ptr","child":Windows.Win32.WinInet.HTTP_WEB_SOCKET_BUFFER_TYPE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn HttpWebSocketClose(
+    hWebSocket: {"kind""Ptr","child":{"kind":"Void"}},
+    usStatus: {"kind":"UInt16"},
+    pvReason: {"kind""Ptr","child":{"kind":"Void"}},
+    dwReasonLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn HttpWebSocketShutdown(
+    hWebSocket: {"kind""Ptr","child":{"kind":"Void"}},
+    usStatus: {"kind":"UInt16"},
+    pvReason: {"kind""Ptr","child":{"kind":"Void"}},
+    dwReasonLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn HttpWebSocketQueryCloseStatus(
+    hWebSocket: {"kind""Ptr","child":{"kind":"Void"}},
+    pusStatus: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pvReason: {"kind""Ptr","child":{"kind":"Void"}},
+    dwReasonLength: {"kind":"UInt32"},
+    pdwReasonLengthConsumed: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WININET" fn InternetConvertUrlFromWireToWideChar(
+    pcszUrl: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchUrl: {"kind":"UInt32"},
+    pcwszBaseUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwCodePageHost: {"kind":"UInt32"},
+    dwCodePagePath: {"kind":"UInt32"},
+    fEncodePathExtra: Windows.Win32.SystemServices.BOOL,
+    dwCodePageExtra: {"kind":"UInt32"},
+    ppwszConvertedUrl: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+],
+
+"unicode_aliases": [
+     "INTERNET_PER_CONN_OPTION"
+     "INTERNET_PER_CONN_OPTION_LIST"
+     "URL_COMPONENTS"
+     "INTERNET_BUFFERS"
+     "GOPHER_FIND_DATA"
+     "INTERNET_CACHE_ENTRY_INFO"
+     "INTERNET_CACHE_GROUP_INFO"
+     "INTERNET_CACHE_CONFIG_PATH_ENTRY"
+     "INTERNET_CACHE_CONFIG_INFO"
+     "INTERNET_CACHE_CONTAINER_INFO"
+     "InternetCrackUrl"
+     "InternetCreateUrl"
+     "InternetCanonicalizeUrl"
+     "InternetCombineUrl"
+     "InternetOpen"
+     "InternetConnect"
+     "InternetOpenUrl"
+     "InternetReadFileEx"
+     "InternetFindNextFile"
+     "InternetQueryOption"
+     "InternetSetOption"
+     "InternetSetOptionEx"
+     "InternetGetLastResponseInfo"
+     "FtpFindFirstFile"
+     "FtpGetFile"
+     "FtpPutFile"
+     "FtpDeleteFile"
+     "FtpRenameFile"
+     "FtpOpenFile"
+     "FtpCreateDirectory"
+     "FtpRemoveDirectory"
+     "FtpSetCurrentDirectory"
+     "FtpGetCurrentDirectory"
+     "FtpCommand"
+     "GopherCreateLocator"
+     "GopherGetLocatorType"
+     "GopherFindFirstFile"
+     "GopherOpenFile"
+     "GopherGetAttribute"
+     "HttpOpenRequest"
+     "HttpAddRequestHeaders"
+     "HttpSendRequest"
+     "HttpSendRequestEx"
+     "HttpEndRequest"
+     "HttpQueryInfo"
+     "InternetSetCookie"
+     "InternetGetCookie"
+     "InternetSetCookieEx"
+     "InternetGetCookieEx"
+     "InternetCheckConnection"
+     "CreateUrlCacheEntry"
+     "CommitUrlCacheEntry"
+     "RetrieveUrlCacheEntryFile"
+     "RetrieveUrlCacheEntryStream"
+     "GetUrlCacheEntryInfo"
+     "GetUrlCacheGroupAttribute"
+     "SetUrlCacheGroupAttribute"
+     "GetUrlCacheEntryInfoEx"
+     "SetUrlCacheEntryInfo"
+     "FindFirstUrlCacheEntryEx"
+     "FindNextUrlCacheEntryEx"
+     "FindFirstUrlCacheEntry"
+     "FindNextUrlCacheEntry"
+     "InternetSetPerSiteCookieDecision"
+     "InternetGetPerSiteCookieDecision"
+     "InternetEnumPerSiteCookieDecision"
+     "InternetAlgIdToString"
+     "InternetSecurityProtocolToString"
+     "InternetWriteFileEx"
+     "HttpCheckDavCompliance"
+     "IsUrlCacheEntryExpired"
+     "CreateUrlCacheContainer"
+     "DeleteUrlCacheContainer"
+     "FindFirstUrlCacheContainer"
+     "FindNextUrlCacheContainer"
+     "FreeUrlCacheSpace"
+     "GetUrlCacheConfigInfo"
+     "SetUrlCacheConfigInfo"
+     "ImportCookieFile"
+     "ExportCookieFile"
+     "IsDomainLegalCookieDomain"
+]}

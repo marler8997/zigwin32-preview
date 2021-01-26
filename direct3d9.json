@@ -1,0 +1,945 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: D3DMATRIX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DMATRIX = extern struct {
+    Anonymous: Windows.Win32.Direct3D9.D3DMATRIX+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            _11: {"kind":"Single"},
+            _12: {"kind":"Single"},
+            _13: {"kind":"Single"},
+            _14: {"kind":"Single"},
+            _21: {"kind":"Single"},
+            _22: {"kind":"Single"},
+            _23: {"kind":"Single"},
+            _24: {"kind":"Single"},
+            _31: {"kind":"Single"},
+            _32: {"kind":"Single"},
+            _33: {"kind":"Single"},
+            _34: {"kind":"Single"},
+            _41: {"kind":"Single"},
+            _42: {"kind":"Single"},
+            _43: {"kind":"Single"},
+            _44: {"kind":"Single"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: D3DVIEWPORT9
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DVIEWPORT9 = extern struct {
+    X: {"kind":"UInt32"},
+    Y: {"kind":"UInt32"},
+    Width: {"kind":"UInt32"},
+    Height: {"kind":"UInt32"},
+    MinZ: {"kind":"Single"},
+    MaxZ: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: D3DCLIPSTATUS9
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DCLIPSTATUS9 = extern struct {
+    ClipUnion: {"kind":"UInt32"},
+    ClipIntersection: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3DMATERIAL9
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DMATERIAL9 = extern struct {
+    Diffuse: Windows.Win32.Dxgi.DXGI_RGBA,
+    Ambient: Windows.Win32.Dxgi.DXGI_RGBA,
+    Specular: Windows.Win32.Dxgi.DXGI_RGBA,
+    Emissive: Windows.Win32.Dxgi.DXGI_RGBA,
+    Power: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: D3DLIGHT9
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DLIGHT9 = extern struct {
+    Type: Windows.Win32.SystemServices.D3DLIGHTTYPE,
+    Diffuse: Windows.Win32.Dxgi.DXGI_RGBA,
+    Specular: Windows.Win32.Dxgi.DXGI_RGBA,
+    Ambient: Windows.Win32.Dxgi.DXGI_RGBA,
+    Position: Windows.Win32.SystemServices.D3DVECTOR,
+    Direction: Windows.Win32.SystemServices.D3DVECTOR,
+    Range: {"kind":"Single"},
+    Falloff: {"kind":"Single"},
+    Attenuation0: {"kind":"Single"},
+    Attenuation1: {"kind":"Single"},
+    Attenuation2: {"kind":"Single"},
+    Theta: {"kind":"Single"},
+    Phi: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: D3DBLENDOP
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DBLENDOP = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DSAMPLERSTATETYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DSAMPLERSTATETYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DTEXTUREFILTERTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DTEXTUREFILTERTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DDECLUSAGE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DDECLUSAGE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DDECLMETHOD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DDECLMETHOD = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DDECLTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DDECLTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DVERTEXELEMENT9
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DVERTEXELEMENT9 = extern struct {
+    Stream: {"kind":"UInt16"},
+    Offset: {"kind":"UInt16"},
+    Type: {"kind":"Byte"},
+    Method: {"kind":"Byte"},
+    Usage: {"kind":"Byte"},
+    UsageIndex: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: D3DSHADER_INSTRUCTION_OPCODE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DSHADER_INSTRUCTION_OPCODE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DSHADER_COMPARISON
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DSHADER_COMPARISON = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DSAMPLER_TEXTURE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DSAMPLER_TEXTURE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DSHADER_PARAM_REGISTER_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DSHADER_PARAM_REGISTER_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DSHADER_MISCTYPE_OFFSETS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DSHADER_MISCTYPE_OFFSETS = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DVS_RASTOUT_OFFSETS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DVS_RASTOUT_OFFSETS = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DVS_ADDRESSMODE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DVS_ADDRESSMODE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DSHADER_ADDRESSMODE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DSHADER_ADDRESSMODE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DSHADER_PARAM_SRCMOD_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DSHADER_PARAM_SRCMOD_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DSHADER_MIN_PRECISION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DSHADER_MIN_PRECISION = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DBASISTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DBASISTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DDEGREETYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DDEGREETYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DPATCHEDGESTYLE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DPATCHEDGESTYLE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DDEVTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DDEVTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DMULTISAMPLE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DMULTISAMPLE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DFORMAT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DFORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DDISPLAYMODE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DDISPLAYMODE = extern struct {
+    Width: {"kind":"UInt32"},
+    Height: {"kind":"UInt32"},
+    RefreshRate: {"kind":"UInt32"},
+    Format: Windows.Win32.Direct3D9.D3DFORMAT,
+};
+// --------------------------------------------------------
+// Type: D3DDEVICE_CREATION_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DDEVICE_CREATION_PARAMETERS = extern struct {
+    AdapterOrdinal: {"kind":"UInt32"},
+    DeviceType: Windows.Win32.Direct3D9.D3DDEVTYPE,
+    hFocusWindow: Windows.Win32.WindowsAndMessaging.HWND,
+    BehaviorFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3DSWAPEFFECT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DSWAPEFFECT = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DPOOL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DPOOL = *opaque{
+};
+// --------------------------------------------------------
+// Type: _D3DPRESENT_PARAMETERS_
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _D3DPRESENT_PARAMETERS_ = extern struct {
+    BackBufferWidth: {"kind":"UInt32"},
+    BackBufferHeight: {"kind":"UInt32"},
+    BackBufferFormat: Windows.Win32.Direct3D9.D3DFORMAT,
+    BackBufferCount: {"kind":"UInt32"},
+    MultiSampleType: Windows.Win32.Direct3D9.D3DMULTISAMPLE_TYPE,
+    MultiSampleQuality: {"kind":"UInt32"},
+    SwapEffect: Windows.Win32.Direct3D9.D3DSWAPEFFECT,
+    hDeviceWindow: Windows.Win32.WindowsAndMessaging.HWND,
+    Windowed: Windows.Win32.SystemServices.BOOL,
+    EnableAutoDepthStencil: Windows.Win32.SystemServices.BOOL,
+    AutoDepthStencilFormat: Windows.Win32.Direct3D9.D3DFORMAT,
+    Flags: {"kind":"UInt32"},
+    FullScreen_RefreshRateInHz: {"kind":"UInt32"},
+    PresentationInterval: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3DGAMMARAMP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DGAMMARAMP = extern struct {
+    red: {"kind":"Array","child": {"kind":"UInt16"}},
+    green: {"kind":"Array","child": {"kind":"UInt16"}},
+    blue: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: D3DBACKBUFFER_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DBACKBUFFER_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DRESOURCETYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DRESOURCETYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DCUBEMAP_FACES
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DCUBEMAP_FACES = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DVERTEXBUFFER_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DVERTEXBUFFER_DESC = extern struct {
+    Format: Windows.Win32.Direct3D9.D3DFORMAT,
+    Type: Windows.Win32.Direct3D9.D3DRESOURCETYPE,
+    Usage: {"kind":"UInt32"},
+    Pool: Windows.Win32.Direct3D9.D3DPOOL,
+    Size: {"kind":"UInt32"},
+    FVF: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3DINDEXBUFFER_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DINDEXBUFFER_DESC = extern struct {
+    Format: Windows.Win32.Direct3D9.D3DFORMAT,
+    Type: Windows.Win32.Direct3D9.D3DRESOURCETYPE,
+    Usage: {"kind":"UInt32"},
+    Pool: Windows.Win32.Direct3D9.D3DPOOL,
+    Size: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3DSURFACE_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DSURFACE_DESC = extern struct {
+    Format: Windows.Win32.Direct3D9.D3DFORMAT,
+    Type: Windows.Win32.Direct3D9.D3DRESOURCETYPE,
+    Usage: {"kind":"UInt32"},
+    Pool: Windows.Win32.Direct3D9.D3DPOOL,
+    MultiSampleType: Windows.Win32.Direct3D9.D3DMULTISAMPLE_TYPE,
+    MultiSampleQuality: {"kind":"UInt32"},
+    Width: {"kind":"UInt32"},
+    Height: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3DVOLUME_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DVOLUME_DESC = extern struct {
+    Format: Windows.Win32.Direct3D9.D3DFORMAT,
+    Type: Windows.Win32.Direct3D9.D3DRESOURCETYPE,
+    Usage: {"kind":"UInt32"},
+    Pool: Windows.Win32.Direct3D9.D3DPOOL,
+    Width: {"kind":"UInt32"},
+    Height: {"kind":"UInt32"},
+    Depth: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3DLOCKED_RECT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DLOCKED_RECT = extern struct {
+    Pitch: {"kind":"Int32"},
+    pBits: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: D3DBOX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DBOX = extern struct {
+    Left: {"kind":"UInt32"},
+    Top: {"kind":"UInt32"},
+    Right: {"kind":"UInt32"},
+    Bottom: {"kind":"UInt32"},
+    Front: {"kind":"UInt32"},
+    Back: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3DLOCKED_BOX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DLOCKED_BOX = extern struct {
+    RowPitch: {"kind":"Int32"},
+    SlicePitch: {"kind":"Int32"},
+    pBits: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: D3DRANGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DRANGE = extern struct {
+    Offset: {"kind":"UInt32"},
+    Size: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3DRECTPATCH_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DRECTPATCH_INFO = extern struct {
+    StartVertexOffsetWidth: {"kind":"UInt32"},
+    StartVertexOffsetHeight: {"kind":"UInt32"},
+    Width: {"kind":"UInt32"},
+    Height: {"kind":"UInt32"},
+    Stride: {"kind":"UInt32"},
+    Basis: Windows.Win32.Direct3D9.D3DBASISTYPE,
+    Degree: Windows.Win32.Direct3D9.D3DDEGREETYPE,
+};
+// --------------------------------------------------------
+// Type: D3DTRIPATCH_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DTRIPATCH_INFO = extern struct {
+    StartVertexOffset: {"kind":"UInt32"},
+    NumVertices: {"kind":"UInt32"},
+    Basis: Windows.Win32.Direct3D9.D3DBASISTYPE,
+    Degree: Windows.Win32.Direct3D9.D3DDEGREETYPE,
+};
+// --------------------------------------------------------
+// Type: D3DADAPTER_IDENTIFIER9
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=4 Size=0
+pub const D3DADAPTER_IDENTIFIER9 = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DRASTER_STATUS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DRASTER_STATUS = extern struct {
+    InVBlank: Windows.Win32.SystemServices.BOOL,
+    ScanLine: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3DDEBUGMONITORTOKENS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DDEBUGMONITORTOKENS = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DQUERYTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DQUERYTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DRESOURCESTATS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DRESOURCESTATS = extern struct {
+    bThrashing: Windows.Win32.SystemServices.BOOL,
+    ApproxBytesDownloaded: {"kind":"UInt32"},
+    NumEvicts: {"kind":"UInt32"},
+    NumVidCreates: {"kind":"UInt32"},
+    LastPri: {"kind":"UInt32"},
+    NumUsed: {"kind":"UInt32"},
+    NumUsedInVidMem: {"kind":"UInt32"},
+    WorkingSet: {"kind":"UInt32"},
+    WorkingSetBytes: {"kind":"UInt32"},
+    TotalManaged: {"kind":"UInt32"},
+    TotalBytes: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3DDEVINFO_RESOURCEMANAGER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DDEVINFO_RESOURCEMANAGER = extern struct {
+    stats: {"kind":"Array","child": Windows.Win32.Direct3D9.D3DRESOURCESTATS},
+};
+// --------------------------------------------------------
+// Type: D3DDEVINFO_D3DVERTEXSTATS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DDEVINFO_D3DVERTEXSTATS = extern struct {
+    NumRenderedTriangles: {"kind":"UInt32"},
+    NumExtraClippingTriangles: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3DDEVINFO_VCACHE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DDEVINFO_VCACHE = extern struct {
+    Pattern: {"kind":"UInt32"},
+    OptMethod: {"kind":"UInt32"},
+    CacheSize: {"kind":"UInt32"},
+    MagicNumber: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3DDEVINFO_D3D9PIPELINETIMINGS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DDEVINFO_D3D9PIPELINETIMINGS = extern struct {
+    VertexProcessingTimePercent: {"kind":"Single"},
+    PixelProcessingTimePercent: {"kind":"Single"},
+    OtherGPUProcessingTimePercent: {"kind":"Single"},
+    GPUIdleTimePercent: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: D3DDEVINFO_D3D9INTERFACETIMINGS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DDEVINFO_D3D9INTERFACETIMINGS = extern struct {
+    WaitingForGPUToUseApplicationResourceTimePercent: {"kind":"Single"},
+    WaitingForGPUToAcceptMoreCommandsTimePercent: {"kind":"Single"},
+    WaitingForGPUToStayWithinLatencyTimePercent: {"kind":"Single"},
+    WaitingForGPUExclusiveResourceTimePercent: {"kind":"Single"},
+    WaitingForGPUOtherTimePercent: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: D3DDEVINFO_D3D9STAGETIMINGS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DDEVINFO_D3D9STAGETIMINGS = extern struct {
+    MemoryProcessingPercent: {"kind":"Single"},
+    ComputationProcessingPercent: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: D3DDEVINFO_D3D9BANDWIDTHTIMINGS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DDEVINFO_D3D9BANDWIDTHTIMINGS = extern struct {
+    MaxBandwidthUtilized: {"kind":"Single"},
+    FrontEndUploadMemoryUtilizedPercent: {"kind":"Single"},
+    VertexRateUtilizedPercent: {"kind":"Single"},
+    TriangleSetupRateUtilizedPercent: {"kind":"Single"},
+    FillRateUtilizedPercent: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: D3DDEVINFO_D3D9CACHEUTILIZATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DDEVINFO_D3D9CACHEUTILIZATION = extern struct {
+    TextureCacheHitRate: {"kind":"Single"},
+    PostTransformVertexCacheHitRate: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: D3DMEMORYPRESSURE
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=4 Size=0
+pub const D3DMEMORYPRESSURE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DCOMPOSERECTSOP
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DCOMPOSERECTSOP = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DCOMPOSERECTDESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DCOMPOSERECTDESC = extern struct {
+    X: {"kind":"UInt16"},
+    Y: {"kind":"UInt16"},
+    Width: {"kind":"UInt16"},
+    Height: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: D3DCOMPOSERECTDESTINATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DCOMPOSERECTDESTINATION = extern struct {
+    SrcRectIndex: {"kind":"UInt16"},
+    Reserved: {"kind":"UInt16"},
+    X: {"kind":"Int16"},
+    Y: {"kind":"Int16"},
+};
+// --------------------------------------------------------
+// Type: D3DPRESENTSTATS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=4 Size=0
+pub const D3DPRESENTSTATS = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DSCANLINEORDERING
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DSCANLINEORDERING = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DDISPLAYMODEEX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DDISPLAYMODEEX = extern struct {
+    Size: {"kind":"UInt32"},
+    Width: {"kind":"UInt32"},
+    Height: {"kind":"UInt32"},
+    RefreshRate: {"kind":"UInt32"},
+    Format: Windows.Win32.Direct3D9.D3DFORMAT,
+    ScanLineOrdering: Windows.Win32.Direct3D9.D3DSCANLINEORDERING,
+};
+// --------------------------------------------------------
+// Type: D3DDISPLAYMODEFILTER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DDISPLAYMODEFILTER = extern struct {
+    Size: {"kind":"UInt32"},
+    Format: Windows.Win32.Direct3D9.D3DFORMAT,
+    ScanLineOrdering: Windows.Win32.Direct3D9.D3DSCANLINEORDERING,
+};
+// --------------------------------------------------------
+// Type: D3DDISPLAYROTATION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DDISPLAYROTATION = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D_OMAC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D_OMAC = extern struct {
+    Omac: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNELTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DAUTHENTICATEDCHANNELTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNEL_QUERY_INPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DAUTHENTICATEDCHANNEL_QUERY_INPUT = extern struct {
+    QueryType: Guid,
+    hChannel: Windows.Win32.SystemServices.HANDLE,
+    SequenceNumber: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT = extern struct {
+    omac: Windows.Win32.Direct3D9.D3D_OMAC,
+    QueryType: Guid,
+    hChannel: Windows.Win32.SystemServices.HANDLE,
+    SequenceNumber: {"kind":"UInt32"},
+    ReturnCode: Windows.Win32.Com.HRESULT,
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNEL_PROTECTION_FLAGS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DAUTHENTICATEDCHANNEL_PROTECTION_FLAGS = extern struct {
+    Anonymous: Windows.Win32.Direct3D9.D3DAUTHENTICATEDCHANNEL_PROTECTION_FLAGS+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            _bitfield: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNEL_QUERYPROTECTION_OUTPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DAUTHENTICATEDCHANNEL_QUERYPROTECTION_OUTPUT = extern struct {
+    Output: Windows.Win32.Direct3D9.D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT,
+    ProtectionFlags: Windows.Win32.Direct3D9.D3DAUTHENTICATEDCHANNEL_PROTECTION_FLAGS,
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNEL_QUERYCHANNELTYPE_OUTPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DAUTHENTICATEDCHANNEL_QUERYCHANNELTYPE_OUTPUT = extern struct {
+    Output: Windows.Win32.Direct3D9.D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT,
+    ChannelType: Windows.Win32.Direct3D9.D3DAUTHENTICATEDCHANNELTYPE,
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNEL_QUERYDEVICEHANDLE_OUTPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DAUTHENTICATEDCHANNEL_QUERYDEVICEHANDLE_OUTPUT = extern struct {
+    Output: Windows.Win32.Direct3D9.D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT,
+    DeviceHandle: Windows.Win32.SystemServices.HANDLE,
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNEL_QUERYCRYPTOSESSION_INPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DAUTHENTICATEDCHANNEL_QUERYCRYPTOSESSION_INPUT = extern struct {
+    Input: Windows.Win32.Direct3D9.D3DAUTHENTICATEDCHANNEL_QUERY_INPUT,
+    DXVA2DecodeHandle: Windows.Win32.SystemServices.HANDLE,
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNEL_QUERYCRYPTOSESSION_OUTPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DAUTHENTICATEDCHANNEL_QUERYCRYPTOSESSION_OUTPUT = extern struct {
+    Output: Windows.Win32.Direct3D9.D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT,
+    DXVA2DecodeHandle: Windows.Win32.SystemServices.HANDLE,
+    CryptoSessionHandle: Windows.Win32.SystemServices.HANDLE,
+    DeviceHandle: Windows.Win32.SystemServices.HANDLE,
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESSCOUNT_OUTPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESSCOUNT_OUTPUT = extern struct {
+    Output: Windows.Win32.Direct3D9.D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT,
+    NumRestrictedSharedResourceProcesses: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESS_INPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESS_INPUT = extern struct {
+    Input: Windows.Win32.Direct3D9.D3DAUTHENTICATEDCHANNEL_QUERY_INPUT,
+    ProcessIndex: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNEL_PROCESSIDENTIFIERTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DAUTHENTICATEDCHANNEL_PROCESSIDENTIFIERTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESS_OUTPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESS_OUTPUT = extern struct {
+    Output: Windows.Win32.Direct3D9.D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT,
+    ProcessIndex: {"kind":"UInt32"},
+    ProcessIdentifer: Windows.Win32.Direct3D9.D3DAUTHENTICATEDCHANNEL_PROCESSIDENTIFIERTYPE,
+    ProcessHandle: Windows.Win32.SystemServices.HANDLE,
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNEL_QUERYUNRESTRICTEDPROTECTEDSHAREDRESOURCECOUNT_OUTPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DAUTHENTICATEDCHANNEL_QUERYUNRESTRICTEDPROTECTEDSHAREDRESOURCECOUNT_OUTPUT = extern struct {
+    Output: Windows.Win32.Direct3D9.D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT,
+    NumUnrestrictedProtectedSharedResources: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTIDCOUNT_INPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTIDCOUNT_INPUT = extern struct {
+    Input: Windows.Win32.Direct3D9.D3DAUTHENTICATEDCHANNEL_QUERY_INPUT,
+    DeviceHandle: Windows.Win32.SystemServices.HANDLE,
+    CryptoSessionHandle: Windows.Win32.SystemServices.HANDLE,
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTIDCOUNT_OUTPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTIDCOUNT_OUTPUT = extern struct {
+    Output: Windows.Win32.Direct3D9.D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT,
+    DeviceHandle: Windows.Win32.SystemServices.HANDLE,
+    CryptoSessionHandle: Windows.Win32.SystemServices.HANDLE,
+    NumOutputIDs: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTID_INPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTID_INPUT = extern struct {
+    Input: Windows.Win32.Direct3D9.D3DAUTHENTICATEDCHANNEL_QUERY_INPUT,
+    DeviceHandle: Windows.Win32.SystemServices.HANDLE,
+    CryptoSessionHandle: Windows.Win32.SystemServices.HANDLE,
+    OutputIDIndex: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTID_OUTPUT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=4 Size=0
+pub const D3DAUTHENTICATEDCHANNEL_QUERYOUTPUTID_OUTPUT = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DBUSTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3DBUSTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNEL_QUERYINFOBUSTYPE_OUTPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DAUTHENTICATEDCHANNEL_QUERYINFOBUSTYPE_OUTPUT = extern struct {
+    Output: Windows.Win32.Direct3D9.D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT,
+    BusType: Windows.Win32.Direct3D9.D3DBUSTYPE,
+    bAccessibleInContiguousBlocks: Windows.Win32.SystemServices.BOOL,
+    bAccessibleInNonContiguousBlocks: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUIDCOUNT_OUTPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUIDCOUNT_OUTPUT = extern struct {
+    Output: Windows.Win32.Direct3D9.D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT,
+    NumEncryptionGuids: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUID_INPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUID_INPUT = extern struct {
+    Input: Windows.Win32.Direct3D9.D3DAUTHENTICATEDCHANNEL_QUERY_INPUT,
+    EncryptionGuidIndex: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUID_OUTPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUID_OUTPUT = extern struct {
+    Output: Windows.Win32.Direct3D9.D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT,
+    EncryptionGuidIndex: {"kind":"UInt32"},
+    EncryptionGuid: Guid,
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNEL_QUERYUNCOMPRESSEDENCRYPTIONLEVEL_OUTPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DAUTHENTICATEDCHANNEL_QUERYUNCOMPRESSEDENCRYPTIONLEVEL_OUTPUT = extern struct {
+    Output: Windows.Win32.Direct3D9.D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT,
+    EncryptionGuid: Guid,
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT = extern struct {
+    omac: Windows.Win32.Direct3D9.D3D_OMAC,
+    ConfigureType: Guid,
+    hChannel: Windows.Win32.SystemServices.HANDLE,
+    SequenceNumber: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNEL_CONFIGURE_OUTPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DAUTHENTICATEDCHANNEL_CONFIGURE_OUTPUT = extern struct {
+    omac: Windows.Win32.Direct3D9.D3D_OMAC,
+    ConfigureType: Guid,
+    hChannel: Windows.Win32.SystemServices.HANDLE,
+    SequenceNumber: {"kind":"UInt32"},
+    ReturnCode: Windows.Win32.Com.HRESULT,
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNEL_CONFIGUREINITIALIZE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DAUTHENTICATEDCHANNEL_CONFIGUREINITIALIZE = extern struct {
+    Parameters: Windows.Win32.Direct3D9.D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT,
+    StartSequenceQuery: {"kind":"UInt32"},
+    StartSequenceConfigure: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNEL_CONFIGUREPROTECTION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DAUTHENTICATEDCHANNEL_CONFIGUREPROTECTION = extern struct {
+    Parameters: Windows.Win32.Direct3D9.D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT,
+    Protections: Windows.Win32.Direct3D9.D3DAUTHENTICATEDCHANNEL_PROTECTION_FLAGS,
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNEL_CONFIGURECRYPTOSESSION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DAUTHENTICATEDCHANNEL_CONFIGURECRYPTOSESSION = extern struct {
+    Parameters: Windows.Win32.Direct3D9.D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT,
+    DXVA2DecodeHandle: Windows.Win32.SystemServices.HANDLE,
+    CryptoSessionHandle: Windows.Win32.SystemServices.HANDLE,
+    DeviceHandle: Windows.Win32.SystemServices.HANDLE,
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNEL_CONFIGURESHAREDRESOURCE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DAUTHENTICATEDCHANNEL_CONFIGURESHAREDRESOURCE = extern struct {
+    Parameters: Windows.Win32.Direct3D9.D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT,
+    ProcessIdentiferType: Windows.Win32.Direct3D9.D3DAUTHENTICATEDCHANNEL_PROCESSIDENTIFIERTYPE,
+    ProcessHandle: Windows.Win32.SystemServices.HANDLE,
+    AllowAccess: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: D3DAUTHENTICATEDCHANNEL_CONFIGUREUNCOMPRESSEDENCRYPTION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DAUTHENTICATEDCHANNEL_CONFIGUREUNCOMPRESSEDENCRYPTION = extern struct {
+    Parameters: Windows.Win32.Direct3D9.D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT,
+    EncryptionGuid: Guid,
+};
+// --------------------------------------------------------
+// Type: D3DENCRYPTED_BLOCK_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3DENCRYPTED_BLOCK_INFO = extern struct {
+    NumEncryptedBytesAtBeginning: {"kind":"UInt32"},
+    NumBytesInSkipPattern: {"kind":"UInt32"},
+    NumBytesInEncryptPattern: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3DAES_CTR_IV
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=4 Size=0
+pub const D3DAES_CTR_IV = *opaque{
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d9" fn D3DPERF_BeginEvent(
+    col: {"kind":"UInt32"},
+    wszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d9" fn D3DPERF_EndEvent(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d9" fn D3DPERF_SetMarker(
+    col: {"kind":"UInt32"},
+    wszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d9" fn D3DPERF_SetRegion(
+    col: {"kind":"UInt32"},
+    wszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d9" fn D3DPERF_QueryRepeatFrame(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d9" fn D3DPERF_SetOptions(
+    dwOptions: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d9" fn D3DPERF_GetStatus(
+],
+
+"unicode_aliases": [
+]}

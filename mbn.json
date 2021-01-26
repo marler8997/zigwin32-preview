@@ -1,0 +1,86 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: MbnConnectionProfileManager
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const MbnConnectionProfileManager = opaque {
+};
+// --------------------------------------------------------
+// Type: MbnInterfaceManager
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const MbnInterfaceManager = opaque {
+};
+// --------------------------------------------------------
+// Type: MbnConnectionManager
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const MbnConnectionManager = opaque {
+};
+// --------------------------------------------------------
+// Type: MbnDeviceServicesManager
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const MbnDeviceServicesManager = opaque {
+};
+// --------------------------------------------------------
+// Type: IDummyMBNUCMExt
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDummyMBNUCMExt = *opaque{
+};
+// --------------------------------------------------------
+// Type: MBN_DEVICE_SERVICE_SESSIONS_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MBN_DEVICE_SERVICE_SESSIONS_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: IMbnDeviceServiceStateEvents
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IMbnDeviceServiceStateEvents = *opaque{
+    // TODO: Method 'OnSessionsStateChange'
+};
+// --------------------------------------------------------
+// Type: __mbnapi_ReferenceRemainingTypes__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const __mbnapi_ReferenceRemainingTypes__ = extern struct {
+    bandClass: Windows.Win32.MobileBroadband.MBN_BAND_CLASS,
+    contextConstants: Windows.Win32.MobileBroadband.MBN_CONTEXT_CONSTANTS,
+    ctrlCaps: Windows.Win32.MobileBroadband.MBN_CTRL_CAPS,
+    dataClass: Windows.Win32.MobileBroadband.MBN_DATA_CLASS,
+    interfaceCapsConstants: Windows.Win32.MobileBroadband.MBN_INTERFACE_CAPS_CONSTANTS,
+    pinConstants: Windows.Win32.MobileBroadband.MBN_PIN_CONSTANTS,
+    providerConstants: Windows.Win32.MobileBroadband.MBN_PROVIDER_CONSTANTS,
+    providerState: Windows.Win32.MobileBroadband.MBN_PROVIDER_STATE,
+    registrationConstants: Windows.Win32.MobileBroadband.MBN_REGISTRATION_CONSTANTS,
+    signalConstants: Windows.Win32.MobileBroadband.MBN_SIGNAL_CONSTANTS,
+    smsCaps: Windows.Win32.MobileBroadband.MBN_SMS_CAPS,
+    smsConstants: Windows.Win32.MobileBroadband.WWAEXT_SMS_CONSTANTS,
+    wwaextSmsConstants: Windows.Win32.MobileBroadband.WWAEXT_SMS_CONSTANTS,
+    smsStatusFlag: Windows.Win32.MobileBroadband.MBN_SMS_STATUS_FLAG,
+};
+// --------------------------------------------------------
+// Type: __DummyPinType__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const __DummyPinType__ = extern struct {
+    pinType: {"kind":"UInt32"},
+};
+],
+
+"func_definitions": [
+],
+
+"unicode_aliases": [
+]}

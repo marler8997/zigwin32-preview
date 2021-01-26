@@ -1,0 +1,2095 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: D3D10_INPUT_CLASSIFICATION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_INPUT_CLASSIFICATION = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_INPUT_ELEMENT_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_INPUT_ELEMENT_DESC = extern struct {
+    SemanticName: {"kind""Ptr","child":{"kind":"SByte"}},
+    SemanticIndex: {"kind":"UInt32"},
+    Format: Windows.Win32.Dxgi.DXGI_FORMAT,
+    InputSlot: {"kind":"UInt32"},
+    AlignedByteOffset: {"kind":"UInt32"},
+    InputSlotClass: Windows.Win32.Direct3D10.D3D10_INPUT_CLASSIFICATION,
+    InstanceDataStepRate: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_FILL_MODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_FILL_MODE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_CULL_MODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_CULL_MODE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_SO_DECLARATION_ENTRY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_SO_DECLARATION_ENTRY = extern struct {
+    SemanticName: {"kind""Ptr","child":{"kind":"SByte"}},
+    SemanticIndex: {"kind":"UInt32"},
+    StartComponent: {"kind":"Byte"},
+    ComponentCount: {"kind":"Byte"},
+    OutputSlot: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: D3D10_VIEWPORT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_VIEWPORT = extern struct {
+    TopLeftX: {"kind":"Int32"},
+    TopLeftY: {"kind":"Int32"},
+    Width: {"kind":"UInt32"},
+    Height: {"kind":"UInt32"},
+    MinDepth: {"kind":"Single"},
+    MaxDepth: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: D3D10_RESOURCE_DIMENSION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_RESOURCE_DIMENSION = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_DSV_DIMENSION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_DSV_DIMENSION = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_RTV_DIMENSION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_RTV_DIMENSION = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_USAGE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_USAGE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_BIND_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_BIND_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_CPU_ACCESS_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_CPU_ACCESS_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_RESOURCE_MISC_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_RESOURCE_MISC_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_MAP
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_MAP = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_MAP_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_MAP_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_RAISE_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_RAISE_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_CLEAR_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_CLEAR_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_BOX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_BOX = extern struct {
+    left: {"kind":"UInt32"},
+    top: {"kind":"UInt32"},
+    front: {"kind":"UInt32"},
+    right: {"kind":"UInt32"},
+    bottom: {"kind":"UInt32"},
+    back: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ID3D10DeviceChild
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10DeviceChild = *opaque{
+    // TODO: Method 'GetDevice'
+    // TODO: Method 'GetPrivateData'
+    // TODO: Method 'SetPrivateData'
+    // TODO: Method 'SetPrivateDataInterface'
+};
+// --------------------------------------------------------
+// Type: D3D10_COMPARISON_FUNC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_COMPARISON_FUNC = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_DEPTH_WRITE_MASK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_DEPTH_WRITE_MASK = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_STENCIL_OP
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_STENCIL_OP = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_DEPTH_STENCILOP_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_DEPTH_STENCILOP_DESC = extern struct {
+    StencilFailOp: Windows.Win32.Direct3D10.D3D10_STENCIL_OP,
+    StencilDepthFailOp: Windows.Win32.Direct3D10.D3D10_STENCIL_OP,
+    StencilPassOp: Windows.Win32.Direct3D10.D3D10_STENCIL_OP,
+    StencilFunc: Windows.Win32.Direct3D10.D3D10_COMPARISON_FUNC,
+};
+// --------------------------------------------------------
+// Type: D3D10_DEPTH_STENCIL_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_DEPTH_STENCIL_DESC = extern struct {
+    DepthEnable: Windows.Win32.SystemServices.BOOL,
+    DepthWriteMask: Windows.Win32.Direct3D10.D3D10_DEPTH_WRITE_MASK,
+    DepthFunc: Windows.Win32.Direct3D10.D3D10_COMPARISON_FUNC,
+    StencilEnable: Windows.Win32.SystemServices.BOOL,
+    StencilReadMask: {"kind":"Byte"},
+    StencilWriteMask: {"kind":"Byte"},
+    FrontFace: Windows.Win32.Direct3D10.D3D10_DEPTH_STENCILOP_DESC,
+    BackFace: Windows.Win32.Direct3D10.D3D10_DEPTH_STENCILOP_DESC,
+};
+// --------------------------------------------------------
+// Type: ID3D10DepthStencilState
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10DepthStencilState = *opaque{
+    // TODO: Method 'GetDesc'
+};
+// --------------------------------------------------------
+// Type: D3D10_BLEND
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_BLEND = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_BLEND_OP
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_BLEND_OP = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_COLOR_WRITE_ENABLE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_COLOR_WRITE_ENABLE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_BLEND_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_BLEND_DESC = extern struct {
+    AlphaToCoverageEnable: Windows.Win32.SystemServices.BOOL,
+    BlendEnable: {"kind":"Array","child": {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.SystemServices.BOOL}}}},
+    SrcBlend: Windows.Win32.Direct3D10.D3D10_BLEND,
+    DestBlend: Windows.Win32.Direct3D10.D3D10_BLEND,
+    BlendOp: Windows.Win32.Direct3D10.D3D10_BLEND_OP,
+    SrcBlendAlpha: Windows.Win32.Direct3D10.D3D10_BLEND,
+    DestBlendAlpha: Windows.Win32.Direct3D10.D3D10_BLEND,
+    BlendOpAlpha: Windows.Win32.Direct3D10.D3D10_BLEND_OP,
+    RenderTargetWriteMask: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: ID3D10BlendState
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10BlendState = *opaque{
+    // TODO: Method 'GetDesc'
+};
+// --------------------------------------------------------
+// Type: D3D10_RASTERIZER_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_RASTERIZER_DESC = extern struct {
+    FillMode: Windows.Win32.Direct3D10.D3D10_FILL_MODE,
+    CullMode: Windows.Win32.Direct3D10.D3D10_CULL_MODE,
+    FrontCounterClockwise: Windows.Win32.SystemServices.BOOL,
+    DepthBias: {"kind":"Int32"},
+    DepthBiasClamp: {"kind":"Single"},
+    SlopeScaledDepthBias: {"kind":"Single"},
+    DepthClipEnable: Windows.Win32.SystemServices.BOOL,
+    ScissorEnable: Windows.Win32.SystemServices.BOOL,
+    MultisampleEnable: Windows.Win32.SystemServices.BOOL,
+    AntialiasedLineEnable: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: ID3D10RasterizerState
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10RasterizerState = *opaque{
+    // TODO: Method 'GetDesc'
+};
+// --------------------------------------------------------
+// Type: D3D10_SUBRESOURCE_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_SUBRESOURCE_DATA = extern struct {
+    pSysMem: {"kind""Ptr","child":{"kind":"Void"}},
+    SysMemPitch: {"kind":"UInt32"},
+    SysMemSlicePitch: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ID3D10Resource
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10Resource = *opaque{
+    // TODO: Method 'GetType'
+    // TODO: Method 'SetEvictionPriority'
+    // TODO: Method 'GetEvictionPriority'
+};
+// --------------------------------------------------------
+// Type: D3D10_BUFFER_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_BUFFER_DESC = extern struct {
+    ByteWidth: {"kind":"UInt32"},
+    Usage: Windows.Win32.Direct3D10.D3D10_USAGE,
+    BindFlags: {"kind":"UInt32"},
+    CPUAccessFlags: {"kind":"UInt32"},
+    MiscFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ID3D10Buffer
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10Buffer = *opaque{
+    // TODO: Method 'Map'
+    // TODO: Method 'Unmap'
+    // TODO: Method 'GetDesc'
+};
+// --------------------------------------------------------
+// Type: D3D10_TEXTURE1D_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_TEXTURE1D_DESC = extern struct {
+    Width: {"kind":"UInt32"},
+    MipLevels: {"kind":"UInt32"},
+    ArraySize: {"kind":"UInt32"},
+    Format: Windows.Win32.Dxgi.DXGI_FORMAT,
+    Usage: Windows.Win32.Direct3D10.D3D10_USAGE,
+    BindFlags: {"kind":"UInt32"},
+    CPUAccessFlags: {"kind":"UInt32"},
+    MiscFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ID3D10Texture1D
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10Texture1D = *opaque{
+    // TODO: Method 'Map'
+    // TODO: Method 'Unmap'
+    // TODO: Method 'GetDesc'
+};
+// --------------------------------------------------------
+// Type: D3D10_TEXTURE2D_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_TEXTURE2D_DESC = extern struct {
+    Width: {"kind":"UInt32"},
+    Height: {"kind":"UInt32"},
+    MipLevels: {"kind":"UInt32"},
+    ArraySize: {"kind":"UInt32"},
+    Format: Windows.Win32.Dxgi.DXGI_FORMAT,
+    SampleDesc: Windows.Win32.Dxgi.DXGI_SAMPLE_DESC,
+    Usage: Windows.Win32.Direct3D10.D3D10_USAGE,
+    BindFlags: {"kind":"UInt32"},
+    CPUAccessFlags: {"kind":"UInt32"},
+    MiscFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_MAPPED_TEXTURE2D
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_MAPPED_TEXTURE2D = extern struct {
+    pData: {"kind""Ptr","child":{"kind":"Void"}},
+    RowPitch: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ID3D10Texture2D
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10Texture2D = *opaque{
+    // TODO: Method 'Map'
+    // TODO: Method 'Unmap'
+    // TODO: Method 'GetDesc'
+};
+// --------------------------------------------------------
+// Type: D3D10_TEXTURE3D_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_TEXTURE3D_DESC = extern struct {
+    Width: {"kind":"UInt32"},
+    Height: {"kind":"UInt32"},
+    Depth: {"kind":"UInt32"},
+    MipLevels: {"kind":"UInt32"},
+    Format: Windows.Win32.Dxgi.DXGI_FORMAT,
+    Usage: Windows.Win32.Direct3D10.D3D10_USAGE,
+    BindFlags: {"kind":"UInt32"},
+    CPUAccessFlags: {"kind":"UInt32"},
+    MiscFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_MAPPED_TEXTURE3D
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_MAPPED_TEXTURE3D = extern struct {
+    pData: {"kind""Ptr","child":{"kind":"Void"}},
+    RowPitch: {"kind":"UInt32"},
+    DepthPitch: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ID3D10Texture3D
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10Texture3D = *opaque{
+    // TODO: Method 'Map'
+    // TODO: Method 'Unmap'
+    // TODO: Method 'GetDesc'
+};
+// --------------------------------------------------------
+// Type: D3D10_TEXTURECUBE_FACE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_TEXTURECUBE_FACE = *opaque{
+};
+// --------------------------------------------------------
+// Type: ID3D10View
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10View = *opaque{
+    // TODO: Method 'GetResource'
+};
+// --------------------------------------------------------
+// Type: D3D10_BUFFER_SRV
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_BUFFER_SRV = extern struct {
+    Anonymous1: Windows.Win32.Direct3D10.D3D10_BUFFER_SRV+_Anonymous1_e__Union,
+    Anonymous2: Windows.Win32.Direct3D10.D3D10_BUFFER_SRV+_Anonymous2_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: D3D10_TEX1D_SRV
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_TEX1D_SRV = extern struct {
+    MostDetailedMip: {"kind":"UInt32"},
+    MipLevels: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_TEX1D_ARRAY_SRV
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_TEX1D_ARRAY_SRV = extern struct {
+    MostDetailedMip: {"kind":"UInt32"},
+    MipLevels: {"kind":"UInt32"},
+    FirstArraySlice: {"kind":"UInt32"},
+    ArraySize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_TEX2D_SRV
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_TEX2D_SRV = extern struct {
+    MostDetailedMip: {"kind":"UInt32"},
+    MipLevels: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_TEX2D_ARRAY_SRV
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_TEX2D_ARRAY_SRV = extern struct {
+    MostDetailedMip: {"kind":"UInt32"},
+    MipLevels: {"kind":"UInt32"},
+    FirstArraySlice: {"kind":"UInt32"},
+    ArraySize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_TEX3D_SRV
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_TEX3D_SRV = extern struct {
+    MostDetailedMip: {"kind":"UInt32"},
+    MipLevels: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_TEXCUBE_SRV
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_TEXCUBE_SRV = extern struct {
+    MostDetailedMip: {"kind":"UInt32"},
+    MipLevels: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_TEX2DMS_SRV
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_TEX2DMS_SRV = extern struct {
+    UnusedField_NothingToDefine: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_TEX2DMS_ARRAY_SRV
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_TEX2DMS_ARRAY_SRV = extern struct {
+    FirstArraySlice: {"kind":"UInt32"},
+    ArraySize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_SHADER_RESOURCE_VIEW_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_SHADER_RESOURCE_VIEW_DESC = extern struct {
+    Format: Windows.Win32.Dxgi.DXGI_FORMAT,
+    ViewDimension: Windows.Win32.Direct3D11.D3D_SRV_DIMENSION,
+    Anonymous: Windows.Win32.Direct3D10.D3D10_SHADER_RESOURCE_VIEW_DESC+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: ID3D10ShaderResourceView
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10ShaderResourceView = *opaque{
+    // TODO: Method 'GetDesc'
+};
+// --------------------------------------------------------
+// Type: D3D10_BUFFER_RTV
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_BUFFER_RTV = extern struct {
+    Anonymous1: Windows.Win32.Direct3D10.D3D10_BUFFER_RTV+_Anonymous1_e__Union,
+    Anonymous2: Windows.Win32.Direct3D10.D3D10_BUFFER_RTV+_Anonymous2_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: D3D10_TEX1D_RTV
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_TEX1D_RTV = extern struct {
+    MipSlice: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_TEX1D_ARRAY_RTV
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_TEX1D_ARRAY_RTV = extern struct {
+    MipSlice: {"kind":"UInt32"},
+    FirstArraySlice: {"kind":"UInt32"},
+    ArraySize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_TEX2D_RTV
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_TEX2D_RTV = extern struct {
+    MipSlice: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_TEX2DMS_RTV
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_TEX2DMS_RTV = extern struct {
+    UnusedField_NothingToDefine: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_TEX2D_ARRAY_RTV
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_TEX2D_ARRAY_RTV = extern struct {
+    MipSlice: {"kind":"UInt32"},
+    FirstArraySlice: {"kind":"UInt32"},
+    ArraySize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_TEX2DMS_ARRAY_RTV
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_TEX2DMS_ARRAY_RTV = extern struct {
+    FirstArraySlice: {"kind":"UInt32"},
+    ArraySize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_TEX3D_RTV
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_TEX3D_RTV = extern struct {
+    MipSlice: {"kind":"UInt32"},
+    FirstWSlice: {"kind":"UInt32"},
+    WSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_RENDER_TARGET_VIEW_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_RENDER_TARGET_VIEW_DESC = extern struct {
+    Format: Windows.Win32.Dxgi.DXGI_FORMAT,
+    ViewDimension: Windows.Win32.Direct3D10.D3D10_RTV_DIMENSION,
+    Anonymous: Windows.Win32.Direct3D10.D3D10_RENDER_TARGET_VIEW_DESC+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: ID3D10RenderTargetView
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10RenderTargetView = *opaque{
+    // TODO: Method 'GetDesc'
+};
+// --------------------------------------------------------
+// Type: D3D10_TEX1D_DSV
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_TEX1D_DSV = extern struct {
+    MipSlice: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_TEX1D_ARRAY_DSV
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_TEX1D_ARRAY_DSV = extern struct {
+    MipSlice: {"kind":"UInt32"},
+    FirstArraySlice: {"kind":"UInt32"},
+    ArraySize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_TEX2D_DSV
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_TEX2D_DSV = extern struct {
+    MipSlice: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_TEX2D_ARRAY_DSV
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_TEX2D_ARRAY_DSV = extern struct {
+    MipSlice: {"kind":"UInt32"},
+    FirstArraySlice: {"kind":"UInt32"},
+    ArraySize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_TEX2DMS_DSV
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_TEX2DMS_DSV = extern struct {
+    UnusedField_NothingToDefine: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_TEX2DMS_ARRAY_DSV
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_TEX2DMS_ARRAY_DSV = extern struct {
+    FirstArraySlice: {"kind":"UInt32"},
+    ArraySize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_DEPTH_STENCIL_VIEW_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_DEPTH_STENCIL_VIEW_DESC = extern struct {
+    Format: Windows.Win32.Dxgi.DXGI_FORMAT,
+    ViewDimension: Windows.Win32.Direct3D10.D3D10_DSV_DIMENSION,
+    Anonymous: Windows.Win32.Direct3D10.D3D10_DEPTH_STENCIL_VIEW_DESC+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: ID3D10DepthStencilView
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10DepthStencilView = *opaque{
+    // TODO: Method 'GetDesc'
+};
+// --------------------------------------------------------
+// Type: ID3D10VertexShader
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10VertexShader = *opaque{
+};
+// --------------------------------------------------------
+// Type: ID3D10GeometryShader
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10GeometryShader = *opaque{
+};
+// --------------------------------------------------------
+// Type: ID3D10PixelShader
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10PixelShader = *opaque{
+};
+// --------------------------------------------------------
+// Type: ID3D10InputLayout
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10InputLayout = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_FILTER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_FILTER = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_FILTER_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_FILTER_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_TEXTURE_ADDRESS_MODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_TEXTURE_ADDRESS_MODE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_SAMPLER_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_SAMPLER_DESC = extern struct {
+    Filter: Windows.Win32.Direct3D10.D3D10_FILTER,
+    AddressU: Windows.Win32.Direct3D10.D3D10_TEXTURE_ADDRESS_MODE,
+    AddressV: Windows.Win32.Direct3D10.D3D10_TEXTURE_ADDRESS_MODE,
+    AddressW: Windows.Win32.Direct3D10.D3D10_TEXTURE_ADDRESS_MODE,
+    MipLODBias: {"kind":"Single"},
+    MaxAnisotropy: {"kind":"UInt32"},
+    ComparisonFunc: Windows.Win32.Direct3D10.D3D10_COMPARISON_FUNC,
+    BorderColor: {"kind":"Array","child": {"kind":"Single"}},
+    MinLOD: {"kind":"Single"},
+    MaxLOD: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: ID3D10SamplerState
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10SamplerState = *opaque{
+    // TODO: Method 'GetDesc'
+};
+// --------------------------------------------------------
+// Type: D3D10_FORMAT_SUPPORT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_FORMAT_SUPPORT = *opaque{
+};
+// --------------------------------------------------------
+// Type: ID3D10Asynchronous
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10Asynchronous = *opaque{
+    // TODO: Method 'Begin'
+    // TODO: Method 'End'
+    // TODO: Method 'GetData'
+    // TODO: Method 'GetDataSize'
+};
+// --------------------------------------------------------
+// Type: D3D10_ASYNC_GETDATA_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_ASYNC_GETDATA_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_QUERY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_QUERY = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_QUERY_MISC_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_QUERY_MISC_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_QUERY_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_QUERY_DESC = extern struct {
+    Query: Windows.Win32.Direct3D10.D3D10_QUERY,
+    MiscFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ID3D10Query
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10Query = *opaque{
+    // TODO: Method 'GetDesc'
+};
+// --------------------------------------------------------
+// Type: ID3D10Predicate
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10Predicate = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_QUERY_DATA_TIMESTAMP_DISJOINT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_QUERY_DATA_TIMESTAMP_DISJOINT = extern struct {
+    Frequency: {"kind":"UInt64"},
+    Disjoint: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: D3D10_QUERY_DATA_PIPELINE_STATISTICS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_QUERY_DATA_PIPELINE_STATISTICS = extern struct {
+    IAVertices: {"kind":"UInt64"},
+    IAPrimitives: {"kind":"UInt64"},
+    VSInvocations: {"kind":"UInt64"},
+    GSInvocations: {"kind":"UInt64"},
+    GSPrimitives: {"kind":"UInt64"},
+    CInvocations: {"kind":"UInt64"},
+    CPrimitives: {"kind":"UInt64"},
+    PSInvocations: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: D3D10_QUERY_DATA_SO_STATISTICS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_QUERY_DATA_SO_STATISTICS = extern struct {
+    NumPrimitivesWritten: {"kind":"UInt64"},
+    PrimitivesStorageNeeded: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: D3D10_COUNTER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_COUNTER = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_COUNTER_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_COUNTER_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_COUNTER_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_COUNTER_DESC = extern struct {
+    Counter: Windows.Win32.Direct3D10.D3D10_COUNTER,
+    MiscFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_COUNTER_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_COUNTER_INFO = extern struct {
+    LastDeviceDependentCounter: Windows.Win32.Direct3D10.D3D10_COUNTER,
+    NumSimultaneousCounters: {"kind":"UInt32"},
+    NumDetectableParallelUnits: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: ID3D10Counter
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10Counter = *opaque{
+    // TODO: Method 'GetDesc'
+};
+// --------------------------------------------------------
+// Type: ID3D10Device
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10Device = *opaque{
+    // TODO: Method 'VSSetConstantBuffers'
+    // TODO: Method 'PSSetShaderResources'
+    // TODO: Method 'PSSetShader'
+    // TODO: Method 'PSSetSamplers'
+    // TODO: Method 'VSSetShader'
+    // TODO: Method 'DrawIndexed'
+    // TODO: Method 'Draw'
+    // TODO: Method 'PSSetConstantBuffers'
+    // TODO: Method 'IASetInputLayout'
+    // TODO: Method 'IASetVertexBuffers'
+    // TODO: Method 'IASetIndexBuffer'
+    // TODO: Method 'DrawIndexedInstanced'
+    // TODO: Method 'DrawInstanced'
+    // TODO: Method 'GSSetConstantBuffers'
+    // TODO: Method 'GSSetShader'
+    // TODO: Method 'IASetPrimitiveTopology'
+    // TODO: Method 'VSSetShaderResources'
+    // TODO: Method 'VSSetSamplers'
+    // TODO: Method 'SetPredication'
+    // TODO: Method 'GSSetShaderResources'
+    // TODO: Method 'GSSetSamplers'
+    // TODO: Method 'OMSetRenderTargets'
+    // TODO: Method 'OMSetBlendState'
+    // TODO: Method 'OMSetDepthStencilState'
+    // TODO: Method 'SOSetTargets'
+    // TODO: Method 'DrawAuto'
+    // TODO: Method 'RSSetState'
+    // TODO: Method 'RSSetViewports'
+    // TODO: Method 'RSSetScissorRects'
+    // TODO: Method 'CopySubresourceRegion'
+    // TODO: Method 'CopyResource'
+    // TODO: Method 'UpdateSubresource'
+    // TODO: Method 'ClearRenderTargetView'
+    // TODO: Method 'ClearDepthStencilView'
+    // TODO: Method 'GenerateMips'
+    // TODO: Method 'ResolveSubresource'
+    // TODO: Method 'VSGetConstantBuffers'
+    // TODO: Method 'PSGetShaderResources'
+    // TODO: Method 'PSGetShader'
+    // TODO: Method 'PSGetSamplers'
+    // TODO: Method 'VSGetShader'
+    // TODO: Method 'PSGetConstantBuffers'
+    // TODO: Method 'IAGetInputLayout'
+    // TODO: Method 'IAGetVertexBuffers'
+    // TODO: Method 'IAGetIndexBuffer'
+    // TODO: Method 'GSGetConstantBuffers'
+    // TODO: Method 'GSGetShader'
+    // TODO: Method 'IAGetPrimitiveTopology'
+    // TODO: Method 'VSGetShaderResources'
+    // TODO: Method 'VSGetSamplers'
+    // TODO: Method 'GetPredication'
+    // TODO: Method 'GSGetShaderResources'
+    // TODO: Method 'GSGetSamplers'
+    // TODO: Method 'OMGetRenderTargets'
+    // TODO: Method 'OMGetBlendState'
+    // TODO: Method 'OMGetDepthStencilState'
+    // TODO: Method 'SOGetTargets'
+    // TODO: Method 'RSGetState'
+    // TODO: Method 'RSGetViewports'
+    // TODO: Method 'RSGetScissorRects'
+    // TODO: Method 'GetDeviceRemovedReason'
+    // TODO: Method 'SetExceptionMode'
+    // TODO: Method 'GetExceptionMode'
+    // TODO: Method 'GetPrivateData'
+    // TODO: Method 'SetPrivateData'
+    // TODO: Method 'SetPrivateDataInterface'
+    // TODO: Method 'ClearState'
+    // TODO: Method 'Flush'
+    // TODO: Method 'CreateBuffer'
+    // TODO: Method 'CreateTexture1D'
+    // TODO: Method 'CreateTexture2D'
+    // TODO: Method 'CreateTexture3D'
+    // TODO: Method 'CreateShaderResourceView'
+    // TODO: Method 'CreateRenderTargetView'
+    // TODO: Method 'CreateDepthStencilView'
+    // TODO: Method 'CreateInputLayout'
+    // TODO: Method 'CreateVertexShader'
+    // TODO: Method 'CreateGeometryShader'
+    // TODO: Method 'CreateGeometryShaderWithStreamOutput'
+    // TODO: Method 'CreatePixelShader'
+    // TODO: Method 'CreateBlendState'
+    // TODO: Method 'CreateDepthStencilState'
+    // TODO: Method 'CreateRasterizerState'
+    // TODO: Method 'CreateSamplerState'
+    // TODO: Method 'CreateQuery'
+    // TODO: Method 'CreatePredicate'
+    // TODO: Method 'CreateCounter'
+    // TODO: Method 'CheckFormatSupport'
+    // TODO: Method 'CheckMultisampleQualityLevels'
+    // TODO: Method 'CheckCounterInfo'
+    // TODO: Method 'CheckCounter'
+    // TODO: Method 'GetCreationFlags'
+    // TODO: Method 'OpenSharedResource'
+    // TODO: Method 'SetTextFilterSize'
+    // TODO: Method 'GetTextFilterSize'
+};
+// --------------------------------------------------------
+// Type: ID3D10Multithread
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10Multithread = *opaque{
+    // TODO: Method 'Enter'
+    // TODO: Method 'Leave'
+    // TODO: Method 'SetMultithreadProtected'
+    // TODO: Method 'GetMultithreadProtected'
+};
+// --------------------------------------------------------
+// Type: D3D10_CREATE_DEVICE_FLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_CREATE_DEVICE_FLAG = *opaque{
+};
+// --------------------------------------------------------
+// Type: ID3D10Debug
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10Debug = *opaque{
+    // TODO: Method 'SetFeatureMask'
+    // TODO: Method 'GetFeatureMask'
+    // TODO: Method 'SetPresentPerRenderOpDelay'
+    // TODO: Method 'GetPresentPerRenderOpDelay'
+    // TODO: Method 'SetSwapChain'
+    // TODO: Method 'GetSwapChain'
+    // TODO: Method 'Validate'
+};
+// --------------------------------------------------------
+// Type: ID3D10SwitchToRef
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10SwitchToRef = *opaque{
+    // TODO: Method 'SetUseRef'
+    // TODO: Method 'GetUseRef'
+};
+// --------------------------------------------------------
+// Type: D3D10_MESSAGE_CATEGORY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_MESSAGE_CATEGORY = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_MESSAGE_SEVERITY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_MESSAGE_SEVERITY = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_MESSAGE_ID
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_MESSAGE_ID = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_MESSAGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_MESSAGE = extern struct {
+    Category: Windows.Win32.Direct3D10.D3D10_MESSAGE_CATEGORY,
+    Severity: Windows.Win32.Direct3D10.D3D10_MESSAGE_SEVERITY,
+    ID: Windows.Win32.Direct3D10.D3D10_MESSAGE_ID,
+    pDescription: {"kind""Ptr","child":{"kind":"SByte"}},
+    DescriptionByteLength: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: D3D10_INFO_QUEUE_FILTER_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_INFO_QUEUE_FILTER_DESC = extern struct {
+    NumCategories: {"kind":"UInt32"},
+    pCategoryList: {"kind""Ptr","child":Windows.Win32.Direct3D10.D3D10_MESSAGE_CATEGORY},
+    NumSeverities: {"kind":"UInt32"},
+    pSeverityList: {"kind""Ptr","child":Windows.Win32.Direct3D10.D3D10_MESSAGE_SEVERITY},
+    NumIDs: {"kind":"UInt32"},
+    pIDList: {"kind""Ptr","child":Windows.Win32.Direct3D10.D3D10_MESSAGE_ID},
+};
+// --------------------------------------------------------
+// Type: D3D10_INFO_QUEUE_FILTER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_INFO_QUEUE_FILTER = extern struct {
+    AllowList: Windows.Win32.Direct3D10.D3D10_INFO_QUEUE_FILTER_DESC,
+    DenyList: Windows.Win32.Direct3D10.D3D10_INFO_QUEUE_FILTER_DESC,
+};
+// --------------------------------------------------------
+// Type: ID3D10InfoQueue
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10InfoQueue = *opaque{
+    // TODO: Method 'SetMessageCountLimit'
+    // TODO: Method 'ClearStoredMessages'
+    // TODO: Method 'GetMessageA'
+    // TODO: Method 'GetNumMessagesAllowedByStorageFilter'
+    // TODO: Method 'GetNumMessagesDeniedByStorageFilter'
+    // TODO: Method 'GetNumStoredMessages'
+    // TODO: Method 'GetNumStoredMessagesAllowedByRetrievalFilter'
+    // TODO: Method 'GetNumMessagesDiscardedByMessageCountLimit'
+    // TODO: Method 'GetMessageCountLimit'
+    // TODO: Method 'AddStorageFilterEntries'
+    // TODO: Method 'GetStorageFilter'
+    // TODO: Method 'ClearStorageFilter'
+    // TODO: Method 'PushEmptyStorageFilter'
+    // TODO: Method 'PushCopyOfStorageFilter'
+    // TODO: Method 'PushStorageFilter'
+    // TODO: Method 'PopStorageFilter'
+    // TODO: Method 'GetStorageFilterStackSize'
+    // TODO: Method 'AddRetrievalFilterEntries'
+    // TODO: Method 'GetRetrievalFilter'
+    // TODO: Method 'ClearRetrievalFilter'
+    // TODO: Method 'PushEmptyRetrievalFilter'
+    // TODO: Method 'PushCopyOfRetrievalFilter'
+    // TODO: Method 'PushRetrievalFilter'
+    // TODO: Method 'PopRetrievalFilter'
+    // TODO: Method 'GetRetrievalFilterStackSize'
+    // TODO: Method 'AddMessage'
+    // TODO: Method 'AddApplicationMessage'
+    // TODO: Method 'SetBreakOnCategory'
+    // TODO: Method 'SetBreakOnSeverity'
+    // TODO: Method 'SetBreakOnID'
+    // TODO: Method 'GetBreakOnCategory'
+    // TODO: Method 'GetBreakOnSeverity'
+    // TODO: Method 'GetBreakOnID'
+    // TODO: Method 'SetMuteDebugOutput'
+    // TODO: Method 'GetMuteDebugOutput'
+};
+// --------------------------------------------------------
+// Type: D3D10_DRIVER_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_DRIVER_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_SHADER_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_SHADER_DESC = extern struct {
+    Version: {"kind":"UInt32"},
+    Creator: {"kind""Ptr","child":{"kind":"SByte"}},
+    Flags: {"kind":"UInt32"},
+    ConstantBuffers: {"kind":"UInt32"},
+    BoundResources: {"kind":"UInt32"},
+    InputParameters: {"kind":"UInt32"},
+    OutputParameters: {"kind":"UInt32"},
+    InstructionCount: {"kind":"UInt32"},
+    TempRegisterCount: {"kind":"UInt32"},
+    TempArrayCount: {"kind":"UInt32"},
+    DefCount: {"kind":"UInt32"},
+    DclCount: {"kind":"UInt32"},
+    TextureNormalInstructions: {"kind":"UInt32"},
+    TextureLoadInstructions: {"kind":"UInt32"},
+    TextureCompInstructions: {"kind":"UInt32"},
+    TextureBiasInstructions: {"kind":"UInt32"},
+    TextureGradientInstructions: {"kind":"UInt32"},
+    FloatInstructionCount: {"kind":"UInt32"},
+    IntInstructionCount: {"kind":"UInt32"},
+    UintInstructionCount: {"kind":"UInt32"},
+    StaticFlowControlCount: {"kind":"UInt32"},
+    DynamicFlowControlCount: {"kind":"UInt32"},
+    MacroInstructionCount: {"kind":"UInt32"},
+    ArrayInstructionCount: {"kind":"UInt32"},
+    CutInstructionCount: {"kind":"UInt32"},
+    EmitInstructionCount: {"kind":"UInt32"},
+    GSOutputTopology: Windows.Win32.Direct3D11.D3D_PRIMITIVE_TOPOLOGY,
+    GSMaxOutputVertexCount: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_SHADER_BUFFER_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_SHADER_BUFFER_DESC = extern struct {
+    Name: {"kind""Ptr","child":{"kind":"SByte"}},
+    Type: Windows.Win32.Direct3D11.D3D_CBUFFER_TYPE,
+    Variables: {"kind":"UInt32"},
+    Size: {"kind":"UInt32"},
+    uFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_SHADER_VARIABLE_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_SHADER_VARIABLE_DESC = extern struct {
+    Name: {"kind""Ptr","child":{"kind":"SByte"}},
+    StartOffset: {"kind":"UInt32"},
+    Size: {"kind":"UInt32"},
+    uFlags: {"kind":"UInt32"},
+    DefaultValue: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: D3D10_SHADER_TYPE_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_SHADER_TYPE_DESC = extern struct {
+    Class: Windows.Win32.Direct3D11.D3D_SHADER_VARIABLE_CLASS,
+    Type: Windows.Win32.Direct3D11.D3D_SHADER_VARIABLE_TYPE,
+    Rows: {"kind":"UInt32"},
+    Columns: {"kind":"UInt32"},
+    Elements: {"kind":"UInt32"},
+    Members: {"kind":"UInt32"},
+    Offset: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_SHADER_INPUT_BIND_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_SHADER_INPUT_BIND_DESC = extern struct {
+    Name: {"kind""Ptr","child":{"kind":"SByte"}},
+    Type: Windows.Win32.Direct3D11.D3D_SHADER_INPUT_TYPE,
+    BindPoint: {"kind":"UInt32"},
+    BindCount: {"kind":"UInt32"},
+    uFlags: {"kind":"UInt32"},
+    ReturnType: Windows.Win32.Direct3D11.D3D_RESOURCE_RETURN_TYPE,
+    Dimension: Windows.Win32.Direct3D11.D3D_SRV_DIMENSION,
+    NumSamples: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_SIGNATURE_PARAMETER_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_SIGNATURE_PARAMETER_DESC = extern struct {
+    SemanticName: {"kind""Ptr","child":{"kind":"SByte"}},
+    SemanticIndex: {"kind":"UInt32"},
+    Register: {"kind":"UInt32"},
+    SystemValueType: Windows.Win32.Direct3D11.D3D_NAME,
+    ComponentType: Windows.Win32.Direct3D11.D3D_REGISTER_COMPONENT_TYPE,
+    Mask: {"kind":"Byte"},
+    ReadWriteMask: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: ID3D10ShaderReflectionType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10ShaderReflectionType = *opaque{
+    // TODO: Method 'GetDesc'
+    // TODO: Method 'GetMemberTypeByIndex'
+    // TODO: Method 'GetMemberTypeByName'
+    // TODO: Method 'GetMemberTypeName'
+};
+// --------------------------------------------------------
+// Type: ID3D10ShaderReflectionVariable
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10ShaderReflectionVariable = *opaque{
+    // TODO: Method 'GetDesc'
+    // TODO: Method 'GetType'
+};
+// --------------------------------------------------------
+// Type: ID3D10ShaderReflectionConstantBuffer
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10ShaderReflectionConstantBuffer = *opaque{
+    // TODO: Method 'GetDesc'
+    // TODO: Method 'GetVariableByIndex'
+    // TODO: Method 'GetVariableByName'
+};
+// --------------------------------------------------------
+// Type: ID3D10ShaderReflection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10ShaderReflection = *opaque{
+    // TODO: Method 'GetDesc'
+    // TODO: Method 'GetConstantBufferByIndex'
+    // TODO: Method 'GetConstantBufferByName'
+    // TODO: Method 'GetResourceBindingDesc'
+    // TODO: Method 'GetInputParameterDesc'
+    // TODO: Method 'GetOutputParameterDesc'
+};
+// --------------------------------------------------------
+// Type: D3D10_DEVICE_STATE_TYPES
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_DEVICE_STATE_TYPES = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_STATE_BLOCK_MASK
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_STATE_BLOCK_MASK = extern struct {
+    VS: {"kind":"Byte"},
+    VSSamplers: {"kind":"Array","child": {"kind":"Byte"}},
+    VSShaderResources: {"kind":"Array","child": {"kind":"Byte"}},
+    VSConstantBuffers: {"kind":"Array","child": {"kind":"Byte"}},
+    GS: {"kind":"Byte"},
+    GSSamplers: {"kind":"Array","child": {"kind":"Byte"}},
+    GSShaderResources: {"kind":"Array","child": {"kind":"Byte"}},
+    GSConstantBuffers: {"kind":"Array","child": {"kind":"Byte"}},
+    PS: {"kind":"Byte"},
+    PSSamplers: {"kind":"Array","child": {"kind":"Byte"}},
+    PSShaderResources: {"kind":"Array","child": {"kind":"Byte"}},
+    PSConstantBuffers: {"kind":"Array","child": {"kind":"Byte"}},
+    IAVertexBuffers: {"kind":"Array","child": {"kind":"Byte"}},
+    IAIndexBuffer: {"kind":"Byte"},
+    IAInputLayout: {"kind":"Byte"},
+    IAPrimitiveTopology: {"kind":"Byte"},
+    OMRenderTargets: {"kind":"Byte"},
+    OMDepthStencilState: {"kind":"Byte"},
+    OMBlendState: {"kind":"Byte"},
+    RSViewports: {"kind":"Byte"},
+    RSScissorRects: {"kind":"Byte"},
+    RSRasterizerState: {"kind":"Byte"},
+    SOBuffers: {"kind":"Byte"},
+    Predication: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: ID3D10StateBlock
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10StateBlock = *opaque{
+    // TODO: Method 'Capture'
+    // TODO: Method 'Apply'
+    // TODO: Method 'ReleaseAllDeviceObjects'
+    // TODO: Method 'GetDevice'
+};
+// --------------------------------------------------------
+// Type: D3D10_EFFECT_TYPE_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_EFFECT_TYPE_DESC = extern struct {
+    TypeName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Class: Windows.Win32.Direct3D11.D3D_SHADER_VARIABLE_CLASS,
+    Type: Windows.Win32.Direct3D11.D3D_SHADER_VARIABLE_TYPE,
+    Elements: {"kind":"UInt32"},
+    Members: {"kind":"UInt32"},
+    Rows: {"kind":"UInt32"},
+    Columns: {"kind":"UInt32"},
+    PackedSize: {"kind":"UInt32"},
+    UnpackedSize: {"kind":"UInt32"},
+    Stride: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ID3D10EffectType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10EffectType = *opaque{
+    // TODO: Method 'IsValid'
+    // TODO: Method 'GetDesc'
+    // TODO: Method 'GetMemberTypeByIndex'
+    // TODO: Method 'GetMemberTypeByName'
+    // TODO: Method 'GetMemberTypeBySemantic'
+    // TODO: Method 'GetMemberName'
+    // TODO: Method 'GetMemberSemantic'
+};
+// --------------------------------------------------------
+// Type: D3D10_EFFECT_VARIABLE_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_EFFECT_VARIABLE_DESC = extern struct {
+    Name: {"kind""Ptr","child":{"kind":"SByte"}},
+    Semantic: {"kind""Ptr","child":{"kind":"SByte"}},
+    Flags: {"kind":"UInt32"},
+    Annotations: {"kind":"UInt32"},
+    BufferOffset: {"kind":"UInt32"},
+    ExplicitBindPoint: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ID3D10EffectVariable
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10EffectVariable = *opaque{
+    // TODO: Method 'IsValid'
+    // TODO: Method 'GetType'
+    // TODO: Method 'GetDesc'
+    // TODO: Method 'GetAnnotationByIndex'
+    // TODO: Method 'GetAnnotationByName'
+    // TODO: Method 'GetMemberByIndex'
+    // TODO: Method 'GetMemberByName'
+    // TODO: Method 'GetMemberBySemantic'
+    // TODO: Method 'GetElement'
+    // TODO: Method 'GetParentConstantBuffer'
+    // TODO: Method 'AsScalar'
+    // TODO: Method 'AsVector'
+    // TODO: Method 'AsMatrix'
+    // TODO: Method 'AsString'
+    // TODO: Method 'AsShaderResource'
+    // TODO: Method 'AsRenderTargetView'
+    // TODO: Method 'AsDepthStencilView'
+    // TODO: Method 'AsConstantBuffer'
+    // TODO: Method 'AsShader'
+    // TODO: Method 'AsBlend'
+    // TODO: Method 'AsDepthStencil'
+    // TODO: Method 'AsRasterizer'
+    // TODO: Method 'AsSampler'
+    // TODO: Method 'SetRawValue'
+    // TODO: Method 'GetRawValue'
+};
+// --------------------------------------------------------
+// Type: ID3D10EffectScalarVariable
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10EffectScalarVariable = *opaque{
+    // TODO: Method 'SetFloat'
+    // TODO: Method 'GetFloat'
+    // TODO: Method 'SetFloatArray'
+    // TODO: Method 'GetFloatArray'
+    // TODO: Method 'SetInt'
+    // TODO: Method 'GetInt'
+    // TODO: Method 'SetIntArray'
+    // TODO: Method 'GetIntArray'
+    // TODO: Method 'SetBool'
+    // TODO: Method 'GetBool'
+    // TODO: Method 'SetBoolArray'
+    // TODO: Method 'GetBoolArray'
+};
+// --------------------------------------------------------
+// Type: ID3D10EffectVectorVariable
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10EffectVectorVariable = *opaque{
+    // TODO: Method 'SetBoolVector'
+    // TODO: Method 'SetIntVector'
+    // TODO: Method 'SetFloatVector'
+    // TODO: Method 'GetBoolVector'
+    // TODO: Method 'GetIntVector'
+    // TODO: Method 'GetFloatVector'
+    // TODO: Method 'SetBoolVectorArray'
+    // TODO: Method 'SetIntVectorArray'
+    // TODO: Method 'SetFloatVectorArray'
+    // TODO: Method 'GetBoolVectorArray'
+    // TODO: Method 'GetIntVectorArray'
+    // TODO: Method 'GetFloatVectorArray'
+};
+// --------------------------------------------------------
+// Type: ID3D10EffectMatrixVariable
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10EffectMatrixVariable = *opaque{
+    // TODO: Method 'SetMatrix'
+    // TODO: Method 'GetMatrix'
+    // TODO: Method 'SetMatrixArray'
+    // TODO: Method 'GetMatrixArray'
+    // TODO: Method 'SetMatrixTranspose'
+    // TODO: Method 'GetMatrixTranspose'
+    // TODO: Method 'SetMatrixTransposeArray'
+    // TODO: Method 'GetMatrixTransposeArray'
+};
+// --------------------------------------------------------
+// Type: ID3D10EffectStringVariable
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10EffectStringVariable = *opaque{
+    // TODO: Method 'GetString'
+    // TODO: Method 'GetStringArray'
+};
+// --------------------------------------------------------
+// Type: ID3D10EffectShaderResourceVariable
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10EffectShaderResourceVariable = *opaque{
+    // TODO: Method 'SetResource'
+    // TODO: Method 'GetResource'
+    // TODO: Method 'SetResourceArray'
+    // TODO: Method 'GetResourceArray'
+};
+// --------------------------------------------------------
+// Type: ID3D10EffectRenderTargetViewVariable
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10EffectRenderTargetViewVariable = *opaque{
+    // TODO: Method 'SetRenderTarget'
+    // TODO: Method 'GetRenderTarget'
+    // TODO: Method 'SetRenderTargetArray'
+    // TODO: Method 'GetRenderTargetArray'
+};
+// --------------------------------------------------------
+// Type: ID3D10EffectDepthStencilViewVariable
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10EffectDepthStencilViewVariable = *opaque{
+    // TODO: Method 'SetDepthStencil'
+    // TODO: Method 'GetDepthStencil'
+    // TODO: Method 'SetDepthStencilArray'
+    // TODO: Method 'GetDepthStencilArray'
+};
+// --------------------------------------------------------
+// Type: ID3D10EffectConstantBuffer
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10EffectConstantBuffer = *opaque{
+    // TODO: Method 'SetConstantBuffer'
+    // TODO: Method 'GetConstantBuffer'
+    // TODO: Method 'SetTextureBuffer'
+    // TODO: Method 'GetTextureBuffer'
+};
+// --------------------------------------------------------
+// Type: D3D10_EFFECT_SHADER_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_EFFECT_SHADER_DESC = extern struct {
+    pInputSignature: {"kind""Ptr","child":{"kind":"Byte"}},
+    IsInline: Windows.Win32.SystemServices.BOOL,
+    pBytecode: {"kind""Ptr","child":{"kind":"Byte"}},
+    BytecodeLength: {"kind":"UInt32"},
+    SODecl: {"kind""Ptr","child":{"kind":"SByte"}},
+    NumInputSignatureEntries: {"kind":"UInt32"},
+    NumOutputSignatureEntries: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ID3D10EffectShaderVariable
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10EffectShaderVariable = *opaque{
+    // TODO: Method 'GetShaderDesc'
+    // TODO: Method 'GetVertexShader'
+    // TODO: Method 'GetGeometryShader'
+    // TODO: Method 'GetPixelShader'
+    // TODO: Method 'GetInputSignatureElementDesc'
+    // TODO: Method 'GetOutputSignatureElementDesc'
+};
+// --------------------------------------------------------
+// Type: ID3D10EffectBlendVariable
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10EffectBlendVariable = *opaque{
+    // TODO: Method 'GetBlendState'
+    // TODO: Method 'GetBackingStore'
+};
+// --------------------------------------------------------
+// Type: ID3D10EffectDepthStencilVariable
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10EffectDepthStencilVariable = *opaque{
+    // TODO: Method 'GetDepthStencilState'
+    // TODO: Method 'GetBackingStore'
+};
+// --------------------------------------------------------
+// Type: ID3D10EffectRasterizerVariable
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10EffectRasterizerVariable = *opaque{
+    // TODO: Method 'GetRasterizerState'
+    // TODO: Method 'GetBackingStore'
+};
+// --------------------------------------------------------
+// Type: ID3D10EffectSamplerVariable
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10EffectSamplerVariable = *opaque{
+    // TODO: Method 'GetSampler'
+    // TODO: Method 'GetBackingStore'
+};
+// --------------------------------------------------------
+// Type: D3D10_PASS_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_PASS_DESC = extern struct {
+    Name: {"kind""Ptr","child":{"kind":"SByte"}},
+    Annotations: {"kind":"UInt32"},
+    pIAInputSignature: {"kind""Ptr","child":{"kind":"Byte"}},
+    IAInputSignatureSize: {"kind":"UIntPtr"},
+    StencilRef: {"kind":"UInt32"},
+    SampleMask: {"kind":"UInt32"},
+    BlendFactor: {"kind":"Array","child": {"kind":"Single"}},
+};
+// --------------------------------------------------------
+// Type: D3D10_PASS_SHADER_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_PASS_SHADER_DESC = extern struct {
+    pShaderVariable: Windows.Win32.Direct3D10.ID3D10EffectShaderVariable,
+    ShaderIndex: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ID3D10EffectPass
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10EffectPass = *opaque{
+    // TODO: Method 'IsValid'
+    // TODO: Method 'GetDesc'
+    // TODO: Method 'GetVertexShaderDesc'
+    // TODO: Method 'GetGeometryShaderDesc'
+    // TODO: Method 'GetPixelShaderDesc'
+    // TODO: Method 'GetAnnotationByIndex'
+    // TODO: Method 'GetAnnotationByName'
+    // TODO: Method 'Apply'
+    // TODO: Method 'ComputeStateBlockMask'
+};
+// --------------------------------------------------------
+// Type: D3D10_TECHNIQUE_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_TECHNIQUE_DESC = extern struct {
+    Name: {"kind""Ptr","child":{"kind":"SByte"}},
+    Passes: {"kind":"UInt32"},
+    Annotations: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ID3D10EffectTechnique
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10EffectTechnique = *opaque{
+    // TODO: Method 'IsValid'
+    // TODO: Method 'GetDesc'
+    // TODO: Method 'GetAnnotationByIndex'
+    // TODO: Method 'GetAnnotationByName'
+    // TODO: Method 'GetPassByIndex'
+    // TODO: Method 'GetPassByName'
+    // TODO: Method 'ComputeStateBlockMask'
+};
+// --------------------------------------------------------
+// Type: D3D10_EFFECT_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_EFFECT_DESC = extern struct {
+    IsChildEffect: Windows.Win32.SystemServices.BOOL,
+    ConstantBuffers: {"kind":"UInt32"},
+    SharedConstantBuffers: {"kind":"UInt32"},
+    GlobalVariables: {"kind":"UInt32"},
+    SharedGlobalVariables: {"kind":"UInt32"},
+    Techniques: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ID3D10Effect
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10Effect = *opaque{
+    // TODO: Method 'IsValid'
+    // TODO: Method 'IsPool'
+    // TODO: Method 'GetDevice'
+    // TODO: Method 'GetDesc'
+    // TODO: Method 'GetConstantBufferByIndex'
+    // TODO: Method 'GetConstantBufferByName'
+    // TODO: Method 'GetVariableByIndex'
+    // TODO: Method 'GetVariableByName'
+    // TODO: Method 'GetVariableBySemantic'
+    // TODO: Method 'GetTechniqueByIndex'
+    // TODO: Method 'GetTechniqueByName'
+    // TODO: Method 'Optimize'
+    // TODO: Method 'IsOptimized'
+};
+// --------------------------------------------------------
+// Type: ID3D10EffectPool
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10EffectPool = *opaque{
+    // TODO: Method 'AsEffect'
+};
+// --------------------------------------------------------
+// Type: D3D10_FEATURE_LEVEL1
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_FEATURE_LEVEL1 = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_RENDER_TARGET_BLEND_DESC1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_RENDER_TARGET_BLEND_DESC1 = extern struct {
+    BlendEnable: Windows.Win32.SystemServices.BOOL,
+    SrcBlend: Windows.Win32.Direct3D10.D3D10_BLEND,
+    DestBlend: Windows.Win32.Direct3D10.D3D10_BLEND,
+    BlendOp: Windows.Win32.Direct3D10.D3D10_BLEND_OP,
+    SrcBlendAlpha: Windows.Win32.Direct3D10.D3D10_BLEND,
+    DestBlendAlpha: Windows.Win32.Direct3D10.D3D10_BLEND,
+    BlendOpAlpha: Windows.Win32.Direct3D10.D3D10_BLEND_OP,
+    RenderTargetWriteMask: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: D3D10_BLEND_DESC1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_BLEND_DESC1 = extern struct {
+    AlphaToCoverageEnable: Windows.Win32.SystemServices.BOOL,
+    IndependentBlendEnable: Windows.Win32.SystemServices.BOOL,
+    RenderTarget: {"kind":"Array","child": Windows.Win32.Direct3D10.D3D10_RENDER_TARGET_BLEND_DESC1},
+};
+// --------------------------------------------------------
+// Type: ID3D10BlendState1
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10BlendState1 = *opaque{
+    // TODO: Method 'GetDesc1'
+};
+// --------------------------------------------------------
+// Type: D3D10_TEXCUBE_ARRAY_SRV1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_TEXCUBE_ARRAY_SRV1 = extern struct {
+    MostDetailedMip: {"kind":"UInt32"},
+    MipLevels: {"kind":"UInt32"},
+    First2DArrayFace: {"kind":"UInt32"},
+    NumCubes: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_SHADER_RESOURCE_VIEW_DESC1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_SHADER_RESOURCE_VIEW_DESC1 = extern struct {
+    Format: Windows.Win32.Dxgi.DXGI_FORMAT,
+    ViewDimension: Windows.Win32.Direct3D11.D3D_SRV_DIMENSION,
+    Anonymous: Windows.Win32.Direct3D10.D3D10_SHADER_RESOURCE_VIEW_DESC1+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: ID3D10ShaderResourceView1
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10ShaderResourceView1 = *opaque{
+    // TODO: Method 'GetDesc1'
+};
+// --------------------------------------------------------
+// Type: D3D10_STANDARD_MULTISAMPLE_QUALITY_LEVELS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_STANDARD_MULTISAMPLE_QUALITY_LEVELS = *opaque{
+};
+// --------------------------------------------------------
+// Type: ID3D10Device1
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10Device1 = *opaque{
+    // TODO: Method 'CreateShaderResourceView1'
+    // TODO: Method 'CreateBlendState1'
+    // TODO: Method 'GetFeatureLevel'
+};
+// --------------------------------------------------------
+// Type: D3D10_SHADER_DEBUG_REGTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_SHADER_DEBUG_REGTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_SHADER_DEBUG_SCOPETYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_SHADER_DEBUG_SCOPETYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_SHADER_DEBUG_VARTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const D3D10_SHADER_DEBUG_VARTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: D3D10_SHADER_DEBUG_TOKEN_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_SHADER_DEBUG_TOKEN_INFO = extern struct {
+    File: {"kind":"UInt32"},
+    Line: {"kind":"UInt32"},
+    Column: {"kind":"UInt32"},
+    TokenLength: {"kind":"UInt32"},
+    TokenId: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_SHADER_DEBUG_VAR_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_SHADER_DEBUG_VAR_INFO = extern struct {
+    TokenId: {"kind":"UInt32"},
+    Type: Windows.Win32.Direct3D11.D3D_SHADER_VARIABLE_TYPE,
+    Register: {"kind":"UInt32"},
+    Component: {"kind":"UInt32"},
+    ScopeVar: {"kind":"UInt32"},
+    ScopeVarOffset: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_SHADER_DEBUG_INPUT_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_SHADER_DEBUG_INPUT_INFO = extern struct {
+    Var: {"kind":"UInt32"},
+    InitialRegisterSet: Windows.Win32.Direct3D10.D3D10_SHADER_DEBUG_REGTYPE,
+    InitialBank: {"kind":"UInt32"},
+    InitialRegister: {"kind":"UInt32"},
+    InitialComponent: {"kind":"UInt32"},
+    InitialValue: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_SHADER_DEBUG_SCOPEVAR_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_SHADER_DEBUG_SCOPEVAR_INFO = extern struct {
+    TokenId: {"kind":"UInt32"},
+    VarType: Windows.Win32.Direct3D10.D3D10_SHADER_DEBUG_VARTYPE,
+    Class: Windows.Win32.Direct3D11.D3D_SHADER_VARIABLE_CLASS,
+    Rows: {"kind":"UInt32"},
+    Columns: {"kind":"UInt32"},
+    StructMemberScope: {"kind":"UInt32"},
+    uArrayIndices: {"kind":"UInt32"},
+    ArrayElements: {"kind":"UInt32"},
+    ArrayStrides: {"kind":"UInt32"},
+    uVariables: {"kind":"UInt32"},
+    uFirstVariable: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_SHADER_DEBUG_SCOPE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_SHADER_DEBUG_SCOPE_INFO = extern struct {
+    ScopeType: Windows.Win32.Direct3D10.D3D10_SHADER_DEBUG_SCOPETYPE,
+    Name: {"kind":"UInt32"},
+    uNameLen: {"kind":"UInt32"},
+    uVariables: {"kind":"UInt32"},
+    VariableData: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_SHADER_DEBUG_OUTPUTVAR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_SHADER_DEBUG_OUTPUTVAR = extern struct {
+    Var: {"kind":"UInt32"},
+    uValueMin: {"kind":"UInt32"},
+    uValueMax: {"kind":"UInt32"},
+    iValueMin: {"kind":"Int32"},
+    iValueMax: {"kind":"Int32"},
+    fValueMin: {"kind":"Single"},
+    fValueMax: {"kind":"Single"},
+    bNaNPossible: Windows.Win32.SystemServices.BOOL,
+    bInfPossible: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: D3D10_SHADER_DEBUG_OUTPUTREG_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_SHADER_DEBUG_OUTPUTREG_INFO = extern struct {
+    OutputRegisterSet: Windows.Win32.Direct3D10.D3D10_SHADER_DEBUG_REGTYPE,
+    OutputReg: {"kind":"UInt32"},
+    TempArrayReg: {"kind":"UInt32"},
+    OutputComponents: {"kind":"Array","child": {"kind":"UInt32"}},
+    OutputVars: {"kind":"Array","child": Windows.Win32.Direct3D10.D3D10_SHADER_DEBUG_OUTPUTVAR},
+    IndexReg: {"kind":"UInt32"},
+    IndexComp: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_SHADER_DEBUG_INST_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_SHADER_DEBUG_INST_INFO = extern struct {
+    Id: {"kind":"UInt32"},
+    Opcode: {"kind":"UInt32"},
+    uOutputs: {"kind":"UInt32"},
+    pOutputs: {"kind":"Array","child": Windows.Win32.Direct3D10.D3D10_SHADER_DEBUG_OUTPUTREG_INFO},
+    TokenId: {"kind":"UInt32"},
+    NestingLevel: {"kind":"UInt32"},
+    Scopes: {"kind":"UInt32"},
+    ScopeInfo: {"kind":"UInt32"},
+    AccessedVars: {"kind":"UInt32"},
+    AccessedVarsInfo: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_SHADER_DEBUG_FILE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_SHADER_DEBUG_FILE_INFO = extern struct {
+    FileName: {"kind":"UInt32"},
+    FileNameLen: {"kind":"UInt32"},
+    FileData: {"kind":"UInt32"},
+    FileLen: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: D3D10_SHADER_DEBUG_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const D3D10_SHADER_DEBUG_INFO = extern struct {
+    Size: {"kind":"UInt32"},
+    Creator: {"kind":"UInt32"},
+    EntrypointName: {"kind":"UInt32"},
+    ShaderTarget: {"kind":"UInt32"},
+    CompileFlags: {"kind":"UInt32"},
+    Files: {"kind":"UInt32"},
+    FileInfo: {"kind":"UInt32"},
+    Instructions: {"kind":"UInt32"},
+    InstructionInfo: {"kind":"UInt32"},
+    Variables: {"kind":"UInt32"},
+    VariableInfo: {"kind":"UInt32"},
+    InputVariables: {"kind":"UInt32"},
+    InputVariableInfo: {"kind":"UInt32"},
+    Tokens: {"kind":"UInt32"},
+    TokenInfo: {"kind":"UInt32"},
+    Scopes: {"kind":"UInt32"},
+    ScopeInfo: {"kind":"UInt32"},
+    ScopeVariables: {"kind":"UInt32"},
+    ScopeVariableInfo: {"kind":"UInt32"},
+    UintOffset: {"kind":"UInt32"},
+    StringOffset: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ID3D10ShaderReflection1
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ID3D10ShaderReflection1 = *opaque{
+    // TODO: Method 'GetDesc'
+    // TODO: Method 'GetConstantBufferByIndex'
+    // TODO: Method 'GetConstantBufferByName'
+    // TODO: Method 'GetResourceBindingDesc'
+    // TODO: Method 'GetInputParameterDesc'
+    // TODO: Method 'GetOutputParameterDesc'
+    // TODO: Method 'GetVariableByName'
+    // TODO: Method 'GetResourceBindingDescByName'
+    // TODO: Method 'GetMovInstructionCount'
+    // TODO: Method 'GetMovcInstructionCount'
+    // TODO: Method 'GetConversionInstructionCount'
+    // TODO: Method 'GetBitwiseInstructionCount'
+    // TODO: Method 'GetGSInputPrimitive'
+    // TODO: Method 'IsLevel9Shader'
+    // TODO: Method 'IsSampleFrequencyShader'
+};
+// --------------------------------------------------------
+// Type: PFN_D3D10_CREATE_DEVICE1
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFN_D3D10_CREATE_DEVICE1 = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFN_D3D10_CREATE_DEVICE_AND_SWAP_CHAIN1
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFN_D3D10_CREATE_DEVICE_AND_SWAP_CHAIN1 = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d10" fn D3D10CreateDevice(
+    pAdapter: Windows.Win32.Dxgi.IDXGIAdapter,
+    DriverType: Windows.Win32.Direct3D10.D3D10_DRIVER_TYPE,
+    Software: {"kind":"IntPtr"},
+    Flags: {"kind":"UInt32"},
+    SDKVersion: {"kind":"UInt32"},
+    ppDevice: {"kind""Ptr","child":Windows.Win32.Direct3D10.ID3D10Device},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d10" fn D3D10CreateDeviceAndSwapChain(
+    pAdapter: Windows.Win32.Dxgi.IDXGIAdapter,
+    DriverType: Windows.Win32.Direct3D10.D3D10_DRIVER_TYPE,
+    Software: {"kind":"IntPtr"},
+    Flags: {"kind":"UInt32"},
+    SDKVersion: {"kind":"UInt32"},
+    pSwapChainDesc: {"kind""Ptr","child":Windows.Win32.Dxgi.DXGI_SWAP_CHAIN_DESC},
+    ppSwapChain: {"kind""Ptr","child":Windows.Win32.Dxgi.IDXGISwapChain},
+    ppDevice: {"kind""Ptr","child":Windows.Win32.Direct3D10.ID3D10Device},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d10" fn D3D10CreateBlob(
+    NumBytes: {"kind":"UIntPtr"},
+    ppBuffer: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d10" fn D3D10CompileShader(
+    pSrcData: {"kind""Ptr","child":{"kind":"SByte"}},
+    SrcDataSize: {"kind":"UIntPtr"},
+    pFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pDefines: {"kind""Ptr","child":Windows.Win32.Direct3D11.D3D_SHADER_MACRO},
+    pInclude: Windows.Win32.Direct3D11.ID3DInclude,
+    pFunctionName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pProfile: {"kind""Ptr","child":{"kind":"SByte"}},
+    Flags: {"kind":"UInt32"},
+    ppShader: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+    ppErrorMsgs: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d10" fn D3D10DisassembleShader(
+    pShader: {"kind""Ptr","child":{"kind":"Void"}},
+    BytecodeLength: {"kind":"UIntPtr"},
+    EnableColorCode: Windows.Win32.SystemServices.BOOL,
+    pComments: {"kind""Ptr","child":{"kind":"SByte"}},
+    ppDisassembly: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d10" fn D3D10GetPixelShaderProfile(
+    pDevice: Windows.Win32.Direct3D10.ID3D10Device,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d10" fn D3D10GetVertexShaderProfile(
+    pDevice: Windows.Win32.Direct3D10.ID3D10Device,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d10" fn D3D10GetGeometryShaderProfile(
+    pDevice: Windows.Win32.Direct3D10.ID3D10Device,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d10" fn D3D10ReflectShader(
+    pShaderBytecode: {"kind""Ptr","child":{"kind":"Void"}},
+    BytecodeLength: {"kind":"UIntPtr"},
+    ppReflector: {"kind""Ptr","child":Windows.Win32.Direct3D10.ID3D10ShaderReflection},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d10" fn D3D10PreprocessShader(
+    pSrcData: {"kind""Ptr","child":{"kind":"SByte"}},
+    SrcDataSize: {"kind":"UIntPtr"},
+    pFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pDefines: {"kind""Ptr","child":Windows.Win32.Direct3D11.D3D_SHADER_MACRO},
+    pInclude: Windows.Win32.Direct3D11.ID3DInclude,
+    ppShaderText: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+    ppErrorMsgs: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d10" fn D3D10GetInputSignatureBlob(
+    pShaderBytecode: {"kind""Ptr","child":{"kind":"Void"}},
+    BytecodeLength: {"kind":"UIntPtr"},
+    ppSignatureBlob: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d10" fn D3D10GetOutputSignatureBlob(
+    pShaderBytecode: {"kind""Ptr","child":{"kind":"Void"}},
+    BytecodeLength: {"kind":"UIntPtr"},
+    ppSignatureBlob: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d10" fn D3D10GetInputAndOutputSignatureBlob(
+    pShaderBytecode: {"kind""Ptr","child":{"kind":"Void"}},
+    BytecodeLength: {"kind":"UIntPtr"},
+    ppSignatureBlob: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d10" fn D3D10GetShaderDebugInfo(
+    pShaderBytecode: {"kind""Ptr","child":{"kind":"Void"}},
+    BytecodeLength: {"kind":"UIntPtr"},
+    ppDebugInfo: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d10" fn D3D10StateBlockMaskUnion(
+    pA: {"kind""Ptr","child":Windows.Win32.Direct3D10.D3D10_STATE_BLOCK_MASK},
+    pB: {"kind""Ptr","child":Windows.Win32.Direct3D10.D3D10_STATE_BLOCK_MASK},
+    pResult: {"kind""Ptr","child":Windows.Win32.Direct3D10.D3D10_STATE_BLOCK_MASK},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d10" fn D3D10StateBlockMaskIntersect(
+    pA: {"kind""Ptr","child":Windows.Win32.Direct3D10.D3D10_STATE_BLOCK_MASK},
+    pB: {"kind""Ptr","child":Windows.Win32.Direct3D10.D3D10_STATE_BLOCK_MASK},
+    pResult: {"kind""Ptr","child":Windows.Win32.Direct3D10.D3D10_STATE_BLOCK_MASK},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d10" fn D3D10StateBlockMaskDifference(
+    pA: {"kind""Ptr","child":Windows.Win32.Direct3D10.D3D10_STATE_BLOCK_MASK},
+    pB: {"kind""Ptr","child":Windows.Win32.Direct3D10.D3D10_STATE_BLOCK_MASK},
+    pResult: {"kind""Ptr","child":Windows.Win32.Direct3D10.D3D10_STATE_BLOCK_MASK},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d10" fn D3D10StateBlockMaskEnableCapture(
+    pMask: {"kind""Ptr","child":Windows.Win32.Direct3D10.D3D10_STATE_BLOCK_MASK},
+    StateType: Windows.Win32.Direct3D10.D3D10_DEVICE_STATE_TYPES,
+    RangeStart: {"kind":"UInt32"},
+    RangeLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d10" fn D3D10StateBlockMaskDisableCapture(
+    pMask: {"kind""Ptr","child":Windows.Win32.Direct3D10.D3D10_STATE_BLOCK_MASK},
+    StateType: Windows.Win32.Direct3D10.D3D10_DEVICE_STATE_TYPES,
+    RangeStart: {"kind":"UInt32"},
+    RangeLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d10" fn D3D10StateBlockMaskEnableAll(
+    pMask: {"kind""Ptr","child":Windows.Win32.Direct3D10.D3D10_STATE_BLOCK_MASK},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d10" fn D3D10StateBlockMaskDisableAll(
+    pMask: {"kind""Ptr","child":Windows.Win32.Direct3D10.D3D10_STATE_BLOCK_MASK},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d10" fn D3D10StateBlockMaskGetSetting(
+    pMask: {"kind""Ptr","child":Windows.Win32.Direct3D10.D3D10_STATE_BLOCK_MASK},
+    StateType: Windows.Win32.Direct3D10.D3D10_DEVICE_STATE_TYPES,
+    Entry: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d10" fn D3D10CreateStateBlock(
+    pDevice: Windows.Win32.Direct3D10.ID3D10Device,
+    pStateBlockMask: {"kind""Ptr","child":Windows.Win32.Direct3D10.D3D10_STATE_BLOCK_MASK},
+    ppStateBlock: {"kind""Ptr","child":Windows.Win32.Direct3D10.ID3D10StateBlock},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d10" fn D3D10CompileEffectFromMemory(
+    pData: {"kind""Ptr","child":{"kind":"Void"}},
+    DataLength: {"kind":"UIntPtr"},
+    pSrcFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pDefines: {"kind""Ptr","child":Windows.Win32.Direct3D11.D3D_SHADER_MACRO},
+    pInclude: Windows.Win32.Direct3D11.ID3DInclude,
+    HLSLFlags: {"kind":"UInt32"},
+    FXFlags: {"kind":"UInt32"},
+    ppCompiledEffect: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+    ppErrors: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d10" fn D3D10CreateEffectFromMemory(
+    pData: {"kind""Ptr","child":{"kind":"Void"}},
+    DataLength: {"kind":"UIntPtr"},
+    FXFlags: {"kind":"UInt32"},
+    pDevice: Windows.Win32.Direct3D10.ID3D10Device,
+    pEffectPool: Windows.Win32.Direct3D10.ID3D10EffectPool,
+    ppEffect: {"kind""Ptr","child":Windows.Win32.Direct3D10.ID3D10Effect},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d10" fn D3D10CreateEffectPoolFromMemory(
+    pData: {"kind""Ptr","child":{"kind":"Void"}},
+    DataLength: {"kind":"UIntPtr"},
+    FXFlags: {"kind":"UInt32"},
+    pDevice: Windows.Win32.Direct3D10.ID3D10Device,
+    ppEffectPool: {"kind""Ptr","child":Windows.Win32.Direct3D10.ID3D10EffectPool},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d10" fn D3D10DisassembleEffect(
+    pEffect: Windows.Win32.Direct3D10.ID3D10Effect,
+    EnableColorCode: Windows.Win32.SystemServices.BOOL,
+    ppDisassembly: {"kind""Ptr","child":Windows.Win32.Direct3D11.ID3DBlob},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d10_1" fn D3D10CreateDevice1(
+    pAdapter: Windows.Win32.Dxgi.IDXGIAdapter,
+    DriverType: Windows.Win32.Direct3D10.D3D10_DRIVER_TYPE,
+    Software: {"kind":"IntPtr"},
+    Flags: {"kind":"UInt32"},
+    HardwareLevel: Windows.Win32.Direct3D10.D3D10_FEATURE_LEVEL1,
+    SDKVersion: {"kind":"UInt32"},
+    ppDevice: {"kind""Ptr","child":Windows.Win32.Direct3D10.ID3D10Device1},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "d3d10_1" fn D3D10CreateDeviceAndSwapChain1(
+    pAdapter: Windows.Win32.Dxgi.IDXGIAdapter,
+    DriverType: Windows.Win32.Direct3D10.D3D10_DRIVER_TYPE,
+    Software: {"kind":"IntPtr"},
+    Flags: {"kind":"UInt32"},
+    HardwareLevel: Windows.Win32.Direct3D10.D3D10_FEATURE_LEVEL1,
+    SDKVersion: {"kind":"UInt32"},
+    pSwapChainDesc: {"kind""Ptr","child":Windows.Win32.Dxgi.DXGI_SWAP_CHAIN_DESC},
+    ppSwapChain: {"kind""Ptr","child":Windows.Win32.Dxgi.IDXGISwapChain},
+    ppDevice: {"kind""Ptr","child":Windows.Win32.Direct3D10.ID3D10Device1},
+],
+
+"unicode_aliases": [
+]}

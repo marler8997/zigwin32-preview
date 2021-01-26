@@ -1,0 +1,849 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: TASK_TRIGGER_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TASK_TRIGGER_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DAILY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DAILY = extern struct {
+    DaysInterval: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: WEEKLY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WEEKLY = extern struct {
+    WeeksInterval: {"kind":"UInt16"},
+    rgfDaysOfTheWeek: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: MONTHLYDATE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MONTHLYDATE = extern struct {
+    rgfDays: {"kind":"UInt32"},
+    rgfMonths: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: MONTHLYDOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MONTHLYDOW = extern struct {
+    wWhichWeek: {"kind":"UInt16"},
+    rgfDaysOfTheWeek: {"kind":"UInt16"},
+    rgfMonths: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: TRIGGER_TYPE_UNION
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const TRIGGER_TYPE_UNION = *opaque{
+};
+// --------------------------------------------------------
+// Type: TASK_TRIGGER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TASK_TRIGGER = extern struct {
+    cbTriggerSize: {"kind":"UInt16"},
+    Reserved1: {"kind":"UInt16"},
+    wBeginYear: {"kind":"UInt16"},
+    wBeginMonth: {"kind":"UInt16"},
+    wBeginDay: {"kind":"UInt16"},
+    wEndYear: {"kind":"UInt16"},
+    wEndMonth: {"kind":"UInt16"},
+    wEndDay: {"kind":"UInt16"},
+    wStartHour: {"kind":"UInt16"},
+    wStartMinute: {"kind":"UInt16"},
+    MinutesDuration: {"kind":"UInt32"},
+    MinutesInterval: {"kind":"UInt32"},
+    rgFlags: {"kind":"UInt32"},
+    TriggerType: Windows.Win32.TaskScheduler.TASK_TRIGGER_TYPE,
+    Type: Windows.Win32.TaskScheduler.TRIGGER_TYPE_UNION,
+    Reserved2: {"kind":"UInt16"},
+    wRandomMinutesInterval: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: ITaskTrigger
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITaskTrigger = *opaque{
+    // TODO: Method 'SetTrigger'
+    // TODO: Method 'GetTrigger'
+    // TODO: Method 'GetTriggerString'
+};
+// --------------------------------------------------------
+// Type: IScheduledWorkItem
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IScheduledWorkItem = *opaque{
+    // TODO: Method 'CreateTrigger'
+    // TODO: Method 'DeleteTrigger'
+    // TODO: Method 'GetTriggerCount'
+    // TODO: Method 'GetTrigger'
+    // TODO: Method 'GetTriggerString'
+    // TODO: Method 'GetRunTimes'
+    // TODO: Method 'GetNextRunTime'
+    // TODO: Method 'SetIdleWait'
+    // TODO: Method 'GetIdleWait'
+    // TODO: Method 'Run'
+    // TODO: Method 'Terminate'
+    // TODO: Method 'EditWorkItem'
+    // TODO: Method 'GetMostRecentRunTime'
+    // TODO: Method 'GetStatus'
+    // TODO: Method 'GetExitCode'
+    // TODO: Method 'SetComment'
+    // TODO: Method 'GetComment'
+    // TODO: Method 'SetCreator'
+    // TODO: Method 'GetCreator'
+    // TODO: Method 'SetWorkItemData'
+    // TODO: Method 'GetWorkItemData'
+    // TODO: Method 'SetErrorRetryCount'
+    // TODO: Method 'GetErrorRetryCount'
+    // TODO: Method 'SetErrorRetryInterval'
+    // TODO: Method 'GetErrorRetryInterval'
+    // TODO: Method 'SetFlags'
+    // TODO: Method 'GetFlags'
+    // TODO: Method 'SetAccountInformation'
+    // TODO: Method 'GetAccountInformation'
+};
+// --------------------------------------------------------
+// Type: ITask
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITask = *opaque{
+    // TODO: Method 'SetApplicationName'
+    // TODO: Method 'GetApplicationName'
+    // TODO: Method 'SetParameters'
+    // TODO: Method 'GetParameters'
+    // TODO: Method 'SetWorkingDirectory'
+    // TODO: Method 'GetWorkingDirectory'
+    // TODO: Method 'SetPriority'
+    // TODO: Method 'GetPriority'
+    // TODO: Method 'SetTaskFlags'
+    // TODO: Method 'GetTaskFlags'
+    // TODO: Method 'SetMaxRunTime'
+    // TODO: Method 'GetMaxRunTime'
+};
+// --------------------------------------------------------
+// Type: IEnumWorkItems
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumWorkItems = *opaque{
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: ITaskScheduler
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITaskScheduler = *opaque{
+    // TODO: Method 'SetTargetComputer'
+    // TODO: Method 'GetTargetComputer'
+    // TODO: Method 'Enum'
+    // TODO: Method 'Activate'
+    // TODO: Method 'Delete'
+    // TODO: Method 'NewWorkItem'
+    // TODO: Method 'AddWorkItem'
+    // TODO: Method 'IsOfType'
+};
+// --------------------------------------------------------
+// Type: TASKPAGE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TASKPAGE = *opaque{
+};
+// --------------------------------------------------------
+// Type: IProvideTaskPage
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IProvideTaskPage = *opaque{
+    // TODO: Method 'GetPage'
+};
+// --------------------------------------------------------
+// Type: TaskScheduler
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const TaskScheduler = opaque {
+};
+// --------------------------------------------------------
+// Type: TaskHandlerPS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const TaskHandlerPS = opaque {
+};
+// --------------------------------------------------------
+// Type: TaskHandlerStatusPS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const TaskHandlerStatusPS = opaque {
+};
+// --------------------------------------------------------
+// Type: TASK_RUN_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TASK_RUN_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: TASK_ENUM_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TASK_ENUM_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: TASK_LOGON_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TASK_LOGON_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: TASK_RUNLEVEL_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TASK_RUNLEVEL_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: TASK_PROCESSTOKENSID_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TASK_PROCESSTOKENSID_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: TASK_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TASK_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: TASK_CREATION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TASK_CREATION = *opaque{
+};
+// --------------------------------------------------------
+// Type: TASK_TRIGGER_TYPE2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TASK_TRIGGER_TYPE2 = *opaque{
+};
+// --------------------------------------------------------
+// Type: TASK_SESSION_STATE_CHANGE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TASK_SESSION_STATE_CHANGE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: TASK_ACTION_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TASK_ACTION_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: TASK_INSTANCES_POLICY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TASK_INSTANCES_POLICY = *opaque{
+};
+// --------------------------------------------------------
+// Type: TASK_COMPATIBILITY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TASK_COMPATIBILITY = *opaque{
+};
+// --------------------------------------------------------
+// Type: ITaskFolderCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITaskFolderCollection = *opaque{
+    // TODO: Method 'get_Count'
+    // TODO: Method 'get_Item'
+    // TODO: Method 'get__NewEnum'
+};
+// --------------------------------------------------------
+// Type: ITaskService
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITaskService = *opaque{
+    // TODO: Method 'GetFolder'
+    // TODO: Method 'GetRunningTasks'
+    // TODO: Method 'NewTask'
+    // TODO: Method 'Connect'
+    // TODO: Method 'get_Connected'
+    // TODO: Method 'get_TargetServer'
+    // TODO: Method 'get_ConnectedUser'
+    // TODO: Method 'get_ConnectedDomain'
+    // TODO: Method 'get_HighestVersion'
+};
+// --------------------------------------------------------
+// Type: ITaskHandler
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITaskHandler = *opaque{
+    // TODO: Method 'Start'
+    // TODO: Method 'Stop'
+    // TODO: Method 'Pause'
+    // TODO: Method 'Resume'
+};
+// --------------------------------------------------------
+// Type: ITaskHandlerStatus
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITaskHandlerStatus = *opaque{
+    // TODO: Method 'UpdateStatus'
+    // TODO: Method 'TaskCompleted'
+};
+// --------------------------------------------------------
+// Type: ITaskVariables
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITaskVariables = *opaque{
+    // TODO: Method 'GetInput'
+    // TODO: Method 'SetOutput'
+    // TODO: Method 'GetContext'
+};
+// --------------------------------------------------------
+// Type: ITaskNamedValuePair
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITaskNamedValuePair = *opaque{
+    // TODO: Method 'get_Name'
+    // TODO: Method 'put_Name'
+    // TODO: Method 'get_Value'
+    // TODO: Method 'put_Value'
+};
+// --------------------------------------------------------
+// Type: ITaskNamedValueCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITaskNamedValueCollection = *opaque{
+    // TODO: Method 'get_Count'
+    // TODO: Method 'get_Item'
+    // TODO: Method 'get__NewEnum'
+    // TODO: Method 'Create'
+    // TODO: Method 'Remove'
+    // TODO: Method 'Clear'
+};
+// --------------------------------------------------------
+// Type: IRunningTask
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRunningTask = *opaque{
+    // TODO: Method 'get_Name'
+    // TODO: Method 'get_InstanceGuid'
+    // TODO: Method 'get_Path'
+    // TODO: Method 'get_State'
+    // TODO: Method 'get_CurrentAction'
+    // TODO: Method 'Stop'
+    // TODO: Method 'Refresh'
+    // TODO: Method 'get_EnginePID'
+};
+// --------------------------------------------------------
+// Type: IRunningTaskCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRunningTaskCollection = *opaque{
+    // TODO: Method 'get_Count'
+    // TODO: Method 'get_Item'
+    // TODO: Method 'get__NewEnum'
+};
+// --------------------------------------------------------
+// Type: IRegisteredTask
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRegisteredTask = *opaque{
+    // TODO: Method 'get_Name'
+    // TODO: Method 'get_Path'
+    // TODO: Method 'get_State'
+    // TODO: Method 'get_Enabled'
+    // TODO: Method 'put_Enabled'
+    // TODO: Method 'Run'
+    // TODO: Method 'RunEx'
+    // TODO: Method 'GetInstances'
+    // TODO: Method 'get_LastRunTime'
+    // TODO: Method 'get_LastTaskResult'
+    // TODO: Method 'get_NumberOfMissedRuns'
+    // TODO: Method 'get_NextRunTime'
+    // TODO: Method 'get_Definition'
+    // TODO: Method 'get_Xml'
+    // TODO: Method 'GetSecurityDescriptor'
+    // TODO: Method 'SetSecurityDescriptor'
+    // TODO: Method 'Stop'
+    // TODO: Method 'GetRunTimes'
+};
+// --------------------------------------------------------
+// Type: ITrigger
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITrigger = *opaque{
+    // TODO: Method 'get_Type'
+    // TODO: Method 'get_Id'
+    // TODO: Method 'put_Id'
+    // TODO: Method 'get_Repetition'
+    // TODO: Method 'put_Repetition'
+    // TODO: Method 'get_ExecutionTimeLimit'
+    // TODO: Method 'put_ExecutionTimeLimit'
+    // TODO: Method 'get_StartBoundary'
+    // TODO: Method 'put_StartBoundary'
+    // TODO: Method 'get_EndBoundary'
+    // TODO: Method 'put_EndBoundary'
+    // TODO: Method 'get_Enabled'
+    // TODO: Method 'put_Enabled'
+};
+// --------------------------------------------------------
+// Type: IIdleTrigger
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IIdleTrigger = *opaque{
+};
+// --------------------------------------------------------
+// Type: ILogonTrigger
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ILogonTrigger = *opaque{
+    // TODO: Method 'get_Delay'
+    // TODO: Method 'put_Delay'
+    // TODO: Method 'get_UserId'
+    // TODO: Method 'put_UserId'
+};
+// --------------------------------------------------------
+// Type: ISessionStateChangeTrigger
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISessionStateChangeTrigger = *opaque{
+    // TODO: Method 'get_Delay'
+    // TODO: Method 'put_Delay'
+    // TODO: Method 'get_UserId'
+    // TODO: Method 'put_UserId'
+    // TODO: Method 'get_StateChange'
+    // TODO: Method 'put_StateChange'
+};
+// --------------------------------------------------------
+// Type: IEventTrigger
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEventTrigger = *opaque{
+    // TODO: Method 'get_Subscription'
+    // TODO: Method 'put_Subscription'
+    // TODO: Method 'get_Delay'
+    // TODO: Method 'put_Delay'
+    // TODO: Method 'get_ValueQueries'
+    // TODO: Method 'put_ValueQueries'
+};
+// --------------------------------------------------------
+// Type: ITimeTrigger
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITimeTrigger = *opaque{
+    // TODO: Method 'get_RandomDelay'
+    // TODO: Method 'put_RandomDelay'
+};
+// --------------------------------------------------------
+// Type: IDailyTrigger
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDailyTrigger = *opaque{
+    // TODO: Method 'get_DaysInterval'
+    // TODO: Method 'put_DaysInterval'
+    // TODO: Method 'get_RandomDelay'
+    // TODO: Method 'put_RandomDelay'
+};
+// --------------------------------------------------------
+// Type: IWeeklyTrigger
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWeeklyTrigger = *opaque{
+    // TODO: Method 'get_DaysOfWeek'
+    // TODO: Method 'put_DaysOfWeek'
+    // TODO: Method 'get_WeeksInterval'
+    // TODO: Method 'put_WeeksInterval'
+    // TODO: Method 'get_RandomDelay'
+    // TODO: Method 'put_RandomDelay'
+};
+// --------------------------------------------------------
+// Type: IMonthlyTrigger
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IMonthlyTrigger = *opaque{
+    // TODO: Method 'get_DaysOfMonth'
+    // TODO: Method 'put_DaysOfMonth'
+    // TODO: Method 'get_MonthsOfYear'
+    // TODO: Method 'put_MonthsOfYear'
+    // TODO: Method 'get_RunOnLastDayOfMonth'
+    // TODO: Method 'put_RunOnLastDayOfMonth'
+    // TODO: Method 'get_RandomDelay'
+    // TODO: Method 'put_RandomDelay'
+};
+// --------------------------------------------------------
+// Type: IMonthlyDOWTrigger
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IMonthlyDOWTrigger = *opaque{
+    // TODO: Method 'get_DaysOfWeek'
+    // TODO: Method 'put_DaysOfWeek'
+    // TODO: Method 'get_WeeksOfMonth'
+    // TODO: Method 'put_WeeksOfMonth'
+    // TODO: Method 'get_MonthsOfYear'
+    // TODO: Method 'put_MonthsOfYear'
+    // TODO: Method 'get_RunOnLastWeekOfMonth'
+    // TODO: Method 'put_RunOnLastWeekOfMonth'
+    // TODO: Method 'get_RandomDelay'
+    // TODO: Method 'put_RandomDelay'
+};
+// --------------------------------------------------------
+// Type: IBootTrigger
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IBootTrigger = *opaque{
+    // TODO: Method 'get_Delay'
+    // TODO: Method 'put_Delay'
+};
+// --------------------------------------------------------
+// Type: IRegistrationTrigger
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRegistrationTrigger = *opaque{
+    // TODO: Method 'get_Delay'
+    // TODO: Method 'put_Delay'
+};
+// --------------------------------------------------------
+// Type: IAction
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAction = *opaque{
+    // TODO: Method 'get_Id'
+    // TODO: Method 'put_Id'
+    // TODO: Method 'get_Type'
+};
+// --------------------------------------------------------
+// Type: IExecAction
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IExecAction = *opaque{
+    // TODO: Method 'get_Path'
+    // TODO: Method 'put_Path'
+    // TODO: Method 'get_Arguments'
+    // TODO: Method 'put_Arguments'
+    // TODO: Method 'get_WorkingDirectory'
+    // TODO: Method 'put_WorkingDirectory'
+};
+// --------------------------------------------------------
+// Type: IExecAction2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IExecAction2 = *opaque{
+    // TODO: Method 'get_HideAppWindow'
+    // TODO: Method 'put_HideAppWindow'
+};
+// --------------------------------------------------------
+// Type: IShowMessageAction
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IShowMessageAction = *opaque{
+    // TODO: Method 'get_Title'
+    // TODO: Method 'put_Title'
+    // TODO: Method 'get_MessageBody'
+    // TODO: Method 'put_MessageBody'
+};
+// --------------------------------------------------------
+// Type: IComHandlerAction
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IComHandlerAction = *opaque{
+    // TODO: Method 'get_ClassId'
+    // TODO: Method 'put_ClassId'
+    // TODO: Method 'get_Data'
+    // TODO: Method 'put_Data'
+};
+// --------------------------------------------------------
+// Type: IEmailAction
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEmailAction = *opaque{
+    // TODO: Method 'get_Server'
+    // TODO: Method 'put_Server'
+    // TODO: Method 'get_Subject'
+    // TODO: Method 'put_Subject'
+    // TODO: Method 'get_To'
+    // TODO: Method 'put_To'
+    // TODO: Method 'get_Cc'
+    // TODO: Method 'put_Cc'
+    // TODO: Method 'get_Bcc'
+    // TODO: Method 'put_Bcc'
+    // TODO: Method 'get_ReplyTo'
+    // TODO: Method 'put_ReplyTo'
+    // TODO: Method 'get_From'
+    // TODO: Method 'put_From'
+    // TODO: Method 'get_HeaderFields'
+    // TODO: Method 'put_HeaderFields'
+    // TODO: Method 'get_Body'
+    // TODO: Method 'put_Body'
+    // TODO: Method 'get_Attachments'
+    // TODO: Method 'put_Attachments'
+};
+// --------------------------------------------------------
+// Type: ITriggerCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITriggerCollection = *opaque{
+    // TODO: Method 'get_Count'
+    // TODO: Method 'get_Item'
+    // TODO: Method 'get__NewEnum'
+    // TODO: Method 'Create'
+    // TODO: Method 'Remove'
+    // TODO: Method 'Clear'
+};
+// --------------------------------------------------------
+// Type: IActionCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IActionCollection = *opaque{
+    // TODO: Method 'get_Count'
+    // TODO: Method 'get_Item'
+    // TODO: Method 'get__NewEnum'
+    // TODO: Method 'get_XmlText'
+    // TODO: Method 'put_XmlText'
+    // TODO: Method 'Create'
+    // TODO: Method 'Remove'
+    // TODO: Method 'Clear'
+    // TODO: Method 'get_Context'
+    // TODO: Method 'put_Context'
+};
+// --------------------------------------------------------
+// Type: IPrincipal
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPrincipal = *opaque{
+    // TODO: Method 'get_Id'
+    // TODO: Method 'put_Id'
+    // TODO: Method 'get_DisplayName'
+    // TODO: Method 'put_DisplayName'
+    // TODO: Method 'get_UserId'
+    // TODO: Method 'put_UserId'
+    // TODO: Method 'get_LogonType'
+    // TODO: Method 'put_LogonType'
+    // TODO: Method 'get_GroupId'
+    // TODO: Method 'put_GroupId'
+    // TODO: Method 'get_RunLevel'
+    // TODO: Method 'put_RunLevel'
+};
+// --------------------------------------------------------
+// Type: IPrincipal2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPrincipal2 = *opaque{
+    // TODO: Method 'get_ProcessTokenSidType'
+    // TODO: Method 'put_ProcessTokenSidType'
+    // TODO: Method 'get_RequiredPrivilegeCount'
+    // TODO: Method 'get_RequiredPrivilege'
+    // TODO: Method 'AddRequiredPrivilege'
+};
+// --------------------------------------------------------
+// Type: IRegistrationInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRegistrationInfo = *opaque{
+    // TODO: Method 'get_Description'
+    // TODO: Method 'put_Description'
+    // TODO: Method 'get_Author'
+    // TODO: Method 'put_Author'
+    // TODO: Method 'get_Version'
+    // TODO: Method 'put_Version'
+    // TODO: Method 'get_Date'
+    // TODO: Method 'put_Date'
+    // TODO: Method 'get_Documentation'
+    // TODO: Method 'put_Documentation'
+    // TODO: Method 'get_XmlText'
+    // TODO: Method 'put_XmlText'
+    // TODO: Method 'get_URI'
+    // TODO: Method 'put_URI'
+    // TODO: Method 'get_SecurityDescriptor'
+    // TODO: Method 'put_SecurityDescriptor'
+    // TODO: Method 'get_Source'
+    // TODO: Method 'put_Source'
+};
+// --------------------------------------------------------
+// Type: ITaskDefinition
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITaskDefinition = *opaque{
+    // TODO: Method 'get_RegistrationInfo'
+    // TODO: Method 'put_RegistrationInfo'
+    // TODO: Method 'get_Triggers'
+    // TODO: Method 'put_Triggers'
+    // TODO: Method 'get_Settings'
+    // TODO: Method 'put_Settings'
+    // TODO: Method 'get_Data'
+    // TODO: Method 'put_Data'
+    // TODO: Method 'get_Principal'
+    // TODO: Method 'put_Principal'
+    // TODO: Method 'get_Actions'
+    // TODO: Method 'put_Actions'
+    // TODO: Method 'get_XmlText'
+    // TODO: Method 'put_XmlText'
+};
+// --------------------------------------------------------
+// Type: ITaskSettings
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITaskSettings = *opaque{
+    // TODO: Method 'get_AllowDemandStart'
+    // TODO: Method 'put_AllowDemandStart'
+    // TODO: Method 'get_RestartInterval'
+    // TODO: Method 'put_RestartInterval'
+    // TODO: Method 'get_RestartCount'
+    // TODO: Method 'put_RestartCount'
+    // TODO: Method 'get_MultipleInstances'
+    // TODO: Method 'put_MultipleInstances'
+    // TODO: Method 'get_StopIfGoingOnBatteries'
+    // TODO: Method 'put_StopIfGoingOnBatteries'
+    // TODO: Method 'get_DisallowStartIfOnBatteries'
+    // TODO: Method 'put_DisallowStartIfOnBatteries'
+    // TODO: Method 'get_AllowHardTerminate'
+    // TODO: Method 'put_AllowHardTerminate'
+    // TODO: Method 'get_StartWhenAvailable'
+    // TODO: Method 'put_StartWhenAvailable'
+    // TODO: Method 'get_XmlText'
+    // TODO: Method 'put_XmlText'
+    // TODO: Method 'get_RunOnlyIfNetworkAvailable'
+    // TODO: Method 'put_RunOnlyIfNetworkAvailable'
+    // TODO: Method 'get_ExecutionTimeLimit'
+    // TODO: Method 'put_ExecutionTimeLimit'
+    // TODO: Method 'get_Enabled'
+    // TODO: Method 'put_Enabled'
+    // TODO: Method 'get_DeleteExpiredTaskAfter'
+    // TODO: Method 'put_DeleteExpiredTaskAfter'
+    // TODO: Method 'get_Priority'
+    // TODO: Method 'put_Priority'
+    // TODO: Method 'get_Compatibility'
+    // TODO: Method 'put_Compatibility'
+    // TODO: Method 'get_Hidden'
+    // TODO: Method 'put_Hidden'
+    // TODO: Method 'get_IdleSettings'
+    // TODO: Method 'put_IdleSettings'
+    // TODO: Method 'get_RunOnlyIfIdle'
+    // TODO: Method 'put_RunOnlyIfIdle'
+    // TODO: Method 'get_WakeToRun'
+    // TODO: Method 'put_WakeToRun'
+    // TODO: Method 'get_NetworkSettings'
+    // TODO: Method 'put_NetworkSettings'
+};
+// --------------------------------------------------------
+// Type: ITaskSettings2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITaskSettings2 = *opaque{
+    // TODO: Method 'get_DisallowStartOnRemoteAppSession'
+    // TODO: Method 'put_DisallowStartOnRemoteAppSession'
+    // TODO: Method 'get_UseUnifiedSchedulingEngine'
+    // TODO: Method 'put_UseUnifiedSchedulingEngine'
+};
+// --------------------------------------------------------
+// Type: ITaskSettings3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITaskSettings3 = *opaque{
+    // TODO: Method 'get_DisallowStartOnRemoteAppSession'
+    // TODO: Method 'put_DisallowStartOnRemoteAppSession'
+    // TODO: Method 'get_UseUnifiedSchedulingEngine'
+    // TODO: Method 'put_UseUnifiedSchedulingEngine'
+    // TODO: Method 'get_MaintenanceSettings'
+    // TODO: Method 'put_MaintenanceSettings'
+    // TODO: Method 'CreateMaintenanceSettings'
+    // TODO: Method 'get_Volatile'
+    // TODO: Method 'put_Volatile'
+};
+// --------------------------------------------------------
+// Type: IMaintenanceSettings
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IMaintenanceSettings = *opaque{
+    // TODO: Method 'put_Period'
+    // TODO: Method 'get_Period'
+    // TODO: Method 'put_Deadline'
+    // TODO: Method 'get_Deadline'
+    // TODO: Method 'put_Exclusive'
+    // TODO: Method 'get_Exclusive'
+};
+// --------------------------------------------------------
+// Type: IRegisteredTaskCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRegisteredTaskCollection = *opaque{
+    // TODO: Method 'get_Count'
+    // TODO: Method 'get_Item'
+    // TODO: Method 'get__NewEnum'
+};
+// --------------------------------------------------------
+// Type: ITaskFolder
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITaskFolder = *opaque{
+    // TODO: Method 'get_Name'
+    // TODO: Method 'get_Path'
+    // TODO: Method 'GetFolder'
+    // TODO: Method 'GetFolders'
+    // TODO: Method 'CreateFolder'
+    // TODO: Method 'DeleteFolder'
+    // TODO: Method 'GetTask'
+    // TODO: Method 'GetTasks'
+    // TODO: Method 'DeleteTask'
+    // TODO: Method 'RegisterTask'
+    // TODO: Method 'RegisterTaskDefinition'
+    // TODO: Method 'GetSecurityDescriptor'
+    // TODO: Method 'SetSecurityDescriptor'
+};
+// --------------------------------------------------------
+// Type: IIdleSettings
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IIdleSettings = *opaque{
+    // TODO: Method 'get_IdleDuration'
+    // TODO: Method 'put_IdleDuration'
+    // TODO: Method 'get_WaitTimeout'
+    // TODO: Method 'put_WaitTimeout'
+    // TODO: Method 'get_StopOnIdleEnd'
+    // TODO: Method 'put_StopOnIdleEnd'
+    // TODO: Method 'get_RestartOnIdle'
+    // TODO: Method 'put_RestartOnIdle'
+};
+// --------------------------------------------------------
+// Type: INetworkSettings
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INetworkSettings = *opaque{
+    // TODO: Method 'get_Name'
+    // TODO: Method 'put_Name'
+    // TODO: Method 'get_Id'
+    // TODO: Method 'put_Id'
+};
+// --------------------------------------------------------
+// Type: IRepetitionPattern
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRepetitionPattern = *opaque{
+    // TODO: Method 'get_Interval'
+    // TODO: Method 'put_Interval'
+    // TODO: Method 'get_Duration'
+    // TODO: Method 'put_Duration'
+    // TODO: Method 'get_StopAtDurationEnd'
+    // TODO: Method 'put_StopAtDurationEnd'
+};
+],
+
+"func_definitions": [
+],
+
+"unicode_aliases": [
+]}

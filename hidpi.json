@@ -1,0 +1,179 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS = *opaque{
+};
+// --------------------------------------------------------
+// Type: DIALOG_DPI_CHANGE_BEHAVIORS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DIALOG_DPI_CHANGE_BEHAVIORS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PROCESS_DPI_AWARENESS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PROCESS_DPI_AWARENESS = *opaque{
+};
+// --------------------------------------------------------
+// Type: MONITOR_DPI_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MONITOR_DPI_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DPI_AWARENESS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DPI_AWARENESS = *opaque{
+};
+// --------------------------------------------------------
+// Type: DPI_HOSTING_BEHAVIOR
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DPI_HOSTING_BEHAVIOR = *opaque{
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetDialogControlDpiChangeBehavior(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    mask: Windows.Win32.HiDpi.DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS,
+    values: Windows.Win32.HiDpi.DIALOG_CONTROL_DPI_CHANGE_BEHAVIORS,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetDialogControlDpiChangeBehavior(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetDialogDpiChangeBehavior(
+    hDlg: Windows.Win32.WindowsAndMessaging.HWND,
+    mask: Windows.Win32.HiDpi.DIALOG_DPI_CHANGE_BEHAVIORS,
+    values: Windows.Win32.HiDpi.DIALOG_DPI_CHANGE_BEHAVIORS,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetDialogDpiChangeBehavior(
+    hDlg: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn GetSystemMetricsForDpi(
+    nIndex: {"kind":"Int32"},
+    dpi: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn AdjustWindowRectExForDpi(
+    lpRect: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    dwStyle: {"kind":"UInt32"},
+    bMenu: Windows.Win32.SystemServices.BOOL,
+    dwExStyle: {"kind":"UInt32"},
+    dpi: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn LogicalToPhysicalPointForPerMonitorDPI(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpPoint: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn PhysicalToLogicalPointForPerMonitorDPI(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    lpPoint: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINT},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SystemParametersInfoForDpi(
+    uiAction: {"kind":"UInt32"},
+    uiParam: {"kind":"UInt32"},
+    pvParam: {"kind""Ptr","child":{"kind":"Void"}},
+    fWinIni: {"kind":"UInt32"},
+    dpi: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn SetThreadDpiAwarenessContext(
+    dpiContext: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetThreadDpiAwarenessContext(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetWindowDpiAwarenessContext(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetAwarenessFromDpiAwarenessContext(
+    value: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetDpiFromDpiAwarenessContext(
+    value: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn AreDpiAwarenessContextsEqual(
+    dpiContextA: {"kind":"IntPtr"},
+    dpiContextB: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn IsValidDpiAwarenessContext(
+    value: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetDpiForWindow(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetDpiForSystem(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetSystemDpiForProcess(
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn EnableNonClientDpiScaling(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "USER32" fn SetProcessDpiAwarenessContext(
+    value: {"kind":"IntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn SetThreadDpiHostingBehavior(
+    value: Windows.Win32.HiDpi.DPI_HOSTING_BEHAVIOR,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetThreadDpiHostingBehavior(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "USER32" fn GetWindowDpiHostingBehavior(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-shcore-scaling-l1-1-1" fn SetProcessDpiAwareness(
+    value: Windows.Win32.HiDpi.PROCESS_DPI_AWARENESS,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-shcore-scaling-l1-1-1" fn GetProcessDpiAwareness(
+    hprocess: Windows.Win32.SystemServices.HANDLE,
+    value: {"kind""Ptr","child":Windows.Win32.HiDpi.PROCESS_DPI_AWARENESS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-shcore-scaling-l1-1-1" fn GetDpiForMonitor(
+    hmonitor: {"kind":"IntPtr"},
+    dpiType: Windows.Win32.HiDpi.MONITOR_DPI_TYPE,
+    dpiX: {"kind""Ptr","child":{"kind":"UInt32"}},
+    dpiY: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "UxTheme" fn OpenThemeDataForDpi(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    pszClassList: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dpi: {"kind":"UInt32"},
+],
+
+"unicode_aliases": [
+]}

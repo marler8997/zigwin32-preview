@@ -1,0 +1,458 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: PRJ_NOTIFY_TYPES
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PRJ_NOTIFY_TYPES = *opaque{
+};
+// --------------------------------------------------------
+// Type: PRJ_NOTIFICATION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PRJ_NOTIFICATION = *opaque{
+};
+// --------------------------------------------------------
+// Type: PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT__ = extern struct {
+    unused: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: PRJ_DIR_ENTRY_BUFFER_HANDLE__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PRJ_DIR_ENTRY_BUFFER_HANDLE__ = extern struct {
+    unused: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: PRJ_EXT_INFO_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PRJ_EXT_INFO_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PRJ_EXTENDED_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PRJ_EXTENDED_INFO = extern struct {
+    InfoType: Windows.Win32.ProjectedFileSystem.PRJ_EXT_INFO_TYPE,
+    NextInfoOffset: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.ProjectedFileSystem.PRJ_EXTENDED_INFO+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Symlink_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Symlink_e__Struct = extern struct {
+            TargetName: {"kind""Ptr","child":{"kind":"UInt16"}},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: PRJ_NOTIFICATION_MAPPING
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PRJ_NOTIFICATION_MAPPING = extern struct {
+    NotificationBitMask: Windows.Win32.ProjectedFileSystem.PRJ_NOTIFY_TYPES,
+    NotificationRoot: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: PRJ_STARTVIRTUALIZING_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PRJ_STARTVIRTUALIZING_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PRJ_STARTVIRTUALIZING_OPTIONS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PRJ_STARTVIRTUALIZING_OPTIONS = extern struct {
+    Flags: Windows.Win32.ProjectedFileSystem.PRJ_STARTVIRTUALIZING_FLAGS,
+    PoolThreadCount: {"kind":"UInt32"},
+    ConcurrentThreadCount: {"kind":"UInt32"},
+    NotificationMappings: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_NOTIFICATION_MAPPING},
+    NotificationMappingsCount: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PRJ_VIRTUALIZATION_INSTANCE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PRJ_VIRTUALIZATION_INSTANCE_INFO = extern struct {
+    InstanceID: Guid,
+    WriteAlignment: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PRJ_PLACEHOLDER_ID
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PRJ_PLACEHOLDER_ID = *opaque{
+};
+// --------------------------------------------------------
+// Type: PRJ_PLACEHOLDER_VERSION_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PRJ_PLACEHOLDER_VERSION_INFO = extern struct {
+    ProviderID: {"kind":"Array","child": {"kind":"Byte"}},
+    ContentID: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: PRJ_FILE_BASIC_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PRJ_FILE_BASIC_INFO = extern struct {
+    IsDirectory: {"kind":"Byte"},
+    FileSize: {"kind":"Int64"},
+    CreationTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    LastAccessTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    LastWriteTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    ChangeTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    FileAttributes: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PRJ_PLACEHOLDER_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PRJ_PLACEHOLDER_INFO = extern struct {
+    FileBasicInfo: Windows.Win32.ProjectedFileSystem.PRJ_FILE_BASIC_INFO,
+    EaInformation: Windows.Win32.ProjectedFileSystem.PRJ_PLACEHOLDER_INFO+_EaInformation_e__Struct,
+    SecurityInformation: Windows.Win32.ProjectedFileSystem.PRJ_PLACEHOLDER_INFO+_SecurityInformation_e__Struct,
+    StreamsInformation: Windows.Win32.ProjectedFileSystem.PRJ_PLACEHOLDER_INFO+_StreamsInformation_e__Struct,
+    VersionInfo: Windows.Win32.ProjectedFileSystem.PRJ_PLACEHOLDER_VERSION_INFO,
+    VariableData: {"kind":"Array","child": {"kind":"Byte"}},
+    // --------------------------------------------------------
+    // Type: _StreamsInformation_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _StreamsInformation_e__Struct = extern struct {
+        StreamsInfoBufferSize: {"kind":"UInt32"},
+        OffsetToFirstStreamInfo: {"kind":"UInt32"},
+    };
+    // --------------------------------------------------------
+    // Type: _EaInformation_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _EaInformation_e__Struct = extern struct {
+        EaBufferSize: {"kind":"UInt32"},
+        OffsetToFirstEa: {"kind":"UInt32"},
+    };
+    // --------------------------------------------------------
+    // Type: _SecurityInformation_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _SecurityInformation_e__Struct = extern struct {
+        SecurityBufferSize: {"kind":"UInt32"},
+        OffsetToSecurityDescriptor: {"kind":"UInt32"},
+    };
+};
+// --------------------------------------------------------
+// Type: PRJ_UPDATE_TYPES
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PRJ_UPDATE_TYPES = *opaque{
+};
+// --------------------------------------------------------
+// Type: PRJ_UPDATE_FAILURE_CAUSES
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PRJ_UPDATE_FAILURE_CAUSES = *opaque{
+};
+// --------------------------------------------------------
+// Type: PRJ_FILE_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PRJ_FILE_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PRJ_CALLBACK_DATA_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PRJ_CALLBACK_DATA_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PRJ_CALLBACK_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PRJ_CALLBACK_DATA = extern struct {
+    Size: {"kind":"UInt32"},
+    Flags: Windows.Win32.ProjectedFileSystem.PRJ_CALLBACK_DATA_FLAGS,
+    NamespaceVirtualizationContext: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT__},
+    CommandId: {"kind":"Int32"},
+    FileId: Guid,
+    DataStreamId: Guid,
+    FilePathName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    VersionInfo: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_PLACEHOLDER_VERSION_INFO},
+    TriggeringProcessId: {"kind":"UInt32"},
+    TriggeringProcessImageFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InstanceContext: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: PRJ_START_DIRECTORY_ENUMERATION_CB
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PRJ_START_DIRECTORY_ENUMERATION_CB = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PRJ_GET_DIRECTORY_ENUMERATION_CB
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PRJ_GET_DIRECTORY_ENUMERATION_CB = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PRJ_END_DIRECTORY_ENUMERATION_CB
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PRJ_END_DIRECTORY_ENUMERATION_CB = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PRJ_GET_PLACEHOLDER_INFO_CB
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PRJ_GET_PLACEHOLDER_INFO_CB = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PRJ_GET_FILE_DATA_CB
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PRJ_GET_FILE_DATA_CB = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PRJ_QUERY_FILE_NAME_CB
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PRJ_QUERY_FILE_NAME_CB = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PRJ_NOTIFICATION_PARAMETERS
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const PRJ_NOTIFICATION_PARAMETERS = *opaque{
+    // --------------------------------------------------------
+    // Type: _FileRenamed_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _FileRenamed_e__Struct = extern struct {
+        NotificationMask: Windows.Win32.ProjectedFileSystem.PRJ_NOTIFY_TYPES,
+    };
+    // --------------------------------------------------------
+    // Type: _PostCreate_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _PostCreate_e__Struct = extern struct {
+        NotificationMask: Windows.Win32.ProjectedFileSystem.PRJ_NOTIFY_TYPES,
+    };
+    // --------------------------------------------------------
+    // Type: _FileDeletedOnHandleClose_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _FileDeletedOnHandleClose_e__Struct = extern struct {
+        IsFileModified: {"kind":"Byte"},
+    };
+};
+// --------------------------------------------------------
+// Type: PRJ_NOTIFICATION_CB
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PRJ_NOTIFICATION_CB = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PRJ_CANCEL_COMMAND_CB
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PRJ_CANCEL_COMMAND_CB = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PRJ_CALLBACKS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PRJ_CALLBACKS = extern struct {
+    StartDirectoryEnumerationCallback: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_START_DIRECTORY_ENUMERATION_CB},
+    EndDirectoryEnumerationCallback: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_END_DIRECTORY_ENUMERATION_CB},
+    GetDirectoryEnumerationCallback: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_GET_DIRECTORY_ENUMERATION_CB},
+    GetPlaceholderInfoCallback: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_GET_PLACEHOLDER_INFO_CB},
+    GetFileDataCallback: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_GET_FILE_DATA_CB},
+    QueryFileNameCallback: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_QUERY_FILE_NAME_CB},
+    NotificationCallback: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_NOTIFICATION_CB},
+    CancelCommandCallback: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_CANCEL_COMMAND_CB},
+};
+// --------------------------------------------------------
+// Type: PRJ_COMPLETE_COMMAND_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PRJ_COMPLETE_COMMAND_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS = extern struct {
+    CommandType: Windows.Win32.ProjectedFileSystem.PRJ_COMPLETE_COMMAND_TYPE,
+    Anonymous: Windows.Win32.ProjectedFileSystem.PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Notification_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Notification_e__Struct = extern struct {
+            NotificationMask: Windows.Win32.ProjectedFileSystem.PRJ_NOTIFY_TYPES,
+        };
+        // --------------------------------------------------------
+        // Type: _Enumeration_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Enumeration_e__Struct = extern struct {
+            DirEntryBufferHandle: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_DIR_ENTRY_BUFFER_HANDLE__},
+        };
+    };
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROJECTEDFSLIB" fn PrjStartVirtualizing(
+    virtualizationRootPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    callbacks: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_CALLBACKS},
+    instanceContext: {"kind""Ptr","child":{"kind":"Void"}},
+    options: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_STARTVIRTUALIZING_OPTIONS},
+    namespaceVirtualizationContext: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT__}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROJECTEDFSLIB" fn PrjStopVirtualizing(
+    namespaceVirtualizationContext: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT__},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROJECTEDFSLIB" fn PrjClearNegativePathCache(
+    namespaceVirtualizationContext: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT__},
+    totalEntryNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROJECTEDFSLIB" fn PrjGetVirtualizationInstanceInfo(
+    namespaceVirtualizationContext: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT__},
+    virtualizationInstanceInfo: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_VIRTUALIZATION_INSTANCE_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROJECTEDFSLIB" fn PrjMarkDirectoryAsPlaceholder(
+    rootPathName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    targetPathName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    versionInfo: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_PLACEHOLDER_VERSION_INFO},
+    virtualizationInstanceID: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROJECTEDFSLIB" fn PrjWritePlaceholderInfo(
+    namespaceVirtualizationContext: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT__},
+    destinationFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    placeholderInfo: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_PLACEHOLDER_INFO},
+    placeholderInfoSize: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROJECTEDFSLIB" fn PrjWritePlaceholderInfo2(
+    namespaceVirtualizationContext: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT__},
+    destinationFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    placeholderInfo: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_PLACEHOLDER_INFO},
+    placeholderInfoSize: {"kind":"UInt32"},
+    ExtendedInfo: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_EXTENDED_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROJECTEDFSLIB" fn PrjUpdateFileIfNeeded(
+    namespaceVirtualizationContext: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT__},
+    destinationFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    placeholderInfo: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_PLACEHOLDER_INFO},
+    placeholderInfoSize: {"kind":"UInt32"},
+    updateFlags: Windows.Win32.ProjectedFileSystem.PRJ_UPDATE_TYPES,
+    failureReason: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_UPDATE_FAILURE_CAUSES},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROJECTEDFSLIB" fn PrjDeleteFile(
+    namespaceVirtualizationContext: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT__},
+    destinationFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    updateFlags: Windows.Win32.ProjectedFileSystem.PRJ_UPDATE_TYPES,
+    failureReason: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_UPDATE_FAILURE_CAUSES},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROJECTEDFSLIB" fn PrjWriteFileData(
+    namespaceVirtualizationContext: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT__},
+    dataStreamId: {"kind""Ptr","child":Guid},
+    buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    byteOffset: {"kind":"UInt64"},
+    length: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROJECTEDFSLIB" fn PrjGetOnDiskFileState(
+    destinationFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fileState: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_FILE_STATE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROJECTEDFSLIB" fn PrjAllocateAlignedBuffer(
+    namespaceVirtualizationContext: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT__},
+    size: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROJECTEDFSLIB" fn PrjFreeAlignedBuffer(
+    buffer: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROJECTEDFSLIB" fn PrjCompleteCommand(
+    namespaceVirtualizationContext: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT__},
+    commandId: {"kind":"Int32"},
+    completionResult: Windows.Win32.Com.HRESULT,
+    extendedParameters: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_COMPLETE_COMMAND_EXTENDED_PARAMETERS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROJECTEDFSLIB" fn PrjFillDirEntryBuffer(
+    fileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fileBasicInfo: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_FILE_BASIC_INFO},
+    dirEntryBufferHandle: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_DIR_ENTRY_BUFFER_HANDLE__},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROJECTEDFSLIB" fn PrjFillDirEntryBuffer2(
+    dirEntryBufferHandle: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_DIR_ENTRY_BUFFER_HANDLE__},
+    fileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fileBasicInfo: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_FILE_BASIC_INFO},
+    extendedInfo: {"kind""Ptr","child":Windows.Win32.ProjectedFileSystem.PRJ_EXTENDED_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROJECTEDFSLIB" fn PrjFileNameMatch(
+    fileNameToCheck: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pattern: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROJECTEDFSLIB" fn PrjFileNameCompare(
+    fileName1: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fileName2: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROJECTEDFSLIB" fn PrjDoesNameContainWildCards(
+    fileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+],
+
+"unicode_aliases": [
+]}

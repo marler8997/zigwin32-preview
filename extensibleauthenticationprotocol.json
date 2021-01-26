@@ -1,0 +1,922 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: RAS_AUTH_ATTRIBUTE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const RAS_AUTH_ATTRIBUTE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: NgcTicketContext
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NgcTicketContext = extern struct {
+    wszTicket: {"kind":"Array","child": {"kind":"UInt16"}},
+    hKey: {"kind":"UIntPtr"},
+    hImpersonateToken: Windows.Win32.SystemServices.HANDLE,
+};
+// --------------------------------------------------------
+// Type: RAS_AUTH_ATTRIBUTE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RAS_AUTH_ATTRIBUTE = extern struct {
+    raaType: Windows.Win32.ExtensibleAuthenticationProtocol.RAS_AUTH_ATTRIBUTE_TYPE,
+    dwLength: {"kind":"UInt32"},
+    Value: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: PPP_EAP_PACKET
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PPP_EAP_PACKET = extern struct {
+    Code: {"kind":"Byte"},
+    Id: {"kind":"Byte"},
+    Length: {"kind":"Array","child": {"kind":"Byte"}},
+    Data: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: PPP_EAP_INPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PPP_EAP_INPUT = extern struct {
+    dwSizeInBytes: {"kind":"UInt32"},
+    fFlags: {"kind":"UInt32"},
+    fAuthenticator: Windows.Win32.SystemServices.BOOL,
+    pwszIdentity: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    bInitialId: {"kind":"Byte"},
+    pUserAttributes: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.RAS_AUTH_ATTRIBUTE},
+    fAuthenticationComplete: Windows.Win32.SystemServices.BOOL,
+    dwAuthResultCode: {"kind":"UInt32"},
+    hTokenImpersonateUser: Windows.Win32.SystemServices.HANDLE,
+    fSuccessPacketReceived: Windows.Win32.SystemServices.BOOL,
+    fDataReceivedFromInteractiveUI: Windows.Win32.SystemServices.BOOL,
+    pDataFromInteractiveUI: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwSizeOfDataFromInteractiveUI: {"kind":"UInt32"},
+    pConnectionData: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwSizeOfConnectionData: {"kind":"UInt32"},
+    pUserData: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwSizeOfUserData: {"kind":"UInt32"},
+    hReserved: Windows.Win32.SystemServices.HANDLE,
+    guidConnectionId: Guid,
+    isVpn: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: PPP_EAP_ACTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PPP_EAP_ACTION = *opaque{
+};
+// --------------------------------------------------------
+// Type: PPP_EAP_OUTPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PPP_EAP_OUTPUT = extern struct {
+    dwSizeInBytes: {"kind":"UInt32"},
+    Action: Windows.Win32.ExtensibleAuthenticationProtocol.PPP_EAP_ACTION,
+    dwAuthResultCode: {"kind":"UInt32"},
+    pUserAttributes: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.RAS_AUTH_ATTRIBUTE},
+    fInvokeInteractiveUI: Windows.Win32.SystemServices.BOOL,
+    pUIContextData: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwSizeOfUIContextData: {"kind":"UInt32"},
+    fSaveConnectionData: Windows.Win32.SystemServices.BOOL,
+    pConnectionData: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwSizeOfConnectionData: {"kind":"UInt32"},
+    fSaveUserData: Windows.Win32.SystemServices.BOOL,
+    pUserData: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwSizeOfUserData: {"kind":"UInt32"},
+    pNgcKerbTicket: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.NgcTicketContext},
+    fSaveToCredMan: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: PPP_EAP_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PPP_EAP_INFO = extern struct {
+    dwSizeInBytes: {"kind":"UInt32"},
+    dwEapTypeId: {"kind":"UInt32"},
+    RasEapInitialize: {"kind":"IntPtr"},
+    RasEapBegin: {"kind":"IntPtr"},
+    RasEapEnd: {"kind":"IntPtr"},
+    RasEapMakeMessage: {"kind":"IntPtr"},
+};
+// --------------------------------------------------------
+// Type: LEGACY_IDENTITY_UI_PARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LEGACY_IDENTITY_UI_PARAMS = extern struct {
+    eapType: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwSizeofConnectionData: {"kind":"UInt32"},
+    pConnectionData: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwSizeofUserData: {"kind":"UInt32"},
+    pUserData: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwSizeofUserDataOut: {"kind":"UInt32"},
+    pUserDataOut: {"kind""Ptr","child":{"kind":"Byte"}},
+    pwszIdentity: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwError: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: LEGACY_INTERACTIVE_UI_PARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LEGACY_INTERACTIVE_UI_PARAMS = extern struct {
+    eapType: {"kind":"UInt32"},
+    dwSizeofContextData: {"kind":"UInt32"},
+    pContextData: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwSizeofInteractiveUIData: {"kind":"UInt32"},
+    pInteractiveUIData: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwError: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: IRouterProtocolConfig
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRouterProtocolConfig = *opaque{
+    // TODO: Method 'AddProtocol'
+    // TODO: Method 'RemoveProtocol'
+};
+// --------------------------------------------------------
+// Type: IAuthenticationProviderConfig
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAuthenticationProviderConfig = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'Uninitialize'
+    // TODO: Method 'Configure'
+    // TODO: Method 'Activate'
+    // TODO: Method 'Deactivate'
+};
+// --------------------------------------------------------
+// Type: IAccountingProviderConfig
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAccountingProviderConfig = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'Uninitialize'
+    // TODO: Method 'Configure'
+    // TODO: Method 'Activate'
+    // TODO: Method 'Deactivate'
+};
+// --------------------------------------------------------
+// Type: IEAPProviderConfig
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEAPProviderConfig = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'Uninitialize'
+    // TODO: Method 'ServerInvokeConfigUI'
+    // TODO: Method 'RouterInvokeConfigUI'
+    // TODO: Method 'RouterInvokeCredentialsUI'
+};
+// --------------------------------------------------------
+// Type: IEAPProviderConfig2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEAPProviderConfig2 = *opaque{
+    // TODO: Method 'ServerInvokeConfigUI2'
+    // TODO: Method 'GetGlobalConfig'
+};
+// --------------------------------------------------------
+// Type: IEAPProviderConfig3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEAPProviderConfig3 = *opaque{
+    // TODO: Method 'ServerInvokeCertificateConfigUI'
+};
+// --------------------------------------------------------
+// Type: EAP_TYPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EAP_TYPE = extern struct {
+    type: {"kind":"Byte"},
+    dwVendorId: {"kind":"UInt32"},
+    dwVendorType: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EAP_METHOD_TYPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EAP_METHOD_TYPE = extern struct {
+    eapType: Windows.Win32.ExtensibleAuthenticationProtocol.EAP_TYPE,
+    dwAuthorId: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EAP_METHOD_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EAP_METHOD_INFO = extern struct {
+    eaptype: Windows.Win32.ExtensibleAuthenticationProtocol.EAP_METHOD_TYPE,
+    pwszAuthorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszFriendlyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    eapProperties: {"kind":"UInt32"},
+    pInnerMethodInfo: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_METHOD_INFO},
+};
+// --------------------------------------------------------
+// Type: EAP_METHOD_INFO_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EAP_METHOD_INFO_EX = extern struct {
+    eaptype: Windows.Win32.ExtensibleAuthenticationProtocol.EAP_METHOD_TYPE,
+    pwszAuthorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszFriendlyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    eapProperties: {"kind":"UInt32"},
+    pInnerMethodInfoArray: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_METHOD_INFO_ARRAY_EX},
+};
+// --------------------------------------------------------
+// Type: EAP_METHOD_INFO_ARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EAP_METHOD_INFO_ARRAY = extern struct {
+    dwNumberOfMethods: {"kind":"UInt32"},
+    pEapMethods: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_METHOD_INFO},
+};
+// --------------------------------------------------------
+// Type: EAP_METHOD_INFO_ARRAY_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EAP_METHOD_INFO_ARRAY_EX = extern struct {
+    dwNumberOfMethods: {"kind":"UInt32"},
+    pEapMethods: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_METHOD_INFO_EX},
+};
+// --------------------------------------------------------
+// Type: EAP_ERROR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EAP_ERROR = extern struct {
+    dwWinError: {"kind":"UInt32"},
+    type: Windows.Win32.ExtensibleAuthenticationProtocol.EAP_METHOD_TYPE,
+    dwReasonCode: {"kind":"UInt32"},
+    rootCauseGuid: Guid,
+    repairGuid: Guid,
+    helpLinkGuid: Guid,
+    pRootCauseString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pRepairString: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: EAP_ATTRIBUTE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EAP_ATTRIBUTE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: EAP_ATTRIBUTE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EAP_ATTRIBUTE = extern struct {
+    eaType: Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ATTRIBUTE_TYPE,
+    dwLength: {"kind":"UInt32"},
+    pValue: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: EAP_ATTRIBUTES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EAP_ATTRIBUTES = extern struct {
+    dwNumberOfAttributes: {"kind":"UInt32"},
+    pAttribs: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ATTRIBUTE},
+};
+// --------------------------------------------------------
+// Type: EAP_CONFIG_INPUT_FIELD_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EAP_CONFIG_INPUT_FIELD_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: EAP_CONFIG_INPUT_FIELD_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EAP_CONFIG_INPUT_FIELD_DATA = extern struct {
+    dwSize: {"kind":"UInt32"},
+    Type: Windows.Win32.ExtensibleAuthenticationProtocol.EAP_CONFIG_INPUT_FIELD_TYPE,
+    dwFlagProps: {"kind":"UInt32"},
+    pwszLabel: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszData: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwMinDataLength: {"kind":"UInt32"},
+    dwMaxDataLength: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EAP_CONFIG_INPUT_FIELD_ARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EAP_CONFIG_INPUT_FIELD_ARRAY = extern struct {
+    dwVersion: {"kind":"UInt32"},
+    dwNumberOfFields: {"kind":"UInt32"},
+    pFields: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_CONFIG_INPUT_FIELD_DATA},
+};
+// --------------------------------------------------------
+// Type: EAP_INTERACTIVE_UI_DATA_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EAP_INTERACTIVE_UI_DATA_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: EAP_CRED_EXPIRY_REQ
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EAP_CRED_EXPIRY_REQ = extern struct {
+    curCreds: Windows.Win32.ExtensibleAuthenticationProtocol.EAP_CONFIG_INPUT_FIELD_ARRAY,
+    newCreds: Windows.Win32.ExtensibleAuthenticationProtocol.EAP_CONFIG_INPUT_FIELD_ARRAY,
+};
+// --------------------------------------------------------
+// Type: EAP_UI_DATA_FORMAT
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const EAP_UI_DATA_FORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: EAP_INTERACTIVE_UI_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EAP_INTERACTIVE_UI_DATA = extern struct {
+    dwVersion: {"kind":"UInt32"},
+    dwSize: {"kind":"UInt32"},
+    dwDataType: Windows.Win32.ExtensibleAuthenticationProtocol.EAP_INTERACTIVE_UI_DATA_TYPE,
+    cbUiData: {"kind":"UInt32"},
+    pbUiData: Windows.Win32.ExtensibleAuthenticationProtocol.EAP_UI_DATA_FORMAT,
+};
+// --------------------------------------------------------
+// Type: EAP_METHOD_PROPERTY_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EAP_METHOD_PROPERTY_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: EAP_METHOD_PROPERTY_VALUE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EAP_METHOD_PROPERTY_VALUE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: EAP_METHOD_PROPERTY_VALUE_BOOL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EAP_METHOD_PROPERTY_VALUE_BOOL = extern struct {
+    length: {"kind":"UInt32"},
+    value: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: EAP_METHOD_PROPERTY_VALUE_DWORD
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EAP_METHOD_PROPERTY_VALUE_DWORD = extern struct {
+    length: {"kind":"UInt32"},
+    value: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: EAP_METHOD_PROPERTY_VALUE_STRING
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EAP_METHOD_PROPERTY_VALUE_STRING = extern struct {
+    length: {"kind":"UInt32"},
+    value: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: EAP_METHOD_PROPERTY_VALUE
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const EAP_METHOD_PROPERTY_VALUE = *opaque{
+};
+// --------------------------------------------------------
+// Type: EAP_METHOD_PROPERTY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EAP_METHOD_PROPERTY = extern struct {
+    eapMethodPropertyType: Windows.Win32.ExtensibleAuthenticationProtocol.EAP_METHOD_PROPERTY_TYPE,
+    eapMethodPropertyValueType: Windows.Win32.ExtensibleAuthenticationProtocol.EAP_METHOD_PROPERTY_VALUE_TYPE,
+    eapMethodPropertyValue: Windows.Win32.ExtensibleAuthenticationProtocol.EAP_METHOD_PROPERTY_VALUE,
+};
+// --------------------------------------------------------
+// Type: EAP_METHOD_PROPERTY_ARRAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EAP_METHOD_PROPERTY_ARRAY = extern struct {
+    dwNumberOfProperties: {"kind":"UInt32"},
+    pMethodProperty: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_METHOD_PROPERTY},
+};
+// --------------------------------------------------------
+// Type: EAPHOST_IDENTITY_UI_PARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EAPHOST_IDENTITY_UI_PARAMS = extern struct {
+    eapMethodType: Windows.Win32.ExtensibleAuthenticationProtocol.EAP_METHOD_TYPE,
+    dwFlags: {"kind":"UInt32"},
+    dwSizeofConnectionData: {"kind":"UInt32"},
+    pConnectionData: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwSizeofUserData: {"kind":"UInt32"},
+    pUserData: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwSizeofUserDataOut: {"kind":"UInt32"},
+    pUserDataOut: {"kind""Ptr","child":{"kind":"Byte"}},
+    pwszIdentity: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwError: {"kind":"UInt32"},
+    pEapError: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR},
+};
+// --------------------------------------------------------
+// Type: EAPHOST_INTERACTIVE_UI_PARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EAPHOST_INTERACTIVE_UI_PARAMS = extern struct {
+    dwSizeofContextData: {"kind":"UInt32"},
+    pContextData: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwSizeofInteractiveUIData: {"kind":"UInt32"},
+    pInteractiveUIData: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwError: {"kind":"UInt32"},
+    pEapError: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR},
+};
+// --------------------------------------------------------
+// Type: EapCredentialType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EapCredentialType = *opaque{
+};
+// --------------------------------------------------------
+// Type: EapUsernamePasswordCredential
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EapUsernamePasswordCredential = extern struct {
+    username: {"kind""Ptr","child":{"kind":"UInt16"}},
+    password: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: EapCertificateCredential
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EapCertificateCredential = extern struct {
+    certHash: {"kind":"Array","child": {"kind":"Byte"}},
+    password: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: EapSimCredential
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EapSimCredential = extern struct {
+    iccID: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: EapCredentialTypeData
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const EapCredentialTypeData = *opaque{
+};
+// --------------------------------------------------------
+// Type: EapCredential
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EapCredential = extern struct {
+    credType: Windows.Win32.ExtensibleAuthenticationProtocol.EapCredentialType,
+    credData: Windows.Win32.ExtensibleAuthenticationProtocol.EapCredentialTypeData,
+};
+// --------------------------------------------------------
+// Type: EapHostPeerMethodResultReason
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EapHostPeerMethodResultReason = *opaque{
+};
+// --------------------------------------------------------
+// Type: EapHostPeerResponseAction
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EapHostPeerResponseAction = *opaque{
+};
+// --------------------------------------------------------
+// Type: EapHostPeerAuthParams
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EapHostPeerAuthParams = *opaque{
+};
+// --------------------------------------------------------
+// Type: EAPHOST_AUTH_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EAPHOST_AUTH_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: EAPHOST_AUTH_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EAPHOST_AUTH_INFO = extern struct {
+    status: Windows.Win32.ExtensibleAuthenticationProtocol.EAPHOST_AUTH_STATUS,
+    dwErrorCode: {"kind":"UInt32"},
+    dwReasonCode: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ISOLATION_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ISOLATION_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: EapHostPeerMethodResult
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EapHostPeerMethodResult = extern struct {
+    fIsSuccess: Windows.Win32.SystemServices.BOOL,
+    dwFailureReasonCode: {"kind":"UInt32"},
+    fSaveConnectionData: Windows.Win32.SystemServices.BOOL,
+    dwSizeofConnectionData: {"kind":"UInt32"},
+    pConnectionData: {"kind""Ptr","child":{"kind":"Byte"}},
+    fSaveUserData: Windows.Win32.SystemServices.BOOL,
+    dwSizeofUserData: {"kind":"UInt32"},
+    pUserData: {"kind""Ptr","child":{"kind":"Byte"}},
+    pAttribArray: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ATTRIBUTES},
+    isolationState: Windows.Win32.ExtensibleAuthenticationProtocol.ISOLATION_STATE,
+    pEapMethodInfo: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_METHOD_INFO},
+    pEapError: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR},
+};
+// --------------------------------------------------------
+// Type: EapPacket
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EapPacket = extern struct {
+    Code: {"kind":"Byte"},
+    Id: {"kind":"Byte"},
+    Length: {"kind":"Array","child": {"kind":"Byte"}},
+    Data: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: EapCode
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EapCode = *opaque{
+};
+// --------------------------------------------------------
+// Type: NotificationHandler
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NotificationHandler = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: EAP_METHOD_AUTHENTICATOR_RESPONSE_ACTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EAP_METHOD_AUTHENTICATOR_RESPONSE_ACTION = *opaque{
+};
+// --------------------------------------------------------
+// Type: EAP_METHOD_AUTHENTICATOR_RESULT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EAP_METHOD_AUTHENTICATOR_RESULT = extern struct {
+    fIsSuccess: Windows.Win32.SystemServices.BOOL,
+    dwFailureReason: {"kind":"UInt32"},
+    pAuthAttribs: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ATTRIBUTES},
+};
+// --------------------------------------------------------
+// Type: EapPeerMethodResponseAction
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EapPeerMethodResponseAction = *opaque{
+};
+// --------------------------------------------------------
+// Type: EapPeerMethodOutput
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EapPeerMethodOutput = extern struct {
+    action: Windows.Win32.ExtensibleAuthenticationProtocol.EapPeerMethodResponseAction,
+    fAllowNotifications: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: EapPeerMethodResultReason
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EapPeerMethodResultReason = *opaque{
+};
+// --------------------------------------------------------
+// Type: EapPeerMethodResult
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EapPeerMethodResult = extern struct {
+    fIsSuccess: Windows.Win32.SystemServices.BOOL,
+    dwFailureReasonCode: {"kind":"UInt32"},
+    fSaveConnectionData: Windows.Win32.SystemServices.BOOL,
+    dwSizeofConnectionData: {"kind":"UInt32"},
+    pConnectionData: {"kind""Ptr","child":{"kind":"Byte"}},
+    fSaveUserData: Windows.Win32.SystemServices.BOOL,
+    dwSizeofUserData: {"kind":"UInt32"},
+    pUserData: {"kind""Ptr","child":{"kind":"Byte"}},
+    pAttribArray: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ATTRIBUTES},
+    pEapError: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR},
+    pNgcKerbTicket: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.NgcTicketContext},
+    fSaveToCredMan: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: EAP_PEER_METHOD_ROUTINES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EAP_PEER_METHOD_ROUTINES = extern struct {
+    dwVersion: {"kind":"UInt32"},
+    pEapType: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_TYPE},
+    EapPeerInitialize: {"kind":"IntPtr"},
+    EapPeerGetIdentity: {"kind":"IntPtr"},
+    EapPeerBeginSession: {"kind":"IntPtr"},
+    EapPeerSetCredentials: {"kind":"IntPtr"},
+    EapPeerProcessRequestPacket: {"kind":"IntPtr"},
+    EapPeerGetResponsePacket: {"kind":"IntPtr"},
+    EapPeerGetResult: {"kind":"IntPtr"},
+    EapPeerGetUIContext: {"kind":"IntPtr"},
+    EapPeerSetUIContext: {"kind":"IntPtr"},
+    EapPeerGetResponseAttributes: {"kind":"IntPtr"},
+    EapPeerSetResponseAttributes: {"kind":"IntPtr"},
+    EapPeerEndSession: {"kind":"IntPtr"},
+    EapPeerShutdown: {"kind":"IntPtr"},
+};
+// --------------------------------------------------------
+// Type: EAP_AUTHENTICATOR_SEND_TIMEOUT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const EAP_AUTHENTICATOR_SEND_TIMEOUT = *opaque{
+};
+// --------------------------------------------------------
+// Type: EAP_AUTHENTICATOR_METHOD_ROUTINES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const EAP_AUTHENTICATOR_METHOD_ROUTINES = extern struct {
+    dwSizeInBytes: {"kind":"UInt32"},
+    pEapType: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_METHOD_TYPE},
+    EapMethodAuthenticatorInitialize: {"kind":"IntPtr"},
+    EapMethodAuthenticatorBeginSession: {"kind":"IntPtr"},
+    EapMethodAuthenticatorUpdateInnerMethodParams: {"kind":"IntPtr"},
+    EapMethodAuthenticatorReceivePacket: {"kind":"IntPtr"},
+    EapMethodAuthenticatorSendPacket: {"kind":"IntPtr"},
+    EapMethodAuthenticatorGetAttributes: {"kind":"IntPtr"},
+    EapMethodAuthenticatorSetAttributes: {"kind":"IntPtr"},
+    EapMethodAuthenticatorGetResult: {"kind":"IntPtr"},
+    EapMethodAuthenticatorEndSession: {"kind":"IntPtr"},
+    EapMethodAuthenticatorShutdown: {"kind":"IntPtr"},
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappcfg" fn EapHostPeerGetMethods(
+    pEapMethodInfoArray: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_METHOD_INFO_ARRAY},
+    ppEapError: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappcfg" fn EapHostPeerGetMethodProperties(
+    dwVersion: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    eapMethodType: Windows.Win32.ExtensibleAuthenticationProtocol.EAP_METHOD_TYPE,
+    hUserImpersonationToken: Windows.Win32.SystemServices.HANDLE,
+    dwEapConnDataSize: {"kind":"UInt32"},
+    pbEapConnData: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwUserDataSize: {"kind":"UInt32"},
+    pbUserData: {"kind""Ptr","child":{"kind":"Byte"}},
+    pMethodPropertyArray: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_METHOD_PROPERTY_ARRAY},
+    ppEapError: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappcfg" fn EapHostPeerInvokeConfigUI(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    dwFlags: {"kind":"UInt32"},
+    eapMethodType: Windows.Win32.ExtensibleAuthenticationProtocol.EAP_METHOD_TYPE,
+    dwSizeOfConfigIn: {"kind":"UInt32"},
+    pConfigIn: {"kind""Ptr","child":{"kind":"Byte"}},
+    pdwSizeOfConfigOut: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ppConfigOut: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    ppEapError: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappcfg" fn EapHostPeerQueryCredentialInputFields(
+    hUserImpersonationToken: Windows.Win32.SystemServices.HANDLE,
+    eapMethodType: Windows.Win32.ExtensibleAuthenticationProtocol.EAP_METHOD_TYPE,
+    dwFlags: {"kind":"UInt32"},
+    dwEapConnDataSize: {"kind":"UInt32"},
+    pbEapConnData: {"kind""Ptr","child":{"kind":"Byte"}},
+    pEapConfigInputFieldArray: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_CONFIG_INPUT_FIELD_ARRAY},
+    ppEapError: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappcfg" fn EapHostPeerQueryUserBlobFromCredentialInputFields(
+    hUserImpersonationToken: Windows.Win32.SystemServices.HANDLE,
+    eapMethodType: Windows.Win32.ExtensibleAuthenticationProtocol.EAP_METHOD_TYPE,
+    dwFlags: {"kind":"UInt32"},
+    dwEapConnDataSize: {"kind":"UInt32"},
+    pbEapConnData: {"kind""Ptr","child":{"kind":"Byte"}},
+    pEapConfigInputFieldArray: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_CONFIG_INPUT_FIELD_ARRAY},
+    pdwUserBlobSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ppbUserBlob: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    ppEapError: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappcfg" fn EapHostPeerInvokeIdentityUI(
+    dwVersion: {"kind":"UInt32"},
+    eapMethodType: Windows.Win32.ExtensibleAuthenticationProtocol.EAP_METHOD_TYPE,
+    dwFlags: {"kind":"UInt32"},
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    dwSizeofConnectionData: {"kind":"UInt32"},
+    pConnectionData: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwSizeofUserData: {"kind":"UInt32"},
+    pUserData: {"kind""Ptr","child":{"kind":"Byte"}},
+    pdwSizeOfUserDataOut: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ppUserDataOut: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    ppwszIdentity: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    ppEapError: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR}},
+    ppvReserved: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappcfg" fn EapHostPeerInvokeInteractiveUI(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    dwSizeofUIContextData: {"kind":"UInt32"},
+    pUIContextData: {"kind""Ptr","child":{"kind":"Byte"}},
+    pdwSizeOfDataFromInteractiveUI: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ppDataFromInteractiveUI: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    ppEapError: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappcfg" fn EapHostPeerQueryInteractiveUIInputFields(
+    dwVersion: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwSizeofUIContextData: {"kind":"UInt32"},
+    pUIContextData: {"kind""Ptr","child":{"kind":"Byte"}},
+    pEapInteractiveUIData: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_INTERACTIVE_UI_DATA},
+    ppEapError: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR}},
+    ppvReserved: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappcfg" fn EapHostPeerQueryUIBlobFromInteractiveUIInputFields(
+    dwVersion: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    dwSizeofUIContextData: {"kind":"UInt32"},
+    pUIContextData: {"kind""Ptr","child":{"kind":"Byte"}},
+    pEapInteractiveUIData: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_INTERACTIVE_UI_DATA},
+    pdwSizeOfDataFromInteractiveUI: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ppDataFromInteractiveUI: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    ppEapError: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR}},
+    ppvReserved: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappcfg" fn EapHostPeerConfigXml2Blob(
+    dwFlags: {"kind":"UInt32"},
+    pConfigDoc: Windows.Win32.WindowsProgramming.IXMLDOMNode,
+    pdwSizeOfConfigOut: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ppConfigOut: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    pEapMethodType: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_METHOD_TYPE},
+    ppEapError: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappcfg" fn EapHostPeerCredentialsXml2Blob(
+    dwFlags: {"kind":"UInt32"},
+    pCredentialsDoc: Windows.Win32.WindowsProgramming.IXMLDOMNode,
+    dwSizeOfConfigIn: {"kind":"UInt32"},
+    pConfigIn: {"kind""Ptr","child":{"kind":"Byte"}},
+    pdwSizeOfCredentialsOut: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ppCredentialsOut: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    pEapMethodType: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_METHOD_TYPE},
+    ppEapError: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappcfg" fn EapHostPeerConfigBlob2Xml(
+    dwFlags: {"kind":"UInt32"},
+    eapMethodType: Windows.Win32.ExtensibleAuthenticationProtocol.EAP_METHOD_TYPE,
+    dwSizeOfConfigIn: {"kind":"UInt32"},
+    pConfigIn: {"kind""Ptr","child":{"kind":"Byte"}},
+    ppConfigDoc: {"kind""Ptr","child":Windows.Win32.XmlHttpExtendedRequest.IXMLDOMDocument2},
+    ppEapError: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappcfg" fn EapHostPeerFreeMemory(
+    pData: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappcfg" fn EapHostPeerFreeErrorMemory(
+    pEapError: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappprxy" fn EapHostPeerInitialize(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappprxy" fn EapHostPeerUninitialize(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappprxy" fn EapHostPeerBeginSession(
+    dwFlags: {"kind":"UInt32"},
+    eapType: Windows.Win32.ExtensibleAuthenticationProtocol.EAP_METHOD_TYPE,
+    pAttributeArray: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ATTRIBUTES},
+    hTokenImpersonateUser: Windows.Win32.SystemServices.HANDLE,
+    dwSizeofConnectionData: {"kind":"UInt32"},
+    pConnectionData: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwSizeofUserData: {"kind":"UInt32"},
+    pUserData: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwMaxSendPacketSize: {"kind":"UInt32"},
+    pConnectionId: {"kind""Ptr","child":Guid},
+    func: Windows.Win32.ExtensibleAuthenticationProtocol.NotificationHandler,
+    pContextData: {"kind""Ptr","child":{"kind":"Void"}},
+    pSessionId: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ppEapError: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappprxy" fn EapHostPeerProcessReceivedPacket(
+    sessionHandle: {"kind":"UInt32"},
+    cbReceivePacket: {"kind":"UInt32"},
+    pReceivePacket: {"kind""Ptr","child":{"kind":"Byte"}},
+    pEapOutput: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EapHostPeerResponseAction},
+    ppEapError: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappprxy" fn EapHostPeerGetSendPacket(
+    sessionHandle: {"kind":"UInt32"},
+    pcbSendPacket: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ppSendPacket: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    ppEapError: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappprxy" fn EapHostPeerGetResult(
+    sessionHandle: {"kind":"UInt32"},
+    reason: Windows.Win32.ExtensibleAuthenticationProtocol.EapHostPeerMethodResultReason,
+    ppResult: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EapHostPeerMethodResult},
+    ppEapError: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappprxy" fn EapHostPeerGetUIContext(
+    sessionHandle: {"kind":"UInt32"},
+    pdwSizeOfUIContextData: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ppUIContextData: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    ppEapError: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappprxy" fn EapHostPeerSetUIContext(
+    sessionHandle: {"kind":"UInt32"},
+    dwSizeOfUIContextData: {"kind":"UInt32"},
+    pUIContextData: {"kind""Ptr","child":{"kind":"Byte"}},
+    pEapOutput: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EapHostPeerResponseAction},
+    ppEapError: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappprxy" fn EapHostPeerGetResponseAttributes(
+    sessionHandle: {"kind":"UInt32"},
+    pAttribs: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ATTRIBUTES},
+    ppEapError: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappprxy" fn EapHostPeerSetResponseAttributes(
+    sessionHandle: {"kind":"UInt32"},
+    pAttribs: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ATTRIBUTES},
+    pEapOutput: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EapHostPeerResponseAction},
+    ppEapError: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappprxy" fn EapHostPeerGetAuthStatus(
+    sessionHandle: {"kind":"UInt32"},
+    authParam: Windows.Win32.ExtensibleAuthenticationProtocol.EapHostPeerAuthParams,
+    pcbAuthData: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ppAuthData: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    ppEapError: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappprxy" fn EapHostPeerEndSession(
+    sessionHandle: {"kind":"UInt32"},
+    ppEapError: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappprxy" fn EapHostPeerGetDataToUnplumbCredentials(
+    pConnectionIdThatLastSavedCreds: {"kind""Ptr","child":Guid},
+    phCredentialImpersonationToken: {"kind""Ptr","child":{"kind":"Int32"}},
+    sessionHandle: {"kind":"UInt32"},
+    ppEapError: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR}},
+    fSaveToCredMan: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappprxy" fn EapHostPeerClearConnection(
+    pConnectionId: {"kind""Ptr","child":Guid},
+    ppEapError: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappprxy" fn EapHostPeerFreeEapError(
+    pEapError: {"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappprxy" fn EapHostPeerGetIdentity(
+    dwVersion: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    eapMethodType: Windows.Win32.ExtensibleAuthenticationProtocol.EAP_METHOD_TYPE,
+    dwSizeofConnectionData: {"kind":"UInt32"},
+    pConnectionData: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwSizeofUserData: {"kind":"UInt32"},
+    pUserData: {"kind""Ptr","child":{"kind":"Byte"}},
+    hTokenImpersonateUser: Windows.Win32.SystemServices.HANDLE,
+    pfInvokeUI: {"kind""Ptr","child":{"kind":"Int32"}},
+    pdwSizeOfUserDataOut: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ppUserDataOut: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    ppwszIdentity: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    ppEapError: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.ExtensibleAuthenticationProtocol.EAP_ERROR}},
+    ppvReserved: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappprxy" fn EapHostPeerGetEncryptedPassword(
+    dwSizeofPassword: {"kind":"UInt32"},
+    szPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppszEncPassword: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "eappprxy" fn EapHostPeerFreeRuntimeMemory(
+    pData: {"kind""Ptr","child":{"kind":"Byte"}},
+],
+
+"unicode_aliases": [
+]}

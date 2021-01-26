@@ -1,0 +1,380 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: INTERACTION_ID
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const INTERACTION_ID = *opaque{
+};
+// --------------------------------------------------------
+// Type: INTERACTION_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const INTERACTION_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: INTERACTION_CONFIGURATION_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const INTERACTION_CONFIGURATION_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: INERTIA_PARAMETER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const INERTIA_PARAMETER = *opaque{
+};
+// --------------------------------------------------------
+// Type: INTERACTION_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const INTERACTION_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: INTERACTION_CONTEXT_PROPERTY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const INTERACTION_CONTEXT_PROPERTY = *opaque{
+};
+// --------------------------------------------------------
+// Type: CROSS_SLIDE_THRESHOLD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CROSS_SLIDE_THRESHOLD = *opaque{
+};
+// --------------------------------------------------------
+// Type: CROSS_SLIDE_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CROSS_SLIDE_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: MOUSE_WHEEL_PARAMETER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MOUSE_WHEEL_PARAMETER = *opaque{
+};
+// --------------------------------------------------------
+// Type: TAP_PARAMETER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TAP_PARAMETER = *opaque{
+};
+// --------------------------------------------------------
+// Type: HOLD_PARAMETER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HOLD_PARAMETER = *opaque{
+};
+// --------------------------------------------------------
+// Type: TRANSLATION_PARAMETER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TRANSLATION_PARAMETER = *opaque{
+};
+// --------------------------------------------------------
+// Type: MANIPULATION_RAILS_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MANIPULATION_RAILS_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: MANIPULATION_TRANSFORM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MANIPULATION_TRANSFORM = extern struct {
+    translationX: {"kind":"Single"},
+    translationY: {"kind":"Single"},
+    scale: {"kind":"Single"},
+    expansion: {"kind":"Single"},
+    rotation: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: MANIPULATION_VELOCITY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MANIPULATION_VELOCITY = extern struct {
+    velocityX: {"kind":"Single"},
+    velocityY: {"kind":"Single"},
+    velocityExpansion: {"kind":"Single"},
+    velocityAngular: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: INTERACTION_ARGUMENTS_MANIPULATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERACTION_ARGUMENTS_MANIPULATION = extern struct {
+    delta: Windows.Win32.InteractionContext.MANIPULATION_TRANSFORM,
+    cumulative: Windows.Win32.InteractionContext.MANIPULATION_TRANSFORM,
+    velocity: Windows.Win32.InteractionContext.MANIPULATION_VELOCITY,
+    railsState: Windows.Win32.InteractionContext.MANIPULATION_RAILS_STATE,
+};
+// --------------------------------------------------------
+// Type: INTERACTION_ARGUMENTS_TAP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERACTION_ARGUMENTS_TAP = extern struct {
+    count: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: INTERACTION_ARGUMENTS_CROSS_SLIDE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERACTION_ARGUMENTS_CROSS_SLIDE = extern struct {
+    flags: Windows.Win32.InteractionContext.CROSS_SLIDE_FLAGS,
+};
+// --------------------------------------------------------
+// Type: INTERACTION_CONTEXT_OUTPUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERACTION_CONTEXT_OUTPUT = extern struct {
+    interactionId: Windows.Win32.InteractionContext.INTERACTION_ID,
+    interactionFlags: Windows.Win32.InteractionContext.INTERACTION_FLAGS,
+    inputType: {"kind":"UInt32"},
+    x: {"kind":"Single"},
+    y: {"kind":"Single"},
+    arguments: Windows.Win32.InteractionContext.INTERACTION_CONTEXT_OUTPUT+_arguments_e__Union,
+    // --------------------------------------------------------
+    // Type: _arguments_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _arguments_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: INTERACTION_CONTEXT_OUTPUT2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERACTION_CONTEXT_OUTPUT2 = extern struct {
+    interactionId: Windows.Win32.InteractionContext.INTERACTION_ID,
+    interactionFlags: Windows.Win32.InteractionContext.INTERACTION_FLAGS,
+    inputType: {"kind":"UInt32"},
+    contactCount: {"kind":"UInt32"},
+    currentContactCount: {"kind":"UInt32"},
+    x: {"kind":"Single"},
+    y: {"kind":"Single"},
+    arguments: Windows.Win32.InteractionContext.INTERACTION_CONTEXT_OUTPUT2+_arguments_e__Union,
+    // --------------------------------------------------------
+    // Type: _arguments_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _arguments_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: INTERACTION_CONTEXT_CONFIGURATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INTERACTION_CONTEXT_CONFIGURATION = extern struct {
+    interactionId: Windows.Win32.InteractionContext.INTERACTION_ID,
+    enable: Windows.Win32.InteractionContext.INTERACTION_CONFIGURATION_FLAGS,
+};
+// --------------------------------------------------------
+// Type: CROSS_SLIDE_PARAMETER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CROSS_SLIDE_PARAMETER = extern struct {
+    threshold: Windows.Win32.InteractionContext.CROSS_SLIDE_THRESHOLD,
+    distance: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: INTERACTION_CONTEXT_OUTPUT_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const INTERACTION_CONTEXT_OUTPUT_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: INTERACTION_CONTEXT_OUTPUT_CALLBACK2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const INTERACTION_CONTEXT_OUTPUT_CALLBACK2 = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: HINTERACTIONCONTEXT__
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HINTERACTIONCONTEXT__ = extern struct {
+    unused: {"kind":"Int32"},
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn CreateInteractionContext(
+    interactionContext: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn DestroyInteractionContext(
+    interactionContext: {"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn RegisterOutputCallbackInteractionContext(
+    interactionContext: {"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__},
+    outputCallback: Windows.Win32.InteractionContext.INTERACTION_CONTEXT_OUTPUT_CALLBACK,
+    clientData: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn RegisterOutputCallbackInteractionContext2(
+    interactionContext: {"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__},
+    outputCallback: Windows.Win32.InteractionContext.INTERACTION_CONTEXT_OUTPUT_CALLBACK2,
+    clientData: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn SetInteractionConfigurationInteractionContext(
+    interactionContext: {"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__},
+    configurationCount: {"kind":"UInt32"},
+    configuration: {"kind""Ptr","child":Windows.Win32.InteractionContext.INTERACTION_CONTEXT_CONFIGURATION},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn GetInteractionConfigurationInteractionContext(
+    interactionContext: {"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__},
+    configurationCount: {"kind":"UInt32"},
+    configuration: {"kind""Ptr","child":Windows.Win32.InteractionContext.INTERACTION_CONTEXT_CONFIGURATION},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn SetPropertyInteractionContext(
+    interactionContext: {"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__},
+    contextProperty: Windows.Win32.InteractionContext.INTERACTION_CONTEXT_PROPERTY,
+    value: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn GetPropertyInteractionContext(
+    interactionContext: {"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__},
+    contextProperty: Windows.Win32.InteractionContext.INTERACTION_CONTEXT_PROPERTY,
+    value: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn SetInertiaParameterInteractionContext(
+    interactionContext: {"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__},
+    inertiaParameter: Windows.Win32.InteractionContext.INERTIA_PARAMETER,
+    value: {"kind":"Single"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn GetInertiaParameterInteractionContext(
+    interactionContext: {"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__},
+    inertiaParameter: Windows.Win32.InteractionContext.INERTIA_PARAMETER,
+    value: {"kind""Ptr","child":{"kind":"Single"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn SetCrossSlideParametersInteractionContext(
+    interactionContext: {"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__},
+    parameterCount: {"kind":"UInt32"},
+    crossSlideParameters: {"kind""Ptr","child":Windows.Win32.InteractionContext.CROSS_SLIDE_PARAMETER},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn GetCrossSlideParameterInteractionContext(
+    interactionContext: {"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__},
+    threshold: Windows.Win32.InteractionContext.CROSS_SLIDE_THRESHOLD,
+    distance: {"kind""Ptr","child":{"kind":"Single"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn SetTapParameterInteractionContext(
+    interactionContext: {"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__},
+    parameter: Windows.Win32.InteractionContext.TAP_PARAMETER,
+    value: {"kind":"Single"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn GetTapParameterInteractionContext(
+    interactionContext: {"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__},
+    parameter: Windows.Win32.InteractionContext.TAP_PARAMETER,
+    value: {"kind""Ptr","child":{"kind":"Single"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn SetHoldParameterInteractionContext(
+    interactionContext: {"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__},
+    parameter: Windows.Win32.InteractionContext.HOLD_PARAMETER,
+    value: {"kind":"Single"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn GetHoldParameterInteractionContext(
+    interactionContext: {"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__},
+    parameter: Windows.Win32.InteractionContext.HOLD_PARAMETER,
+    value: {"kind""Ptr","child":{"kind":"Single"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn SetTranslationParameterInteractionContext(
+    interactionContext: {"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__},
+    parameter: Windows.Win32.InteractionContext.TRANSLATION_PARAMETER,
+    value: {"kind":"Single"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn GetTranslationParameterInteractionContext(
+    interactionContext: {"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__},
+    parameter: Windows.Win32.InteractionContext.TRANSLATION_PARAMETER,
+    value: {"kind""Ptr","child":{"kind":"Single"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn SetMouseWheelParameterInteractionContext(
+    interactionContext: {"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__},
+    parameter: Windows.Win32.InteractionContext.MOUSE_WHEEL_PARAMETER,
+    value: {"kind":"Single"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn GetMouseWheelParameterInteractionContext(
+    interactionContext: {"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__},
+    parameter: Windows.Win32.InteractionContext.MOUSE_WHEEL_PARAMETER,
+    value: {"kind""Ptr","child":{"kind":"Single"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn ResetInteractionContext(
+    interactionContext: {"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn GetStateInteractionContext(
+    interactionContext: {"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__},
+    pointerInfo: {"kind""Ptr","child":Windows.Win32.PointerInput.POINTER_INFO},
+    state: {"kind""Ptr","child":Windows.Win32.InteractionContext.INTERACTION_STATE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn AddPointerInteractionContext(
+    interactionContext: {"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__},
+    pointerId: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn RemovePointerInteractionContext(
+    interactionContext: {"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__},
+    pointerId: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn ProcessPointerFramesInteractionContext(
+    interactionContext: {"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__},
+    entriesCount: {"kind":"UInt32"},
+    pointerCount: {"kind":"UInt32"},
+    pointerInfo: {"kind""Ptr","child":Windows.Win32.PointerInput.POINTER_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn BufferPointerPacketsInteractionContext(
+    interactionContext: {"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__},
+    entriesCount: {"kind":"UInt32"},
+    pointerInfo: {"kind""Ptr","child":Windows.Win32.PointerInput.POINTER_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn ProcessBufferedPacketsInteractionContext(
+    interactionContext: {"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn ProcessInertiaInteractionContext(
+    interactionContext: {"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn StopInteractionContext(
+    interactionContext: {"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NInput" fn SetPivotInteractionContext(
+    interactionContext: {"kind""Ptr","child":Windows.Win32.InteractionContext.HINTERACTIONCONTEXT__},
+    x: {"kind":"Single"},
+    y: {"kind":"Single"},
+    radius: {"kind":"Single"},
+],
+
+"unicode_aliases": [
+]}

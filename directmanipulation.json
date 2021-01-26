@@ -1,0 +1,407 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: IDirectManipulationSnapPointsInertiaBehavior
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const IDirectManipulationSnapPointsInertiaBehavior = opaque {
+};
+// --------------------------------------------------------
+// Type: IDirectManipulationContent2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const IDirectManipulationContent2 = opaque {
+};
+// --------------------------------------------------------
+// Type: IDirectManipulationViewport3
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const IDirectManipulationViewport3 = opaque {
+};
+// --------------------------------------------------------
+// Type: IDirectManipulationPrimaryContent2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const IDirectManipulationPrimaryContent2 = opaque {
+};
+// --------------------------------------------------------
+// Type: IDirectManipulationParametricMotionBehavior
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const IDirectManipulationParametricMotionBehavior = opaque {
+};
+// --------------------------------------------------------
+// Type: IDirectManipulationParametricMotionCurve
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const IDirectManipulationParametricMotionCurve = opaque {
+};
+// --------------------------------------------------------
+// Type: IDirectManipulationParametricRestPointList
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const IDirectManipulationParametricRestPointList = opaque {
+};
+// --------------------------------------------------------
+// Type: IDirectManipulationParametricRestPointBehavior
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const IDirectManipulationParametricRestPointBehavior = opaque {
+};
+// --------------------------------------------------------
+// Type: IDirectManipulationCompositorPartner
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const IDirectManipulationCompositorPartner = opaque {
+};
+// --------------------------------------------------------
+// Type: IDirectManipulationManagerPartner
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const IDirectManipulationManagerPartner = opaque {
+};
+// --------------------------------------------------------
+// Type: IDirectManipulationViewportPartner
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const IDirectManipulationViewportPartner = opaque {
+};
+// --------------------------------------------------------
+// Type: DirectManipulationViewport
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const DirectManipulationViewport = opaque {
+};
+// --------------------------------------------------------
+// Type: DirectManipulationUpdateManager
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const DirectManipulationUpdateManager = opaque {
+};
+// --------------------------------------------------------
+// Type: DirectManipulationPrimaryContent
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const DirectManipulationPrimaryContent = opaque {
+};
+// --------------------------------------------------------
+// Type: DirectManipulationManager
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const DirectManipulationManager = opaque {
+};
+// --------------------------------------------------------
+// Type: DirectManipulationSharedManager
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const DirectManipulationSharedManager = opaque {
+};
+// --------------------------------------------------------
+// Type: DCompManipulationCompositor
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const DCompManipulationCompositor = opaque {
+};
+// --------------------------------------------------------
+// Type: DIRECTMANIPULATION_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DIRECTMANIPULATION_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: DIRECTMANIPULATION_HITTEST_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DIRECTMANIPULATION_HITTEST_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DIRECTMANIPULATION_CONFIGURATION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DIRECTMANIPULATION_CONFIGURATION = *opaque{
+};
+// --------------------------------------------------------
+// Type: DIRECTMANIPULATION_GESTURE_CONFIGURATION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DIRECTMANIPULATION_GESTURE_CONFIGURATION = *opaque{
+};
+// --------------------------------------------------------
+// Type: DIRECTMANIPULATION_MOTION_TYPES
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DIRECTMANIPULATION_MOTION_TYPES = *opaque{
+};
+// --------------------------------------------------------
+// Type: DIRECTMANIPULATION_VIEWPORT_OPTIONS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DIRECTMANIPULATION_VIEWPORT_OPTIONS = *opaque{
+};
+// --------------------------------------------------------
+// Type: DIRECTMANIPULATION_SNAPPOINT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DIRECTMANIPULATION_SNAPPOINT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DIRECTMANIPULATION_SNAPPOINT_COORDINATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DIRECTMANIPULATION_SNAPPOINT_COORDINATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DIRECTMANIPULATION_HORIZONTALALIGNMENT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DIRECTMANIPULATION_HORIZONTALALIGNMENT = *opaque{
+};
+// --------------------------------------------------------
+// Type: DIRECTMANIPULATION_VERTICALALIGNMENT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DIRECTMANIPULATION_VERTICALALIGNMENT = *opaque{
+};
+// --------------------------------------------------------
+// Type: DIRECTMANIPULATION_INPUT_MODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DIRECTMANIPULATION_INPUT_MODE = *opaque{
+};
+// --------------------------------------------------------
+// Type: IDirectManipulationManager
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectManipulationManager = *opaque{
+    // TODO: Method 'Activate'
+    // TODO: Method 'Deactivate'
+    // TODO: Method 'RegisterHitTestTarget'
+    // TODO: Method 'ProcessInput'
+    // TODO: Method 'GetUpdateManager'
+    // TODO: Method 'CreateViewport'
+    // TODO: Method 'CreateContent'
+};
+// --------------------------------------------------------
+// Type: IDirectManipulationManager2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectManipulationManager2 = *opaque{
+    // TODO: Method 'CreateBehavior'
+};
+// --------------------------------------------------------
+// Type: IDirectManipulationManager3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectManipulationManager3 = *opaque{
+    // TODO: Method 'GetService'
+};
+// --------------------------------------------------------
+// Type: IDirectManipulationViewport
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectManipulationViewport = *opaque{
+    // TODO: Method 'Enable'
+    // TODO: Method 'Disable'
+    // TODO: Method 'SetContact'
+    // TODO: Method 'ReleaseContact'
+    // TODO: Method 'ReleaseAllContacts'
+    // TODO: Method 'GetStatus'
+    // TODO: Method 'GetTag'
+    // TODO: Method 'SetTag'
+    // TODO: Method 'GetViewportRect'
+    // TODO: Method 'SetViewportRect'
+    // TODO: Method 'ZoomToRect'
+    // TODO: Method 'SetViewportTransform'
+    // TODO: Method 'SyncDisplayTransform'
+    // TODO: Method 'GetPrimaryContent'
+    // TODO: Method 'AddContent'
+    // TODO: Method 'RemoveContent'
+    // TODO: Method 'SetViewportOptions'
+    // TODO: Method 'AddConfiguration'
+    // TODO: Method 'RemoveConfiguration'
+    // TODO: Method 'ActivateConfiguration'
+    // TODO: Method 'SetManualGesture'
+    // TODO: Method 'SetChaining'
+    // TODO: Method 'AddEventHandler'
+    // TODO: Method 'RemoveEventHandler'
+    // TODO: Method 'SetInputMode'
+    // TODO: Method 'SetUpdateMode'
+    // TODO: Method 'Stop'
+    // TODO: Method 'Abandon'
+};
+// --------------------------------------------------------
+// Type: IDirectManipulationViewport2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectManipulationViewport2 = *opaque{
+    // TODO: Method 'AddBehavior'
+    // TODO: Method 'RemoveBehavior'
+    // TODO: Method 'RemoveAllBehaviors'
+};
+// --------------------------------------------------------
+// Type: IDirectManipulationViewportEventHandler
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectManipulationViewportEventHandler = *opaque{
+    // TODO: Method 'OnViewportStatusChanged'
+    // TODO: Method 'OnViewportUpdated'
+    // TODO: Method 'OnContentUpdated'
+};
+// --------------------------------------------------------
+// Type: IDirectManipulationContent
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectManipulationContent = *opaque{
+    // TODO: Method 'GetContentRect'
+    // TODO: Method 'SetContentRect'
+    // TODO: Method 'GetViewport'
+    // TODO: Method 'GetTag'
+    // TODO: Method 'SetTag'
+    // TODO: Method 'GetOutputTransform'
+    // TODO: Method 'GetContentTransform'
+    // TODO: Method 'SyncContentTransform'
+};
+// --------------------------------------------------------
+// Type: IDirectManipulationPrimaryContent
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectManipulationPrimaryContent = *opaque{
+    // TODO: Method 'SetSnapInterval'
+    // TODO: Method 'SetSnapPoints'
+    // TODO: Method 'SetSnapType'
+    // TODO: Method 'SetSnapCoordinate'
+    // TODO: Method 'SetZoomBoundaries'
+    // TODO: Method 'SetHorizontalAlignment'
+    // TODO: Method 'SetVerticalAlignment'
+    // TODO: Method 'GetInertiaEndTransform'
+    // TODO: Method 'GetCenterPoint'
+};
+// --------------------------------------------------------
+// Type: DIRECTMANIPULATION_DRAG_DROP_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DIRECTMANIPULATION_DRAG_DROP_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: IDirectManipulationDragDropEventHandler
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectManipulationDragDropEventHandler = *opaque{
+    // TODO: Method 'OnDragDropStatusChange'
+};
+// --------------------------------------------------------
+// Type: DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION = *opaque{
+};
+// --------------------------------------------------------
+// Type: IDirectManipulationDragDropBehavior
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectManipulationDragDropBehavior = *opaque{
+    // TODO: Method 'SetConfiguration'
+    // TODO: Method 'GetStatus'
+};
+// --------------------------------------------------------
+// Type: DIRECTMANIPULATION_INTERACTION_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DIRECTMANIPULATION_INTERACTION_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: IDirectManipulationInteractionEventHandler
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectManipulationInteractionEventHandler = *opaque{
+    // TODO: Method 'OnInteraction'
+};
+// --------------------------------------------------------
+// Type: IDirectManipulationFrameInfoProvider
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectManipulationFrameInfoProvider = *opaque{
+    // TODO: Method 'GetNextFrameInfo'
+};
+// --------------------------------------------------------
+// Type: IDirectManipulationCompositor
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectManipulationCompositor = *opaque{
+    // TODO: Method 'AddContent'
+    // TODO: Method 'RemoveContent'
+    // TODO: Method 'SetUpdateManager'
+    // TODO: Method 'Flush'
+};
+// --------------------------------------------------------
+// Type: IDirectManipulationCompositor2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectManipulationCompositor2 = *opaque{
+    // TODO: Method 'AddContentWithCrossProcessChaining'
+};
+// --------------------------------------------------------
+// Type: IDirectManipulationUpdateHandler
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectManipulationUpdateHandler = *opaque{
+    // TODO: Method 'Update'
+};
+// --------------------------------------------------------
+// Type: IDirectManipulationUpdateManager
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectManipulationUpdateManager = *opaque{
+    // TODO: Method 'RegisterWaitHandleCallback'
+    // TODO: Method 'UnregisterWaitHandleCallback'
+    // TODO: Method 'Update'
+};
+// --------------------------------------------------------
+// Type: DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DIRECTMANIPULATION_AUTOSCROLL_CONFIGURATION = *opaque{
+};
+// --------------------------------------------------------
+// Type: IDirectManipulationAutoScrollBehavior
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectManipulationAutoScrollBehavior = *opaque{
+    // TODO: Method 'SetConfiguration'
+};
+// --------------------------------------------------------
+// Type: IDirectManipulationDeferContactService
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectManipulationDeferContactService = *opaque{
+    // TODO: Method 'DeferContact'
+    // TODO: Method 'CancelContact'
+    // TODO: Method 'CancelDeferral'
+};
+],
+
+"func_definitions": [
+],
+
+"unicode_aliases": [
+]}

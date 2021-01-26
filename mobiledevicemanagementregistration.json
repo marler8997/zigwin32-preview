@@ -1,0 +1,92 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: MANAGEMENT_SERVICE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MANAGEMENT_SERVICE_INFO = extern struct {
+    pszMDMServiceUri: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszAuthenticationUri: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: MANAGEMENT_REGISTRATION_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MANAGEMENT_REGISTRATION_INFO = extern struct {
+    fDeviceRegisteredWithManagement: Windows.Win32.SystemServices.BOOL,
+    dwDeviceRegistionKind: {"kind":"UInt32"},
+    pszUPN: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszMDMServiceUri: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: REGISTRATION_INFORMATION_CLASS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const REGISTRATION_INFORMATION_CLASS = *opaque{
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MDMRegistration" fn GetDeviceRegistrationInfo(
+    DeviceInformationClass: Windows.Win32.MobileDeviceManagementRegistration.REGISTRATION_INFORMATION_CLASS,
+    ppDeviceRegistrationInfo: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MDMRegistration" fn IsDeviceRegisteredWithManagement(
+    pfIsDeviceRegisteredWithManagement: {"kind""Ptr","child":{"kind":"Int32"}},
+    cchUPN: {"kind":"UInt32"},
+    pszUPN: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MDMRegistration" fn IsManagementRegistrationAllowed(
+    pfIsManagementRegistrationAllowed: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MDMRegistration" fn IsMdmUxWithoutAadAllowed(
+    isEnrollmentAllowed: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MDMRegistration" fn SetManagedExternally(
+    IsManagedExternally: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MDMRegistration" fn DiscoverManagementService(
+    pszUPN: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppMgmtInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.MobileDeviceManagementRegistration.MANAGEMENT_SERVICE_INFO}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MDMRegistration" fn RegisterDeviceWithManagementUsingAADCredentials(
+    UserToken: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MDMRegistration" fn RegisterDeviceWithManagementUsingAADDeviceCredentials(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MDMRegistration" fn RegisterDeviceWithManagement(
+    pszUPN: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppszMDMServiceUri: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppzsAccessToken: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MDMRegistration" fn UnregisterDeviceWithManagement(
+    enrollmentID: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MDMRegistration" fn GetManagementAppHyperlink(
+    cchHyperlink: {"kind":"UInt32"},
+    pszHyperlink: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MDMRegistration" fn DiscoverManagementServiceEx(
+    pszUPN: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszDiscoveryServiceCandidate: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppMgmtInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.MobileDeviceManagementRegistration.MANAGEMENT_SERVICE_INFO}},
+],
+
+"unicode_aliases": [
+]}

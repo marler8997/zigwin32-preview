@@ -1,0 +1,76 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-power-setting-l1-1-0" fn PowerWriteACValueIndex(
+    RootPowerKey: Windows.Win32.WindowsProgramming.HKEY,
+    SchemeGuid: {"kind""Ptr","child":Guid},
+    SubGroupOfPowerSettingsGuid: {"kind""Ptr","child":Guid},
+    PowerSettingGuid: {"kind""Ptr","child":Guid},
+    AcValueIndex: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-power-setting-l1-1-0" fn PowerWriteDCValueIndex(
+    RootPowerKey: Windows.Win32.WindowsProgramming.HKEY,
+    SchemeGuid: {"kind""Ptr","child":Guid},
+    SubGroupOfPowerSettingsGuid: {"kind""Ptr","child":Guid},
+    PowerSettingGuid: {"kind""Ptr","child":Guid},
+    DcValueIndex: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "POWRPROF" fn PowerReadACValueIndex(
+    RootPowerKey: Windows.Win32.WindowsProgramming.HKEY,
+    SchemeGuid: {"kind""Ptr","child":Guid},
+    SubGroupOfPowerSettingsGuid: {"kind""Ptr","child":Guid},
+    PowerSettingGuid: {"kind""Ptr","child":Guid},
+    AcValueIndex: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "POWRPROF" fn PowerReadDCValueIndex(
+    RootPowerKey: Windows.Win32.WindowsProgramming.HKEY,
+    SchemeGuid: {"kind""Ptr","child":Guid},
+    SubGroupOfPowerSettingsGuid: {"kind""Ptr","child":Guid},
+    PowerSettingGuid: {"kind""Ptr","child":Guid},
+    DcValueIndex: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "POWRPROF" fn PowerReadACDefaultIndex(
+    RootPowerKey: Windows.Win32.WindowsProgramming.HKEY,
+    SchemePersonalityGuid: {"kind""Ptr","child":Guid},
+    SubGroupOfPowerSettingsGuid: {"kind""Ptr","child":Guid},
+    PowerSettingGuid: {"kind""Ptr","child":Guid},
+    AcDefaultIndex: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "POWRPROF" fn PowerReadDCDefaultIndex(
+    RootPowerKey: Windows.Win32.WindowsProgramming.HKEY,
+    SchemePersonalityGuid: {"kind""Ptr","child":Guid},
+    SubGroupOfPowerSettingsGuid: {"kind""Ptr","child":Guid},
+    PowerSettingGuid: {"kind""Ptr","child":Guid},
+    DcDefaultIndex: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "POWRPROF" fn PowerWriteACDefaultIndex(
+    RootSystemPowerKey: Windows.Win32.WindowsProgramming.HKEY,
+    SchemePersonalityGuid: {"kind""Ptr","child":Guid},
+    SubGroupOfPowerSettingsGuid: {"kind""Ptr","child":Guid},
+    PowerSettingGuid: {"kind""Ptr","child":Guid},
+    DefaultAcIndex: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "POWRPROF" fn PowerWriteDCDefaultIndex(
+    RootSystemPowerKey: Windows.Win32.WindowsProgramming.HKEY,
+    SchemePersonalityGuid: {"kind""Ptr","child":Guid},
+    SubGroupOfPowerSettingsGuid: {"kind""Ptr","child":Guid},
+    PowerSettingGuid: {"kind""Ptr","child":Guid},
+    DefaultDcIndex: {"kind":"UInt32"},
+],
+
+"unicode_aliases": [
+]}

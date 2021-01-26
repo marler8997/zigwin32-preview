@@ -1,0 +1,141 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: MAGTRANSFORM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MAGTRANSFORM = extern struct {
+    v: {"kind":"Array","child": {"kind":"Single"}},
+};
+// --------------------------------------------------------
+// Type: MAGIMAGEHEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MAGIMAGEHEADER = extern struct {
+    width: {"kind":"UInt32"},
+    height: {"kind":"UInt32"},
+    format: Guid,
+    stride: {"kind":"UInt32"},
+    offset: {"kind":"UInt32"},
+    cbSize: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: MAGCOLOREFFECT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MAGCOLOREFFECT = extern struct {
+    transform: {"kind":"Array","child": {"kind":"Single"}},
+};
+// --------------------------------------------------------
+// Type: MagImageScalingCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MagImageScalingCallback = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MAGNIFICATION" fn MagInitialize(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MAGNIFICATION" fn MagUninitialize(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MAGNIFICATION" fn MagSetWindowSource(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    rect: Windows.Win32.DisplayDevices.RECT,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MAGNIFICATION" fn MagGetWindowSource(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    pRect: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MAGNIFICATION" fn MagSetWindowTransform(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    pTransform: {"kind""Ptr","child":Windows.Win32.Magnification.MAGTRANSFORM},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MAGNIFICATION" fn MagGetWindowTransform(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    pTransform: {"kind""Ptr","child":Windows.Win32.Magnification.MAGTRANSFORM},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MAGNIFICATION" fn MagSetWindowFilterList(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    dwFilterMode: {"kind":"UInt32"},
+    count: {"kind":"Int32"},
+    pHWND: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.HWND},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MAGNIFICATION" fn MagGetWindowFilterList(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    pdwFilterMode: {"kind""Ptr","child":{"kind":"UInt32"}},
+    count: {"kind":"Int32"},
+    pHWND: {"kind""Ptr","child":Windows.Win32.WindowsAndMessaging.HWND},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MAGNIFICATION" fn MagSetImageScalingCallback(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    callback: Windows.Win32.Magnification.MagImageScalingCallback,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MAGNIFICATION" fn MagGetImageScalingCallback(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MAGNIFICATION" fn MagSetColorEffect(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    pEffect: {"kind""Ptr","child":Windows.Win32.Magnification.MAGCOLOREFFECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MAGNIFICATION" fn MagGetColorEffect(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    pEffect: {"kind""Ptr","child":Windows.Win32.Magnification.MAGCOLOREFFECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MAGNIFICATION" fn MagSetFullscreenTransform(
+    magLevel: {"kind":"Single"},
+    xOffset: {"kind":"Int32"},
+    yOffset: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MAGNIFICATION" fn MagGetFullscreenTransform(
+    pMagLevel: {"kind""Ptr","child":{"kind":"Single"}},
+    pxOffset: {"kind""Ptr","child":{"kind":"Int32"}},
+    pyOffset: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MAGNIFICATION" fn MagSetFullscreenColorEffect(
+    pEffect: {"kind""Ptr","child":Windows.Win32.Magnification.MAGCOLOREFFECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MAGNIFICATION" fn MagGetFullscreenColorEffect(
+    pEffect: {"kind""Ptr","child":Windows.Win32.Magnification.MAGCOLOREFFECT},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "MAGNIFICATION" fn MagSetInputTransform(
+    fEnabled: Windows.Win32.SystemServices.BOOL,
+    pRectSource: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    pRectDest: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MAGNIFICATION" fn MagGetInputTransform(
+    pfEnabled: {"kind""Ptr","child":{"kind":"Int32"}},
+    pRectSource: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+    pRectDest: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MAGNIFICATION" fn MagShowSystemCursor(
+    fShowCursor: Windows.Win32.SystemServices.BOOL,
+],
+
+"unicode_aliases": [
+]}

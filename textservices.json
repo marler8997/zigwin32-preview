@@ -1,0 +1,1755 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: TS_STATUS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TS_STATUS = extern struct {
+    dwDynamicFlags: {"kind":"UInt32"},
+    dwStaticFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: TS_TEXTCHANGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TS_TEXTCHANGE = extern struct {
+    acpStart: {"kind":"Int32"},
+    acpOldEnd: {"kind":"Int32"},
+    acpNewEnd: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: TsActiveSelEnd
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TsActiveSelEnd = *opaque{
+};
+// --------------------------------------------------------
+// Type: TS_SELECTIONSTYLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TS_SELECTIONSTYLE = extern struct {
+    ase: Windows.Win32.TextServices.TsActiveSelEnd,
+    fInterimChar: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: TS_SELECTION_ACP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TS_SELECTION_ACP = extern struct {
+    acpStart: {"kind":"Int32"},
+    acpEnd: {"kind":"Int32"},
+    style: Windows.Win32.TextServices.TS_SELECTIONSTYLE,
+};
+// --------------------------------------------------------
+// Type: TS_SELECTION_ANCHOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TS_SELECTION_ANCHOR = extern struct {
+    paStart: Windows.Win32.TextServices.IAnchor,
+    paEnd: Windows.Win32.TextServices.IAnchor,
+    style: Windows.Win32.TextServices.TS_SELECTIONSTYLE,
+};
+// --------------------------------------------------------
+// Type: TS_ATTRVAL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TS_ATTRVAL = extern struct {
+    idAttr: Guid,
+    dwOverlapId: {"kind":"UInt32"},
+    varValue: Windows.Win32.Automation.VARIANT,
+};
+// --------------------------------------------------------
+// Type: TsLayoutCode
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TsLayoutCode = *opaque{
+};
+// --------------------------------------------------------
+// Type: TsRunType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TsRunType = *opaque{
+};
+// --------------------------------------------------------
+// Type: TS_RUNINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TS_RUNINFO = extern struct {
+    uCount: {"kind":"UInt32"},
+    type: Windows.Win32.TextServices.TsRunType,
+};
+// --------------------------------------------------------
+// Type: ITextStoreACP
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITextStoreACP = *opaque{
+    // TODO: Method 'AdviseSink'
+    // TODO: Method 'UnadviseSink'
+    // TODO: Method 'RequestLock'
+    // TODO: Method 'GetStatus'
+    // TODO: Method 'QueryInsert'
+    // TODO: Method 'GetSelection'
+    // TODO: Method 'SetSelection'
+    // TODO: Method 'GetText'
+    // TODO: Method 'SetText'
+    // TODO: Method 'GetFormattedText'
+    // TODO: Method 'GetEmbedded'
+    // TODO: Method 'QueryInsertEmbedded'
+    // TODO: Method 'InsertEmbedded'
+    // TODO: Method 'InsertTextAtSelection'
+    // TODO: Method 'InsertEmbeddedAtSelection'
+    // TODO: Method 'RequestSupportedAttrs'
+    // TODO: Method 'RequestAttrsAtPosition'
+    // TODO: Method 'RequestAttrsTransitioningAtPosition'
+    // TODO: Method 'FindNextAttrTransition'
+    // TODO: Method 'RetrieveRequestedAttrs'
+    // TODO: Method 'GetEndACP'
+    // TODO: Method 'GetActiveView'
+    // TODO: Method 'GetACPFromPoint'
+    // TODO: Method 'GetTextExt'
+    // TODO: Method 'GetScreenExt'
+    // TODO: Method 'GetWnd'
+};
+// --------------------------------------------------------
+// Type: ITextStoreACP2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITextStoreACP2 = *opaque{
+    // TODO: Method 'AdviseSink'
+    // TODO: Method 'UnadviseSink'
+    // TODO: Method 'RequestLock'
+    // TODO: Method 'GetStatus'
+    // TODO: Method 'QueryInsert'
+    // TODO: Method 'GetSelection'
+    // TODO: Method 'SetSelection'
+    // TODO: Method 'GetText'
+    // TODO: Method 'SetText'
+    // TODO: Method 'GetFormattedText'
+    // TODO: Method 'GetEmbedded'
+    // TODO: Method 'QueryInsertEmbedded'
+    // TODO: Method 'InsertEmbedded'
+    // TODO: Method 'InsertTextAtSelection'
+    // TODO: Method 'InsertEmbeddedAtSelection'
+    // TODO: Method 'RequestSupportedAttrs'
+    // TODO: Method 'RequestAttrsAtPosition'
+    // TODO: Method 'RequestAttrsTransitioningAtPosition'
+    // TODO: Method 'FindNextAttrTransition'
+    // TODO: Method 'RetrieveRequestedAttrs'
+    // TODO: Method 'GetEndACP'
+    // TODO: Method 'GetActiveView'
+    // TODO: Method 'GetACPFromPoint'
+    // TODO: Method 'GetTextExt'
+    // TODO: Method 'GetScreenExt'
+};
+// --------------------------------------------------------
+// Type: ITextStoreACPSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITextStoreACPSink = *opaque{
+    // TODO: Method 'OnTextChange'
+    // TODO: Method 'OnSelectionChange'
+    // TODO: Method 'OnLayoutChange'
+    // TODO: Method 'OnStatusChange'
+    // TODO: Method 'OnAttrsChange'
+    // TODO: Method 'OnLockGranted'
+    // TODO: Method 'OnStartEditTransaction'
+    // TODO: Method 'OnEndEditTransaction'
+};
+// --------------------------------------------------------
+// Type: TsGravity
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TsGravity = *opaque{
+};
+// --------------------------------------------------------
+// Type: TsShiftDir
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TsShiftDir = *opaque{
+};
+// --------------------------------------------------------
+// Type: IAnchor
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAnchor = *opaque{
+    // TODO: Method 'SetGravity'
+    // TODO: Method 'GetGravity'
+    // TODO: Method 'IsEqual'
+    // TODO: Method 'Compare'
+    // TODO: Method 'Shift'
+    // TODO: Method 'ShiftTo'
+    // TODO: Method 'ShiftRegion'
+    // TODO: Method 'SetChangeHistoryMask'
+    // TODO: Method 'GetChangeHistory'
+    // TODO: Method 'ClearChangeHistory'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: ITextStoreAnchor
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITextStoreAnchor = *opaque{
+    // TODO: Method 'AdviseSink'
+    // TODO: Method 'UnadviseSink'
+    // TODO: Method 'RequestLock'
+    // TODO: Method 'GetStatus'
+    // TODO: Method 'QueryInsert'
+    // TODO: Method 'GetSelection'
+    // TODO: Method 'SetSelection'
+    // TODO: Method 'GetText'
+    // TODO: Method 'SetText'
+    // TODO: Method 'GetFormattedText'
+    // TODO: Method 'GetEmbedded'
+    // TODO: Method 'InsertEmbedded'
+    // TODO: Method 'RequestSupportedAttrs'
+    // TODO: Method 'RequestAttrsAtPosition'
+    // TODO: Method 'RequestAttrsTransitioningAtPosition'
+    // TODO: Method 'FindNextAttrTransition'
+    // TODO: Method 'RetrieveRequestedAttrs'
+    // TODO: Method 'GetStart'
+    // TODO: Method 'GetEnd'
+    // TODO: Method 'GetActiveView'
+    // TODO: Method 'GetAnchorFromPoint'
+    // TODO: Method 'GetTextExt'
+    // TODO: Method 'GetScreenExt'
+    // TODO: Method 'GetWnd'
+    // TODO: Method 'QueryInsertEmbedded'
+    // TODO: Method 'InsertTextAtSelection'
+    // TODO: Method 'InsertEmbeddedAtSelection'
+};
+// --------------------------------------------------------
+// Type: ITextStoreAnchorSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITextStoreAnchorSink = *opaque{
+    // TODO: Method 'OnTextChange'
+    // TODO: Method 'OnSelectionChange'
+    // TODO: Method 'OnLayoutChange'
+    // TODO: Method 'OnStatusChange'
+    // TODO: Method 'OnAttrsChange'
+    // TODO: Method 'OnLockGranted'
+    // TODO: Method 'OnStartEditTransaction'
+    // TODO: Method 'OnEndEditTransaction'
+};
+// --------------------------------------------------------
+// Type: ITfLangBarMgr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfLangBarMgr = *opaque{
+    // TODO: Method 'AdviseEventSink'
+    // TODO: Method 'UnadviseEventSink'
+    // TODO: Method 'GetThreadMarshalInterface'
+    // TODO: Method 'GetThreadLangBarItemMgr'
+    // TODO: Method 'GetInputProcessorProfiles'
+    // TODO: Method 'RestoreLastFocus'
+    // TODO: Method 'SetModalInput'
+    // TODO: Method 'ShowFloating'
+    // TODO: Method 'GetShowFloatingStatus'
+};
+// --------------------------------------------------------
+// Type: ITfLangBarEventSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfLangBarEventSink = *opaque{
+    // TODO: Method 'OnSetFocus'
+    // TODO: Method 'OnThreadTerminate'
+    // TODO: Method 'OnThreadItemChange'
+    // TODO: Method 'OnModalInput'
+    // TODO: Method 'ShowFloating'
+    // TODO: Method 'GetItemFloatingRect'
+};
+// --------------------------------------------------------
+// Type: ITfLangBarItemSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfLangBarItemSink = *opaque{
+    // TODO: Method 'OnUpdate'
+};
+// --------------------------------------------------------
+// Type: IEnumTfLangBarItems
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumTfLangBarItems = *opaque{
+    // TODO: Method 'Clone'
+    // TODO: Method 'Next'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Skip'
+};
+// --------------------------------------------------------
+// Type: TF_LANGBARITEMINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TF_LANGBARITEMINFO = extern struct {
+    clsidService: Guid,
+    guidItem: Guid,
+    dwStyle: {"kind":"UInt32"},
+    ulSort: {"kind":"UInt32"},
+    szDescription: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: ITfLangBarItemMgr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfLangBarItemMgr = *opaque{
+    // TODO: Method 'EnumItems'
+    // TODO: Method 'GetItem'
+    // TODO: Method 'AddItem'
+    // TODO: Method 'RemoveItem'
+    // TODO: Method 'AdviseItemSink'
+    // TODO: Method 'UnadviseItemSink'
+    // TODO: Method 'GetItemFloatingRect'
+    // TODO: Method 'GetItemsStatus'
+    // TODO: Method 'GetItemNum'
+    // TODO: Method 'GetItems'
+    // TODO: Method 'AdviseItemsSink'
+    // TODO: Method 'UnadviseItemsSink'
+};
+// --------------------------------------------------------
+// Type: ITfLangBarItem
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfLangBarItem = *opaque{
+    // TODO: Method 'GetInfo'
+    // TODO: Method 'GetStatus'
+    // TODO: Method 'Show'
+    // TODO: Method 'GetTooltipString'
+};
+// --------------------------------------------------------
+// Type: ITfSystemLangBarItemSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfSystemLangBarItemSink = *opaque{
+    // TODO: Method 'InitMenu'
+    // TODO: Method 'OnMenuSelect'
+};
+// --------------------------------------------------------
+// Type: ITfSystemLangBarItem
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfSystemLangBarItem = *opaque{
+    // TODO: Method 'SetIcon'
+    // TODO: Method 'SetTooltipString'
+};
+// --------------------------------------------------------
+// Type: ITfSystemLangBarItemText
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfSystemLangBarItemText = *opaque{
+    // TODO: Method 'SetItemText'
+    // TODO: Method 'GetItemText'
+};
+// --------------------------------------------------------
+// Type: ITfSystemDeviceTypeLangBarItem
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfSystemDeviceTypeLangBarItem = *opaque{
+    // TODO: Method 'SetIconMode'
+    // TODO: Method 'GetIconMode'
+};
+// --------------------------------------------------------
+// Type: TfLBIClick
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TfLBIClick = *opaque{
+};
+// --------------------------------------------------------
+// Type: ITfLangBarItemButton
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfLangBarItemButton = *opaque{
+    // TODO: Method 'OnClick'
+    // TODO: Method 'InitMenu'
+    // TODO: Method 'OnMenuSelect'
+    // TODO: Method 'GetIcon'
+    // TODO: Method 'GetText'
+};
+// --------------------------------------------------------
+// Type: ITfLangBarItemBitmapButton
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfLangBarItemBitmapButton = *opaque{
+    // TODO: Method 'OnClick'
+    // TODO: Method 'InitMenu'
+    // TODO: Method 'OnMenuSelect'
+    // TODO: Method 'GetPreferredSize'
+    // TODO: Method 'DrawBitmap'
+    // TODO: Method 'GetText'
+};
+// --------------------------------------------------------
+// Type: ITfLangBarItemBitmap
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfLangBarItemBitmap = *opaque{
+    // TODO: Method 'OnClick'
+    // TODO: Method 'GetPreferredSize'
+    // TODO: Method 'DrawBitmap'
+};
+// --------------------------------------------------------
+// Type: TfLBBalloonStyle
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TfLBBalloonStyle = *opaque{
+};
+// --------------------------------------------------------
+// Type: TF_LBBALLOONINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TF_LBBALLOONINFO = extern struct {
+    style: Windows.Win32.TextServices.TfLBBalloonStyle,
+    bstrText: Windows.Win32.Automation.BSTR,
+};
+// --------------------------------------------------------
+// Type: ITfLangBarItemBalloon
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfLangBarItemBalloon = *opaque{
+    // TODO: Method 'OnClick'
+    // TODO: Method 'GetPreferredSize'
+    // TODO: Method 'GetBalloonInfo'
+};
+// --------------------------------------------------------
+// Type: ITfMenu
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfMenu = *opaque{
+    // TODO: Method 'AddMenuItem'
+};
+// --------------------------------------------------------
+// Type: TF_PERSISTENT_PROPERTY_HEADER_ACP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TF_PERSISTENT_PROPERTY_HEADER_ACP = extern struct {
+    guidType: Guid,
+    ichStart: {"kind":"Int32"},
+    cch: {"kind":"Int32"},
+    cb: {"kind":"UInt32"},
+    dwPrivate: {"kind":"UInt32"},
+    clsidTIP: Guid,
+};
+// --------------------------------------------------------
+// Type: TF_LANGUAGEPROFILE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TF_LANGUAGEPROFILE = extern struct {
+    clsid: Guid,
+    langid: {"kind":"UInt16"},
+    catid: Guid,
+    fActive: Windows.Win32.SystemServices.BOOL,
+    guidProfile: Guid,
+};
+// --------------------------------------------------------
+// Type: TfAnchor
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TfAnchor = *opaque{
+};
+// --------------------------------------------------------
+// Type: ITfThreadMgr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfThreadMgr = *opaque{
+    // TODO: Method 'Activate'
+    // TODO: Method 'Deactivate'
+    // TODO: Method 'CreateDocumentMgr'
+    // TODO: Method 'EnumDocumentMgrs'
+    // TODO: Method 'GetFocus'
+    // TODO: Method 'SetFocus'
+    // TODO: Method 'AssociateFocus'
+    // TODO: Method 'IsThreadFocus'
+    // TODO: Method 'GetFunctionProvider'
+    // TODO: Method 'EnumFunctionProviders'
+    // TODO: Method 'GetGlobalCompartment'
+};
+// --------------------------------------------------------
+// Type: ITfThreadMgrEx
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfThreadMgrEx = *opaque{
+    // TODO: Method 'ActivateEx'
+    // TODO: Method 'GetActiveFlags'
+};
+// --------------------------------------------------------
+// Type: ITfThreadMgr2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfThreadMgr2 = *opaque{
+    // TODO: Method 'Activate'
+    // TODO: Method 'Deactivate'
+    // TODO: Method 'CreateDocumentMgr'
+    // TODO: Method 'EnumDocumentMgrs'
+    // TODO: Method 'GetFocus'
+    // TODO: Method 'SetFocus'
+    // TODO: Method 'IsThreadFocus'
+    // TODO: Method 'GetFunctionProvider'
+    // TODO: Method 'EnumFunctionProviders'
+    // TODO: Method 'GetGlobalCompartment'
+    // TODO: Method 'ActivateEx'
+    // TODO: Method 'GetActiveFlags'
+    // TODO: Method 'SuspendKeystrokeHandling'
+    // TODO: Method 'ResumeKeystrokeHandling'
+};
+// --------------------------------------------------------
+// Type: ITfThreadMgrEventSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfThreadMgrEventSink = *opaque{
+    // TODO: Method 'OnInitDocumentMgr'
+    // TODO: Method 'OnUninitDocumentMgr'
+    // TODO: Method 'OnSetFocus'
+    // TODO: Method 'OnPushContext'
+    // TODO: Method 'OnPopContext'
+};
+// --------------------------------------------------------
+// Type: ITfConfigureSystemKeystrokeFeed
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfConfigureSystemKeystrokeFeed = *opaque{
+    // TODO: Method 'DisableSystemKeystrokeFeed'
+    // TODO: Method 'EnableSystemKeystrokeFeed'
+};
+// --------------------------------------------------------
+// Type: IEnumTfDocumentMgrs
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumTfDocumentMgrs = *opaque{
+    // TODO: Method 'Clone'
+    // TODO: Method 'Next'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Skip'
+};
+// --------------------------------------------------------
+// Type: ITfDocumentMgr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfDocumentMgr = *opaque{
+    // TODO: Method 'CreateContext'
+    // TODO: Method 'Push'
+    // TODO: Method 'Pop'
+    // TODO: Method 'GetTop'
+    // TODO: Method 'GetBase'
+    // TODO: Method 'EnumContexts'
+};
+// --------------------------------------------------------
+// Type: IEnumTfContexts
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumTfContexts = *opaque{
+    // TODO: Method 'Clone'
+    // TODO: Method 'Next'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Skip'
+};
+// --------------------------------------------------------
+// Type: ITfCompositionView
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfCompositionView = *opaque{
+    // TODO: Method 'GetOwnerClsid'
+    // TODO: Method 'GetRange'
+};
+// --------------------------------------------------------
+// Type: IEnumITfCompositionView
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumITfCompositionView = *opaque{
+    // TODO: Method 'Clone'
+    // TODO: Method 'Next'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Skip'
+};
+// --------------------------------------------------------
+// Type: ITfComposition
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfComposition = *opaque{
+    // TODO: Method 'GetRange'
+    // TODO: Method 'ShiftStart'
+    // TODO: Method 'ShiftEnd'
+    // TODO: Method 'EndComposition'
+};
+// --------------------------------------------------------
+// Type: ITfCompositionSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfCompositionSink = *opaque{
+    // TODO: Method 'OnCompositionTerminated'
+};
+// --------------------------------------------------------
+// Type: ITfContextComposition
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfContextComposition = *opaque{
+    // TODO: Method 'StartComposition'
+    // TODO: Method 'EnumCompositions'
+    // TODO: Method 'FindComposition'
+    // TODO: Method 'TakeOwnership'
+};
+// --------------------------------------------------------
+// Type: ITfContextOwnerCompositionServices
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfContextOwnerCompositionServices = *opaque{
+    // TODO: Method 'TerminateComposition'
+};
+// --------------------------------------------------------
+// Type: ITfContextOwnerCompositionSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfContextOwnerCompositionSink = *opaque{
+    // TODO: Method 'OnStartComposition'
+    // TODO: Method 'OnUpdateComposition'
+    // TODO: Method 'OnEndComposition'
+};
+// --------------------------------------------------------
+// Type: ITfContextView
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfContextView = *opaque{
+    // TODO: Method 'GetRangeFromPoint'
+    // TODO: Method 'GetTextExt'
+    // TODO: Method 'GetScreenExt'
+    // TODO: Method 'GetWnd'
+};
+// --------------------------------------------------------
+// Type: IEnumTfContextViews
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumTfContextViews = *opaque{
+    // TODO: Method 'Clone'
+    // TODO: Method 'Next'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Skip'
+};
+// --------------------------------------------------------
+// Type: TfActiveSelEnd
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TfActiveSelEnd = *opaque{
+};
+// --------------------------------------------------------
+// Type: TF_SELECTIONSTYLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TF_SELECTIONSTYLE = extern struct {
+    ase: Windows.Win32.TextServices.TfActiveSelEnd,
+    fInterimChar: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: TF_SELECTION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TF_SELECTION = extern struct {
+    range: Windows.Win32.TextServices.ITfRange,
+    style: Windows.Win32.TextServices.TF_SELECTIONSTYLE,
+};
+// --------------------------------------------------------
+// Type: ITfContext
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfContext = *opaque{
+    // TODO: Method 'RequestEditSession'
+    // TODO: Method 'InWriteSession'
+    // TODO: Method 'GetSelection'
+    // TODO: Method 'SetSelection'
+    // TODO: Method 'GetStart'
+    // TODO: Method 'GetEnd'
+    // TODO: Method 'GetActiveView'
+    // TODO: Method 'EnumViews'
+    // TODO: Method 'GetStatus'
+    // TODO: Method 'GetProperty'
+    // TODO: Method 'GetAppProperty'
+    // TODO: Method 'TrackProperties'
+    // TODO: Method 'EnumProperties'
+    // TODO: Method 'GetDocumentMgr'
+    // TODO: Method 'CreateRangeBackup'
+};
+// --------------------------------------------------------
+// Type: ITfQueryEmbedded
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfQueryEmbedded = *opaque{
+    // TODO: Method 'QueryInsertEmbedded'
+};
+// --------------------------------------------------------
+// Type: ITfInsertAtSelection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfInsertAtSelection = *opaque{
+    // TODO: Method 'InsertTextAtSelection'
+    // TODO: Method 'InsertEmbeddedAtSelection'
+};
+// --------------------------------------------------------
+// Type: ITfCleanupContextSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfCleanupContextSink = *opaque{
+    // TODO: Method 'OnCleanupContext'
+};
+// --------------------------------------------------------
+// Type: ITfCleanupContextDurationSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfCleanupContextDurationSink = *opaque{
+    // TODO: Method 'OnStartCleanupContext'
+    // TODO: Method 'OnEndCleanupContext'
+};
+// --------------------------------------------------------
+// Type: ITfReadOnlyProperty
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfReadOnlyProperty = *opaque{
+    // TODO: Method 'GetType'
+    // TODO: Method 'EnumRanges'
+    // TODO: Method 'GetValue'
+    // TODO: Method 'GetContext'
+};
+// --------------------------------------------------------
+// Type: TF_PROPERTYVAL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TF_PROPERTYVAL = extern struct {
+    guidId: Guid,
+    varValue: Windows.Win32.Automation.VARIANT,
+};
+// --------------------------------------------------------
+// Type: IEnumTfPropertyValue
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumTfPropertyValue = *opaque{
+    // TODO: Method 'Clone'
+    // TODO: Method 'Next'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Skip'
+};
+// --------------------------------------------------------
+// Type: ITfMouseTracker
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfMouseTracker = *opaque{
+    // TODO: Method 'AdviseMouseSink'
+    // TODO: Method 'UnadviseMouseSink'
+};
+// --------------------------------------------------------
+// Type: ITfMouseTrackerACP
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfMouseTrackerACP = *opaque{
+    // TODO: Method 'AdviseMouseSink'
+    // TODO: Method 'UnadviseMouseSink'
+};
+// --------------------------------------------------------
+// Type: ITfMouseSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfMouseSink = *opaque{
+    // TODO: Method 'OnMouseEvent'
+};
+// --------------------------------------------------------
+// Type: ITfEditRecord
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfEditRecord = *opaque{
+    // TODO: Method 'GetSelectionStatus'
+    // TODO: Method 'GetTextAndPropertyUpdates'
+};
+// --------------------------------------------------------
+// Type: ITfTextEditSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfTextEditSink = *opaque{
+    // TODO: Method 'OnEndEdit'
+};
+// --------------------------------------------------------
+// Type: TfLayoutCode
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TfLayoutCode = *opaque{
+};
+// --------------------------------------------------------
+// Type: ITfTextLayoutSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfTextLayoutSink = *opaque{
+    // TODO: Method 'OnLayoutChange'
+};
+// --------------------------------------------------------
+// Type: ITfStatusSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfStatusSink = *opaque{
+    // TODO: Method 'OnStatusChange'
+};
+// --------------------------------------------------------
+// Type: ITfEditTransactionSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfEditTransactionSink = *opaque{
+    // TODO: Method 'OnStartEditTransaction'
+    // TODO: Method 'OnEndEditTransaction'
+};
+// --------------------------------------------------------
+// Type: ITfContextOwner
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfContextOwner = *opaque{
+    // TODO: Method 'GetACPFromPoint'
+    // TODO: Method 'GetTextExt'
+    // TODO: Method 'GetScreenExt'
+    // TODO: Method 'GetStatus'
+    // TODO: Method 'GetWnd'
+    // TODO: Method 'GetAttribute'
+};
+// --------------------------------------------------------
+// Type: ITfContextOwnerServices
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfContextOwnerServices = *opaque{
+    // TODO: Method 'OnLayoutChange'
+    // TODO: Method 'OnStatusChange'
+    // TODO: Method 'OnAttributeChange'
+    // TODO: Method 'Serialize'
+    // TODO: Method 'Unserialize'
+    // TODO: Method 'ForceLoadProperty'
+    // TODO: Method 'CreateRange'
+};
+// --------------------------------------------------------
+// Type: ITfContextKeyEventSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfContextKeyEventSink = *opaque{
+    // TODO: Method 'OnKeyDown'
+    // TODO: Method 'OnKeyUp'
+    // TODO: Method 'OnTestKeyDown'
+    // TODO: Method 'OnTestKeyUp'
+};
+// --------------------------------------------------------
+// Type: ITfEditSession
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfEditSession = *opaque{
+    // TODO: Method 'DoEditSession'
+};
+// --------------------------------------------------------
+// Type: TfGravity
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TfGravity = *opaque{
+};
+// --------------------------------------------------------
+// Type: TfShiftDir
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TfShiftDir = *opaque{
+};
+// --------------------------------------------------------
+// Type: TF_HALTCOND
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TF_HALTCOND = extern struct {
+    pHaltRange: Windows.Win32.TextServices.ITfRange,
+    aHaltPos: Windows.Win32.TextServices.TfAnchor,
+    dwFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ITfRange
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfRange = *opaque{
+    // TODO: Method 'GetText'
+    // TODO: Method 'SetText'
+    // TODO: Method 'GetFormattedText'
+    // TODO: Method 'GetEmbedded'
+    // TODO: Method 'InsertEmbedded'
+    // TODO: Method 'ShiftStart'
+    // TODO: Method 'ShiftEnd'
+    // TODO: Method 'ShiftStartToRange'
+    // TODO: Method 'ShiftEndToRange'
+    // TODO: Method 'ShiftStartRegion'
+    // TODO: Method 'ShiftEndRegion'
+    // TODO: Method 'IsEmpty'
+    // TODO: Method 'Collapse'
+    // TODO: Method 'IsEqualStart'
+    // TODO: Method 'IsEqualEnd'
+    // TODO: Method 'CompareStart'
+    // TODO: Method 'CompareEnd'
+    // TODO: Method 'AdjustForInsert'
+    // TODO: Method 'GetGravity'
+    // TODO: Method 'SetGravity'
+    // TODO: Method 'Clone'
+    // TODO: Method 'GetContext'
+};
+// --------------------------------------------------------
+// Type: ITfRangeACP
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfRangeACP = *opaque{
+    // TODO: Method 'GetExtent'
+    // TODO: Method 'SetExtent'
+};
+// --------------------------------------------------------
+// Type: ITextStoreACPServices
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITextStoreACPServices = *opaque{
+    // TODO: Method 'Serialize'
+    // TODO: Method 'Unserialize'
+    // TODO: Method 'ForceLoadProperty'
+    // TODO: Method 'CreateRange'
+};
+// --------------------------------------------------------
+// Type: ITfRangeBackup
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfRangeBackup = *opaque{
+    // TODO: Method 'Restore'
+};
+// --------------------------------------------------------
+// Type: ITfPropertyStore
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfPropertyStore = *opaque{
+    // TODO: Method 'GetType'
+    // TODO: Method 'GetDataType'
+    // TODO: Method 'GetData'
+    // TODO: Method 'OnTextUpdated'
+    // TODO: Method 'Shrink'
+    // TODO: Method 'Divide'
+    // TODO: Method 'Clone'
+    // TODO: Method 'GetPropertyRangeCreator'
+    // TODO: Method 'Serialize'
+};
+// --------------------------------------------------------
+// Type: IEnumTfRanges
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumTfRanges = *opaque{
+    // TODO: Method 'Clone'
+    // TODO: Method 'Next'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Skip'
+};
+// --------------------------------------------------------
+// Type: ITfCreatePropertyStore
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfCreatePropertyStore = *opaque{
+    // TODO: Method 'IsStoreSerializable'
+    // TODO: Method 'CreatePropertyStore'
+};
+// --------------------------------------------------------
+// Type: ITfPersistentPropertyLoaderACP
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfPersistentPropertyLoaderACP = *opaque{
+    // TODO: Method 'LoadProperty'
+};
+// --------------------------------------------------------
+// Type: ITfProperty
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfProperty = *opaque{
+    // TODO: Method 'FindRange'
+    // TODO: Method 'SetValueStore'
+    // TODO: Method 'SetValue'
+    // TODO: Method 'Clear'
+};
+// --------------------------------------------------------
+// Type: IEnumTfProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumTfProperties = *opaque{
+    // TODO: Method 'Clone'
+    // TODO: Method 'Next'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Skip'
+};
+// --------------------------------------------------------
+// Type: ITfCompartment
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfCompartment = *opaque{
+    // TODO: Method 'SetValue'
+    // TODO: Method 'GetValue'
+};
+// --------------------------------------------------------
+// Type: ITfCompartmentEventSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfCompartmentEventSink = *opaque{
+    // TODO: Method 'OnChange'
+};
+// --------------------------------------------------------
+// Type: ITfCompartmentMgr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfCompartmentMgr = *opaque{
+    // TODO: Method 'GetCompartment'
+    // TODO: Method 'ClearCompartment'
+    // TODO: Method 'EnumCompartments'
+};
+// --------------------------------------------------------
+// Type: ITfFunction
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfFunction = *opaque{
+    // TODO: Method 'GetDisplayName'
+};
+// --------------------------------------------------------
+// Type: ITfFunctionProvider
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfFunctionProvider = *opaque{
+    // TODO: Method 'GetType'
+    // TODO: Method 'GetDescription'
+    // TODO: Method 'GetFunction'
+};
+// --------------------------------------------------------
+// Type: IEnumTfFunctionProviders
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumTfFunctionProviders = *opaque{
+    // TODO: Method 'Clone'
+    // TODO: Method 'Next'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Skip'
+};
+// --------------------------------------------------------
+// Type: ITfInputProcessorProfiles
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfInputProcessorProfiles = *opaque{
+    // TODO: Method 'Register'
+    // TODO: Method 'Unregister'
+    // TODO: Method 'AddLanguageProfile'
+    // TODO: Method 'RemoveLanguageProfile'
+    // TODO: Method 'EnumInputProcessorInfo'
+    // TODO: Method 'GetDefaultLanguageProfile'
+    // TODO: Method 'SetDefaultLanguageProfile'
+    // TODO: Method 'ActivateLanguageProfile'
+    // TODO: Method 'GetActiveLanguageProfile'
+    // TODO: Method 'GetLanguageProfileDescription'
+    // TODO: Method 'GetCurrentLanguage'
+    // TODO: Method 'ChangeCurrentLanguage'
+    // TODO: Method 'GetLanguageList'
+    // TODO: Method 'EnumLanguageProfiles'
+    // TODO: Method 'EnableLanguageProfile'
+    // TODO: Method 'IsEnabledLanguageProfile'
+    // TODO: Method 'EnableLanguageProfileByDefault'
+    // TODO: Method 'SubstituteKeyboardLayout'
+};
+// --------------------------------------------------------
+// Type: ITfInputProcessorProfilesEx
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfInputProcessorProfilesEx = *opaque{
+    // TODO: Method 'SetLanguageProfileDisplayName'
+};
+// --------------------------------------------------------
+// Type: ITfInputProcessorProfileSubstituteLayout
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfInputProcessorProfileSubstituteLayout = *opaque{
+    // TODO: Method 'GetSubstituteKeyboardLayout'
+};
+// --------------------------------------------------------
+// Type: ITfActiveLanguageProfileNotifySink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfActiveLanguageProfileNotifySink = *opaque{
+    // TODO: Method 'OnActivated'
+};
+// --------------------------------------------------------
+// Type: IEnumTfLanguageProfiles
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumTfLanguageProfiles = *opaque{
+    // TODO: Method 'Clone'
+    // TODO: Method 'Next'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Skip'
+};
+// --------------------------------------------------------
+// Type: ITfLanguageProfileNotifySink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfLanguageProfileNotifySink = *opaque{
+    // TODO: Method 'OnLanguageChange'
+    // TODO: Method 'OnLanguageChanged'
+};
+// --------------------------------------------------------
+// Type: TF_INPUTPROCESSORPROFILE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TF_INPUTPROCESSORPROFILE = extern struct {
+    dwProfileType: {"kind":"UInt32"},
+    langid: {"kind":"UInt16"},
+    clsid: Guid,
+    guidProfile: Guid,
+    catid: Guid,
+    hklSubstitute: {"kind":"IntPtr"},
+    dwCaps: {"kind":"UInt32"},
+    hkl: {"kind":"IntPtr"},
+    dwFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ITfInputProcessorProfileMgr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfInputProcessorProfileMgr = *opaque{
+    // TODO: Method 'ActivateProfile'
+    // TODO: Method 'DeactivateProfile'
+    // TODO: Method 'GetProfile'
+    // TODO: Method 'EnumProfiles'
+    // TODO: Method 'ReleaseInputProcessor'
+    // TODO: Method 'RegisterProfile'
+    // TODO: Method 'UnregisterProfile'
+    // TODO: Method 'GetActiveProfile'
+};
+// --------------------------------------------------------
+// Type: IEnumTfInputProcessorProfiles
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumTfInputProcessorProfiles = *opaque{
+    // TODO: Method 'Clone'
+    // TODO: Method 'Next'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Skip'
+};
+// --------------------------------------------------------
+// Type: ITfInputProcessorProfileActivationSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfInputProcessorProfileActivationSink = *opaque{
+    // TODO: Method 'OnActivated'
+};
+// --------------------------------------------------------
+// Type: TF_PRESERVEDKEY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TF_PRESERVEDKEY = extern struct {
+    uVKey: {"kind":"UInt32"},
+    uModifiers: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ITfKeystrokeMgr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfKeystrokeMgr = *opaque{
+    // TODO: Method 'AdviseKeyEventSink'
+    // TODO: Method 'UnadviseKeyEventSink'
+    // TODO: Method 'GetForeground'
+    // TODO: Method 'TestKeyDown'
+    // TODO: Method 'TestKeyUp'
+    // TODO: Method 'KeyDown'
+    // TODO: Method 'KeyUp'
+    // TODO: Method 'GetPreservedKey'
+    // TODO: Method 'IsPreservedKey'
+    // TODO: Method 'PreserveKey'
+    // TODO: Method 'UnpreserveKey'
+    // TODO: Method 'SetPreservedKeyDescription'
+    // TODO: Method 'GetPreservedKeyDescription'
+    // TODO: Method 'SimulatePreservedKey'
+};
+// --------------------------------------------------------
+// Type: ITfKeyEventSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfKeyEventSink = *opaque{
+    // TODO: Method 'OnSetFocus'
+    // TODO: Method 'OnTestKeyDown'
+    // TODO: Method 'OnTestKeyUp'
+    // TODO: Method 'OnKeyDown'
+    // TODO: Method 'OnKeyUp'
+    // TODO: Method 'OnPreservedKey'
+};
+// --------------------------------------------------------
+// Type: ITfKeyTraceEventSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfKeyTraceEventSink = *opaque{
+    // TODO: Method 'OnKeyTraceDown'
+    // TODO: Method 'OnKeyTraceUp'
+};
+// --------------------------------------------------------
+// Type: ITfPreservedKeyNotifySink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfPreservedKeyNotifySink = *opaque{
+    // TODO: Method 'OnUpdated'
+};
+// --------------------------------------------------------
+// Type: ITfMessagePump
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfMessagePump = *opaque{
+    // TODO: Method 'PeekMessageA'
+    // TODO: Method 'GetMessageA'
+    // TODO: Method 'PeekMessageW'
+    // TODO: Method 'GetMessageW'
+};
+// --------------------------------------------------------
+// Type: ITfThreadFocusSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfThreadFocusSink = *opaque{
+    // TODO: Method 'OnSetThreadFocus'
+    // TODO: Method 'OnKillThreadFocus'
+};
+// --------------------------------------------------------
+// Type: ITfTextInputProcessor
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfTextInputProcessor = *opaque{
+    // TODO: Method 'Activate'
+    // TODO: Method 'Deactivate'
+};
+// --------------------------------------------------------
+// Type: ITfTextInputProcessorEx
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfTextInputProcessorEx = *opaque{
+    // TODO: Method 'ActivateEx'
+};
+// --------------------------------------------------------
+// Type: ITfClientId
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfClientId = *opaque{
+    // TODO: Method 'GetClientId'
+};
+// --------------------------------------------------------
+// Type: TF_DA_LINESTYLE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TF_DA_LINESTYLE = *opaque{
+};
+// --------------------------------------------------------
+// Type: TF_DA_COLORTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TF_DA_COLORTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: TF_DA_COLOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TF_DA_COLOR = extern struct {
+    type: Windows.Win32.TextServices.TF_DA_COLORTYPE,
+    Anonymous: Windows.Win32.TextServices.TF_DA_COLOR+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: TF_DA_ATTR_INFO
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TF_DA_ATTR_INFO = *opaque{
+};
+// --------------------------------------------------------
+// Type: TF_DISPLAYATTRIBUTE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TF_DISPLAYATTRIBUTE = extern struct {
+    crText: Windows.Win32.TextServices.TF_DA_COLOR,
+    crBk: Windows.Win32.TextServices.TF_DA_COLOR,
+    lsStyle: Windows.Win32.TextServices.TF_DA_LINESTYLE,
+    fBoldLine: Windows.Win32.SystemServices.BOOL,
+    crLine: Windows.Win32.TextServices.TF_DA_COLOR,
+    bAttr: Windows.Win32.TextServices.TF_DA_ATTR_INFO,
+};
+// --------------------------------------------------------
+// Type: ITfDisplayAttributeInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfDisplayAttributeInfo = *opaque{
+    // TODO: Method 'GetGUID'
+    // TODO: Method 'GetDescription'
+    // TODO: Method 'GetAttributeInfo'
+    // TODO: Method 'SetAttributeInfo'
+    // TODO: Method 'Reset'
+};
+// --------------------------------------------------------
+// Type: IEnumTfDisplayAttributeInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumTfDisplayAttributeInfo = *opaque{
+    // TODO: Method 'Clone'
+    // TODO: Method 'Next'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Skip'
+};
+// --------------------------------------------------------
+// Type: ITfDisplayAttributeProvider
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfDisplayAttributeProvider = *opaque{
+    // TODO: Method 'EnumDisplayAttributeInfo'
+    // TODO: Method 'GetDisplayAttributeInfo'
+};
+// --------------------------------------------------------
+// Type: ITfDisplayAttributeMgr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfDisplayAttributeMgr = *opaque{
+    // TODO: Method 'OnUpdateInfo'
+    // TODO: Method 'EnumDisplayAttributeInfo'
+    // TODO: Method 'GetDisplayAttributeInfo'
+};
+// --------------------------------------------------------
+// Type: ITfDisplayAttributeNotifySink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfDisplayAttributeNotifySink = *opaque{
+    // TODO: Method 'OnUpdateInfo'
+};
+// --------------------------------------------------------
+// Type: ITfCategoryMgr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfCategoryMgr = *opaque{
+    // TODO: Method 'RegisterCategory'
+    // TODO: Method 'UnregisterCategory'
+    // TODO: Method 'EnumCategoriesInItem'
+    // TODO: Method 'EnumItemsInCategory'
+    // TODO: Method 'FindClosestCategory'
+    // TODO: Method 'RegisterGUIDDescription'
+    // TODO: Method 'UnregisterGUIDDescription'
+    // TODO: Method 'GetGUIDDescription'
+    // TODO: Method 'RegisterGUIDDWORD'
+    // TODO: Method 'UnregisterGUIDDWORD'
+    // TODO: Method 'GetGUIDDWORD'
+    // TODO: Method 'RegisterGUID'
+    // TODO: Method 'GetGUID'
+    // TODO: Method 'IsEqualTfGuidAtom'
+};
+// --------------------------------------------------------
+// Type: ITfSource
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfSource = *opaque{
+    // TODO: Method 'AdviseSink'
+    // TODO: Method 'UnadviseSink'
+};
+// --------------------------------------------------------
+// Type: ITfSourceSingle
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfSourceSingle = *opaque{
+    // TODO: Method 'AdviseSingleSink'
+    // TODO: Method 'UnadviseSingleSink'
+};
+// --------------------------------------------------------
+// Type: ITfUIElementMgr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfUIElementMgr = *opaque{
+    // TODO: Method 'BeginUIElement'
+    // TODO: Method 'UpdateUIElement'
+    // TODO: Method 'EndUIElement'
+    // TODO: Method 'GetUIElement'
+    // TODO: Method 'EnumUIElements'
+};
+// --------------------------------------------------------
+// Type: IEnumTfUIElements
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumTfUIElements = *opaque{
+    // TODO: Method 'Clone'
+    // TODO: Method 'Next'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Skip'
+};
+// --------------------------------------------------------
+// Type: ITfUIElementSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfUIElementSink = *opaque{
+    // TODO: Method 'BeginUIElement'
+    // TODO: Method 'UpdateUIElement'
+    // TODO: Method 'EndUIElement'
+};
+// --------------------------------------------------------
+// Type: ITfUIElement
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfUIElement = *opaque{
+    // TODO: Method 'GetDescription'
+    // TODO: Method 'GetGUID'
+    // TODO: Method 'Show'
+    // TODO: Method 'IsShown'
+};
+// --------------------------------------------------------
+// Type: ITfCandidateListUIElement
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfCandidateListUIElement = *opaque{
+    // TODO: Method 'GetUpdatedFlags'
+    // TODO: Method 'GetDocumentMgr'
+    // TODO: Method 'GetCount'
+    // TODO: Method 'GetSelection'
+    // TODO: Method 'GetString'
+    // TODO: Method 'GetPageIndex'
+    // TODO: Method 'SetPageIndex'
+    // TODO: Method 'GetCurrentPage'
+};
+// --------------------------------------------------------
+// Type: ITfCandidateListUIElementBehavior
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfCandidateListUIElementBehavior = *opaque{
+    // TODO: Method 'SetSelection'
+    // TODO: Method 'Finalize'
+    // TODO: Method 'Abort'
+};
+// --------------------------------------------------------
+// Type: ITfReadingInformationUIElement
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfReadingInformationUIElement = *opaque{
+    // TODO: Method 'GetUpdatedFlags'
+    // TODO: Method 'GetContext'
+    // TODO: Method 'GetString'
+    // TODO: Method 'GetMaxReadingStringLength'
+    // TODO: Method 'GetErrorIndex'
+    // TODO: Method 'IsVerticalOrderPreferred'
+};
+// --------------------------------------------------------
+// Type: ITfTransitoryExtensionUIElement
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfTransitoryExtensionUIElement = *opaque{
+    // TODO: Method 'GetDocumentMgr'
+};
+// --------------------------------------------------------
+// Type: ITfTransitoryExtensionSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfTransitoryExtensionSink = *opaque{
+    // TODO: Method 'OnTransitoryExtensionUpdated'
+};
+// --------------------------------------------------------
+// Type: ITfToolTipUIElement
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfToolTipUIElement = *opaque{
+    // TODO: Method 'GetString'
+};
+// --------------------------------------------------------
+// Type: ITfReverseConversionList
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfReverseConversionList = *opaque{
+    // TODO: Method 'GetLength'
+    // TODO: Method 'GetString'
+};
+// --------------------------------------------------------
+// Type: ITfReverseConversion
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfReverseConversion = *opaque{
+    // TODO: Method 'DoReverseConversion'
+};
+// --------------------------------------------------------
+// Type: ITfReverseConversionMgr
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfReverseConversionMgr = *opaque{
+    // TODO: Method 'GetReverseConversion'
+};
+// --------------------------------------------------------
+// Type: ITfCandidateString
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfCandidateString = *opaque{
+    // TODO: Method 'GetString'
+    // TODO: Method 'GetIndex'
+};
+// --------------------------------------------------------
+// Type: IEnumTfCandidates
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumTfCandidates = *opaque{
+    // TODO: Method 'Clone'
+    // TODO: Method 'Next'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Skip'
+};
+// --------------------------------------------------------
+// Type: TfCandidateResult
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TfCandidateResult = *opaque{
+};
+// --------------------------------------------------------
+// Type: ITfCandidateList
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfCandidateList = *opaque{
+    // TODO: Method 'EnumCandidates'
+    // TODO: Method 'GetCandidate'
+    // TODO: Method 'GetCandidateNum'
+    // TODO: Method 'SetResult'
+};
+// --------------------------------------------------------
+// Type: ITfFnReconversion
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfFnReconversion = *opaque{
+    // TODO: Method 'QueryRange'
+    // TODO: Method 'GetReconversion'
+    // TODO: Method 'Reconvert'
+};
+// --------------------------------------------------------
+// Type: ITfFnPlayBack
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfFnPlayBack = *opaque{
+    // TODO: Method 'QueryRange'
+    // TODO: Method 'Play'
+};
+// --------------------------------------------------------
+// Type: ITfFnLangProfileUtil
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfFnLangProfileUtil = *opaque{
+    // TODO: Method 'RegisterActiveProfiles'
+    // TODO: Method 'IsProfileAvailableForLang'
+};
+// --------------------------------------------------------
+// Type: ITfFnConfigure
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfFnConfigure = *opaque{
+    // TODO: Method 'Show'
+};
+// --------------------------------------------------------
+// Type: ITfFnConfigureRegisterWord
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfFnConfigureRegisterWord = *opaque{
+    // TODO: Method 'Show'
+};
+// --------------------------------------------------------
+// Type: ITfFnConfigureRegisterEudc
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfFnConfigureRegisterEudc = *opaque{
+    // TODO: Method 'Show'
+};
+// --------------------------------------------------------
+// Type: ITfFnShowHelp
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfFnShowHelp = *opaque{
+    // TODO: Method 'Show'
+};
+// --------------------------------------------------------
+// Type: ITfFnBalloon
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfFnBalloon = *opaque{
+    // TODO: Method 'UpdateBalloon'
+};
+// --------------------------------------------------------
+// Type: TfSapiObject
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TfSapiObject = *opaque{
+};
+// --------------------------------------------------------
+// Type: ITfFnGetSAPIObject
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfFnGetSAPIObject = *opaque{
+    // TODO: Method 'Get'
+};
+// --------------------------------------------------------
+// Type: ITfFnPropertyUIStatus
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfFnPropertyUIStatus = *opaque{
+    // TODO: Method 'GetStatus'
+    // TODO: Method 'SetStatus'
+};
+// --------------------------------------------------------
+// Type: ITfFnLMProcessor
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfFnLMProcessor = *opaque{
+    // TODO: Method 'QueryRange'
+    // TODO: Method 'QueryLangID'
+    // TODO: Method 'GetReconversion'
+    // TODO: Method 'Reconvert'
+    // TODO: Method 'QueryKey'
+    // TODO: Method 'InvokeKey'
+    // TODO: Method 'InvokeFunc'
+};
+// --------------------------------------------------------
+// Type: ITfFnLMInternal
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfFnLMInternal = *opaque{
+    // TODO: Method 'ProcessLattice'
+};
+// --------------------------------------------------------
+// Type: TF_LMLATTELEMENT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TF_LMLATTELEMENT = extern struct {
+    dwFrameStart: {"kind":"UInt32"},
+    dwFrameLen: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.TextServices.TF_LMLATTELEMENT+_Anonymous_e__Union,
+    bstrText: Windows.Win32.Automation.BSTR,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: IEnumTfLatticeElements
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumTfLatticeElements = *opaque{
+    // TODO: Method 'Clone'
+    // TODO: Method 'Next'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Skip'
+};
+// --------------------------------------------------------
+// Type: ITfLMLattice
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfLMLattice = *opaque{
+    // TODO: Method 'QueryType'
+    // TODO: Method 'EnumLatticeElements'
+};
+// --------------------------------------------------------
+// Type: ITfFnAdviseText
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfFnAdviseText = *opaque{
+    // TODO: Method 'OnTextUpdate'
+    // TODO: Method 'OnLatticeUpdate'
+};
+// --------------------------------------------------------
+// Type: ITfFnSearchCandidateProvider
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfFnSearchCandidateProvider = *opaque{
+    // TODO: Method 'GetSearchCandidates'
+    // TODO: Method 'SetResult'
+};
+// --------------------------------------------------------
+// Type: TfIntegratableCandidateListSelectionStyle
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TfIntegratableCandidateListSelectionStyle = *opaque{
+};
+// --------------------------------------------------------
+// Type: ITfIntegratableCandidateListUIElement
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfIntegratableCandidateListUIElement = *opaque{
+    // TODO: Method 'SetIntegrationStyle'
+    // TODO: Method 'GetSelectionStyle'
+    // TODO: Method 'OnKeyDown'
+    // TODO: Method 'ShowCandidateNumbers'
+    // TODO: Method 'FinalizeExactCompositionString'
+};
+// --------------------------------------------------------
+// Type: TKBLayoutType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TKBLayoutType = *opaque{
+};
+// --------------------------------------------------------
+// Type: ITfFnGetPreferredTouchKeyboardLayout
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfFnGetPreferredTouchKeyboardLayout = *opaque{
+    // TODO: Method 'GetLayout'
+};
+// --------------------------------------------------------
+// Type: ITfFnGetLinguisticAlternates
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfFnGetLinguisticAlternates = *opaque{
+    // TODO: Method 'GetAlternates'
+};
+// --------------------------------------------------------
+// Type: IUIManagerEventSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IUIManagerEventSink = *opaque{
+    // TODO: Method 'OnWindowOpening'
+    // TODO: Method 'OnWindowOpened'
+    // TODO: Method 'OnWindowUpdating'
+    // TODO: Method 'OnWindowUpdated'
+    // TODO: Method 'OnWindowClosing'
+    // TODO: Method 'OnWindowClosed'
+};
+// --------------------------------------------------------
+// Type: InputScope
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const InputScope = *opaque{
+};
+// --------------------------------------------------------
+// Type: ITfInputScope
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfInputScope = *opaque{
+    // TODO: Method 'GetInputScopes'
+    // TODO: Method 'GetPhrase'
+    // TODO: Method 'GetRegularExpression'
+    // TODO: Method 'GetSRGS'
+    // TODO: Method 'GetXML'
+};
+// --------------------------------------------------------
+// Type: ITfInputScope2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfInputScope2 = *opaque{
+    // TODO: Method 'EnumWordList'
+};
+// --------------------------------------------------------
+// Type: ITfSpeechUIServer
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfSpeechUIServer = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'ShowUI'
+    // TODO: Method 'UpdateBalloon'
+};
+// --------------------------------------------------------
+// Type: ITfMSAAControl
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITfMSAAControl = *opaque{
+    // TODO: Method 'SystemEnableMSAA'
+    // TODO: Method 'SystemDisableMSAA'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MsCtfMonitor" fn InitLocalMsCtfMonitor(
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "MsCtfMonitor" fn UninitLocalMsCtfMonitor(
+],
+
+"unicode_aliases": [
+]}

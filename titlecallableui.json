@@ -1,0 +1,225 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: GameUICompletionRoutine
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const GameUICompletionRoutine = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PlayerPickerUICompletionRoutine
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PlayerPickerUICompletionRoutine = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: KnownGamingPrivileges
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const KnownGamingPrivileges = *opaque{
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-gaming-tcui-l1-1-0" fn ShowGameInviteUI(
+    serviceConfigurationId: {"kind":"IntPtr"},
+    sessionTemplateName: {"kind":"IntPtr"},
+    sessionId: {"kind":"IntPtr"},
+    invitationDisplayText: {"kind":"IntPtr"},
+    completionRoutine: Windows.Win32.TitleCallableUI.GameUICompletionRoutine,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-gaming-tcui-l1-1-0" fn ShowPlayerPickerUI(
+    promptDisplayText: {"kind":"IntPtr"},
+    xuids: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    xuidsCount: {"kind":"UIntPtr"},
+    preSelectedXuids: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    preSelectedXuidsCount: {"kind":"UIntPtr"},
+    minSelectionCount: {"kind":"UIntPtr"},
+    maxSelectionCount: {"kind":"UIntPtr"},
+    completionRoutine: Windows.Win32.TitleCallableUI.PlayerPickerUICompletionRoutine,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-gaming-tcui-l1-1-0" fn ShowProfileCardUI(
+    targetUserXuid: {"kind":"IntPtr"},
+    completionRoutine: Windows.Win32.TitleCallableUI.GameUICompletionRoutine,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-gaming-tcui-l1-1-0" fn ShowChangeFriendRelationshipUI(
+    targetUserXuid: {"kind":"IntPtr"},
+    completionRoutine: Windows.Win32.TitleCallableUI.GameUICompletionRoutine,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-gaming-tcui-l1-1-0" fn ShowTitleAchievementsUI(
+    titleId: {"kind":"UInt32"},
+    completionRoutine: Windows.Win32.TitleCallableUI.GameUICompletionRoutine,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-gaming-tcui-l1-1-0" fn ProcessPendingGameUI(
+    waitForCompletion: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-gaming-tcui-l1-1-0" fn TryCancelPendingGameUI(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-gaming-tcui-l1-1-1" fn CheckGamingPrivilegeWithUI(
+    privilegeId: {"kind":"UInt32"},
+    scope: {"kind":"IntPtr"},
+    policy: {"kind":"IntPtr"},
+    friendlyMessage: {"kind":"IntPtr"},
+    completionRoutine: Windows.Win32.TitleCallableUI.GameUICompletionRoutine,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-gaming-tcui-l1-1-1" fn CheckGamingPrivilegeSilently(
+    privilegeId: {"kind":"UInt32"},
+    scope: {"kind":"IntPtr"},
+    policy: {"kind":"IntPtr"},
+    hasPrivilege: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-gaming-tcui-l1-1-2" fn ShowGameInviteUIForUser(
+    user: Windows.Win32.WinRT.IInspectable,
+    serviceConfigurationId: {"kind":"IntPtr"},
+    sessionTemplateName: {"kind":"IntPtr"},
+    sessionId: {"kind":"IntPtr"},
+    invitationDisplayText: {"kind":"IntPtr"},
+    completionRoutine: Windows.Win32.TitleCallableUI.GameUICompletionRoutine,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-gaming-tcui-l1-1-2" fn ShowPlayerPickerUIForUser(
+    user: Windows.Win32.WinRT.IInspectable,
+    promptDisplayText: {"kind":"IntPtr"},
+    xuids: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    xuidsCount: {"kind":"UIntPtr"},
+    preSelectedXuids: {"kind""Ptr","child":{"kind":"IntPtr"}},
+    preSelectedXuidsCount: {"kind":"UIntPtr"},
+    minSelectionCount: {"kind":"UIntPtr"},
+    maxSelectionCount: {"kind":"UIntPtr"},
+    completionRoutine: Windows.Win32.TitleCallableUI.PlayerPickerUICompletionRoutine,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-gaming-tcui-l1-1-2" fn ShowProfileCardUIForUser(
+    user: Windows.Win32.WinRT.IInspectable,
+    targetUserXuid: {"kind":"IntPtr"},
+    completionRoutine: Windows.Win32.TitleCallableUI.GameUICompletionRoutine,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-gaming-tcui-l1-1-2" fn ShowChangeFriendRelationshipUIForUser(
+    user: Windows.Win32.WinRT.IInspectable,
+    targetUserXuid: {"kind":"IntPtr"},
+    completionRoutine: Windows.Win32.TitleCallableUI.GameUICompletionRoutine,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-gaming-tcui-l1-1-2" fn ShowTitleAchievementsUIForUser(
+    user: Windows.Win32.WinRT.IInspectable,
+    titleId: {"kind":"UInt32"},
+    completionRoutine: Windows.Win32.TitleCallableUI.GameUICompletionRoutine,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-gaming-tcui-l1-1-2" fn CheckGamingPrivilegeWithUIForUser(
+    user: Windows.Win32.WinRT.IInspectable,
+    privilegeId: {"kind":"UInt32"},
+    scope: {"kind":"IntPtr"},
+    policy: {"kind":"IntPtr"},
+    friendlyMessage: {"kind":"IntPtr"},
+    completionRoutine: Windows.Win32.TitleCallableUI.GameUICompletionRoutine,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-gaming-tcui-l1-1-2" fn CheckGamingPrivilegeSilentlyForUser(
+    user: Windows.Win32.WinRT.IInspectable,
+    privilegeId: {"kind":"UInt32"},
+    scope: {"kind":"IntPtr"},
+    policy: {"kind":"IntPtr"},
+    hasPrivilege: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-gaming-tcui-l1-1-3" fn ShowGameInviteUIWithContext(
+    serviceConfigurationId: {"kind":"IntPtr"},
+    sessionTemplateName: {"kind":"IntPtr"},
+    sessionId: {"kind":"IntPtr"},
+    invitationDisplayText: {"kind":"IntPtr"},
+    customActivationContext: {"kind":"IntPtr"},
+    completionRoutine: Windows.Win32.TitleCallableUI.GameUICompletionRoutine,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-gaming-tcui-l1-1-3" fn ShowGameInviteUIWithContextForUser(
+    user: Windows.Win32.WinRT.IInspectable,
+    serviceConfigurationId: {"kind":"IntPtr"},
+    sessionTemplateName: {"kind":"IntPtr"},
+    sessionId: {"kind":"IntPtr"},
+    invitationDisplayText: {"kind":"IntPtr"},
+    customActivationContext: {"kind":"IntPtr"},
+    completionRoutine: Windows.Win32.TitleCallableUI.GameUICompletionRoutine,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-gaming-tcui-l1-1-4" fn ShowGameInfoUI(
+    titleId: {"kind":"UInt32"},
+    completionRoutine: Windows.Win32.TitleCallableUI.GameUICompletionRoutine,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-gaming-tcui-l1-1-4" fn ShowGameInfoUIForUser(
+    user: Windows.Win32.WinRT.IInspectable,
+    titleId: {"kind":"UInt32"},
+    completionRoutine: Windows.Win32.TitleCallableUI.GameUICompletionRoutine,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-gaming-tcui-l1-1-4" fn ShowFindFriendsUI(
+    completionRoutine: Windows.Win32.TitleCallableUI.GameUICompletionRoutine,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-gaming-tcui-l1-1-4" fn ShowFindFriendsUIForUser(
+    user: Windows.Win32.WinRT.IInspectable,
+    completionRoutine: Windows.Win32.TitleCallableUI.GameUICompletionRoutine,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-gaming-tcui-l1-1-4" fn ShowCustomizeUserProfileUI(
+    completionRoutine: Windows.Win32.TitleCallableUI.GameUICompletionRoutine,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-gaming-tcui-l1-1-4" fn ShowCustomizeUserProfileUIForUser(
+    user: Windows.Win32.WinRT.IInspectable,
+    completionRoutine: Windows.Win32.TitleCallableUI.GameUICompletionRoutine,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-gaming-tcui-l1-1-4" fn ShowUserSettingsUI(
+    completionRoutine: Windows.Win32.TitleCallableUI.GameUICompletionRoutine,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-gaming-tcui-l1-1-4" fn ShowUserSettingsUIForUser(
+    user: Windows.Win32.WinRT.IInspectable,
+    completionRoutine: Windows.Win32.TitleCallableUI.GameUICompletionRoutine,
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+],
+
+"unicode_aliases": [
+]}

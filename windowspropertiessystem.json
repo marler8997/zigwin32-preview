@@ -1,0 +1,1741 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: SYNC_TRANSFER_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SYNC_TRANSFER_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PLACEHOLDER_STATES
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PLACEHOLDER_STATES = *opaque{
+};
+// --------------------------------------------------------
+// Type: _PROPERTYUI_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const _PROPERTYUI_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: IPropertyUI
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPropertyUI = *opaque{
+    // TODO: Method 'ParsePropertyName'
+    // TODO: Method 'GetCannonicalName'
+    // TODO: Method 'GetDisplayName'
+    // TODO: Method 'GetPropertyDescription'
+    // TODO: Method 'GetDefaultWidth'
+    // TODO: Method 'GetFlags'
+    // TODO: Method 'FormatForDisplay'
+    // TODO: Method 'GetHelpInfo'
+};
+// --------------------------------------------------------
+// Type: PDOPSTATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDOPSTATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: SYNC_ENGINE_STATE_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SYNC_ENGINE_STATE_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PROPPRG
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const PROPPRG = *opaque{
+};
+// --------------------------------------------------------
+// Type: PROPERTYKEY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PROPERTYKEY = extern struct {
+    fmtid: Guid,
+    pid: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: InMemoryPropertyStore
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const InMemoryPropertyStore = opaque {
+};
+// --------------------------------------------------------
+// Type: InMemoryPropertyStoreMarshalByValue
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const InMemoryPropertyStoreMarshalByValue = opaque {
+};
+// --------------------------------------------------------
+// Type: PropertySystem
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const PropertySystem = opaque {
+};
+// --------------------------------------------------------
+// Type: GETPROPERTYSTOREFLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const GETPROPERTYSTOREFLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PKA_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PKA_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: IPropertyChange
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPropertyChange = *opaque{
+    // TODO: Method 'ApplyToPropVariant'
+};
+// --------------------------------------------------------
+// Type: IPropertyChangeArray
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPropertyChangeArray = *opaque{
+    // TODO: Method 'GetCount'
+    // TODO: Method 'GetAt'
+    // TODO: Method 'InsertAt'
+    // TODO: Method 'Append'
+    // TODO: Method 'AppendOrReplace'
+    // TODO: Method 'RemoveAt'
+    // TODO: Method 'IsKeyInArray'
+};
+// --------------------------------------------------------
+// Type: IPropertyStoreCapabilities
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPropertyStoreCapabilities = *opaque{
+    // TODO: Method 'IsPropertyWritable'
+};
+// --------------------------------------------------------
+// Type: PSC_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PSC_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: IPropertyStoreCache
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPropertyStoreCache = *opaque{
+    // TODO: Method 'GetState'
+    // TODO: Method 'GetValueAndState'
+    // TODO: Method 'SetState'
+    // TODO: Method 'SetValueAndState'
+};
+// --------------------------------------------------------
+// Type: PROPENUMTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PROPENUMTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: IPropertyEnumType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPropertyEnumType = *opaque{
+    // TODO: Method 'GetEnumType'
+    // TODO: Method 'GetValue'
+    // TODO: Method 'GetRangeMinValue'
+    // TODO: Method 'GetRangeSetValue'
+    // TODO: Method 'GetDisplayText'
+};
+// --------------------------------------------------------
+// Type: IPropertyEnumType2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPropertyEnumType2 = *opaque{
+    // TODO: Method 'GetImageReference'
+};
+// --------------------------------------------------------
+// Type: IPropertyEnumTypeList
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPropertyEnumTypeList = *opaque{
+    // TODO: Method 'GetCount'
+    // TODO: Method 'GetAt'
+    // TODO: Method 'GetConditionAt'
+    // TODO: Method 'FindMatchingIndex'
+};
+// --------------------------------------------------------
+// Type: PROPDESC_TYPE_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PROPDESC_TYPE_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PROPDESC_VIEW_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PROPDESC_VIEW_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PROPDESC_DISPLAYTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PROPDESC_DISPLAYTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PROPDESC_GROUPING_RANGE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PROPDESC_GROUPING_RANGE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PROPDESC_FORMAT_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PROPDESC_FORMAT_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PROPDESC_SORTDESCRIPTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PROPDESC_SORTDESCRIPTION = *opaque{
+};
+// --------------------------------------------------------
+// Type: PROPDESC_RELATIVEDESCRIPTION_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PROPDESC_RELATIVEDESCRIPTION_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PROPDESC_AGGREGATION_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PROPDESC_AGGREGATION_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PROPDESC_CONDITION_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PROPDESC_CONDITION_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: IPropertyDescription
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPropertyDescription = *opaque{
+    // TODO: Method 'GetPropertyKey'
+    // TODO: Method 'GetCanonicalName'
+    // TODO: Method 'GetPropertyType'
+    // TODO: Method 'GetDisplayName'
+    // TODO: Method 'GetEditInvitation'
+    // TODO: Method 'GetTypeFlags'
+    // TODO: Method 'GetViewFlags'
+    // TODO: Method 'GetDefaultColumnWidth'
+    // TODO: Method 'GetDisplayType'
+    // TODO: Method 'GetColumnState'
+    // TODO: Method 'GetGroupingRange'
+    // TODO: Method 'GetRelativeDescriptionType'
+    // TODO: Method 'GetRelativeDescription'
+    // TODO: Method 'GetSortDescription'
+    // TODO: Method 'GetSortDescriptionLabel'
+    // TODO: Method 'GetAggregationType'
+    // TODO: Method 'GetConditionType'
+    // TODO: Method 'GetEnumTypeList'
+    // TODO: Method 'CoerceToCanonicalValue'
+    // TODO: Method 'FormatForDisplay'
+    // TODO: Method 'IsValueCanonical'
+};
+// --------------------------------------------------------
+// Type: IPropertyDescription2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPropertyDescription2 = *opaque{
+    // TODO: Method 'GetImageReferenceForValue'
+};
+// --------------------------------------------------------
+// Type: IPropertyDescriptionAliasInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPropertyDescriptionAliasInfo = *opaque{
+    // TODO: Method 'GetSortByAlias'
+    // TODO: Method 'GetAdditionalSortByAliases'
+};
+// --------------------------------------------------------
+// Type: PROPDESC_SEARCHINFO_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PROPDESC_SEARCHINFO_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PROPDESC_COLUMNINDEX_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PROPDESC_COLUMNINDEX_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: IPropertyDescriptionSearchInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPropertyDescriptionSearchInfo = *opaque{
+    // TODO: Method 'GetSearchInfoFlags'
+    // TODO: Method 'GetColumnIndexType'
+    // TODO: Method 'GetProjectionString'
+    // TODO: Method 'GetMaxSize'
+};
+// --------------------------------------------------------
+// Type: IPropertyDescriptionRelatedPropertyInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPropertyDescriptionRelatedPropertyInfo = *opaque{
+    // TODO: Method 'GetRelatedProperty'
+};
+// --------------------------------------------------------
+// Type: PROPDESC_ENUMFILTER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PROPDESC_ENUMFILTER = *opaque{
+};
+// --------------------------------------------------------
+// Type: IPropertySystem
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPropertySystem = *opaque{
+    // TODO: Method 'GetPropertyDescription'
+    // TODO: Method 'GetPropertyDescriptionByName'
+    // TODO: Method 'GetPropertyDescriptionListFromString'
+    // TODO: Method 'EnumeratePropertyDescriptions'
+    // TODO: Method 'FormatForDisplay'
+    // TODO: Method 'FormatForDisplayAlloc'
+    // TODO: Method 'RegisterPropertySchema'
+    // TODO: Method 'UnregisterPropertySchema'
+    // TODO: Method 'RefreshPropertySchema'
+};
+// --------------------------------------------------------
+// Type: IPropertyDescriptionList
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPropertyDescriptionList = *opaque{
+    // TODO: Method 'GetCount'
+    // TODO: Method 'GetAt'
+};
+// --------------------------------------------------------
+// Type: IPropertyStoreFactory
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPropertyStoreFactory = *opaque{
+    // TODO: Method 'GetPropertyStore'
+    // TODO: Method 'GetPropertyStoreForKeys'
+};
+// --------------------------------------------------------
+// Type: _PERSIST_SPROPSTORE_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const _PERSIST_SPROPSTORE_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: SERIALIZEDPROPSTORAGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const SERIALIZEDPROPSTORAGE = opaque {
+};
+// --------------------------------------------------------
+// Type: IPropertySystemChangeNotify
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPropertySystemChangeNotify = *opaque{
+    // TODO: Method 'SchemaRefreshed'
+};
+// --------------------------------------------------------
+// Type: tagPSTIME_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const tagPSTIME_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: PROPVAR_COMPARE_UNIT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PROPVAR_COMPARE_UNIT = *opaque{
+};
+// --------------------------------------------------------
+// Type: tagPROPVAR_COMPARE_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const tagPROPVAR_COMPARE_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: tagPROPVAR_CHANGE_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const tagPROPVAR_CHANGE_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: DRAWPROGRESSFLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DRAWPROGRESSFLAGS = *opaque{
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SHELL32" fn SHGetPropertyStoreForWindow(
+    hwnd: Windows.Win32.WindowsAndMessaging.HWND,
+    riid: {"kind""Ptr","child":Guid},
+    ppv: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SHELL32" fn SHGetPropertyStoreFromIDList(
+    pidl: {"kind""Ptr","child":Windows.Win32.Shell.ITEMIDLIST},
+    flags: Windows.Win32.WindowsPropertiesSystem.GETPROPERTYSTOREFLAGS,
+    riid: {"kind""Ptr","child":Guid},
+    ppv: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SHELL32" fn SHGetPropertyStoreFromParsingName(
+    pszPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pbc: Windows.Win32.Com.IBindCtx,
+    flags: Windows.Win32.WindowsPropertiesSystem.GETPROPERTYSTOREFLAGS,
+    riid: {"kind""Ptr","child":Guid},
+    ppv: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SHELL32" fn SHAddDefaultPropertiesByExt(
+    pszExt: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pPropStore: Windows.Win32.Audio.IPropertyStore,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SHELL32" fn PifMgr_OpenProperties(
+    pszApp: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszPIF: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hInf: {"kind":"UInt32"},
+    flOpt: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SHELL32" fn PifMgr_GetProperties(
+    hProps: Windows.Win32.SystemServices.HANDLE,
+    pszGroup: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpProps: {"kind""Ptr","child":{"kind":"Void"}},
+    cbProps: {"kind":"Int32"},
+    flOpt: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SHELL32" fn PifMgr_SetProperties(
+    hProps: Windows.Win32.SystemServices.HANDLE,
+    pszGroup: {"kind""Ptr","child":{"kind":"SByte"}},
+    lpProps: {"kind""Ptr","child":{"kind":"Void"}},
+    cbProps: {"kind":"Int32"},
+    flOpt: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SHELL32" fn PifMgr_CloseProperties(
+    hProps: Windows.Win32.SystemServices.HANDLE,
+    flOpt: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SHELL32" fn SHPropStgCreate(
+    psstg: Windows.Win32.StructuredStorage.IPropertySetStorage,
+    fmtid: {"kind""Ptr","child":Guid},
+    pclsid: {"kind""Ptr","child":Guid},
+    grfFlags: {"kind":"UInt32"},
+    grfMode: {"kind":"UInt32"},
+    dwDisposition: {"kind":"UInt32"},
+    ppstg: {"kind""Ptr","child":Windows.Win32.StructuredStorage.IPropertyStorage},
+    puCodePage: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SHELL32" fn SHPropStgReadMultiple(
+    pps: Windows.Win32.StructuredStorage.IPropertyStorage,
+    uCodePage: {"kind":"UInt32"},
+    cpspec: {"kind":"UInt32"},
+    rgpspec: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPSPEC},
+    rgvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "SHELL32" fn SHPropStgWriteMultiple(
+    pps: Windows.Win32.StructuredStorage.IPropertyStorage,
+    puCodePage: {"kind""Ptr","child":{"kind":"UInt32"}},
+    cpspec: {"kind":"UInt32"},
+    rgpspec: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPSPEC},
+    rgvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    propidNameFirst: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToWinRTPropertyValue(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    riid: {"kind""Ptr","child":Guid},
+    ppv: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn WinRTPropertyValueToPropVariant(
+    punkPropertyValue: Windows.Win32.Com.IUnknown,
+    ppropvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSFormatForDisplay(
+    propkey: {"kind""Ptr","child":Windows.Win32.WindowsPropertiesSystem.PROPERTYKEY},
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    pdfFlags: Windows.Win32.WindowsPropertiesSystem.PROPDESC_FORMAT_FLAGS,
+    pwszText: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchText: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSFormatForDisplayAlloc(
+    key: {"kind""Ptr","child":Windows.Win32.WindowsPropertiesSystem.PROPERTYKEY},
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    pdff: Windows.Win32.WindowsPropertiesSystem.PROPDESC_FORMAT_FLAGS,
+    ppszDisplay: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSFormatPropertyValue(
+    pps: Windows.Win32.Audio.IPropertyStore,
+    ppd: Windows.Win32.WindowsPropertiesSystem.IPropertyDescription,
+    pdff: Windows.Win32.WindowsPropertiesSystem.PROPDESC_FORMAT_FLAGS,
+    ppszDisplay: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSGetImageReferenceForValue(
+    propkey: {"kind""Ptr","child":Windows.Win32.WindowsPropertiesSystem.PROPERTYKEY},
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    ppszImageRes: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSStringFromPropertyKey(
+    pkey: {"kind""Ptr","child":Windows.Win32.WindowsPropertiesSystem.PROPERTYKEY},
+    psz: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cch: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyKeyFromString(
+    pszString: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pkey: {"kind""Ptr","child":Windows.Win32.WindowsPropertiesSystem.PROPERTYKEY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSCreateMemoryPropertyStore(
+    riid: {"kind""Ptr","child":Guid},
+    ppv: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSCreateDelayedMultiplexPropertyStore(
+    flags: Windows.Win32.WindowsPropertiesSystem.GETPROPERTYSTOREFLAGS,
+    pdpsf: Windows.Win32.Shell.IDelayedPropertyStoreFactory,
+    rgStoreIds: {"kind""Ptr","child":{"kind":"UInt32"}},
+    cStores: {"kind":"UInt32"},
+    riid: {"kind""Ptr","child":Guid},
+    ppv: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSCreateMultiplexPropertyStore(
+    prgpunkStores: {"kind""Ptr","child":Windows.Win32.Com.IUnknown},
+    cStores: {"kind":"UInt32"},
+    riid: {"kind""Ptr","child":Guid},
+    ppv: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSCreatePropertyChangeArray(
+    rgpropkey: {"kind""Ptr","child":Windows.Win32.WindowsPropertiesSystem.PROPERTYKEY},
+    rgflags: {"kind""Ptr","child":Windows.Win32.WindowsPropertiesSystem.PKA_FLAGS},
+    rgpropvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    cChanges: {"kind":"UInt32"},
+    riid: {"kind""Ptr","child":Guid},
+    ppv: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSCreateSimplePropertyChange(
+    flags: Windows.Win32.WindowsPropertiesSystem.PKA_FLAGS,
+    key: {"kind""Ptr","child":Windows.Win32.WindowsPropertiesSystem.PROPERTYKEY},
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    riid: {"kind""Ptr","child":Guid},
+    ppv: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSGetPropertyDescription(
+    propkey: {"kind""Ptr","child":Windows.Win32.WindowsPropertiesSystem.PROPERTYKEY},
+    riid: {"kind""Ptr","child":Guid},
+    ppv: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSGetPropertyDescriptionByName(
+    pszCanonicalName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    riid: {"kind""Ptr","child":Guid},
+    ppv: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSLookupPropertyHandlerCLSID(
+    pszFilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pclsid: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSGetItemPropertyHandler(
+    punkItem: Windows.Win32.Com.IUnknown,
+    fReadWrite: Windows.Win32.SystemServices.BOOL,
+    riid: {"kind""Ptr","child":Guid},
+    ppv: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSGetItemPropertyHandlerWithCreateObject(
+    punkItem: Windows.Win32.Com.IUnknown,
+    fReadWrite: Windows.Win32.SystemServices.BOOL,
+    punkCreateObject: Windows.Win32.Com.IUnknown,
+    riid: {"kind""Ptr","child":Guid},
+    ppv: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSGetPropertyValue(
+    pps: Windows.Win32.Audio.IPropertyStore,
+    ppd: Windows.Win32.WindowsPropertiesSystem.IPropertyDescription,
+    ppropvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSSetPropertyValue(
+    pps: Windows.Win32.Audio.IPropertyStore,
+    ppd: Windows.Win32.WindowsPropertiesSystem.IPropertyDescription,
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSRegisterPropertySchema(
+    pszPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSUnregisterPropertySchema(
+    pszPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSRefreshPropertySchema(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSEnumeratePropertyDescriptions(
+    filterOn: Windows.Win32.WindowsPropertiesSystem.PROPDESC_ENUMFILTER,
+    riid: {"kind""Ptr","child":Guid},
+    ppv: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSGetPropertyKeyFromName(
+    pszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppropkey: {"kind""Ptr","child":Windows.Win32.WindowsPropertiesSystem.PROPERTYKEY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSGetNameFromPropertyKey(
+    propkey: {"kind""Ptr","child":Windows.Win32.WindowsPropertiesSystem.PROPERTYKEY},
+    ppszCanonicalName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSCoerceToCanonicalValue(
+    key: {"kind""Ptr","child":Windows.Win32.WindowsPropertiesSystem.PROPERTYKEY},
+    ppropvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSGetPropertyDescriptionListFromString(
+    pszPropList: {"kind""Ptr","child":{"kind":"UInt16"}},
+    riid: {"kind""Ptr","child":Guid},
+    ppv: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSCreatePropertyStoreFromPropertySetStorage(
+    ppss: Windows.Win32.StructuredStorage.IPropertySetStorage,
+    grfMode: {"kind":"UInt32"},
+    riid: {"kind""Ptr","child":Guid},
+    ppv: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSCreatePropertyStoreFromObject(
+    punk: Windows.Win32.Com.IUnknown,
+    grfMode: {"kind":"UInt32"},
+    riid: {"kind""Ptr","child":Guid},
+    ppv: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSCreateAdapterFromPropertyStore(
+    pps: Windows.Win32.Audio.IPropertyStore,
+    riid: {"kind""Ptr","child":Guid},
+    ppv: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSGetPropertySystem(
+    riid: {"kind""Ptr","child":Guid},
+    ppv: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSGetPropertyFromPropertyStorage(
+    psps: {"kind""Ptr","child":Windows.Win32.WindowsPropertiesSystem.SERIALIZEDPROPSTORAGE},
+    cb: {"kind":"UInt32"},
+    rpkey: {"kind""Ptr","child":Windows.Win32.WindowsPropertiesSystem.PROPERTYKEY},
+    ppropvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSGetNamedPropertyFromPropertyStorage(
+    psps: {"kind""Ptr","child":Windows.Win32.WindowsPropertiesSystem.SERIALIZEDPROPSTORAGE},
+    cb: {"kind":"UInt32"},
+    pszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppropvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_ReadType(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    var: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    type: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_ReadStr(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind""Ptr","child":{"kind":"UInt16"}},
+    characterCount: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_ReadStrAlloc(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_ReadBSTR(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_WriteStr(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_WriteBSTR(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: Windows.Win32.Automation.BSTR,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_ReadInt(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_WriteInt(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_ReadSHORT(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_WriteSHORT(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind":"Int16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_ReadLONG(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_WriteLONG(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_ReadDWORD(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_WriteDWORD(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_ReadBOOL(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_WriteBOOL(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_ReadPOINTL(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINTL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_WritePOINTL(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINTL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_ReadPOINTS(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINTS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_WritePOINTS(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind""Ptr","child":Windows.Win32.DisplayDevices.POINTS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_ReadRECTL(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECTL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_WriteRECTL(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind""Ptr","child":Windows.Win32.DisplayDevices.RECTL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_ReadStream(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind""Ptr","child":Windows.Win32.StructuredStorage.IStream},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_WriteStream(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: Windows.Win32.StructuredStorage.IStream,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_Delete(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_ReadULONGLONG(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_WriteULONGLONG(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind":"UInt64"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_ReadUnknown(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    riid: {"kind""Ptr","child":Guid},
+    ppv: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_WriteUnknown(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    punk: Windows.Win32.Com.IUnknown,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_ReadGUID(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_WriteGUID(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_ReadPropertyKey(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind""Ptr","child":Windows.Win32.WindowsPropertiesSystem.PROPERTYKEY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PSPropertyBag_WritePropertyKey(
+    propBag: Windows.Win32.Automation.IPropertyBag,
+    propName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind""Ptr","child":Windows.Win32.WindowsPropertiesSystem.PROPERTYKEY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitPropVariantFromResource(
+    hinst: Windows.Win32.SystemServices.HINSTANCE,
+    id: {"kind":"UInt32"},
+    ppropvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitPropVariantFromBuffer(
+    pv: {"kind""Ptr","child":{"kind":"Void"}},
+    cb: {"kind":"UInt32"},
+    ppropvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitPropVariantFromCLSID(
+    clsid: {"kind""Ptr","child":Guid},
+    ppropvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitPropVariantFromGUIDAsString(
+    guid: {"kind""Ptr","child":Guid},
+    ppropvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitPropVariantFromFileTime(
+    pftIn: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+    ppropvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitPropVariantFromPropVariantVectorElem(
+    propvarIn: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    iElem: {"kind":"UInt32"},
+    ppropvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitPropVariantVectorFromPropVariant(
+    propvarSingle: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    ppropvarVector: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitPropVariantFromStrRet(
+    pstrret: {"kind""Ptr","child":Windows.Win32.Shell.STRRET},
+    pidl: {"kind""Ptr","child":Windows.Win32.Shell.ITEMIDLIST},
+    ppropvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitPropVariantFromBooleanVector(
+    prgf: {"kind""Ptr","child":{"kind":"Int32"}},
+    cElems: {"kind":"UInt32"},
+    ppropvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitPropVariantFromInt16Vector(
+    prgn: {"kind""Ptr","child":{"kind":"Int16"}},
+    cElems: {"kind":"UInt32"},
+    ppropvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitPropVariantFromUInt16Vector(
+    prgn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cElems: {"kind":"UInt32"},
+    ppropvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitPropVariantFromInt32Vector(
+    prgn: {"kind""Ptr","child":{"kind":"Int32"}},
+    cElems: {"kind":"UInt32"},
+    ppropvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitPropVariantFromUInt32Vector(
+    prgn: {"kind""Ptr","child":{"kind":"UInt32"}},
+    cElems: {"kind":"UInt32"},
+    ppropvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitPropVariantFromInt64Vector(
+    prgn: {"kind""Ptr","child":{"kind":"Int64"}},
+    cElems: {"kind":"UInt32"},
+    ppropvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitPropVariantFromUInt64Vector(
+    prgn: {"kind""Ptr","child":{"kind":"UInt64"}},
+    cElems: {"kind":"UInt32"},
+    ppropvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitPropVariantFromDoubleVector(
+    prgn: {"kind""Ptr","child":{"kind":"Double"}},
+    cElems: {"kind":"UInt32"},
+    ppropvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitPropVariantFromFileTimeVector(
+    prgft: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+    cElems: {"kind":"UInt32"},
+    ppropvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitPropVariantFromStringVector(
+    prgsz: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    cElems: {"kind":"UInt32"},
+    ppropvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitPropVariantFromStringAsVector(
+    psz: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppropvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToBooleanWithDefault(
+    propvarIn: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    fDefault: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToInt16WithDefault(
+    propvarIn: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    iDefault: {"kind":"Int16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToUInt16WithDefault(
+    propvarIn: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    uiDefault: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToInt32WithDefault(
+    propvarIn: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    lDefault: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToUInt32WithDefault(
+    propvarIn: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    ulDefault: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToInt64WithDefault(
+    propvarIn: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    llDefault: {"kind":"Int64"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToUInt64WithDefault(
+    propvarIn: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    ullDefault: {"kind":"UInt64"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToDoubleWithDefault(
+    propvarIn: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    dblDefault: {"kind":"Double"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToStringWithDefault(
+    propvarIn: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    pszDefault: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToBoolean(
+    propvarIn: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    pfRet: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToInt16(
+    propvarIn: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    piRet: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToUInt16(
+    propvarIn: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    puiRet: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToInt32(
+    propvarIn: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    plRet: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToUInt32(
+    propvarIn: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    pulRet: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToInt64(
+    propvarIn: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    pllRet: {"kind""Ptr","child":{"kind":"Int64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToUInt64(
+    propvarIn: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    pullRet: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToDouble(
+    propvarIn: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    pdblRet: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToBuffer(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    pv: {"kind""Ptr","child":{"kind":"Void"}},
+    cb: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToString(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    psz: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cch: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToGUID(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    pguid: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToStringAlloc(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    ppszOut: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToBSTR(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    pbstrOut: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToStrRet(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    pstrret: {"kind""Ptr","child":Windows.Win32.Shell.STRRET},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToFileTime(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    pstfOut: {"kind":"Int32"},
+    pftOut: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantGetElementCount(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToBooleanVector(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    prgf: {"kind""Ptr","child":{"kind":"Int32"}},
+    crgf: {"kind":"UInt32"},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToInt16Vector(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    prgn: {"kind""Ptr","child":{"kind":"Int16"}},
+    crgn: {"kind":"UInt32"},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToUInt16Vector(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    prgn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    crgn: {"kind":"UInt32"},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToInt32Vector(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    prgn: {"kind""Ptr","child":{"kind":"Int32"}},
+    crgn: {"kind":"UInt32"},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToUInt32Vector(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    prgn: {"kind""Ptr","child":{"kind":"UInt32"}},
+    crgn: {"kind":"UInt32"},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToInt64Vector(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    prgn: {"kind""Ptr","child":{"kind":"Int64"}},
+    crgn: {"kind":"UInt32"},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToUInt64Vector(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    prgn: {"kind""Ptr","child":{"kind":"UInt64"}},
+    crgn: {"kind":"UInt32"},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToDoubleVector(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    prgn: {"kind""Ptr","child":{"kind":"Double"}},
+    crgn: {"kind":"UInt32"},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToFileTimeVector(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    prgft: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+    crgft: {"kind":"UInt32"},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToStringVector(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    prgsz: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    crgsz: {"kind":"UInt32"},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToBooleanVectorAlloc(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    pprgf: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Int32"}}},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToInt16VectorAlloc(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    pprgn: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Int16"}}},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToUInt16VectorAlloc(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    pprgn: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToInt32VectorAlloc(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    pprgn: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Int32"}}},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToUInt32VectorAlloc(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    pprgn: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt32"}}},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToInt64VectorAlloc(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    pprgn: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Int64"}}},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToUInt64VectorAlloc(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    pprgn: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt64"}}},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToDoubleVectorAlloc(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    pprgn: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Double"}}},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToFileTimeVectorAlloc(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    pprgft: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME}},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToStringVectorAlloc(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    pprgsz: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}}},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantGetBooleanElem(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    iElem: {"kind":"UInt32"},
+    pfVal: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantGetInt16Elem(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    iElem: {"kind":"UInt32"},
+    pnVal: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantGetUInt16Elem(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    iElem: {"kind":"UInt32"},
+    pnVal: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantGetInt32Elem(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    iElem: {"kind":"UInt32"},
+    pnVal: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantGetUInt32Elem(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    iElem: {"kind":"UInt32"},
+    pnVal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantGetInt64Elem(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    iElem: {"kind":"UInt32"},
+    pnVal: {"kind""Ptr","child":{"kind":"Int64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantGetUInt64Elem(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    iElem: {"kind":"UInt32"},
+    pnVal: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantGetDoubleElem(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    iElem: {"kind":"UInt32"},
+    pnVal: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantGetFileTimeElem(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    iElem: {"kind":"UInt32"},
+    pftVal: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantGetStringElem(
+    propvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    iElem: {"kind":"UInt32"},
+    ppszVal: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn ClearPropVariantArray(
+    rgPropVar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    cVars: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantCompareEx(
+    propvar1: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    propvar2: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    unit: Windows.Win32.WindowsPropertiesSystem.PROPVAR_COMPARE_UNIT,
+    flags: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantChangeType(
+    ppropvarDest: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    propvarSrc: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    flags: {"kind":"Int32"},
+    vt: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn PropVariantToVariant(
+    pPropVar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    pVar: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToPropVariant(
+    pVar: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pPropVar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitVariantFromResource(
+    hinst: Windows.Win32.SystemServices.HINSTANCE,
+    id: {"kind":"UInt32"},
+    pvar: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitVariantFromBuffer(
+    pv: {"kind""Ptr","child":{"kind":"Void"}},
+    cb: {"kind":"UInt32"},
+    pvar: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitVariantFromGUIDAsString(
+    guid: {"kind""Ptr","child":Guid},
+    pvar: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitVariantFromFileTime(
+    pft: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+    pvar: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitVariantFromFileTimeArray(
+    prgft: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+    cElems: {"kind":"UInt32"},
+    pvar: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitVariantFromStrRet(
+    pstrret: {"kind""Ptr","child":Windows.Win32.Shell.STRRET},
+    pidl: {"kind""Ptr","child":Windows.Win32.Shell.ITEMIDLIST},
+    pvar: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitVariantFromVariantArrayElem(
+    varIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    iElem: {"kind":"UInt32"},
+    pvar: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitVariantFromBooleanArray(
+    prgf: {"kind""Ptr","child":{"kind":"Int32"}},
+    cElems: {"kind":"UInt32"},
+    pvar: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitVariantFromInt16Array(
+    prgn: {"kind""Ptr","child":{"kind":"Int16"}},
+    cElems: {"kind":"UInt32"},
+    pvar: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitVariantFromUInt16Array(
+    prgn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cElems: {"kind":"UInt32"},
+    pvar: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitVariantFromInt32Array(
+    prgn: {"kind""Ptr","child":{"kind":"Int32"}},
+    cElems: {"kind":"UInt32"},
+    pvar: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitVariantFromUInt32Array(
+    prgn: {"kind""Ptr","child":{"kind":"UInt32"}},
+    cElems: {"kind":"UInt32"},
+    pvar: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitVariantFromInt64Array(
+    prgn: {"kind""Ptr","child":{"kind":"Int64"}},
+    cElems: {"kind":"UInt32"},
+    pvar: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitVariantFromUInt64Array(
+    prgn: {"kind""Ptr","child":{"kind":"UInt64"}},
+    cElems: {"kind":"UInt32"},
+    pvar: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitVariantFromDoubleArray(
+    prgn: {"kind""Ptr","child":{"kind":"Double"}},
+    cElems: {"kind":"UInt32"},
+    pvar: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn InitVariantFromStringArray(
+    prgsz: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    cElems: {"kind":"UInt32"},
+    pvar: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToBooleanWithDefault(
+    varIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    fDefault: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToInt16WithDefault(
+    varIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    iDefault: {"kind":"Int16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToUInt16WithDefault(
+    varIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    uiDefault: {"kind":"UInt16"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToInt32WithDefault(
+    varIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    lDefault: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToUInt32WithDefault(
+    varIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    ulDefault: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToInt64WithDefault(
+    varIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    llDefault: {"kind":"Int64"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToUInt64WithDefault(
+    varIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    ullDefault: {"kind":"UInt64"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToDoubleWithDefault(
+    varIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    dblDefault: {"kind":"Double"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToStringWithDefault(
+    varIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pszDefault: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToBoolean(
+    varIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pfRet: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToInt16(
+    varIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    piRet: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToUInt16(
+    varIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    puiRet: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToInt32(
+    varIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    plRet: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToUInt32(
+    varIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pulRet: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToInt64(
+    varIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pllRet: {"kind""Ptr","child":{"kind":"Int64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToUInt64(
+    varIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pullRet: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToDouble(
+    varIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pdblRet: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToBuffer(
+    varIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pv: {"kind""Ptr","child":{"kind":"Void"}},
+    cb: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToGUID(
+    varIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pguid: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToString(
+    varIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pszBuf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchBuf: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToStringAlloc(
+    varIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    ppszBuf: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToDosDateTime(
+    varIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pwDate: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwTime: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToStrRet(
+    varIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pstrret: {"kind""Ptr","child":Windows.Win32.Shell.STRRET},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToFileTime(
+    varIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    stfOut: {"kind":"Int32"},
+    pftOut: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantGetElementCount(
+    varIn: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToBooleanArray(
+    var: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    prgf: {"kind""Ptr","child":{"kind":"Int32"}},
+    crgn: {"kind":"UInt32"},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToInt16Array(
+    var: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    prgn: {"kind""Ptr","child":{"kind":"Int16"}},
+    crgn: {"kind":"UInt32"},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToUInt16Array(
+    var: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    prgn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    crgn: {"kind":"UInt32"},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToInt32Array(
+    var: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    prgn: {"kind""Ptr","child":{"kind":"Int32"}},
+    crgn: {"kind":"UInt32"},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToUInt32Array(
+    var: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    prgn: {"kind""Ptr","child":{"kind":"UInt32"}},
+    crgn: {"kind":"UInt32"},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToInt64Array(
+    var: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    prgn: {"kind""Ptr","child":{"kind":"Int64"}},
+    crgn: {"kind":"UInt32"},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToUInt64Array(
+    var: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    prgn: {"kind""Ptr","child":{"kind":"UInt64"}},
+    crgn: {"kind":"UInt32"},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToDoubleArray(
+    var: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    prgn: {"kind""Ptr","child":{"kind":"Double"}},
+    crgn: {"kind":"UInt32"},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToStringArray(
+    var: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    prgsz: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    crgsz: {"kind":"UInt32"},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToBooleanArrayAlloc(
+    var: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pprgf: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Int32"}}},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToInt16ArrayAlloc(
+    var: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pprgn: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Int16"}}},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToUInt16ArrayAlloc(
+    var: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pprgn: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToInt32ArrayAlloc(
+    var: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pprgn: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Int32"}}},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToUInt32ArrayAlloc(
+    var: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pprgn: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt32"}}},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToInt64ArrayAlloc(
+    var: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pprgn: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Int64"}}},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToUInt64ArrayAlloc(
+    var: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pprgn: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt64"}}},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToDoubleArrayAlloc(
+    var: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pprgn: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Double"}}},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantToStringArrayAlloc(
+    var: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    pprgsz: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}}},
+    pcElem: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantGetBooleanElem(
+    var: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    iElem: {"kind":"UInt32"},
+    pfVal: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantGetInt16Elem(
+    var: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    iElem: {"kind":"UInt32"},
+    pnVal: {"kind""Ptr","child":{"kind":"Int16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantGetUInt16Elem(
+    var: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    iElem: {"kind":"UInt32"},
+    pnVal: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantGetInt32Elem(
+    var: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    iElem: {"kind":"UInt32"},
+    pnVal: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantGetUInt32Elem(
+    var: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    iElem: {"kind":"UInt32"},
+    pnVal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantGetInt64Elem(
+    var: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    iElem: {"kind":"UInt32"},
+    pnVal: {"kind""Ptr","child":{"kind":"Int64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantGetUInt64Elem(
+    var: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    iElem: {"kind":"UInt32"},
+    pnVal: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantGetDoubleElem(
+    var: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    iElem: {"kind":"UInt32"},
+    pnVal: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantGetStringElem(
+    var: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    iElem: {"kind":"UInt32"},
+    ppszVal: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn ClearVariantArray(
+    pvars: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    cvars: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn VariantCompare(
+    var1: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    var2: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+],
+
+"unicode_aliases": [
+]}

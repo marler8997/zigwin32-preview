@@ -1,0 +1,64 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: HARDWARE_COUNTER_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const HARDWARE_COUNTER_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: HARDWARE_COUNTER_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HARDWARE_COUNTER_DATA = extern struct {
+    Type: Windows.Win32.HardwareCounterProfiling.HARDWARE_COUNTER_TYPE,
+    Reserved: {"kind":"UInt32"},
+    Value: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: PERFORMANCE_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PERFORMANCE_DATA = extern struct {
+    Size: {"kind":"UInt16"},
+    Version: {"kind":"Byte"},
+    HwCountersCount: {"kind":"Byte"},
+    ContextSwitchCount: {"kind":"UInt32"},
+    WaitReasonBitMap: {"kind":"UInt64"},
+    CycleTime: {"kind":"UInt64"},
+    RetryCount: {"kind":"UInt32"},
+    Reserved: {"kind":"UInt32"},
+    HwCounters: {"kind":"Array","child": Windows.Win32.HardwareCounterProfiling.HARDWARE_COUNTER_DATA},
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn EnableThreadProfiling(
+    ThreadHandle: Windows.Win32.SystemServices.HANDLE,
+    Flags: {"kind":"UInt32"},
+    HardwareCounters: {"kind":"UInt64"},
+    PerformanceDataHandle: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn DisableThreadProfiling(
+    PerformanceDataHandle: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn QueryThreadProfiling(
+    ThreadHandle: Windows.Win32.SystemServices.HANDLE,
+    Enabled: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn ReadThreadProfilingData(
+    PerformanceDataHandle: Windows.Win32.SystemServices.HANDLE,
+    Flags: {"kind":"UInt32"},
+    PerformanceData: {"kind""Ptr","child":Windows.Win32.HardwareCounterProfiling.PERFORMANCE_DATA},
+],
+
+"unicode_aliases": [
+]}

@@ -1,0 +1,1328 @@
+﻿{
+"constants": [
+     {
+         "name": "DML_TENSOR_DIMENSION_COUNT_MAX"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 5
+    }
+    ,{
+         "name": "DML_TEMPORARY_BUFFER_ALIGNMENT"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 256
+    }
+    ,{
+         "name": "DML_PERSISTENT_BUFFER_ALIGNMENT"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 256
+    }
+    ,{
+         "name": "DML_MINIMUM_BUFFER_TENSOR_ALIGNMENT"
+        ,"type": {"kind":"UInt32"}
+        ,"value": 16
+    }
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: DML_TENSOR_DATA_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DML_TENSOR_DATA_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DML_TENSOR_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DML_TENSOR_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DML_TENSOR_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DML_TENSOR_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: DML_BUFFER_TENSOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_BUFFER_TENSOR_DESC = extern struct {
+    DataType: Windows.Win32.DirectML.DML_TENSOR_DATA_TYPE,
+    Flags: Windows.Win32.DirectML.DML_TENSOR_FLAGS,
+    DimensionCount: {"kind":"UInt32"},
+    Sizes: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Strides: {"kind""Ptr","child":{"kind":"UInt32"}},
+    TotalTensorSizeInBytes: {"kind":"UInt64"},
+    GuaranteedBaseOffsetAlignment: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DML_TENSOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_TENSOR_DESC = extern struct {
+    Type: Windows.Win32.DirectML.DML_TENSOR_TYPE,
+    Desc: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DML_OPERATOR_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DML_OPERATOR_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DML_REDUCE_FUNCTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DML_REDUCE_FUNCTION = *opaque{
+};
+// --------------------------------------------------------
+// Type: DML_MATRIX_TRANSFORM
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DML_MATRIX_TRANSFORM = *opaque{
+};
+// --------------------------------------------------------
+// Type: DML_CONVOLUTION_MODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DML_CONVOLUTION_MODE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DML_CONVOLUTION_DIRECTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DML_CONVOLUTION_DIRECTION = *opaque{
+};
+// --------------------------------------------------------
+// Type: DML_PADDING_MODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DML_PADDING_MODE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DML_INTERPOLATION_MODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DML_INTERPOLATION_MODE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DML_SCALE_BIAS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_SCALE_BIAS = extern struct {
+    Scale: {"kind":"Single"},
+    Bias: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: DML_SIZE_2D
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_SIZE_2D = extern struct {
+    Width: {"kind":"UInt32"},
+    Height: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DML_RECURRENT_NETWORK_DIRECTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DML_RECURRENT_NETWORK_DIRECTION = *opaque{
+};
+// --------------------------------------------------------
+// Type: DML_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_OPERATOR_DESC = extern struct {
+    Type: Windows.Win32.DirectML.DML_OPERATOR_TYPE,
+    Desc: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_IDENTITY_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_IDENTITY_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleBias: {"kind""Ptr","child":Windows.Win32.DirectML.DML_SCALE_BIAS},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_ABS_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_ABS_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleBias: {"kind""Ptr","child":Windows.Win32.DirectML.DML_SCALE_BIAS},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_ACOS_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_ACOS_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleBias: {"kind""Ptr","child":Windows.Win32.DirectML.DML_SCALE_BIAS},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_ADD_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_ADD_OPERATOR_DESC = extern struct {
+    ATensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    BTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_ADD1_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_ADD1_OPERATOR_DESC = extern struct {
+    ATensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    BTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    FusedActivation: {"kind""Ptr","child":Windows.Win32.DirectML.DML_OPERATOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_ASIN_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_ASIN_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleBias: {"kind""Ptr","child":Windows.Win32.DirectML.DML_SCALE_BIAS},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_ATAN_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_ATAN_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleBias: {"kind""Ptr","child":Windows.Win32.DirectML.DML_SCALE_BIAS},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_CEIL_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_CEIL_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleBias: {"kind""Ptr","child":Windows.Win32.DirectML.DML_SCALE_BIAS},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_CLIP_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_CLIP_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleBias: {"kind""Ptr","child":Windows.Win32.DirectML.DML_SCALE_BIAS},
+    Min: {"kind":"Single"},
+    Max: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_COS_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_COS_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleBias: {"kind""Ptr","child":Windows.Win32.DirectML.DML_SCALE_BIAS},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_DIVIDE_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_DIVIDE_OPERATOR_DESC = extern struct {
+    ATensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    BTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_EXP_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_EXP_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleBias: {"kind""Ptr","child":Windows.Win32.DirectML.DML_SCALE_BIAS},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_FLOOR_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_FLOOR_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleBias: {"kind""Ptr","child":Windows.Win32.DirectML.DML_SCALE_BIAS},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_LOG_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_LOG_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleBias: {"kind""Ptr","child":Windows.Win32.DirectML.DML_SCALE_BIAS},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_LOGICAL_AND_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_LOGICAL_AND_OPERATOR_DESC = extern struct {
+    ATensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    BTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_LOGICAL_EQUALS_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_LOGICAL_EQUALS_OPERATOR_DESC = extern struct {
+    ATensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    BTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_LOGICAL_GREATER_THAN_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_LOGICAL_GREATER_THAN_OPERATOR_DESC = extern struct {
+    ATensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    BTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OPERATOR_DESC = extern struct {
+    ATensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    BTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_LOGICAL_NOT_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_LOGICAL_NOT_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_LOGICAL_OR_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_LOGICAL_OR_OPERATOR_DESC = extern struct {
+    ATensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    BTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_LOGICAL_XOR_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_LOGICAL_XOR_OPERATOR_DESC = extern struct {
+    ATensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    BTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_MAX_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_MAX_OPERATOR_DESC = extern struct {
+    ATensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    BTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_MEAN_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_MEAN_OPERATOR_DESC = extern struct {
+    ATensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    BTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_MIN_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_MIN_OPERATOR_DESC = extern struct {
+    ATensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    BTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_MULTIPLY_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_MULTIPLY_OPERATOR_DESC = extern struct {
+    ATensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    BTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_POW_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_POW_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ExponentTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleBias: {"kind""Ptr","child":Windows.Win32.DirectML.DML_SCALE_BIAS},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_CONSTANT_POW_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_CONSTANT_POW_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleBias: {"kind""Ptr","child":Windows.Win32.DirectML.DML_SCALE_BIAS},
+    Exponent: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_RECIP_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_RECIP_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleBias: {"kind""Ptr","child":Windows.Win32.DirectML.DML_SCALE_BIAS},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_SIN_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_SIN_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleBias: {"kind""Ptr","child":Windows.Win32.DirectML.DML_SCALE_BIAS},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_SQRT_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_SQRT_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleBias: {"kind""Ptr","child":Windows.Win32.DirectML.DML_SCALE_BIAS},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_SUBTRACT_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_SUBTRACT_OPERATOR_DESC = extern struct {
+    ATensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    BTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_TAN_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_TAN_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleBias: {"kind""Ptr","child":Windows.Win32.DirectML.DML_SCALE_BIAS},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_THRESHOLD_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_THRESHOLD_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleBias: {"kind""Ptr","child":Windows.Win32.DirectML.DML_SCALE_BIAS},
+    Min: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_QUANTIZE_LINEAR_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_QUANTIZE_LINEAR_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ZeroPointTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_DEQUANTIZE_LINEAR_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_DEQUANTIZE_LINEAR_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ZeroPointTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_ACTIVATION_ELU_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ACTIVATION_ELU_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    Alpha: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: DML_ACTIVATION_HARDMAX_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ACTIVATION_HARDMAX_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_ACTIVATION_HARD_SIGMOID_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ACTIVATION_HARD_SIGMOID_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    Alpha: {"kind":"Single"},
+    Beta: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: DML_ACTIVATION_IDENTITY_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ACTIVATION_IDENTITY_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_ACTIVATION_LEAKY_RELU_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ACTIVATION_LEAKY_RELU_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    Alpha: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: DML_ACTIVATION_LINEAR_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ACTIVATION_LINEAR_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    Alpha: {"kind":"Single"},
+    Beta: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: DML_ACTIVATION_LOG_SOFTMAX_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ACTIVATION_LOG_SOFTMAX_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_ACTIVATION_PARAMETERIZED_RELU_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ACTIVATION_PARAMETERIZED_RELU_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    SlopeTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_ACTIVATION_PARAMETRIC_SOFTPLUS_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ACTIVATION_PARAMETRIC_SOFTPLUS_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    Alpha: {"kind":"Single"},
+    Beta: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: DML_ACTIVATION_RELU_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ACTIVATION_RELU_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_ACTIVATION_SCALED_ELU_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ACTIVATION_SCALED_ELU_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    Alpha: {"kind":"Single"},
+    Gamma: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: DML_ACTIVATION_SCALED_TANH_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ACTIVATION_SCALED_TANH_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    Alpha: {"kind":"Single"},
+    Beta: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: DML_ACTIVATION_SIGMOID_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ACTIVATION_SIGMOID_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_ACTIVATION_SOFTMAX_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ACTIVATION_SOFTMAX_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_ACTIVATION_SOFTPLUS_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ACTIVATION_SOFTPLUS_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    Steepness: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: DML_ACTIVATION_SOFTSIGN_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ACTIVATION_SOFTSIGN_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_ACTIVATION_TANH_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ACTIVATION_TANH_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_ACTIVATION_THRESHOLDED_RELU_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ACTIVATION_THRESHOLDED_RELU_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    Alpha: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: DML_CONVOLUTION_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_CONVOLUTION_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    FilterTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    BiasTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    Mode: Windows.Win32.DirectML.DML_CONVOLUTION_MODE,
+    Direction: Windows.Win32.DirectML.DML_CONVOLUTION_DIRECTION,
+    DimensionCount: {"kind":"UInt32"},
+    Strides: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Dilations: {"kind""Ptr","child":{"kind":"UInt32"}},
+    StartPadding: {"kind""Ptr","child":{"kind":"UInt32"}},
+    EndPadding: {"kind""Ptr","child":{"kind":"UInt32"}},
+    OutputPadding: {"kind""Ptr","child":{"kind":"UInt32"}},
+    GroupCount: {"kind":"UInt32"},
+    FusedActivation: {"kind""Ptr","child":Windows.Win32.DirectML.DML_OPERATOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_GEMM_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_GEMM_OPERATOR_DESC = extern struct {
+    ATensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    BTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    CTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    TransA: Windows.Win32.DirectML.DML_MATRIX_TRANSFORM,
+    TransB: Windows.Win32.DirectML.DML_MATRIX_TRANSFORM,
+    Alpha: {"kind":"Single"},
+    Beta: {"kind":"Single"},
+    FusedActivation: {"kind""Ptr","child":Windows.Win32.DirectML.DML_OPERATOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_REDUCE_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_REDUCE_OPERATOR_DESC = extern struct {
+    Function: Windows.Win32.DirectML.DML_REDUCE_FUNCTION,
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    AxisCount: {"kind":"UInt32"},
+    Axes: {"kind""Ptr","child":{"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: DML_AVERAGE_POOLING_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_AVERAGE_POOLING_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    DimensionCount: {"kind":"UInt32"},
+    Strides: {"kind""Ptr","child":{"kind":"UInt32"}},
+    WindowSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    StartPadding: {"kind""Ptr","child":{"kind":"UInt32"}},
+    EndPadding: {"kind""Ptr","child":{"kind":"UInt32"}},
+    IncludePadding: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: DML_LP_POOLING_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_LP_POOLING_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    DimensionCount: {"kind":"UInt32"},
+    Strides: {"kind""Ptr","child":{"kind":"UInt32"}},
+    WindowSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    StartPadding: {"kind""Ptr","child":{"kind":"UInt32"}},
+    EndPadding: {"kind""Ptr","child":{"kind":"UInt32"}},
+    P: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DML_MAX_POOLING_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_MAX_POOLING_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    DimensionCount: {"kind":"UInt32"},
+    Strides: {"kind""Ptr","child":{"kind":"UInt32"}},
+    WindowSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    StartPadding: {"kind""Ptr","child":{"kind":"UInt32"}},
+    EndPadding: {"kind""Ptr","child":{"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: DML_MAX_POOLING1_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_MAX_POOLING1_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputIndicesTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    DimensionCount: {"kind":"UInt32"},
+    Strides: {"kind""Ptr","child":{"kind":"UInt32"}},
+    WindowSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    StartPadding: {"kind""Ptr","child":{"kind":"UInt32"}},
+    EndPadding: {"kind""Ptr","child":{"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: DML_ROI_POOLING_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ROI_POOLING_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ROITensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    SpatialScale: {"kind":"Single"},
+    PooledSize: Windows.Win32.DirectML.DML_SIZE_2D,
+};
+// --------------------------------------------------------
+// Type: DML_SLICE_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_SLICE_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    DimensionCount: {"kind":"UInt32"},
+    Offsets: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Sizes: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Strides: {"kind""Ptr","child":{"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: DML_CAST_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_CAST_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_SPLIT_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_SPLIT_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputCount: {"kind":"UInt32"},
+    OutputTensors: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    Axis: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DML_JOIN_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_JOIN_OPERATOR_DESC = extern struct {
+    InputCount: {"kind":"UInt32"},
+    InputTensors: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    Axis: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DML_PADDING_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_PADDING_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    PaddingMode: Windows.Win32.DirectML.DML_PADDING_MODE,
+    PaddingValue: {"kind":"Single"},
+    DimensionCount: {"kind":"UInt32"},
+    StartPadding: {"kind""Ptr","child":{"kind":"UInt32"}},
+    EndPadding: {"kind""Ptr","child":{"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: DML_VALUE_SCALE_2D_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_VALUE_SCALE_2D_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    Scale: {"kind":"Single"},
+    ChannelCount: {"kind":"UInt32"},
+    Bias: {"kind""Ptr","child":{"kind":"Single"}},
+};
+// --------------------------------------------------------
+// Type: DML_UPSAMPLE_2D_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_UPSAMPLE_2D_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleSize: Windows.Win32.DirectML.DML_SIZE_2D,
+    InterpolationMode: Windows.Win32.DirectML.DML_INTERPOLATION_MODE,
+};
+// --------------------------------------------------------
+// Type: DML_GATHER_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_GATHER_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    IndicesTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    Axis: {"kind":"UInt32"},
+    IndexDimensions: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DML_SPACE_TO_DEPTH_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_SPACE_TO_DEPTH_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    BlockSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DML_DEPTH_TO_SPACE_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_DEPTH_TO_SPACE_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    BlockSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DML_TILE_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_TILE_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    RepeatsCount: {"kind":"UInt32"},
+    Repeats: {"kind""Ptr","child":{"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: DML_TOP_K_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_TOP_K_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputValueTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputIndexTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    Axis: {"kind":"UInt32"},
+    K: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DML_BATCH_NORMALIZATION_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_BATCH_NORMALIZATION_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    MeanTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    VarianceTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    BiasTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    Spatial: Windows.Win32.SystemServices.BOOL,
+    Epsilon: {"kind":"Single"},
+    FusedActivation: {"kind""Ptr","child":Windows.Win32.DirectML.DML_OPERATOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    BiasTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    CrossChannel: Windows.Win32.SystemServices.BOOL,
+    NormalizeVariance: Windows.Win32.SystemServices.BOOL,
+    Epsilon: {"kind":"Single"},
+    FusedActivation: {"kind""Ptr","child":Windows.Win32.DirectML.DML_OPERATOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    CrossChannel: Windows.Win32.SystemServices.BOOL,
+    LocalSize: {"kind":"UInt32"},
+    Alpha: {"kind":"Single"},
+    Beta: {"kind":"Single"},
+    Bias: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: DML_LP_NORMALIZATION_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_LP_NORMALIZATION_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    Axis: {"kind":"UInt32"},
+    Epsilon: {"kind":"Single"},
+    P: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DML_RNN_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_RNN_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    WeightTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    RecurrenceTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    BiasTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    HiddenInitTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    SequenceLengthsTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputSequenceTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputSingleTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ActivationDescCount: {"kind":"UInt32"},
+    ActivationDescs: {"kind""Ptr","child":Windows.Win32.DirectML.DML_OPERATOR_DESC},
+    Direction: Windows.Win32.DirectML.DML_RECURRENT_NETWORK_DIRECTION,
+};
+// --------------------------------------------------------
+// Type: DML_LSTM_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_LSTM_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    WeightTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    RecurrenceTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    BiasTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    HiddenInitTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    CellMemInitTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    SequenceLengthsTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    PeepholeTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputSequenceTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputSingleTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputCellSingleTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ActivationDescCount: {"kind":"UInt32"},
+    ActivationDescs: {"kind""Ptr","child":Windows.Win32.DirectML.DML_OPERATOR_DESC},
+    Direction: Windows.Win32.DirectML.DML_RECURRENT_NETWORK_DIRECTION,
+    ClipThreshold: {"kind":"Single"},
+    UseClipThreshold: Windows.Win32.SystemServices.BOOL,
+    CoupleInputForget: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: DML_GRU_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_GRU_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    WeightTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    RecurrenceTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    BiasTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    HiddenInitTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    SequenceLengthsTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputSequenceTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputSingleTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ActivationDescCount: {"kind":"UInt32"},
+    ActivationDescs: {"kind""Ptr","child":Windows.Win32.DirectML.DML_OPERATOR_DESC},
+    Direction: Windows.Win32.DirectML.DML_RECURRENT_NETWORK_DIRECTION,
+    LinearBeforeReset: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_SIGN_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_SIGN_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_IS_NAN_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_IS_NAN_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_ERF_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_ERF_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleBias: {"kind""Ptr","child":Windows.Win32.DirectML.DML_SCALE_BIAS},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_SINH_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_SINH_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleBias: {"kind""Ptr","child":Windows.Win32.DirectML.DML_SCALE_BIAS},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_COSH_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_COSH_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleBias: {"kind""Ptr","child":Windows.Win32.DirectML.DML_SCALE_BIAS},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_TANH_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_TANH_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleBias: {"kind""Ptr","child":Windows.Win32.DirectML.DML_SCALE_BIAS},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_ASINH_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_ASINH_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleBias: {"kind""Ptr","child":Windows.Win32.DirectML.DML_SCALE_BIAS},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_ACOSH_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_ACOSH_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleBias: {"kind""Ptr","child":Windows.Win32.DirectML.DML_SCALE_BIAS},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_ATANH_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_ATANH_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ScaleBias: {"kind""Ptr","child":Windows.Win32.DirectML.DML_SCALE_BIAS},
+};
+// --------------------------------------------------------
+// Type: DML_ELEMENT_WISE_IF_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ELEMENT_WISE_IF_OPERATOR_DESC = extern struct {
+    ConditionTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ATensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    BTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_ACTIVATION_SHRINK_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ACTIVATION_SHRINK_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    Bias: {"kind":"Single"},
+    Threshold: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: DML_MAX_UNPOOLING_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_MAX_UNPOOLING_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    IndicesTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+};
+// --------------------------------------------------------
+// Type: DML_DIAGONAL_MATRIX_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_DIAGONAL_MATRIX_OPERATOR_DESC = extern struct {
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    Offset: {"kind":"Int32"},
+    Value: {"kind":"Single"},
+};
+// --------------------------------------------------------
+// Type: DML_SCATTER_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_SCATTER_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    IndicesTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    UpdatesTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    Axis: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DML_ONE_HOT_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_ONE_HOT_OPERATOR_DESC = extern struct {
+    IndicesTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    ValuesTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    Axis: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DML_RESAMPLE_OPERATOR_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_RESAMPLE_OPERATOR_DESC = extern struct {
+    InputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    OutputTensor: {"kind""Ptr","child":Windows.Win32.DirectML.DML_TENSOR_DESC},
+    InterpolationMode: Windows.Win32.DirectML.DML_INTERPOLATION_MODE,
+    ScaleCount: {"kind":"UInt32"},
+    Scales: {"kind""Ptr","child":{"kind":"Single"}},
+};
+// --------------------------------------------------------
+// Type: DML_FEATURE_LEVEL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DML_FEATURE_LEVEL = *opaque{
+};
+// --------------------------------------------------------
+// Type: DML_FEATURE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DML_FEATURE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DML_FEATURE_QUERY_TENSOR_DATA_TYPE_SUPPORT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_FEATURE_QUERY_TENSOR_DATA_TYPE_SUPPORT = extern struct {
+    DataType: Windows.Win32.DirectML.DML_TENSOR_DATA_TYPE,
+};
+// --------------------------------------------------------
+// Type: DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_FEATURE_DATA_TENSOR_DATA_TYPE_SUPPORT = extern struct {
+    IsSupported: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: DML_FEATURE_QUERY_FEATURE_LEVELS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_FEATURE_QUERY_FEATURE_LEVELS = extern struct {
+    RequestedFeatureLevelCount: {"kind":"UInt32"},
+    RequestedFeatureLevels: {"kind""Ptr","child":Windows.Win32.DirectML.DML_FEATURE_LEVEL},
+};
+// --------------------------------------------------------
+// Type: DML_FEATURE_DATA_FEATURE_LEVELS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_FEATURE_DATA_FEATURE_LEVELS = extern struct {
+    MaxSupportedFeatureLevel: Windows.Win32.DirectML.DML_FEATURE_LEVEL,
+};
+// --------------------------------------------------------
+// Type: DML_BINDING_TABLE_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_BINDING_TABLE_DESC = extern struct {
+    Dispatchable: Windows.Win32.DirectML.IDMLDispatchable,
+    CPUDescriptorHandle: Windows.Win32.Direct3D12.D3D12_CPU_DESCRIPTOR_HANDLE,
+    GPUDescriptorHandle: Windows.Win32.Direct3D12.D3D12_GPU_DESCRIPTOR_HANDLE,
+    SizeInDescriptors: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DML_EXECUTION_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DML_EXECUTION_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: DML_CREATE_DEVICE_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DML_CREATE_DEVICE_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: IDMLObject
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDMLObject = *opaque{
+    // TODO: Method 'GetPrivateData'
+    // TODO: Method 'SetPrivateData'
+    // TODO: Method 'SetPrivateDataInterface'
+    // TODO: Method 'SetName'
+};
+// --------------------------------------------------------
+// Type: IDMLDevice
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDMLDevice = *opaque{
+    // TODO: Method 'CheckFeatureSupport'
+    // TODO: Method 'CreateOperator'
+    // TODO: Method 'CompileOperator'
+    // TODO: Method 'CreateOperatorInitializer'
+    // TODO: Method 'CreateCommandRecorder'
+    // TODO: Method 'CreateBindingTable'
+    // TODO: Method 'Evict'
+    // TODO: Method 'MakeResident'
+    // TODO: Method 'GetDeviceRemovedReason'
+    // TODO: Method 'GetParentDevice'
+};
+// --------------------------------------------------------
+// Type: IDMLDeviceChild
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDMLDeviceChild = *opaque{
+    // TODO: Method 'GetDevice'
+};
+// --------------------------------------------------------
+// Type: IDMLPageable
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDMLPageable = *opaque{
+};
+// --------------------------------------------------------
+// Type: IDMLOperator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDMLOperator = *opaque{
+};
+// --------------------------------------------------------
+// Type: DML_BINDING_PROPERTIES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_BINDING_PROPERTIES = extern struct {
+    RequiredDescriptorCount: {"kind":"UInt32"},
+    TemporaryResourceSize: {"kind":"UInt64"},
+    PersistentResourceSize: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: IDMLDispatchable
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDMLDispatchable = *opaque{
+    // TODO: Method 'GetBindingProperties'
+};
+// --------------------------------------------------------
+// Type: IDMLCompiledOperator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDMLCompiledOperator = *opaque{
+};
+// --------------------------------------------------------
+// Type: IDMLOperatorInitializer
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDMLOperatorInitializer = *opaque{
+    // TODO: Method 'Reset'
+};
+// --------------------------------------------------------
+// Type: DML_BINDING_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DML_BINDING_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DML_BINDING_DESC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_BINDING_DESC = extern struct {
+    Type: Windows.Win32.DirectML.DML_BINDING_TYPE,
+    Desc: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DML_BUFFER_BINDING
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_BUFFER_BINDING = extern struct {
+    Buffer: Windows.Win32.Direct3D12.ID3D12Resource,
+    Offset: {"kind":"UInt64"},
+    SizeInBytes: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: DML_BUFFER_ARRAY_BINDING
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DML_BUFFER_ARRAY_BINDING = extern struct {
+    BindingCount: {"kind":"UInt32"},
+    Bindings: {"kind""Ptr","child":Windows.Win32.DirectML.DML_BUFFER_BINDING},
+};
+// --------------------------------------------------------
+// Type: IDMLBindingTable
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDMLBindingTable = *opaque{
+    // TODO: Method 'BindInputs'
+    // TODO: Method 'BindOutputs'
+    // TODO: Method 'BindTemporaryResource'
+    // TODO: Method 'BindPersistentResource'
+    // TODO: Method 'Reset'
+};
+// --------------------------------------------------------
+// Type: IDMLCommandRecorder
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDMLCommandRecorder = *opaque{
+    // TODO: Method 'RecordDispatch'
+};
+// --------------------------------------------------------
+// Type: IDMLDebugDevice
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDMLDebugDevice = *opaque{
+    // TODO: Method 'SetMuteDebugOutput'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DirectML" fn DMLCreateDevice(
+    d3d12Device: Windows.Win32.Direct3D12.ID3D12Device,
+    flags: Windows.Win32.DirectML.DML_CREATE_DEVICE_FLAGS,
+    riid: {"kind""Ptr","child":Guid},
+    ppv: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "DirectML" fn DMLCreateDevice1(
+    d3d12Device: Windows.Win32.Direct3D12.ID3D12Device,
+    flags: Windows.Win32.DirectML.DML_CREATE_DEVICE_FLAGS,
+    minimumFeatureLevel: Windows.Win32.DirectML.DML_FEATURE_LEVEL,
+    riid: {"kind""Ptr","child":Guid},
+    ppv: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+],
+
+"unicode_aliases": [
+]}

@@ -1,0 +1,543 @@
+﻿{
+"constants": [
+     {
+         "name": "JS_SOURCE_CONTEXT_NONE"
+        ,"type": {"kind":"UInt64"}
+        ,"value": 18446744073709551615
+    }
+    ,{
+         "name": "JsRuntimeVersionEdge"
+        ,"type": {"kind":"Int32"}
+        ,"value": -1
+    }
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: JsRuntimeVersion
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const JsRuntimeVersion = *opaque{
+};
+// --------------------------------------------------------
+// Type: JsErrorCode
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const JsErrorCode = *opaque{
+};
+// --------------------------------------------------------
+// Type: JsRuntimeAttributes
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const JsRuntimeAttributes = *opaque{
+};
+// --------------------------------------------------------
+// Type: JsMemoryEventType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const JsMemoryEventType = *opaque{
+};
+// --------------------------------------------------------
+// Type: JsMemoryAllocationCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const JsMemoryAllocationCallback = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: JsBeforeCollectCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const JsBeforeCollectCallback = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: JsBackgroundWorkItemCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const JsBackgroundWorkItemCallback = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: JsThreadServiceCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const JsThreadServiceCallback = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: JsValueType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const JsValueType = *opaque{
+};
+// --------------------------------------------------------
+// Type: JsFinalizeCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const JsFinalizeCallback = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: JsNativeFunction
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const JsNativeFunction = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsCreateRuntime(
+    attributes: Windows.Win32.Js.JsRuntimeAttributes,
+    runtimeVersion: Windows.Win32.Js.JsRuntimeVersion,
+    threadService: Windows.Win32.Js.JsThreadServiceCallback,
+    runtime: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsCollectGarbage(
+    runtime: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsDisposeRuntime(
+    runtime: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsGetRuntimeMemoryUsage(
+    runtime: {"kind""Ptr","child":{"kind":"Void"}},
+    memoryUsage: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsGetRuntimeMemoryLimit(
+    runtime: {"kind""Ptr","child":{"kind":"Void"}},
+    memoryLimit: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsSetRuntimeMemoryLimit(
+    runtime: {"kind""Ptr","child":{"kind":"Void"}},
+    memoryLimit: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsSetRuntimeMemoryAllocationCallback(
+    runtime: {"kind""Ptr","child":{"kind":"Void"}},
+    callbackState: {"kind""Ptr","child":{"kind":"Void"}},
+    allocationCallback: Windows.Win32.Js.JsMemoryAllocationCallback,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsSetRuntimeBeforeCollectCallback(
+    runtime: {"kind""Ptr","child":{"kind":"Void"}},
+    callbackState: {"kind""Ptr","child":{"kind":"Void"}},
+    beforeCollectCallback: Windows.Win32.Js.JsBeforeCollectCallback,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsAddRef(
+    ref: {"kind""Ptr","child":{"kind":"Void"}},
+    count: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsRelease(
+    ref: {"kind""Ptr","child":{"kind":"Void"}},
+    count: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsCreateContext(
+    runtime: {"kind""Ptr","child":{"kind":"Void"}},
+    debugApplication: Windows.Win32.Debug.IDebugApplication32,
+    newContext: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsGetCurrentContext(
+    currentContext: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsSetCurrentContext(
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsGetRuntime(
+    context: {"kind""Ptr","child":{"kind":"Void"}},
+    runtime: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsStartDebugging(
+    debugApplication: Windows.Win32.Debug.IDebugApplication32,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsIdle(
+    nextIdleTick: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsParseScript(
+    script: {"kind""Ptr","child":{"kind":"UInt16"}},
+    sourceContext: {"kind":"UIntPtr"},
+    sourceUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    result: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsRunScript(
+    script: {"kind""Ptr","child":{"kind":"UInt16"}},
+    sourceContext: {"kind":"UIntPtr"},
+    sourceUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    result: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsSerializeScript(
+    script: {"kind""Ptr","child":{"kind":"UInt16"}},
+    buffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    bufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsParseSerializedScript(
+    script: {"kind""Ptr","child":{"kind":"UInt16"}},
+    buffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    sourceContext: {"kind":"UIntPtr"},
+    sourceUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    result: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsRunSerializedScript(
+    script: {"kind""Ptr","child":{"kind":"UInt16"}},
+    buffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    sourceContext: {"kind":"UIntPtr"},
+    sourceUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    result: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsGetPropertyIdFromName(
+    name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    propertyId: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsGetPropertyNameFromId(
+    propertyId: {"kind""Ptr","child":{"kind":"Void"}},
+    name: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsGetUndefinedValue(
+    undefinedValue: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsGetNullValue(
+    nullValue: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsGetTrueValue(
+    trueValue: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsGetFalseValue(
+    falseValue: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsBoolToBoolean(
+    value: {"kind":"Byte"},
+    booleanValue: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsBooleanToBool(
+    value: {"kind""Ptr","child":{"kind":"Void"}},
+    boolValue: {"kind""Ptr","child":{"kind":"Boolean"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsConvertValueToBoolean(
+    value: {"kind""Ptr","child":{"kind":"Void"}},
+    booleanValue: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsGetValueType(
+    value: {"kind""Ptr","child":{"kind":"Void"}},
+    type: {"kind""Ptr","child":Windows.Win32.Js.JsValueType},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsDoubleToNumber(
+    doubleValue: {"kind":"Double"},
+    value: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsIntToNumber(
+    intValue: {"kind":"Int32"},
+    value: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsNumberToDouble(
+    value: {"kind""Ptr","child":{"kind":"Void"}},
+    doubleValue: {"kind""Ptr","child":{"kind":"Double"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsConvertValueToNumber(
+    value: {"kind""Ptr","child":{"kind":"Void"}},
+    numberValue: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsGetStringLength(
+    stringValue: {"kind""Ptr","child":{"kind":"Void"}},
+    length: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsPointerToString(
+    stringValue: {"kind""Ptr","child":{"kind":"UInt16"}},
+    stringLength: {"kind":"UIntPtr"},
+    value: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsStringToPointer(
+    value: {"kind""Ptr","child":{"kind":"Void"}},
+    stringValue: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    stringLength: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsConvertValueToString(
+    value: {"kind""Ptr","child":{"kind":"Void"}},
+    stringValue: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsVariantToValue(
+    variant: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+    value: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsValueToVariant(
+    object: {"kind""Ptr","child":{"kind":"Void"}},
+    variant: {"kind""Ptr","child":Windows.Win32.Automation.VARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsGetGlobalObject(
+    globalObject: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsCreateObject(
+    object: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsCreateExternalObject(
+    data: {"kind""Ptr","child":{"kind":"Void"}},
+    finalizeCallback: Windows.Win32.Js.JsFinalizeCallback,
+    object: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsConvertValueToObject(
+    value: {"kind""Ptr","child":{"kind":"Void"}},
+    object: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsGetPrototype(
+    object: {"kind""Ptr","child":{"kind":"Void"}},
+    prototypeObject: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsSetPrototype(
+    object: {"kind""Ptr","child":{"kind":"Void"}},
+    prototypeObject: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsGetExtensionAllowed(
+    object: {"kind""Ptr","child":{"kind":"Void"}},
+    value: {"kind""Ptr","child":{"kind":"Boolean"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsPreventExtension(
+    object: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsGetProperty(
+    object: {"kind""Ptr","child":{"kind":"Void"}},
+    propertyId: {"kind""Ptr","child":{"kind":"Void"}},
+    value: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsGetOwnPropertyDescriptor(
+    object: {"kind""Ptr","child":{"kind":"Void"}},
+    propertyId: {"kind""Ptr","child":{"kind":"Void"}},
+    propertyDescriptor: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsGetOwnPropertyNames(
+    object: {"kind""Ptr","child":{"kind":"Void"}},
+    propertyNames: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsSetProperty(
+    object: {"kind""Ptr","child":{"kind":"Void"}},
+    propertyId: {"kind""Ptr","child":{"kind":"Void"}},
+    value: {"kind""Ptr","child":{"kind":"Void"}},
+    useStrictRules: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsHasProperty(
+    object: {"kind""Ptr","child":{"kind":"Void"}},
+    propertyId: {"kind""Ptr","child":{"kind":"Void"}},
+    hasProperty: {"kind""Ptr","child":{"kind":"Boolean"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsDeleteProperty(
+    object: {"kind""Ptr","child":{"kind":"Void"}},
+    propertyId: {"kind""Ptr","child":{"kind":"Void"}},
+    useStrictRules: {"kind":"Byte"},
+    result: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsDefineProperty(
+    object: {"kind""Ptr","child":{"kind":"Void"}},
+    propertyId: {"kind""Ptr","child":{"kind":"Void"}},
+    propertyDescriptor: {"kind""Ptr","child":{"kind":"Void"}},
+    result: {"kind""Ptr","child":{"kind":"Boolean"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsHasIndexedProperty(
+    object: {"kind""Ptr","child":{"kind":"Void"}},
+    index: {"kind""Ptr","child":{"kind":"Void"}},
+    result: {"kind""Ptr","child":{"kind":"Boolean"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsGetIndexedProperty(
+    object: {"kind""Ptr","child":{"kind":"Void"}},
+    index: {"kind""Ptr","child":{"kind":"Void"}},
+    result: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsSetIndexedProperty(
+    object: {"kind""Ptr","child":{"kind":"Void"}},
+    index: {"kind""Ptr","child":{"kind":"Void"}},
+    value: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsDeleteIndexedProperty(
+    object: {"kind""Ptr","child":{"kind":"Void"}},
+    index: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsEquals(
+    object1: {"kind""Ptr","child":{"kind":"Void"}},
+    object2: {"kind""Ptr","child":{"kind":"Void"}},
+    result: {"kind""Ptr","child":{"kind":"Boolean"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsStrictEquals(
+    object1: {"kind""Ptr","child":{"kind":"Void"}},
+    object2: {"kind""Ptr","child":{"kind":"Void"}},
+    result: {"kind""Ptr","child":{"kind":"Boolean"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsHasExternalData(
+    object: {"kind""Ptr","child":{"kind":"Void"}},
+    value: {"kind""Ptr","child":{"kind":"Boolean"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsGetExternalData(
+    object: {"kind""Ptr","child":{"kind":"Void"}},
+    externalData: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsSetExternalData(
+    object: {"kind""Ptr","child":{"kind":"Void"}},
+    externalData: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsCreateArray(
+    length: {"kind":"UInt32"},
+    result: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsCallFunction(
+    function: {"kind""Ptr","child":{"kind":"Void"}},
+    arguments: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+    argumentCount: {"kind":"UInt16"},
+    result: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsConstructObject(
+    function: {"kind""Ptr","child":{"kind":"Void"}},
+    arguments: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+    argumentCount: {"kind":"UInt16"},
+    result: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsCreateFunction(
+    nativeFunction: Windows.Win32.Js.JsNativeFunction,
+    callbackState: {"kind""Ptr","child":{"kind":"Void"}},
+    function: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsCreateError(
+    message: {"kind""Ptr","child":{"kind":"Void"}},
+    error: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsCreateRangeError(
+    message: {"kind""Ptr","child":{"kind":"Void"}},
+    error: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsCreateReferenceError(
+    message: {"kind""Ptr","child":{"kind":"Void"}},
+    error: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsCreateSyntaxError(
+    message: {"kind""Ptr","child":{"kind":"Void"}},
+    error: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsCreateTypeError(
+    message: {"kind""Ptr","child":{"kind":"Void"}},
+    error: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsCreateURIError(
+    message: {"kind""Ptr","child":{"kind":"Void"}},
+    error: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsHasException(
+    hasException: {"kind""Ptr","child":{"kind":"Boolean"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsGetAndClearException(
+    exception: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsSetException(
+    exception: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsDisableRuntimeExecution(
+    runtime: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsEnableRuntimeExecution(
+    runtime: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsIsRuntimeExecutionDisabled(
+    runtime: {"kind""Ptr","child":{"kind":"Void"}},
+    isDisabled: {"kind""Ptr","child":{"kind":"Boolean"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsStartProfiling(
+    callback: Windows.Win32.Debug.IActiveScriptProfilerCallback,
+    eventMask: Windows.Win32.Debug.__MIDL___MIDL_itf_activprof_0000_0000_0002,
+    context: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsStopProfiling(
+    reason: Windows.Win32.Com.HRESULT,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsEnumerateHeap(
+    enumerator: {"kind""Ptr","child":Windows.Win32.Debug.IActiveScriptProfilerHeapEnum},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "chakra" fn JsIsEnumeratingHeap(
+    isEnumeratingHeap: {"kind""Ptr","child":{"kind":"Boolean"}},
+],
+
+"unicode_aliases": [
+]}

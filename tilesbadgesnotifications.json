@@ -1,0 +1,27 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: NOTIFICATION_USER_INPUT_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NOTIFICATION_USER_INPUT_DATA = extern struct {
+    Key: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Value: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: INotificationActivationCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const INotificationActivationCallback = *opaque{
+    // TODO: Method 'Activate'
+};
+],
+
+"func_definitions": [
+],
+
+"unicode_aliases": [
+]}

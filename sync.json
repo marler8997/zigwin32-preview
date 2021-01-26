@@ -1,0 +1,27 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn EnterCriticalSection(
+    lpCriticalSection: {"kind""Ptr","child":Windows.Win32.SystemServices.RTL_CRITICAL_SECTION},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn CreatePrivateNamespaceA(
+    lpPrivateNamespaceAttributes: {"kind""Ptr","child":Windows.Win32.SystemServices.SECURITY_ATTRIBUTES},
+    lpBoundaryDescriptor: {"kind""Ptr","child":{"kind":"Void"}},
+    lpAliasPrefix: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn OpenPrivateNamespaceA(
+    lpBoundaryDescriptor: {"kind""Ptr","child":{"kind":"Void"}},
+    lpAliasPrefix: {"kind""Ptr","child":{"kind":"SByte"}},
+],
+
+"unicode_aliases": [
+]}

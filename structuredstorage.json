@@ -1,0 +1,3815 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: ISequentialStream
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ISequentialStream = *opaque{
+    // TODO: Method 'Read'
+    // TODO: Method 'Write'
+};
+// --------------------------------------------------------
+// Type: STATSTG
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const STATSTG = extern struct {
+    pwcsName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    type: {"kind":"UInt32"},
+    cbSize: Windows.Win32.SystemServices.ULARGE_INTEGER,
+    mtime: Windows.Win32.WindowsProgramming.FILETIME,
+    ctime: Windows.Win32.WindowsProgramming.FILETIME,
+    atime: Windows.Win32.WindowsProgramming.FILETIME,
+    grfMode: {"kind":"UInt32"},
+    grfLocksSupported: {"kind":"UInt32"},
+    clsid: Guid,
+    grfStateBits: {"kind":"UInt32"},
+    reserved: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: STGTY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const STGTY = *opaque{
+};
+// --------------------------------------------------------
+// Type: STREAM_SEEK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const STREAM_SEEK = *opaque{
+};
+// --------------------------------------------------------
+// Type: LOCKTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LOCKTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: IStream
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IStream = *opaque{
+    // TODO: Method 'Seek'
+    // TODO: Method 'SetSize'
+    // TODO: Method 'CopyTo'
+    // TODO: Method 'Commit'
+    // TODO: Method 'Revert'
+    // TODO: Method 'LockRegion'
+    // TODO: Method 'UnlockRegion'
+    // TODO: Method 'Stat'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IEnumSTATSTG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumSTATSTG = *opaque{
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: RemSNB
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RemSNB = extern struct {
+    ulCntStr: {"kind":"UInt32"},
+    ulCntChar: {"kind":"UInt32"},
+    rgString: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: IStorage
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IStorage = *opaque{
+    // TODO: Method 'CreateStream'
+    // TODO: Method 'OpenStream'
+    // TODO: Method 'CreateStorage'
+    // TODO: Method 'OpenStorage'
+    // TODO: Method 'CopyTo'
+    // TODO: Method 'MoveElementTo'
+    // TODO: Method 'Commit'
+    // TODO: Method 'Revert'
+    // TODO: Method 'EnumElements'
+    // TODO: Method 'DestroyElement'
+    // TODO: Method 'RenameElement'
+    // TODO: Method 'SetElementTimes'
+    // TODO: Method 'SetClass'
+    // TODO: Method 'SetStateBits'
+    // TODO: Method 'Stat'
+};
+// --------------------------------------------------------
+// Type: ILockBytes
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ILockBytes = *opaque{
+    // TODO: Method 'ReadAt'
+    // TODO: Method 'WriteAt'
+    // TODO: Method 'Flush'
+    // TODO: Method 'SetSize'
+    // TODO: Method 'LockRegion'
+    // TODO: Method 'UnlockRegion'
+    // TODO: Method 'Stat'
+};
+// --------------------------------------------------------
+// Type: IRootStorage
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRootStorage = *opaque{
+    // TODO: Method 'SwitchToFile'
+};
+// --------------------------------------------------------
+// Type: IFillLockBytes
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IFillLockBytes = *opaque{
+    // TODO: Method 'FillAppend'
+    // TODO: Method 'FillAt'
+    // TODO: Method 'SetFillSize'
+    // TODO: Method 'Terminate'
+};
+// --------------------------------------------------------
+// Type: StorageLayout
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const StorageLayout = extern struct {
+    LayoutType: {"kind":"UInt32"},
+    pwcsElementName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cOffset: Windows.Win32.SystemServices.LARGE_INTEGER,
+    cBytes: Windows.Win32.SystemServices.LARGE_INTEGER,
+};
+// --------------------------------------------------------
+// Type: ILayoutStorage
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ILayoutStorage = *opaque{
+    // TODO: Method 'LayoutScript'
+    // TODO: Method 'BeginMonitor'
+    // TODO: Method 'EndMonitor'
+    // TODO: Method 'ReLayoutDocfile'
+    // TODO: Method 'ReLayoutDocfileOnILockBytes'
+};
+// --------------------------------------------------------
+// Type: IDirectWriterLock
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IDirectWriterLock = *opaque{
+    // TODO: Method 'WaitForWriteAccess'
+    // TODO: Method 'ReleaseWriteAccess'
+    // TODO: Method 'HaveWriteAccess'
+};
+// --------------------------------------------------------
+// Type: VERSIONEDSTREAM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const VERSIONEDSTREAM = extern struct {
+    guidVersion: Guid,
+    pStream: Windows.Win32.StructuredStorage.IStream,
+};
+// --------------------------------------------------------
+// Type: CAC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CAC = extern struct {
+    cElems: {"kind":"UInt32"},
+    pElems: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: CAUB
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CAUB = extern struct {
+    cElems: {"kind":"UInt32"},
+    pElems: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: CAI
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CAI = extern struct {
+    cElems: {"kind":"UInt32"},
+    pElems: {"kind""Ptr","child":{"kind":"Int16"}},
+};
+// --------------------------------------------------------
+// Type: CAUI
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CAUI = extern struct {
+    cElems: {"kind":"UInt32"},
+    pElems: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: CAL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CAL = extern struct {
+    cElems: {"kind":"UInt32"},
+    pElems: {"kind""Ptr","child":{"kind":"Int32"}},
+};
+// --------------------------------------------------------
+// Type: CAUL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CAUL = extern struct {
+    cElems: {"kind":"UInt32"},
+    pElems: {"kind""Ptr","child":{"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: CAFLT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CAFLT = extern struct {
+    cElems: {"kind":"UInt32"},
+    pElems: {"kind""Ptr","child":{"kind":"Single"}},
+};
+// --------------------------------------------------------
+// Type: CADBL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CADBL = extern struct {
+    cElems: {"kind":"UInt32"},
+    pElems: {"kind""Ptr","child":{"kind":"Double"}},
+};
+// --------------------------------------------------------
+// Type: CACY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CACY = extern struct {
+    cElems: {"kind":"UInt32"},
+    pElems: {"kind""Ptr","child":Windows.Win32.SystemServices.CY},
+};
+// --------------------------------------------------------
+// Type: CADATE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CADATE = extern struct {
+    cElems: {"kind":"UInt32"},
+    pElems: {"kind""Ptr","child":{"kind":"Double"}},
+};
+// --------------------------------------------------------
+// Type: CABSTR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CABSTR = extern struct {
+    cElems: {"kind":"UInt32"},
+    pElems: {"kind""Ptr","child":Windows.Win32.Automation.BSTR},
+};
+// --------------------------------------------------------
+// Type: CABSTRBLOB
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CABSTRBLOB = extern struct {
+    cElems: {"kind":"UInt32"},
+    pElems: {"kind""Ptr","child":Windows.Win32.SystemServices.BSTRBLOB},
+};
+// --------------------------------------------------------
+// Type: CABOOL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CABOOL = extern struct {
+    cElems: {"kind":"UInt32"},
+    pElems: {"kind""Ptr","child":{"kind":"Int16"}},
+};
+// --------------------------------------------------------
+// Type: CASCODE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CASCODE = extern struct {
+    cElems: {"kind":"UInt32"},
+    pElems: {"kind""Ptr","child":{"kind":"Int32"}},
+};
+// --------------------------------------------------------
+// Type: CAPROPVARIANT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CAPROPVARIANT = extern struct {
+    cElems: {"kind":"UInt32"},
+    pElems: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+};
+// --------------------------------------------------------
+// Type: CAH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CAH = extern struct {
+    cElems: {"kind":"UInt32"},
+    pElems: {"kind""Ptr","child":Windows.Win32.SystemServices.LARGE_INTEGER},
+};
+// --------------------------------------------------------
+// Type: CAUH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CAUH = extern struct {
+    cElems: {"kind":"UInt32"},
+    pElems: {"kind""Ptr","child":Windows.Win32.SystemServices.ULARGE_INTEGER},
+};
+// --------------------------------------------------------
+// Type: CALPSTR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CALPSTR = extern struct {
+    cElems: {"kind":"UInt32"},
+    pElems: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+};
+// --------------------------------------------------------
+// Type: CALPWSTR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CALPWSTR = extern struct {
+    cElems: {"kind":"UInt32"},
+    pElems: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+};
+// --------------------------------------------------------
+// Type: CAFILETIME
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CAFILETIME = extern struct {
+    cElems: {"kind":"UInt32"},
+    pElems: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+};
+// --------------------------------------------------------
+// Type: CACLIPDATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CACLIPDATA = extern struct {
+    cElems: {"kind":"UInt32"},
+    pElems: {"kind""Ptr","child":Windows.Win32.SystemServices.CLIPDATA},
+};
+// --------------------------------------------------------
+// Type: CACLSID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CACLSID = extern struct {
+    cElems: {"kind":"UInt32"},
+    pElems: {"kind""Ptr","child":Guid},
+};
+// --------------------------------------------------------
+// Type: PROPVARIANT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PROPVARIANT = extern struct {
+    Anonymous: Windows.Win32.StructuredStorage.PROPVARIANT+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            vt: {"kind":"UInt16"},
+            wReserved1: {"kind":"UInt16"},
+            wReserved2: {"kind":"UInt16"},
+            wReserved3: {"kind":"UInt16"},
+            Anonymous: Windows.Win32.StructuredStorage.PROPVARIANT+_Anonymous_e__Union+_Anonymous_e__Struct+_Anonymous_e__Union,
+            // --------------------------------------------------------
+            // Type: _Anonymous_e__Union
+            // TypeLayoutAttr: explicit
+            // not generating the actual code for this type because it has an explicit layout
+            pub const _Anonymous_e__Union = *opaque{
+            };
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: PROPSPEC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PROPSPEC = extern struct {
+    ulKind: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.StructuredStorage.PROPSPEC+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: STATPROPSTG
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const STATPROPSTG = extern struct {
+    lpwstrName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    propid: {"kind":"UInt32"},
+    vt: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: STATPROPSETSTG
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const STATPROPSETSTG = extern struct {
+    fmtid: Guid,
+    clsid: Guid,
+    grfFlags: {"kind":"UInt32"},
+    mtime: Windows.Win32.WindowsProgramming.FILETIME,
+    ctime: Windows.Win32.WindowsProgramming.FILETIME,
+    atime: Windows.Win32.WindowsProgramming.FILETIME,
+    dwOSVersion: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: IPropertyStorage
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPropertyStorage = *opaque{
+    // TODO: Method 'ReadMultiple'
+    // TODO: Method 'WriteMultiple'
+    // TODO: Method 'DeleteMultiple'
+    // TODO: Method 'ReadPropertyNames'
+    // TODO: Method 'WritePropertyNames'
+    // TODO: Method 'DeletePropertyNames'
+    // TODO: Method 'Commit'
+    // TODO: Method 'Revert'
+    // TODO: Method 'Enum'
+    // TODO: Method 'SetTimes'
+    // TODO: Method 'SetClass'
+    // TODO: Method 'Stat'
+};
+// --------------------------------------------------------
+// Type: IPropertySetStorage
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IPropertySetStorage = *opaque{
+    // TODO: Method 'Create'
+    // TODO: Method 'Open'
+    // TODO: Method 'Delete'
+    // TODO: Method 'Enum'
+};
+// --------------------------------------------------------
+// Type: IEnumSTATPROPSTG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumSTATPROPSTG = *opaque{
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: IEnumSTATPROPSETSTG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IEnumSTATPROPSETSTG = *opaque{
+    // TODO: Method 'Next'
+    // TODO: Method 'Skip'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Clone'
+};
+// --------------------------------------------------------
+// Type: STGOPTIONS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const STGOPTIONS = extern struct {
+    usVersion: {"kind":"UInt16"},
+    reserved: {"kind":"UInt16"},
+    ulSectorSize: {"kind":"UInt32"},
+    pwcsTemplateFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: PIDMSI_STATUS_VALUE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIDMSI_STATUS_VALUE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PMemoryAllocator
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const PMemoryAllocator = opaque {
+};
+// --------------------------------------------------------
+// Type: JET_INDEXID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_INDEXID = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    rgbIndexId: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: JET_PFNSTATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const JET_PFNSTATUS = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: JET_RSTMAP_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_RSTMAP_A = extern struct {
+    szDatabaseName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szNewDatabaseName: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: JET_RSTMAP_W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_RSTMAP_W = extern struct {
+    szDatabaseName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szNewDatabaseName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: tagCONVERT_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const tagCONVERT_A = extern struct {
+    szOldDll: {"kind""Ptr","child":{"kind":"SByte"}},
+    Anonymous: Windows.Win32.StructuredStorage.tagCONVERT_A+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            _bitfield: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: tagCONVERT_W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const tagCONVERT_W = extern struct {
+    szOldDll: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Anonymous: Windows.Win32.StructuredStorage.tagCONVERT_W+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            _bitfield: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: JET_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const JET_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: JET_SNPROG
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_SNPROG = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    cunitDone: {"kind":"UInt32"},
+    cunitTotal: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_DBINFOUPGRADE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_DBINFOUPGRADE = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    cbFilesizeLow: {"kind":"UInt32"},
+    cbFilesizeHigh: {"kind":"UInt32"},
+    cbFreeSpaceRequiredLow: {"kind":"UInt32"},
+    cbFreeSpaceRequiredHigh: {"kind":"UInt32"},
+    csecToUpgrade: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.StructuredStorage.JET_DBINFOUPGRADE+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            _bitfield: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: JET_OBJECTINFO
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=4 Size=0
+pub const JET_OBJECTINFO = *opaque{
+};
+// --------------------------------------------------------
+// Type: JET_OBJECTLIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_OBJECTLIST = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    cRecord: {"kind":"UInt32"},
+    columnidcontainername: {"kind":"UInt32"},
+    columnidobjectname: {"kind":"UInt32"},
+    columnidobjtyp: {"kind":"UInt32"},
+    columniddtCreate: {"kind":"UInt32"},
+    columniddtUpdate: {"kind":"UInt32"},
+    columnidgrbit: {"kind":"UInt32"},
+    columnidflags: {"kind":"UInt32"},
+    columnidcRecord: {"kind":"UInt32"},
+    columnidcPage: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_COLUMNLIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_COLUMNLIST = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    cRecord: {"kind":"UInt32"},
+    columnidPresentationOrder: {"kind":"UInt32"},
+    columnidcolumnname: {"kind":"UInt32"},
+    columnidcolumnid: {"kind":"UInt32"},
+    columnidcoltyp: {"kind":"UInt32"},
+    columnidCountry: {"kind":"UInt32"},
+    columnidLangid: {"kind":"UInt32"},
+    columnidCp: {"kind":"UInt32"},
+    columnidCollate: {"kind":"UInt32"},
+    columnidcbMax: {"kind":"UInt32"},
+    columnidgrbit: {"kind":"UInt32"},
+    columnidDefault: {"kind":"UInt32"},
+    columnidBaseTableName: {"kind":"UInt32"},
+    columnidBaseColumnName: {"kind":"UInt32"},
+    columnidDefinitionName: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_COLUMNDEF
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_COLUMNDEF = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    columnid: {"kind":"UInt32"},
+    coltyp: {"kind":"UInt32"},
+    wCountry: {"kind":"UInt16"},
+    langid: {"kind":"UInt16"},
+    cp: {"kind":"UInt16"},
+    wCollate: {"kind":"UInt16"},
+    cbMax: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_COLUMNBASE_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_COLUMNBASE_A = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    columnid: {"kind":"UInt32"},
+    coltyp: {"kind":"UInt32"},
+    wCountry: {"kind":"UInt16"},
+    langid: {"kind":"UInt16"},
+    cp: {"kind":"UInt16"},
+    wFiller: {"kind":"UInt16"},
+    cbMax: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+    szBaseTableName: {"kind":"Array","child": {"kind":"SByte"}},
+    szBaseColumnName: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: JET_COLUMNBASE_W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_COLUMNBASE_W = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    columnid: {"kind":"UInt32"},
+    coltyp: {"kind":"UInt32"},
+    wCountry: {"kind":"UInt16"},
+    langid: {"kind":"UInt16"},
+    cp: {"kind":"UInt16"},
+    wFiller: {"kind":"UInt16"},
+    cbMax: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+    szBaseTableName: {"kind":"Array","child": {"kind":"UInt16"}},
+    szBaseColumnName: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: JET_INDEXLIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_INDEXLIST = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    cRecord: {"kind":"UInt32"},
+    columnidindexname: {"kind":"UInt32"},
+    columnidgrbitIndex: {"kind":"UInt32"},
+    columnidcKey: {"kind":"UInt32"},
+    columnidcEntry: {"kind":"UInt32"},
+    columnidcPage: {"kind":"UInt32"},
+    columnidcColumn: {"kind":"UInt32"},
+    columnidiColumn: {"kind":"UInt32"},
+    columnidcolumnid: {"kind":"UInt32"},
+    columnidcoltyp: {"kind":"UInt32"},
+    columnidCountry: {"kind":"UInt32"},
+    columnidLangid: {"kind":"UInt32"},
+    columnidCp: {"kind":"UInt32"},
+    columnidCollate: {"kind":"UInt32"},
+    columnidgrbitColumn: {"kind":"UInt32"},
+    columnidcolumnname: {"kind":"UInt32"},
+    columnidLCMapFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: tag_JET_COLUMNCREATE_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const tag_JET_COLUMNCREATE_A = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    szColumnName: {"kind""Ptr","child":{"kind":"SByte"}},
+    coltyp: {"kind":"UInt32"},
+    cbMax: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+    pvDefault: {"kind""Ptr","child":{"kind":"Void"}},
+    cbDefault: {"kind":"UInt32"},
+    cp: {"kind":"UInt32"},
+    columnid: {"kind":"UInt32"},
+    err: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: tag_JET_COLUMNCREATE_W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const tag_JET_COLUMNCREATE_W = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    szColumnName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    coltyp: {"kind":"UInt32"},
+    cbMax: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+    pvDefault: {"kind""Ptr","child":{"kind":"Void"}},
+    cbDefault: {"kind":"UInt32"},
+    cp: {"kind":"UInt32"},
+    columnid: {"kind":"UInt32"},
+    err: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: tag_JET_USERDEFINEDDEFAULT_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const tag_JET_USERDEFINEDDEFAULT_A = extern struct {
+    szCallback: {"kind""Ptr","child":{"kind":"SByte"}},
+    pbUserData: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbUserData: {"kind":"UInt32"},
+    szDependantColumns: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: tag_JET_USERDEFINEDDEFAULT_W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const tag_JET_USERDEFINEDDEFAULT_W = extern struct {
+    szCallback: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pbUserData: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbUserData: {"kind":"UInt32"},
+    szDependantColumns: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: JET_CONDITIONALCOLUMN_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_CONDITIONALCOLUMN_A = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    szColumnName: {"kind""Ptr","child":{"kind":"SByte"}},
+    grbit: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_CONDITIONALCOLUMN_W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_CONDITIONALCOLUMN_W = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    szColumnName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    grbit: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_UNICODEINDEX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_UNICODEINDEX = extern struct {
+    lcid: {"kind":"UInt32"},
+    dwMapFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_UNICODEINDEX2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_UNICODEINDEX2 = extern struct {
+    szLocaleName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwMapFlags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_TUPLELIMITS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_TUPLELIMITS = extern struct {
+    chLengthMin: {"kind":"UInt32"},
+    chLengthMax: {"kind":"UInt32"},
+    chToIndexMax: {"kind":"UInt32"},
+    cchIncrement: {"kind":"UInt32"},
+    ichStart: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_SPACEHINTS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_SPACEHINTS = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    ulInitialDensity: {"kind":"UInt32"},
+    cbInitial: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+    ulMaintDensity: {"kind":"UInt32"},
+    ulGrowth: {"kind":"UInt32"},
+    cbMinExtent: {"kind":"UInt32"},
+    cbMaxExtent: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_INDEXCREATE_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_INDEXCREATE_A = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    szIndexName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szKey: {"kind""Ptr","child":{"kind":"SByte"}},
+    cbKey: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+    ulDensity: {"kind":"UInt32"},
+    Anonymous1: Windows.Win32.StructuredStorage.JET_INDEXCREATE_A+_Anonymous1_e__Union,
+    Anonymous2: Windows.Win32.StructuredStorage.JET_INDEXCREATE_A+_Anonymous2_e__Union,
+    rgconditionalcolumn: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_CONDITIONALCOLUMN_A},
+    cConditionalColumn: {"kind":"UInt32"},
+    err: {"kind":"Int32"},
+    cbKeyMost: {"kind":"UInt32"},
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: JET_INDEXCREATE_W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_INDEXCREATE_W = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    szIndexName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szKey: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cbKey: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+    ulDensity: {"kind":"UInt32"},
+    Anonymous1: Windows.Win32.StructuredStorage.JET_INDEXCREATE_W+_Anonymous1_e__Union,
+    Anonymous2: Windows.Win32.StructuredStorage.JET_INDEXCREATE_W+_Anonymous2_e__Union,
+    rgconditionalcolumn: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_CONDITIONALCOLUMN_W},
+    cConditionalColumn: {"kind":"UInt32"},
+    err: {"kind":"Int32"},
+    cbKeyMost: {"kind":"UInt32"},
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: JET_INDEXCREATE2_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_INDEXCREATE2_A = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    szIndexName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szKey: {"kind""Ptr","child":{"kind":"SByte"}},
+    cbKey: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+    ulDensity: {"kind":"UInt32"},
+    Anonymous1: Windows.Win32.StructuredStorage.JET_INDEXCREATE2_A+_Anonymous1_e__Union,
+    Anonymous2: Windows.Win32.StructuredStorage.JET_INDEXCREATE2_A+_Anonymous2_e__Union,
+    rgconditionalcolumn: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_CONDITIONALCOLUMN_A},
+    cConditionalColumn: {"kind":"UInt32"},
+    err: {"kind":"Int32"},
+    cbKeyMost: {"kind":"UInt32"},
+    pSpacehints: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_SPACEHINTS},
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: JET_INDEXCREATE2_W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_INDEXCREATE2_W = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    szIndexName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szKey: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cbKey: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+    ulDensity: {"kind":"UInt32"},
+    Anonymous1: Windows.Win32.StructuredStorage.JET_INDEXCREATE2_W+_Anonymous1_e__Union,
+    Anonymous2: Windows.Win32.StructuredStorage.JET_INDEXCREATE2_W+_Anonymous2_e__Union,
+    rgconditionalcolumn: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_CONDITIONALCOLUMN_W},
+    cConditionalColumn: {"kind":"UInt32"},
+    err: {"kind":"Int32"},
+    cbKeyMost: {"kind":"UInt32"},
+    pSpacehints: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_SPACEHINTS},
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: JET_INDEXCREATE3_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_INDEXCREATE3_A = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    szIndexName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szKey: {"kind""Ptr","child":{"kind":"SByte"}},
+    cbKey: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+    ulDensity: {"kind":"UInt32"},
+    pidxunicode: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_UNICODEINDEX2},
+    Anonymous: Windows.Win32.StructuredStorage.JET_INDEXCREATE3_A+_Anonymous_e__Union,
+    rgconditionalcolumn: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_CONDITIONALCOLUMN_A},
+    cConditionalColumn: {"kind":"UInt32"},
+    err: {"kind":"Int32"},
+    cbKeyMost: {"kind":"UInt32"},
+    pSpacehints: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_SPACEHINTS},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: JET_INDEXCREATE3_W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_INDEXCREATE3_W = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    szIndexName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szKey: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cbKey: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+    ulDensity: {"kind":"UInt32"},
+    pidxunicode: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_UNICODEINDEX2},
+    Anonymous: Windows.Win32.StructuredStorage.JET_INDEXCREATE3_W+_Anonymous_e__Union,
+    rgconditionalcolumn: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_CONDITIONALCOLUMN_W},
+    cConditionalColumn: {"kind":"UInt32"},
+    err: {"kind":"Int32"},
+    cbKeyMost: {"kind":"UInt32"},
+    pSpacehints: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_SPACEHINTS},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: JET_TABLECREATE_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_TABLECREATE_A = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szTemplateTableName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulPages: {"kind":"UInt32"},
+    ulDensity: {"kind":"UInt32"},
+    rgcolumncreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.tag_JET_COLUMNCREATE_A},
+    cColumns: {"kind":"UInt32"},
+    rgindexcreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_INDEXCREATE_A},
+    cIndexes: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    cCreated: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_TABLECREATE_W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_TABLECREATE_W = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szTemplateTableName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulPages: {"kind":"UInt32"},
+    ulDensity: {"kind":"UInt32"},
+    rgcolumncreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.tag_JET_COLUMNCREATE_W},
+    cColumns: {"kind":"UInt32"},
+    rgindexcreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_INDEXCREATE_W},
+    cIndexes: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    cCreated: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_TABLECREATE2_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_TABLECREATE2_A = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szTemplateTableName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulPages: {"kind":"UInt32"},
+    ulDensity: {"kind":"UInt32"},
+    rgcolumncreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.tag_JET_COLUMNCREATE_A},
+    cColumns: {"kind":"UInt32"},
+    rgindexcreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_INDEXCREATE_A},
+    cIndexes: {"kind":"UInt32"},
+    szCallback: {"kind""Ptr","child":{"kind":"SByte"}},
+    cbtyp: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    cCreated: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_TABLECREATE2_W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_TABLECREATE2_W = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szTemplateTableName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulPages: {"kind":"UInt32"},
+    ulDensity: {"kind":"UInt32"},
+    rgcolumncreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.tag_JET_COLUMNCREATE_W},
+    cColumns: {"kind":"UInt32"},
+    rgindexcreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_INDEXCREATE_W},
+    cIndexes: {"kind":"UInt32"},
+    szCallback: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cbtyp: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    cCreated: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_TABLECREATE3_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_TABLECREATE3_A = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szTemplateTableName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulPages: {"kind":"UInt32"},
+    ulDensity: {"kind":"UInt32"},
+    rgcolumncreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.tag_JET_COLUMNCREATE_A},
+    cColumns: {"kind":"UInt32"},
+    rgindexcreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_INDEXCREATE2_A},
+    cIndexes: {"kind":"UInt32"},
+    szCallback: {"kind""Ptr","child":{"kind":"SByte"}},
+    cbtyp: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+    pSeqSpacehints: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_SPACEHINTS},
+    pLVSpacehints: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_SPACEHINTS},
+    cbSeparateLV: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    cCreated: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_TABLECREATE3_W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_TABLECREATE3_W = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szTemplateTableName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulPages: {"kind":"UInt32"},
+    ulDensity: {"kind":"UInt32"},
+    rgcolumncreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.tag_JET_COLUMNCREATE_W},
+    cColumns: {"kind":"UInt32"},
+    rgindexcreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_INDEXCREATE2_W},
+    cIndexes: {"kind":"UInt32"},
+    szCallback: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cbtyp: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+    pSeqSpacehints: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_SPACEHINTS},
+    pLVSpacehints: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_SPACEHINTS},
+    cbSeparateLV: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    cCreated: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_TABLECREATE4_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_TABLECREATE4_A = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szTemplateTableName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ulPages: {"kind":"UInt32"},
+    ulDensity: {"kind":"UInt32"},
+    rgcolumncreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.tag_JET_COLUMNCREATE_A},
+    cColumns: {"kind":"UInt32"},
+    rgindexcreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_INDEXCREATE3_A},
+    cIndexes: {"kind":"UInt32"},
+    szCallback: {"kind""Ptr","child":{"kind":"SByte"}},
+    cbtyp: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+    pSeqSpacehints: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_SPACEHINTS},
+    pLVSpacehints: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_SPACEHINTS},
+    cbSeparateLV: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    cCreated: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_TABLECREATE4_W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_TABLECREATE4_W = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szTemplateTableName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulPages: {"kind":"UInt32"},
+    ulDensity: {"kind":"UInt32"},
+    rgcolumncreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.tag_JET_COLUMNCREATE_W},
+    cColumns: {"kind":"UInt32"},
+    rgindexcreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_INDEXCREATE3_W},
+    cIndexes: {"kind":"UInt32"},
+    szCallback: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cbtyp: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+    pSeqSpacehints: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_SPACEHINTS},
+    pLVSpacehints: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_SPACEHINTS},
+    cbSeparateLV: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    cCreated: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_OPENTEMPORARYTABLE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_OPENTEMPORARYTABLE = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    prgcolumndef: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_COLUMNDEF},
+    ccolumn: {"kind":"UInt32"},
+    pidxunicode: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_UNICODEINDEX},
+    grbit: {"kind":"UInt32"},
+    prgcolumnid: {"kind""Ptr","child":{"kind":"UInt32"}},
+    cbKeyMost: {"kind":"UInt32"},
+    cbVarSegMac: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_OPENTEMPORARYTABLE2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_OPENTEMPORARYTABLE2 = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    prgcolumndef: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_COLUMNDEF},
+    ccolumn: {"kind":"UInt32"},
+    pidxunicode: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_UNICODEINDEX2},
+    grbit: {"kind":"UInt32"},
+    prgcolumnid: {"kind""Ptr","child":{"kind":"UInt32"}},
+    cbKeyMost: {"kind":"UInt32"},
+    cbVarSegMac: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_RETINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_RETINFO = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    ibLongValue: {"kind":"UInt32"},
+    itagSequence: {"kind":"UInt32"},
+    columnidNextTagged: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_SETINFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_SETINFO = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    ibLongValue: {"kind":"UInt32"},
+    itagSequence: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_RECPOS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_RECPOS = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    centriesLT: {"kind":"UInt32"},
+    centriesInRange: {"kind":"UInt32"},
+    centriesTotal: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_RECORDLIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_RECORDLIST = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    cRecord: {"kind":"UInt32"},
+    columnidBookmark: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_INDEXRANGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_INDEXRANGE = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_RELOP
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const JET_RELOP = *opaque{
+};
+// --------------------------------------------------------
+// Type: JET_INDEX_COLUMN
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_INDEX_COLUMN = extern struct {
+    columnid: {"kind":"UInt32"},
+    relop: Windows.Win32.StructuredStorage.JET_RELOP,
+    pv: {"kind""Ptr","child":{"kind":"Void"}},
+    cb: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_INDEX_RANGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_INDEX_RANGE = extern struct {
+    rgStartColumns: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_INDEX_COLUMN},
+    cStartColumns: {"kind":"UInt32"},
+    rgEndColumns: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_INDEX_COLUMN},
+    cEndColumns: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_LOGTIME
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_LOGTIME = extern struct {
+    bSeconds: {"kind":"SByte"},
+    bMinutes: {"kind":"SByte"},
+    bHours: {"kind":"SByte"},
+    bDay: {"kind":"SByte"},
+    bMonth: {"kind":"SByte"},
+    bYear: {"kind":"SByte"},
+    Anonymous1: Windows.Win32.StructuredStorage.JET_LOGTIME+_Anonymous1_e__Union,
+    Anonymous2: Windows.Win32.StructuredStorage.JET_LOGTIME+_Anonymous2_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            _bitfield: {"kind":"Byte"},
+        };
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            _bitfield: {"kind":"Byte"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: JET_BKLOGTIME
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_BKLOGTIME = extern struct {
+    bSeconds: {"kind":"SByte"},
+    bMinutes: {"kind":"SByte"},
+    bHours: {"kind":"SByte"},
+    bDay: {"kind":"SByte"},
+    bMonth: {"kind":"SByte"},
+    bYear: {"kind":"SByte"},
+    Anonymous1: Windows.Win32.StructuredStorage.JET_BKLOGTIME+_Anonymous1_e__Union,
+    Anonymous2: Windows.Win32.StructuredStorage.JET_BKLOGTIME+_Anonymous2_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous2_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous2_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            _bitfield: {"kind":"Byte"},
+        };
+    };
+    // --------------------------------------------------------
+    // Type: _Anonymous1_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous1_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            _bitfield: {"kind":"Byte"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: JET_LGPOS
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const JET_LGPOS = *opaque{
+};
+// --------------------------------------------------------
+// Type: JET_SIGNATURE
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const JET_SIGNATURE = *opaque{
+};
+// --------------------------------------------------------
+// Type: JET_BKINFO
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const JET_BKINFO = *opaque{
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: JET_DBINFOMISC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_DBINFOMISC = extern struct {
+    ulVersion: {"kind":"UInt32"},
+    ulUpdate: {"kind":"UInt32"},
+    signDb: Windows.Win32.StructuredStorage.JET_SIGNATURE,
+    dbstate: {"kind":"UInt32"},
+    lgposConsistent: Windows.Win32.StructuredStorage.JET_LGPOS,
+    logtimeConsistent: Windows.Win32.StructuredStorage.JET_LOGTIME,
+    logtimeAttach: Windows.Win32.StructuredStorage.JET_LOGTIME,
+    lgposAttach: Windows.Win32.StructuredStorage.JET_LGPOS,
+    logtimeDetach: Windows.Win32.StructuredStorage.JET_LOGTIME,
+    lgposDetach: Windows.Win32.StructuredStorage.JET_LGPOS,
+    signLog: Windows.Win32.StructuredStorage.JET_SIGNATURE,
+    bkinfoFullPrev: Windows.Win32.StructuredStorage.JET_BKINFO,
+    bkinfoIncPrev: Windows.Win32.StructuredStorage.JET_BKINFO,
+    bkinfoFullCur: Windows.Win32.StructuredStorage.JET_BKINFO,
+    fShadowingDisabled: {"kind":"UInt32"},
+    fUpgradeDb: {"kind":"UInt32"},
+    dwMajorVersion: {"kind":"UInt32"},
+    dwMinorVersion: {"kind":"UInt32"},
+    dwBuildNumber: {"kind":"UInt32"},
+    lSPNumber: {"kind":"Int32"},
+    cbPageSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_DBINFOMISC2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_DBINFOMISC2 = extern struct {
+    ulVersion: {"kind":"UInt32"},
+    ulUpdate: {"kind":"UInt32"},
+    signDb: Windows.Win32.StructuredStorage.JET_SIGNATURE,
+    dbstate: {"kind":"UInt32"},
+    lgposConsistent: Windows.Win32.StructuredStorage.JET_LGPOS,
+    logtimeConsistent: Windows.Win32.StructuredStorage.JET_LOGTIME,
+    logtimeAttach: Windows.Win32.StructuredStorage.JET_LOGTIME,
+    lgposAttach: Windows.Win32.StructuredStorage.JET_LGPOS,
+    logtimeDetach: Windows.Win32.StructuredStorage.JET_LOGTIME,
+    lgposDetach: Windows.Win32.StructuredStorage.JET_LGPOS,
+    signLog: Windows.Win32.StructuredStorage.JET_SIGNATURE,
+    bkinfoFullPrev: Windows.Win32.StructuredStorage.JET_BKINFO,
+    bkinfoIncPrev: Windows.Win32.StructuredStorage.JET_BKINFO,
+    bkinfoFullCur: Windows.Win32.StructuredStorage.JET_BKINFO,
+    fShadowingDisabled: {"kind":"UInt32"},
+    fUpgradeDb: {"kind":"UInt32"},
+    dwMajorVersion: {"kind":"UInt32"},
+    dwMinorVersion: {"kind":"UInt32"},
+    dwBuildNumber: {"kind":"UInt32"},
+    lSPNumber: {"kind":"Int32"},
+    cbPageSize: {"kind":"UInt32"},
+    genMinRequired: {"kind":"UInt32"},
+    genMaxRequired: {"kind":"UInt32"},
+    logtimeGenMaxCreate: Windows.Win32.StructuredStorage.JET_LOGTIME,
+    ulRepairCount: {"kind":"UInt32"},
+    logtimeRepair: Windows.Win32.StructuredStorage.JET_LOGTIME,
+    ulRepairCountOld: {"kind":"UInt32"},
+    ulECCFixSuccess: {"kind":"UInt32"},
+    logtimeECCFixSuccess: Windows.Win32.StructuredStorage.JET_LOGTIME,
+    ulECCFixSuccessOld: {"kind":"UInt32"},
+    ulECCFixFail: {"kind":"UInt32"},
+    logtimeECCFixFail: Windows.Win32.StructuredStorage.JET_LOGTIME,
+    ulECCFixFailOld: {"kind":"UInt32"},
+    ulBadChecksum: {"kind":"UInt32"},
+    logtimeBadChecksum: Windows.Win32.StructuredStorage.JET_LOGTIME,
+    ulBadChecksumOld: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_DBINFOMISC3
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_DBINFOMISC3 = extern struct {
+    ulVersion: {"kind":"UInt32"},
+    ulUpdate: {"kind":"UInt32"},
+    signDb: Windows.Win32.StructuredStorage.JET_SIGNATURE,
+    dbstate: {"kind":"UInt32"},
+    lgposConsistent: Windows.Win32.StructuredStorage.JET_LGPOS,
+    logtimeConsistent: Windows.Win32.StructuredStorage.JET_LOGTIME,
+    logtimeAttach: Windows.Win32.StructuredStorage.JET_LOGTIME,
+    lgposAttach: Windows.Win32.StructuredStorage.JET_LGPOS,
+    logtimeDetach: Windows.Win32.StructuredStorage.JET_LOGTIME,
+    lgposDetach: Windows.Win32.StructuredStorage.JET_LGPOS,
+    signLog: Windows.Win32.StructuredStorage.JET_SIGNATURE,
+    bkinfoFullPrev: Windows.Win32.StructuredStorage.JET_BKINFO,
+    bkinfoIncPrev: Windows.Win32.StructuredStorage.JET_BKINFO,
+    bkinfoFullCur: Windows.Win32.StructuredStorage.JET_BKINFO,
+    fShadowingDisabled: {"kind":"UInt32"},
+    fUpgradeDb: {"kind":"UInt32"},
+    dwMajorVersion: {"kind":"UInt32"},
+    dwMinorVersion: {"kind":"UInt32"},
+    dwBuildNumber: {"kind":"UInt32"},
+    lSPNumber: {"kind":"Int32"},
+    cbPageSize: {"kind":"UInt32"},
+    genMinRequired: {"kind":"UInt32"},
+    genMaxRequired: {"kind":"UInt32"},
+    logtimeGenMaxCreate: Windows.Win32.StructuredStorage.JET_LOGTIME,
+    ulRepairCount: {"kind":"UInt32"},
+    logtimeRepair: Windows.Win32.StructuredStorage.JET_LOGTIME,
+    ulRepairCountOld: {"kind":"UInt32"},
+    ulECCFixSuccess: {"kind":"UInt32"},
+    logtimeECCFixSuccess: Windows.Win32.StructuredStorage.JET_LOGTIME,
+    ulECCFixSuccessOld: {"kind":"UInt32"},
+    ulECCFixFail: {"kind":"UInt32"},
+    logtimeECCFixFail: Windows.Win32.StructuredStorage.JET_LOGTIME,
+    ulECCFixFailOld: {"kind":"UInt32"},
+    ulBadChecksum: {"kind":"UInt32"},
+    logtimeBadChecksum: Windows.Win32.StructuredStorage.JET_LOGTIME,
+    ulBadChecksumOld: {"kind":"UInt32"},
+    genCommitted: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_DBINFOMISC4
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_DBINFOMISC4 = extern struct {
+    ulVersion: {"kind":"UInt32"},
+    ulUpdate: {"kind":"UInt32"},
+    signDb: Windows.Win32.StructuredStorage.JET_SIGNATURE,
+    dbstate: {"kind":"UInt32"},
+    lgposConsistent: Windows.Win32.StructuredStorage.JET_LGPOS,
+    logtimeConsistent: Windows.Win32.StructuredStorage.JET_LOGTIME,
+    logtimeAttach: Windows.Win32.StructuredStorage.JET_LOGTIME,
+    lgposAttach: Windows.Win32.StructuredStorage.JET_LGPOS,
+    logtimeDetach: Windows.Win32.StructuredStorage.JET_LOGTIME,
+    lgposDetach: Windows.Win32.StructuredStorage.JET_LGPOS,
+    signLog: Windows.Win32.StructuredStorage.JET_SIGNATURE,
+    bkinfoFullPrev: Windows.Win32.StructuredStorage.JET_BKINFO,
+    bkinfoIncPrev: Windows.Win32.StructuredStorage.JET_BKINFO,
+    bkinfoFullCur: Windows.Win32.StructuredStorage.JET_BKINFO,
+    fShadowingDisabled: {"kind":"UInt32"},
+    fUpgradeDb: {"kind":"UInt32"},
+    dwMajorVersion: {"kind":"UInt32"},
+    dwMinorVersion: {"kind":"UInt32"},
+    dwBuildNumber: {"kind":"UInt32"},
+    lSPNumber: {"kind":"Int32"},
+    cbPageSize: {"kind":"UInt32"},
+    genMinRequired: {"kind":"UInt32"},
+    genMaxRequired: {"kind":"UInt32"},
+    logtimeGenMaxCreate: Windows.Win32.StructuredStorage.JET_LOGTIME,
+    ulRepairCount: {"kind":"UInt32"},
+    logtimeRepair: Windows.Win32.StructuredStorage.JET_LOGTIME,
+    ulRepairCountOld: {"kind":"UInt32"},
+    ulECCFixSuccess: {"kind":"UInt32"},
+    logtimeECCFixSuccess: Windows.Win32.StructuredStorage.JET_LOGTIME,
+    ulECCFixSuccessOld: {"kind":"UInt32"},
+    ulECCFixFail: {"kind":"UInt32"},
+    logtimeECCFixFail: Windows.Win32.StructuredStorage.JET_LOGTIME,
+    ulECCFixFailOld: {"kind":"UInt32"},
+    ulBadChecksum: {"kind":"UInt32"},
+    logtimeBadChecksum: Windows.Win32.StructuredStorage.JET_LOGTIME,
+    ulBadChecksumOld: {"kind":"UInt32"},
+    genCommitted: {"kind":"UInt32"},
+    bkinfoCopyPrev: Windows.Win32.StructuredStorage.JET_BKINFO,
+    bkinfoDiffPrev: Windows.Win32.StructuredStorage.JET_BKINFO,
+};
+// --------------------------------------------------------
+// Type: JET_THREADSTATS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_THREADSTATS = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    cPageReferenced: {"kind":"UInt32"},
+    cPageRead: {"kind":"UInt32"},
+    cPagePreread: {"kind":"UInt32"},
+    cPageDirtied: {"kind":"UInt32"},
+    cPageRedirtied: {"kind":"UInt32"},
+    cLogRecord: {"kind":"UInt32"},
+    cbLogRecord: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: JET_THREADSTATS2
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=4 Size=0
+pub const JET_THREADSTATS2 = *opaque{
+};
+// --------------------------------------------------------
+// Type: JET_RSTINFO_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_RSTINFO_A = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    rgrstmap: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_RSTMAP_A},
+    crstmap: {"kind":"Int32"},
+    lgposStop: Windows.Win32.StructuredStorage.JET_LGPOS,
+    logtimeStop: Windows.Win32.StructuredStorage.JET_LOGTIME,
+    pfnStatus: Windows.Win32.StructuredStorage.JET_PFNSTATUS,
+};
+// --------------------------------------------------------
+// Type: JET_RSTINFO_W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_RSTINFO_W = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    rgrstmap: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_RSTMAP_W},
+    crstmap: {"kind":"Int32"},
+    lgposStop: Windows.Win32.StructuredStorage.JET_LGPOS,
+    logtimeStop: Windows.Win32.StructuredStorage.JET_LOGTIME,
+    pfnStatus: Windows.Win32.StructuredStorage.JET_PFNSTATUS,
+};
+// --------------------------------------------------------
+// Type: JET_ERRCAT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const JET_ERRCAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: JET_ERRINFOBASIC_W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_ERRINFOBASIC_W = extern struct {
+    cbStruct: {"kind":"UInt32"},
+    errValue: {"kind":"Int32"},
+    errcatMostSpecific: Windows.Win32.StructuredStorage.JET_ERRCAT,
+    rgCategoricalHierarchy: {"kind":"Array","child": {"kind":"Byte"}},
+    lSourceLine: {"kind":"UInt32"},
+    rgszSourceFile: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: JET_COMMIT_ID
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=4 Size=0
+pub const JET_COMMIT_ID = *opaque{
+};
+// --------------------------------------------------------
+// Type: JET_PFNDURABLECOMMITCALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const JET_PFNDURABLECOMMITCALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: JET_INDEXCHECKING
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const JET_INDEXCHECKING = *opaque{
+};
+// --------------------------------------------------------
+// Type: JET_OPERATIONCONTEXT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_OPERATIONCONTEXT = extern struct {
+    ulUserID: {"kind":"UInt32"},
+    nOperationID: {"kind":"Byte"},
+    nOperationType: {"kind":"Byte"},
+    nClientType: {"kind":"Byte"},
+    fFlags: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: JET_SETCOLUMN
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_SETCOLUMN = extern struct {
+    columnid: {"kind":"UInt32"},
+    pvData: {"kind""Ptr","child":{"kind":"Void"}},
+    cbData: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+    ibLongValue: {"kind":"UInt32"},
+    itagSequence: {"kind":"UInt32"},
+    err: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: JET_SETSYSPARAM_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_SETSYSPARAM_A = extern struct {
+    paramid: {"kind":"UInt32"},
+    lParam: {"kind":"UInt32"},
+    sz: {"kind""Ptr","child":{"kind":"SByte"}},
+    err: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: JET_SETSYSPARAM_W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_SETSYSPARAM_W = extern struct {
+    paramid: {"kind":"UInt32"},
+    lParam: {"kind":"UInt32"},
+    sz: {"kind""Ptr","child":{"kind":"UInt16"}},
+    err: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: JET_RETRIEVECOLUMN
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_RETRIEVECOLUMN = extern struct {
+    columnid: {"kind":"UInt32"},
+    pvData: {"kind""Ptr","child":{"kind":"Void"}},
+    cbData: {"kind":"UInt32"},
+    cbActual: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+    ibLongValue: {"kind":"UInt32"},
+    itagSequence: {"kind":"UInt32"},
+    columnidNextTagged: {"kind":"UInt32"},
+    err: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: JET_ENUMCOLUMNID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_ENUMCOLUMNID = extern struct {
+    columnid: {"kind":"UInt32"},
+    ctagSequence: {"kind":"UInt32"},
+    rgtagSequence: {"kind""Ptr","child":{"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: JET_ENUMCOLUMNVALUE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_ENUMCOLUMNVALUE = extern struct {
+    itagSequence: {"kind":"UInt32"},
+    err: {"kind":"Int32"},
+    cbData: {"kind":"UInt32"},
+    pvData: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: JET_ENUMCOLUMN
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_ENUMCOLUMN = extern struct {
+    columnid: {"kind":"UInt32"},
+    err: {"kind":"Int32"},
+    Anonymous: Windows.Win32.StructuredStorage.JET_ENUMCOLUMN+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous1_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous1_e__Struct = extern struct {
+            cEnumColumnValue: {"kind":"UInt32"},
+            rgEnumColumnValue: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_ENUMCOLUMNVALUE},
+        };
+        // --------------------------------------------------------
+        // Type: _Anonymous2_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous2_e__Struct = extern struct {
+            cbData: {"kind":"UInt32"},
+            pvData: {"kind""Ptr","child":{"kind":"Void"}},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: JET_PFNREALLOC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const JET_PFNREALLOC = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: JET_RECSIZE
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=4 Size=0
+pub const JET_RECSIZE = *opaque{
+};
+// --------------------------------------------------------
+// Type: JET_RECSIZE2
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=4 Size=0
+pub const JET_RECSIZE2 = *opaque{
+};
+// --------------------------------------------------------
+// Type: JET_LOGINFO_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_LOGINFO_A = extern struct {
+    cbSize: {"kind":"UInt32"},
+    ulGenLow: {"kind":"UInt32"},
+    ulGenHigh: {"kind":"UInt32"},
+    szBaseName: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: JET_LOGINFO_W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_LOGINFO_W = extern struct {
+    cbSize: {"kind":"UInt32"},
+    ulGenLow: {"kind":"UInt32"},
+    ulGenHigh: {"kind":"UInt32"},
+    szBaseName: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: JET_INSTANCE_INFO_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_INSTANCE_INFO_A = extern struct {
+    hInstanceId: {"kind":"UInt32"},
+    szInstanceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    cDatabases: {"kind":"UInt32"},
+    szDatabaseFileName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    szDatabaseDisplayName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    szDatabaseSLVFileName_Obsolete: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+};
+// --------------------------------------------------------
+// Type: JET_INSTANCE_INFO_W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const JET_INSTANCE_INFO_W = extern struct {
+    hInstanceId: {"kind":"UInt32"},
+    szInstanceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cDatabases: {"kind":"UInt32"},
+    szDatabaseFileName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    szDatabaseDisplayName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    szDatabaseSLVFileName_Obsolete: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+};
+// --------------------------------------------------------
+// Type: STGC
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const STGC = *opaque{
+};
+// --------------------------------------------------------
+// Type: STGMOVE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const STGMOVE = *opaque{
+};
+// --------------------------------------------------------
+// Type: STATFLAG
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const STATFLAG = *opaque{
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn CreateStreamOnHGlobal(
+    hGlobal: {"kind":"IntPtr"},
+    fDeleteOnRelease: Windows.Win32.SystemServices.BOOL,
+    ppstm: {"kind""Ptr","child":Windows.Win32.StructuredStorage.IStream},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn GetHGlobalFromStream(
+    pstm: Windows.Win32.StructuredStorage.IStream,
+    phglobal: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn PropVariantCopy(
+    pvarDest: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    pvarSrc: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn PropVariantClear(
+    pvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn FreePropVariantArray(
+    cVariants: {"kind":"UInt32"},
+    rgvars: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn WriteFmtUserTypeStg(
+    pstg: Windows.Win32.StructuredStorage.IStorage,
+    cf: {"kind":"UInt16"},
+    lpszUserType: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn ReadFmtUserTypeStg(
+    pstg: Windows.Win32.StructuredStorage.IStorage,
+    pcf: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lplpszUserType: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ole32" fn OleConvertOLESTREAMToIStorage(
+    lpolestream: {"kind""Ptr","child":Windows.Win32.Com.OLESTREAM},
+    pstg: Windows.Win32.StructuredStorage.IStorage,
+    ptd: {"kind""Ptr","child":Windows.Win32.Com.DVTARGETDEVICE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ole32" fn OleConvertIStorageToOLESTREAM(
+    pstg: Windows.Win32.StructuredStorage.IStorage,
+    lpolestream: {"kind""Ptr","child":Windows.Win32.Com.OLESTREAM},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn SetConvertStg(
+    pStg: Windows.Win32.StructuredStorage.IStorage,
+    fConvert: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ole32" fn OleConvertIStorageToOLESTREAMEx(
+    pstg: Windows.Win32.StructuredStorage.IStorage,
+    cfFormat: {"kind":"UInt16"},
+    lWidth: {"kind":"Int32"},
+    lHeight: {"kind":"Int32"},
+    dwSize: {"kind":"UInt32"},
+    pmedium: {"kind""Ptr","child":Windows.Win32.Com.STGMEDIUM},
+    polestm: {"kind""Ptr","child":Windows.Win32.Com.OLESTREAM},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ole32" fn OleConvertOLESTREAMToIStorageEx(
+    polestm: {"kind""Ptr","child":Windows.Win32.Com.OLESTREAM},
+    pstg: Windows.Win32.StructuredStorage.IStorage,
+    pcfFormat: {"kind""Ptr","child":{"kind":"UInt16"}},
+    plwWidth: {"kind""Ptr","child":{"kind":"Int32"}},
+    plHeight: {"kind""Ptr","child":{"kind":"Int32"}},
+    pdwSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pmedium: {"kind""Ptr","child":Windows.Win32.Com.STGMEDIUM},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn StgCreateDocfile(
+    pwcsName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    grfMode: {"kind":"UInt32"},
+    reserved: {"kind":"UInt32"},
+    ppstgOpen: {"kind""Ptr","child":Windows.Win32.StructuredStorage.IStorage},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn StgCreateDocfileOnILockBytes(
+    plkbyt: Windows.Win32.StructuredStorage.ILockBytes,
+    grfMode: {"kind":"UInt32"},
+    reserved: {"kind":"UInt32"},
+    ppstgOpen: {"kind""Ptr","child":Windows.Win32.StructuredStorage.IStorage},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn StgOpenStorage(
+    pwcsName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pstgPriority: Windows.Win32.StructuredStorage.IStorage,
+    grfMode: {"kind":"UInt32"},
+    snbExclude: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    reserved: {"kind":"UInt32"},
+    ppstgOpen: {"kind""Ptr","child":Windows.Win32.StructuredStorage.IStorage},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn StgOpenStorageOnILockBytes(
+    plkbyt: Windows.Win32.StructuredStorage.ILockBytes,
+    pstgPriority: Windows.Win32.StructuredStorage.IStorage,
+    grfMode: {"kind":"UInt32"},
+    snbExclude: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    reserved: {"kind":"UInt32"},
+    ppstgOpen: {"kind""Ptr","child":Windows.Win32.StructuredStorage.IStorage},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn StgIsStorageFile(
+    pwcsName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn StgIsStorageILockBytes(
+    plkbyt: Windows.Win32.StructuredStorage.ILockBytes,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn StgSetTimes(
+    lpszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pctime: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+    patime: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+    pmtime: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.FILETIME},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn StgCreateStorageEx(
+    pwcsName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    grfMode: {"kind":"UInt32"},
+    stgfmt: {"kind":"UInt32"},
+    grfAttrs: {"kind":"UInt32"},
+    pStgOptions: {"kind""Ptr","child":Windows.Win32.StructuredStorage.STGOPTIONS},
+    pSecurityDescriptor: {"kind""Ptr","child":{"kind":"Void"}},
+    riid: {"kind""Ptr","child":Guid},
+    ppObjectOpen: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn StgOpenStorageEx(
+    pwcsName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    grfMode: {"kind":"UInt32"},
+    stgfmt: {"kind":"UInt32"},
+    grfAttrs: {"kind":"UInt32"},
+    pStgOptions: {"kind""Ptr","child":Windows.Win32.StructuredStorage.STGOPTIONS},
+    pSecurityDescriptor: {"kind""Ptr","child":{"kind":"Void"}},
+    riid: {"kind""Ptr","child":Guid},
+    ppObjectOpen: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn StgCreatePropStg(
+    pUnk: Windows.Win32.Com.IUnknown,
+    fmtid: {"kind""Ptr","child":Guid},
+    pclsid: {"kind""Ptr","child":Guid},
+    grfFlags: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+    ppPropStg: {"kind""Ptr","child":Windows.Win32.StructuredStorage.IPropertyStorage},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn StgOpenPropStg(
+    pUnk: Windows.Win32.Com.IUnknown,
+    fmtid: {"kind""Ptr","child":Guid},
+    grfFlags: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+    ppPropStg: {"kind""Ptr","child":Windows.Win32.StructuredStorage.IPropertyStorage},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn StgCreatePropSetStg(
+    pStorage: Windows.Win32.StructuredStorage.IStorage,
+    dwReserved: {"kind":"UInt32"},
+    ppPropSetStg: {"kind""Ptr","child":Windows.Win32.StructuredStorage.IPropertySetStorage},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn FmtIdToPropStgName(
+    pfmtid: {"kind""Ptr","child":Guid},
+    oszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn PropStgNameToFmtId(
+    oszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pfmtid: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn ReadClassStg(
+    pStg: Windows.Win32.StructuredStorage.IStorage,
+    pclsid: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn WriteClassStg(
+    pStg: Windows.Win32.StructuredStorage.IStorage,
+    rclsid: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn ReadClassStm(
+    pStm: Windows.Win32.StructuredStorage.IStream,
+    pclsid: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn WriteClassStm(
+    pStm: Windows.Win32.StructuredStorage.IStream,
+    rclsid: {"kind""Ptr","child":Guid},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn GetHGlobalFromILockBytes(
+    plkbyt: Windows.Win32.StructuredStorage.ILockBytes,
+    phglobal: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn CreateILockBytesOnHGlobal(
+    hGlobal: {"kind":"IntPtr"},
+    fDeleteOnRelease: Windows.Win32.SystemServices.BOOL,
+    pplkbyt: {"kind""Ptr","child":Windows.Win32.StructuredStorage.ILockBytes},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "OLE32" fn GetConvertStg(
+    pStg: Windows.Win32.StructuredStorage.IStorage,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ole32" fn CoBuildVersion(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ole32" fn DcomChannelSetHResult(
+    pvReserved: {"kind""Ptr","child":{"kind":"Void"}},
+    pulReserved: {"kind""Ptr","child":{"kind":"UInt32"}},
+    appsHR: Windows.Win32.Com.HRESULT,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ole32" fn StgOpenAsyncDocfileOnIFillLockBytes(
+    pflb: Windows.Win32.StructuredStorage.IFillLockBytes,
+    grfMode: {"kind":"UInt32"},
+    asyncFlags: {"kind":"UInt32"},
+    ppstgOpen: {"kind""Ptr","child":Windows.Win32.StructuredStorage.IStorage},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ole32" fn StgGetIFillLockBytesOnILockBytes(
+    pilb: Windows.Win32.StructuredStorage.ILockBytes,
+    ppflb: {"kind""Ptr","child":Windows.Win32.StructuredStorage.IFillLockBytes},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ole32" fn StgGetIFillLockBytesOnFile(
+    pwcsName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppflb: {"kind""Ptr","child":Windows.Win32.StructuredStorage.IFillLockBytes},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "dflayout" fn StgOpenLayoutDocfile(
+    pwcsDfName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    grfMode: {"kind":"UInt32"},
+    reserved: {"kind":"UInt32"},
+    ppstgOpen: {"kind""Ptr","child":Windows.Win32.StructuredStorage.IStorage},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ole32" fn StgConvertVariantToProperty(
+    pvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    CodePage: {"kind":"UInt16"},
+    pprop: {"kind""Ptr","child":Windows.Win32.Shell.SERIALIZEDPROPERTYVALUE},
+    pcb: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pid: {"kind":"UInt32"},
+    fReserved: {"kind":"Byte"},
+    pcIndirect: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ole32" fn StgConvertPropertyToVariant(
+    pprop: {"kind""Ptr","child":Windows.Win32.Shell.SERIALIZEDPROPERTYVALUE},
+    CodePage: {"kind":"UInt16"},
+    pvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    pma: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PMemoryAllocator},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ole32" fn CreateStdProgressIndicator(
+    hwndParent: Windows.Win32.WindowsAndMessaging.HWND,
+    pszTitle: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pIbscCaller: Windows.Win32.Com.IBindStatusCallback,
+    ppIbsc: {"kind""Ptr","child":Windows.Win32.Com.IBindStatusCallback},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ole32" fn StgPropertyLengthAsVariant(
+    pProp: {"kind""Ptr","child":Windows.Win32.Shell.SERIALIZEDPROPERTYVALUE},
+    cbProp: {"kind":"UInt32"},
+    CodePage: {"kind":"UInt16"},
+    bReserved: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetInit(
+    pinstance: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetInit2(
+    pinstance: {"kind""Ptr","child":{"kind":"UInt32"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetInit3A(
+    pinstance: {"kind""Ptr","child":{"kind":"UInt32"}},
+    prstInfo: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_RSTINFO_A},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetInit3W(
+    pinstance: {"kind""Ptr","child":{"kind":"UInt32"}},
+    prstInfo: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_RSTINFO_W},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCreateInstanceA(
+    pinstance: {"kind""Ptr","child":{"kind":"UInt32"}},
+    szInstanceName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCreateInstanceW(
+    pinstance: {"kind""Ptr","child":{"kind":"UInt32"}},
+    szInstanceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCreateInstance2A(
+    pinstance: {"kind""Ptr","child":{"kind":"UInt32"}},
+    szInstanceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szDisplayName: {"kind""Ptr","child":{"kind":"SByte"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCreateInstance2W(
+    pinstance: {"kind""Ptr","child":{"kind":"UInt32"}},
+    szInstanceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szDisplayName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetInstanceMiscInfo(
+    instance: {"kind":"UInt32"},
+    pvResult: {"kind""Ptr","child":{"kind":"Void"}},
+    cbMax: {"kind":"UInt32"},
+    InfoLevel: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetTerm(
+    instance: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetTerm2(
+    instance: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetStopService(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetStopServiceInstance(
+    instance: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetStopServiceInstance2(
+    instance: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetStopBackup(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetStopBackupInstance(
+    instance: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetSetSystemParameterA(
+    pinstance: {"kind""Ptr","child":{"kind":"UInt32"}},
+    sesid: {"kind":"UInt32"},
+    paramid: {"kind":"UInt32"},
+    lParam: {"kind":"UInt32"},
+    szParam: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetSetSystemParameterW(
+    pinstance: {"kind""Ptr","child":{"kind":"UInt32"}},
+    sesid: {"kind":"UInt32"},
+    paramid: {"kind":"UInt32"},
+    lParam: {"kind":"UInt32"},
+    szParam: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetSystemParameterA(
+    instance: {"kind":"UInt32"},
+    sesid: {"kind":"UInt32"},
+    paramid: {"kind":"UInt32"},
+    plParam: {"kind""Ptr","child":{"kind":"UInt32"}},
+    szParam: {"kind""Ptr","child":{"kind":"SByte"}},
+    cbMax: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetSystemParameterW(
+    instance: {"kind":"UInt32"},
+    sesid: {"kind":"UInt32"},
+    paramid: {"kind":"UInt32"},
+    plParam: {"kind""Ptr","child":{"kind":"UInt32"}},
+    szParam: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cbMax: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetEnableMultiInstanceA(
+    psetsysparam: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_SETSYSPARAM_A},
+    csetsysparam: {"kind":"UInt32"},
+    pcsetsucceed: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetEnableMultiInstanceW(
+    psetsysparam: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_SETSYSPARAM_W},
+    csetsysparam: {"kind":"UInt32"},
+    pcsetsucceed: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetThreadStats(
+    pvResult: {"kind""Ptr","child":{"kind":"Void"}},
+    cbMax: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetBeginSessionA(
+    instance: {"kind":"UInt32"},
+    psesid: {"kind""Ptr","child":{"kind":"UInt32"}},
+    szUserName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szPassword: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetBeginSessionW(
+    instance: {"kind":"UInt32"},
+    psesid: {"kind""Ptr","child":{"kind":"UInt32"}},
+    szUserName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetDupSession(
+    sesid: {"kind":"UInt32"},
+    psesid: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetEndSession(
+    sesid: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetVersion(
+    sesid: {"kind":"UInt32"},
+    pwVersion: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetIdle(
+    sesid: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCreateDatabaseA(
+    sesid: {"kind":"UInt32"},
+    szFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+    szConnect: {"kind""Ptr","child":{"kind":"SByte"}},
+    pdbid: {"kind""Ptr","child":{"kind":"UInt32"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCreateDatabaseW(
+    sesid: {"kind":"UInt32"},
+    szFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szConnect: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pdbid: {"kind""Ptr","child":{"kind":"UInt32"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCreateDatabase2A(
+    sesid: {"kind":"UInt32"},
+    szFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+    cpgDatabaseSizeMax: {"kind":"UInt32"},
+    pdbid: {"kind""Ptr","child":{"kind":"UInt32"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCreateDatabase2W(
+    sesid: {"kind":"UInt32"},
+    szFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cpgDatabaseSizeMax: {"kind":"UInt32"},
+    pdbid: {"kind""Ptr","child":{"kind":"UInt32"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetAttachDatabaseA(
+    sesid: {"kind":"UInt32"},
+    szFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetAttachDatabaseW(
+    sesid: {"kind":"UInt32"},
+    szFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetAttachDatabase2A(
+    sesid: {"kind":"UInt32"},
+    szFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+    cpgDatabaseSizeMax: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetAttachDatabase2W(
+    sesid: {"kind":"UInt32"},
+    szFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cpgDatabaseSizeMax: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetDetachDatabaseA(
+    sesid: {"kind":"UInt32"},
+    szFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetDetachDatabaseW(
+    sesid: {"kind":"UInt32"},
+    szFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetDetachDatabase2A(
+    sesid: {"kind":"UInt32"},
+    szFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetDetachDatabase2W(
+    sesid: {"kind":"UInt32"},
+    szFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetObjectInfoA(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    objtyp: {"kind":"UInt32"},
+    szContainerName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szObjectName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pvResult: {"kind""Ptr","child":{"kind":"Void"}},
+    cbMax: {"kind":"UInt32"},
+    InfoLevel: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetObjectInfoW(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    objtyp: {"kind":"UInt32"},
+    szContainerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szObjectName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pvResult: {"kind""Ptr","child":{"kind":"Void"}},
+    cbMax: {"kind":"UInt32"},
+    InfoLevel: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetTableInfoA(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    pvResult: {"kind""Ptr","child":{"kind":"Void"}},
+    cbMax: {"kind":"UInt32"},
+    InfoLevel: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetTableInfoW(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    pvResult: {"kind""Ptr","child":{"kind":"Void"}},
+    cbMax: {"kind":"UInt32"},
+    InfoLevel: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCreateTableA(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"SByte"}},
+    lPages: {"kind":"UInt32"},
+    lDensity: {"kind":"UInt32"},
+    ptableid: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCreateTableW(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lPages: {"kind":"UInt32"},
+    lDensity: {"kind":"UInt32"},
+    ptableid: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCreateTableColumnIndexA(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    ptablecreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_TABLECREATE_A},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCreateTableColumnIndexW(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    ptablecreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_TABLECREATE_W},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCreateTableColumnIndex2A(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    ptablecreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_TABLECREATE2_A},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCreateTableColumnIndex2W(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    ptablecreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_TABLECREATE2_W},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCreateTableColumnIndex3A(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    ptablecreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_TABLECREATE3_A},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCreateTableColumnIndex3W(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    ptablecreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_TABLECREATE3_W},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCreateTableColumnIndex4A(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    ptablecreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_TABLECREATE4_A},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCreateTableColumnIndex4W(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    ptablecreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_TABLECREATE4_W},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetDeleteTableA(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetDeleteTableW(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetRenameTableA(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    szName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szNameNew: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetRenameTableW(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    szName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szNameNew: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetTableColumnInfoA(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    szColumnName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pvResult: {"kind""Ptr","child":{"kind":"Void"}},
+    cbMax: {"kind":"UInt32"},
+    InfoLevel: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetTableColumnInfoW(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    szColumnName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pvResult: {"kind""Ptr","child":{"kind":"Void"}},
+    cbMax: {"kind":"UInt32"},
+    InfoLevel: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetColumnInfoA(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pColumnNameOrId: {"kind""Ptr","child":{"kind":"SByte"}},
+    pvResult: {"kind""Ptr","child":{"kind":"Void"}},
+    cbMax: {"kind":"UInt32"},
+    InfoLevel: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetColumnInfoW(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwColumnNameOrId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pvResult: {"kind""Ptr","child":{"kind":"Void"}},
+    cbMax: {"kind":"UInt32"},
+    InfoLevel: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetAddColumnA(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    szColumnName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcolumndef: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_COLUMNDEF},
+    pvDefault: {"kind""Ptr","child":{"kind":"Void"}},
+    cbDefault: {"kind":"UInt32"},
+    pcolumnid: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetAddColumnW(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    szColumnName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcolumndef: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_COLUMNDEF},
+    pvDefault: {"kind""Ptr","child":{"kind":"Void"}},
+    cbDefault: {"kind":"UInt32"},
+    pcolumnid: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetDeleteColumnA(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    szColumnName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetDeleteColumnW(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    szColumnName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetDeleteColumn2A(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    szColumnName: {"kind""Ptr","child":{"kind":"SByte"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetDeleteColumn2W(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    szColumnName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetRenameColumnA(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    szName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szNameNew: {"kind""Ptr","child":{"kind":"SByte"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetRenameColumnW(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    szName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szNameNew: {"kind""Ptr","child":{"kind":"UInt16"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetSetColumnDefaultValueA(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szColumnName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pvData: {"kind""Ptr","child":{"kind":"Void"}},
+    cbData: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetSetColumnDefaultValueW(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szColumnName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pvData: {"kind""Ptr","child":{"kind":"Void"}},
+    cbData: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetTableIndexInfoA(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    szIndexName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pvResult: {"kind""Ptr","child":{"kind":"Void"}},
+    cbResult: {"kind":"UInt32"},
+    InfoLevel: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetTableIndexInfoW(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    szIndexName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pvResult: {"kind""Ptr","child":{"kind":"Void"}},
+    cbResult: {"kind":"UInt32"},
+    InfoLevel: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetIndexInfoA(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szIndexName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pvResult: {"kind""Ptr","child":{"kind":"Void"}},
+    cbResult: {"kind":"UInt32"},
+    InfoLevel: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetIndexInfoW(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szIndexName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pvResult: {"kind""Ptr","child":{"kind":"Void"}},
+    cbResult: {"kind":"UInt32"},
+    InfoLevel: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCreateIndexA(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    szIndexName: {"kind""Ptr","child":{"kind":"SByte"}},
+    grbit: {"kind":"UInt32"},
+    szKey: {"kind""Ptr","child":{"kind":"SByte"}},
+    cbKey: {"kind":"UInt32"},
+    lDensity: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCreateIndexW(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    szIndexName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    grbit: {"kind":"UInt32"},
+    szKey: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cbKey: {"kind":"UInt32"},
+    lDensity: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCreateIndex2A(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    pindexcreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_INDEXCREATE_A},
+    cIndexCreate: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCreateIndex2W(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    pindexcreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_INDEXCREATE_W},
+    cIndexCreate: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCreateIndex3A(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    pindexcreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_INDEXCREATE2_A},
+    cIndexCreate: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCreateIndex3W(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    pindexcreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_INDEXCREATE2_W},
+    cIndexCreate: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCreateIndex4A(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    pindexcreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_INDEXCREATE3_A},
+    cIndexCreate: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCreateIndex4W(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    pindexcreate: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_INDEXCREATE3_W},
+    cIndexCreate: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetDeleteIndexA(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    szIndexName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetDeleteIndexW(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    szIndexName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetBeginTransaction(
+    sesid: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetBeginTransaction2(
+    sesid: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetBeginTransaction3(
+    sesid: {"kind":"UInt32"},
+    trxid: {"kind":"Int64"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCommitTransaction(
+    sesid: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCommitTransaction2(
+    sesid: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+    cmsecDurableCommit: {"kind":"UInt32"},
+    pCommitId: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_COMMIT_ID},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetRollback(
+    sesid: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetDatabaseInfoA(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    pvResult: {"kind""Ptr","child":{"kind":"Void"}},
+    cbMax: {"kind":"UInt32"},
+    InfoLevel: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetDatabaseInfoW(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    pvResult: {"kind""Ptr","child":{"kind":"Void"}},
+    cbMax: {"kind":"UInt32"},
+    InfoLevel: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetDatabaseFileInfoA(
+    szDatabaseName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pvResult: {"kind""Ptr","child":{"kind":"Void"}},
+    cbMax: {"kind":"UInt32"},
+    InfoLevel: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetDatabaseFileInfoW(
+    szDatabaseName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pvResult: {"kind""Ptr","child":{"kind":"Void"}},
+    cbMax: {"kind":"UInt32"},
+    InfoLevel: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetOpenDatabaseA(
+    sesid: {"kind":"UInt32"},
+    szFilename: {"kind""Ptr","child":{"kind":"SByte"}},
+    szConnect: {"kind""Ptr","child":{"kind":"SByte"}},
+    pdbid: {"kind""Ptr","child":{"kind":"UInt32"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetOpenDatabaseW(
+    sesid: {"kind":"UInt32"},
+    szFilename: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szConnect: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pdbid: {"kind""Ptr","child":{"kind":"UInt32"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCloseDatabase(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetOpenTableA(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pvParameters: {"kind""Ptr","child":{"kind":"Void"}},
+    cbParameters: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+    ptableid: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetOpenTableW(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pvParameters: {"kind""Ptr","child":{"kind":"Void"}},
+    cbParameters: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+    ptableid: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetSetTableSequential(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetResetTableSequential(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCloseTable(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetDelete(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetUpdate(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    pvBookmark: {"kind""Ptr","child":{"kind":"Void"}},
+    cbBookmark: {"kind":"UInt32"},
+    pcbActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetUpdate2(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    pvBookmark: {"kind""Ptr","child":{"kind":"Void"}},
+    cbBookmark: {"kind":"UInt32"},
+    pcbActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetEscrowUpdate(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    columnid: {"kind":"UInt32"},
+    pv: {"kind""Ptr","child":{"kind":"Void"}},
+    cbMax: {"kind":"UInt32"},
+    pvOld: {"kind""Ptr","child":{"kind":"Void"}},
+    cbOldMax: {"kind":"UInt32"},
+    pcbOldActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetRetrieveColumn(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    columnid: {"kind":"UInt32"},
+    pvData: {"kind""Ptr","child":{"kind":"Void"}},
+    cbData: {"kind":"UInt32"},
+    pcbActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+    grbit: {"kind":"UInt32"},
+    pretinfo: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_RETINFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetRetrieveColumns(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    pretrievecolumn: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_RETRIEVECOLUMN},
+    cretrievecolumn: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetEnumerateColumns(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    cEnumColumnId: {"kind":"UInt32"},
+    rgEnumColumnId: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_ENUMCOLUMNID},
+    pcEnumColumn: {"kind""Ptr","child":{"kind":"UInt32"}},
+    prgEnumColumn: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_ENUMCOLUMN}},
+    pfnRealloc: Windows.Win32.StructuredStorage.JET_PFNREALLOC,
+    pvReallocContext: {"kind""Ptr","child":{"kind":"Void"}},
+    cbDataMost: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetRecordSize(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    precsize: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_RECSIZE},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetRecordSize2(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    precsize: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_RECSIZE2},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetSetColumn(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    columnid: {"kind":"UInt32"},
+    pvData: {"kind""Ptr","child":{"kind":"Void"}},
+    cbData: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+    psetinfo: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_SETINFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetSetColumns(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    psetcolumn: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_SETCOLUMN},
+    csetcolumn: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetPrepareUpdate(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    prep: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetRecordPosition(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    precpos: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_RECPOS},
+    cbRecpos: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGotoPosition(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    precpos: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_RECPOS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetCursorInfo(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    pvResult: {"kind""Ptr","child":{"kind":"Void"}},
+    cbMax: {"kind":"UInt32"},
+    InfoLevel: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetDupCursor(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    ptableid: {"kind""Ptr","child":{"kind":"UInt32"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetCurrentIndexA(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    szIndexName: {"kind""Ptr","child":{"kind":"SByte"}},
+    cbIndexName: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetCurrentIndexW(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    szIndexName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cbIndexName: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetSetCurrentIndexA(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    szIndexName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetSetCurrentIndexW(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    szIndexName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetSetCurrentIndex2A(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    szIndexName: {"kind""Ptr","child":{"kind":"SByte"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetSetCurrentIndex2W(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    szIndexName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetSetCurrentIndex3A(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    szIndexName: {"kind""Ptr","child":{"kind":"SByte"}},
+    grbit: {"kind":"UInt32"},
+    itagSequence: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetSetCurrentIndex3W(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    szIndexName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    grbit: {"kind":"UInt32"},
+    itagSequence: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetSetCurrentIndex4A(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    szIndexName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pindexid: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_INDEXID},
+    grbit: {"kind":"UInt32"},
+    itagSequence: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetSetCurrentIndex4W(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    szIndexName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pindexid: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_INDEXID},
+    grbit: {"kind":"UInt32"},
+    itagSequence: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetMove(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    cRow: {"kind":"Int32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetSetCursorFilter(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    rgColumnFilters: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_INDEX_COLUMN},
+    cColumnFilters: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetLock(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetMakeKey(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    pvData: {"kind""Ptr","child":{"kind":"Void"}},
+    cbData: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetSeek(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetPrereadKeys(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    rgpvKeys: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+    rgcbKeys: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ckeys: {"kind":"Int32"},
+    pckeysPreread: {"kind""Ptr","child":{"kind":"Int32"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetPrereadIndexRanges(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    rgIndexRanges: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_INDEX_RANGE},
+    cIndexRanges: {"kind":"UInt32"},
+    pcRangesPreread: {"kind""Ptr","child":{"kind":"UInt32"}},
+    rgcolumnidPreread: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ccolumnidPreread: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetBookmark(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    pvBookmark: {"kind""Ptr","child":{"kind":"Void"}},
+    cbMax: {"kind":"UInt32"},
+    pcbActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetSecondaryIndexBookmark(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    pvSecondaryKey: {"kind""Ptr","child":{"kind":"Void"}},
+    cbSecondaryKeyMax: {"kind":"UInt32"},
+    pcbSecondaryKeyActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pvPrimaryBookmark: {"kind""Ptr","child":{"kind":"Void"}},
+    cbPrimaryBookmarkMax: {"kind":"UInt32"},
+    pcbPrimaryBookmarkActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCompactA(
+    sesid: {"kind":"UInt32"},
+    szDatabaseSrc: {"kind""Ptr","child":{"kind":"SByte"}},
+    szDatabaseDest: {"kind""Ptr","child":{"kind":"SByte"}},
+    pfnStatus: Windows.Win32.StructuredStorage.JET_PFNSTATUS,
+    pconvert: {"kind""Ptr","child":Windows.Win32.StructuredStorage.tagCONVERT_A},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCompactW(
+    sesid: {"kind":"UInt32"},
+    szDatabaseSrc: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szDatabaseDest: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pfnStatus: Windows.Win32.StructuredStorage.JET_PFNSTATUS,
+    pconvert: {"kind""Ptr","child":Windows.Win32.StructuredStorage.tagCONVERT_W},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetDefragmentA(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcPasses: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pcSeconds: {"kind""Ptr","child":{"kind":"UInt32"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetDefragmentW(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcPasses: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pcSeconds: {"kind""Ptr","child":{"kind":"UInt32"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetDefragment2A(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcPasses: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pcSeconds: {"kind""Ptr","child":{"kind":"UInt32"}},
+    callback: Windows.Win32.StructuredStorage.JET_CALLBACK,
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetDefragment2W(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    szTableName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcPasses: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pcSeconds: {"kind""Ptr","child":{"kind":"UInt32"}},
+    callback: Windows.Win32.StructuredStorage.JET_CALLBACK,
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetDefragment3A(
+    sesid: {"kind":"UInt32"},
+    szDatabaseName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szTableName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pcPasses: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pcSeconds: {"kind""Ptr","child":{"kind":"UInt32"}},
+    callback: Windows.Win32.StructuredStorage.JET_CALLBACK,
+    pvContext: {"kind""Ptr","child":{"kind":"Void"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetDefragment3W(
+    sesid: {"kind":"UInt32"},
+    szDatabaseName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szTableName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pcPasses: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pcSeconds: {"kind""Ptr","child":{"kind":"UInt32"}},
+    callback: Windows.Win32.StructuredStorage.JET_CALLBACK,
+    pvContext: {"kind""Ptr","child":{"kind":"Void"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetSetDatabaseSizeA(
+    sesid: {"kind":"UInt32"},
+    szDatabaseName: {"kind""Ptr","child":{"kind":"SByte"}},
+    cpg: {"kind":"UInt32"},
+    pcpgReal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetSetDatabaseSizeW(
+    sesid: {"kind":"UInt32"},
+    szDatabaseName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cpg: {"kind":"UInt32"},
+    pcpgReal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGrowDatabase(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    cpg: {"kind":"UInt32"},
+    pcpgReal: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetResizeDatabase(
+    sesid: {"kind":"UInt32"},
+    dbid: {"kind":"UInt32"},
+    cpgTarget: {"kind":"UInt32"},
+    pcpgActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetSetSessionContext(
+    sesid: {"kind":"UInt32"},
+    ulContext: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetResetSessionContext(
+    sesid: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGotoBookmark(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    pvBookmark: {"kind""Ptr","child":{"kind":"Void"}},
+    cbBookmark: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGotoSecondaryIndexBookmark(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    pvSecondaryKey: {"kind""Ptr","child":{"kind":"Void"}},
+    cbSecondaryKey: {"kind":"UInt32"},
+    pvPrimaryBookmark: {"kind""Ptr","child":{"kind":"Void"}},
+    cbPrimaryBookmark: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetIntersectIndexes(
+    sesid: {"kind":"UInt32"},
+    rgindexrange: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_INDEXRANGE},
+    cindexrange: {"kind":"UInt32"},
+    precordlist: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_RECORDLIST},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetComputeStats(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetOpenTempTable(
+    sesid: {"kind":"UInt32"},
+    prgcolumndef: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_COLUMNDEF},
+    ccolumn: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+    ptableid: {"kind""Ptr","child":{"kind":"UInt32"}},
+    prgcolumnid: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetOpenTempTable2(
+    sesid: {"kind":"UInt32"},
+    prgcolumndef: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_COLUMNDEF},
+    ccolumn: {"kind":"UInt32"},
+    lcid: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+    ptableid: {"kind""Ptr","child":{"kind":"UInt32"}},
+    prgcolumnid: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetOpenTempTable3(
+    sesid: {"kind":"UInt32"},
+    prgcolumndef: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_COLUMNDEF},
+    ccolumn: {"kind":"UInt32"},
+    pidxunicode: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_UNICODEINDEX},
+    grbit: {"kind":"UInt32"},
+    ptableid: {"kind""Ptr","child":{"kind":"UInt32"}},
+    prgcolumnid: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetOpenTemporaryTable(
+    sesid: {"kind":"UInt32"},
+    popentemporarytable: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_OPENTEMPORARYTABLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetOpenTemporaryTable2(
+    sesid: {"kind":"UInt32"},
+    popentemporarytable: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_OPENTEMPORARYTABLE2},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetBackupA(
+    szBackupPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    grbit: {"kind":"UInt32"},
+    pfnStatus: Windows.Win32.StructuredStorage.JET_PFNSTATUS,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetBackupW(
+    szBackupPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    grbit: {"kind":"UInt32"},
+    pfnStatus: Windows.Win32.StructuredStorage.JET_PFNSTATUS,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetBackupInstanceA(
+    instance: {"kind":"UInt32"},
+    szBackupPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    grbit: {"kind":"UInt32"},
+    pfnStatus: Windows.Win32.StructuredStorage.JET_PFNSTATUS,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetBackupInstanceW(
+    instance: {"kind":"UInt32"},
+    szBackupPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    grbit: {"kind":"UInt32"},
+    pfnStatus: Windows.Win32.StructuredStorage.JET_PFNSTATUS,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetRestoreA(
+    szSource: {"kind""Ptr","child":{"kind":"SByte"}},
+    pfn: Windows.Win32.StructuredStorage.JET_PFNSTATUS,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetRestoreW(
+    szSource: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pfn: Windows.Win32.StructuredStorage.JET_PFNSTATUS,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetRestore2A(
+    sz: {"kind""Ptr","child":{"kind":"SByte"}},
+    szDest: {"kind""Ptr","child":{"kind":"SByte"}},
+    pfn: Windows.Win32.StructuredStorage.JET_PFNSTATUS,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetRestore2W(
+    sz: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szDest: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pfn: Windows.Win32.StructuredStorage.JET_PFNSTATUS,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetRestoreInstanceA(
+    instance: {"kind":"UInt32"},
+    sz: {"kind""Ptr","child":{"kind":"SByte"}},
+    szDest: {"kind""Ptr","child":{"kind":"SByte"}},
+    pfn: Windows.Win32.StructuredStorage.JET_PFNSTATUS,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetRestoreInstanceW(
+    instance: {"kind":"UInt32"},
+    sz: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szDest: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pfn: Windows.Win32.StructuredStorage.JET_PFNSTATUS,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetSetIndexRange(
+    sesid: {"kind":"UInt32"},
+    tableidSrc: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetIndexRecordCount(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    pcrec: {"kind""Ptr","child":{"kind":"UInt32"}},
+    crecMax: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetRetrieveKey(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    pvKey: {"kind""Ptr","child":{"kind":"Void"}},
+    cbMax: {"kind":"UInt32"},
+    pcbActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetBeginExternalBackup(
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetBeginExternalBackupInstance(
+    instance: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetAttachInfoA(
+    szzDatabases: {"kind""Ptr","child":{"kind":"SByte"}},
+    cbMax: {"kind":"UInt32"},
+    pcbActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetAttachInfoW(
+    wszzDatabases: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cbMax: {"kind":"UInt32"},
+    pcbActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetAttachInfoInstanceA(
+    instance: {"kind":"UInt32"},
+    szzDatabases: {"kind""Ptr","child":{"kind":"SByte"}},
+    cbMax: {"kind":"UInt32"},
+    pcbActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetAttachInfoInstanceW(
+    instance: {"kind":"UInt32"},
+    szzDatabases: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cbMax: {"kind":"UInt32"},
+    pcbActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetOpenFileA(
+    szFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    phfFile: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pulFileSizeLow: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pulFileSizeHigh: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetOpenFileW(
+    szFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phfFile: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pulFileSizeLow: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pulFileSizeHigh: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetOpenFileInstanceA(
+    instance: {"kind":"UInt32"},
+    szFileName: {"kind""Ptr","child":{"kind":"SByte"}},
+    phfFile: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pulFileSizeLow: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pulFileSizeHigh: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetOpenFileInstanceW(
+    instance: {"kind":"UInt32"},
+    szFileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    phfFile: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pulFileSizeLow: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pulFileSizeHigh: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetReadFile(
+    hfFile: {"kind":"UInt32"},
+    pv: {"kind""Ptr","child":{"kind":"Void"}},
+    cb: {"kind":"UInt32"},
+    pcbActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetReadFileInstance(
+    instance: {"kind":"UInt32"},
+    hfFile: {"kind":"UInt32"},
+    pv: {"kind""Ptr","child":{"kind":"Void"}},
+    cb: {"kind":"UInt32"},
+    pcbActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCloseFile(
+    hfFile: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetCloseFileInstance(
+    instance: {"kind":"UInt32"},
+    hfFile: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetLogInfoA(
+    szzLogs: {"kind""Ptr","child":{"kind":"SByte"}},
+    cbMax: {"kind":"UInt32"},
+    pcbActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetLogInfoW(
+    szzLogs: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cbMax: {"kind":"UInt32"},
+    pcbActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetLogInfoInstanceA(
+    instance: {"kind":"UInt32"},
+    szzLogs: {"kind""Ptr","child":{"kind":"SByte"}},
+    cbMax: {"kind":"UInt32"},
+    pcbActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetLogInfoInstanceW(
+    instance: {"kind":"UInt32"},
+    wszzLogs: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cbMax: {"kind":"UInt32"},
+    pcbActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetLogInfoInstance2A(
+    instance: {"kind":"UInt32"},
+    szzLogs: {"kind""Ptr","child":{"kind":"SByte"}},
+    cbMax: {"kind":"UInt32"},
+    pcbActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pLogInfo: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_LOGINFO_A},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetLogInfoInstance2W(
+    instance: {"kind":"UInt32"},
+    wszzLogs: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cbMax: {"kind":"UInt32"},
+    pcbActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pLogInfo: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_LOGINFO_W},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetTruncateLogInfoInstanceA(
+    instance: {"kind":"UInt32"},
+    szzLogs: {"kind""Ptr","child":{"kind":"SByte"}},
+    cbMax: {"kind":"UInt32"},
+    pcbActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetTruncateLogInfoInstanceW(
+    instance: {"kind":"UInt32"},
+    wszzLogs: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cbMax: {"kind":"UInt32"},
+    pcbActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetTruncateLog(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetTruncateLogInstance(
+    instance: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetEndExternalBackup(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetEndExternalBackupInstance(
+    instance: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetEndExternalBackupInstance2(
+    instance: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetExternalRestoreA(
+    szCheckpointFilePath: {"kind""Ptr","child":{"kind":"SByte"}},
+    szLogPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    rgrstmap: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_RSTMAP_A},
+    crstfilemap: {"kind":"Int32"},
+    szBackupLogPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    genLow: {"kind":"Int32"},
+    genHigh: {"kind":"Int32"},
+    pfn: Windows.Win32.StructuredStorage.JET_PFNSTATUS,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetExternalRestoreW(
+    szCheckpointFilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szLogPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    rgrstmap: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_RSTMAP_W},
+    crstfilemap: {"kind":"Int32"},
+    szBackupLogPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    genLow: {"kind":"Int32"},
+    genHigh: {"kind":"Int32"},
+    pfn: Windows.Win32.StructuredStorage.JET_PFNSTATUS,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetExternalRestore2A(
+    szCheckpointFilePath: {"kind""Ptr","child":{"kind":"SByte"}},
+    szLogPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    rgrstmap: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_RSTMAP_A},
+    crstfilemap: {"kind":"Int32"},
+    szBackupLogPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    pLogInfo: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_LOGINFO_A},
+    szTargetInstanceName: {"kind""Ptr","child":{"kind":"SByte"}},
+    szTargetInstanceLogPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    szTargetInstanceCheckpointPath: {"kind""Ptr","child":{"kind":"SByte"}},
+    pfn: Windows.Win32.StructuredStorage.JET_PFNSTATUS,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetExternalRestore2W(
+    szCheckpointFilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szLogPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    rgrstmap: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_RSTMAP_W},
+    crstfilemap: {"kind":"Int32"},
+    szBackupLogPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pLogInfo: {"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_LOGINFO_W},
+    szTargetInstanceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szTargetInstanceLogPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    szTargetInstanceCheckpointPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pfn: Windows.Win32.StructuredStorage.JET_PFNSTATUS,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetRegisterCallback(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    cbtyp: {"kind":"UInt32"},
+    pCallback: Windows.Win32.StructuredStorage.JET_CALLBACK,
+    pvContext: {"kind""Ptr","child":{"kind":"Void"}},
+    phCallbackId: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetUnregisterCallback(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    cbtyp: {"kind":"UInt32"},
+    hCallbackId: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetInstanceInfoA(
+    pcInstanceInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+    paInstanceInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_INSTANCE_INFO_A}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetInstanceInfoW(
+    pcInstanceInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+    paInstanceInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_INSTANCE_INFO_W}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetFreeBuffer(
+    pbBuf: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetSetLS(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    ls: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetLS(
+    sesid: {"kind":"UInt32"},
+    tableid: {"kind":"UInt32"},
+    pls: {"kind""Ptr","child":{"kind":"UInt32"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetOSSnapshotPrepare(
+    psnapId: {"kind""Ptr","child":{"kind":"UInt32"}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetOSSnapshotPrepareInstance(
+    snapId: {"kind":"UInt32"},
+    instance: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetOSSnapshotFreezeA(
+    snapId: {"kind":"UInt32"},
+    pcInstanceInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+    paInstanceInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_INSTANCE_INFO_A}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetOSSnapshotFreezeW(
+    snapId: {"kind":"UInt32"},
+    pcInstanceInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+    paInstanceInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_INSTANCE_INFO_W}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetOSSnapshotThaw(
+    snapId: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetOSSnapshotAbort(
+    snapId: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetOSSnapshotTruncateLog(
+    snapId: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetOSSnapshotTruncateLogInstance(
+    snapId: {"kind":"UInt32"},
+    instance: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetOSSnapshotGetFreezeInfoA(
+    snapId: {"kind":"UInt32"},
+    pcInstanceInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+    paInstanceInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_INSTANCE_INFO_A}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetOSSnapshotGetFreezeInfoW(
+    snapId: {"kind":"UInt32"},
+    pcInstanceInfo: {"kind""Ptr","child":{"kind":"UInt32"}},
+    paInstanceInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.StructuredStorage.JET_INSTANCE_INFO_W}},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetOSSnapshotEnd(
+    snapId: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetConfigureProcessForCrashDump(
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetErrorInfoW(
+    pvContext: {"kind""Ptr","child":{"kind":"Void"}},
+    pvResult: {"kind""Ptr","child":{"kind":"Void"}},
+    cbMax: {"kind":"UInt32"},
+    InfoLevel: {"kind":"UInt32"},
+    grbit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetSetSessionParameter(
+    sesid: {"kind":"UInt32"},
+    sesparamid: {"kind":"UInt32"},
+    pvParam: {"kind""Ptr","child":{"kind":"Void"}},
+    cbParam: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ESENT" fn JetGetSessionParameter(
+    sesid: {"kind":"UInt32"},
+    sesparamid: {"kind":"UInt32"},
+    pvParam: {"kind""Ptr","child":{"kind":"Void"}},
+    cbParamMax: {"kind":"UInt32"},
+    pcbParamActual: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn StgSerializePropVariant(
+    ppropvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+    ppProp: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Shell.SERIALIZEDPROPERTYVALUE}},
+    pcb: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "PROPSYS" fn StgDeserializePropVariant(
+    pprop: {"kind""Ptr","child":Windows.Win32.Shell.SERIALIZEDPROPERTYVALUE},
+    cbMax: {"kind":"UInt32"},
+    ppropvar: {"kind""Ptr","child":Windows.Win32.StructuredStorage.PROPVARIANT},
+],
+
+"unicode_aliases": [
+     "JET_RSTMAP_"
+     "tagCONVERT_"
+     "JET_COLUMNBASE_"
+     "tag_JET_COLUMNCREATE_"
+     "tag_JET_USERDEFINEDDEFAULT_"
+     "JET_CONDITIONALCOLUMN_"
+     "JET_INDEXCREATE_"
+     "JET_INDEXCREATE2_"
+     "JET_INDEXCREATE3_"
+     "JET_TABLECREATE_"
+     "JET_TABLECREATE2_"
+     "JET_TABLECREATE3_"
+     "JET_TABLECREATE4_"
+     "JET_RSTINFO_"
+     "JET_SETSYSPARAM_"
+     "JET_LOGINFO_"
+     "JET_INSTANCE_INFO_"
+     "JetInit3"
+     "JetCreateInstance"
+     "JetCreateInstance2"
+     "JetSetSystemParameter"
+     "JetGetSystemParameter"
+     "JetEnableMultiInstance"
+     "JetBeginSession"
+     "JetCreateDatabase"
+     "JetCreateDatabase2"
+     "JetAttachDatabase"
+     "JetAttachDatabase2"
+     "JetDetachDatabase"
+     "JetDetachDatabase2"
+     "JetGetObjectInfo"
+     "JetGetTableInfo"
+     "JetCreateTable"
+     "JetCreateTableColumnIndex"
+     "JetCreateTableColumnIndex2"
+     "JetCreateTableColumnIndex3"
+     "JetCreateTableColumnIndex4"
+     "JetDeleteTable"
+     "JetRenameTable"
+     "JetGetTableColumnInfo"
+     "JetGetColumnInfo"
+     "JetAddColumn"
+     "JetDeleteColumn"
+     "JetDeleteColumn2"
+     "JetRenameColumn"
+     "JetSetColumnDefaultValue"
+     "JetGetTableIndexInfo"
+     "JetGetIndexInfo"
+     "JetCreateIndex"
+     "JetCreateIndex2"
+     "JetCreateIndex3"
+     "JetCreateIndex4"
+     "JetDeleteIndex"
+     "JetGetDatabaseInfo"
+     "JetGetDatabaseFileInfo"
+     "JetOpenDatabase"
+     "JetOpenTable"
+     "JetGetCurrentIndex"
+     "JetSetCurrentIndex"
+     "JetSetCurrentIndex2"
+     "JetSetCurrentIndex3"
+     "JetSetCurrentIndex4"
+     "JetCompact"
+     "JetDefragment"
+     "JetDefragment2"
+     "JetDefragment3"
+     "JetSetDatabaseSize"
+     "JetBackup"
+     "JetBackupInstance"
+     "JetRestore"
+     "JetRestore2"
+     "JetRestoreInstance"
+     "JetGetAttachInfo"
+     "JetGetAttachInfoInstance"
+     "JetOpenFile"
+     "JetOpenFileInstance"
+     "JetGetLogInfo"
+     "JetGetLogInfoInstance"
+     "JetGetLogInfoInstance2"
+     "JetGetTruncateLogInfoInstance"
+     "JetExternalRestore"
+     "JetExternalRestore2"
+     "JetGetInstanceInfo"
+     "JetOSSnapshotFreeze"
+     "JetOSSnapshotGetFreezeInfo"
+]}

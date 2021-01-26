@@ -1,0 +1,38 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: OPERATION_START_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const OPERATION_START_PARAMETERS = extern struct {
+    Version: {"kind":"UInt32"},
+    OperationId: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: OPERATION_END_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const OPERATION_END_PARAMETERS = extern struct {
+    Version: {"kind":"UInt32"},
+    OperationId: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn OperationStart(
+    OperationStartParams: {"kind""Ptr","child":Windows.Win32.OperationRecorder.OPERATION_START_PARAMETERS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ADVAPI32" fn OperationEnd(
+    OperationEndParams: {"kind""Ptr","child":Windows.Win32.OperationRecorder.OPERATION_END_PARAMETERS},
+],
+
+"unicode_aliases": [
+]}

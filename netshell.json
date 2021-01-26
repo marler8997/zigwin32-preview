@@ -1,0 +1,343 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: NS_CMD_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NS_CMD_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: NS_REQS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NS_REQS = *opaque{
+};
+// --------------------------------------------------------
+// Type: NS_EVENTS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NS_EVENTS = *opaque{
+};
+// --------------------------------------------------------
+// Type: NS_MODE_CHANGE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NS_MODE_CHANGE = *opaque{
+};
+// --------------------------------------------------------
+// Type: TOKEN_VALUE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TOKEN_VALUE = extern struct {
+    pwszToken: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwValue: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: GET_RESOURCE_STRING_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const GET_RESOURCE_STRING_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PGET_RESOURCE_STRING_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PGET_RESOURCE_STRING_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: NS_CONTEXT_COMMIT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NS_CONTEXT_COMMIT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PNS_CONTEXT_COMMIT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PNS_CONTEXT_COMMIT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: NS_CONTEXT_CONNECT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NS_CONTEXT_CONNECT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PNS_CONTEXT_CONNECT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PNS_CONTEXT_CONNECT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: NS_CONTEXT_DUMP_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NS_CONTEXT_DUMP_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PNS_CONTEXT_DUMP_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PNS_CONTEXT_DUMP_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: NS_DLL_STOP_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NS_DLL_STOP_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PNS_DLL_STOP_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PNS_DLL_STOP_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: NS_HELPER_START_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NS_HELPER_START_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PNS_HELPER_START_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PNS_HELPER_START_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: NS_HELPER_STOP_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NS_HELPER_STOP_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PNS_HELPER_STOP_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PNS_HELPER_STOP_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: FN_HANDLE_CMD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FN_HANDLE_CMD = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFN_HANDLE_CMD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFN_HANDLE_CMD = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: NS_OSVERSIONCHECK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NS_OSVERSIONCHECK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PNS_OSVERSIONCHECK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PNS_OSVERSIONCHECK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: NS_HELPER_ATTRIBUTES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NS_HELPER_ATTRIBUTES = extern struct {
+    Anonymous: Windows.Win32.NetShell.NS_HELPER_ATTRIBUTES+_Anonymous_e__Union,
+    guidHelper: Guid,
+    pfnStart: Windows.Win32.NetShell.PNS_HELPER_START_FN,
+    pfnStop: Windows.Win32.NetShell.PNS_HELPER_STOP_FN,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            dwVersion: {"kind":"UInt32"},
+            dwReserved: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: CMD_ENTRY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CMD_ENTRY = extern struct {
+    pwszCmdToken: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pfnCmdHandler: Windows.Win32.NetShell.PFN_HANDLE_CMD,
+    dwShortCmdHelpToken: {"kind":"UInt32"},
+    dwCmdHlpToken: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pOsVersionCheck: Windows.Win32.NetShell.PNS_OSVERSIONCHECK,
+};
+// --------------------------------------------------------
+// Type: CMD_GROUP_ENTRY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CMD_GROUP_ENTRY = extern struct {
+    pwszCmdGroupToken: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwShortCmdHelpToken: {"kind":"UInt32"},
+    ulCmdGroupSize: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pCmdGroup: {"kind""Ptr","child":Windows.Win32.NetShell.CMD_ENTRY},
+    pOsVersionCheck: Windows.Win32.NetShell.PNS_OSVERSIONCHECK,
+};
+// --------------------------------------------------------
+// Type: NS_CONTEXT_ATTRIBUTES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NS_CONTEXT_ATTRIBUTES = extern struct {
+    Anonymous: Windows.Win32.NetShell.NS_CONTEXT_ATTRIBUTES+_Anonymous_e__Union,
+    pwszContext: {"kind""Ptr","child":{"kind":"UInt16"}},
+    guidHelper: Guid,
+    dwFlags: {"kind":"UInt32"},
+    ulPriority: {"kind":"UInt32"},
+    ulNumTopCmds: {"kind":"UInt32"},
+    pTopCmds: {"kind""Ptr","child":Windows.Win32.NetShell.CMD_ENTRY},
+    ulNumGroups: {"kind":"UInt32"},
+    pCmdGroups: {"kind""Ptr","child":Windows.Win32.NetShell.CMD_GROUP_ENTRY},
+    pfnCommitFn: Windows.Win32.NetShell.PNS_CONTEXT_COMMIT_FN,
+    pfnDumpFn: Windows.Win32.NetShell.PNS_CONTEXT_DUMP_FN,
+    pfnConnectFn: Windows.Win32.NetShell.PNS_CONTEXT_CONNECT_FN,
+    pReserved: {"kind""Ptr","child":{"kind":"Void"}},
+    pfnOsVersionCheck: Windows.Win32.NetShell.PNS_OSVERSIONCHECK,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            dwVersion: {"kind":"UInt32"},
+            dwReserved: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: TAG_TYPE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TAG_TYPE = extern struct {
+    pwszTag: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwRequired: {"kind":"UInt32"},
+    bPresent: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: NS_DLL_INIT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NS_DLL_INIT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PNS_DLL_INIT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PNS_DLL_INIT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETSH" fn MatchEnumTag(
+    hModule: Windows.Win32.SystemServices.HANDLE,
+    pwcArg: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwNumArg: {"kind":"UInt32"},
+    pEnumTable: {"kind""Ptr","child":Windows.Win32.NetShell.TOKEN_VALUE},
+    pdwValue: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETSH" fn MatchToken(
+    pwszUserToken: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszCmdToken: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETSH" fn PreprocessCommand(
+    hModule: Windows.Win32.SystemServices.HANDLE,
+    ppwcArguments: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    dwCurrentIndex: {"kind":"UInt32"},
+    dwArgCount: {"kind":"UInt32"},
+    pttTags: {"kind""Ptr","child":Windows.Win32.NetShell.TAG_TYPE},
+    dwTagCount: {"kind":"UInt32"},
+    dwMinArgs: {"kind":"UInt32"},
+    dwMaxArgs: {"kind":"UInt32"},
+    pdwTagType: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETSH" fn PrintError(
+    hModule: Windows.Win32.SystemServices.HANDLE,
+    dwErrId: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETSH" fn PrintMessageFromModule(
+    hModule: Windows.Win32.SystemServices.HANDLE,
+    dwMsgId: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETSH" fn PrintMessage(
+    pwszFormat: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETSH" fn RegisterContext(
+    pChildContext: {"kind""Ptr","child":Windows.Win32.NetShell.NS_CONTEXT_ATTRIBUTES},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETSH" fn RegisterHelper(
+    pguidParentContext: {"kind""Ptr","child":Guid},
+    pfnRegisterSubContext: {"kind""Ptr","child":Windows.Win32.NetShell.NS_HELPER_ATTRIBUTES},
+],
+
+"unicode_aliases": [
+]}

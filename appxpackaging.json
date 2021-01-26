@@ -1,0 +1,1289 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: AppxFactory
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const AppxFactory = opaque {
+};
+// --------------------------------------------------------
+// Type: AppxBundleFactory
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const AppxBundleFactory = opaque {
+};
+// --------------------------------------------------------
+// Type: AppxPackagingDiagnosticEventSinkManager
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const AppxPackagingDiagnosticEventSinkManager = opaque {
+};
+// --------------------------------------------------------
+// Type: AppxEncryptionFactory
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const AppxEncryptionFactory = opaque {
+};
+// --------------------------------------------------------
+// Type: AppxPackageEditor
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const AppxPackageEditor = opaque {
+};
+// --------------------------------------------------------
+// Type: APPX_PACKAGE_SETTINGS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const APPX_PACKAGE_SETTINGS = extern struct {
+    forceZip32: Windows.Win32.SystemServices.BOOL,
+    hashMethod: Windows.Win32.Com.IUri,
+};
+// --------------------------------------------------------
+// Type: APPX_COMPRESSION_OPTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const APPX_COMPRESSION_OPTION = *opaque{
+};
+// --------------------------------------------------------
+// Type: APPX_PACKAGE_WRITER_PAYLOAD_STREAM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const APPX_PACKAGE_WRITER_PAYLOAD_STREAM = extern struct {
+    inputStream: Windows.Win32.StructuredStorage.IStream,
+    fileName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    contentType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    compressionOption: Windows.Win32.AppxPackaging.APPX_COMPRESSION_OPTION,
+};
+// --------------------------------------------------------
+// Type: APPX_FOOTPRINT_FILE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const APPX_FOOTPRINT_FILE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: APPX_BUNDLE_FOOTPRINT_FILE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const APPX_BUNDLE_FOOTPRINT_FILE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: APPX_CAPABILITIES
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const APPX_CAPABILITIES = *opaque{
+};
+// --------------------------------------------------------
+// Type: APPX_PACKAGE_ARCHITECTURE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const APPX_PACKAGE_ARCHITECTURE = *opaque{
+};
+// --------------------------------------------------------
+// Type: APPX_PACKAGE_ARCHITECTURE2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const APPX_PACKAGE_ARCHITECTURE2 = *opaque{
+};
+// --------------------------------------------------------
+// Type: APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DX_FEATURE_LEVEL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DX_FEATURE_LEVEL = *opaque{
+};
+// --------------------------------------------------------
+// Type: APPX_CAPABILITY_CLASS_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const APPX_CAPABILITY_CLASS_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: APPX_PACKAGING_CONTEXT_CHANGE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const APPX_PACKAGING_CONTEXT_CHANGE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: IAppxFactory
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxFactory = *opaque{
+    // TODO: Method 'CreatePackageWriter'
+    // TODO: Method 'CreatePackageReader'
+    // TODO: Method 'CreateManifestReader'
+    // TODO: Method 'CreateBlockMapReader'
+    // TODO: Method 'CreateValidatedBlockMapReader'
+};
+// --------------------------------------------------------
+// Type: IAppxFactory2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxFactory2 = *opaque{
+    // TODO: Method 'CreateContentGroupMapReader'
+    // TODO: Method 'CreateSourceContentGroupMapReader'
+    // TODO: Method 'CreateContentGroupMapWriter'
+};
+// --------------------------------------------------------
+// Type: IAppxPackageReader
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxPackageReader = *opaque{
+    // TODO: Method 'GetBlockMap'
+    // TODO: Method 'GetFootprintFile'
+    // TODO: Method 'GetPayloadFile'
+    // TODO: Method 'GetPayloadFiles'
+    // TODO: Method 'GetManifest'
+};
+// --------------------------------------------------------
+// Type: IAppxPackageWriter
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxPackageWriter = *opaque{
+    // TODO: Method 'AddPayloadFile'
+    // TODO: Method 'Close'
+};
+// --------------------------------------------------------
+// Type: IAppxPackageWriter2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxPackageWriter2 = *opaque{
+    // TODO: Method 'Close'
+};
+// --------------------------------------------------------
+// Type: IAppxPackageWriter3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxPackageWriter3 = *opaque{
+    // TODO: Method 'AddPayloadFiles'
+};
+// --------------------------------------------------------
+// Type: IAppxFile
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxFile = *opaque{
+    // TODO: Method 'GetCompressionOption'
+    // TODO: Method 'GetContentType'
+    // TODO: Method 'GetName'
+    // TODO: Method 'GetSize'
+    // TODO: Method 'GetStream'
+};
+// --------------------------------------------------------
+// Type: IAppxFilesEnumerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxFilesEnumerator = *opaque{
+    // TODO: Method 'GetCurrent'
+    // TODO: Method 'GetHasCurrent'
+    // TODO: Method 'MoveNext'
+};
+// --------------------------------------------------------
+// Type: IAppxBlockMapReader
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxBlockMapReader = *opaque{
+    // TODO: Method 'GetFile'
+    // TODO: Method 'GetFiles'
+    // TODO: Method 'GetHashMethod'
+    // TODO: Method 'GetStream'
+};
+// --------------------------------------------------------
+// Type: IAppxBlockMapFile
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxBlockMapFile = *opaque{
+    // TODO: Method 'GetBlocks'
+    // TODO: Method 'GetLocalFileHeaderSize'
+    // TODO: Method 'GetName'
+    // TODO: Method 'GetUncompressedSize'
+    // TODO: Method 'ValidateFileHash'
+};
+// --------------------------------------------------------
+// Type: IAppxBlockMapFilesEnumerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxBlockMapFilesEnumerator = *opaque{
+    // TODO: Method 'GetCurrent'
+    // TODO: Method 'GetHasCurrent'
+    // TODO: Method 'MoveNext'
+};
+// --------------------------------------------------------
+// Type: IAppxBlockMapBlock
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxBlockMapBlock = *opaque{
+    // TODO: Method 'GetHash'
+    // TODO: Method 'GetCompressedSize'
+};
+// --------------------------------------------------------
+// Type: IAppxBlockMapBlocksEnumerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxBlockMapBlocksEnumerator = *opaque{
+    // TODO: Method 'GetCurrent'
+    // TODO: Method 'GetHasCurrent'
+    // TODO: Method 'MoveNext'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestReader
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestReader = *opaque{
+    // TODO: Method 'GetPackageId'
+    // TODO: Method 'GetProperties'
+    // TODO: Method 'GetPackageDependencies'
+    // TODO: Method 'GetCapabilities'
+    // TODO: Method 'GetResources'
+    // TODO: Method 'GetDeviceCapabilities'
+    // TODO: Method 'GetPrerequisite'
+    // TODO: Method 'GetApplications'
+    // TODO: Method 'GetStream'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestReader2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestReader2 = *opaque{
+    // TODO: Method 'GetQualifiedResources'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestReader3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestReader3 = *opaque{
+    // TODO: Method 'GetCapabilitiesByCapabilityClass'
+    // TODO: Method 'GetTargetDeviceFamilies'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestReader4
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestReader4 = *opaque{
+    // TODO: Method 'GetOptionalPackageInfo'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestReader5
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestReader5 = *opaque{
+    // TODO: Method 'GetMainPackageDependencies'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestReader6
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestReader6 = *opaque{
+    // TODO: Method 'GetIsNonQualifiedResourcePackage'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestReader7
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestReader7 = *opaque{
+    // TODO: Method 'GetDriverDependencies'
+    // TODO: Method 'GetOSPackageDependencies'
+    // TODO: Method 'GetHostRuntimeDependencies'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestDriverDependenciesEnumerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestDriverDependenciesEnumerator = *opaque{
+    // TODO: Method 'GetCurrent'
+    // TODO: Method 'GetHasCurrent'
+    // TODO: Method 'MoveNext'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestDriverDependency
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestDriverDependency = *opaque{
+    // TODO: Method 'GetDriverConstraints'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestDriverConstraintsEnumerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestDriverConstraintsEnumerator = *opaque{
+    // TODO: Method 'GetCurrent'
+    // TODO: Method 'GetHasCurrent'
+    // TODO: Method 'MoveNext'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestDriverConstraint
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestDriverConstraint = *opaque{
+    // TODO: Method 'GetName'
+    // TODO: Method 'GetMinVersion'
+    // TODO: Method 'GetMinDate'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestOSPackageDependenciesEnumerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestOSPackageDependenciesEnumerator = *opaque{
+    // TODO: Method 'GetCurrent'
+    // TODO: Method 'GetHasCurrent'
+    // TODO: Method 'MoveNext'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestOSPackageDependency
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestOSPackageDependency = *opaque{
+    // TODO: Method 'GetName'
+    // TODO: Method 'GetVersion'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestHostRuntimeDependenciesEnumerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestHostRuntimeDependenciesEnumerator = *opaque{
+    // TODO: Method 'GetCurrent'
+    // TODO: Method 'GetHasCurrent'
+    // TODO: Method 'MoveNext'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestHostRuntimeDependency
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestHostRuntimeDependency = *opaque{
+    // TODO: Method 'GetName'
+    // TODO: Method 'GetPublisher'
+    // TODO: Method 'GetMinVersion'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestOptionalPackageInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestOptionalPackageInfo = *opaque{
+    // TODO: Method 'GetIsOptionalPackage'
+    // TODO: Method 'GetMainPackageName'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestMainPackageDependenciesEnumerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestMainPackageDependenciesEnumerator = *opaque{
+    // TODO: Method 'GetCurrent'
+    // TODO: Method 'GetHasCurrent'
+    // TODO: Method 'MoveNext'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestMainPackageDependency
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestMainPackageDependency = *opaque{
+    // TODO: Method 'GetName'
+    // TODO: Method 'GetPublisher'
+    // TODO: Method 'GetPackageFamilyName'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestPackageId
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestPackageId = *opaque{
+    // TODO: Method 'GetName'
+    // TODO: Method 'GetArchitecture'
+    // TODO: Method 'GetPublisher'
+    // TODO: Method 'GetVersion'
+    // TODO: Method 'GetResourceId'
+    // TODO: Method 'ComparePublisher'
+    // TODO: Method 'GetPackageFullName'
+    // TODO: Method 'GetPackageFamilyName'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestPackageId2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestPackageId2 = *opaque{
+    // TODO: Method 'GetArchitecture2'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestProperties
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestProperties = *opaque{
+    // TODO: Method 'GetBoolValue'
+    // TODO: Method 'GetStringValue'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestTargetDeviceFamiliesEnumerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestTargetDeviceFamiliesEnumerator = *opaque{
+    // TODO: Method 'GetCurrent'
+    // TODO: Method 'GetHasCurrent'
+    // TODO: Method 'MoveNext'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestTargetDeviceFamily
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestTargetDeviceFamily = *opaque{
+    // TODO: Method 'GetName'
+    // TODO: Method 'GetMinVersion'
+    // TODO: Method 'GetMaxVersionTested'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestPackageDependenciesEnumerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestPackageDependenciesEnumerator = *opaque{
+    // TODO: Method 'GetCurrent'
+    // TODO: Method 'GetHasCurrent'
+    // TODO: Method 'MoveNext'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestPackageDependency
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestPackageDependency = *opaque{
+    // TODO: Method 'GetName'
+    // TODO: Method 'GetPublisher'
+    // TODO: Method 'GetMinVersion'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestPackageDependency2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestPackageDependency2 = *opaque{
+    // TODO: Method 'GetMaxMajorVersionTested'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestPackageDependency3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestPackageDependency3 = *opaque{
+    // TODO: Method 'GetIsOptional'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestResourcesEnumerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestResourcesEnumerator = *opaque{
+    // TODO: Method 'GetCurrent'
+    // TODO: Method 'GetHasCurrent'
+    // TODO: Method 'MoveNext'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestDeviceCapabilitiesEnumerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestDeviceCapabilitiesEnumerator = *opaque{
+    // TODO: Method 'GetCurrent'
+    // TODO: Method 'GetHasCurrent'
+    // TODO: Method 'MoveNext'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestCapabilitiesEnumerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestCapabilitiesEnumerator = *opaque{
+    // TODO: Method 'GetCurrent'
+    // TODO: Method 'GetHasCurrent'
+    // TODO: Method 'MoveNext'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestApplicationsEnumerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestApplicationsEnumerator = *opaque{
+    // TODO: Method 'GetCurrent'
+    // TODO: Method 'GetHasCurrent'
+    // TODO: Method 'MoveNext'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestApplication
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestApplication = *opaque{
+    // TODO: Method 'GetStringValue'
+    // TODO: Method 'GetAppUserModelId'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestQualifiedResourcesEnumerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestQualifiedResourcesEnumerator = *opaque{
+    // TODO: Method 'GetCurrent'
+    // TODO: Method 'GetHasCurrent'
+    // TODO: Method 'MoveNext'
+};
+// --------------------------------------------------------
+// Type: IAppxManifestQualifiedResource
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxManifestQualifiedResource = *opaque{
+    // TODO: Method 'GetLanguage'
+    // TODO: Method 'GetScale'
+    // TODO: Method 'GetDXFeatureLevel'
+};
+// --------------------------------------------------------
+// Type: IAppxBundleFactory
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxBundleFactory = *opaque{
+    // TODO: Method 'CreateBundleWriter'
+    // TODO: Method 'CreateBundleReader'
+    // TODO: Method 'CreateBundleManifestReader'
+};
+// --------------------------------------------------------
+// Type: IAppxBundleWriter
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxBundleWriter = *opaque{
+    // TODO: Method 'AddPayloadPackage'
+    // TODO: Method 'Close'
+};
+// --------------------------------------------------------
+// Type: IAppxBundleWriter2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxBundleWriter2 = *opaque{
+    // TODO: Method 'AddExternalPackageReference'
+};
+// --------------------------------------------------------
+// Type: IAppxBundleWriter3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxBundleWriter3 = *opaque{
+    // TODO: Method 'AddPackageReference'
+    // TODO: Method 'Close'
+};
+// --------------------------------------------------------
+// Type: IAppxBundleWriter4
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxBundleWriter4 = *opaque{
+    // TODO: Method 'AddPayloadPackage'
+    // TODO: Method 'AddPackageReference'
+    // TODO: Method 'AddExternalPackageReference'
+};
+// --------------------------------------------------------
+// Type: IAppxBundleReader
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxBundleReader = *opaque{
+    // TODO: Method 'GetFootprintFile'
+    // TODO: Method 'GetBlockMap'
+    // TODO: Method 'GetManifest'
+    // TODO: Method 'GetPayloadPackages'
+    // TODO: Method 'GetPayloadPackage'
+};
+// --------------------------------------------------------
+// Type: IAppxBundleManifestReader
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxBundleManifestReader = *opaque{
+    // TODO: Method 'GetPackageId'
+    // TODO: Method 'GetPackageInfoItems'
+    // TODO: Method 'GetStream'
+};
+// --------------------------------------------------------
+// Type: IAppxBundleManifestReader2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxBundleManifestReader2 = *opaque{
+    // TODO: Method 'GetOptionalBundles'
+};
+// --------------------------------------------------------
+// Type: IAppxBundleManifestPackageInfoEnumerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxBundleManifestPackageInfoEnumerator = *opaque{
+    // TODO: Method 'GetCurrent'
+    // TODO: Method 'GetHasCurrent'
+    // TODO: Method 'MoveNext'
+};
+// --------------------------------------------------------
+// Type: IAppxBundleManifestPackageInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxBundleManifestPackageInfo = *opaque{
+    // TODO: Method 'GetPackageType'
+    // TODO: Method 'GetPackageId'
+    // TODO: Method 'GetFileName'
+    // TODO: Method 'GetOffset'
+    // TODO: Method 'GetSize'
+    // TODO: Method 'GetResources'
+};
+// --------------------------------------------------------
+// Type: IAppxBundleManifestPackageInfo2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxBundleManifestPackageInfo2 = *opaque{
+    // TODO: Method 'GetIsPackageReference'
+    // TODO: Method 'GetIsNonQualifiedResourcePackage'
+    // TODO: Method 'GetIsDefaultApplicablePackage'
+};
+// --------------------------------------------------------
+// Type: IAppxBundleManifestPackageInfo3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxBundleManifestPackageInfo3 = *opaque{
+    // TODO: Method 'GetTargetDeviceFamilies'
+};
+// --------------------------------------------------------
+// Type: IAppxBundleManifestPackageInfo4
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxBundleManifestPackageInfo4 = *opaque{
+    // TODO: Method 'GetIsStub'
+};
+// --------------------------------------------------------
+// Type: IAppxBundleManifestOptionalBundleInfoEnumerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxBundleManifestOptionalBundleInfoEnumerator = *opaque{
+    // TODO: Method 'GetCurrent'
+    // TODO: Method 'GetHasCurrent'
+    // TODO: Method 'MoveNext'
+};
+// --------------------------------------------------------
+// Type: IAppxBundleManifestOptionalBundleInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxBundleManifestOptionalBundleInfo = *opaque{
+    // TODO: Method 'GetPackageId'
+    // TODO: Method 'GetFileName'
+    // TODO: Method 'GetPackageInfoItems'
+};
+// --------------------------------------------------------
+// Type: IAppxContentGroupFilesEnumerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxContentGroupFilesEnumerator = *opaque{
+    // TODO: Method 'GetCurrent'
+    // TODO: Method 'GetHasCurrent'
+    // TODO: Method 'MoveNext'
+};
+// --------------------------------------------------------
+// Type: IAppxContentGroup
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxContentGroup = *opaque{
+    // TODO: Method 'GetName'
+    // TODO: Method 'GetFiles'
+};
+// --------------------------------------------------------
+// Type: IAppxContentGroupsEnumerator
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxContentGroupsEnumerator = *opaque{
+    // TODO: Method 'GetCurrent'
+    // TODO: Method 'GetHasCurrent'
+    // TODO: Method 'MoveNext'
+};
+// --------------------------------------------------------
+// Type: IAppxContentGroupMapReader
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxContentGroupMapReader = *opaque{
+    // TODO: Method 'GetRequiredGroup'
+    // TODO: Method 'GetAutomaticGroups'
+};
+// --------------------------------------------------------
+// Type: IAppxSourceContentGroupMapReader
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxSourceContentGroupMapReader = *opaque{
+    // TODO: Method 'GetRequiredGroup'
+    // TODO: Method 'GetAutomaticGroups'
+};
+// --------------------------------------------------------
+// Type: IAppxContentGroupMapWriter
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxContentGroupMapWriter = *opaque{
+    // TODO: Method 'AddAutomaticGroup'
+    // TODO: Method 'AddAutomaticFile'
+    // TODO: Method 'Close'
+};
+// --------------------------------------------------------
+// Type: IAppxPackagingDiagnosticEventSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxPackagingDiagnosticEventSink = *opaque{
+    // TODO: Method 'ReportContextChange'
+    // TODO: Method 'ReportError'
+};
+// --------------------------------------------------------
+// Type: IAppxPackagingDiagnosticEventSinkManager
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxPackagingDiagnosticEventSinkManager = *opaque{
+    // TODO: Method 'SetSinkForProcess'
+};
+// --------------------------------------------------------
+// Type: APPX_ENCRYPTED_PACKAGE_SETTINGS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const APPX_ENCRYPTED_PACKAGE_SETTINGS = extern struct {
+    keyLength: {"kind":"UInt32"},
+    encryptionAlgorithm: {"kind""Ptr","child":{"kind":"UInt16"}},
+    useDiffusion: Windows.Win32.SystemServices.BOOL,
+    blockMapHashAlgorithm: Windows.Win32.Com.IUri,
+};
+// --------------------------------------------------------
+// Type: APPX_ENCRYPTED_PACKAGE_OPTIONS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const APPX_ENCRYPTED_PACKAGE_OPTIONS = *opaque{
+};
+// --------------------------------------------------------
+// Type: APPX_ENCRYPTED_PACKAGE_SETTINGS2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const APPX_ENCRYPTED_PACKAGE_SETTINGS2 = extern struct {
+    keyLength: {"kind":"UInt32"},
+    encryptionAlgorithm: {"kind""Ptr","child":{"kind":"UInt16"}},
+    blockMapHashAlgorithm: Windows.Win32.Com.IUri,
+    options: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: APPX_KEY_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const APPX_KEY_INFO = extern struct {
+    keyLength: {"kind":"UInt32"},
+    keyIdLength: {"kind":"UInt32"},
+    key: {"kind""Ptr","child":{"kind":"Byte"}},
+    keyId: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: APPX_ENCRYPTED_EXEMPTIONS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const APPX_ENCRYPTED_EXEMPTIONS = extern struct {
+    count: {"kind":"UInt32"},
+    plainTextFiles: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+};
+// --------------------------------------------------------
+// Type: IAppxEncryptionFactory
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxEncryptionFactory = *opaque{
+    // TODO: Method 'EncryptPackage'
+    // TODO: Method 'DecryptPackage'
+    // TODO: Method 'CreateEncryptedPackageWriter'
+    // TODO: Method 'CreateEncryptedPackageReader'
+    // TODO: Method 'EncryptBundle'
+    // TODO: Method 'DecryptBundle'
+    // TODO: Method 'CreateEncryptedBundleWriter'
+    // TODO: Method 'CreateEncryptedBundleReader'
+};
+// --------------------------------------------------------
+// Type: IAppxEncryptionFactory2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxEncryptionFactory2 = *opaque{
+    // TODO: Method 'CreateEncryptedPackageWriter'
+};
+// --------------------------------------------------------
+// Type: IAppxEncryptionFactory3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxEncryptionFactory3 = *opaque{
+    // TODO: Method 'EncryptPackage'
+    // TODO: Method 'CreateEncryptedPackageWriter'
+    // TODO: Method 'EncryptBundle'
+    // TODO: Method 'CreateEncryptedBundleWriter'
+};
+// --------------------------------------------------------
+// Type: IAppxEncryptionFactory4
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxEncryptionFactory4 = *opaque{
+    // TODO: Method 'EncryptPackage'
+};
+// --------------------------------------------------------
+// Type: IAppxEncryptedPackageWriter
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxEncryptedPackageWriter = *opaque{
+    // TODO: Method 'AddPayloadFileEncrypted'
+    // TODO: Method 'Close'
+};
+// --------------------------------------------------------
+// Type: IAppxEncryptedPackageWriter2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxEncryptedPackageWriter2 = *opaque{
+    // TODO: Method 'AddPayloadFilesEncrypted'
+};
+// --------------------------------------------------------
+// Type: IAppxEncryptedBundleWriter
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxEncryptedBundleWriter = *opaque{
+    // TODO: Method 'AddPayloadPackageEncrypted'
+    // TODO: Method 'Close'
+};
+// --------------------------------------------------------
+// Type: IAppxEncryptedBundleWriter2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxEncryptedBundleWriter2 = *opaque{
+    // TODO: Method 'AddExternalPackageReference'
+};
+// --------------------------------------------------------
+// Type: APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION = *opaque{
+};
+// --------------------------------------------------------
+// Type: APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_MANIFEST_OPTIONS = *opaque{
+};
+// --------------------------------------------------------
+// Type: IAppxEncryptedBundleWriter3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxEncryptedBundleWriter3 = *opaque{
+    // TODO: Method 'AddPayloadPackageEncrypted'
+    // TODO: Method 'AddExternalPackageReference'
+};
+// --------------------------------------------------------
+// Type: IAppxPackageEditor
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAppxPackageEditor = *opaque{
+    // TODO: Method 'SetWorkingDirectory'
+    // TODO: Method 'CreateDeltaPackage'
+    // TODO: Method 'CreateDeltaPackageUsingBaselineBlockMap'
+    // TODO: Method 'UpdatePackage'
+    // TODO: Method 'UpdateEncryptedPackage'
+    // TODO: Method 'UpdatePackageManifest'
+};
+// --------------------------------------------------------
+// Type: PACKAGE_VERSION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PACKAGE_VERSION = extern struct {
+    Anonymous: Windows.Win32.AppxPackaging.PACKAGE_VERSION+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Anonymous_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Anonymous_e__Struct = extern struct {
+            Revision: {"kind":"UInt16"},
+            Build: {"kind":"UInt16"},
+            Minor: {"kind":"UInt16"},
+            Major: {"kind":"UInt16"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: PACKAGE_ID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PACKAGE_ID = extern struct {
+    reserved: {"kind":"UInt32"},
+    processorArchitecture: {"kind":"UInt32"},
+    version: Windows.Win32.AppxPackaging.PACKAGE_VERSION,
+    name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    publisher: {"kind""Ptr","child":{"kind":"UInt16"}},
+    resourceId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    publisherId: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: PackagePathType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PackagePathType = *opaque{
+};
+// --------------------------------------------------------
+// Type: PackageOrigin
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PackageOrigin = *opaque{
+};
+// --------------------------------------------------------
+// Type: _PACKAGE_INFO_REFERENCE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _PACKAGE_INFO_REFERENCE = extern struct {
+    reserved: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: PACKAGE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PACKAGE_INFO = extern struct {
+    reserved: {"kind":"UInt32"},
+    flags: {"kind":"UInt32"},
+    path: {"kind""Ptr","child":{"kind":"UInt16"}},
+    packageFullName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    packageFamilyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    packageId: Windows.Win32.AppxPackaging.PACKAGE_ID,
+};
+// --------------------------------------------------------
+// Type: AppPolicyLifecycleManagement
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const AppPolicyLifecycleManagement = *opaque{
+};
+// --------------------------------------------------------
+// Type: AppPolicyWindowingModel
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const AppPolicyWindowingModel = *opaque{
+};
+// --------------------------------------------------------
+// Type: AppPolicyMediaFoundationCodecLoading
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const AppPolicyMediaFoundationCodecLoading = *opaque{
+};
+// --------------------------------------------------------
+// Type: AppPolicyClrCompat
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const AppPolicyClrCompat = *opaque{
+};
+// --------------------------------------------------------
+// Type: AppPolicyThreadInitializationType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const AppPolicyThreadInitializationType = *opaque{
+};
+// --------------------------------------------------------
+// Type: AppPolicyShowDeveloperDiagnostic
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const AppPolicyShowDeveloperDiagnostic = *opaque{
+};
+// --------------------------------------------------------
+// Type: AppPolicyProcessTerminationMethod
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const AppPolicyProcessTerminationMethod = *opaque{
+};
+// --------------------------------------------------------
+// Type: AppPolicyCreateFileAccess
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const AppPolicyCreateFileAccess = *opaque{
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn GetCurrentPackageId(
+    bufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    buffer: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn GetCurrentPackageFullName(
+    packageFullNameLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    packageFullName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn GetCurrentPackageFamilyName(
+    packageFamilyNameLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    packageFamilyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn GetCurrentPackagePath(
+    pathLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    path: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn GetPackageId(
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+    bufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    buffer: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn GetPackageFullName(
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+    packageFullNameLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    packageFullName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-appmodel-runtime-l1-1-1" fn GetPackageFullNameFromToken(
+    token: Windows.Win32.SystemServices.HANDLE,
+    packageFullNameLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    packageFullName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn GetPackageFamilyName(
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+    packageFamilyNameLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    packageFamilyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-appmodel-runtime-l1-1-1" fn GetPackageFamilyNameFromToken(
+    token: Windows.Win32.SystemServices.HANDLE,
+    packageFamilyNameLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    packageFamilyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn GetPackagePath(
+    packageId: {"kind""Ptr","child":Windows.Win32.AppxPackaging.PACKAGE_ID},
+    reserved: {"kind":"UInt32"},
+    pathLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    path: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn GetPackagePathByFullName(
+    packageFullName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pathLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    path: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn GetStagedPackagePathByFullName(
+    packageFullName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pathLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    path: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-appmodel-runtime-l1-1-3" fn GetPackagePathByFullName2(
+    packageFullName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    packagePathType: Windows.Win32.AppxPackaging.PackagePathType,
+    pathLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    path: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-appmodel-runtime-l1-1-3" fn GetStagedPackagePathByFullName2(
+    packageFullName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    packagePathType: Windows.Win32.AppxPackaging.PackagePathType,
+    pathLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    path: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-appmodel-runtime-l1-1-3" fn GetCurrentPackageInfo2(
+    flags: {"kind":"UInt32"},
+    packagePathType: Windows.Win32.AppxPackaging.PackagePathType,
+    bufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    buffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    count: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-appmodel-runtime-l1-1-3" fn GetCurrentPackagePath2(
+    packagePathType: Windows.Win32.AppxPackaging.PackagePathType,
+    pathLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    path: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn GetCurrentApplicationUserModelId(
+    applicationUserModelIdLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    applicationUserModelId: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn GetApplicationUserModelId(
+    hProcess: Windows.Win32.SystemServices.HANDLE,
+    applicationUserModelIdLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    applicationUserModelId: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-appmodel-runtime-l1-1-1" fn GetApplicationUserModelIdFromToken(
+    token: Windows.Win32.SystemServices.HANDLE,
+    applicationUserModelIdLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    applicationUserModelId: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-appmodel-runtime-l1-1-1" fn VerifyPackageFullName(
+    packageFullName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-appmodel-runtime-l1-1-1" fn VerifyPackageFamilyName(
+    packageFamilyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-appmodel-runtime-l1-1-1" fn VerifyPackageId(
+    packageId: {"kind""Ptr","child":Windows.Win32.AppxPackaging.PACKAGE_ID},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-appmodel-runtime-l1-1-1" fn VerifyApplicationUserModelId(
+    applicationUserModelId: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-appmodel-runtime-l1-1-1" fn VerifyPackageRelativeApplicationId(
+    packageRelativeApplicationId: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn PackageIdFromFullName(
+    packageFullName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    flags: {"kind":"UInt32"},
+    bufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    buffer: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn PackageFullNameFromId(
+    packageId: {"kind""Ptr","child":Windows.Win32.AppxPackaging.PACKAGE_ID},
+    packageFullNameLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    packageFullName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn PackageFamilyNameFromId(
+    packageId: {"kind""Ptr","child":Windows.Win32.AppxPackaging.PACKAGE_ID},
+    packageFamilyNameLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    packageFamilyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn PackageFamilyNameFromFullName(
+    packageFullName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    packageFamilyNameLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    packageFamilyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn PackageNameAndPublisherIdFromFamilyName(
+    packageFamilyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    packageNameLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    packageName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    packagePublisherIdLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    packagePublisherId: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn FormatApplicationUserModelId(
+    packageFamilyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    packageRelativeApplicationId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    applicationUserModelIdLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    applicationUserModelId: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn ParseApplicationUserModelId(
+    applicationUserModelId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    packageFamilyNameLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    packageFamilyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    packageRelativeApplicationIdLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    packageRelativeApplicationId: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn GetPackagesByPackageFamily(
+    packageFamilyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    count: {"kind""Ptr","child":{"kind":"UInt32"}},
+    packageFullNames: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    bufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    buffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn FindPackagesByPackageFamily(
+    packageFamilyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    packageFilters: {"kind":"UInt32"},
+    count: {"kind""Ptr","child":{"kind":"UInt32"}},
+    packageFullNames: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    bufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    buffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    packageProperties: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-appmodel-runtime-l1-1-1" fn GetStagedPackageOrigin(
+    packageFullName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    origin: {"kind""Ptr","child":Windows.Win32.AppxPackaging.PackageOrigin},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn GetCurrentPackageInfo(
+    flags: {"kind":"UInt32"},
+    bufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    buffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    count: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn OpenPackageInfoByFullName(
+    packageFullName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    reserved: {"kind":"UInt32"},
+    packageInfoReference: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.AppxPackaging._PACKAGE_INFO_REFERENCE}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-appmodel-runtime-l1-1-1" fn OpenPackageInfoByFullNameForUser(
+    userSid: {"kind""Ptr","child":{"kind":"Void"}},
+    packageFullName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    reserved: {"kind":"UInt32"},
+    packageInfoReference: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.AppxPackaging._PACKAGE_INFO_REFERENCE}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn ClosePackageInfo(
+    packageInfoReference: {"kind""Ptr","child":Windows.Win32.AppxPackaging._PACKAGE_INFO_REFERENCE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn GetPackageInfo(
+    packageInfoReference: {"kind""Ptr","child":Windows.Win32.AppxPackaging._PACKAGE_INFO_REFERENCE},
+    flags: {"kind":"UInt32"},
+    bufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    buffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    count: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn GetPackageApplicationIds(
+    packageInfoReference: {"kind""Ptr","child":Windows.Win32.AppxPackaging._PACKAGE_INFO_REFERENCE},
+    bufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    buffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    count: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn AppPolicyGetLifecycleManagement(
+    processToken: Windows.Win32.SystemServices.HANDLE,
+    policy: {"kind""Ptr","child":Windows.Win32.AppxPackaging.AppPolicyLifecycleManagement},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn AppPolicyGetWindowingModel(
+    processToken: Windows.Win32.SystemServices.HANDLE,
+    policy: {"kind""Ptr","child":Windows.Win32.AppxPackaging.AppPolicyWindowingModel},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn AppPolicyGetMediaFoundationCodecLoading(
+    processToken: Windows.Win32.SystemServices.HANDLE,
+    policy: {"kind""Ptr","child":Windows.Win32.AppxPackaging.AppPolicyMediaFoundationCodecLoading},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn AppPolicyGetClrCompat(
+    processToken: Windows.Win32.SystemServices.HANDLE,
+    policy: {"kind""Ptr","child":Windows.Win32.AppxPackaging.AppPolicyClrCompat},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn AppPolicyGetThreadInitializationType(
+    processToken: Windows.Win32.SystemServices.HANDLE,
+    policy: {"kind""Ptr","child":Windows.Win32.AppxPackaging.AppPolicyThreadInitializationType},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn AppPolicyGetShowDeveloperDiagnostic(
+    processToken: Windows.Win32.SystemServices.HANDLE,
+    policy: {"kind""Ptr","child":Windows.Win32.AppxPackaging.AppPolicyShowDeveloperDiagnostic},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn AppPolicyGetProcessTerminationMethod(
+    processToken: Windows.Win32.SystemServices.HANDLE,
+    policy: {"kind""Ptr","child":Windows.Win32.AppxPackaging.AppPolicyProcessTerminationMethod},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn AppPolicyGetCreateFileAccess(
+    processToken: Windows.Win32.SystemServices.HANDLE,
+    policy: {"kind""Ptr","child":Windows.Win32.AppxPackaging.AppPolicyCreateFileAccess},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-appmodel-runtime-l1-1-3" fn GetPackageInfo2(
+    packageInfoReference: {"kind""Ptr","child":Windows.Win32.AppxPackaging._PACKAGE_INFO_REFERENCE},
+    flags: {"kind":"UInt32"},
+    packagePathType: Windows.Win32.AppxPackaging.PackagePathType,
+    bufferLength: {"kind""Ptr","child":{"kind":"UInt32"}},
+    buffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    count: {"kind""Ptr","child":{"kind":"UInt32"}},
+],
+
+"unicode_aliases": [
+]}

@@ -1,0 +1,3215 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: WTSSESSION_NOTIFICATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTSSESSION_NOTIFICATION = extern struct {
+    cbSize: {"kind":"UInt32"},
+    dwSessionId: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HwtsVirtualChannelHandle
+// TypeLayoutAttr: sequential
+// RAIIFree 'WTSVirtualChannelClose' (TODO: can we use this information?)
+pub const HwtsVirtualChannelHandle = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: TSUserExInterfaces
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const TSUserExInterfaces = opaque {
+};
+// --------------------------------------------------------
+// Type: ADsTSUserEx
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const ADsTSUserEx = opaque {
+};
+// --------------------------------------------------------
+// Type: IADsTSUserEx
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IADsTSUserEx = *opaque{
+    // TODO: Method 'get_TerminalServicesProfilePath'
+    // TODO: Method 'put_TerminalServicesProfilePath'
+    // TODO: Method 'get_TerminalServicesHomeDirectory'
+    // TODO: Method 'put_TerminalServicesHomeDirectory'
+    // TODO: Method 'get_TerminalServicesHomeDrive'
+    // TODO: Method 'put_TerminalServicesHomeDrive'
+    // TODO: Method 'get_AllowLogon'
+    // TODO: Method 'put_AllowLogon'
+    // TODO: Method 'get_EnableRemoteControl'
+    // TODO: Method 'put_EnableRemoteControl'
+    // TODO: Method 'get_MaxDisconnectionTime'
+    // TODO: Method 'put_MaxDisconnectionTime'
+    // TODO: Method 'get_MaxConnectionTime'
+    // TODO: Method 'put_MaxConnectionTime'
+    // TODO: Method 'get_MaxIdleTime'
+    // TODO: Method 'put_MaxIdleTime'
+    // TODO: Method 'get_ReconnectionAction'
+    // TODO: Method 'put_ReconnectionAction'
+    // TODO: Method 'get_BrokenConnectionAction'
+    // TODO: Method 'put_BrokenConnectionAction'
+    // TODO: Method 'get_ConnectClientDrivesAtLogon'
+    // TODO: Method 'put_ConnectClientDrivesAtLogon'
+    // TODO: Method 'get_ConnectClientPrintersAtLogon'
+    // TODO: Method 'put_ConnectClientPrintersAtLogon'
+    // TODO: Method 'get_DefaultToMainPrinter'
+    // TODO: Method 'put_DefaultToMainPrinter'
+    // TODO: Method 'get_TerminalServicesWorkDirectory'
+    // TODO: Method 'put_TerminalServicesWorkDirectory'
+    // TODO: Method 'get_TerminalServicesInitialProgram'
+    // TODO: Method 'put_TerminalServicesInitialProgram'
+};
+// --------------------------------------------------------
+// Type: AAAuthSchemes
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const AAAuthSchemes = *opaque{
+};
+// --------------------------------------------------------
+// Type: AAAccountingDataType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const AAAccountingDataType = *opaque{
+};
+// --------------------------------------------------------
+// Type: AAAccountingData
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AAAccountingData = extern struct {
+    userName: Windows.Win32.Automation.BSTR,
+    clientName: Windows.Win32.Automation.BSTR,
+    authType: Windows.Win32.RemoteDesktopServices.AAAuthSchemes,
+    resourceName: Windows.Win32.Automation.BSTR,
+    portNumber: {"kind":"Int32"},
+    protocolName: Windows.Win32.Automation.BSTR,
+    numberOfBytesReceived: {"kind":"Int32"},
+    numberOfBytesTransfered: {"kind":"Int32"},
+    reasonForDisconnect: Windows.Win32.Automation.BSTR,
+    mainSessionId: Guid,
+    subSessionId: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: __MIDL___MIDL_itf_tsgpolicyengine_0000_0000_0004
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const __MIDL___MIDL_itf_tsgpolicyengine_0000_0000_0004 = *opaque{
+};
+// --------------------------------------------------------
+// Type: PolicyAttributeType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PolicyAttributeType = *opaque{
+};
+// --------------------------------------------------------
+// Type: __MIDL___MIDL_itf_tsgpolicyengine_0000_0000_0006
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const __MIDL___MIDL_itf_tsgpolicyengine_0000_0000_0006 = *opaque{
+};
+// --------------------------------------------------------
+// Type: ITSGAuthorizeConnectionSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITSGAuthorizeConnectionSink = *opaque{
+    // TODO: Method 'OnConnectionAuthorized'
+};
+// --------------------------------------------------------
+// Type: ITSGAuthorizeResourceSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITSGAuthorizeResourceSink = *opaque{
+    // TODO: Method 'OnChannelAuthorized'
+};
+// --------------------------------------------------------
+// Type: ITSGPolicyEngine
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITSGPolicyEngine = *opaque{
+    // TODO: Method 'AuthorizeConnection'
+    // TODO: Method 'AuthorizeResource'
+    // TODO: Method 'Refresh'
+    // TODO: Method 'IsQuarantineEnabled'
+};
+// --------------------------------------------------------
+// Type: ITSGAccountingEngine
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITSGAccountingEngine = *opaque{
+    // TODO: Method 'DoAccounting'
+};
+// --------------------------------------------------------
+// Type: ITSGAuthenticateUserSink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITSGAuthenticateUserSink = *opaque{
+    // TODO: Method 'OnUserAuthenticated'
+    // TODO: Method 'OnUserAuthenticationFailed'
+    // TODO: Method 'ReauthenticateUser'
+    // TODO: Method 'DisconnectUser'
+};
+// --------------------------------------------------------
+// Type: ITSGAuthenticationEngine
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITSGAuthenticationEngine = *opaque{
+    // TODO: Method 'AuthenticateUser'
+    // TODO: Method 'CancelAuthentication'
+};
+// --------------------------------------------------------
+// Type: WTS_CONNECTSTATE_CLASS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WTS_CONNECTSTATE_CLASS = *opaque{
+};
+// --------------------------------------------------------
+// Type: WTS_SERVER_INFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_SERVER_INFOW = extern struct {
+    pServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WTS_SERVER_INFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_SERVER_INFOA = extern struct {
+    pServerName: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: WTS_SESSION_INFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_SESSION_INFOW = extern struct {
+    SessionId: {"kind":"UInt32"},
+    pWinStationName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    State: Windows.Win32.RemoteDesktopServices.WTS_CONNECTSTATE_CLASS,
+};
+// --------------------------------------------------------
+// Type: WTS_SESSION_INFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_SESSION_INFOA = extern struct {
+    SessionId: {"kind":"UInt32"},
+    pWinStationName: {"kind""Ptr","child":{"kind":"SByte"}},
+    State: Windows.Win32.RemoteDesktopServices.WTS_CONNECTSTATE_CLASS,
+};
+// --------------------------------------------------------
+// Type: WTS_SESSION_INFO_1W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_SESSION_INFO_1W = extern struct {
+    ExecEnvId: {"kind":"UInt32"},
+    State: Windows.Win32.RemoteDesktopServices.WTS_CONNECTSTATE_CLASS,
+    SessionId: {"kind":"UInt32"},
+    pSessionName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pHostName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pUserName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pDomainName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pFarmName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WTS_SESSION_INFO_1A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_SESSION_INFO_1A = extern struct {
+    ExecEnvId: {"kind":"UInt32"},
+    State: Windows.Win32.RemoteDesktopServices.WTS_CONNECTSTATE_CLASS,
+    SessionId: {"kind":"UInt32"},
+    pSessionName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pHostName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pUserName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pDomainName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pFarmName: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: WTS_PROCESS_INFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_PROCESS_INFOW = extern struct {
+    SessionId: {"kind":"UInt32"},
+    ProcessId: {"kind":"UInt32"},
+    pProcessName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pUserSid: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: WTS_PROCESS_INFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_PROCESS_INFOA = extern struct {
+    SessionId: {"kind":"UInt32"},
+    ProcessId: {"kind":"UInt32"},
+    pProcessName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pUserSid: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: WTS_INFO_CLASS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WTS_INFO_CLASS = *opaque{
+};
+// --------------------------------------------------------
+// Type: WTSCONFIGINFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTSCONFIGINFOW = extern struct {
+    version: {"kind":"UInt32"},
+    fConnectClientDrivesAtLogon: {"kind":"UInt32"},
+    fConnectPrinterAtLogon: {"kind":"UInt32"},
+    fDisablePrinterRedirection: {"kind":"UInt32"},
+    fDisableDefaultMainClientPrinter: {"kind":"UInt32"},
+    ShadowSettings: {"kind":"UInt32"},
+    LogonUserName: {"kind":"Array","child": {"kind":"UInt16"}},
+    LogonDomain: {"kind":"Array","child": {"kind":"UInt16"}},
+    WorkDirectory: {"kind":"Array","child": {"kind":"UInt16"}},
+    InitialProgram: {"kind":"Array","child": {"kind":"UInt16"}},
+    ApplicationName: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WTSCONFIGINFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTSCONFIGINFOA = extern struct {
+    version: {"kind":"UInt32"},
+    fConnectClientDrivesAtLogon: {"kind":"UInt32"},
+    fConnectPrinterAtLogon: {"kind":"UInt32"},
+    fDisablePrinterRedirection: {"kind":"UInt32"},
+    fDisableDefaultMainClientPrinter: {"kind":"UInt32"},
+    ShadowSettings: {"kind":"UInt32"},
+    LogonUserName: {"kind":"Array","child": {"kind":"SByte"}},
+    LogonDomain: {"kind":"Array","child": {"kind":"SByte"}},
+    WorkDirectory: {"kind":"Array","child": {"kind":"SByte"}},
+    InitialProgram: {"kind":"Array","child": {"kind":"SByte"}},
+    ApplicationName: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: WTSINFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTSINFOW = extern struct {
+    State: Windows.Win32.RemoteDesktopServices.WTS_CONNECTSTATE_CLASS,
+    SessionId: {"kind":"UInt32"},
+    IncomingBytes: {"kind":"UInt32"},
+    OutgoingBytes: {"kind":"UInt32"},
+    IncomingFrames: {"kind":"UInt32"},
+    OutgoingFrames: {"kind":"UInt32"},
+    IncomingCompressedBytes: {"kind":"UInt32"},
+    OutgoingCompressedBytes: {"kind":"UInt32"},
+    WinStationName: {"kind":"Array","child": {"kind":"UInt16"}},
+    Domain: {"kind":"Array","child": {"kind":"UInt16"}},
+    UserName: {"kind":"Array","child": {"kind":"UInt16"}},
+    ConnectTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    DisconnectTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    LastInputTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    LogonTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    CurrentTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+};
+// --------------------------------------------------------
+// Type: WTSINFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTSINFOA = extern struct {
+    State: Windows.Win32.RemoteDesktopServices.WTS_CONNECTSTATE_CLASS,
+    SessionId: {"kind":"UInt32"},
+    IncomingBytes: {"kind":"UInt32"},
+    OutgoingBytes: {"kind":"UInt32"},
+    IncomingFrames: {"kind":"UInt32"},
+    OutgoingFrames: {"kind":"UInt32"},
+    IncomingCompressedBytes: {"kind":"UInt32"},
+    OutgoingCompressedBy: {"kind":"UInt32"},
+    WinStationName: {"kind":"Array","child": {"kind":"SByte"}},
+    Domain: {"kind":"Array","child": {"kind":"SByte"}},
+    UserName: {"kind":"Array","child": {"kind":"SByte"}},
+    ConnectTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    DisconnectTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    LastInputTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    LogonTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    CurrentTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+};
+// --------------------------------------------------------
+// Type: WTSINFOEX_LEVEL1_W
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTSINFOEX_LEVEL1_W = extern struct {
+    SessionId: {"kind":"UInt32"},
+    SessionState: Windows.Win32.RemoteDesktopServices.WTS_CONNECTSTATE_CLASS,
+    SessionFlags: {"kind":"Int32"},
+    WinStationName: {"kind":"Array","child": {"kind":"UInt16"}},
+    UserName: {"kind":"Array","child": {"kind":"UInt16"}},
+    DomainName: {"kind":"Array","child": {"kind":"UInt16"}},
+    LogonTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    ConnectTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    DisconnectTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    LastInputTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    CurrentTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    IncomingBytes: {"kind":"UInt32"},
+    OutgoingBytes: {"kind":"UInt32"},
+    IncomingFrames: {"kind":"UInt32"},
+    OutgoingFrames: {"kind":"UInt32"},
+    IncomingCompressedBytes: {"kind":"UInt32"},
+    OutgoingCompressedBytes: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WTSINFOEX_LEVEL1_A
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTSINFOEX_LEVEL1_A = extern struct {
+    SessionId: {"kind":"UInt32"},
+    SessionState: Windows.Win32.RemoteDesktopServices.WTS_CONNECTSTATE_CLASS,
+    SessionFlags: {"kind":"Int32"},
+    WinStationName: {"kind":"Array","child": {"kind":"SByte"}},
+    UserName: {"kind":"Array","child": {"kind":"SByte"}},
+    DomainName: {"kind":"Array","child": {"kind":"SByte"}},
+    LogonTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    ConnectTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    DisconnectTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    LastInputTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    CurrentTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    IncomingBytes: {"kind":"UInt32"},
+    OutgoingBytes: {"kind":"UInt32"},
+    IncomingFrames: {"kind":"UInt32"},
+    OutgoingFrames: {"kind":"UInt32"},
+    IncomingCompressedBytes: {"kind":"UInt32"},
+    OutgoingCompressedBytes: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WTSINFOEX_LEVEL_W
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const WTSINFOEX_LEVEL_W = *opaque{
+};
+// --------------------------------------------------------
+// Type: WTSINFOEX_LEVEL_A
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const WTSINFOEX_LEVEL_A = *opaque{
+};
+// --------------------------------------------------------
+// Type: WTSINFOEXW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTSINFOEXW = extern struct {
+    Level: {"kind":"UInt32"},
+    Data: Windows.Win32.RemoteDesktopServices.WTSINFOEX_LEVEL_W,
+};
+// --------------------------------------------------------
+// Type: WTSINFOEXA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTSINFOEXA = extern struct {
+    Level: {"kind":"UInt32"},
+    Data: Windows.Win32.RemoteDesktopServices.WTSINFOEX_LEVEL_A,
+};
+// --------------------------------------------------------
+// Type: WTSCLIENTW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTSCLIENTW = extern struct {
+    ClientName: {"kind":"Array","child": {"kind":"UInt16"}},
+    Domain: {"kind":"Array","child": {"kind":"UInt16"}},
+    UserName: {"kind":"Array","child": {"kind":"UInt16"}},
+    WorkDirectory: {"kind":"Array","child": {"kind":"UInt16"}},
+    InitialProgram: {"kind":"Array","child": {"kind":"UInt16"}},
+    EncryptionLevel: {"kind":"Byte"},
+    ClientAddressFamily: {"kind":"UInt32"},
+    ClientAddress: {"kind":"Array","child": {"kind":"UInt16"}},
+    HRes: {"kind":"UInt16"},
+    VRes: {"kind":"UInt16"},
+    ColorDepth: {"kind":"UInt16"},
+    ClientDirectory: {"kind":"Array","child": {"kind":"UInt16"}},
+    ClientBuildNumber: {"kind":"UInt32"},
+    ClientHardwareId: {"kind":"UInt32"},
+    ClientProductId: {"kind":"UInt16"},
+    OutBufCountHost: {"kind":"UInt16"},
+    OutBufCountClient: {"kind":"UInt16"},
+    OutBufLength: {"kind":"UInt16"},
+    DeviceId: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WTSCLIENTA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTSCLIENTA = extern struct {
+    ClientName: {"kind":"Array","child": {"kind":"SByte"}},
+    Domain: {"kind":"Array","child": {"kind":"SByte"}},
+    UserName: {"kind":"Array","child": {"kind":"SByte"}},
+    WorkDirectory: {"kind":"Array","child": {"kind":"SByte"}},
+    InitialProgram: {"kind":"Array","child": {"kind":"SByte"}},
+    EncryptionLevel: {"kind":"Byte"},
+    ClientAddressFamily: {"kind":"UInt32"},
+    ClientAddress: {"kind":"Array","child": {"kind":"UInt16"}},
+    HRes: {"kind":"UInt16"},
+    VRes: {"kind":"UInt16"},
+    ColorDepth: {"kind":"UInt16"},
+    ClientDirectory: {"kind":"Array","child": {"kind":"SByte"}},
+    ClientBuildNumber: {"kind":"UInt32"},
+    ClientHardwareId: {"kind":"UInt32"},
+    ClientProductId: {"kind":"UInt16"},
+    OutBufCountHost: {"kind":"UInt16"},
+    OutBufCountClient: {"kind":"UInt16"},
+    OutBufLength: {"kind":"UInt16"},
+    DeviceId: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: _WTS_PRODUCT_INFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _WTS_PRODUCT_INFOA = extern struct {
+    CompanyName: {"kind":"Array","child": {"kind":"SByte"}},
+    ProductID: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: _WTS_PRODUCT_INFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const _WTS_PRODUCT_INFOW = extern struct {
+    CompanyName: {"kind":"Array","child": {"kind":"UInt16"}},
+    ProductID: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WTS_VALIDATION_INFORMATIONA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_VALIDATION_INFORMATIONA = extern struct {
+    ProductInfo: Windows.Win32.RemoteDesktopServices._WTS_PRODUCT_INFOA,
+    License: {"kind":"Array","child": {"kind":"Byte"}},
+    LicenseLength: {"kind":"UInt32"},
+    HardwareID: {"kind":"Array","child": {"kind":"Byte"}},
+    HardwareIDLength: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WTS_VALIDATION_INFORMATIONW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_VALIDATION_INFORMATIONW = extern struct {
+    ProductInfo: Windows.Win32.RemoteDesktopServices._WTS_PRODUCT_INFOW,
+    License: {"kind":"Array","child": {"kind":"Byte"}},
+    LicenseLength: {"kind":"UInt32"},
+    HardwareID: {"kind":"Array","child": {"kind":"Byte"}},
+    HardwareIDLength: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WTS_CLIENT_ADDRESS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_CLIENT_ADDRESS = extern struct {
+    AddressFamily: {"kind":"UInt32"},
+    Address: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: WTS_CLIENT_DISPLAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_CLIENT_DISPLAY = extern struct {
+    HorizontalResolution: {"kind":"UInt32"},
+    VerticalResolution: {"kind":"UInt32"},
+    ColorDepth: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WTS_CONFIG_CLASS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WTS_CONFIG_CLASS = *opaque{
+};
+// --------------------------------------------------------
+// Type: WTS_CONFIG_SOURCE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WTS_CONFIG_SOURCE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WTSUSERCONFIGA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTSUSERCONFIGA = extern struct {
+    Source: {"kind":"UInt32"},
+    InheritInitialProgram: {"kind":"UInt32"},
+    AllowLogonTerminalServer: {"kind":"UInt32"},
+    TimeoutSettingsConnections: {"kind":"UInt32"},
+    TimeoutSettingsDisconnections: {"kind":"UInt32"},
+    TimeoutSettingsIdle: {"kind":"UInt32"},
+    DeviceClientDrives: {"kind":"UInt32"},
+    DeviceClientPrinters: {"kind":"UInt32"},
+    ClientDefaultPrinter: {"kind":"UInt32"},
+    BrokenTimeoutSettings: {"kind":"UInt32"},
+    ReconnectSettings: {"kind":"UInt32"},
+    ShadowingSettings: {"kind":"UInt32"},
+    TerminalServerRemoteHomeDir: {"kind":"UInt32"},
+    InitialProgram: {"kind":"Array","child": {"kind":"SByte"}},
+    WorkDirectory: {"kind":"Array","child": {"kind":"SByte"}},
+    TerminalServerProfilePath: {"kind":"Array","child": {"kind":"SByte"}},
+    TerminalServerHomeDir: {"kind":"Array","child": {"kind":"SByte"}},
+    TerminalServerHomeDirDrive: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: WTSUSERCONFIGW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTSUSERCONFIGW = extern struct {
+    Source: {"kind":"UInt32"},
+    InheritInitialProgram: {"kind":"UInt32"},
+    AllowLogonTerminalServer: {"kind":"UInt32"},
+    TimeoutSettingsConnections: {"kind":"UInt32"},
+    TimeoutSettingsDisconnections: {"kind":"UInt32"},
+    TimeoutSettingsIdle: {"kind":"UInt32"},
+    DeviceClientDrives: {"kind":"UInt32"},
+    DeviceClientPrinters: {"kind":"UInt32"},
+    ClientDefaultPrinter: {"kind":"UInt32"},
+    BrokenTimeoutSettings: {"kind":"UInt32"},
+    ReconnectSettings: {"kind":"UInt32"},
+    ShadowingSettings: {"kind":"UInt32"},
+    TerminalServerRemoteHomeDir: {"kind":"UInt32"},
+    InitialProgram: {"kind":"Array","child": {"kind":"UInt16"}},
+    WorkDirectory: {"kind":"Array","child": {"kind":"UInt16"}},
+    TerminalServerProfilePath: {"kind":"Array","child": {"kind":"UInt16"}},
+    TerminalServerHomeDir: {"kind":"Array","child": {"kind":"UInt16"}},
+    TerminalServerHomeDirDrive: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WTS_VIRTUAL_CLASS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WTS_VIRTUAL_CLASS = *opaque{
+};
+// --------------------------------------------------------
+// Type: WTS_SESSION_ADDRESS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_SESSION_ADDRESS = extern struct {
+    AddressFamily: {"kind":"UInt32"},
+    Address: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: WTS_PROCESS_INFO_EXW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_PROCESS_INFO_EXW = extern struct {
+    SessionId: {"kind":"UInt32"},
+    ProcessId: {"kind":"UInt32"},
+    pProcessName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pUserSid: {"kind""Ptr","child":{"kind":"Void"}},
+    NumberOfThreads: {"kind":"UInt32"},
+    HandleCount: {"kind":"UInt32"},
+    PagefileUsage: {"kind":"UInt32"},
+    PeakPagefileUsage: {"kind":"UInt32"},
+    WorkingSetSize: {"kind":"UInt32"},
+    PeakWorkingSetSize: {"kind":"UInt32"},
+    UserTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    KernelTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+};
+// --------------------------------------------------------
+// Type: WTS_PROCESS_INFO_EXA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_PROCESS_INFO_EXA = extern struct {
+    SessionId: {"kind":"UInt32"},
+    ProcessId: {"kind":"UInt32"},
+    pProcessName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pUserSid: {"kind""Ptr","child":{"kind":"Void"}},
+    NumberOfThreads: {"kind":"UInt32"},
+    HandleCount: {"kind":"UInt32"},
+    PagefileUsage: {"kind":"UInt32"},
+    PeakPagefileUsage: {"kind":"UInt32"},
+    WorkingSetSize: {"kind":"UInt32"},
+    PeakWorkingSetSize: {"kind":"UInt32"},
+    UserTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+    KernelTime: Windows.Win32.SystemServices.LARGE_INTEGER,
+};
+// --------------------------------------------------------
+// Type: WTS_TYPE_CLASS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WTS_TYPE_CLASS = *opaque{
+};
+// --------------------------------------------------------
+// Type: WTSLISTENERCONFIGW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTSLISTENERCONFIGW = extern struct {
+    version: {"kind":"UInt32"},
+    fEnableListener: {"kind":"UInt32"},
+    MaxConnectionCount: {"kind":"UInt32"},
+    fPromptForPassword: {"kind":"UInt32"},
+    fInheritColorDepth: {"kind":"UInt32"},
+    ColorDepth: {"kind":"UInt32"},
+    fInheritBrokenTimeoutSettings: {"kind":"UInt32"},
+    BrokenTimeoutSettings: {"kind":"UInt32"},
+    fDisablePrinterRedirection: {"kind":"UInt32"},
+    fDisableDriveRedirection: {"kind":"UInt32"},
+    fDisableComPortRedirection: {"kind":"UInt32"},
+    fDisableLPTPortRedirection: {"kind":"UInt32"},
+    fDisableClipboardRedirection: {"kind":"UInt32"},
+    fDisableAudioRedirection: {"kind":"UInt32"},
+    fDisablePNPRedirection: {"kind":"UInt32"},
+    fDisableDefaultMainClientPrinter: {"kind":"UInt32"},
+    LanAdapter: {"kind":"UInt32"},
+    PortNumber: {"kind":"UInt32"},
+    fInheritShadowSettings: {"kind":"UInt32"},
+    ShadowSettings: {"kind":"UInt32"},
+    TimeoutSettingsConnection: {"kind":"UInt32"},
+    TimeoutSettingsDisconnection: {"kind":"UInt32"},
+    TimeoutSettingsIdle: {"kind":"UInt32"},
+    SecurityLayer: {"kind":"UInt32"},
+    MinEncryptionLevel: {"kind":"UInt32"},
+    UserAuthentication: {"kind":"UInt32"},
+    Comment: {"kind":"Array","child": {"kind":"UInt16"}},
+    LogonUserName: {"kind":"Array","child": {"kind":"UInt16"}},
+    LogonDomain: {"kind":"Array","child": {"kind":"UInt16"}},
+    WorkDirectory: {"kind":"Array","child": {"kind":"UInt16"}},
+    InitialProgram: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WTSLISTENERCONFIGA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTSLISTENERCONFIGA = extern struct {
+    version: {"kind":"UInt32"},
+    fEnableListener: {"kind":"UInt32"},
+    MaxConnectionCount: {"kind":"UInt32"},
+    fPromptForPassword: {"kind":"UInt32"},
+    fInheritColorDepth: {"kind":"UInt32"},
+    ColorDepth: {"kind":"UInt32"},
+    fInheritBrokenTimeoutSettings: {"kind":"UInt32"},
+    BrokenTimeoutSettings: {"kind":"UInt32"},
+    fDisablePrinterRedirection: {"kind":"UInt32"},
+    fDisableDriveRedirection: {"kind":"UInt32"},
+    fDisableComPortRedirection: {"kind":"UInt32"},
+    fDisableLPTPortRedirection: {"kind":"UInt32"},
+    fDisableClipboardRedirection: {"kind":"UInt32"},
+    fDisableAudioRedirection: {"kind":"UInt32"},
+    fDisablePNPRedirection: {"kind":"UInt32"},
+    fDisableDefaultMainClientPrinter: {"kind":"UInt32"},
+    LanAdapter: {"kind":"UInt32"},
+    PortNumber: {"kind":"UInt32"},
+    fInheritShadowSettings: {"kind":"UInt32"},
+    ShadowSettings: {"kind":"UInt32"},
+    TimeoutSettingsConnection: {"kind":"UInt32"},
+    TimeoutSettingsDisconnection: {"kind":"UInt32"},
+    TimeoutSettingsIdle: {"kind":"UInt32"},
+    SecurityLayer: {"kind":"UInt32"},
+    MinEncryptionLevel: {"kind":"UInt32"},
+    UserAuthentication: {"kind":"UInt32"},
+    Comment: {"kind":"Array","child": {"kind":"SByte"}},
+    LogonUserName: {"kind":"Array","child": {"kind":"SByte"}},
+    LogonDomain: {"kind":"Array","child": {"kind":"SByte"}},
+    WorkDirectory: {"kind":"Array","child": {"kind":"SByte"}},
+    InitialProgram: {"kind":"Array","child": {"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: WTSSBX_MACHINE_DRAIN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WTSSBX_MACHINE_DRAIN = *opaque{
+};
+// --------------------------------------------------------
+// Type: WTSSBX_MACHINE_SESSION_MODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WTSSBX_MACHINE_SESSION_MODE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WTSSBX_ADDRESS_FAMILY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WTSSBX_ADDRESS_FAMILY = *opaque{
+};
+// --------------------------------------------------------
+// Type: WTSSBX_IP_ADDRESS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTSSBX_IP_ADDRESS = extern struct {
+    AddressFamily: Windows.Win32.RemoteDesktopServices.WTSSBX_ADDRESS_FAMILY,
+    Address: {"kind":"Array","child": {"kind":"Byte"}},
+    PortNumber: {"kind":"UInt16"},
+    dwScope: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WTSSBX_MACHINE_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WTSSBX_MACHINE_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WTSSBX_MACHINE_CONNECT_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTSSBX_MACHINE_CONNECT_INFO = extern struct {
+    wczMachineFQDN: {"kind":"Array","child": {"kind":"UInt16"}},
+    wczMachineNetBiosName: {"kind":"Array","child": {"kind":"UInt16"}},
+    dwNumOfIPAddr: {"kind":"UInt32"},
+    IPaddr: {"kind":"Array","child": Windows.Win32.RemoteDesktopServices.WTSSBX_IP_ADDRESS},
+};
+// --------------------------------------------------------
+// Type: WTSSBX_MACHINE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTSSBX_MACHINE_INFO = extern struct {
+    ClientConnectInfo: Windows.Win32.RemoteDesktopServices.WTSSBX_MACHINE_CONNECT_INFO,
+    wczFarmName: {"kind":"Array","child": {"kind":"UInt16"}},
+    InternalIPAddress: Windows.Win32.RemoteDesktopServices.WTSSBX_IP_ADDRESS,
+    dwMaxSessionsLimit: {"kind":"UInt32"},
+    ServerWeight: {"kind":"UInt32"},
+    SingleSessionMode: Windows.Win32.RemoteDesktopServices.WTSSBX_MACHINE_SESSION_MODE,
+    InDrain: Windows.Win32.RemoteDesktopServices.WTSSBX_MACHINE_DRAIN,
+    MachineState: Windows.Win32.RemoteDesktopServices.WTSSBX_MACHINE_STATE,
+};
+// --------------------------------------------------------
+// Type: WTSSBX_SESSION_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WTSSBX_SESSION_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WTSSBX_SESSION_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTSSBX_SESSION_INFO = extern struct {
+    wszUserName: {"kind":"Array","child": {"kind":"UInt16"}},
+    wszDomainName: {"kind":"Array","child": {"kind":"UInt16"}},
+    ApplicationType: {"kind":"Array","child": {"kind":"UInt16"}},
+    dwSessionId: {"kind":"UInt32"},
+    CreateTime: Windows.Win32.WindowsProgramming.FILETIME,
+    DisconnectTime: Windows.Win32.WindowsProgramming.FILETIME,
+    SessionState: Windows.Win32.RemoteDesktopServices.WTSSBX_SESSION_STATE,
+};
+// --------------------------------------------------------
+// Type: WTSSBX_NOTIFICATION_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WTSSBX_NOTIFICATION_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: IWTSSBPlugin
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWTSSBPlugin = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'WTSSBX_MachineChangeNotification'
+    // TODO: Method 'WTSSBX_SessionChangeNotification'
+    // TODO: Method 'WTSSBX_GetMostSuitableServer'
+    // TODO: Method 'Terminated'
+    // TODO: Method 'WTSSBX_GetUserExternalSession'
+};
+// --------------------------------------------------------
+// Type: CHANNEL_DEF
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const CHANNEL_DEF = *opaque{
+};
+// --------------------------------------------------------
+// Type: CHANNEL_PDU_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CHANNEL_PDU_HEADER = extern struct {
+    length: {"kind":"UInt32"},
+    flags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: CHANNEL_INIT_EVENT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CHANNEL_INIT_EVENT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PCHANNEL_INIT_EVENT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PCHANNEL_INIT_EVENT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: CHANNEL_OPEN_EVENT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CHANNEL_OPEN_EVENT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PCHANNEL_OPEN_EVENT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PCHANNEL_OPEN_EVENT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: VIRTUALCHANNELINIT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const VIRTUALCHANNELINIT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PVIRTUALCHANNELINIT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PVIRTUALCHANNELINIT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: VIRTUALCHANNELOPEN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const VIRTUALCHANNELOPEN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PVIRTUALCHANNELOPEN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PVIRTUALCHANNELOPEN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: VIRTUALCHANNELCLOSE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const VIRTUALCHANNELCLOSE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PVIRTUALCHANNELCLOSE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PVIRTUALCHANNELCLOSE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: VIRTUALCHANNELWRITE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const VIRTUALCHANNELWRITE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PVIRTUALCHANNELWRITE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PVIRTUALCHANNELWRITE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: CHANNEL_ENTRY_POINTS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CHANNEL_ENTRY_POINTS = extern struct {
+    cbSize: {"kind":"UInt32"},
+    protocolVersion: {"kind":"UInt32"},
+    pVirtualChannelInit: Windows.Win32.RemoteDesktopServices.PVIRTUALCHANNELINIT,
+    pVirtualChannelOpen: Windows.Win32.RemoteDesktopServices.PVIRTUALCHANNELOPEN,
+    pVirtualChannelClose: Windows.Win32.RemoteDesktopServices.PVIRTUALCHANNELCLOSE,
+    pVirtualChannelWrite: Windows.Win32.RemoteDesktopServices.PVIRTUALCHANNELWRITE,
+};
+// --------------------------------------------------------
+// Type: VIRTUALCHANNELENTRY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const VIRTUALCHANNELENTRY = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PVIRTUALCHANNELENTRY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PVIRTUALCHANNELENTRY = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: Workspace
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const Workspace = opaque {
+};
+// --------------------------------------------------------
+// Type: IWorkspaceClientExt
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWorkspaceClientExt = *opaque{
+    // TODO: Method 'GetResourceId'
+    // TODO: Method 'GetResourceDisplayName'
+    // TODO: Method 'IssueDisconnect'
+};
+// --------------------------------------------------------
+// Type: IWorkspace
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWorkspace = *opaque{
+    // TODO: Method 'GetWorkspaceNames'
+    // TODO: Method 'StartRemoteApplication'
+    // TODO: Method 'GetProcessId'
+};
+// --------------------------------------------------------
+// Type: IWorkspace2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWorkspace2 = *opaque{
+    // TODO: Method 'StartRemoteApplicationEx'
+};
+// --------------------------------------------------------
+// Type: IWorkspace3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWorkspace3 = *opaque{
+    // TODO: Method 'GetClaimsToken2'
+    // TODO: Method 'SetClaimsToken'
+};
+// --------------------------------------------------------
+// Type: IWorkspaceRegistration
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWorkspaceRegistration = *opaque{
+    // TODO: Method 'AddResource'
+    // TODO: Method 'RemoveResource'
+};
+// --------------------------------------------------------
+// Type: IWorkspaceRegistration2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWorkspaceRegistration2 = *opaque{
+    // TODO: Method 'AddResourceEx'
+    // TODO: Method 'RemoveResourceEx'
+};
+// --------------------------------------------------------
+// Type: IWorkspaceScriptable
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWorkspaceScriptable = *opaque{
+    // TODO: Method 'DisconnectWorkspace'
+    // TODO: Method 'StartWorkspace'
+    // TODO: Method 'IsWorkspaceCredentialSpecified'
+    // TODO: Method 'IsWorkspaceSSOEnabled'
+    // TODO: Method 'ClearWorkspaceCredential'
+    // TODO: Method 'OnAuthenticated'
+    // TODO: Method 'DisconnectWorkspaceByFriendlyName'
+};
+// --------------------------------------------------------
+// Type: IWorkspaceScriptable2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWorkspaceScriptable2 = *opaque{
+    // TODO: Method 'StartWorkspaceEx'
+    // TODO: Method 'ResourceDismissed'
+};
+// --------------------------------------------------------
+// Type: IWorkspaceScriptable3
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWorkspaceScriptable3 = *opaque{
+    // TODO: Method 'StartWorkspaceEx2'
+};
+// --------------------------------------------------------
+// Type: IWorkspaceReportMessage
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWorkspaceReportMessage = *opaque{
+    // TODO: Method 'RegisterErrorLogMessage'
+    // TODO: Method 'IsErrorMessageRegistered'
+    // TODO: Method 'RegisterErrorEvent'
+};
+// --------------------------------------------------------
+// Type: _ITSWkspEvents
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const _ITSWkspEvents = *opaque{
+};
+// --------------------------------------------------------
+// Type: TSSD_AddrV46Type
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TSSD_AddrV46Type = *opaque{
+};
+// --------------------------------------------------------
+// Type: TSSB_NOTIFICATION_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TSSB_NOTIFICATION_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: TARGET_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TARGET_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: TARGET_CHANGE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TARGET_CHANGE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: TARGET_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TARGET_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: TARGET_PATCH_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TARGET_PATCH_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: CLIENT_MESSAGE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CLIENT_MESSAGE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: CONNECTION_CHANGE_NOTIFICATION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const CONNECTION_CHANGE_NOTIFICATION = *opaque{
+};
+// --------------------------------------------------------
+// Type: RD_FARM_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const RD_FARM_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PLUGIN_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PLUGIN_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: TSSESSION_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TSSESSION_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: TARGET_OWNER
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TARGET_OWNER = *opaque{
+};
+// --------------------------------------------------------
+// Type: CLIENT_DISPLAY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CLIENT_DISPLAY = extern struct {
+    HorizontalResolution: {"kind":"UInt32"},
+    VerticalResolution: {"kind":"UInt32"},
+    ColorDepth: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: TSSD_ConnectionPoint
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TSSD_ConnectionPoint = extern struct {
+    ServerAddressB: {"kind":"Array","child": {"kind":"Byte"}},
+    AddressType: Windows.Win32.RemoteDesktopServices.TSSD_AddrV46Type,
+    PortNumber: {"kind":"UInt16"},
+    AddressScope: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: VM_NOTIFY_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const VM_NOTIFY_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: VM_NOTIFY_ENTRY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const VM_NOTIFY_ENTRY = extern struct {
+    VmName: {"kind":"Array","child": {"kind":"UInt16"}},
+    VmHost: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: VM_PATCH_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const VM_PATCH_INFO = extern struct {
+    dwNumEntries: {"kind":"UInt32"},
+    pVmNames: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+};
+// --------------------------------------------------------
+// Type: VM_NOTIFY_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const VM_NOTIFY_INFO = extern struct {
+    dwNumEntries: {"kind":"UInt32"},
+    ppVmEntries: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.RemoteDesktopServices.VM_NOTIFY_ENTRY}},
+};
+// --------------------------------------------------------
+// Type: VM_HOST_NOTIFY_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const VM_HOST_NOTIFY_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: RDV_TASK_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const RDV_TASK_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: TS_SB_SORT_BY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TS_SB_SORT_BY = *opaque{
+};
+// --------------------------------------------------------
+// Type: ITsSbPlugin
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbPlugin = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'Terminate'
+};
+// --------------------------------------------------------
+// Type: ITsSbResourcePlugin
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbResourcePlugin = *opaque{
+};
+// --------------------------------------------------------
+// Type: ITsSbServiceNotification
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbServiceNotification = *opaque{
+    // TODO: Method 'NotifyServiceFailure'
+    // TODO: Method 'NotifyServiceSuccess'
+};
+// --------------------------------------------------------
+// Type: ITsSbLoadBalancing
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbLoadBalancing = *opaque{
+    // TODO: Method 'GetMostSuitableTarget'
+};
+// --------------------------------------------------------
+// Type: ITsSbPlacement
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbPlacement = *opaque{
+    // TODO: Method 'QueryEnvironmentForTarget'
+};
+// --------------------------------------------------------
+// Type: ITsSbOrchestration
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbOrchestration = *opaque{
+    // TODO: Method 'PrepareTargetForConnect'
+};
+// --------------------------------------------------------
+// Type: ITsSbEnvironment
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbEnvironment = *opaque{
+    // TODO: Method 'get_Name'
+    // TODO: Method 'get_ServerWeight'
+    // TODO: Method 'get_EnvironmentPropertySet'
+    // TODO: Method 'put_EnvironmentPropertySet'
+};
+// --------------------------------------------------------
+// Type: ITsSbLoadBalanceResult
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbLoadBalanceResult = *opaque{
+    // TODO: Method 'get_TargetName'
+};
+// --------------------------------------------------------
+// Type: ITsSbTarget
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbTarget = *opaque{
+    // TODO: Method 'get_TargetName'
+    // TODO: Method 'put_TargetName'
+    // TODO: Method 'get_FarmName'
+    // TODO: Method 'put_FarmName'
+    // TODO: Method 'get_TargetFQDN'
+    // TODO: Method 'put_TargetFQDN'
+    // TODO: Method 'get_TargetNetbios'
+    // TODO: Method 'put_TargetNetbios'
+    // TODO: Method 'get_IpAddresses'
+    // TODO: Method 'put_IpAddresses'
+    // TODO: Method 'get_TargetState'
+    // TODO: Method 'put_TargetState'
+    // TODO: Method 'get_TargetPropertySet'
+    // TODO: Method 'put_TargetPropertySet'
+    // TODO: Method 'get_EnvironmentName'
+    // TODO: Method 'put_EnvironmentName'
+    // TODO: Method 'get_NumSessions'
+    // TODO: Method 'get_NumPendingConnections'
+    // TODO: Method 'get_TargetLoad'
+};
+// --------------------------------------------------------
+// Type: ITsSbSession
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbSession = *opaque{
+    // TODO: Method 'get_SessionId'
+    // TODO: Method 'get_TargetName'
+    // TODO: Method 'put_TargetName'
+    // TODO: Method 'get_Username'
+    // TODO: Method 'get_Domain'
+    // TODO: Method 'get_State'
+    // TODO: Method 'put_State'
+    // TODO: Method 'get_CreateTime'
+    // TODO: Method 'put_CreateTime'
+    // TODO: Method 'get_DisconnectTime'
+    // TODO: Method 'put_DisconnectTime'
+    // TODO: Method 'get_InitialProgram'
+    // TODO: Method 'put_InitialProgram'
+    // TODO: Method 'get_ClientDisplay'
+    // TODO: Method 'put_ClientDisplay'
+    // TODO: Method 'get_ProtocolType'
+    // TODO: Method 'put_ProtocolType'
+};
+// --------------------------------------------------------
+// Type: ITsSbResourceNotification
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbResourceNotification = *opaque{
+    // TODO: Method 'NotifySessionChange'
+    // TODO: Method 'NotifyTargetChange'
+    // TODO: Method 'NotifyClientConnectionStateChange'
+};
+// --------------------------------------------------------
+// Type: ITsSbResourceNotificationEx
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbResourceNotificationEx = *opaque{
+    // TODO: Method 'NotifySessionChangeEx'
+    // TODO: Method 'NotifyTargetChangeEx'
+    // TODO: Method 'NotifyClientConnectionStateChangeEx'
+};
+// --------------------------------------------------------
+// Type: ITsSbTaskInfo
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbTaskInfo = *opaque{
+    // TODO: Method 'get_TargetId'
+    // TODO: Method 'get_StartTime'
+    // TODO: Method 'get_EndTime'
+    // TODO: Method 'get_Deadline'
+    // TODO: Method 'get_Identifier'
+    // TODO: Method 'get_Label'
+    // TODO: Method 'get_Context'
+    // TODO: Method 'get_Plugin'
+    // TODO: Method 'get_Status'
+};
+// --------------------------------------------------------
+// Type: ITsSbTaskPlugin
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbTaskPlugin = *opaque{
+    // TODO: Method 'InitializeTaskPlugin'
+    // TODO: Method 'SetTaskQueue'
+};
+// --------------------------------------------------------
+// Type: ITsSbPropertySet
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbPropertySet = *opaque{
+};
+// --------------------------------------------------------
+// Type: ITsSbPluginPropertySet
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbPluginPropertySet = *opaque{
+};
+// --------------------------------------------------------
+// Type: ITsSbClientConnectionPropertySet
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbClientConnectionPropertySet = *opaque{
+};
+// --------------------------------------------------------
+// Type: ITsSbTargetPropertySet
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbTargetPropertySet = *opaque{
+};
+// --------------------------------------------------------
+// Type: ITsSbEnvironmentPropertySet
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbEnvironmentPropertySet = *opaque{
+};
+// --------------------------------------------------------
+// Type: ITsSbBaseNotifySink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbBaseNotifySink = *opaque{
+    // TODO: Method 'OnError'
+    // TODO: Method 'OnReportStatus'
+};
+// --------------------------------------------------------
+// Type: ITsSbPluginNotifySink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbPluginNotifySink = *opaque{
+    // TODO: Method 'OnInitialized'
+    // TODO: Method 'OnTerminated'
+};
+// --------------------------------------------------------
+// Type: ITsSbLoadBalancingNotifySink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbLoadBalancingNotifySink = *opaque{
+    // TODO: Method 'OnGetMostSuitableTarget'
+};
+// --------------------------------------------------------
+// Type: ITsSbPlacementNotifySink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbPlacementNotifySink = *opaque{
+    // TODO: Method 'OnQueryEnvironmentCompleted'
+};
+// --------------------------------------------------------
+// Type: ITsSbOrchestrationNotifySink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbOrchestrationNotifySink = *opaque{
+    // TODO: Method 'OnReadyToConnect'
+};
+// --------------------------------------------------------
+// Type: ITsSbTaskPluginNotifySink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbTaskPluginNotifySink = *opaque{
+    // TODO: Method 'OnSetTaskTime'
+    // TODO: Method 'OnDeleteTaskTime'
+    // TODO: Method 'OnUpdateTaskStatus'
+    // TODO: Method 'OnReportTasks'
+};
+// --------------------------------------------------------
+// Type: ITsSbClientConnection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbClientConnection = *opaque{
+    // TODO: Method 'get_UserName'
+    // TODO: Method 'get_Domain'
+    // TODO: Method 'get_InitialProgram'
+    // TODO: Method 'get_LoadBalanceResult'
+    // TODO: Method 'get_FarmName'
+    // TODO: Method 'PutContext'
+    // TODO: Method 'GetContext'
+    // TODO: Method 'get_Environment'
+    // TODO: Method 'get_ConnectionError'
+    // TODO: Method 'get_SamUserAccount'
+    // TODO: Method 'get_ClientConnectionPropertySet'
+    // TODO: Method 'get_IsFirstAssignment'
+    // TODO: Method 'get_RdFarmType'
+    // TODO: Method 'get_UserSidString'
+    // TODO: Method 'GetDisconnectedSession'
+};
+// --------------------------------------------------------
+// Type: ITsSbProvider
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbProvider = *opaque{
+    // TODO: Method 'CreateTargetObject'
+    // TODO: Method 'CreateLoadBalanceResultObject'
+    // TODO: Method 'CreateSessionObject'
+    // TODO: Method 'CreatePluginPropertySet'
+    // TODO: Method 'CreateTargetPropertySetObject'
+    // TODO: Method 'CreateEnvironmentObject'
+    // TODO: Method 'GetResourcePluginStore'
+    // TODO: Method 'GetFilterPluginStore'
+    // TODO: Method 'RegisterForNotification'
+    // TODO: Method 'UnRegisterForNotification'
+    // TODO: Method 'GetInstanceOfGlobalStore'
+    // TODO: Method 'CreateEnvironmentPropertySetObject'
+};
+// --------------------------------------------------------
+// Type: ITsSbResourcePluginStore
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbResourcePluginStore = *opaque{
+    // TODO: Method 'QueryTarget'
+    // TODO: Method 'QuerySessionBySessionId'
+    // TODO: Method 'AddTargetToStore'
+    // TODO: Method 'AddSessionToStore'
+    // TODO: Method 'AddEnvironmentToStore'
+    // TODO: Method 'RemoveEnvironmentFromStore'
+    // TODO: Method 'EnumerateFarms'
+    // TODO: Method 'QueryEnvironment'
+    // TODO: Method 'EnumerateEnvironments'
+    // TODO: Method 'SaveTarget'
+    // TODO: Method 'SaveEnvironment'
+    // TODO: Method 'SaveSession'
+    // TODO: Method 'SetTargetProperty'
+    // TODO: Method 'SetEnvironmentProperty'
+    // TODO: Method 'SetTargetState'
+    // TODO: Method 'SetSessionState'
+    // TODO: Method 'EnumerateTargets'
+    // TODO: Method 'EnumerateSessions'
+    // TODO: Method 'GetFarmProperty'
+    // TODO: Method 'DeleteTarget'
+    // TODO: Method 'SetTargetPropertyWithVersionCheck'
+    // TODO: Method 'SetEnvironmentPropertyWithVersionCheck'
+    // TODO: Method 'AcquireTargetLock'
+    // TODO: Method 'ReleaseTargetLock'
+    // TODO: Method 'TestAndSetServerState'
+    // TODO: Method 'SetServerWaitingToStart'
+    // TODO: Method 'GetServerState'
+    // TODO: Method 'SetServerDrainMode'
+};
+// --------------------------------------------------------
+// Type: ITsSbFilterPluginStore
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbFilterPluginStore = *opaque{
+    // TODO: Method 'SaveProperties'
+    // TODO: Method 'EnumerateProperties'
+    // TODO: Method 'DeleteProperties'
+};
+// --------------------------------------------------------
+// Type: ITsSbGlobalStore
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbGlobalStore = *opaque{
+    // TODO: Method 'QueryTarget'
+    // TODO: Method 'QuerySessionBySessionId'
+    // TODO: Method 'EnumerateFarms'
+    // TODO: Method 'EnumerateTargets'
+    // TODO: Method 'EnumerateEnvironmentsByProvider'
+    // TODO: Method 'EnumerateSessions'
+    // TODO: Method 'GetFarmProperty'
+};
+// --------------------------------------------------------
+// Type: ITsSbProvisioningPluginNotifySink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbProvisioningPluginNotifySink = *opaque{
+    // TODO: Method 'OnJobCreated'
+    // TODO: Method 'OnVirtualMachineStatusChanged'
+    // TODO: Method 'OnJobCompleted'
+    // TODO: Method 'OnJobCancelled'
+    // TODO: Method 'LockVirtualMachine'
+    // TODO: Method 'OnVirtualMachineHostStatusChanged'
+};
+// --------------------------------------------------------
+// Type: ITsSbProvisioning
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbProvisioning = *opaque{
+    // TODO: Method 'CreateVirtualMachines'
+    // TODO: Method 'PatchVirtualMachines'
+    // TODO: Method 'DeleteVirtualMachines'
+    // TODO: Method 'CancelJob'
+};
+// --------------------------------------------------------
+// Type: ITsSbGenericNotifySink
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ITsSbGenericNotifySink = *opaque{
+    // TODO: Method 'OnCompleted'
+    // TODO: Method 'GetWaitTimeout'
+};
+// --------------------------------------------------------
+// Type: pluginResource
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const pluginResource = extern struct {
+    alias: {"kind":"Array","child": {"kind":"UInt16"}},
+    name: {"kind":"Array","child": {"kind":"UInt16"}},
+    resourceFileContents: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fileExtension: {"kind":"Array","child": {"kind":"UInt16"}},
+    resourcePluginType: {"kind":"Array","child": {"kind":"UInt16"}},
+    isDiscoverable: {"kind":"Byte"},
+    resourceType: {"kind":"Int32"},
+    pceIconSize: {"kind":"UInt32"},
+    iconContents: {"kind""Ptr","child":{"kind":"Byte"}},
+    pcePluginBlobSize: {"kind":"UInt32"},
+    blobContents: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: ItsPubPlugin
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ItsPubPlugin = *opaque{
+    // TODO: Method 'GetResourceList'
+    // TODO: Method 'GetResource'
+    // TODO: Method 'GetCacheLastUpdateTime'
+    // TODO: Method 'get_pluginName'
+    // TODO: Method 'get_pluginVersion'
+    // TODO: Method 'ResolveResource'
+};
+// --------------------------------------------------------
+// Type: pluginResource2FileAssociation
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const pluginResource2FileAssociation = extern struct {
+    extName: {"kind":"Array","child": {"kind":"UInt16"}},
+    primaryHandler: {"kind":"Byte"},
+    pceIconSize: {"kind":"UInt32"},
+    iconContents: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: pluginResource2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const pluginResource2 = extern struct {
+    resourceV1: Windows.Win32.RemoteDesktopServices.pluginResource,
+    pceFileAssocListSize: {"kind":"UInt32"},
+    fileAssocList: {"kind""Ptr","child":Windows.Win32.RemoteDesktopServices.pluginResource2FileAssociation},
+    securityDescriptor: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pceFolderListSize: {"kind":"UInt32"},
+    folderList: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+};
+// --------------------------------------------------------
+// Type: TSPUB_PLUGIN_PD_RESOLUTION_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TSPUB_PLUGIN_PD_RESOLUTION_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: TSPUB_PLUGIN_PD_ASSIGNMENT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TSPUB_PLUGIN_PD_ASSIGNMENT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: ItsPubPlugin2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const ItsPubPlugin2 = *opaque{
+    // TODO: Method 'GetResource2List'
+    // TODO: Method 'GetResource2'
+    // TODO: Method 'ResolvePersonalDesktop'
+    // TODO: Method 'DeletePersonalDesktopAssignment'
+};
+// --------------------------------------------------------
+// Type: IWorkspaceResTypeRegistry
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWorkspaceResTypeRegistry = *opaque{
+    // TODO: Method 'AddResourceType'
+    // TODO: Method 'DeleteResourceType'
+    // TODO: Method 'GetRegisteredFileExtensions'
+    // TODO: Method 'GetResourceTypeInfo'
+    // TODO: Method 'ModifyResourceType'
+};
+// --------------------------------------------------------
+// Type: IWTSPlugin
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWTSPlugin = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'Connected'
+    // TODO: Method 'Disconnected'
+    // TODO: Method 'Terminated'
+};
+// --------------------------------------------------------
+// Type: IWTSListener
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWTSListener = *opaque{
+    // TODO: Method 'GetConfiguration'
+};
+// --------------------------------------------------------
+// Type: IWTSListenerCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWTSListenerCallback = *opaque{
+    // TODO: Method 'OnNewChannelConnection'
+};
+// --------------------------------------------------------
+// Type: IWTSVirtualChannelCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWTSVirtualChannelCallback = *opaque{
+    // TODO: Method 'OnDataReceived'
+    // TODO: Method 'OnClose'
+};
+// --------------------------------------------------------
+// Type: IWTSVirtualChannelManager
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWTSVirtualChannelManager = *opaque{
+    // TODO: Method 'CreateListener'
+};
+// --------------------------------------------------------
+// Type: IWTSVirtualChannel
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWTSVirtualChannel = *opaque{
+    // TODO: Method 'Write'
+    // TODO: Method 'Close'
+};
+// --------------------------------------------------------
+// Type: IWTSPluginServiceProvider
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWTSPluginServiceProvider = *opaque{
+    // TODO: Method 'GetService'
+};
+// --------------------------------------------------------
+// Type: BITMAP_RENDERER_STATISTICS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const BITMAP_RENDERER_STATISTICS = extern struct {
+    dwFramesDelivered: {"kind":"UInt32"},
+    dwFramesDropped: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: IWTSBitmapRenderer
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWTSBitmapRenderer = *opaque{
+    // TODO: Method 'Render'
+    // TODO: Method 'GetRendererStatistics'
+    // TODO: Method 'RemoveMapping'
+};
+// --------------------------------------------------------
+// Type: IWTSBitmapRendererCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWTSBitmapRendererCallback = *opaque{
+    // TODO: Method 'OnTargetSizeChanged'
+};
+// --------------------------------------------------------
+// Type: IWTSBitmapRenderService
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWTSBitmapRenderService = *opaque{
+    // TODO: Method 'GetMappedRenderer'
+};
+// --------------------------------------------------------
+// Type: IWRdsGraphicsChannelEvents
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWRdsGraphicsChannelEvents = *opaque{
+    // TODO: Method 'OnDataReceived'
+    // TODO: Method 'OnClose'
+    // TODO: Method 'OnChannelOpened'
+    // TODO: Method 'OnDataSent'
+    // TODO: Method 'OnMetricsUpdate'
+};
+// --------------------------------------------------------
+// Type: IWRdsGraphicsChannel
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWRdsGraphicsChannel = *opaque{
+    // TODO: Method 'Write'
+    // TODO: Method 'Close'
+    // TODO: Method 'Open'
+};
+// --------------------------------------------------------
+// Type: WRdsGraphicsChannelType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WRdsGraphicsChannelType = *opaque{
+};
+// --------------------------------------------------------
+// Type: IWRdsGraphicsChannelManager
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWRdsGraphicsChannelManager = *opaque{
+    // TODO: Method 'CreateChannel'
+};
+// --------------------------------------------------------
+// Type: RFX_GFX_RECT
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const RFX_GFX_RECT = *opaque{
+};
+// --------------------------------------------------------
+// Type: RFX_GFX_MSG_HEADER
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const RFX_GFX_MSG_HEADER = *opaque{
+};
+// --------------------------------------------------------
+// Type: RFX_GFX_MONITOR_INFO
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const RFX_GFX_MONITOR_INFO = *opaque{
+};
+// --------------------------------------------------------
+// Type: RFX_GFX_MSG_CLIENT_DESKTOP_INFO_REQUEST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RFX_GFX_MSG_CLIENT_DESKTOP_INFO_REQUEST = extern struct {
+    channelHdr: Windows.Win32.RemoteDesktopServices.RFX_GFX_MSG_HEADER,
+};
+// --------------------------------------------------------
+// Type: RFX_GFX_MSG_CLIENT_DESKTOP_INFO_RESPONSE
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const RFX_GFX_MSG_CLIENT_DESKTOP_INFO_RESPONSE = *opaque{
+};
+// --------------------------------------------------------
+// Type: RFX_GFX_MSG_DESKTOP_CONFIG_CHANGE_NOTIFY
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const RFX_GFX_MSG_DESKTOP_CONFIG_CHANGE_NOTIFY = *opaque{
+};
+// --------------------------------------------------------
+// Type: RFX_GFX_MSG_DESKTOP_CONFIG_CHANGE_CONFIRM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RFX_GFX_MSG_DESKTOP_CONFIG_CHANGE_CONFIRM = extern struct {
+    channelHdr: Windows.Win32.RemoteDesktopServices.RFX_GFX_MSG_HEADER,
+};
+// --------------------------------------------------------
+// Type: RFX_GFX_MSG_DESKTOP_INPUT_RESET
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const RFX_GFX_MSG_DESKTOP_INPUT_RESET = *opaque{
+};
+// --------------------------------------------------------
+// Type: RFX_GFX_MSG_DISCONNECT_NOTIFY
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const RFX_GFX_MSG_DISCONNECT_NOTIFY = *opaque{
+};
+// --------------------------------------------------------
+// Type: RFX_GFX_MSG_DESKTOP_RESEND_REQUEST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RFX_GFX_MSG_DESKTOP_RESEND_REQUEST = extern struct {
+    channelHdr: Windows.Win32.RemoteDesktopServices.RFX_GFX_MSG_HEADER,
+    RedrawRect: Windows.Win32.RemoteDesktopServices.RFX_GFX_RECT,
+};
+// --------------------------------------------------------
+// Type: RFX_GFX_MSG_RDP_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const RFX_GFX_MSG_RDP_DATA = extern struct {
+    channelHdr: Windows.Win32.RemoteDesktopServices.RFX_GFX_MSG_HEADER,
+    rdpData: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: WTS_SOCKADDR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_SOCKADDR = extern struct {
+    sin_family: {"kind":"UInt16"},
+    u: Windows.Win32.RemoteDesktopServices.WTS_SOCKADDR+_u_e__Union,
+    // --------------------------------------------------------
+    // Type: _u_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _u_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _ipv6_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _ipv6_e__Struct = extern struct {
+            sin6_port: {"kind":"UInt16"},
+            sin6_flowinfo: {"kind":"UInt32"},
+            sin6_addr: {"kind":"Array","child": {"kind":"UInt16"}},
+            sin6_scope_id: {"kind":"UInt32"},
+        };
+        // --------------------------------------------------------
+        // Type: _ipv4_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _ipv4_e__Struct = extern struct {
+            sin_port: {"kind":"UInt16"},
+            in_addr: {"kind":"UInt32"},
+            sin_zero: {"kind":"Array","child": {"kind":"Byte"}},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: WTS_SMALL_RECT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_SMALL_RECT = extern struct {
+    Left: {"kind":"Int16"},
+    Top: {"kind":"Int16"},
+    Right: {"kind":"Int16"},
+    Bottom: {"kind":"Int16"},
+};
+// --------------------------------------------------------
+// Type: WTS_RCM_SERVICE_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WTS_RCM_SERVICE_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WTS_RCM_DRAIN_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WTS_RCM_DRAIN_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WTS_SERVICE_STATE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_SERVICE_STATE = extern struct {
+    RcmServiceState: Windows.Win32.RemoteDesktopServices.WTS_RCM_SERVICE_STATE,
+    RcmDrainState: Windows.Win32.RemoteDesktopServices.WTS_RCM_DRAIN_STATE,
+};
+// --------------------------------------------------------
+// Type: WTS_SESSION_ID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_SESSION_ID = extern struct {
+    SessionUniqueGuid: Guid,
+    SessionId: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WTS_USER_CREDENTIAL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_USER_CREDENTIAL = extern struct {
+    UserName: {"kind":"Array","child": {"kind":"UInt16"}},
+    Password: {"kind":"Array","child": {"kind":"UInt16"}},
+    Domain: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WTS_SYSTEMTIME
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_SYSTEMTIME = extern struct {
+    wYear: {"kind":"UInt16"},
+    wMonth: {"kind":"UInt16"},
+    wDayOfWeek: {"kind":"UInt16"},
+    wDay: {"kind":"UInt16"},
+    wHour: {"kind":"UInt16"},
+    wMinute: {"kind":"UInt16"},
+    wSecond: {"kind":"UInt16"},
+    wMilliseconds: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: WTS_TIME_ZONE_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_TIME_ZONE_INFORMATION = extern struct {
+    Bias: {"kind":"Int32"},
+    StandardName: {"kind":"Array","child": {"kind":"UInt16"}},
+    StandardDate: Windows.Win32.RemoteDesktopServices.WTS_SYSTEMTIME,
+    StandardBias: {"kind":"Int32"},
+    DaylightName: {"kind":"Array","child": {"kind":"UInt16"}},
+    DaylightDate: Windows.Win32.RemoteDesktopServices.WTS_SYSTEMTIME,
+    DaylightBias: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: WRDS_DYNAMIC_TIME_ZONE_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WRDS_DYNAMIC_TIME_ZONE_INFORMATION = extern struct {
+    Bias: {"kind":"Int32"},
+    StandardName: {"kind":"Array","child": {"kind":"UInt16"}},
+    StandardDate: Windows.Win32.RemoteDesktopServices.WTS_SYSTEMTIME,
+    StandardBias: {"kind":"Int32"},
+    DaylightName: {"kind":"Array","child": {"kind":"UInt16"}},
+    DaylightDate: Windows.Win32.RemoteDesktopServices.WTS_SYSTEMTIME,
+    DaylightBias: {"kind":"Int32"},
+    TimeZoneKeyName: {"kind":"Array","child": {"kind":"UInt16"}},
+    DynamicDaylightTimeDisabled: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: WTS_CLIENT_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_CLIENT_DATA = extern struct {
+    fDisableCtrlAltDel: {"kind":"Byte"},
+    fDoubleClickDetect: {"kind":"Byte"},
+    fEnableWindowsKey: {"kind":"Byte"},
+    fHideTitleBar: {"kind":"Byte"},
+    fInheritAutoLogon: Windows.Win32.SystemServices.BOOL,
+    fPromptForPassword: {"kind":"Byte"},
+    fUsingSavedCreds: {"kind":"Byte"},
+    Domain: {"kind":"Array","child": {"kind":"UInt16"}},
+    UserName: {"kind":"Array","child": {"kind":"UInt16"}},
+    Password: {"kind":"Array","child": {"kind":"UInt16"}},
+    fPasswordIsScPin: {"kind":"Byte"},
+    fInheritInitialProgram: Windows.Win32.SystemServices.BOOL,
+    WorkDirectory: {"kind":"Array","child": {"kind":"UInt16"}},
+    InitialProgram: {"kind":"Array","child": {"kind":"UInt16"}},
+    fMaximizeShell: {"kind":"Byte"},
+    EncryptionLevel: {"kind":"Byte"},
+    PerformanceFlags: {"kind":"UInt32"},
+    ProtocolName: {"kind":"Array","child": {"kind":"UInt16"}},
+    ProtocolType: {"kind":"UInt16"},
+    fInheritColorDepth: Windows.Win32.SystemServices.BOOL,
+    HRes: {"kind":"UInt16"},
+    VRes: {"kind":"UInt16"},
+    ColorDepth: {"kind":"UInt16"},
+    DisplayDriverName: {"kind":"Array","child": {"kind":"UInt16"}},
+    DisplayDeviceName: {"kind":"Array","child": {"kind":"UInt16"}},
+    fMouse: {"kind":"Byte"},
+    KeyboardLayout: {"kind":"UInt32"},
+    KeyboardType: {"kind":"UInt32"},
+    KeyboardSubType: {"kind":"UInt32"},
+    KeyboardFunctionKey: {"kind":"UInt32"},
+    imeFileName: {"kind":"Array","child": {"kind":"UInt16"}},
+    ActiveInputLocale: {"kind":"UInt32"},
+    fNoAudioPlayback: {"kind":"Byte"},
+    fRemoteConsoleAudio: {"kind":"Byte"},
+    AudioDriverName: {"kind":"Array","child": {"kind":"UInt16"}},
+    ClientTimeZone: Windows.Win32.RemoteDesktopServices.WTS_TIME_ZONE_INFORMATION,
+    ClientName: {"kind":"Array","child": {"kind":"UInt16"}},
+    SerialNumber: {"kind":"UInt32"},
+    ClientAddressFamily: {"kind":"UInt32"},
+    ClientAddress: {"kind":"Array","child": {"kind":"UInt16"}},
+    ClientSockAddress: Windows.Win32.RemoteDesktopServices.WTS_SOCKADDR,
+    ClientDirectory: {"kind":"Array","child": {"kind":"UInt16"}},
+    ClientBuildNumber: {"kind":"UInt32"},
+    ClientProductId: {"kind":"UInt16"},
+    OutBufCountHost: {"kind":"UInt16"},
+    OutBufCountClient: {"kind":"UInt16"},
+    OutBufLength: {"kind":"UInt16"},
+    ClientSessionId: {"kind":"UInt32"},
+    ClientDigProductId: {"kind":"Array","child": {"kind":"UInt16"}},
+    fDisableCpm: {"kind":"Byte"},
+    fDisableCdm: {"kind":"Byte"},
+    fDisableCcm: {"kind":"Byte"},
+    fDisableLPT: {"kind":"Byte"},
+    fDisableClip: {"kind":"Byte"},
+    fDisablePNP: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: WTS_USER_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_USER_DATA = extern struct {
+    WorkDirectory: {"kind":"Array","child": {"kind":"UInt16"}},
+    InitialProgram: {"kind":"Array","child": {"kind":"UInt16"}},
+    UserTimeZone: Windows.Win32.RemoteDesktopServices.WTS_TIME_ZONE_INFORMATION,
+};
+// --------------------------------------------------------
+// Type: WTS_POLICY_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_POLICY_DATA = extern struct {
+    fDisableEncryption: {"kind":"Byte"},
+    fDisableAutoReconnect: {"kind":"Byte"},
+    ColorDepth: {"kind":"UInt32"},
+    MinEncryptionLevel: {"kind":"Byte"},
+    fDisableCpm: {"kind":"Byte"},
+    fDisableCdm: {"kind":"Byte"},
+    fDisableCcm: {"kind":"Byte"},
+    fDisableLPT: {"kind":"Byte"},
+    fDisableClip: {"kind":"Byte"},
+    fDisablePNPRedir: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: WTS_PROTOCOL_CACHE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_PROTOCOL_CACHE = extern struct {
+    CacheReads: {"kind":"UInt32"},
+    CacheHits: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WTS_CACHE_STATS_UN
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const WTS_CACHE_STATS_UN = *opaque{
+};
+// --------------------------------------------------------
+// Type: WTS_CACHE_STATS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_CACHE_STATS = extern struct {
+    Specific: {"kind":"UInt32"},
+    Data: Windows.Win32.RemoteDesktopServices.WTS_CACHE_STATS_UN,
+    ProtocolType: {"kind":"UInt16"},
+    Length: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: WTS_PROTOCOL_COUNTERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_PROTOCOL_COUNTERS = extern struct {
+    WdBytes: {"kind":"UInt32"},
+    WdFrames: {"kind":"UInt32"},
+    WaitForOutBuf: {"kind":"UInt32"},
+    Frames: {"kind":"UInt32"},
+    Bytes: {"kind":"UInt32"},
+    CompressedBytes: {"kind":"UInt32"},
+    CompressFlushes: {"kind":"UInt32"},
+    Errors: {"kind":"UInt32"},
+    Timeouts: {"kind":"UInt32"},
+    AsyncFramingError: {"kind":"UInt32"},
+    AsyncOverrunError: {"kind":"UInt32"},
+    AsyncOverflowError: {"kind":"UInt32"},
+    AsyncParityError: {"kind":"UInt32"},
+    TdErrors: {"kind":"UInt32"},
+    ProtocolType: {"kind":"UInt16"},
+    Length: {"kind":"UInt16"},
+    Specific: {"kind":"UInt16"},
+    Reserved: {"kind":"Array","child": {"kind":"UInt32"}},
+};
+// --------------------------------------------------------
+// Type: WTS_PROTOCOL_STATUS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_PROTOCOL_STATUS = extern struct {
+    Output: Windows.Win32.RemoteDesktopServices.WTS_PROTOCOL_COUNTERS,
+    Input: Windows.Win32.RemoteDesktopServices.WTS_PROTOCOL_COUNTERS,
+    Cache: Windows.Win32.RemoteDesktopServices.WTS_CACHE_STATS,
+    AsyncSignal: {"kind":"UInt32"},
+    AsyncSignalMask: {"kind":"UInt32"},
+    Counters: {"kind":"Array","child": Windows.Win32.SystemServices.LARGE_INTEGER},
+};
+// --------------------------------------------------------
+// Type: WTS_DISPLAY_IOCTL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_DISPLAY_IOCTL = extern struct {
+    pDisplayIOCtlData: {"kind":"Array","child": {"kind":"Byte"}},
+    cbDisplayIOCtlData: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WTS_LOGON_ERROR_REDIRECTOR_RESPONSE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WTS_LOGON_ERROR_REDIRECTOR_RESPONSE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WTS_PROPERTY_VALUE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_PROPERTY_VALUE = extern struct {
+    Type: {"kind":"UInt16"},
+    u: Windows.Win32.RemoteDesktopServices.WTS_PROPERTY_VALUE+_u_e__Union,
+    // --------------------------------------------------------
+    // Type: _u_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _u_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _bVal_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _bVal_e__Struct = extern struct {
+            size: {"kind":"UInt32"},
+            pbVal: {"kind""Ptr","child":{"kind":"SByte"}},
+        };
+        // --------------------------------------------------------
+        // Type: _strVal_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _strVal_e__Struct = extern struct {
+            size: {"kind":"UInt32"},
+            pstrVal: {"kind""Ptr","child":{"kind":"UInt16"}},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: WTS_CERT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WTS_CERT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WTS_LICENSE_CAPABILITIES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WTS_LICENSE_CAPABILITIES = extern struct {
+    KeyExchangeAlg: {"kind":"UInt32"},
+    ProtocolVer: {"kind":"UInt32"},
+    fAuthenticateServer: Windows.Win32.SystemServices.BOOL,
+    CertType: Windows.Win32.RemoteDesktopServices.WTS_CERT_TYPE,
+    cbClientName: {"kind":"UInt32"},
+    rgbClientName: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: WRDS_CONNECTION_SETTING_LEVEL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WRDS_CONNECTION_SETTING_LEVEL = *opaque{
+};
+// --------------------------------------------------------
+// Type: WRDS_LISTENER_SETTING_LEVEL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WRDS_LISTENER_SETTING_LEVEL = *opaque{
+};
+// --------------------------------------------------------
+// Type: WRDS_SETTING_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WRDS_SETTING_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WRDS_SETTING_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WRDS_SETTING_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: WRDS_SETTING_LEVEL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WRDS_SETTING_LEVEL = *opaque{
+};
+// --------------------------------------------------------
+// Type: WRDS_LISTENER_SETTINGS_1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WRDS_LISTENER_SETTINGS_1 = extern struct {
+    MaxProtocolListenerConnectionCount: {"kind":"UInt32"},
+    SecurityDescriptorSize: {"kind":"UInt32"},
+    pSecurityDescriptor: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: WRDS_LISTENER_SETTING
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const WRDS_LISTENER_SETTING = *opaque{
+};
+// --------------------------------------------------------
+// Type: WRDS_LISTENER_SETTINGS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WRDS_LISTENER_SETTINGS = extern struct {
+    WRdsListenerSettingLevel: Windows.Win32.RemoteDesktopServices.WRDS_LISTENER_SETTING_LEVEL,
+    WRdsListenerSetting: Windows.Win32.RemoteDesktopServices.WRDS_LISTENER_SETTING,
+};
+// --------------------------------------------------------
+// Type: WRDS_CONNECTION_SETTINGS_1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WRDS_CONNECTION_SETTINGS_1 = extern struct {
+    fInheritInitialProgram: {"kind":"Byte"},
+    fInheritColorDepth: {"kind":"Byte"},
+    fHideTitleBar: {"kind":"Byte"},
+    fInheritAutoLogon: {"kind":"Byte"},
+    fMaximizeShell: {"kind":"Byte"},
+    fDisablePNP: {"kind":"Byte"},
+    fPasswordIsScPin: {"kind":"Byte"},
+    fPromptForPassword: {"kind":"Byte"},
+    fDisableCpm: {"kind":"Byte"},
+    fDisableCdm: {"kind":"Byte"},
+    fDisableCcm: {"kind":"Byte"},
+    fDisableLPT: {"kind":"Byte"},
+    fDisableClip: {"kind":"Byte"},
+    fResetBroken: {"kind":"Byte"},
+    fDisableEncryption: {"kind":"Byte"},
+    fDisableAutoReconnect: {"kind":"Byte"},
+    fDisableCtrlAltDel: {"kind":"Byte"},
+    fDoubleClickDetect: {"kind":"Byte"},
+    fEnableWindowsKey: {"kind":"Byte"},
+    fUsingSavedCreds: {"kind":"Byte"},
+    fMouse: {"kind":"Byte"},
+    fNoAudioPlayback: {"kind":"Byte"},
+    fRemoteConsoleAudio: {"kind":"Byte"},
+    EncryptionLevel: {"kind":"Byte"},
+    ColorDepth: {"kind":"UInt16"},
+    ProtocolType: {"kind":"UInt16"},
+    HRes: {"kind":"UInt16"},
+    VRes: {"kind":"UInt16"},
+    ClientProductId: {"kind":"UInt16"},
+    OutBufCountHost: {"kind":"UInt16"},
+    OutBufCountClient: {"kind":"UInt16"},
+    OutBufLength: {"kind":"UInt16"},
+    KeyboardLayout: {"kind":"UInt32"},
+    MaxConnectionTime: {"kind":"UInt32"},
+    MaxDisconnectionTime: {"kind":"UInt32"},
+    MaxIdleTime: {"kind":"UInt32"},
+    PerformanceFlags: {"kind":"UInt32"},
+    KeyboardType: {"kind":"UInt32"},
+    KeyboardSubType: {"kind":"UInt32"},
+    KeyboardFunctionKey: {"kind":"UInt32"},
+    ActiveInputLocale: {"kind":"UInt32"},
+    SerialNumber: {"kind":"UInt32"},
+    ClientAddressFamily: {"kind":"UInt32"},
+    ClientBuildNumber: {"kind":"UInt32"},
+    ClientSessionId: {"kind":"UInt32"},
+    WorkDirectory: {"kind":"Array","child": {"kind":"UInt16"}},
+    InitialProgram: {"kind":"Array","child": {"kind":"UInt16"}},
+    UserName: {"kind":"Array","child": {"kind":"UInt16"}},
+    Domain: {"kind":"Array","child": {"kind":"UInt16"}},
+    Password: {"kind":"Array","child": {"kind":"UInt16"}},
+    ProtocolName: {"kind":"Array","child": {"kind":"UInt16"}},
+    DisplayDriverName: {"kind":"Array","child": {"kind":"UInt16"}},
+    DisplayDeviceName: {"kind":"Array","child": {"kind":"UInt16"}},
+    imeFileName: {"kind":"Array","child": {"kind":"UInt16"}},
+    AudioDriverName: {"kind":"Array","child": {"kind":"UInt16"}},
+    ClientName: {"kind":"Array","child": {"kind":"UInt16"}},
+    ClientAddress: {"kind":"Array","child": {"kind":"UInt16"}},
+    ClientDirectory: {"kind":"Array","child": {"kind":"UInt16"}},
+    ClientDigProductId: {"kind":"Array","child": {"kind":"UInt16"}},
+    ClientSockAddress: Windows.Win32.RemoteDesktopServices.WTS_SOCKADDR,
+    ClientTimeZone: Windows.Win32.RemoteDesktopServices.WTS_TIME_ZONE_INFORMATION,
+    WRdsListenerSettings: Windows.Win32.RemoteDesktopServices.WRDS_LISTENER_SETTINGS,
+    EventLogActivityId: Guid,
+    ContextSize: {"kind":"UInt32"},
+    ContextData: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: WRDS_SETTINGS_1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WRDS_SETTINGS_1 = extern struct {
+    WRdsDisableClipStatus: Windows.Win32.RemoteDesktopServices.WRDS_SETTING_STATUS,
+    WRdsDisableClipValue: {"kind":"UInt32"},
+    WRdsDisableLPTStatus: Windows.Win32.RemoteDesktopServices.WRDS_SETTING_STATUS,
+    WRdsDisableLPTValue: {"kind":"UInt32"},
+    WRdsDisableCcmStatus: Windows.Win32.RemoteDesktopServices.WRDS_SETTING_STATUS,
+    WRdsDisableCcmValue: {"kind":"UInt32"},
+    WRdsDisableCdmStatus: Windows.Win32.RemoteDesktopServices.WRDS_SETTING_STATUS,
+    WRdsDisableCdmValue: {"kind":"UInt32"},
+    WRdsDisableCpmStatus: Windows.Win32.RemoteDesktopServices.WRDS_SETTING_STATUS,
+    WRdsDisableCpmValue: {"kind":"UInt32"},
+    WRdsDisablePnpStatus: Windows.Win32.RemoteDesktopServices.WRDS_SETTING_STATUS,
+    WRdsDisablePnpValue: {"kind":"UInt32"},
+    WRdsEncryptionLevelStatus: Windows.Win32.RemoteDesktopServices.WRDS_SETTING_STATUS,
+    WRdsEncryptionValue: {"kind":"UInt32"},
+    WRdsColorDepthStatus: Windows.Win32.RemoteDesktopServices.WRDS_SETTING_STATUS,
+    WRdsColorDepthValue: {"kind":"UInt32"},
+    WRdsDisableAutoReconnecetStatus: Windows.Win32.RemoteDesktopServices.WRDS_SETTING_STATUS,
+    WRdsDisableAutoReconnecetValue: {"kind":"UInt32"},
+    WRdsDisableEncryptionStatus: Windows.Win32.RemoteDesktopServices.WRDS_SETTING_STATUS,
+    WRdsDisableEncryptionValue: {"kind":"UInt32"},
+    WRdsResetBrokenStatus: Windows.Win32.RemoteDesktopServices.WRDS_SETTING_STATUS,
+    WRdsResetBrokenValue: {"kind":"UInt32"},
+    WRdsMaxIdleTimeStatus: Windows.Win32.RemoteDesktopServices.WRDS_SETTING_STATUS,
+    WRdsMaxIdleTimeValue: {"kind":"UInt32"},
+    WRdsMaxDisconnectTimeStatus: Windows.Win32.RemoteDesktopServices.WRDS_SETTING_STATUS,
+    WRdsMaxDisconnectTimeValue: {"kind":"UInt32"},
+    WRdsMaxConnectTimeStatus: Windows.Win32.RemoteDesktopServices.WRDS_SETTING_STATUS,
+    WRdsMaxConnectTimeValue: {"kind":"UInt32"},
+    WRdsKeepAliveStatus: Windows.Win32.RemoteDesktopServices.WRDS_SETTING_STATUS,
+    WRdsKeepAliveStartValue: {"kind":"Byte"},
+    WRdsKeepAliveIntervalValue: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WRDS_CONNECTION_SETTING
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const WRDS_CONNECTION_SETTING = *opaque{
+};
+// --------------------------------------------------------
+// Type: WRDS_CONNECTION_SETTINGS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WRDS_CONNECTION_SETTINGS = extern struct {
+    WRdsConnectionSettingLevel: Windows.Win32.RemoteDesktopServices.WRDS_CONNECTION_SETTING_LEVEL,
+    WRdsConnectionSetting: Windows.Win32.RemoteDesktopServices.WRDS_CONNECTION_SETTING,
+};
+// --------------------------------------------------------
+// Type: WRDS_SETTING
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const WRDS_SETTING = *opaque{
+};
+// --------------------------------------------------------
+// Type: WRDS_SETTINGS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WRDS_SETTINGS = extern struct {
+    WRdsSettingType: Windows.Win32.RemoteDesktopServices.WRDS_SETTING_TYPE,
+    WRdsSettingLevel: Windows.Win32.RemoteDesktopServices.WRDS_SETTING_LEVEL,
+    WRdsSetting: Windows.Win32.RemoteDesktopServices.WRDS_SETTING,
+};
+// --------------------------------------------------------
+// Type: IWTSProtocolManager
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWTSProtocolManager = *opaque{
+    // TODO: Method 'CreateListener'
+    // TODO: Method 'NotifyServiceStateChange'
+    // TODO: Method 'NotifySessionOfServiceStart'
+    // TODO: Method 'NotifySessionOfServiceStop'
+    // TODO: Method 'NotifySessionStateChange'
+};
+// --------------------------------------------------------
+// Type: IWTSProtocolListener
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWTSProtocolListener = *opaque{
+    // TODO: Method 'StartListen'
+    // TODO: Method 'StopListen'
+};
+// --------------------------------------------------------
+// Type: IWTSProtocolListenerCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWTSProtocolListenerCallback = *opaque{
+    // TODO: Method 'OnConnected'
+};
+// --------------------------------------------------------
+// Type: IWTSProtocolConnection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWTSProtocolConnection = *opaque{
+    // TODO: Method 'GetLogonErrorRedirector'
+    // TODO: Method 'SendPolicyData'
+    // TODO: Method 'AcceptConnection'
+    // TODO: Method 'GetClientData'
+    // TODO: Method 'GetUserCredentials'
+    // TODO: Method 'GetLicenseConnection'
+    // TODO: Method 'AuthenticateClientToSession'
+    // TODO: Method 'NotifySessionId'
+    // TODO: Method 'GetProtocolHandles'
+    // TODO: Method 'ConnectNotify'
+    // TODO: Method 'IsUserAllowedToLogon'
+    // TODO: Method 'SessionArbitrationEnumeration'
+    // TODO: Method 'LogonNotify'
+    // TODO: Method 'GetUserData'
+    // TODO: Method 'DisconnectNotify'
+    // TODO: Method 'Close'
+    // TODO: Method 'GetProtocolStatus'
+    // TODO: Method 'GetLastInputTime'
+    // TODO: Method 'SetErrorInfo'
+    // TODO: Method 'SendBeep'
+    // TODO: Method 'CreateVirtualChannel'
+    // TODO: Method 'QueryProperty'
+    // TODO: Method 'GetShadowConnection'
+};
+// --------------------------------------------------------
+// Type: IWTSProtocolConnectionCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWTSProtocolConnectionCallback = *opaque{
+    // TODO: Method 'OnReady'
+    // TODO: Method 'BrokenConnection'
+    // TODO: Method 'StopScreenUpdates'
+    // TODO: Method 'RedrawWindow'
+    // TODO: Method 'DisplayIOCtl'
+};
+// --------------------------------------------------------
+// Type: IWTSProtocolShadowConnection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWTSProtocolShadowConnection = *opaque{
+    // TODO: Method 'Start'
+    // TODO: Method 'Stop'
+    // TODO: Method 'DoTarget'
+};
+// --------------------------------------------------------
+// Type: IWTSProtocolShadowCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWTSProtocolShadowCallback = *opaque{
+    // TODO: Method 'StopShadow'
+    // TODO: Method 'InvokeTargetShadow'
+};
+// --------------------------------------------------------
+// Type: IWTSProtocolLicenseConnection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWTSProtocolLicenseConnection = *opaque{
+    // TODO: Method 'RequestLicensingCapabilities'
+    // TODO: Method 'SendClientLicense'
+    // TODO: Method 'RequestClientLicense'
+    // TODO: Method 'ProtocolComplete'
+};
+// --------------------------------------------------------
+// Type: IWTSProtocolLogonErrorRedirector
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWTSProtocolLogonErrorRedirector = *opaque{
+    // TODO: Method 'OnBeginPainting'
+    // TODO: Method 'RedirectStatus'
+    // TODO: Method 'RedirectMessage'
+    // TODO: Method 'RedirectLogonError'
+};
+// --------------------------------------------------------
+// Type: IWRdsRemoteFXGraphicsConnection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWRdsRemoteFXGraphicsConnection = *opaque{
+    // TODO: Method 'EnableRemoteFXGraphics'
+    // TODO: Method 'GetVirtualChannelTransport'
+};
+// --------------------------------------------------------
+// Type: IWRdsProtocolSettings
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWRdsProtocolSettings = *opaque{
+    // TODO: Method 'GetSettings'
+    // TODO: Method 'MergeSettings'
+};
+// --------------------------------------------------------
+// Type: IWRdsProtocolManager
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWRdsProtocolManager = *opaque{
+    // TODO: Method 'Initialize'
+    // TODO: Method 'CreateListener'
+    // TODO: Method 'NotifyServiceStateChange'
+    // TODO: Method 'NotifySessionOfServiceStart'
+    // TODO: Method 'NotifySessionOfServiceStop'
+    // TODO: Method 'NotifySessionStateChange'
+    // TODO: Method 'NotifySettingsChange'
+    // TODO: Method 'Uninitialize'
+};
+// --------------------------------------------------------
+// Type: IWRdsProtocolListener
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWRdsProtocolListener = *opaque{
+    // TODO: Method 'GetSettings'
+    // TODO: Method 'StartListen'
+    // TODO: Method 'StopListen'
+};
+// --------------------------------------------------------
+// Type: IWRdsProtocolListenerCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWRdsProtocolListenerCallback = *opaque{
+    // TODO: Method 'OnConnected'
+};
+// --------------------------------------------------------
+// Type: IWRdsProtocolConnection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWRdsProtocolConnection = *opaque{
+    // TODO: Method 'GetLogonErrorRedirector'
+    // TODO: Method 'AcceptConnection'
+    // TODO: Method 'GetClientData'
+    // TODO: Method 'GetClientMonitorData'
+    // TODO: Method 'GetUserCredentials'
+    // TODO: Method 'GetLicenseConnection'
+    // TODO: Method 'AuthenticateClientToSession'
+    // TODO: Method 'NotifySessionId'
+    // TODO: Method 'GetInputHandles'
+    // TODO: Method 'GetVideoHandle'
+    // TODO: Method 'ConnectNotify'
+    // TODO: Method 'IsUserAllowedToLogon'
+    // TODO: Method 'SessionArbitrationEnumeration'
+    // TODO: Method 'LogonNotify'
+    // TODO: Method 'PreDisconnect'
+    // TODO: Method 'DisconnectNotify'
+    // TODO: Method 'Close'
+    // TODO: Method 'GetProtocolStatus'
+    // TODO: Method 'GetLastInputTime'
+    // TODO: Method 'SetErrorInfo'
+    // TODO: Method 'CreateVirtualChannel'
+    // TODO: Method 'QueryProperty'
+    // TODO: Method 'GetShadowConnection'
+    // TODO: Method 'NotifyCommandProcessCreated'
+};
+// --------------------------------------------------------
+// Type: IWRdsProtocolConnectionCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWRdsProtocolConnectionCallback = *opaque{
+    // TODO: Method 'OnReady'
+    // TODO: Method 'BrokenConnection'
+    // TODO: Method 'StopScreenUpdates'
+    // TODO: Method 'RedrawWindow'
+    // TODO: Method 'GetConnectionId'
+};
+// --------------------------------------------------------
+// Type: IWRdsProtocolShadowConnection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWRdsProtocolShadowConnection = *opaque{
+    // TODO: Method 'Start'
+    // TODO: Method 'Stop'
+    // TODO: Method 'DoTarget'
+};
+// --------------------------------------------------------
+// Type: IWRdsProtocolShadowCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWRdsProtocolShadowCallback = *opaque{
+    // TODO: Method 'StopShadow'
+    // TODO: Method 'InvokeTargetShadow'
+};
+// --------------------------------------------------------
+// Type: IWRdsProtocolLicenseConnection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWRdsProtocolLicenseConnection = *opaque{
+    // TODO: Method 'RequestLicensingCapabilities'
+    // TODO: Method 'SendClientLicense'
+    // TODO: Method 'RequestClientLicense'
+    // TODO: Method 'ProtocolComplete'
+};
+// --------------------------------------------------------
+// Type: IWRdsProtocolLogonErrorRedirector
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWRdsProtocolLogonErrorRedirector = *opaque{
+    // TODO: Method 'OnBeginPainting'
+    // TODO: Method 'RedirectStatus'
+    // TODO: Method 'RedirectMessage'
+    // TODO: Method 'RedirectLogonError'
+};
+// --------------------------------------------------------
+// Type: IWRdsWddmIddProps
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWRdsWddmIddProps = *opaque{
+    // TODO: Method 'GetHardwareId'
+    // TODO: Method 'OnDriverLoad'
+    // TODO: Method 'OnDriverUnload'
+    // TODO: Method 'EnableWddmIdd'
+};
+// --------------------------------------------------------
+// Type: IWRdsProtocolConnectionSettings
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWRdsProtocolConnectionSettings = *opaque{
+    // TODO: Method 'SetConnectionSetting'
+    // TODO: Method 'GetConnectionSetting'
+};
+// --------------------------------------------------------
+// Type: __MIDL_IRemoteDesktopClientSettings_0001
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const __MIDL_IRemoteDesktopClientSettings_0001 = *opaque{
+};
+// --------------------------------------------------------
+// Type: IRemoteDesktopClientSettings
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRemoteDesktopClientSettings = *opaque{
+    // TODO: Method 'ApplySettings'
+    // TODO: Method 'RetrieveSettings'
+    // TODO: Method 'GetRdpProperty'
+    // TODO: Method 'SetRdpProperty'
+};
+// --------------------------------------------------------
+// Type: RemoteActionType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const RemoteActionType = *opaque{
+};
+// --------------------------------------------------------
+// Type: SnapshotEncodingType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SnapshotEncodingType = *opaque{
+};
+// --------------------------------------------------------
+// Type: SnapshotFormatType
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const SnapshotFormatType = *opaque{
+};
+// --------------------------------------------------------
+// Type: IRemoteDesktopClientActions
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRemoteDesktopClientActions = *opaque{
+    // TODO: Method 'SuspendScreenUpdates'
+    // TODO: Method 'ResumeScreenUpdates'
+    // TODO: Method 'ExecuteRemoteAction'
+    // TODO: Method 'GetSnapshot'
+};
+// --------------------------------------------------------
+// Type: IRemoteDesktopClientTouchPointer
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRemoteDesktopClientTouchPointer = *opaque{
+    // TODO: Method 'put_Enabled'
+    // TODO: Method 'get_Enabled'
+    // TODO: Method 'put_EventsEnabled'
+    // TODO: Method 'get_EventsEnabled'
+    // TODO: Method 'put_PointerSpeed'
+    // TODO: Method 'get_PointerSpeed'
+};
+// --------------------------------------------------------
+// Type: __MIDL_IRemoteDesktopClient_0001
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const __MIDL_IRemoteDesktopClient_0001 = *opaque{
+};
+// --------------------------------------------------------
+// Type: IRemoteDesktopClient
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IRemoteDesktopClient = *opaque{
+    // TODO: Method 'Connect'
+    // TODO: Method 'Disconnect'
+    // TODO: Method 'Reconnect'
+    // TODO: Method 'get_Settings'
+    // TODO: Method 'get_Actions'
+    // TODO: Method 'get_TouchPointer'
+    // TODO: Method 'DeleteSavedCredentials'
+    // TODO: Method 'UpdateSessionDisplaySettings'
+    // TODO: Method 'attachEvent'
+    // TODO: Method 'detachEvent'
+};
+// --------------------------------------------------------
+// Type: APO_BUFFER_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const APO_BUFFER_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: APO_CONNECTION_PROPERTY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const APO_CONNECTION_PROPERTY = extern struct {
+    pBuffer: {"kind":"UIntPtr"},
+    u32ValidFrameCount: {"kind":"UInt32"},
+    u32BufferFlags: Windows.Win32.RemoteDesktopServices.APO_BUFFER_FLAGS,
+    u32Signature: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: AE_POSITION_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const AE_POSITION_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: AE_CURRENT_POSITION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AE_CURRENT_POSITION = extern struct {
+    u64DevicePosition: {"kind":"UInt64"},
+    u64StreamPosition: {"kind":"UInt64"},
+    u64PaddingFrames: {"kind":"UInt64"},
+    hnsQPCPosition: {"kind":"Int64"},
+    f32FramesPerSecond: {"kind":"Single"},
+    Flag: Windows.Win32.RemoteDesktopServices.AE_POSITION_FLAGS,
+};
+// --------------------------------------------------------
+// Type: IAudioEndpoint
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAudioEndpoint = *opaque{
+    // TODO: Method 'GetFrameFormat'
+    // TODO: Method 'GetFramesPerPacket'
+    // TODO: Method 'GetLatency'
+    // TODO: Method 'SetStreamFlags'
+    // TODO: Method 'SetEventHandle'
+};
+// --------------------------------------------------------
+// Type: IAudioEndpointRT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAudioEndpointRT = *opaque{
+    // TODO: Method 'GetCurrentPadding'
+    // TODO: Method 'ProcessingComplete'
+    // TODO: Method 'SetPinInactive'
+    // TODO: Method 'SetPinActive'
+};
+// --------------------------------------------------------
+// Type: IAudioInputEndpointRT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAudioInputEndpointRT = *opaque{
+    // TODO: Method 'GetInputDataPointer'
+    // TODO: Method 'ReleaseInputDataPointer'
+    // TODO: Method 'PulseEndpoint'
+};
+// --------------------------------------------------------
+// Type: IAudioOutputEndpointRT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAudioOutputEndpointRT = *opaque{
+    // TODO: Method 'GetOutputDataPointer'
+    // TODO: Method 'ReleaseOutputDataPointer'
+    // TODO: Method 'PulseEndpoint'
+};
+// --------------------------------------------------------
+// Type: IAudioDeviceEndpoint
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAudioDeviceEndpoint = *opaque{
+    // TODO: Method 'SetBuffer'
+    // TODO: Method 'GetRTCaps'
+    // TODO: Method 'GetEventDrivenCapable'
+    // TODO: Method 'WriteExclusiveModeParametersToSharedMemory'
+};
+// --------------------------------------------------------
+// Type: IAudioEndpointControl
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IAudioEndpointControl = *opaque{
+    // TODO: Method 'Start'
+    // TODO: Method 'Reset'
+    // TODO: Method 'Stop'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSStopRemoteControlSession(
+    LogonId: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSStartRemoteControlSessionW(
+    pTargetServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TargetLogonId: {"kind":"UInt32"},
+    HotkeyVk: {"kind":"Byte"},
+    HotkeyModifiers: {"kind":"UInt16"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSStartRemoteControlSessionA(
+    pTargetServerName: {"kind""Ptr","child":{"kind":"SByte"}},
+    TargetLogonId: {"kind":"UInt32"},
+    HotkeyVk: {"kind":"Byte"},
+    HotkeyModifiers: {"kind":"UInt16"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSConnectSessionA(
+    LogonId: {"kind":"UInt32"},
+    TargetLogonId: {"kind":"UInt32"},
+    pPassword: {"kind""Ptr","child":{"kind":"SByte"}},
+    bWait: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSConnectSessionW(
+    LogonId: {"kind":"UInt32"},
+    TargetLogonId: {"kind":"UInt32"},
+    pPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    bWait: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSEnumerateServersW(
+    pDomainName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Reserved: {"kind":"UInt32"},
+    Version: {"kind":"UInt32"},
+    ppServerInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.RemoteDesktopServices.WTS_SERVER_INFOW}},
+    pCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSEnumerateServersA(
+    pDomainName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Reserved: {"kind":"UInt32"},
+    Version: {"kind":"UInt32"},
+    ppServerInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.RemoteDesktopServices.WTS_SERVER_INFOA}},
+    pCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WTSAPI32" fn WTSOpenServerW(
+    pServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WTSAPI32" fn WTSOpenServerA(
+    pServerName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WTSAPI32" fn WTSOpenServerExW(
+    pServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WTSAPI32" fn WTSOpenServerExA(
+    pServerName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WTSAPI32" fn WTSCloseServer(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSEnumerateSessionsW(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    Reserved: {"kind":"UInt32"},
+    Version: {"kind":"UInt32"},
+    ppSessionInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.RemoteDesktopServices.WTS_SESSION_INFOW}},
+    pCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSEnumerateSessionsA(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    Reserved: {"kind":"UInt32"},
+    Version: {"kind":"UInt32"},
+    ppSessionInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.RemoteDesktopServices.WTS_SESSION_INFOA}},
+    pCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSEnumerateSessionsExW(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    pLevel: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Filter: {"kind":"UInt32"},
+    ppSessionInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.RemoteDesktopServices.WTS_SESSION_INFO_1W}},
+    pCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSEnumerateSessionsExA(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    pLevel: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Filter: {"kind":"UInt32"},
+    ppSessionInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.RemoteDesktopServices.WTS_SESSION_INFO_1A}},
+    pCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSEnumerateProcessesW(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    Reserved: {"kind":"UInt32"},
+    Version: {"kind":"UInt32"},
+    ppProcessInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.RemoteDesktopServices.WTS_PROCESS_INFOW}},
+    pCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSEnumerateProcessesA(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    Reserved: {"kind":"UInt32"},
+    Version: {"kind":"UInt32"},
+    ppProcessInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.RemoteDesktopServices.WTS_PROCESS_INFOA}},
+    pCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSTerminateProcess(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    ProcessId: {"kind":"UInt32"},
+    ExitCode: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSQuerySessionInformationW(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    SessionId: {"kind":"UInt32"},
+    WTSInfoClass: Windows.Win32.RemoteDesktopServices.WTS_INFO_CLASS,
+    ppBuffer: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    pBytesReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSQuerySessionInformationA(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    SessionId: {"kind":"UInt32"},
+    WTSInfoClass: Windows.Win32.RemoteDesktopServices.WTS_INFO_CLASS,
+    ppBuffer: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    pBytesReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSQueryUserConfigW(
+    pServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pUserName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    WTSConfigClass: Windows.Win32.RemoteDesktopServices.WTS_CONFIG_CLASS,
+    ppBuffer: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    pBytesReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSQueryUserConfigA(
+    pServerName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pUserName: {"kind""Ptr","child":{"kind":"SByte"}},
+    WTSConfigClass: Windows.Win32.RemoteDesktopServices.WTS_CONFIG_CLASS,
+    ppBuffer: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    pBytesReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSSetUserConfigW(
+    pServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pUserName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    WTSConfigClass: Windows.Win32.RemoteDesktopServices.WTS_CONFIG_CLASS,
+    pBuffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DataLength: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSSetUserConfigA(
+    pServerName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pUserName: {"kind""Ptr","child":{"kind":"SByte"}},
+    WTSConfigClass: Windows.Win32.RemoteDesktopServices.WTS_CONFIG_CLASS,
+    pBuffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    DataLength: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSSendMessageW(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    SessionId: {"kind":"UInt32"},
+    pTitle: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TitleLength: {"kind":"UInt32"},
+    pMessage: {"kind""Ptr","child":{"kind":"UInt16"}},
+    MessageLength: {"kind":"UInt32"},
+    Style: {"kind":"UInt32"},
+    Timeout: {"kind":"UInt32"},
+    pResponse: {"kind""Ptr","child":{"kind":"UInt32"}},
+    bWait: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSSendMessageA(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    SessionId: {"kind":"UInt32"},
+    pTitle: {"kind""Ptr","child":{"kind":"SByte"}},
+    TitleLength: {"kind":"UInt32"},
+    pMessage: {"kind""Ptr","child":{"kind":"SByte"}},
+    MessageLength: {"kind":"UInt32"},
+    Style: {"kind":"UInt32"},
+    Timeout: {"kind":"UInt32"},
+    pResponse: {"kind""Ptr","child":{"kind":"UInt32"}},
+    bWait: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSDisconnectSession(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    SessionId: {"kind":"UInt32"},
+    bWait: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSLogoffSession(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    SessionId: {"kind":"UInt32"},
+    bWait: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSShutdownSystem(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    ShutdownFlag: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSWaitSystemEvent(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    EventMask: {"kind":"UInt32"},
+    pEventFlags: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSVirtualChannelOpen(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    SessionId: {"kind":"UInt32"},
+    pVirtualName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSVirtualChannelOpenEx(
+    SessionId: {"kind":"UInt32"},
+    pVirtualName: {"kind""Ptr","child":{"kind":"SByte"}},
+    flags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSVirtualChannelClose(
+    hChannelHandle: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSVirtualChannelRead(
+    hChannelHandle: Windows.Win32.SystemServices.HANDLE,
+    TimeOut: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    BufferSize: {"kind":"UInt32"},
+    pBytesRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSVirtualChannelWrite(
+    hChannelHandle: Windows.Win32.SystemServices.HANDLE,
+    Buffer: {"kind""Ptr","child":{"kind":"SByte"}},
+    Length: {"kind":"UInt32"},
+    pBytesWritten: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSVirtualChannelPurgeInput(
+    hChannelHandle: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSVirtualChannelPurgeOutput(
+    hChannelHandle: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSVirtualChannelQuery(
+    hChannelHandle: Windows.Win32.SystemServices.HANDLE,
+    param1: Windows.Win32.RemoteDesktopServices.WTS_VIRTUAL_CLASS,
+    ppBuffer: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+    pBytesReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WTSAPI32" fn WTSFreeMemory(
+    pMemory: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSRegisterSessionNotification(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSUnRegisterSessionNotification(
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINSTA" fn WTSRegisterSessionNotificationEx(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+    dwFlags: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WINSTA" fn WTSUnRegisterSessionNotificationEx(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    hWnd: Windows.Win32.WindowsAndMessaging.HWND,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSQueryUserToken(
+    SessionId: {"kind":"UInt32"},
+    phToken: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSFreeMemoryExW(
+    WTSTypeClass: Windows.Win32.RemoteDesktopServices.WTS_TYPE_CLASS,
+    pMemory: {"kind""Ptr","child":{"kind":"Void"}},
+    NumberOfEntries: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSFreeMemoryExA(
+    WTSTypeClass: Windows.Win32.RemoteDesktopServices.WTS_TYPE_CLASS,
+    pMemory: {"kind""Ptr","child":{"kind":"Void"}},
+    NumberOfEntries: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSEnumerateProcessesExW(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    pLevel: {"kind""Ptr","child":{"kind":"UInt32"}},
+    SessionId: {"kind":"UInt32"},
+    ppProcessInfo: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    pCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSEnumerateProcessesExA(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    pLevel: {"kind""Ptr","child":{"kind":"UInt32"}},
+    SessionId: {"kind":"UInt32"},
+    ppProcessInfo: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    pCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSEnumerateListenersW(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    pReserved: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved: {"kind":"UInt32"},
+    pListeners: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    pCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSEnumerateListenersA(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    pReserved: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved: {"kind":"UInt32"},
+    pListeners: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    pCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSQueryListenerConfigW(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    pReserved: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved: {"kind":"UInt32"},
+    pListenerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pBuffer: {"kind""Ptr","child":Windows.Win32.RemoteDesktopServices.WTSLISTENERCONFIGW},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSQueryListenerConfigA(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    pReserved: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved: {"kind":"UInt32"},
+    pListenerName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pBuffer: {"kind""Ptr","child":Windows.Win32.RemoteDesktopServices.WTSLISTENERCONFIGA},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSCreateListenerW(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    pReserved: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved: {"kind":"UInt32"},
+    pListenerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pBuffer: {"kind""Ptr","child":Windows.Win32.RemoteDesktopServices.WTSLISTENERCONFIGW},
+    flag: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSCreateListenerA(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    pReserved: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved: {"kind":"UInt32"},
+    pListenerName: {"kind""Ptr","child":{"kind":"SByte"}},
+    pBuffer: {"kind""Ptr","child":Windows.Win32.RemoteDesktopServices.WTSLISTENERCONFIGA},
+    flag: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSSetListenerSecurityW(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    pReserved: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved: {"kind":"UInt32"},
+    pListenerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SecurityInformation: {"kind":"UInt32"},
+    pSecurityDescriptor: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSSetListenerSecurityA(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    pReserved: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved: {"kind":"UInt32"},
+    pListenerName: {"kind""Ptr","child":{"kind":"SByte"}},
+    SecurityInformation: {"kind":"UInt32"},
+    pSecurityDescriptor: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSGetListenerSecurityW(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    pReserved: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved: {"kind":"UInt32"},
+    pListenerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    SecurityInformation: {"kind":"UInt32"},
+    pSecurityDescriptor: {"kind""Ptr","child":{"kind":"Void"}},
+    nLength: {"kind":"UInt32"},
+    lpnLengthNeeded: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WTSAPI32" fn WTSGetListenerSecurityA(
+    hServer: Windows.Win32.SystemServices.HANDLE,
+    pReserved: {"kind""Ptr","child":{"kind":"Void"}},
+    Reserved: {"kind":"UInt32"},
+    pListenerName: {"kind""Ptr","child":{"kind":"SByte"}},
+    SecurityInformation: {"kind":"UInt32"},
+    pSecurityDescriptor: {"kind""Ptr","child":{"kind":"Void"}},
+    nLength: {"kind":"UInt32"},
+    lpnLengthNeeded: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WTSAPI32" fn WTSEnableChildSessions(
+    bEnable: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WTSAPI32" fn WTSIsChildSessionsEnabled(
+    pbEnabled: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WTSAPI32" fn WTSGetChildSessionId(
+    pSessionId: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WTSAPI32" fn WTSSetRenderHint(
+    pRenderHintID: {"kind""Ptr","child":{"kind":"UInt64"}},
+    hwndOwner: Windows.Win32.WindowsAndMessaging.HWND,
+    renderHintType: {"kind":"UInt32"},
+    cbHintDataLength: {"kind":"UInt32"},
+    pHintData: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "KERNEL32" fn ProcessIdToSessionId(
+    dwProcessId: {"kind":"UInt32"},
+    pSessionId: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn WTSGetActiveConsoleSessionId(
+],
+
+"unicode_aliases": [
+     "WTS_SERVER_INFO"
+     "WTS_SESSION_INFO"
+     "WTS_SESSION_INFO_1"
+     "WTS_PROCESS_INFO"
+     "WTSCONFIGINFO"
+     "WTSINFO"
+     "WTSINFOEX_LEVEL1_"
+     "WTSINFOEX_LEVEL_"
+     "WTSINFOEX"
+     "WTSCLIENT"
+     "_WTS_PRODUCT_INFO"
+     "WTS_VALIDATION_INFORMATION"
+     "WTSUSERCONFIG"
+     "WTS_PROCESS_INFO_EX"
+     "WTSLISTENERCONFIG"
+     "WTSStartRemoteControlSession"
+     "WTSConnectSession"
+     "WTSEnumerateServers"
+     "WTSOpenServer"
+     "WTSOpenServerEx"
+     "WTSEnumerateSessions"
+     "WTSEnumerateSessionsEx"
+     "WTSEnumerateProcesses"
+     "WTSQuerySessionInformation"
+     "WTSQueryUserConfig"
+     "WTSSetUserConfig"
+     "WTSSendMessage"
+     "WTSFreeMemoryEx"
+     "WTSEnumerateProcessesEx"
+     "WTSEnumerateListeners"
+     "WTSQueryListenerConfig"
+     "WTSCreateListener"
+     "WTSSetListenerSecurity"
+     "WTSGetListenerSecurity"
+]}

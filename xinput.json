@@ -1,0 +1,111 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: XINPUT_GAMEPAD
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const XINPUT_GAMEPAD = extern struct {
+    wButtons: {"kind":"UInt16"},
+    bLeftTrigger: {"kind":"Byte"},
+    bRightTrigger: {"kind":"Byte"},
+    sThumbLX: {"kind":"Int16"},
+    sThumbLY: {"kind":"Int16"},
+    sThumbRX: {"kind":"Int16"},
+    sThumbRY: {"kind":"Int16"},
+};
+// --------------------------------------------------------
+// Type: XINPUT_STATE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const XINPUT_STATE = extern struct {
+    dwPacketNumber: {"kind":"UInt32"},
+    Gamepad: Windows.Win32.XInput.XINPUT_GAMEPAD,
+};
+// --------------------------------------------------------
+// Type: XINPUT_VIBRATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const XINPUT_VIBRATION = extern struct {
+    wLeftMotorSpeed: {"kind":"UInt16"},
+    wRightMotorSpeed: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: XINPUT_CAPABILITIES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const XINPUT_CAPABILITIES = extern struct {
+    Type: {"kind":"Byte"},
+    SubType: {"kind":"Byte"},
+    Flags: {"kind":"UInt16"},
+    Gamepad: Windows.Win32.XInput.XINPUT_GAMEPAD,
+    Vibration: Windows.Win32.XInput.XINPUT_VIBRATION,
+};
+// --------------------------------------------------------
+// Type: XINPUT_BATTERY_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const XINPUT_BATTERY_INFORMATION = extern struct {
+    BatteryType: {"kind":"Byte"},
+    BatteryLevel: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: XINPUT_KEYSTROKE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const XINPUT_KEYSTROKE = extern struct {
+    VirtualKey: {"kind":"UInt16"},
+    Unicode: {"kind":"UInt16"},
+    Flags: {"kind":"UInt16"},
+    UserIndex: {"kind":"Byte"},
+    HidCode: {"kind":"Byte"},
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "XINPUTUAP" fn XInputGetState(
+    dwUserIndex: {"kind":"UInt32"},
+    pState: {"kind""Ptr","child":Windows.Win32.XInput.XINPUT_STATE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "XINPUTUAP" fn XInputSetState(
+    dwUserIndex: {"kind":"UInt32"},
+    pVibration: {"kind""Ptr","child":Windows.Win32.XInput.XINPUT_VIBRATION},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "XINPUTUAP" fn XInputGetCapabilities(
+    dwUserIndex: {"kind":"UInt32"},
+    dwFlags: {"kind":"UInt32"},
+    pCapabilities: {"kind""Ptr","child":Windows.Win32.XInput.XINPUT_CAPABILITIES},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "XINPUTUAP" fn XInputEnable(
+    enable: Windows.Win32.SystemServices.BOOL,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "XINPUTUAP" fn XInputGetAudioDeviceIds(
+    dwUserIndex: {"kind":"UInt32"},
+    pRenderDeviceId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pRenderCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pCaptureDeviceId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pCaptureCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "XINPUTUAP" fn XInputGetBatteryInformation(
+    dwUserIndex: {"kind":"UInt32"},
+    devType: {"kind":"Byte"},
+    pBatteryInformation: {"kind""Ptr","child":Windows.Win32.XInput.XINPUT_BATTERY_INFORMATION},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "XINPUTUAP" fn XInputGetKeystroke(
+    dwUserIndex: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+    pKeystroke: {"kind""Ptr","child":Windows.Win32.XInput.XINPUT_KEYSTROKE},
+],
+
+"unicode_aliases": [
+]}

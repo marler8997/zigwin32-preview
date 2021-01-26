@@ -1,0 +1,1598 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: SCSI_PASS_THROUGH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SCSI_PASS_THROUGH = extern struct {
+    Length: {"kind":"UInt16"},
+    ScsiStatus: {"kind":"Byte"},
+    PathId: {"kind":"Byte"},
+    TargetId: {"kind":"Byte"},
+    Lun: {"kind":"Byte"},
+    CdbLength: {"kind":"Byte"},
+    SenseInfoLength: {"kind":"Byte"},
+    DataIn: {"kind":"Byte"},
+    DataTransferLength: {"kind":"UInt32"},
+    TimeOutValue: {"kind":"UInt32"},
+    DataBufferOffset: {"kind":"UIntPtr"},
+    SenseInfoOffset: {"kind":"UInt32"},
+    Cdb: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: SCSI_PASS_THROUGH_DIRECT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SCSI_PASS_THROUGH_DIRECT = extern struct {
+    Length: {"kind":"UInt16"},
+    ScsiStatus: {"kind":"Byte"},
+    PathId: {"kind":"Byte"},
+    TargetId: {"kind":"Byte"},
+    Lun: {"kind":"Byte"},
+    CdbLength: {"kind":"Byte"},
+    SenseInfoLength: {"kind":"Byte"},
+    DataIn: {"kind":"Byte"},
+    DataTransferLength: {"kind":"UInt32"},
+    TimeOutValue: {"kind":"UInt32"},
+    DataBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    SenseInfoOffset: {"kind":"UInt32"},
+    Cdb: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: SCSI_PASS_THROUGH_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SCSI_PASS_THROUGH_EX = extern struct {
+    Version: {"kind":"UInt32"},
+    Length: {"kind":"UInt32"},
+    CdbLength: {"kind":"UInt32"},
+    StorAddressLength: {"kind":"UInt32"},
+    ScsiStatus: {"kind":"Byte"},
+    SenseInfoLength: {"kind":"Byte"},
+    DataDirection: {"kind":"Byte"},
+    Reserved: {"kind":"Byte"},
+    TimeOutValue: {"kind":"UInt32"},
+    StorAddressOffset: {"kind":"UInt32"},
+    SenseInfoOffset: {"kind":"UInt32"},
+    DataOutTransferLength: {"kind":"UInt32"},
+    DataInTransferLength: {"kind":"UInt32"},
+    DataOutBufferOffset: {"kind":"UIntPtr"},
+    DataInBufferOffset: {"kind":"UIntPtr"},
+    Cdb: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: SCSI_PASS_THROUGH_DIRECT_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SCSI_PASS_THROUGH_DIRECT_EX = extern struct {
+    Version: {"kind":"UInt32"},
+    Length: {"kind":"UInt32"},
+    CdbLength: {"kind":"UInt32"},
+    StorAddressLength: {"kind":"UInt32"},
+    ScsiStatus: {"kind":"Byte"},
+    SenseInfoLength: {"kind":"Byte"},
+    DataDirection: {"kind":"Byte"},
+    Reserved: {"kind":"Byte"},
+    TimeOutValue: {"kind":"UInt32"},
+    StorAddressOffset: {"kind":"UInt32"},
+    SenseInfoOffset: {"kind":"UInt32"},
+    DataOutTransferLength: {"kind":"UInt32"},
+    DataInTransferLength: {"kind":"UInt32"},
+    DataOutBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    DataInBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    Cdb: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: ATA_PASS_THROUGH_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ATA_PASS_THROUGH_EX = extern struct {
+    Length: {"kind":"UInt16"},
+    AtaFlags: {"kind":"UInt16"},
+    PathId: {"kind":"Byte"},
+    TargetId: {"kind":"Byte"},
+    Lun: {"kind":"Byte"},
+    ReservedAsUchar: {"kind":"Byte"},
+    DataTransferLength: {"kind":"UInt32"},
+    TimeOutValue: {"kind":"UInt32"},
+    ReservedAsUlong: {"kind":"UInt32"},
+    DataBufferOffset: {"kind":"UIntPtr"},
+    PreviousTaskFile: {"kind":"Array","child": {"kind":"Byte"}},
+    CurrentTaskFile: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: ATA_PASS_THROUGH_DIRECT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ATA_PASS_THROUGH_DIRECT = extern struct {
+    Length: {"kind":"UInt16"},
+    AtaFlags: {"kind":"UInt16"},
+    PathId: {"kind":"Byte"},
+    TargetId: {"kind":"Byte"},
+    Lun: {"kind":"Byte"},
+    ReservedAsUchar: {"kind":"Byte"},
+    DataTransferLength: {"kind":"UInt32"},
+    TimeOutValue: {"kind":"UInt32"},
+    ReservedAsUlong: {"kind":"UInt32"},
+    DataBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    PreviousTaskFile: {"kind":"Array","child": {"kind":"Byte"}},
+    CurrentTaskFile: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: IDE_IO_CONTROL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IDE_IO_CONTROL = extern struct {
+    HeaderLength: {"kind":"UInt32"},
+    Signature: {"kind":"Array","child": {"kind":"Byte"}},
+    Timeout: {"kind":"UInt32"},
+    ControlCode: {"kind":"UInt32"},
+    ReturnStatus: {"kind":"UInt32"},
+    DataLength: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MPIO_PASS_THROUGH_PATH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MPIO_PASS_THROUGH_PATH = extern struct {
+    PassThrough: Windows.Win32.IScsiDisc.SCSI_PASS_THROUGH,
+    Version: {"kind":"UInt32"},
+    Length: {"kind":"UInt16"},
+    Flags: {"kind":"Byte"},
+    PortNumber: {"kind":"Byte"},
+    MpioPathId: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: MPIO_PASS_THROUGH_PATH_DIRECT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MPIO_PASS_THROUGH_PATH_DIRECT = extern struct {
+    PassThrough: Windows.Win32.IScsiDisc.SCSI_PASS_THROUGH_DIRECT,
+    Version: {"kind":"UInt32"},
+    Length: {"kind":"UInt16"},
+    Flags: {"kind":"Byte"},
+    PortNumber: {"kind":"Byte"},
+    MpioPathId: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: MPIO_PASS_THROUGH_PATH_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MPIO_PASS_THROUGH_PATH_EX = extern struct {
+    PassThroughOffset: {"kind":"UInt32"},
+    Version: {"kind":"UInt32"},
+    Length: {"kind":"UInt16"},
+    Flags: {"kind":"Byte"},
+    PortNumber: {"kind":"Byte"},
+    MpioPathId: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: MPIO_PASS_THROUGH_PATH_DIRECT_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MPIO_PASS_THROUGH_PATH_DIRECT_EX = extern struct {
+    PassThroughOffset: {"kind":"UInt32"},
+    Version: {"kind":"UInt32"},
+    Length: {"kind":"UInt16"},
+    Flags: {"kind":"Byte"},
+    PortNumber: {"kind":"Byte"},
+    MpioPathId: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: SCSI_BUS_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SCSI_BUS_DATA = extern struct {
+    NumberOfLogicalUnits: {"kind":"Byte"},
+    InitiatorBusId: {"kind":"Byte"},
+    InquiryDataOffset: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SCSI_ADAPTER_BUS_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SCSI_ADAPTER_BUS_INFO = extern struct {
+    NumberOfBuses: {"kind":"Byte"},
+    BusData: {"kind":"Array","child": Windows.Win32.IScsiDisc.SCSI_BUS_DATA},
+};
+// --------------------------------------------------------
+// Type: SCSI_INQUIRY_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SCSI_INQUIRY_DATA = extern struct {
+    PathId: {"kind":"Byte"},
+    TargetId: {"kind":"Byte"},
+    Lun: {"kind":"Byte"},
+    DeviceClaimed: {"kind":"Byte"},
+    InquiryDataLength: {"kind":"UInt32"},
+    NextInquiryDataOffset: {"kind":"UInt32"},
+    InquiryData: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: SRB_IO_CONTROL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SRB_IO_CONTROL = extern struct {
+    HeaderLength: {"kind":"UInt32"},
+    Signature: {"kind":"Array","child": {"kind":"Byte"}},
+    Timeout: {"kind":"UInt32"},
+    ControlCode: {"kind":"UInt32"},
+    ReturnCode: {"kind":"UInt32"},
+    Length: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: NVCACHE_REQUEST_BLOCK
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NVCACHE_REQUEST_BLOCK = extern struct {
+    NRBSize: {"kind":"UInt32"},
+    Function: {"kind":"UInt16"},
+    NRBFlags: {"kind":"UInt32"},
+    NRBStatus: {"kind":"UInt32"},
+    Count: {"kind":"UInt32"},
+    LBA: {"kind":"UInt64"},
+    DataBufSize: {"kind":"UInt32"},
+    NVCacheStatus: {"kind":"UInt32"},
+    NVCacheSubStatus: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: NV_FEATURE_PARAMETER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NV_FEATURE_PARAMETER = extern struct {
+    NVPowerModeEnabled: {"kind":"UInt16"},
+    NVParameterReserv1: {"kind":"UInt16"},
+    NVCmdEnabled: {"kind":"UInt16"},
+    NVParameterReserv2: {"kind":"UInt16"},
+    NVPowerModeVer: {"kind":"UInt16"},
+    NVCmdVer: {"kind":"UInt16"},
+    NVSize: {"kind":"UInt32"},
+    NVReadSpeed: {"kind":"UInt16"},
+    NVWrtSpeed: {"kind":"UInt16"},
+    DeviceSpinUpTime: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: NVCACHE_HINT_PAYLOAD
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NVCACHE_HINT_PAYLOAD = extern struct {
+    Command: {"kind":"Byte"},
+    Feature7_0: {"kind":"Byte"},
+    Feature15_8: {"kind":"Byte"},
+    Count15_8: {"kind":"Byte"},
+    LBA7_0: {"kind":"Byte"},
+    LBA15_8: {"kind":"Byte"},
+    LBA23_16: {"kind":"Byte"},
+    LBA31_24: {"kind":"Byte"},
+    LBA39_32: {"kind":"Byte"},
+    LBA47_40: {"kind":"Byte"},
+    Auxiliary7_0: {"kind":"Byte"},
+    Auxiliary23_16: {"kind":"Byte"},
+    Reserved: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: NV_SEP_CACHE_PARAMETER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NV_SEP_CACHE_PARAMETER = extern struct {
+    Version: {"kind":"UInt32"},
+    Size: {"kind":"UInt32"},
+    Flags: Windows.Win32.IScsiDisc.NV_SEP_CACHE_PARAMETER+_Flags_e__Union,
+    WriteCacheType: {"kind":"Byte"},
+    WriteCacheTypeEffective: {"kind":"Byte"},
+    ParameterReserve1: {"kind":"Array","child": {"kind":"Byte"}},
+    // --------------------------------------------------------
+    // Type: _Flags_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Flags_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _CacheFlags_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _CacheFlags_e__Struct = extern struct {
+            _bitfield: {"kind":"Byte"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: NV_SEP_WRITE_CACHE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NV_SEP_WRITE_CACHE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: MP_STORAGE_DIAGNOSTIC_LEVEL
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MP_STORAGE_DIAGNOSTIC_LEVEL = *opaque{
+};
+// --------------------------------------------------------
+// Type: MP_STORAGE_DIAGNOSTIC_TARGET_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const MP_STORAGE_DIAGNOSTIC_TARGET_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: STORAGE_DIAGNOSTIC_MP_REQUEST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const STORAGE_DIAGNOSTIC_MP_REQUEST = extern struct {
+    Version: {"kind":"UInt32"},
+    Size: {"kind":"UInt32"},
+    TargetType: Windows.Win32.IScsiDisc.MP_STORAGE_DIAGNOSTIC_TARGET_TYPE,
+    Level: Windows.Win32.IScsiDisc.MP_STORAGE_DIAGNOSTIC_LEVEL,
+    ProviderId: Guid,
+    BufferSize: {"kind":"UInt32"},
+    Reserved: {"kind":"UInt32"},
+    DataBuffer: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: MP_DEVICE_DATA_SET_RANGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MP_DEVICE_DATA_SET_RANGE = extern struct {
+    StartingOffset: {"kind":"Int64"},
+    LengthInBytes: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: DSM_NOTIFICATION_REQUEST_BLOCK
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSM_NOTIFICATION_REQUEST_BLOCK = extern struct {
+    Size: {"kind":"UInt32"},
+    Version: {"kind":"UInt32"},
+    NotifyFlags: {"kind":"UInt32"},
+    DataSetProfile: {"kind":"UInt32"},
+    Reserved: {"kind":"Array","child": {"kind":"UInt32"}},
+    DataSetRangesCount: {"kind":"UInt32"},
+    DataSetRanges: {"kind":"Array","child": Windows.Win32.IScsiDisc.MP_DEVICE_DATA_SET_RANGE},
+};
+// --------------------------------------------------------
+// Type: HYBRID_REQUEST_BLOCK
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HYBRID_REQUEST_BLOCK = extern struct {
+    Version: {"kind":"UInt32"},
+    Size: {"kind":"UInt32"},
+    Function: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+    DataBufferOffset: {"kind":"UInt32"},
+    DataBufferLength: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: NVCACHE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NVCACHE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: NVCACHE_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NVCACHE_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: NVCACHE_PRIORITY_LEVEL_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NVCACHE_PRIORITY_LEVEL_DESCRIPTOR = extern struct {
+    PriorityLevel: {"kind":"Byte"},
+    Reserved0: {"kind":"Array","child": {"kind":"Byte"}},
+    ConsumedNVMSizeFraction: {"kind":"UInt32"},
+    ConsumedMappingResourcesFraction: {"kind":"UInt32"},
+    ConsumedNVMSizeForDirtyDataFraction: {"kind":"UInt32"},
+    ConsumedMappingResourcesForDirtyDataFraction: {"kind":"UInt32"},
+    Reserved1: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HYBRID_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HYBRID_INFORMATION = extern struct {
+    Version: {"kind":"UInt32"},
+    Size: {"kind":"UInt32"},
+    HybridSupported: {"kind":"Byte"},
+    Status: Windows.Win32.IScsiDisc.NVCACHE_STATUS,
+    CacheTypeEffective: Windows.Win32.IScsiDisc.NVCACHE_TYPE,
+    CacheTypeDefault: Windows.Win32.IScsiDisc.NVCACHE_TYPE,
+    FractionBase: {"kind":"UInt32"},
+    CacheSize: {"kind":"UInt64"},
+    Attributes: Windows.Win32.IScsiDisc.HYBRID_INFORMATION+_Attributes_e__Struct,
+    Priorities: Windows.Win32.IScsiDisc.HYBRID_INFORMATION+_Priorities_e__Struct,
+    // --------------------------------------------------------
+    // Type: _Priorities_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _Priorities_e__Struct = extern struct {
+        PriorityLevelCount: {"kind":"Byte"},
+        MaxPriorityBehavior: {"kind":"Byte"},
+        OptimalWriteGranularity: {"kind":"Byte"},
+        Reserved: {"kind":"Byte"},
+        DirtyThresholdLow: {"kind":"UInt32"},
+        DirtyThresholdHigh: {"kind":"UInt32"},
+        SupportedCommands: Windows.Win32.IScsiDisc.HYBRID_INFORMATION+_Priorities_e__Struct+_SupportedCommands_e__Struct,
+        Priority: {"kind":"Array","child": Windows.Win32.IScsiDisc.NVCACHE_PRIORITY_LEVEL_DESCRIPTOR},
+        // --------------------------------------------------------
+        // Type: _SupportedCommands_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _SupportedCommands_e__Struct = extern struct {
+            _bitfield: {"kind":"UInt32"},
+            MaxEvictCommands: {"kind":"UInt32"},
+            MaxLbaRangeCountForEvict: {"kind":"UInt32"},
+            MaxLbaRangeCountForChangeLba: {"kind":"UInt32"},
+        };
+    };
+    // --------------------------------------------------------
+    // Type: _Attributes_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _Attributes_e__Struct = extern struct {
+        _bitfield: {"kind":"UInt32"},
+    };
+};
+// --------------------------------------------------------
+// Type: HYBRID_DIRTY_THRESHOLDS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HYBRID_DIRTY_THRESHOLDS = extern struct {
+    Version: {"kind":"UInt32"},
+    Size: {"kind":"UInt32"},
+    DirtyLowThreshold: {"kind":"UInt32"},
+    DirtyHighThreshold: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HYBRID_DEMOTE_BY_SIZE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HYBRID_DEMOTE_BY_SIZE = extern struct {
+    Version: {"kind":"UInt32"},
+    Size: {"kind":"UInt32"},
+    SourcePriority: {"kind":"Byte"},
+    TargetPriority: {"kind":"Byte"},
+    Reserved0: {"kind":"UInt16"},
+    Reserved1: {"kind":"UInt32"},
+    LbaCount: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: FIRMWARE_REQUEST_BLOCK
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FIRMWARE_REQUEST_BLOCK = extern struct {
+    Version: {"kind":"UInt32"},
+    Size: {"kind":"UInt32"},
+    Function: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+    DataBufferOffset: {"kind":"UInt32"},
+    DataBufferLength: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: STORAGE_FIRMWARE_SLOT_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const STORAGE_FIRMWARE_SLOT_INFO = extern struct {
+    SlotNumber: {"kind":"Byte"},
+    ReadOnly: {"kind":"Byte"},
+    Reserved: {"kind":"Array","child": {"kind":"Byte"}},
+    Revision: Windows.Win32.IScsiDisc.STORAGE_FIRMWARE_SLOT_INFO+_Revision_e__Union,
+    // --------------------------------------------------------
+    // Type: _Revision_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Revision_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: STORAGE_FIRMWARE_SLOT_INFO_V2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const STORAGE_FIRMWARE_SLOT_INFO_V2 = extern struct {
+    SlotNumber: {"kind":"Byte"},
+    ReadOnly: {"kind":"Byte"},
+    Reserved: {"kind":"Array","child": {"kind":"Byte"}},
+    Revision: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: STORAGE_FIRMWARE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const STORAGE_FIRMWARE_INFO = extern struct {
+    Version: {"kind":"UInt32"},
+    Size: {"kind":"UInt32"},
+    UpgradeSupport: {"kind":"Byte"},
+    SlotCount: {"kind":"Byte"},
+    ActiveSlot: {"kind":"Byte"},
+    PendingActivateSlot: {"kind":"Byte"},
+    Reserved: {"kind":"UInt32"},
+    Slot: {"kind":"Array","child": Windows.Win32.IScsiDisc.STORAGE_FIRMWARE_SLOT_INFO},
+};
+// --------------------------------------------------------
+// Type: STORAGE_FIRMWARE_INFO_V2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const STORAGE_FIRMWARE_INFO_V2 = extern struct {
+    Version: {"kind":"UInt32"},
+    Size: {"kind":"UInt32"},
+    UpgradeSupport: {"kind":"Byte"},
+    SlotCount: {"kind":"Byte"},
+    ActiveSlot: {"kind":"Byte"},
+    PendingActivateSlot: {"kind":"Byte"},
+    FirmwareShared: {"kind":"Byte"},
+    Reserved: {"kind":"Array","child": {"kind":"Byte"}},
+    ImagePayloadAlignment: {"kind":"UInt32"},
+    ImagePayloadMaxSize: {"kind":"UInt32"},
+    Slot: {"kind":"Array","child": Windows.Win32.IScsiDisc.STORAGE_FIRMWARE_SLOT_INFO_V2},
+};
+// --------------------------------------------------------
+// Type: STORAGE_FIRMWARE_DOWNLOAD
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const STORAGE_FIRMWARE_DOWNLOAD = extern struct {
+    Version: {"kind":"UInt32"},
+    Size: {"kind":"UInt32"},
+    Offset: {"kind":"UInt64"},
+    BufferSize: {"kind":"UInt64"},
+    ImageBuffer: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: STORAGE_FIRMWARE_DOWNLOAD_V2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const STORAGE_FIRMWARE_DOWNLOAD_V2 = extern struct {
+    Version: {"kind":"UInt32"},
+    Size: {"kind":"UInt32"},
+    Offset: {"kind":"UInt64"},
+    BufferSize: {"kind":"UInt64"},
+    Slot: {"kind":"Byte"},
+    Reserved: {"kind":"Array","child": {"kind":"Byte"}},
+    ImageSize: {"kind":"UInt32"},
+    ImageBuffer: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: STORAGE_FIRMWARE_ACTIVATE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const STORAGE_FIRMWARE_ACTIVATE = extern struct {
+    Version: {"kind":"UInt32"},
+    Size: {"kind":"UInt32"},
+    SlotToActivate: {"kind":"Byte"},
+    Reserved0: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: IO_SCSI_CAPABILITIES
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IO_SCSI_CAPABILITIES = extern struct {
+    Length: {"kind":"UInt32"},
+    MaximumTransferLength: {"kind":"UInt32"},
+    MaximumPhysicalPages: {"kind":"UInt32"},
+    SupportedAsynchronousEvents: {"kind":"UInt32"},
+    AlignmentMask: {"kind":"UInt32"},
+    TaggedQueuing: {"kind":"Byte"},
+    AdapterScansDown: {"kind":"Byte"},
+    AdapterUsesPio: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: SCSI_ADDRESS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SCSI_ADDRESS = extern struct {
+    Length: {"kind":"UInt32"},
+    PortNumber: {"kind":"Byte"},
+    PathId: {"kind":"Byte"},
+    TargetId: {"kind":"Byte"},
+    Lun: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: _ADAPTER_OBJECT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _ADAPTER_OBJECT = opaque {
+};
+// --------------------------------------------------------
+// Type: DUMP_DEVICE_POWERON_ROUTINE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DUMP_DEVICE_POWERON_ROUTINE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PDUMP_DEVICE_POWERON_ROUTINE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PDUMP_DEVICE_POWERON_ROUTINE = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DUMP_POINTERS_VERSION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DUMP_POINTERS_VERSION = extern struct {
+    Version: {"kind":"UInt32"},
+    Size: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: DUMP_POINTERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DUMP_POINTERS = extern struct {
+    AdapterObject: {"kind""Ptr","child":Windows.Win32.IScsiDisc._ADAPTER_OBJECT},
+    MappedRegisterBase: {"kind""Ptr","child":{"kind":"Void"}},
+    DumpData: {"kind""Ptr","child":{"kind":"Void"}},
+    CommonBufferVa: {"kind""Ptr","child":{"kind":"Void"}},
+    CommonBufferPa: Windows.Win32.SystemServices.LARGE_INTEGER,
+    CommonBufferSize: {"kind":"UInt32"},
+    AllocateCommonBuffers: {"kind":"Byte"},
+    UseDiskDump: {"kind":"Byte"},
+    Spare1: {"kind":"Array","child": {"kind":"Byte"}},
+    DeviceObject: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DUMP_POINTERS_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DUMP_POINTERS_EX = extern struct {
+    Header: Windows.Win32.IScsiDisc.DUMP_POINTERS_VERSION,
+    DumpData: {"kind""Ptr","child":{"kind":"Void"}},
+    CommonBufferVa: {"kind""Ptr","child":{"kind":"Void"}},
+    CommonBufferSize: {"kind":"UInt32"},
+    AllocateCommonBuffers: {"kind":"Byte"},
+    DeviceObject: {"kind""Ptr","child":{"kind":"Void"}},
+    DriverList: {"kind""Ptr","child":{"kind":"Void"}},
+    dwPortFlags: {"kind":"UInt32"},
+    MaxDeviceDumpSectionSize: {"kind":"UInt32"},
+    MaxDeviceDumpLevel: {"kind":"UInt32"},
+    MaxTransferSize: {"kind":"UInt32"},
+    AdapterObject: {"kind""Ptr","child":{"kind":"Void"}},
+    MappedRegisterBase: {"kind""Ptr","child":{"kind":"Void"}},
+    DeviceReady: {"kind""Ptr","child":{"kind":"Byte"}},
+    DumpDevicePowerOn: Windows.Win32.IScsiDisc.PDUMP_DEVICE_POWERON_ROUTINE,
+    DumpDevicePowerOnContext: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: DUMP_DRIVER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DUMP_DRIVER = extern struct {
+    DumpDriverList: {"kind""Ptr","child":{"kind":"Void"}},
+    DriverName: {"kind":"Array","child": {"kind":"UInt16"}},
+    BaseName: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: NTSCSI_UNICODE_STRING
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NTSCSI_UNICODE_STRING = extern struct {
+    Length: {"kind":"UInt16"},
+    MaximumLength: {"kind":"UInt16"},
+    Buffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DUMP_DRIVER_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DUMP_DRIVER_EX = extern struct {
+    DumpDriverList: {"kind""Ptr","child":{"kind":"Void"}},
+    DriverName: {"kind":"Array","child": {"kind":"UInt16"}},
+    BaseName: {"kind":"Array","child": {"kind":"UInt16"}},
+    DriverFullPath: Windows.Win32.IScsiDisc.NTSCSI_UNICODE_STRING,
+};
+// --------------------------------------------------------
+// Type: STORAGE_ENDURANCE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const STORAGE_ENDURANCE_INFO = extern struct {
+    ValidFields: {"kind":"UInt32"},
+    GroupId: {"kind":"UInt32"},
+    Flags: Windows.Win32.IScsiDisc.STORAGE_ENDURANCE_INFO+_Flags_e__Struct,
+    LifePercentage: {"kind":"UInt32"},
+    BytesReadCount: {"kind":"Array","child": {"kind":"Byte"}},
+    ByteWriteCount: {"kind":"Array","child": {"kind":"Byte"}},
+    // --------------------------------------------------------
+    // Type: _Flags_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _Flags_e__Struct = extern struct {
+        _bitfield: {"kind":"UInt32"},
+    };
+};
+// --------------------------------------------------------
+// Type: STORAGE_ENDURANCE_DATA_DESCRIPTOR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const STORAGE_ENDURANCE_DATA_DESCRIPTOR = extern struct {
+    Version: {"kind":"UInt32"},
+    Size: {"kind":"UInt32"},
+    EnduranceInfo: Windows.Win32.IScsiDisc.STORAGE_ENDURANCE_INFO,
+};
+// --------------------------------------------------------
+// Type: ISCSI_DIGEST_TYPES
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ISCSI_DIGEST_TYPES = *opaque{
+};
+// --------------------------------------------------------
+// Type: ISCSI_AUTH_TYPES
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const ISCSI_AUTH_TYPES = *opaque{
+};
+// --------------------------------------------------------
+// Type: ISCSI_LOGIN_OPTIONS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ISCSI_LOGIN_OPTIONS = extern struct {
+    Version: {"kind":"UInt32"},
+    InformationSpecified: {"kind":"UInt32"},
+    LoginFlags: {"kind":"UInt32"},
+    AuthType: Windows.Win32.IScsiDisc.ISCSI_AUTH_TYPES,
+    HeaderDigest: Windows.Win32.IScsiDisc.ISCSI_DIGEST_TYPES,
+    DataDigest: Windows.Win32.IScsiDisc.ISCSI_DIGEST_TYPES,
+    MaximumConnections: {"kind":"UInt32"},
+    DefaultTime2Wait: {"kind":"UInt32"},
+    DefaultTime2Retain: {"kind":"UInt32"},
+    UsernameLength: {"kind":"UInt32"},
+    PasswordLength: {"kind":"UInt32"},
+    Username: {"kind""Ptr","child":{"kind":"Byte"}},
+    Password: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: IKE_AUTHENTICATION_METHOD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const IKE_AUTHENTICATION_METHOD = *opaque{
+};
+// --------------------------------------------------------
+// Type: IKE_AUTHENTICATION_PRESHARED_KEY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IKE_AUTHENTICATION_PRESHARED_KEY = extern struct {
+    SecurityFlags: {"kind":"UInt64"},
+    IdType: {"kind":"Byte"},
+    IdLengthInBytes: {"kind":"UInt32"},
+    Id: {"kind""Ptr","child":{"kind":"Byte"}},
+    KeyLengthInBytes: {"kind":"UInt32"},
+    Key: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: IKE_AUTHENTICATION_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const IKE_AUTHENTICATION_INFORMATION = extern struct {
+    AuthMethod: Windows.Win32.IScsiDisc.IKE_AUTHENTICATION_METHOD,
+    Anonymous: Windows.Win32.IScsiDisc.IKE_AUTHENTICATION_INFORMATION+_Anonymous_e__Union,
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: ISCSI_UNIQUE_SESSION_ID
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ISCSI_UNIQUE_SESSION_ID = extern struct {
+    AdapterUnique: {"kind":"UInt64"},
+    AdapterSpecific: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: SCSI_LUN_LIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SCSI_LUN_LIST = extern struct {
+    OSLUN: {"kind":"UInt32"},
+    TargetLUN: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: ISCSI_TARGET_MAPPINGW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ISCSI_TARGET_MAPPINGW = extern struct {
+    InitiatorName: {"kind":"Array","child": {"kind":"UInt16"}},
+    TargetName: {"kind":"Array","child": {"kind":"UInt16"}},
+    OSDeviceName: {"kind":"Array","child": {"kind":"UInt16"}},
+    SessionId: Windows.Win32.IScsiDisc.ISCSI_UNIQUE_SESSION_ID,
+    OSBusNumber: {"kind":"UInt32"},
+    OSTargetNumber: {"kind":"UInt32"},
+    LUNCount: {"kind":"UInt32"},
+    LUNList: {"kind""Ptr","child":Windows.Win32.IScsiDisc.SCSI_LUN_LIST},
+};
+// --------------------------------------------------------
+// Type: ISCSI_TARGET_MAPPINGA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ISCSI_TARGET_MAPPINGA = extern struct {
+    InitiatorName: {"kind":"Array","child": {"kind":"SByte"}},
+    TargetName: {"kind":"Array","child": {"kind":"SByte"}},
+    OSDeviceName: {"kind":"Array","child": {"kind":"SByte"}},
+    SessionId: Windows.Win32.IScsiDisc.ISCSI_UNIQUE_SESSION_ID,
+    OSBusNumber: {"kind":"UInt32"},
+    OSTargetNumber: {"kind":"UInt32"},
+    LUNCount: {"kind":"UInt32"},
+    LUNList: {"kind""Ptr","child":Windows.Win32.IScsiDisc.SCSI_LUN_LIST},
+};
+// --------------------------------------------------------
+// Type: ISCSI_TARGET_PORTALW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ISCSI_TARGET_PORTALW = extern struct {
+    SymbolicName: {"kind":"Array","child": {"kind":"UInt16"}},
+    Address: {"kind":"Array","child": {"kind":"UInt16"}},
+    Socket: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: ISCSI_TARGET_PORTALA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ISCSI_TARGET_PORTALA = extern struct {
+    SymbolicName: {"kind":"Array","child": {"kind":"SByte"}},
+    Address: {"kind":"Array","child": {"kind":"SByte"}},
+    Socket: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: ISCSI_TARGET_PORTAL_INFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ISCSI_TARGET_PORTAL_INFOW = extern struct {
+    InitiatorName: {"kind":"Array","child": {"kind":"UInt16"}},
+    InitiatorPortNumber: {"kind":"UInt32"},
+    SymbolicName: {"kind":"Array","child": {"kind":"UInt16"}},
+    Address: {"kind":"Array","child": {"kind":"UInt16"}},
+    Socket: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: ISCSI_TARGET_PORTAL_INFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ISCSI_TARGET_PORTAL_INFOA = extern struct {
+    InitiatorName: {"kind":"Array","child": {"kind":"SByte"}},
+    InitiatorPortNumber: {"kind":"UInt32"},
+    SymbolicName: {"kind":"Array","child": {"kind":"SByte"}},
+    Address: {"kind":"Array","child": {"kind":"SByte"}},
+    Socket: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: ISCSI_TARGET_PORTAL_INFO_EXW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ISCSI_TARGET_PORTAL_INFO_EXW = extern struct {
+    InitiatorName: {"kind":"Array","child": {"kind":"UInt16"}},
+    InitiatorPortNumber: {"kind":"UInt32"},
+    SymbolicName: {"kind":"Array","child": {"kind":"UInt16"}},
+    Address: {"kind":"Array","child": {"kind":"UInt16"}},
+    Socket: {"kind":"UInt16"},
+    SecurityFlags: {"kind":"UInt64"},
+    LoginOptions: Windows.Win32.IScsiDisc.ISCSI_LOGIN_OPTIONS,
+};
+// --------------------------------------------------------
+// Type: ISCSI_TARGET_PORTAL_INFO_EXA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ISCSI_TARGET_PORTAL_INFO_EXA = extern struct {
+    InitiatorName: {"kind":"Array","child": {"kind":"SByte"}},
+    InitiatorPortNumber: {"kind":"UInt32"},
+    SymbolicName: {"kind":"Array","child": {"kind":"SByte"}},
+    Address: {"kind":"Array","child": {"kind":"SByte"}},
+    Socket: {"kind":"UInt16"},
+    SecurityFlags: {"kind":"UInt64"},
+    LoginOptions: Windows.Win32.IScsiDisc.ISCSI_LOGIN_OPTIONS,
+};
+// --------------------------------------------------------
+// Type: ISCSI_TARGET_PORTAL_GROUPW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ISCSI_TARGET_PORTAL_GROUPW = extern struct {
+    Count: {"kind":"UInt32"},
+    Portals: {"kind":"Array","child": Windows.Win32.IScsiDisc.ISCSI_TARGET_PORTALW},
+};
+// --------------------------------------------------------
+// Type: ISCSI_TARGET_PORTAL_GROUPA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ISCSI_TARGET_PORTAL_GROUPA = extern struct {
+    Count: {"kind":"UInt32"},
+    Portals: {"kind":"Array","child": Windows.Win32.IScsiDisc.ISCSI_TARGET_PORTALA},
+};
+// --------------------------------------------------------
+// Type: ISCSI_CONNECTION_INFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ISCSI_CONNECTION_INFOW = extern struct {
+    ConnectionId: Windows.Win32.IScsiDisc.ISCSI_UNIQUE_SESSION_ID,
+    InitiatorAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TargetAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InitiatorSocket: {"kind":"UInt16"},
+    TargetSocket: {"kind":"UInt16"},
+    CID: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: ISCSI_SESSION_INFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ISCSI_SESSION_INFOW = extern struct {
+    SessionId: Windows.Win32.IScsiDisc.ISCSI_UNIQUE_SESSION_ID,
+    InitiatorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TargetNodeName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TargetName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ISID: {"kind":"Array","child": {"kind":"Byte"}},
+    TSID: {"kind":"Array","child": {"kind":"Byte"}},
+    ConnectionCount: {"kind":"UInt32"},
+    Connections: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_CONNECTION_INFOW},
+};
+// --------------------------------------------------------
+// Type: ISCSI_CONNECTION_INFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ISCSI_CONNECTION_INFOA = extern struct {
+    ConnectionId: Windows.Win32.IScsiDisc.ISCSI_UNIQUE_SESSION_ID,
+    InitiatorAddress: {"kind""Ptr","child":{"kind":"SByte"}},
+    TargetAddress: {"kind""Ptr","child":{"kind":"SByte"}},
+    InitiatorSocket: {"kind":"UInt16"},
+    TargetSocket: {"kind":"UInt16"},
+    CID: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: ISCSI_SESSION_INFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ISCSI_SESSION_INFOA = extern struct {
+    SessionId: Windows.Win32.IScsiDisc.ISCSI_UNIQUE_SESSION_ID,
+    InitiatorName: {"kind""Ptr","child":{"kind":"SByte"}},
+    TargetNodeName: {"kind""Ptr","child":{"kind":"SByte"}},
+    TargetName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ISID: {"kind":"Array","child": {"kind":"Byte"}},
+    TSID: {"kind":"Array","child": {"kind":"Byte"}},
+    ConnectionCount: {"kind":"UInt32"},
+    Connections: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_CONNECTION_INFOA},
+};
+// --------------------------------------------------------
+// Type: ISCSI_CONNECTION_INFO_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ISCSI_CONNECTION_INFO_EX = extern struct {
+    ConnectionId: Windows.Win32.IScsiDisc.ISCSI_UNIQUE_SESSION_ID,
+    State: {"kind":"Byte"},
+    Protocol: {"kind":"Byte"},
+    HeaderDigest: {"kind":"Byte"},
+    DataDigest: {"kind":"Byte"},
+    MaxRecvDataSegmentLength: {"kind":"UInt32"},
+    AuthType: Windows.Win32.IScsiDisc.ISCSI_AUTH_TYPES,
+    EstimatedThroughput: {"kind":"UInt64"},
+    MaxDatagramSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ISCSI_SESSION_INFO_EX
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ISCSI_SESSION_INFO_EX = extern struct {
+    SessionId: Windows.Win32.IScsiDisc.ISCSI_UNIQUE_SESSION_ID,
+    InitialR2t: {"kind":"Byte"},
+    ImmediateData: {"kind":"Byte"},
+    Type: {"kind":"Byte"},
+    DataSequenceInOrder: {"kind":"Byte"},
+    DataPduInOrder: {"kind":"Byte"},
+    ErrorRecoveryLevel: {"kind":"Byte"},
+    MaxOutstandingR2t: {"kind":"UInt32"},
+    FirstBurstLength: {"kind":"UInt32"},
+    MaxBurstLength: {"kind":"UInt32"},
+    MaximumConnections: {"kind":"UInt32"},
+    ConnectionCount: {"kind":"UInt32"},
+    Connections: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_CONNECTION_INFO_EX},
+};
+// --------------------------------------------------------
+// Type: ISCSI_DEVICE_ON_SESSIONW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ISCSI_DEVICE_ON_SESSIONW = extern struct {
+    InitiatorName: {"kind":"Array","child": {"kind":"UInt16"}},
+    TargetName: {"kind":"Array","child": {"kind":"UInt16"}},
+    ScsiAddress: Windows.Win32.IScsiDisc.SCSI_ADDRESS,
+    DeviceInterfaceType: Guid,
+    DeviceInterfaceName: {"kind":"Array","child": {"kind":"UInt16"}},
+    LegacyName: {"kind":"Array","child": {"kind":"UInt16"}},
+    StorageDeviceNumber: Windows.Win32.SystemServices.STORAGE_DEVICE_NUMBER,
+    DeviceInstance: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ISCSI_DEVICE_ON_SESSIONA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ISCSI_DEVICE_ON_SESSIONA = extern struct {
+    InitiatorName: {"kind":"Array","child": {"kind":"SByte"}},
+    TargetName: {"kind":"Array","child": {"kind":"SByte"}},
+    ScsiAddress: Windows.Win32.IScsiDisc.SCSI_ADDRESS,
+    DeviceInterfaceType: Guid,
+    DeviceInterfaceName: {"kind":"Array","child": {"kind":"SByte"}},
+    LegacyName: {"kind":"Array","child": {"kind":"SByte"}},
+    StorageDeviceNumber: Windows.Win32.SystemServices.STORAGE_DEVICE_NUMBER,
+    DeviceInstance: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PERSISTENT_ISCSI_LOGIN_INFOW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PERSISTENT_ISCSI_LOGIN_INFOW = extern struct {
+    TargetName: {"kind":"Array","child": {"kind":"UInt16"}},
+    IsInformationalSession: {"kind":"Byte"},
+    InitiatorInstance: {"kind":"Array","child": {"kind":"UInt16"}},
+    InitiatorPortNumber: {"kind":"UInt32"},
+    TargetPortal: Windows.Win32.IScsiDisc.ISCSI_TARGET_PORTALW,
+    SecurityFlags: {"kind":"UInt64"},
+    Mappings: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_TARGET_MAPPINGW},
+    LoginOptions: Windows.Win32.IScsiDisc.ISCSI_LOGIN_OPTIONS,
+};
+// --------------------------------------------------------
+// Type: PERSISTENT_ISCSI_LOGIN_INFOA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PERSISTENT_ISCSI_LOGIN_INFOA = extern struct {
+    TargetName: {"kind":"Array","child": {"kind":"SByte"}},
+    IsInformationalSession: {"kind":"Byte"},
+    InitiatorInstance: {"kind":"Array","child": {"kind":"SByte"}},
+    InitiatorPortNumber: {"kind":"UInt32"},
+    TargetPortal: Windows.Win32.IScsiDisc.ISCSI_TARGET_PORTALA,
+    SecurityFlags: {"kind":"UInt64"},
+    Mappings: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_TARGET_MAPPINGA},
+    LoginOptions: Windows.Win32.IScsiDisc.ISCSI_LOGIN_OPTIONS,
+};
+// --------------------------------------------------------
+// Type: TARGETPROTOCOLTYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TARGETPROTOCOLTYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: TARGET_INFORMATION_CLASS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TARGET_INFORMATION_CLASS = *opaque{
+};
+// --------------------------------------------------------
+// Type: ISCSI_VERSION_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ISCSI_VERSION_INFO = extern struct {
+    MajorVersion: {"kind":"UInt32"},
+    MinorVersion: {"kind":"UInt32"},
+    BuildNumber: {"kind":"UInt32"},
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn GetIScsiVersionInformation(
+    VersionInfo: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_VERSION_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn GetIScsiTargetInformationW(
+    TargetName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DiscoveryMechanism: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InfoClass: Windows.Win32.IScsiDisc.TARGET_INFORMATION_CLASS,
+    BufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn GetIScsiTargetInformationA(
+    TargetName: {"kind""Ptr","child":{"kind":"SByte"}},
+    DiscoveryMechanism: {"kind""Ptr","child":{"kind":"SByte"}},
+    InfoClass: Windows.Win32.IScsiDisc.TARGET_INFORMATION_CLASS,
+    BufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn AddIScsiConnectionW(
+    UniqueSessionId: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_UNIQUE_SESSION_ID},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+    InitiatorPortNumber: {"kind":"UInt32"},
+    TargetPortal: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_TARGET_PORTALW},
+    SecurityFlags: {"kind":"UInt64"},
+    LoginOptions: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_LOGIN_OPTIONS},
+    KeySize: {"kind":"UInt32"},
+    Key: {"kind""Ptr","child":{"kind":"SByte"}},
+    ConnectionId: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_UNIQUE_SESSION_ID},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn AddIScsiConnectionA(
+    UniqueSessionId: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_UNIQUE_SESSION_ID},
+    Reserved: {"kind""Ptr","child":{"kind":"Void"}},
+    InitiatorPortNumber: {"kind":"UInt32"},
+    TargetPortal: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_TARGET_PORTALA},
+    SecurityFlags: {"kind":"UInt64"},
+    LoginOptions: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_LOGIN_OPTIONS},
+    KeySize: {"kind":"UInt32"},
+    Key: {"kind""Ptr","child":{"kind":"SByte"}},
+    ConnectionId: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_UNIQUE_SESSION_ID},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn RemoveIScsiConnection(
+    UniqueSessionId: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_UNIQUE_SESSION_ID},
+    ConnectionId: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_UNIQUE_SESSION_ID},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn ReportIScsiTargetsW(
+    ForceUpdate: {"kind":"Byte"},
+    BufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn ReportIScsiTargetsA(
+    ForceUpdate: {"kind":"Byte"},
+    BufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn AddIScsiStaticTargetW(
+    TargetName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TargetAlias: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TargetFlags: {"kind":"UInt32"},
+    Persist: {"kind":"Byte"},
+    Mappings: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_TARGET_MAPPINGW},
+    LoginOptions: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_LOGIN_OPTIONS},
+    PortalGroup: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_TARGET_PORTAL_GROUPW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn AddIScsiStaticTargetA(
+    TargetName: {"kind""Ptr","child":{"kind":"SByte"}},
+    TargetAlias: {"kind""Ptr","child":{"kind":"SByte"}},
+    TargetFlags: {"kind":"UInt32"},
+    Persist: {"kind":"Byte"},
+    Mappings: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_TARGET_MAPPINGA},
+    LoginOptions: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_LOGIN_OPTIONS},
+    PortalGroup: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_TARGET_PORTAL_GROUPA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn RemoveIScsiStaticTargetW(
+    TargetName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn RemoveIScsiStaticTargetA(
+    TargetName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn AddIScsiSendTargetPortalW(
+    InitiatorInstance: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InitiatorPortNumber: {"kind":"UInt32"},
+    LoginOptions: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_LOGIN_OPTIONS},
+    SecurityFlags: {"kind":"UInt64"},
+    Portal: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_TARGET_PORTALW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn AddIScsiSendTargetPortalA(
+    InitiatorInstance: {"kind""Ptr","child":{"kind":"SByte"}},
+    InitiatorPortNumber: {"kind":"UInt32"},
+    LoginOptions: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_LOGIN_OPTIONS},
+    SecurityFlags: {"kind":"UInt64"},
+    Portal: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_TARGET_PORTALA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn RemoveIScsiSendTargetPortalW(
+    InitiatorInstance: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InitiatorPortNumber: {"kind":"UInt32"},
+    Portal: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_TARGET_PORTALW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn RemoveIScsiSendTargetPortalA(
+    InitiatorInstance: {"kind""Ptr","child":{"kind":"SByte"}},
+    InitiatorPortNumber: {"kind":"UInt32"},
+    Portal: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_TARGET_PORTALA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn RefreshIScsiSendTargetPortalW(
+    InitiatorInstance: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InitiatorPortNumber: {"kind":"UInt32"},
+    Portal: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_TARGET_PORTALW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn RefreshIScsiSendTargetPortalA(
+    InitiatorInstance: {"kind""Ptr","child":{"kind":"SByte"}},
+    InitiatorPortNumber: {"kind":"UInt32"},
+    Portal: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_TARGET_PORTALA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn ReportIScsiSendTargetPortalsW(
+    PortalCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PortalInfo: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_TARGET_PORTAL_INFOW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn ReportIScsiSendTargetPortalsA(
+    PortalCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PortalInfo: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_TARGET_PORTAL_INFOA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn ReportIScsiSendTargetPortalsExW(
+    PortalCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PortalInfoSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PortalInfo: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_TARGET_PORTAL_INFO_EXW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn ReportIScsiSendTargetPortalsExA(
+    PortalCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PortalInfoSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PortalInfo: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_TARGET_PORTAL_INFO_EXA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn LoginIScsiTargetW(
+    TargetName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    IsInformationalSession: {"kind":"Byte"},
+    InitiatorInstance: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InitiatorPortNumber: {"kind":"UInt32"},
+    TargetPortal: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_TARGET_PORTALW},
+    SecurityFlags: {"kind":"UInt64"},
+    Mappings: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_TARGET_MAPPINGW},
+    LoginOptions: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_LOGIN_OPTIONS},
+    KeySize: {"kind":"UInt32"},
+    Key: {"kind""Ptr","child":{"kind":"SByte"}},
+    IsPersistent: {"kind":"Byte"},
+    UniqueSessionId: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_UNIQUE_SESSION_ID},
+    UniqueConnectionId: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_UNIQUE_SESSION_ID},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn LoginIScsiTargetA(
+    TargetName: {"kind""Ptr","child":{"kind":"SByte"}},
+    IsInformationalSession: {"kind":"Byte"},
+    InitiatorInstance: {"kind""Ptr","child":{"kind":"SByte"}},
+    InitiatorPortNumber: {"kind":"UInt32"},
+    TargetPortal: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_TARGET_PORTALA},
+    SecurityFlags: {"kind":"UInt64"},
+    Mappings: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_TARGET_MAPPINGA},
+    LoginOptions: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_LOGIN_OPTIONS},
+    KeySize: {"kind":"UInt32"},
+    Key: {"kind""Ptr","child":{"kind":"SByte"}},
+    IsPersistent: {"kind":"Byte"},
+    UniqueSessionId: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_UNIQUE_SESSION_ID},
+    UniqueConnectionId: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_UNIQUE_SESSION_ID},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn ReportIScsiPersistentLoginsW(
+    Count: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PersistentLoginInfo: {"kind""Ptr","child":Windows.Win32.IScsiDisc.PERSISTENT_ISCSI_LOGIN_INFOW},
+    BufferSizeInBytes: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn ReportIScsiPersistentLoginsA(
+    Count: {"kind""Ptr","child":{"kind":"UInt32"}},
+    PersistentLoginInfo: {"kind""Ptr","child":Windows.Win32.IScsiDisc.PERSISTENT_ISCSI_LOGIN_INFOA},
+    BufferSizeInBytes: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn LogoutIScsiTarget(
+    UniqueSessionId: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_UNIQUE_SESSION_ID},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn RemoveIScsiPersistentTargetW(
+    InitiatorInstance: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InitiatorPortNumber: {"kind":"UInt32"},
+    TargetName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Portal: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_TARGET_PORTALW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn RemoveIScsiPersistentTargetA(
+    InitiatorInstance: {"kind""Ptr","child":{"kind":"SByte"}},
+    InitiatorPortNumber: {"kind":"UInt32"},
+    TargetName: {"kind""Ptr","child":{"kind":"SByte"}},
+    Portal: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_TARGET_PORTALA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn SendScsiInquiry(
+    UniqueSessionId: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_UNIQUE_SESSION_ID},
+    Lun: {"kind":"UInt64"},
+    EvpdCmddt: {"kind":"Byte"},
+    PageCode: {"kind":"Byte"},
+    ScsiStatus: {"kind""Ptr","child":{"kind":"Byte"}},
+    ResponseSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ResponseBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    SenseSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    SenseBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn SendScsiReadCapacity(
+    UniqueSessionId: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_UNIQUE_SESSION_ID},
+    Lun: {"kind":"UInt64"},
+    ScsiStatus: {"kind""Ptr","child":{"kind":"Byte"}},
+    ResponseSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ResponseBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    SenseSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    SenseBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn SendScsiReportLuns(
+    UniqueSessionId: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_UNIQUE_SESSION_ID},
+    ScsiStatus: {"kind""Ptr","child":{"kind":"Byte"}},
+    ResponseSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ResponseBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    SenseSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    SenseBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn ReportIScsiInitiatorListW(
+    BufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn ReportIScsiInitiatorListA(
+    BufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn ReportActiveIScsiTargetMappingsW(
+    BufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    MappingCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Mappings: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_TARGET_MAPPINGW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn ReportActiveIScsiTargetMappingsA(
+    BufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    MappingCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Mappings: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_TARGET_MAPPINGA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn SetIScsiTunnelModeOuterAddressW(
+    InitiatorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InitiatorPortNumber: {"kind":"UInt32"},
+    DestinationAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    OuterModeAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Persist: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn SetIScsiTunnelModeOuterAddressA(
+    InitiatorName: {"kind""Ptr","child":{"kind":"SByte"}},
+    InitiatorPortNumber: {"kind":"UInt32"},
+    DestinationAddress: {"kind""Ptr","child":{"kind":"SByte"}},
+    OuterModeAddress: {"kind""Ptr","child":{"kind":"SByte"}},
+    Persist: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn SetIScsiIKEInfoW(
+    InitiatorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InitiatorPortNumber: {"kind":"UInt32"},
+    AuthInfo: {"kind""Ptr","child":Windows.Win32.IScsiDisc.IKE_AUTHENTICATION_INFORMATION},
+    Persist: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn SetIScsiIKEInfoA(
+    InitiatorName: {"kind""Ptr","child":{"kind":"SByte"}},
+    InitiatorPortNumber: {"kind":"UInt32"},
+    AuthInfo: {"kind""Ptr","child":Windows.Win32.IScsiDisc.IKE_AUTHENTICATION_INFORMATION},
+    Persist: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn GetIScsiIKEInfoW(
+    InitiatorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    InitiatorPortNumber: {"kind":"UInt32"},
+    Reserved: {"kind""Ptr","child":{"kind":"UInt32"}},
+    AuthInfo: {"kind""Ptr","child":Windows.Win32.IScsiDisc.IKE_AUTHENTICATION_INFORMATION},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn GetIScsiIKEInfoA(
+    InitiatorName: {"kind""Ptr","child":{"kind":"SByte"}},
+    InitiatorPortNumber: {"kind":"UInt32"},
+    Reserved: {"kind""Ptr","child":{"kind":"UInt32"}},
+    AuthInfo: {"kind""Ptr","child":Windows.Win32.IScsiDisc.IKE_AUTHENTICATION_INFORMATION},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn SetIScsiGroupPresharedKey(
+    KeyLength: {"kind":"UInt32"},
+    Key: {"kind""Ptr","child":{"kind":"Byte"}},
+    Persist: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn SetIScsiInitiatorCHAPSharedSecret(
+    SharedSecretLength: {"kind":"UInt32"},
+    SharedSecret: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn SetIScsiInitiatorRADIUSSharedSecret(
+    SharedSecretLength: {"kind":"UInt32"},
+    SharedSecret: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn SetIScsiInitiatorNodeNameW(
+    InitiatorNodeName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn SetIScsiInitiatorNodeNameA(
+    InitiatorNodeName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn GetIScsiInitiatorNodeNameW(
+    InitiatorNodeName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn GetIScsiInitiatorNodeNameA(
+    InitiatorNodeName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn AddISNSServerW(
+    Address: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn AddISNSServerA(
+    Address: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn RemoveISNSServerW(
+    Address: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn RemoveISNSServerA(
+    Address: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn RefreshISNSServerW(
+    Address: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn RefreshISNSServerA(
+    Address: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn ReportISNSServerListW(
+    BufferSizeInChar: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn ReportISNSServerListA(
+    BufferSizeInChar: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn GetIScsiSessionListW(
+    BufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    SessionCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    SessionInfo: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_SESSION_INFOW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn GetIScsiSessionListA(
+    BufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    SessionCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    SessionInfo: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_SESSION_INFOA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn GetIScsiSessionListEx(
+    BufferSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    SessionCountPtr: {"kind""Ptr","child":{"kind":"UInt32"}},
+    SessionInfo: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_SESSION_INFO_EX},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn GetDevicesForIScsiSessionW(
+    UniqueSessionId: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_UNIQUE_SESSION_ID},
+    DeviceCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Devices: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_DEVICE_ON_SESSIONW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn GetDevicesForIScsiSessionA(
+    UniqueSessionId: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_UNIQUE_SESSION_ID},
+    DeviceCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Devices: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_DEVICE_ON_SESSIONA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn SetupPersistentIScsiVolumes(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn SetupPersistentIScsiDevices(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn AddPersistentIScsiDeviceW(
+    DevicePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn AddPersistentIScsiDeviceA(
+    DevicePath: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn RemovePersistentIScsiDeviceW(
+    DevicePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn RemovePersistentIScsiDeviceA(
+    DevicePath: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn ClearPersistentIScsiDevices(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn ReportPersistentIScsiDevicesW(
+    BufferSizeInChar: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn ReportPersistentIScsiDevicesA(
+    BufferSizeInChar: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn ReportIScsiTargetPortalsW(
+    InitiatorName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TargetName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    TargetPortalTag: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ElementCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Portals: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_TARGET_PORTALW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn ReportIScsiTargetPortalsA(
+    InitiatorName: {"kind""Ptr","child":{"kind":"SByte"}},
+    TargetName: {"kind""Ptr","child":{"kind":"SByte"}},
+    TargetPortalTag: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ElementCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Portals: {"kind""Ptr","child":Windows.Win32.IScsiDisc.ISCSI_TARGET_PORTALA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn AddRadiusServerW(
+    Address: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn AddRadiusServerA(
+    Address: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn RemoveRadiusServerW(
+    Address: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn RemoveRadiusServerA(
+    Address: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn ReportRadiusServerListW(
+    BufferSizeInChar: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "ISCSIDSC" fn ReportRadiusServerListA(
+    BufferSizeInChar: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Buffer: {"kind""Ptr","child":{"kind":"SByte"}},
+],
+
+"unicode_aliases": [
+     "ISCSI_TARGET_MAPPING"
+     "ISCSI_TARGET_PORTAL"
+     "ISCSI_TARGET_PORTAL_INFO"
+     "ISCSI_TARGET_PORTAL_INFO_EX"
+     "ISCSI_TARGET_PORTAL_GROUP"
+     "ISCSI_CONNECTION_INFO"
+     "ISCSI_SESSION_INFO"
+     "ISCSI_DEVICE_ON_SESSION"
+     "PERSISTENT_ISCSI_LOGIN_INFO"
+     "GetIScsiTargetInformation"
+     "AddIScsiConnection"
+     "ReportIScsiTargets"
+     "AddIScsiStaticTarget"
+     "RemoveIScsiStaticTarget"
+     "AddIScsiSendTargetPortal"
+     "RemoveIScsiSendTargetPortal"
+     "RefreshIScsiSendTargetPortal"
+     "ReportIScsiSendTargetPortals"
+     "ReportIScsiSendTargetPortalsEx"
+     "LoginIScsiTarget"
+     "ReportIScsiPersistentLogins"
+     "RemoveIScsiPersistentTarget"
+     "ReportIScsiInitiatorList"
+     "ReportActiveIScsiTargetMappings"
+     "SetIScsiTunnelModeOuterAddress"
+     "SetIScsiIKEInfo"
+     "GetIScsiIKEInfo"
+     "SetIScsiInitiatorNodeName"
+     "GetIScsiInitiatorNodeName"
+     "AddISNSServer"
+     "RemoveISNSServer"
+     "RefreshISNSServer"
+     "ReportISNSServerList"
+     "GetIScsiSessionList"
+     "GetDevicesForIScsiSession"
+     "AddPersistentIScsiDevice"
+     "RemovePersistentIScsiDevice"
+     "ReportPersistentIScsiDevices"
+     "ReportIScsiTargetPortals"
+     "AddRadiusServer"
+     "RemoveRadiusServer"
+     "ReportRadiusServerList"
+]}

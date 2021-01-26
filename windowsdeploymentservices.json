@@ -1,0 +1,1494 @@
+﻿{
+"constants": [
+     {
+         "name": "WdsCliFlagEnumFilterVersion"
+        ,"type": {"kind":"Int32"}
+        ,"value": 1
+    }
+    ,{
+         "name": "WdsCliFlagEnumFilterFirmware"
+        ,"type": {"kind":"Int32"}
+        ,"value": 2
+    }
+    ,{
+         "name": "WDS_LOG_TYPE_CLIENT_ERROR"
+        ,"type": {"kind":"Int32"}
+        ,"value": 1
+    }
+    ,{
+         "name": "WDS_LOG_TYPE_CLIENT_STARTED"
+        ,"type": {"kind":"Int32"}
+        ,"value": 2
+    }
+    ,{
+         "name": "WDS_LOG_TYPE_CLIENT_FINISHED"
+        ,"type": {"kind":"Int32"}
+        ,"value": 3
+    }
+    ,{
+         "name": "WDS_LOG_TYPE_CLIENT_IMAGE_SELECTED"
+        ,"type": {"kind":"Int32"}
+        ,"value": 4
+    }
+    ,{
+         "name": "WDS_LOG_TYPE_CLIENT_APPLY_STARTED"
+        ,"type": {"kind":"Int32"}
+        ,"value": 5
+    }
+    ,{
+         "name": "WDS_LOG_TYPE_CLIENT_APPLY_FINISHED"
+        ,"type": {"kind":"Int32"}
+        ,"value": 6
+    }
+    ,{
+         "name": "WDS_LOG_TYPE_CLIENT_GENERIC_MESSAGE"
+        ,"type": {"kind":"Int32"}
+        ,"value": 7
+    }
+    ,{
+         "name": "WDS_LOG_TYPE_CLIENT_UNATTEND_MODE"
+        ,"type": {"kind":"Int32"}
+        ,"value": 8
+    }
+    ,{
+         "name": "WDS_LOG_TYPE_CLIENT_TRANSFER_START"
+        ,"type": {"kind":"Int32"}
+        ,"value": 9
+    }
+    ,{
+         "name": "WDS_LOG_TYPE_CLIENT_TRANSFER_END"
+        ,"type": {"kind":"Int32"}
+        ,"value": 10
+    }
+    ,{
+         "name": "WDS_LOG_TYPE_CLIENT_TRANSFER_DOWNGRADE"
+        ,"type": {"kind":"Int32"}
+        ,"value": 11
+    }
+    ,{
+         "name": "WDS_LOG_TYPE_CLIENT_DOMAINJOINERROR"
+        ,"type": {"kind":"Int32"}
+        ,"value": 12
+    }
+    ,{
+         "name": "WDS_LOG_TYPE_CLIENT_POST_ACTIONS_START"
+        ,"type": {"kind":"Int32"}
+        ,"value": 13
+    }
+    ,{
+         "name": "WDS_LOG_TYPE_CLIENT_POST_ACTIONS_END"
+        ,"type": {"kind":"Int32"}
+        ,"value": 14
+    }
+    ,{
+         "name": "WDS_LOG_TYPE_CLIENT_APPLY_STARTED_2"
+        ,"type": {"kind":"Int32"}
+        ,"value": 15
+    }
+    ,{
+         "name": "WDS_LOG_TYPE_CLIENT_APPLY_FINISHED_2"
+        ,"type": {"kind":"Int32"}
+        ,"value": 16
+    }
+    ,{
+         "name": "WDS_LOG_TYPE_CLIENT_DOMAINJOINERROR_2"
+        ,"type": {"kind":"Int32"}
+        ,"value": 17
+    }
+    ,{
+         "name": "WDS_LOG_TYPE_CLIENT_DRIVER_PACKAGE_NOT_ACCESSIBLE"
+        ,"type": {"kind":"Int32"}
+        ,"value": 18
+    }
+    ,{
+         "name": "WDS_LOG_TYPE_CLIENT_OFFLINE_DRIVER_INJECTION_START"
+        ,"type": {"kind":"Int32"}
+        ,"value": 19
+    }
+    ,{
+         "name": "WDS_LOG_TYPE_CLIENT_OFFLINE_DRIVER_INJECTION_END"
+        ,"type": {"kind":"Int32"}
+        ,"value": 20
+    }
+    ,{
+         "name": "WDS_LOG_TYPE_CLIENT_OFFLINE_DRIVER_INJECTION_FAILURE"
+        ,"type": {"kind":"Int32"}
+        ,"value": 21
+    }
+    ,{
+         "name": "WDS_LOG_TYPE_CLIENT_IMAGE_SELECTED2"
+        ,"type": {"kind":"Int32"}
+        ,"value": 22
+    }
+    ,{
+         "name": "WDS_LOG_TYPE_CLIENT_IMAGE_SELECTED3"
+        ,"type": {"kind":"Int32"}
+        ,"value": 23
+    }
+    ,{
+         "name": "WDS_LOG_TYPE_CLIENT_MAX_CODE"
+        ,"type": {"kind":"Int32"}
+        ,"value": 24
+    }
+    ,{
+         "name": "WDS_LOG_LEVEL_DISABLED"
+        ,"type": {"kind":"Int32"}
+        ,"value": 0
+    }
+    ,{
+         "name": "WDS_LOG_LEVEL_ERROR"
+        ,"type": {"kind":"Int32"}
+        ,"value": 1
+    }
+    ,{
+         "name": "WDS_LOG_LEVEL_WARNING"
+        ,"type": {"kind":"Int32"}
+        ,"value": 2
+    }
+    ,{
+         "name": "WDS_LOG_LEVEL_INFO"
+        ,"type": {"kind":"Int32"}
+        ,"value": 3
+    }
+    ,{
+         "name": "WDS_CLI_MSG_START"
+        ,"type": {"kind":"Int32"}
+        ,"value": 0
+    }
+    ,{
+         "name": "WDS_CLI_MSG_COMPLETE"
+        ,"type": {"kind":"Int32"}
+        ,"value": 1
+    }
+    ,{
+         "name": "WDS_CLI_MSG_PROGRESS"
+        ,"type": {"kind":"Int32"}
+        ,"value": 2
+    }
+    ,{
+         "name": "WDS_CLI_MSG_TEXT"
+        ,"type": {"kind":"Int32"}
+        ,"value": 3
+    }
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: WDS_CLI_CRED
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WDS_CLI_CRED = extern struct {
+    pwszUserName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszDomain: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: PFN_WdsCliTraceFunction
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFN_WdsCliTraceFunction = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WDS_CLI_IMAGE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WDS_CLI_IMAGE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WDS_CLI_FIRMWARE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WDS_CLI_FIRMWARE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WDS_CLI_IMAGE_PARAM_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WDS_CLI_IMAGE_PARAM_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: PFN_WdsCliCallback
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFN_WdsCliCallback = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PXE_DHCP_OPTION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PXE_DHCP_OPTION = extern struct {
+    OptionType: {"kind":"Byte"},
+    OptionLength: {"kind":"Byte"},
+    OptionValue: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: PXE_DHCP_MESSAGE
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const PXE_DHCP_MESSAGE = *opaque{
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: PXE_DHCPV6_OPTION
+// TypeLayoutAttr: sequential
+// not generating the actual code for this type because it has a non-default layout IsDefault=False PackingSize=1 Size=0
+pub const PXE_DHCPV6_OPTION = *opaque{
+};
+// --------------------------------------------------------
+// Type: PXE_DHCPV6_MESSAGE_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PXE_DHCPV6_MESSAGE_HEADER = extern struct {
+    MessageType: {"kind":"Byte"},
+    Message: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: PXE_DHCPV6_MESSAGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PXE_DHCPV6_MESSAGE = extern struct {
+    MessageType: {"kind":"Byte"},
+    TransactionIDByte1: {"kind":"Byte"},
+    TransactionIDByte2: {"kind":"Byte"},
+    TransactionIDByte3: {"kind":"Byte"},
+    Options: {"kind":"Array","child": Windows.Win32.WindowsDeploymentServices.PXE_DHCPV6_OPTION},
+};
+// --------------------------------------------------------
+// Type: PXE_DHCPV6_RELAY_MESSAGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PXE_DHCPV6_RELAY_MESSAGE = extern struct {
+    MessageType: {"kind":"Byte"},
+    HopCount: {"kind":"Byte"},
+    LinkAddress: {"kind":"Array","child": {"kind":"Byte"}},
+    PeerAddress: {"kind":"Array","child": {"kind":"Byte"}},
+    Options: {"kind":"Array","child": Windows.Win32.WindowsDeploymentServices.PXE_DHCPV6_OPTION},
+};
+// --------------------------------------------------------
+// Type: PXE_PROVIDER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PXE_PROVIDER = extern struct {
+    uSizeOfStruct: {"kind":"UInt32"},
+    pwszName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszFilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    bIsCritical: Windows.Win32.SystemServices.BOOL,
+    uIndex: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PXE_ADDRESS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PXE_ADDRESS = extern struct {
+    uFlags: {"kind":"UInt32"},
+    Anonymous: Windows.Win32.WindowsDeploymentServices.PXE_ADDRESS+_Anonymous_e__Union,
+    uAddrLen: {"kind":"UInt32"},
+    uPort: {"kind":"UInt16"},
+    // --------------------------------------------------------
+    // Type: _Anonymous_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Anonymous_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: PXE_DHCPV6_NESTED_RELAY_MESSAGE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PXE_DHCPV6_NESTED_RELAY_MESSAGE = extern struct {
+    pRelayMessage: {"kind""Ptr","child":Windows.Win32.WindowsDeploymentServices.PXE_DHCPV6_RELAY_MESSAGE},
+    cbRelayMessage: {"kind":"UInt32"},
+    pInterfaceIdOption: {"kind""Ptr","child":{"kind":"Void"}},
+    cbInterfaceIdOption: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: TRANSPORTPROVIDER_CALLBACK_ID
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TRANSPORTPROVIDER_CALLBACK_ID = *opaque{
+};
+// --------------------------------------------------------
+// Type: WDS_TRANSPORTPROVIDER_INIT_PARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WDS_TRANSPORTPROVIDER_INIT_PARAMS = extern struct {
+    ulLength: {"kind":"UInt32"},
+    ulMcServerVersion: {"kind":"UInt32"},
+    hRegistryKey: Windows.Win32.WindowsProgramming.HKEY,
+    hProvider: Windows.Win32.SystemServices.HANDLE,
+};
+// --------------------------------------------------------
+// Type: WDS_TRANSPORTPROVIDER_SETTINGS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WDS_TRANSPORTPROVIDER_SETTINGS = extern struct {
+    ulLength: {"kind":"UInt32"},
+    ulProviderVersion: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: TRANSPORTCLIENT_CALLBACK_ID
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TRANSPORTCLIENT_CALLBACK_ID = *opaque{
+};
+// --------------------------------------------------------
+// Type: TRANSPORTCLIENT_SESSION_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TRANSPORTCLIENT_SESSION_INFO = extern struct {
+    ulStructureLength: {"kind":"UInt32"},
+    ullFileSize: Windows.Win32.SystemServices.ULARGE_INTEGER,
+    ulBlockSize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PFN_WdsTransportClientSessionStart
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFN_WdsTransportClientSessionStart = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFN_WdsTransportClientSessionStartEx
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFN_WdsTransportClientSessionStartEx = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFN_WdsTransportClientReceiveMetadata
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFN_WdsTransportClientReceiveMetadata = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFN_WdsTransportClientReceiveContents
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFN_WdsTransportClientReceiveContents = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFN_WdsTransportClientSessionComplete
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFN_WdsTransportClientSessionComplete = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PFN_WdsTransportClientSessionNegotiate
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PFN_WdsTransportClientSessionNegotiate = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WDS_TRANSPORTCLIENT_REQUEST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WDS_TRANSPORTCLIENT_REQUEST = extern struct {
+    ulLength: {"kind":"UInt32"},
+    ulApiVersion: {"kind":"UInt32"},
+    ulAuthLevel: {"kind":"UInt32"},
+    pwszServer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszNamespace: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszObjectName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ulCacheSize: {"kind":"UInt32"},
+    ulProtocol: {"kind":"UInt32"},
+    pvProtocolData: {"kind""Ptr","child":{"kind":"Void"}},
+    ulProtocolDataLength: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WDS_TRANSPORTCLIENT_CALLBACKS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WDS_TRANSPORTCLIENT_CALLBACKS = extern struct {
+    SessionStart: Windows.Win32.WindowsDeploymentServices.PFN_WdsTransportClientSessionStart,
+    SessionStartEx: Windows.Win32.WindowsDeploymentServices.PFN_WdsTransportClientSessionStartEx,
+    ReceiveContents: Windows.Win32.WindowsDeploymentServices.PFN_WdsTransportClientReceiveContents,
+    ReceiveMetadata: Windows.Win32.WindowsDeploymentServices.PFN_WdsTransportClientReceiveMetadata,
+    SessionComplete: Windows.Win32.WindowsDeploymentServices.PFN_WdsTransportClientSessionComplete,
+    SessionNegotiate: Windows.Win32.WindowsDeploymentServices.PFN_WdsTransportClientSessionNegotiate,
+};
+// --------------------------------------------------------
+// Type: WdsTransportCacheable
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WdsTransportCacheable = opaque {
+};
+// --------------------------------------------------------
+// Type: WdsTransportCollection
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WdsTransportCollection = opaque {
+};
+// --------------------------------------------------------
+// Type: WdsTransportManager
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WdsTransportManager = opaque {
+};
+// --------------------------------------------------------
+// Type: WdsTransportServer
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WdsTransportServer = opaque {
+};
+// --------------------------------------------------------
+// Type: WdsTransportSetupManager
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WdsTransportSetupManager = opaque {
+};
+// --------------------------------------------------------
+// Type: WdsTransportConfigurationManager
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WdsTransportConfigurationManager = opaque {
+};
+// --------------------------------------------------------
+// Type: WdsTransportNamespaceManager
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WdsTransportNamespaceManager = opaque {
+};
+// --------------------------------------------------------
+// Type: WdsTransportServicePolicy
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WdsTransportServicePolicy = opaque {
+};
+// --------------------------------------------------------
+// Type: WdsTransportDiagnosticsPolicy
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WdsTransportDiagnosticsPolicy = opaque {
+};
+// --------------------------------------------------------
+// Type: WdsTransportMulticastSessionPolicy
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WdsTransportMulticastSessionPolicy = opaque {
+};
+// --------------------------------------------------------
+// Type: WdsTransportNamespace
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WdsTransportNamespace = opaque {
+};
+// --------------------------------------------------------
+// Type: WdsTransportNamespaceAutoCast
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WdsTransportNamespaceAutoCast = opaque {
+};
+// --------------------------------------------------------
+// Type: WdsTransportNamespaceScheduledCast
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WdsTransportNamespaceScheduledCast = opaque {
+};
+// --------------------------------------------------------
+// Type: WdsTransportNamespaceScheduledCastManualStart
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WdsTransportNamespaceScheduledCastManualStart = opaque {
+};
+// --------------------------------------------------------
+// Type: WdsTransportNamespaceScheduledCastAutoStart
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WdsTransportNamespaceScheduledCastAutoStart = opaque {
+};
+// --------------------------------------------------------
+// Type: WdsTransportContent
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WdsTransportContent = opaque {
+};
+// --------------------------------------------------------
+// Type: WdsTransportSession
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WdsTransportSession = opaque {
+};
+// --------------------------------------------------------
+// Type: WdsTransportClient
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WdsTransportClient = opaque {
+};
+// --------------------------------------------------------
+// Type: WdsTransportTftpClient
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WdsTransportTftpClient = opaque {
+};
+// --------------------------------------------------------
+// Type: WdsTransportTftpManager
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WdsTransportTftpManager = opaque {
+};
+// --------------------------------------------------------
+// Type: WdsTransportContentProvider
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const WdsTransportContentProvider = opaque {
+};
+// --------------------------------------------------------
+// Type: WDSTRANSPORT_FEATURE_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WDSTRANSPORT_FEATURE_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: WDSTRANSPORT_PROTOCOL_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WDSTRANSPORT_PROTOCOL_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: WDSTRANSPORT_NAMESPACE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WDSTRANSPORT_NAMESPACE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WDSTRANSPORT_DISCONNECT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WDSTRANSPORT_DISCONNECT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WDSTRANSPORT_SERVICE_NOTIFICATION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WDSTRANSPORT_SERVICE_NOTIFICATION = *opaque{
+};
+// --------------------------------------------------------
+// Type: WDSTRANSPORT_IP_ADDRESS_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WDSTRANSPORT_IP_ADDRESS_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WDSTRANSPORT_IP_ADDRESS_SOURCE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WDSTRANSPORT_IP_ADDRESS_SOURCE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WDSTRANSPORT_NETWORK_PROFILE_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WDSTRANSPORT_NETWORK_PROFILE_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WDSTRANSPORT_DIAGNOSTICS_COMPONENT_FLAGS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WDSTRANSPORT_DIAGNOSTICS_COMPONENT_FLAGS = *opaque{
+};
+// --------------------------------------------------------
+// Type: WDSTRANSPORT_SLOW_CLIENT_HANDLING_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WDSTRANSPORT_SLOW_CLIENT_HANDLING_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WDSTRANSPORT_UDP_PORT_POLICY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WDSTRANSPORT_UDP_PORT_POLICY = *opaque{
+};
+// --------------------------------------------------------
+// Type: WDSTRANSPORT_TFTP_CAPABILITY
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WDSTRANSPORT_TFTP_CAPABILITY = *opaque{
+};
+// --------------------------------------------------------
+// Type: IWdsTransportCacheable
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWdsTransportCacheable = *opaque{
+    // TODO: Method 'get_Dirty'
+    // TODO: Method 'Discard'
+    // TODO: Method 'Refresh'
+    // TODO: Method 'Commit'
+};
+// --------------------------------------------------------
+// Type: IWdsTransportCollection
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWdsTransportCollection = *opaque{
+    // TODO: Method 'get_Count'
+    // TODO: Method 'get_Item'
+    // TODO: Method 'get__NewEnum'
+};
+// --------------------------------------------------------
+// Type: IWdsTransportManager
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWdsTransportManager = *opaque{
+    // TODO: Method 'GetWdsTransportServer'
+};
+// --------------------------------------------------------
+// Type: IWdsTransportServer
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWdsTransportServer = *opaque{
+    // TODO: Method 'get_Name'
+    // TODO: Method 'get_SetupManager'
+    // TODO: Method 'get_ConfigurationManager'
+    // TODO: Method 'get_NamespaceManager'
+    // TODO: Method 'DisconnectClient'
+};
+// --------------------------------------------------------
+// Type: IWdsTransportServer2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWdsTransportServer2 = *opaque{
+    // TODO: Method 'get_TftpManager'
+};
+// --------------------------------------------------------
+// Type: IWdsTransportSetupManager
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWdsTransportSetupManager = *opaque{
+    // TODO: Method 'get_Version'
+    // TODO: Method 'get_InstalledFeatures'
+    // TODO: Method 'get_Protocols'
+    // TODO: Method 'RegisterContentProvider'
+    // TODO: Method 'DeregisterContentProvider'
+};
+// --------------------------------------------------------
+// Type: IWdsTransportSetupManager2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWdsTransportSetupManager2 = *opaque{
+    // TODO: Method 'get_TftpCapabilities'
+    // TODO: Method 'get_ContentProviders'
+};
+// --------------------------------------------------------
+// Type: IWdsTransportConfigurationManager
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWdsTransportConfigurationManager = *opaque{
+    // TODO: Method 'get_ServicePolicy'
+    // TODO: Method 'get_DiagnosticsPolicy'
+    // TODO: Method 'get_WdsTransportServicesRunning'
+    // TODO: Method 'EnableWdsTransportServices'
+    // TODO: Method 'DisableWdsTransportServices'
+    // TODO: Method 'StartWdsTransportServices'
+    // TODO: Method 'StopWdsTransportServices'
+    // TODO: Method 'RestartWdsTransportServices'
+    // TODO: Method 'NotifyWdsTransportServices'
+};
+// --------------------------------------------------------
+// Type: IWdsTransportConfigurationManager2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWdsTransportConfigurationManager2 = *opaque{
+    // TODO: Method 'get_MulticastSessionPolicy'
+};
+// --------------------------------------------------------
+// Type: IWdsTransportNamespaceManager
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWdsTransportNamespaceManager = *opaque{
+    // TODO: Method 'CreateNamespace'
+    // TODO: Method 'RetrieveNamespace'
+    // TODO: Method 'RetrieveNamespaces'
+};
+// --------------------------------------------------------
+// Type: IWdsTransportTftpManager
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWdsTransportTftpManager = *opaque{
+    // TODO: Method 'RetrieveTftpClients'
+};
+// --------------------------------------------------------
+// Type: IWdsTransportServicePolicy
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWdsTransportServicePolicy = *opaque{
+    // TODO: Method 'get_IpAddressSource'
+    // TODO: Method 'put_IpAddressSource'
+    // TODO: Method 'get_StartIpAddress'
+    // TODO: Method 'put_StartIpAddress'
+    // TODO: Method 'get_EndIpAddress'
+    // TODO: Method 'put_EndIpAddress'
+    // TODO: Method 'get_StartPort'
+    // TODO: Method 'put_StartPort'
+    // TODO: Method 'get_EndPort'
+    // TODO: Method 'put_EndPort'
+    // TODO: Method 'get_NetworkProfile'
+    // TODO: Method 'put_NetworkProfile'
+};
+// --------------------------------------------------------
+// Type: IWdsTransportServicePolicy2
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWdsTransportServicePolicy2 = *opaque{
+    // TODO: Method 'get_UdpPortPolicy'
+    // TODO: Method 'put_UdpPortPolicy'
+    // TODO: Method 'get_TftpMaximumBlockSize'
+    // TODO: Method 'put_TftpMaximumBlockSize'
+    // TODO: Method 'get_EnableTftpVariableWindowExtension'
+    // TODO: Method 'put_EnableTftpVariableWindowExtension'
+};
+// --------------------------------------------------------
+// Type: IWdsTransportDiagnosticsPolicy
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWdsTransportDiagnosticsPolicy = *opaque{
+    // TODO: Method 'get_Enabled'
+    // TODO: Method 'put_Enabled'
+    // TODO: Method 'get_Components'
+    // TODO: Method 'put_Components'
+};
+// --------------------------------------------------------
+// Type: IWdsTransportMulticastSessionPolicy
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWdsTransportMulticastSessionPolicy = *opaque{
+    // TODO: Method 'get_SlowClientHandling'
+    // TODO: Method 'put_SlowClientHandling'
+    // TODO: Method 'get_AutoDisconnectThreshold'
+    // TODO: Method 'put_AutoDisconnectThreshold'
+    // TODO: Method 'get_MultistreamStreamCount'
+    // TODO: Method 'put_MultistreamStreamCount'
+    // TODO: Method 'get_SlowClientFallback'
+    // TODO: Method 'put_SlowClientFallback'
+};
+// --------------------------------------------------------
+// Type: IWdsTransportNamespace
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWdsTransportNamespace = *opaque{
+    // TODO: Method 'get_Type'
+    // TODO: Method 'get_Id'
+    // TODO: Method 'get_Name'
+    // TODO: Method 'put_Name'
+    // TODO: Method 'get_FriendlyName'
+    // TODO: Method 'put_FriendlyName'
+    // TODO: Method 'get_Description'
+    // TODO: Method 'put_Description'
+    // TODO: Method 'get_ContentProvider'
+    // TODO: Method 'put_ContentProvider'
+    // TODO: Method 'get_Configuration'
+    // TODO: Method 'put_Configuration'
+    // TODO: Method 'get_Registered'
+    // TODO: Method 'get_Tombstoned'
+    // TODO: Method 'get_TombstoneTime'
+    // TODO: Method 'get_TransmissionStarted'
+    // TODO: Method 'Register'
+    // TODO: Method 'Deregister'
+    // TODO: Method 'Clone'
+    // TODO: Method 'Refresh'
+    // TODO: Method 'RetrieveContents'
+};
+// --------------------------------------------------------
+// Type: IWdsTransportNamespaceAutoCast
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWdsTransportNamespaceAutoCast = *opaque{
+};
+// --------------------------------------------------------
+// Type: IWdsTransportNamespaceScheduledCast
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWdsTransportNamespaceScheduledCast = *opaque{
+    // TODO: Method 'StartTransmission'
+};
+// --------------------------------------------------------
+// Type: IWdsTransportNamespaceScheduledCastManualStart
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWdsTransportNamespaceScheduledCastManualStart = *opaque{
+};
+// --------------------------------------------------------
+// Type: IWdsTransportNamespaceScheduledCastAutoStart
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWdsTransportNamespaceScheduledCastAutoStart = *opaque{
+    // TODO: Method 'get_MinimumClients'
+    // TODO: Method 'put_MinimumClients'
+    // TODO: Method 'get_StartTime'
+    // TODO: Method 'put_StartTime'
+};
+// --------------------------------------------------------
+// Type: IWdsTransportContent
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWdsTransportContent = *opaque{
+    // TODO: Method 'get_Namespace'
+    // TODO: Method 'get_Id'
+    // TODO: Method 'get_Name'
+    // TODO: Method 'RetrieveSessions'
+    // TODO: Method 'Terminate'
+};
+// --------------------------------------------------------
+// Type: IWdsTransportSession
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWdsTransportSession = *opaque{
+    // TODO: Method 'get_Content'
+    // TODO: Method 'get_Id'
+    // TODO: Method 'get_NetworkInterfaceName'
+    // TODO: Method 'get_NetworkInterfaceAddress'
+    // TODO: Method 'get_TransferRate'
+    // TODO: Method 'get_MasterClientId'
+    // TODO: Method 'RetrieveClients'
+    // TODO: Method 'Terminate'
+};
+// --------------------------------------------------------
+// Type: IWdsTransportClient
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWdsTransportClient = *opaque{
+    // TODO: Method 'get_Session'
+    // TODO: Method 'get_Id'
+    // TODO: Method 'get_Name'
+    // TODO: Method 'get_MacAddress'
+    // TODO: Method 'get_IpAddress'
+    // TODO: Method 'get_PercentCompletion'
+    // TODO: Method 'get_JoinDuration'
+    // TODO: Method 'get_CpuUtilization'
+    // TODO: Method 'get_MemoryUtilization'
+    // TODO: Method 'get_NetworkUtilization'
+    // TODO: Method 'get_UserIdentity'
+    // TODO: Method 'Disconnect'
+};
+// --------------------------------------------------------
+// Type: IWdsTransportTftpClient
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWdsTransportTftpClient = *opaque{
+    // TODO: Method 'get_FileName'
+    // TODO: Method 'get_IpAddress'
+    // TODO: Method 'get_Timeout'
+    // TODO: Method 'get_CurrentFileOffset'
+    // TODO: Method 'get_FileSize'
+    // TODO: Method 'get_BlockSize'
+    // TODO: Method 'get_WindowSize'
+};
+// --------------------------------------------------------
+// Type: IWdsTransportContentProvider
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because its an abstract type (probably a COM type?)
+pub const IWdsTransportContentProvider = *opaque{
+    // TODO: Method 'get_Name'
+    // TODO: Method 'get_Description'
+    // TODO: Method 'get_FilePath'
+    // TODO: Method 'get_InitializationRoutine'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliClose(
+    Handle: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliRegisterTrace(
+    pfn: Windows.Win32.WindowsDeploymentServices.PFN_WdsCliTraceFunction,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliFreeStringArray(
+    ppwszArray: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    ulCount: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliFindFirstImage(
+    hSession: Windows.Win32.SystemServices.HANDLE,
+    phFindHandle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliFindNextImage(
+    Handle: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliGetEnumerationFlags(
+    Handle: Windows.Win32.SystemServices.HANDLE,
+    pdwFlags: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliGetImageHandleFromFindHandle(
+    FindHandle: Windows.Win32.SystemServices.HANDLE,
+    phImageHandle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliGetImageHandleFromTransferHandle(
+    hTransfer: Windows.Win32.SystemServices.HANDLE,
+    phImageHandle: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliCreateSession(
+    pwszServer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pCred: {"kind""Ptr","child":Windows.Win32.WindowsDeploymentServices.WDS_CLI_CRED},
+    phSession: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliAuthorizeSession(
+    hSession: Windows.Win32.SystemServices.HANDLE,
+    pCred: {"kind""Ptr","child":Windows.Win32.WindowsDeploymentServices.WDS_CLI_CRED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliInitializeLog(
+    hSession: Windows.Win32.SystemServices.HANDLE,
+    ulClientArchitecture: {"kind":"UInt32"},
+    pwszClientId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszClientAddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliLog(
+    hSession: Windows.Win32.SystemServices.HANDLE,
+    ulLogLevel: {"kind":"UInt32"},
+    ulMessageCode: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliGetImageName(
+    hIfh: Windows.Win32.SystemServices.HANDLE,
+    ppwszValue: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliGetImageDescription(
+    hIfh: Windows.Win32.SystemServices.HANDLE,
+    ppwszValue: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliGetImageType(
+    hIfh: Windows.Win32.SystemServices.HANDLE,
+    pImageType: {"kind""Ptr","child":Windows.Win32.WindowsDeploymentServices.WDS_CLI_IMAGE_TYPE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliGetImageFiles(
+    hIfh: Windows.Win32.SystemServices.HANDLE,
+    pppwszFiles: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}}},
+    pdwCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliGetImageLanguage(
+    hIfh: Windows.Win32.SystemServices.HANDLE,
+    ppwszValue: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliGetImageLanguages(
+    hIfh: Windows.Win32.SystemServices.HANDLE,
+    pppszValues: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}}},
+    pdwNumValues: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliGetImageVersion(
+    hIfh: Windows.Win32.SystemServices.HANDLE,
+    ppwszValue: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliGetImagePath(
+    hIfh: Windows.Win32.SystemServices.HANDLE,
+    ppwszValue: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliGetImageIndex(
+    hIfh: Windows.Win32.SystemServices.HANDLE,
+    pdwValue: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliGetImageArchitecture(
+    hIfh: Windows.Win32.SystemServices.HANDLE,
+    pdwValue: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliGetImageLastModifiedTime(
+    hIfh: Windows.Win32.SystemServices.HANDLE,
+    ppSysTimeValue: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WindowsProgramming.SYSTEMTIME}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliGetImageSize(
+    hIfh: Windows.Win32.SystemServices.HANDLE,
+    pullValue: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliGetImageHalName(
+    hIfh: Windows.Win32.SystemServices.HANDLE,
+    ppwszValue: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliGetImageGroup(
+    hIfh: Windows.Win32.SystemServices.HANDLE,
+    ppwszValue: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliGetImageNamespace(
+    hIfh: Windows.Win32.SystemServices.HANDLE,
+    ppwszValue: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliGetImageParameter(
+    hIfh: Windows.Win32.SystemServices.HANDLE,
+    ParamType: Windows.Win32.WindowsDeploymentServices.WDS_CLI_IMAGE_PARAM_TYPE,
+    pResponse: {"kind""Ptr","child":{"kind":"Void"}},
+    uResponseLen: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliGetTransferSize(
+    hIfh: Windows.Win32.SystemServices.HANDLE,
+    pullValue: {"kind""Ptr","child":{"kind":"UInt64"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliSetTransferBufferSize(
+    ulSizeInBytes: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliTransferImage(
+    hImage: Windows.Win32.SystemServices.HANDLE,
+    pwszLocalPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+    pfnWdsCliCallback: Windows.Win32.WindowsDeploymentServices.PFN_WdsCliCallback,
+    pvUserData: {"kind""Ptr","child":{"kind":"Void"}},
+    phTransfer: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliTransferFile(
+    pwszServer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszNamespace: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszRemoteFilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszLocalFilePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwFlags: {"kind":"UInt32"},
+    dwReserved: {"kind":"UInt32"},
+    pfnWdsCliCallback: Windows.Win32.WindowsDeploymentServices.PFN_WdsCliCallback,
+    pvUserData: {"kind""Ptr","child":{"kind":"Void"}},
+    phTransfer: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliCancelTransfer(
+    hTransfer: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliWaitForTransfer(
+    hTransfer: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliObtainDriverPackages(
+    hImage: Windows.Win32.SystemServices.HANDLE,
+    ppwszServerName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    pppwszDriverPackages: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}}},
+    pulCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliObtainDriverPackagesEx(
+    hSession: Windows.Win32.SystemServices.HANDLE,
+    pwszMachineInfo: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppwszServerName: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    pppwszDriverPackages: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}}},
+    pulCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSCLIENTAPI" fn WdsCliGetDriverQueryXml(
+    pwszWinDirPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppwszDriverQuery: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxeProviderRegister(
+    pszProviderName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszModulePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Index: {"kind":"UInt32"},
+    bIsCritical: Windows.Win32.SystemServices.BOOL,
+    phProviderKey: {"kind""Ptr","child":Windows.Win32.WindowsProgramming.HKEY},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxeProviderUnRegister(
+    pszProviderName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxeProviderQueryIndex(
+    pszProviderName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    puIndex: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxeProviderEnumFirst(
+    phEnum: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxeProviderEnumNext(
+    hEnum: Windows.Win32.SystemServices.HANDLE,
+    ppProvider: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WindowsDeploymentServices.PXE_PROVIDER}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxeProviderEnumClose(
+    hEnum: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxeProviderFreeInfo(
+    pProvider: {"kind""Ptr","child":Windows.Win32.WindowsDeploymentServices.PXE_PROVIDER},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxeRegisterCallback(
+    hProvider: Windows.Win32.SystemServices.HANDLE,
+    CallbackType: {"kind":"UInt32"},
+    pCallbackFunction: {"kind""Ptr","child":{"kind":"Void"}},
+    pContext: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxeSendReply(
+    hClientRequest: Windows.Win32.SystemServices.HANDLE,
+    pPacket: {"kind""Ptr","child":{"kind":"Void"}},
+    uPacketLen: {"kind":"UInt32"},
+    pAddress: {"kind""Ptr","child":Windows.Win32.WindowsDeploymentServices.PXE_ADDRESS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxeAsyncRecvDone(
+    hClientRequest: Windows.Win32.SystemServices.HANDLE,
+    Action: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxeTrace(
+    hProvider: Windows.Win32.SystemServices.HANDLE,
+    Severity: {"kind":"UInt32"},
+    pszFormat: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxeTraceV(
+    hProvider: Windows.Win32.SystemServices.HANDLE,
+    Severity: {"kind":"UInt32"},
+    pszFormat: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Params: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WDSPXE" fn PxePacketAllocate(
+    hProvider: Windows.Win32.SystemServices.HANDLE,
+    hClientRequest: Windows.Win32.SystemServices.HANDLE,
+    uSize: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxePacketFree(
+    hProvider: Windows.Win32.SystemServices.HANDLE,
+    hClientRequest: Windows.Win32.SystemServices.HANDLE,
+    pPacket: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxeProviderSetAttribute(
+    hProvider: Windows.Win32.SystemServices.HANDLE,
+    Attribute: {"kind":"UInt32"},
+    pParameterBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    uParamLen: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxeDhcpInitialize(
+    pRecvPacket: {"kind""Ptr","child":{"kind":"Void"}},
+    uRecvPacketLen: {"kind":"UInt32"},
+    pReplyPacket: {"kind""Ptr","child":{"kind":"Void"}},
+    uMaxReplyPacketLen: {"kind":"UInt32"},
+    puReplyPacketLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxeDhcpv6Initialize(
+    pRequest: {"kind""Ptr","child":{"kind":"Void"}},
+    cbRequest: {"kind":"UInt32"},
+    pReply: {"kind""Ptr","child":{"kind":"Void"}},
+    cbReply: {"kind":"UInt32"},
+    pcbReplyUsed: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxeDhcpAppendOption(
+    pReplyPacket: {"kind""Ptr","child":{"kind":"Void"}},
+    uMaxReplyPacketLen: {"kind":"UInt32"},
+    puReplyPacketLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+    bOption: {"kind":"Byte"},
+    bOptionLen: {"kind":"Byte"},
+    pValue: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxeDhcpv6AppendOption(
+    pReply: {"kind""Ptr","child":{"kind":"Void"}},
+    cbReply: {"kind":"UInt32"},
+    pcbReplyUsed: {"kind""Ptr","child":{"kind":"UInt32"}},
+    wOptionType: {"kind":"UInt16"},
+    cbOption: {"kind":"UInt16"},
+    pOption: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxeDhcpAppendOptionRaw(
+    pReplyPacket: {"kind""Ptr","child":{"kind":"Void"}},
+    uMaxReplyPacketLen: {"kind":"UInt32"},
+    puReplyPacketLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+    uBufferLen: {"kind":"UInt16"},
+    pBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxeDhcpv6AppendOptionRaw(
+    pReply: {"kind""Ptr","child":{"kind":"Void"}},
+    cbReply: {"kind":"UInt32"},
+    pcbReplyUsed: {"kind""Ptr","child":{"kind":"UInt32"}},
+    cbBuffer: {"kind":"UInt16"},
+    pBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxeDhcpIsValid(
+    pPacket: {"kind""Ptr","child":{"kind":"Void"}},
+    uPacketLen: {"kind":"UInt32"},
+    bRequestPacket: Windows.Win32.SystemServices.BOOL,
+    pbPxeOptionPresent: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxeDhcpv6IsValid(
+    pPacket: {"kind""Ptr","child":{"kind":"Void"}},
+    uPacketLen: {"kind":"UInt32"},
+    bRequestPacket: Windows.Win32.SystemServices.BOOL,
+    pbPxeOptionPresent: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxeDhcpGetOptionValue(
+    pPacket: {"kind""Ptr","child":{"kind":"Void"}},
+    uPacketLen: {"kind":"UInt32"},
+    uInstance: {"kind":"UInt32"},
+    bOption: {"kind":"Byte"},
+    pbOptionLen: {"kind""Ptr","child":{"kind":"Byte"}},
+    ppOptionValue: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxeDhcpv6GetOptionValue(
+    pPacket: {"kind""Ptr","child":{"kind":"Void"}},
+    uPacketLen: {"kind":"UInt32"},
+    uInstance: {"kind":"UInt32"},
+    wOption: {"kind":"UInt16"},
+    pwOptionLen: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppOptionValue: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxeDhcpGetVendorOptionValue(
+    pPacket: {"kind""Ptr","child":{"kind":"Void"}},
+    uPacketLen: {"kind":"UInt32"},
+    bOption: {"kind":"Byte"},
+    uInstance: {"kind":"UInt32"},
+    pbOptionLen: {"kind""Ptr","child":{"kind":"Byte"}},
+    ppOptionValue: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxeDhcpv6GetVendorOptionValue(
+    pPacket: {"kind""Ptr","child":{"kind":"Void"}},
+    uPacketLen: {"kind":"UInt32"},
+    dwEnterpriseNumber: {"kind":"UInt32"},
+    wOption: {"kind":"UInt16"},
+    uInstance: {"kind":"UInt32"},
+    pwOptionLen: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppOptionValue: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxeDhcpv6ParseRelayForw(
+    pRelayForwPacket: {"kind""Ptr","child":{"kind":"Void"}},
+    uRelayForwPacketLen: {"kind":"UInt32"},
+    pRelayMessages: {"kind""Ptr","child":Windows.Win32.WindowsDeploymentServices.PXE_DHCPV6_NESTED_RELAY_MESSAGE},
+    nRelayMessages: {"kind":"UInt32"},
+    pnRelayMessages: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ppInnerPacket: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    pcbInnerPacket: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxeDhcpv6CreateRelayRepl(
+    pRelayMessages: {"kind""Ptr","child":Windows.Win32.WindowsDeploymentServices.PXE_DHCPV6_NESTED_RELAY_MESSAGE},
+    nRelayMessages: {"kind":"UInt32"},
+    pInnerPacket: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbInnerPacket: {"kind":"UInt32"},
+    pReplyBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    cbReplyBuffer: {"kind":"UInt32"},
+    pcbReplyBuffer: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxeGetServerInfo(
+    uInfoType: {"kind":"UInt32"},
+    pBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    uBufferLen: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSPXE" fn PxeGetServerInfoEx(
+    uInfoType: {"kind":"UInt32"},
+    pBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    uBufferLen: {"kind":"UInt32"},
+    puBufferUsed: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSMC" fn WdsTransportServerRegisterCallback(
+    hProvider: Windows.Win32.SystemServices.HANDLE,
+    CallbackId: Windows.Win32.WindowsDeploymentServices.TRANSPORTPROVIDER_CALLBACK_ID,
+    pfnCallback: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSMC" fn WdsTransportServerCompleteRead(
+    hProvider: Windows.Win32.SystemServices.HANDLE,
+    ulBytesRead: {"kind":"UInt32"},
+    pvUserData: {"kind""Ptr","child":{"kind":"Void"}},
+    hReadResult: Windows.Win32.Com.HRESULT,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSMC" fn WdsTransportServerTrace(
+    hProvider: Windows.Win32.SystemServices.HANDLE,
+    Severity: {"kind":"UInt32"},
+    pwszFormat: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSMC" fn WdsTransportServerTraceV(
+    hProvider: Windows.Win32.SystemServices.HANDLE,
+    Severity: {"kind":"UInt32"},
+    pwszFormat: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Params: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSMC" fn WdsTransportServerAllocateBuffer(
+    hProvider: Windows.Win32.SystemServices.HANDLE,
+    ulBufferSize: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSMC" fn WdsTransportServerFreeBuffer(
+    hProvider: Windows.Win32.SystemServices.HANDLE,
+    pvBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSTPTC" fn WdsTransportClientInitialize(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSTPTC" fn WdsTransportClientInitializeSession(
+    pSessionRequest: {"kind""Ptr","child":Windows.Win32.WindowsDeploymentServices.WDS_TRANSPORTCLIENT_REQUEST},
+    pCallerData: {"kind""Ptr","child":{"kind":"Void"}},
+    hSessionKey: {"kind""Ptr","child":{"kind":"IntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSTPTC" fn WdsTransportClientRegisterCallback(
+    hSessionKey: Windows.Win32.SystemServices.HANDLE,
+    CallbackId: Windows.Win32.WindowsDeploymentServices.TRANSPORTCLIENT_CALLBACK_ID,
+    pfnCallback: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSTPTC" fn WdsTransportClientStartSession(
+    hSessionKey: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSTPTC" fn WdsTransportClientCompleteReceive(
+    hSessionKey: Windows.Win32.SystemServices.HANDLE,
+    ulSize: {"kind":"UInt32"},
+    pullOffset: {"kind""Ptr","child":Windows.Win32.SystemServices.ULARGE_INTEGER},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSTPTC" fn WdsTransportClientCancelSession(
+    hSessionKey: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSTPTC" fn WdsTransportClientCancelSessionEx(
+    hSessionKey: Windows.Win32.SystemServices.HANDLE,
+    dwErrorCode: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSTPTC" fn WdsTransportClientWaitForCompletion(
+    hSessionKey: Windows.Win32.SystemServices.HANDLE,
+    uTimeout: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSTPTC" fn WdsTransportClientQueryStatus(
+    hSessionKey: Windows.Win32.SystemServices.HANDLE,
+    puStatus: {"kind""Ptr","child":{"kind":"UInt32"}},
+    puErrorCode: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSTPTC" fn WdsTransportClientCloseSession(
+    hSessionKey: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSTPTC" fn WdsTransportClientAddRefBuffer(
+    pvBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSTPTC" fn WdsTransportClientReleaseBuffer(
+    pvBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSTPTC" fn WdsTransportClientShutdown(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSBP" fn WdsBpParseInitialize(
+    pPacket: {"kind""Ptr","child":{"kind":"Void"}},
+    uPacketLen: {"kind":"UInt32"},
+    pbPacketType: {"kind""Ptr","child":{"kind":"Byte"}},
+    phHandle: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSBP" fn WdsBpParseInitializev6(
+    pPacket: {"kind""Ptr","child":{"kind":"Void"}},
+    uPacketLen: {"kind":"UInt32"},
+    pbPacketType: {"kind""Ptr","child":{"kind":"Byte"}},
+    phHandle: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSBP" fn WdsBpInitialize(
+    bPacketType: {"kind":"Byte"},
+    phHandle: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSBP" fn WdsBpCloseHandle(
+    hHandle: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSBP" fn WdsBpQueryOption(
+    hHandle: Windows.Win32.SystemServices.HANDLE,
+    uOption: {"kind":"UInt32"},
+    uValueLen: {"kind":"UInt32"},
+    pValue: {"kind""Ptr","child":{"kind":"Void"}},
+    puBytes: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSBP" fn WdsBpAddOption(
+    hHandle: Windows.Win32.SystemServices.HANDLE,
+    uOption: {"kind":"UInt32"},
+    uValueLen: {"kind":"UInt32"},
+    pValue: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WDSBP" fn WdsBpGetOptionBuffer(
+    hHandle: Windows.Win32.SystemServices.HANDLE,
+    uBufferLen: {"kind":"UInt32"},
+    pBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    puBytes: {"kind""Ptr","child":{"kind":"UInt32"}},
+],
+
+"unicode_aliases": [
+]}

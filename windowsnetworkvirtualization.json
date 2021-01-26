@@ -1,0 +1,132 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: WNV_NOTIFICATION_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WNV_NOTIFICATION_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WNV_OBJECT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WNV_OBJECT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WNV_CA_NOTIFICATION_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WNV_CA_NOTIFICATION_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WNV_OBJECT_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WNV_OBJECT_HEADER = extern struct {
+    MajorVersion: {"kind":"Byte"},
+    MinorVersion: {"kind":"Byte"},
+    Size: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WNV_NOTIFICATION_PARAM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WNV_NOTIFICATION_PARAM = extern struct {
+    Header: Windows.Win32.WindowsNetworkVirtualization.WNV_OBJECT_HEADER,
+    NotificationType: Windows.Win32.WindowsNetworkVirtualization.WNV_NOTIFICATION_TYPE,
+    PendingNotifications: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: WNV_IP_ADDRESS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WNV_IP_ADDRESS = extern struct {
+    IP: Windows.Win32.WindowsNetworkVirtualization.WNV_IP_ADDRESS+_IP_e__Union,
+    // --------------------------------------------------------
+    // Type: _IP_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _IP_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: WNV_POLICY_MISMATCH_PARAM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WNV_POLICY_MISMATCH_PARAM = extern struct {
+    CAFamily: {"kind":"UInt16"},
+    PAFamily: {"kind":"UInt16"},
+    VirtualSubnetId: {"kind":"UInt32"},
+    CA: Windows.Win32.WindowsNetworkVirtualization.WNV_IP_ADDRESS,
+    PA: Windows.Win32.WindowsNetworkVirtualization.WNV_IP_ADDRESS,
+};
+// --------------------------------------------------------
+// Type: WNV_PROVIDER_ADDRESS_CHANGE_PARAM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WNV_PROVIDER_ADDRESS_CHANGE_PARAM = extern struct {
+    PAFamily: {"kind":"UInt16"},
+    PA: Windows.Win32.WindowsNetworkVirtualization.WNV_IP_ADDRESS,
+    AddressState: Windows.Win32.IpHelper.NL_DAD_STATE,
+};
+// --------------------------------------------------------
+// Type: WNV_CUSTOMER_ADDRESS_CHANGE_PARAM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WNV_CUSTOMER_ADDRESS_CHANGE_PARAM = extern struct {
+    MACAddress: Windows.Win32.WindowsFiltering.DL_EUI48,
+    CAFamily: {"kind":"UInt16"},
+    CA: Windows.Win32.WindowsNetworkVirtualization.WNV_IP_ADDRESS,
+    VirtualSubnetId: {"kind":"UInt32"},
+    PAFamily: {"kind":"UInt16"},
+    PA: Windows.Win32.WindowsNetworkVirtualization.WNV_IP_ADDRESS,
+    NotificationReason: Windows.Win32.WindowsNetworkVirtualization.WNV_CA_NOTIFICATION_TYPE,
+};
+// --------------------------------------------------------
+// Type: WNV_OBJECT_CHANGE_PARAM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WNV_OBJECT_CHANGE_PARAM = extern struct {
+    ObjectType: Windows.Win32.WindowsNetworkVirtualization.WNV_OBJECT_TYPE,
+    ObjectParam: Windows.Win32.WindowsNetworkVirtualization.WNV_OBJECT_CHANGE_PARAM+_ObjectParam_e__Union,
+    // --------------------------------------------------------
+    // Type: _ObjectParam_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _ObjectParam_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: WNV_REDIRECT_PARAM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WNV_REDIRECT_PARAM = extern struct {
+    CAFamily: {"kind":"UInt16"},
+    PAFamily: {"kind":"UInt16"},
+    NewPAFamily: {"kind":"UInt16"},
+    VirtualSubnetId: {"kind":"UInt32"},
+    CA: Windows.Win32.WindowsNetworkVirtualization.WNV_IP_ADDRESS,
+    PA: Windows.Win32.WindowsNetworkVirtualization.WNV_IP_ADDRESS,
+    NewPA: Windows.Win32.WindowsNetworkVirtualization.WNV_IP_ADDRESS,
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wnvapi" fn WnvOpen(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wnvapi" fn WnvRequestNotification(
+    WnvHandle: Windows.Win32.SystemServices.HANDLE,
+    NotificationParam: {"kind""Ptr","child":Windows.Win32.WindowsNetworkVirtualization.WNV_NOTIFICATION_PARAM},
+    Overlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+    BytesTransferred: {"kind""Ptr","child":{"kind":"UInt32"}},
+],
+
+"unicode_aliases": [
+]}

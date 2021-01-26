@@ -1,0 +1,462 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: FilterFindHandle
+// TypeLayoutAttr: sequential
+// RAIIFree 'FilterFindClose' (TODO: can we use this information?)
+pub const FilterFindHandle = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: FilterInstanceFindHandle
+// TypeLayoutAttr: sequential
+// RAIIFree 'FilterInstanceFindClose' (TODO: can we use this information?)
+pub const FilterInstanceFindHandle = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: FilterVolumeFindHandle
+// TypeLayoutAttr: sequential
+// RAIIFree 'FilterVolumeFindClose' (TODO: can we use this information?)
+pub const FilterVolumeFindHandle = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: FilterVolumeInstanceFindHandle
+// TypeLayoutAttr: sequential
+// RAIIFree 'FilterVolumeInstanceFindClose' (TODO: can we use this information?)
+pub const FilterVolumeInstanceFindHandle = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: HFILTER
+// TypeLayoutAttr: sequential
+// RAIIFree 'FilterClose' (TODO: can we use this information?)
+pub const HFILTER = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: HFILTER_INSTANCE
+// TypeLayoutAttr: sequential
+// RAIIFree 'FilterInstanceClose' (TODO: can we use this information?)
+pub const HFILTER_INSTANCE = {"kind":"IntPtr"};
+// --------------------------------------------------------
+// Type: FLT_FILESYSTEM_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FLT_FILESYSTEM_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: FILTER_INFORMATION_CLASS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FILTER_INFORMATION_CLASS = *opaque{
+};
+// --------------------------------------------------------
+// Type: FILTER_FULL_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FILTER_FULL_INFORMATION = extern struct {
+    NextEntryOffset: {"kind":"UInt32"},
+    FrameID: {"kind":"UInt32"},
+    NumberOfInstances: {"kind":"UInt32"},
+    FilterNameLength: {"kind":"UInt16"},
+    FilterNameBuffer: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: FILTER_AGGREGATE_BASIC_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FILTER_AGGREGATE_BASIC_INFORMATION = extern struct {
+    NextEntryOffset: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+    Type: Windows.Win32.InstallableFileSystems.FILTER_AGGREGATE_BASIC_INFORMATION+_Type_e__Union,
+    // --------------------------------------------------------
+    // Type: _Type_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Type_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _MiniFilter_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _MiniFilter_e__Struct = extern struct {
+            FrameID: {"kind":"UInt32"},
+            NumberOfInstances: {"kind":"UInt32"},
+            FilterNameLength: {"kind":"UInt16"},
+            FilterNameBufferOffset: {"kind":"UInt16"},
+            FilterAltitudeLength: {"kind":"UInt16"},
+            FilterAltitudeBufferOffset: {"kind":"UInt16"},
+        };
+        // --------------------------------------------------------
+        // Type: _LegacyFilter_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _LegacyFilter_e__Struct = extern struct {
+            FilterNameLength: {"kind":"UInt16"},
+            FilterNameBufferOffset: {"kind":"UInt16"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: FILTER_AGGREGATE_STANDARD_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FILTER_AGGREGATE_STANDARD_INFORMATION = extern struct {
+    NextEntryOffset: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+    Type: Windows.Win32.InstallableFileSystems.FILTER_AGGREGATE_STANDARD_INFORMATION+_Type_e__Union,
+    // --------------------------------------------------------
+    // Type: _Type_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Type_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _MiniFilter_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _MiniFilter_e__Struct = extern struct {
+            Flags: {"kind":"UInt32"},
+            FrameID: {"kind":"UInt32"},
+            NumberOfInstances: {"kind":"UInt32"},
+            FilterNameLength: {"kind":"UInt16"},
+            FilterNameBufferOffset: {"kind":"UInt16"},
+            FilterAltitudeLength: {"kind":"UInt16"},
+            FilterAltitudeBufferOffset: {"kind":"UInt16"},
+        };
+        // --------------------------------------------------------
+        // Type: _LegacyFilter_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _LegacyFilter_e__Struct = extern struct {
+            Flags: {"kind":"UInt32"},
+            FilterNameLength: {"kind":"UInt16"},
+            FilterNameBufferOffset: {"kind":"UInt16"},
+            FilterAltitudeLength: {"kind":"UInt16"},
+            FilterAltitudeBufferOffset: {"kind":"UInt16"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: FILTER_VOLUME_INFORMATION_CLASS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const FILTER_VOLUME_INFORMATION_CLASS = *opaque{
+};
+// --------------------------------------------------------
+// Type: FILTER_VOLUME_BASIC_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FILTER_VOLUME_BASIC_INFORMATION = extern struct {
+    FilterVolumeNameLength: {"kind":"UInt16"},
+    FilterVolumeName: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: FILTER_VOLUME_STANDARD_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FILTER_VOLUME_STANDARD_INFORMATION = extern struct {
+    NextEntryOffset: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+    FrameID: {"kind":"UInt32"},
+    FileSystemType: Windows.Win32.InstallableFileSystems.FLT_FILESYSTEM_TYPE,
+    FilterVolumeNameLength: {"kind":"UInt16"},
+    FilterVolumeName: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: INSTANCE_INFORMATION_CLASS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const INSTANCE_INFORMATION_CLASS = *opaque{
+};
+// --------------------------------------------------------
+// Type: INSTANCE_BASIC_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INSTANCE_BASIC_INFORMATION = extern struct {
+    NextEntryOffset: {"kind":"UInt32"},
+    InstanceNameLength: {"kind":"UInt16"},
+    InstanceNameBufferOffset: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: INSTANCE_PARTIAL_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INSTANCE_PARTIAL_INFORMATION = extern struct {
+    NextEntryOffset: {"kind":"UInt32"},
+    InstanceNameLength: {"kind":"UInt16"},
+    InstanceNameBufferOffset: {"kind":"UInt16"},
+    AltitudeLength: {"kind":"UInt16"},
+    AltitudeBufferOffset: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: INSTANCE_FULL_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INSTANCE_FULL_INFORMATION = extern struct {
+    NextEntryOffset: {"kind":"UInt32"},
+    InstanceNameLength: {"kind":"UInt16"},
+    InstanceNameBufferOffset: {"kind":"UInt16"},
+    AltitudeLength: {"kind":"UInt16"},
+    AltitudeBufferOffset: {"kind":"UInt16"},
+    VolumeNameLength: {"kind":"UInt16"},
+    VolumeNameBufferOffset: {"kind":"UInt16"},
+    FilterNameLength: {"kind":"UInt16"},
+    FilterNameBufferOffset: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: INSTANCE_AGGREGATE_STANDARD_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const INSTANCE_AGGREGATE_STANDARD_INFORMATION = extern struct {
+    NextEntryOffset: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+    Type: Windows.Win32.InstallableFileSystems.INSTANCE_AGGREGATE_STANDARD_INFORMATION+_Type_e__Union,
+    // --------------------------------------------------------
+    // Type: _Type_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Type_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _MiniFilter_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _MiniFilter_e__Struct = extern struct {
+            Flags: {"kind":"UInt32"},
+            FrameID: {"kind":"UInt32"},
+            VolumeFileSystemType: Windows.Win32.InstallableFileSystems.FLT_FILESYSTEM_TYPE,
+            InstanceNameLength: {"kind":"UInt16"},
+            InstanceNameBufferOffset: {"kind":"UInt16"},
+            AltitudeLength: {"kind":"UInt16"},
+            AltitudeBufferOffset: {"kind":"UInt16"},
+            VolumeNameLength: {"kind":"UInt16"},
+            VolumeNameBufferOffset: {"kind":"UInt16"},
+            FilterNameLength: {"kind":"UInt16"},
+            FilterNameBufferOffset: {"kind":"UInt16"},
+            SupportedFeatures: {"kind":"UInt32"},
+        };
+        // --------------------------------------------------------
+        // Type: _LegacyFilter_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _LegacyFilter_e__Struct = extern struct {
+            Flags: {"kind":"UInt32"},
+            AltitudeLength: {"kind":"UInt16"},
+            AltitudeBufferOffset: {"kind":"UInt16"},
+            VolumeNameLength: {"kind":"UInt16"},
+            VolumeNameBufferOffset: {"kind":"UInt16"},
+            FilterNameLength: {"kind":"UInt16"},
+            FilterNameBufferOffset: {"kind":"UInt16"},
+            SupportedFeatures: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: FILTER_MESSAGE_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FILTER_MESSAGE_HEADER = extern struct {
+    ReplyLength: {"kind":"UInt32"},
+    MessageId: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: FILTER_REPLY_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const FILTER_REPLY_HEADER = extern struct {
+    Status: Windows.Win32.SystemServices.NTSTATUS,
+    MessageId: {"kind":"UInt64"},
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "KERNEL32" fn RtlCaptureStackBackTrace(
+    FramesToSkip: {"kind":"UInt32"},
+    FramesToCapture: {"kind":"UInt32"},
+    BackTrace: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+    BackTraceHash: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FLTLIB" fn FilterLoad(
+    lpFilterName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FLTLIB" fn FilterUnload(
+    lpFilterName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FLTLIB" fn FilterCreate(
+    lpFilterName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hFilter: {"kind""Ptr","child":Windows.Win32.InstallableFileSystems.HFILTER},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FLTLIB" fn FilterClose(
+    hFilter: Windows.Win32.InstallableFileSystems.HFILTER,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FLTLIB" fn FilterInstanceCreate(
+    lpFilterName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpVolumeName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpInstanceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    hInstance: {"kind""Ptr","child":Windows.Win32.InstallableFileSystems.HFILTER_INSTANCE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FLTLIB" fn FilterInstanceClose(
+    hInstance: Windows.Win32.InstallableFileSystems.HFILTER_INSTANCE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FLTLIB" fn FilterAttach(
+    lpFilterName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpVolumeName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpInstanceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwCreatedInstanceNameLength: {"kind":"UInt32"},
+    lpCreatedInstanceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FLTLIB" fn FilterAttachAtAltitude(
+    lpFilterName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpVolumeName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpAltitude: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpInstanceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwCreatedInstanceNameLength: {"kind":"UInt32"},
+    lpCreatedInstanceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FLTLIB" fn FilterDetach(
+    lpFilterName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpVolumeName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpInstanceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FLTLIB" fn FilterFindFirst(
+    dwInformationClass: Windows.Win32.InstallableFileSystems.FILTER_INFORMATION_CLASS,
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwBufferSize: {"kind":"UInt32"},
+    lpBytesReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpFilterFind: {"kind""Ptr","child":Windows.Win32.InstallableFileSystems.FilterFindHandle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FLTLIB" fn FilterFindNext(
+    hFilterFind: Windows.Win32.SystemServices.HANDLE,
+    dwInformationClass: Windows.Win32.InstallableFileSystems.FILTER_INFORMATION_CLASS,
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwBufferSize: {"kind":"UInt32"},
+    lpBytesReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FLTLIB" fn FilterFindClose(
+    hFilterFind: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FLTLIB" fn FilterVolumeFindFirst(
+    dwInformationClass: Windows.Win32.InstallableFileSystems.FILTER_VOLUME_INFORMATION_CLASS,
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwBufferSize: {"kind":"UInt32"},
+    lpBytesReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpVolumeFind: {"kind""Ptr","child":Windows.Win32.InstallableFileSystems.FilterVolumeFindHandle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FLTLIB" fn FilterVolumeFindNext(
+    hVolumeFind: Windows.Win32.SystemServices.HANDLE,
+    dwInformationClass: Windows.Win32.InstallableFileSystems.FILTER_VOLUME_INFORMATION_CLASS,
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwBufferSize: {"kind":"UInt32"},
+    lpBytesReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FLTLIB" fn FilterVolumeFindClose(
+    hVolumeFind: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FLTLIB" fn FilterInstanceFindFirst(
+    lpFilterName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwInformationClass: Windows.Win32.InstallableFileSystems.INSTANCE_INFORMATION_CLASS,
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwBufferSize: {"kind":"UInt32"},
+    lpBytesReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpFilterInstanceFind: {"kind""Ptr","child":Windows.Win32.InstallableFileSystems.FilterInstanceFindHandle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FLTLIB" fn FilterInstanceFindNext(
+    hFilterInstanceFind: Windows.Win32.SystemServices.HANDLE,
+    dwInformationClass: Windows.Win32.InstallableFileSystems.INSTANCE_INFORMATION_CLASS,
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwBufferSize: {"kind":"UInt32"},
+    lpBytesReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FLTLIB" fn FilterInstanceFindClose(
+    hFilterInstanceFind: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FLTLIB" fn FilterVolumeInstanceFindFirst(
+    lpVolumeName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwInformationClass: Windows.Win32.InstallableFileSystems.INSTANCE_INFORMATION_CLASS,
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwBufferSize: {"kind":"UInt32"},
+    lpBytesReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+    lpVolumeInstanceFind: {"kind""Ptr","child":Windows.Win32.InstallableFileSystems.FilterVolumeInstanceFindHandle},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FLTLIB" fn FilterVolumeInstanceFindNext(
+    hVolumeInstanceFind: Windows.Win32.SystemServices.HANDLE,
+    dwInformationClass: Windows.Win32.InstallableFileSystems.INSTANCE_INFORMATION_CLASS,
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwBufferSize: {"kind":"UInt32"},
+    lpBytesReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FLTLIB" fn FilterVolumeInstanceFindClose(
+    hVolumeInstanceFind: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FLTLIB" fn FilterGetInformation(
+    hFilter: Windows.Win32.InstallableFileSystems.HFILTER,
+    dwInformationClass: Windows.Win32.InstallableFileSystems.FILTER_INFORMATION_CLASS,
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwBufferSize: {"kind":"UInt32"},
+    lpBytesReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FLTLIB" fn FilterInstanceGetInformation(
+    hInstance: Windows.Win32.InstallableFileSystems.HFILTER_INSTANCE,
+    dwInformationClass: Windows.Win32.InstallableFileSystems.INSTANCE_INFORMATION_CLASS,
+    lpBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwBufferSize: {"kind":"UInt32"},
+    lpBytesReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FLTLIB" fn FilterConnectCommunicationPort(
+    lpPortName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwOptions: {"kind":"UInt32"},
+    lpContext: {"kind""Ptr","child":{"kind":"Void"}},
+    wSizeOfContext: {"kind":"UInt16"},
+    lpSecurityAttributes: {"kind""Ptr","child":Windows.Win32.SystemServices.SECURITY_ATTRIBUTES},
+    hPort: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FLTLIB" fn FilterSendMessage(
+    hPort: Windows.Win32.SystemServices.HANDLE,
+    lpInBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwInBufferSize: {"kind":"UInt32"},
+    lpOutBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    dwOutBufferSize: {"kind":"UInt32"},
+    lpBytesReturned: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FLTLIB" fn FilterGetMessage(
+    hPort: Windows.Win32.SystemServices.HANDLE,
+    lpMessageBuffer: {"kind""Ptr","child":Windows.Win32.InstallableFileSystems.FILTER_MESSAGE_HEADER},
+    dwMessageBufferSize: {"kind":"UInt32"},
+    lpOverlapped: {"kind""Ptr","child":Windows.Win32.SystemServices.OVERLAPPED},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FLTLIB" fn FilterReplyMessage(
+    hPort: Windows.Win32.SystemServices.HANDLE,
+    lpReplyBuffer: {"kind""Ptr","child":Windows.Win32.InstallableFileSystems.FILTER_REPLY_HEADER},
+    dwReplyBufferSize: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "FLTLIB" fn FilterGetDosName(
+    lpVolumeName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpDosName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwDosNameBufferSize: {"kind":"UInt32"},
+],
+
+"unicode_aliases": [
+]}

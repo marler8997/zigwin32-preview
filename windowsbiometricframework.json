@@ -1,0 +1,2471 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: WINBIO_VERSION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_VERSION = extern struct {
+    MajorVersion: {"kind":"UInt32"},
+    MinorVersion: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WINBIO_IDENTITY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_IDENTITY = extern struct {
+    Type: {"kind":"UInt32"},
+    Value: Windows.Win32.WindowsBiometricFramework.WINBIO_IDENTITY+_Value_e__Union,
+    // --------------------------------------------------------
+    // Type: _Value_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Value_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _AccountSid_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _AccountSid_e__Struct = extern struct {
+            Size: {"kind":"UInt32"},
+            Data: {"kind":"Array","child": {"kind":"Byte"}},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: WINBIO_SECURE_CONNECTION_PARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_SECURE_CONNECTION_PARAMS = extern struct {
+    PayloadSize: {"kind":"UInt32"},
+    Version: {"kind":"UInt16"},
+    Flags: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: WINBIO_SECURE_CONNECTION_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_SECURE_CONNECTION_DATA = extern struct {
+    Size: {"kind":"UInt32"},
+    Version: {"kind":"UInt16"},
+    Flags: {"kind":"UInt16"},
+    ModelCertificateSize: {"kind":"UInt32"},
+    IntermediateCA1Size: {"kind":"UInt32"},
+    IntermediateCA2Size: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WINBIO_BIR_DATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_BIR_DATA = extern struct {
+    Size: {"kind":"UInt32"},
+    Offset: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WINBIO_BIR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_BIR = extern struct {
+    HeaderBlock: Windows.Win32.WindowsBiometricFramework.WINBIO_BIR_DATA,
+    StandardDataBlock: Windows.Win32.WindowsBiometricFramework.WINBIO_BIR_DATA,
+    VendorDataBlock: Windows.Win32.WindowsBiometricFramework.WINBIO_BIR_DATA,
+    SignatureBlock: Windows.Win32.WindowsBiometricFramework.WINBIO_BIR_DATA,
+};
+// --------------------------------------------------------
+// Type: WINBIO_REGISTERED_FORMAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_REGISTERED_FORMAT = extern struct {
+    Owner: {"kind":"UInt16"},
+    Type: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: WINBIO_BIR_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_BIR_HEADER = extern struct {
+    ValidFields: {"kind":"UInt16"},
+    HeaderVersion: {"kind":"Byte"},
+    PatronHeaderVersion: {"kind":"Byte"},
+    DataFlags: {"kind":"Byte"},
+    Type: {"kind":"UInt32"},
+    Subtype: {"kind":"Byte"},
+    Purpose: {"kind":"Byte"},
+    DataQuality: {"kind":"SByte"},
+    CreationDate: Windows.Win32.SystemServices.LARGE_INTEGER,
+    ValidityPeriod: Windows.Win32.WindowsBiometricFramework.WINBIO_BIR_HEADER+_ValidityPeriod_e__Struct,
+    BiometricDataFormat: Windows.Win32.WindowsBiometricFramework.WINBIO_REGISTERED_FORMAT,
+    ProductId: Windows.Win32.WindowsBiometricFramework.WINBIO_REGISTERED_FORMAT,
+    // --------------------------------------------------------
+    // Type: _ValidityPeriod_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _ValidityPeriod_e__Struct = extern struct {
+        BeginDate: Windows.Win32.SystemServices.LARGE_INTEGER,
+        EndDate: Windows.Win32.SystemServices.LARGE_INTEGER,
+    };
+};
+// --------------------------------------------------------
+// Type: WINBIO_BDB_ANSI_381_HEADER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_BDB_ANSI_381_HEADER = extern struct {
+    RecordLength: {"kind":"UInt64"},
+    FormatIdentifier: {"kind":"UInt32"},
+    VersionNumber: {"kind":"UInt32"},
+    ProductId: Windows.Win32.WindowsBiometricFramework.WINBIO_REGISTERED_FORMAT,
+    CaptureDeviceId: {"kind":"UInt16"},
+    ImageAcquisitionLevel: {"kind":"UInt16"},
+    HorizontalScanResolution: {"kind":"UInt16"},
+    VerticalScanResolution: {"kind":"UInt16"},
+    HorizontalImageResolution: {"kind":"UInt16"},
+    VerticalImageResolution: {"kind":"UInt16"},
+    ElementCount: {"kind":"Byte"},
+    ScaleUnits: {"kind":"Byte"},
+    PixelDepth: {"kind":"Byte"},
+    ImageCompressionAlg: {"kind":"Byte"},
+    Reserved: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: WINBIO_BDB_ANSI_381_RECORD
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_BDB_ANSI_381_RECORD = extern struct {
+    BlockLength: {"kind":"UInt32"},
+    HorizontalLineLength: {"kind":"UInt16"},
+    VerticalLineLength: {"kind":"UInt16"},
+    Position: {"kind":"Byte"},
+    CountOfViews: {"kind":"Byte"},
+    ViewNumber: {"kind":"Byte"},
+    ImageQuality: {"kind":"Byte"},
+    ImpressionType: {"kind":"Byte"},
+    Reserved: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: WINBIO_SECURE_BUFFER_HEADER_V1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_SECURE_BUFFER_HEADER_V1 = extern struct {
+    Type: {"kind":"UInt32"},
+    Size: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+    ValidationTag: {"kind":"UInt64"},
+};
+// --------------------------------------------------------
+// Type: WINBIO_EVENT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_EVENT = extern struct {
+    Type: {"kind":"UInt32"},
+    Parameters: Windows.Win32.WindowsBiometricFramework.WINBIO_EVENT+_Parameters_e__Union,
+    // --------------------------------------------------------
+    // Type: _Parameters_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Parameters_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _UnclaimedIdentify_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _UnclaimedIdentify_e__Struct = extern struct {
+            UnitId: {"kind":"UInt32"},
+            Identity: Windows.Win32.WindowsBiometricFramework.WINBIO_IDENTITY,
+            SubFactor: {"kind":"Byte"},
+            RejectDetail: {"kind":"UInt32"},
+        };
+        // --------------------------------------------------------
+        // Type: _Error_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Error_e__Struct = extern struct {
+            ErrorCode: Windows.Win32.Com.HRESULT,
+        };
+        // --------------------------------------------------------
+        // Type: _Unclaimed_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Unclaimed_e__Struct = extern struct {
+            UnitId: {"kind":"UInt32"},
+            RejectDetail: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: WINBIO_PRESENCE_PROPERTIES
+// TypeLayoutAttr: explicit
+// not generating the actual code for this type because it has an explicit layout
+pub const WINBIO_PRESENCE_PROPERTIES = *opaque{
+    // --------------------------------------------------------
+    // Type: _Iris_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _Iris_e__Struct = extern struct {
+        EyeBoundingBox_1: Windows.Win32.DisplayDevices.RECT,
+        EyeBoundingBox_2: Windows.Win32.DisplayDevices.RECT,
+        PupilCenter_1: Windows.Win32.DisplayDevices.POINT,
+        PupilCenter_2: Windows.Win32.DisplayDevices.POINT,
+        Distance: {"kind":"Int32"},
+    };
+    // --------------------------------------------------------
+    // Type: _FacialFeatures_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _FacialFeatures_e__Struct = extern struct {
+        BoundingBox: Windows.Win32.DisplayDevices.RECT,
+        Distance: {"kind":"Int32"},
+        OpaqueEngineData: Windows.Win32.WindowsBiometricFramework.WINBIO_PRESENCE_PROPERTIES+_FacialFeatures_e__Struct+_OpaqueEngineData_e__Struct,
+        // --------------------------------------------------------
+        // Type: _OpaqueEngineData_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _OpaqueEngineData_e__Struct = extern struct {
+            AdapterId: Guid,
+            Data: {"kind":"Array","child": {"kind":"UInt32"}},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: WINBIO_PRESENCE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_PRESENCE = extern struct {
+    Factor: {"kind":"UInt32"},
+    SubFactor: {"kind":"Byte"},
+    Status: Windows.Win32.Com.HRESULT,
+    RejectDetail: {"kind":"UInt32"},
+    Identity: Windows.Win32.WindowsBiometricFramework.WINBIO_IDENTITY,
+    TrackingId: {"kind":"UInt64"},
+    Ticket: {"kind":"UInt64"},
+    Properties: Windows.Win32.WindowsBiometricFramework.WINBIO_PRESENCE_PROPERTIES,
+    Authorization: Windows.Win32.WindowsBiometricFramework.WINBIO_PRESENCE+_Authorization_e__Struct,
+    // --------------------------------------------------------
+    // Type: _Authorization_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _Authorization_e__Struct = extern struct {
+        Size: {"kind":"UInt32"},
+        Data: {"kind":"Array","child": {"kind":"Byte"}},
+    };
+};
+// --------------------------------------------------------
+// Type: WINBIO_BSP_SCHEMA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_BSP_SCHEMA = extern struct {
+    BiometricFactor: {"kind":"UInt32"},
+    BspId: Guid,
+    Description: {"kind":"Array","child": {"kind":"UInt16"}},
+    Vendor: {"kind":"Array","child": {"kind":"UInt16"}},
+    Version: Windows.Win32.WindowsBiometricFramework.WINBIO_VERSION,
+};
+// --------------------------------------------------------
+// Type: WINBIO_UNIT_SCHEMA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_UNIT_SCHEMA = extern struct {
+    UnitId: {"kind":"UInt32"},
+    PoolType: {"kind":"UInt32"},
+    BiometricFactor: {"kind":"UInt32"},
+    SensorSubType: {"kind":"UInt32"},
+    Capabilities: {"kind":"UInt32"},
+    DeviceInstanceId: {"kind":"Array","child": {"kind":"UInt16"}},
+    Description: {"kind":"Array","child": {"kind":"UInt16"}},
+    Manufacturer: {"kind":"Array","child": {"kind":"UInt16"}},
+    Model: {"kind":"Array","child": {"kind":"UInt16"}},
+    SerialNumber: {"kind":"Array","child": {"kind":"UInt16"}},
+    FirmwareVersion: Windows.Win32.WindowsBiometricFramework.WINBIO_VERSION,
+};
+// --------------------------------------------------------
+// Type: WINBIO_STORAGE_SCHEMA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_STORAGE_SCHEMA = extern struct {
+    BiometricFactor: {"kind":"UInt32"},
+    DatabaseId: Guid,
+    DataFormat: Guid,
+    Attributes: {"kind":"UInt32"},
+    FilePath: {"kind":"Array","child": {"kind":"UInt16"}},
+    ConnectionString: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WINBIO_EXTENDED_SENSOR_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_EXTENDED_SENSOR_INFO = extern struct {
+    GenericSensorCapabilities: {"kind":"UInt32"},
+    Factor: {"kind":"UInt32"},
+    Specific: Windows.Win32.WindowsBiometricFramework.WINBIO_EXTENDED_SENSOR_INFO+_Specific_e__Union,
+    // --------------------------------------------------------
+    // Type: _Specific_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Specific_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Iris_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Iris_e__Struct = extern struct {
+            FrameSize: Windows.Win32.DisplayDevices.RECT,
+            FrameOffset: Windows.Win32.DisplayDevices.POINT,
+            MandatoryOrientation: {"kind":"UInt32"},
+        };
+        // --------------------------------------------------------
+        // Type: _FacialFeatures_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _FacialFeatures_e__Struct = extern struct {
+            FrameSize: Windows.Win32.DisplayDevices.RECT,
+            FrameOffset: Windows.Win32.DisplayDevices.POINT,
+            MandatoryOrientation: {"kind":"UInt32"},
+            HardwareInfo: Windows.Win32.WindowsBiometricFramework.WINBIO_EXTENDED_SENSOR_INFO+_Specific_e__Union+_FacialFeatures_e__Struct+_HardwareInfo_e__Struct,
+            // --------------------------------------------------------
+            // Type: _HardwareInfo_e__Struct
+            // TypeLayoutAttr: sequential
+            // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+            pub const _HardwareInfo_e__Struct = extern struct {
+                ColorSensorId: {"kind":"Array","child": {"kind":"UInt16"}},
+                InfraredSensorId: {"kind":"Array","child": {"kind":"UInt16"}},
+                InfraredSensorRotationAngle: {"kind":"UInt32"},
+            };
+        };
+        // --------------------------------------------------------
+        // Type: _Voice_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Voice_e__Struct = extern struct {
+            Reserved: {"kind":"UInt32"},
+        };
+        // --------------------------------------------------------
+        // Type: _Fingerprint_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Fingerprint_e__Struct = extern struct {
+            Reserved: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: WINBIO_EXTENDED_ENGINE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_EXTENDED_ENGINE_INFO = extern struct {
+    GenericEngineCapabilities: {"kind":"UInt32"},
+    Factor: {"kind":"UInt32"},
+    Specific: Windows.Win32.WindowsBiometricFramework.WINBIO_EXTENDED_ENGINE_INFO+_Specific_e__Union,
+    // --------------------------------------------------------
+    // Type: _Specific_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Specific_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Voice_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Voice_e__Struct = extern struct {
+            Capabilities: {"kind":"UInt32"},
+            EnrollmentRequirements: Windows.Win32.WindowsBiometricFramework.WINBIO_EXTENDED_ENGINE_INFO+_Specific_e__Union+_Voice_e__Struct+_EnrollmentRequirements_e__Struct,
+            // --------------------------------------------------------
+            // Type: _EnrollmentRequirements_e__Struct
+            // TypeLayoutAttr: sequential
+            // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+            pub const _EnrollmentRequirements_e__Struct = extern struct {
+                Null: {"kind":"UInt32"},
+            };
+        };
+        // --------------------------------------------------------
+        // Type: _Iris_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Iris_e__Struct = extern struct {
+            Capabilities: {"kind":"UInt32"},
+            EnrollmentRequirements: Windows.Win32.WindowsBiometricFramework.WINBIO_EXTENDED_ENGINE_INFO+_Specific_e__Union+_Iris_e__Struct+_EnrollmentRequirements_e__Struct,
+            // --------------------------------------------------------
+            // Type: _EnrollmentRequirements_e__Struct
+            // TypeLayoutAttr: sequential
+            // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+            pub const _EnrollmentRequirements_e__Struct = extern struct {
+                Null: {"kind":"UInt32"},
+            };
+        };
+        // --------------------------------------------------------
+        // Type: _Fingerprint_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Fingerprint_e__Struct = extern struct {
+            Capabilities: {"kind":"UInt32"},
+            EnrollmentRequirements: Windows.Win32.WindowsBiometricFramework.WINBIO_EXTENDED_ENGINE_INFO+_Specific_e__Union+_Fingerprint_e__Struct+_EnrollmentRequirements_e__Struct,
+            // --------------------------------------------------------
+            // Type: _EnrollmentRequirements_e__Struct
+            // TypeLayoutAttr: sequential
+            // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+            pub const _EnrollmentRequirements_e__Struct = extern struct {
+                GeneralSamples: {"kind":"UInt32"},
+                Center: {"kind":"UInt32"},
+                TopEdge: {"kind":"UInt32"},
+                BottomEdge: {"kind":"UInt32"},
+                LeftEdge: {"kind":"UInt32"},
+                RightEdge: {"kind":"UInt32"},
+            };
+        };
+        // --------------------------------------------------------
+        // Type: _FacialFeatures_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _FacialFeatures_e__Struct = extern struct {
+            Capabilities: {"kind":"UInt32"},
+            EnrollmentRequirements: Windows.Win32.WindowsBiometricFramework.WINBIO_EXTENDED_ENGINE_INFO+_Specific_e__Union+_FacialFeatures_e__Struct+_EnrollmentRequirements_e__Struct,
+            // --------------------------------------------------------
+            // Type: _EnrollmentRequirements_e__Struct
+            // TypeLayoutAttr: sequential
+            // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+            pub const _EnrollmentRequirements_e__Struct = extern struct {
+                Null: {"kind":"UInt32"},
+            };
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: WINBIO_EXTENDED_STORAGE_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_EXTENDED_STORAGE_INFO = extern struct {
+    GenericStorageCapabilities: {"kind":"UInt32"},
+    Factor: {"kind":"UInt32"},
+    Specific: Windows.Win32.WindowsBiometricFramework.WINBIO_EXTENDED_STORAGE_INFO+_Specific_e__Union,
+    // --------------------------------------------------------
+    // Type: _Specific_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Specific_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Iris_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Iris_e__Struct = extern struct {
+            Capabilities: {"kind":"UInt32"},
+        };
+        // --------------------------------------------------------
+        // Type: _FacialFeatures_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _FacialFeatures_e__Struct = extern struct {
+            Capabilities: {"kind":"UInt32"},
+        };
+        // --------------------------------------------------------
+        // Type: _Voice_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Voice_e__Struct = extern struct {
+            Capabilities: {"kind":"UInt32"},
+        };
+        // --------------------------------------------------------
+        // Type: _Fingerprint_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Fingerprint_e__Struct = extern struct {
+            Capabilities: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: WINBIO_EXTENDED_ENROLLMENT_STATUS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_EXTENDED_ENROLLMENT_STATUS = extern struct {
+    TemplateStatus: Windows.Win32.Com.HRESULT,
+    RejectDetail: {"kind":"UInt32"},
+    PercentComplete: {"kind":"UInt32"},
+    Factor: {"kind":"UInt32"},
+    SubFactor: {"kind":"Byte"},
+    Specific: Windows.Win32.WindowsBiometricFramework.WINBIO_EXTENDED_ENROLLMENT_STATUS+_Specific_e__Union,
+    // --------------------------------------------------------
+    // Type: _Specific_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Specific_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _Iris_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Iris_e__Struct = extern struct {
+            EyeBoundingBox_1: Windows.Win32.DisplayDevices.RECT,
+            EyeBoundingBox_2: Windows.Win32.DisplayDevices.RECT,
+            PupilCenter_1: Windows.Win32.DisplayDevices.POINT,
+            PupilCenter_2: Windows.Win32.DisplayDevices.POINT,
+            Distance: {"kind":"Int32"},
+            GridPointCompletionPercent: {"kind":"UInt32"},
+            GridPointIndex: {"kind":"UInt16"},
+            Point3D: Windows.Win32.WindowsBiometricFramework.WINBIO_EXTENDED_ENROLLMENT_STATUS+_Specific_e__Union+_Iris_e__Struct+_Point3D_e__Struct,
+            StopCaptureAndShowCriticalFeedback: Windows.Win32.SystemServices.BOOL,
+            // --------------------------------------------------------
+            // Type: _Point3D_e__Struct
+            // TypeLayoutAttr: sequential
+            // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+            pub const _Point3D_e__Struct = extern struct {
+                X: {"kind":"Double"},
+                Y: {"kind":"Double"},
+                Z: {"kind":"Double"},
+            };
+        };
+        // --------------------------------------------------------
+        // Type: _FacialFeatures_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _FacialFeatures_e__Struct = extern struct {
+            BoundingBox: Windows.Win32.DisplayDevices.RECT,
+            Distance: {"kind":"Int32"},
+            OpaqueEngineData: Windows.Win32.WindowsBiometricFramework.WINBIO_EXTENDED_ENROLLMENT_STATUS+_Specific_e__Union+_FacialFeatures_e__Struct+_OpaqueEngineData_e__Struct,
+            // --------------------------------------------------------
+            // Type: _OpaqueEngineData_e__Struct
+            // TypeLayoutAttr: sequential
+            // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+            pub const _OpaqueEngineData_e__Struct = extern struct {
+                AdapterId: Guid,
+                Data: {"kind":"Array","child": {"kind":"UInt32"}},
+            };
+        };
+        // --------------------------------------------------------
+        // Type: _Voice_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Voice_e__Struct = extern struct {
+            Reserved: {"kind":"UInt32"},
+        };
+        // --------------------------------------------------------
+        // Type: _Fingerprint_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Fingerprint_e__Struct = extern struct {
+            GeneralSamples: {"kind":"UInt32"},
+            Center: {"kind":"UInt32"},
+            TopEdge: {"kind":"UInt32"},
+            BottomEdge: {"kind":"UInt32"},
+            LeftEdge: {"kind":"UInt32"},
+            RightEdge: {"kind":"UInt32"},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: WINBIO_EXTENDED_UNIT_STATUS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_EXTENDED_UNIT_STATUS = extern struct {
+    Availability: {"kind":"UInt32"},
+    ReasonCode: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WINBIO_FP_BU_STATE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_FP_BU_STATE = extern struct {
+    SensorAttached: Windows.Win32.SystemServices.BOOL,
+    CreationResult: Windows.Win32.Com.HRESULT,
+};
+// --------------------------------------------------------
+// Type: WINBIO_ANTI_SPOOF_POLICY_ACTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WINBIO_ANTI_SPOOF_POLICY_ACTION = *opaque{
+};
+// --------------------------------------------------------
+// Type: WINBIO_POLICY_SOURCE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WINBIO_POLICY_SOURCE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WINBIO_ANTI_SPOOF_POLICY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_ANTI_SPOOF_POLICY = extern struct {
+    Action: Windows.Win32.WindowsBiometricFramework.WINBIO_ANTI_SPOOF_POLICY_ACTION,
+    Source: Windows.Win32.WindowsBiometricFramework.WINBIO_POLICY_SOURCE,
+};
+// --------------------------------------------------------
+// Type: WINBIO_CREDENTIAL_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WINBIO_CREDENTIAL_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WINBIO_CREDENTIAL_FORMAT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WINBIO_CREDENTIAL_FORMAT = *opaque{
+};
+// --------------------------------------------------------
+// Type: WINBIO_CREDENTIAL_STATE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WINBIO_CREDENTIAL_STATE = *opaque{
+};
+// --------------------------------------------------------
+// Type: WINBIO_EXTENDED_ENROLLMENT_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_EXTENDED_ENROLLMENT_PARAMETERS = extern struct {
+    Size: {"kind":"UIntPtr"},
+    SubFactor: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: WINBIO_ACCOUNT_POLICY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_ACCOUNT_POLICY = extern struct {
+    Identity: Windows.Win32.WindowsBiometricFramework.WINBIO_IDENTITY,
+    AntiSpoofBehavior: Windows.Win32.WindowsBiometricFramework.WINBIO_ANTI_SPOOF_POLICY_ACTION,
+};
+// --------------------------------------------------------
+// Type: WINBIO_PROTECTION_POLICY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_PROTECTION_POLICY = extern struct {
+    Version: {"kind":"UInt32"},
+    Identity: Windows.Win32.WindowsBiometricFramework.WINBIO_IDENTITY,
+    DatabaseId: Guid,
+    UserState: {"kind":"UInt64"},
+    PolicySize: {"kind":"UIntPtr"},
+    Policy: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: WINBIO_GESTURE_METADATA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_GESTURE_METADATA = extern struct {
+    Size: {"kind":"UIntPtr"},
+    BiometricType: {"kind":"UInt32"},
+    MatchType: {"kind":"UInt32"},
+    ProtectionType: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WINBIO_ASYNC_NOTIFICATION_METHOD
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const WINBIO_ASYNC_NOTIFICATION_METHOD = *opaque{
+};
+// --------------------------------------------------------
+// Type: WINBIO_ASYNC_RESULT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_ASYNC_RESULT = extern struct {
+    SessionHandle: {"kind":"UInt32"},
+    Operation: {"kind":"UInt32"},
+    SequenceNumber: {"kind":"UInt64"},
+    TimeStamp: {"kind":"Int64"},
+    ApiStatus: Windows.Win32.Com.HRESULT,
+    UnitId: {"kind":"UInt32"},
+    UserData: {"kind""Ptr","child":{"kind":"Void"}},
+    Parameters: Windows.Win32.WindowsBiometricFramework.WINBIO_ASYNC_RESULT+_Parameters_e__Union,
+    // --------------------------------------------------------
+    // Type: _Parameters_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _Parameters_e__Union = *opaque{
+        // --------------------------------------------------------
+        // Type: _NotifyUnitStatusChange_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _NotifyUnitStatusChange_e__Struct = extern struct {
+            ExtendedStatus: Windows.Win32.WindowsBiometricFramework.WINBIO_EXTENDED_UNIT_STATUS,
+        };
+        // --------------------------------------------------------
+        // Type: _MonitorPresence_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _MonitorPresence_e__Struct = extern struct {
+            ChangeType: {"kind":"UInt32"},
+            PresenceCount: {"kind":"UIntPtr"},
+            PresenceArray: {"kind""Ptr","child":Windows.Win32.WindowsBiometricFramework.WINBIO_PRESENCE},
+        };
+        // --------------------------------------------------------
+        // Type: _IdentifyAndReleaseTicket_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _IdentifyAndReleaseTicket_e__Struct = extern struct {
+            Identity: Windows.Win32.WindowsBiometricFramework.WINBIO_IDENTITY,
+            SubFactor: {"kind":"Byte"},
+            RejectDetail: {"kind":"UInt32"},
+            Ticket: {"kind":"UInt64"},
+        };
+        // --------------------------------------------------------
+        // Type: _EnumDatabases_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _EnumDatabases_e__Struct = extern struct {
+            StorageCount: {"kind":"UIntPtr"},
+            StorageSchemaArray: {"kind""Ptr","child":Windows.Win32.WindowsBiometricFramework.WINBIO_STORAGE_SCHEMA},
+        };
+        // --------------------------------------------------------
+        // Type: _EnumServiceProviders_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _EnumServiceProviders_e__Struct = extern struct {
+            BspCount: {"kind":"UIntPtr"},
+            BspSchemaArray: {"kind""Ptr","child":Windows.Win32.WindowsBiometricFramework.WINBIO_BSP_SCHEMA},
+        };
+        // --------------------------------------------------------
+        // Type: _GetEvent_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _GetEvent_e__Struct = extern struct {
+            Event: Windows.Win32.WindowsBiometricFramework.WINBIO_EVENT,
+        };
+        // --------------------------------------------------------
+        // Type: _GetProperty_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _GetProperty_e__Struct = extern struct {
+            PropertyType: {"kind":"UInt32"},
+            PropertyId: {"kind":"UInt32"},
+            Identity: Windows.Win32.WindowsBiometricFramework.WINBIO_IDENTITY,
+            SubFactor: {"kind":"Byte"},
+            PropertyBufferSize: {"kind":"UIntPtr"},
+            PropertyBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+        };
+        // --------------------------------------------------------
+        // Type: _CaptureSample_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _CaptureSample_e__Struct = extern struct {
+            Sample: {"kind""Ptr","child":Windows.Win32.WindowsBiometricFramework.WINBIO_BIR},
+            SampleSize: {"kind":"UIntPtr"},
+            RejectDetail: {"kind":"UInt32"},
+        };
+        // --------------------------------------------------------
+        // Type: _EnrollCommit_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _EnrollCommit_e__Struct = extern struct {
+            Identity: Windows.Win32.WindowsBiometricFramework.WINBIO_IDENTITY,
+            IsNewTemplate: {"kind":"Byte"},
+        };
+        // --------------------------------------------------------
+        // Type: _EnrollBegin_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _EnrollBegin_e__Struct = extern struct {
+            SubFactor: {"kind":"Byte"},
+        };
+        // --------------------------------------------------------
+        // Type: _Verify_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Verify_e__Struct = extern struct {
+            Match: {"kind":"Byte"},
+            RejectDetail: {"kind":"UInt32"},
+        };
+        // --------------------------------------------------------
+        // Type: _GetProtectionPolicy_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _GetProtectionPolicy_e__Struct = extern struct {
+            Identity: Windows.Win32.WindowsBiometricFramework.WINBIO_IDENTITY,
+            Policy: Windows.Win32.WindowsBiometricFramework.WINBIO_PROTECTION_POLICY,
+        };
+        // --------------------------------------------------------
+        // Type: _VerifyAndReleaseTicket_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _VerifyAndReleaseTicket_e__Struct = extern struct {
+            Match: {"kind":"Byte"},
+            RejectDetail: {"kind":"UInt32"},
+            Ticket: {"kind":"UInt64"},
+        };
+        // --------------------------------------------------------
+        // Type: _ControlUnit_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _ControlUnit_e__Struct = extern struct {
+            Component: {"kind":"UInt32"},
+            ControlCode: {"kind":"UInt32"},
+            OperationStatus: {"kind":"UInt32"},
+            SendBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+            SendBufferSize: {"kind":"UIntPtr"},
+            ReceiveBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+            ReceiveBufferSize: {"kind":"UIntPtr"},
+            ReceiveDataSize: {"kind":"UIntPtr"},
+        };
+        // --------------------------------------------------------
+        // Type: _DeleteTemplate_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _DeleteTemplate_e__Struct = extern struct {
+            Identity: Windows.Win32.WindowsBiometricFramework.WINBIO_IDENTITY,
+            SubFactor: {"kind":"Byte"},
+        };
+        // --------------------------------------------------------
+        // Type: _EnrollCapture_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _EnrollCapture_e__Struct = extern struct {
+            RejectDetail: {"kind":"UInt32"},
+        };
+        // --------------------------------------------------------
+        // Type: _EnrollSelect_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _EnrollSelect_e__Struct = extern struct {
+            SelectorValue: {"kind":"UInt64"},
+        };
+        // --------------------------------------------------------
+        // Type: _SetProperty_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _SetProperty_e__Struct = extern struct {
+            PropertyType: {"kind":"UInt32"},
+            PropertyId: {"kind":"UInt32"},
+            Identity: Windows.Win32.WindowsBiometricFramework.WINBIO_IDENTITY,
+            SubFactor: {"kind":"Byte"},
+            PropertyBufferSize: {"kind":"UIntPtr"},
+            PropertyBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+        };
+        // --------------------------------------------------------
+        // Type: _Identify_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _Identify_e__Struct = extern struct {
+            Identity: Windows.Win32.WindowsBiometricFramework.WINBIO_IDENTITY,
+            SubFactor: {"kind":"Byte"},
+            RejectDetail: {"kind":"UInt32"},
+        };
+        // --------------------------------------------------------
+        // Type: _EnumEnrollments_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _EnumEnrollments_e__Struct = extern struct {
+            Identity: Windows.Win32.WindowsBiometricFramework.WINBIO_IDENTITY,
+            SubFactorCount: {"kind":"UIntPtr"},
+            SubFactorArray: {"kind""Ptr","child":{"kind":"Byte"}},
+        };
+        // --------------------------------------------------------
+        // Type: _EnumBiometricUnits_e__Struct
+        // TypeLayoutAttr: sequential
+        // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+        pub const _EnumBiometricUnits_e__Struct = extern struct {
+            UnitCount: {"kind":"UIntPtr"},
+            UnitSchemaArray: {"kind""Ptr","child":Windows.Win32.WindowsBiometricFramework.WINBIO_UNIT_SCHEMA},
+        };
+    };
+};
+// --------------------------------------------------------
+// Type: PWINBIO_ASYNC_COMPLETION_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PWINBIO_ASYNC_COMPLETION_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PWINBIO_VERIFY_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PWINBIO_VERIFY_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PWINBIO_IDENTIFY_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PWINBIO_IDENTIFY_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PWINBIO_LOCATE_SENSOR_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PWINBIO_LOCATE_SENSOR_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PWINBIO_ENROLL_CAPTURE_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PWINBIO_ENROLL_CAPTURE_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PWINBIO_EVENT_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PWINBIO_EVENT_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PWINBIO_CAPTURE_CALLBACK
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PWINBIO_CAPTURE_CALLBACK = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: _WINIBIO_SENSOR_CONTEXT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _WINIBIO_SENSOR_CONTEXT = opaque {
+};
+// --------------------------------------------------------
+// Type: _WINIBIO_ENGINE_CONTEXT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _WINIBIO_ENGINE_CONTEXT = opaque {
+};
+// --------------------------------------------------------
+// Type: _WINIBIO_STORAGE_CONTEXT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const _WINIBIO_STORAGE_CONTEXT = opaque {
+};
+// --------------------------------------------------------
+// Type: WINBIO_STORAGE_RECORD
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_STORAGE_RECORD = extern struct {
+    Identity: {"kind""Ptr","child":Windows.Win32.WindowsBiometricFramework.WINBIO_IDENTITY},
+    SubFactor: {"kind":"Byte"},
+    IndexVector: {"kind""Ptr","child":{"kind":"UInt32"}},
+    IndexElementCount: {"kind":"UIntPtr"},
+    TemplateBlob: {"kind""Ptr","child":{"kind":"Byte"}},
+    TemplateBlobSize: {"kind":"UIntPtr"},
+    PayloadBlob: {"kind""Ptr","child":{"kind":"Byte"}},
+    PayloadBlobSize: {"kind":"UIntPtr"},
+};
+// --------------------------------------------------------
+// Type: WINBIO_PIPELINE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_PIPELINE = extern struct {
+    SensorHandle: Windows.Win32.SystemServices.HANDLE,
+    EngineHandle: Windows.Win32.SystemServices.HANDLE,
+    StorageHandle: Windows.Win32.SystemServices.HANDLE,
+    SensorInterface: {"kind""Ptr","child":Windows.Win32.WindowsBiometricFramework.WINBIO_SENSOR_INTERFACE},
+    EngineInterface: {"kind""Ptr","child":Windows.Win32.WindowsBiometricFramework.WINBIO_ENGINE_INTERFACE},
+    StorageInterface: {"kind""Ptr","child":Windows.Win32.WindowsBiometricFramework.WINBIO_STORAGE_INTERFACE},
+    SensorContext: {"kind""Ptr","child":Windows.Win32.WindowsBiometricFramework._WINIBIO_SENSOR_CONTEXT},
+    EngineContext: {"kind""Ptr","child":Windows.Win32.WindowsBiometricFramework._WINIBIO_ENGINE_CONTEXT},
+    StorageContext: {"kind""Ptr","child":Windows.Win32.WindowsBiometricFramework._WINIBIO_STORAGE_CONTEXT},
+    FrameworkInterface: {"kind""Ptr","child":Windows.Win32.WindowsBiometricFramework.WINBIO_FRAMEWORK_INTERFACE},
+};
+// --------------------------------------------------------
+// Type: WINBIO_ADAPTER_INTERFACE_VERSION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_ADAPTER_INTERFACE_VERSION = extern struct {
+    MajorVersion: {"kind":"UInt16"},
+    MinorVersion: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_ATTACH_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_ATTACH_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_DETACH_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_DETACH_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_CLEAR_CONTEXT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_CLEAR_CONTEXT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_QUERY_STATUS_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_QUERY_STATUS_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_RESET_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_RESET_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_SET_MODE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_SET_MODE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_SET_INDICATOR_STATUS_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_SET_INDICATOR_STATUS_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_GET_INDICATOR_STATUS_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_GET_INDICATOR_STATUS_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_START_CAPTURE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_START_CAPTURE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_FINISH_CAPTURE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_FINISH_CAPTURE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_EXPORT_SENSOR_DATA_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_EXPORT_SENSOR_DATA_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_CANCEL_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_CANCEL_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_PUSH_DATA_TO_ENGINE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_PUSH_DATA_TO_ENGINE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_CONTROL_UNIT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_CONTROL_UNIT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_CONTROL_UNIT_PRIVILEGED_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_CONTROL_UNIT_PRIVILEGED_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_NOTIFY_POWER_CHANGE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_NOTIFY_POWER_CHANGE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_PIPELINE_INIT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_PIPELINE_INIT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_PIPELINE_CLEANUP_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_PIPELINE_CLEANUP_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_ACTIVATE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_ACTIVATE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_DEACTIVATE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_DEACTIVATE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_QUERY_EXTENDED_INFO_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_QUERY_EXTENDED_INFO_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_QUERY_CALIBRATION_FORMATS_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_QUERY_CALIBRATION_FORMATS_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_SET_CALIBRATION_FORMAT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_SET_CALIBRATION_FORMAT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_ACCEPT_CALIBRATION_DATA_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_ACCEPT_CALIBRATION_DATA_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_ASYNC_IMPORT_RAW_BUFFER_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_ASYNC_IMPORT_RAW_BUFFER_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_ASYNC_IMPORT_SECURE_BUFFER_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_ASYNC_IMPORT_SECURE_BUFFER_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_QUERY_PRIVATE_SENSOR_TYPE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_QUERY_PRIVATE_SENSOR_TYPE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_CONNECT_SECURE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_CONNECT_SECURE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_START_CAPTURE_EX_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_START_CAPTURE_EX_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_START_NOTIFY_WAKE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_START_NOTIFY_WAKE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_SENSOR_FINISH_NOTIFY_WAKE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_SENSOR_FINISH_NOTIFY_WAKE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WINBIO_SENSOR_INTERFACE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_SENSOR_INTERFACE = extern struct {
+    Version: Windows.Win32.WindowsBiometricFramework.WINBIO_ADAPTER_INTERFACE_VERSION,
+    Type: {"kind":"UInt32"},
+    Size: {"kind":"UIntPtr"},
+    AdapterId: Guid,
+    Attach: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_ATTACH_FN,
+    Detach: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_DETACH_FN,
+    ClearContext: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_CLEAR_CONTEXT_FN,
+    QueryStatus: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_QUERY_STATUS_FN,
+    Reset: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_RESET_FN,
+    SetMode: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_SET_MODE_FN,
+    SetIndicatorStatus: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_SET_INDICATOR_STATUS_FN,
+    GetIndicatorStatus: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_GET_INDICATOR_STATUS_FN,
+    StartCapture: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_START_CAPTURE_FN,
+    FinishCapture: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_FINISH_CAPTURE_FN,
+    ExportSensorData: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_EXPORT_SENSOR_DATA_FN,
+    Cancel: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_CANCEL_FN,
+    PushDataToEngine: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_PUSH_DATA_TO_ENGINE_FN,
+    ControlUnit: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_CONTROL_UNIT_FN,
+    ControlUnitPrivileged: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_CONTROL_UNIT_PRIVILEGED_FN,
+    NotifyPowerChange: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_NOTIFY_POWER_CHANGE_FN,
+    PipelineInit: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_PIPELINE_INIT_FN,
+    PipelineCleanup: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_PIPELINE_CLEANUP_FN,
+    Activate: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_ACTIVATE_FN,
+    Deactivate: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_DEACTIVATE_FN,
+    QueryExtendedInfo: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_QUERY_EXTENDED_INFO_FN,
+    QueryCalibrationFormats: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_QUERY_CALIBRATION_FORMATS_FN,
+    SetCalibrationFormat: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_SET_CALIBRATION_FORMAT_FN,
+    AcceptCalibrationData: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_ACCEPT_CALIBRATION_DATA_FN,
+    AsyncImportRawBuffer: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_ASYNC_IMPORT_RAW_BUFFER_FN,
+    AsyncImportSecureBuffer: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_ASYNC_IMPORT_SECURE_BUFFER_FN,
+    QueryPrivateSensorType: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_QUERY_PRIVATE_SENSOR_TYPE_FN,
+    ConnectSecure: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_CONNECT_SECURE_FN,
+    StartCaptureEx: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_START_CAPTURE_EX_FN,
+    StartNotifyWake: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_START_NOTIFY_WAKE_FN,
+    FinishNotifyWake: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_FINISH_NOTIFY_WAKE_FN,
+};
+// --------------------------------------------------------
+// Type: PWINBIO_QUERY_SENSOR_INTERFACE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PWINBIO_QUERY_SENSOR_INTERFACE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_ATTACH_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_ATTACH_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_DETACH_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_DETACH_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_CLEAR_CONTEXT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_CLEAR_CONTEXT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_QUERY_PREFERRED_FORMAT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_QUERY_PREFERRED_FORMAT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_QUERY_INDEX_VECTOR_SIZE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_QUERY_INDEX_VECTOR_SIZE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_QUERY_HASH_ALGORITHMS_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_QUERY_HASH_ALGORITHMS_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_SET_HASH_ALGORITHM_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_SET_HASH_ALGORITHM_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_QUERY_SAMPLE_HINT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_QUERY_SAMPLE_HINT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_ACCEPT_SAMPLE_DATA_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_ACCEPT_SAMPLE_DATA_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_EXPORT_ENGINE_DATA_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_EXPORT_ENGINE_DATA_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_VERIFY_FEATURE_SET_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_VERIFY_FEATURE_SET_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_IDENTIFY_FEATURE_SET_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_IDENTIFY_FEATURE_SET_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_CREATE_ENROLLMENT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_CREATE_ENROLLMENT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_UPDATE_ENROLLMENT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_UPDATE_ENROLLMENT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_GET_ENROLLMENT_STATUS_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_GET_ENROLLMENT_STATUS_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_GET_ENROLLMENT_HASH_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_GET_ENROLLMENT_HASH_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_CHECK_FOR_DUPLICATE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_CHECK_FOR_DUPLICATE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_COMMIT_ENROLLMENT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_COMMIT_ENROLLMENT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_DISCARD_ENROLLMENT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_DISCARD_ENROLLMENT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_CONTROL_UNIT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_CONTROL_UNIT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_CONTROL_UNIT_PRIVILEGED_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_CONTROL_UNIT_PRIVILEGED_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_NOTIFY_POWER_CHANGE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_NOTIFY_POWER_CHANGE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_RESERVED_1_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_RESERVED_1_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_PIPELINE_INIT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_PIPELINE_INIT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_PIPELINE_CLEANUP_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_PIPELINE_CLEANUP_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_ACTIVATE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_ACTIVATE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_DEACTIVATE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_DEACTIVATE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_QUERY_EXTENDED_INFO_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_QUERY_EXTENDED_INFO_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_IDENTIFY_ALL_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_IDENTIFY_ALL_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_SET_ENROLLMENT_SELECTOR_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_SET_ENROLLMENT_SELECTOR_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_SET_ENROLLMENT_PARAMETERS_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_SET_ENROLLMENT_PARAMETERS_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_QUERY_EXTENDED_ENROLLMENT_STATUS_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_QUERY_EXTENDED_ENROLLMENT_STATUS_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_REFRESH_CACHE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_REFRESH_CACHE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_SELECT_CALIBRATION_FORMAT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_SELECT_CALIBRATION_FORMAT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_QUERY_CALIBRATION_DATA_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_QUERY_CALIBRATION_DATA_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_SET_ACCOUNT_POLICY_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_SET_ACCOUNT_POLICY_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_CREATE_KEY_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_CREATE_KEY_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_IDENTIFY_FEATURE_SET_SECURE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_IDENTIFY_FEATURE_SET_SECURE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_ACCEPT_PRIVATE_SENSOR_TYPE_INFO_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_ACCEPT_PRIVATE_SENSOR_TYPE_INFO_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_CREATE_ENROLLMENT_AUTHENTICATED_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_CREATE_ENROLLMENT_AUTHENTICATED_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_ENGINE_IDENTIFY_FEATURE_SET_AUTHENTICATED_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_ENGINE_IDENTIFY_FEATURE_SET_AUTHENTICATED_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WINBIO_ENGINE_INTERFACE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_ENGINE_INTERFACE = extern struct {
+    Version: Windows.Win32.WindowsBiometricFramework.WINBIO_ADAPTER_INTERFACE_VERSION,
+    Type: {"kind":"UInt32"},
+    Size: {"kind":"UIntPtr"},
+    AdapterId: Guid,
+    Attach: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_ATTACH_FN,
+    Detach: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_DETACH_FN,
+    ClearContext: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_CLEAR_CONTEXT_FN,
+    QueryPreferredFormat: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_QUERY_PREFERRED_FORMAT_FN,
+    QueryIndexVectorSize: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_QUERY_INDEX_VECTOR_SIZE_FN,
+    QueryHashAlgorithms: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_QUERY_HASH_ALGORITHMS_FN,
+    SetHashAlgorithm: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_SET_HASH_ALGORITHM_FN,
+    QuerySampleHint: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_QUERY_SAMPLE_HINT_FN,
+    AcceptSampleData: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_ACCEPT_SAMPLE_DATA_FN,
+    ExportEngineData: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_EXPORT_ENGINE_DATA_FN,
+    VerifyFeatureSet: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_VERIFY_FEATURE_SET_FN,
+    IdentifyFeatureSet: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_IDENTIFY_FEATURE_SET_FN,
+    CreateEnrollment: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_CREATE_ENROLLMENT_FN,
+    UpdateEnrollment: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_UPDATE_ENROLLMENT_FN,
+    GetEnrollmentStatus: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_GET_ENROLLMENT_STATUS_FN,
+    GetEnrollmentHash: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_GET_ENROLLMENT_HASH_FN,
+    CheckForDuplicate: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_CHECK_FOR_DUPLICATE_FN,
+    CommitEnrollment: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_COMMIT_ENROLLMENT_FN,
+    DiscardEnrollment: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_DISCARD_ENROLLMENT_FN,
+    ControlUnit: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_CONTROL_UNIT_FN,
+    ControlUnitPrivileged: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_CONTROL_UNIT_PRIVILEGED_FN,
+    NotifyPowerChange: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_NOTIFY_POWER_CHANGE_FN,
+    Reserved_1: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_RESERVED_1_FN,
+    PipelineInit: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_PIPELINE_INIT_FN,
+    PipelineCleanup: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_PIPELINE_CLEANUP_FN,
+    Activate: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_ACTIVATE_FN,
+    Deactivate: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_DEACTIVATE_FN,
+    QueryExtendedInfo: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_QUERY_EXTENDED_INFO_FN,
+    IdentifyAll: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_IDENTIFY_ALL_FN,
+    SetEnrollmentSelector: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_SET_ENROLLMENT_SELECTOR_FN,
+    SetEnrollmentParameters: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_SET_ENROLLMENT_PARAMETERS_FN,
+    QueryExtendedEnrollmentStatus: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_QUERY_EXTENDED_ENROLLMENT_STATUS_FN,
+    RefreshCache: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_REFRESH_CACHE_FN,
+    SelectCalibrationFormat: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_SELECT_CALIBRATION_FORMAT_FN,
+    QueryCalibrationData: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_QUERY_CALIBRATION_DATA_FN,
+    SetAccountPolicy: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_SET_ACCOUNT_POLICY_FN,
+    CreateKey: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_CREATE_KEY_FN,
+    IdentifyFeatureSetSecure: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_IDENTIFY_FEATURE_SET_SECURE_FN,
+    AcceptPrivateSensorTypeInfo: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_ACCEPT_PRIVATE_SENSOR_TYPE_INFO_FN,
+    CreateEnrollmentAuthenticated: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_CREATE_ENROLLMENT_AUTHENTICATED_FN,
+    IdentifyFeatureSetAuthenticated: Windows.Win32.WindowsBiometricFramework.PIBIO_ENGINE_IDENTIFY_FEATURE_SET_AUTHENTICATED_FN,
+};
+// --------------------------------------------------------
+// Type: PWINBIO_QUERY_ENGINE_INTERFACE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PWINBIO_QUERY_ENGINE_INTERFACE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_ATTACH_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_ATTACH_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_DETACH_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_DETACH_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_CLEAR_CONTEXT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_CLEAR_CONTEXT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_CREATE_DATABASE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_CREATE_DATABASE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_ERASE_DATABASE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_ERASE_DATABASE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_OPEN_DATABASE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_OPEN_DATABASE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_CLOSE_DATABASE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_CLOSE_DATABASE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_GET_DATA_FORMAT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_GET_DATA_FORMAT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_GET_DATABASE_SIZE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_GET_DATABASE_SIZE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_ADD_RECORD_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_ADD_RECORD_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_DELETE_RECORD_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_DELETE_RECORD_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_QUERY_BY_SUBJECT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_QUERY_BY_SUBJECT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_QUERY_BY_CONTENT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_QUERY_BY_CONTENT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_GET_RECORD_COUNT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_GET_RECORD_COUNT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_FIRST_RECORD_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_FIRST_RECORD_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_NEXT_RECORD_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_NEXT_RECORD_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_GET_CURRENT_RECORD_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_GET_CURRENT_RECORD_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_CONTROL_UNIT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_CONTROL_UNIT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_CONTROL_UNIT_PRIVILEGED_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_CONTROL_UNIT_PRIVILEGED_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_NOTIFY_POWER_CHANGE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_NOTIFY_POWER_CHANGE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_PIPELINE_INIT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_PIPELINE_INIT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_PIPELINE_CLEANUP_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_PIPELINE_CLEANUP_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_ACTIVATE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_ACTIVATE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_DEACTIVATE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_DEACTIVATE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_QUERY_EXTENDED_INFO_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_QUERY_EXTENDED_INFO_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_NOTIFY_DATABASE_CHANGE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_NOTIFY_DATABASE_CHANGE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_RESERVED_1_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_RESERVED_1_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_RESERVED_2_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_RESERVED_2_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_UPDATE_RECORD_BEGIN_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_UPDATE_RECORD_BEGIN_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_STORAGE_UPDATE_RECORD_COMMIT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_STORAGE_UPDATE_RECORD_COMMIT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WINBIO_STORAGE_INTERFACE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_STORAGE_INTERFACE = extern struct {
+    Version: Windows.Win32.WindowsBiometricFramework.WINBIO_ADAPTER_INTERFACE_VERSION,
+    Type: {"kind":"UInt32"},
+    Size: {"kind":"UIntPtr"},
+    AdapterId: Guid,
+    Attach: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_ATTACH_FN,
+    Detach: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_DETACH_FN,
+    ClearContext: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_CLEAR_CONTEXT_FN,
+    CreateDatabase: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_CREATE_DATABASE_FN,
+    EraseDatabase: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_ERASE_DATABASE_FN,
+    OpenDatabase: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_OPEN_DATABASE_FN,
+    CloseDatabase: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_CLOSE_DATABASE_FN,
+    GetDataFormat: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_GET_DATA_FORMAT_FN,
+    GetDatabaseSize: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_GET_DATABASE_SIZE_FN,
+    AddRecord: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_ADD_RECORD_FN,
+    DeleteRecord: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_DELETE_RECORD_FN,
+    QueryBySubject: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_QUERY_BY_SUBJECT_FN,
+    QueryByContent: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_QUERY_BY_CONTENT_FN,
+    GetRecordCount: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_GET_RECORD_COUNT_FN,
+    FirstRecord: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_FIRST_RECORD_FN,
+    NextRecord: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_NEXT_RECORD_FN,
+    GetCurrentRecord: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_GET_CURRENT_RECORD_FN,
+    ControlUnit: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_CONTROL_UNIT_FN,
+    ControlUnitPrivileged: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_CONTROL_UNIT_PRIVILEGED_FN,
+    NotifyPowerChange: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_NOTIFY_POWER_CHANGE_FN,
+    PipelineInit: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_PIPELINE_INIT_FN,
+    PipelineCleanup: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_PIPELINE_CLEANUP_FN,
+    Activate: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_ACTIVATE_FN,
+    Deactivate: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_DEACTIVATE_FN,
+    QueryExtendedInfo: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_QUERY_EXTENDED_INFO_FN,
+    NotifyDatabaseChange: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_NOTIFY_DATABASE_CHANGE_FN,
+    Reserved1: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_RESERVED_1_FN,
+    Reserved2: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_RESERVED_2_FN,
+    UpdateRecordBegin: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_UPDATE_RECORD_BEGIN_FN,
+    UpdateRecordCommit: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_UPDATE_RECORD_COMMIT_FN,
+};
+// --------------------------------------------------------
+// Type: PWINBIO_QUERY_STORAGE_INTERFACE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PWINBIO_QUERY_STORAGE_INTERFACE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_FRAMEWORK_SET_UNIT_STATUS_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_FRAMEWORK_SET_UNIT_STATUS_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_FRAMEWORK_VSM_CACHE_CLEAR_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_FRAMEWORK_VSM_CACHE_CLEAR_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_FRAMEWORK_VSM_CACHE_IMPORT_BEGIN_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_FRAMEWORK_VSM_CACHE_IMPORT_BEGIN_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_FRAMEWORK_VSM_CACHE_IMPORT_NEXT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_FRAMEWORK_VSM_CACHE_IMPORT_NEXT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_FRAMEWORK_VSM_CACHE_IMPORT_END_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_FRAMEWORK_VSM_CACHE_IMPORT_END_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_FRAMEWORK_VSM_CACHE_EXPORT_BEGIN_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_FRAMEWORK_VSM_CACHE_EXPORT_BEGIN_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_FRAMEWORK_VSM_CACHE_EXPORT_NEXT_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_FRAMEWORK_VSM_CACHE_EXPORT_NEXT_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_FRAMEWORK_VSM_CACHE_EXPORT_END_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_FRAMEWORK_VSM_CACHE_EXPORT_END_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_FRAMEWORK_VSM_STORAGE_RESERVED_1_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_FRAMEWORK_VSM_STORAGE_RESERVED_1_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_FRAMEWORK_VSM_STORAGE_RESERVED_2_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_FRAMEWORK_VSM_STORAGE_RESERVED_2_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_FRAMEWORK_VSM_STORAGE_RESERVED_3_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_FRAMEWORK_VSM_STORAGE_RESERVED_3_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_FRAMEWORK_ALLOCATE_MEMORY_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_FRAMEWORK_ALLOCATE_MEMORY_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_FRAMEWORK_FREE_MEMORY_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_FRAMEWORK_FREE_MEMORY_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_FRAMEWORK_GET_PROPERTY_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_FRAMEWORK_GET_PROPERTY_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_FRAMEWORK_LOCK_AND_VALIDATE_SECURE_BUFFER_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_FRAMEWORK_LOCK_AND_VALIDATE_SECURE_BUFFER_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_FRAMEWORK_RELEASE_SECURE_BUFFER_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_FRAMEWORK_RELEASE_SECURE_BUFFER_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_FRAMEWORK_VSM_QUERY_AUTHORIZED_ENROLLMENTS_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_FRAMEWORK_VSM_QUERY_AUTHORIZED_ENROLLMENTS_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: PIBIO_FRAMEWORK_VSM_DECRYPT_SAMPLE_FN
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const PIBIO_FRAMEWORK_VSM_DECRYPT_SAMPLE_FN = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: WINBIO_FRAMEWORK_INTERFACE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WINBIO_FRAMEWORK_INTERFACE = extern struct {
+    Version: Windows.Win32.WindowsBiometricFramework.WINBIO_ADAPTER_INTERFACE_VERSION,
+    Type: {"kind":"UInt32"},
+    Size: {"kind":"UIntPtr"},
+    AdapterId: Guid,
+    SetUnitStatus: Windows.Win32.WindowsBiometricFramework.PIBIO_FRAMEWORK_SET_UNIT_STATUS_FN,
+    VsmStorageAttach: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_ATTACH_FN,
+    VsmStorageDetach: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_DETACH_FN,
+    VsmStorageClearContext: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_CLEAR_CONTEXT_FN,
+    VsmStorageCreateDatabase: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_CREATE_DATABASE_FN,
+    VsmStorageOpenDatabase: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_OPEN_DATABASE_FN,
+    VsmStorageCloseDatabase: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_CLOSE_DATABASE_FN,
+    VsmStorageDeleteRecord: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_DELETE_RECORD_FN,
+    VsmStorageNotifyPowerChange: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_NOTIFY_POWER_CHANGE_FN,
+    VsmStoragePipelineInit: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_PIPELINE_INIT_FN,
+    VsmStoragePipelineCleanup: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_PIPELINE_CLEANUP_FN,
+    VsmStorageActivate: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_ACTIVATE_FN,
+    VsmStorageDeactivate: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_DEACTIVATE_FN,
+    VsmStorageQueryExtendedInfo: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_QUERY_EXTENDED_INFO_FN,
+    VsmStorageCacheClear: Windows.Win32.WindowsBiometricFramework.PIBIO_FRAMEWORK_VSM_CACHE_CLEAR_FN,
+    VsmStorageCacheImportBegin: Windows.Win32.WindowsBiometricFramework.PIBIO_FRAMEWORK_VSM_CACHE_IMPORT_BEGIN_FN,
+    VsmStorageCacheImportNext: Windows.Win32.WindowsBiometricFramework.PIBIO_FRAMEWORK_VSM_CACHE_IMPORT_NEXT_FN,
+    VsmStorageCacheImportEnd: Windows.Win32.WindowsBiometricFramework.PIBIO_FRAMEWORK_VSM_CACHE_IMPORT_END_FN,
+    VsmStorageCacheExportBegin: Windows.Win32.WindowsBiometricFramework.PIBIO_FRAMEWORK_VSM_CACHE_EXPORT_BEGIN_FN,
+    VsmStorageCacheExportNext: Windows.Win32.WindowsBiometricFramework.PIBIO_FRAMEWORK_VSM_CACHE_EXPORT_NEXT_FN,
+    VsmStorageCacheExportEnd: Windows.Win32.WindowsBiometricFramework.PIBIO_FRAMEWORK_VSM_CACHE_EXPORT_END_FN,
+    VsmSensorAttach: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_ATTACH_FN,
+    VsmSensorDetach: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_DETACH_FN,
+    VsmSensorClearContext: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_CLEAR_CONTEXT_FN,
+    VsmSensorPushDataToEngine: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_PUSH_DATA_TO_ENGINE_FN,
+    VsmSensorNotifyPowerChange: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_NOTIFY_POWER_CHANGE_FN,
+    VsmSensorPipelineInit: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_PIPELINE_INIT_FN,
+    VsmSensorPipelineCleanup: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_PIPELINE_CLEANUP_FN,
+    VsmSensorActivate: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_ACTIVATE_FN,
+    VsmSensorDeactivate: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_DEACTIVATE_FN,
+    VsmSensorAsyncImportRawBuffer: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_ASYNC_IMPORT_RAW_BUFFER_FN,
+    VsmSensorAsyncImportSecureBuffer: Windows.Win32.WindowsBiometricFramework.PIBIO_SENSOR_ASYNC_IMPORT_SECURE_BUFFER_FN,
+    Reserved1: Windows.Win32.WindowsBiometricFramework.PIBIO_FRAMEWORK_VSM_STORAGE_RESERVED_1_FN,
+    Reserved2: Windows.Win32.WindowsBiometricFramework.PIBIO_FRAMEWORK_VSM_STORAGE_RESERVED_2_FN,
+    Reserved3: Windows.Win32.WindowsBiometricFramework.PIBIO_FRAMEWORK_VSM_STORAGE_RESERVED_3_FN,
+    Reserved4: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_RESERVED_1_FN,
+    Reserved5: Windows.Win32.WindowsBiometricFramework.PIBIO_STORAGE_RESERVED_2_FN,
+    AllocateMemory: Windows.Win32.WindowsBiometricFramework.PIBIO_FRAMEWORK_ALLOCATE_MEMORY_FN,
+    FreeMemory: Windows.Win32.WindowsBiometricFramework.PIBIO_FRAMEWORK_FREE_MEMORY_FN,
+    GetProperty: Windows.Win32.WindowsBiometricFramework.PIBIO_FRAMEWORK_GET_PROPERTY_FN,
+    LockAndValidateSecureBuffer: Windows.Win32.WindowsBiometricFramework.PIBIO_FRAMEWORK_LOCK_AND_VALIDATE_SECURE_BUFFER_FN,
+    ReleaseSecureBuffer: Windows.Win32.WindowsBiometricFramework.PIBIO_FRAMEWORK_RELEASE_SECURE_BUFFER_FN,
+    QueryAuthorizedEnrollments: Windows.Win32.WindowsBiometricFramework.PIBIO_FRAMEWORK_VSM_QUERY_AUTHORIZED_ENROLLMENTS_FN,
+    DecryptSample: Windows.Win32.WindowsBiometricFramework.PIBIO_FRAMEWORK_VSM_DECRYPT_SAMPLE_FN,
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioEnumServiceProviders(
+    Factor: {"kind":"UInt32"},
+    BspSchemaArray: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WindowsBiometricFramework.WINBIO_BSP_SCHEMA}},
+    BspCount: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioEnumBiometricUnits(
+    Factor: {"kind":"UInt32"},
+    UnitSchemaArray: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WindowsBiometricFramework.WINBIO_UNIT_SCHEMA}},
+    UnitCount: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioEnumDatabases(
+    Factor: {"kind":"UInt32"},
+    StorageSchemaArray: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WindowsBiometricFramework.WINBIO_STORAGE_SCHEMA}},
+    StorageCount: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioAsyncOpenFramework(
+    NotificationMethod: Windows.Win32.WindowsBiometricFramework.WINBIO_ASYNC_NOTIFICATION_METHOD,
+    TargetWindow: Windows.Win32.WindowsAndMessaging.HWND,
+    MessageCode: {"kind":"UInt32"},
+    CallbackRoutine: Windows.Win32.WindowsBiometricFramework.PWINBIO_ASYNC_COMPLETION_CALLBACK,
+    UserData: {"kind""Ptr","child":{"kind":"Void"}},
+    AsynchronousOpen: Windows.Win32.SystemServices.BOOL,
+    FrameworkHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioCloseFramework(
+    FrameworkHandle: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioAsyncEnumServiceProviders(
+    FrameworkHandle: {"kind":"UInt32"},
+    Factor: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioAsyncEnumBiometricUnits(
+    FrameworkHandle: {"kind":"UInt32"},
+    Factor: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioAsyncEnumDatabases(
+    FrameworkHandle: {"kind":"UInt32"},
+    Factor: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioAsyncMonitorFrameworkChanges(
+    FrameworkHandle: {"kind":"UInt32"},
+    ChangeTypes: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioOpenSession(
+    Factor: {"kind":"UInt32"},
+    PoolType: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+    UnitArray: {"kind""Ptr","child":{"kind":"UInt32"}},
+    UnitCount: {"kind":"UIntPtr"},
+    DatabaseId: {"kind""Ptr","child":Guid},
+    SessionHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioAsyncOpenSession(
+    Factor: {"kind":"UInt32"},
+    PoolType: {"kind":"UInt32"},
+    Flags: {"kind":"UInt32"},
+    UnitArray: {"kind""Ptr","child":{"kind":"UInt32"}},
+    UnitCount: {"kind":"UIntPtr"},
+    DatabaseId: {"kind""Ptr","child":Guid},
+    NotificationMethod: Windows.Win32.WindowsBiometricFramework.WINBIO_ASYNC_NOTIFICATION_METHOD,
+    TargetWindow: Windows.Win32.WindowsAndMessaging.HWND,
+    MessageCode: {"kind":"UInt32"},
+    CallbackRoutine: Windows.Win32.WindowsBiometricFramework.PWINBIO_ASYNC_COMPLETION_CALLBACK,
+    UserData: {"kind""Ptr","child":{"kind":"Void"}},
+    AsynchronousOpen: Windows.Win32.SystemServices.BOOL,
+    SessionHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioCloseSession(
+    SessionHandle: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioVerify(
+    SessionHandle: {"kind":"UInt32"},
+    Identity: {"kind""Ptr","child":Windows.Win32.WindowsBiometricFramework.WINBIO_IDENTITY},
+    SubFactor: {"kind":"Byte"},
+    UnitId: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Match: {"kind""Ptr","child":{"kind":"Byte"}},
+    RejectDetail: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioVerifyWithCallback(
+    SessionHandle: {"kind":"UInt32"},
+    Identity: {"kind""Ptr","child":Windows.Win32.WindowsBiometricFramework.WINBIO_IDENTITY},
+    SubFactor: {"kind":"Byte"},
+    VerifyCallback: Windows.Win32.WindowsBiometricFramework.PWINBIO_VERIFY_CALLBACK,
+    VerifyCallbackContext: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioIdentify(
+    SessionHandle: {"kind":"UInt32"},
+    UnitId: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Identity: {"kind""Ptr","child":Windows.Win32.WindowsBiometricFramework.WINBIO_IDENTITY},
+    SubFactor: {"kind""Ptr","child":{"kind":"Byte"}},
+    RejectDetail: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioIdentifyWithCallback(
+    SessionHandle: {"kind":"UInt32"},
+    IdentifyCallback: Windows.Win32.WindowsBiometricFramework.PWINBIO_IDENTIFY_CALLBACK,
+    IdentifyCallbackContext: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioWait(
+    SessionHandle: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioCancel(
+    SessionHandle: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioLocateSensor(
+    SessionHandle: {"kind":"UInt32"},
+    UnitId: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioLocateSensorWithCallback(
+    SessionHandle: {"kind":"UInt32"},
+    LocateCallback: Windows.Win32.WindowsBiometricFramework.PWINBIO_LOCATE_SENSOR_CALLBACK,
+    LocateCallbackContext: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioEnrollBegin(
+    SessionHandle: {"kind":"UInt32"},
+    SubFactor: {"kind":"Byte"},
+    UnitId: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioEnrollSelect(
+    SessionHandle: {"kind":"UInt32"},
+    SelectorValue: {"kind":"UInt64"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioEnrollCapture(
+    SessionHandle: {"kind":"UInt32"},
+    RejectDetail: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioEnrollCaptureWithCallback(
+    SessionHandle: {"kind":"UInt32"},
+    EnrollCallback: Windows.Win32.WindowsBiometricFramework.PWINBIO_ENROLL_CAPTURE_CALLBACK,
+    EnrollCallbackContext: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioEnrollCommit(
+    SessionHandle: {"kind":"UInt32"},
+    Identity: {"kind""Ptr","child":Windows.Win32.WindowsBiometricFramework.WINBIO_IDENTITY},
+    IsNewTemplate: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioEnrollDiscard(
+    SessionHandle: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioEnumEnrollments(
+    SessionHandle: {"kind":"UInt32"},
+    UnitId: {"kind":"UInt32"},
+    Identity: {"kind""Ptr","child":Windows.Win32.WindowsBiometricFramework.WINBIO_IDENTITY},
+    SubFactorArray: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    SubFactorCount: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioRegisterEventMonitor(
+    SessionHandle: {"kind":"UInt32"},
+    EventMask: {"kind":"UInt32"},
+    EventCallback: Windows.Win32.WindowsBiometricFramework.PWINBIO_EVENT_CALLBACK,
+    EventCallbackContext: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioUnregisterEventMonitor(
+    SessionHandle: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioMonitorPresence(
+    SessionHandle: {"kind":"UInt32"},
+    UnitId: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioCaptureSample(
+    SessionHandle: {"kind":"UInt32"},
+    Purpose: {"kind":"Byte"},
+    Flags: {"kind":"Byte"},
+    UnitId: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Sample: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.WindowsBiometricFramework.WINBIO_BIR}},
+    SampleSize: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    RejectDetail: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioCaptureSampleWithCallback(
+    SessionHandle: {"kind":"UInt32"},
+    Purpose: {"kind":"Byte"},
+    Flags: {"kind":"Byte"},
+    CaptureCallback: Windows.Win32.WindowsBiometricFramework.PWINBIO_CAPTURE_CALLBACK,
+    CaptureCallbackContext: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioDeleteTemplate(
+    SessionHandle: {"kind":"UInt32"},
+    UnitId: {"kind":"UInt32"},
+    Identity: {"kind""Ptr","child":Windows.Win32.WindowsBiometricFramework.WINBIO_IDENTITY},
+    SubFactor: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioLockUnit(
+    SessionHandle: {"kind":"UInt32"},
+    UnitId: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioUnlockUnit(
+    SessionHandle: {"kind":"UInt32"},
+    UnitId: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioControlUnit(
+    SessionHandle: {"kind":"UInt32"},
+    UnitId: {"kind":"UInt32"},
+    Component: {"kind":"UInt32"},
+    ControlCode: {"kind":"UInt32"},
+    SendBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    SendBufferSize: {"kind":"UIntPtr"},
+    ReceiveBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    ReceiveBufferSize: {"kind":"UIntPtr"},
+    ReceiveDataSize: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    OperationStatus: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioControlUnitPrivileged(
+    SessionHandle: {"kind":"UInt32"},
+    UnitId: {"kind":"UInt32"},
+    Component: {"kind":"UInt32"},
+    ControlCode: {"kind":"UInt32"},
+    SendBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    SendBufferSize: {"kind":"UIntPtr"},
+    ReceiveBuffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    ReceiveBufferSize: {"kind":"UIntPtr"},
+    ReceiveDataSize: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+    OperationStatus: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioGetProperty(
+    SessionHandle: {"kind":"UInt32"},
+    PropertyType: {"kind":"UInt32"},
+    PropertyId: {"kind":"UInt32"},
+    UnitId: {"kind":"UInt32"},
+    Identity: {"kind""Ptr","child":Windows.Win32.WindowsBiometricFramework.WINBIO_IDENTITY},
+    SubFactor: {"kind":"Byte"},
+    PropertyBuffer: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+    PropertyBufferSize: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioSetProperty(
+    SessionHandle: {"kind":"UInt32"},
+    PropertyType: {"kind":"UInt32"},
+    PropertyId: {"kind":"UInt32"},
+    UnitId: {"kind":"UInt32"},
+    Identity: {"kind""Ptr","child":Windows.Win32.WindowsBiometricFramework.WINBIO_IDENTITY},
+    SubFactor: {"kind":"Byte"},
+    PropertyBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    PropertyBufferSize: {"kind":"UIntPtr"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioFree(
+    Address: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioSetCredential(
+    Type: Windows.Win32.WindowsBiometricFramework.WINBIO_CREDENTIAL_TYPE,
+    Credential: {"kind""Ptr","child":{"kind":"Byte"}},
+    CredentialSize: {"kind":"UIntPtr"},
+    Format: Windows.Win32.WindowsBiometricFramework.WINBIO_CREDENTIAL_FORMAT,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioRemoveCredential(
+    Identity: Windows.Win32.WindowsBiometricFramework.WINBIO_IDENTITY,
+    Type: Windows.Win32.WindowsBiometricFramework.WINBIO_CREDENTIAL_TYPE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioRemoveAllCredentials(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioRemoveAllDomainCredentials(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioGetCredentialState(
+    Identity: Windows.Win32.WindowsBiometricFramework.WINBIO_IDENTITY,
+    Type: Windows.Win32.WindowsBiometricFramework.WINBIO_CREDENTIAL_TYPE,
+    CredentialState: {"kind""Ptr","child":Windows.Win32.WindowsBiometricFramework.WINBIO_CREDENTIAL_STATE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioLogonIdentifiedUser(
+    SessionHandle: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioGetEnrolledFactors(
+    AccountOwner: {"kind""Ptr","child":Windows.Win32.WindowsBiometricFramework.WINBIO_IDENTITY},
+    EnrolledFactors: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioGetEnabledSetting(
+    Value: {"kind""Ptr","child":{"kind":"Byte"}},
+    Source: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioGetLogonSetting(
+    Value: {"kind""Ptr","child":{"kind":"Byte"}},
+    Source: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioGetDomainLogonSetting(
+    Value: {"kind""Ptr","child":{"kind":"Byte"}},
+    Source: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioAcquireFocus(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "winbio" fn WinBioReleaseFocus(
+],
+
+"unicode_aliases": [
+]}

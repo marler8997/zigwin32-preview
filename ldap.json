@@ -1,0 +1,1946 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: LDAP_RETCODE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const LDAP_RETCODE = *opaque{
+};
+// --------------------------------------------------------
+// Type: ldap
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ldap = extern struct {
+    ld_sb: Windows.Win32.Ldap.ldap+_ld_sb_e__Struct,
+    ld_host: {"kind""Ptr","child":{"kind":"SByte"}},
+    ld_version: {"kind":"UInt32"},
+    ld_lberoptions: {"kind":"Byte"},
+    ld_deref: {"kind":"UInt32"},
+    ld_timelimit: {"kind":"UInt32"},
+    ld_sizelimit: {"kind":"UInt32"},
+    ld_errno: {"kind":"UInt32"},
+    ld_matched: {"kind""Ptr","child":{"kind":"SByte"}},
+    ld_error: {"kind""Ptr","child":{"kind":"SByte"}},
+    ld_msgid: {"kind":"UInt32"},
+    Reserved3: {"kind":"Array","child": {"kind":"Byte"}},
+    ld_cldaptries: {"kind":"UInt32"},
+    ld_cldaptimeout: {"kind":"UInt32"},
+    ld_refhoplimit: {"kind":"UInt32"},
+    ld_options: {"kind":"UInt32"},
+    // --------------------------------------------------------
+    // Type: _ld_sb_e__Struct
+    // TypeLayoutAttr: sequential
+    // TODO: I think this is a struct, but not sure at this point, assuming it is for now
+    pub const _ld_sb_e__Struct = extern struct {
+        sb_sd: {"kind":"UIntPtr"},
+        Reserved1: {"kind":"Array","child": {"kind":"Byte"}},
+        sb_naddr: {"kind":"UIntPtr"},
+        Reserved2: {"kind":"Array","child": {"kind":"Byte"}},
+    };
+};
+// --------------------------------------------------------
+// Type: LDAP_TIMEVAL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LDAP_TIMEVAL = extern struct {
+    tv_sec: {"kind":"Int32"},
+    tv_usec: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: LDAP_BERVAL
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LDAP_BERVAL = extern struct {
+    bv_len: {"kind":"UInt32"},
+    bv_val: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: LDAPMessage
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LDAPMessage = extern struct {
+    lm_msgid: {"kind":"UInt32"},
+    lm_msgtype: {"kind":"UInt32"},
+    lm_ber: {"kind""Ptr","child":{"kind":"Void"}},
+    lm_chain: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+    lm_next: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+    lm_time: {"kind":"UInt32"},
+    Connection: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    Request: {"kind""Ptr","child":{"kind":"Void"}},
+    lm_returncode: {"kind":"UInt32"},
+    lm_referral: {"kind":"UInt16"},
+    lm_chased: {"kind":"Byte"},
+    lm_eom: {"kind":"Byte"},
+    ConnectionReferenced: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: ldapcontrolA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ldapcontrolA = extern struct {
+    ldctl_oid: {"kind""Ptr","child":{"kind":"SByte"}},
+    ldctl_value: Windows.Win32.Ldap.LDAP_BERVAL,
+    ldctl_iscritical: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: ldapcontrolW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ldapcontrolW = extern struct {
+    ldctl_oid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ldctl_value: Windows.Win32.Ldap.LDAP_BERVAL,
+    ldctl_iscritical: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: ldapmodW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ldapmodW = extern struct {
+    mod_op: {"kind":"UInt32"},
+    mod_type: {"kind""Ptr","child":{"kind":"UInt16"}},
+    mod_vals: Windows.Win32.Ldap.ldapmodW+_mod_vals_e__Union,
+    // --------------------------------------------------------
+    // Type: _mod_vals_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _mod_vals_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: ldapmodA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ldapmodA = extern struct {
+    mod_op: {"kind":"UInt32"},
+    mod_type: {"kind""Ptr","child":{"kind":"SByte"}},
+    mod_vals: Windows.Win32.Ldap.ldapmodA+_mod_vals_e__Union,
+    // --------------------------------------------------------
+    // Type: _mod_vals_e__Union
+    // TypeLayoutAttr: explicit
+    // not generating the actual code for this type because it has an explicit layout
+    pub const _mod_vals_e__Union = *opaque{
+    };
+};
+// --------------------------------------------------------
+// Type: berelement
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const berelement = extern struct {
+    opaque: {"kind""Ptr","child":{"kind":"SByte"}},
+};
+// --------------------------------------------------------
+// Type: ldap_version_info
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ldap_version_info = extern struct {
+    lv_size: {"kind":"UInt32"},
+    lv_major: {"kind":"UInt32"},
+    lv_minor: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ldapapiinfoA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ldapapiinfoA = extern struct {
+    ldapai_info_version: {"kind":"Int32"},
+    ldapai_api_version: {"kind":"Int32"},
+    ldapai_protocol_version: {"kind":"Int32"},
+    ldapai_extensions: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    ldapai_vendor_name: {"kind""Ptr","child":{"kind":"SByte"}},
+    ldapai_vendor_version: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: ldapapiinfoW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ldapapiinfoW = extern struct {
+    ldapai_info_version: {"kind":"Int32"},
+    ldapai_api_version: {"kind":"Int32"},
+    ldapai_protocol_version: {"kind":"Int32"},
+    ldapai_extensions: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    ldapai_vendor_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ldapai_vendor_version: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: LDAPAPIFeatureInfoA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LDAPAPIFeatureInfoA = extern struct {
+    ldapaif_info_version: {"kind":"Int32"},
+    ldapaif_name: {"kind""Ptr","child":{"kind":"SByte"}},
+    ldapaif_version: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: LDAPAPIFeatureInfoW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LDAPAPIFeatureInfoW = extern struct {
+    ldapaif_info_version: {"kind":"Int32"},
+    ldapaif_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ldapaif_version: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: DBGPRINT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DBGPRINT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: ldapsearch
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+// a struct with no fields? this means Zig can't use it in extern structs, so we're making it opaque
+pub const ldapsearch = opaque {
+};
+// --------------------------------------------------------
+// Type: ldapsortkeyW
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ldapsortkeyW = extern struct {
+    sk_attrtype: {"kind""Ptr","child":{"kind":"UInt16"}},
+    sk_matchruleoid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    sk_reverseorder: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: ldapsortkeyA
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ldapsortkeyA = extern struct {
+    sk_attrtype: {"kind""Ptr","child":{"kind":"SByte"}},
+    sk_matchruleoid: {"kind""Ptr","child":{"kind":"SByte"}},
+    sk_reverseorder: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: ldapvlvinfo
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ldapvlvinfo = extern struct {
+    ldvlv_version: {"kind":"Int32"},
+    ldvlv_before_count: {"kind":"UInt32"},
+    ldvlv_after_count: {"kind":"UInt32"},
+    ldvlv_offset: {"kind":"UInt32"},
+    ldvlv_count: {"kind":"UInt32"},
+    ldvlv_attrvalue: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL},
+    ldvlv_context: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL},
+    ldvlv_extradata: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: QUERYFORCONNECTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const QUERYFORCONNECTION = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: NOTIFYOFNEWCONNECTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NOTIFYOFNEWCONNECTION = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: DEREFERENCECONNECTION
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DEREFERENCECONNECTION = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: LDAP_REFERRAL_CALLBACK
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LDAP_REFERRAL_CALLBACK = extern struct {
+    SizeOfCallbacks: {"kind":"UInt32"},
+    QueryForConnection: {"kind""Ptr","child":Windows.Win32.Ldap.QUERYFORCONNECTION},
+    NotifyRoutine: {"kind""Ptr","child":Windows.Win32.Ldap.NOTIFYOFNEWCONNECTION},
+    DereferenceRoutine: {"kind""Ptr","child":Windows.Win32.Ldap.DEREFERENCECONNECTION},
+};
+// --------------------------------------------------------
+// Type: QUERYCLIENTCERT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const QUERYCLIENTCERT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+// --------------------------------------------------------
+// Type: VERIFYSERVERCERT
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const VERIFYSERVERCERT = *opaque{
+    // TODO: Method '.ctor'
+    // TODO: Method 'Invoke'
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_openW(
+    HostName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PortNumber: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_openA(
+    HostName: {"kind""Ptr","child":{"kind":"SByte"}},
+    PortNumber: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_initW(
+    HostName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PortNumber: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_initA(
+    HostName: {"kind""Ptr","child":{"kind":"SByte"}},
+    PortNumber: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_sslinitW(
+    HostName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PortNumber: {"kind":"UInt32"},
+    secure: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_sslinitA(
+    HostName: {"kind""Ptr","child":{"kind":"SByte"}},
+    PortNumber: {"kind":"UInt32"},
+    secure: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_connect(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    timeout: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_TIMEVAL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_open(
+    HostName: {"kind""Ptr","child":{"kind":"SByte"}},
+    PortNumber: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_init(
+    HostName: {"kind""Ptr","child":{"kind":"SByte"}},
+    PortNumber: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_sslinit(
+    HostName: {"kind""Ptr","child":{"kind":"SByte"}},
+    PortNumber: {"kind":"UInt32"},
+    secure: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WLDAP32" fn cldap_openW(
+    HostName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PortNumber: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WLDAP32" fn cldap_openA(
+    HostName: {"kind""Ptr","child":{"kind":"SByte"}},
+    PortNumber: {"kind":"UInt32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WLDAP32" fn cldap_open(
+    HostName: {"kind""Ptr","child":{"kind":"SByte"}},
+    PortNumber: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_unbind(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_unbind_s(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_get_option(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    option: {"kind":"Int32"},
+    outvalue: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_get_optionW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    option: {"kind":"Int32"},
+    outvalue: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_set_option(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    option: {"kind":"Int32"},
+    invalue: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_set_optionW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    option: {"kind":"Int32"},
+    invalue: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_simple_bindW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    passwd: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_simple_bindA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    passwd: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_simple_bind_sW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    passwd: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_simple_bind_sA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    passwd: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_bindW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cred: {"kind""Ptr","child":{"kind":"UInt16"}},
+    method: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_bindA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    cred: {"kind""Ptr","child":{"kind":"SByte"}},
+    method: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_bind_sW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cred: {"kind""Ptr","child":{"kind":"UInt16"}},
+    method: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_bind_sA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    cred: {"kind""Ptr","child":{"kind":"SByte"}},
+    method: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_sasl_bindA(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    DistName: {"kind""Ptr","child":{"kind":"SByte"}},
+    AuthMechanism: {"kind""Ptr","child":{"kind":"SByte"}},
+    cred: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL},
+    ServerCtrls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientCtrls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    MessageNumber: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_sasl_bindW(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    DistName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    AuthMechanism: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cred: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL},
+    ServerCtrls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    ClientCtrls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    MessageNumber: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_sasl_bind_sA(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    DistName: {"kind""Ptr","child":{"kind":"SByte"}},
+    AuthMechanism: {"kind""Ptr","child":{"kind":"SByte"}},
+    cred: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL},
+    ServerCtrls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientCtrls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ServerData: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_sasl_bind_sW(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    DistName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    AuthMechanism: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cred: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL},
+    ServerCtrls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    ClientCtrls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    ServerData: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_simple_bind(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    passwd: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_simple_bind_s(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    passwd: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_bind(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    cred: {"kind""Ptr","child":{"kind":"SByte"}},
+    method: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_bind_s(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    cred: {"kind""Ptr","child":{"kind":"SByte"}},
+    method: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_searchW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    base: {"kind""Ptr","child":{"kind":"UInt16"}},
+    scope: {"kind":"UInt32"},
+    filter: {"kind""Ptr","child":{"kind":"UInt16"}},
+    attrs: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    attrsonly: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_searchA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    base: {"kind""Ptr","child":{"kind":"SByte"}},
+    scope: {"kind":"UInt32"},
+    filter: {"kind""Ptr","child":{"kind":"SByte"}},
+    attrs: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    attrsonly: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_search_sW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    base: {"kind""Ptr","child":{"kind":"UInt16"}},
+    scope: {"kind":"UInt32"},
+    filter: {"kind""Ptr","child":{"kind":"UInt16"}},
+    attrs: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    attrsonly: {"kind":"UInt32"},
+    res: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_search_sA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    base: {"kind""Ptr","child":{"kind":"SByte"}},
+    scope: {"kind":"UInt32"},
+    filter: {"kind""Ptr","child":{"kind":"SByte"}},
+    attrs: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    attrsonly: {"kind":"UInt32"},
+    res: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_search_stW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    base: {"kind""Ptr","child":{"kind":"UInt16"}},
+    scope: {"kind":"UInt32"},
+    filter: {"kind""Ptr","child":{"kind":"UInt16"}},
+    attrs: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    attrsonly: {"kind":"UInt32"},
+    timeout: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_TIMEVAL},
+    res: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_search_stA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    base: {"kind""Ptr","child":{"kind":"SByte"}},
+    scope: {"kind":"UInt32"},
+    filter: {"kind""Ptr","child":{"kind":"SByte"}},
+    attrs: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    attrsonly: {"kind":"UInt32"},
+    timeout: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_TIMEVAL},
+    res: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_search_extW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    base: {"kind""Ptr","child":{"kind":"UInt16"}},
+    scope: {"kind":"UInt32"},
+    filter: {"kind""Ptr","child":{"kind":"UInt16"}},
+    attrs: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    attrsonly: {"kind":"UInt32"},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    TimeLimit: {"kind":"UInt32"},
+    SizeLimit: {"kind":"UInt32"},
+    MessageNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_search_extA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    base: {"kind""Ptr","child":{"kind":"SByte"}},
+    scope: {"kind":"UInt32"},
+    filter: {"kind""Ptr","child":{"kind":"SByte"}},
+    attrs: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    attrsonly: {"kind":"UInt32"},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    TimeLimit: {"kind":"UInt32"},
+    SizeLimit: {"kind":"UInt32"},
+    MessageNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_search_ext_sW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    base: {"kind""Ptr","child":{"kind":"UInt16"}},
+    scope: {"kind":"UInt32"},
+    filter: {"kind""Ptr","child":{"kind":"UInt16"}},
+    attrs: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    attrsonly: {"kind":"UInt32"},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    timeout: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_TIMEVAL},
+    SizeLimit: {"kind":"UInt32"},
+    res: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_search_ext_sA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    base: {"kind""Ptr","child":{"kind":"SByte"}},
+    scope: {"kind":"UInt32"},
+    filter: {"kind""Ptr","child":{"kind":"SByte"}},
+    attrs: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    attrsonly: {"kind":"UInt32"},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    timeout: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_TIMEVAL},
+    SizeLimit: {"kind":"UInt32"},
+    res: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_search(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    base: {"kind""Ptr","child":{"kind":"SByte"}},
+    scope: {"kind":"UInt32"},
+    filter: {"kind""Ptr","child":{"kind":"SByte"}},
+    attrs: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    attrsonly: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_search_s(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    base: {"kind""Ptr","child":{"kind":"SByte"}},
+    scope: {"kind":"UInt32"},
+    filter: {"kind""Ptr","child":{"kind":"SByte"}},
+    attrs: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    attrsonly: {"kind":"UInt32"},
+    res: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_search_st(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    base: {"kind""Ptr","child":{"kind":"SByte"}},
+    scope: {"kind":"UInt32"},
+    filter: {"kind""Ptr","child":{"kind":"SByte"}},
+    attrs: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    attrsonly: {"kind":"UInt32"},
+    timeout: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_TIMEVAL},
+    res: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_search_ext(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    base: {"kind""Ptr","child":{"kind":"SByte"}},
+    scope: {"kind":"UInt32"},
+    filter: {"kind""Ptr","child":{"kind":"SByte"}},
+    attrs: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    attrsonly: {"kind":"UInt32"},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    TimeLimit: {"kind":"UInt32"},
+    SizeLimit: {"kind":"UInt32"},
+    MessageNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_search_ext_s(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    base: {"kind""Ptr","child":{"kind":"SByte"}},
+    scope: {"kind":"UInt32"},
+    filter: {"kind""Ptr","child":{"kind":"SByte"}},
+    attrs: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    attrsonly: {"kind":"UInt32"},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    timeout: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_TIMEVAL},
+    SizeLimit: {"kind":"UInt32"},
+    res: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_check_filterW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    SearchFilter: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_check_filterA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    SearchFilter: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_modifyW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    mods: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapmodW}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_modifyA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    mods: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapmodA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_modify_sW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    mods: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapmodW}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_modify_sA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    mods: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapmodA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_modify_extW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    mods: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapmodW}},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    MessageNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_modify_extA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    mods: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapmodA}},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    MessageNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_modify_ext_sW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    mods: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapmodW}},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_modify_ext_sA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    mods: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapmodA}},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_modify(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    mods: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapmodA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_modify_s(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    mods: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapmodA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_modify_ext(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    mods: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapmodA}},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    MessageNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_modify_ext_s(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    mods: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapmodA}},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_modrdn2W(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    DistinguishedName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    NewDistinguishedName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DeleteOldRdn: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_modrdn2A(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    DistinguishedName: {"kind""Ptr","child":{"kind":"SByte"}},
+    NewDistinguishedName: {"kind""Ptr","child":{"kind":"SByte"}},
+    DeleteOldRdn: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_modrdnW(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    DistinguishedName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    NewDistinguishedName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_modrdnA(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    DistinguishedName: {"kind""Ptr","child":{"kind":"SByte"}},
+    NewDistinguishedName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_modrdn2_sW(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    DistinguishedName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    NewDistinguishedName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DeleteOldRdn: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_modrdn2_sA(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    DistinguishedName: {"kind""Ptr","child":{"kind":"SByte"}},
+    NewDistinguishedName: {"kind""Ptr","child":{"kind":"SByte"}},
+    DeleteOldRdn: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_modrdn_sW(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    DistinguishedName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    NewDistinguishedName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_modrdn_sA(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    DistinguishedName: {"kind""Ptr","child":{"kind":"SByte"}},
+    NewDistinguishedName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_modrdn2(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    DistinguishedName: {"kind""Ptr","child":{"kind":"SByte"}},
+    NewDistinguishedName: {"kind""Ptr","child":{"kind":"SByte"}},
+    DeleteOldRdn: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_modrdn(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    DistinguishedName: {"kind""Ptr","child":{"kind":"SByte"}},
+    NewDistinguishedName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_modrdn2_s(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    DistinguishedName: {"kind""Ptr","child":{"kind":"SByte"}},
+    NewDistinguishedName: {"kind""Ptr","child":{"kind":"SByte"}},
+    DeleteOldRdn: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_modrdn_s(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    DistinguishedName: {"kind""Ptr","child":{"kind":"SByte"}},
+    NewDistinguishedName: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_rename_extW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    NewRDN: {"kind""Ptr","child":{"kind":"UInt16"}},
+    NewParent: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DeleteOldRdn: {"kind":"Int32"},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    MessageNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_rename_extA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    NewRDN: {"kind""Ptr","child":{"kind":"SByte"}},
+    NewParent: {"kind""Ptr","child":{"kind":"SByte"}},
+    DeleteOldRdn: {"kind":"Int32"},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    MessageNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_rename_ext_sW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    NewRDN: {"kind""Ptr","child":{"kind":"UInt16"}},
+    NewParent: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DeleteOldRdn: {"kind":"Int32"},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_rename_ext_sA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    NewRDN: {"kind""Ptr","child":{"kind":"SByte"}},
+    NewParent: {"kind""Ptr","child":{"kind":"SByte"}},
+    DeleteOldRdn: {"kind":"Int32"},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_rename_ext(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    NewRDN: {"kind""Ptr","child":{"kind":"SByte"}},
+    NewParent: {"kind""Ptr","child":{"kind":"SByte"}},
+    DeleteOldRdn: {"kind":"Int32"},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    MessageNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_rename_ext_s(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    NewRDN: {"kind""Ptr","child":{"kind":"SByte"}},
+    NewParent: {"kind""Ptr","child":{"kind":"SByte"}},
+    DeleteOldRdn: {"kind":"Int32"},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_addW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    attrs: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapmodW}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_addA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    attrs: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapmodA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_add_sW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    attrs: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapmodW}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_add_sA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    attrs: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapmodA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_add_extW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    attrs: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapmodW}},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    MessageNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_add_extA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    attrs: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapmodA}},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    MessageNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_add_ext_sW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    attrs: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapmodW}},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_add_ext_sA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    attrs: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapmodA}},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_add(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    attrs: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapmodA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_add_s(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    attrs: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapmodA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_add_ext(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    attrs: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapmodA}},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    MessageNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_add_ext_s(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    attrs: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapmodA}},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_compareW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    attr: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_compareA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    attr: {"kind""Ptr","child":{"kind":"SByte"}},
+    value: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_compare_sW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    attr: {"kind""Ptr","child":{"kind":"UInt16"}},
+    value: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_compare_sA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    attr: {"kind""Ptr","child":{"kind":"SByte"}},
+    value: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_compare(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    attr: {"kind""Ptr","child":{"kind":"SByte"}},
+    value: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_compare_s(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    attr: {"kind""Ptr","child":{"kind":"SByte"}},
+    value: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_compare_extW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Attr: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Value: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Data: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    MessageNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_compare_extA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    Attr: {"kind""Ptr","child":{"kind":"SByte"}},
+    Value: {"kind""Ptr","child":{"kind":"SByte"}},
+    Data: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    MessageNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_compare_ext_sW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Attr: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Value: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Data: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_compare_ext_sA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    Attr: {"kind""Ptr","child":{"kind":"SByte"}},
+    Value: {"kind""Ptr","child":{"kind":"SByte"}},
+    Data: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_compare_ext(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    Attr: {"kind""Ptr","child":{"kind":"SByte"}},
+    Value: {"kind""Ptr","child":{"kind":"SByte"}},
+    Data: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    MessageNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_compare_ext_s(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    Attr: {"kind""Ptr","child":{"kind":"SByte"}},
+    Value: {"kind""Ptr","child":{"kind":"SByte"}},
+    Data: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_deleteW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_deleteA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_delete_sW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_delete_sA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_delete_extW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    MessageNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_delete_extA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    MessageNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_delete_ext_sW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_delete_ext_sA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_delete(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_delete_s(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_delete_ext(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    MessageNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_delete_ext_s(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_abandon(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    msgid: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_result(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    msgid: {"kind":"UInt32"},
+    all: {"kind":"UInt32"},
+    timeout: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_TIMEVAL},
+    res: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_msgfree(
+    res: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_result2error(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    res: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+    freeit: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_parse_resultW(
+    Connection: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    ResultMessage: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+    ReturnCode: {"kind""Ptr","child":{"kind":"UInt32"}},
+    MatchedDNs: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    ErrorMessage: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    Referrals: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}}},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}}},
+    Freeit: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_parse_resultA(
+    Connection: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    ResultMessage: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+    ReturnCode: {"kind""Ptr","child":{"kind":"UInt32"}},
+    MatchedDNs: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    ErrorMessage: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    Referrals: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}}},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}}},
+    Freeit: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_parse_extended_resultA(
+    Connection: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    ResultMessage: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+    ResultOID: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    ResultData: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL}},
+    Freeit: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_parse_extended_resultW(
+    Connection: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    ResultMessage: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+    ResultOID: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    ResultData: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL}},
+    Freeit: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_controls_freeA(
+    Controls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_control_freeA(
+    Controls: {"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_controls_freeW(
+    Control: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_control_freeW(
+    Control: {"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_free_controlsW(
+    Controls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_free_controlsA(
+    Controls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_parse_result(
+    Connection: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    ResultMessage: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+    ReturnCode: {"kind""Ptr","child":{"kind":"UInt32"}},
+    MatchedDNs: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    ErrorMessage: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    Referrals: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}}},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}}},
+    Freeit: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_controls_free(
+    Controls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_control_free(
+    Control: {"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_free_controls(
+    Controls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_err2stringW(
+    err: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_err2stringA(
+    err: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_err2string(
+    err: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_perror(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    msg: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_first_entry(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    res: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_next_entry(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    entry: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_count_entries(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    res: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_first_attributeW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    entry: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+    ptr: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.berelement}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_first_attributeA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    entry: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+    ptr: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.berelement}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_first_attribute(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    entry: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+    ptr: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.berelement}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_next_attributeW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    entry: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+    ptr: {"kind""Ptr","child":Windows.Win32.Ldap.berelement},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_next_attributeA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    entry: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+    ptr: {"kind""Ptr","child":Windows.Win32.Ldap.berelement},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_next_attribute(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    entry: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+    ptr: {"kind""Ptr","child":Windows.Win32.Ldap.berelement},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_get_valuesW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    entry: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+    attr: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_get_valuesA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    entry: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+    attr: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_get_values(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    entry: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+    attr: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_get_values_lenW(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    Message: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+    attr: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_get_values_lenA(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    Message: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+    attr: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_get_values_len(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    Message: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+    attr: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_count_valuesW(
+    vals: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_count_valuesA(
+    vals: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_count_values(
+    vals: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_count_values_len(
+    vals: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_value_freeW(
+    vals: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_value_freeA(
+    vals: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_value_free(
+    vals: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_value_free_len(
+    vals: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_get_dnW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    entry: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_get_dnA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    entry: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_get_dn(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    entry: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_explode_dnW(
+    dn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    notypes: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_explode_dnA(
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    notypes: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_explode_dn(
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+    notypes: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_dn2ufnW(
+    dn: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_dn2ufnA(
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_dn2ufn(
+    dn: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_memfreeW(
+    Block: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_memfreeA(
+    Block: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ber_bvfree(
+    bv: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_memfree(
+    Block: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_ufn2dnW(
+    ufn: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pDn: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_ufn2dnA(
+    ufn: {"kind""Ptr","child":{"kind":"SByte"}},
+    pDn: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_ufn2dn(
+    ufn: {"kind""Ptr","child":{"kind":"SByte"}},
+    pDn: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_startup(
+    version: {"kind""Ptr","child":Windows.Win32.Ldap.ldap_version_info},
+    Instance: {"kind""Ptr","child":Windows.Win32.SystemServices.HANDLE},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_cleanup(
+    hInstance: Windows.Win32.SystemServices.HANDLE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_escape_filter_elementW(
+    sourceFilterElement: {"kind""Ptr","child":{"kind":"SByte"}},
+    sourceLength: {"kind":"UInt32"},
+    destFilterElement: {"kind""Ptr","child":{"kind":"UInt16"}},
+    destLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_escape_filter_elementA(
+    sourceFilterElement: {"kind""Ptr","child":{"kind":"SByte"}},
+    sourceLength: {"kind":"UInt32"},
+    destFilterElement: {"kind""Ptr","child":{"kind":"SByte"}},
+    destLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_escape_filter_element(
+    sourceFilterElement: {"kind""Ptr","child":{"kind":"SByte"}},
+    sourceLength: {"kind":"UInt32"},
+    destFilterElement: {"kind""Ptr","child":{"kind":"SByte"}},
+    destLength: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_set_dbg_flags(
+    NewFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_set_dbg_routine(
+    DebugPrintRoutine: Windows.Win32.Ldap.DBGPRINT,
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WLDAP32" fn LdapUTF8ToUnicode(
+    lpSrcStr: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchSrc: {"kind":"Int32"},
+    lpDestStr: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchDest: {"kind":"Int32"},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WLDAP32" fn LdapUnicodeToUTF8(
+    lpSrcStr: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cchSrc: {"kind":"Int32"},
+    lpDestStr: {"kind""Ptr","child":{"kind":"SByte"}},
+    cchDest: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_create_sort_controlA(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    SortKeys: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapsortkeyA}},
+    IsCritical: {"kind":"Byte"},
+    Control: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_create_sort_controlW(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    SortKeys: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapsortkeyW}},
+    IsCritical: {"kind":"Byte"},
+    Control: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_parse_sort_controlA(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    Control: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    Result: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Attribute: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_parse_sort_controlW(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    Control: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    Result: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Attribute: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_create_sort_control(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    SortKeys: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapsortkeyA}},
+    IsCritical: {"kind":"Byte"},
+    Control: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_parse_sort_control(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    Control: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    Result: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Attribute: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_encode_sort_controlW(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    SortKeys: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapsortkeyW}},
+    Control: {"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW},
+    Criticality: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_encode_sort_controlA(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    SortKeys: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapsortkeyA}},
+    Control: {"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA},
+    Criticality: {"kind":"Byte"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_create_page_controlW(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    PageSize: {"kind":"UInt32"},
+    Cookie: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL},
+    IsCritical: {"kind":"Byte"},
+    Control: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_create_page_controlA(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    PageSize: {"kind":"UInt32"},
+    Cookie: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL},
+    IsCritical: {"kind":"Byte"},
+    Control: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_parse_page_controlW(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    TotalCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Cookie: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_parse_page_controlA(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    TotalCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Cookie: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_create_page_control(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    PageSize: {"kind":"UInt32"},
+    Cookie: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL},
+    IsCritical: {"kind":"Byte"},
+    Control: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_parse_page_control(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    TotalCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Cookie: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WLDAP32" fn ldap_search_init_pageW(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    DistinguishedName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ScopeOfSearch: {"kind":"UInt32"},
+    SearchFilter: {"kind""Ptr","child":{"kind":"UInt16"}},
+    AttributeList: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    AttributesOnly: {"kind":"UInt32"},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    PageTimeLimit: {"kind":"UInt32"},
+    TotalSizeLimit: {"kind":"UInt32"},
+    SortKeys: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapsortkeyW}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WLDAP32" fn ldap_search_init_pageA(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    DistinguishedName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ScopeOfSearch: {"kind":"UInt32"},
+    SearchFilter: {"kind""Ptr","child":{"kind":"SByte"}},
+    AttributeList: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    AttributesOnly: {"kind":"UInt32"},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    PageTimeLimit: {"kind":"UInt32"},
+    TotalSizeLimit: {"kind":"UInt32"},
+    SortKeys: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapsortkeyA}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "WLDAP32" fn ldap_search_init_page(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    DistinguishedName: {"kind""Ptr","child":{"kind":"SByte"}},
+    ScopeOfSearch: {"kind":"UInt32"},
+    SearchFilter: {"kind""Ptr","child":{"kind":"SByte"}},
+    AttributeList: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    AttributesOnly: {"kind":"UInt32"},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    PageTimeLimit: {"kind":"UInt32"},
+    TotalSizeLimit: {"kind":"UInt32"},
+    SortKeys: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapsortkeyA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_get_next_page(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    SearchHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldapsearch},
+    PageSize: {"kind":"UInt32"},
+    MessageNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_get_next_page_s(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    SearchHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldapsearch},
+    timeout: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_TIMEVAL},
+    PageSize: {"kind":"UInt32"},
+    TotalCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Results: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_get_paged_count(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    SearchBlock: {"kind""Ptr","child":Windows.Win32.Ldap.ldapsearch},
+    TotalCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Results: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_search_abandon_page(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    SearchBlock: {"kind""Ptr","child":Windows.Win32.Ldap.ldapsearch},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_create_vlv_controlW(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    VlvInfo: {"kind""Ptr","child":Windows.Win32.Ldap.ldapvlvinfo},
+    IsCritical: {"kind":"Byte"},
+    Control: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_create_vlv_controlA(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    VlvInfo: {"kind""Ptr","child":Windows.Win32.Ldap.ldapvlvinfo},
+    IsCritical: {"kind":"Byte"},
+    Control: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_parse_vlv_controlW(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    Control: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    TargetPos: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ListCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Context: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL}},
+    ErrCode: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_parse_vlv_controlA(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    Control: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    TargetPos: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ListCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Context: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL}},
+    ErrCode: {"kind""Ptr","child":{"kind":"Int32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_start_tls_sW(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    ServerReturnValue: {"kind""Ptr","child":{"kind":"UInt32"}},
+    result: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage}},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_start_tls_sA(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    ServerReturnValue: {"kind""Ptr","child":{"kind":"UInt32"}},
+    result: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage}},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_stop_tls_s(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_first_reference(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    res: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_next_reference(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    entry: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_count_references(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    res: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_parse_referenceW(
+    Connection: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    ResultMessage: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+    Referrals: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_parse_referenceA(
+    Connection: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    ResultMessage: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+    Referrals: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_parse_reference(
+    Connection: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    ResultMessage: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+    Referrals: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_extended_operationW(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    Oid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Data: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    MessageNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_extended_operationA(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    Oid: {"kind""Ptr","child":{"kind":"SByte"}},
+    Data: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    MessageNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_extended_operation_sA(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    Oid: {"kind""Ptr","child":{"kind":"SByte"}},
+    Data: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ReturnedOid: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+    ReturnedData: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_extended_operation_sW(
+    ExternalHandle: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    Oid: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Data: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolW}},
+    ReturnedOid: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    ReturnedData: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_extended_operation(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    Oid: {"kind""Ptr","child":{"kind":"SByte"}},
+    Data: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL},
+    ServerControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    ClientControls: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.ldapcontrolA}},
+    MessageNumber: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_close_extended_op(
+    ld: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    MessageNumber: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn LdapGetLastError(
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn LdapMapErrorToWin32(
+    LdapError: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ldap_conn_from_msg(
+    PrimaryConn: {"kind""Ptr","child":Windows.Win32.Ldap.ldap},
+    res: {"kind""Ptr","child":Windows.Win32.Ldap.LDAPMessage},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ber_init(
+    pBerVal: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ber_free(
+    pBerElement: {"kind""Ptr","child":Windows.Win32.Ldap.berelement},
+    fbuf: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ber_bvecfree(
+    pBerVal: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ber_bvdup(
+    pBerVal: {"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ber_alloc_t(
+    options: {"kind":"Int32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ber_skip_tag(
+    pBerElement: {"kind""Ptr","child":Windows.Win32.Ldap.berelement},
+    pLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ber_peek_tag(
+    pBerElement: {"kind""Ptr","child":Windows.Win32.Ldap.berelement},
+    pLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ber_first_element(
+    pBerElement: {"kind""Ptr","child":Windows.Win32.Ldap.berelement},
+    pLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ppOpaque: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"SByte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ber_next_element(
+    pBerElement: {"kind""Ptr","child":Windows.Win32.Ldap.berelement},
+    pLen: {"kind""Ptr","child":{"kind":"UInt32"}},
+    opaque: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ber_flatten(
+    pBerElement: {"kind""Ptr","child":Windows.Win32.Ldap.berelement},
+    pBerVal: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.Ldap.LDAP_BERVAL}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ber_printf(
+    pBerElement: {"kind""Ptr","child":Windows.Win32.Ldap.berelement},
+    fmt: {"kind""Ptr","child":{"kind":"SByte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "WLDAP32" fn ber_scanf(
+    pBerElement: {"kind""Ptr","child":Windows.Win32.Ldap.berelement},
+    fmt: {"kind""Ptr","child":{"kind":"SByte"}},
+],
+
+"unicode_aliases": [
+     "ldapcontrol"
+     "ldapmod"
+     "ldapapiinfo"
+     "LDAPAPIFeatureInfo"
+     "ldapsortkey"
+     "ldap_sasl_bind"
+     "ldap_sasl_bind_s"
+     "ldap_check_filter"
+     "ldap_parse_extended_result"
+     "ldap_encode_sort_control"
+     "ldap_create_vlv_control"
+     "ldap_parse_vlv_control"
+     "ldap_start_tls_s"
+     "ldap_extended_operation_s"
+]}

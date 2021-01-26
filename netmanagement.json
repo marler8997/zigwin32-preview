@@ -1,0 +1,3527 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: USER_INFO_0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_0 = extern struct {
+    usri0_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_1 = extern struct {
+    usri1_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri1_password: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri1_password_age: {"kind":"UInt32"},
+    usri1_priv: {"kind":"UInt32"},
+    usri1_home_dir: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri1_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri1_flags: {"kind":"UInt32"},
+    usri1_script_path: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_2 = extern struct {
+    usri2_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri2_password: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri2_password_age: {"kind":"UInt32"},
+    usri2_priv: {"kind":"UInt32"},
+    usri2_home_dir: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri2_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri2_flags: {"kind":"UInt32"},
+    usri2_script_path: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri2_auth_flags: {"kind":"UInt32"},
+    usri2_full_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri2_usr_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri2_parms: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri2_workstations: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri2_last_logon: {"kind":"UInt32"},
+    usri2_last_logoff: {"kind":"UInt32"},
+    usri2_acct_expires: {"kind":"UInt32"},
+    usri2_max_storage: {"kind":"UInt32"},
+    usri2_units_per_week: {"kind":"UInt32"},
+    usri2_logon_hours: {"kind""Ptr","child":{"kind":"Byte"}},
+    usri2_bad_pw_count: {"kind":"UInt32"},
+    usri2_num_logons: {"kind":"UInt32"},
+    usri2_logon_server: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri2_country_code: {"kind":"UInt32"},
+    usri2_code_page: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_3
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_3 = extern struct {
+    usri3_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri3_password: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri3_password_age: {"kind":"UInt32"},
+    usri3_priv: {"kind":"UInt32"},
+    usri3_home_dir: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri3_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri3_flags: {"kind":"UInt32"},
+    usri3_script_path: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri3_auth_flags: {"kind":"UInt32"},
+    usri3_full_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri3_usr_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri3_parms: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri3_workstations: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri3_last_logon: {"kind":"UInt32"},
+    usri3_last_logoff: {"kind":"UInt32"},
+    usri3_acct_expires: {"kind":"UInt32"},
+    usri3_max_storage: {"kind":"UInt32"},
+    usri3_units_per_week: {"kind":"UInt32"},
+    usri3_logon_hours: {"kind""Ptr","child":{"kind":"Byte"}},
+    usri3_bad_pw_count: {"kind":"UInt32"},
+    usri3_num_logons: {"kind":"UInt32"},
+    usri3_logon_server: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri3_country_code: {"kind":"UInt32"},
+    usri3_code_page: {"kind":"UInt32"},
+    usri3_user_id: {"kind":"UInt32"},
+    usri3_primary_group_id: {"kind":"UInt32"},
+    usri3_profile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri3_home_dir_drive: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri3_password_expired: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_4
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_4 = extern struct {
+    usri4_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri4_password: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri4_password_age: {"kind":"UInt32"},
+    usri4_priv: {"kind":"UInt32"},
+    usri4_home_dir: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri4_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri4_flags: {"kind":"UInt32"},
+    usri4_script_path: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri4_auth_flags: {"kind":"UInt32"},
+    usri4_full_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri4_usr_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri4_parms: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri4_workstations: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri4_last_logon: {"kind":"UInt32"},
+    usri4_last_logoff: {"kind":"UInt32"},
+    usri4_acct_expires: {"kind":"UInt32"},
+    usri4_max_storage: {"kind":"UInt32"},
+    usri4_units_per_week: {"kind":"UInt32"},
+    usri4_logon_hours: {"kind""Ptr","child":{"kind":"Byte"}},
+    usri4_bad_pw_count: {"kind":"UInt32"},
+    usri4_num_logons: {"kind":"UInt32"},
+    usri4_logon_server: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri4_country_code: {"kind":"UInt32"},
+    usri4_code_page: {"kind":"UInt32"},
+    usri4_user_sid: {"kind""Ptr","child":{"kind":"Void"}},
+    usri4_primary_group_id: {"kind":"UInt32"},
+    usri4_profile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri4_home_dir_drive: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri4_password_expired: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_10
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_10 = extern struct {
+    usri10_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri10_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri10_usr_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri10_full_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_11
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_11 = extern struct {
+    usri11_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri11_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri11_usr_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri11_full_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri11_priv: {"kind":"UInt32"},
+    usri11_auth_flags: {"kind":"UInt32"},
+    usri11_password_age: {"kind":"UInt32"},
+    usri11_home_dir: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri11_parms: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri11_last_logon: {"kind":"UInt32"},
+    usri11_last_logoff: {"kind":"UInt32"},
+    usri11_bad_pw_count: {"kind":"UInt32"},
+    usri11_num_logons: {"kind":"UInt32"},
+    usri11_logon_server: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri11_country_code: {"kind":"UInt32"},
+    usri11_workstations: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri11_max_storage: {"kind":"UInt32"},
+    usri11_units_per_week: {"kind":"UInt32"},
+    usri11_logon_hours: {"kind""Ptr","child":{"kind":"Byte"}},
+    usri11_code_page: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_20
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_20 = extern struct {
+    usri20_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri20_full_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri20_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri20_flags: {"kind":"UInt32"},
+    usri20_user_id: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_21
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_21 = extern struct {
+    usri21_password: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_22
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_22 = extern struct {
+    usri22_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri22_password: {"kind":"Array","child": {"kind":"Byte"}},
+    usri22_password_age: {"kind":"UInt32"},
+    usri22_priv: {"kind":"UInt32"},
+    usri22_home_dir: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri22_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri22_flags: {"kind":"UInt32"},
+    usri22_script_path: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri22_auth_flags: {"kind":"UInt32"},
+    usri22_full_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri22_usr_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri22_parms: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri22_workstations: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri22_last_logon: {"kind":"UInt32"},
+    usri22_last_logoff: {"kind":"UInt32"},
+    usri22_acct_expires: {"kind":"UInt32"},
+    usri22_max_storage: {"kind":"UInt32"},
+    usri22_units_per_week: {"kind":"UInt32"},
+    usri22_logon_hours: {"kind""Ptr","child":{"kind":"Byte"}},
+    usri22_bad_pw_count: {"kind":"UInt32"},
+    usri22_num_logons: {"kind":"UInt32"},
+    usri22_logon_server: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri22_country_code: {"kind":"UInt32"},
+    usri22_code_page: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_23
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_23 = extern struct {
+    usri23_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri23_full_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri23_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri23_flags: {"kind":"UInt32"},
+    usri23_user_sid: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_24
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_24 = extern struct {
+    usri24_internet_identity: Windows.Win32.SystemServices.BOOL,
+    usri24_flags: {"kind":"UInt32"},
+    usri24_internet_provider_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri24_internet_principal_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri24_user_sid: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_1003
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_1003 = extern struct {
+    usri1003_password: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_1005
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_1005 = extern struct {
+    usri1005_priv: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_1006
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_1006 = extern struct {
+    usri1006_home_dir: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_1007
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_1007 = extern struct {
+    usri1007_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_1008
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_1008 = extern struct {
+    usri1008_flags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_1009
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_1009 = extern struct {
+    usri1009_script_path: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_1010
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_1010 = extern struct {
+    usri1010_auth_flags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_1011
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_1011 = extern struct {
+    usri1011_full_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_1012
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_1012 = extern struct {
+    usri1012_usr_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_1013
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_1013 = extern struct {
+    usri1013_parms: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_1014
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_1014 = extern struct {
+    usri1014_workstations: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_1017
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_1017 = extern struct {
+    usri1017_acct_expires: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_1018
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_1018 = extern struct {
+    usri1018_max_storage: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_1020
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_1020 = extern struct {
+    usri1020_units_per_week: {"kind":"UInt32"},
+    usri1020_logon_hours: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_1023
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_1023 = extern struct {
+    usri1023_logon_server: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_1024
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_1024 = extern struct {
+    usri1024_country_code: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_1025
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_1025 = extern struct {
+    usri1025_code_page: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_1051
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_1051 = extern struct {
+    usri1051_primary_group_id: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_1052
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_1052 = extern struct {
+    usri1052_profile: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: USER_INFO_1053
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_INFO_1053 = extern struct {
+    usri1053_home_dir_drive: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: USER_MODALS_INFO_0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_MODALS_INFO_0 = extern struct {
+    usrmod0_min_passwd_len: {"kind":"UInt32"},
+    usrmod0_max_passwd_age: {"kind":"UInt32"},
+    usrmod0_min_passwd_age: {"kind":"UInt32"},
+    usrmod0_force_logoff: {"kind":"UInt32"},
+    usrmod0_password_hist_len: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: USER_MODALS_INFO_1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_MODALS_INFO_1 = extern struct {
+    usrmod1_role: {"kind":"UInt32"},
+    usrmod1_primary: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: USER_MODALS_INFO_2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_MODALS_INFO_2 = extern struct {
+    usrmod2_domain_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usrmod2_domain_id: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: USER_MODALS_INFO_3
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_MODALS_INFO_3 = extern struct {
+    usrmod3_lockout_duration: {"kind":"UInt32"},
+    usrmod3_lockout_observation_window: {"kind":"UInt32"},
+    usrmod3_lockout_threshold: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: USER_MODALS_INFO_1001
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_MODALS_INFO_1001 = extern struct {
+    usrmod1001_min_passwd_len: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: USER_MODALS_INFO_1002
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_MODALS_INFO_1002 = extern struct {
+    usrmod1002_max_passwd_age: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: USER_MODALS_INFO_1003
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_MODALS_INFO_1003 = extern struct {
+    usrmod1003_min_passwd_age: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: USER_MODALS_INFO_1004
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_MODALS_INFO_1004 = extern struct {
+    usrmod1004_force_logoff: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: USER_MODALS_INFO_1005
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_MODALS_INFO_1005 = extern struct {
+    usrmod1005_password_hist_len: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: USER_MODALS_INFO_1006
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_MODALS_INFO_1006 = extern struct {
+    usrmod1006_role: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: USER_MODALS_INFO_1007
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_MODALS_INFO_1007 = extern struct {
+    usrmod1007_primary: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: GROUP_INFO_0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GROUP_INFO_0 = extern struct {
+    grpi0_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: GROUP_INFO_1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GROUP_INFO_1 = extern struct {
+    grpi1_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    grpi1_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: GROUP_INFO_2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GROUP_INFO_2 = extern struct {
+    grpi2_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    grpi2_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    grpi2_group_id: {"kind":"UInt32"},
+    grpi2_attributes: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: GROUP_INFO_3
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GROUP_INFO_3 = extern struct {
+    grpi3_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    grpi3_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    grpi3_group_sid: {"kind""Ptr","child":{"kind":"Void"}},
+    grpi3_attributes: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: GROUP_INFO_1002
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GROUP_INFO_1002 = extern struct {
+    grpi1002_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: GROUP_INFO_1005
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GROUP_INFO_1005 = extern struct {
+    grpi1005_attributes: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: GROUP_USERS_INFO_0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GROUP_USERS_INFO_0 = extern struct {
+    grui0_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: GROUP_USERS_INFO_1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GROUP_USERS_INFO_1 = extern struct {
+    grui1_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    grui1_attributes: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: LOCALGROUP_INFO_0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LOCALGROUP_INFO_0 = extern struct {
+    lgrpi0_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: LOCALGROUP_INFO_1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LOCALGROUP_INFO_1 = extern struct {
+    lgrpi1_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lgrpi1_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: LOCALGROUP_INFO_1002
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LOCALGROUP_INFO_1002 = extern struct {
+    lgrpi1002_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: LOCALGROUP_MEMBERS_INFO_0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LOCALGROUP_MEMBERS_INFO_0 = extern struct {
+    lgrmi0_sid: {"kind""Ptr","child":{"kind":"Void"}},
+};
+// --------------------------------------------------------
+// Type: LOCALGROUP_MEMBERS_INFO_1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LOCALGROUP_MEMBERS_INFO_1 = extern struct {
+    lgrmi1_sid: {"kind""Ptr","child":{"kind":"Void"}},
+    lgrmi1_sidusage: Windows.Win32.Security.SID_NAME_USE,
+    lgrmi1_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: LOCALGROUP_MEMBERS_INFO_2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LOCALGROUP_MEMBERS_INFO_2 = extern struct {
+    lgrmi2_sid: {"kind""Ptr","child":{"kind":"Void"}},
+    lgrmi2_sidusage: Windows.Win32.Security.SID_NAME_USE,
+    lgrmi2_domainandname: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: LOCALGROUP_MEMBERS_INFO_3
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LOCALGROUP_MEMBERS_INFO_3 = extern struct {
+    lgrmi3_domainandname: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: LOCALGROUP_USERS_INFO_0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const LOCALGROUP_USERS_INFO_0 = extern struct {
+    lgrui0_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: NET_DISPLAY_USER
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NET_DISPLAY_USER = extern struct {
+    usri1_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri1_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri1_flags: {"kind":"UInt32"},
+    usri1_full_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri1_user_id: {"kind":"UInt32"},
+    usri1_next_index: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: NET_DISPLAY_MACHINE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NET_DISPLAY_MACHINE = extern struct {
+    usri2_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri2_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    usri2_flags: {"kind":"UInt32"},
+    usri2_user_id: {"kind":"UInt32"},
+    usri2_next_index: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: NET_DISPLAY_GROUP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NET_DISPLAY_GROUP = extern struct {
+    grpi3_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    grpi3_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    grpi3_group_id: {"kind":"UInt32"},
+    grpi3_attributes: {"kind":"UInt32"},
+    grpi3_next_index: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ACCESS_INFO_0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ACCESS_INFO_0 = extern struct {
+    acc0_resource_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: ACCESS_INFO_1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ACCESS_INFO_1 = extern struct {
+    acc1_resource_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    acc1_attr: {"kind":"UInt32"},
+    acc1_count: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ACCESS_INFO_1002
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ACCESS_INFO_1002 = extern struct {
+    acc1002_attr: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ACCESS_LIST
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ACCESS_LIST = extern struct {
+    acl_ugname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    acl_access: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: NET_VALIDATE_PASSWORD_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NET_VALIDATE_PASSWORD_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: NET_VALIDATE_PASSWORD_HASH
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NET_VALIDATE_PASSWORD_HASH = extern struct {
+    Length: {"kind":"UInt32"},
+    Hash: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: NET_VALIDATE_PERSISTED_FIELDS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NET_VALIDATE_PERSISTED_FIELDS = extern struct {
+    PresentFields: {"kind":"UInt32"},
+    PasswordLastSet: Windows.Win32.WindowsProgramming.FILETIME,
+    BadPasswordTime: Windows.Win32.WindowsProgramming.FILETIME,
+    LockoutTime: Windows.Win32.WindowsProgramming.FILETIME,
+    BadPasswordCount: {"kind":"UInt32"},
+    PasswordHistoryLength: {"kind":"UInt32"},
+    PasswordHistory: {"kind""Ptr","child":Windows.Win32.NetManagement.NET_VALIDATE_PASSWORD_HASH},
+};
+// --------------------------------------------------------
+// Type: NET_VALIDATE_OUTPUT_ARG
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NET_VALIDATE_OUTPUT_ARG = extern struct {
+    ChangedPersistedFields: Windows.Win32.NetManagement.NET_VALIDATE_PERSISTED_FIELDS,
+    ValidationStatus: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: NET_VALIDATE_AUTHENTICATION_INPUT_ARG
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NET_VALIDATE_AUTHENTICATION_INPUT_ARG = extern struct {
+    InputPersistedFields: Windows.Win32.NetManagement.NET_VALIDATE_PERSISTED_FIELDS,
+    PasswordMatched: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: NET_VALIDATE_PASSWORD_CHANGE_INPUT_ARG
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NET_VALIDATE_PASSWORD_CHANGE_INPUT_ARG = extern struct {
+    InputPersistedFields: Windows.Win32.NetManagement.NET_VALIDATE_PERSISTED_FIELDS,
+    ClearPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    UserAccountName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    HashedPassword: Windows.Win32.NetManagement.NET_VALIDATE_PASSWORD_HASH,
+    PasswordMatch: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: NET_VALIDATE_PASSWORD_RESET_INPUT_ARG
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NET_VALIDATE_PASSWORD_RESET_INPUT_ARG = extern struct {
+    InputPersistedFields: Windows.Win32.NetManagement.NET_VALIDATE_PERSISTED_FIELDS,
+    ClearPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    UserAccountName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    HashedPassword: Windows.Win32.NetManagement.NET_VALIDATE_PASSWORD_HASH,
+    PasswordMustChangeAtNextLogon: {"kind":"Byte"},
+    ClearLockout: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: NETSETUP_NAME_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NETSETUP_NAME_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DSREG_JOIN_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const DSREG_JOIN_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: DSREG_USER_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSREG_USER_INFO = extern struct {
+    pszUserEmail: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszUserKeyId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszUserKeyName: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: DSREG_JOIN_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const DSREG_JOIN_INFO = extern struct {
+    joinType: Windows.Win32.NetManagement.DSREG_JOIN_TYPE,
+    pJoinCertificate: {"kind""Ptr","child":Windows.Win32.Security.CERT_CONTEXT},
+    pszDeviceId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszIdpDomain: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszTenantId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszJoinUserEmail: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszTenantDisplayName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszMdmEnrollmentUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszMdmTermsOfUseUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszMdmComplianceUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pszUserSettingSyncUrl: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pUserInfo: {"kind""Ptr","child":Windows.Win32.NetManagement.DSREG_USER_INFO},
+};
+// --------------------------------------------------------
+// Type: NET_COMPUTER_NAME_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NET_COMPUTER_NAME_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: NETSETUP_PROVISIONING_PARAMS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const NETSETUP_PROVISIONING_PARAMS = extern struct {
+    dwVersion: {"kind":"UInt32"},
+    lpDomain: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpHostName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpMachineAccountOU: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpDcName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwProvisionOptions: {"kind":"UInt32"},
+    aCertTemplateNames: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    cCertTemplateNames: {"kind":"UInt32"},
+    aMachinePolicyNames: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    cMachinePolicyNames: {"kind":"UInt32"},
+    aMachinePolicyPaths: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    cMachinePolicyPaths: {"kind":"UInt32"},
+    lpNetbiosName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpSiteName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpPrimaryDNSDomain: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: NETSETUP_JOIN_STATUS
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const NETSETUP_JOIN_STATUS = *opaque{
+};
+// --------------------------------------------------------
+// Type: STD_ALERT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const STD_ALERT = extern struct {
+    alrt_timestamp: {"kind":"UInt32"},
+    alrt_eventname: {"kind":"Array","child": {"kind":"UInt16"}},
+    alrt_servicename: {"kind":"Array","child": {"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: ADMIN_OTHER_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ADMIN_OTHER_INFO = extern struct {
+    alrtad_errcode: {"kind":"UInt32"},
+    alrtad_numstrings: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: ERRLOG_OTHER_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ERRLOG_OTHER_INFO = extern struct {
+    alrter_errcode: {"kind":"UInt32"},
+    alrter_offset: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: PRINT_OTHER_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const PRINT_OTHER_INFO = extern struct {
+    alrtpr_jobid: {"kind":"UInt32"},
+    alrtpr_status: {"kind":"UInt32"},
+    alrtpr_submitted: {"kind":"UInt32"},
+    alrtpr_size: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: USER_OTHER_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USER_OTHER_INFO = extern struct {
+    alrtus_errcode: {"kind":"UInt32"},
+    alrtus_numstrings: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: HLOG
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const HLOG = extern struct {
+    time: {"kind":"UInt32"},
+    last_flags: {"kind":"UInt32"},
+    offset: {"kind":"UInt32"},
+    rec_offset: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: AUDIT_ENTRY
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AUDIT_ENTRY = extern struct {
+    ae_len: {"kind":"UInt32"},
+    ae_reserved: {"kind":"UInt32"},
+    ae_time: {"kind":"UInt32"},
+    ae_type: {"kind":"UInt32"},
+    ae_data_offset: {"kind":"UInt32"},
+    ae_data_size: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: AE_SRVSTATUS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AE_SRVSTATUS = extern struct {
+    ae_sv_status: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: AE_SESSLOGON
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AE_SESSLOGON = extern struct {
+    ae_so_compname: {"kind":"UInt32"},
+    ae_so_username: {"kind":"UInt32"},
+    ae_so_privilege: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: AE_SESSLOGOFF
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AE_SESSLOGOFF = extern struct {
+    ae_sf_compname: {"kind":"UInt32"},
+    ae_sf_username: {"kind":"UInt32"},
+    ae_sf_reason: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: AE_SESSPWERR
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AE_SESSPWERR = extern struct {
+    ae_sp_compname: {"kind":"UInt32"},
+    ae_sp_username: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: AE_CONNSTART
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AE_CONNSTART = extern struct {
+    ae_ct_compname: {"kind":"UInt32"},
+    ae_ct_username: {"kind":"UInt32"},
+    ae_ct_netname: {"kind":"UInt32"},
+    ae_ct_connid: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: AE_CONNSTOP
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AE_CONNSTOP = extern struct {
+    ae_cp_compname: {"kind":"UInt32"},
+    ae_cp_username: {"kind":"UInt32"},
+    ae_cp_netname: {"kind":"UInt32"},
+    ae_cp_connid: {"kind":"UInt32"},
+    ae_cp_reason: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: AE_CONNREJ
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AE_CONNREJ = extern struct {
+    ae_cr_compname: {"kind":"UInt32"},
+    ae_cr_username: {"kind":"UInt32"},
+    ae_cr_netname: {"kind":"UInt32"},
+    ae_cr_reason: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: AE_RESACCESS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AE_RESACCESS = extern struct {
+    ae_ra_compname: {"kind":"UInt32"},
+    ae_ra_username: {"kind":"UInt32"},
+    ae_ra_resname: {"kind":"UInt32"},
+    ae_ra_operation: {"kind":"UInt32"},
+    ae_ra_returncode: {"kind":"UInt32"},
+    ae_ra_restype: {"kind":"UInt32"},
+    ae_ra_fileid: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: AE_RESACCESSREJ
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AE_RESACCESSREJ = extern struct {
+    ae_rr_compname: {"kind":"UInt32"},
+    ae_rr_username: {"kind":"UInt32"},
+    ae_rr_resname: {"kind":"UInt32"},
+    ae_rr_operation: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: AE_CLOSEFILE
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AE_CLOSEFILE = extern struct {
+    ae_cf_compname: {"kind":"UInt32"},
+    ae_cf_username: {"kind":"UInt32"},
+    ae_cf_resname: {"kind":"UInt32"},
+    ae_cf_fileid: {"kind":"UInt32"},
+    ae_cf_duration: {"kind":"UInt32"},
+    ae_cf_reason: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: AE_SERVICESTAT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AE_SERVICESTAT = extern struct {
+    ae_ss_compname: {"kind":"UInt32"},
+    ae_ss_username: {"kind":"UInt32"},
+    ae_ss_svcname: {"kind":"UInt32"},
+    ae_ss_status: {"kind":"UInt32"},
+    ae_ss_code: {"kind":"UInt32"},
+    ae_ss_text: {"kind":"UInt32"},
+    ae_ss_returnval: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: AE_ACLMOD
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AE_ACLMOD = extern struct {
+    ae_am_compname: {"kind":"UInt32"},
+    ae_am_username: {"kind":"UInt32"},
+    ae_am_resname: {"kind":"UInt32"},
+    ae_am_action: {"kind":"UInt32"},
+    ae_am_datalen: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: AE_UASMOD
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AE_UASMOD = extern struct {
+    ae_um_compname: {"kind":"UInt32"},
+    ae_um_username: {"kind":"UInt32"},
+    ae_um_resname: {"kind":"UInt32"},
+    ae_um_rectype: {"kind":"UInt32"},
+    ae_um_action: {"kind":"UInt32"},
+    ae_um_datalen: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: AE_NETLOGON
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AE_NETLOGON = extern struct {
+    ae_no_compname: {"kind":"UInt32"},
+    ae_no_username: {"kind":"UInt32"},
+    ae_no_privilege: {"kind":"UInt32"},
+    ae_no_authflags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: AE_NETLOGOFF
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AE_NETLOGOFF = extern struct {
+    ae_nf_compname: {"kind":"UInt32"},
+    ae_nf_username: {"kind":"UInt32"},
+    ae_nf_reserved1: {"kind":"UInt32"},
+    ae_nf_reserved2: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: AE_ACCLIM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AE_ACCLIM = extern struct {
+    ae_al_compname: {"kind":"UInt32"},
+    ae_al_username: {"kind":"UInt32"},
+    ae_al_resname: {"kind":"UInt32"},
+    ae_al_limit: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: AE_LOCKOUT
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AE_LOCKOUT = extern struct {
+    ae_lk_compname: {"kind":"UInt32"},
+    ae_lk_username: {"kind":"UInt32"},
+    ae_lk_action: {"kind":"UInt32"},
+    ae_lk_bad_pw_count: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: AE_GENERIC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AE_GENERIC = extern struct {
+    ae_ge_msgfile: {"kind":"UInt32"},
+    ae_ge_msgnum: {"kind":"UInt32"},
+    ae_ge_params: {"kind":"UInt32"},
+    ae_ge_param1: {"kind":"UInt32"},
+    ae_ge_param2: {"kind":"UInt32"},
+    ae_ge_param3: {"kind":"UInt32"},
+    ae_ge_param4: {"kind":"UInt32"},
+    ae_ge_param5: {"kind":"UInt32"},
+    ae_ge_param6: {"kind":"UInt32"},
+    ae_ge_param7: {"kind":"UInt32"},
+    ae_ge_param8: {"kind":"UInt32"},
+    ae_ge_param9: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: CONFIG_INFO_0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const CONFIG_INFO_0 = extern struct {
+    cfgi0_key: {"kind""Ptr","child":{"kind":"UInt16"}},
+    cfgi0_data: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: ERROR_LOG
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const ERROR_LOG = extern struct {
+    el_len: {"kind":"UInt32"},
+    el_reserved: {"kind":"UInt32"},
+    el_time: {"kind":"UInt32"},
+    el_error: {"kind":"UInt32"},
+    el_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    el_text: {"kind""Ptr","child":{"kind":"UInt16"}},
+    el_data: {"kind""Ptr","child":{"kind":"Byte"}},
+    el_data_size: {"kind":"UInt32"},
+    el_nstrings: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: MSG_INFO_0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MSG_INFO_0 = extern struct {
+    msgi0_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: MSG_INFO_1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const MSG_INFO_1 = extern struct {
+    msgi1_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    msgi1_forward_flag: {"kind":"UInt32"},
+    msgi1_forward: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: TIME_OF_DAY_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TIME_OF_DAY_INFO = extern struct {
+    tod_elapsedt: {"kind":"UInt32"},
+    tod_msecs: {"kind":"UInt32"},
+    tod_hours: {"kind":"UInt32"},
+    tod_mins: {"kind":"UInt32"},
+    tod_secs: {"kind":"UInt32"},
+    tod_hunds: {"kind":"UInt32"},
+    tod_timezone: {"kind":"Int32"},
+    tod_tinterval: {"kind":"UInt32"},
+    tod_day: {"kind":"UInt32"},
+    tod_month: {"kind":"UInt32"},
+    tod_year: {"kind":"UInt32"},
+    tod_weekday: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: AT_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AT_INFO = extern struct {
+    JobTime: {"kind":"UIntPtr"},
+    DaysOfMonth: {"kind":"UInt32"},
+    DaysOfWeek: {"kind":"Byte"},
+    Flags: {"kind":"Byte"},
+    Command: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: AT_ENUM
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const AT_ENUM = extern struct {
+    JobId: {"kind":"UInt32"},
+    JobTime: {"kind":"UIntPtr"},
+    DaysOfMonth: {"kind":"UInt32"},
+    DaysOfWeek: {"kind":"Byte"},
+    Flags: {"kind":"Byte"},
+    Command: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_100
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_100 = extern struct {
+    sv100_platform_id: {"kind":"UInt32"},
+    sv100_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_101
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_101 = extern struct {
+    sv101_platform_id: {"kind":"UInt32"},
+    sv101_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    sv101_version_major: {"kind":"UInt32"},
+    sv101_version_minor: {"kind":"UInt32"},
+    sv101_type: {"kind":"UInt32"},
+    sv101_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_102
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_102 = extern struct {
+    sv102_platform_id: {"kind":"UInt32"},
+    sv102_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    sv102_version_major: {"kind":"UInt32"},
+    sv102_version_minor: {"kind":"UInt32"},
+    sv102_type: {"kind":"UInt32"},
+    sv102_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    sv102_users: {"kind":"UInt32"},
+    sv102_disc: {"kind":"Int32"},
+    sv102_hidden: Windows.Win32.SystemServices.BOOL,
+    sv102_announce: {"kind":"UInt32"},
+    sv102_anndelta: {"kind":"UInt32"},
+    sv102_licenses: {"kind":"UInt32"},
+    sv102_userpath: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_103
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_103 = extern struct {
+    sv103_platform_id: {"kind":"UInt32"},
+    sv103_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    sv103_version_major: {"kind":"UInt32"},
+    sv103_version_minor: {"kind":"UInt32"},
+    sv103_type: {"kind":"UInt32"},
+    sv103_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+    sv103_users: {"kind":"UInt32"},
+    sv103_disc: {"kind":"Int32"},
+    sv103_hidden: Windows.Win32.SystemServices.BOOL,
+    sv103_announce: {"kind":"UInt32"},
+    sv103_anndelta: {"kind":"UInt32"},
+    sv103_licenses: {"kind":"UInt32"},
+    sv103_userpath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    sv103_capabilities: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_402
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_402 = extern struct {
+    sv402_ulist_mtime: {"kind":"UInt32"},
+    sv402_glist_mtime: {"kind":"UInt32"},
+    sv402_alist_mtime: {"kind":"UInt32"},
+    sv402_alerts: {"kind""Ptr","child":{"kind":"UInt16"}},
+    sv402_security: {"kind":"UInt32"},
+    sv402_numadmin: {"kind":"UInt32"},
+    sv402_lanmask: {"kind":"UInt32"},
+    sv402_guestacct: {"kind""Ptr","child":{"kind":"UInt16"}},
+    sv402_chdevs: {"kind":"UInt32"},
+    sv402_chdevq: {"kind":"UInt32"},
+    sv402_chdevjobs: {"kind":"UInt32"},
+    sv402_connections: {"kind":"UInt32"},
+    sv402_shares: {"kind":"UInt32"},
+    sv402_openfiles: {"kind":"UInt32"},
+    sv402_sessopens: {"kind":"UInt32"},
+    sv402_sessvcs: {"kind":"UInt32"},
+    sv402_sessreqs: {"kind":"UInt32"},
+    sv402_opensearch: {"kind":"UInt32"},
+    sv402_activelocks: {"kind":"UInt32"},
+    sv402_numreqbuf: {"kind":"UInt32"},
+    sv402_sizreqbuf: {"kind":"UInt32"},
+    sv402_numbigbuf: {"kind":"UInt32"},
+    sv402_numfiletasks: {"kind":"UInt32"},
+    sv402_alertsched: {"kind":"UInt32"},
+    sv402_erroralert: {"kind":"UInt32"},
+    sv402_logonalert: {"kind":"UInt32"},
+    sv402_accessalert: {"kind":"UInt32"},
+    sv402_diskalert: {"kind":"UInt32"},
+    sv402_netioalert: {"kind":"UInt32"},
+    sv402_maxauditsz: {"kind":"UInt32"},
+    sv402_srvheuristics: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_403
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_403 = extern struct {
+    sv403_ulist_mtime: {"kind":"UInt32"},
+    sv403_glist_mtime: {"kind":"UInt32"},
+    sv403_alist_mtime: {"kind":"UInt32"},
+    sv403_alerts: {"kind""Ptr","child":{"kind":"UInt16"}},
+    sv403_security: {"kind":"UInt32"},
+    sv403_numadmin: {"kind":"UInt32"},
+    sv403_lanmask: {"kind":"UInt32"},
+    sv403_guestacct: {"kind""Ptr","child":{"kind":"UInt16"}},
+    sv403_chdevs: {"kind":"UInt32"},
+    sv403_chdevq: {"kind":"UInt32"},
+    sv403_chdevjobs: {"kind":"UInt32"},
+    sv403_connections: {"kind":"UInt32"},
+    sv403_shares: {"kind":"UInt32"},
+    sv403_openfiles: {"kind":"UInt32"},
+    sv403_sessopens: {"kind":"UInt32"},
+    sv403_sessvcs: {"kind":"UInt32"},
+    sv403_sessreqs: {"kind":"UInt32"},
+    sv403_opensearch: {"kind":"UInt32"},
+    sv403_activelocks: {"kind":"UInt32"},
+    sv403_numreqbuf: {"kind":"UInt32"},
+    sv403_sizreqbuf: {"kind":"UInt32"},
+    sv403_numbigbuf: {"kind":"UInt32"},
+    sv403_numfiletasks: {"kind":"UInt32"},
+    sv403_alertsched: {"kind":"UInt32"},
+    sv403_erroralert: {"kind":"UInt32"},
+    sv403_logonalert: {"kind":"UInt32"},
+    sv403_accessalert: {"kind":"UInt32"},
+    sv403_diskalert: {"kind":"UInt32"},
+    sv403_netioalert: {"kind":"UInt32"},
+    sv403_maxauditsz: {"kind":"UInt32"},
+    sv403_srvheuristics: {"kind""Ptr","child":{"kind":"UInt16"}},
+    sv403_auditedevents: {"kind":"UInt32"},
+    sv403_autoprofile: {"kind":"UInt32"},
+    sv403_autopath: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_502
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_502 = extern struct {
+    sv502_sessopens: {"kind":"UInt32"},
+    sv502_sessvcs: {"kind":"UInt32"},
+    sv502_opensearch: {"kind":"UInt32"},
+    sv502_sizreqbuf: {"kind":"UInt32"},
+    sv502_initworkitems: {"kind":"UInt32"},
+    sv502_maxworkitems: {"kind":"UInt32"},
+    sv502_rawworkitems: {"kind":"UInt32"},
+    sv502_irpstacksize: {"kind":"UInt32"},
+    sv502_maxrawbuflen: {"kind":"UInt32"},
+    sv502_sessusers: {"kind":"UInt32"},
+    sv502_sessconns: {"kind":"UInt32"},
+    sv502_maxpagedmemoryusage: {"kind":"UInt32"},
+    sv502_maxnonpagedmemoryusage: {"kind":"UInt32"},
+    sv502_enablesoftcompat: Windows.Win32.SystemServices.BOOL,
+    sv502_enableforcedlogoff: Windows.Win32.SystemServices.BOOL,
+    sv502_timesource: Windows.Win32.SystemServices.BOOL,
+    sv502_acceptdownlevelapis: Windows.Win32.SystemServices.BOOL,
+    sv502_lmannounce: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_503
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_503 = extern struct {
+    sv503_sessopens: {"kind":"UInt32"},
+    sv503_sessvcs: {"kind":"UInt32"},
+    sv503_opensearch: {"kind":"UInt32"},
+    sv503_sizreqbuf: {"kind":"UInt32"},
+    sv503_initworkitems: {"kind":"UInt32"},
+    sv503_maxworkitems: {"kind":"UInt32"},
+    sv503_rawworkitems: {"kind":"UInt32"},
+    sv503_irpstacksize: {"kind":"UInt32"},
+    sv503_maxrawbuflen: {"kind":"UInt32"},
+    sv503_sessusers: {"kind":"UInt32"},
+    sv503_sessconns: {"kind":"UInt32"},
+    sv503_maxpagedmemoryusage: {"kind":"UInt32"},
+    sv503_maxnonpagedmemoryusage: {"kind":"UInt32"},
+    sv503_enablesoftcompat: Windows.Win32.SystemServices.BOOL,
+    sv503_enableforcedlogoff: Windows.Win32.SystemServices.BOOL,
+    sv503_timesource: Windows.Win32.SystemServices.BOOL,
+    sv503_acceptdownlevelapis: Windows.Win32.SystemServices.BOOL,
+    sv503_lmannounce: Windows.Win32.SystemServices.BOOL,
+    sv503_domain: {"kind""Ptr","child":{"kind":"UInt16"}},
+    sv503_maxcopyreadlen: {"kind":"UInt32"},
+    sv503_maxcopywritelen: {"kind":"UInt32"},
+    sv503_minkeepsearch: {"kind":"UInt32"},
+    sv503_maxkeepsearch: {"kind":"UInt32"},
+    sv503_minkeepcomplsearch: {"kind":"UInt32"},
+    sv503_maxkeepcomplsearch: {"kind":"UInt32"},
+    sv503_threadcountadd: {"kind":"UInt32"},
+    sv503_numblockthreads: {"kind":"UInt32"},
+    sv503_scavtimeout: {"kind":"UInt32"},
+    sv503_minrcvqueue: {"kind":"UInt32"},
+    sv503_minfreeworkitems: {"kind":"UInt32"},
+    sv503_xactmemsize: {"kind":"UInt32"},
+    sv503_threadpriority: {"kind":"UInt32"},
+    sv503_maxmpxct: {"kind":"UInt32"},
+    sv503_oplockbreakwait: {"kind":"UInt32"},
+    sv503_oplockbreakresponsewait: {"kind":"UInt32"},
+    sv503_enableoplocks: Windows.Win32.SystemServices.BOOL,
+    sv503_enableoplockforceclose: Windows.Win32.SystemServices.BOOL,
+    sv503_enablefcbopens: Windows.Win32.SystemServices.BOOL,
+    sv503_enableraw: Windows.Win32.SystemServices.BOOL,
+    sv503_enablesharednetdrives: Windows.Win32.SystemServices.BOOL,
+    sv503_minfreeconnections: {"kind":"UInt32"},
+    sv503_maxfreeconnections: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_599
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_599 = extern struct {
+    sv599_sessopens: {"kind":"UInt32"},
+    sv599_sessvcs: {"kind":"UInt32"},
+    sv599_opensearch: {"kind":"UInt32"},
+    sv599_sizreqbuf: {"kind":"UInt32"},
+    sv599_initworkitems: {"kind":"UInt32"},
+    sv599_maxworkitems: {"kind":"UInt32"},
+    sv599_rawworkitems: {"kind":"UInt32"},
+    sv599_irpstacksize: {"kind":"UInt32"},
+    sv599_maxrawbuflen: {"kind":"UInt32"},
+    sv599_sessusers: {"kind":"UInt32"},
+    sv599_sessconns: {"kind":"UInt32"},
+    sv599_maxpagedmemoryusage: {"kind":"UInt32"},
+    sv599_maxnonpagedmemoryusage: {"kind":"UInt32"},
+    sv599_enablesoftcompat: Windows.Win32.SystemServices.BOOL,
+    sv599_enableforcedlogoff: Windows.Win32.SystemServices.BOOL,
+    sv599_timesource: Windows.Win32.SystemServices.BOOL,
+    sv599_acceptdownlevelapis: Windows.Win32.SystemServices.BOOL,
+    sv599_lmannounce: Windows.Win32.SystemServices.BOOL,
+    sv599_domain: {"kind""Ptr","child":{"kind":"UInt16"}},
+    sv599_maxcopyreadlen: {"kind":"UInt32"},
+    sv599_maxcopywritelen: {"kind":"UInt32"},
+    sv599_minkeepsearch: {"kind":"UInt32"},
+    sv599_maxkeepsearch: {"kind":"UInt32"},
+    sv599_minkeepcomplsearch: {"kind":"UInt32"},
+    sv599_maxkeepcomplsearch: {"kind":"UInt32"},
+    sv599_threadcountadd: {"kind":"UInt32"},
+    sv599_numblockthreads: {"kind":"UInt32"},
+    sv599_scavtimeout: {"kind":"UInt32"},
+    sv599_minrcvqueue: {"kind":"UInt32"},
+    sv599_minfreeworkitems: {"kind":"UInt32"},
+    sv599_xactmemsize: {"kind":"UInt32"},
+    sv599_threadpriority: {"kind":"UInt32"},
+    sv599_maxmpxct: {"kind":"UInt32"},
+    sv599_oplockbreakwait: {"kind":"UInt32"},
+    sv599_oplockbreakresponsewait: {"kind":"UInt32"},
+    sv599_enableoplocks: Windows.Win32.SystemServices.BOOL,
+    sv599_enableoplockforceclose: Windows.Win32.SystemServices.BOOL,
+    sv599_enablefcbopens: Windows.Win32.SystemServices.BOOL,
+    sv599_enableraw: Windows.Win32.SystemServices.BOOL,
+    sv599_enablesharednetdrives: Windows.Win32.SystemServices.BOOL,
+    sv599_minfreeconnections: {"kind":"UInt32"},
+    sv599_maxfreeconnections: {"kind":"UInt32"},
+    sv599_initsesstable: {"kind":"UInt32"},
+    sv599_initconntable: {"kind":"UInt32"},
+    sv599_initfiletable: {"kind":"UInt32"},
+    sv599_initsearchtable: {"kind":"UInt32"},
+    sv599_alertschedule: {"kind":"UInt32"},
+    sv599_errorthreshold: {"kind":"UInt32"},
+    sv599_networkerrorthreshold: {"kind":"UInt32"},
+    sv599_diskspacethreshold: {"kind":"UInt32"},
+    sv599_reserved: {"kind":"UInt32"},
+    sv599_maxlinkdelay: {"kind":"UInt32"},
+    sv599_minlinkthroughput: {"kind":"UInt32"},
+    sv599_linkinfovalidtime: {"kind":"UInt32"},
+    sv599_scavqosinfoupdatetime: {"kind":"UInt32"},
+    sv599_maxworkitemidletime: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_598
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_598 = extern struct {
+    sv598_maxrawworkitems: {"kind":"UInt32"},
+    sv598_maxthreadsperqueue: {"kind":"UInt32"},
+    sv598_producttype: {"kind":"UInt32"},
+    sv598_serversize: {"kind":"UInt32"},
+    sv598_connectionlessautodisc: {"kind":"UInt32"},
+    sv598_sharingviolationretries: {"kind":"UInt32"},
+    sv598_sharingviolationdelay: {"kind":"UInt32"},
+    sv598_maxglobalopensearch: {"kind":"UInt32"},
+    sv598_removeduplicatesearches: {"kind":"UInt32"},
+    sv598_lockviolationoffset: {"kind":"UInt32"},
+    sv598_lockviolationdelay: {"kind":"UInt32"},
+    sv598_mdlreadswitchover: {"kind":"UInt32"},
+    sv598_cachedopenlimit: {"kind":"UInt32"},
+    sv598_otherqueueaffinity: {"kind":"UInt32"},
+    sv598_restrictnullsessaccess: Windows.Win32.SystemServices.BOOL,
+    sv598_enablewfw311directipx: Windows.Win32.SystemServices.BOOL,
+    sv598_queuesamplesecs: {"kind":"UInt32"},
+    sv598_balancecount: {"kind":"UInt32"},
+    sv598_preferredaffinity: {"kind":"UInt32"},
+    sv598_maxfreerfcbs: {"kind":"UInt32"},
+    sv598_maxfreemfcbs: {"kind":"UInt32"},
+    sv598_maxfreelfcbs: {"kind":"UInt32"},
+    sv598_maxfreepagedpoolchunks: {"kind":"UInt32"},
+    sv598_minpagedpoolchunksize: {"kind":"UInt32"},
+    sv598_maxpagedpoolchunksize: {"kind":"UInt32"},
+    sv598_sendsfrompreferredprocessor: Windows.Win32.SystemServices.BOOL,
+    sv598_cacheddirectorylimit: {"kind":"UInt32"},
+    sv598_maxcopylength: {"kind":"UInt32"},
+    sv598_enablecompression: Windows.Win32.SystemServices.BOOL,
+    sv598_autosharewks: Windows.Win32.SystemServices.BOOL,
+    sv598_autoshareserver: Windows.Win32.SystemServices.BOOL,
+    sv598_enablesecuritysignature: Windows.Win32.SystemServices.BOOL,
+    sv598_requiresecuritysignature: Windows.Win32.SystemServices.BOOL,
+    sv598_minclientbuffersize: {"kind":"UInt32"},
+    sv598_serverguid: Guid,
+    sv598_ConnectionNoSessionsTimeout: {"kind":"UInt32"},
+    sv598_IdleThreadTimeOut: {"kind":"UInt32"},
+    sv598_enableW9xsecuritysignature: Windows.Win32.SystemServices.BOOL,
+    sv598_enforcekerberosreauthentication: Windows.Win32.SystemServices.BOOL,
+    sv598_disabledos: Windows.Win32.SystemServices.BOOL,
+    sv598_lowdiskspaceminimum: {"kind":"UInt32"},
+    sv598_disablestrictnamechecking: Windows.Win32.SystemServices.BOOL,
+    sv598_enableauthenticateusersharing: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1005
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1005 = extern struct {
+    sv1005_comment: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1107
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1107 = extern struct {
+    sv1107_users: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1010
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1010 = extern struct {
+    sv1010_disc: {"kind":"Int32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1016
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1016 = extern struct {
+    sv1016_hidden: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1017
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1017 = extern struct {
+    sv1017_announce: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1018
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1018 = extern struct {
+    sv1018_anndelta: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1501
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1501 = extern struct {
+    sv1501_sessopens: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1502
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1502 = extern struct {
+    sv1502_sessvcs: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1503
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1503 = extern struct {
+    sv1503_opensearch: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1506
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1506 = extern struct {
+    sv1506_maxworkitems: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1509
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1509 = extern struct {
+    sv1509_maxrawbuflen: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1510
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1510 = extern struct {
+    sv1510_sessusers: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1511
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1511 = extern struct {
+    sv1511_sessconns: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1512
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1512 = extern struct {
+    sv1512_maxnonpagedmemoryusage: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1513
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1513 = extern struct {
+    sv1513_maxpagedmemoryusage: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1514
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1514 = extern struct {
+    sv1514_enablesoftcompat: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1515
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1515 = extern struct {
+    sv1515_enableforcedlogoff: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1516
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1516 = extern struct {
+    sv1516_timesource: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1518
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1518 = extern struct {
+    sv1518_lmannounce: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1520
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1520 = extern struct {
+    sv1520_maxcopyreadlen: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1521
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1521 = extern struct {
+    sv1521_maxcopywritelen: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1522
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1522 = extern struct {
+    sv1522_minkeepsearch: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1523
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1523 = extern struct {
+    sv1523_maxkeepsearch: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1524
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1524 = extern struct {
+    sv1524_minkeepcomplsearch: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1525
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1525 = extern struct {
+    sv1525_maxkeepcomplsearch: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1528
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1528 = extern struct {
+    sv1528_scavtimeout: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1529
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1529 = extern struct {
+    sv1529_minrcvqueue: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1530
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1530 = extern struct {
+    sv1530_minfreeworkitems: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1533
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1533 = extern struct {
+    sv1533_maxmpxct: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1534
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1534 = extern struct {
+    sv1534_oplockbreakwait: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1535
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1535 = extern struct {
+    sv1535_oplockbreakresponsewait: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1536
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1536 = extern struct {
+    sv1536_enableoplocks: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1537
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1537 = extern struct {
+    sv1537_enableoplockforceclose: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1538
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1538 = extern struct {
+    sv1538_enablefcbopens: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1539
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1539 = extern struct {
+    sv1539_enableraw: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1540
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1540 = extern struct {
+    sv1540_enablesharednetdrives: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1541
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1541 = extern struct {
+    sv1541_minfreeconnections: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1542
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1542 = extern struct {
+    sv1542_maxfreeconnections: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1543
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1543 = extern struct {
+    sv1543_initsesstable: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1544
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1544 = extern struct {
+    sv1544_initconntable: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1545
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1545 = extern struct {
+    sv1545_initfiletable: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1546
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1546 = extern struct {
+    sv1546_initsearchtable: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1547
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1547 = extern struct {
+    sv1547_alertschedule: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1548
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1548 = extern struct {
+    sv1548_errorthreshold: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1549
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1549 = extern struct {
+    sv1549_networkerrorthreshold: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1550
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1550 = extern struct {
+    sv1550_diskspacethreshold: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1552
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1552 = extern struct {
+    sv1552_maxlinkdelay: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1553
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1553 = extern struct {
+    sv1553_minlinkthroughput: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1554
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1554 = extern struct {
+    sv1554_linkinfovalidtime: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1555
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1555 = extern struct {
+    sv1555_scavqosinfoupdatetime: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1556
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1556 = extern struct {
+    sv1556_maxworkitemidletime: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1557
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1557 = extern struct {
+    sv1557_maxrawworkitems: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1560
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1560 = extern struct {
+    sv1560_producttype: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1561
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1561 = extern struct {
+    sv1561_serversize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1562
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1562 = extern struct {
+    sv1562_connectionlessautodisc: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1563
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1563 = extern struct {
+    sv1563_sharingviolationretries: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1564
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1564 = extern struct {
+    sv1564_sharingviolationdelay: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1565
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1565 = extern struct {
+    sv1565_maxglobalopensearch: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1566
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1566 = extern struct {
+    sv1566_removeduplicatesearches: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1567
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1567 = extern struct {
+    sv1567_lockviolationretries: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1568
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1568 = extern struct {
+    sv1568_lockviolationoffset: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1569
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1569 = extern struct {
+    sv1569_lockviolationdelay: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1570
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1570 = extern struct {
+    sv1570_mdlreadswitchover: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1571
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1571 = extern struct {
+    sv1571_cachedopenlimit: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1572
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1572 = extern struct {
+    sv1572_criticalthreads: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1573
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1573 = extern struct {
+    sv1573_restrictnullsessaccess: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1574
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1574 = extern struct {
+    sv1574_enablewfw311directipx: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1575
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1575 = extern struct {
+    sv1575_otherqueueaffinity: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1576
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1576 = extern struct {
+    sv1576_queuesamplesecs: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1577
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1577 = extern struct {
+    sv1577_balancecount: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1578
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1578 = extern struct {
+    sv1578_preferredaffinity: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1579
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1579 = extern struct {
+    sv1579_maxfreerfcbs: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1580
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1580 = extern struct {
+    sv1580_maxfreemfcbs: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1581
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1581 = extern struct {
+    sv1581_maxfreemlcbs: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1582
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1582 = extern struct {
+    sv1582_maxfreepagedpoolchunks: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1583
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1583 = extern struct {
+    sv1583_minpagedpoolchunksize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1584
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1584 = extern struct {
+    sv1584_maxpagedpoolchunksize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1585
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1585 = extern struct {
+    sv1585_sendsfrompreferredprocessor: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1586
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1586 = extern struct {
+    sv1586_maxthreadsperqueue: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1587
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1587 = extern struct {
+    sv1587_cacheddirectorylimit: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1588
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1588 = extern struct {
+    sv1588_maxcopylength: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1590
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1590 = extern struct {
+    sv1590_enablecompression: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1591
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1591 = extern struct {
+    sv1591_autosharewks: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1592
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1592 = extern struct {
+    sv1592_autosharewks: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1593
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1593 = extern struct {
+    sv1593_enablesecuritysignature: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1594
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1594 = extern struct {
+    sv1594_requiresecuritysignature: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1595
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1595 = extern struct {
+    sv1595_minclientbuffersize: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1596
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1596 = extern struct {
+    sv1596_ConnectionNoSessionsTimeout: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1597
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1597 = extern struct {
+    sv1597_IdleThreadTimeOut: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1598
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1598 = extern struct {
+    sv1598_enableW9xsecuritysignature: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1599
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1599 = extern struct {
+    sv1598_enforcekerberosreauthentication: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1600
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1600 = extern struct {
+    sv1598_disabledos: {"kind":"Byte"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1601
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1601 = extern struct {
+    sv1598_lowdiskspaceminimum: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_INFO_1602
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_INFO_1602 = extern struct {
+    sv_1598_disablestrictnamechecking: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: SERVER_TRANSPORT_INFO_0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_TRANSPORT_INFO_0 = extern struct {
+    svti0_numberofvcs: {"kind":"UInt32"},
+    svti0_transportname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    svti0_transportaddress: {"kind""Ptr","child":{"kind":"Byte"}},
+    svti0_transportaddresslength: {"kind":"UInt32"},
+    svti0_networkaddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: SERVER_TRANSPORT_INFO_1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_TRANSPORT_INFO_1 = extern struct {
+    svti1_numberofvcs: {"kind":"UInt32"},
+    svti1_transportname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    svti1_transportaddress: {"kind""Ptr","child":{"kind":"Byte"}},
+    svti1_transportaddresslength: {"kind":"UInt32"},
+    svti1_networkaddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    svti1_domain: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: SERVER_TRANSPORT_INFO_2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_TRANSPORT_INFO_2 = extern struct {
+    svti2_numberofvcs: {"kind":"UInt32"},
+    svti2_transportname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    svti2_transportaddress: {"kind""Ptr","child":{"kind":"Byte"}},
+    svti2_transportaddresslength: {"kind":"UInt32"},
+    svti2_networkaddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    svti2_domain: {"kind""Ptr","child":{"kind":"UInt16"}},
+    svti2_flags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVER_TRANSPORT_INFO_3
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVER_TRANSPORT_INFO_3 = extern struct {
+    svti3_numberofvcs: {"kind":"UInt32"},
+    svti3_transportname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    svti3_transportaddress: {"kind""Ptr","child":{"kind":"Byte"}},
+    svti3_transportaddresslength: {"kind":"UInt32"},
+    svti3_networkaddress: {"kind""Ptr","child":{"kind":"UInt16"}},
+    svti3_domain: {"kind""Ptr","child":{"kind":"UInt16"}},
+    svti3_flags: {"kind":"UInt32"},
+    svti3_passwordlength: {"kind":"UInt32"},
+    svti3_password: {"kind":"Array","child": {"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: SERVICE_INFO_0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVICE_INFO_0 = extern struct {
+    svci0_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: SERVICE_INFO_1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVICE_INFO_1 = extern struct {
+    svci1_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    svci1_status: {"kind":"UInt32"},
+    svci1_code: {"kind":"UInt32"},
+    svci1_pid: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: SERVICE_INFO_2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const SERVICE_INFO_2 = extern struct {
+    svci2_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    svci2_status: {"kind":"UInt32"},
+    svci2_code: {"kind":"UInt32"},
+    svci2_pid: {"kind":"UInt32"},
+    svci2_text: {"kind""Ptr","child":{"kind":"UInt16"}},
+    svci2_specific_error: {"kind":"UInt32"},
+    svci2_display_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: USE_INFO_0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USE_INFO_0 = extern struct {
+    ui0_local: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ui0_remote: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: USE_INFO_1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USE_INFO_1 = extern struct {
+    ui1_local: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ui1_remote: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ui1_password: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ui1_status: {"kind":"UInt32"},
+    ui1_asg_type: {"kind":"UInt32"},
+    ui1_refcount: {"kind":"UInt32"},
+    ui1_usecount: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: USE_INFO_2
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USE_INFO_2 = extern struct {
+    ui2_local: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ui2_remote: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ui2_password: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ui2_status: {"kind":"UInt32"},
+    ui2_asg_type: {"kind":"UInt32"},
+    ui2_refcount: {"kind":"UInt32"},
+    ui2_usecount: {"kind":"UInt32"},
+    ui2_username: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ui2_domainname: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: USE_INFO_3
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USE_INFO_3 = extern struct {
+    ui3_ui2: Windows.Win32.NetManagement.USE_INFO_2,
+    ui3_flags: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: USE_INFO_4
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USE_INFO_4 = extern struct {
+    ui4_ui3: Windows.Win32.NetManagement.USE_INFO_3,
+    ui4_auth_identity_length: {"kind":"UInt32"},
+    ui4_auth_identity: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: USE_INFO_5
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USE_INFO_5 = extern struct {
+    ui4_ui3: Windows.Win32.NetManagement.USE_INFO_3,
+    ui4_auth_identity_length: {"kind":"UInt32"},
+    ui4_auth_identity: {"kind""Ptr","child":{"kind":"Byte"}},
+    ui5_security_descriptor_length: {"kind":"UInt32"},
+    ui5_security_descriptor: {"kind""Ptr","child":{"kind":"Byte"}},
+    ui5_use_options_length: {"kind":"UInt32"},
+    ui5_use_options: {"kind""Ptr","child":{"kind":"Byte"}},
+};
+// --------------------------------------------------------
+// Type: USE_OPTION_GENERIC
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USE_OPTION_GENERIC = extern struct {
+    Tag: {"kind":"UInt32"},
+    Length: {"kind":"UInt16"},
+    Reserved: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: USE_OPTION_DEFERRED_CONNECTION_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USE_OPTION_DEFERRED_CONNECTION_PARAMETERS = extern struct {
+    Tag: {"kind":"UInt32"},
+    Length: {"kind":"UInt16"},
+    Reserved: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: TRANSPORT_TYPE
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const TRANSPORT_TYPE = *opaque{
+};
+// --------------------------------------------------------
+// Type: TRANSPORT_INFO
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const TRANSPORT_INFO = extern struct {
+    Type: Windows.Win32.NetManagement.TRANSPORT_TYPE,
+};
+// --------------------------------------------------------
+// Type: USE_OPTION_TRANSPORT_PARAMETERS
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const USE_OPTION_TRANSPORT_PARAMETERS = extern struct {
+    Tag: {"kind":"UInt32"},
+    Length: {"kind":"UInt16"},
+    Reserved: {"kind":"UInt16"},
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_100
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_100 = extern struct {
+    wki100_platform_id: {"kind":"UInt32"},
+    wki100_computername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wki100_langroup: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wki100_ver_major: {"kind":"UInt32"},
+    wki100_ver_minor: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_101
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_101 = extern struct {
+    wki101_platform_id: {"kind":"UInt32"},
+    wki101_computername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wki101_langroup: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wki101_ver_major: {"kind":"UInt32"},
+    wki101_ver_minor: {"kind":"UInt32"},
+    wki101_lanroot: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_102
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_102 = extern struct {
+    wki102_platform_id: {"kind":"UInt32"},
+    wki102_computername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wki102_langroup: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wki102_ver_major: {"kind":"UInt32"},
+    wki102_ver_minor: {"kind":"UInt32"},
+    wki102_lanroot: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wki102_logged_on_users: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_302
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_302 = extern struct {
+    wki302_char_wait: {"kind":"UInt32"},
+    wki302_collection_time: {"kind":"UInt32"},
+    wki302_maximum_collection_count: {"kind":"UInt32"},
+    wki302_keep_conn: {"kind":"UInt32"},
+    wki302_keep_search: {"kind":"UInt32"},
+    wki302_max_cmds: {"kind":"UInt32"},
+    wki302_num_work_buf: {"kind":"UInt32"},
+    wki302_siz_work_buf: {"kind":"UInt32"},
+    wki302_max_wrk_cache: {"kind":"UInt32"},
+    wki302_sess_timeout: {"kind":"UInt32"},
+    wki302_siz_error: {"kind":"UInt32"},
+    wki302_num_alerts: {"kind":"UInt32"},
+    wki302_num_services: {"kind":"UInt32"},
+    wki302_errlog_sz: {"kind":"UInt32"},
+    wki302_print_buf_time: {"kind":"UInt32"},
+    wki302_num_char_buf: {"kind":"UInt32"},
+    wki302_siz_char_buf: {"kind":"UInt32"},
+    wki302_wrk_heuristics: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wki302_mailslots: {"kind":"UInt32"},
+    wki302_num_dgram_buf: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_402
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_402 = extern struct {
+    wki402_char_wait: {"kind":"UInt32"},
+    wki402_collection_time: {"kind":"UInt32"},
+    wki402_maximum_collection_count: {"kind":"UInt32"},
+    wki402_keep_conn: {"kind":"UInt32"},
+    wki402_keep_search: {"kind":"UInt32"},
+    wki402_max_cmds: {"kind":"UInt32"},
+    wki402_num_work_buf: {"kind":"UInt32"},
+    wki402_siz_work_buf: {"kind":"UInt32"},
+    wki402_max_wrk_cache: {"kind":"UInt32"},
+    wki402_sess_timeout: {"kind":"UInt32"},
+    wki402_siz_error: {"kind":"UInt32"},
+    wki402_num_alerts: {"kind":"UInt32"},
+    wki402_num_services: {"kind":"UInt32"},
+    wki402_errlog_sz: {"kind":"UInt32"},
+    wki402_print_buf_time: {"kind":"UInt32"},
+    wki402_num_char_buf: {"kind":"UInt32"},
+    wki402_siz_char_buf: {"kind":"UInt32"},
+    wki402_wrk_heuristics: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wki402_mailslots: {"kind":"UInt32"},
+    wki402_num_dgram_buf: {"kind":"UInt32"},
+    wki402_max_threads: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_502
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_502 = extern struct {
+    wki502_char_wait: {"kind":"UInt32"},
+    wki502_collection_time: {"kind":"UInt32"},
+    wki502_maximum_collection_count: {"kind":"UInt32"},
+    wki502_keep_conn: {"kind":"UInt32"},
+    wki502_max_cmds: {"kind":"UInt32"},
+    wki502_sess_timeout: {"kind":"UInt32"},
+    wki502_siz_char_buf: {"kind":"UInt32"},
+    wki502_max_threads: {"kind":"UInt32"},
+    wki502_lock_quota: {"kind":"UInt32"},
+    wki502_lock_increment: {"kind":"UInt32"},
+    wki502_lock_maximum: {"kind":"UInt32"},
+    wki502_pipe_increment: {"kind":"UInt32"},
+    wki502_pipe_maximum: {"kind":"UInt32"},
+    wki502_cache_file_timeout: {"kind":"UInt32"},
+    wki502_dormant_file_limit: {"kind":"UInt32"},
+    wki502_read_ahead_throughput: {"kind":"UInt32"},
+    wki502_num_mailslot_buffers: {"kind":"UInt32"},
+    wki502_num_srv_announce_buffers: {"kind":"UInt32"},
+    wki502_max_illegal_datagram_events: {"kind":"UInt32"},
+    wki502_illegal_datagram_event_reset_frequency: {"kind":"UInt32"},
+    wki502_log_election_packets: Windows.Win32.SystemServices.BOOL,
+    wki502_use_opportunistic_locking: Windows.Win32.SystemServices.BOOL,
+    wki502_use_unlock_behind: Windows.Win32.SystemServices.BOOL,
+    wki502_use_close_behind: Windows.Win32.SystemServices.BOOL,
+    wki502_buf_named_pipes: Windows.Win32.SystemServices.BOOL,
+    wki502_use_lock_read_unlock: Windows.Win32.SystemServices.BOOL,
+    wki502_utilize_nt_caching: Windows.Win32.SystemServices.BOOL,
+    wki502_use_raw_read: Windows.Win32.SystemServices.BOOL,
+    wki502_use_raw_write: Windows.Win32.SystemServices.BOOL,
+    wki502_use_write_raw_data: Windows.Win32.SystemServices.BOOL,
+    wki502_use_encryption: Windows.Win32.SystemServices.BOOL,
+    wki502_buf_files_deny_write: Windows.Win32.SystemServices.BOOL,
+    wki502_buf_read_only_files: Windows.Win32.SystemServices.BOOL,
+    wki502_force_core_create_mode: Windows.Win32.SystemServices.BOOL,
+    wki502_use_512_byte_max_transfer: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1010
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1010 = extern struct {
+    wki1010_char_wait: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1011
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1011 = extern struct {
+    wki1011_collection_time: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1012
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1012 = extern struct {
+    wki1012_maximum_collection_count: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1027
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1027 = extern struct {
+    wki1027_errlog_sz: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1028
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1028 = extern struct {
+    wki1028_print_buf_time: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1032
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1032 = extern struct {
+    wki1032_wrk_heuristics: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1013
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1013 = extern struct {
+    wki1013_keep_conn: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1018
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1018 = extern struct {
+    wki1018_sess_timeout: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1023
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1023 = extern struct {
+    wki1023_siz_char_buf: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1033
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1033 = extern struct {
+    wki1033_max_threads: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1041
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1041 = extern struct {
+    wki1041_lock_quota: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1042
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1042 = extern struct {
+    wki1042_lock_increment: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1043
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1043 = extern struct {
+    wki1043_lock_maximum: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1044
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1044 = extern struct {
+    wki1044_pipe_increment: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1045
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1045 = extern struct {
+    wki1045_pipe_maximum: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1046
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1046 = extern struct {
+    wki1046_dormant_file_limit: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1047
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1047 = extern struct {
+    wki1047_cache_file_timeout: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1048
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1048 = extern struct {
+    wki1048_use_opportunistic_locking: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1049
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1049 = extern struct {
+    wki1049_use_unlock_behind: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1050
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1050 = extern struct {
+    wki1050_use_close_behind: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1051
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1051 = extern struct {
+    wki1051_buf_named_pipes: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1052
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1052 = extern struct {
+    wki1052_use_lock_read_unlock: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1053
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1053 = extern struct {
+    wki1053_utilize_nt_caching: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1054
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1054 = extern struct {
+    wki1054_use_raw_read: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1055
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1055 = extern struct {
+    wki1055_use_raw_write: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1056
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1056 = extern struct {
+    wki1056_use_write_raw_data: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1057
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1057 = extern struct {
+    wki1057_use_encryption: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1058
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1058 = extern struct {
+    wki1058_buf_files_deny_write: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1059
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1059 = extern struct {
+    wki1059_buf_read_only_files: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1060
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1060 = extern struct {
+    wki1060_force_core_create_mode: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1061
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1061 = extern struct {
+    wki1061_use_512_byte_max_transfer: Windows.Win32.SystemServices.BOOL,
+};
+// --------------------------------------------------------
+// Type: WKSTA_INFO_1062
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_INFO_1062 = extern struct {
+    wki1062_read_ahead_throughput: {"kind":"UInt32"},
+};
+// --------------------------------------------------------
+// Type: WKSTA_USER_INFO_0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_USER_INFO_0 = extern struct {
+    wkui0_username: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WKSTA_USER_INFO_1
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_USER_INFO_1 = extern struct {
+    wkui1_username: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wkui1_logon_domain: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wkui1_oth_domains: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wkui1_logon_server: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WKSTA_USER_INFO_1101
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_USER_INFO_1101 = extern struct {
+    wkui1101_oth_domains: {"kind""Ptr","child":{"kind":"UInt16"}},
+};
+// --------------------------------------------------------
+// Type: WKSTA_TRANSPORT_INFO_0
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const WKSTA_TRANSPORT_INFO_0 = extern struct {
+    wkti0_quality_of_service: {"kind":"UInt32"},
+    wkti0_number_of_vcs: {"kind":"UInt32"},
+    wkti0_transport_name: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wkti0_transport_address: {"kind""Ptr","child":{"kind":"UInt16"}},
+    wkti0_wan_ish: Windows.Win32.SystemServices.BOOL,
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetUserAdd(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    buf: {"kind""Ptr","child":{"kind":"Byte"}},
+    parm_err: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetUserEnum(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    filter: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    prefmaxlen: {"kind":"UInt32"},
+    entriesread: {"kind""Ptr","child":{"kind":"UInt32"}},
+    totalentries: {"kind""Ptr","child":{"kind":"UInt32"}},
+    resume_handle: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetUserGetInfo(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    username: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetUserSetInfo(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    username: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    buf: {"kind""Ptr","child":{"kind":"Byte"}},
+    parm_err: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetUserDel(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    username: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetUserGetGroups(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    username: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    prefmaxlen: {"kind":"UInt32"},
+    entriesread: {"kind""Ptr","child":{"kind":"UInt32"}},
+    totalentries: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetUserSetGroups(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    username: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    buf: {"kind""Ptr","child":{"kind":"Byte"}},
+    num_entries: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetUserGetLocalGroups(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    username: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    flags: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    prefmaxlen: {"kind":"UInt32"},
+    entriesread: {"kind""Ptr","child":{"kind":"UInt32"}},
+    totalentries: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetUserModalsGet(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetUserModalsSet(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    buf: {"kind""Ptr","child":{"kind":"Byte"}},
+    parm_err: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=True (can and should we use this?)
+pub extern "samcli" fn NetUserChangePassword(
+    domainname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    username: {"kind""Ptr","child":{"kind":"UInt16"}},
+    oldpassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    newpassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetGroupAdd(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    buf: {"kind""Ptr","child":{"kind":"Byte"}},
+    parm_err: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetGroupAddUser(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    GroupName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    username: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetGroupEnum(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    prefmaxlen: {"kind":"UInt32"},
+    entriesread: {"kind""Ptr","child":{"kind":"UInt32"}},
+    totalentries: {"kind""Ptr","child":{"kind":"UInt32"}},
+    resume_handle: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetGroupGetInfo(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    groupname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetGroupSetInfo(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    groupname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    buf: {"kind""Ptr","child":{"kind":"Byte"}},
+    parm_err: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetGroupDel(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    groupname: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetGroupDelUser(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    GroupName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Username: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetGroupGetUsers(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    groupname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    prefmaxlen: {"kind":"UInt32"},
+    entriesread: {"kind""Ptr","child":{"kind":"UInt32"}},
+    totalentries: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ResumeHandle: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetGroupSetUsers(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    groupname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    buf: {"kind""Ptr","child":{"kind":"Byte"}},
+    totalentries: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetLocalGroupAdd(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    buf: {"kind""Ptr","child":{"kind":"Byte"}},
+    parm_err: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetLocalGroupAddMember(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    groupname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    membersid: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetLocalGroupEnum(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    prefmaxlen: {"kind":"UInt32"},
+    entriesread: {"kind""Ptr","child":{"kind":"UInt32"}},
+    totalentries: {"kind""Ptr","child":{"kind":"UInt32"}},
+    resumehandle: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetLocalGroupGetInfo(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    groupname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetLocalGroupSetInfo(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    groupname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    buf: {"kind""Ptr","child":{"kind":"Byte"}},
+    parm_err: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetLocalGroupDel(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    groupname: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetLocalGroupDelMember(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    groupname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    membersid: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetLocalGroupGetMembers(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    localgroupname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    prefmaxlen: {"kind":"UInt32"},
+    entriesread: {"kind""Ptr","child":{"kind":"UInt32"}},
+    totalentries: {"kind""Ptr","child":{"kind":"UInt32"}},
+    resumehandle: {"kind""Ptr","child":{"kind":"UIntPtr"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetLocalGroupSetMembers(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    groupname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    buf: {"kind""Ptr","child":{"kind":"Byte"}},
+    totalentries: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetLocalGroupAddMembers(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    groupname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    buf: {"kind""Ptr","child":{"kind":"Byte"}},
+    totalentries: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetLocalGroupDelMembers(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    groupname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    buf: {"kind""Ptr","child":{"kind":"Byte"}},
+    totalentries: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetQueryDisplayInformation(
+    ServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Level: {"kind":"UInt32"},
+    Index: {"kind":"UInt32"},
+    EntriesRequested: {"kind":"UInt32"},
+    PreferredMaximumLength: {"kind":"UInt32"},
+    ReturnedEntryCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    SortedBuffer: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetGetDisplayInformationIndex(
+    ServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Level: {"kind":"UInt32"},
+    Prefix: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Index: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetAccessAdd(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    buf: {"kind""Ptr","child":{"kind":"Byte"}},
+    parm_err: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetAccessEnum(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    BasePath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Recursive: {"kind":"UInt32"},
+    level: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    prefmaxlen: {"kind":"UInt32"},
+    entriesread: {"kind""Ptr","child":{"kind":"UInt32"}},
+    totalentries: {"kind""Ptr","child":{"kind":"UInt32"}},
+    resume_handle: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetAccessGetInfo(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    resource: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetAccessSetInfo(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    resource: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    buf: {"kind""Ptr","child":{"kind":"Byte"}},
+    parm_err: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetAccessDel(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    resource: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetAccessGetUserPerms(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    UGname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    resource: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Perms: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetValidatePasswordPolicy(
+    ServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Qualifier: {"kind""Ptr","child":{"kind":"Void"}},
+    ValidationType: Windows.Win32.NetManagement.NET_VALIDATE_PASSWORD_TYPE,
+    InputArg: {"kind""Ptr","child":{"kind":"Void"}},
+    OutputArg: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "samcli" fn NetValidatePasswordPolicyFree(
+    OutputArg: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "logoncli" fn NetGetDCName(
+    ServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DomainName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Buffer: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "logoncli" fn NetGetAnyDCName(
+    ServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DomainName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Buffer: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wkscli" fn NetJoinDomain(
+    lpServer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpDomain: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpMachineAccountOU: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpAccount: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fJoinOptions: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wkscli" fn NetUnjoinDomain(
+    lpServer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpAccount: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fUnjoinOptions: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wkscli" fn NetRenameMachineInDomain(
+    lpServer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpNewMachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpAccount: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fRenameOptions: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wkscli" fn NetValidateName(
+    lpServer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpAccount: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    NameType: Windows.Win32.NetManagement.NETSETUP_NAME_TYPE,
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wkscli" fn NetGetJoinableOUs(
+    lpServer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpDomain: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpAccount: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    OUCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    OUs: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wkscli" fn NetAddAlternateComputerName(
+    Server: {"kind""Ptr","child":{"kind":"UInt16"}},
+    AlternateName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DomainAccount: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DomainAccountPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Reserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wkscli" fn NetRemoveAlternateComputerName(
+    Server: {"kind""Ptr","child":{"kind":"UInt16"}},
+    AlternateName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DomainAccount: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DomainAccountPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Reserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wkscli" fn NetSetPrimaryComputerName(
+    Server: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PrimaryName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DomainAccount: {"kind""Ptr","child":{"kind":"UInt16"}},
+    DomainAccountPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Reserved: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wkscli" fn NetEnumerateComputerNames(
+    Server: {"kind""Ptr","child":{"kind":"UInt16"}},
+    NameType: Windows.Win32.NetManagement.NET_COMPUTER_NAME_TYPE,
+    Reserved: {"kind":"UInt32"},
+    EntryCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ComputerNames: {"kind""Ptr","child":{"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetProvisionComputerAccount(
+    lpDomain: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpMachineName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpMachineAccountOU: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpDcName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    dwOptions: {"kind":"UInt32"},
+    pProvisionBinData: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    pdwProvisionBinDataSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    pProvisionTextData: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetRequestOfflineDomainJoin(
+    pProvisionBinData: {"kind""Ptr","child":{"kind":"Byte"}},
+    cbProvisionBinDataSize: {"kind":"UInt32"},
+    dwOptions: {"kind":"UInt32"},
+    lpWindowsPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetCreateProvisioningPackage(
+    pProvisioningParams: {"kind""Ptr","child":Windows.Win32.NetManagement.NETSETUP_PROVISIONING_PARAMS},
+    ppPackageBinData: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    pdwPackageBinDataSize: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ppPackageTextData: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetRequestProvisioningPackageInstall(
+    pPackageBinData: {"kind""Ptr","child":{"kind":"Byte"}},
+    dwPackageBinDataSize: {"kind":"UInt32"},
+    dwProvisionOptions: {"kind":"UInt32"},
+    lpWindowsPath: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pvReserved: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetGetAadJoinInformation(
+    pcszTenantId: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ppJoinInfo: {"kind""Ptr","child":{"kind""Ptr","child":Windows.Win32.NetManagement.DSREG_JOIN_INFO}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetFreeAadJoinInformation(
+    pJoinInfo: {"kind""Ptr","child":Windows.Win32.NetManagement.DSREG_JOIN_INFO},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wkscli" fn NetGetJoinInformation(
+    lpServer: {"kind""Ptr","child":{"kind":"UInt16"}},
+    lpNameBuffer: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    BufferType: {"kind""Ptr","child":Windows.Win32.NetManagement.NETSETUP_JOIN_STATUS},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mstask" fn GetNetScheduleAccountInformation(
+    pwszServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ccAccount: {"kind":"UInt32"},
+    wszAccount: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "mstask" fn SetNetScheduleAccountInformation(
+    pwszServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszAccount: {"kind""Ptr","child":{"kind":"UInt16"}},
+    pwszPassword: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetAlertRaise(
+    AlertType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    BufferSize: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetAlertRaiseEx(
+    AlertType: {"kind""Ptr","child":{"kind":"UInt16"}},
+    VariableInfo: {"kind""Ptr","child":{"kind":"Void"}},
+    VariableInfoSize: {"kind":"UInt32"},
+    ServiceName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "netutils" fn NetApiBufferAllocate(
+    ByteCount: {"kind":"UInt32"},
+    Buffer: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "netutils" fn NetApiBufferFree(
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "netutils" fn NetApiBufferReallocate(
+    OldBuffer: {"kind""Ptr","child":{"kind":"Void"}},
+    NewByteCount: {"kind":"UInt32"},
+    NewBuffer: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Void"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "netutils" fn NetApiBufferSize(
+    Buffer: {"kind""Ptr","child":{"kind":"Void"}},
+    ByteCount: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetAuditClear(
+    server: {"kind""Ptr","child":{"kind":"UInt16"}},
+    backupfile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    service: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetAuditRead(
+    server: {"kind""Ptr","child":{"kind":"UInt16"}},
+    service: {"kind""Ptr","child":{"kind":"UInt16"}},
+    auditloghandle: {"kind""Ptr","child":Windows.Win32.NetManagement.HLOG},
+    offset: {"kind":"UInt32"},
+    reserved1: {"kind""Ptr","child":{"kind":"UInt32"}},
+    reserved2: {"kind":"UInt32"},
+    offsetflag: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    prefmaxlen: {"kind":"UInt32"},
+    bytesread: {"kind""Ptr","child":{"kind":"UInt32"}},
+    totalavailable: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetAuditWrite(
+    type: {"kind":"UInt32"},
+    buf: {"kind""Ptr","child":{"kind":"Byte"}},
+    numbytes: {"kind":"UInt32"},
+    service: {"kind""Ptr","child":{"kind":"UInt16"}},
+    reserved: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetConfigGet(
+    server: {"kind""Ptr","child":{"kind":"UInt16"}},
+    component: {"kind""Ptr","child":{"kind":"UInt16"}},
+    parameter: {"kind""Ptr","child":{"kind":"UInt16"}},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetConfigGetAll(
+    server: {"kind""Ptr","child":{"kind":"UInt16"}},
+    component: {"kind""Ptr","child":{"kind":"UInt16"}},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetConfigSet(
+    server: {"kind""Ptr","child":{"kind":"UInt16"}},
+    reserved1: {"kind""Ptr","child":{"kind":"UInt16"}},
+    component: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    reserved2: {"kind":"UInt32"},
+    buf: {"kind""Ptr","child":{"kind":"Byte"}},
+    reserved3: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetErrorLogClear(
+    UncServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    BackupFile: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Reserved: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetErrorLogRead(
+    UncServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Reserved1: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ErrorLogHandle: {"kind""Ptr","child":Windows.Win32.NetManagement.HLOG},
+    Offset: {"kind":"UInt32"},
+    Reserved2: {"kind""Ptr","child":{"kind":"UInt32"}},
+    Reserved3: {"kind":"UInt32"},
+    OffsetFlag: {"kind":"UInt32"},
+    BufPtr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    PrefMaxSize: {"kind":"UInt32"},
+    BytesRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    TotalAvailable: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetErrorLogWrite(
+    Reserved1: {"kind""Ptr","child":{"kind":"Byte"}},
+    Code: {"kind":"UInt32"},
+    Component: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Buffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    NumBytes: {"kind":"UInt32"},
+    MsgBuf: {"kind""Ptr","child":{"kind":"Byte"}},
+    StrCount: {"kind":"UInt32"},
+    Reserved2: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetMessageNameAdd(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    msgname: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetMessageNameEnum(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    prefmaxlen: {"kind":"UInt32"},
+    entriesread: {"kind""Ptr","child":{"kind":"UInt32"}},
+    totalentries: {"kind""Ptr","child":{"kind":"UInt32"}},
+    resume_handle: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetMessageNameGetInfo(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    msgname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetMessageNameDel(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    msgname: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetMessageBufferSend(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    msgname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    fromname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    buf: {"kind""Ptr","child":{"kind":"Byte"}},
+    buflen: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "srvcli" fn NetRemoteTOD(
+    UncServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    BufferPtr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "netutils" fn NetRemoteComputerSupports(
+    UncServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    OptionsWanted: {"kind":"UInt32"},
+    OptionsSupported: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "schedcli" fn NetScheduleJobAdd(
+    Servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    Buffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    JobId: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "schedcli" fn NetScheduleJobDel(
+    Servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    MinJobId: {"kind":"UInt32"},
+    MaxJobId: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "schedcli" fn NetScheduleJobEnum(
+    Servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    PointerToBuffer: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    PrefferedMaximumLength: {"kind":"UInt32"},
+    EntriesRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    TotalEntries: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ResumeHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "schedcli" fn NetScheduleJobGetInfo(
+    Servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    JobId: {"kind":"UInt32"},
+    PointerToBuffer: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetServerEnum(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    prefmaxlen: {"kind":"UInt32"},
+    entriesread: {"kind""Ptr","child":{"kind":"UInt32"}},
+    totalentries: {"kind""Ptr","child":{"kind":"UInt32"}},
+    servertype: {"kind":"UInt32"},
+    domain: {"kind""Ptr","child":{"kind":"UInt16"}},
+    resume_handle: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "srvcli" fn NetServerGetInfo(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "srvcli" fn NetServerSetInfo(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    buf: {"kind""Ptr","child":{"kind":"Byte"}},
+    ParmError: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "srvcli" fn NetServerDiskEnum(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    prefmaxlen: {"kind":"UInt32"},
+    entriesread: {"kind""Ptr","child":{"kind":"UInt32"}},
+    totalentries: {"kind""Ptr","child":{"kind":"UInt32"}},
+    resume_handle: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "srvcli" fn NetServerComputerNameAdd(
+    ServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    EmulatedDomainName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    EmulatedServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "srvcli" fn NetServerComputerNameDel(
+    ServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    EmulatedServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "srvcli" fn NetServerTransportAdd(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "srvcli" fn NetServerTransportAddEx(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "srvcli" fn NetServerTransportDel(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind":"Byte"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "srvcli" fn NetServerTransportEnum(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    prefmaxlen: {"kind":"UInt32"},
+    entriesread: {"kind""Ptr","child":{"kind":"UInt32"}},
+    totalentries: {"kind""Ptr","child":{"kind":"UInt32"}},
+    resume_handle: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetServiceControl(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    service: {"kind""Ptr","child":{"kind":"UInt16"}},
+    opcode: {"kind":"UInt32"},
+    arg: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetServiceEnum(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    prefmaxlen: {"kind":"UInt32"},
+    entriesread: {"kind""Ptr","child":{"kind":"UInt32"}},
+    totalentries: {"kind""Ptr","child":{"kind":"UInt32"}},
+    resume_handle: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetServiceGetInfo(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    service: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "NETAPI32" fn NetServiceInstall(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    service: {"kind""Ptr","child":{"kind":"UInt16"}},
+    argc: {"kind":"UInt32"},
+    argv: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"UInt16"}}},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wkscli" fn NetUseAdd(
+    servername: {"kind""Ptr","child":{"kind":"SByte"}},
+    LevelFlags: {"kind":"UInt32"},
+    buf: {"kind""Ptr","child":{"kind":"Byte"}},
+    parm_err: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wkscli" fn NetUseDel(
+    UncServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    UseName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ForceLevelFlags: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wkscli" fn NetUseEnum(
+    UncServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    LevelFlags: {"kind":"UInt32"},
+    BufPtr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    PreferedMaximumSize: {"kind":"UInt32"},
+    EntriesRead: {"kind""Ptr","child":{"kind":"UInt32"}},
+    TotalEntries: {"kind""Ptr","child":{"kind":"UInt32"}},
+    ResumeHandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wkscli" fn NetUseGetInfo(
+    UncServerName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    UseName: {"kind""Ptr","child":{"kind":"UInt16"}},
+    LevelFlags: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wkscli" fn NetWkstaGetInfo(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wkscli" fn NetWkstaSetInfo(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    buffer: {"kind""Ptr","child":{"kind":"Byte"}},
+    parm_err: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wkscli" fn NetWkstaUserGetInfo(
+    reserved: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wkscli" fn NetWkstaUserSetInfo(
+    reserved: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    buf: {"kind""Ptr","child":{"kind":"Byte"}},
+    parm_err: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wkscli" fn NetWkstaUserEnum(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    level: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    prefmaxlen: {"kind":"UInt32"},
+    entriesread: {"kind""Ptr","child":{"kind":"UInt32"}},
+    totalentries: {"kind""Ptr","child":{"kind":"UInt32"}},
+    resumehandle: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wkscli" fn NetWkstaTransportAdd(
+    servername: {"kind""Ptr","child":{"kind":"SByte"}},
+    level: {"kind":"UInt32"},
+    buf: {"kind""Ptr","child":{"kind":"Byte"}},
+    parm_err: {"kind""Ptr","child":{"kind":"UInt32"}},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wkscli" fn NetWkstaTransportDel(
+    servername: {"kind""Ptr","child":{"kind":"UInt16"}},
+    transportname: {"kind""Ptr","child":{"kind":"UInt16"}},
+    ucond: {"kind":"UInt32"},
+
+// set_last_errror=False (can and should we use this?)
+pub extern "wkscli" fn NetWkstaTransportEnum(
+    servername: {"kind""Ptr","child":{"kind":"SByte"}},
+    level: {"kind":"UInt32"},
+    bufptr: {"kind""Ptr","child":{"kind""Ptr","child":{"kind":"Byte"}}},
+    prefmaxlen: {"kind":"UInt32"},
+    entriesread: {"kind""Ptr","child":{"kind":"UInt32"}},
+    totalentries: {"kind""Ptr","child":{"kind":"UInt32"}},
+    resume_handle: {"kind""Ptr","child":{"kind":"UInt32"}},
+],
+
+"unicode_aliases": [
+]}

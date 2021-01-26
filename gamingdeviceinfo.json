@@ -1,0 +1,36 @@
+﻿{
+"constants": [
+],
+
+"types_definitions": [
+// --------------------------------------------------------
+// Type: GAMING_DEVICE_VENDOR_ID
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const GAMING_DEVICE_VENDOR_ID = *opaque{
+};
+// --------------------------------------------------------
+// Type: GAMING_DEVICE_DEVICE_ID
+// TypeLayoutAttr: auto
+// not generating the actual code for this type because it has an 'auto' layout (follow up on https://github.com/microsoft/win32metadata/issues/188)
+pub const GAMING_DEVICE_DEVICE_ID = *opaque{
+};
+// --------------------------------------------------------
+// Type: GAMING_DEVICE_MODEL_INFORMATION
+// TypeLayoutAttr: sequential
+// TODO: I think this is a struct, but not sure at this point, assuming it is for now
+pub const GAMING_DEVICE_MODEL_INFORMATION = extern struct {
+    vendorId: Windows.Win32.GamingDeviceInfo.GAMING_DEVICE_VENDOR_ID,
+    deviceId: Windows.Win32.GamingDeviceInfo.GAMING_DEVICE_DEVICE_ID,
+};
+],
+
+"func_definitions": [
+
+// set_last_errror=False (can and should we use this?)
+pub extern "api-ms-win-gaming-deviceinformation-l1-1-0" fn GetGamingDeviceModelInformation(
+    information: {"kind""Ptr","child":Windows.Win32.GamingDeviceInfo.GAMING_DEVICE_MODEL_INFORMATION},
+],
+
+"unicode_aliases": [
+]}
